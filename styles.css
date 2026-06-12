@@ -18,3 +18,31 @@
 @media(max-width:1080px){.bdg-time-grid{grid-template-columns:repeat(3,minmax(0,1fr))}body.bdg-has-global-nav .site-shell{padding-top:330px}}@media(max-width:760px){#bd-global-dropdown-nav{top:10px;left:10px;right:10px}.bdg-bar{flex-wrap:wrap}.bdg-title{order:1;width:calc(100% - 56px);min-width:0;text-align:left}.bdg-title span{display:none}.bdg-drag-handle{order:0}.bdg-bar details{order:3;width:100%}#bdg-hide-nav{order:4;width:100%}.bdg-bar summary,#bdg-hide-nav{width:100%;justify-content:center}.bdg-menu{left:0;right:auto;min-width:calc(100vw - 24px)}#jcc-persistent-tracker{top:190px;left:10px;right:10px}.bdg-time-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body.bdg-has-global-nav .site-shell{padding-top:520px}}@media(max-width:520px){#jcc-persistent-tracker{top:210px}.bdg-time-grid{grid-template-columns:1fr}body.bdg-has-global-nav .site-shell{padding-top:760px}}@media print{#bd-global-dropdown-nav,#bd-nav-bubble,#jcc-persistent-tracker{display:none!important}body.bdg-has-global-nav .site-shell{padding-top:0}.page-panel{display:block!important;break-after:page}}
 
 .lore-chip-row{display:flex;flex-wrap:wrap;gap:7px;margin:.4rem 0 0}.lore-chip{display:inline-flex;align-items:center;border:1px solid rgba(255,244,199,.24);border-radius:999px;padding:5px 9px;background:linear-gradient(135deg,rgba(124,245,223,.14),rgba(255,229,155,.12));color:var(--cream);font-size:.86rem;font-weight:750}.onyx-lore-panel article+article{margin-top:12px}.onyx-lore-panel ul{padding-left:1.2rem;margin:.4rem 0 0}.onyx-lore-panel li{margin:.22rem 0}
+
+/* Jasper cottagecore/witchcore sunrise theme repair — added June 12 2026 */
+:root{
+  --sunset-orange:#f28a3d;
+  --sunrise-orange:#ffb05c;
+  --butter-yellow:#ffe59b;
+  --soft-yellow:#fff4c7;
+  --starfish:#ff8f74;
+  --cyan:#6fe7f5;
+  --teal:#249d9f;
+  --aqua:#7cf5df;
+  --moss:#8ba878;
+  --plum:#3b2448;
+  --midnight:#171324;
+  --ink:#0c0b12;
+  --cream:#fff9df;
+  --muted:#f7dca6;
+  --glass:rgba(22,15,28,.84);
+  --glass-deep:rgba(12,10,18,.94);
+  --soft-shadow:0 18px 48px rgba(32,13,26,.42);
+  --glow:0 0 32px rgba(124,245,223,.22),0 0 26px rgba(255,176,92,.16);
+  --edge-image:url("https://wallpapers.com/images/high/orange-and-teal-5184-x-3456-tsdu6sksayhdnmqq.webp");
+  --page-bg:url("https://wallpapers.com/images/high/cottagecore-house-artwork-sztao33ct9x0n10r.webp");
+}
+body{background:#120d18;color:var(--cream)}
+body::before{background:linear-gradient(135deg,rgba(59,36,72,.54),rgba(36,157,159,.28),rgba(255,176,92,.22)),var(--page-bg) center/cover no-repeat!important;filter:saturate(1.12) contrast(1.04)}
+body::after{background:radial-gradient(circle at 10% 8%,rgba(255,229,155,.34),transparent 24%),radial-gradient(circle at 88% 10%,rgba(111,231,245,.26),transparent 25%),radial-gradient(circle at 64% 92%,rgba(255,143,116,.25),transparent 34%),linear-gradient(180deg,rgba(12,8,18,.10),rgba(12,8,18,.82))!important}.hero-card,.module,#jcc-persistent-tracker,.floating-bot{background:linear-gradient(135deg,rgba(23,19,36,.86),rgba(36,157,159,.26),rgba(255,143,116,.16)) padding-box,var(--edge-image) center/cover border-box!important;border:2px solid transparent!important;box-shadow:var(--soft-shadow),var(--glow)!important}.bdg-bar,.site-nav{background:linear-gradient(90deg,rgba(23,19,36,.96),rgba(36,157,159,.86),rgba(242,138,61,.38)) padding-box,var(--edge-image) center/cover border-box!important;border:2px solid transparent!important}.bdg-menu,.dropdown-links{background:linear-gradient(180deg,rgba(27,14,36,.98),rgba(12,54,60,.96))!important;border-color:rgba(255,244,199,.28)!important}.bdg-link,.nav-link,.soft-button,.complete-button,.control-button,.ghost-button,#bdg-hide-nav,.mini-button{border:1px solid rgba(255,244,199,.22)!important}.soft-button,.control-button{background:linear-gradient(135deg,var(--aqua),var(--butter-yellow))!important;color:#201327!important}.complete-button,.bdg-link,.nav-link{background:linear-gradient(135deg,var(--butter-yellow),var(--starfish))!important;color:#201327!important}.complete-button.distress{background:linear-gradient(135deg,var(--starfish),var(--sunrise-orange))!important}.ghost-button,.mini-button{background:rgba(255,244,199,.10)!important;color:var(--cream)!important}.page-chip,.pill,.legend{background:rgba(124,245,223,.16)!important;border:1px solid rgba(124,245,223,.24)!important;color:var(--soft-yellow)!important}.text-input,textarea,select,input[type="number"],input[type="date"],input[type="time"]{background:rgba(12,10,18,.70)!important;color:var(--cream)!important;border:1px solid rgba(255,244,199,.26)!important;border-radius:14px!important}select option{background:#171324;color:#fff9df}.game-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.game-controls select{min-width:min(100%,360px);flex:1}.game-auto-reward-note{display:inline-flex;align-items:center;min-height:42px;border-radius:999px;padding:9px 12px;background:linear-gradient(135deg,rgba(124,245,223,.18),rgba(255,229,155,.15));border:1px solid rgba(255,244,199,.24);color:var(--soft-yellow);font-weight:850}.bdg-time-card,.bdg-currency-card,.task-card,.dbt-card,.log-entry,.store-item,.break-item,.calendar-cell,.diary-card-preview{border-color:rgba(255,244,199,.20)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}#gameFrame{border:2px solid rgba(255,244,199,.26)!important;box-shadow:0 18px 48px rgba(12,8,18,.35),0 0 22px rgba(124,245,223,.16);background:#050508}.floating-bot-button{border:1px solid rgba(255,244,199,.36)!important;background:linear-gradient(135deg,var(--aqua),var(--starfish))!important}.toast{background:linear-gradient(135deg,rgba(27,14,36,.96),rgba(16,104,106,.84))!important;border-color:rgba(124,245,223,.38)!important}.onyx-mood-stage img,.floating-bot-button img,.floating-onyx-title img{object-fit:contain!important;background:transparent!important}.onyx-mood-stage{background:radial-gradient(circle,rgba(255,244,199,.14),rgba(12,8,18,.26))!important}
+@media(max-width:760px){.game-controls{display:grid;grid-template-columns:1fr}.game-auto-reward-note{border-radius:18px;justify-content:center;text-align:center}}

@@ -234,7 +234,7 @@
     {title:"STOP", module:"Crisis survival", desc:"Stop, Take a step back, Observe, Proceed mindfully."}, {title:"TIPP", module:"Body regulation", desc:"Temperature, Intense exercise if safe, Paced breathing, Paired muscle relaxation."}, {title:"Wise Mind", module:"Mindfulness", desc:"Let emotion mind and reasonable mind both sit at the table."}, {title:"Check the Facts", module:"Emotion regulation", desc:"Ask what happened, what you are assuming, and what facts support or soften the fear."}, {title:"Opposite Action", module:"Emotion regulation", desc:"When an emotion does not fit the facts or is too intense, choose a healthy opposite action."}, {title:"Self-Soothe", module:"Distress tolerance", desc:"Use senses: comfort texture, smell, music, soft light, taste, warmth, or pressure."}, {title:"DEAR MAN", module:"Interpersonal", desc:"Describe, Express, Assert, Reinforce, stay Mindful, Appear confident, Negotiate."}, {title:"GIVE", module:"Interpersonal", desc:"Be Gentle, Interested, Validate, use an Easy manner."}, {title:"FAST", module:"Self-respect", desc:"Be Fair, no Apologies for existing, Stick to values, be Truthful."}
   ];
   const JOURNAL_PROMPTS = ["What does your body need first: food, water, meds, hygiene, rest, or comfort?","What task would feel less heavy if it were split into one tiny part?","What did you do today that Future Jasper deserves to be proud of?","What emotion is loudest, and what fact can sit beside it?","What would count as a hard-day win instead of an everything-day win?","What can Onyx lovingly judge so you do not have to carry it alone?"];
-  const GAME_FILES = ["badicecream3.html","candycrush.html","capybaraclicker.html","flappybird.html","fnaf.html","fnaf2.html","fnaf3.html","fnaf4.html","minesweeper.html","noobminer.html","tabletennisworldtour.html","theyarecoming.html","tinyfishing.html","zombierush.html"];
+  const GAME_FILES = ["angrybirds.html", "baconmaydie.html", "badicecream3.html", "badpiggies.html", "bubbleshooter.html", "candycrush.html", "capybaraclicker.html", "ducklife5.html", "escapingtheprison.html", "fancypantsadventure2.html", "flappybird.html", "fnaf.html", "fnaf4.html", "fruitninja.html", "minesweeper.html", "noobminer.html", "plantsvszombies.html", "tabletennisworldtour.html", "tinyfishing.html", "tunnelrush.html", "webecomewhatwebehold.html", "zombierush.html"];
   const ONYX_MOODS = {
     sleepy:{file:"onyx_sleepy.png",label:"Sleepy",note:"Onyx is half-asleep but still supervising Momma."},
     listening:{file:"onyx_listening.png",label:"Listening with both void ears",note:"Onyx woke up and is listening carefully to Momma."},
@@ -309,7 +309,19 @@
   function bindToday(){ $("#clearTodaySelections").addEventListener("click",()=>{ state.todayAdded[todayKey()]=[]; saveState(); renderAll(); toast("Added tasks cleared. Automatic daily tasks stayed."); }); $("#timesheetNotes").addEventListener("input",e=>{state.timesheetNotes=e.target.value;saveState();}); }
   function bindDiary(){ ["Mood","Distress","Energy","Urges"].forEach(name=>{ const el=$("#diary"+name); const out=$("#diary"+name+"Value"); el.addEventListener("input",()=>out.textContent=el.value); }); $("#saveDiaryCard").addEventListener("click",saveDiary); $("#exportDiaryPdf").addEventListener("click",exportDiaryPdf); $("#exportDiaryPng").addEventListener("click",exportDiaryPng); }
   function bindJournal(){ $("#newPrompt").addEventListener("click",()=>$("#journalPrompt").textContent=random(JOURNAL_PROMPTS)); $("#saveJournal").addEventListener("click",saveJournal); $("#exportJournalsTxt").addEventListener("click",exportJournalsTxt); $("#exportJournalsDocx").addEventListener("click",exportJournalsDocx); }
-  function bindGames(){ const sel=$("#gameSelect"); sel.innerHTML=GAME_FILES.map(f=>`<option value="games/${f}">${prettyGame(f)}</option>`).join(""); $("#loadGame").addEventListener("click",()=>{ $("#gameFrame").src=sel.value; toast("Game loaded for decompression."); }); }
+  function bindGames(){
+    const sel=$("#gameSelect");
+    if(!sel) return;
+    sel.innerHTML=GAME_FILES.map(f=>`<option value="games/${f}">${prettyGame(f)}</option>`).join("");
+    const load=()=>{
+      const frame=$("#gameFrame");
+      if(frame && sel.value){
+        frame.src=sel.value;
+        toast("Game loaded. Squishy currency rewards are automatic inside the game.");
+      }
+    };
+    $("#loadGame")?.addEventListener("click",load);
+  }
   async function bindGallery(){ $("#galleryUpload").addEventListener("change", async e=>{ for(const file of e.target.files){ if(!file.type.startsWith("image/")) continue; const data=await readFileAsDataUrl(file); state.gallery.unshift({id:Date.now()+Math.random(),name:file.name,data}); } e.target.value=""; saveState(); renderGallery(); toast("Added serotonin image(s)."); }); document.addEventListener("click", e=>{ const del=e.target.closest("[data-delete-image]"); if(del){ state.gallery=state.gallery.filter(x=>String(x.id)!==del.dataset.deleteImage); saveState(); renderGallery(); } }); }
   function bindStore(){ ["#storeSearch","#storeCategory"].forEach(sel=>$(sel).addEventListener("input",renderStore)); $("#customStoreForm").addEventListener("submit", e=>{ e.preventDefault(); const name=$("#storeItemName").value.trim(); if(!name) return; state.customStore.unshift({id:"store-custom-"+Date.now(),name,category:$("#storeItemCategory").value,url:$("#storeItemUrl").value.trim(),cost:{copper:+$("#storeCostC").value||0,silver:+$("#storeCostS").value||0,gold:+$("#storeCostG").value||0,platinum:+$("#storeCostP").value||0}}); e.target.reset(); saveState(); renderStore(); toast("Custom store item/link added."); }); document.addEventListener("click", e=>{ const add=e.target.closest("[data-add-cart]"); if(add) addToCart(add.dataset.addCart); const remove=e.target.closest("[data-remove-cart]"); if(remove) removeCart(remove.dataset.removeCart); }); $("#checkoutCart").addEventListener("click",checkoutCart); $("#copyCheckoutEmail").addEventListener("click",copyCheckoutEmail); $("#clearCart").addEventListener("click",()=>{state.cart=[];saveState();renderCart();}); }
   function bindChat(){ renderChat(); setOnyxMood("judgmental"); setFloatingButtonMood("sleepy"); $("#chatForm").addEventListener("submit", e=>{ e.preventDefault(); sendChat($("#chatInput"), "#chatMessages"); }); $("#floatingChatForm").addEventListener("submit", e=>{ e.preventDefault(); sendChat($("#floatingChatInput"), "#floatingChatMessages"); }); $("#floatingBotButton").addEventListener("click",openFloatingBot); $("#closeFloatingBot").addEventListener("click",closeFloatingBot); document.addEventListener("click",e=>{ const b=e.target.closest("[data-onyx]"); if(b){ addBotMessage(onyxReply(b.dataset.onyx)); }}); $("#dbtSearch").addEventListener("input",renderDbt); renderDbt(); renderOnyxLore(); }
@@ -345,7 +357,19 @@ function setActivePage(id){
     if(newDetails) newDetails.open=false;
     window.scrollTo({top:0,behavior:"smooth"});
   }
-  function pageBackground(id){ const map={"task-board":"url('https://wallpapers.com/images/high/cottagecore-house-artwork-sztao33ct9x0n10r.webp')","todays-routine":"url('https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp')","chat-bot-dbt-skills":"url('https://wallpapers.com/images/high/black-cat-tarot-symbolism-esq5mscawvmt5iez.webp')","dbt-daily-cards":"url('https://wallpapers.com/images/high/mystical-tarot-hermit-and-crystals-aesthetic-jpg-f4fqa0odp32jjshv.webp')","dbt-journaling":"url('https://wallpapers.com/images/high/cottagecore-library-room-j08td6azywnnfo0r.webp')","mobile-games":"url('https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp')","serotonin":"url('https://wallpapers.com/images/high/cottagecore-house-artwork-sztao33ct9x0n10r.webp')","squishy-store":"url('https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp')"}; return map[id]||map["task-board"]; }
+  function pageBackground(id){
+    const map={
+      "task-board":"url('https://wallpapers.com/images/high/cottagecore-house-artwork-sztao33ct9x0n10r.webp')",
+      "todays-routine":"url('https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp')",
+      "chat-bot-dbt-skills":"url('https://wallpapers.com/images/high/black-cat-tarot-symbolism-esq5mscawvmt5iez.webp')",
+      "dbt-daily-cards":"url('https://wallpapers.com/images/high/mystical-tarot-hermit-and-crystals-aesthetic-jpg-f4fqa0odp32jjshv.webp')",
+      "dbt-journaling":"url('https://wallpapers.com/images/high/witchy-tarot-cards-for-iphone-screens-onup9yxe4vkuey82.webp')",
+      "mobile-games":"url('https://wallpapers.com/images/high/summer-background-yfcdzb4xyiba2cuy.webp')",
+      "serotonin":"url('https://wallpapers.com/images/high/arctic-orange-sunrise-qmkyi9q7rqsjaccs.webp')",
+      "squishy-store":"url('https://wallpapers.com/images/high/malibu-beach-sunrise-desktop-nmueexjebjnft1wn.webp')"
+    };
+    return map[id]||map["task-board"];
+  }
   function rollover(){ const dk=todayKey(); if(state.dateKey!==dk){ state.dateKey=dk; saveState(); } }
   function tick(){
     rollover();
