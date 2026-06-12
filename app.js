@@ -351,6 +351,8 @@ function setActivePage(id){
     const title=$("#currentPageTitle"), sub=$("#pageSubtitle");
     if(title) title.textContent=panel?.dataset.title||"Jasper's Care Cottage";
     if(sub) sub.textContent=panel?.dataset.subtitle||"";
+    document.body.dataset.currentPage=id;
+    document.documentElement.dataset.currentPage=id;
     document.body.style.setProperty("--page-bg", pageBackground(id));
     const oldDetails=$("#pageNavDetails"), newDetails=$("#bdg-nav-details");
     if(oldDetails) oldDetails.open=false;
@@ -358,15 +360,17 @@ function setActivePage(id){
     window.scrollTo({top:0,behavior:"smooth"});
   }
   function pageBackground(id){
+    // Keep this JavaScript map in sync with styles.css. The active page writes
+    // --page-bg onto <body>, so a wrong map here overrides otherwise-correct CSS.
     const map={
-      "task-board":"url('https://wallpapers.com/images/high/cottagecore-house-artwork-sztao33ct9x0n10r.webp')",
-      "todays-routine":"url('https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp')",
+      "task-board":"url('https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp')",
+      "todays-routine":"url('https://wallpapers.com/images/high/malibu-beach-sunrise-desktop-nmueexjebjnft1wn.webp')",
       "chat-bot-dbt-skills":"url('https://wallpapers.com/images/high/black-cat-tarot-symbolism-esq5mscawvmt5iez.webp')",
-      "dbt-daily-cards":"url('https://wallpapers.com/images/high/mystical-tarot-hermit-and-crystals-aesthetic-jpg-f4fqa0odp32jjshv.webp')",
-      "dbt-journaling":"url('https://wallpapers.com/images/high/witchy-tarot-cards-for-iphone-screens-onup9yxe4vkuey82.webp')",
-      "mobile-games":"url('https://wallpapers.com/images/high/summer-background-yfcdzb4xyiba2cuy.webp')",
-      "serotonin":"url('https://wallpapers.com/images/high/arctic-orange-sunrise-qmkyi9q7rqsjaccs.webp')",
-      "squishy-store":"url('https://wallpapers.com/images/high/malibu-beach-sunrise-desktop-nmueexjebjnft1wn.webp')"
+      "dbt-daily-cards":"url('https://wallpapers.com/images/high/witchy-tarot-cards-for-iphone-screens-onup9yxe4vkuey82.webp')",
+      "dbt-journaling":"url('https://wallpapers.com/images/high/cottagecore-house-artwork-sztao33ct9x0n10r.webp')",
+      "mobile-games":"url('https://wallpapers.com/images/high/arctic-orange-sunrise-qmkyi9q7rqsjaccs.webp')",
+      "serotonin":"url('https://wallpapers.com/images/high/mystical-tarot-hermit-and-crystals-aesthetic-jpg-f4fqa0odp32jjshv.webp')",
+      "squishy-store":"url('https://wallpapers.com/images/high/summer-background-yfcdzb4xyiba2cuy.webp')"
     };
     return map[id]||map["task-board"];
   }

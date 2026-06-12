@@ -385,3 +385,15 @@ label,
   background:rgba(124,245,223,.35);
   color:var(--cream);
 }
+
+
+/* Hard link between app.js page state and the requested backgrounds.
+   app.js sets body[data-current-page] and --page-bg when navigation changes. */
+body[data-current-page="task-board"]{--page-bg:var(--calendar-bg)!important;}
+body[data-current-page="todays-routine"]{--page-bg:var(--schedule-bg)!important;}
+body[data-current-page="chat-bot-dbt-skills"]{--page-bg:var(--chat-bg)!important;}
+body[data-current-page="dbt-daily-cards"]{--page-bg:var(--daily-card-bg)!important;}
+body[data-current-page="dbt-journaling"]{--page-bg:var(--journal-bg)!important;}
+body[data-current-page="mobile-games"]{--page-bg:var(--games-bg)!important;}
+body[data-current-page="serotonin"]{--page-bg:var(--serotonin-bg)!important;}
+body[data-current-page="squishy-store"]{--page-bg:var(--store-bg)!important;}
