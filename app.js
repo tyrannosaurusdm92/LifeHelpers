@@ -6,8 +6,27 @@
   const CHECKOUT_EMAIL = "williamsaville92@gmail.com";
   const ET_ZONE = "America/New_York";
   const PAGES = [
-    ["task-board", "Care Task Board"], ["todays-routine", "Today's Schedule"], ["chat-bot-dbt-skills", "Onyx + DBT"], ["dbt-daily-cards", "DBT Daily Cards"], ["dbt-journaling", "DBT Journaling"], ["mobile-games", "Mobile Games"], ["serotonin", "Serotonin"], ["squishy-store", "Squishy Store"]
+    ["home", "Home"],
+    ["task-board", "Calendar + Tasks"],
+    ["todays-routine", "Today's Schedule"],
+    ["chat-bot-dbt-skills", "Onyx + DBT"],
+    ["dbt-daily-cards", "DBT Daily Cards"],
+    ["dbt-journaling", "DBT Journaling"],
+    ["mobile-games", "Mobile Games"],
+    ["serotonin", "Serotonin"],
+    ["squishy-store", "Squishy Store"]
   ];
+  const PAGE_META = {
+    home:{emoji:"🏡", label:"Home"},
+    "task-board":{emoji:"📅", label:"Calendar + Tasks"},
+    "todays-routine":{emoji:"🌅", label:"Today's Schedule"},
+    "chat-bot-dbt-skills":{emoji:"🐈‍⬛", label:"Onyx + DBT", img:"assets/onyx-moods/onyx_caring.png"},
+    "dbt-daily-cards":{emoji:"🃏", label:"DBT Daily Cards"},
+    "dbt-journaling":{emoji:"📓", label:"DBT Journaling"},
+    "mobile-games":{emoji:"🎮", label:"Mobile Games"},
+    serotonin:{emoji:"🔮", label:"Serotonin"},
+    "squishy-store":{emoji:"🛍️", label:"Squishy Store"}
+  };
   const REWARD_BY_PRIORITY = {
     "Critical": {copper:2400, silver:240, gold:70, platinum:8},
     "Very High": {copper:3200, silver:320, gold:100, platinum:14},
@@ -255,7 +274,7 @@
   document.addEventListener("DOMContentLoaded", init);
   function t(id, name, room, priority, frequency, details, copper, silver, gold, platinum){ return {id,name,room,priority,frequency,details,reward:{copper,silver,gold,platinum}}; }
   function s(id, name, category, cost, url=""){ return {id,name,category,cost,url}; }
-  function defaultState(){ return {dateKey:easternDateKey(new Date()), currency:{copper:0,silver:0,gold:0,platinum:0}, lastCompleted:{}, dayCompletions:{}, todayAdded:{}, activity:[], customTasks:[], cart:[], customStore:[], purchases:[], journals:[], diaryCards:[], gallery:[], timeRows:{}, timesheetNotes:"", layout:{}, chat:[]}; }
+  function defaultState(){ return {dateKey:easternDateKey(new Date()), currency:{copper:0,silver:0,gold:0,platinum:0}, lastCompleted:{}, dayCompletions:{}, todayAdded:{}, activity:[], customTasks:[], cart:[], customStore:[], purchases:[], journals:[], diaryCards:[], gallery:[], timeRows:{}, timesheetNotes:"", layout:{}, ui:{theme:"dark",bubbleMode:false,trackerBubble:false}, gameProgress:{}, chat:[]}; }
   function loadState(){
     try{
       const saved={...defaultState(), ...JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}")} ;
@@ -266,10 +285,14 @@
     }catch{ return defaultState(); }
   }
   function saveState(){ state.currency=normalizeCurrency(state.currency||{}); localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); localStorage.setItem("jaspersCareCottageCurrency", JSON.stringify(state.currency)); }
-  function init(){ buildNav(); buildFilters(); bindShell(); bindTaskUI(); bindCalendar(); bindToday(); bindDiary(); bindJournal(); bindGames(); bindGallery(); bindStore(); bindChat(); setupDraggables(); setInterval(tick,1000); tick(); rollover(); setActivePage(location.hash.slice(1)||"task-board"); renderAll(); }
+  function init(){ buildNav(); stampModuleBubbles(); applySavedUiPrefs(); buildFilters(); bindShell(); bindTaskUI(); bindCalendar(); bindToday(); bindDiary(); bindJournal(); bindGames(); bindGallery(); bindStore(); bindChat(); setupDraggables(); setInterval(tick,1000); tick(); rollover(); setActivePage(location.hash.slice(1)||"home"); renderAll(); }
   function buildNav(){
     document.body.classList.add("bdg-has-global-nav");
-    const links=PAGES.map(([id,label])=>`<a class="bdg-link nav-link" href="#${id}" data-page="${id}" data-target="${id}">${escapeHtml(label)}</a>`).join("");
+    const links=PAGES.map(([id,label])=>{
+      const meta=PAGE_META[id]||{emoji:"•",label};
+      const icon=meta.img?`<span class="bdg-link-icon onyx-icon"><img src="${escapeAttr(meta.img)}" alt="" /></span>`:`<span class="bdg-link-icon" aria-hidden="true">${escapeHtml(meta.emoji||"•")}</span>`;
+      return `<a class="bdg-link nav-link" href="#${id}" data-page="${id}" data-target="${id}" data-bubble="${escapeAttr(meta.emoji||"•")}" aria-label="${escapeAttr(meta.label||label)}">${icon}<span class="bdg-link-label">${escapeHtml(meta.label||label)}</span></a>`;
+    }).join("");
     const newHost=$("#bdg-menu-links");
     const oldHost=$("#pageLinks");
     if(newHost) newHost.innerHTML=links;
@@ -278,14 +301,24 @@
   }
   function buildFilters(){ const rooms=[...new Set(allTasks().map(x=>x.room))].sort(); $("#taskRoomFilter").insertAdjacentHTML("beforeend", rooms.map(r=>`<option>${escapeHtml(r)}</option>`).join("")); const cats=[...new Set(allStoreItems().map(x=>x.category))].sort((a,b)=>(STORE_AISLES.indexOf(a)<0?999:STORE_AISLES.indexOf(a))-(STORE_AISLES.indexOf(b)<0?999:STORE_AISLES.indexOf(b)) || a.localeCompare(b)); $("#storeCategory").insertAdjacentHTML("beforeend", cats.map(c=>`<option value="${escapeAttr(c)}">${escapeHtml(c)}</option>`).join("")); }
   function bindShell(){
-    window.addEventListener("hashchange",()=>setActivePage(location.hash.slice(1)||"task-board"));
+    window.addEventListener("hashchange",()=>setActivePage(location.hash.slice(1)||"home"));
     window.addEventListener("message", handleGameCurrencyMessage);
     ["pointerdown","keydown","scroll","click"].forEach(ev=>document.addEventListener(ev,()=>{lastActivityAt=Date.now();}, {passive:true}));
     $("#saveNowBtn").addEventListener("click",()=>{saveState(); toast("Saved in this browser.")});
     $("#exportAllData").addEventListener("click",exportAllData);
     $("#importAllData").addEventListener("change",importAllData);
     $("#resetLayout").addEventListener("click",()=>{ state.layout={}; saveState(); location.reload(); });
-    document.addEventListener("click", e=>{ const btn=e.target.closest("[data-collapse]"); if(btn){ btn.closest(".module").classList.toggle("minimized"); saveLayout(); } const complete=e.target.closest("[data-complete]"); if(complete){ completeTask(complete.dataset.complete); } });
+    $("#bdg-theme-toggle")?.addEventListener("click",toggleThemeMode);
+    $("#bdg-bubble-all")?.addEventListener("click",()=>setBubbleMode(!document.body.classList.contains("jcc-bubble-mode")));
+    $("#bdg-collapse-tracker")?.addEventListener("click",()=>setTrackerBubble(!document.body.classList.contains("jcc-tracker-bubble")));
+    $("#jcc-persistent-tracker")?.addEventListener("click",e=>{ if(document.body.classList.contains("jcc-tracker-bubble") && !e.target.closest("button")){ setTrackerBubble(false); } });
+    document.addEventListener("click", e=>{
+      const btn=e.target.closest("[data-collapse]");
+      if(btn){ const module=btn.closest(".module"); if(module){ module.classList.toggle("minimized"); module.classList.remove("jcc-expanded-bubble"); saveLayout(); } }
+      const moduleBubble=e.target.closest(".module");
+      if(moduleBubble && document.body.classList.contains("jcc-bubble-mode") && !moduleBubble.classList.contains("jcc-expanded-bubble") && !e.target.closest("button,a,input,textarea,select,label")){ moduleBubble.classList.add("jcc-expanded-bubble"); return; }
+      const complete=e.target.closest("[data-complete]"); if(complete){ completeTask(complete.dataset.complete); }
+    });
   }
   function handleGameCurrencyMessage(event){
     const data=event.data||{};
@@ -317,15 +350,77 @@
       const frame=$("#gameFrame");
       if(frame && sel.value){
         frame.src=sel.value;
+        localStorage.setItem("jccLastGame", sel.value);
         toast("Game loaded. Squishy currency rewards are automatic inside the game.");
       }
     };
     $("#loadGame")?.addEventListener("click",load);
+    $("#saveGameProgress")?.addEventListener("click",()=>{
+      const frame=$("#gameFrame");
+      const current=sel.value||localStorage.getItem("jccLastGame")||"";
+      state.gameProgress=state.gameProgress||{};
+      state.gameProgress[current||"mobile-games"]={savedAt:new Date().toISOString(), currency:state.currency};
+      saveState();
+      try{ frame?.contentWindow?.postMessage?.({type:"jasperSaveGameProgressRequest",currency:state.currency,totalCopper:currencyToCopper(state.currency)},"*"); }catch(e){}
+      toast("Game progress and Squishy currency saved in this browser.");
+    });
+    $("#clearGameFrame")?.addEventListener("click",()=>{ const frame=$("#gameFrame"); if(frame) frame.src="about:blank"; toast("Game closed. Your site save is still here."); });
+    $("#gameHomeButton")?.addEventListener("click",()=>{ saveState(); });
   }
   async function bindGallery(){ $("#galleryUpload").addEventListener("change", async e=>{ for(const file of e.target.files){ if(!file.type.startsWith("image/")) continue; const data=await readFileAsDataUrl(file); state.gallery.unshift({id:Date.now()+Math.random(),name:file.name,data}); } e.target.value=""; saveState(); renderGallery(); toast("Added serotonin image(s)."); }); document.addEventListener("click", e=>{ const del=e.target.closest("[data-delete-image]"); if(del){ state.gallery=state.gallery.filter(x=>String(x.id)!==del.dataset.deleteImage); saveState(); renderGallery(); } }); }
   function bindStore(){ ["#storeSearch","#storeCategory"].forEach(sel=>$(sel).addEventListener("input",renderStore)); $("#customStoreForm").addEventListener("submit", e=>{ e.preventDefault(); const name=$("#storeItemName").value.trim(); if(!name) return; state.customStore.unshift({id:"store-custom-"+Date.now(),name,category:$("#storeItemCategory").value,url:$("#storeItemUrl").value.trim(),cost:{copper:+$("#storeCostC").value||0,silver:+$("#storeCostS").value||0,gold:+$("#storeCostG").value||0,platinum:+$("#storeCostP").value||0}}); e.target.reset(); saveState(); renderStore(); toast("Custom store item/link added."); }); document.addEventListener("click", e=>{ const add=e.target.closest("[data-add-cart]"); if(add) addToCart(add.dataset.addCart); const remove=e.target.closest("[data-remove-cart]"); if(remove) removeCart(remove.dataset.removeCart); }); $("#checkoutCart").addEventListener("click",checkoutCart); $("#copyCheckoutEmail").addEventListener("click",copyCheckoutEmail); $("#clearCart").addEventListener("click",()=>{state.cart=[];saveState();renderCart();}); }
   function bindChat(){ renderChat(); setOnyxMood("judgmental"); setFloatingButtonMood("sleepy"); $("#chatForm").addEventListener("submit", e=>{ e.preventDefault(); sendChat($("#chatInput"), "#chatMessages"); }); $("#floatingChatForm").addEventListener("submit", e=>{ e.preventDefault(); sendChat($("#floatingChatInput"), "#floatingChatMessages"); }); $("#floatingBotButton").addEventListener("click",openFloatingBot); $("#closeFloatingBot").addEventListener("click",closeFloatingBot); document.addEventListener("click",e=>{ const b=e.target.closest("[data-onyx]"); if(b){ addBotMessage(onyxReply(b.dataset.onyx)); }}); $("#dbtSearch").addEventListener("input",renderDbt); renderDbt(); renderOnyxLore(); }
   
+  function applySavedUiPrefs(){
+    state.ui={theme:"dark",bubbleMode:false,trackerBubble:false,...(state.ui||{})};
+    applyThemeMode(state.ui.theme||"dark", false);
+    setBubbleMode(!!state.ui.bubbleMode, false);
+    setTrackerBubble(!!state.ui.trackerBubble, false);
+  }
+  function applyThemeMode(mode, persist=true){
+    mode=(mode==="light")?"light":"dark";
+    document.body.dataset.theme=mode;
+    document.documentElement.dataset.theme=mode;
+    const btn=$("#bdg-theme-toggle");
+    if(btn) btn.textContent=mode==="dark"?"🌙 Dark":"☀️ Light";
+    state.ui={...(state.ui||{}),theme:mode};
+    if(persist) saveState();
+  }
+  function toggleThemeMode(){ applyThemeMode((document.body.dataset.theme||"dark")==="dark"?"light":"dark"); }
+  function setBubbleMode(on, persist=true){
+    document.body.classList.toggle("jcc-bubble-mode", !!on);
+    document.documentElement.classList.toggle("jcc-bubble-mode", !!on);
+    $$(".module.jcc-expanded-bubble").forEach(m=>m.classList.remove("jcc-expanded-bubble"));
+    const btn=$("#bdg-bubble-all");
+    if(btn){ btn.setAttribute("aria-pressed", on?"true":"false"); btn.textContent=on?"🌿 Full View":"🫧 Bubble Mode"; }
+    state.ui={...(state.ui||{}),bubbleMode:!!on};
+    if(persist) saveState();
+  }
+  function setTrackerBubble(on, persist=true){
+    document.body.classList.toggle("jcc-tracker-bubble", !!on);
+    const btn=$("#bdg-collapse-tracker");
+    if(btn){ btn.setAttribute("aria-expanded", on?"false":"true"); btn.textContent=on?"🕒 Open Tracker":"🕒 Bubble Tracker"; }
+    state.ui={...(state.ui||{}),trackerBubble:!!on};
+    if(persist) saveState();
+  }
+  function stampModuleBubbles(){
+    const map={
+      "home-welcome":"🏡","home-gentle-start":"🌤️","home-mobile-tools":"📱",
+      "task-overview":"💰","calendar-views":"📅","task-library":"✅","custom-task":"➕","activity-log-module":"📜",
+      "today-list":"🌅","caregiver-workday":"🫶","timesheet-style":"🕒",
+      "onyx-chat":"🐈‍⬛","dbt-search":"🧠","diary-card":"🃏","diary-history":"🗂️",
+      "journal-editor":"📓","journal-prompts":"💭","journal-list":"📚",
+      "games-module":"🎮","gallery-module":"🔮","onyx-lore":"🐾",
+      "store-shelf":"🛍️","cart":"🛒","custom-store":"🔗"
+    };
+    $$(".module").forEach(m=>{
+      const key=m.dataset.key;
+      if(!m.dataset.bubble) m.dataset.bubble=map[key]||"✨";
+      const title=m.querySelector(".module-title")?.textContent?.trim();
+      if(title) m.setAttribute("aria-label", title);
+    });
+  }
+
   function installGlobalNavControls(){
     const nav=$("#bd-global-dropdown-nav"), bubble=$("#bd-nav-bubble"), hide=$("#bdg-hide-nav"), show=$("#bdg-show-nav"), handle=$(".bdg-drag-handle");
     try{ if(localStorage.getItem("jccNavHidden")==="1") document.body.classList.add("bdg-nav-hidden"); }catch(e){}
@@ -337,9 +432,9 @@
     if(show) show.addEventListener("click",()=>{ document.body.classList.remove("bdg-nav-hidden"); try{localStorage.setItem("jccNavHidden","0");}catch(e){} });
   }
 function setActivePage(id){
-    const aliases={"care-task-board":"task-board","todays-schedule":"todays-routine","onyx-dbt":"chat-bot-dbt-skills"};
+    const aliases={"care-task-board":"task-board","calendar":"task-board","todays-schedule":"todays-routine","onyx-dbt":"chat-bot-dbt-skills","landing":"home"};
     id=aliases[id]||id;
-    if(!PAGES.some(p=>p[0]===id)) id="task-board";
+    if(!PAGES.some(p=>p[0]===id)) id="home";
     $$(".page-panel").forEach(p=>p.classList.toggle("active",p.id===id));
     $$(".nav-link,.bdg-link").forEach(a=>{
       const current=(a.dataset.page===id)||(a.dataset.target===id);
@@ -363,6 +458,7 @@ function setActivePage(id){
     // Keep this JavaScript map in sync with styles.css. The active page writes
     // --page-bg onto <body>, so a wrong map here overrides otherwise-correct CSS.
     const map={
+      "home":"url('https://wallpapers.com/images/high/nonbinary-6dmq3e06bl8l8zv7.webp')",
       "task-board":"url('https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp')",
       "todays-routine":"url('https://wallpapers.com/images/high/malibu-beach-sunrise-desktop-nmueexjebjnft1wn.webp')",
       "chat-bot-dbt-skills":"url('https://wallpapers.com/images/high/black-cat-tarot-symbolism-esq5mscawvmt5iez.webp')",
@@ -372,7 +468,7 @@ function setActivePage(id){
       "serotonin":"url('https://wallpapers.com/images/high/mystical-tarot-hermit-and-crystals-aesthetic-jpg-f4fqa0odp32jjshv.webp')",
       "squishy-store":"url('https://wallpapers.com/images/high/summer-background-yfcdzb4xyiba2cuy.webp')"
     };
-    return map[id]||map["task-board"];
+    return map[id]||map["home"];
   }
   function rollover(){ const dk=todayKey(); if(state.dateKey!==dk){ state.dateKey=dk; saveState(); } }
   function tick(){
