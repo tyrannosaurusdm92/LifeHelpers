@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Jasper's Squishy Care Cottage</title>
+  <title>Jasper's Squishy Care Cottage — Momma Onyx Support</title>
   <meta name="description" content="Mobile-first caregiver, self-care, DBT, schedule, calendar, and Squishy Store reward site for Jasper." />
   <link rel="manifest" href="docs/manifest.webmanifest" />
-  <link rel="stylesheet" href="css/mobile.css?v=device-split-20260612" media="(max-width: 767px)" />
-  <link rel="stylesheet" href="css/tablet.css?v=device-split-20260612" media="(min-width: 768px) and (max-width: 1199px)" />
-  <link rel="stylesheet" href="css/desktop.css?v=device-split-20260612" media="(min-width: 1200px), print" />
+  <link rel="stylesheet" href="css/styles.css?v=onyx-full-support-20260613" />
+  <link rel="stylesheet" href="css/jcc-full-functionality-upgrade.css?v=full-functionality-20260613" />
   <meta name="theme-color" content="#f28a3d" />
   <!-- Squishy support data/reward files. app.js stays at the site root. -->
-  <script src="./js/jasper-support-data.js?v=squishy-support-clean-20260612"></script>
-  <script src="./js/jasper-reward-catalog-data.js?v=squishy-support-clean-20260612"></script>
 </head>
 <body>
   <div aria-label="Jasper's Care Cottage in-site navigation" id="bd-global-dropdown-nav">
@@ -215,14 +212,15 @@
         </div>
       </section>
 
-      <section class="page-panel" id="chat-bot-dbt-skills" data-title="DBT Support Chat" data-subtitle="Shame-free DBT, ADHD, grounding, attachment-alarm, self-care, and reward support.">
-        <div class="page-heading"><h2>DBT Support Chat</h2><span class="page-chip">chat support earns rewards</span></div>
+      <section class="page-panel" id="chat-bot-dbt-skills" data-title="Momma Onyx Psychiatrist Support" data-subtitle="Lord Onyx Blepman: upgraded Momma-specific DBT, ADHD, risk-aware, grounding, attachment-alarm, and psychoeducation support.">
+        <div class="page-heading"><h2>Momma Onyx Psychiatrist + DBT Support Chat</h2><span class="page-chip">upgraded Momma bot + rewards</span></div>
         <div class="module-grid">
           <section class="module movable wide" data-key="support-chat">
-            <div class="module-header drag-handle"><span class="module-title">DBT + Self-Care Support Chat</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
+            <div class="module-header drag-handle"><span class="module-title">Lord Onyx Blepman Support Chat</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
             <div class="module-body">
               <div class="support-companion-card">
-                <div><span class="eyebrow">Shame-free skill support</span><h3>Use this space for DBT, ADHD tiny steps, grounding, attachment alarms, self-care resets, and reward check-ins.</h3><strong id="supportMoodLabel">Care support</strong><p id="supportMoodNote">The helper keeps the focus on safety, tiny steps, practical care, and passive scanner context. Full Emperor Onyx companion mode is linked below.</p><div class="support-quick-row support-mode-bubbles" aria-label="Quick support modes">
+                <div class="support-mood-stage"><img id="supportMoodImage" src="assets/onyx-moods/onyx_caring.png" alt="Onyx mood: caring" loading="lazy" /></div>
+                <div><span class="eyebrow">Lord Onyx Blepman support</span><h3>Onyx is Papa’s best friend and Momma’s devoted baby: DBT skills, ADHD tiny steps, grounding, attachment alarms, self-care resets, rewards, and dramatic tiny-void encouragement.</h3><strong id="supportMoodLabel">Onyx care support</strong><p id="supportMoodNote">Onyx now uses the upgraded Momma-specific psychiatrist/DBT/ADHD bot brain: validation first, risk-aware scanner context, tiny psychoeducation, and one paw-sized next step.</p><div class="support-quick-row support-mode-bubbles" aria-label="Quick support modes">
                   <button class="ghost-button support-mode-button" type="button" data-support="comfort">🤎 Comfort</button>
                   <button class="ghost-button support-mode-button" type="button" data-support="dbt_picker">🧠 DBT picker</button>
                   <button class="ghost-button support-mode-button" type="button" data-support="tipp">🧊 TIPP panic</button>
@@ -235,19 +233,57 @@
                   <button class="ghost-button support-mode-button" type="button" data-support="listen">👂 Listen</button>
                 </div>
                 <div class="support-link-row" aria-label="Linked support systems">
-                  <a class="soft-button" href="Emperor_onyx.html">Open Emperor Onyx full companion</a>
+                  <button class="soft-button" type="button" data-support="who">Ask who Onyx is</button>
                   <span class="scanner-status-pill" id="backgroundScannerStatus">Passive scanner loading…</span>
                 </div>
               </div>
               </div>
               <div id="chatMessages" class="chat-messages"></div>
               <form id="chatForm" class="chat-form"><textarea id="chatInput" rows="2" placeholder="Write what is going on, ask for DBT help, or name what your nervous system is yelling."></textarea><button class="soft-button" type="submit">Send</button></form>
-              <div class="quick-complete-grid"><button class="complete-button" type="button" data-complete="use-chatbot">Log chatbot support</button><button class="complete-button distress" type="button" data-complete="use-chatbot-distress">Log distress chat support</button></div>
+              <div class="quick-complete-grid"><button class="complete-button" type="button" data-complete="use-chatbot">Log Onyx support</button><button class="complete-button distress" type="button" data-complete="use-chatbot-distress">Log Onyx distress support</button></div>
             </div>
           </section>
           <section class="module movable tall" data-key="dbt-library">
             <div class="module-header drag-handle"><span class="module-title">DBT Quick Skill Library</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
             <div class="module-body"><input class="text-input" id="dbtSearch" placeholder="Search: STOP, TIPP, wise mind, check facts..." /><div id="dbtResults" class="dbt-results"></div></div>
+          </section>
+          <section class="module movable tall onyx-psychiatrist-console" data-key="onyx-momma-psychiatrist-console">
+            <div class="module-header drag-handle"><span class="module-title">Momma Onyx Scanner + Teaching Console</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
+            <div class="module-body">
+              <p id="onyxPsychiatristStatus" class="scanner-console-status">Momma Onyx scanner is loading the upgraded psychiatrist/DBT/ADHD support layer.</p>
+              <h4>Signals Onyx is reading between the lines</h4>
+              <div id="onyxScannerSignalList" class="psy-signal-list"><p class="soft-note">No signals yet.</p></div>
+              <h4>Teaching notes Onyx may use</h4>
+              <div id="onyxPsychoeducationMatches" class="psy-education-list"><p class="soft-note">Teaching notes appear after Jasper/Momma writes to Onyx.</p></div>
+            </div>
+          </section>
+          <section class="module movable full onyx-merged-panel" id="onyxProfileMerged" data-key="onyx-full-companion-merged">
+            <div class="module-header drag-handle"><span class="module-title">Merged Emperor Onyx Full Companion</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
+            <div class="module-body">
+              <div class="onyx-merged-hero">
+                <div class="onyx-merged-mood"><img src="assets/onyx-moods/onyx_snuggly.png" alt="Lord Onyx Blepman in snuggly support mode" loading="lazy" /></div>
+                <div>
+                  <p class="eyebrow">Service Cat • Tiny Void Emperor • Papa’s Best Friend • Momma’s Devoted Baby</p>
+                  <h3>Lord Onyx Blepman, Emperor Of The Voidattude</h3>
+                  <p>The upgraded Momma-specific psychiatrist Onyx bot has been merged into this one index. The old lower-depth support replies now delegate to the stronger Momma bot brain: passive risk scanning, DBT/ADHD routing, diary-card coaching, psychoeducation, crisis triage, and Onyx lore all live in the main chat.</p>
+                </div>
+              </div>
+              <div class="onyx-merged-grid">
+                <article><h4>Relationship canon</h4><p>Onyx is Papa’s best friend and Momma’s devoted baby. He sleeps on Papa’s legs, the ottoman, the bookshelf, and his personal Luis Vuitton pillow. He is protective, dramatic, judgmental only in loving care-check mode, food-motivated, brilliant, snuggly, and deeply devoted.</p></article>
+                <article><h4>Support powers</h4><p>Wise Mind, STOP, TIPP, Check the Facts, Opposite Action, Self-Soothe, PLEASE, DEAR MAN/GIVE/FAST, Chain Analysis, diary-card check-ins, reactive attachment/abandonment-alarm support, ADHD tiny-step planning, body doubling, transitions, reminders, and shame-free resets.</p></article>
+                <article><h4>Risk-aware help</h4><p>The upgraded Momma scanner watches for crisis language, passive death-wish phrasing, attachment alarms, shame spirals, panic, dissociation, self-neglect, pain/fatigue barriers, and overwhelming distress. Onyx keeps responses concrete: validation, body safety, tiny psychoeducation, one next step, and live-human escalation when safety cannot be handled by a website.</p></article>
+                <article><h4>Reward support</h4><p>Asking for help, using a DBT skill, doing a tiny task starter, regulating with a game, stopping before overstimulation, saving a diary card, journaling, and returning to care all count as rewardable effort.</p></article>
+              </div>
+              <div class="support-quick-row onyx-merged-buttons" aria-label="Merged Onyx quick actions">
+                <button class="ghost-button support-mode-button" type="button" data-support="comfort">🤎 Comfort me</button>
+                <button class="ghost-button support-mode-button" type="button" data-support="pep">✨ Pep talk</button>
+                <button class="ghost-button support-mode-button" type="button" data-support="tipp">🧊 TIPP panic support</button>
+                <button class="ghost-button support-mode-button" type="button" data-support="adhd_split">🐾 Split my stuck task</button>
+                <button class="ghost-button support-mode-button" type="button" data-support="attachment_alarm">🫂 Attachment alarm</button>
+                <button class="ghost-button support-mode-button" type="button" data-support="diary_card">📓 Diary card help</button>
+                <button class="ghost-button support-mode-button" type="button" data-support="who">🐈‍⬛ Who are you?</button>
+              </div>
+            </div>
           </section>
         </div>
       </section>
@@ -347,18 +383,12 @@
     </main>
   </div>
   <div class="support-mobile-dock" id="supportMobileDock" aria-label="Mobile quick support dock"><button class="support-dock-pill" type="button" data-support="dbt_picker">🧠 DBT</button><button class="support-dock-pill" type="button" data-support="adhd_split">🐾 tiny step</button><button class="support-dock-pill" type="button" data-support="self_care_reset">🫧 reset</button></div>
-  <button class="floating-bot-button" id="floatingBotButton" type="button" aria-label="Open quick support"><span class="floating-support-icon" id="floatingBotButtonIcon" aria-hidden="true">💬</span><span class="floating-bot-zzz">help</span></button>
-  <aside class="floating-bot" id="floatingBot"><div class="floating-bot-head"><div class="floating-support-title"><strong>Quick support</strong></div><button id="closeFloatingBot" type="button">×</button></div><div id="floatingChatMessages" class="chat-messages small"></div><form id="floatingChatForm" class="chat-form compact"><input class="text-input" id="floatingChatInput" placeholder="Ask for a tiny next step" /><button class="soft-button" type="submit">Send</button></form><div class="support-quick-row floating-support-quick" id="floatingSupportQuickModes" aria-label="Quick support help"><button class="ghost-button support-mode-button" type="button" data-support="comfort">🤎</button><button class="ghost-button support-mode-button" type="button" data-support="dbt_picker">🧠</button><button class="ghost-button support-mode-button" type="button" data-support="tipp">🧊</button><button class="ghost-button support-mode-button" type="button" data-support="adhd_split">🐾</button><button class="ghost-button support-mode-button" type="button" data-support="self_care_reset">🫧</button><button class="ghost-button support-mode-button" type="button" data-support="grounding">💗</button></div></aside>
+  <button class="floating-bot-button" id="floatingBotButton" type="button" aria-label="Open Onyx quick support"><span class="floating-support-icon" id="floatingBotButtonIcon" aria-hidden="true"><img src="assets/onyx-moods/onyx_caring.png" alt="" /></span><span class="floating-bot-zzz">Onyx</span></button>
+  <aside class="floating-bot" id="floatingBot"><div class="floating-bot-head"><div class="floating-support-title"><img src="assets/onyx-moods/onyx_snuggly.png" alt="" /><strong>Onyx quick support</strong></div><button id="closeFloatingBot" type="button">×</button></div><div id="floatingChatMessages" class="chat-messages small"></div><form id="floatingChatForm" class="chat-form compact"><input class="text-input" id="floatingChatInput" placeholder="Ask for a tiny next step" /><button class="soft-button" type="submit">Send</button></form><div class="support-quick-row floating-support-quick" id="floatingSupportQuickModes" aria-label="Quick support help"><button class="ghost-button support-mode-button" type="button" data-support="comfort">🤎</button><button class="ghost-button support-mode-button" type="button" data-support="dbt_picker">🧠</button><button class="ghost-button support-mode-button" type="button" data-support="tipp">🧊</button><button class="ghost-button support-mode-button" type="button" data-support="adhd_split">🐾</button><button class="ghost-button support-mode-button" type="button" data-support="self_care_reset">🫧</button><button class="ghost-button support-mode-button" type="button" data-support="grounding">💗</button></div></aside>
   <div id="toastHost" class="toast-host" aria-live="polite"></div>
-  <!-- Passive background scanner: loaded without a button and used by the support chat/form layer. -->
-  <script data-merge-role="passive-psychiatry-background-scanner" src="js/health_scanner_data.js?v=background-scanner-20260612"></script>
-  <script data-merge-role="passive-psychiatry-background-scanner" src="js/scanner-core.js?v=background-scanner-20260612"></script>
-  <script data-merge-role="passive-psychiatry-background-scanner" src="js/health_scanner_bridge.js?v=background-scanner-20260612"></script>
-  <script data-merge-role="passive-psychiatry-background-scanner" src="js/unified-background-psychiatry-runtime.js?v=background-scanner-20260612"></script>
-  <!-- Optional helper file kept in /js/: jasper-game-currency-bridge.js. -->
-  <script src="js/app.js?v=squishy-support-clean-20260612"></script>
-  <script src="js/desktop.js?v=device-split-20260612"></script>
-  <script src="js/tablet.js?v=device-split-20260612"></script>
-  <script src="js/mobile.js?v=device-split-20260612"></script>
+  <!-- Mobile-first bundled runtime: full Onyx personality, support data, passive scanner, app, and responsive device navigation. -->
+  <script src="js/onyx-momma-psychiatrist-bridge.js?v=momma-psychiatrist-20260613"></script>
+  <script src="js/app.bundle.js?v=momma-psychiatrist-20260613"></script>
+  <script src="js/jcc-full-functionality-upgrade.js?v=full-functionality-20260613"></script>
 </body>
 </html>
