@@ -1,0 +1,273 @@
+{
+  "name": "Notion Database",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "event": "pagedUpdatedInDatabase",
+        "databaseId": {
+          "__rl": true,
+          "value": "23da0519-ba10-80f8-b2dc-e2b101439e4a",
+          "mode": "list",
+          "cachedResultName": "For N8N",
+          "cachedResultUrl": "https://www.notion.so/23da0519ba1080f8b2dce2b101439e4a"
+        }
+      },
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        64
+      ],
+      "id": "46d91180-26fb-4559-aa31-608303040799",
+      "name": "Trigger when something changes",
+      "credentials": {
+        "notionApi": {
+          "id": "o28QXcBHRFEhw2zq",
+          "name": "Second Brain Database"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Notion trigger to see if there is a change in a page.",
+        "height": 288
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -496,
+        -32
+      ],
+      "id": "b7eb517b-4348-4f31-80b7-28afdb3b36b8",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "Making sure it takes a task from where \"status\" is \"In process\"",
+        "height": 288
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        -32
+      ],
+      "id": "401c142f-3523-4c90-9721-d26bb0f1c817",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "23da0519-ba10-80f8-b2dc-e2b101439e4a",
+          "mode": "list",
+          "cachedResultName": "For N8N",
+          "cachedResultUrl": "https://www.notion.so/23da0519ba1080f8b2dce2b101439e4a"
+        },
+        "returnAll": true,
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Status|select",
+              "condition": "equals",
+              "selectValue": "In Progress"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        -192,
+        64
+      ],
+      "id": "d0647a28-ecd8-499e-b233-384e2a1563a5",
+      "name": "Checking task in progress",
+      "credentials": {
+        "notionApi": {
+          "id": "o28QXcBHRFEhw2zq",
+          "name": "Second Brain Database"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Checking if Status Change time is not null. If not, then will proceed to change status change time and sending message.\n",
+        "height": 304
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        -48
+      ],
+      "id": "575e5069-7daf-4005-84fc-9fb4e4bb0f4c",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Next Reminder Time|date",
+              "date": "={{ $now.plus(45, minutes ) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        336,
+        -32
+      ],
+      "id": "f7b9fb80-1286-4674-b36c-f5578474c90a",
+      "name": "Updating Status Change time",
+      "credentials": {
+        "notionApi": {
+          "id": "o28QXcBHRFEhw2zq",
+          "name": "Second Brain Database"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Updating Status Change time to now.\n\nSetting reminder timer. for 45 in future.",
+        "height": 352
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        272,
+        -208
+      ],
+      "id": "6d25c7b6-725d-448f-8d78-c058b7b058ac",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a7c4e2c1-6ec0-4365-bbeb-c27b32924651",
+              "leftValue": "={{ $json.property_status_change_time.start }}",
+              "rightValue": "={{ null }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        16,
+        64
+      ],
+      "id": "e813b2a8-0eef-4b91-907f-957e20e82d36",
+      "name": "If Status Change time is null"
+    },
+    {
+      "parameters": {
+        "errorMessage": "Just Change something Else"
+      },
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        352,
+        208
+      ],
+      "id": "2eb8475d-0d47-476a-8a14-5cb06f6a150d",
+      "name": "Stop and Error"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Trigger when something changes": {
+      "main": [
+        [
+          {
+            "node": "Checking task in progress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Checking task in progress": {
+      "main": [
+        [
+          {
+            "node": "If Status Change time is null",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Updating Status Change time": {
+      "main": [
+        []
+      ]
+    },
+    "If Status Change time is null": {
+      "main": [
+        [
+          {
+            "node": "Updating Status Change time",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6b3ea648-d56f-44df-9e76-b31ac7749ab5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0bcebf51d4cf800b245aed453dd260211b798a8cfd4db368038cbb6eb3e36c74"
+  },
+  "id": "qU9gHn0Rw4HRXTgC",
+  "tags": []
+}
