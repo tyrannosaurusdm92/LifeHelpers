@@ -249,6 +249,7 @@
     judgemental:{label:"Care-check mode",note:"Used only to redirect skipped body care back toward food, meds-as-prescribed, hygiene, hydration, or rest."},
     sleepy:{label:"Rest mode",note:"Rest, pause, low-stimulation decompression, and recovery are valid care."}
   };
+  const memoryStorageFallback = {};
   let state = loadState();
   let activeCalendarView = "month";
   let calendarCursor = new Date();
@@ -257,19 +258,75 @@
   function t(id, name, room, priority, frequency, details, copper, silver, gold, platinum){ return {id,name,room,priority,frequency,details,reward:{copper,silver,gold,platinum}}; }
   function s(id, name, category, cost, url=""){ return {id,name,category,cost,url}; }
   function defaultState(){ return {dateKey:easternDateKey(new Date()), currency:{copper:0,silver:0,gold:0,platinum:0}, lastCompleted:{}, dayCompletions:{}, todayAdded:{}, activity:[], customTasks:[], cart:[], customStore:[], purchases:[], journals:[], diaryCards:[], gallery:[], mediaConnections:{tiktok:{url:"",notes:"",connected:false,updatedAt:""},spotify:{url:"",notes:"",connected:false,updatedAt:""},youtube:{url:"",notes:"",connected:false,updatedAt:""}}, gameSession:{active:false,selectedGame:"",lastLoadedAt:"",lastQuitAt:"",saveReason:""}, timeRows:{}, timesheetNotes:"", layout:{}, chat:[], scannerReports:[]}; }
-  function loadState(){
-    try{
-      const saved={...defaultState(), ...JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}")} ;
-      const globalCurrency=JSON.parse(localStorage.getItem("jaspersCareCottageCurrency")||"null");
-      if(globalCurrency && !localStorage.getItem(STORAGE_KEY)) saved.currency=globalCurrency;
-      saved.currency=normalizeCurrency(saved.currency||{});
-      saved.mediaConnections={...defaultState().mediaConnections,...(saved.mediaConnections||{})};
-      saved.gameSession={...defaultState().gameSession,...(saved.gameSession||{})};
-      return saved;
-    }catch{ return defaultState(); }
+  function isPlainObject(value){ return !!value && typeof value === "object" && !Array.isArray(value); }
+  function asObject(value){ return isPlainObject(value) ? value : {}; }
+  function asArray(value){ return Array.isArray(value) ? value : []; }
+  function sanitizeSavedState(raw){
+    const base=defaultState();
+    const source=asObject(raw);
+    const saved={...base, ...source};
+
+    saved.currency=normalizeCurrency(asObject(saved.currency));
+    ["activity","customTasks","cart","customStore","purchases","journals","diaryCards","gallery","chat","scannerReports"].forEach((key)=>{ saved[key]=asArray(saved[key]); });
+    ["lastCompleted","dayCompletions","todayAdded","timeRows","layout"].forEach((key)=>{ saved[key]=asObject(saved[key]); });
+
+    Object.keys(saved.todayAdded).forEach((key)=>{ saved.todayAdded[key]=asArray(saved.todayAdded[key]); });
+    Object.keys(saved.dayCompletions).forEach((key)=>{ saved.dayCompletions[key]=asObject(saved.dayCompletions[key]); });
+    Object.keys(saved.timeRows).forEach((key)=>{ saved.timeRows[key]=asObject(saved.timeRows[key]); });
+    Object.keys(saved.layout).forEach((key)=>{ saved.layout[key]=asObject(saved.layout[key]); });
+
+    saved.mediaConnections={...base.mediaConnections, ...asObject(saved.mediaConnections)};
+    Object.keys(base.mediaConnections).forEach((key)=>{ saved.mediaConnections[key]={...base.mediaConnections[key], ...asObject(saved.mediaConnections[key])}; });
+    saved.gameSession={...base.gameSession, ...asObject(saved.gameSession)};
+    saved.timesheetNotes=typeof saved.timesheetNotes === "string" ? saved.timesheetNotes : "";
+    saved.dateKey=typeof saved.dateKey === "string" && saved.dateKey ? saved.dateKey : base.dateKey;
+    return saved;
   }
-  function saveState(){ state.currency=normalizeCurrency(state.currency||{}); localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); localStorage.setItem("jaspersCareCottageCurrency", JSON.stringify(state.currency)); }
-  function init(){ buildNav(); buildFilters(); bindShell(); bindTaskUI(); bindCalendar(); bindToday(); bindDiary(); bindJournal(); bindGames(); bindGallery(); bindSerotoninMedia(); bindStore(); bindChat(); setupDraggables(); setInterval(tick,1000); tick(); rollover(); setActivePage(location.hash.slice(1)||"task-board"); renderAll(); }
+  function loadState(){
+    let raw={};
+    try{ raw=JSON.parse(storageGet(STORAGE_KEY,"{}")); }
+    catch(err){ recordBootError("loadState: saved JSON was invalid and was reset", err); raw={}; }
+    const saved=sanitizeSavedState(raw);
+    try{
+      const globalCurrency=JSON.parse(storageGet("jaspersCareCottageCurrency","null"));
+      if(globalCurrency && !storageGet(STORAGE_KEY,"")) saved.currency=normalizeCurrency(asObject(globalCurrency));
+    }catch(err){ recordBootError("loadState: legacy currency was invalid and was ignored", err); }
+    return saved;
+  }
+  function saveState(){ state=sanitizeSavedState(state); storageSet(STORAGE_KEY, JSON.stringify(state)); storageSet("jaspersCareCottageCurrency", JSON.stringify(state.currency)); }
+  function recordBootError(name, err){
+    try{
+      window.__JCC_BOOT_ERRORS__ ||= [];
+      window.__JCC_BOOT_ERRORS__.push({step:name, message:String(err && (err.message||err)), at:new Date().toISOString()});
+    }catch(_err){}
+  }
+  function safeStep(name, fn){
+    try{ return fn(); }
+    catch(err){ recordBootError(name, err); console.error("[JCC]", name, err); return undefined; }
+  }
+  function storageGet(key, fallback=""){
+    try{
+      const value = window.localStorage.getItem(key);
+      return value == null ? fallback : value;
+    }catch(err){
+      if(Object.prototype.hasOwnProperty.call(memoryStorageFallback, key)) return memoryStorageFallback[key];
+      recordBootError("storageGet: localStorage unavailable for " + key, err);
+      return fallback;
+    }
+  }
+  function storageSet(key, value){
+    const text = String(value);
+    try{ window.localStorage.setItem(key, text); }
+    catch(err){ memoryStorageFallback[key] = text; recordBootError("storageSet: using in-memory fallback for " + key, err); }
+  }
+  function init(){
+    [["buildNav",buildNav],["buildFilters",buildFilters],["bindShell",bindShell],["bindTaskUI",bindTaskUI],["bindCalendar",bindCalendar],["bindToday",bindToday],["bindDiary",bindDiary],["bindJournal",bindJournal],["bindGames",bindGames],["bindGallery",bindGallery],["bindSerotoninMedia",bindSerotoninMedia],["bindStore",bindStore],["bindChat",bindChat],["setupDraggables",setupDraggables]].forEach(([name,fn])=>safeStep(name,fn));
+    setInterval(()=>safeStep("tick",tick),1000);
+    safeStep("tick",tick);
+    safeStep("rollover",rollover);
+    safeStep("setActivePage",()=>setActivePage(location.hash.slice(1)||"task-board"));
+    safeStep("renderAll",renderAll);
+  }
   function buildNav(){
     document.body.classList.add("bdg-has-global-nav");
     const links=PAGES.map(([id,label])=>`<a class="bdg-link nav-link" href="#${id}" data-page="${id}" data-target="${id}">${escapeHtml(label)}</a>`).join("");
@@ -279,9 +336,18 @@
     if(oldHost) oldHost.innerHTML=links;
     installGlobalNavControls();
   }
-  function buildFilters(){ const rooms=[...new Set(allTasks().map(x=>x.room))].sort(); $("#taskRoomFilter").insertAdjacentHTML("beforeend", rooms.map(r=>`<option>${escapeHtml(r)}</option>`).join("")); const cats=[...new Set(allStoreItems().map(x=>x.category))].sort((a,b)=>(STORE_AISLES.indexOf(a)<0?999:STORE_AISLES.indexOf(a))-(STORE_AISLES.indexOf(b)<0?999:STORE_AISLES.indexOf(b)) || a.localeCompare(b)); $("#storeCategory").insertAdjacentHTML("beforeend", cats.map(c=>`<option value="${escapeAttr(c)}">${escapeHtml(c)}</option>`).join("")); }
+  function buildFilters(){ const rooms=[...new Set(allTasks().map(x=>x.room))].sort(); const roomFilter=$("#taskRoomFilter"); if(roomFilter) roomFilter.insertAdjacentHTML("beforeend", rooms.map(r=>`<option>${escapeHtml(r)}</option>`).join("")); const cats=[...new Set(allStoreItems().map(x=>x.category))].sort((a,b)=>(STORE_AISLES.indexOf(a)<0?999:STORE_AISLES.indexOf(a))-(STORE_AISLES.indexOf(b)<0?999:STORE_AISLES.indexOf(b)) || a.localeCompare(b)); const storeCategory=$("#storeCategory"); if(storeCategory) storeCategory.insertAdjacentHTML("beforeend", cats.map(c=>`<option value="${escapeAttr(c)}">${escapeHtml(c)}</option>`).join("")); }
   function bindShell(){
     window.addEventListener("hashchange",()=>setActivePage(location.hash.slice(1)||"task-board"));
+    document.addEventListener("click", e=>{
+      const link=e.target.closest(".nav-link,.bdg-link,[data-page],[data-target]");
+      if(!link || !link.matches("a,button")) return;
+      const page=link.dataset.page || link.dataset.target || (link.getAttribute("href")||"").replace(/^#/,"");
+      if(!page || !PAGES.some(p=>p[0]===page)) return;
+      e.preventDefault();
+      if(location.hash.slice(1)!==page) location.hash=page;
+      setActivePage(page);
+    });
     window.addEventListener("message", handleGameCurrencyMessage);
     ["pointerdown","keydown","scroll","click"].forEach(ev=>document.addEventListener(ev,()=>{lastActivityAt=Date.now();}, {passive:true}));
     $("#saveNowBtn").addEventListener("click",()=>{saveState(); toast("Saved in this browser.")});
@@ -357,13 +423,13 @@ function bindSerotoninMedia(){
   
   function installGlobalNavControls(){
     const nav=$("#bd-global-dropdown-nav"), bubble=$("#bd-nav-bubble"), hide=$("#bdg-hide-nav"), show=$("#bdg-show-nav"), handle=$(".bdg-drag-handle");
-    try{ if(localStorage.getItem("jccNavHidden")==="1") document.body.classList.add("bdg-nav-hidden"); }catch(e){}
-    function restore(el,key,def){ if(!el) return; try{ const p=JSON.parse(localStorage.getItem(key)||"null"); if(p){ el.style.left=p.x+"px"; el.style.top=p.y+"px"; el.style.right="auto"; el.style.bottom="auto"; } else if(def){ Object.assign(el.style,def); } }catch(e){} }
+    try{ if(storageGet("jccNavHidden","")==="1") document.body.classList.add("bdg-nav-hidden"); }catch(e){}
+    function restore(el,key,def){ if(!el) return; try{ const p=JSON.parse(storageGet(key,"null")); if(p){ el.style.left=p.x+"px"; el.style.top=p.y+"px"; el.style.right="auto"; el.style.bottom="auto"; } else if(def){ Object.assign(el.style,def); } }catch(e){} }
     function clamp(el,x,y){ const r=el.getBoundingClientRect(); return {x:Math.min(Math.max(8,x),Math.max(8,window.innerWidth-r.width-8)),y:Math.min(Math.max(8,y),Math.max(8,window.innerHeight-r.height-8))}; }
-    function drag(handle,el,key){ if(!handle||!el) return; let sx=0,sy=0,ox=0,oy=0; handle.addEventListener("pointerdown",ev=>{ const r=el.getBoundingClientRect(); sx=ev.clientX; sy=ev.clientY; ox=r.left; oy=r.top; handle.setPointerCapture?.(ev.pointerId); ev.preventDefault(); }); handle.addEventListener("pointermove",ev=>{ if(!handle.hasPointerCapture?.(ev.pointerId)) return; const p=clamp(el,ox+ev.clientX-sx,oy+ev.clientY-sy); el.style.left=p.x+"px"; el.style.top=p.y+"px"; el.style.right="auto"; el.style.bottom="auto"; }); handle.addEventListener("pointerup",ev=>{ if(handle.hasPointerCapture?.(ev.pointerId)) handle.releasePointerCapture(ev.pointerId); const r=el.getBoundingClientRect(); try{ localStorage.setItem(key,JSON.stringify({x:r.left,y:r.top})); }catch(e){} }); }
+    function drag(handle,el,key){ if(!handle||!el) return; let sx=0,sy=0,ox=0,oy=0; handle.addEventListener("pointerdown",ev=>{ const r=el.getBoundingClientRect(); sx=ev.clientX; sy=ev.clientY; ox=r.left; oy=r.top; handle.setPointerCapture?.(ev.pointerId); ev.preventDefault(); }); handle.addEventListener("pointermove",ev=>{ if(!handle.hasPointerCapture?.(ev.pointerId)) return; const p=clamp(el,ox+ev.clientX-sx,oy+ev.clientY-sy); el.style.left=p.x+"px"; el.style.top=p.y+"px"; el.style.right="auto"; el.style.bottom="auto"; }); handle.addEventListener("pointerup",ev=>{ if(handle.hasPointerCapture?.(ev.pointerId)) handle.releasePointerCapture(ev.pointerId); const r=el.getBoundingClientRect(); try{ storageSet(key,JSON.stringify({x:r.left,y:r.top})); }catch(e){} }); }
     restore(nav,"jccNavPos"); restore(bubble,"jccBubblePos",{left:"14px",bottom:"14px"}); drag(handle,nav,"jccNavPos");
-    if(hide) hide.addEventListener("click",()=>{ document.body.classList.add("bdg-nav-hidden"); try{localStorage.setItem("jccNavHidden","1");}catch(e){} });
-    if(show) show.addEventListener("click",()=>{ document.body.classList.remove("bdg-nav-hidden"); try{localStorage.setItem("jccNavHidden","0");}catch(e){} });
+    if(hide) hide.addEventListener("click",()=>{ document.body.classList.add("bdg-nav-hidden"); try{storageSet("jccNavHidden","1");}catch(e){} });
+    if(show) show.addEventListener("click",()=>{ document.body.classList.remove("bdg-nav-hidden"); try{storageSet("jccNavHidden","0");}catch(e){} });
   }
 function setActivePage(id){
     const aliases={"care-task-board":"task-board","todays-schedule":"todays-routine","support-dbt":"chat-bot-dbt-skills"};
@@ -405,7 +471,7 @@ function setActivePage(id){
     const awayEl=$("#awayStatus");
     if(awayEl){ awayEl.textContent=awayMin<5?"active now":`${awayMin}m quiet`; if(awayMin>=45) awayEl.textContent=`${awayMin}m away — check in?`; }
   }
-  function renderAll(){ renderCurrency(); renderTasks(); renderToday(); renderCalendar(); renderActivity(); renderTimeRows(); renderDiaryHistory(); renderJournalHistory(); renderGallery(); renderSerotoninMedia(); renderStore(); renderCart(); renderPurchaseHistory(); renderGameSessionStatus(); }
+  function renderAll(){ [["renderCurrency",renderCurrency],["renderTasks",renderTasks],["renderToday",renderToday],["renderCalendar",renderCalendar],["renderActivity",renderActivity],["renderTimeRows",renderTimeRows],["renderDiaryHistory",renderDiaryHistory],["renderJournalHistory",renderJournalHistory],["renderGallery",renderGallery],["renderSerotoninMedia",renderSerotoninMedia],["renderStore",renderStore],["renderCart",renderCart],["renderPurchaseHistory",renderPurchaseHistory],["renderGameSessionStatus",renderGameSessionStatus]].forEach(([name,fn])=>safeStep(name,fn)); }
   function allTasks(){ return [...TASKS, ...state.customTasks]; }
   function todayKey(){ return easternDateKey(new Date()); }
   function dueStatus(task){ const last=state.lastCompleted[task.id]; const doneToday=!!(state.dayCompletions[todayKey()]||{})[task.id]; if(doneToday) return {due:false,doneToday:true,label:"Done today"}; if(task.frequency==="weekday" && !isWeekdayET()) return {due:false,doneToday:false,label:"Respawns Monday-Friday"}; if(!last) return {due:true,doneToday:false,label:"Ready"}; const days=daysBetween(last,todayKey()); if(task.frequency==="daily"||task.frequency==="weekday"||task.frequency==="asneeded") return {due:days>=1,doneToday:false,label:days>=1?"Ready":"Respawns tomorrow"}; if(task.frequency==="every2") return {due:days>=2,doneToday:false,label:days>=2?"Ready":`Respawns in ${2-days} day`}; if(task.frequency==="weekly") return {due:days>=7,doneToday:false,label:days>=7?"Ready":`Respawns in ${7-days} day(s)`}; if(task.frequency==="monthly") return {due:monthsPassed(last,todayKey()),doneToday:false,label:monthsPassed(last,todayKey())?"Ready":"Respawns next month"}; return {due:true,doneToday:false,label:"Ready"}; }
@@ -453,8 +519,8 @@ function setActivePage(id){
   }
   function renderActivity(){ const host=$("#activityLog"); host.innerHTML=(state.activity||[]).slice(0,80).map(a=>`<div class="log-entry"><strong>${escapeHtml(a.name)}</strong><br><small>${escapeHtml(a.date)} • ${formatReward(a.reward)}</small></div>`).join("")||`<p class="soft-note">No activity logged yet.</p>`; }
   function renderWorkday(){ const day=new Intl.DateTimeFormat("en-US",{timeZone:ET_ZONE,weekday:"long"}).format(new Date()); const monday=day==="Monday"; const weekday=isWeekdayET(); $("#expectedWorkday").textContent=weekday?(monday?"7h 45m today":"5h 00m today"):"No weekday care block"; const blocks=weekday? (monday?["Start check-in + must-have supplies","Meal/hydration break","Body-safe pacing break","Decompression break","End-of-work reset + notes"]:["Start check-in","Hydration/body break","Meal or snack break","Decompression reset","End-of-work notes"]):["Weekend mode: only urgent care, self-care, cats, and chosen tasks."]; $("#breakPlan").innerHTML=blocks.map((b,i)=>`<div class="break-item"><strong>${i+1}. ${escapeHtml(b)}</strong><br><small>Breaks earn rewards because your body is part of the system.</small></div>`).join(""); }
-  function renderTimeRows(){ const days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; const host=$("#timeRows"); host.innerHTML=days.map(d=>{ const row=state.timeRows[d]||{}; const total=calcTime(row.start,row.end); return `<div class="time-row"><strong>${d}</strong><input type="time" data-time-day="${d}" data-time-field="start" value="${row.start||""}"><input type="time" data-time-day="${d}" data-time-field="end" value="${row.end||""}"><span>${minutesLabel(total)}</span></div>`; }).join(""); host.querySelectorAll("input").forEach(inp=>inp.addEventListener("input",e=>{ const {timeDay,timeField}=e.target.dataset; state.timeRows[timeDay] ||= {}; state.timeRows[timeDay][timeField]=e.target.value; saveState(); renderWeeklyTotal(); })); $("#timesheetNotes").value=state.timesheetNotes||""; renderWeeklyTotal(); }
-  function renderWeeklyTotal(){ const mins=Object.values(state.timeRows||{}).reduce((sum,r)=>sum+calcTime(r.start,r.end),0); $("#weeklyHoursTotal").textContent=minutesLabel(mins); }
+  function renderTimeRows(){ const days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; const host=$("#timeRows"); if(!host) return; host.innerHTML=days.map(d=>{ const row=state.timeRows[d]||{}; const total=calcTime(row.start,row.end); return `<div class="time-row"><strong>${d}</strong><input type="time" data-time-day="${d}" data-time-field="start" value="${row.start||""}"><input type="time" data-time-day="${d}" data-time-field="end" value="${row.end||""}"><span data-time-total="${d}">${minutesLabel(total)}</span></div>`; }).join(""); host.querySelectorAll("input").forEach(inp=>inp.addEventListener("input",e=>{ const {timeDay,timeField}=e.target.dataset; state.timeRows[timeDay] ||= {}; state.timeRows[timeDay][timeField]=e.target.value; const totalEl=e.target.closest(".time-row")?.querySelector("[data-time-total]"); if(totalEl) totalEl.textContent=minutesLabel(calcTime(state.timeRows[timeDay].start,state.timeRows[timeDay].end)); saveState(); renderWeeklyTotal(); })); const notes=$("#timesheetNotes"); if(notes) notes.value=state.timesheetNotes||""; renderWeeklyTotal(); }
+  function renderWeeklyTotal(){ const mins=Object.values(state.timeRows||{}).reduce((sum,r)=>sum+calcTime(r.start,r.end),0); const el=$("#weeklyHoursTotal"); if(el) el.textContent=minutesLabel(mins); }
   function renderCalendar(){ const title=$("#calendarTitle"), host=$("#calendarHost"); if(activeCalendarView==="month"){ const y=calendarCursor.getFullYear(), m=calendarCursor.getMonth(); title.textContent=new Intl.DateTimeFormat("en-US",{month:"long",year:"numeric"}).format(calendarCursor); const first=new Date(y,m,1), start=new Date(first); start.setDate(1-first.getDay()); let html='<div class="month-grid">'+["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(d=>`<div class="calendar-day-name">${d}</div>`).join(""); for(let i=0;i<42;i++){ const d=new Date(start); d.setDate(start.getDate()+i); const key=easternDateKey(d); const count=Object.keys(state.dayCompletions[key]||{}).length; const muted=d.getMonth()!==m; html+=`<div class="calendar-cell ${key===todayKey()?"today":""} ${muted?"muted":""}"><strong>${d.getDate()}</strong>${count?`<br><span class="calendar-dot">${count} done</span>`:""}</div>`; } host.innerHTML=html+'</div>'; } else if(activeCalendarView==="week"){ title.textContent="Week view"; const start=startOfWeek(calendarCursor); host.innerHTML='<div class="week-list">'+Array.from({length:7},(_,i)=>{ const d=new Date(start); d.setDate(start.getDate()+i); const key=easternDateKey(d); return `<div class="history-item"><strong>${new Intl.DateTimeFormat("en-US",{weekday:"long",month:"short",day:"numeric"}).format(d)}</strong><br><small>${Object.keys(state.dayCompletions[key]||{}).length} tasks done • ${activityForDate(key).length} log items</small></div>`; }).join("")+'</div>'; } else { title.textContent="Day view"; const key=easternDateKey(calendarCursor); host.innerHTML='<div class="day-list">'+(activityForDate(key).map(a=>`<div class="history-item"><strong>${escapeHtml(a.name)}</strong><br><small>${formatReward(a.reward)}</small></div>`).join("")||`<p class="soft-note">No logged tasks for ${key}.</p>` )+'</div>'; } }
   function adjustCalendar(dir){ if(activeCalendarView==="month") calendarCursor.setMonth(calendarCursor.getMonth()+dir); else calendarCursor.setDate(calendarCursor.getDate()+dir*(activeCalendarView==="week"?7:1)); renderCalendar(); }
   function saveDiary(){ const card={id:Date.now(),date:todayKey(),mood:$("#diaryMood").value,distress:$("#diaryDistress").value,energy:$("#diaryEnergy").value,urges:$("#diaryUrges").value,emotions:$("#diaryEmotions").value,skills:$("#diarySkills").value,care:$("#diaryCare").value,win:$("#diaryWin").value}; state.diaryCards.unshift(card); tryAutoCompleteTask("daily-diary-card","Completed DBT diary card"); saveState(); renderAll(); toast("Diary card saved."); }
@@ -855,5 +921,5 @@ Because this looks heavier than a normal check-in, I am going to keep the next s
   function escapeHtml(v){ return String(v??"").replace(/[&<>'"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[ch])); }
   function escapeAttr(v){ return escapeHtml(v).replace(/`/g,"&#96;"); }
   function escapeForEmail(v){ return String(v??"").replace(/\n/g," "); }
-  function toast(message){ const host=$("#toastHost"); const el=document.createElement("div"); el.className="toast"; el.textContent=message; host.appendChild(el); setTimeout(()=>{el.style.opacity="0";el.style.transform="translateY(8px)"},3500); setTimeout(()=>el.remove(),4300); }
+  function toast(message){ const host=$("#toastHost"); if(!host){ console.log("[JCC toast]", message); return; } const el=document.createElement("div"); el.className="toast"; el.textContent=message; host.appendChild(el); setTimeout(()=>{el.style.opacity="0";el.style.transform="translateY(8px)"},3500); setTimeout(()=>el.remove(),4300); }
 })();

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-13T01:51:31Z",
+  "generated_at_utc": "2026-06-13T04:22:19Z",
   "static_references": {
     "missing_html_refs": [],
     "missing_css_refs": []
@@ -232,6 +232,12 @@
       "top_level_count": 9
     },
     {
+      "file": "docs/FILE_PRESERVATION_AND_SIZE_REPORT.json",
+      "ok": true,
+      "top_level_type": "dict",
+      "top_level_count": 8
+    },
+    {
       "file": "docs/INTEGRATION_MAP.json",
       "ok": true,
       "top_level_type": "dict",
@@ -242,6 +248,18 @@
       "ok": true,
       "top_level_type": "dict",
       "top_level_count": 11
+    },
+    {
+      "file": "docs/SPLIT_PART_MANIFEST_part_1.json",
+      "ok": true,
+      "top_level_type": "dict",
+      "top_level_count": 6
+    },
+    {
+      "file": "docs/SPLIT_PART_MANIFEST_part_2.json",
+      "ok": true,
+      "top_level_type": "dict",
+      "top_level_count": 6
     }
   ],
   "browser_scanner_runtime_vm": {
@@ -279,15 +297,39 @@
     "onyx_scanner_loaded": true,
     "currency_conversion_10s": true,
     "game_manifest_count": 22,
-    "game_manifest_missing_files": [],
+    "game_manifest_missing_files": [
+      "angrybirds.html",
+      "baconmaydie.html",
+      "badicecream3.html",
+      "badpiggies.html",
+      "bubbleshooter.html",
+      "candycrush.html",
+      "capybaraclicker.html",
+      "ducklife5.html",
+      "escapingtheprison.html",
+      "fancypantsadventure2.html",
+      "flappybird.html",
+      "fnaf.html",
+      "fnaf4.html",
+      "fruitninja.html",
+      "minesweeper.html",
+      "noobminer.html",
+      "plantsvszombies.html",
+      "tabletennisworldtour.html",
+      "tinyfishing.html",
+      "tunnelrush.html",
+      "webecomewhatwebehold.html",
+      "zombierush.html"
+    ],
     "games_without_bridge": [],
+    "games_omitted_external_ok": true,
     "legacy_tabletennis_stub_exists": true,
     "adult_reward_items_detected": 8,
     "passive_scanner_status_element": true,
     "scanner_report_stored": true
   },
   "file_stats": {
-    "file_count": 1504,
-    "uncompressed_bytes": 284620922
+    "file_count": 463,
+    "uncompressed_bytes": 34677534
   }
 }
