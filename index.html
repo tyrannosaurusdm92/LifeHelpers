@@ -1,393 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Jasper's Squishy Care Cottage — Momma Onyx Support</title>
-  <meta name="description" content="Mobile-first caregiver, self-care, DBT, schedule, calendar, and Squishy Store reward site for Jasper." />
-  <link rel="manifest" href="docs/manifest.webmanifest" />
-  <link rel="stylesheet" href="css/styles.css?v=single-css-20260613" />
-  <meta name="theme-color" content="#f28a3d" />
-  <!-- Squishy support data/reward files. app.js stays at the site root. -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile Sign In</title>
+  <link rel="stylesheet" href="assets/css/ourspace-auth.css" />
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#00ffff">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="OurSpace">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="css/ourspace-pwa.css">
 </head>
-<body>
-  <div aria-label="Jasper's Care Cottage in-site navigation" id="bd-global-dropdown-nav">
-    <div class="bdg-bar">
-      <div class="bdg-drag-handle" title="Drag navigation">✥</div>
-
-      <details id="bdg-nav-details">
-        <summary>☰ Cottage Navigation</summary>
-        <div class="bdg-menu" role="menu" id="bdg-menu-links"></div>
-      </details>
-
-      <button id="bdg-hide-nav" type="button">Hide Nav</button>
-
-      <div class="bdg-title">
-        <b>Jasper's Care Cottage</b>
-        <span>in-site navigation</span>
-      </div>
-    </div>
-  </div>
-
-  <div aria-label="Hidden Jasper's Care Cottage navigation bubble" id="bd-nav-bubble">
-    <button class="bdg-bubble-core" id="bdg-show-nav" title="Show navigation bar" type="button">☰</button>
-  </div>
-
-  <div aria-label="Jasper's Care Cottage time and currency tracker" id="jcc-persistent-tracker" class="bdg-time-panel">
-    <h3>🏡 Jasper's Care Cottage</h3>
-
-    <div class="bdg-time-grid">
-      <div class="bdg-time-card">
-        <strong>Eastern Time</strong>
-        <span id="bd-earth-time">Loading…</span>
+<body class="auth-page">
+  <main class="auth-shell" aria-labelledby="page-title">
+    <section class="brand-panel" aria-label="Profiles">
+      <div class="brand-topline">
+        <span class="brand-mark">A place to breathe, live, & love authentically</span>
+        <div class="profile-mini-nav" aria-label="Profiles">
+        </div>
       </div>
 
-      <div class="bdg-time-card">
-        <strong>Current UTC Offset</strong>
-        <span id="bd-eastern-offset">Loading…</span>
+      <div class="brand-hero">
+        <h1 id="page-title" class="ourspace-title">OurSpace</h1>
+        <div class="profile-cards" aria-label="Allowed profiles">
+          <article class="profile-card jasper-card">
+            <span class="profile-icon" aria-hidden="true">✦</span>
+            <h2>Squishy Cottage</h2>
+            <p>Jasper</p>
+          </article>
+          <article class="profile-card william-card">
+            <span class="profile-icon" aria-hidden="true">✧</span>
+            <h2>Dino Nerdzone</h2>
+            <p>William</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-panel" aria-label="Sign in or sign up">
+      <div class="tabs" role="tablist" aria-label="Authentication options">
+        <button class="tab active" type="button" role="tab" aria-selected="true" aria-controls="signin-panel" data-auth-tab="signin">Sign in</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="signup-panel" data-auth-tab="signup">Sign up</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="reset-panel" data-auth-tab="reset">Reset</button>
       </div>
 
-      <div class="bdg-currency-card">
-        <strong>Copper</strong>
-        <span id="bd-copper-count">0</span>
-      </div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
 
-      <div class="bdg-currency-card">
-        <strong>Silver</strong>
-        <span id="bd-silver-count">0</span>
-      </div>
+      <section id="signin-panel" class="auth-panel active" role="tabpanel">
+        <h2>Sign in</h2>
+        <form id="signin-form" class="auth-form" autocomplete="on" action="dino-nerdzone.html" method="get">
+          <label for="signin-profile">Profile</label>
+          <select id="signin-profile" name="profileKey" autocomplete="off">
+            <option value="">Choose profile</option>
+            <option value="jasper">Jasper — Squishy Cottage</option>
+            <option value="william">William — Dino Nerdzone</option>
+          </select>
 
-      <div class="bdg-currency-card">
-        <strong>Gold</strong>
-        <span id="bd-gold-count">0</span>
-      </div>
+          <label for="signin-identifier">Email or username</label>
+          <input id="signin-identifier" name="username" type="text" autocomplete="username" inputmode="email" required />
 
-      <div class="bdg-currency-card">
-        <strong>Platinum</strong>
-        <span id="bd-platinum-count">0</span>
-      </div>
-
-      <p class="bd-hint">
-        Currency conversion:
-        <code>10 copper = 1 silver</code>
-        <code>10 silver = 1 gold</code>
-        <code>10 gold = 1 platinum</code>
-      </p>
-    </div>
-  </div>
-
-  <div class="site-shell">
-    <header class="hero-card">
-      <div class="hero-row">
-        <div class="branding">
-          <div class="site-mark" aria-hidden="true">🐾</div>
-          <div>
-            <h1 id="currentPageTitle">Care Task Board</h1>
-            <p id="pageSubtitle">Every part counts, Jasper. Little tasks, hard tasks, body care, cat care, and rest all earn rewards.</p>
+          <label for="signin-password">Password</label>
+          <div class="password-wrap">
+            <input id="signin-password" name="password" type="password" autocomplete="current-password" required />
+            <button type="button" class="toggle-password" data-toggle-password="signin-password" aria-label="Show password" aria-pressed="false">Show</button>
           </div>
-        </div>
-        <div class="controls" aria-label="Site controls">
-          <button class="control-button" type="button" id="saveNowBtn">Save Now</button>
-          <button class="control-button" type="button" id="exportAllData">Export Save</button>
-          <label class="control-button file-label">Import Save<input type="file" id="importAllData" accept="application/json" /></label>
-          <button class="control-button secondary" type="button" id="resetLayout">Reset Layout</button>
-        </div>
-      </div>
-    </header>
 
-    <main id="pageHost">
-      <section class="page-panel active" id="task-board" data-title="Care Task Board" data-subtitle="Your full task library lives here. Add weekly, every-few-days, and monthly tasks to today when they are due.">
-        <div class="page-heading"><h2>Care Task Board</h2><span class="page-chip">first page task library</span></div>
-        <div class="module-grid">
-          <section class="module movable wide" data-key="task-overview">
-            <div class="module-header drag-handle"><span class="module-title">Jasper's Reward Overview</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <div class="tracker-cards">
-                <article><span>Due now</span><strong id="dueNowCount">0</strong><small>tasks ready to add or complete</small></article>
-                <article><span>Locked until due</span><strong id="lockedCount">0</strong><small>red cards are resting</small></article>
-                <article><span>Today selected</span><strong id="selectedTodayCount">0</strong><small>extra tasks on your routine</small></article>
-                <article><span>Next reset</span><strong id="nextReset">--</strong><small>midnight Eastern</small></article>
-              </div>
-              <div class="daily-bundle-card">
-                <div><h3>Self-care is high value here</h3><p>Your meds, eating, drinking, decompression, DBT, hygiene, cat care, and caregiver work are all rewarded like real effort.</p></div>
-                <strong id="bundleProgress">0 / 8</strong>
-              </div>
-            </div>
-          </section>
-
-          <section class="module movable tall" data-key="calendar-views">
-            <div class="module-header drag-handle"><span class="module-title">Calendar: Month / Week / Day</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <div class="view-switch" role="tablist" aria-label="Calendar views">
-                <button class="view-tab active" type="button" data-calendar-view="month">Month</button>
-                <button class="view-tab" type="button" data-calendar-view="week">Week</button>
-                <button class="view-tab" type="button" data-calendar-view="day">Day</button>
-              </div>
-              <div class="calendar-actions">
-                <button class="ghost-button" type="button" id="prevCalendar">←</button>
-                <strong id="calendarTitle">This month</strong>
-                <button class="ghost-button" type="button" id="nextCalendar">→</button>
-                <button class="ghost-button" type="button" id="todayCalendar">Today</button>
-              </div>
-              <div id="calendarHost" class="calendar-host"></div>
-            </div>
-          </section>
-
-          <section class="module movable full" data-key="task-library">
-            <div class="module-header drag-handle"><span class="module-title">Task Library by Room, Priority, and Respawn</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <div class="filter-row">
-                <input class="text-input search-input" id="taskSearch" placeholder="Search tasks: dishes, mopping, litter, phone call, bathroom..." />
-                <select id="taskRoomFilter"><option value="all">All rooms/areas</option></select>
-                <select id="taskPriorityFilter"><option value="all">All priorities</option><option>Critical</option><option>Very High</option><option>High</option><option>Medium</option><option>Gentle</option></select>
-                <select id="taskFrequencyFilter"><option value="all">All respawns</option><option value="daily">Daily</option><option value="weekday">Weekday</option><option value="every2">Every 2 days</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option><option value="asneeded">As needed / daily lock</option></select>
-              </div>
-              <div class="legend-row"><span class="legend due">ready</span><span class="legend done">done today</span><span class="legend locked">red = not due yet</span></div>
-              <div id="taskLibrary" class="task-list"></div>
-            </div>
-          </section>
-
-          <section class="module movable wide" data-key="custom-task">
-            <div class="module-header drag-handle"><span class="module-title">Add a Custom Reward Task</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <form id="customTaskForm" class="custom-grid">
-                <label>Task name<input class="text-input" id="customTaskName" required placeholder="Example: organize medicine basket" /></label>
-                <label>Area<select id="customTaskRoom"><option>Self-care</option><option>Bathroom</option><option>Bedroom</option><option>Living room</option><option>Kitchen</option><option>Cats</option><option>Caregiver support</option><option>Admin</option><option>Shopping</option></select></label>
-                <label>Priority<select id="customTaskPriority"><option>Medium</option><option>High</option><option>Very High</option><option>Critical</option><option>Gentle</option></select></label>
-                <label>Respawn<select id="customTaskFrequency"><option value="asneeded">As needed / daily lock</option><option value="daily">Daily</option><option value="every2">Every 2 days</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option></select></label>
-                <label>Copper<input type="number" id="customCopper" min="0" value="1200" /></label>
-                <label>Silver<input type="number" id="customSilver" min="0" value="120" /></label>
-                <label>Gold<input type="number" id="customGold" min="0" value="30" /></label>
-                <label>Platinum<input type="number" id="customPlatinum" min="0" value="3" /></label>
-                <button class="soft-button" type="submit">Add task</button>
-              </form>
-            </div>
-          </section>
-
-          <section class="module movable" data-key="activity-log-module">
-            <div class="module-header drag-handle"><span class="module-title">Activity Log</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body"><div id="activityLog" class="activity-log"></div></div>
-          </section>
-        </div>
+          <button class="primary-action" type="submit">Sign in</button>
+        </form>
       </section>
 
-      <section class="page-panel" id="todays-routine" data-title="Today's Schedule" data-subtitle="Automatic daily tasks show here. Added weekly/monthly tasks become part of today’s routine.">
-        <div class="page-heading"><h2>Today's Schedule</h2><span class="page-chip">daily routine + break-safe work blocks</span></div>
-        <div class="module-grid">
-          <section class="module movable full" data-key="today-list">
-            <div class="module-header drag-handle"><span class="module-title">Today's Automatic + Added Tasks</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <div class="today-summary"><strong id="todaySummaryText">No tasks yet.</strong><button class="ghost-button" type="button" id="clearTodaySelections">Clear only added tasks</button></div>
-              <div id="todayTaskList" class="task-list compact"></div>
-            </div>
-          </section>
+      <section id="signup-panel" class="auth-panel" role="tabpanel" hidden>
+        <h2>Sign up</h2>
+        <form id="signup-form" class="auth-form" autocomplete="on" action="index.html" method="get">
+          <label for="signup-profile">Profile</label>
+          <select id="signup-profile" name="profileKey" autocomplete="off" required>
+            <option value="">Choose profile</option>
+            <option value="jasper">Jasper — Squishy Cottage</option>
+            <option value="william">William — Dino Nerdzone</option>
+          </select>
 
-          <section class="module movable wide" data-key="caregiver-workday">
-            <div class="module-header drag-handle"><span class="module-title">Caregiver Workday + Required Breaks</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <div class="workday-card">
-                <div><span>Expected weekday care block</span><strong id="expectedWorkday">--</strong><small>Monday is 7 hours 45 minutes. Tuesday-Friday are 5 hours.</small></div>
-                <div><span>Breaks are protected</span><strong>eat • hydrate • decompress</strong><small>Breaks have their own rewards because you matter too.</small></div>
-              </div>
-              <div id="breakPlan" class="break-plan"></div>
-              <div class="quick-complete-grid">
-                <button class="complete-button" type="button" data-complete="break-food">Log workday meal break</button>
-                <button class="complete-button" type="button" data-complete="break-hydrate">Log workday hydration break</button>
-                <button class="complete-button" type="button" data-complete="break-decompress">Log workday decompression break</button>
-                <button class="complete-button distress" type="button" data-complete="caregiver-shift-complete">Log caregiver work block</button>
-              </div>
-            </div>
-          </section>
+          <label for="signup-display">Display name</label>
+          <input id="signup-display" name="name" type="text" autocomplete="name" required />
 
-          <section class="module movable tall" data-key="timesheet-style">
-            <div class="module-header drag-handle"><span class="module-title">Tempus-Style Weekly Time Notes</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <p class="soft-note">Use this as a local helper for start/end times, daily totals, notes, and weekly totals.</p>
-              <div id="timeRows" class="time-rows"></div>
-              <div class="weekly-total"><span>Weekly total</span><strong id="weeklyHoursTotal">0h 00m</strong></div>
-              <label class="field-label">Timesheet notes<textarea id="timesheetNotes" rows="4" placeholder="Notes, missed punches, EVV reminders, paperwork follow-up..."></textarea></label>
-            </div>
-          </section>
-        </div>
+          <label for="signup-email">Email</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" required />
+
+          <label for="signup-username">Username</label>
+          <input id="signup-username" name="username" type="text" autocomplete="username" required />
+
+          <label for="signup-password">Password</label>
+          <div class="password-wrap">
+            <input id="signup-password" name="new-password" type="password" autocomplete="new-password" minlength="8" required />
+            <button type="button" class="toggle-password" data-toggle-password="signup-password" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+
+          <label for="signup-confirm">Confirm password</label>
+          <div class="password-wrap">
+            <input id="signup-confirm" name="confirm-password" type="password" autocomplete="new-password" minlength="8" required />
+            <button type="button" class="toggle-password" data-toggle-password="signup-confirm" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+
+          <button class="primary-action" type="submit">Create sign-in</button>
+        </form>
       </section>
 
-      <section class="page-panel" id="chat-bot-dbt-skills" data-title="Momma Onyx Psychiatrist Support" data-subtitle="Lord Onyx Blepman: upgraded Momma-specific DBT, ADHD, risk-aware, grounding, attachment-alarm, and psychoeducation support.">
-        <div class="page-heading"><h2>Momma Onyx Psychiatrist + DBT Support Chat</h2><span class="page-chip">upgraded Momma bot + rewards</span></div>
-        <div class="module-grid">
-          <section class="module movable wide" data-key="support-chat">
-            <div class="module-header drag-handle"><span class="module-title">Lord Onyx Blepman Support Chat</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <div class="support-companion-card">
-                <div class="support-mood-stage"><img id="supportMoodImage" src="assets/onyx-moods/onyx_caring.png" alt="Onyx mood: caring" loading="lazy" /></div>
-                <div><span class="eyebrow">Lord Onyx Blepman support</span><h3>Onyx is Papa’s best friend and Momma’s devoted baby: DBT skills, ADHD tiny steps, grounding, attachment alarms, self-care resets, rewards, and dramatic tiny-void encouragement.</h3><strong id="supportMoodLabel">Onyx care support</strong><p id="supportMoodNote">Onyx now uses the upgraded Momma-specific psychiatrist/DBT/ADHD bot brain: validation first, risk-aware scanner context, tiny psychoeducation, and one paw-sized next step.</p><div class="support-quick-row support-mode-bubbles" aria-label="Quick support modes">
-                  <button class="ghost-button support-mode-button" type="button" data-support="comfort">🤎 Comfort</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="dbt_picker">🧠 DBT picker</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="tipp">🧊 TIPP panic</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="adhd_split">🐾 ADHD tiny steps</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="self_care_reset">🫧 Self-care reset</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="body_double">📚 Body double</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="attachment_alarm">🫂 Attachment alarm</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="diary_card">📓 Diary card</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="grounding">💗 Grounding</button>
-                  <button class="ghost-button support-mode-button" type="button" data-support="listen">👂 Listen</button>
-                </div>
-                <div class="support-link-row" aria-label="Linked support systems">
-                  <button class="soft-button" type="button" data-support="who">Ask who Onyx is</button>
-                  <span class="scanner-status-pill" id="backgroundScannerStatus">Passive scanner loading…</span>
-                </div>
-              </div>
-              </div>
-              <div id="chatMessages" class="chat-messages"></div>
-              <form id="chatForm" class="chat-form"><textarea id="chatInput" rows="2" placeholder="Write what is going on, ask for DBT help, or name what your nervous system is yelling."></textarea><button class="soft-button" type="submit">Send</button></form>
-              <div class="quick-complete-grid"><button class="complete-button" type="button" data-complete="use-chatbot">Log Onyx support</button><button class="complete-button distress" type="button" data-complete="use-chatbot-distress">Log Onyx distress support</button></div>
-            </div>
-          </section>
-          <section class="module movable tall" data-key="dbt-library">
-            <div class="module-header drag-handle"><span class="module-title">DBT Quick Skill Library</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body"><input class="text-input" id="dbtSearch" placeholder="Search: STOP, TIPP, wise mind, check facts..." /><div id="dbtResults" class="dbt-results"></div></div>
-          </section>
-          <section class="module movable tall onyx-psychiatrist-console" data-key="onyx-momma-psychiatrist-console">
-            <div class="module-header drag-handle"><span class="module-title">Momma Onyx Scanner + Teaching Console</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <p id="onyxPsychiatristStatus" class="scanner-console-status">Momma Onyx scanner is loading the upgraded psychiatrist/DBT/ADHD support layer.</p>
-              <h4>Signals Onyx is reading between the lines</h4>
-              <div id="onyxScannerSignalList" class="psy-signal-list"><p class="soft-note">No signals yet.</p></div>
-              <h4>Teaching notes Onyx may use</h4>
-              <div id="onyxPsychoeducationMatches" class="psy-education-list"><p class="soft-note">Teaching notes appear after Jasper/Momma writes to Onyx.</p></div>
-            </div>
-          </section>
-          <section class="module movable full onyx-merged-panel" id="onyxProfileMerged" data-key="onyx-full-companion-merged">
-            <div class="module-header drag-handle"><span class="module-title">Merged Emperor Onyx Full Companion</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <div class="onyx-merged-hero">
-                <div class="onyx-merged-mood"><img src="assets/onyx-moods/onyx_snuggly.png" alt="Lord Onyx Blepman in snuggly support mode" loading="lazy" /></div>
-                <div>
-                  <p class="eyebrow">Service Cat • Tiny Void Emperor • Papa’s Best Friend • Momma’s Devoted Baby</p>
-                  <h3>Lord Onyx Blepman, Emperor Of The Voidattude</h3>
-                  <p>The upgraded Momma-specific psychiatrist Onyx bot has been merged into this one index. The old lower-depth support replies now delegate to the stronger Momma bot brain: passive risk scanning, DBT/ADHD routing, diary-card coaching, psychoeducation, crisis triage, and Onyx lore all live in the main chat.</p>
-                </div>
-              </div>
-              <div class="onyx-merged-grid">
-                <article><h4>Relationship canon</h4><p>Onyx is Papa’s best friend and Momma’s devoted baby. He sleeps on Papa’s legs, the ottoman, the bookshelf, and his personal Luis Vuitton pillow. He is protective, dramatic, judgmental only in loving care-check mode, food-motivated, brilliant, snuggly, and deeply devoted.</p></article>
-                <article><h4>Support powers</h4><p>Wise Mind, STOP, TIPP, Check the Facts, Opposite Action, Self-Soothe, PLEASE, DEAR MAN/GIVE/FAST, Chain Analysis, diary-card check-ins, reactive attachment/abandonment-alarm support, ADHD tiny-step planning, body doubling, transitions, reminders, and shame-free resets.</p></article>
-                <article><h4>Risk-aware help</h4><p>The upgraded Momma scanner watches for crisis language, passive death-wish phrasing, attachment alarms, shame spirals, panic, dissociation, self-neglect, pain/fatigue barriers, and overwhelming distress. Onyx keeps responses concrete: validation, body safety, tiny psychoeducation, one next step, and live-human escalation when safety cannot be handled by a website.</p></article>
-                <article><h4>Reward support</h4><p>Asking for help, using a DBT skill, doing a tiny task starter, regulating with a game, stopping before overstimulation, saving a diary card, journaling, and returning to care all count as rewardable effort.</p></article>
-              </div>
-              <div class="support-quick-row onyx-merged-buttons" aria-label="Merged Onyx quick actions">
-                <button class="ghost-button support-mode-button" type="button" data-support="comfort">🤎 Comfort me</button>
-                <button class="ghost-button support-mode-button" type="button" data-support="pep">✨ Pep talk</button>
-                <button class="ghost-button support-mode-button" type="button" data-support="tipp">🧊 TIPP panic support</button>
-                <button class="ghost-button support-mode-button" type="button" data-support="adhd_split">🐾 Split my stuck task</button>
-                <button class="ghost-button support-mode-button" type="button" data-support="attachment_alarm">🫂 Attachment alarm</button>
-                <button class="ghost-button support-mode-button" type="button" data-support="diary_card">📓 Diary card help</button>
-                <button class="ghost-button support-mode-button" type="button" data-support="who">🐈‍⬛ Who are you?</button>
-              </div>
-            </div>
-          </section>
-        </div>
-      </section>
+      <section id="reset-panel" class="auth-panel" role="tabpanel" hidden>
+        <h2>Reset password</h2>
+        <form id="reset-request-form" class="auth-form compact" autocomplete="on">
+          <label for="reset-identifier">Email or username</label>
+          <input id="reset-identifier" name="username" type="text" autocomplete="username" required />
+          <button class="secondary-action" type="submit">Email code</button>
+        </form>
+        <form id="reset-complete-form" class="auth-form compact" autocomplete="on">
+          <label for="reset-code">Reset code</label>
+          <input id="reset-code" name="one-time-code" type="text" inputmode="numeric" autocomplete="one-time-code" required />
 
-      <section class="page-panel" id="dbt-daily-cards" data-title="DBT Daily Cards" data-subtitle="Fill out a diary card, save it locally, and export it as PDF or PNG.">
-        <div class="page-heading"><h2>DBT Daily Cards</h2><span class="page-chip">PDF + PNG export</span></div>
-        <div class="module-grid">
-          <section class="module movable wide" data-key="diary-card">
-            <div class="module-header drag-handle"><span class="module-title">Daily Diary Card</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-            <div class="module-body">
-              <div id="diaryCardCanvas" class="diary-card-preview">
-                <h3>Jasper's DBT Daily Diary Card</h3>
-                <div class="diary-grid"><label>Mood<input type="range" min="0" max="10" value="5" id="diaryMood"><span id="diaryMoodValue">5</span></label><label>Distress<input type="range" min="0" max="10" value="3" id="diaryDistress"><span id="diaryDistressValue">3</span></label><label>Energy<input type="range" min="0" max="10" value="4" id="diaryEnergy"><span id="diaryEnergyValue">4</span></label><label>Urges<input type="range" min="0" max="10" value="0" id="diaryUrges"><span id="diaryUrgesValue">0</span></label></div>
-                <label class="field-label">Emotions noticed<textarea id="diaryEmotions" rows="3"></textarea></label>
-                <label class="field-label">DBT skills used<textarea id="diarySkills" rows="3"></textarea></label>
-                <label class="field-label">Care completed<textarea id="diaryCare" rows="3"></textarea></label>
-                <label class="field-label">Tiny win / hard-day grace<textarea id="diaryWin" rows="3"></textarea></label>
-              </div>
-              <div class="tiny-actions"><button class="soft-button" type="button" id="saveDiaryCard">Save diary card</button><button class="soft-button" type="button" id="exportDiaryPdf">Export PDF</button><button class="soft-button" type="button" id="exportDiaryPng">Export PNG</button><button class="complete-button" type="button" data-complete="daily-diary-card">Log diary card reward</button></div>
-            </div>
-          </section>
-          <section class="module movable" data-key="diary-history"><div class="module-header drag-handle"><span class="module-title">Saved Diary Cards</span><button class="mini-button" data-collapse type="button">Bubble</button></div><div class="module-body"><div id="diaryHistory" class="history-list"></div></div></section>
-        </div>
-      </section>
+          <label for="reset-new-password">New password</label>
+          <div class="password-wrap">
+            <input id="reset-new-password" name="new-password" type="password" autocomplete="new-password" minlength="8" required />
+            <button type="button" class="toggle-password" data-toggle-password="reset-new-password" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
 
-      <section class="page-panel" id="dbt-journaling" data-title="DBT Journaling" data-subtitle="Save journals in-browser and export them as TXT or DOCX.">
-        <div class="page-heading"><h2>DBT Journaling</h2><span class="page-chip">TXT + DOCX export</span></div>
-        <div class="module-grid">
-          <section class="module movable wide" data-key="journal-editor"><div class="module-header drag-handle"><span class="module-title">Journal Editor</span><button class="mini-button" data-collapse type="button">Bubble</button></div><div class="module-body"><div class="prompt-card"><strong id="journalPrompt">What does your body need first?</strong><button class="ghost-button" type="button" id="newPrompt">New prompt</button></div><label class="field-label">Title<input class="text-input" id="journalTitle" placeholder="Today’s journal" /></label><label class="field-label">Entry<textarea id="journalText" rows="12" placeholder="Write here. Autosaves only when you press Save Journal."></textarea></label><div class="tiny-actions"><button class="soft-button" type="button" id="saveJournal">Save Journal</button><button class="soft-button" type="button" id="exportJournalsTxt">Export TXT</button><button class="soft-button" type="button" id="exportJournalsDocx">Export DOCX</button><button class="complete-button" type="button" data-complete="journal-entry">Log journaling reward</button></div></div></section>
-          <section class="module movable tall" data-key="journal-list"><div class="module-header drag-handle"><span class="module-title">Saved Journals</span><button class="mini-button" data-collapse type="button">Bubble</button></div><div class="module-body"><div id="journalHistory" class="history-list"></div></div></section>
-        </div>
+          <button class="primary-action" type="submit">Reset password</button>
+        </form>
       </section>
-
-      <section class="page-panel" id="mobile-games" data-title="Mobile Games" data-subtitle="Pick a mobile-friendly mini-game when decompression would help.">
-        <div class="page-heading"><h2>Mobile Games</h2><span class="page-chip">games earn decompression rewards</span></div>
-        <div class="module-grid"><section class="module movable full" data-key="games-module"><div class="module-header drag-handle"><span class="module-title">Stress-Reduction Game Selector</span><button class="mini-button" data-collapse type="button">Bubble</button></div><div class="module-body"><div class="game-controls"><select id="gameSelect"></select><button class="soft-button" type="button" id="loadGame">Load game</button><button class="complete-button" type="button" data-complete="mini-game-decompress">Log decompression game</button></div><iframe id="gameFrame" title="Selected mobile game"></iframe></div></section></div>
-      </section>
-
-<section class="page-panel" id="serotonin" data-title="Serotonin" data-subtitle="Comfort images and mobile-first media connections for quick regulation.">
-  <div class="page-heading"><h2>Serotonin Gallery + Media</h2><span class="page-chip">comfort gallery + socials + music</span></div>
-  <div class="module-grid serotonin-grid">
-    <section class="module movable wide" data-key="gallery-module">
-      <div class="module-header drag-handle"><span class="module-title">Quick Serotonin Gallery</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-      <div class="module-body"><label class="upload-zone">Upload comfort images<input type="file" id="galleryUpload" accept="image/*" multiple /></label><div id="galleryFrame" class="gallery-frame"></div></div>
     </section>
+  </main>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/backend-bridge.js"></script>
+  <script src="assets/js/auth-ui.js"></script>
 
-    <section class="module movable" data-key="connect-tiktok">
-      <div class="module-header drag-handle"><span class="module-title">TikTok Content Watch</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-      <div class="module-body serotonin-connect-card">
-        <div class="connect-heading"><span>🎵</span><div><h3>TikTok sign-in + comfort feed</h3><p>Open TikTok, save a comfort profile/feed link, and keep notes for what feels regulating.</p></div></div>
-        <div class="connect-actions"><a class="soft-button" id="openTikTokLogin" href="https://www.tiktok.com/login" target="_blank" rel="noopener">Open TikTok sign-in</a><button class="ghost-button" type="button" data-open-media="tiktok">Open saved TikTok</button></div>
-        <label class="field-label">TikTok profile, search, or video URL<input class="text-input" id="tiktokProfileUrl" placeholder="https://www.tiktok.com/@comfort-account" /></label>
-        <label class="field-label">Comfort notes<textarea id="tiktokComfortNotes" rows="4" placeholder="Examples: animal videos, cozy cooking, cat rescues, avoid doomscrolling after 20 minutes."></textarea></label>
-        <button class="soft-button" type="button" id="saveTikTokConnection">Save TikTok connection</button>
-      </div>
-    </section>
-
-    <section class="module movable" data-key="connect-spotify">
-      <div class="module-header drag-handle"><span class="module-title">Spotify Connect</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-      <div class="module-body serotonin-connect-card">
-        <div class="connect-heading"><span>🎧</span><div><h3>Spotify music anchor</h3><p>Save a Spotify playlist, artist, album, or podcast link for one-tap regulation.</p></div></div>
-        <div class="connect-actions"><a class="soft-button" id="openSpotifyLogin" href="https://accounts.spotify.com/login" target="_blank" rel="noopener">Open Spotify sign-in</a><button class="ghost-button" type="button" data-open-media="spotify">Open saved Spotify</button></div>
-        <label class="field-label">Spotify URL<input class="text-input" id="spotifyUrl" placeholder="https://open.spotify.com/playlist/..." /></label>
-        <label class="field-label">Music notes<textarea id="spotifyNotes" rows="4" placeholder="Examples: grounding playlist, shower playlist, sleepy grounding playlist, no sad songs after midnight."></textarea></label>
-        <button class="soft-button" type="button" id="saveSpotifyConnection">Save Spotify connection</button>
-      </div>
-    </section>
-
-    <section class="module movable wide" data-key="connect-youtube">
-      <div class="module-header drag-handle"><span class="module-title">YouTube Playlist</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-      <div class="module-body serotonin-connect-card">
-        <div class="connect-heading"><span>▶️</span><div><h3>YouTube comfort playlist</h3><p>Paste a playlist or video link. Playlist links can be embedded when the URL includes a list ID.</p></div></div>
-        <div class="connect-actions"><a class="soft-button" id="openYouTubeLogin" href="https://www.youtube.com/account" target="_blank" rel="noopener">Open YouTube account</a><button class="ghost-button" type="button" data-open-media="youtube">Open saved YouTube</button></div>
-        <label class="field-label">YouTube playlist or video URL<input class="text-input" id="youtubePlaylistUrl" placeholder="https://www.youtube.com/playlist?list=..." /></label>
-        <label class="field-label">Playlist notes<textarea id="youtubeNotes" rows="3" placeholder="Examples: cozy shows, DBT videos, cat TV, safe decompression playlist."></textarea></label>
-        <button class="soft-button" type="button" id="saveYouTubeConnection">Save YouTube playlist</button>
-        <div id="youtubeEmbedHost" class="youtube-embed-host"><p class="soft-note">Paste and save a YouTube playlist URL to preview it here.</p></div>
-      </div>
-    </section>
-
-    <section class="module movable tall" data-key="support-resources">
-      <div class="module-header drag-handle"><span class="module-title">DBT + ADHD Support Resources</span><button class="mini-button" data-collapse type="button">Bubble</button></div>
-      <div class="module-body"><div id="supportResources" class="support-resource-panel"></div></div>
-    </section>
-  </div>
-</section>
-
-      <section class="page-panel" id="squishy-store" data-title="Squishy Store" data-subtitle="Shop by aisle with earned currency, add links from Walmart/TikTok/Amazon/Uber Eats, and check out by email.">
-        <div class="page-heading"><h2>Squishy Store</h2><span class="page-chip">cart + checkout + email request</span></div>
-        <p class="store-legal-note">Adult-only reward requests stay in caregiver review and are treated as legal-adult/medical-card items only. Checkout deducts Squishy currency and opens the caregiver email request.</p>
-        <div class="module-grid">
-          <section class="module movable full" data-key="store-shelf"><div class="module-header drag-handle"><span class="module-title">Shop by Aisle</span><button class="mini-button" data-collapse type="button">Bubble</button></div><div class="module-body"><div class="shopping-links"><a href="https://www.walmart.com/lists" target="_blank" rel="noopener">Walmart Lists</a><a href="https://www.walmart.com/orders" target="_blank" rel="noopener">Walmart Purchase History</a><a href="https://www.tiktok.com/shop" target="_blank" rel="noopener">TikTok Shop</a><a href="https://www.amazon.com/gp/css/order-history" target="_blank" rel="noopener">Amazon Orders</a><a href="https://www.ubereats.com" target="_blank" rel="noopener">Uber Eats</a></div><div class="filter-row"><input class="text-input search-input" id="storeSearch" placeholder="Search aisles: pop, craft, clothes, meal, dispensary..." /><select id="storeCategory"><option value="all">All aisles</option></select></div><div id="storeList" class="store-list"></div></div></section>
-          <section class="module movable wide" data-key="cart"><div class="module-header drag-handle"><span class="module-title">Cart + Checkout</span><button class="mini-button" data-collapse type="button">Bubble</button></div><div class="module-body"><div id="cartList" class="cart-list"></div><div class="cart-total"><span>Cart total</span><strong id="cartTotal">0 C · 0 S · 0 G · 0 P</strong></div><div class="tiny-actions"><button class="soft-button" type="button" id="checkoutCart">Checkout and email request</button><button class="ghost-button" type="button" id="copyCheckoutEmail">Copy email text</button><button class="ghost-button" type="button" id="clearCart">Clear cart</button></div><textarea id="checkoutEmailPreview" rows="7" class="email-preview" readonly></textarea></div></section>
-          <section class="module movable" data-key="custom-store"><div class="module-header drag-handle"><span class="module-title">Add Link / Past Order / Favorite Store</span><button class="mini-button" data-collapse type="button">Bubble</button></div><div class="module-body"><form id="customStoreForm" class="custom-store-form"><label>Name<input class="text-input" id="storeItemName" required placeholder="Example: starfish hoodie" /></label><label>Aisle<select id="storeItemCategory"><option>Links + Custom Finds Aisle</option><option>Clothes Aisle</option><option>Craft + Music Aisle</option><option>Food Delivery + Meal Aisle</option><option>Gaming Aisle</option><option>Favorite stores</option></select></label><label>URL or notes<input class="text-input" id="storeItemUrl" placeholder="Paste TikTok/Walmart/Amazon/Uber Eats link or notes" /></label><div class="cost-row"><label>C<input type="number" id="storeCostC" value="5000" min="0" /></label><label>S<input type="number" id="storeCostS" value="500" min="0" /></label><label>G<input type="number" id="storeCostG" value="100" min="0" /></label><label>P<input type="number" id="storeCostP" value="10" min="0" /></label></div><button class="soft-button" type="submit">Add to store</button></form><div id="purchaseHistory" class="history-list"></div></div></section>
-        </div>
-      </section>
-    </main>
-  </div>
-  <div class="support-mobile-dock" id="supportMobileDock" aria-label="Mobile quick support dock"><button class="support-dock-pill" type="button" data-support="dbt_picker">🧠 DBT</button><button class="support-dock-pill" type="button" data-support="adhd_split">🐾 tiny step</button><button class="support-dock-pill" type="button" data-support="self_care_reset">🫧 reset</button></div>
-  <button class="floating-bot-button" id="floatingBotButton" type="button" aria-label="Open Onyx quick support"><span class="floating-support-icon" id="floatingBotButtonIcon" aria-hidden="true"><img src="assets/onyx-moods/onyx_caring.png" alt="" /></span><span class="floating-bot-zzz">Onyx</span></button>
-  <aside class="floating-bot" id="floatingBot"><div class="floating-bot-head"><div class="floating-support-title"><img src="assets/onyx-moods/onyx_snuggly.png" alt="" /><strong>Onyx quick support</strong></div><button id="closeFloatingBot" type="button">×</button></div><div id="floatingChatMessages" class="chat-messages small"></div><form id="floatingChatForm" class="chat-form compact"><input class="text-input" id="floatingChatInput" placeholder="Ask for a tiny next step" /><button class="soft-button" type="submit">Send</button></form><div class="support-quick-row floating-support-quick" id="floatingSupportQuickModes" aria-label="Quick support help"><button class="ghost-button support-mode-button" type="button" data-support="comfort">🤎</button><button class="ghost-button support-mode-button" type="button" data-support="dbt_picker">🧠</button><button class="ghost-button support-mode-button" type="button" data-support="tipp">🧊</button><button class="ghost-button support-mode-button" type="button" data-support="adhd_split">🐾</button><button class="ghost-button support-mode-button" type="button" data-support="self_care_reset">🫧</button><button class="ghost-button support-mode-button" type="button" data-support="grounding">💗</button></div></aside>
-  <div id="toastHost" class="toast-host" aria-live="polite"></div>
-  <!-- Mobile-first bundled runtime: full Onyx personality, support data, passive scanner, app, and responsive device navigation. -->
-  <script src="js/onyx-momma-psychiatrist-bridge.js?v=momma-psychiatrist-20260613"></script>
-  <script src="js/app.bundle.js?v=momma-psychiatrist-20260613"></script>
-  <script src="js/jcc-full-functionality-upgrade.js?v=full-functionality-20260613"></script>
+<script src="js/ourspace-gas-app.js"></script>
+<script src="js/ourspace-pwa.js"></script>
 </body>
 </html>

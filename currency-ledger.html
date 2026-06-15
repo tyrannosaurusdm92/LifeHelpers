@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OurSpace Currency Ledger</title>
+  <link rel="stylesheet" href="css/ourspace-game-rewards.css" />
+  <link rel="stylesheet" href="css/ourspace-launcher.css" />
+  <script>
+    window.OurSpaceCurrencyConfig = {
+      ledgerKey: 'ourspace.currency.ledger.v1',
+      blockUnknownGameRewards: true
+    };
+  </script>
+  <script defer src="js/ourspace-currency-core.js"></script>
+  <script defer src="js/portal-storage.js"></script>
+  <script defer src="js/currency.js"></script>
+</head>
+<body>
+<header>
+  <h1>OurSpace Currency Ledger</h1>
+  <div>
+    <a class="linkBtn" href="index.html">Game launcher</a>
+    <button id="exportBtn" type="button">Export ledger JSON</button>
+    <button id="clearBtn" type="button">Clear ledger</button>
+  </div>
+</header>
+<section class="panel">
+  <h2 id="balance">Loading…</h2>
+  <p class="helper">Currency scale: 10 copper = 1 silver, 10 silver = 1 gold, 10 gold = 1 platinum.</p>
+  <div id="history"></div>
+</section>
+<script>
+function fmt(total) {
+  return window.OurSpaceCurrency ? window.OurSpaceCurrency.formatCurrency(total || 0) : `${total || 0} copper`;
+}
+function loadLedger() {
+  return window.OurSpaceCurrency?.loadLedger?.() || { totalCopper: 0, history: [] };
+}
+function render() {
+  const ledger = loadLedger();
+  document.getElementById('balance').textContent = `Balance: ${fmt(ledger.totalCopper || 0)}`;
+  const rows = (ledger.history || []).slice(0, 100).map(entry => `
+    <div class="logRow">
+      <span><strong>${entry.gameName || entry.label || 'Reward'}</strong><br><small>${entry.label || entry.eventId || ''} · ${entry.at || ''}</small></span>
+      <span class="currency">+${entry.display || fmt(entry.totalCopper || 0)}</span>
+    </div>
+  `).join('');
+  document.getElementById('history').innerHTML = rows || '<p class="helper">No rewards logged yet.</p>';
+}
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(loadLedger(), null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'ourspace-currency-ledger.json';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
+document.getElementById('clearBtn').addEventListener('click', () => {
+  if (!confirm('Clear the shared currency ledger on this browser?')) return;
+  localStorage.removeItem('ourspace.currency.ledger.v1');
+  render();
+});
+window.addEventListener('ourspace:currency-updated', render);
+setInterval(render, 1500);
+setTimeout(render, 350);
+</script>
+</body>
+</html>
