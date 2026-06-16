@@ -111,15 +111,15 @@
       const w=Math.min(moduleWidth(mod),max-24); mod.style.width=w+'px'; if(x+w>max){x=24;y+=rowH+gap;rowH=0;} mod.style.left=x+'px'; mod.style.top=y+'px'; mod.style.setProperty('--x',x+'px'); mod.style.setProperty('--y',y+'px'); mod.classList.add('os-repair-positioned'); const h=Math.max(mod.offsetHeight||160, parseFloat(getComputedStyle(mod).minHeight)||120); rowH=Math.max(rowH,h); x+=w+gap;});
     board.style.minHeight=(y+rowH+80)+'px';
   }
-  function packActivePage(){packPage($('.page-section.active')||$('#'+(location.hash||'#home').slice(1))||$('#home'));}
+  function packActivePage(){packPage($('.page-section.active')||$('#'+((String(location.hash||'#home').split('#').filter(Boolean).filter(h=>h!=='admin-editor').pop())||'home'))||$('#home'));}
   function injectGoogleCalendarBox(){
     const links=readLS(storeKey('links'),[]); const g=links.find(l=>/calendar\.google|google\.com\/calendar|calendar\.app\.google/i.test((l.url||'')+' '+(l.label||''))); const main=$('#calendarList')?.parentElement; if(!main)return; let box=$('#linkedGoogleCalendarEmbed'); if(!g){if(box)box.remove(); return;} if(!box){box=document.createElement('div'); box.id='linkedGoogleCalendarEmbed'; box.className='google-calendar-embed'; main.appendChild(box);} box.innerHTML=`<div class="notice"><strong>Linked Google Calendar</strong><br><span class="repair-notice">Static pages cannot read private Google events without Google permission, but this opens your saved calendar link here when Google allows embedding.</span><br><button class="tiny-btn" type="button" data-open-google-calendar>Show linked calendar</button> <a class="tiny-btn" target="_blank" rel="noopener" href="${esc(g.url)}">Open in Google Calendar</a></div>`;
   }
   function bootBasicMessengerFallback(){
-    const root=$('#ourspace-messenger-root'); if(!root||$('.os-messenger',root))return; const me=profile()==='jasper'?'jasper':'william', other=me==='jasper'?'william':'jasper'; const key='ourspace.tincan.v2'; const state=readLS(key,{messages:[],channel:'home'}); const channels=['home','care','games','store','dbt','media','calls'];
-    root.innerHTML=`<section class="os-messenger"><div class="notice"><strong>Tin-can fallback messenger</strong><br>Local shared browser line for William and Jasper. Full messenger scripts did not mount, so this keeps text, channels, and export working.</div><div class="dbt-skill-controls"><select id="tcChan">${channels.map(c=>`<option ${state.channel===c?'selected':''}>${c}</option>`).join('')}</select><input id="tcText" placeholder="Send on the tin-can line..."/><button class="tiny-btn" id="tcSend">Send</button><button class="tiny-btn" id="tcExport">Export</button></div><div class="data-list" id="tcLog"></div></section>`;
+    const root=$('#ourspace-messenger-root'); if(!root||$('.os-messenger',root))return; const me=profile()==='jasper'?'jasper':'william', other=me==='jasper'?'william':'jasper'; const key='ourspace.two-person.v2'; const state=readLS(key,{messages:[],channel:'home'}); const channels=['home','care','games','store','dbt','media','calls'];
+    root.innerHTML=`<section class="os-messenger"><div class="notice"><strong>Two-person fallback messenger</strong><br>Local shared browser messenger for William and Jasper. Full messenger scripts did not mount, so this keeps text, channels, and export working.</div><div class="dbt-skill-controls"><select id="tcChan">${channels.map(c=>`<option ${state.channel===c?'selected':''}>${c}</option>`).join('')}</select><input id="tcText" placeholder="Send a message..."/><button class="tiny-btn" id="tcSend">Send</button><button class="tiny-btn" id="tcExport">Export</button></div><div class="data-list" id="tcLog"></div></section>`;
     function draw(){const chan=$('#tcChan').value; $('#tcLog').innerHTML=(state.messages||[]).filter(m=>m.channel===chan).map(m=>`<div class="data-card"><strong>${esc(m.author)}</strong> <span class="meta">${esc(new Date(m.at).toLocaleString())}</span><p>${esc(m.text)}</p></div>`).join('')||'<div class="empty-state">No messages in this channel yet.</div>';}
-    $('#tcChan').addEventListener('change',()=>{state.channel=$('#tcChan').value; writeLS(key,state); draw();}); $('#tcSend').addEventListener('click',()=>{const input=$('#tcText'); const msg=input.value.trim(); if(!msg)return; state.messages.push({author:me==='jasper'?'Jasper / Squishy':'William / Dino',to:other,text:msg,channel:$('#tcChan').value,at:new Date().toISOString()}); input.value=''; writeLS(key,state); draw();}); $('#tcExport').addEventListener('click',()=>{const a=document.createElement('a'); a.href='data:application/json,'+encodeURIComponent(JSON.stringify(state,null,2)); a.download='ourspace-tin-can-messenger.json'; a.click();}); draw();
+    $('#tcChan').addEventListener('change',()=>{state.channel=$('#tcChan').value; writeLS(key,state); draw();}); $('#tcSend').addEventListener('click',()=>{const input=$('#tcText'); const msg=input.value.trim(); if(!msg)return; state.messages.push({author:me==='jasper'?'Jasper / Squishy':'William / Dino',to:other,text:msg,channel:$('#tcChan').value,at:new Date().toISOString()}); input.value=''; writeLS(key,state); draw();}); $('#tcExport').addEventListener('click',()=>{const a=document.createElement('a'); a.href='data:application/json,'+encodeURIComponent(JSON.stringify(state,null,2)); a.download='ourspace-two-person-messenger.json'; a.click();}); draw();
   }
   function bindRepairEvents(){
     $('#calPrev')?.addEventListener('click',()=>{const d=cursorDate(),v=currentView(); if(v==='day')d.setDate(d.getDate()-1); else if(v==='week')d.setDate(d.getDate()-7); else d.setMonth(d.getMonth()-1); setCursor(d); setTimeout(renderCalendarRepair,0);},true);
@@ -175,24 +175,7 @@
     if($('#audioList') && !$('#audioList').textContent.trim()) $('#audioList').innerHTML='<div class="notice">Upload MP3s for local audio comfort. Nothing is sent anywhere.</div>';
   }
   function visualWidth(mod){const base=mod.classList.contains('profile-module')?250:mod.classList.contains('wide')?760:mod.classList.contains('phone-module')?390:mod.classList.contains('large')?500:360; return base;}
-  function compactPack(sec){
-    if(!matchMedia('(min-width:901px)').matches)return;
-    sec=sec||$('.page-section.active')||$('#'+(location.hash||'#home').slice(1))||$('#home');
-    const board=$('.page-board',sec); if(!board)return;
-    const globalScale=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--os-module-scale'))||.5;
-    const max=Math.max(720,board.clientWidth||980)-14; const gap=14; let x=12,y=12,row=0;
-    $$('.module',board).forEach(mod=>{
-      const moduleScale=mod.classList.contains('collapsed')?1:(Number(mod.dataset.moduleSize||100)/100 || 1);
-      const visualScale=globalScale*moduleScale;
-      const bw=mod.classList.contains('collapsed')?100:Math.min(visualWidth(mod), Math.max(240,(max-12)/Math.max(visualScale,.25)));
-      const vh=(mod.classList.contains('collapsed')?100:Math.max(mod.offsetHeight||160, parseFloat(getComputedStyle(mod).minHeight)||120))*visualScale;
-      const vw=bw*visualScale;
-      if(x+vw>max){x=12;y+=row+gap;row=0;}
-      mod.style.width=bw+'px'; mod.style.left=x+'px'; mod.style.top=y+'px'; mod.style.setProperty('--x',x+'px'); mod.style.setProperty('--y',y+'px'); mod.classList.add('os-compact-positioned');
-      x+=vw+gap; row=Math.max(row,vh);
-    });
-    board.style.minHeight=Math.max(360,y+row+60)+'px';
-  }
+  function compactPack(sec){ return; }
   function installCompact(){renderKnowledgeFallbacks(); setTimeout(()=>compactPack(),80); setTimeout(()=>{renderKnowledgeFallbacks();compactPack();},800); setTimeout(()=>compactPack(),1800);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',installCompact); else installCompact();
   window.OurSpaceCompactPack = compactPack;
