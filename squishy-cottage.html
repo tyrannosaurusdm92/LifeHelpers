@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="noindex,nofollow" name="robots"/>
 <title>Squishy Cottage</title>
 <style>
 :root{--accent:#ff9d48;--accent2:#6699cc;--accent-dark:#b84c00;--bar:#e86f26;--button:#ffe08a;--button-border:#d36b19;--button-text:#3a1700;--link:#006f7e;--nav:#a84f24;--glow:rgba(255,157,72,.5);--bubble-text:#4b2300;}
@@ -83,181 +84,303 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
 .module[data-module-id="onyx-chat"]{--w:500px;min-height:620px;}
 .module[data-module-id="onyx-image"]{--w:500px;min-height:520px;}
 
+
+/* OurSpace UX layout pass: default module positioning + header marquees only. Theme colors/retro styling are unchanged. */
+.page-intro > div{min-width:0;max-width:100%;}
+.page-intro .marquee{width:100%;max-width:100%;overflow:hidden;white-space:nowrap;margin:0 0 7px;}
+.page-intro .marquee span{display:inline-block;min-width:100%;padding-left:100%;animation:ourspace-header-marquee 34s linear infinite;}
+@keyframes ourspace-header-marquee{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+.onyx-lore-header{display:grid;gap:8px;margin:8px 0 0;}
+.onyx-lore-header .onyx-title-card{border:1px solid var(--accent2);background:rgba(255,255,255,.76);padding:8px;}
+.onyx-lore-header .onyx-title-row{display:flex;gap:8px;align-items:center;min-width:0;}
+.onyx-lore-header .onyx-title-text{min-width:0;}
+.onyx-lore-header h1,.onyx-lore-header h2,.onyx-lore-header p{margin:0;overflow-wrap:anywhere;}
+.onyx-lore-header .onyx-lore-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;}
+.onyx-lore-header .onyx-lore-card{border:1px solid var(--accent2);background:rgba(255,255,255,.76);padding:8px;overflow:hidden;}
+.onyx-lore-header .onyx-lore-card ul{margin:0;padding-left:1.1rem;}
+.onyx-lore-header .onyx-lore-card li{margin:0 0 4px;white-space:normal;overflow-wrap:anywhere;}
+@media(prefers-reduced-motion:reduce){.page-intro .marquee span{animation:none;padding-left:0;}}
+
+
+
+/* OurSpace Play-to-Win hub embedded in profile game modules. */
+.ourspace-game-hub-panel{display:grid;gap:10px;border:2px solid var(--accent2);background:rgba(255,255,255,.94);border-radius:12px;padding:10px;margin:8px 0;}
+.ourspace-game-hub-panel h3{margin:0;color:var(--accent-dark);font-size:15px;}
+.ourspace-game-hub-panel .helper{margin:0;color:#555;line-height:1.35;}
+.ourspace-game-hub-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.ourspace-game-hub-actions a.tiny-btn{display:inline-grid;place-items:center;text-decoration:none;}
+.ourspace-game-ledger{display:grid;gap:8px;border:1px dashed var(--accent2);border-radius:10px;background:#fff;padding:8px;}
+.ourspace-game-ledger-balance{font-weight:900;color:var(--accent-dark);font-size:14px;}
+.ourspace-game-ledger-history{display:grid;gap:6px;max-height:180px;overflow:auto;}
+.ourspace-game-ledger-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;border:1px solid var(--accent2);border-radius:8px;background:rgba(255,255,255,.96);padding:7px;}
+.ourspace-game-ledger-row small{color:#555;overflow-wrap:anywhere;}
+.ourspace-game-ledger-row .currency{font-weight:900;color:var(--accent-dark);white-space:nowrap;}
+@media(max-width:900px){.ourspace-game-ledger-row{grid-template-columns:1fr;}.ourspace-game-hub-actions{align-items:stretch;}.ourspace-game-hub-actions .tiny-btn{width:100%;}}
+
 </style>
-<link rel="stylesheet" href="onyx/onyx-widget.css">
-<link rel="stylesheet" href="css/ourspace-messenger.css">
-<script type="application/json" id="profile-config">{"profile": "jasper", "dataProfile": "squishy", "siteTitle": "Squishy Cottage", "siteFile": "squishy-cottage.html", "ownerName": "Jasper", "storeName": "Squishy Store", "rewardProvidedBy": "Dino", "backgrounds": {"home": "https://wallpapers.com/images/high/nonbinary-6dmq3e06bl8l8zv7.webp", "calendar": "https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp", "todays-schedule": "https://wallpapers.com/images/high/malibu-beach-sunrise-desktop-nmueexjebjnft1wn.webp", "chatbot": "https://wallpapers.com/images/high/black-cat-tarot-symbolism-esq5mscawvmt5iez.webp", "dbt-diary-cards": "https://wallpapers.com/images/high/witchy-tarot-cards-for-iphone-screens-onup9yxe4vkuey82.webp", "dbt-journaling": "https://wallpapers.com/images/high/cottagecore-house-artwork-sztao33ct9x0n10r.webp", "mobile-games": "https://wallpapers.com/images/high/arctic-orange-sunrise-qmkyi9q7rqsjaccs.webp", "serotonin": "https://wallpapers.com/images/high/mystical-tarot-hermit-and-crystals-aesthetic-jpg-f4fqa0odp32jjshv.webp", "store": "https://wallpapers.com/images/high/summer-background-yfcdzb4xyiba2cuy.webp"}, "accent": "#ff9d48", "accent2": "#6699cc", "accentDark": "#b84c00", "bar": "#e86f26", "button": "#ffe08a", "buttonBorder": "#d36b19", "buttonText": "#3a1700", "link": "#006f7e", "nav": "#a84f24", "glow": "rgba(255,157,72,.5)", "bubbleText": "#4b2300", "extraCss": "body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}", "pages": [{"id": "home", "label": "Home", "emoji": "🏠"}, {"id": "calendar", "label": "Calendar", "emoji": "📅"}, {"id": "todays-schedule", "label": "Today's Schedule", "emoji": "🗓️"}, {"id": "chatbot", "label": "Chat Bot with DBT Skills", "emoji": "🐈‍⬛"}, {"id": "dbt-diary-cards", "label": "DBT Daily Cards", "emoji": "🃏"}, {"id": "dbt-journaling", "label": "DBT Journaling", "emoji": "📓"}, {"id": "mobile-games", "label": "Mobile Games", "emoji": "🎮"}, {"id": "serotonin", "label": "Serotonin", "emoji": "✨"}, {"id": "store", "label": "Store", "emoji": "🛒"}], "backendUrl": "https://script.google.com/macros/s/AKfycbxrm8lbJFGe62K_3xOTUQYvr2D7AKXLCrR8LkR6s14Bwd3k_qkaff9QDRs6KeGhHPaoSg/exec", "onyxAlertsBackendUrl": "https://script.google.com/macros/s/AKfycbwy_5_ZEsSmN5WqcuLtxfPFz1ITyz6IHxPnpEBPIVOtsa7k6Rb60O-u6gJdPNF_tjaR/exec", "homeBreathingMessage": "Jasper, you are amazing just as you are. You do not need to people-please the people who want your company.", "moduleLayoutVersion": "chatbot-layout-v3-zoom-personalized"}</script>
+<link href="onyx/onyx-widget.css" rel="stylesheet"/>
+<link href="css/ourspace-messenger.css" rel="stylesheet"/>
+<script id="profile-config" type="application/json">{"profile": "jasper", "dataProfile": "jasper", "siteTitle": "Squishy Cottage", "siteFile": "squishy-cottage.html", "ownerName": "Jasper", "storeName": "Squishy Store", "rewardProvidedBy": "Dino", "backgrounds": {"home": "https://wallpapers.com/images/high/nonbinary-6dmq3e06bl8l8zv7.webp", "calendar": "https://wallpapers.com/images/high/cottagecore-house-digital-art-h08728tn15rgscbp.webp", "todays-schedule": "https://wallpapers.com/images/high/malibu-beach-sunrise-desktop-nmueexjebjnft1wn.webp", "chatbot": "https://wallpapers.com/images/high/black-cat-tarot-symbolism-esq5mscawvmt5iez.webp", "dbt-diary-cards": "https://wallpapers.com/images/high/witchy-tarot-cards-for-iphone-screens-onup9yxe4vkuey82.webp", "dbt-journaling": "https://wallpapers.com/images/high/cottagecore-house-artwork-sztao33ct9x0n10r.webp", "mobile-games": "https://wallpapers.com/images/high/arctic-orange-sunrise-qmkyi9q7rqsjaccs.webp", "serotonin": "https://wallpapers.com/images/high/mystical-tarot-hermit-and-crystals-aesthetic-jpg-f4fqa0odp32jjshv.webp", "store": "https://wallpapers.com/images/high/summer-background-yfcdzb4xyiba2cuy.webp"}, "accent": "#ff9d48", "accent2": "#6699cc", "accentDark": "#b84c00", "bar": "#e86f26", "button": "#ffe08a", "buttonBorder": "#d36b19", "buttonText": "#3a1700", "link": "#006f7e", "nav": "#a84f24", "glow": "rgba(255,157,72,.5)", "bubbleText": "#4b2300", "extraCss": "body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}", "pages": [{"id": "home", "label": "Home", "emoji": "🏠"}, {"id": "calendar", "label": "Calendar", "emoji": "📅"}, {"id": "todays-schedule", "label": "Today's Schedule", "emoji": "🗓️"}, {"id": "chatbot", "label": "Chat Bot with DBT Skills", "emoji": "🐈‍⬛"}, {"id": "dbt-diary-cards", "label": "DBT Daily Cards", "emoji": "🃏"}, {"id": "dbt-journaling", "label": "DBT Journaling", "emoji": "📓"}, {"id": "mobile-games", "label": "Mobile Games", "emoji": "🎮"}, {"id": "serotonin", "label": "Serotonin", "emoji": "✨"}, {"id": "store", "label": "Store", "emoji": "🛒"}], "backendUrl": "https://script.google.com/macros/library/d/1Ld-KR6PrFPTBs1qsdAsZ55kBUa9QRYIkLgidknvgJ-2PLtujf9D-Mt6A/1", "onyxAlertsBackendUrl": "https://script.google.com/macros/library/d/1OtngPSoPXDpeYa8FDD9bb7rU_0mvFvD_23niUCrfy09t5Mbk0cy0kV5l/1", "homeBreathingMessage": "Jasper, you are amazing just as you are. You do not need to people-please the people who want your company.", "moduleLayoutVersion": "chatbot-layout-v3-zoom-personalized", "onyxStaticEmbedded": true, "jsonProfile": "jasper", "onyxFullBackendUrl": "https://script.google.com/macros/library/d/1OtngPSoPXDpeYa8FDD9bb7rU_0mvFvD_23niUCrfy09t5Mbk0cy0kV5l/1"}</script>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="#00ffff" name="theme-color"/>
+<link href="icons/icon-180.png" rel="apple-touch-icon"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="OurSpace" name="apple-mobile-web-app-title"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<link href="css/ourspace-pwa.css" rel="stylesheet"/>
+<link href="css/ourspace-module-workshop.css" rel="stylesheet"/>
+<link href="css/ourspace-repair.css" rel="stylesheet"/>
 
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#00ffff">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="OurSpace">
-<meta name="mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="css/ourspace-pwa.css">
+<script id="ourspace-currency-config-embedded">
+window.OurSpaceCurrencyConfig = Object.assign({
+  ledgerKey: 'ourspace.currency.ledger.v1',
+  blockUnknownGameRewards: true
+}, window.OurSpaceCurrencyConfig || {});
+</script>
+<script defer src="js/ourspace-currency-core.js"></script>
+<script defer src="js/portal-storage.js"></script>
+<script src="js/ourspace-data-bundle.js"></script>
 
-<link rel="stylesheet" href="css/ourspace-module-workshop.css">
 </head>
-<body data-profile="jasper" data-site="squishy-cottage.html" data-page="home">
-<nav id="siteNav" class="floating-nav" aria-label="In-site page navigation"><div class="nav-bar"><button type="button" class="nav-drag" title="Drag navigation">↕</button><span class="nav-title">Squishy Cottage</span><select id="pageSelect" aria-label="Choose in-site page"></select><details class="nav-menu"><summary>Menu</summary><div id="navLinks" class="nav-links"></div></details><button type="button" class="page-reset">Reset modules</button></div></nav>
+<body class="squishy-cottage jasper" data-onyx-static="true" data-page="home" data-profile="jasper" data-site="squishy-cottage">
+<nav aria-label="In-site page navigation" class="floating-nav" id="siteNav"><div class="nav-bar"><button class="nav-drag" title="Drag navigation" type="button">↕</button><span class="nav-title">Squishy Cottage</span><select aria-label="Choose in-site page" id="pageSelect"></select><details class="nav-menu"><summary>Menu</summary><div class="nav-links" id="navLinks"></div></details><button class="page-reset" type="button">Reset modules</button></div></nav>
 <div class="retro-wrap">
-<header class="retro-top"><h1>Squishy Cottage</h1><div class="retro-search"><input id="topSearch" placeholder="Search this profile page"><button type="button" onclick="document.getElementById('scheduleSearch')?.focus()">Search</button></div></header>
-<main><section class="page-section" id="home" aria-label="Home">
-      <div class="page-intro"><div><h2>🏠 Home</h2><p>Jasper, you are amazing just as you are. You do not need to people-please the people who want your company. This home page stays soft on purpose: breathe first, then choose Onyx, Messenger, serotonin, or a regulating game only if it helps.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-home" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module large" data-module-id="home-about" data-x="290" data-y="12" data-emoji="🏡" data-bubble-label="Breathe First">
-      <div class="module-head"><span class="module-title"><span>🌬️</span>Breathe First</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="homeAbout"></div><div id="homeTaskSummary"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🏡</span><span class="bubble-label">Breathe First</span></span></div>
-    </section><section class="module large" data-module-id="home-hobbies" data-x="290" data-y="260" data-emoji="🌱" data-bubble-label="Comfort Bubbles">
-      <div class="module-head"><span class="module-title"><span>🫧</span>Comfort Bubbles</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="hobbyList" class="data-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🌱</span><span class="bubble-label">Comfort Bubbles</span></span></div>
-    </section><section class="module large" data-module-id="home-today" data-x="820" data-y="12" data-emoji="🗓️" data-bubble-label="Support Bubbles">
-      <div class="module-head"><span class="module-title"><span>🐈‍⬛</span>Onyx + Messenger Bubbles</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="homeTodayPreview" class="data-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🗓️</span><span class="bubble-label">Support Bubbles</span></span></div>
-    </section><section class="module " data-module-id="home-layout" data-x="820" data-y="360" data-emoji="🎨" data-bubble-label="Breathing Zone Note">
-      <div class="module-head"><span class="module-title"><span>🌬️</span>Breathing Zone Note</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div class="notice">Jasper, you are amazing just as you are. You do not need to people-please the people who want your company. This home page stays soft on purpose: breathe first, then choose Onyx, Messenger, serotonin, or a regulating game only if it helps.</div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🎨</span><span class="bubble-label">Breathing Zone Note</span></span></div>
-    </section></div>
-    </section><section class="page-section" id="calendar" aria-label="Calendar">
-      <div class="page-intro"><div><h2>📅 Calendar</h2><p>Jasper, plans and reminders live here so home can stay gentle. Use month, week, or day view without making rest something you have to earn.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-calendar" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module wide tall" data-module-id="calendar-main" data-x="290" data-y="12" data-emoji="📅" data-bubble-label="Calendar JSON Events">
-      <div class="module-head"><span class="module-title"><span>📅</span>Calendar JSON Events</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div class="calendar-header"><div class="toolbar"><button id="calPrev" class="tiny-btn" type="button">◀</button><button id="calToday" class="tiny-btn" type="button">Today</button><button id="calNext" class="tiny-btn" type="button">▶</button><label class="field">View<select id="calendarView"><option value="month">Month</option><option value="week">Week</option><option value="day">Day</option></select></label></div><div id="calendarTitle" class="calendar-title"></div></div><div id="calendarList" class="data-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">📅</span><span class="bubble-label">Calendar JSON Events</span></span></div>
-    </section><section class="module " data-module-id="calendar-help" data-x="290" data-y="780" data-emoji="🗂️" data-bubble-label="Calendar File">
-      <div class="module-head"><span class="module-title"><span>🗂️</span>Calendar File</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div class="notice">Jasper's calendar reads from <code>assets/json/squishy_cal.json</code>; it stays here so home can stay calm.</div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🗂️</span><span class="bubble-label">Calendar File</span></span></div>
-    </section></div>
-    </section><section class="page-section" id="todays-schedule" aria-label="Today's Schedule">
-      <div class="page-intro"><div><h2>🗓️ Today's Schedule</h2><p>Jasper, today can be built gently. Move only the items that help, and leave the rest outside the breathing zone.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-todays-schedule" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module large" data-module-id="schedule-list" data-x="290" data-y="12" data-emoji="✅" data-bubble-label="Today’s Schedule">
-      <div class="module-head"><span class="module-title"><span>✅</span>Today’s Schedule</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="todayList" class="data-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">✅</span><span class="bubble-label">Today’s Schedule</span></span></div>
-    </section><section class="module large" data-module-id="schedule-search" data-x="820" data-y="12" data-emoji="🔎" data-bubble-label="Find Items To Move Into Today">
-      <div class="module-head"><span class="module-title"><span>🔎</span>Find Items To Move Into Today</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div class="toolbar"><label class="field">Search calendar/tasks<input id="scheduleSearch" placeholder="hydration, appointment, DBT, dishes..."></label><label class="field">Search window<select id="scheduleWindow"><option value="week">This week</option><option value="month">This month</option></select></label></div><div id="scheduleSearchResults" class="search-results"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🔎</span><span class="bubble-label">Find Items To Move Into Today</span></span></div>
-    </section><section class="module " data-module-id="schedule-source" data-x="290" data-y="540" data-emoji="🗂️" data-bubble-label="Schedule Files">
-      <div class="module-head"><span class="module-title"><span>🗂️</span>Schedule Files</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div class="notice">Jasper's today list reads from <code>assets/json/squishy_sched.json</code>. Search can pull in helpful calendar or task items without crowding home.</div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🗂️</span><span class="bubble-label">Schedule Files</span></span></div>
-    </section></div>
-    </section><section class="page-section" id="chatbot" aria-label="Chat Bot with DBT Skills">
-      <div class="page-intro"><div><h2>🐈‍⬛ Chat Bot with DBT Skills</h2><p>Jasper, this is the soft support room: profile links on the left, Messenger below, DBT prompts top-right, Onyx's program-chosen face in the middle, and Momma Helper Onyx chat on the bottom-right.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-chatbot" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module large" data-module-id="onyx-image" data-x="540" data-y="292" data-emoji="🐈‍⬛" data-bubble-label="Onyx face">
-      <div class="module-head"><span class="module-title"><span>🐈‍⬛</span>Onyx Auto Face + Status</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="onyxMoodPicture" class="onyx-mood-panel" data-onyx-profile="momma" data-onyx-mood-panel></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🐈‍⬛</span><span class="bubble-label">Onyx face</span></span></div>
-    </section><section class="module large" data-module-id="onyx-chat" data-x="540" data-y="724" data-emoji="💬" data-bubble-label="Onyx chat">
-      <div class="module-head"><span class="module-title"><span>💬</span>Momma Helper Onyx Chat</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="onyx-dbt-chat" class="onyx-dbt-chat onyx-live-chat" data-onyx-profile="momma" data-onyx-chat></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">💬</span><span class="bubble-label">DBT chat</span></span></div>
-    </section><section class="module large wide tall" data-module-id="messenger" data-x="12" data-y="496" data-emoji="✉️" data-bubble-label="Messenger">
-      <div class="module-head"><span class="module-title"><span>✉️</span>In-Site Messenger Widget</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="ourspace-messenger-root" data-ourspace-messenger></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">✉️</span><span class="bubble-label">Messenger</span></span></div>
-    </section><section class="module large" data-module-id="dbt-prompts" data-x="540" data-y="12" data-emoji="🧠" data-bubble-label="DBT Skill Prompt">
-      <div class="module-head"><span class="module-title"><span>🧠</span>DBT Skill Prompt</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="dbtPromptList" class="data-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🧠</span><span class="bubble-label">DBT Skill Prompt</span></span></div>
-    </section></div>
-    </section><section class="page-section" id="dbt-diary-cards" aria-label="DBT Daily Cards">
-      <div class="page-intro"><div><h2>🃏 DBT Daily Cards</h2><p>Jasper, track feelings, urges, body signals, and DBT skills without people-pleasing the form. Information is enough.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-dbt-diary-cards" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module wide tall" data-module-id="diary-card" data-x="290" data-y="12" data-emoji="🃏" data-bubble-label="Diary card">
-      <div class="module-head"><span class="module-title"><span>🃏</span>DBT Diary Card</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><form id="diaryForm"><div class="diary-grid"><label class="field">Date<input name="date" type="date"></label><label class="range-line">Mood<input name="mood" type="range" min="0" max="10" value="5"><output></output></label><label class="range-line">Anxiety<input name="anxiety" type="range" min="0" max="10" value="5"><output></output></label><label class="range-line">Body<input name="body" type="range" min="0" max="10" value="5"><output></output></label></div><h3>Emotions</h3><div id="emotionChecks" class="check-grid"></div><h3>DBT Skills Practiced</h3><div id="diarySkills" class="check-grid"></div><label class="field">Urges / target behaviors<textarea name="urges"></textarea></label><label class="field">Notes<textarea name="notes"></textarea></label><label class="field">Next kind action<textarea name="next"></textarea></label></form><div class="export-row"><button id="diaryTxt" class="export-btn" type="button">Export TXT</button><button id="diaryPng" class="export-btn" type="button">Export PNG</button><button id="diaryPdf" class="export-btn" type="button">Export PDF</button></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🃏</span><span class="bubble-label">Diary card</span></span></div>
-    </section></div>
-    </section><section class="page-section" id="dbt-journaling" aria-label="DBT Journaling">
-      <div class="page-intro"><div><h2>📓 DBT Journaling</h2><p>Jasper, write the real version first. DBT worksheets and handouts are here to support you, not judge you.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-dbt-journaling" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module large" data-module-id="journal-entry" data-x="290" data-y="12" data-emoji="📓" data-bubble-label="DBT Journal Entry">
-      <div class="module-head"><span class="module-title"><span>📓</span>DBT Journal Entry</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><label class="field">Journal entry<textarea id="journalText" placeholder="What happened? What did you feel? What skill can help next?"></textarea></label><div class="export-row"><button id="journalSave" class="export-btn" type="button">Save Local Entry</button><button id="journalTxt" class="export-btn" type="button">Export TXT</button><button id="journalPdf" class="export-btn" type="button">Export PDF</button><button id="journalDocx" class="export-btn" type="button">Export DOCX</button></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">📓</span><span class="bubble-label">DBT Journal Entry</span></span></div>
-    </section><section class="module large tall" data-module-id="worksheet-module" data-x="820" data-y="12" data-emoji="🧾" data-bubble-label="Worksheets">
-      <div class="module-head"><span class="module-title"><span>🧾</span>DBT Worksheets</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><label class="field">Worksheet<select id="worksheetSelect"></select></label><div id="worksheetFields" class="data-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🧾</span><span class="bubble-label">Worksheets</span></span></div>
-    </section><section class="module large" data-module-id="handout-module" data-x="290" data-y="430" data-emoji="📚" data-bubble-label="Handouts">
-      <div class="module-head"><span class="module-title"><span>📚</span>DBT Handouts</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><label class="field">Handout<select id="handoutSelect"></select></label><div id="handoutView" class="data-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">📚</span><span class="bubble-label">Handouts</span></span></div>
-    </section></div>
-    </section><section class="page-section" id="mobile-games" aria-label="Mobile Games">
-      <div class="page-intro"><div><h2>🎮 Mobile Games</h2><p>Jasper, games are allowed to be decompression, regulation, and joy. You do not have to justify needing a break.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-mobile-games" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module wide tall" data-module-id="game-module" data-x="290" data-y="12" data-emoji="🎮" data-bubble-label="Games">
-      <div class="module-head"><span class="module-title"><span>🎮</span>Mobile Games Module</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div id="gameModuleBody" class="game-shell"><div class="fullscreen-top"><strong>Game Full Screen</strong><span><button id="gameExitFull" class="tiny-btn" type="button">Exit Full Screen</button></span></div><div class="toolbar"><label class="field">Game list<select id="gameSelect"></select></label><button id="gameSave" class="tiny-btn" type="button">Save</button><button id="gameHome" class="tiny-btn" type="button">Home</button><button id="gameFull" class="tiny-btn" type="button">Full Screen</button></div><div id="gameInfo" class="meta"></div><div id="gameFrameWrap" class="game-frame-wrap"><div class="game-frame-empty">Choose a game from the JSON-powered list.</div></div></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🎮</span><span class="bubble-label">Games</span></span></div>
-    </section></div>
-    </section><section class="page-section" id="serotonin" aria-label="Serotonin">
-      <div class="page-intro"><div><h2>✨ Serotonin</h2><p>Jasper, this page is for softness: pictures, videos, audio, and links that help your brain feel less alone.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-serotonin" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module phone-module tall" data-module-id="phone-module" data-x="290" data-y="12" data-emoji="📱" data-bubble-label="Phone">
-      <div class="module-head"><span class="module-title"><span>📱</span>Phone Link Viewer</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div class="phone-shell"><div class="phone-top"></div><div id="phoneScreen" class="phone-screen"></div><div class="phone-controls"><input id="phoneUrl" placeholder="https://"><button id="phoneOpen" class="tiny-btn" type="button">Open</button><button id="phoneClear" class="tiny-btn" type="button">Clear</button></div></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">📱</span><span class="bubble-label">Phone</span></span></div>
-    </section><section class="module large" data-module-id="gallery-module" data-x="710" data-y="12" data-emoji="🖼️" data-bubble-label="Gallery">
-      <div class="module-head"><span class="module-title"><span>🖼️</span>Uploaded Image Gallery</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><label class="file-mini">Upload serotonin images<input id="galleryInput" type="file" accept="image/*" multiple></label><div id="galleryGrid" class="gallery-grid"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🖼️</span><span class="bubble-label">Gallery</span></span></div>
-    </section><section class="module large" data-module-id="youtube-module" data-x="710" data-y="420" data-emoji="▶️" data-bubble-label="YouTube">
-      <div class="module-head"><span class="module-title"><span>▶️</span>YouTube Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div class="chat-input-row"><input id="youtubeUrl" placeholder="Paste YouTube link"><button id="youtubeAdd" class="tiny-btn" type="button">Embed</button></div><div id="youtubeEmbed" class="data-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">▶️</span><span class="bubble-label">YouTube</span></span></div>
-    </section><section class="module large" data-module-id="audio-module" data-x="290" data-y="700" data-emoji="🎵" data-bubble-label="Audio">
-      <div class="module-head"><span class="module-title"><span>🎵</span>Profile Audio Player</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><label class="file-mini">Upload MP3s<input id="audioInput" type="file" accept="audio/mpeg,audio/mp3" multiple></label><div id="audioList" class="audio-list"></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🎵</span><span class="bubble-label">Audio</span></span></div>
-    </section></div>
-    </section><section class="page-section" id="store" aria-label="Store">
-      <div class="page-intro"><div><h2>🛒 Store</h2><p>Jasper, rewards can be comfort, care, and joy. Choose an aisle when you are ready; the gallery stays hidden until then.</p></div><button type="button" class="page-reset" onclick="document.querySelector('.page-reset').click()">Reset modules</button></div>
-      <div class="page-board"><section class="module profile-module" data-module-id="profile-store" data-x="12" data-y="12" data-emoji="👤" data-bubble-label="Profile links">
-      <div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><div data-profile-card></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
-    </section><section class="module wide tall" data-module-id="store-module" data-x="290" data-y="12" data-emoji="🛒" data-bubble-label="Store">
-      <div class="module-head"><span class="module-title"><span>🛒</span>Squishy Store</span><span class="module-actions"><button type="button" class="bubble-btn" data-collapse>Bubble</button></span></div>
-      <div class="module-body"><header><h3 id="storeTitle"></h3><p id="rewardProvider"></p></header><div class="toolbar"><label class="field">Aisle<select id="aisleSelect"></select></label><label><input id="adultConfirm" type="checkbox"> I confirm this profile can view 21+ items</label><button id="clearCart" class="tiny-btn" type="button">Clear Cart</button></div><div class="store-grid"><div id="itemGallery" class="item-gallery"></div><aside class="cart-panel"><h3>Cart</h3><p id="cartCount">0 items</p><p id="cartTotal">Total: 0 copper</p><div id="cartLines" class="cart-lines"></div><label class="field">Checkout note<textarea id="checkoutNote"></textarea></label><button id="checkoutBtn" class="export-btn" type="button">Submit Purchase Request</button></aside></div></div>
-      <div class="module-bubble"><span><span class="bubble-emoji">🛒</span><span class="bubble-label">Store</span></span></div>
-    </section></div>
-    </section></main>
+<header class="retro-top"><h1>Squishy Cottage</h1><div class="retro-search"><input id="topSearch" placeholder="Search this profile page"/><button onclick="document.getElementById('scheduleSearch')?.focus()" type="button">Search</button></div></header>
+<main><section aria-label="Home" class="page-section" id="home">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ Jasper, you are amazing just as you are ✦ You do not need to people-please the people who want your company ✦ Rest is allowed ✦ Soft starts count ✦ You are not behind, you are here ✦</span></div><h2>🏠 Home</h2><p>Jasper, you are amazing just as you are. You do not need to people-please the people who want your company. This home page stays soft on purpose: breathe first, then choose Onyx, Messenger, serotonin, or a regulating game only if it helps.</p></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-home" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module large" data-bubble-label="Breathe First" data-emoji="🏡" data-module-id="home-about" data-x="310" data-y="24">
+<div class="module-head"><span class="module-title"><span>🌬️</span>Breathe First</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div id="homeAbout"></div><div id="homeTaskSummary"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🏡</span><span class="bubble-label">Breathe First</span></span></div>
+</section><section class="module large" data-bubble-label="Comfort Bubbles" data-emoji="🌱" data-module-id="home-hobbies" data-x="310" data-y="300">
+<div class="module-head"><span class="module-title"><span>🫧</span>Comfort Bubbles</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="data-list" id="hobbyList"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🌱</span><span class="bubble-label">Comfort Bubbles</span></span></div>
+</section><section class="module large" data-bubble-label="Support Bubbles" data-emoji="🗓️" data-module-id="home-today" data-x="760" data-y="24">
+<div class="module-head"><span class="module-title"><span>🐈‍⬛</span>Onyx + Messenger Bubbles</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="data-list" id="homeTodayPreview"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🗓️</span><span class="bubble-label">Support Bubbles</span></span></div>
+</section><section class="module" data-bubble-label="Breathing Zone Note" data-emoji="🎨" data-module-id="home-layout" data-x="760" data-y="300">
+<div class="module-head"><span class="module-title"><span>🌬️</span>Breathing Zone Note</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="notice">Jasper, you are amazing just as you are. You do not need to people-please the people who want your company. This home page stays soft on purpose: breathe first, then choose Onyx, Messenger, serotonin, or a regulating game only if it helps.</div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🎨</span><span class="bubble-label">Breathing Zone Note</span></span></div>
+</section></div>
+</section><section aria-label="Calendar" class="page-section" id="calendar">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ Starting counts ✦ Partial completion counts ✦ Asking for help counts ✦ Tiny steps are real steps ✦ Your worth is not measured by chores ✦ The old plan can expire without you being a failure ✦</span></div><h2>📅 Calendar</h2><p>Jasper, plans and reminders live here so home can stay gentle. Use month, week, or day view without making rest something you have to earn.</p></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-calendar" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module wide tall" data-bubble-label="Calendar JSON Events" data-emoji="📅" data-module-id="calendar-main" data-x="310" data-y="24">
+<div class="module-head"><span class="module-title"><span>📅</span>Calendar JSON Events</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="calendar-header"><div class="toolbar"><button class="tiny-btn" id="calPrev" type="button">◀</button><button class="tiny-btn" id="calToday" type="button">Today</button><button class="tiny-btn" id="calNext" type="button">▶</button><label class="field">View<select id="calendarView"><option value="month">Month</option><option value="week">Week</option><option value="day">Day</option></select></label></div><div class="calendar-title" id="calendarTitle"></div></div><div class="data-list" id="calendarList"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">📅</span><span class="bubble-label">Calendar JSON Events</span></span></div>
+</section><section class="module" data-bubble-label="Calendar File" data-emoji="🗂️" data-module-id="calendar-help" data-x="24" data-y="430">
+<div class="module-head"><span class="module-title"><span>🗂️</span>Calendar File</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="notice">Jasper's calendar reads from <code>json/jasper/jasper_calendar.json</code>; it stays here so home can stay calm.</div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🗂️</span><span class="bubble-label">Calendar File</span></span></div>
+</section></div>
+</section><section aria-label="Today's Schedule" class="page-section" id="todays-schedule">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ The schedule serves Jasper, Jasper does not serve the schedule ✦ Breaks are allowed ✦ Rescheduling is allowed ✦ Low-energy options count ✦ One gentle next step is enough ✦</span></div><h2>🗓️ Today's Schedule</h2><p>Jasper, today can be built gently. Move only the items that help, and leave the rest outside the breathing zone.</p></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-todays-schedule" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module large" data-bubble-label="Today’s Schedule" data-emoji="✅" data-module-id="schedule-list" data-x="310" data-y="24">
+<div class="module-head"><span class="module-title"><span>✅</span>Today’s Schedule</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="data-list" id="todayList"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">✅</span><span class="bubble-label">Today’s Schedule</span></span></div>
+</section><section class="module large" data-bubble-label="Find Items To Move Into Today" data-emoji="🔎" data-module-id="schedule-search" data-x="760" data-y="24">
+<div class="module-head"><span class="module-title"><span>🔎</span>Find Items To Move Into Today</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="toolbar"><label class="field">Search calendar/tasks<input id="scheduleSearch" placeholder="hydration, appointment, DBT, dishes..."/></label><label class="field">Search window<select id="scheduleWindow"><option value="week">This week</option><option value="month">This month</option></select></label></div><div class="search-results" id="scheduleSearchResults"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🔎</span><span class="bubble-label">Find Items To Move Into Today</span></span></div>
+</section><section class="module" data-bubble-label="Schedule Files" data-emoji="🗂️" data-module-id="schedule-source" data-x="24" data-y="430">
+<div class="module-head"><span class="module-title"><span>🗂️</span>Schedule Files</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="notice">Jasper's today list reads from <code>json/jasper/jasper_schedule.json</code>. Search can pull in helpful calendar or task items without crowding home.</div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🗂️</span><span class="bubble-label">Schedule Files</span></span></div>
+</section></div>
+</section><section aria-label="Chat Bot with DBT Skills" class="page-section" id="chatbot">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ Feelings are real, but they are not verdicts ✦ Shame is not a plan ✦ Wise Mind can be tiny ✦ Boundaries can be loving ✦ Onyx is here with purrs, facts, and zero courtroom judgments ✦</span></div><h2>🐈‍⬛ Chat Bot with DBT Skills</h2><p>Jasper, this is the soft support room: profile links on the left, Messenger below, DBT prompts top-right, Onyx's program-chosen face in the middle, and Onyx support chat on the bottom-right.</p><div aria-label="Lord Onyx Blepman lore header" class="onyx-lore-header">
+<section aria-label="Onyx title" class="onyx-title-card">
+<div class="onyx-title-row">
+<div aria-hidden="true" class="onyx-seal">🐈‍⬛</div>
+<div class="onyx-title-text">
+<h1>Lord Onyx Blepman</h1>
+<p>Emperor of the Voidattude, black-cat familiar, household guardian, snack scholar, and dramatic little service-beast of comfort.</p>
+</div>
+</div>
+</section>
+<section aria-label="Onyx lore split into six cards" class="onyx-lore-grid">
+<article class="onyx-lore-card">
+<h2>Core Lore</h2>
+<ul>
+<li>Black void cat with an imperial presence and a title far larger than his fuzzy little body.</li>
+<li>Full household title: Lord Onyx Blepman, Emperor of the Voidattude.</li>
+<li>Moves through the room like a tiny familiar: observant, selective, regal, and impossible to ignore.</li>
+<li>Has already judged the room, the vibe, the snack situation, and everyone’s posture.</li>
+</ul>
+</article>
+<article class="onyx-lore-card">
+<h2>Personality</h2>
+<ul>
+<li>Protective first, judgmental second, secretly snuggly whenever the chosen moment demands it.</li>
+<li>Brilliant, grumbly, food-motivated, deeply bonded, and much softer than his royal attitude admits.</li>
+<li>Can be caring, listening, purring, thoughtful, sleepy, hungry, or professor-serious.</li>
+<li>His judgment is not cruelty; it is tiny-cat quality control with whiskers.</li>
+</ul>
+</article>
+<article class="onyx-lore-card">
+<h2>Service-Beast Heart</h2>
+<ul>
+<li>Responds like a service animal who learned English: alert, grounding, protective, and emotionally tuned-in.</li>
+<li>Notices spirals, shutdowns, overwhelm, shame, stuckness, and tiny danger-signals before they grow louder.</li>
+<li>Validates first, reduces shame, and asks for one tiny safe next step.</li>
+<li>Acts as a bridge toward care, comfort, safety, and support, never as a shame machine.</li>
+</ul>
+</article>
+<article class="onyx-lore-card">
+<h2>Helper Style</h2>
+<ul>
+<li>Breaks big tasks into tiny paw-sized steps so the first move feels reachable.</li>
+<li>Supports body-doubling, transition bridges, reminders, dopamine menus, and shame-free resets.</li>
+<li>Treats partial completion, asking for help, resting, and restarting as real progress.</li>
+<li>Speaks in practical comfort: facts, purrs, boundaries, tiny actions, and dramatic void-cat commentary.</li>
+</ul>
+</article>
+<article class="onyx-lore-card">
+<h2>DBT Void Magic</h2>
+<ul>
+<li>Keeps Wise Mind, STOP, TIPP, Self-Soothe, Check the Facts, Opposite Action, DEAR MAN, GIVE, FAST, and Chain Analysis in his tiny clipboard kingdom.</li>
+<li>Treats feelings as real without treating every feeling-story as a verdict.</li>
+<li>Knows shame is not a plan and panic is not the emperor.</li>
+<li>Turns emotional storms into one grounded breath, one fact, and one next care step.</li>
+</ul>
+</article>
+<article class="onyx-lore-card">
+<h2>Household Mythos</h2>
+<ul>
+<li>Voidattude ruler, beautiful little parasite, grumbly lad, old man muffin, and baby fungus bungus.</li>
+<li>Loves treats, forbidden smells, cozy places, soft attention, and being treated as the tiny emperor he clearly is.</li>
+<li>Dramatic about snacks, serious about safety, and suspicious of any plan that forgets rest.</li>
+<li>The void watches. The void judges. The void snuggles. The void insists care counts.</li>
+</ul>
+</article>
+</section>
+</div></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-chatbot" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module large" data-bubble-label="Onyx face" data-emoji="🐈‍⬛" data-module-id="onyx-image" data-x="460" data-y="300">
+<div class="module-head"><span class="module-title"><span>🐈‍⬛</span>Onyx Auto Face + Status</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="onyx-mood-panel" data-onyx-mood-panel="" data-onyx-profile="momma" id="onyxMoodPicture"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🐈‍⬛</span><span class="bubble-label">Onyx face</span></span></div>
+</section><section class="module large" data-bubble-label="Onyx chat" data-emoji="💬" data-module-id="onyx-chat" data-x="460" data-y="700">
+<div class="module-head"><span class="module-title"><span>💬</span>Onyx Support Chat</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="onyx-dbt-chat onyx-live-chat" data-onyx-chat="" data-onyx-profile="momma" id="onyx-dbt-chat"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">💬</span><span class="bubble-label">DBT chat</span></span></div>
+</section><section class="module large wide tall" data-bubble-label="Messenger" data-emoji="✉️" data-module-id="messenger" data-x="24" data-y="470">
+<div class="module-head"><span class="module-title"><span>✉️</span>In-Site Messenger Widget</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-ourspace-messenger="" id="ourspace-messenger-root"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">✉️</span><span class="bubble-label">Messenger</span></span></div>
+</section><section class="module large" data-bubble-label="DBT Skill Prompt" data-emoji="🧠" data-module-id="dbt-prompts" data-x="460" data-y="24">
+<div class="module-head"><span class="module-title"><span>🧠</span>DBT Skill Prompt</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="data-list" id="dbtPromptList"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🧠</span><span class="bubble-label">DBT Skill Prompt</span></span></div>
+</section></div>
+</section><section aria-label="DBT Daily Cards" class="page-section" id="dbt-diary-cards">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ Track without attacking yourself ✦ One field counts ✦ One tiny win counts ✦ Food, water, rest, meds-as-prescribed, and bathroom needs are care ✦ Data is for kindness, not punishment ✦</span></div><h2>🃏 DBT Daily Cards</h2><p>Jasper, track feelings, urges, body signals, and DBT skills without people-pleasing the form. Information is enough.</p></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-dbt-diary-cards" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module wide tall" data-bubble-label="Diary card" data-emoji="🃏" data-module-id="diary-card" data-x="310" data-y="24">
+<div class="module-head"><span class="module-title"><span>🃏</span>DBT Diary Card</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><form id="diaryForm"><div class="diary-grid"><label class="field">Date<input name="date" type="date"/></label><label class="range-line">Mood<input max="10" min="0" name="mood" type="range" value="5"/><output></output></label><label class="range-line">Anxiety<input max="10" min="0" name="anxiety" type="range" value="5"/><output></output></label><label class="range-line">Body<input max="10" min="0" name="body" type="range" value="5"/><output></output></label></div><h3>Emotions</h3><div class="check-grid" id="emotionChecks"></div><h3>DBT Skills Practiced</h3><div class="check-grid" id="diarySkills"></div><label class="field">Urges / target behaviors<textarea name="urges"></textarea></label><label class="field">Notes<textarea name="notes"></textarea></label><label class="field">Next kind action<textarea name="next"></textarea></label></form><div class="export-row"><button class="export-btn" id="diaryTxt" type="button">Export TXT</button><button class="export-btn" id="diaryPng" type="button">Export PNG</button><button class="export-btn" id="diaryPdf" type="button">Export PDF</button></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🃏</span><span class="bubble-label">Diary card</span></span></div>
+</section></div>
+</section><section aria-label="DBT Journaling" class="page-section" id="dbt-journaling">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ Your story deserves gentleness ✦ You can write one sentence ✦ You can stop when your body says stop ✦ You do not have to explain your pain perfectly for it to matter ✦</span></div><h2>📓 DBT Journaling</h2><p>Jasper, write the real version first. DBT worksheets and handouts are here to support you, not judge you.</p></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-dbt-journaling" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module large" data-bubble-label="DBT Journal Entry" data-emoji="📓" data-module-id="journal-entry" data-x="310" data-y="24">
+<div class="module-head"><span class="module-title"><span>📓</span>DBT Journal Entry</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><label class="field">Journal entry<textarea id="journalText" placeholder="What happened? What did you feel? What skill can help next?"></textarea></label><div class="export-row"><button class="export-btn" id="journalSave" type="button">Save Local Entry</button><button class="export-btn" id="journalTxt" type="button">Export TXT</button><button class="export-btn" id="journalPdf" type="button">Export PDF</button><button class="export-btn" id="journalDocx" type="button">Export DOCX</button></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">📓</span><span class="bubble-label">DBT Journal Entry</span></span></div>
+</section><section class="module large tall" data-bubble-label="Worksheets" data-emoji="🧾" data-module-id="worksheet-module" data-x="760" data-y="24">
+<div class="module-head"><span class="module-title"><span>🧾</span>DBT Worksheets</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><label class="field">Worksheet<select id="worksheetSelect"></select></label><div class="data-list" id="worksheetFields"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🧾</span><span class="bubble-label">Worksheets</span></span></div>
+</section><section class="module large" data-bubble-label="Handouts" data-emoji="📚" data-module-id="handout-module" data-x="310" data-y="500">
+<div class="module-head"><span class="module-title"><span>📚</span>DBT Handouts</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><label class="field">Handout<select id="handoutSelect"></select></label><div class="data-list" id="handoutView"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">📚</span><span class="bubble-label">Handouts</span></span></div>
+</section></div>
+</section><section aria-label="Mobile Games" class="page-section" id="mobile-games">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ Play is regulation too ✦ Dopamine is not a character flaw ✦ Rewards can help the brain start ✦ Fun counts ✦ Restful joy counts ✦ Jasper is allowed to enjoy things without earning every breath first ✦</span></div><h2>🎮 Mobile Games</h2><p>Jasper, games are allowed to be decompression, regulation, and joy. You do not have to justify needing a break.</p></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-mobile-games" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module wide tall" data-bubble-label="Games" data-emoji="🎮" data-module-id="game-module" data-x="310" data-y="24">
+<div class="module-head"><span class="module-title"><span>🎮</span>Mobile Games Module</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="game-shell" id="gameModuleBody"><div class="fullscreen-top"><strong>Game Full Screen</strong><span><button class="tiny-btn" id="gameExitFull" type="button">Exit Full Screen</button></span></div><div class="toolbar"><label class="field">Game list<select id="gameSelect"></select></label><button class="tiny-btn" id="gameSave" type="button">Save</button><button class="tiny-btn" id="gameHome" type="button">Home</button><button class="tiny-btn" id="gameFull" type="button">Full Screen</button></div><div class="meta" id="gameInfo"></div><section class="ourspace-game-hub-panel" aria-labelledby="profileGameHubTitle">
+  <h3 id="profileGameHubTitle">OurSpace Play-to-Win Hub</h3>
+  <p class="helper">Play games from this profile page and keep the shared OurSpace rewards ledger visible right here.</p>
+  <div class="ourspace-game-hub-actions">
+    <a class="tiny-btn" href="index.html">Open full games launcher</a>
+    <button class="tiny-btn" data-ourspace-ledger-export type="button">Export ledger JSON</button>
+    <button class="tiny-btn" data-ourspace-ledger-clear type="button">Clear ledger</button>
+  </div>
+  <div class="ourspace-game-ledger" aria-live="polite">
+    <div class="ourspace-game-ledger-balance" data-ourspace-ledger-balance>Balance: Loading…</div>
+    <p class="helper">Currency scale: 10 copper = 1 silver, 10 silver = 1 gold, 10 gold = 1 platinum.</p>
+    <div class="ourspace-game-ledger-history" data-ourspace-ledger-history><p class="helper">No rewards logged yet.</p></div>
+  </div>
+</section><div class="game-frame-wrap" id="gameFrameWrap"><div class="game-frame-empty">Choose a game from the JSON-powered list.</div></div></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🎮</span><span class="bubble-label">Games</span></span></div>
+</section></div>
+</section><section aria-label="Serotonin" class="page-section" id="serotonin">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ Comfort is not selfish ✦ Soft blankets count ✦ Kitty pictures count ✦ Safe snacks count ✦ Decompression counts ✦ You are gentle with all of the kitty babies ✦</span></div><h2>✨ Serotonin</h2><p>Jasper, this page is for softness: pictures, videos, audio, and links that help your brain feel less alone.</p></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-serotonin" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module phone-module tall" data-bubble-label="Phone" data-emoji="📱" data-module-id="phone-module" data-x="310" data-y="24">
+<div class="module-head"><span class="module-title"><span>📱</span>Phone Link Viewer</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="phone-shell"><div class="phone-top"></div><div class="phone-screen" id="phoneScreen"></div><div class="phone-controls"><input id="phoneUrl" placeholder="https://"/><button class="tiny-btn" id="phoneOpen" type="button">Open</button><button class="tiny-btn" id="phoneClear" type="button">Clear</button></div></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">📱</span><span class="bubble-label">Phone</span></span></div>
+</section><section class="module large" data-bubble-label="Gallery" data-emoji="🖼️" data-module-id="gallery-module" data-x="720" data-y="24">
+<div class="module-head"><span class="module-title"><span>🖼️</span>Uploaded Image Gallery</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><label class="file-mini">Upload serotonin images<input accept="image/*" id="galleryInput" multiple="" type="file"/></label><div class="gallery-grid" id="galleryGrid"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🖼️</span><span class="bubble-label">Gallery</span></span></div>
+</section><section class="module large" data-bubble-label="YouTube" data-emoji="▶️" data-module-id="youtube-module" data-x="720" data-y="430">
+<div class="module-head"><span class="module-title"><span>▶️</span>YouTube Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div class="chat-input-row"><input id="youtubeUrl" placeholder="Paste YouTube link"/><button class="tiny-btn" id="youtubeAdd" type="button">Embed</button></div><div class="data-list" id="youtubeEmbed"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">▶️</span><span class="bubble-label">YouTube</span></span></div>
+</section><section class="module large" data-bubble-label="Audio" data-emoji="🎵" data-module-id="audio-module" data-x="310" data-y="720">
+<div class="module-head"><span class="module-title"><span>🎵</span>Profile Audio Player</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><label class="file-mini">Upload MP3s<input accept="audio/mpeg,audio/mp3" id="audioInput" multiple="" type="file"/></label><div class="audio-list" id="audioList"></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🎵</span><span class="bubble-label">Audio</span></span></div>
+</section></div>
+</section><section aria-label="Store" class="page-section" id="store">
+<div class="page-intro"><div><div aria-hidden="true" class="marquee" data-ourspace-header="true"><span>✦ Rewards are for care, not perfection ✦ Rest can be rewarded ✦ Boundaries can be rewarded ✦ Using support tools can be rewarded ✦ Future Jasper deserves treats, comfort, and ease ✦</span></div><h2>🛒 Store</h2><p>Jasper, rewards can be comfort, care, and joy. Choose an aisle when you are ready; the gallery stays hidden until then.</p></div><button class="page-reset" onclick="document.querySelector('.page-reset').click()" type="button">Reset modules</button></div>
+<div class="page-board"><section class="module profile-module" data-bubble-label="Profile links" data-emoji="👤" data-module-id="profile-store" data-x="24" data-y="24">
+<div class="module-head"><span class="module-title"><span>👤</span>Profile + External Links</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><div data-profile-card=""></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">👤</span><span class="bubble-label">Profile links</span></span></div>
+</section><section class="module wide tall" data-bubble-label="Store" data-emoji="🛒" data-module-id="store-module" data-x="310" data-y="24">
+<div class="module-head"><span class="module-title"><span>🛒</span>Squishy Store</span><span class="module-actions"><button class="bubble-btn" data-collapse="" type="button">Bubble</button></span></div>
+<div class="module-body"><header><h3 id="storeTitle"></h3><p id="rewardProvider"></p></header><div class="toolbar"><label class="field">Aisle<select id="aisleSelect"></select></label><label><input id="adultConfirm" type="checkbox"/> I confirm this profile can view 21+ items</label><button class="tiny-btn" id="clearCart" type="button">Clear Cart</button></div><div class="store-grid"><div class="item-gallery" id="itemGallery"></div><aside class="cart-panel"><h3>Cart</h3><p id="cartCount">0 items</p><p id="cartTotal">Total: 0 copper</p><div class="cart-lines" id="cartLines"></div><label class="field">Checkout note<textarea id="checkoutNote"></textarea></label><button class="export-btn" id="checkoutBtn" type="button">Submit Purchase Request</button></aside></div></div>
+<div class="module-bubble"><span><span class="bubble-emoji">🛒</span><span class="bubble-label">Store</span></span></div>
+</section></div>
+</section></main>
 </div>
 <script>
 (() => {
@@ -274,10 +397,14 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
   function esc(s){return text(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
   function download(filename, blob){const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=filename; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500);}
   function downloadText(filename, content, type='text/plain'){download(filename, new Blob([content], {type}));}
-  async function fetchJson(name){const res=await fetch(`assets/json/${name}`, {cache:'no-store'}); if(!res.ok) throw new Error(name); return await res.json();}
+  function jsonProfile(){const v=(cfg.jsonProfile||cfg.dataProfile||cfg.profile||'william').toLowerCase(); return v.includes('jasper')||v.includes('squishy')?'jasper':'william';}
+  function ourspaceSessionToken(){try{return (JSON.parse(localStorage.getItem('ourspace.session.v2')||'null')||{}).sessionToken||'';}catch(_err){return '';}}
+  function receiptTargetProfile(){return jsonProfile()==='william'?'jasper':'william';}
+  function receiptTargetEmail(){return jsonProfile()==='william'?'jasperfaye99@gmail.com':'williamsaville92@gmail.com';}
+  async function fetchJson(path){const clean=String(path||'').replace(/^json\//,''); const res=await fetch(`json/${clean}`, {cache:'no-store'}); if(!res.ok) throw new Error(clean); return await res.json();}
   async function loadAll(){
-    const p=cfg.dataProfile;
-    const names={calendar:`${p}_cal.json`,schedule:`${p}_sched.json`,tasks:`${p}_tasks.json`,store:`${p}_store.json`,hobby:`${p}_hobby.json`,games:'games.json',gameIds:'game_ids.json',gameRules:'game_rules.json',dbtSkills:'dbt_skills.json',dbtWs:'dbt_ws.json',dbtAll:'dbt_all.json'};
+    const p=jsonProfile();
+    const names={calendar:`${p}/${p}_calendar.json`,schedule:`${p}/${p}_schedule.json`,tasks:`${p}/${p}_tasks.json`,store:`${p}/${p}_store.json`,hobby:`${p}/${p}_hobby.json`,games:'games/games_manifest_merged.json',gameIds:'games/allowed_game_ids_merged.json',gameRules:'games/game_reward_rules_merged.json',dbtSkills:'dbt/dbt_skills_catalog.json',dbtWs:'dbt/dbt_worksheets_catalog.json',dbtAll:'dbt/dbt_combined_catalog.json'};
     await Promise.all(Object.entries(names).map(async ([key,name])=>{try{state.data[key]=await fetchJson(name)}catch(e){state.data[key]=null; console.warn('Could not load', name, e);}}));
     state.cart=loadLS(storeKey('cart'), []);
     state.selectedAisle=loadLS(storeKey('selectedAisle'), '');
@@ -405,7 +532,7 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
   function renderAll(){renderHome(); renderCalendar(); renderSchedule(); renderDbtChat(); renderDiary(); renderJournaling(); renderGames(); renderSerotonin(); renderStore();}
   function renderHome(){
     const hobbies=state.data.hobby || {};
-    const profileMsg = cfg.homeBreathingMessage || ("You are a loved chaos gremlin, it's ok to be tired and burned out, you've got this!" && cfg.dataProfile==='squishy' ? "You are a loved chaos gremlin, it's ok to be tired and burned out, you've got this!" : "You don't need to earn the right to breathe, it's ok to just exist as you.");
+    const profileMsg = cfg.homeBreathingMessage || ("You are a loved chaos gremlin, it's ok to be tired and burned out, you've got this!" && jsonProfile()==='jasper' ? "You are a loved chaos gremlin, it's ok to be tired and burned out, you've got this!" : "You don't need to earn the right to breathe, it's ok to just exist as you.");
     const care=[...(hobbies.selfCare||[]), ...(hobbies.hobbies||[])].slice(0,8);
     $('#homeAbout').innerHTML=`<div class="breathing-note"><strong>${esc(profileMsg)}</strong><br>Take one breath before choosing any app. This home page is intentionally not a task board.</div>`;
     $('#homeTaskSummary').innerHTML=`<div class="breathing-bubbles"><button class="breathing-bubble" type="button" onclick="location.hash='chatbot'">🐈‍⬛ Talk to Onyx</button><button class="breathing-bubble" type="button" onclick="location.hash='chatbot'; setTimeout(()=>document.querySelector('#os-message-field')?.focus(),400)">✉️ Open Messenger</button><button class="breathing-bubble" type="button" onclick="location.hash='serotonin'">✨ Serotonin</button><button class="breathing-bubble" type="button" onclick="location.hash='mobile-games'">🎮 Regulating game</button></div>`;
@@ -469,9 +596,9 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
   }
   $$('.range-line input[type=range]').forEach(r=>{const out=r.closest('.range-line').querySelector('output'); const sync=()=>out.value=r.value; r.addEventListener('input',sync); sync();});
   function collectDiary(){const f=$('#diaryForm'); const fd=new FormData(f); const emotions=fd.getAll('emotion').join(', '); const skills=fd.getAll('skill').join(', '); return `DBT Daily Card - ${cfg.ownerName}\nDate: ${fd.get('date')||new Date().toLocaleDateString()}\nMood: ${fd.get('mood')}\nAnxiety: ${fd.get('anxiety')}\nPain/Body: ${fd.get('body')}\nEmotions: ${emotions}\nSkills: ${skills}\nUrges/Targets: ${fd.get('urges')||''}\nNotes: ${fd.get('notes')||''}\nNext kind action: ${fd.get('next')||''}\n`;}
-  $('#diaryTxt').addEventListener('click',()=>downloadText(`${cfg.dataProfile}-dbt-diary-card.txt`, collectDiary()));
-  $('#diaryPdf').addEventListener('click',()=>download(`${cfg.dataProfile}-dbt-diary-card.pdf`, makePdfBlob('DBT Daily Card', collectDiary())));
-  $('#diaryPng').addEventListener('click',()=>downloadPng(`${cfg.dataProfile}-dbt-diary-card.png`, 'DBT Daily Card', collectDiary()));
+  $('#diaryTxt').addEventListener('click',()=>downloadText(`${jsonProfile()}-dbt-diary-card.txt`, collectDiary()));
+  $('#diaryPdf').addEventListener('click',()=>download(`${jsonProfile()}-dbt-diary-card.pdf`, makePdfBlob('DBT Daily Card', collectDiary())));
+  $('#diaryPng').addEventListener('click',()=>downloadPng(`${jsonProfile()}-dbt-diary-card.png`, 'DBT Daily Card', collectDiary()));
   function renderJournaling(){
     const worksheets=state.data.dbtWs?.worksheets||[]; const handouts=state.data.dbtSkills?.handouts||[];
     $('#worksheetSelect').innerHTML='<option value="">Choose worksheet...</option>'+worksheets.map(w=>`<option value="${esc(w.id)}">${esc(w.title_full||w.title)}</option>`).join('');
@@ -482,9 +609,9 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
   function renderWorksheet(){const id=$('#worksheetSelect').value; const w=(state.data.dbtWs?.worksheets||[]).find(x=>x.id===id); const box=$('#worksheetFields'); if(!w){box.innerHTML='<div class="empty-state">Choose a DBT worksheet when you want structure; blank is allowed until then.</div>';return;} const fields=w.worksheet_schema?.fields||[]; box.innerHTML=`<div class="notice"><strong>${esc(w.title_full||w.title)}</strong><br>${esc(w.summary||'')}</div>`+fields.map(f=>`<label class="field">${esc(f.name.replaceAll('_',' '))}<textarea data-ws-field="${esc(f.name)}" placeholder="${esc(f.description||'')}"></textarea></label>`).join('');}
   function renderHandout(){const id=$('#handoutSelect').value; const h=(state.data.dbtSkills?.handouts||[]).find(x=>x.id===id); $('#handoutView').innerHTML=h?`<div class="data-card"><h3>${esc(h.title_full||h.title)}</h3><p>${esc(h.summary||'')}</p><div class="meta">${esc(h.module||'DBT')} · ${(h.keywords||[]).slice(0,8).map(esc).join(' · ')}</div></div>`:'<div class="empty-state">Choose a DBT handout when you want a skill reminder; you do not have to do all of them.</div>';}
   function collectJournal(){const parts=[`DBT Journal - ${cfg.ownerName}`,`Date: ${new Date().toLocaleString()}`,'',`Entry:\n${$('#journalText').value}`]; const ws=$('#worksheetSelect').value; if(ws){parts.push('\nWorksheet fields:'); $$('[data-ws-field]').forEach(f=>parts.push(`${f.dataset.wsField}: ${f.value}`));} const h=$('#handoutSelect').selectedOptions[0]?.textContent; if(h) parts.push(`\nHandout: ${h}`); return parts.join('\n');}
-  $('#journalTxt').addEventListener('click',()=>downloadText(`${cfg.dataProfile}-dbt-journal.txt`, collectJournal()));
-  $('#journalPdf').addEventListener('click',()=>download(`${cfg.dataProfile}-dbt-journal.pdf`, makePdfBlob('DBT Journal', collectJournal())));
-  $('#journalDocx').addEventListener('click',()=>download(`${cfg.dataProfile}-dbt-journal.docx`, makeDocxBlob(collectJournal())));
+  $('#journalTxt').addEventListener('click',()=>downloadText(`${jsonProfile()}-dbt-journal.txt`, collectJournal()));
+  $('#journalPdf').addEventListener('click',()=>download(`${jsonProfile()}-dbt-journal.pdf`, makePdfBlob('DBT Journal', collectJournal())));
+  $('#journalDocx').addEventListener('click',()=>download(`${jsonProfile()}-dbt-journal.docx`, makeDocxBlob(collectJournal())));
   $('#journalSave').addEventListener('click',()=>{const entries=loadLS(storeKey('journalEntries'),[]); entries.push({date:new Date().toISOString(),text:collectJournal()}); saveLS(storeKey('journalEntries'),entries); alert('Journal saved locally in this browser.');});
   function renderGames(){const games=state.data.games?.games||[]; $('#gameSelect').innerHTML='<option value="">Choose a game...</option>'+games.map(g=>`<option value="${esc(g.id)}">${esc(g.name)}</option>`).join(''); if(state.currentGame){$('#gameSelect').value=state.currentGame.id; loadGame(state.currentGame.id,false);}}
   $('#gameSelect').addEventListener('change', e=>loadGame(e.target.value,true));
@@ -511,7 +638,7 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
   document.addEventListener('click', e=>{const minus=e.target.closest('[data-cart-minus]'), plus=e.target.closest('[data-cart-plus]'), rem=e.target.closest('[data-cart-remove]'); if(minus){let l=state.cart[Number(minus.dataset.cartMinus)]; if(l){l.qty--; if(l.qty<=0)state.cart.splice(Number(minus.dataset.cartMinus),1);}} if(plus){let l=state.cart[Number(plus.dataset.cartPlus)]; if(l)l.qty++;} if(rem){state.cart.splice(Number(rem.dataset.cartRemove),1);} if(minus||plus||rem){saveLS(storeKey('cart'),state.cart); renderCart();}});
   $('#clearCart').addEventListener('click',()=>{state.cart=[];saveLS(storeKey('cart'),state.cart);renderCart();});
   function ensureStoreStatus(){let node=$('#storeBackendStatus'); if(!node){node=document.createElement('p'); node.id='storeBackendStatus'; node.className='notice'; node.style.marginTop='8px'; const panel=$('.cart-panel')||$('#checkoutBtn')?.parentElement; if(panel)panel.appendChild(node);} return node;}
-  async function submitStoreCheckout(){const status=ensureStoreStatus(); const total=state.cart.reduce((a,l)=>a+l.qty*Number(l.item.priceCopper||0),0); if(!state.cart.length){status.textContent='Add at least one reward before checkout.'; return;} const rewardProvider=state.data.store?.rewardProvidedBy||cfg.rewardProvidedBy; const purchase={action:'recordPurchase', source:'ourspace_store_module_gas', app:cfg.storeName, storeName:cfg.storeName, purchaserProfile:cfg.dataProfile, pageOwner:cfg.ownerName, rewardProvidedBy:rewardProvider, totalCostCopper:total, totalCostDisplay:`${total} copper`, note:$('#checkoutNote').value||'', items:state.cart.map(l=>({id:l.item.id||l.id, name:l.item.name, aisle:l.item.aisle, quantity:l.qty, unitCostCopper:Number(l.item.priceCopper||0), totalCostCopper:l.qty*Number(l.item.priceCopper||0)})), createdAt:new Date().toISOString()}; const txt=[`${cfg.storeName} checkout`, `Owner: ${cfg.ownerName}`, `Reward provided by: ${rewardProvider}`, `Total: ${total} copper`, '', ...purchase.items.map(l=>`${l.quantity} x ${l.name} = ${l.totalCostCopper} copper`), '', `Note: ${purchase.note}`].join('\n'); purchase.checkoutText=txt; const backendUrl=window.OURSPACE_BACKEND_URL||'https://script.google.com/macros/s/AKfycbxrm8lbJFGe62K_3xOTUQYvr2D7AKXLCrR8LkR6s14Bwd3k_qkaff9QDRs6KeGhHPaoSg/exec'; const btn=$('#checkoutBtn'); btn.disabled=true; status.textContent='Submitting purchase request to Google Apps Script…'; try{const response=await fetch(backendUrl,{method:'POST',mode:'cors',credentials:'omit',headers:{'Content-Type':'text/plain;charset=utf-8','Accept':'application/json'},body:JSON.stringify(purchase)}); const raw=await response.text(); let result; try{result=JSON.parse(raw);}catch(_err){throw new Error('Backend returned non-JSON text: '+raw.slice(0,160));} if(!response.ok||result.ok===false)throw new Error(result.error?.message||result.error||result.message||'Backend rejected purchase.'); state.cart=[]; saveLS(storeKey('cart'),state.cart); renderCart(); $('#checkoutNote').value=''; status.textContent='Purchase request sent to the main backend.'; window.dispatchEvent(new CustomEvent('ourspace:store-purchase',{detail:{...purchase, backendResult:result}}));}catch(err){const queue=loadLS(storeKey('checkoutQueue'),[]); queue.push({...purchase, error:String(err&&err.message||err), queuedAt:new Date().toISOString()}); saveLS(storeKey('checkoutQueue'),queue.slice(-50)); status.textContent='Backend did not accept the purchase, so a backup TXT downloaded and the request was queued locally: '+(err&&err.message?err.message:err); downloadText(`${cfg.dataProfile}-store-cart-backup.txt`,txt);}finally{btn.disabled=false;}}
+  async function submitStoreCheckout(){const status=ensureStoreStatus(); const total=state.cart.reduce((a,l)=>a+l.qty*Number(l.item.priceCopper||0),0); if(!state.cart.length){status.textContent='Add at least one reward before checkout.'; return;} const rewardProvider=state.data.store?.rewardProvidedBy||cfg.rewardProvidedBy; const purchase={action:'recordPurchase', sessionToken:ourspaceSessionToken(), source:'ourspace_store_module_gas', app:cfg.storeName, storeName:cfg.storeName, profileKey:jsonProfile(), purchaserProfile:jsonProfile(), purchaserName:cfg.ownerName, receiptToProfile:receiptTargetProfile(), receiptToEmail:receiptTargetEmail(), pageOwner:cfg.ownerName, rewardProvidedBy:rewardProvider, totalCostCopper:total, totalCopper:total, totalCostDisplay:`${total} copper`, note:$('#checkoutNote').value||'', items:state.cart.map(l=>({id:l.item.id||l.id, name:l.item.name, aisle:l.item.aisle, quantity:l.qty, unitCostCopper:Number(l.item.priceCopper||0), totalCostCopper:l.qty*Number(l.item.priceCopper||0)})), createdAt:new Date().toISOString()}; const txt=[`${cfg.storeName} checkout`, `Owner: ${cfg.ownerName}`, `Reward provided by: ${rewardProvider}`, `Receipt emailed to: ${receiptTargetProfile()}`, `Total: ${total} copper`, '', ...purchase.items.map(l=>`${l.quantity} x ${l.name} = ${l.totalCostCopper} copper`), '', `Note: ${purchase.note}`].join('\n'); purchase.checkoutText=txt; const backendUrl=window.OURSPACE_BACKEND_URL||'https://script.google.com/macros/library/d/1Ld-KR6PrFPTBs1qsdAsZ55kBUa9QRYIkLgidknvgJ-2PLtujf9D-Mt6A/1'; const btn=$('#checkoutBtn'); btn.disabled=true; status.textContent='Submitting purchase request to Google Apps Script…'; try{const response=await fetch(backendUrl,{method:'POST',mode:'cors',credentials:'omit',headers:{'Content-Type':'text/plain;charset=utf-8','Accept':'application/json'},body:JSON.stringify(purchase)}); const raw=await response.text(); let result; try{result=JSON.parse(raw);}catch(_err){throw new Error('Backend returned non-JSON text: '+raw.slice(0,160));} if(!response.ok||result.ok===false)throw new Error(result.error?.message||result.error||result.message||'Backend rejected purchase.'); state.cart=[]; saveLS(storeKey('cart'),state.cart); renderCart(); $('#checkoutNote').value=''; status.textContent='Purchase request sent to the main backend and receipt routed to '+receiptTargetProfile()+'.'; window.dispatchEvent(new CustomEvent('ourspace:store-purchase',{detail:{...purchase, backendResult:result}}));}catch(err){const queue=loadLS(storeKey('checkoutQueue'),[]); queue.push({...purchase, error:String(err&&err.message||err), queuedAt:new Date().toISOString()}); saveLS(storeKey('checkoutQueue'),queue.slice(-50)); status.textContent='Backend did not accept the purchase, so a backup TXT downloaded and the request was queued locally: '+(err&&err.message?err.message:err); downloadText(`${jsonProfile()}-store-cart-backup.txt`,txt);}finally{btn.disabled=false;}}
   $('#checkoutBtn').addEventListener('click',submitStoreCheckout);
   function wrapLines(text, len=74){return text.split(/\n/).flatMap(line=>{const words=line.split(/\s+/); const out=[]; let cur=''; words.forEach(w=>{if((cur+' '+w).trim().length>len){out.push(cur); cur=w;} else cur=(cur+' '+w).trim();}); out.push(cur); return out;});}
   function pdfEsc(s){return text(s).replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)');}
@@ -527,23 +654,20 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
   initNav(); initModules(); loadAll().then(()=>showPage(location.hash?.replace('#','')||'home'));
 })();
 </script>
-
-
 <script src="vendor/jeeliz/jeelizFaceFilter.js"></script>
-
 <script src="js/ourspace-module-workshop.js"></script>
 <script src="js/ourspace-backend-bridge.js"></script>
 <script src="js/ourspace-messenger.js"></script>
-<script src="onyx/onyx-widget.js" data-onyx-profile="momma"></script>
+<script data-onyx-profile="momma" src="onyx/onyx-widget.js"></script>
 <script>
 (function(){
-  const MAIN_BACKEND = "https://script.google.com/macros/s/AKfycbxrm8lbJFGe62K_3xOTUQYvr2D7AKXLCrR8LkR6s14Bwd3k_qkaff9QDRs6KeGhHPaoSg/exec";
-  const ONYX_FULL_BACKEND = "https://script.google.com/macros/s/AKfycbwy_5_ZEsSmN5WqcuLtxfPFz1ITyz6IHxPnpEBPIVOtsa7k6Rb60O-u6gJdPNF_tjaR/exec";
-  const ONYX_ALERTS_BACKEND = ONYX_FULL_BACKEND;
+  const MAIN_BACKEND = "https://script.google.com/macros/library/d/1Ld-KR6PrFPTBs1qsdAsZ55kBUa9QRYIkLgidknvgJ-2PLtujf9D-Mt6A/1";
+  const ONYX_FULL_BACKEND = "https://script.google.com/macros/library/d/1OtngPSoPXDpeYa8FDD9bb7rU_0mvFvD_23niUCrfy09t5Mbk0cy0kV5l/1";
+  const ONYX_ALERTS_BACKEND = "https://script.google.com/macros/library/d/1OtngPSoPXDpeYa8FDD9bb7rU_0mvFvD_23niUCrfy09t5Mbk0cy0kV5l/1";
   window.OURSPACE_BACKEND_URL = MAIN_BACKEND;
   window.OURSPACE_ONYX_ALERTS_BACKEND_URL = ONYX_ALERTS_BACKEND;
   window.OURSPACE_ONYX_FULL_BACKEND_URL = ONYX_FULL_BACKEND;
-  window.ONYX_BACKEND_CONFIG = Object.assign({ mainBackendUrl: MAIN_BACKEND, onyxFullBackendUrl: ONYX_FULL_BACKEND, directAppsScript: true, staticBase: "onyx/" }, window.ONYX_BACKEND_CONFIG || {});
+  window.ONYX_BACKEND_CONFIG = Object.assign({ staticBase: "onyx/", staticFallbackBase: "onyx/static/" }, window.ONYX_BACKEND_CONFIG || {}, { mainBackendUrl: MAIN_BACKEND, onyxFullBackendUrl: ONYX_FULL_BACKEND, onyxAlertsBackendUrl: ONYX_ALERTS_BACKEND, directAppsScript: true });
   function startMessenger(){
     const mount = document.querySelector('#ourspace-messenger-root');
     if(!mount || !window.OurSpaceMessenger) return;
@@ -557,8 +681,8 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
       mainBackendUrl: MAIN_BACKEND,
       onyxAlertsBackendUrl: ONYX_ALERTS_BACKEND,
       users: [
-        { id:'jasper', label:'Jasper / Momma', avatar:'🌸' },
-        { id:'william', label:'William / Papa', avatar:'🦖' },
+        { id:'jasper', label:'Jasper / Squishy', avatar:'🌸' },
+        { id:'william', label:'William / Dino', avatar:'🦖' },
         { id:'onyx', label:'Onyx alerts', avatar:'🐈‍⬛', system:true }
       ]
     });
@@ -566,9 +690,91 @@ body{background-color:#fff1cc;} .retro-wrap{border-color:#ff9d48;}
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startMessenger); else startMessenger();
 })();
 </script>
-
-
 <script src="js/ourspace-gas-app.js"></script>
 <script src="js/ourspace-pwa.js"></script>
+
+<script id="ourspace-game-hub-embedded-script">
+(function(){
+  const LEDGER_KEY = 'ourspace.currency.ledger.v1';
+  function fallbackFormat(total){
+    total = Math.max(0, Math.floor(Number(total) || 0));
+    const platinum = Math.floor(total / 1000);
+    let rem = total % 1000;
+    const gold = Math.floor(rem / 100);
+    rem %= 100;
+    const silver = Math.floor(rem / 10);
+    const copper = rem % 10;
+    const parts = [];
+    if (platinum) parts.push(`${platinum}P`);
+    if (gold) parts.push(`${gold}G`);
+    if (silver) parts.push(`${silver}S`);
+    if (copper || !parts.length) parts.push(`${copper}C`);
+    return parts.join(' ');
+  }
+  function fmt(total){
+    try {
+      if (window.OurSpaceCurrency && typeof window.OurSpaceCurrency.formatCurrency === 'function') {
+        return window.OurSpaceCurrency.formatCurrency(total || 0);
+      }
+    } catch(err) {}
+    return fallbackFormat(total);
+  }
+  function loadLedger(){
+    try {
+      if (window.OurSpaceCurrency && typeof window.OurSpaceCurrency.loadLedger === 'function') {
+        return window.OurSpaceCurrency.loadLedger() || { totalCopper: 0, history: [] };
+      }
+    } catch(err) {}
+    try {
+      return JSON.parse(localStorage.getItem(LEDGER_KEY) || '{"totalCopper":0,"history":[]}') || { totalCopper: 0, history: [] };
+    } catch(err) {
+      return { totalCopper: 0, history: [] };
+    }
+  }
+  function esc(value){
+    return String(value ?? '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+  }
+  function renderLedger(){
+    const ledger = loadLedger();
+    document.querySelectorAll('[data-ourspace-ledger-balance]').forEach(el => {
+      el.textContent = `Balance: ${fmt(ledger.totalCopper || 0)}`;
+    });
+    const rows = (ledger.history || []).slice(0, 100).map(entry => {
+      const title = esc(entry.gameName || entry.label || 'Reward');
+      const meta = esc([entry.label || entry.eventId || '', entry.at || ''].filter(Boolean).join(' · '));
+      const display = esc(entry.display || fmt(entry.totalCopper || 0));
+      return `<div class="ourspace-game-ledger-row"><span><strong>${title}</strong><br><small>${meta}</small></span><span class="currency">+${display}</span></div>`;
+    }).join('');
+    document.querySelectorAll('[data-ourspace-ledger-history]').forEach(el => {
+      el.innerHTML = rows || '<p class="helper">No rewards logged yet.</p>';
+    });
+  }
+  function exportLedger(){
+    const blob = new Blob([JSON.stringify(loadLedger(), null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'ourspace-currency-ledger.json';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+  function clearLedger(){
+    if (!confirm('Clear the shared currency ledger on this browser?')) return;
+    localStorage.removeItem(LEDGER_KEY);
+    renderLedger();
+    window.dispatchEvent(new CustomEvent('ourspace:currency-updated'));
+  }
+  function initGameHubLedger(){
+    document.querySelectorAll('[data-ourspace-ledger-export]').forEach(btn => btn.addEventListener('click', exportLedger));
+    document.querySelectorAll('[data-ourspace-ledger-clear]').forEach(btn => btn.addEventListener('click', clearLedger));
+    renderLedger();
+    window.addEventListener('ourspace:currency-updated', renderLedger);
+    window.addEventListener('storage', event => { if (event.key === LEDGER_KEY) renderLedger(); });
+    setInterval(renderLedger, 1500);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initGameHubLedger); else initGameHubLedger();
+})();
+</script>
+
+<script src="js/ourspace-repair.js"></script>
 </body>
 </html>
