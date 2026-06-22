@@ -914,7 +914,7 @@
   function vttTime(ms) { const t = Math.max(0, Math.floor(ms)); const h = Math.floor(t / 3600000); const m = Math.floor((t % 3600000) / 60000); const s = Math.floor((t % 60000) / 1000); const z = t % 1000; return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(z).padStart(3, '0')}`; }
 
 
-    function setAuthPasswordVisible(input, button) {
+  function setAuthPasswordVisible(input, button) {
     if (!input || !button) return;
     const showing = input.type === 'text';
     input.type = showing ? 'password' : 'text';
@@ -923,20 +923,73 @@
     input.focus();
   }
 
+  function cleanIdentifier(value) {
+    return String(value || '').trim();
+  }
+
+  function normalizePhone(value) {
+    return String(value || '').replace(/[^0-9]/g, '');
+  }
+
+  function isEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
+  }
+
+  function parseBackupEmails(value) {
+    return [...new Set(String(value || '').split(/[\s,;]+/).map(x => x.trim().toLowerCase()).filter(Boolean))].filter(isEmail);
+  }
+
+  function normalizeAuthSession(result, fallback = {}) {
+    const data = result?.data || result || {};
+    const raw = data.session || data.account || data.user || data.profile || data;
+    const session = {
+      ...fallback,
+      ...raw,
+      sessionToken: raw.sessionToken || raw.token || data.sessionToken || data.token || fallback.sessionToken || fallback.token || '',
+      token: raw.token || raw.sessionToken || data.token || data.sessionToken || fallback.token || fallback.sessionToken || '',
+      username: raw.username || data.username || fallback.username || '',
+      displayName: raw.displayName || raw.name || data.displayName || data.name || fallback.displayName || fallback.name || fallback.username || 'Friend',
+      accountId: raw.accountId || raw.userId || data.accountId || data.userId || fallback.accountId || fallback.userId || '',
+      mustChangePassword: Boolean(raw.mustChangePassword || raw.requiresPasswordChange || data.mustChangePassword || data.requiresPasswordChange || fallback.mustChangePassword)
+    };
+    return session;
+  }
+
+  function saveAuthSession(session) {
+    window.SocialSharedBackend?.setSession?.(session);
+    if (session.username) localStorage.setItem('socials.username', session.username);
+    if (session.displayName) localStorage.setItem('socials.name', session.displayName);
+  }
+
+  function setAppLocked(locked) {
+    $('#newPasswordGate')?.toggleAttribute('hidden', !locked);
+    $('.topbar')?.toggleAttribute('hidden', locked);
+    $('.tabs')?.toggleAttribute('hidden', locked);
+    $('.shell')?.toggleAttribute('hidden', locked);
+  }
+
   function enterSignedInApp(session = {}) {
-    const name = session.displayName || session.name || localStorage.getItem('socials.name') || $('#usernameInput')?.value.trim() || 'Friend';
+    const name = session.displayName || session.name || session.username || localStorage.getItem('socials.name') || $('#signinIdentifierInput')?.value.trim() || 'Friend';
     $('#signinShell').hidden = true;
     $('#appShell').hidden = false;
     document.body.classList.add('signed-in');
     $('#signedInMessage').textContent = `Signed in as ${name}.`;
     $('#logoutBackend')?.removeAttribute('hidden');
     localStorage.setItem('socials.name', name);
+    saveAuthSession({ ...session, displayName: name });
+    if (session.mustChangePassword) {
+      setAppLocked(true);
+      $('#gatePasswordInput')?.focus();
+    } else {
+      setAppLocked(false);
+    }
   }
 
   function showSignInShell(message = '') {
     $('#appShell').hidden = true;
     $('#signinShell').hidden = false;
     document.body.classList.remove('signed-in');
+    setAppLocked(false);
     if (message) $('#statusMessage').textContent = message;
   }
 
@@ -946,45 +999,233 @@
     return payload;
   }
 
+  async function backendAction(action, payload = {}, options = {}) {
+    if (!window.SocialSharedBackend?.request) throw new Error('Backend is not available.');
+    return window.SocialSharedBackend.request(action, payload, options);
+  }
+
+  async function signInWithNewBackend(identifier, password) {
+    const payload = { identifier, username: identifier, password, userAgent: navigator.userAgent };
+    const result = await backendAction('sign_in', payload);
+    const session = normalizeAuthSession(result, { username: identifier, displayName: identifier });
+    saveAuthSession(session);
+    return session;
+  }
+
+  async function signInWithLegacyBackend(identifier, password) {
+    const session = await window.SocialSharedBackend.login(identifier, password, identifier);
+    return normalizeAuthSession(session, { username: identifier, displayName: identifier });
+  }
+
+  async function createWithNewBackend(details) {
+    const result = await backendAction('create_account', { ...details, userAgent: navigator.userAgent });
+    const session = normalizeAuthSession(result, { username: details.username, displayName: details.username });
+    saveAuthSession(session);
+    return session;
+  }
+
+  async function createWithLegacyBackend(details) {
+    const session = await window.SocialSharedBackend.register(details.username, details.password, details.username);
+    return normalizeAuthSession(session, { username: details.username, displayName: details.username });
+  }
+
+  async function handleSignIn() {
+    const identifier = cleanIdentifier($('#signinIdentifierInput')?.value);
+    const password = $('#passwordInput')?.value || '';
+
+    if (!identifier || !password) {
+      $('#statusMessage').textContent = 'Enter your login and password.';
+      return;
+    }
+
+    $('#statusMessage').textContent = 'Signing in...';
+    try {
+      let session;
+      try {
+        session = await signInWithNewBackend(identifier, password);
+      } catch (newError) {
+        session = await signInWithLegacyBackend(identifier, password);
+      }
+      $('#statusMessage').textContent = session.mustChangePassword ? 'Temporary code accepted.' : 'Signed in.';
+      enterSignedInApp(session);
+      await loadState().catch(err => toast(err.message));
+      await window.SocialSharedBackend.request('heartbeat', { name: session.displayName || identifier, status: 'Around' }).catch(() => {});
+    } catch (error) {
+      $('#statusMessage').textContent = error.message || 'Sign in failed.';
+    }
+  }
+
+
+  async function handlePostCreateSignIn(username, password) {
+    try {
+      return await signInWithNewBackend(username, password);
+    } catch (newError) {
+      return signInWithLegacyBackend(username, password);
+    }
+  }
+
+  async function handleCreateAccount() {
+    const email = cleanIdentifier($('#createEmailInput')?.value).toLowerCase();
+    const phone = normalizePhone($('#createPhoneInput')?.value);
+    const username = cleanIdentifier($('#createUsernameInput')?.value);
+    const password = $('#createPasswordInput')?.value || '';
+    const backupEmails = parseBackupEmails($('#createBackupEmailsInput')?.value);
+
+    if (!email && !phone) {
+      $('#createMessage').textContent = 'Add an email or phone number.';
+      return;
+    }
+    if (email && !isEmail(email)) {
+      $('#createMessage').textContent = 'Enter a valid email.';
+      return;
+    }
+    if (!username || !password) {
+      $('#createMessage').textContent = 'Enter a username and password.';
+      return;
+    }
+
+    const details = { email, phone, username, password, backupEmails };
+    $('#createMessage').textContent = 'Creating account...';
+    try {
+      let session;
+      try {
+        session = await createWithNewBackend(details);
+      } catch (newError) {
+        session = await createWithLegacyBackend(details);
+      }
+      if (!session.sessionToken && !session.token) {
+        session = await handlePostCreateSignIn(username, password).catch(() => session);
+      }
+      $('#createMessage').textContent = 'Account created.';
+      enterSignedInApp(session);
+      await loadState().catch(err => toast(err.message));
+      await window.SocialSharedBackend.request('heartbeat', { name: session.displayName || username, status: 'Around' }).catch(() => {});
+    } catch (error) {
+      $('#createMessage').textContent = error.message || 'Account creation failed.';
+    }
+  }
+
+  async function requestReset(delivery) {
+    const identifier = cleanIdentifier($('#resetIdentifierInput')?.value || $('#signinIdentifierInput')?.value);
+    if (!identifier) {
+      $('#resetMessage').textContent = 'Enter the account lookup first.';
+      return;
+    }
+    $('#resetMessage').textContent = 'Sending reset request...';
+    try {
+      await backendAction('request_password_reset', { identifier, delivery });
+      $('#resetMessage').textContent = 'Reset request sent if that account can receive it.';
+    } catch (error) {
+      $('#resetMessage').textContent = 'Reset could not be sent from this page.';
+    }
+  }
+
+  async function tellDinoCantLogin() {
+    const identifier = cleanIdentifier($('#resetIdentifierInput')?.value || $('#signinIdentifierInput')?.value);
+    if (!identifier) {
+      $('#resetMessage').textContent = 'Enter the account lookup first.';
+      return;
+    }
+    $('#resetMessage').textContent = 'Sending help request...';
+    try {
+      await backendAction('tell_dino_cant_login', { identifier });
+      $('#resetMessage').textContent = 'Help request sent.';
+    } catch (error) {
+      $('#resetMessage').textContent = 'Help request could not be sent from this page.';
+    }
+  }
+
+  function useCodeAsTemporaryPassword() {
+    const identifier = cleanIdentifier($('#resetIdentifierInput')?.value || $('#signinIdentifierInput')?.value);
+    const code = cleanIdentifier($('#resetCodeInput')?.value);
+    if (!identifier || !code) {
+      $('#resetMessage').textContent = 'Enter the account lookup and reset code.';
+      return;
+    }
+    $('#signinIdentifierInput').value = identifier;
+    $('#passwordInput').value = code;
+    $('#forgotPanel').hidden = true;
+    $('#statusMessage').textContent = 'Code added. Press Sign In.';
+  }
+
+  async function saveNewPassword() {
+    const session = window.SocialSharedBackend?.getSession?.() || {};
+    const newPassword = $('#gatePasswordInput')?.value || '';
+    const backupEmails = parseBackupEmails($('#gateBackupEmailsInput')?.value);
+    if (!newPassword || newPassword.length < 4) {
+      $('#gateMessage').textContent = 'Enter a new password.';
+      return;
+    }
+    if (!backupEmails.length) {
+      $('#gateMessage').textContent = 'Add at least one backup email.';
+      return;
+    }
+
+    $('#gateMessage').textContent = 'Saving...';
+    try {
+      const result = await backendAction('update_password', {
+        accountId: session.accountId || session.userId || '',
+        username: session.username || '',
+        newPassword,
+        backupEmails
+      });
+      const updated = normalizeAuthSession(result, { ...session, mustChangePassword: false, backupEmails });
+      updated.mustChangePassword = false;
+      saveAuthSession(updated);
+      $('#gatePasswordInput').value = '';
+      $('#gateMessage').textContent = 'Saved.';
+      enterSignedInApp(updated);
+      await loadState().catch(err => toast(err.message));
+    } catch (error) {
+      $('#gateMessage').textContent = 'New password could not be saved.';
+    }
+  }
+
   async function initSharedBackendUI() {
     window.SocialSharedBackend?.applyDynamicManifest?.();
+
     const install = $('#installProjectApp');
     install?.addEventListener('click', async () => {
-      const projectName = prompt('Project/app icon name:', window.SocialSharedBackend?.getProjectName?.() || document.title) || '';
+      const projectName = prompt('App icon name:', window.SocialSharedBackend?.getProjectName?.() || document.title) || '';
       if (projectName.trim()) window.SocialSharedBackend?.setProject(projectName.trim());
       await window.SocialSharedBackend?.promptInstall?.().catch(err => toast(err.message));
     });
-    $('#backendSettings')?.addEventListener('click', () => {
-      const current = window.SocialSharedBackend?.getBackendUrl?.() || window.SocialSharedBackend?.getDefaultBackendUrl?.() || '';
-      const url = prompt('Shared backend URL for all projects. Leave unchanged to keep the deployed backend. Type LOCAL to disable only for this browser:', current);
-      if (url === null) return;
-      if (url.trim().toLowerCase() === 'local') window.SocialSharedBackend?.disableBackend?.();
-      else if (!url.trim()) window.SocialSharedBackend?.useDefaultBackend?.();
-      else window.SocialSharedBackend?.setBackendUrl?.(url);
-      location.reload();
-    });
 
     $('#togglePassword')?.addEventListener('click', () => setAuthPasswordVisible($('#passwordInput'), $('#togglePassword')));
-    $('#toggleResetPassword')?.addEventListener('click', () => setAuthPasswordVisible($('#resetPasswordInput'), $('#toggleResetPassword')));
+    $('#toggleCreatePassword')?.addEventListener('click', () => setAuthPasswordVisible($('#createPasswordInput'), $('#toggleCreatePassword')));
+    $('#toggleGatePassword')?.addEventListener('click', () => setAuthPasswordVisible($('#gatePasswordInput'), $('#toggleGatePassword')));
+
+    $('#showCreateButton')?.addEventListener('click', () => {
+      $('#createAccountPanel').hidden = !$('#createAccountPanel').hidden;
+      $('#createMessage').textContent = '';
+      if (!$('#createAccountPanel').hidden) $('#createUsernameInput').focus();
+    });
+
     $('#forgotButton')?.addEventListener('click', () => {
       $('#forgotPanel').hidden = !$('#forgotPanel').hidden;
       $('#resetMessage').textContent = '';
-      if (!$('#forgotPanel').hidden) $('#resetEmailInput').focus();
+      if (!$('#forgotPanel').hidden) $('#resetIdentifierInput').focus();
     });
-    $('#resetPasswordButton')?.addEventListener('click', () => {
-      const email = $('#resetEmailInput').value.trim().toLowerCase();
-      const newPassword = $('#resetPasswordInput').value;
-      if (!email || !newPassword) {
-        $('#resetMessage').textContent = 'Enter the email and the new password you want to remember.';
-        return;
-      }
-      localPasswordHelp(email, newPassword);
-      $('#resetMessage').textContent = 'Saved a browser-only reminder. The deployed backend password was not changed.';
+
+    $('#signinForm')?.addEventListener('submit', async event => {
+      event.preventDefault();
+      await handleSignIn();
+    }, { once: false });
+
+    $('#createAccountButton')?.addEventListener('click', handleCreateAccount);
+    $('#sendEmailResetButton')?.addEventListener('click', () => requestReset('email'));
+    $('#sendPhoneResetButton')?.addEventListener('click', () => requestReset('phone'));
+    $('#tellDinoButton')?.addEventListener('click', tellDinoCantLogin);
+    $('#useCodeButton')?.addEventListener('click', useCodeAsTemporaryPassword);
+    $('#saveNewPasswordButton')?.addEventListener('click', saveNewPassword);
+    $('#gateSignOutButton')?.addEventListener('click', async () => {
+      await window.SocialSharedBackend?.logout?.();
+      showSignInShell('Signed out.');
     });
 
     $('#logoutBackend')?.addEventListener('click', async () => {
       await window.SocialSharedBackend?.logout?.();
-      showSignInShell('Signed out. The inner site is hidden again.');
+      showSignInShell('Signed out.');
     });
 
     if (!window.SocialSharedBackend?.isEnabled?.()) {
@@ -994,50 +1235,13 @@
 
     const existing = window.SocialSharedBackend.getSession();
     if (existing?.sessionToken || existing?.token) {
-      enterSignedInApp(existing);
+      enterSignedInApp(normalizeAuthSession(existing));
       return existing;
     }
 
     showSignInShell('');
-    return new Promise(resolve => {
-      $('#signinForm').addEventListener('submit', async event => {
-        event.preventDefault();
-        const email = $('#emailInput').value.trim().toLowerCase();
-        const username = $('#usernameInput').value.trim();
-        const password = $('#passwordInput').value;
-        const displayName = $('#signinDisplayNameInput').value.trim() || username;
-        if (!username || !password) {
-          $('#statusMessage').textContent = 'Please enter a username and password.';
-          return;
-        }
-        if (password.length < 6) {
-          $('#statusMessage').textContent = 'The deployed backend requires passwords of at least 6 characters.';
-          return;
-        }
-        $('#statusMessage').textContent = 'Signing in...';
-        try {
-          let session;
-          try {
-            session = await window.SocialSharedBackend.login(username, password, displayName);
-            $('#statusMessage').textContent = 'Signed in.';
-          } catch (error) {
-            if (!/not found|register|first setup/i.test(error.message || '')) throw error;
-            $('#statusMessage').textContent = 'No account found. Creating it now...';
-            session = await window.SocialSharedBackend.register(username, password, displayName);
-          }
-          if (email) localStorage.setItem('socials.email', email);
-          localStorage.setItem('socials.username', username);
-          localStorage.setItem('socials.name', session.displayName || displayName);
-          enterSignedInApp(session);
-          await window.SocialSharedBackend.request('heartbeat', { name: session.displayName || displayName, status: 'Around' }).catch(() => {});
-          resolve(session);
-        } catch (error) {
-          $('#statusMessage').textContent = error.message || 'Sign in failed.';
-        }
-      }, { once: false });
-    });
+    return null;
   }
-
 
   async function init() {
     bindMainTabs();

@@ -12,80 +12,123 @@
   <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
-
   <main id="signinShell">
     <section id="signinPanel" aria-labelledby="signinTitle">
       <h1 id="signinTitle">Socials Application</h1>
-      <h2>Sign in to enter the social space</h2>
-      <p>Use a normal email, username, and password form so your browser or Google Password Manager can save your login. The form still talks to the existing Google Apps Script backend using the same login and register actions.</p>
+      <h2>Sign in</h2>
 
       <form id="signinForm" autocomplete="on">
+        <label>
+          Email, phone number, or username
+          <input id="signinIdentifierInput" name="username" type="text" autocomplete="username" inputmode="email" placeholder="Email, phone, or username" required>
+        </label>
+
+        <label>
+          Password or reset code
+          <span class="passwordRow">
+            <input id="passwordInput" name="password" type="password" autocomplete="current-password" placeholder="Password or reset code" required minlength="4">
+            <button id="togglePassword" type="button" aria-pressed="false">Show</button>
+          </span>
+        </label>
+
+        <div class="actionRow">
+          <button type="submit">Sign In</button>
+          <button id="showCreateButton" class="secondary" type="button">Create Account</button>
+          <button id="forgotButton" class="secondary" type="button">Forgot Password</button>
+        </div>
+
+        <p id="statusMessage" role="status" aria-live="polite"></p>
+      </form>
+
+      <section id="createAccountPanel" hidden aria-labelledby="createTitle">
+        <h3 id="createTitle">Create Account</h3>
         <div class="formGrid">
           <label>
-            Email
-            <input id="emailInput" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+            Main Email
+            <input id="createEmailInput" name="email" type="email" autocomplete="email" placeholder="Email">
           </label>
           <label>
-            Username
-            <input id="usernameInput" name="username" type="text" autocomplete="username" placeholder="Your username" required />
+            Phone Number
+            <input id="createPhoneInput" name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="Phone">
           </label>
           <label class="fullWidth">
-            Display name
-            <input id="signinDisplayNameInput" name="name" type="text" autocomplete="nickname" placeholder="Shown to friends" />
+            Username
+            <input id="createUsernameInput" name="new-username" type="text" autocomplete="username" placeholder="Username" required>
+          </label>
+          <label class="fullWidth">
+            Backup Emails
+            <textarea id="createBackupEmailsInput" name="backup-emails" autocomplete="email" placeholder="Backup emails"></textarea>
           </label>
           <label class="fullWidth">
             Password
             <span class="passwordRow">
-              <input id="passwordInput" name="password" type="password" autocomplete="current-password" placeholder="Your password" required minlength="6" />
-              <button id="togglePassword" type="button" aria-pressed="false">Show</button>
+              <input id="createPasswordInput" name="new-password" type="password" autocomplete="new-password" placeholder="Password" minlength="4">
+              <button id="toggleCreatePassword" type="button" aria-pressed="false">Show</button>
             </span>
           </label>
         </div>
         <div class="actionRow">
-          <button type="submit">Sign In / Create Account</button>
-          <button id="forgotButton" class="secondary" type="button">Forgot Password</button>
+          <button id="createAccountButton" type="button">Create Account</button>
         </div>
-        <p id="statusMessage" role="status" aria-live="polite"></p>
-      </form>
+        <p id="createMessage" role="status" aria-live="polite"></p>
+      </section>
 
       <section id="forgotPanel" hidden aria-labelledby="forgotTitle">
-        <h3 id="forgotTitle">Password Help</h3>
-        <p>This backend currently supports login, register, and logout. To avoid breaking your deployed Google Apps Script, this screen does not invent a fake remote reset endpoint. If the password is lost, reset it in the backend sheet or create a new account if your small-circle user limit allows it.</p>
+        <h3 id="forgotTitle">Password Reset</h3>
         <label>
-          Account Email
-          <input id="resetEmailInput" name="reset-email" type="email" autocomplete="email" placeholder="you@example.com" />
-        </label>
-        <label>
-          New Password Reminder
-          <span class="passwordRow">
-            <input id="resetPasswordInput" name="new-password" type="password" autocomplete="new-password" placeholder="New password to remember locally" minlength="6" />
-            <button id="toggleResetPassword" type="button" aria-pressed="false">Show</button>
-          </span>
+          Account lookup
+          <input id="resetIdentifierInput" name="reset-identifier" type="text" autocomplete="username" placeholder="Email, phone, username, or backup email">
         </label>
         <div class="actionRow">
-          <button id="resetPasswordButton" type="button">Save Browser Reminder Only</button>
+          <button id="sendEmailResetButton" type="button">Send Reset to Email</button>
+          <button id="sendPhoneResetButton" type="button">Send Reset to Phone</button>
+          <button id="tellDinoButton" class="warning" type="button">Tell Dino I Can't Login</button>
+        </div>
+        <label>
+          Reset code
+          <input id="resetCodeInput" name="one-time-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6 digit code">
+        </label>
+        <div class="actionRow">
+          <button id="useCodeButton" type="button">Use Code</button>
         </div>
         <p id="resetMessage" role="status" aria-live="polite"></p>
       </section>
-
-      <small class="smallNote">Background source: Wallpapers.com Starry Night Over Mountains.</small>
     </section>
   </main>
 
+
   <div id="appShell" class="app-shell" hidden>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <section id="newPasswordGate" hidden aria-labelledby="newPasswordTitle">
+    <h2 id="newPasswordTitle">New Password Required</h2>
+    <label>
+      New Password
+      <span class="passwordRow">
+        <input id="gatePasswordInput" name="forced-new-password" type="password" autocomplete="new-password" placeholder="New password" minlength="4">
+        <button id="toggleGatePassword" type="button" aria-pressed="false">Show</button>
+      </span>
+    </label>
+    <label>
+      Backup Emails
+      <textarea id="gateBackupEmailsInput" name="forced-backup-emails" autocomplete="email" placeholder="Backup emails"></textarea>
+    </label>
+    <div class="actionRow">
+      <button id="saveNewPasswordButton" type="button">Save New Password &amp; Enter Site</button>
+      <button id="gateSignOutButton" class="secondary" type="button">Sign Out</button>
+    </div>
+    <p id="gateMessage" role="status" aria-live="polite"></p>
+  </section>
   <header class="topbar">
     <div class="brand">
       <span class="logo" aria-hidden="true">SA</span>
       <div>
-        <p class="eyebrow">private small-network social app</p>
+        <p class="eyebrow">social space</p>
         <h1>Socials Application</h1>
       </div>
     </div>
     <div class="identity card-lite top-actions">
       <span id="signedInMessage" class="signed-in-message">Signed in.</span>
       <button id="rerollTheme" class="secondary" type="button">Reroll theme</button>
-      <button id="backendSettings" class="secondary" type="button">Backend connected</button>
       <button id="installProjectApp" class="secondary" type="button">Install app icon</button>
       <button id="logoutBackend" class="danger" type="button" hidden>Sign Out</button>
     </div>

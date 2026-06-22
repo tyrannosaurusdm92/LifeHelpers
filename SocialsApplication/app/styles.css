@@ -241,7 +241,7 @@ body:not(.signed-in){
 body.signed-in{color:var(--text);}
 
 #signinShell{
-  width:min(980px, calc(100% - 28px));
+  width:min(1040px, calc(100% - 28px));
   min-height:100vh;
   margin:0 auto;
   padding:44px 0;
@@ -280,7 +280,7 @@ body.signed-in{color:var(--text);}
   padding:8px 12px;
   line-height:1.75;
 }
-#signinForm,#forgotPanel{
+#signinForm,#createAccountPanel,#forgotPanel,#newPasswordGate{
   display:grid;
   gap:20px;
   padding:22px;
@@ -288,7 +288,7 @@ body.signed-in{color:var(--text);}
   border-radius:24px;
   background:rgba(0,30,36,.58);
 }
-#forgotPanel{margin-top:22px}
+#createAccountPanel,#forgotPanel{margin-top:22px}
 .formGrid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -339,7 +339,7 @@ body.signed-in{color:var(--text);}
   font-weight:800;
   text-align:center;
 }
-#statusMessage,#resetMessage{
+#statusMessage,#resetMessage,#createMessage,#gateMessage{
   min-height:28px;
   margin:0;
   padding:12px;
@@ -362,6 +362,29 @@ body.signed-in{color:var(--text);}
   background:rgba(255,255,255,.07);
   font-weight:800;
 }
+
+#signinPanel button.warning{
+  border-color:#FFB86C;
+  background:#301700;
+}
+#signinPanel textarea{
+  min-height:104px;
+  resize:vertical;
+}
+#newPasswordGate{
+  width:min(820px, calc(100% - 24px));
+  margin:clamp(24px,8vh,72px) auto;
+  color:#fff;
+  background:linear-gradient(180deg,rgba(0,60,66,.96),rgba(0,30,36,.96));
+  box-shadow:0 18px 60px rgba(0,0,0,.22);
+}
+#newPasswordGate h2{
+  margin:0;
+  padding:10px;
+  font-size:clamp(1.7rem,5vw,3rem);
+  color:var(--law-accent,#00FFFF);
+}
+#signinPanel .helperText,#signinPanel .backendNote{display:none!important}
 
 /* === Retro 2007 MySpace Feed/Profile Facelift === */
 .myspace-feed-panel{

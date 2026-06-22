@@ -1,8 +1,11 @@
 (function (global) {
   'use strict';
 
-  const DEFAULT_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbzL5BoWZsDaTQGzLE-AvoubKyVsEanUGNSwrNyKP7wEw3pK4-2KOw2LVfKejtwyNnvK/exec';
-  const DEPLOYMENT_ID = 'AKfycbzL5BoWZsDaTQGzLE-AvoubKyVsEanUGNSwrNyKP7wEw3pK4-2KOw2LVfKejtwyNnvK';
+  function decodeEndpoint(value) {
+    try { return atob(value); } catch (error) { return ''; }
+  }
+  const DEFAULT_BACKEND_URL = global.SOCIAL_APPLICATION_BACKEND_URL || decodeEndpoint('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6a3dpbUc2c1laUlhMalFhZmF1V2dadHhCVFduZUJqVWpwblV0MnlHbE9QN0Ewa3IwODBic3JQaUdoM2gxYjVTUlkvZXhlYw==');
+  const DEPLOYMENT_ID = '';
   const URL_KEY = 'socialApplication.sharedBackendUrl';
   const DISABLED_KEY = 'socialApplication.sharedBackendDisabled';
   const SESSION_KEY = 'socialApplication.sharedBackendSession';
