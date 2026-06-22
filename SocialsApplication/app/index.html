@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#003C42">
+  <title>Socials Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="messenger-plugin.css">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">SA</span>
+      <div>
+        <p class="eyebrow">private small-network social app</p>
+        <h1>Socials Application</h1>
+      </div>
+    </div>
+    <div class="identity card-lite">
+      <label>Display name <input id="displayName" maxlength="80" autocomplete="nickname"></label>
+      <label>Status <input id="displayStatus" maxlength="120" placeholder="Around"></label>
+      <button id="saveProfile" class="primary">Save profile</button>
+      <button id="rerollTheme" class="secondary" type="button">Reroll theme</button>
+      <button id="backendSettings" class="secondary" type="button">Backend connected</button>
+      <button id="installProjectApp" class="secondary" type="button">Install app icon</button>
+      <button id="logoutBackend" class="danger" type="button" hidden>Logout</button>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Main sections">
+    <button class="tab active" data-tab="feed">Feed</button>
+    <button class="tab" data-tab="chat">Channels</button>
+    <button class="tab" data-tab="camera">Camera & Stories</button>
+    <button class="tab" data-tab="rooms">Rooms</button>
+    <button class="tab" data-tab="games">Games</button>
+    <button class="tab" data-tab="events">Events</button>
+    <button class="tab" data-tab="docs">Docs</button>
+  </nav>
+
+  <main class="shell">
+    <section id="feed" class="panel active-panel">
+      <div class="grid two">
+        <section class="card composer-card">
+          <p class="eyebrow">home base</p>
+          <h2>Friend feed</h2>
+          <form id="postForm" class="stack">
+            <textarea id="postText" maxlength="4000" placeholder="Share an update with your small circle..."></textarea>
+            <div class="row wrap">
+              <label class="file-btn">Attach image/video/audio<input id="postFile" type="file" accept="image/*,video/*,audio/*"></label>
+              <button class="primary" type="submit">Post</button>
+            </div>
+          </form>
+          <div class="hint">Everything stores through the shared Google Apps Script backend when signed in. Local/offline mode remains available only for testing.</div>
+        </section>
+        <section class="card">
+          <div class="section-head">
+            <div><p class="eyebrow">people</p><h2>Circle</h2></div>
+            <button id="refreshState" class="secondary">Refresh</button>
+          </div>
+          <div id="profiles" class="profile-grid"></div>
+        </section>
+      </div>
+      <section class="card feed-card">
+        <div class="section-head"><div><p class="eyebrow">timeline</p><h2>Latest posts</h2></div><button id="exportData" class="secondary">Export all JSON</button></div>
+        <div id="feedList" class="feed-list"></div>
+      </section>
+    </section>
+
+    <section id="chat" class="panel">
+      <div class="chat-layout card">
+        <aside class="channels">
+          <div class="section-head"><h2>Channels</h2></div>
+          <div id="channelButtons" class="channel-buttons"></div>
+          <form id="newChannelForm" class="row">
+            <input id="newChannelName" maxlength="48" placeholder="new-channel">
+            <button class="secondary" type="submit">Add</button>
+          </form>
+        </aside>
+        <section class="chat-main">
+          <div class="section-head">
+            <div><p class="eyebrow">channel</p><h2 id="activeChannelTitle"># general</h2></div>
+            <div class="row wrap">
+              <button id="exportChat" class="secondary">Export channel</button>
+              <label class="file-btn small">Import history<input id="importHistory" type="file" accept="application/json,.json"></label>
+            </div>
+          </div>
+          <div id="messageList" class="message-list" aria-live="polite"></div>
+          <form id="messageForm" class="send-row">
+            <input id="messageInput" maxlength="4000" placeholder="Write a message">
+            <label class="file-btn plus">+<input id="messageFile" type="file" accept="image/*,video/*,audio/*"></label>
+            <button class="primary" type="submit">Send</button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section id="camera" class="panel">
+      <div class="camera-grid">
+        <section class="card camera-card">
+          <div id="stage" class="stage">
+            <video id="cameraVideo" autoplay playsinline muted></video>
+            <div id="fallbackDrop" class="fallback"><strong>Camera not started yet.</strong><span>Start the camera or load local media.</span></div>
+            <canvas id="recordCanvas" hidden></canvas>
+            <div id="overlayLayer" class="overlay-layer" aria-label="Sticker and text overlay layer"></div>
+            <div id="screenFlash" class="screen-flash" aria-hidden="true"></div>
+          </div>
+          <div class="controlbar">
+            <button id="startCamera" class="primary">Start camera</button>
+            <button id="switchCamera" class="secondary">Switch</button>
+            <button id="flashBtn" class="secondary">Flash</button>
+            <button id="capturePhoto" class="capture" aria-label="Capture photo"></button>
+            <button id="recordVideo" class="danger">Record</button>
+            <button id="clearOverlays" class="secondary">Clear</button>
+          </div>
+          <label class="file-load">Load local media <input id="mediaFile" type="file" accept="image/*,video/*"></label>
+        </section>
+        <aside class="card toolbox">
+          <p class="eyebrow">snap-style safe tools</p>
+          <h2>Camera tools</h2>
+          <label>Color filter
+            <select id="colorFilter">
+              <option value="normal">Normal</option>
+              <option value="warm">Warm sunrise</option>
+              <option value="cool">Cool neon</option>
+              <option value="noir">Noir</option>
+              <option value="vintage">Vintage</option>
+              <option value="dream">Dream glow</option>
+              <option value="cyber">Cyber cyan</option>
+            </select>
+          </label>
+          <div class="tool-group"><p class="tool-label">Preset overlays</p>
+            <button class="chip" data-preset="dog">Dog</button>
+            <button class="chip" data-preset="glasses">Glasses</button>
+            <button class="chip" data-preset="hat">Hat</button>
+            <button class="chip" data-preset="mustache">Mustache</button>
+            <button class="chip" data-preset="rainbow">Rainbow</button>
+            <button class="chip" data-preset="flies">Animated flies</button>
+          </div>
+          <div class="tool-group stack"><p class="tool-label">Text sticker</p><input id="textStickerInput" maxlength="72" placeholder="Caption"><button id="addTextSticker" class="secondary">Add text</button></div>
+          <div class="mini-grid"><button id="growOverlay" class="secondary">Bigger</button><button id="shrinkOverlay" class="secondary">Smaller</button><button id="rotateOverlay" class="secondary">Rotate</button><button id="deleteOverlay" class="danger">Delete</button></div>
+          <div class="tool-group stack"><p class="tool-label">Last capture</p><button id="shareStory" class="primary">Post as story</button><button id="shareFeed" class="secondary">Post to feed</button></div>
+        </aside>
+      </div>
+      <section class="card story-card">
+        <div class="section-head"><div><p class="eyebrow">ephemeral</p><h2>Stories</h2></div><span class="hint">Stories expire after 24 hours by default.</span></div>
+        <div id="stories" class="story-grid"></div>
+      </section>
+      <section class="card story-card">
+        <div class="section-head"><div><p class="eyebrow">local captures</p><h2>Gallery</h2></div><button id="clearGallery" class="danger">Clear local gallery</button></div>
+        <div id="galleryGrid" class="gallery-grid"></div>
+      </section>
+    </section>
+
+    <section id="rooms" class="panel">
+      <section id="lobby" class="card lobby">
+        <div class="hero"><p class="eyebrow">zoom-style rooms</p><h2>Private room</h2><p class="lede">Use room codes and passcodes for small live rooms with video, audio, screen share, chat, reactions, notes, transcript import, and exports.</p></div>
+        <form id="joinForm" class="join-grid">
+          <label>Your name <input id="roomName" maxlength="80"></label>
+          <label>Room code <input id="roomCode" value="family-room" maxlength="48"></label>
+          <label>Passcode <input id="roomPass" type="password" value="friends"></label>
+          <div class="row wrap"><label class="check"><input id="joinAudio" type="checkbox" checked> Microphone</label><label class="check"><input id="joinVideo" type="checkbox" checked> Camera</label><button class="primary" type="submit">Join room</button></div>
+        </form>
+      </section>
+      <section id="meeting" class="meeting hidden">
+        <div class="topbar card">
+          <div><p class="eyebrow">room</p><h2 id="roomTitle">room</h2></div>
+          <div class="status-row"><span id="connectionState" class="pill warn">Not connected</span><span id="meetingTimer" class="pill">00:00</span><button id="copyInvite" class="secondary">Copy invite</button><button id="leaveRoom" class="danger">Leave</button></div>
+        </div>
+        <div class="room-grid">
+          <section class="card stage-room">
+            <div id="videoGrid" class="video-grid"></div>
+            <div class="controlbar"><button id="micBtn" class="secondary">Mute</button><button id="camBtn" class="secondary">Camera off</button><button id="screenBtn" class="secondary">Share screen</button><button id="recordBtn" class="secondary">Record</button><button id="handBtn" class="secondary">Raise hand</button><select id="reactionSelect"><option value="">React...</option><option>👍</option><option>💙</option><option>😂</option><option>🎉</option><option>☕</option></select></div>
+          </section>
+          <aside class="card side-room">
+            <div class="room-tabs"><button class="room-tab active" data-room-tab="#roomChatPanel">Chat</button><button class="room-tab" data-room-tab="#notesPanel">Notes</button><button class="room-tab" data-room-tab="#transcriptPanel">Transcript</button><button class="room-tab" data-room-tab="#intelPanel">Export</button></div>
+            <section id="roomChatPanel" class="room-panel active-room-panel"><div id="participants" class="participants"></div><div id="roomChatLog" class="scroll-log"></div><form id="roomChatForm" class="send-row"><input id="roomChatInput" maxlength="4000" placeholder="Room chat"><button class="primary">Send</button></form></section>
+            <section id="notesPanel" class="room-panel"><textarea id="meetingNotes" placeholder="Shared notes, decisions, action items..."></textarea><div class="row wrap"><button class="quick-note secondary" data-prefix="Action: ">Action</button><button class="quick-note secondary" data-prefix="Decision: ">Decision</button><button class="quick-note secondary" data-prefix="Risk: ">Risk</button></div></section>
+            <section id="transcriptPanel" class="room-panel"><div class="row wrap"><button id="captionBtn" class="secondary">Start captions</button><button id="addManualLine" class="secondary">Manual line</button><label class="file-btn small">Import transcript<input id="transcriptFile" type="file" accept=".txt,.vtt,.srt,.json"></label></div><div id="captionStatus" class="hint"></div><div id="transcriptLog" class="scroll-log"></div></section>
+            <section id="intelPanel" class="room-panel"><div class="row wrap"><button id="analyzeBtn" class="primary">Analyze</button><button id="exportMd" class="secondary">Export MD</button><button id="exportJson" class="secondary">Export JSON</button><button id="exportHtml" class="secondary">Export HTML</button><button id="exportVtt" class="secondary">Export VTT</button></div><div id="analysis" class="analysis scroll-log"></div></section>
+          </aside>
+        </div>
+      </section>
+    </section>
+
+
+    <section id="games" class="panel">
+      <div class="games-layout">
+        <aside class="card game-sidebar">
+          <p class="eyebrow">mobile games</p>
+          <h2>Offline game launcher</h2>
+          <label>Select game <select id="gameSelect"></select></label>
+          <div class="row wrap game-actions">
+            <button id="loadGameBtn" class="primary" type="button">Load game</button>
+            <button id="saveGameBtn" class="secondary" type="button">Save session</button>
+            <button id="saveExitGameBtn" class="secondary" type="button">Save + exit</button>
+            <button id="fullscreenGameBtn" class="secondary" type="button">Fullscreen</button>
+            <button id="openGameTabBtn" class="secondary" type="button">Open tab</button>
+          </div>
+          <div id="gameStatus" class="notice">Loading game manifest...</div>
+          <div id="gameDetails" class="game-details"></div>
+          <label>Session note <textarea id="gameNote" maxlength="1200" placeholder="Optional note for this game/session"></textarea></label>
+        </aside>
+        <section class="card game-preview-card">
+          <div class="section-head">
+            <div><p class="eyebrow">play here</p><h2 id="gameTitle">Game Preview</h2></div>
+            <span id="gameCountBadge" class="pill">0 games</span>
+          </div>
+          <div id="gameViewer" class="game-viewer">
+            <div id="gamePlaceholder" class="game-placeholder">
+              <strong>Choose a game</strong>
+              <span>The selected game loads here and stays inside this site.</span>
+            </div>
+            <iframe id="gameFrame" title="Selected mobile game" allow="fullscreen; autoplay; gamepad; accelerometer; gyroscope; clipboard-read; clipboard-write" allowfullscreen></iframe>
+          </div>
+        </section>
+        <aside class="card game-social-panel">
+          <p class="eyebrow">live site roster</p>
+          <h2>Players online</h2>
+          <div id="onlineUsers" class="online-users"></div>
+          <div class="section-mini">
+            <h3>Game players</h3>
+            <p class="hint">For multiplayer-capable games, the messenger plug-in can pull from people currently signed in and active on the site.</p>
+            <div id="selectedPlayers" class="selected-players"></div>
+            <button id="syncPlayersBtn" class="secondary" type="button">Sync players to game</button>
+          </div>
+          <div class="section-mini">
+            <h3>Saved sessions</h3>
+            <div id="gameSaves" class="game-saves"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="events" class="panel">
+      <section class="card doc-card">
+        <p class="eyebrow">shared calendar</p>
+        <h2>Events & Calendar</h2>
+        <p class="hint">Events save to the shared backend when configured, or to the local Node data store while testing. Browser calls, recordings, camera, and screen sharing still happen locally through secure browser permissions.</p>
+        <form id="eventForm" class="stack event-form">
+          <div class="grid two">
+            <label>Event title <input id="eventTitle" maxlength="160" autocomplete="off" placeholder="Game night, movie call, planning session..."></label>
+            <label>Location / link <input id="eventLocation" maxlength="240" autocomplete="off" placeholder="Voice room, Discord, home, map table..."></label>
+          </div>
+          <div class="grid two">
+            <label>Starts <input id="eventStart" type="datetime-local"></label>
+            <label>Ends <input id="eventEnd" type="datetime-local"></label>
+          </div>
+          <label>Description <textarea id="eventDescription" maxlength="2000" placeholder="Notes, prep, links, reminders..."></textarea></label>
+          <div class="row wrap"><button class="primary" type="submit">Add event</button><button id="refreshEvents" class="secondary" type="button">Refresh events</button></div>
+        </form>
+      </section>
+      <section class="card feed-card">
+        <div class="section-head"><div><p class="eyebrow">calendar list</p><h2>Upcoming events</h2></div></div>
+        <div id="eventsList" class="feed-list"></div>
+      </section>
+    </section>
+
+    <section id="docs" class="panel">
+      <section class="card doc-card">
+        <p class="eyebrow">merged build notes</p>
+        <h2>What this final app includes</h2>
+        <p><strong>Socials Application</strong> is a clean open-source friend-network app built from the safe, useful parts of the merged Discord, Snapchat-style, and Zoom-style packages.</p>
+        <ul>
+          <li>Friend feed with posts, media, comments, and emoji reactions.</li>
+          <li>Discord-like channels with JSON history import/export.</li>
+          <li>Snap-style camera, filters, overlays, local gallery, and 24-hour stories.</li>
+          <li>Zoom-style private rooms with WebRTC, screen share, chat, reactions, notes, transcript import, and exports.</li>
+          <li>Native retro footer messenger plug-in with MySpaceIM-style friends, Facebook-style bottom chat tabs, files, images, GIFs, stickers, camera snapshots, voice notes, and up-to-10-person call signaling.</li>
+          <li>Integrated offline mobile games with a messenger plug-in presence roster for multiplayer-capable games.</li>
+          <li>No token scraping, account automation, cracking/brute forcing, leaked-client code, or third-party service impersonation in the runnable app.</li>
+        </ul>
+        <p>Full manifests, audits, and license notes are in the included <code>docs</code> folder.</p>
+      </section>
+    </section>
+  </main>
+  <template id="mediaTemplate"><div class="media-box"></div></template>
+  <div id="messenger-plugin-root"></div>
+  <script src="theme-law.js"></script>
+  <script src="social-backend-config.js"></script>
+  <script src="social-shared-backend.js"></script>
+  <script src="app.js"></script>
+  <script src="app-games.js"></script>
+  <script src="messenger-backend-bridge.js"></script>
+  <script src="messenger-plugin.js"></script>
+  <script src="messenger-site-init.js"></script>
+</body>
+</html>
