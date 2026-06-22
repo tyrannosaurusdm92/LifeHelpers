@@ -1,0 +1,243 @@
+{
+  "generated_at": "2026-06-21T04:52:28.750404+00:00",
+  "package_name": "Discord Merged Messenger Plug-in",
+  "package_policy": "Direct runtime code is a clean, small integration. Large upstream repositories are documented and licensed in docs instead of copied into the end app.",
+  "inputs": [
+    {
+      "repo_folder": "BetterDiscord-development",
+      "summary": "Installation",
+      "file_count": 325,
+      "unpacked_bytes": 1513614,
+      "license_guess": "Apache-2.0",
+      "license_file": "LICENSE",
+      "package_name": "betterdiscord",
+      "package_version": "1.13.14",
+      "direct_merge_role": "Client mod architecture reference only; documented in docs because direct injection would duplicate runtime and complicate licenses."
+    },
+    {
+      "repo_folder": "BetterDiscordApp-master",
+      "summary": "BetterDiscordApp",
+      "file_count": 181,
+      "unpacked_bytes": 15451510,
+      "license_guess": "MIT",
+      "license_file": "LICENSE",
+      "package_name": "betterdiscord",
+      "package_version": "0.2.7",
+      "direct_merge_role": "Deprecated legacy client-mod reference only; documented in docs."
+    },
+    {
+      "repo_folder": "Discord-History-Tracker-master",
+      "summary": "Welcome",
+      "file_count": 280,
+      "unpacked_bytes": 873821,
+      "license_guess": "MIT",
+      "license_file": "LICENSE.md",
+      "package_name": null,
+      "package_version": null,
+      "direct_merge_role": "History export/import concept; represented by src/history.js import normalization instead of scraper/client source."
+    },
+    {
+      "repo_folder": "DiscordPHP-master",
+      "summary": "Cache Interface (experimental)",
+      "file_count": 552,
+      "unpacked_bytes": 2355413,
+      "license_guess": "MIT",
+      "license_file": "LICENSE.md",
+      "package_name": "team-reflex/discord-php",
+      "package_version": null,
+      "direct_merge_role": "Optional PHP bot/backend ecosystem reference; documented in docs, not copied into runtime because the final app uses one Node backend."
+    },
+    {
+      "repo_folder": "OpenAsar-main",
+      "summary": "OpenAsar &nbsp;<sup><sub>/\u02c8o\u028ap\u0259n \u028cs\u0251r/ &nbsp;*(o-pen as-are)*</sup></sub>",
+      "file_count": 31,
+      "unpacked_bytes": 97518,
+      "license_guess": "AGPL-3.0",
+      "license_file": "LICENSE",
+      "package_name": null,
+      "package_version": null,
+      "direct_merge_role": "Client asar replacement reference only; documented in docs and not included in runtime because AGPL/client replacement code is outside the safe end app."
+    },
+    {
+      "repo_folder": "Vesktop-main",
+      "summary": "Vesktop",
+      "file_count": 169,
+      "unpacked_bytes": 6058612,
+      "license_guess": "GPL-3.0",
+      "license_file": "LICENSE",
+      "package_name": "vesktop",
+      "package_version": "1.6.5",
+      "direct_merge_role": "Desktop Discord client reference only; documented in docs and not included in runtime because it is a separate GPL Electron app."
+    },
+    {
+      "repo_folder": "acrd.app-dev",
+      "summary": "Accord - Messaging Made Simple.",
+      "file_count": 373,
+      "unpacked_bytes": 4452994,
+      "license_guess": "MPL-2.0",
+      "license_file": "LICENSE",
+      "package_name": null,
+      "package_version": null,
+      "direct_merge_role": "Messaging layout and channel concept; represented by the merged public messenger UI and consolidated JSON-backed API."
+    },
+    {
+      "repo_folder": "discord-example-app-main",
+      "summary": "Getting Started app for Discord",
+      "file_count": 17,
+      "unpacked_bytes": 1314402,
+      "license_guess": "MIT",
+      "license_file": "LICENSE",
+      "package_name": "discord-getting-started",
+      "package_version": "1.0.0",
+      "direct_merge_role": "Canonical official-style Node interaction server pattern; represented by app.js, cmd.js, and src/discord.js."
+    },
+    {
+      "repo_folder": "embedded-app-sdk-main",
+      "summary": "@discord/embedded-app-sdk",
+      "file_count": 97,
+      "unpacked_bytes": 4458527,
+      "license_guess": "MIT",
+      "license_file": "LICENSE.md",
+      "package_name": "@discord/embedded-app-sdk",
+      "package_version": "2.5.0",
+      "direct_merge_role": "Canonical Activity SDK integration; represented by the optional public embedded-mode loader and package dependency."
+    },
+    {
+      "repo_folder": "lemonade-main",
+      "summary": "\ud83c\udf4b Lemonade: Refreshingly fast local AI",
+      "file_count": 561,
+      "unpacked_bytes": 8078703,
+      "license_guess": "Apache-2.0",
+      "license_file": "LICENSE",
+      "package_name": null,
+      "package_version": null,
+      "direct_merge_role": "Not a Discord client/app despite Discord community links; documented as non-runtime input."
+    }
+  ],
+  "direct_runtime_files": [
+    {
+      "path": "README.md",
+      "bytes": 2278,
+      "sha256": "67ca2693a3670cc7ff8a2067652bb0097e6b3ca3494368e0d9aabefef0a038e0"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 1268,
+      "sha256": "986eae383e8d0e96ea57bb2c75b9aa56673ad1a5db084e17921d9dd54ca2dd90"
+    },
+    {
+      "path": "package.json",
+      "bytes": 667,
+      "sha256": "dc1fb4075e3f94a941cc9ebf34fb0593b0ad35d9e8b5785ec6ed98f7b4cb9b9c"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 225,
+      "sha256": "64b8a1a95c2f3197ec5a539af16c32251efa2757729e7e25f554400ae1f66fad"
+    },
+    {
+      "path": "start-windows.bat",
+      "bytes": 351,
+      "sha256": "4e494f9a148a730ad419e07cc821c92ea615f8c483f539e56d0abd37f98f66f0"
+    },
+    {
+      "path": "app.js",
+      "bytes": 2874,
+      "sha256": "f5da79019e93d2554057358813f37238b861836d5e24e4dd1d7839f193760770"
+    },
+    {
+      "path": "cmd.js",
+      "bytes": 231,
+      "sha256": "618898f0e336cd1dce565c00e9152dafeebc383ecb08e71b46ffbc3153505189"
+    },
+    {
+      "path": "src/store.js",
+      "bytes": 2452,
+      "sha256": "1251b01ab11044ab6bf2bb0bba768a286084a208af69e29d6bfaec0f68bc103f"
+    },
+    {
+      "path": "src/history.js",
+      "bytes": 1520,
+      "sha256": "a91467ee562d771626186071d761ac8953bbf59df00b6bcc84a566391fef01ae"
+    },
+    {
+      "path": "src/discord.js",
+      "bytes": 2138,
+      "sha256": "6efd0c13bccd03090a940459386cdbeb474b6ab6d511052ce1f726483c318336"
+    },
+    {
+      "path": "public/index.html",
+      "bytes": 2030,
+      "sha256": "4b575ff4a390d861b7f4d00eb3f9f9c4fcf121b006050e42d3cf2fab06e106d0"
+    },
+    {
+      "path": "public/style.css",
+      "bytes": 3092,
+      "sha256": "e17d4674b340467d34f03e12748958f9a8f43aa64c586ce1497185a60166b486"
+    },
+    {
+      "path": "public/app.js",
+      "bytes": 4173,
+      "sha256": "a50492076d0813e85d59950ba322b9adb688453bfc62f1ed2a6c317278c20b18"
+    }
+  ],
+  "notes": [
+    {
+      "uploaded_zip": "DiscordPHP-master.zip",
+      "bytes": 809246,
+      "sha256": "1aa6be4a01c31b29dde61e32e6cce28e6915237196dbe6519e47a8b490fa3cfd"
+    },
+    {
+      "uploaded_zip": "acrd.app-dev.zip",
+      "bytes": 2709336,
+      "sha256": "03200a6abbcebf04f47c9541c3bc3f511455eeac6cdea96261f5b0ac31c17576"
+    },
+    {
+      "uploaded_zip": "Vesktop-main.zip",
+      "bytes": 3224666,
+      "sha256": "d91980cb2a6a7f5e6e450e4f5f88ab000155868aada3504ec3c603cc6874a793"
+    },
+    {
+      "uploaded_zip": "lemonade-main.zip",
+      "bytes": 2645428,
+      "sha256": "b4d54eb826910aeb8e2b93920e4bb269a3a0403d6df49bd7f81bd7b3f0171664"
+    },
+    {
+      "uploaded_zip": "Discord-History-Tracker-master.zip",
+      "bytes": 415215,
+      "sha256": "4a98075728645e089f07421e5b389529b9963f790ad6b90ea2d4fa194b614205"
+    },
+    {
+      "uploaded_zip": "embedded-app-sdk-main.zip",
+      "bytes": 3845328,
+      "sha256": "6a2b3259866494710caad6901e1e1e2f55c9a8a2d4a97312b58f89b593bda0f9"
+    },
+    {
+      "uploaded_zip": "OpenAsar-main.zip",
+      "bytes": 41645,
+      "sha256": "a3080fae7d98e4523a6a7eff559d764c21c8db5937d800a5c01bc29672124729"
+    },
+    {
+      "uploaded_zip": "BetterDiscord-development.zip",
+      "bytes": 537149,
+      "sha256": "041f987930e04a551e194a2ec193abc46de6d1e77eecd1f0719975057e83b2fd"
+    },
+    {
+      "uploaded_zip": "BetterDiscordApp-master.zip",
+      "bytes": 3668074,
+      "sha256": "964064fca3a633cdbd714f65fc33f517d0827d7f89701e3f255e8d83dd86191e"
+    },
+    {
+      "uploaded_zip": "discord-example-app-main.zip",
+      "bytes": 1178012,
+      "sha256": "dddf8581696528711625bc9b49bed32fe555a4cca1c8641ab62b93617435eb66"
+    }
+  ],
+  "output_path_audit": {
+    "output_file_count": 31,
+    "max_relative_path_length": 51,
+    "max_path": "docs/licenses/BetterDiscord-development_LICENSE.txt",
+    "max_depth": 3,
+    "windows_friendly": true
+  }
+}

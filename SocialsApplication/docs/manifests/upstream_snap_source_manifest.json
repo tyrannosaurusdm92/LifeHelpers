@@ -1,0 +1,566 @@
+[
+  {
+    "upload": "snapcrack-main.zip",
+    "sha256_zip": "eea0a70d2eaab4cb913ec43e460e20e1237404c2d9a8f6b893ef701fc319068f",
+    "file_count": 9,
+    "uncompressed_bytes": 125651,
+    "top_extensions": [
+      [
+        ".py",
+        3
+      ],
+      [
+        ".pyc",
+        2
+      ],
+      [
+        "[no_ext]",
+        1
+      ],
+      [
+        ".md",
+        1
+      ],
+      [
+        ".png",
+        1
+      ],
+      [
+        ".txt",
+        1
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [],
+    "manifests": [
+      "requirements.txt"
+    ],
+    "decision": "Excluded from runnable app",
+    "reason": "Credential-cracking / brute-force automation; no license found. Documented only."
+  },
+  {
+    "upload": "SnapBrute-main.zip",
+    "sha256_zip": "b6e24d8e1292895f5a874cff5b36308f6ee50c6a3e2eb18680c9a200f948835f",
+    "file_count": 5,
+    "uncompressed_bytes": 45369,
+    "top_extensions": [
+      [
+        ".py",
+        2
+      ],
+      [
+        "[no_ext]",
+        1
+      ],
+      [
+        ".md",
+        1
+      ],
+      [
+        ".txt",
+        1
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [
+      "LICENSE"
+    ],
+    "manifests": [
+      "requirements.txt"
+    ],
+    "decision": "Excluded from runnable app",
+    "reason": "Credential brute-force tooling. GPL license copied for audit only; no runnable code copied."
+  },
+  {
+    "upload": "SnapchatLikeCamera-master.zip",
+    "sha256_zip": "a9c753cdf11788dae07b7c560893925cf6bbeddf7a5b0f68a4ea7182d4904f9b",
+    "file_count": 104,
+    "uncompressed_bytes": 532734,
+    "top_extensions": [
+      [
+        ".png",
+        68
+      ],
+      [
+        ".xml",
+        11
+      ],
+      [
+        ".java",
+        11
+      ],
+      [
+        "[no_ext]",
+        4
+      ],
+      [
+        ".gradle",
+        3
+      ],
+      [
+        ".properties",
+        2
+      ],
+      [
+        ".md",
+        1
+      ],
+      [
+        ".bat",
+        1
+      ],
+      [
+        ".pro",
+        1
+      ],
+      [
+        ".jpg",
+        1
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [],
+    "manifests": [
+      "build.gradle",
+      "app/build.gradle"
+    ],
+    "decision": "Reference only",
+    "reason": "Useful Android camera/sticker behavior, but no clear project license found. Recreated browser-native equivalents rather than copying source."
+  },
+  {
+    "upload": "snapchat-clone-master.zip",
+    "sha256_zip": "0b37194334a8c905dd9300fd2fc81b4be79c737daed3039c7e84cacfdd81cb13",
+    "file_count": 233,
+    "uncompressed_bytes": 63689148,
+    "top_extensions": [
+      [
+        ".tsx",
+        53
+      ],
+      [
+        ".ts",
+        36
+      ],
+      [
+        ".scss",
+        32
+      ],
+      [
+        ".jpg",
+        32
+      ],
+      [
+        ".svg",
+        20
+      ],
+      [
+        ".png",
+        16
+      ],
+      [
+        ".json",
+        15
+      ],
+      [
+        ".js",
+        9
+      ],
+      [
+        "[no_ext]",
+        5
+      ],
+      [
+        ".mp4",
+        5
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [
+      "LICENSE"
+    ],
+    "manifests": [
+      "package.json"
+    ],
+    "decision": "Reference only",
+    "reason": "MIT UI clone patterns and fixture ideas reviewed; no React code copied into final static app to avoid dependency bloat."
+  },
+  {
+    "upload": "simple-snapchat-master.zip",
+    "sha256_zip": "34724d608e63424e9369f8f73e03701d170f7f84e74090a1222e24ee5696eac4",
+    "file_count": 347,
+    "uncompressed_bytes": 112256058,
+    "top_extensions": [
+      [
+        ".h",
+        110
+      ],
+      [
+        ".png",
+        89
+      ],
+      [
+        ".swift",
+        43
+      ],
+      [
+        ".json",
+        38
+      ],
+      [
+        "[no_ext]",
+        23
+      ],
+      [
+        ".modulemap",
+        10
+      ],
+      [
+        ".plist",
+        8
+      ],
+      [
+        ".md",
+        4
+      ],
+      [
+        ".jpg",
+        3
+      ],
+      [
+        ".lock",
+        2
+      ]
+    ],
+    "readmes": [
+      "README.md",
+      "Pods/Firebase/README.md",
+      "Pods/FirebaseAuth/README.md"
+    ],
+    "licenses": [
+      "simple-snapchat/Parse.framework/third_party_licenses.txt"
+    ],
+    "manifests": [
+      "Podfile"
+    ],
+    "decision": "Reference only",
+    "reason": "iOS/Firebase learning app reviewed for flow concepts; no project license at root and heavy platform dependencies, so no source copied."
+  },
+  {
+    "upload": "snapchat-filters-opencv-master.zip",
+    "sha256_zip": "dbb5f0db1e0a152334a77b00cc85f4e89871f43f95e69e47187afe5fe7ad66d1",
+    "file_count": 64,
+    "uncompressed_bytes": 110316277,
+    "top_extensions": [
+      [
+        ".png",
+        26
+      ],
+      [
+        ".py",
+        15
+      ],
+      [
+        ".xml",
+        6
+      ],
+      [
+        ".gif",
+        5
+      ],
+      [
+        ".zip",
+        4
+      ],
+      [
+        "[no_ext]",
+        3
+      ],
+      [
+        ".md",
+        1
+      ],
+      [
+        ".txt",
+        1
+      ],
+      [
+        ".dat",
+        1
+      ],
+      [
+        ".pdf",
+        1
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [
+      "LICENSE"
+    ],
+    "manifests": [
+      "requirements.txt"
+    ],
+    "decision": "Partially included",
+    "reason": "MIT-licensed overlay sprite assets copied and deduplicated. Python/OpenCV desktop code not included because final app is browser-native."
+  },
+  {
+    "upload": "Snapchat-Source-Code-Leak-master.zip",
+    "sha256_zip": "1bad6f200760e88a0862c094eb618ff4c5375c720b77c792c224019e87fe396a",
+    "file_count": 311,
+    "uncompressed_bytes": 1141213,
+    "top_extensions": [
+      [
+        ".h",
+        172
+      ],
+      [
+        ".m",
+        126
+      ],
+      [
+        ".metal",
+        4
+      ],
+      [
+        ".mm",
+        3
+      ],
+      [
+        ".value",
+        3
+      ],
+      [
+        "[no_ext]",
+        2
+      ],
+      [
+        ".md",
+        1
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [],
+    "manifests": [],
+    "decision": "Excluded from runnable app",
+    "reason": "Repository describes itself as a source-code leak and has no license. No source copied."
+  },
+  {
+    "upload": "snap-camera-server-main.zip",
+    "sha256_zip": "bb03911efefe947f9dd9f53e552fa9a163ae790744a73e6c75446714d0b107f2",
+    "file_count": 102,
+    "uncompressed_bytes": 2229040,
+    "top_extensions": [
+      [
+        ".js",
+        30
+      ],
+      [
+        ".json",
+        14
+      ],
+      [
+        ".sql",
+        13
+      ],
+      [
+        ".yml",
+        10
+      ],
+      [
+        ".png",
+        8
+      ],
+      [
+        "[no_ext]",
+        7
+      ],
+      [
+        ".md",
+        7
+      ],
+      [
+        ".jpg",
+        4
+      ],
+      [
+        ".html",
+        2
+      ],
+      [
+        ".css",
+        2
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [
+      "LICENSE"
+    ],
+    "manifests": [
+      "package.json",
+      "migrations/package.json",
+      "migrations/sqls/package.json"
+    ],
+    "decision": "Reference only",
+    "reason": "MIT server tooling reviewed. Not copied into runnable app because final package is static/local and avoids service/bypass/crawler behavior."
+  },
+  {
+    "upload": "SwiftyCam-master.zip",
+    "sha256_zip": "4d4a193042c846118f32ced9c08a4586123868e9bf8158644411557b4d299a9d",
+    "file_count": 47,
+    "uncompressed_bytes": 307288,
+    "top_extensions": [
+      [
+        ".png",
+        12
+      ],
+      [
+        ".swift",
+        11
+      ],
+      [
+        ".json",
+        8
+      ],
+      [
+        ".plist",
+        3
+      ],
+      [
+        "[no_ext]",
+        2
+      ],
+      [
+        ".md",
+        2
+      ],
+      [
+        ".xcscheme",
+        2
+      ],
+      [
+        ".storyboard",
+        2
+      ],
+      [
+        ".podspec",
+        1
+      ],
+      [
+        ".jpg",
+        1
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [
+      "LICENSE"
+    ],
+    "manifests": [],
+    "decision": "Reference only",
+    "reason": "BSD iOS camera framework reviewed for capture behavior. No Swift code copied because final target is static browser app."
+  },
+  {
+    "upload": "Source-SnapChat-master(1).zip",
+    "sha256_zip": "5943f3e5bbe8d8a25b3944b4b2c1aacff51a71bceb2f1b0ff0bd664d107b7cd2",
+    "file_count": 311,
+    "uncompressed_bytes": 1140808,
+    "top_extensions": [
+      [
+        ".h",
+        172
+      ],
+      [
+        ".m",
+        126
+      ],
+      [
+        ".metal",
+        4
+      ],
+      [
+        ".mm",
+        3
+      ],
+      [
+        ".value",
+        3
+      ],
+      [
+        "[no_ext]",
+        2
+      ],
+      [
+        ".md",
+        1
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [],
+    "manifests": [],
+    "decision": "Excluded from runnable app",
+    "reason": "Duplicate of the leaked-source repository except README. No source copied."
+  },
+  {
+    "upload": "SC-API-master.zip",
+    "sha256_zip": "1fb0590f6b25d75748a1f13a6362bbd6c45c04d51ac3d70740e553cf85cac89b",
+    "file_count": 47,
+    "uncompressed_bytes": 1600487,
+    "top_extensions": [
+      [
+        ".php",
+        35
+      ],
+      [
+        "[no_ext]",
+        7
+      ],
+      [
+        ".md",
+        1
+      ],
+      [
+        ".json",
+        1
+      ],
+      [
+        ".crt",
+        1
+      ],
+      [
+        ".otf",
+        1
+      ],
+      [
+        ".cnf",
+        1
+      ]
+    ],
+    "readmes": [
+      "README.md"
+    ],
+    "licenses": [
+      "LICENSE"
+    ],
+    "manifests": [
+      "composer.json"
+    ],
+    "decision": "Excluded from runnable app",
+    "reason": "Unofficial account/API automation library. Documented only; no runnable code copied."
+  }
+]

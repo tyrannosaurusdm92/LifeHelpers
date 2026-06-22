@@ -1,0 +1,268 @@
+{
+  "project": "SnapMerge",
+  "generated_utc": "2026-06-21T04:53:26.770695+00:00",
+  "file_count": 43,
+  "total_bytes": 324173,
+  "max_relative_path_length": 74,
+  "safety_summary": "Credential cracking, leaked source, and unofficial account/API automation code were excluded from the runnable app and documented in audits.",
+  "files": [
+    {
+      "path": "assets/overlays/dog/ears.png",
+      "bytes": 68911,
+      "sha256": "b30eb956dd2bcc5c0ae2232239ce9fc8ed0d5a067622809774108c2757a76561",
+      "path_length": 28
+    },
+    {
+      "path": "assets/overlays/dog/nose.png",
+      "bytes": 25801,
+      "sha256": "a0db14ad689345c61576885ceeadb3023d0391be6c370be5590ec414738b9102",
+      "path_length": 28
+    },
+    {
+      "path": "assets/overlays/dog/tongue.png",
+      "bytes": 46375,
+      "sha256": "9bc51ff3cfa4ec7c7bf360ac2be8d008e1094f7780a80eb57d7809bf4c5e172e",
+      "path_length": 30
+    },
+    {
+      "path": "assets/overlays/flies/flies_00.png",
+      "bytes": 1101,
+      "sha256": "3b8d262fbcc975ff96b2dd9ebdffd390b684647b82c19872b1712eb1f813e095",
+      "path_length": 34
+    },
+    {
+      "path": "assets/overlays/flies/flies_01.png",
+      "bytes": 1154,
+      "sha256": "9c3cf1214d6419ee0e70d4b8968cc9f2f4ebab5ec57a39da8b579dbdfd4c406c",
+      "path_length": 34
+    },
+    {
+      "path": "assets/overlays/flies/flies_02.png",
+      "bytes": 1020,
+      "sha256": "16c65a33da703e89a156c75542dc35075cd31fb053776b9cc78112e3868a43c8",
+      "path_length": 34
+    },
+    {
+      "path": "assets/overlays/flies/flies_03.png",
+      "bytes": 945,
+      "sha256": "f623166dd036deefd30617e1cf16d88dff57a6f33171cb2bc11cdfcf5a1f4e69",
+      "path_length": 34
+    },
+    {
+      "path": "assets/overlays/fun/glasses.png",
+      "bytes": 5272,
+      "sha256": "35f6af7afeefb02085e2cef9b0c224bca10bc1273fdae50a4c1daf54588c2d2e",
+      "path_length": 31
+    },
+    {
+      "path": "assets/overlays/fun/hat.png",
+      "bytes": 4555,
+      "sha256": "a964cfb2904ee4ef0c186fa02b9c255a2d0564db23f680bf9e1cbd0a68dda6ca",
+      "path_length": 27
+    },
+    {
+      "path": "assets/overlays/fun/mustache.png",
+      "bytes": 13533,
+      "sha256": "89f7ad39ee19c4f56cd2ebbb9791198a24ef36266ff6eee6b06a82a62f895509",
+      "path_length": 32
+    },
+    {
+      "path": "assets/overlays/fun/rainbow.png",
+      "bytes": 41318,
+      "sha256": "24ed17ca33eb9a6456d852ff7f302b8c90db23b34e48198ca4d3f8d9af405c78",
+      "path_length": 31
+    },
+    {
+      "path": "css/app.css",
+      "bytes": 6981,
+      "sha256": "110db6b2366e150db700102e9640889221edd897b68213339c2acbe3d3cd0930",
+      "path_length": 11
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 1988,
+      "sha256": "0144c375a6c63d8ba2f3cfc01af6cb83cb9db26e18910b23685bb7a9b1df2b44",
+      "path_length": 14
+    },
+    {
+      "path": "docs/audits/MERGE_MATRIX.md",
+      "bytes": 1191,
+      "sha256": "a8e7d9de0f604ec7a3667709052d21c3e01ca979667cdaf662e5602429f024d0",
+      "path_length": 27
+    },
+    {
+      "path": "docs/audits/REPO_AUDIT.md",
+      "bytes": 3837,
+      "sha256": "8c567a83f95b9f871bee485389275f6d628ee743321aba8554265618b3490b5f",
+      "path_length": 25
+    },
+    {
+      "path": "docs/audits/SECURITY_NOTES.md",
+      "bytes": 648,
+      "sha256": "b52a8756e184a3d02273a5541bf0226d01e19c02f8cdf340a7e31eb99933c476",
+      "path_length": 29
+    },
+    {
+      "path": "docs/licenses/LICENSING_NOTES.md",
+      "bytes": 1079,
+      "sha256": "ee7445e39c0b311000db23bff732d73150dc21c57e3e9c11951f533d1868b913",
+      "path_length": 32
+    },
+    {
+      "path": "docs/licenses/SC-API-master_LICENSE",
+      "bytes": 1073,
+      "sha256": "a04d9daa51038b5928b42b54d454eccb54a31b44cd61f3e9856964d763a2a5b4",
+      "path_length": 35
+    },
+    {
+      "path": "docs/licenses/SnapBrute-main_LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "path_length": 36
+    },
+    {
+      "path": "docs/licenses/SwiftyCam-master_LICENSE",
+      "bytes": 1272,
+      "sha256": "98dfd400684b138cb3a3e94d7909183af05a33b9383a29f50473460f87872e63",
+      "path_length": 38
+    },
+    {
+      "path": "docs/licenses/snap-camera-server-main_LICENSE",
+      "bytes": 1112,
+      "sha256": "97d4e10c132c57dcc153a08e05dbc687bb011f899680e9c76c98df0b1f6851d6",
+      "path_length": 45
+    },
+    {
+      "path": "docs/licenses/snapchat-clone-master_LICENSE",
+      "bytes": 1089,
+      "sha256": "f88d94514b52c4ed11d9ffc0168d6f3abe64663e0d42df54697862a32952026f",
+      "path_length": 43
+    },
+    {
+      "path": "docs/licenses/snapchat-filters-opencv-master_LICENSE",
+      "bytes": 1068,
+      "sha256": "f70bc4ea4ed1143b5a05392419036c9ef4f60807650dd1c19ace5d9df3d9cb53",
+      "path_length": 52
+    },
+    {
+      "path": "docs/manifests/ORIGINAL_MANIFESTS.md",
+      "bytes": 1585,
+      "sha256": "4b9f2d67b7d617b6b4876e27ebd6faa0431f1cb254b2716255ee7946b675e2dc",
+      "path_length": 36
+    },
+    {
+      "path": "docs/manifests/SC-API-master__composer.json.txt",
+      "bytes": 798,
+      "sha256": "707a0374292603b6878e2495649e99e5250874e564a5b8b2dd1e57f87b2aecd3",
+      "path_length": 47
+    },
+    {
+      "path": "docs/manifests/SnapBrute-main__requirements.txt.txt",
+      "bytes": 33,
+      "sha256": "a09d08c147912ce39767756bef9d7b11834a1f1877f7466dbf3d168c0b2999f3",
+      "path_length": 51
+    },
+    {
+      "path": "docs/manifests/SnapchatLikeCamera-master__app__build.gradle.txt",
+      "bytes": 886,
+      "sha256": "08c3ada01d465da3530273de7b377405d7516915621f41ee52be71b015d40b1d",
+      "path_length": 63
+    },
+    {
+      "path": "docs/manifests/SnapchatLikeCamera-master__build.gradle.txt",
+      "bytes": 498,
+      "sha256": "87b3d95c2404871423d09aff6dc75b4cec4d3189d66c9288776a6207bc66631e",
+      "path_length": 58
+    },
+    {
+      "path": "docs/manifests/final_manifest.json",
+      "bytes": 8582,
+      "sha256": "54d4f87411aed225e8474f8c105922601eb75dcacdd22eeb8af0a513b2214889",
+      "path_length": 34
+    },
+    {
+      "path": "docs/manifests/simple-snapchat-master__Podfile.txt",
+      "bytes": 334,
+      "sha256": "b68b564524bdd65a7740f057dcdd72515e182782148d9babf6725526f5f1a452",
+      "path_length": 50
+    },
+    {
+      "path": "docs/manifests/snap-camera-server-main__migrations__package.json.txt",
+      "bytes": 24,
+      "sha256": "73513439b93b2391b8a67720b5e0959f46afc909c1f0fc7dd73b79c5ae36bda7",
+      "path_length": 68
+    },
+    {
+      "path": "docs/manifests/snap-camera-server-main__migrations__sqls__package.json.txt",
+      "bytes": 24,
+      "sha256": "73513439b93b2391b8a67720b5e0959f46afc909c1f0fc7dd73b79c5ae36bda7",
+      "path_length": 74
+    },
+    {
+      "path": "docs/manifests/snap-camera-server-main__package.json.txt",
+      "bytes": 1497,
+      "sha256": "ec554fc3a50e14ac271a6816c064220c31b245f074bb1114977b441f938e6ebe",
+      "path_length": 56
+    },
+    {
+      "path": "docs/manifests/snapchat-clone-master__package.json.txt",
+      "bytes": 3470,
+      "sha256": "f15012d029a583a7219d68ac3e2edafbf97037a6d4c975c9e1886c4094648ab7",
+      "path_length": 54
+    },
+    {
+      "path": "docs/manifests/snapchat-filters-opencv-master__requirements.txt.txt",
+      "bytes": 82,
+      "sha256": "e8aa729e6c4e05cdeebc36e49f3a990d48f9af6e994834b9e8dd344c2cb08a68",
+      "path_length": 67
+    },
+    {
+      "path": "docs/manifests/snapcrack-main__requirements.txt.txt",
+      "bytes": 62,
+      "sha256": "de55c2cfafc6baf3e8e6aaeebc065b94dafe82f65786a7b5a609a99c0442d416",
+      "path_length": 51
+    },
+    {
+      "path": "docs/manifests/source_manifest.json",
+      "bytes": 9826,
+      "sha256": "3a4cca47d1e9e3597eeabf1d9f2c1948baaf759dc676560dd22a2673ab824282",
+      "path_length": 35
+    },
+    {
+      "path": "index.html",
+      "bytes": 7631,
+      "sha256": "2e12717079ba0cd9d6be66219032951358cbdc3af6399452750ad6a5a9a1e507",
+      "path_length": 10
+    },
+    {
+      "path": "js/app.js",
+      "bytes": 20902,
+      "sha256": "3c02499fce4c69e7cb3304649e0445a897cd65c301253c75dd006aac86c3b579",
+      "path_length": 9
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 205,
+      "sha256": "cfb53a9f0a2f5fe4deffa1fb283ec66426d7a44ba270d983ae0ae97dd2bd0ba7",
+      "path_length": 20
+    },
+    {
+      "path": "package.json",
+      "bytes": 239,
+      "sha256": "d151a560d0207a368f385b7936e575f1cdd6b5217abef58eb34e2bc2c28af101",
+      "path_length": 12
+    },
+    {
+      "path": "server/local-dev-server.js",
+      "bytes": 964,
+      "sha256": "7c3ba56985a4c7bc3a287508e8a81817f329f58545e1d022d4d78a7cf48fdbc1",
+      "path_length": 26
+    },
+    {
+      "path": "start-windows.bat",
+      "bytes": 59,
+      "sha256": "a8aa5922dbd0284d5d27f138f0a5a7a5f38fd3cfd94248c879a70777e431a9e5",
+      "path_length": 17
+    }
+  ]
+}

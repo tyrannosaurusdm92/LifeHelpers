@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "appName": "Socials Application",
+  "profiles": [
+    {
+      "id": "friend",
+      "name": "Friend",
+      "color": "#38bdf8",
+      "status": "Around"
+    },
+    {
+      "id": "loved-one",
+      "name": "Loved One",
+      "color": "#f472b6",
+      "status": "Around"
+    }
+  ],
+  "channels": {
+    "general": [],
+    "checkins": [],
+    "cats": [],
+    "plans": []
+  },
+  "feed": [],
+  "stories": [],
+  "events": [
+    {
+      "id": "event_aa396207c5264294",
+      "title": "Test Event",
+      "start": "2026-06-21T12:00",
+      "end": "2026-06-21T12:00",
+      "location": "",
+      "description": "",
+      "createdBy": "Friend",
+      "createdAt": "2026-06-21T11:47:55.260Z",
+      "updatedAt": "2026-06-21T11:47:55.260Z"
+    }
+  ],
+  "messengerEnvelopes": [],
+  "createdAt": "2026-06-21T11:47:51.338Z",
+  "updatedAt": "2026-06-21T11:47:55.260Z"
+}

@@ -1,0 +1,414 @@
+{
+  "schema": "socials.application.final_manifest.v2",
+  "generatedAt": "2026-06-21T11:05:03Z",
+  "appName": "Socials Application",
+  "version": "1.1.0",
+  "integrationSummary": [
+    "Unified social feed, channels, camera/stories, and rooms from prior merged packages.",
+    "Added offline mobile game keep-set under app/games.",
+    "Added live presence roster and multiplayer game player bridge.",
+    "Kept source audits, manifests, and license notes under docs."
+  ],
+  "gameCount": 25,
+  "topLevelPaths": [
+    ".env.example",
+    "LICENSE",
+    "README.md",
+    "app",
+    "docs",
+    "package.json",
+    "server.js",
+    "start-windows.bat"
+  ],
+  "fileCount": 97,
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 116
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1089
+    },
+    {
+      "path": "README.md",
+      "bytes": 2858
+    },
+    {
+      "path": "app/app-games.js",
+      "bytes": 16692
+    },
+    {
+      "path": "app/app.js",
+      "bytes": 50525
+    },
+    {
+      "path": "app/assets/overlays/dog/ears.png",
+      "bytes": 68911
+    },
+    {
+      "path": "app/assets/overlays/dog/nose.png",
+      "bytes": 25801
+    },
+    {
+      "path": "app/assets/overlays/dog/tongue.png",
+      "bytes": 46375
+    },
+    {
+      "path": "app/assets/overlays/flies/flies_00.png",
+      "bytes": 1101
+    },
+    {
+      "path": "app/assets/overlays/flies/flies_01.png",
+      "bytes": 1154
+    },
+    {
+      "path": "app/assets/overlays/flies/flies_02.png",
+      "bytes": 1020
+    },
+    {
+      "path": "app/assets/overlays/flies/flies_03.png",
+      "bytes": 945
+    },
+    {
+      "path": "app/assets/overlays/fun/glasses.png",
+      "bytes": 5272
+    },
+    {
+      "path": "app/assets/overlays/fun/hat.png",
+      "bytes": 4555
+    },
+    {
+      "path": "app/assets/overlays/fun/mustache.png",
+      "bytes": 13533
+    },
+    {
+      "path": "app/assets/overlays/fun/rainbow.png",
+      "bytes": 41318
+    },
+    {
+      "path": "app/games/8ballclassic.html",
+      "bytes": 8815098
+    },
+    {
+      "path": "app/games/amongus.html",
+      "bytes": 7870674
+    },
+    {
+      "path": "app/games/angrybirds.html",
+      "bytes": 14147188
+    },
+    {
+      "path": "app/games/backrooms.html",
+      "bytes": 24724337
+    },
+    {
+      "path": "app/games/badpiggies.html",
+      "bytes": 10002011
+    },
+    {
+      "path": "app/games/bloxorz.html",
+      "bytes": 9824296
+    },
+    {
+      "path": "app/games/bubbleshooter.html",
+      "bytes": 7076246
+    },
+    {
+      "path": "app/games/candycrush.html",
+      "bytes": 4528176
+    },
+    {
+      "path": "app/games/capybaraclicker.html",
+      "bytes": 13528719
+    },
+    {
+      "path": "app/games/clashofvikings.html",
+      "bytes": 3788303
+    },
+    {
+      "path": "app/games/doodlejump.html",
+      "bytes": 422608
+    },
+    {
+      "path": "app/games/ducklife.html",
+      "bytes": 8514800
+    },
+    {
+      "path": "app/games/fancypantsadventure2.html",
+      "bytes": 21462423
+    },
+    {
+      "path": "app/games/flappybird.html",
+      "bytes": 4341092
+    },
+    {
+      "path": "app/games/floodrunner2.html",
+      "bytes": 9256313
+    },
+    {
+      "path": "app/games/fnaf.html",
+      "bytes": 19627678
+    },
+    {
+      "path": "app/games/fnaf4.html",
+      "bytes": 23273034
+    },
+    {
+      "path": "app/games/fruitninja.html",
+      "bytes": 8404819
+    },
+    {
+      "path": "app/games/houseofhazards.html",
+      "bytes": 17371118
+    },
+    {
+      "path": "app/games/jetpackjoyride.html",
+      "bytes": 21990169
+    },
+    {
+      "path": "app/games/minesweeper.html",
+      "bytes": 1230108
+    },
+    {
+      "path": "app/games/noobminer.html",
+      "bytes": 2599751
+    },
+    {
+      "path": "app/games/paintbynumber.html",
+      "bytes": 69871
+    },
+    {
+      "path": "app/games/plantsvszombies.html",
+      "bytes": 21035113
+    },
+    {
+      "path": "app/games/retropingpong.html",
+      "bytes": 3520774
+    },
+    {
+      "path": "app/games_manifest.json",
+      "bytes": 18196
+    },
+    {
+      "path": "app/index.html",
+      "bytes": 16055
+    },
+    {
+      "path": "app/manifest.webmanifest",
+      "bytes": 171
+    },
+    {
+      "path": "app/styles.css",
+      "bytes": 15390
+    },
+    {
+      "path": "docs/LICENSING.md",
+      "bytes": 1017
+    },
+    {
+      "path": "docs/MERGE_AUDIT.md",
+      "bytes": 3493
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 658
+    },
+    {
+      "path": "docs/SECURITY_AUDIT.md",
+      "bytes": 1904
+    },
+    {
+      "path": "docs/audits/discord_dedup_audit.md",
+      "bytes": 2814
+    },
+    {
+      "path": "docs/audits/discord_merge_audit.md",
+      "bytes": 2728
+    },
+    {
+      "path": "docs/audits/discord_unused_source_audit.md",
+      "bytes": 1574
+    },
+    {
+      "path": "docs/audits/snap_repo_audit.md",
+      "bytes": 3837
+    },
+    {
+      "path": "docs/audits/snap_security_notes.md",
+      "bytes": 648
+    },
+    {
+      "path": "docs/audits/zoom_audit.md",
+      "bytes": 1722
+    },
+    {
+      "path": "docs/audits/zoom_security.md",
+      "bytes": 689
+    },
+    {
+      "path": "docs/licenses/BetterDiscord-development_LICENSE.txt",
+      "bytes": 10174
+    },
+    {
+      "path": "docs/licenses/BetterDiscordApp_LICENSE.txt",
+      "bytes": 1082
+    },
+    {
+      "path": "docs/licenses/Discord-History-Tracker_LICENSE.txt",
+      "bytes": 1071
+    },
+    {
+      "path": "docs/licenses/DiscordPHP_LICENSE.txt",
+      "bytes": 1125
+    },
+    {
+      "path": "docs/licenses/LICENSING_NOTES.md",
+      "bytes": 1079
+    },
+    {
+      "path": "docs/licenses/NO_LICENSE_NOTICES.md",
+      "bytes": 415
+    },
+    {
+      "path": "docs/licenses/OpenAsar_LICENSE.txt",
+      "bytes": 34523
+    },
+    {
+      "path": "docs/licenses/SC-API-master_LICENSE",
+      "bytes": 1073
+    },
+    {
+      "path": "docs/licenses/SnapBrute-main_LICENSE",
+      "bytes": 35149
+    },
+    {
+      "path": "docs/licenses/SwiftyCam-master_LICENSE",
+      "bytes": 1272
+    },
+    {
+      "path": "docs/licenses/Vesktop_LICENSE.txt",
+      "bytes": 35149
+    },
+    {
+      "path": "docs/licenses/acrd.app_LICENSE.txt",
+      "bytes": 16726
+    },
+    {
+      "path": "docs/licenses/discord-example-app_LICENSE.txt",
+      "bytes": 1068
+    },
+    {
+      "path": "docs/licenses/embedded-app-sdk_LICENSE.txt",
+      "bytes": 1077
+    },
+    {
+      "path": "docs/licenses/garely-main-LICENSE.txt",
+      "bytes": 34524
+    },
+    {
+      "path": "docs/licenses/lemonade_LICENSE.txt",
+      "bytes": 19411
+    },
+    {
+      "path": "docs/licenses/meeting-scribe-main-LICENSE.txt",
+      "bytes": 1083
+    },
+    {
+      "path": "docs/licenses/meeting-transcriber-main-LICENSE.txt",
+      "bytes": 1063
+    },
+    {
+      "path": "docs/licenses/open-meet-main-LICENSE.txt",
+      "bytes": 1070
+    },
+    {
+      "path": "docs/licenses/snap-camera-server-main_LICENSE",
+      "bytes": 1112
+    },
+    {
+      "path": "docs/licenses/snapchat-clone-master_LICENSE",
+      "bytes": 1089
+    },
+    {
+      "path": "docs/licenses/snapchat-filters-opencv-master_LICENSE",
+      "bytes": 1068
+    },
+    {
+      "path": "docs/manifests/SHA256SUMS.txt",
+      "bytes": 5999
+    },
+    {
+      "path": "docs/manifests/final_manifest.json",
+      "bytes": 10404
+    },
+    {
+      "path": "docs/manifests/upstream_discord_manifest.json",
+      "bytes": 8642
+    },
+    {
+      "path": "docs/manifests/upstream_snap_final_manifest.json",
+      "bytes": 8776
+    },
+    {
+      "path": "docs/manifests/upstream_snap_source_manifest.json",
+      "bytes": 9826
+    },
+    {
+      "path": "docs/manifests/upstream_zoom_dependency_manifest.csv",
+      "bytes": 26787
+    },
+    {
+      "path": "docs/manifests/upstream_zoom_source_manifest.json",
+      "bytes": 15980
+    },
+    {
+      "path": "docs/mobile-games/README.md",
+      "bytes": 1223
+    },
+    {
+      "path": "docs/mobile-games/SOCIALS_INTEGRATION.md",
+      "bytes": 1108
+    },
+    {
+      "path": "docs/mobile-games/included_games_manifest.json",
+      "bytes": 16920
+    },
+    {
+      "path": "docs/mobile-games/licenses_and_attribution.md",
+      "bytes": 1213
+    },
+    {
+      "path": "docs/mobile-games/non_kept_games_audit.json",
+      "bytes": 10757
+    },
+    {
+      "path": "docs/mobile-games/original_archive_README.md",
+      "bytes": 731
+    },
+    {
+      "path": "docs/mobile-games/package_build_audit.json",
+      "bytes": 25853
+    },
+    {
+      "path": "docs/mobile-games/source_manifest_snapshot.json",
+      "bytes": 170943
+    },
+    {
+      "path": "docs/mobile-games/static_validation.json",
+      "bytes": 870
+    },
+    {
+      "path": "package.json",
+      "bytes": 452
+    },
+    {
+      "path": "server.js",
+      "bytes": 21730
+    },
+    {
+      "path": "start-windows.bat",
+      "bytes": 203
+    }
+  ]
+}
