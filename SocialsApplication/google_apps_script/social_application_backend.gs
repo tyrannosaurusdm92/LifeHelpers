@@ -9,10 +9,6 @@
  * The browser site supplies its own projectId, so this one Apps Script deployment can be reused by
  * multiple separate projects/sites. The backend stores each project separately in the same spreadsheet.
  *
- * Current deployed web app URL embedded in the frontend:
- * https://script.google.com/macros/s/AKfycbzL5BoWZsDaTQGzLE-AvoubKyVsEanUGNSwrNyKP7wEw3pK4-2KOw2LVfKejtwyNnvK/exec
- * Deployment ID:
- * AKfycbzL5BoWZsDaTQGzLE-AvoubKyVsEanUGNSwrNyKP7wEw3pK4-2KOw2LVfKejtwyNnvK
  *
  * Important architecture note:
  * - Google Apps Script can store messages/files/events, authenticate sessions, enforce the 10-person cap,
