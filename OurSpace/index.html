@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Living Sunset Tree Scene</title>
+  <meta name="description" content="Animated painterly sunset scene with a smiling tree, rope swing, moving river, waterfall shimmer, drifting leaves, swaying grass, and tiny layered asset textures." />
+  <link rel="stylesheet" href="css/scene.css" />
+</head>
+<body>
+  <main class="scene-shell" aria-label="Animated sunset landscape scene">
+    <section id="scene" class="scene" aria-label="Living sunset scene based on the uploaded tree and waterfall image">
+      <img class="base-bg" src="assets/base/sunset-tree-base.png" alt="Painterly sunset landscape with a smiling tree, river, and waterfall" />
+      <div class="tree-shadow-breath" aria-hidden="true"></div>
+      <div class="tree-breath" aria-hidden="true"></div>
+      <div class="sky-swirl" aria-hidden="true"></div>
+      <div class="cloud-veil" aria-hidden="true"></div>
+      <div class="cloud-veil two" aria-hidden="true"></div>
+      <div id="skyLayer" class="motion-layer layer sky" aria-hidden="true"></div>
+      <div id="mountainLayer" class="motion-layer layer mountain" aria-hidden="true"></div>
+      <div id="waterLayer" class="motion-layer layer water" aria-hidden="true"></div>
+      <div class="water-ribbon" aria-hidden="true"></div>
+      <div class="water-ribbon small" aria-hidden="true"></div>
+      <div class="water-ribbon riverline" aria-hidden="true"></div>
+      <div id="mistLayer" class="motion-layer layer mist" aria-hidden="true"></div>
+      <div id="microLayer" class="motion-layer layer micro" aria-hidden="true"></div>
+      <div id="vegetationLayer" class="motion-layer layer vegetation" aria-hidden="true"></div>
+      <div class="swing-rig" aria-hidden="true"><div class="swing-seat"></div></div>
+      <div id="leavesLayer" class="motion-layer layer leaves" aria-hidden="true"></div>
+      <div id="foregroundLayer" class="motion-layer layer foreground" aria-hidden="true"></div>
+      <div id="grassLayer" class="motion-layer layer grass" aria-hidden="true"></div>
+      <aside class="fx-toggle" aria-label="Scene controls">
+        <button id="motionBtn" type="button">Motion on</button>
+        <button id="densityBtn" type="button">Tiny layers on</button>
+      </aside>
+    </section>
+  </main>
+  <script src="js/scene-assets.js"></script>
+  <script src="js/scene.js"></script>
+</body>
+</html>
