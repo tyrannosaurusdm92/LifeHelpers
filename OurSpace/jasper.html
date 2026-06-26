@@ -196,6 +196,93 @@ body.ourspace-myspace-coded .top-inner{backdrop-filter:none;}
 </style>
 <style id="myspaceThemeStyle"></style>
 
+<style id="ourspaceEmergencyStyle">
+/* OurSpace emergency controls: this style lives after user layout CSS so recovery buttons stay usable. */
+html body .ourspace-safe-controls,
+html body .ourspace-safe-controls *,
+html body .app-top,
+html body .app-top *,
+html body .main-nav,
+html body .main-nav *{
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  filter:none!important;
+  transform:none!important;
+  text-shadow:none!important;
+  -webkit-text-stroke:0!important;
+}
+html body .app-top{
+  position:sticky!important;
+  top:0!important;
+  z-index:2147483200!important;
+  display:block!important;
+  min-height:auto!important;
+  height:auto!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  background:linear-gradient(135deg,#111827,#1f2937)!important;
+  color:#ffffff!important;
+  border-bottom:4px solid #ff9a3d!important;
+  box-shadow:0 6px 24px rgba(15,23,42,.22)!important;
+}
+html body .app-top .top-inner{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:.75rem!important;max-width:1280px!important;margin:auto!important;padding:.65rem .85rem!important;background:transparent!important;}
+html body .app-top .brand strong,
+html body .app-top .brand span{color:#fff!important;background:transparent!important;}
+html body .main-nav{display:flex!important;gap:.35rem!important;flex-wrap:wrap!important;justify-content:flex-end!important;background:transparent!important;border:0!important;}
+html body .main-nav button,
+html body .ourspace-safe-controls button,
+html body .ourspace-safe-controls select{
+  position:relative!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:auto!important;
+  min-height:40px!important;
+  width:auto!important;
+  height:auto!important;
+  margin:.12rem!important;
+  padding:.55rem .75rem!important;
+  border:2px solid #ffffff!important;
+  border-radius:999px!important;
+  background:#ffffff!important;
+  color:#001e24!important;
+  font:800 14px/1.15 Arial,Helvetica,sans-serif!important;
+  text-align:center!important;
+  text-transform:none!important;
+  letter-spacing:0!important;
+  box-shadow:0 4px 12px rgba(0,0,0,.28)!important;
+  cursor:pointer!important;
+}
+html body .main-nav button.active{background:#00ffff!important;color:#001e24!important;border-color:#001e24!important;}
+html body .ourspace-safe-controls{
+  position:fixed!important;
+  right:.65rem!important;
+  bottom:.65rem!important;
+  z-index:2147483600!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:.35rem!important;
+  align-items:center!important;
+  max-width:min(96vw,680px)!important;
+  padding:.55rem!important;
+  border:3px solid #00ffff!important;
+  border-radius:18px!important;
+  background:rgba(0,30,36,.96)!important;
+  color:#ffffff!important;
+  box-shadow:0 12px 35px rgba(0,0,0,.45)!important;
+  font:800 14px/1.25 Arial,Helvetica,sans-serif!important;
+}
+html body .ourspace-safe-controls strong{color:#fff!important;font:900 14px/1.2 Arial,Helvetica,sans-serif!important;}
+html body .ourspace-safe-controls .safe-status{font-weight:700!important;color:#d9ffff!important;max-width:20rem!important;}
+html body .ourspace-safe-controls .danger{background:#fff1f2!important;color:#9f1239!important;border-color:#fb7185!important;}
+html body .ourspace-safe-controls .good{background:#dcfce7!important;color:#14532d!important;border-color:#22c55e!important;}
+html body.ourspace-layout-safe-mode #myspaceThemeStyle{disabled:disabled;}
+html body.ourspace-layout-safe-mode .page{background:rgba(255,255,255,.92)!important;color:#111827!important;}
+@media(max-width:700px){html body .ourspace-safe-controls{left:.45rem!important;right:.45rem!important;bottom:.45rem!important;} html body .ourspace-safe-controls button{flex:1 1 9rem!important;}}
+</style>
+
 <link rel="manifest" href="./manifest.webmanifest">
 <meta name="theme-color" content="#00ffff">
 <meta name="mobile-web-app-capable" content="yes">
@@ -203,6 +290,16 @@ body.ourspace-myspace-coded .top-inner{backdrop-filter:none;}
 <meta name="msapplication-config" content="./browserconfig.xml">
 </head>
 <body data-ourspace-user="jasper" data-ourspace-partner="william">
+
+<div id="ourspaceSafeControls" class="ourspace-safe-controls" role="region" aria-label="OurSpace safe layout controls">
+  <strong>Layout Rescue</strong>
+  <button type="button" id="safeModeButton" class="good">Safe view</button>
+  <button type="button" id="clearCurrentLayoutButton" class="danger">Remove this page code</button>
+  <button type="button" id="clearAllLayoutsButton" class="danger">Remove all page codes</button>
+  <button type="button" id="openSyncSafeButton">Open Sync</button>
+  <span id="layoutRescueStatus" class="safe-status">If styling breaks buttons, use these.</span>
+</div>
+
 <header class="app-top">
   <div class="top-inner">
     <div class="brand"><strong id="appTitle">OurSpace</strong><span id="userLine">Signed in</span></div>
@@ -525,6 +622,24 @@ let currentPage='home';
 let calendarView='annual';
 let musicIndex=-1;
 let gameTimer=null, gameMinute=0;
+
+const SAFE_LAYOUT_MODE=/([?&](safe|safeLayout|noskins|layoutSafe)=1)|(#safe\b|#safe-layout\b)/i.test(location.href);
+const CLEAR_LAYOUT_ON_BOOT=/([?&](clearLayout|resetStyle|clearStyles)=1)|(#clear-layout\b|#reset-style\b|#remove-myspace\b)/i.test(location.href);
+function setRescueStatus(text){const el=$('layoutRescueStatus'); if(el)el.textContent=text||'';}
+function removeAllLayoutCodesLocal(){state.pageMyspaceCodes={}; state.myspaceCode=''; localStorage.setItem(STORE_KEY,JSON.stringify(state));}
+function removeCurrentLayoutCodeLocal(){ensurePageCodes(); delete state.pageMyspaceCodes[currentPage||'home']; if((currentPage||'home')==='home')state.myspaceCode=''; localStorage.setItem(STORE_KEY,JSON.stringify(state));}
+async function pushLayoutRescueState(){try{await saveStateToBackend(); setRescueStatus('Saved. Refresh or use the page buttons again.');}catch(e){setRescueStatus('Removed locally. Backend sync can retry from Sync.');}}
+function enterSafeLayoutView(){document.body.classList.add('ourspace-layout-safe-mode'); const style=$('myspaceThemeStyle'); if(style)style.textContent=''; setRescueStatus('Safe view is on. Your code is not deleted until you remove it.');}
+async function clearCurrentLayoutCode(){removeCurrentLayoutCodeLocal(); document.body.classList.remove('ourspace-layout-safe-mode'); applyMyspaceCode(); await pushLayoutRescueState();}
+async function clearAllLayoutCodes(){removeAllLayoutCodesLocal(); document.body.classList.remove('ourspace-layout-safe-mode'); applyMyspaceCode(); await pushLayoutRescueState();}
+function initEmergencyLayoutControls(){
+  $('safeModeButton')?.addEventListener('click',enterSafeLayoutView);
+  $('clearCurrentLayoutButton')?.addEventListener('click',clearCurrentLayoutCode);
+  $('clearAllLayoutsButton')?.addEventListener('click',clearAllLayoutCodes);
+  $('openSyncSafeButton')?.addEventListener('click',()=>{setPage('sync'); window.scrollTo({top:0,behavior:'smooth'});});
+  if(SAFE_LAYOUT_MODE) setTimeout(enterSafeLayoutView,0);
+}
+
 function normalizeCurrency(w=state.wallet){let copper=Number(w.copper||0)+Number(w.silver||0)*10+Number(w.gold||0)*100+Number(w.platinum||0)*1000; w.platinum=Math.floor(copper/1000); copper%=1000; w.gold=Math.floor(copper/100); copper%=100; w.silver=Math.floor(copper/10); w.copper=copper%10; return w;}
 function currencyToCopper(w){return Number(w.copper||0)+Number(w.silver||0)*10+Number(w.gold||0)*100+Number(w.platinum||0)*1000;}
 function copperToCurrency(n){return normalizeCurrency({platinum:0,gold:0,silver:0,copper:Math.max(0,Math.floor(n||0))});}
@@ -831,9 +946,9 @@ function mapMyspaceSelector(selector,page){
     if(new RegExp('#page-(?:'+MYSPACE_PAGE_KEYS.join('|')+')','i').test(s)){add(s);return;}
     const low=s.toLowerCase();
     if(/^(?:html|body)(?:\b|[:.#\[])/.test(low)){add(bodySel,pageSel);return;}
-    if(/(?:div\.)?wrap\b|#container|\.container|\.content|div\.contentmid2|div#header|#googlebar|#topnav|#footer/.test(low)){add(pageSel,pageSel+' .home-retro-bg',pageSel+' .retro-layout',pageSel+' .page-toolbar',pageSel+' .main-nav',pageSel+' .app-top');return;}
-    if(/a\s*:\s*hover|\.redlink\s*:\s*hover|hover/.test(low)){add(pageSel+' a:hover',pageSel+' button:hover',pageSel+' .button:hover',pageSel+' .main-nav button:hover');return;}
-    if(/^a(?:\b|[:.#\[])/.test(low)||/\.redlink|\.url|urllink|urlLink|contactLinks/i.test(s)){add(pageSel+' a',pageSel+' .button',pageSel+' button',pageSel+' .main-nav button');return;}
+    if(/(?:div\.)?wrap\b|#container|\.container|\.content|div\.contentmid2|div#header|#googlebar|#topnav|#footer/.test(low)){add(pageSel,pageSel+' .home-retro-bg',pageSel+' .retro-layout',pageSel+' .page-toolbar',pageSel+' .retro-nav');return;}
+    if(/a\s*:\s*hover|\.redlink\s*:\s*hover|hover/.test(low)){add(pageSel+' a:hover',pageSel+' button:hover',pageSel+' .button:hover',pageSel+' .retro-nav button:hover');return;}
+    if(/^a(?:\b|[:.#\[])/.test(low)||/\.redlink|\.url|urllink|urlLink|contactLinks/i.test(s)){add(pageSel+' a',pageSel+' .button',pageSel+' button',pageSel+' .retro-nav button');return;}
     if(/h3\.modulehead|modulehead|nametext|orangetext15|whitetext12|lightbluetext8|\.heading|h[1-6]/.test(low)){add(pageSel+' .card-head',pageSel+' .retro-panel .heading',pageSel+' .moduleHead',pageSel+' h1',pageSel+' h2',pageSel+' h3',pageSel+' h4');return;}
     if(/(?:module|contacttable|friendspace|commentsmodule|blurbsmodule|detailsmodule).*\ba(?::|\b)/.test(low)){add(pageSel+' .myspace-module a',pageSel+' .module a',pageSel+' .card a',pageSel+' .retro-panel a');return;}
     if(/button|input\[type=['"]?submit|\.button/.test(low)){add(pageSel+' button',pageSel+' .button',pageSel+' input[type="button"]',pageSel+' input[type="submit"]');return;}
@@ -898,8 +1013,8 @@ function initWellness(){
 function applyMyspaceCode(){
   ensurePageCodes(); const homeCode=currentPageCode('home'); const box=$('myspaceCode'); if(box)box.value=homeCode; const gbox=$('globalMyspaceCode'); if(gbox)gbox.value=currentPageCode($('themePageKey')?.value||currentPage);
   const css=MYSPACE_PAGE_KEYS.map(p=>state.pageMyspaceCodes[p]?extractHomeCode(state.pageMyspaceCodes[p],p).css:'').filter(Boolean).join('\n\n');
-  $('myspaceThemeStyle').textContent=css; applyStyleHooks();
-  document.body.classList.toggle('ourspace-myspace-coded',!!currentPageCode(currentPage));
+  if(SAFE_LAYOUT_MODE||document.body.classList.contains('ourspace-layout-safe-mode')){ $('myspaceThemeStyle').textContent=''; } else { $('myspaceThemeStyle').textContent=css; } applyStyleHooks();
+  document.body.classList.toggle('ourspace-myspace-coded',!!currentPageCode(currentPage) && !(SAFE_LAYOUT_MODE||document.body.classList.contains('ourspace-layout-safe-mode')));
   document.querySelectorAll('.page').forEach(p=>{const key=p.dataset.page; p.setAttribute('data-myspace-page',key); p.classList.toggle('myspace-coded',!!state.pageMyspaceCodes[key]);});
   if($('customHomeOutput'))$('customHomeOutput').innerHTML=homeCode?'<p class="tiny">Home styling applied to the full page.</p>':'';
   if($('globalCustomOutput'))$('globalCustomOutput').innerHTML=currentPageCode($('themePageKey')?.value||currentPage)?'<p class="tiny">Page styling applied to the full page.</p>':'';
@@ -917,7 +1032,7 @@ function setPage(page){
   if(page==='daily')renderDaily(); if(page==='calendar')renderCalendar(); if(page==='dbt')renderWellness(); if(page==='games'){renderGames(); renderCurrency();} if(page==='store'){renderStore(); renderWishlist(); renderCurrency();} if(page==='sync'){fillBackendPayload(); updateInstallButton();}
 }
 
-async function boot(){initNav(); await loadStateFromBackend(); initMyspaceHooks(); initHome(); initHomeEvents(); initDaily(); initCalendar(); initWellness(); initGames(); initStore(); initMessenger(); initModals(); initInstall(); initBackendTools(); renderCurrency(); setPage('home'); if('serviceWorker' in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});}
+async function boot(){initEmergencyLayoutControls(); initNav(); if(CLEAR_LAYOUT_ON_BOOT){removeAllLayoutCodesLocal(); setRescueStatus('Layout code removed locally. Syncing the clean state...');} else { await loadStateFromBackend(); } if(CLEAR_LAYOUT_ON_BOOT){await pushLayoutRescueState();} initMyspaceHooks(); initHome(); initHomeEvents(); initDaily(); initCalendar(); initWellness(); initGames(); initStore(); initMessenger(); initModals(); initInstall(); initBackendTools(); renderCurrency(); setPage('home'); if(SAFE_LAYOUT_MODE)enterSafeLayoutView(); if('serviceWorker' in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});}
 boot();
 })();
 </script>

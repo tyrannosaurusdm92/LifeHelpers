@@ -1,4 +1,4 @@
-const OURSPACE_CACHE = 'ourspace-pwa-v13-full-myspace-diary-converter';
+const OURSPACE_CACHE = 'ourspace-panic-layout-rescue-v1';
 const CORE_ASSETS = [
   "./ourspace.html",
   "./OurSpace.html",
