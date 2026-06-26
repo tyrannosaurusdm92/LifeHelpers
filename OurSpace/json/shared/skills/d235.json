@@ -1,0 +1,4163 @@
+{
+  "schema": "pdf_to_json_text_layout_v1",
+  "created_at_utc": "2026-06-25T17:18:50.890535+00:00",
+  "group_type": "merged_similar_pdfs_json",
+  "merge_policy": {
+    "threshold": "merge documents when TF-IDF cosine similarity >= 0.60 OR 5-token shingle containment of the smaller document >= 0.60",
+    "why_containment_is_used": "Containment catches shorter PDFs that are substantially embedded inside longer PDFs even when whole-document Jaccard/cosine is lower."
+  },
+  "source_document_count": 2,
+  "source_documents": [
+    {
+      "document_id": "10208_manage_your_life_adhd_time_assessment_chart",
+      "source_index": 1,
+      "original_filename": "10208_Manage-Your-Life_adhd-time-assessment-chart.pdf",
+      "source_relative_path": "adhd/10208_Manage-Your-Life_adhd-time-assessment-chart.pdf",
+      "sha256": "45087e898f56c2e0ec2fceb12e8684deb1d3d7d69d9c6e1411e3dea52dc325cf",
+      "title": "From ADDitude’s Experts",
+      "page_count": 6,
+      "character_count": 5144,
+      "word_count": 785,
+      "link_count": 9,
+      "image_count": 14,
+      "form_field_count": 0,
+      "annotation_count": 0
+    },
+    {
+      "document_id": "bettertimemanagement",
+      "source_index": 9,
+      "original_filename": "BetterTimeManagement.pdf",
+      "source_relative_path": "adhd/BetterTimeManagement.pdf",
+      "sha256": "09fd2736ae41ca89ae1a79bd1f0c00bfdc1c5f6186457c15bbcf029396b8e1d2",
+      "title": "From ADDitude’s Experts",
+      "page_count": 12,
+      "character_count": 22773,
+      "word_count": 3782,
+      "link_count": 34,
+      "image_count": 9,
+      "form_field_count": 0,
+      "annotation_count": 0
+    }
+  ],
+  "within_group_similarity": [
+    {
+      "source_index_a": 1,
+      "filename_a": "10208_Manage-Your-Life_adhd-time-assessment-chart.pdf",
+      "source_index_b": 9,
+      "filename_b": "BetterTimeManagement.pdf",
+      "tfidf_cosine_similarity": 0.5774,
+      "five_token_shingle_jaccard": 0.1092,
+      "five_token_shingle_containment_of_smaller_doc": 0.6694,
+      "merge_recommended": true,
+      "merge_reason": ">= 60% cosine/containment similarity"
+    }
+  ],
+  "documents": [
+    {
+      "document_id": "10208_manage_your_life_adhd_time_assessment_chart",
+      "source_index": 1,
+      "original_filename": "10208_Manage-Your-Life_adhd-time-assessment-chart.pdf",
+      "source_relative_path": "adhd/10208_Manage-Your-Life_adhd-time-assessment-chart.pdf",
+      "sha256": "45087e898f56c2e0ec2fceb12e8684deb1d3d7d69d9c6e1411e3dea52dc325cf",
+      "title": "From ADDitude’s Experts",
+      "pdf_metadata": {
+        "format": "PDF 1.7",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Adobe InDesign CS5.5 (7.5.3)",
+        "producer": "Adobe PDF Library 9.9",
+        "creationDate": "D:20130703130853-04'00'",
+        "modDate": "D:20130723100752-04'00'",
+        "trapped": "",
+        "encryption": "Standard V4 R4 128-bit AES"
+      },
+      "page_count": 6,
+      "character_count": 5144,
+      "word_count": 785,
+      "link_count": 9,
+      "image_count": 14,
+      "form_field_count": 0,
+      "annotation_count": 0,
+      "full_text": "From ADDitude’s Experts\nADHD Time Assessment Chart TERMS OF USE Copyright © 2013 by New Hope Media. All rights reserved. No part of this report may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, faxing, e-mailing, posting online, or by any information storage and retrieval system, without written permission from the Publisher. All trademarks and brands referred to herein are the property of their respective owners. All references to ADDitude magazine, ADDitudeMag.com, and ADDConnect.com are trademarks of New Hope Media. CONTACT INFORMATION New Hope Media\n1-646-366-0830\n39 West 37th Street, 15th Floor\nNew York, NY 10018\nLEGAL NOTICES While all attempts have been made to verify information provided in this publication, neither the au-\nthor nor the publisher assumes any responsibility for error, omissions, or contrary interpretations of the subject matter contained herein. The purchaser or reader of this publication assumes responsibility for the use of these materials and information. Adherence to all applicable laws and regulations, both referral and state and local, govern-\ning professional licensing, business practices, advertising, and all other aspects of doing business in the United States or any other jurisdiction, is the sole responsibility of the purchaser or reader. The author and publisher assume no responsibility or liability whatsoever on the behalf of any purchaser or reader of these materials. Any perceived slights of specific people or organizations are unintentional. Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nPersonal Care\nSleep\nEating\nBathroom\nShower\nPersonal Care\n(Total Hours)\nHousehold\nHousework\nFood (prep and cleanup)\nLaundry\nLawn and other outdoor work\nPurchasing goods and services (food, car maintenance, etc.)\nProfessional services (doctor, haircutter, etc.)\nCaring for/helping household members\nCaring for/helping non-\nhousehold members\nHousehold\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y\nADHD Time Assessment Chart\nDr. Ned Hallowell developed a chart that indicates whether various tasks are really worth your time and effort. This ADHD time-management chart weighs tasks against the effort they take, the fulfillment they give, and their necessity. Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nWork and Work-Related Activities\nThe part of work you like best\nThe part of work you like least\nThe part of work that’s in-\nbetween\nWork and Work-Related Activities\n(Total Hours)\nDriving, Commuting, Taxing\n(Total Hours)\nEducational Activities\n(Total Hours)\nOrganization, Civic, and Religious Activities (Volunteer, Unpaid)\nOrganizational\nCivic\nReligious\nOrganization, Civic, and Religious Activities (Volunteer, Unpaid)\n(Total Hours)\nLEISURE\n(Total Hours)\nSocializing\nWith people you like a lot\nWith people you don’t much like\nWith people in between\nPlaying a sport\nOther exercise\nSocializing\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nElectronic Time\nE-mail\n(necessary)\nE-mail (screen sucking)\nInternet\n(necessary)\nInternet\n(screen sucking)\nTelevision\n(necessary)\nTelevision\n(screen sucking)\nTelephone\n(landline)\nCell Phone\nBlackberry, Treo, etc.\n(necessary)\nBlackberry, Treo, etc.\n(screen-sucking)\nElectronic Time\n(Total Hours)\nIntimate Time\n(Lovemaking, Cuddling, Intimate Conversation)\n(Total Hours)\nWasted, Killed, or Forgotten Time\n(Total Hours)\nCreative time\n(TOTAL HOURS)\nOther\n(Describe)\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y 6\nADDConnect.com\nFind comprehensive resources and advice for parents and educators affected by ADD and LD.\nTry a Free Issue! www.additudemag.com/subscribe\nOrder online\nyour complete resource for living well with adhd",
+      "pages": [
+        {
+          "page_number": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "From ADDitude’s Experts\nADHD Time Assessment Chart",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                154.71,
+                640.53,
+                457.93,
+                670.41
+              ],
+              "text": "From ADDitude’s Experts"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                103.72,
+                89.36,
+                520.12,
+                306.18
+              ],
+              "text": "ADHD Time\nAssessment\nChart"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 2,
+              "bbox": [
+                198.32,
+                677.58,
+                414.32,
+                749.58
+              ],
+              "width_px": 450,
+              "height_px": 150,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                124.17,
+                305.02,
+                544.39,
+                625.57
+              ],
+              "width_px": 876,
+              "height_px": 668,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "TERMS OF USE Copyright © 2013 by New Hope Media. All rights reserved. No part of this report may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, faxing, e-mailing, posting online, or by any information storage and retrieval system, without written permission from the Publisher. All trademarks and brands referred to herein are the property of their respective owners. All references to ADDitude magazine, ADDitudeMag.com, and ADDConnect.com are trademarks of New Hope Media. CONTACT INFORMATION New Hope Media\n1-646-366-0830\n39 West 37th Street, 15th Floor\nNew York, NY 10018\nLEGAL NOTICES While all attempts have been made to verify information provided in this publication, neither the au-\nthor nor the publisher assumes any responsibility for error, omissions, or contrary interpretations of the subject matter contained herein. The purchaser or reader of this publication assumes responsibility for the use of these materials and information. Adherence to all applicable laws and regulations, both referral and state and local, govern-\ning professional licensing, business practices, advertising, and all other aspects of doing business in the United States or any other jurisdiction, is the sole responsibility of the purchaser or reader. The author and publisher assume no responsibility or liability whatsoever on the behalf of any purchaser or reader of these materials. Any perceived slights of specific people or organizations are unintentional.",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                54.0,
+                69.98,
+                560.71,
+                146.36
+              ],
+              "text": "TERMS OF USE\nCopyright © 2013 by New Hope Media. All rights reserved. No part of this report may be reproduced or\ntransmitted in any form or by any means, electronic or mechanical, including photocopying, recording,\nfaxing, e-mailing, posting online, or by any information storage and retrieval system, without written\npermission from the Publisher."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                54.0,
+                159.91,
+                560.66,
+                206.36
+              ],
+              "text": "All trademarks and brands referred to herein are the property of their respective owners. All references\nto ADDitude magazine, ADDitudeMag.com, and ADDConnect.com are trademarks of New Hope Media."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                54.0,
+                223.98,
+                211.09,
+                300.36
+              ],
+              "text": "CONTACT INFORMATION\nNew Hope Media\n1-646-366-0830\n39 West 37th Street, 15th Floor\nNew York, NY 10018"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                54.0,
+                332.98,
+                560.66,
+                394.36
+              ],
+              "text": "LEGAL NOTICES\nWhile all attempts have been made to verify information provided in this publication, neither the au-\nthor nor the publisher assumes any responsibility for error, omissions, or contrary interpretations of the\nsubject matter contained herein."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                54.0,
+                407.91,
+                560.71,
+                499.36
+              ],
+              "text": "The purchaser or reader of this publication assumes responsibility for the use of these materials and\ninformation. Adherence to all applicable laws and regulations, both referral and state and local, govern-\ning professional licensing, business practices, advertising, and all other aspects of doing business in the\nUnited States or any other jurisdiction, is the sole responsibility of the purchaser or reader. The author\nand publisher assume no responsibility or liability whatsoever on the behalf of any purchaser or reader\nof these materials. Any perceived slights of specific people or organizations are unintentional."
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nPersonal Care\nSleep\nEating\nBathroom\nShower\nPersonal Care\n(Total Hours)\nHousehold\nHousework\nFood (prep and cleanup)\nLaundry\nLawn and other outdoor work\nPurchasing goods and services (food, car maintenance, etc.)\nProfessional services (doctor, haircutter, etc.)\nCaring for/helping household members\nCaring for/helping non-\nhousehold members\nHousehold\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y\nADHD Time Assessment Chart\nDr. Ned Hallowell developed a chart that indicates whether various tasks are really worth your time and effort. This ADHD time-management chart weighs tasks against the effort they take, the fulfillment they give, and their necessity.",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                178.32,
+                129.56,
+                430.46,
+                157.74
+              ],
+              "text": "Crazy Busy Time Chart"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                73.96,
+                164.83,
+                203.35,
+                209.66
+              ],
+              "text": "I.\nActivity\nII.\nAverage\nHours\nper Day"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                224.76,
+                164.83,
+                279.62,
+                209.66
+              ],
+              "text": "III.\nEffort Factor\n(1 = most,\n5 = least)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                298.83,
+                164.83,
+                348.35,
+                220.66
+              ],
+              "text": "IV.\nFulfillment\nFactor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                365.13,
+                164.83,
+                422.25,
+                209.66
+              ],
+              "text": "V.\nE x F\n(column III x\ncolumn IV)"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                430.66,
+                164.83,
+                498.02,
+                231.66
+              ],
+              "text": "VI.\nNecessity,\nRight-Thing-to-\nDo Factor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                503.14,
+                164.83,
+                570.52,
+                220.66
+              ],
+              "text": "VII.\nWorth-It Factor\n(product of\ncolumns III, IV,\nand VI)"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                40.1,
+                254.51,
+                99.28,
+                265.18
+              ],
+              "text": "Personal Care"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                40.1,
+                275.89,
+                59.77,
+                286.56
+              ],
+              "text": "Sleep"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                40.1,
+                297.28,
+                62.58,
+                307.94
+              ],
+              "text": "Eating"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                40.1,
+                318.66,
+                75.06,
+                329.33
+              ],
+              "text": "Bathroom"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                40.1,
+                340.05,
+                67.09,
+                350.71
+              ],
+              "text": "Shower"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                40.1,
+                361.43,
+                99.28,
+                383.09
+              ],
+              "text": "Personal Care\n(Total Hours)"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                40.1,
+                404.81,
+                83.29,
+                415.48
+              ],
+              "text": "Household"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                40.1,
+                426.19,
+                80.24,
+                436.86
+              ],
+              "text": "Housework"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                40.1,
+                447.58,
+                107.38,
+                469.24
+              ],
+              "text": "Food\n(prep and cleanup)"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                40.1,
+                479.96,
+                69.25,
+                490.63
+              ],
+              "text": "Laundry"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                40.1,
+                501.34,
+                127.76,
+                523.01
+              ],
+              "text": "Lawn and other outdoor\nwork"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                40.1,
+                530.13,
+                121.87,
+                562.79
+              ],
+              "text": "Purchasing goods and\nservices (food, car\nmaintenance, etc.)"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                40.1,
+                566.31,
+                123.34,
+                587.97
+              ],
+              "text": "Professional services\n(doctor, haircutter, etc.)"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                40.1,
+                591.49,
+                112.69,
+                613.15
+              ],
+              "text": "Caring for/helping\nhousehold members"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                40.1,
+                616.67,
+                123.85,
+                638.33
+              ],
+              "text": "Caring for/helping non-\nhousehold members"
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                40.1,
+                641.85,
+                94.22,
+                663.52
+              ],
+              "text": "Household\n(Total Hours)"
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                40.1,
+                690.01,
+                526.72,
+                714.8
+              ],
+              "text": "Excerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD.\n© 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y"
+            },
+            {
+              "block_index": 25,
+              "bbox": [
+                54.0,
+                32.54,
+                365.74,
+                60.0
+              ],
+              "text": "ADHD Time Assessment Chart"
+            },
+            {
+              "block_index": 26,
+              "bbox": [
+                54.0,
+                59.14,
+                560.68,
+                105.59
+              ],
+              "text": "Dr. Ned Hallowell developed a chart that indicates whether various tasks are really worth your time and\neffort. This ADHD time-management chart weighs tasks against the effort they take, the fulfillment they\ngive, and their necessity."
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nWork and Work-Related Activities\nThe part of work you like best\nThe part of work you like least\nThe part of work that’s in-\nbetween\nWork and Work-Related Activities\n(Total Hours)\nDriving, Commuting, Taxing\n(Total Hours)\nEducational Activities\n(Total Hours)\nOrganization, Civic, and Religious Activities (Volunteer, Unpaid)\nOrganizational\nCivic\nReligious\nOrganization, Civic, and Religious Activities (Volunteer, Unpaid)\n(Total Hours)\nLEISURE\n(Total Hours)\nSocializing\nWith people you like a lot\nWith people you don’t much like\nWith people in between\nPlaying a sport\nOther exercise\nSocializing\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                178.32,
+                33.08,
+                430.46,
+                61.26
+              ],
+              "text": "Crazy Busy Time Chart"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                73.96,
+                68.35,
+                203.35,
+                113.18
+              ],
+              "text": "I.\nActivity\nII.\nAverage\nHours\nper Day"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                224.76,
+                68.35,
+                279.62,
+                113.18
+              ],
+              "text": "III.\nEffort Factor\n(1 = most,\n5 = least)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                298.83,
+                68.35,
+                348.35,
+                124.18
+              ],
+              "text": "IV.\nFulfillment\nFactor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                365.13,
+                68.35,
+                422.25,
+                113.18
+              ],
+              "text": "V.\nE x F\n(column III x\ncolumn IV)"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                430.66,
+                68.35,
+                498.02,
+                135.18
+              ],
+              "text": "VI.\nNecessity,\nRight-Thing-to-\nDo Factor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                503.14,
+                68.35,
+                570.52,
+                124.18
+              ],
+              "text": "VII.\nWorth-It Factor\n(product of\ncolumns III, IV,\nand VI)"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                40.1,
+                154.43,
+                140.43,
+                176.09
+              ],
+              "text": "Work and Work-Related\nActivities"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                40.1,
+                179.61,
+                131.48,
+                201.27
+              ],
+              "text": "The part of work you like\nbest"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                40.1,
+                204.79,
+                131.48,
+                226.46
+              ],
+              "text": "The part of work you like\nleast"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                40.1,
+                229.98,
+                133.66,
+                251.64
+              ],
+              "text": "The part of work that’s in-\nbetween"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                40.1,
+                255.16,
+                140.43,
+                287.82
+              ],
+              "text": "Work and Work-Related\nActivities\n(Total Hours)"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                40.1,
+                307.86,
+                122.54,
+                340.52
+              ],
+              "text": "Driving, Commuting,\nTaxing\n(Total Hours)"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                40.1,
+                360.57,
+                130.87,
+                382.23
+              ],
+              "text": "Educational Activities\n(Total Hours)"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                40.1,
+                396.75,
+                137.71,
+                429.41
+              ],
+              "text": "Organization, Civic, and\nReligious Activities\n(Volunteer, Unpaid)"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                40.1,
+                434.83,
+                91.89,
+                445.5
+              ],
+              "text": "Organizational"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                40.1,
+                452.83,
+                57.42,
+                463.5
+              ],
+              "text": "Civic"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                40.1,
+                470.83,
+                73.07,
+                481.5
+              ],
+              "text": "Religious"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                40.1,
+                486.93,
+                137.71,
+                530.58
+              ],
+              "text": "Organization, Civic, and\nReligious Activities\n(Volunteer, Unpaid)\n(Total Hours)"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                40.1,
+                550.63,
+                94.22,
+                572.29
+              ],
+              "text": "LEISURE\n(Total Hours)"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                40.1,
+                586.81,
+                85.24,
+                597.47
+              ],
+              "text": "Socializing"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                40.1,
+                602.9,
+                130.15,
+                613.56
+              ],
+              "text": "With people you like a lot"
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                40.1,
+                618.99,
+                142.01,
+                640.65
+              ],
+              "text": "With people you don’t much\nlike"
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                40.1,
+                646.08,
+                123.72,
+                656.75
+              ],
+              "text": "With people in between"
+            },
+            {
+              "block_index": 25,
+              "bbox": [
+                40.1,
+                664.08,
+                93.54,
+                674.75
+              ],
+              "text": "Playing a sport"
+            },
+            {
+              "block_index": 26,
+              "bbox": [
+                40.1,
+                682.08,
+                91.48,
+                692.75
+              ],
+              "text": "Other exercise"
+            },
+            {
+              "block_index": 27,
+              "bbox": [
+                40.1,
+                698.17,
+                94.22,
+                719.84
+              ],
+              "text": "Socializing\n(Total Hours)"
+            },
+            {
+              "block_index": 28,
+              "bbox": [
+                40.1,
+                740.54,
+                526.72,
+                765.33
+              ],
+              "text": "Excerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD.\n© 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nElectronic Time\nE-mail\n(necessary)\nE-mail (screen sucking)\nInternet\n(necessary)\nInternet\n(screen sucking)\nTelevision\n(necessary)\nTelevision\n(screen sucking)\nTelephone\n(landline)\nCell Phone\nBlackberry, Treo, etc.\n(necessary)\nBlackberry, Treo, etc.\n(screen-sucking)\nElectronic Time\n(Total Hours)\nIntimate Time\n(Lovemaking, Cuddling, Intimate Conversation)\n(Total Hours)\nWasted, Killed, or Forgotten Time\n(Total Hours)\nCreative time\n(TOTAL HOURS)\nOther\n(Describe)\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                178.32,
+                33.08,
+                430.46,
+                61.26
+              ],
+              "text": "Crazy Busy Time Chart"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                73.96,
+                68.35,
+                203.35,
+                113.18
+              ],
+              "text": "I.\nActivity\nII.\nAverage\nHours\nper Day"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                224.76,
+                68.35,
+                279.62,
+                113.18
+              ],
+              "text": "III.\nEffort Factor\n(1 = most,\n5 = least)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                298.83,
+                68.35,
+                348.35,
+                124.18
+              ],
+              "text": "IV.\nFulfillment\nFactor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                365.13,
+                68.35,
+                422.25,
+                113.18
+              ],
+              "text": "V.\nE x F\n(column III x\ncolumn IV)"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                430.66,
+                68.35,
+                498.02,
+                135.18
+              ],
+              "text": "VI.\nNecessity,\nRight-Thing-to-\nDo Factor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                503.14,
+                68.35,
+                570.52,
+                124.18
+              ],
+              "text": "VII.\nWorth-It Factor\n(product of\ncolumns III, IV,\nand VI)"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                40.1,
+                165.43,
+                104.2,
+                176.09
+              ],
+              "text": "Electronic Time"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                40.1,
+                179.61,
+                81.91,
+                201.28
+              ],
+              "text": "E-mail\n(necessary)"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                40.1,
+                204.8,
+                99.91,
+                226.46
+              ],
+              "text": "E-mail\n(screen sucking)"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                40.1,
+                229.98,
+                81.91,
+                251.64
+              ],
+              "text": "Internet\n(necessary)"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                40.1,
+                255.16,
+                99.91,
+                276.82
+              ],
+              "text": "Internet\n(screen sucking)"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                40.1,
+                280.34,
+                81.91,
+                302.0
+              ],
+              "text": "Television\n(necessary)"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                40.1,
+                305.52,
+                99.91,
+                327.19
+              ],
+              "text": "Television\n(screen sucking)"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                40.1,
+                330.71,
+                76.24,
+                352.37
+              ],
+              "text": "Telephone\n(landline)"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                40.1,
+                357.8,
+                77.74,
+                368.46
+              ],
+              "text": "Cell Phone"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                40.1,
+                373.89,
+                114.85,
+                395.55
+              ],
+              "text": "Blackberry, Treo, etc.\n(necessary)"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                40.1,
+                399.07,
+                114.85,
+                420.73
+              ],
+              "text": "Blackberry, Treo, etc.\n(screen-sucking)"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                40.1,
+                424.25,
+                104.2,
+                445.91
+              ],
+              "text": "Electronic Time\n(Total Hours)"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                40.1,
+                467.43,
+                134.56,
+                511.09
+              ],
+              "text": "Intimate Time\n(Lovemaking, Cuddling,\nIntimate Conversation)\n(Total Hours)"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                40.1,
+                532.61,
+                114.96,
+                565.27
+              ],
+              "text": "Wasted, Killed, or\nForgotten Time\n(Total Hours)"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                40.1,
+                586.79,
+                94.22,
+                608.45
+              ],
+              "text": "Creative time\n(TOTAL HOURS)"
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                40.1,
+                629.97,
+                94.22,
+                662.64
+              ],
+              "text": "Other\n(Describe)\n(Total Hours)"
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                40.1,
+                688.65,
+                526.72,
+                713.44
+              ],
+              "text": "Excerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD.\n© 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "6\nADDConnect.com\nFind comprehensive resources and advice for parents and educators affected by ADD and LD.\nTry a Free Issue! www.additudemag.com/subscribe\nOrder online\nyour complete resource for living well with adhd",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                560.8,
+                757.15,
+                566.8,
+                770.92
+              ],
+              "text": "6"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                45.0,
+                728.89,
+                306.85,
+                773.36
+              ],
+              "text": "ADDConnect.com"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                84.15,
+                9.86,
+                541.02,
+                93.96
+              ],
+              "text": "Find comprehensive resources and advice for\nparents and educators affected by ADD and LD.\nTry a Free Issue!"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                83.8,
+                289.64,
+                548.02,
+                338.78
+              ],
+              "text": "www.additudemag.com/subscribe\nOrder online"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                87.2,
+                336.28,
+                408.94,
+                353.98
+              ],
+              "text": "your complete resource for living well with adhd"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 3,
+              "bbox": [
+                0.0,
+                0.0,
+                612.0,
+                368.0
+              ],
+              "width_px": 612,
+              "height_px": 368,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                359.78,
+                98.4,
+                517.22,
+                295.2
+              ],
+              "width_px": 656,
+              "height_px": 820,
+              "extension": "jpeg",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                363.67,
+                100.16,
+                505.89,
+                282.25
+              ],
+              "width_px": 297,
+              "height_px": 380,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                231.78,
+                95.32,
+                389.22,
+                292.12
+              ],
+              "width_px": 656,
+              "height_px": 820,
+              "extension": "jpeg",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                233.62,
+                98.62,
+                391.06,
+                295.42
+              ],
+              "width_px": 656,
+              "height_px": 820,
+              "extension": "jpeg",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                237.32,
+                100.16,
+                379.53,
+                282.03
+              ],
+              "width_px": 297,
+              "height_px": 379,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                107.06,
+                98.4,
+                264.5,
+                295.2
+              ],
+              "width_px": 656,
+              "height_px": 820,
+              "extension": "jpeg",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                110.97,
+                100.15,
+                253.16,
+                281.84
+              ],
+              "width_px": 297,
+              "height_px": 379,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "width_px": 0,
+              "height_px": 0,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                462.53,
+                336.34,
+                476.6,
+                350.41
+              ],
+              "width_px": 30,
+              "height_px": 30,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                497.35,
+                336.09,
+                529.6,
+                350.74
+              ],
+              "width_px": 68,
+              "height_px": 31,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                480.17,
+                336.02,
+                495.21,
+                350.76
+              ],
+              "width_px": 32,
+              "height_px": 31,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://addconnect.com",
+              "bbox": [
+                45.0,
+                728.89,
+                306.85,
+                773.36
+              ]
+            },
+            {
+              "uri": "http://ADDConnect.com/groups",
+              "bbox": [
+                435.24,
+                517.56,
+                544.94,
+                530.59
+              ]
+            },
+            {
+              "uri": "http://addconnect.com/forums/",
+              "bbox": [
+                435.24,
+                612.24,
+                545.54,
+                625.28
+              ]
+            },
+            {
+              "uri": "http://ADDConnect.com/site/newsletter",
+              "bbox": [
+                435.12,
+                706.91,
+                580.24,
+                719.94
+              ]
+            },
+            {
+              "uri": "http://additudemag.com/subscribe",
+              "bbox": [
+                83.8,
+                303.66,
+                548.0,
+                338.78
+              ]
+            },
+            {
+              "uri": "https://www.facebook.com/additudemag",
+              "bbox": [
+                424.96,
+                741.04,
+                453.44,
+                769.69
+              ]
+            },
+            {
+              "uri": "https://twitter.com/ADDitudeMag",
+              "bbox": [
+                460.54,
+                741.04,
+                489.51,
+                769.69
+              ]
+            },
+            {
+              "uri": "http://www.youtube.com/user/additudemag",
+              "bbox": [
+                492.86,
+                741.04,
+                557.12,
+                769.69
+              ]
+            },
+            {
+              "uri": "https://plus.google.com/110986281831276512389/posts",
+              "bbox": [
+                563.92,
+                741.04,
+                593.2,
+                769.69
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        }
+      ]
+    },
+    {
+      "document_id": "bettertimemanagement",
+      "source_index": 9,
+      "original_filename": "BetterTimeManagement.pdf",
+      "source_relative_path": "adhd/BetterTimeManagement.pdf",
+      "sha256": "09fd2736ae41ca89ae1a79bd1f0c00bfdc1c5f6186457c15bbcf029396b8e1d2",
+      "title": "From ADDitude’s Experts",
+      "pdf_metadata": {
+        "format": "PDF 1.7",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Adobe InDesign CS5.5 (7.5)",
+        "producer": "Adobe PDF Library 9.9",
+        "creationDate": "D:20170208160947-05'00'",
+        "modDate": "D:20170208161107-05'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "page_count": 12,
+      "character_count": 22773,
+      "word_count": 3782,
+      "link_count": 34,
+      "image_count": 9,
+      "form_field_count": 0,
+      "annotation_count": 0,
+      "full_text": "From ADDitude’s Experts\nBetter Time Management with Adult ADHD\n19 ways to meet deadlines and get things done TERMS OF USE Copyright © 2017 by New Hope Media. All rights reserved. No part of this report may be reproduced or transmitted in any form or by any means, electronic or mechanical, in-\ncluding photocopying, recording, faxing, e-mailing, posting online, or by any information storage and retrieval system, without written permission from the Publisher. All trademarks and brands referred to herein are the prop-\nerty of their respective owners. All references to ADDitude magazine, ADDitudeMag.com, and ADDConnect.com are trademarks of New Hope Media.\nCONTACT INFORMATION New Hope Media – 646-366-0830 108 West 39th St, Suite 805 New York, NY 10018\nLEGAL NOTICES ADDitude does not provide medical advice, diagnosis or treatment. The information offered here is for information-\nal purposes only and is not intended to substitute or replace professional medical advice, diagnosis, or treatment. Al-\nways consult with your physician or other qualified health-\ncare professional or educational consultant for questions about the health and education of you, your child, and family members. Do not disregard, avoid or delay obtaining medi-\ncal or health related advice from your health-care profes-\nsional because of something you have read here.\nIf you think you may have a medical emergency, call your doc-\ntor or 911 immediately. ADDitude does not recommend or endorse any specific tests, physicians, products, procedures, opinions, or other information that may be mentioned in ADDitude publications or web sites. Reliance on any infor-\nmation provided by ADDitude is solely at your own risk.\nA trusted source of advice and information for families touched by attention-deficit disorder— and a voice of inspiration to help people with ADHD find success at home, at school, and on the job.\nADDitudeMag.com\nFounder: Ellen Kingsley (1951-2007) Editor In chief: Susan Caughman\nEditor: Wayne Kalyn\nstaff consulting creative Director: Joseph Caserto\nconsulting art Director: Ron Anteroinen\nManaging Editor: Eve Gilman\nreporter: Devon Frye Digital content editor: Janice Rodden\nSocial Media editors: Rebecca Brown Wright, Penny Williams\nDigital Marketing Director: Anni Rodgers\nDigital Marketing Manager: Kate Harmsworth\nAdvertising: Anne Mazza Circulation: Sue Sidler\nCopy Editor: Gene Jones\ncontributing Editors Carol Brady, Ph.D., and John Taylor, Ph.D. (Children)\nEdward M. Hallowell, M.D. (Life)\nSandy Maynard, M.S. (Coaching)\nMichele Novotni, Ph.D. (Adults)\nAnn Dolin, M.Ed., and Sandra F. Rief, M.A. (Education) administrative assistant Madalyn Baldanzi\nscientific advisory board Russell Barkley, Ph.D.\nMedical University of South Carolina Charleston, SC\nCarol Brady, Ph.D.\nBaylor College of Medicine Houston, TX\nThomas E. Brown, Ph.D.\nUniversity of Southern California\nLos Angeles, CA\nWilliam Dodson, M.D.\nDodson ADHD Center\nGreenwood Village, CO\nRoss W. Greene, Ph.D.\nLives in the Balance\nPortland, ME\nEdward M. Hallowell, M.D.\nThe Hallowell Center Sudbury, MA Stephen P. Hinshaw, Ph.D.\nUniversity of California\nBerkeley, CA\nPeter Jaksa, Ph.D.\nADD Centers of America\nChicago, IL\nPeter Jensen, M.D.\nThe REACH Institute New York, NY\nHarold Koplewicz, M.D.\nNew York University Medical School\nNew York, NY\nSandy Newmark, M.D.\nOsher Center for Integrative Medicine University of California\nSan Francisco, CA\nMichele Novotni, Ph.D.\nThe Villages, FL\nRoberto Olivardia, Ph.D.\nHarvard Medical School\nBoston, MA 1\nHere is your game plan for organizing and finishing projects—big and small. By Edward Hallowell, M.D., and Sandy Maynard, M.S.\n9 Time Management Tips from Dr. Ned Hallowell\nR\nemember rotary telephones? I had to use one at the lakeside cot-\ntage my family rented last summer, and, boy, was it irritating. That old monster took forever to dial. OK, it took only 11 seconds (I timed it), but that seemed an eternity in today’s fast-paced world. Which got me thinking about why I found it so irritating to spend an entire 11 seconds dialing a phone number! So what? Without intending to, many people find they live in a rush they didn’t create, or at least didn’t mean to create. Sometimes busy-ness is blissful. But not if “busy” keeps you from doing what’s most important to you. Here’s how to overcome this common malady: 1. \u0007Focus on what truly matters. Don’t spread yourself too thin, and don’t get sidetracked. Remember, cell phones, personal computers, and other high-tech gadgets enable us to do more, but more is not necessarily better. Better Time Management with Adult ADHD\n19 ways to meet deadlines and get things done Better Time Management with Adult ADHD from the editors of\n2\n2. \u0007Create a positive emotional environment wherever you go. Positive emotion is not a frill. It’s the on/off switch for effective mental functioning. When you feel secure in your surroundings, you think better, behave better, work better, and are better able to help others. So do your best to build positive relationships. Always aim to be friendly and upbeat. 3. \u0007Don’t waste time “screensucking.” What’s that? It’s being glued to your TV or computer screen. Screen-\nsucking interferes with the brain’s ability to focus. Whenever possible, limit such electronic hypnosis to one hour a day. 4. \u0007Minimize distractions. Things that distract you on a regular basis should be addressed. Keep losing your glasses? Train yourself to put them in a special place. If you’re distracted by magazines strewn about your kitchen, put a basket in another room, and make sure the magazines get into it. 5. \u0007Delegate anything you’re not good at. Is paying bills each month an irritant because you never manage to send them in on time? Hand the job over to your spouse. If you’re not married (or have a spouse who isn’t good at it, either), put as many bills as possible on auto-pay. \u0007Your goal is not to be independent, but to be effectively interdepen-\ndent—that is, to share responsibilities for tasks with other people. 6. \u0007Slow down. Periodically ask yourself why you’re in such a hurry, and take the question seriously. If the answer is “because I’m late,” assess your priorities and cut out unnecessary responsibilities. The time you save should be devoted solely to personal or family time. 7. \u0007Think twice about multitasking. Research shows that doing two things at once takes about 50 per-\ncent longer than doing them sequentially. An exception to this rule: Some people with ADHD focus better if they do something essentially mindless while tackling an important task—for example, listening to music or balancing on a ball while doing homework. 8. \u0007Invest your time for maximum return. Not sure where the time goes? Create a chart, and record everything you do. Maybe the chart indicates you’re spending too much time looking for lost keys or nagging your teenage daughter to clean up her room. Think of some creative ways to eliminate these (hanging a key hook near the front door or deciding that her room doesn’t really need to be clean, after all). Better Time Management with Adult ADHD from the editors of\n3\n9. \u0007Play a lot. Imaginatively engage in what you are doing. This will use the best parts of your wonderful, creative mind. Playing is not a waste of time. It will make you more effective at whatever you’re doing, whether it’s carrying on a conversation or baking an apple pie.\nDr. Edward Hallowell is a practicing psychiatrist and founder of the Hallowell Center for Cognitive and Emotional Health in Sudbury, Massachusetts, New York City, San Francisco and Seattle. A former instructor of Harvard Medical School, he is the author of 20 books, including the bestsellers: Driven to Distraction, Delivered from Distraction, CrazyBusy, and most recently, Driven to Distraction at Work. Dr. Hallowell has AD/HD himself.\n10 Time-Management Techniques from Sandy Maynard\nT\nhe word deadline dates back to the Civil War. At the notorious Con-\nfederate prison camp at Andersonville, Georgia, a line was drawn 17 feet inside the perimeter fence. Guards were authorized to shoot any pris-\noner who crossed the line. Adults and children with attention deficit disorder (ADHD) don’t need a gun pointed at us to get us going on projects. But many of us do need or-\nganization help because we have a hard time with time management—es-\npecially with difficult or boring projects. This is certainly true for me. Take this article. I assured my editor that I’d have no trouble getting it done on time, and yet the more I thought about it, the harder it seemed to write. So here I am, one day before my deadline, and I’m just now starting. I’ve had similar difficulties in trying to complete my master’s thesis (after many years as an ADHD coach, I returned to school three years ago). I learned a lot of things about deadlines and getting things done during those months. Here’s my 10-point plan for meeting all of your deadlines, big and small: 1. \u0007Don’t bite off more than you can chew. Consider how much time is available in your busy schedule, and plan accordingly. If you take on a new project, you may have to cut back on other activities in order to finish it on time. 2. \u0007Post your deadlines where you will see them. This simple action will remind you to use your time wisely. When I went for my master’s degree, I highlighted the syllabus and put it on the wall over my desk. When I wrote my thesis, I created a computer screensaver that read “February 26 or Bust.” Better Time Management with Adult ADHD from the editors of\n4\n3. \u0007Break big projects into smaller parts, and assign a deadline for completing each. We’re usually given a deadline for the date by which the entire proj-\nect has to be completed. To keep yourself on track, mark the date by which you should complete one-quarter of the project, one-half, and so on. Those dates will alert you to problems while there’s still time to play catchup. 4. \u0007Set deadlines for others. We people with ADHD dislike deadlines so much that we’re often reluctant to set appropriate deadlines for others. Often, as I was working on my thesis, I’d find that I needed to ask my professors a question. To make sure I could get going on time each Saturday morn-\ning, I asked them to get back to me with answers no later than Friday afternoon. Otherwise, I would have lost momentum—or relied upon the excuse that I couldn’t keep working because I was unsure about what to do next. 5. \u0007When time runs short, outsource. Don’t assume that you must do every portion of a project. In many cases, it makes sense to outsource or delegate. 6. \u0007Take frequent breaks. Those who fail to get away from a project occasionally are likely to start avoiding it—or to just give up. Taking breaks will help you avoid burnout. 7. \u0007Start and end when you say you will. While writing my thesis, I started at 9. a.m. and ended at 5 p.m., so I had time to socialize in the evening. Knowing I would quit at 5 kept me going. I could say to myself, “only two more hours... only one more hour,” and so on. If I hadn’t committed to stopping at 5, I might have thought, “I’ll take a break and do something else and work on it later in the evening.” This kind of thinking is dangerous for individu-\nals with ADHD, who are easily distracted. 8. \u0007Change your inner voice. Think of positive things you can say to yourself to stay motivated. Some of my clients write down “positive affirmations” and keep them nearby to glance at. \u0007Example: “I’m going to feel great when I hand this in to my boss on time.” Or, “I can do this!” As I was writing my thesis, I often caught myself thinking, “Oh, well, I can just sign up for another quarter and take my time.” Each time I did, I immediately changed that to “No! Better Time Management with Adult ADHD from the editors of\n5\nYou will get this thesis done this quarter!” 9. \u0007Define your objectives. When I started my thesis project, my objective was to learn as much as possible about my topic. I accomplished that, but it wasn’t until my objective became finishing by the end of February that I was able to stay focused on the hard part: writing. Finishing on time is one of the most important objectives for people with ADHD. 10. If all else fails... hire a nanny. \u0007It seemed an extravagance at the time, but I hired someone to watch over me when I was earning my master’s degree. That’s right, a nanny. I gave her strict instructions. She was to arrive at 8:00 a.m., fix break-\nfast for me, and make sure I was at my desk by 9 a.m. There was to be no radio, no TV, no telephone—and no e-mail. She kept me on track, and now I have an M.S. at the end of my name. Sandy Maynard, M.S., is a pioneer in the field of coaching people with Attention Deficit/Hyperactivity Disorder (ADHD). She was instrumen-\ntal in the development of The National Attention Deficit Disorder Association’s Coaching Guidelines and a founding board member for the Institute for the Advancement of AD/HD Coaching (IAAC). She is a certified Master Practitioner of Neuro-Linguistic Programming (NLP) and uses a holistic health and wellness approach with her clients. Ms. Maynard lives in Washington, D.C., where she operates Catalytic Coaching. She lectures internationally and is a regular contributor to ADDitude magazine. Visit her on the web on sandymaynard.com.\nOther articles of interest: 1. \u0007Yours, Mind, and Hours: Understanding Your Partner’s Time Style. Is a skewed sense of time causing stress in your marriage? Ease time management tension by trying out your spouse’s perception of time. http://www.additudemag.com/adhd/article/755.html\n2. \u0007Never Be Late Again! Time management strategies to help ADHD adults be on time and organized. http://www.additudemag.com/adhd/article/2495.html\n3. \u0007When You Need a Body Double. Difficult tasks are easier to accom-\nplish if someone is on hand to keep you company. http://www.additudemag.com/adhd/article/893.html Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nPersonal Care\nSleep\nEating\nBathroom\nShower\nPersonal Care\n(Total Hours)\nHousehold\nHousework\nFood (prep and cleanup)\nLaundry\nLawn and other outdoor work\nPurchasing goods and services (food, car maintenance, etc.)\nProfessional services (doctor, haircutter, etc.)\nCaring for/helping household members\nCaring for/helping non-\nhousehold members\nHousehold\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y\nADHD Time Assessment Chart\nDr. Ned Hallowell developed a chart that indicates whether various tasks are really worth your time and effort. This ADHD time-management chart weighs tasks against the effort they take, the fulfillment they give, and their necessity. Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nWork and Work-Related Activities\nThe part of work you like best\nThe part of work you like least\nThe part of work that’s in-\nbetween\nWork and Work-Related Activities\n(Total Hours)\nDriving, Commuting, Taxing\n(Total Hours)\nEducational Activities\n(Total Hours)\nOrganization, Civic, and Religious Activities (Volunteer, Unpaid)\nOrganizational\nCivic\nReligious\nOrganization, Civic, and Religious Activities (Volunteer, Unpaid)\n(Total Hours)\nLEISURE\n(Total Hours)\nSocializing\nWith people you like a lot\nWith people you don’t much like\nWith people in between\nPlaying a sport\nOther exercise\nSocializing\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nElectronic Time\nE-mail\n(necessary)\nE-mail (screen sucking)\nInternet\n(necessary)\nInternet\n(screen sucking)\nTelevision\n(necessary)\nTelevision\n(screen sucking)\nTelephone\n(landline)\nCell Phone\nBlackberry, Treo, etc.\n(necessary)\nBlackberry, Treo, etc.\n(screen-sucking)\nElectronic Time\n(Total Hours)\nIntimate Time\n(Lovemaking, Cuddling, Intimate Conversation)\n(Total Hours)\nWasted, Killed, or Forgotten Time\n(Total Hours)\nCreative time\n(TOTAL HOURS)\nOther\n(Describe)\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y ADDitude Special Reports Available Now\nwww.adhdreports.com\n9 Conditions Often Diagnosed with ADHD\nDepression. Bipolar Disorder. Anxiety. OCD. And five more conditions that often show up alongside attention deficit. About 80 percent of individuals with ADHD are diagnosed with at least one other psychiatric condition at some time in their lives. This in-depth special report looks at the nine most common, outlining symptoms, treatment strat-\negies, and differentiating features of each. Plus, strategies for living well with any mental health condition.\n>> Learn more about this special report: http://additu.de/related\nMindfulness and Other Natural Treatments\nThe best non-medical treatments for ADHD, including exercise, green time, and mindful meditation.\nLearn how mindfulness works on ADHD brains, and how to begin practic-\ning it today. Plus, research the benefits of other alternative treatments like yoga and deep breathing exercises—including some designed especially for kids—as well as the science behind each natural therapy.\n>> Learn more about this special report: http://additu.de/mindfulness\nADHD 101\nA complete overview of ADHD, outlining every step from diagnosis to treat-\nment—all the way to living successfully with attention deficit. From the moment you suspect ADHD in yourself or your child, you have hundreds of questions. Which doctors can evaluate symptoms? What med-\nication side effects should you be prepared for? Can diet help? This com-\nprehensive eBook has over 100 pages of expert advice, personal stories, and more to help you become an ADHD expert. >> Learn More About This Special Report: http://additu.de/adhd-101\nTo purchase these or other ADDitude Special Reports, go to www.adhdreports.com\nFREE ADDitude Downloadable Booklets\n73 ADHD-Friendly Ways to Organize Your Life Now\nAchieve less clutter, fewer hassles, and greater tranquility in your life.\nADHD Time Assessment Chart\nDo you spend your time wisely? Use this tool to find out.\nBoost Your Productivity At Work\nADHD can make any job more challenging. Keep up with this expert advice.\nYou Know You Have ADHD When…\nReal ADHDers share personal sto-\nries highlighting the lighter side of living with attention deficit.\nSmart Comebacks\nWitty responses to ADHD doubters.\nIt’s Not ADHD: 3 Common Diagnosis Mistakes\nDoctors are sometimes too quick to diagnose ADHD. Read up on common misdiagnoses.\nFind these and many more free ADHD resources online at:\nhttp://additu.de/ freedownloads from ADDitude:\n7 Fixes for Self-Defeating ADHD Behaviors\n>> http://additu.de/brown Are your bad habits setting you up for failure? Find out what behaviors to watch for, and seven simple changes that can help you reach your full poten-\ntial and put you on the path to success. Entrepreneur and ADHD coach Alan Brown teaches “fix-it” strategies that he used to cope with his own ADHD.\nOrganizing Solutions for People with ADHD\n>> http://additu.de/org-web Feeling lost in the mess of “stuff”? Susan Pinsky, a professional organizer who specializes in ADHD, discusses simple steps for reducing clutter, eliminating excess from your life, and why ADHDers should aim for “good enough” in-\nstead of “perfect.” These simple, straightforward solutions will help you calm the chaos and conquer the clutter — for good.\nHealing the ADHD Brain: Interventions and Strategies that Work\n>> http://additu.de/healing\nThere’s no one-size-fits-all approach for treating ADHD. Here, Daniel G. Amen, M.D., explains treatment options ranging from medication and sup-\nplements to diet and exercise.\nSurvival Strategies for Moms with ADHD\n>>http://additu.de/adhd-moms Mothers with ADHD, especially those parenting ADHD children, often put the needs of others before themselves. Despite their good intentions, when moms leave their own ADHD untreated, the whole family can suffer. Ellen Lit-\ntman, Ph.D., outlines how to let go of society’s expectations of being “perfect” and focus on your own accomplishments. After all, being a mom is a tough job!\nSmart Money Strategies for ADHD Adults\n>> http://additu.de/ta You don’t need to be an investment banker to make financially sound deci-\nsions. In this audio presentation hosted by Stephanie Sarkis, Ph.D., you’ll learn how executive functions affect your ability to manage money, how to avoid impulsive purchases, and more. Save, spend, budget, and plan like the pros!\nFREE ADHD Newsletters from ADDitude\nSign up to receive criti-\ncal news and information about ADHD diagnosis and treatment, plus strategies for school, parenting, and living better with ADHD: http://additu.de/email\nAdult ADHD and LD (weekly)\nExpert advice on managing your household, time, money, career, and relationships\nParenting ADHD and LD Children (weekly)\nStrategies and support for par-\nents on behavior and discipline, time management, disorganiza-\ntion, and making friends.\nADHD and LD at School (bimonthly; weekly from August through October)\nHow to get classroom accom-\nmodations, finish homework, work with teachers, find the right schools, and much more.\nTreating ADHD (weekly)\nTreatment options for attention deficit including medications, food, supplements, brain training, mindfulness and other alternative therapies.",
+      "pages": [
+        {
+          "page_number": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "From ADDitude’s Experts\nBetter Time Management with Adult ADHD\n19 ways to meet deadlines and get things done",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                154.71,
+                640.53,
+                457.93,
+                670.41
+              ],
+              "text": "From ADDitude’s Experts"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                54.0,
+                44.34,
+                557.98,
+                360.56
+              ],
+              "text": "Better Time\nManagement\nwith Adult\nADHD\n19 ways to meet deadlines and get things done"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 2,
+              "bbox": [
+                198.32,
+                677.58,
+                414.32,
+                749.58
+              ],
+              "width_px": 450,
+              "height_px": 150,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                184.28,
+                364.13,
+                431.1,
+                714.25
+              ],
+              "width_px": 515,
+              "height_px": 731,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "TERMS OF USE Copyright © 2017 by New Hope Media. All rights reserved. No part of this report may be reproduced or transmitted in any form or by any means, electronic or mechanical, in-\ncluding photocopying, recording, faxing, e-mailing, posting online, or by any information storage and retrieval system, without written permission from the Publisher. All trademarks and brands referred to herein are the prop-\nerty of their respective owners. All references to ADDitude magazine, ADDitudeMag.com, and ADDConnect.com are trademarks of New Hope Media.\nCONTACT INFORMATION New Hope Media – 646-366-0830 108 West 39th St, Suite 805 New York, NY 10018\nLEGAL NOTICES ADDitude does not provide medical advice, diagnosis or treatment. The information offered here is for information-\nal purposes only and is not intended to substitute or replace professional medical advice, diagnosis, or treatment. Al-\nways consult with your physician or other qualified health-\ncare professional or educational consultant for questions about the health and education of you, your child, and family members. Do not disregard, avoid or delay obtaining medi-\ncal or health related advice from your health-care profes-\nsional because of something you have read here.\nIf you think you may have a medical emergency, call your doc-\ntor or 911 immediately. ADDitude does not recommend or endorse any specific tests, physicians, products, procedures, opinions, or other information that may be mentioned in ADDitude publications or web sites. Reliance on any infor-\nmation provided by ADDitude is solely at your own risk.\nA trusted source of advice and information for families touched by attention-deficit disorder— and a voice of inspiration to help people with ADHD find success at home, at school, and on the job.\nADDitudeMag.com\nFounder: Ellen Kingsley (1951-2007) Editor In chief: Susan Caughman\nEditor: Wayne Kalyn\nstaff consulting creative Director: Joseph Caserto\nconsulting art Director: Ron Anteroinen\nManaging Editor: Eve Gilman\nreporter: Devon Frye Digital content editor: Janice Rodden\nSocial Media editors: Rebecca Brown Wright, Penny Williams\nDigital Marketing Director: Anni Rodgers\nDigital Marketing Manager: Kate Harmsworth\nAdvertising: Anne Mazza Circulation: Sue Sidler\nCopy Editor: Gene Jones\ncontributing Editors Carol Brady, Ph.D., and John Taylor, Ph.D. (Children)\nEdward M. Hallowell, M.D. (Life)\nSandy Maynard, M.S. (Coaching)\nMichele Novotni, Ph.D. (Adults)\nAnn Dolin, M.Ed., and Sandra F. Rief, M.A. (Education) administrative assistant Madalyn Baldanzi\nscientific advisory board Russell Barkley, Ph.D.\nMedical University of South Carolina Charleston, SC\nCarol Brady, Ph.D.\nBaylor College of Medicine Houston, TX\nThomas E. Brown, Ph.D.\nUniversity of Southern California\nLos Angeles, CA\nWilliam Dodson, M.D.\nDodson ADHD Center\nGreenwood Village, CO\nRoss W. Greene, Ph.D.\nLives in the Balance\nPortland, ME\nEdward M. Hallowell, M.D.\nThe Hallowell Center Sudbury, MA Stephen P. Hinshaw, Ph.D.\nUniversity of California\nBerkeley, CA\nPeter Jaksa, Ph.D.\nADD Centers of America\nChicago, IL\nPeter Jensen, M.D.\nThe REACH Institute New York, NY\nHarold Koplewicz, M.D.\nNew York University Medical School\nNew York, NY\nSandy Newmark, M.D.\nOsher Center for Integrative Medicine University of California\nSan Francisco, CA\nMichele Novotni, Ph.D.\nThe Villages, FL\nRoberto Olivardia, Ph.D.\nHarvard Medical School\nBoston, MA",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                56.88,
+                166.21,
+                286.53,
+                250.08
+              ],
+              "text": "TERMS OF USE\nCopyright © 2017 by New Hope Media. All rights reserved.\nNo part of this report may be reproduced or transmitted\nin any form or by any means, electronic or mechanical, in-\ncluding photocopying, recording, faxing, e-mailing, posting\nonline, or by any information storage and retrieval system,\nwithout written permission from the Publisher."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                56.88,
+                261.61,
+                286.86,
+                308.88
+              ],
+              "text": "All trademarks and brands referred to herein are the prop-\nerty of their respective owners. All references to ADDitude\nmagazine, ADDitudeMag.com, and ADDConnect.com\nare trademarks of New Hope Media."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                56.88,
+                321.25,
+                187.59,
+                369.12
+              ],
+              "text": "CONTACT INFORMATION\nNew Hope Media – 646-366-0830\n108 West 39th St, Suite 805\nNew York, NY 10018"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                56.88,
+                377.89,
+                286.52,
+                509.76
+              ],
+              "text": "LEGAL NOTICES\nADDitude does not provide medical advice, diagnosis or\ntreatment. The information offered here is for information-\nal purposes only and is not intended to substitute or replace\nprofessional medical advice, diagnosis, or treatment. Al-\nways consult with your physician or other qualified health-\ncare professional or educational consultant for questions\nabout the health and education of you, your child, and family\nmembers. Do not disregard, avoid or delay obtaining medi-\ncal or health related advice from your health-care profes-\nsional because of something you have read here."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                56.88,
+                524.89,
+                286.53,
+                596.16
+              ],
+              "text": "If you think you may have a medical emergency, call your doc-\ntor or 911 immediately. ADDitude does not recommend or\nendorse any specific tests, physicians, products, procedures,\nopinions, or other information that may be mentioned in\nADDitude publications or web sites. Reliance on any infor-\nmation provided by ADDitude is solely at your own risk."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                122.07,
+                98.17,
+                488.19,
+                119.64
+              ],
+              "text": "A trusted source of advice and information for families touched by attention-deficit disorder—\nand a voice of inspiration to help people with ADHD find success at home, at school, and on the job."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                251.24,
+                129.98,
+                363.32,
+                145.38
+              ],
+              "text": "ADDitudeMag.com"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                367.38,
+                166.45,
+                518.02,
+                178.11
+              ],
+              "text": "Founder: Ellen Kingsley (1951-2007)"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                370.52,
+                183.23,
+                512.09,
+                205.25
+              ],
+              "text": "Editor In chief: Susan Caughman\nEditor: Wayne Kalyn"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                426.25,
+                215.46,
+                458.45,
+                227.34
+              ],
+              "text": "staff"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                352.15,
+                228.1,
+                530.65,
+                238.3
+              ],
+              "text": "consulting creative Director: Joseph Caserto"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                362.06,
+                239.74,
+                520.74,
+                249.95
+              ],
+              "text": "consulting art Director: Ron Anteroinen"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                386.08,
+                251.38,
+                496.72,
+                261.59
+              ],
+              "text": "Managing Editor: Eve Gilman"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                325.4,
+                263.03,
+                557.4,
+                273.23
+              ],
+              "text": "reporter: Devon Frye Digital content editor: Janice Rodden"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                329.41,
+                274.67,
+                553.39,
+                284.88
+              ],
+              "text": "Social Media editors: Rebecca Brown Wright, Penny Williams"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                353.05,
+                286.31,
+                529.76,
+                308.16
+              ],
+              "text": "Digital Marketing Director: Anni Rodgers\nDigital Marketing Manager: Kate Harmsworth"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                394.57,
+                309.6,
+                489.49,
+                319.81
+              ],
+              "text": "Advertising: Anne Mazza"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                395.39,
+                321.24,
+                487.41,
+                343.09
+              ],
+              "text": "Circulation: Sue Sidler\nCopy Editor: Gene Jones"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                350.12,
+                345.7,
+                533.95,
+                406.49
+              ],
+              "text": "contributing Editors\nCarol Brady, Ph.D., and John Taylor, Ph.D. (Children)\nEdward M. Hallowell, M.D. (Life)\nSandy Maynard, M.S. (Coaching)\nMichele Novotni, Ph.D. (Adults)\nAnn Dolin, M.Ed., and Sandra F. Rief, M.A. (Education)"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                390.27,
+                409.09,
+                493.89,
+                429.77
+              ],
+              "text": "administrative assistant\nMadalyn Baldanzi"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                371.92,
+                450.72,
+                518.44,
+                462.6
+              ],
+              "text": "scientific advisory board"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                316.55,
+                471.74,
+                445.48,
+                502.71
+              ],
+              "text": "Russell Barkley, Ph.D.\nMedical University of South Carolina\nCharleston, SC"
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                333.91,
+                513.14,
+                428.11,
+                544.11
+              ],
+              "text": "Carol Brady, Ph.D.\nBaylor College of Medicine\nHouston, TX"
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                323.15,
+                554.54,
+                437.6,
+                585.51
+              ],
+              "text": "Thomas E. Brown, Ph.D.\nUniversity of Southern California\nLos Angeles, CA"
+            },
+            {
+              "block_index": 25,
+              "bbox": [
+                339.84,
+                595.95,
+                420.91,
+                626.92
+              ],
+              "text": "William Dodson, M.D.\nDodson ADHD Center\nGreenwood Village, CO"
+            },
+            {
+              "block_index": 26,
+              "bbox": [
+                341.07,
+                637.35,
+                419.69,
+                668.32
+              ],
+              "text": "Ross W. Greene, Ph.D.\nLives in the Balance\nPortland, ME"
+            },
+            {
+              "block_index": 27,
+              "bbox": [
+                333.81,
+                678.75,
+                426.95,
+                709.73
+              ],
+              "text": "Edward M. Hallowell, M.D.\nThe Hallowell Center\nSudbury, MA"
+            },
+            {
+              "block_index": 28,
+              "bbox": [
+                333.75,
+                720.16,
+                427.01,
+                751.13
+              ],
+              "text": "Stephen P. Hinshaw, Ph.D.\nUniversity of California\nBerkeley, CA"
+            },
+            {
+              "block_index": 29,
+              "bbox": [
+                479.24,
+                471.77,
+                564.68,
+                502.74
+              ],
+              "text": "Peter Jaksa, Ph.D.\nADD Centers of America\nChicago, IL"
+            },
+            {
+              "block_index": 30,
+              "bbox": [
+                486.03,
+                513.18,
+                559.14,
+                544.15
+              ],
+              "text": "Peter Jensen, M.D.\nThe REACH Institute\nNew York, NY"
+            },
+            {
+              "block_index": 31,
+              "bbox": [
+                480.33,
+                554.58,
+                563.59,
+                595.9
+              ],
+              "text": "Harold Koplewicz, M.D.\nNew York University\nMedical School\nNew York, NY"
+            },
+            {
+              "block_index": 32,
+              "bbox": [
+                482.06,
+                606.33,
+                561.84,
+                658.01
+              ],
+              "text": "Sandy Newmark, M.D.\nOsher Center for\nIntegrative Medicine\nUniversity of California\nSan Francisco, CA"
+            },
+            {
+              "block_index": 33,
+              "bbox": [
+                481.08,
+                668.44,
+                562.84,
+                689.06
+              ],
+              "text": "Michele Novotni, Ph.D.\nThe Villages, FL"
+            },
+            {
+              "block_index": 34,
+              "bbox": [
+                478.53,
+                699.49,
+                565.4,
+                730.46
+              ],
+              "text": "Roberto Olivardia, Ph.D.\nHarvard Medical School\nBoston, MA"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "1\nHere is your game plan for organizing and finishing projects—big and small. By Edward Hallowell, M.D., and Sandy Maynard, M.S.\n9 Time Management Tips from Dr. Ned Hallowell\nR\nemember rotary telephones? I had to use one at the lakeside cot-\ntage my family rented last summer, and, boy, was it irritating. That old monster took forever to dial. OK, it took only 11 seconds (I timed it), but that seemed an eternity in today’s fast-paced world. Which got me thinking about why I found it so irritating to spend an entire 11 seconds dialing a phone number! So what? Without intending to, many people find they live in a rush they didn’t create, or at least didn’t mean to create. Sometimes busy-ness is blissful. But not if “busy” keeps you from doing what’s most important to you. Here’s how to overcome this common malady: 1. \u0007Focus on what truly matters. Don’t spread yourself too thin, and don’t get sidetracked. Remember, cell phones, personal computers, and other high-tech gadgets enable us to do more, but more is not necessarily better. Better Time Management with Adult ADHD\n19 ways to meet deadlines and get things done",
+          "text_blocks": [
+            {
+              "block_index": 2,
+              "bbox": [
+                221.71,
+                743.84,
+                229.21,
+                761.0
+              ],
+              "text": "1"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                75.25,
+                331.92,
+                395.79,
+                390.58
+              ],
+              "text": "Here is your game plan for organizing and\nfinishing projects—big and small.\nBy Edward Hallowell, M.D., and Sandy Maynard, M.S."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                53.98,
+                436.61,
+                323.64,
+                535.69
+              ],
+              "text": "9 Time Management Tips\nfrom Dr. Ned Hallowell\nR"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                54.01,
+                495.93,
+                419.67,
+                647.38
+              ],
+              "text": "emember rotary telephones? I had to use one at the lakeside cot-\ntage my family rented last summer, and, boy, was it irritating. That\nold monster took forever to dial. OK, it took only 11 seconds (I timed it),\nbut that seemed an eternity in today’s fast-paced world. Which got me\nthinking about why I found it so irritating to spend an entire 11 seconds\ndialing a phone number! So what?\nWithout intending to, many people find they live in a rush they didn’t\ncreate, or at least didn’t mean to create. Sometimes busy-ness is blissful.\nBut not if “busy” keeps you from doing what’s most important to you.\nHere’s how to overcome this common malady:"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                54.0,
+                654.25,
+                241.57,
+                671.47
+              ],
+              "text": "1. \u0007Focus on what truly matters."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                74.65,
+                669.93,
+                419.65,
+                716.38
+              ],
+              "text": "Don’t spread yourself too thin, and don’t get sidetracked. Remember,\ncell phones, personal computers, and other high-tech gadgets enable\nus to do more, but more is not necessarily better."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                51.98,
+                82.65,
+                414.16,
+                322.44
+              ],
+              "text": "Better Time\nManagement\nwith Adult\nADHD\n19 ways to meet deadlines and get things done"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 1,
+              "bbox": [
+                427.0,
+                726.4,
+                538.05,
+                763.42
+              ],
+              "width_px": 232,
+              "height_px": 78,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.additudemag.com",
+              "bbox": [
+                429.0,
+                727.22,
+                540.0,
+                768.22
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/authorID/7.html",
+              "bbox": [
+                93.33,
+                372.42,
+                236.02,
+                390.58
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/765.html",
+              "bbox": [
+                153.8,
+                555.93,
+                417.0,
+                572.38
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/765.html",
+              "bbox": [
+                54.0,
+                570.93,
+                175.6,
+                587.38
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Better Time Management with Adult ADHD from the editors of\n2\n2. \u0007Create a positive emotional environment wherever you go. Positive emotion is not a frill. It’s the on/off switch for effective mental functioning. When you feel secure in your surroundings, you think better, behave better, work better, and are better able to help others. So do your best to build positive relationships. Always aim to be friendly and upbeat. 3. \u0007Don’t waste time “screensucking.” What’s that? It’s being glued to your TV or computer screen. Screen-\nsucking interferes with the brain’s ability to focus. Whenever possible, limit such electronic hypnosis to one hour a day. 4. \u0007Minimize distractions. Things that distract you on a regular basis should be addressed. Keep losing your glasses? Train yourself to put them in a special place. If you’re distracted by magazines strewn about your kitchen, put a basket in another room, and make sure the magazines get into it. 5. \u0007Delegate anything you’re not good at. Is paying bills each month an irritant because you never manage to send them in on time? Hand the job over to your spouse. If you’re not married (or have a spouse who isn’t good at it, either), put as many bills as possible on auto-pay. \u0007Your goal is not to be independent, but to be effectively interdepen-\ndent—that is, to share responsibilities for tasks with other people. 6. \u0007Slow down. Periodically ask yourself why you’re in such a hurry, and take the question seriously. If the answer is “because I’m late,” assess your priorities and cut out unnecessary responsibilities. The time you save should be devoted solely to personal or family time. 7. \u0007Think twice about multitasking. Research shows that doing two things at once takes about 50 per-\ncent longer than doing them sequentially. An exception to this rule: Some people with ADHD focus better if they do something essentially mindless while tackling an important task—for example, listening to music or balancing on a ball while doing homework. 8. \u0007Invest your time for maximum return. Not sure where the time goes? Create a chart, and record everything you do. Maybe the chart indicates you’re spending too much time looking for lost keys or nagging your teenage daughter to clean up her room. Think of some creative ways to eliminate these (hanging a key hook near the front door or deciding that her room doesn’t really need to be clean, after all).",
+          "text_blocks": [
+            {
+              "block_index": 2,
+              "bbox": [
+                432.0,
+                634.02,
+                523.98,
+                706.48
+              ],
+              "text": "Better Time\nManagement\nwith Adult\nADHD"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                432.0,
+                719.37,
+                490.71,
+                730.5
+              ],
+              "text": "from the editors of"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                221.71,
+                743.84,
+                229.21,
+                761.0
+              ],
+              "text": "2"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                53.99,
+                69.78,
+                408.17,
+                87.0
+              ],
+              "text": "2. \u0007Create a positive emotional environment wherever you go."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                74.65,
+                85.46,
+                414.41,
+                161.91
+              ],
+              "text": "Positive emotion is not a frill. It’s the on/off switch for effective\nmental functioning. When you feel secure in your surroundings, you\nthink better, behave better, work better, and are better able to help\nothers. So do your best to build positive relationships. Always aim to\nbe friendly and upbeat."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                54.0,
+                168.78,
+                274.24,
+                186.0
+              ],
+              "text": "3. \u0007Don’t waste time “screensucking.”"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                72.0,
+                184.46,
+                416.81,
+                230.91
+              ],
+              "text": "What’s that? It’s being glued to your TV or computer screen. Screen-\nsucking interferes with the brain’s ability to focus. Whenever possible,\nlimit such electronic hypnosis to one hour a day."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                54.0,
+                237.78,
+                203.51,
+                255.0
+              ],
+              "text": "4. \u0007Minimize distractions."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                72.0,
+                253.46,
+                417.2,
+                314.91
+              ],
+              "text": "Things that distract you on a regular basis should be addressed. Keep\nlosing your glasses? Train yourself to put them in a special place. If\nyou’re distracted by magazines strewn about your kitchen, put a\nbasket in another room, and make sure the magazines get into it."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                54.0,
+                321.78,
+                415.2,
+                398.91
+              ],
+              "text": "5. \u0007Delegate anything you’re not good at.\nIs paying bills each month an irritant because you never manage to\nsend them in on time? Hand the job over to your spouse. If you’re not\nmarried (or have a spouse who isn’t good at it, either), put as many\nbills as possible on auto-pay."
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                54.0,
+                406.34,
+                398.75,
+                437.91
+              ],
+              "text": "\u0007Your goal is not to be independent, but to be effectively interdepen-\ndent—that is, to share responsibilities for tasks with other people."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                54.0,
+                444.78,
+                142.37,
+                462.0
+              ],
+              "text": "6. \u0007Slow down."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                72.0,
+                460.46,
+                412.86,
+                518.92
+              ],
+              "text": "Periodically ask yourself why you’re in such a hurry, and take the\nquestion seriously. If the answer is “because I’m late,” assess your\npriorities and cut out unnecessary responsibilities. The time you save\nshould be devoted solely to personal or family time."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                54.0,
+                525.78,
+                256.39,
+                543.0
+              ],
+              "text": "7. \u0007Think twice about multitasking."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                72.0,
+                543.67,
+                419.06,
+                617.91
+              ],
+              "text": "Research shows that doing two things at once takes about 50 per-\ncent longer than doing them sequentially. An exception to this rule:\nSome people with ADHD focus better if they do something essentially\nmindless while tackling an important task—for example, listening to\nmusic or balancing on a ball while doing homework."
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                54.0,
+                624.78,
+                414.64,
+                731.91
+              ],
+              "text": "8. \u0007Invest your time for maximum return.\nNot sure where the time goes? Create a chart, and record everything\nyou do. Maybe the chart indicates you’re spending too much time\nlooking for lost keys or nagging your teenage daughter to clean up\nher room. Think of some creative ways to eliminate these (hanging a\nkey hook near the front door or deciding that her room doesn’t really\nneed to be clean, after all)."
+            }
+          ],
+          "images": [
+            {
+              "block_index": 1,
+              "bbox": [
+                427.0,
+                726.4,
+                538.05,
+                763.42
+              ],
+              "width_px": 232,
+              "height_px": 78,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.additudemag.com",
+              "bbox": [
+                429.0,
+                727.22,
+                540.0,
+                768.22
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/3990.html",
+              "bbox": [
+                74.65,
+                85.46,
+                153.17,
+                101.91
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/883.html",
+              "bbox": [
+                72.0,
+                253.46,
+                192.92,
+                269.91
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/RCLP/sub/2750.html",
+              "bbox": [
+                95.8,
+                337.46,
+                204.62,
+                353.91
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/954.html",
+              "bbox": [
+                183.38,
+                543.67,
+                398.23,
+                556.59
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/954.html",
+              "bbox": [
+                72.0,
+                556.46,
+                279.3,
+                572.91
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/RCLP/sub/2751.html",
+              "bbox": [
+                232.27,
+                642.67,
+                414.65,
+                655.52
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/RCLP/sub/2751.html",
+              "bbox": [
+                72.0,
+                655.46,
+                105.86,
+                671.91
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Better Time Management with Adult ADHD from the editors of\n3\n9. \u0007Play a lot. Imaginatively engage in what you are doing. This will use the best parts of your wonderful, creative mind. Playing is not a waste of time. It will make you more effective at whatever you’re doing, whether it’s carrying on a conversation or baking an apple pie.\nDr. Edward Hallowell is a practicing psychiatrist and founder of the Hallowell Center for Cognitive and Emotional Health in Sudbury, Massachusetts, New York City, San Francisco and Seattle. A former instructor of Harvard Medical School, he is the author of 20 books, including the bestsellers: Driven to Distraction, Delivered from Distraction, CrazyBusy, and most recently, Driven to Distraction at Work. Dr. Hallowell has AD/HD himself.\n10 Time-Management Techniques from Sandy Maynard\nT\nhe word deadline dates back to the Civil War. At the notorious Con-\nfederate prison camp at Andersonville, Georgia, a line was drawn 17 feet inside the perimeter fence. Guards were authorized to shoot any pris-\noner who crossed the line. Adults and children with attention deficit disorder (ADHD) don’t need a gun pointed at us to get us going on projects. But many of us do need or-\nganization help because we have a hard time with time management—es-\npecially with difficult or boring projects. This is certainly true for me. Take this article. I assured my editor that I’d have no trouble getting it done on time, and yet the more I thought about it, the harder it seemed to write. So here I am, one day before my deadline, and I’m just now starting. I’ve had similar difficulties in trying to complete my master’s thesis (after many years as an ADHD coach, I returned to school three years ago). I learned a lot of things about deadlines and getting things done during those months. Here’s my 10-point plan for meeting all of your deadlines, big and small: 1. \u0007Don’t bite off more than you can chew. Consider how much time is available in your busy schedule, and plan accordingly. If you take on a new project, you may have to cut back on other activities in order to finish it on time. 2. \u0007Post your deadlines where you will see them. This simple action will remind you to use your time wisely. When I went for my master’s degree, I highlighted the syllabus and put it on the wall over my desk. When I wrote my thesis, I created a computer screensaver that read “February 26 or Bust.”",
+          "text_blocks": [
+            {
+              "block_index": 2,
+              "bbox": [
+                432.0,
+                634.02,
+                523.98,
+                706.48
+              ],
+              "text": "Better Time\nManagement\nwith Adult\nADHD"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                432.0,
+                719.37,
+                490.71,
+                730.5
+              ],
+              "text": "from the editors of"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                221.71,
+                743.84,
+                229.21,
+                761.0
+              ],
+              "text": "3"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                53.99,
+                69.78,
+                415.89,
+                146.91
+              ],
+              "text": "9. \u0007Play a lot.\nImaginatively engage in what you are doing. This will use the best\nparts of your wonderful, creative mind. Playing is not a waste of time.\nIt will make you more effective at whatever you’re doing, whether it’s\ncarrying on a conversation or baking an apple pie."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                133.15,
+                158.98,
+                406.08,
+                246.4
+              ],
+              "text": "Dr. Edward Hallowell is a practicing psychiatrist and founder of the\nHallowell Center for Cognitive and Emotional Health in Sudbury,\nMassachusetts, New York City, San Francisco and Seattle. A former\ninstructor of Harvard Medical School, he is the author of 20 books,\nincluding the bestsellers: Driven to Distraction, Delivered from\nDistraction, CrazyBusy, and most recently, Driven to Distraction at\nWork. Dr. Hallowell has AD/HD himself."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                54.0,
+                293.79,
+                414.76,
+                392.88
+              ],
+              "text": "10 Time-Management Techniques\nfrom Sandy Maynard\nT"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                54.0,
+                353.12,
+                419.7,
+                579.57
+              ],
+              "text": "he word deadline dates back to the Civil War. At the notorious Con-\nfederate prison camp at Andersonville, Georgia, a line was drawn 17\nfeet inside the perimeter fence. Guards were authorized to shoot any pris-\noner who crossed the line.\nAdults and children with attention deficit disorder (ADHD) don’t need\na gun pointed at us to get us going on projects. But many of us do need or-\nganization help because we have a hard time with time management—es-\npecially with difficult or boring projects. This is certainly true for me. Take\nthis article. I assured my editor that I’d have no trouble getting it done on\ntime, and yet the more I thought about it, the harder it seemed to write. So\nhere I am, one day before my deadline, and I’m just now starting.\nI’ve had similar difficulties in trying to complete my master’s thesis (after\nmany years as an ADHD coach, I returned to school three years ago). I learned\na lot of things about deadlines and getting things done during those months.\nHere’s my 10-point plan for meeting all of your deadlines, big and small:"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                54.0,
+                586.44,
+                292.1,
+                603.66
+              ],
+              "text": "1. \u0007Don’t bite off more than you can chew."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                72.0,
+                602.12,
+                400.73,
+                648.57
+              ],
+              "text": "Consider how much time is available in your busy schedule, and\nplan accordingly. If you take on a new project, you may have to cut\nback on other activities in order to finish it on time."
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                54.0,
+                655.44,
+                327.51,
+                672.66
+              ],
+              "text": "2. \u0007Post your deadlines where you will see them."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                72.0,
+                671.12,
+                409.93,
+                732.57
+              ],
+              "text": "This simple action will remind you to use your time wisely. When I\nwent for my master’s degree, I highlighted the syllabus and put it on\nthe wall over my desk. When I wrote my thesis, I created a computer\nscreensaver that read “February 26 or Bust.”"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 1,
+              "bbox": [
+                427.0,
+                726.4,
+                538.05,
+                763.42
+              ],
+              "width_px": 232,
+              "height_px": 78,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                52.95,
+                160.65,
+                127.0,
+                244.07
+              ],
+              "width_px": 155,
+              "height_px": 174,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.additudemag.com",
+              "bbox": [
+                429.0,
+                727.22,
+                540.0,
+                768.22
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/742.html",
+              "bbox": [
+                121.57,
+                353.12,
+                163.97,
+                369.57
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/755.html",
+              "bbox": [
+                225.57,
+                443.12,
+                392.05,
+                459.57
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Better Time Management with Adult ADHD from the editors of\n4\n3. \u0007Break big projects into smaller parts, and assign a deadline for completing each. We’re usually given a deadline for the date by which the entire proj-\nect has to be completed. To keep yourself on track, mark the date by which you should complete one-quarter of the project, one-half, and so on. Those dates will alert you to problems while there’s still time to play catchup. 4. \u0007Set deadlines for others. We people with ADHD dislike deadlines so much that we’re often reluctant to set appropriate deadlines for others. Often, as I was working on my thesis, I’d find that I needed to ask my professors a question. To make sure I could get going on time each Saturday morn-\ning, I asked them to get back to me with answers no later than Friday afternoon. Otherwise, I would have lost momentum—or relied upon the excuse that I couldn’t keep working because I was unsure about what to do next. 5. \u0007When time runs short, outsource. Don’t assume that you must do every portion of a project. In many cases, it makes sense to outsource or delegate. 6. \u0007Take frequent breaks. Those who fail to get away from a project occasionally are likely to start avoiding it—or to just give up. Taking breaks will help you avoid burnout. 7. \u0007Start and end when you say you will. While writing my thesis, I started at 9. a.m. and ended at 5 p.m., so I had time to socialize in the evening. Knowing I would quit at 5 kept me going. I could say to myself, “only two more hours... only one more hour,” and so on. If I hadn’t committed to stopping at 5, I might have thought, “I’ll take a break and do something else and work on it later in the evening.” This kind of thinking is dangerous for individu-\nals with ADHD, who are easily distracted. 8. \u0007Change your inner voice. Think of positive things you can say to yourself to stay motivated. Some of my clients write down “positive affirmations” and keep them nearby to glance at. \u0007Example: “I’m going to feel great when I hand this in to my boss on time.” Or, “I can do this!” As I was writing my thesis, I often caught myself thinking, “Oh, well, I can just sign up for another quarter and take my time.” Each time I did, I immediately changed that to “No!",
+          "text_blocks": [
+            {
+              "block_index": 2,
+              "bbox": [
+                432.0,
+                634.02,
+                523.98,
+                706.48
+              ],
+              "text": "Better Time\nManagement\nwith Adult\nADHD"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                432.0,
+                719.37,
+                490.71,
+                730.5
+              ],
+              "text": "from the editors of"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                221.71,
+                743.84,
+                229.21,
+                761.0
+              ],
+              "text": "4"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                53.99,
+                69.78,
+                414.74,
+                176.91
+              ],
+              "text": "3. \u0007Break big projects into smaller parts, and assign a deadline\nfor completing each.\nWe’re usually given a deadline for the date by which the entire proj-\nect has to be completed. To keep yourself on track, mark the date by\nwhich you should complete one-quarter of the project, one-half, and\nso on. Those dates will alert you to problems while there’s still time to\nplay catchup."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                54.0,
+                183.78,
+                416.97,
+                320.91
+              ],
+              "text": "4. \u0007Set deadlines for others.\nWe people with ADHD dislike deadlines so much that we’re often\nreluctant to set appropriate deadlines for others. Often, as I was\nworking on my thesis, I’d find that I needed to ask my professors a\nquestion. To make sure I could get going on time each Saturday morn-\ning, I asked them to get back to me with answers no later than Friday\nafternoon. Otherwise, I would have lost momentum—or relied upon\nthe excuse that I couldn’t keep working because I was unsure about\nwhat to do next."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                54.0,
+                327.78,
+                407.46,
+                374.91
+              ],
+              "text": "5. \u0007When time runs short, outsource.\nDon’t assume that you must do every portion of a project. In many\ncases, it makes sense to outsource or delegate."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                54.0,
+                381.78,
+                418.76,
+                443.91
+              ],
+              "text": "6. \u0007Take frequent breaks.\nThose who fail to get away from a project occasionally are likely to\nstart avoiding it—or to just give up. Taking breaks will help you avoid\nburnout."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                54.0,
+                450.78,
+                414.48,
+                572.91
+              ],
+              "text": "7. \u0007Start and end when you say you will.\nWhile writing my thesis, I started at 9. a.m. and ended at 5 p.m., so I\nhad time to socialize in the evening. Knowing I would quit at 5 kept\nme going. I could say to myself, “only two more hours... only one\nmore hour,” and so on. If I hadn’t committed to stopping at 5, I might\nhave thought, “I’ll take a break and do something else and work on it\nlater in the evening.” This kind of thinking is dangerous for individu-\nals with ADHD, who are easily distracted."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                54.0,
+                579.78,
+                414.36,
+                641.91
+              ],
+              "text": "8. \u0007Change your inner voice.\nThink of positive things you can say to yourself to stay motivated.\nSome of my clients write down “positive affirmations” and keep them\nnearby to glance at."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                54.0,
+                649.46,
+                413.85,
+                710.91
+              ],
+              "text": "\u0007Example: “I’m going to feel great when I hand this in to my boss on\ntime.” Or, “I can do this!” As I was writing my thesis, I often caught\nmyself thinking, “Oh, well, I can just sign up for another quarter and\ntake my time.” Each time I did, I immediately changed that to “No!"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 1,
+              "bbox": [
+                427.0,
+                726.4,
+                538.05,
+                763.42
+              ],
+              "width_px": 232,
+              "height_px": 78,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.additudemag.com",
+              "bbox": [
+                429.0,
+                727.22,
+                540.0,
+                768.22
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Better Time Management with Adult ADHD from the editors of\n5\nYou will get this thesis done this quarter!” 9. \u0007Define your objectives. When I started my thesis project, my objective was to learn as much as possible about my topic. I accomplished that, but it wasn’t until my objective became finishing by the end of February that I was able to stay focused on the hard part: writing. Finishing on time is one of the most important objectives for people with ADHD. 10. If all else fails... hire a nanny. \u0007It seemed an extravagance at the time, but I hired someone to watch over me when I was earning my master’s degree. That’s right, a nanny. I gave her strict instructions. She was to arrive at 8:00 a.m., fix break-\nfast for me, and make sure I was at my desk by 9 a.m. There was to be no radio, no TV, no telephone—and no e-mail. She kept me on track, and now I have an M.S. at the end of my name. Sandy Maynard, M.S., is a pioneer in the field of coaching people with Attention Deficit/Hyperactivity Disorder (ADHD). She was instrumen-\ntal in the development of The National Attention Deficit Disorder Association’s Coaching Guidelines and a founding board member for the Institute for the Advancement of AD/HD Coaching (IAAC). She is a certified Master Practitioner of Neuro-Linguistic Programming (NLP) and uses a holistic health and wellness approach with her clients. Ms. Maynard lives in Washington, D.C., where she operates Catalytic Coaching. She lectures internationally and is a regular contributor to ADDitude magazine. Visit her on the web on sandymaynard.com.\nOther articles of interest: 1. \u0007Yours, Mind, and Hours: Understanding Your Partner’s Time Style. Is a skewed sense of time causing stress in your marriage? Ease time management tension by trying out your spouse’s perception of time. http://www.additudemag.com/adhd/article/755.html\n2. \u0007Never Be Late Again! Time management strategies to help ADHD adults be on time and organized. http://www.additudemag.com/adhd/article/2495.html\n3. \u0007When You Need a Body Double. Difficult tasks are easier to accom-\nplish if someone is on hand to keep you company. http://www.additudemag.com/adhd/article/893.html",
+          "text_blocks": [
+            {
+              "block_index": 2,
+              "bbox": [
+                432.0,
+                634.02,
+                523.98,
+                706.48
+              ],
+              "text": "Better Time\nManagement\nwith Adult\nADHD"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                432.0,
+                719.37,
+                490.71,
+                730.5
+              ],
+              "text": "from the editors of"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                221.71,
+                743.84,
+                229.21,
+                761.0
+              ],
+              "text": "5"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                72.0,
+                68.59,
+                280.1,
+                85.04
+              ],
+              "text": "You will get this thesis done this quarter!”"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                54.0,
+                91.91,
+                205.02,
+                109.13
+              ],
+              "text": "9. \u0007Define your objectives."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                72.0,
+                109.8,
+                418.46,
+                184.04
+              ],
+              "text": "When I started my thesis project, my objective was to learn as much\nas possible about my topic. I accomplished that, but it wasn’t until my\nobjective became finishing by the end of February that I was able to\nstay focused on the hard part: writing. Finishing on time is one of the\nmost important objectives for people with ADHD."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                54.0,
+                190.91,
+                415.34,
+                298.04
+              ],
+              "text": "10. If all else fails... hire a nanny.\n\u0007It seemed an extravagance at the time, but I hired someone to watch\nover me when I was earning my master’s degree. That’s right, a nanny.\nI gave her strict instructions. She was to arrive at 8:00 a.m., fix break-\nfast for me, and make sure I was at my desk by 9 a.m. There was to be\nno radio, no TV, no telephone—and no e-mail. She kept me on track,\nand now I have an M.S. at the end of my name."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                54.0,
+                310.11,
+                415.99,
+                435.06
+              ],
+              "text": "Sandy Maynard, M.S., is a pioneer in the field of coaching people with\nAttention Deficit/Hyperactivity Disorder (ADHD). She was instrumen-\ntal in the development of The National Attention Deficit Disorder\nAssociation’s Coaching Guidelines and a founding board member for\nthe Institute for the Advancement of AD/HD Coaching (IAAC). She is a\ncertified Master Practitioner of Neuro-Linguistic Programming (NLP)\nand uses a holistic health and wellness approach with her clients. Ms.\nMaynard lives in Washington, D.C., where she operates Catalytic Coaching. She lectures\ninternationally and is a regular contributor to ADDitude magazine. Visit her on the web on\nsandymaynard.com."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                54.0,
+                508.17,
+                207.89,
+                524.19
+              ],
+              "text": "Other articles of interest:"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                54.0,
+                532.09,
+                407.0,
+                578.54
+              ],
+              "text": "1. \u0007Yours, Mind, and Hours: Understanding Your Partner’s Time Style.\nIs a skewed sense of time causing stress in your marriage? Ease time\nmanagement tension by trying out your spouse’s perception of time."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                54.0,
+                587.89,
+                348.48,
+                601.62
+              ],
+              "text": "http://www.additudemag.com/adhd/article/755.html"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                54.0,
+                610.09,
+                400.86,
+                641.54
+              ],
+              "text": "2. \u0007Never Be Late Again! Time management strategies to help ADHD\nadults be on time and organized."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                54.0,
+                650.89,
+                356.24,
+                664.62
+              ],
+              "text": "http://www.additudemag.com/adhd/article/2495.html"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                54.0,
+                673.09,
+                402.32,
+                704.54
+              ],
+              "text": "3. \u0007When You Need a Body Double. Difficult tasks are easier to accom-\nplish if someone is on hand to keep you company."
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                54.0,
+                713.89,
+                349.91,
+                727.62
+              ],
+              "text": "http://www.additudemag.com/adhd/article/893.html"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 1,
+              "bbox": [
+                427.0,
+                726.4,
+                538.05,
+                763.42
+              ],
+              "width_px": 232,
+              "height_px": 78,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                52.89,
+                312.0,
+                126.98,
+                385.92
+              ],
+              "width_px": 155,
+              "height_px": 154,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.additudemag.com",
+              "bbox": [
+                429.0,
+                727.22,
+                540.0,
+                768.22
+              ]
+            },
+            {
+              "uri": "http://www.sandymaynard.com",
+              "bbox": [
+                54.0,
+                422.61,
+                142.39,
+                435.1
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/755.html",
+              "bbox": [
+                72.0,
+                587.89,
+                348.46,
+                601.62
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/2495.html",
+              "bbox": [
+                72.0,
+                650.89,
+                356.22,
+                664.62
+              ]
+            },
+            {
+              "uri": "http://www.additudemag.com/adhd/article/893.html",
+              "bbox": [
+                72.0,
+                713.89,
+                349.89,
+                727.62
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nPersonal Care\nSleep\nEating\nBathroom\nShower\nPersonal Care\n(Total Hours)\nHousehold\nHousework\nFood (prep and cleanup)\nLaundry\nLawn and other outdoor work\nPurchasing goods and services (food, car maintenance, etc.)\nProfessional services (doctor, haircutter, etc.)\nCaring for/helping household members\nCaring for/helping non-\nhousehold members\nHousehold\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y\nADHD Time Assessment Chart\nDr. Ned Hallowell developed a chart that indicates whether various tasks are really worth your time and effort. This ADHD time-management chart weighs tasks against the effort they take, the fulfillment they give, and their necessity.",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                178.32,
+                129.56,
+                430.46,
+                157.74
+              ],
+              "text": "Crazy Busy Time Chart"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                73.96,
+                164.83,
+                203.35,
+                209.66
+              ],
+              "text": "I.\nActivity\nII.\nAverage\nHours\nper Day"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                224.76,
+                164.83,
+                279.62,
+                209.66
+              ],
+              "text": "III.\nEffort Factor\n(1 = most,\n5 = least)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                298.83,
+                164.83,
+                348.35,
+                220.66
+              ],
+              "text": "IV.\nFulfillment\nFactor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                365.13,
+                164.83,
+                422.25,
+                209.66
+              ],
+              "text": "V.\nE x F\n(column III x\ncolumn IV)"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                430.66,
+                164.83,
+                498.02,
+                231.66
+              ],
+              "text": "VI.\nNecessity,\nRight-Thing-to-\nDo Factor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                503.14,
+                164.83,
+                570.52,
+                220.66
+              ],
+              "text": "VII.\nWorth-It Factor\n(product of\ncolumns III, IV,\nand VI)"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                40.1,
+                254.51,
+                99.28,
+                265.18
+              ],
+              "text": "Personal Care"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                40.1,
+                275.89,
+                59.77,
+                286.56
+              ],
+              "text": "Sleep"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                40.1,
+                297.28,
+                62.58,
+                307.94
+              ],
+              "text": "Eating"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                40.1,
+                318.66,
+                75.06,
+                329.33
+              ],
+              "text": "Bathroom"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                40.1,
+                340.05,
+                67.09,
+                350.71
+              ],
+              "text": "Shower"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                40.1,
+                361.43,
+                99.28,
+                383.09
+              ],
+              "text": "Personal Care\n(Total Hours)"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                40.1,
+                404.81,
+                83.29,
+                415.48
+              ],
+              "text": "Household"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                40.1,
+                426.19,
+                80.24,
+                436.86
+              ],
+              "text": "Housework"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                40.1,
+                447.58,
+                107.38,
+                469.24
+              ],
+              "text": "Food\n(prep and cleanup)"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                40.1,
+                479.96,
+                69.25,
+                490.63
+              ],
+              "text": "Laundry"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                40.1,
+                501.34,
+                127.76,
+                523.01
+              ],
+              "text": "Lawn and other outdoor\nwork"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                40.1,
+                530.13,
+                121.87,
+                562.79
+              ],
+              "text": "Purchasing goods and\nservices (food, car\nmaintenance, etc.)"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                40.1,
+                566.31,
+                123.34,
+                587.97
+              ],
+              "text": "Professional services\n(doctor, haircutter, etc.)"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                40.1,
+                591.49,
+                112.69,
+                613.15
+              ],
+              "text": "Caring for/helping\nhousehold members"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                40.1,
+                616.67,
+                123.85,
+                638.33
+              ],
+              "text": "Caring for/helping non-\nhousehold members"
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                40.1,
+                641.85,
+                94.22,
+                663.52
+              ],
+              "text": "Household\n(Total Hours)"
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                40.1,
+                690.01,
+                526.72,
+                714.8
+              ],
+              "text": "Excerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD.\n© 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y"
+            },
+            {
+              "block_index": 25,
+              "bbox": [
+                54.0,
+                32.54,
+                365.74,
+                60.0
+              ],
+              "text": "ADHD Time Assessment Chart"
+            },
+            {
+              "block_index": 26,
+              "bbox": [
+                54.0,
+                59.14,
+                560.68,
+                105.59
+              ],
+              "text": "Dr. Ned Hallowell developed a chart that indicates whether various tasks are really worth your time and\neffort. This ADHD time-management chart weighs tasks against the effort they take, the fulfillment they\ngive, and their necessity."
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nWork and Work-Related Activities\nThe part of work you like best\nThe part of work you like least\nThe part of work that’s in-\nbetween\nWork and Work-Related Activities\n(Total Hours)\nDriving, Commuting, Taxing\n(Total Hours)\nEducational Activities\n(Total Hours)\nOrganization, Civic, and Religious Activities (Volunteer, Unpaid)\nOrganizational\nCivic\nReligious\nOrganization, Civic, and Religious Activities (Volunteer, Unpaid)\n(Total Hours)\nLEISURE\n(Total Hours)\nSocializing\nWith people you like a lot\nWith people you don’t much like\nWith people in between\nPlaying a sport\nOther exercise\nSocializing\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                178.32,
+                33.08,
+                430.46,
+                61.26
+              ],
+              "text": "Crazy Busy Time Chart"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                73.96,
+                68.35,
+                203.35,
+                113.18
+              ],
+              "text": "I.\nActivity\nII.\nAverage\nHours\nper Day"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                224.76,
+                68.35,
+                279.62,
+                113.18
+              ],
+              "text": "III.\nEffort Factor\n(1 = most,\n5 = least)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                298.83,
+                68.35,
+                348.35,
+                124.18
+              ],
+              "text": "IV.\nFulfillment\nFactor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                365.13,
+                68.35,
+                422.25,
+                113.18
+              ],
+              "text": "V.\nE x F\n(column III x\ncolumn IV)"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                430.66,
+                68.35,
+                498.02,
+                135.18
+              ],
+              "text": "VI.\nNecessity,\nRight-Thing-to-\nDo Factor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                503.14,
+                68.35,
+                570.52,
+                124.18
+              ],
+              "text": "VII.\nWorth-It Factor\n(product of\ncolumns III, IV,\nand VI)"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                40.1,
+                154.43,
+                140.43,
+                176.09
+              ],
+              "text": "Work and Work-Related\nActivities"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                40.1,
+                179.61,
+                131.48,
+                201.27
+              ],
+              "text": "The part of work you like\nbest"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                40.1,
+                204.79,
+                131.48,
+                226.46
+              ],
+              "text": "The part of work you like\nleast"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                40.1,
+                229.98,
+                133.66,
+                251.64
+              ],
+              "text": "The part of work that’s in-\nbetween"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                40.1,
+                255.16,
+                140.43,
+                287.82
+              ],
+              "text": "Work and Work-Related\nActivities\n(Total Hours)"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                40.1,
+                307.86,
+                122.54,
+                340.52
+              ],
+              "text": "Driving, Commuting,\nTaxing\n(Total Hours)"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                40.1,
+                360.57,
+                130.87,
+                382.23
+              ],
+              "text": "Educational Activities\n(Total Hours)"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                40.1,
+                396.75,
+                137.71,
+                429.41
+              ],
+              "text": "Organization, Civic, and\nReligious Activities\n(Volunteer, Unpaid)"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                40.1,
+                434.83,
+                91.89,
+                445.5
+              ],
+              "text": "Organizational"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                40.1,
+                452.83,
+                57.42,
+                463.5
+              ],
+              "text": "Civic"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                40.1,
+                470.83,
+                73.07,
+                481.5
+              ],
+              "text": "Religious"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                40.1,
+                486.93,
+                137.71,
+                530.58
+              ],
+              "text": "Organization, Civic, and\nReligious Activities\n(Volunteer, Unpaid)\n(Total Hours)"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                40.1,
+                550.63,
+                94.22,
+                572.29
+              ],
+              "text": "LEISURE\n(Total Hours)"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                40.1,
+                586.81,
+                85.24,
+                597.47
+              ],
+              "text": "Socializing"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                40.1,
+                602.9,
+                130.15,
+                613.56
+              ],
+              "text": "With people you like a lot"
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                40.1,
+                618.99,
+                142.01,
+                640.65
+              ],
+              "text": "With people you don’t much\nlike"
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                40.1,
+                646.08,
+                123.72,
+                656.75
+              ],
+              "text": "With people in between"
+            },
+            {
+              "block_index": 25,
+              "bbox": [
+                40.1,
+                664.08,
+                93.54,
+                674.75
+              ],
+              "text": "Playing a sport"
+            },
+            {
+              "block_index": 26,
+              "bbox": [
+                40.1,
+                682.08,
+                91.48,
+                692.75
+              ],
+              "text": "Other exercise"
+            },
+            {
+              "block_index": 27,
+              "bbox": [
+                40.1,
+                698.17,
+                94.22,
+                719.84
+              ],
+              "text": "Socializing\n(Total Hours)"
+            },
+            {
+              "block_index": 28,
+              "bbox": [
+                40.1,
+                740.54,
+                526.72,
+                765.33
+              ],
+              "text": "Excerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD.\n© 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Crazy Busy Time Chart\nI. Activity\nII. Average Hours per Day\nIII.\nEffort Factor\n(1 = most, 5 = least)\nIV.\nFulfillment Factor\n(1 = least, 5 = most)\nV. E x F\n(column III x column IV)\nVI.\nNecessity, Right-Thing-to-\nDo Factor\n(1 = least, 5 = most)\nVII.\nWorth-It Factor\n(product of columns III, IV, and VI)\nElectronic Time\nE-mail\n(necessary)\nE-mail (screen sucking)\nInternet\n(necessary)\nInternet\n(screen sucking)\nTelevision\n(necessary)\nTelevision\n(screen sucking)\nTelephone\n(landline)\nCell Phone\nBlackberry, Treo, etc.\n(necessary)\nBlackberry, Treo, etc.\n(screen-sucking)\nElectronic Time\n(Total Hours)\nIntimate Time\n(Lovemaking, Cuddling, Intimate Conversation)\n(Total Hours)\nWasted, Killed, or Forgotten Time\n(Total Hours)\nCreative time\n(TOTAL HOURS)\nOther\n(Describe)\n(Total Hours)\nExcerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD. © 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                178.32,
+                33.08,
+                430.46,
+                61.26
+              ],
+              "text": "Crazy Busy Time Chart"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                73.96,
+                68.35,
+                203.35,
+                113.18
+              ],
+              "text": "I.\nActivity\nII.\nAverage\nHours\nper Day"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                224.76,
+                68.35,
+                279.62,
+                113.18
+              ],
+              "text": "III.\nEffort Factor\n(1 = most,\n5 = least)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                298.83,
+                68.35,
+                348.35,
+                124.18
+              ],
+              "text": "IV.\nFulfillment\nFactor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                365.13,
+                68.35,
+                422.25,
+                113.18
+              ],
+              "text": "V.\nE x F\n(column III x\ncolumn IV)"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                430.66,
+                68.35,
+                498.02,
+                135.18
+              ],
+              "text": "VI.\nNecessity,\nRight-Thing-to-\nDo Factor\n(1 = least,\n5 = most)"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                503.14,
+                68.35,
+                570.52,
+                124.18
+              ],
+              "text": "VII.\nWorth-It Factor\n(product of\ncolumns III, IV,\nand VI)"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                40.1,
+                165.43,
+                104.2,
+                176.09
+              ],
+              "text": "Electronic Time"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                40.1,
+                179.61,
+                81.91,
+                201.28
+              ],
+              "text": "E-mail\n(necessary)"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                40.1,
+                204.8,
+                99.91,
+                226.46
+              ],
+              "text": "E-mail\n(screen sucking)"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                40.1,
+                229.98,
+                81.91,
+                251.64
+              ],
+              "text": "Internet\n(necessary)"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                40.1,
+                255.16,
+                99.91,
+                276.82
+              ],
+              "text": "Internet\n(screen sucking)"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                40.1,
+                280.34,
+                81.91,
+                302.0
+              ],
+              "text": "Television\n(necessary)"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                40.1,
+                305.52,
+                99.91,
+                327.19
+              ],
+              "text": "Television\n(screen sucking)"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                40.1,
+                330.71,
+                76.24,
+                352.37
+              ],
+              "text": "Telephone\n(landline)"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                40.1,
+                357.8,
+                77.74,
+                368.46
+              ],
+              "text": "Cell Phone"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                40.1,
+                373.89,
+                114.85,
+                395.55
+              ],
+              "text": "Blackberry, Treo, etc.\n(necessary)"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                40.1,
+                399.07,
+                114.85,
+                420.73
+              ],
+              "text": "Blackberry, Treo, etc.\n(screen-sucking)"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                40.1,
+                424.25,
+                104.2,
+                445.91
+              ],
+              "text": "Electronic Time\n(Total Hours)"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                40.1,
+                467.43,
+                134.56,
+                511.09
+              ],
+              "text": "Intimate Time\n(Lovemaking, Cuddling,\nIntimate Conversation)\n(Total Hours)"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                40.1,
+                532.61,
+                114.96,
+                565.27
+              ],
+              "text": "Wasted, Killed, or\nForgotten Time\n(Total Hours)"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                40.1,
+                586.79,
+                94.22,
+                608.45
+              ],
+              "text": "Creative time\n(TOTAL HOURS)"
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                40.1,
+                629.97,
+                94.22,
+                662.64
+              ],
+              "text": "Other\n(Describe)\n(Total Hours)"
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                40.1,
+                688.65,
+                526.72,
+                713.44
+              ],
+              "text": "Excerpted from CrazyBusy: Overstretched, Overbooked, and About to Snap! Strategies for Coping in a World Gone ADD.\n© 2006 by Edward M. Hallowell, M.D., Ballantine Books, a division of Random House, Inc., N.Y"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "ADDitude Special Reports Available Now\nwww.adhdreports.com\n9 Conditions Often Diagnosed with ADHD\nDepression. Bipolar Disorder. Anxiety. OCD. And five more conditions that often show up alongside attention deficit. About 80 percent of individuals with ADHD are diagnosed with at least one other psychiatric condition at some time in their lives. This in-depth special report looks at the nine most common, outlining symptoms, treatment strat-\negies, and differentiating features of each. Plus, strategies for living well with any mental health condition.\n>> Learn more about this special report: http://additu.de/related\nMindfulness and Other Natural Treatments\nThe best non-medical treatments for ADHD, including exercise, green time, and mindful meditation.\nLearn how mindfulness works on ADHD brains, and how to begin practic-\ning it today. Plus, research the benefits of other alternative treatments like yoga and deep breathing exercises—including some designed especially for kids—as well as the science behind each natural therapy.\n>> Learn more about this special report: http://additu.de/mindfulness\nADHD 101\nA complete overview of ADHD, outlining every step from diagnosis to treat-\nment—all the way to living successfully with attention deficit. From the moment you suspect ADHD in yourself or your child, you have hundreds of questions. Which doctors can evaluate symptoms? What med-\nication side effects should you be prepared for? Can diet help? This com-\nprehensive eBook has over 100 pages of expert advice, personal stories, and more to help you become an ADHD expert. >> Learn More About This Special Report: http://additu.de/adhd-101\nTo purchase these or other ADDitude Special Reports, go to www.adhdreports.com\nFREE ADDitude Downloadable Booklets\n73 ADHD-Friendly Ways to Organize Your Life Now\nAchieve less clutter, fewer hassles, and greater tranquility in your life.\nADHD Time Assessment Chart\nDo you spend your time wisely? Use this tool to find out.\nBoost Your Productivity At Work\nADHD can make any job more challenging. Keep up with this expert advice.\nYou Know You Have ADHD When…\nReal ADHDers share personal sto-\nries highlighting the lighter side of living with attention deficit.\nSmart Comebacks\nWitty responses to ADHD doubters.\nIt’s Not ADHD: 3 Common Diagnosis Mistakes\nDoctors are sometimes too quick to diagnose ADHD. Read up on common misdiagnoses.\nFind these and many more free ADHD resources online at:\nhttp://additu.de/ freedownloads",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                54.0,
+                51.06,
+                310.12,
+                110.43
+              ],
+              "text": "ADDitude Special Reports\nAvailable Now\nwww.adhdreports.com"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                54.0,
+                133.85,
+                410.29,
+                177.79
+              ],
+              "text": "9 Conditions Often Diagnosed with ADHD\nDepression. Bipolar Disorder. Anxiety. OCD. And five more conditions that often\nshow up alongside attention deficit."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                54.0,
+                182.43,
+                419.76,
+                258.61
+              ],
+              "text": "About 80 percent of individuals with ADHD are diagnosed with at least one\nother psychiatric condition at some time in their lives. This in-depth special\nreport looks at the nine most common, outlining symptoms, treatment strat-\negies, and differentiating features of each. Plus, strategies for living well with\nany mental health condition."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                54.0,
+                261.93,
+                365.04,
+                278.11
+              ],
+              "text": ">> Learn more about this special report: http://additu.de/related"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                54.0,
+                288.15,
+                408.14,
+                332.09
+              ],
+              "text": "Mindfulness and Other Natural Treatments\nThe best non-medical treatments for ADHD, including exercise, green time, and\nmindful meditation."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                54.0,
+                336.73,
+                419.77,
+                397.91
+              ],
+              "text": "Learn how mindfulness works on ADHD brains, and how to begin practic-\ning it today. Plus, research the benefits of other alternative treatments like\nyoga and deep breathing exercises—including some designed especially for\nkids—as well as the science behind each natural therapy."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                54.0,
+                401.23,
+                392.2,
+                417.41
+              ],
+              "text": ">> Learn more about this special report: http://additu.de/mindfulness"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                54.0,
+                427.45,
+                387.65,
+                471.39
+              ],
+              "text": "ADHD 101\nA complete overview of ADHD, outlining every step from diagnosis to treat-\nment—all the way to living successfully with attention deficit."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                54.0,
+                476.03,
+                419.74,
+                552.21
+              ],
+              "text": "From the moment you suspect ADHD in yourself or your child, you have\nhundreds of questions. Which doctors can evaluate symptoms? What med-\nication side effects should you be prepared for? Can diet help? This com-\nprehensive eBook has over 100 pages of expert advice, personal stories, and\nmore to help you become an ADHD expert."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                54.0,
+                555.53,
+                384.8,
+                571.71
+              ],
+              "text": ">> Learn More About This Special Report: http://additu.de/adhd-101"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                54.0,
+                583.04,
+                413.09,
+                614.06
+              ],
+              "text": "To purchase these or other ADDitude Special Reports, go to\nwww.adhdreports.com"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                433.16,
+                69.62,
+                559.35,
+                121.13
+              ],
+              "text": "FREE ADDitude\nDownloadable\nBooklets"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                433.16,
+                130.81,
+                578.7,
+                180.0
+              ],
+              "text": "73 ADHD-Friendly Ways to\nOrganize Your Life Now\nAchieve less clutter, fewer hassles,\nand greater tranquility in your life."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                433.16,
+                190.81,
+                566.68,
+                240.0
+              ],
+              "text": "ADHD Time Assessment\nChart\nDo you spend your time wisely?\nUse this tool to find out."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                433.16,
+                250.81,
+                574.62,
+                312.0
+              ],
+              "text": "Boost Your Productivity At\nWork\nADHD can make any job more\nchallenging. Keep up with this\nexpert advice."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                433.16,
+                322.81,
+                577.18,
+                384.0
+              ],
+              "text": "You Know You Have ADHD\nWhen…\nReal ADHDers share personal sto-\nries highlighting the lighter side of\nliving with attention deficit."
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                433.16,
+                394.81,
+                544.04,
+                432.0
+              ],
+              "text": "Smart Comebacks\nWitty responses to ADHD\ndoubters."
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                433.16,
+                442.81,
+                576.04,
+                504.0
+              ],
+              "text": "It’s Not ADHD: 3 Common\nDiagnosis Mistakes\nDoctors are sometimes too quick\nto diagnose ADHD. Read up on\ncommon misdiagnoses."
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                433.16,
+                515.18,
+                569.91,
+                582.53
+              ],
+              "text": "Find these and many\nmore free ADHD\nresources online at:\nhttp://additu.de/\nfreedownloads"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "http://www.adhdreports.com",
+              "bbox": [
+                54.0,
+                91.14,
+                212.58,
+                110.43
+              ]
+            },
+            {
+              "uri": "http://additu.de/related",
+              "bbox": [
+                243.0,
+                261.93,
+                365.03,
+                278.11
+              ]
+            },
+            {
+              "uri": "http://additu.de/mindfulness",
+              "bbox": [
+                243.0,
+                401.23,
+                392.19,
+                417.41
+              ]
+            },
+            {
+              "uri": "http://additu.de/adhd-101",
+              "bbox": [
+                253.56,
+                555.53,
+                384.8,
+                571.71
+              ]
+            },
+            {
+              "uri": "http://www.adhdreports.com",
+              "bbox": [
+                54.0,
+                598.04,
+                192.28,
+                614.06
+              ]
+            },
+            {
+              "uri": "http://additu.de/freedownloads",
+              "bbox": [
+                433.16,
+                555.81,
+                522.32,
+                569.53
+              ]
+            },
+            {
+              "uri": "http://additu.de/freedownloads",
+              "bbox": [
+                433.16,
+                568.81,
+                512.62,
+                582.53
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "from ADDitude:\n7 Fixes for Self-Defeating ADHD Behaviors\n>> http://additu.de/brown Are your bad habits setting you up for failure? Find out what behaviors to watch for, and seven simple changes that can help you reach your full poten-\ntial and put you on the path to success. Entrepreneur and ADHD coach Alan Brown teaches “fix-it” strategies that he used to cope with his own ADHD.\nOrganizing Solutions for People with ADHD\n>> http://additu.de/org-web Feeling lost in the mess of “stuff”? Susan Pinsky, a professional organizer who specializes in ADHD, discusses simple steps for reducing clutter, eliminating excess from your life, and why ADHDers should aim for “good enough” in-\nstead of “perfect.” These simple, straightforward solutions will help you calm the chaos and conquer the clutter — for good.\nHealing the ADHD Brain: Interventions and Strategies that Work\n>> http://additu.de/healing\nThere’s no one-size-fits-all approach for treating ADHD. Here, Daniel G. Amen, M.D., explains treatment options ranging from medication and sup-\nplements to diet and exercise.\nSurvival Strategies for Moms with ADHD\n>>http://additu.de/adhd-moms Mothers with ADHD, especially those parenting ADHD children, often put the needs of others before themselves. Despite their good intentions, when moms leave their own ADHD untreated, the whole family can suffer. Ellen Lit-\ntman, Ph.D., outlines how to let go of society’s expectations of being “perfect” and focus on your own accomplishments. After all, being a mom is a tough job!\nSmart Money Strategies for ADHD Adults\n>> http://additu.de/ta You don’t need to be an investment banker to make financially sound deci-\nsions. In this audio presentation hosted by Stephanie Sarkis, Ph.D., you’ll learn how executive functions affect your ability to manage money, how to avoid impulsive purchases, and more. Save, spend, budget, and plan like the pros!\nFREE ADHD Newsletters from ADDitude\nSign up to receive criti-\ncal news and information about ADHD diagnosis and treatment, plus strategies for school, parenting, and living better with ADHD: http://additu.de/email\nAdult ADHD and LD (weekly)\nExpert advice on managing your household, time, money, career, and relationships\nParenting ADHD and LD Children (weekly)\nStrategies and support for par-\nents on behavior and discipline, time management, disorganiza-\ntion, and making friends.\nADHD and LD at School (bimonthly; weekly from August through October)\nHow to get classroom accom-\nmodations, finish homework, work with teachers, find the right schools, and much more.\nTreating ADHD (weekly)\nTreatment options for attention deficit including medications, food, supplements, brain training, mindfulness and other alternative therapies.",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                54.0,
+                51.06,
+                202.93,
+                75.17
+              ],
+              "text": "from ADDitude:"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                54.0,
+                95.05,
+                340.52,
+                112.78
+              ],
+              "text": "7 Fixes for Self-Defeating ADHD Behaviors"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                54.0,
+                116.66,
+                183.55,
+                130.39
+              ],
+              "text": ">> http://additu.de/brown"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                54.0,
+                134.63,
+                419.71,
+                195.81
+              ],
+              "text": "Are your bad habits setting you up for failure? Find out what behaviors to\nwatch for, and seven simple changes that can help you reach your full poten-\ntial and put you on the path to success. Entrepreneur and ADHD coach Alan\nBrown teaches “fix-it” strategies that he used to cope with his own ADHD."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                54.0,
+                205.85,
+                346.45,
+                223.58
+              ],
+              "text": "Organizing Solutions for People with ADHD"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                54.0,
+                227.31,
+                198.4,
+                241.19
+              ],
+              "text": ">> http://additu.de/org-web"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                54.0,
+                245.43,
+                419.72,
+                321.61
+              ],
+              "text": "Feeling lost in the mess of “stuff”? Susan Pinsky, a professional organizer who\nspecializes in ADHD, discusses simple steps for reducing clutter, eliminating\nexcess from your life, and why ADHDers should aim for “good enough” in-\nstead of “perfect.” These simple, straightforward solutions will help you calm\nthe chaos and conquer the clutter — for good."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                54.0,
+                331.65,
+                418.31,
+                365.38
+              ],
+              "text": "Healing the ADHD Brain: Interventions and Strategies\nthat Work"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                54.0,
+                367.73,
+                192.11,
+                383.91
+              ],
+              "text": ">> http://additu.de/healing"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                54.0,
+                387.23,
+                419.74,
+                433.41
+              ],
+              "text": "There’s no one-size-fits-all approach for treating ADHD. Here, Daniel G.\nAmen, M.D., explains treatment options ranging from medication and sup-\nplements to diet and exercise."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                54.0,
+                443.45,
+                328.58,
+                461.18
+              ],
+              "text": "Survival Strategies for Moms with ADHD"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                54.0,
+                463.53,
+                217.42,
+                479.71
+              ],
+              "text": ">>http://additu.de/adhd-moms"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                54.0,
+                483.03,
+                419.72,
+                559.21
+              ],
+              "text": "Mothers with ADHD, especially those parenting ADHD children, often put\nthe needs of others before themselves. Despite their good intentions, when\nmoms leave their own ADHD untreated, the whole family can suffer. Ellen Lit-\ntman, Ph.D., outlines how to let go of society’s expectations of being “perfect”\nand focus on your own accomplishments. After all, being a mom is a tough job!"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                54.0,
+                569.25,
+                333.05,
+                586.98
+              ],
+              "text": "Smart Money Strategies for ADHD Adults"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                54.0,
+                589.33,
+                167.06,
+                605.51
+              ],
+              "text": ">> http://additu.de/ta"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                54.0,
+                608.83,
+                419.75,
+                670.01
+              ],
+              "text": "You don’t need to be an investment banker to make financially sound deci-\nsions. In this audio presentation hosted by Stephanie Sarkis, Ph.D., you’ll learn\nhow executive functions affect your ability to manage money, how to avoid\nimpulsive purchases, and more. Save, spend, budget, and plan like the pros!"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                432.72,
+                69.48,
+                578.05,
+                210.37
+              ],
+              "text": "FREE ADHD\nNewsletters from\nADDitude\nSign up to receive criti-\ncal news and information\nabout ADHD diagnosis and\ntreatment, plus strategies\nfor school, parenting, and\nliving better with ADHD:\nhttp://additu.de/email"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                432.72,
+                221.64,
+                576.6,
+                270.86
+              ],
+              "text": "Adult ADHD and LD (weekly)\nExpert advice on managing your\nhousehold, time, money, career,\nand relationships"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                432.72,
+                281.67,
+                566.78,
+                354.86
+              ],
+              "text": "Parenting ADHD and LD\nChildren (weekly)\nStrategies and support for par-\nents on behavior and discipline,\ntime management, disorganiza-\ntion, and making friends."
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                432.72,
+                365.67,
+                573.47,
+                450.86
+              ],
+              "text": "ADHD and LD at School\n(bimonthly; weekly from\nAugust through October)\nHow to get classroom accom-\nmodations, finish homework,\nwork with teachers, find the right\nschools, and much more."
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                432.72,
+                461.67,
+                577.22,
+                534.87
+              ],
+              "text": "Treating ADHD (weekly)\nTreatment options for attention\ndeficit including medications,\nfood, supplements, brain training,\nmindfulness and other alternative\ntherapies."
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "http://additu.de/brown",
+              "bbox": [
+                67.78,
+                116.66,
+                181.78,
+                130.39
+              ]
+            },
+            {
+              "uri": "http://additu.de/org-web",
+              "bbox": [
+                67.78,
+                227.31,
+                196.55,
+                241.19
+              ]
+            },
+            {
+              "uri": "http://additu.de/healing",
+              "bbox": [
+                68.98,
+                367.73,
+                192.1,
+                383.91
+              ]
+            },
+            {
+              "uri": "http://additu.de/adhd-moms",
+              "bbox": [
+                67.01,
+                463.53,
+                214.69,
+                479.71
+              ]
+            },
+            {
+              "uri": "http://additu.de/ta",
+              "bbox": [
+                68.41,
+                589.33,
+                164.34,
+                605.51
+              ]
+            },
+            {
+              "uri": "http://additu.de/email",
+              "bbox": [
+                432.72,
+                196.67,
+                546.12,
+                210.4
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        }
+      ]
+    }
+  ],
+  "ourspace_kindness_pass": {
+    "schema_name": "ourspace_dbt_adhd_kindness_pass",
+    "schema_version": "1.0.0",
+    "generated_at_utc": "2026-06-25T21:00:29.329839+00:00",
+    "shared_library": true,
+    "routine_cadence": "daily",
+    "source_relative_path": "08_ADHD_Time_Management_and_Planning/json/10208_manage_your_life_adhd_time_assessment_c_bettertimemanagement_merged.json",
+    "title": "pdf_to_json_text_layout_v1",
+    "category": "ADHD Time Management and Planning",
+    "source_type": "reference",
+    "disability_profile_basis": {
+      "william": {
+        "main_doability_needs": [
+          "bed-level or seated options by default",
+          "oxygen/breathing, pain, vertigo, fatigue, mobility, and recovery time respected",
+          "ADHD/autism supports: transitions, low-stimulation starts, tiny visible steps",
+          "partial completion and stopping before a crash count as success",
+          "no shame, no body blame, no pressure to push through pain or dysphoria"
+        ],
+        "care_language": "direct, validating, masculine, autonomy-preserving, privacy-respecting"
+      },
+      "jasper": {
+        "main_doability_needs": [
+          "ADHD transition support before task demands",
+          "caregiver burnout recovery treated as care, not avoidance",
+          "protected rest, boundaries, decompression, sensory needs, and people-pleasing checks",
+          "low-energy, one-field, one-minute versions allowed",
+          "no assumption that Jasper has unlimited caregiver capacity"
+        ],
+        "care_language": "they/them, body-neutral, consent-based, non-shaming, burnout-aware"
+      },
+      "shared": {
+        "household_rules": [
+          "no hour block may hold more than two tasks/tools",
+          "skills may be used as one-breath or one-field versions",
+          "survival days load critical care first and skip optional worksheets",
+          "rest, boundaries, decompression, and asking for help count as care",
+          "skills are for support, not grades"
+        ]
+      }
+    },
+    "universal_kindness_rules": [
+      "This is a support tool, not a test.",
+      "One line, one checkbox, one breath, or one tiny step counts.",
+      "Skipping a skill because the body is unsafe, exhausted, dysregulated, or overloaded is allowed.",
+      "Do not stack this with more than one other task inside the same hour.",
+      "Survival-day version always wins over perfection."
+    ],
+    "william_accessibility_adaptations": [
+      "Use bed-level, seated, voice-note, or caregiver-assisted versions when needed.",
+      "Avoid pain escalation, respiratory strain, unsafe transfers, and dysphoria-triggering language.",
+      "Break worksheets into one-field chunks; stopping before a crash is success."
+    ],
+    "jasper_accessibility_adaptations": [
+      "Start with transition support before expecting focus.",
+      "Protect caregiver burnout recovery; rest and boundaries are valid completion.",
+      "Use body-doubling, timers, low-stimulation versions, and one-minute starts."
+    ],
+    "tiny_steps": [
+      "Pick the smallest visible version.",
+      "Use a timer, body double, or transition cue.",
+      "Stop after one tiny step if energy drops."
+    ],
+    "routine_integration": {
+      "routine_role": "small daily support option",
+      "start_the_day_use": "eligible as a rotating daily skill, never more than one DBT/ADHD skill in an hour block",
+      "recommended_block": "after body check or before decompression"
+    },
+    "completion_rules": {
+      "partial_completion_counts": true,
+      "can_be_paused_and_resumed": true,
+      "no_shame_if_skipped": true,
+      "low_spoon_version_required": true,
+      "can_be_done_separately_by_william_and_jasper": true,
+      "can_be_done_together_only_if_both_people_have_capacity": true
+    },
+    "schedule_policy": {
+      "start_the_day_eligible": true,
+      "expanded_day_eligible": true,
+      "max_items_per_hour_block": 2,
+      "do_not_force_into_day": false,
+      "do_not_stack_with": [
+        "appointment",
+        "heavy_chore",
+        "conflict_repair",
+        "hygiene_overload",
+        "caregiver_overload"
+      ]
+    },
+    "currency_suggestion": {
+      "platinum": 0,
+      "gold": 0,
+      "silver": 3,
+      "copper": 0
+    }
+  }
+}

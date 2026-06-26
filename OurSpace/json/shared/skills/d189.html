@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Distress Tolerance Worksheet 14: Planning for Dialectical Abstinence</title><style>:root{--ink:#17212b;--muted:#5f6b78;--line:#cbd5df;--paper:#fff;--soft:#f4f7fa;--accent:#0d6972;--accent2:#0f8b8d;}
+*{box-sizing:border-box}body{margin:0;background:#eef3f6;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45}.page{max-width:980px;margin:24px auto;padding:24px;background:var(--paper);box-shadow:0 6px 25px rgba(0,0,0,.12);border-radius:16px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;border-bottom:2px solid var(--line);padding-bottom:14px;margin-bottom:18px}.buttons{display:flex;gap:10px;flex-wrap:wrap}button,.linkbutton{border:0;border-radius:999px;background:var(--accent);color:white;padding:10px 16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}button.secondary{background:#697887}.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0 18px}.field{display:flex;flex-direction:column;gap:4px}.field label,.label{font-size:.88rem;color:var(--muted);font-weight:700}input[type=text],input[type=date],input[type=number],textarea{border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit;background:#fff;min-height:38px}textarea{min-height:80px;resize:vertical;width:100%}.rating input{width:72px}.section{border:1px solid var(--line);border-radius:12px;margin:14px 0;padding:14px;background:#fff}.section h2{font-size:1.12rem;margin:0 0 10px;color:#093d44}.source-text{white-space:pre-wrap;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px;max-height:none}.prompt{border-left:4px solid var(--accent2);padding-left:10px;margin:10px 0}.checkgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}.check{display:flex;gap:8px;align-items:flex-start;padding:6px 8px;background:var(--soft);border-radius:8px}.weekly{width:100%;border-collapse:collapse;margin:10px 0}.weekly th,.weekly td{border:1px solid var(--line);padding:8px;vertical-align:top}.weekly textarea{min-height:95px}.small{font-size:.88rem;color:var(--muted)}h1{font-size:1.6rem;margin:.2rem 0}.subtitle{color:var(--muted);font-weight:700}.notice{font-size:.88rem;background:#fff7e6;border:1px solid #f1d48b;border-radius:10px;padding:10px;margin:12px 0}.item-list{columns:2;column-gap:28px}.item-list li{break-inside:avoid;margin:0 0 6px}.pill{display:inline-block;background:#e3f2f4;color:#064950;border-radius:999px;padding:2px 8px;font-size:.78rem;font-weight:700;margin-right:4px}
+@media(max-width:700px){.page{margin:0;border-radius:0;padding:16px}.item-list{columns:1}.toolbar{display:block}.buttons{margin-top:10px}}
+@media print{body{background:#fff}.page{box-shadow:none;margin:0;max-width:none;border-radius:0}.toolbar button,.toolbar.linkbutton,.no-print{display:none!important}.section{break-inside:avoid}.source-text{background:#fff}input,textarea{border:1px solid #777}a{color:#000;text-decoration:none}}
+</style><script>
+function printPage(){ window.print(); }
+function clearForm(){ if(confirm('Clear all typed answers on this page?')){ document.querySelectorAll('input, textarea').forEach(el=>{ if(el.type==='checkbox') el.checked=false; else el.value=''; }); localStorage.removeItem(location.pathname); } }
+function saveLocal(){ const data=[]; document.querySelectorAll('input, textarea').forEach((el,i)=>{ data.push({i, type:el.type, value:el.type==='checkbox'?el.checked:el.value}); }); localStorage.setItem(location.pathname, JSON.stringify(data)); alert('Saved in this browser.'); }
+function loadLocal(){ try{ const data=JSON.parse(localStorage.getItem(location.pathname)||'[]'); data.forEach(x=>{ const el=document.querySelectorAll('input, textarea')[x.i]; if(el){ if(el.type==='checkbox') el.checked=!!x.value; else el.value=x.value; }}); }catch(e){} }
+window.addEventListener('DOMContentLoaded', loadLocal);
+</script></head><body> <style id="ourspace-kindness-pass-style">.ourspace-kindness-pass{margin:1rem auto;padding:1rem;border:2px solid #00a8b8;border-radius:16px;background:#f3ffff;color:#17202a;max-width:1100px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.45}.ourspace-kindness-pass h2{margin:.1rem 0.35rem;font-size:1.25rem}.ourspace-kindness-pass.pill{display:inline-block;padding:.2rem.55rem;border-radius:999px;background:#fff2e8;border:1px solid #d7b49a;margin:.15rem.15rem.15rem 0;font-size:.9rem}.ourspace-kindness-pass button{padding:.45rem.75rem;border-radius:10px;border:1px solid #00a8b8;background:white;cursor:pointer}
+@media print{.ourspace-kindness-pass button{display:none}}
+</style>
+<section class="ourspace-kindness-pass" aria-label="OurSpace kindness pass">
+<h2>OurSpace kindness pass</h2>
+<p><strong>Distress Tolerance Worksheet 14: Planning for Dialectical Abstinence</strong> is assigned as a <span class="pill">daily</span> support tool. It is not a test; one tiny step counts.</p>
+<ul><li>Open the file without requiring completion.</li><li>Fill one field, circle one option, or read one prompt.</li><li>Stop, save, or print; partial completion counts.</li></ul>
+<p><span class="pill">William: bed-level/seated/low-spoon allowed</span><span class="pill">Jasper: ADHD transition + burnout protection allowed</span><span class="pill">Max 2 items per hour</span></p>
+<button type="button" onclick="window.print()">Print</button>
+</section>
+<main class="page"> <div class="toolbar"><div><a class="linkbutton no-print" href="../../index.html">Index</a></div><div class="buttons"><button onclick="printPage()">Print</button><button class="secondary" onclick="saveLocal()">Save in browser</button><button class="secondary" onclick="clearForm()">Clear</button></div></div> <h1>Distress Tolerance Worksheet 14: Planning for Dialectical Abstinence</h1><div class="subtitle"><span class="pill">Distress Tolerance</span><span class="pill">Worksheet</span> Source book page(s): 404, 405, 406</div> <div class="notice">Fillable HTML companion generated from the user-provided workbook text. Use Print to print this worksheet after filling it out.</div> <div class="meta"><div class="field"><label>Name</label><input type="text"></div><div class="field"><label>Date</label><input type="date"></div><div class="field"><label>Due date</label><input type="text"></div><div class="field"><label>Week starting</label><input type="text"></div></div> <section class="section"><h2>Weekly / Daily Practice Tracker</h2><table class="weekly"><thead><tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></tr></thead><tbody><tr><td><textarea placeholder="Practice notes, ratings, skills used..."></textarea></td><td><textarea placeholder="Practice notes, ratings, skills used..."></textarea></td><td><textarea placeholder="Practice notes, ratings, skills used..."></textarea></td><td><textarea placeholder="Practice notes, ratings, skills used..."></textarea></td><td><textarea placeholder="Practice notes, ratings, skills used..."></textarea></td><td><textarea placeholder="Practice notes, ratings, skills used..."></textarea></td><td><textarea placeholder="Practice notes, ratings, skills used..."></textarea></td></tr></tbody></table></section><section class="section"><h2>Checklist / Skills Used</h2><div class="checkgrid"><label class="check"><input type="checkbox"> <span>Problem Behavior:</span></label><label class="check"><input type="checkbox"> <span>Check each activity and describe what you did</span></label><label class="check"><input type="checkbox"> <span>Plan activities to do instead of problem behaviors (e.g., work, find a hobby, go to a support</span></label><label class="check"><input type="checkbox"> <span>Spend time or touch base with people who will reinforce my not engaging in problem behaviors</span></label><label class="check"><input type="checkbox"> <span>keep/get relationship, to save money, to avoid shame). These include:</span></label><label class="check"><input type="checkbox"> <span>Avoid cues for problem behaviors. Cues include:</span></label><label class="check"><input type="checkbox"> <span>Use skills (things to do to avoid urges, interpersonal effectiveness, distress tolerance, emotion</span></label><label class="check"><input type="checkbox"> <span>Publicly announce I’ve embraced abstinence and effective behavior</span></label><label class="check"><input type="checkbox"> <span>Opposite action (Emotion Regulation Handout 10) can be rehearsed to fight guilt and shame. If</span></label><label class="check"><input type="checkbox"> <span>Building mastery and coping ahead for emotional situations (Emotion Regulation Handout 19),</span></label><label class="check"><input type="checkbox"> <span>and checking the facts (Emotion Regulation Handout 8), can be used to fight feelings of being</span></label><label class="check"><input type="checkbox"> <span>Problem-solve right away to find a way to “get back on the wagon” and repair any damage you</span></label><label class="check"><input type="checkbox"> <span>have done (Emotion Regulation Handout 12)</span></label><label class="check"><input type="checkbox"> <span>Distract yourself, self-soothe, and improve the moment</span></label><label class="check"><input type="checkbox"> <span>a disaster. (Check each extreme thought I am giving up and the middle ground I am accepting.)</span></label></div></section><section class="section"><h2>Fillable Responses</h2><div class="prompt"><div class="label">1. Problem Behavior:</div><textarea></textarea></div><div class="prompt"><div class="label">2. Check each activity and describe what you did.</div><textarea></textarea></div><div class="prompt"><div class="label">3., I need to aim for abstinence.</div><textarea></textarea></div><div class="prompt"><div class="label">4. meeting, volunteer). These will include:</div><textarea></textarea></div><div class="prompt"><div class="label">5. employers, my therapist, people from group). These people include:</div><textarea></textarea></div><div class="prompt"><div class="label">6. keep/get relationship, to save money, to avoid shame). These include:</div><textarea></textarea></div><div class="prompt"><div class="label">7. include:</div><textarea></textarea></div><div class="prompt"><div class="label">8. Avoid cues for problem behaviors. Cues include:</div><textarea></textarea></div><div class="prompt"><div class="label">9. regulation, mindfulness). The most useful skills for me include:</div><textarea></textarea></div><div class="prompt"><div class="label">10. Find alternative ways to rebel. These include:</div><textarea></textarea></div><div class="prompt"><div class="label">11. Call my therapist, sponsor, or mentor for skills coaching. His or her number is:</div><textarea></textarea></div><div class="prompt"><div class="label">12. group). These people include (with contact information):</div><textarea></textarea></div><div class="prompt"><div class="label">13. Review skills and handouts from DBT. The most helpful skills/handouts for me are:</div><textarea></textarea></div><div class="prompt"><div class="label">14. can often be found via online support groups. These people or groups include:</div><textarea></textarea></div><div class="prompt"><div class="label">15. Cheerlead myself (e.g., “One slip is not a disaster,” “Don’t give up,” “Don’t get willful,” “I can still</div><textarea></textarea></div><div class="prompt"><div class="label">16. climb back on the wagon.”) My cheerleading statements will include:</div><textarea></textarea></div><div class="prompt"><div class="label">17. Extreme thinking:</div><textarea></textarea></div><div class="prompt"><div class="label">18. Middle ground:</div><textarea></textarea></div><div class="prompt"><div class="label">19. I have to stay relapsed. I can be</div><textarea></textarea></div><div class="prompt"><div class="label">20. I missed an appointment, but I can get</div><textarea></textarea></div><div class="prompt"><div class="label">21. Other:</div><textarea></textarea></div></section><section class="section"><h2>Extracted Worksheet Text</h2><div class="source-text">download a larger version of this worksheet from www.guilford.com/dbt-worksheets.
+Planning for Dialectical Abstinence
+Due Date: Name: Week Starting:
+Problem Behavior:
+Check each activity and describe what you did.
+Plan for Abstinence
+To maximize the chances I’ll stop, I need to aim for abstinence.
+
+ Plan activities to do instead of problem behaviors (e.g., work, find a hobby, go to a support
+meeting, volunteer). These will include: 
+ Spend time or touch base with people who will reinforce my not engaging in problem behaviors
+and my engaging in effective behaviors (e.g., effective friends or family members, co-workers,
+employers, my therapist, people from group). These people include: 
+ Remind myself of reasons to stay abstinent and be effective (e.g., to reach long-term goals, to
+keep/get relationship, to save money, to avoid shame). These include: 
+ Burn bridges with people who represent a temptation (e.g., lose their numbers, unfriend them,
+tell them to stop contacting me, make them not want to hang out with me). These people
+include: 
+ Avoid cues for problem behaviors. Cues include: (continued on next page) 
+ Use skills (things to do to avoid urges, interpersonal effectiveness, distress tolerance, emotion
+regulation, mindfulness). The most useful skills for me include: 
+ Find alternative ways to rebel. These include: 
+ Publicly announce I’ve embraced abstinence and effective behavior.
+Plan for Harm Reduction
+If I have a slip, I don’t want the slip to turn into a slide. To avoid a slide, I must have plans to regain
+my balance and get back to abstinence and effectiveness.
+
+ Call my therapist, sponsor, or mentor for skills coaching. His or her number is:
+
+ Get in contact with other effective people who can help (e.g., friends or family, people from
+group). These people include (with contact information): 
+ Get rid of the temptations (e.g., drugs, comfort food); surround myself with cues for effective
+behaviors (e.g., workout clothes, fruit).
+
+ Review skills and handouts from DBT. The most helpful skills/handouts for me are: 
+ Opposite action (Emotion Regulation Handout 10) can be rehearsed to fight guilt and shame. If
+no other option works, go to an anonymous meeting of any sort and publicly report your lapse.
+
+ Building mastery and coping ahead for emotional situations (Emotion Regulation Handout 19),
+and checking the facts (Emotion Regulation Handout 8), can be used to fight feelings of being
+out of control.
+(continued on next page) 
+ Interpersonal skills (Interpersonal Effectiveness Handouts 5–7), such as asking for help from
+family, friends, sponsors, ministers, or counselors, can also be helpful. If you are isolated, help
+can often be found via online support groups. These people or groups include: 
+ Conduct a chain analysis to analyze what prompted the lapse (General Handouts 7, 7a).
+
+ Problem-solve right away to find a way to “get back on the wagon” and repair any damage you
+have done (Emotion Regulation Handout 12).
+
+ Distract yourself, self-soothe, and improve the moment.
+
+ Cheerlead myself (e.g., “One slip is not a disaster,” “Don’t give up,” “Don’t get willful,” “I can still
+climb back on the wagon.”) My cheerleading statements will include: 
+ Do pros and cons of stopping again now.
+
+ Stay away from extreme thinking. Always look for the middle ground. Don’t let one slip turn into
+a disaster. (Check each extreme thought I am giving up and the middle ground I am accepting.)
+Extreme thinking:
+Middle ground:
+
+ I have not quit yet; therefore I am
+doomed and might as well give up.
+
+ Relapsing once does not doom me to
+never stopping.
+
+ Now that I’ve relapsed, I might as well
+keep going.
+
+ I relapsed, but that does not mean
+I have to stay relapsed. I can be
+effective and get up now.
+
+ I missed an appointment, so I’m done
+with treatment.
+
+ I missed an appointment, but I can get
+in to see my therapist ASAP.
+
+ Other:
+
+ Other:
+
+ Other:
+
+ Other:
+
+ Recommit to 100% total abstinence.</div></section><p class="small">Copyright notice from source is retained in the JSON files. This generated form is intended for the user’s personal workbook use.</p></main></body></html>
