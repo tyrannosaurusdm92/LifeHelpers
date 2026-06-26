@@ -4,7 +4,7 @@
   const ACCOUNTS_KEY = 'ourspace_accounts_v2';
   const SESSION_KEY = 'ourspace_session_v2';
   const LEGACY_SESSION_KEY = 'ourspace_session_v1';
-  const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwXZ9maNHUWZR68su4O3KXymU-z-RFYJI4JYBuWQUDvUYjfESY_ivEPXTe6odBDqDGrqQ/exec';
+  const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec';
   const $ = (id) => document.getElementById(id);
   const isAdmin = () => location.hash.toLowerCase().includes('admin');
   function readJSON(key, fallback){try{return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));}catch{return fallback;}}

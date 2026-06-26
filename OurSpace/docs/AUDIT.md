@@ -1,25 +1,23 @@
-# OurSpace cleanup audit
+# OurSpace Full Replacement Audit
 
-Generated: 2026-06-25
+Generated: 2026-06-25 21:30 America/New_York
 
-## Completed
-- Replaced hard-coded placeholder games with the existing game manifest in `assets/ourspace-embedded-catalogs.js`.
-- Added `assets/ourspace-data-catalogs.js` as the runtime catalog for stores, tasks, self-care, skills, and GiftLink backend settings.
-- Populated top-level `json/shared`, `json/william`, and `json/jasper` store/task/skill indexes from the detailed JSON already in the project.
-- Removed DBT/ADHD placeholder JSON files and restored the shared skill index to point at the existing usable skill files.
-- Filtered store data so William does not receive Jasper-only ducks/purses/homecooked/cola-style items, and Jasper does not receive William-only D&D/dinosaur/Brev/Foundry/Arkenforge-style items.
-- Moved the user pages to JSON-backed store aisles, daily start scheduling, cadence pull lists, shared DBT/ADHD skill cards, manifest-backed games, and persistent uploaded media.
-- Added persistent gallery video support, persistent MP3 data-URL storage, saved uploaded standalone HTML games, and saved profile/background media.
-- Rebuilt the footer messenger around one shared William/Jasper local-storage thread.
-- Added Store-page GiftLink wishlist routing using the supplied Apps Script endpoint: `https://script.google.com/macros/s/AKfycbwXZ9maNHUWZR68su4O3KXymU-z-RFYJI4JYBuWQUDvUYjfESY_ivEPXTe6odBDqDGrqQ/exec`.
-- Restored canonical `OurSpace.html`; lowercase `ourspace.html` is now a small redirect for old links.
-- Updated the PWA manifest and service worker cache to include the new runtime catalogs.
+## Included entry files
+- `ourspace.html` — lowercase GitHub Pages entry for `/LifeHelpers/OurSpace/ourspace.html`.
+- `OurSpace.html` — matching uppercase copy for older links.
+- `william.html` and `jasper.html` — private user pages.
+- `manifest.webmanifest`, `service-worker.js`, `browserconfig.xml`, app icons, audio, and runtime catalogs.
+- `backend/OurSpace_Unified_Merged_Backend.gs` — backend source copy for reference/deployment.
 
-## Source-data note
-The supplied yearly task and yearly self-care JSON files contain zero records for shared, William, and Jasper. I left those empty rather than inventing new user-facing yearly tasks. The yearly DBT/ADHD skill catalog is populated and usable by both users.
+## Fixed
+- Added visible install buttons to login, William, Jasper, and Sync.
+- Rebuilt the manifest around `/LifeHelpers/OurSpace/ourspace.html` and `/LifeHelpers/OurSpace/` scope.
+- Rebuilt the service worker so install does not fail by caching missing JSON paths.
+- Added a Sync page that exposes backend actions except reserved actions.
+- Preserved reserved backend code in the uploaded Apps Script file but did not surface it in front-end controls.
+- Added weekly/monthly disability-kindness chores and care tasks with tiny steps for William, Jasper, and shared chores.
+- GiftLink remains near the top of Store and has a Sync-page connector for backend login/share/list/address/request actions.
+- Store aisle dropdowns remain in place with Show all.
 
-## Legacy code decision
-Game reward bridge files named `legacy-ourspace-*` remain in `assets/` because the game HTML files actively reference them. They are integrated game bridge code, not unused source.
-
-## Static validation
-See `docs/VALIDATION.md` for automated checks run during packaging.
+## Backend URL
+`https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec`
