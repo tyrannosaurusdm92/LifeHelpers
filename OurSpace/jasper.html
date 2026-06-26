@@ -273,14 +273,79 @@ html body .ourspace-safe-controls{
   color:#ffffff!important;
   box-shadow:0 12px 35px rgba(0,0,0,.45)!important;
   font:800 14px/1.25 Arial,Helvetica,sans-serif!important;
+  touch-action:none!important;
+  user-select:none!important;
 }
+html body .ourspace-safe-controls.collapsed{
+  width:75px!important;
+  height:75px!important;
+  min-width:75px!important;
+  min-height:75px!important;
+  max-width:75px!important;
+  max-height:75px!important;
+  padding:0!important;
+  border-radius:50%!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+}
+html body .ourspace-safe-controls .rescue-toggle{
+  width:62px!important;
+  height:62px!important;
+  min-width:62px!important;
+  min-height:62px!important;
+  border-radius:50%!important;
+  padding:0!important;
+  font-size:26px!important;
+  line-height:1!important;
+  z-index:2!important;
+}
+html body .ourspace-safe-controls:not(.collapsed) .rescue-toggle{
+  position:absolute!important;
+  right:.45rem!important;
+  top:.45rem!important;
+  width:42px!important;
+  height:42px!important;
+  min-width:42px!important;
+  min-height:42px!important;
+  font-size:18px!important;
+}
+html body .ourspace-safe-controls.collapsed .rescue-panel{display:none!important;}
+html body .ourspace-safe-controls:not(.collapsed){min-width:min(94vw,330px)!important;max-width:min(94vw,720px)!important;}
+html body .ourspace-safe-controls .rescue-panel{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:.45rem!important;
+  padding:.15rem 3rem .15rem .15rem!important;
+  width:100%!important;
+}
+html body .ourspace-safe-controls .rescue-header{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:.5rem!important;
+  cursor:grab!important;
+  color:#fff!important;
+  padding:.1rem .25rem!important;
+}
+html body .ourspace-safe-controls.dragging .rescue-header{cursor:grabbing!important;}
 html body .ourspace-safe-controls strong{color:#fff!important;font:900 14px/1.2 Arial,Helvetica,sans-serif!important;}
-html body .ourspace-safe-controls .safe-status{font-weight:700!important;color:#d9ffff!important;max-width:20rem!important;}
+html body .ourspace-safe-controls label{color:#d9ffff!important;font:800 11px/1.1 Arial,Helvetica,sans-serif!important;text-transform:uppercase!important;letter-spacing:.04em!important;margin:.1rem 0 0!important;}
+html body .ourspace-safe-controls select{width:100%!important;max-width:100%!important;}
+html body .ourspace-safe-controls .rescue-row{display:flex!important;flex-wrap:wrap!important;gap:.25rem!important;align-items:center!important;}
+html body .ourspace-safe-controls .safe-status{font-weight:700!important;color:#d9ffff!important;max-width:32rem!important;font-size:12px!important;}
 html body .ourspace-safe-controls .danger{background:#fff1f2!important;color:#9f1239!important;border-color:#fb7185!important;}
 html body .ourspace-safe-controls .good{background:#dcfce7!important;color:#14532d!important;border-color:#22c55e!important;}
-html body.ourspace-layout-safe-mode #myspaceThemeStyle{disabled:disabled;}
+html body .ourspace-user-bg-active{
+  background-image:var(--page-bg-image)!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-attachment:fixed!important;
+  background-repeat:no-repeat!important;
+}
+html body.ourspace-user-bg-active::before{opacity:0!important;background-image:none!important;}
 html body.ourspace-layout-safe-mode .page{background:rgba(255,255,255,.92)!important;color:#111827!important;}
-@media(max-width:700px){html body .ourspace-safe-controls{left:.45rem!important;right:.45rem!important;bottom:.45rem!important;} html body .ourspace-safe-controls button{flex:1 1 9rem!important;}}
+@media(max-width:700px){html body .app-top .top-inner{align-items:flex-start!important;} html body .ourspace-safe-controls .rescue-row button{flex:1 1 9rem!important;}}
 </style>
 
 <link rel="manifest" href="./manifest.webmanifest">
@@ -291,13 +356,28 @@ html body.ourspace-layout-safe-mode .page{background:rgba(255,255,255,.92)!impor
 </head>
 <body data-ourspace-user="jasper" data-ourspace-partner="william">
 
-<div id="ourspaceSafeControls" class="ourspace-safe-controls" role="region" aria-label="OurSpace safe layout controls">
-  <strong>Layout Rescue</strong>
-  <button type="button" id="safeModeButton" class="good">Safe view</button>
-  <button type="button" id="clearCurrentLayoutButton" class="danger">Remove this page code</button>
-  <button type="button" id="clearAllLayoutsButton" class="danger">Remove all page codes</button>
-  <button type="button" id="openSyncSafeButton">Open Sync</button>
-  <span id="layoutRescueStatus" class="safe-status">If styling breaks buttons, use these.</span>
+<div id="ourspaceSafeControls" class="ourspace-safe-controls collapsed" role="region" aria-label="OurSpace safe layout controls">
+  <button type="button" id="layoutRescueToggle" class="rescue-toggle" aria-expanded="false" title="Layout Rescue">🛟</button>
+  <div class="rescue-panel">
+    <div class="rescue-header" id="layoutRescueHandle"><strong>Layout Rescue</strong><button type="button" id="layoutRescueCollapse">Collapse</button></div>
+    <label for="rescuePageSelect">Target page</label>
+    <select id="rescuePageSelect" aria-label="Target page for layout rescue">
+      <option value="home">Home</option>
+      <option value="daily">Daily</option>
+      <option value="calendar">Calendar</option>
+      <option value="dbt">DBT / ADHD</option>
+      <option value="games">Games</option>
+      <option value="store">Store</option>
+      <option value="sync">Sync</option>
+    </select>
+    <div class="rescue-row">
+      <button type="button" id="safeModeButton" class="good">Safe view</button>
+      <button type="button" id="clearCurrentLayoutButton" class="danger">Remove selected page code</button>
+      <button type="button" id="clearAllLayoutsButton" class="danger">Remove all page codes</button>
+      <button type="button" id="openSyncSafeButton">Open Sync</button>
+    </div>
+    <span id="layoutRescueStatus" class="safe-status">Drag this panel anywhere. Collapse it to a 75×75 rescue bubble.</span>
+  </div>
 </div>
 
 <header class="app-top">
@@ -626,17 +706,42 @@ let gameTimer=null, gameMinute=0;
 const SAFE_LAYOUT_MODE=/([?&](safe|safeLayout|noskins|layoutSafe)=1)|(#safe\b|#safe-layout\b)/i.test(location.href);
 const CLEAR_LAYOUT_ON_BOOT=/([?&](clearLayout|resetStyle|clearStyles)=1)|(#clear-layout\b|#reset-style\b|#remove-myspace\b)/i.test(location.href);
 function setRescueStatus(text){const el=$('layoutRescueStatus'); if(el)el.textContent=text||'';}
+function selectedRescuePage(){const sel=$('rescuePageSelect'); return (sel&&sel.value)||currentPage||'home';}
 function removeAllLayoutCodesLocal(){state.pageMyspaceCodes={}; state.myspaceCode=''; localStorage.setItem(STORE_KEY,JSON.stringify(state));}
-function removeCurrentLayoutCodeLocal(){ensurePageCodes(); delete state.pageMyspaceCodes[currentPage||'home']; if((currentPage||'home')==='home')state.myspaceCode=''; localStorage.setItem(STORE_KEY,JSON.stringify(state));}
+function removeCurrentLayoutCodeLocal(){ensurePageCodes(); const page=selectedRescuePage(); delete state.pageMyspaceCodes[page]; if(page==='home')state.myspaceCode=''; localStorage.setItem(STORE_KEY,JSON.stringify(state));}
 async function pushLayoutRescueState(){try{await saveStateToBackend(); setRescueStatus('Saved. Refresh or use the page buttons again.');}catch(e){setRescueStatus('Removed locally. Backend sync can retry from Sync.');}}
 function enterSafeLayoutView(){document.body.classList.add('ourspace-layout-safe-mode'); const style=$('myspaceThemeStyle'); if(style)style.textContent=''; setRescueStatus('Safe view is on. Your code is not deleted until you remove it.');}
-async function clearCurrentLayoutCode(){removeCurrentLayoutCodeLocal(); document.body.classList.remove('ourspace-layout-safe-mode'); applyMyspaceCode(); await pushLayoutRescueState();}
-async function clearAllLayoutCodes(){removeAllLayoutCodesLocal(); document.body.classList.remove('ourspace-layout-safe-mode'); applyMyspaceCode(); await pushLayoutRescueState();}
+async function clearCurrentLayoutCode(){const page=selectedRescuePage(); removeCurrentLayoutCodeLocal(); document.body.classList.remove('ourspace-layout-safe-mode'); applyMyspaceCode(); await pushLayoutRescueState(); setRescueStatus('Removed layout code for '+page+'.');}
+async function clearAllLayoutCodes(){removeAllLayoutCodesLocal(); document.body.classList.remove('ourspace-layout-safe-mode'); applyMyspaceCode(); await pushLayoutRescueState(); setRescueStatus('Removed all saved layout code.');}
 function initEmergencyLayoutControls(){
+  const panel=$('ourspaceSafeControls');
+  const toggle=$('layoutRescueToggle');
+  const collapse=$('layoutRescueCollapse');
+  const handle=$('layoutRescueHandle');
+  const select=$('rescuePageSelect');
+  const posKey='ourspace_rescue_panel_'+PROFILE_ID;
+  const collapsedKey='ourspace_rescue_collapsed_'+PROFILE_ID;
+  function setCollapsed(v){if(!panel)return; panel.classList.toggle('collapsed',!!v); if(toggle)toggle.setAttribute('aria-expanded',String(!v)); try{localStorage.setItem(collapsedKey,v?'1':'0');}catch(e){}}
+  function clampToViewport(x,y){const rect=panel?.getBoundingClientRect?.()||{width:75,height:75}; const maxX=Math.max(0,window.innerWidth-rect.width-4); const maxY=Math.max(0,window.innerHeight-rect.height-4); return {x:Math.min(Math.max(4,x),maxX),y:Math.min(Math.max(4,y),maxY)};}
+  function place(x,y){if(!panel)return; const p=clampToViewport(x,y); panel.style.left=p.x+'px'; panel.style.top=p.y+'px'; panel.style.right='auto'; panel.style.bottom='auto'; try{localStorage.setItem(posKey,JSON.stringify(p));}catch(e){}}
+  try{const saved=JSON.parse(localStorage.getItem(posKey)||'null'); if(saved&&Number.isFinite(saved.x)&&Number.isFinite(saved.y))place(saved.x,saved.y);}catch(e){}
+  setCollapsed(localStorage.getItem(collapsedKey)!=='0');
+  let drag=null;
+  function startDrag(e){if(!panel)return; const t=e.target; if(t&&t.closest&&t.closest('button,select')&&t!==toggle&&t!==handle)return; const r=panel.getBoundingClientRect(); drag={id:e.pointerId,startX:e.clientX,startY:e.clientY,dx:e.clientX-r.left,dy:e.clientY-r.top,moved:false}; panel.classList.add('dragging'); try{panel.setPointerCapture(e.pointerId);}catch(err){} }
+  function moveDrag(e){if(!drag||e.pointerId!==drag.id)return; const moved=Math.abs(e.clientX-drag.startX)+Math.abs(e.clientY-drag.startY); if(moved>4)drag.moved=true; place(e.clientX-drag.dx,e.clientY-drag.dy); e.preventDefault();}
+  function endDrag(e){if(!drag||e.pointerId!==drag.id)return; const wasClick=!drag.moved; panel.classList.remove('dragging'); try{panel.releasePointerCapture(e.pointerId);}catch(err){} drag=null; if(wasClick&&e.target===toggle)setCollapsed(!panel.classList.contains('collapsed'));}
+  panel?.addEventListener('pointerdown',startDrag);
+  panel?.addEventListener('pointermove',moveDrag);
+  panel?.addEventListener('pointerup',endDrag);
+  panel?.addEventListener('pointercancel',endDrag);
+  toggle?.addEventListener('click',e=>{if(panel?.classList.contains('dragging'))return; setCollapsed(!panel.classList.contains('collapsed'));});
+  collapse?.addEventListener('click',()=>setCollapsed(true));
+  if(select)select.value=currentPage||'home';
   $('safeModeButton')?.addEventListener('click',enterSafeLayoutView);
   $('clearCurrentLayoutButton')?.addEventListener('click',clearCurrentLayoutCode);
   $('clearAllLayoutsButton')?.addEventListener('click',clearAllLayoutCodes);
-  $('openSyncSafeButton')?.addEventListener('click',()=>{setPage('sync'); window.scrollTo({top:0,behavior:'smooth'});});
+  $('openSyncSafeButton')?.addEventListener('click',()=>{setPage('sync'); window.scrollTo({top:0,behavior:'smooth'}); setCollapsed(true);});
+  window.addEventListener('resize',()=>{const r=panel?.getBoundingClientRect?.(); if(r)place(r.left,r.top);});
   if(SAFE_LAYOUT_MODE) setTimeout(enterSafeLayoutView,0);
 }
 
@@ -796,7 +901,7 @@ async function requestAppInstall(){try{if(deferredInstallPrompt){const e=deferre
 function initInstall(){window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;updateInstallButton();}); window.addEventListener('appinstalled',()=>{setInstallStatus('Installed.');backendAction('pwa.install.record',defaultPayloadFor('pwa.install.record'),{tolerateOpaque:true}).catch(()=>{});updateInstallButton();}); $('installAppButton')?.addEventListener('click',requestAppInstall); $('installAppTop')?.addEventListener('click',requestAppInstall); $('recordInstallButton')?.addEventListener('click',()=>runBackendPreset('pwa.install.record')); updateInstallButton();}
 function initBackendTools(){const tok=$('backendSessionToken'); if(tok)tok.value=activeSessionToken(); $('backendActionSelect')?.addEventListener('change',fillBackendPayload); $('fillBackendPayload')?.addEventListener('click',fillBackendPayload); $('sendBackendAction')?.addEventListener('click',sendSelectedBackendAction); $('syncLocalState')?.addEventListener('click',syncLocalStateToBackend); document.querySelectorAll('[data-backend-preset]').forEach(b=>b.addEventListener('click',()=>runBackendPreset(b.dataset.backendPreset))); $('giftBackendEmail')&&( $('giftBackendEmail').value=activeSession?.email||'' ); $('giftBackendLogin')?.addEventListener('click',async()=>{const out=$('giftBackendOutput'); if(out)out.value='Connecting...'; try{const data=await backendAction('login',{email:$('giftBackendEmail').value,passcode:$('giftBackendPasscode').value,password:$('giftBackendPasscode').value},{tolerateOpaque:false}); if(data.sessionToken){state.giftLinkSessionToken=data.sessionToken; saveState();} if(out)out.value=pretty(data);}catch(e){if(out)out.value=e.message||String(e);}}); $('giftBackendShareUrl')?.addEventListener('click',async()=>{const out=$('giftBackendOutput'); if(out)out.value='Requesting...'; const data=await backendAction('getPublicShareUrl',{sessionToken:state.giftLinkSessionToken||''},{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); if(out)out.value=pretty(data);}); $('giftBackendList')?.addEventListener('click',async()=>{const out=$('giftBackendOutput'); const data=await backendAction('listMyLinks',{sessionToken:state.giftLinkSessionToken||''},{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); if(out)out.value=pretty(data);}); $('giftBackendRotate')?.addEventListener('click',async()=>{const out=$('giftBackendOutput'); const data=await backendAction('rotateShareId',{sessionToken:state.giftLinkSessionToken||''},{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); if(out)out.value=pretty(data);}); $('giftBackendSaveAddress')?.addEventListener('click',async()=>{const payload={sessionToken:state.giftLinkSessionToken||'',address:{name:$('giftPrivateName').value,address:$('giftPrivateAddress').value,note:$('giftPrivateNote').value}}; const data=await backendAction('savePrivateAddress',payload,{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); const out=$('giftBackendOutput'); if(out)out.value=pretty(data);}); $('giftBackendRequests')?.addEventListener('click',async()=>{const data=await backendAction('listPurchaseRequests',{sessionToken:state.giftLinkSessionToken||''},{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); const out=$('giftBackendOutput'); if(out)out.value=pretty(data);}); fillBackendPayload();}
 
-function applyPageBackground(){const raw=state.backgrounds[currentPage]||''; const val=mediaSrc(raw); document.body.style.setProperty('--page-bg-image',val?`url("${String(val).replace(/"/g,'%22')}")`:'none');}
+function applyPageBackground(){const raw=state.backgrounds[currentPage]||''; const val=mediaSrc(raw); document.body.style.setProperty('--page-bg-image',val?`url("${String(val).replace(/"/g,'%22')}")`:'none'); document.body.classList.toggle('ourspace-user-bg-active',!!val);}
 function setPage(page){currentPage=page; document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.dataset.page===page)); document.querySelectorAll('[data-page-link]').forEach(b=>b.classList.toggle('active',b.dataset.pageLink===page)); $('messageDock')?.classList.toggle('visible',page==='daily'); applyPageBackground(); applyMyspaceCode(); if(page==='daily')renderDaily(); if(page==='calendar')renderCalendar(); if(page==='dbt')renderWellness(); if(page==='games'){renderGames(); renderCurrency();} if(page==='store'){renderStore(); renderWishlist(); renderCurrency();} if(page==='sync'){fillBackendPayload(); updateInstallButton();}}
 function initNav(){document.querySelectorAll('[data-page-link]').forEach(btn=>btn.addEventListener('click',()=>setPage(btn.dataset.pageLink))); document.querySelectorAll('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>$(btn.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'start'}))); $('returnHomepage')?.addEventListener('click',signOutToHomepage);}
 function initHome(){ $('homeSiteName').textContent=state.siteName; $('appTitle').textContent=state.siteName||'OurSpace'; $('homeStatus').textContent=state.status; $('userLine').textContent=PROFILE_LABEL+(activeSession.admin?' · #admin':''); $('siteNameInput').value=state.siteName; $('profileNameInput').value=state.profileName; $('statusInput').value=state.status; document.querySelectorAll('[data-home-edit]').forEach(el=>{const key=el.dataset.homeEdit; if(state.homeEdits[key])el.innerHTML=state.homeEdits[key]; el.addEventListener('input',()=>{state.homeEdits[key]=el.innerHTML; saveState();});}); applyProfileImage(); renderGallery(); applyMyspaceCode(); renderPositiveMessages();}
@@ -804,20 +909,46 @@ function applyProfileImage(){const img=$('profileImage'), ph=$('profilePlacehold
 function fileToDataURL(file,cb){const r=new FileReader(); r.onload=()=>cb(String(r.result||'')); r.readAsDataURL(file);}
 function renderGallery(){const grid=$('galleryGrid'); grid.innerHTML=''; if(!state.gallery.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">No saved media yet.</div>'; return;} state.gallery.forEach((entry,i)=>{const item=typeof entry==='string'?{type:'image',src:entry,name:'media'}:entry; const src=mediaSrc(item); const wrap=document.createElement('div'); const isVideo=(item.type||'').startsWith('video'); wrap.innerHTML=(isVideo?`<video src="${esc(src)}" controls style="width:100%;border-radius:12px"></video>`:`<img src="${esc(src)}" alt="${esc(item.name||'Gallery image')}">`)+`<button data-del-gallery="${i}" class="danger" style="width:100%;margin-top:.25rem">Remove</button>`; grid.appendChild(wrap);}); grid.querySelectorAll('[data-del-gallery]').forEach(b=>b.addEventListener('click',()=>{state.gallery.splice(Number(b.dataset.delGallery),1); saveState(); renderGallery();}));}
 const MYSPACE_PAGE_KEYS=['home','daily','calendar','dbt','games','store','sync'];
-const SAFE_CSS_PROPS=/^(?:--ms-|background(?:-(?:color|image|size|position|repeat|attachment|blend-mode|clip|origin))?|color|font(?:-(?:family|size|weight|style|variant))?|text-(?:align|decoration|transform|shadow)|letter-spacing|line-height|border(?:-(?:color|style|width|radius|top|right|bottom|left|top-color|right-color|bottom-color|left-color))?|box-shadow|opacity|outline|outline-color|outline-style|outline-width|padding(?:-(?:top|right|bottom|left))?|margin(?:-(?:top|right|bottom|left))?|width|max-width|min-width|height|max-height|min-height|display|grid-column|grid-row|order|align-self|justify-self|gap|row-gap|column-gap|overflow|overflow-x|overflow-y|filter|backdrop-filter|cursor)$/i;
-function stripUnsafeCssText(raw){return String(raw||'').replace(/<\/?(?:script|iframe|object|embed|applet|form|input|meta|link|base)\b[^>]*>/gi,'').replace(/on\w+\s*=\s*(['"]).*?\1/gi,'').replace(/javascript\s*:|vbscript\s*:|data\s*:\s*text\/html|expression\s*\(|behavior\s*:|-moz-binding\s*:|@import\b/gi,'').replace(/\{![\s\S]*?!\}/g,'').replace(/<\/?(?:td|tr|table|tbody|thead|tfoot)[^>]*>/gi,'');}
-function normalizeCssValue(value){let v=String(value||'').trim(); if(/^(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(v)) v='#'+v; if(/url\((['"]?)(.*?)\1\)/i.test(v)){const url=v.replace(/^.*?url\((['"]?)(.*?)\1\).*$/i,'$2').trim(); if(/^\s*(?:javascript|vbscript|data:text\/html)/i.test(url)) return ''; v=v.replace(/url\((['"]?)(.*?)\1\)/ig,(_,q,u)=>`url("${String(u).replace(/"/g,'%22')}")`);} return v;}
-function cleanDeclarations(block){return String(block||'').split(';').map(part=>{const i=part.indexOf(':'); if(i<0)return ''; const prop=part.slice(0,i).trim(); let value=normalizeCssValue(part.slice(i+1)); if(!prop||!value)return ''; if(!SAFE_CSS_PROPS.test(prop))return ''; if(/(?:position\s*:\s*fixed|z-index\s*:\s*9999)/i.test(prop+':'+value))return ''; return `${prop}:${value}`;}).filter(Boolean).join(';');}
-function mapMyspaceSelector(selector,page){let out=[]; const pageSel='#page-'+page; String(selector||'').split(',').forEach(raw=>{let s=raw.trim(); if(!s)return; if(/(?:script|iframe|object|embed|applet|form|input\[type=['"]?hidden)/i.test(s))return; if(new RegExp('#page-(?:'+MYSPACE_PAGE_KEYS.join('|')+')','i').test(s)){out.push(s);return;} const low=s.toLowerCase(); if(/^(?:html|body)(?:\b|[:.#\[])/.test(low)){out.push(pageSel);return;} if(/a\s*:\s*hover|\.redlink\s*:\s*hover|hover/.test(low)){out.push(pageSel+' a:hover',pageSel+' button:hover',pageSel+' .button:hover');return;} if(/^a(?:\b|[:.#\[])/.test(low)||/\.redlink/.test(low)){out.push(pageSel+' a',pageSel+' .button');return;} if(/nametext|orangetext15|whitetext12|lightbluetext8|modulehead|\.heading|h[1-6]/.test(low)){out.push(pageSel+' .card-head',pageSel+' .retro-panel .heading',pageSel+' h1',pageSel+' h2',pageSel+' h3');return;} if(/contacttable|friendspacemodule|commentsmodule|blurbsmodule|detailsmodule|interestsmodule|basicinfomodule/.test(low)){out.push(pageSel+' '+s.replace(/\s+/g,' '));return;} if(/table|td\.text|\.module|modulebody|modulemid|column0|column1|\.friends|\.comments|\.blurbs|\.details|\.interests|\.contact|\.journal|\.diary/.test(low)){out.push(pageSel+' .myspace-module');return;} if(/^\.[a-z0-9_-]+$/i.test(s)||/^#[a-z0-9_-]+$/i.test(s)){out.push(pageSel+' '+s);return;} out.push(pageSel+' .myspace-module');}); return [...new Set(out)].join(', ');}
-function inferHookVars(css){const vars=[]; const bodyMatch=css.match(/(?:body|html)[^{]*\{([^}]*)\}/i); const all=css; const find=(re)=>{const m=(bodyMatch?.[1]||all).match(re); return m?normalizeCssValue(m[1]):'';}; const bg=find(/background(?:-image)?\s*:\s*([^;]*url\([^;]+\)[^;]*)/i); const bgColor=find(/background-color\s*:\s*([^;]+)/i); const color=find(/(?:^|;)\s*color\s*:\s*([^;]+)/i); const font=find(/font-family\s*:\s*([^;]+)/i); const border=find(/border(?:-color)?\s*:\s*([^;]+)/i); if(bg)vars.push(`--ms-page-bg:${bg}`); if(bgColor)vars.push(`--ms-page-bg-color:${bgColor}`); if(color)vars.push(`--ms-text:${color}`); if(font)vars.push(`font-family:${font}`); if(border)vars.push(`--ms-card-border:${border.includes(' ')?border.split(/\s+/).pop():border}`); return vars.length?vars.join(';')+';':'';}
-function extractHomeCode(raw,page='home'){raw=stripUnsafeCssText(raw); let css=[]; raw=raw.replace(/<style[^>]*>([\s\S]*?)<\/style>/gi,(_,s)=>{css.push(s); return '';}); const looksCss=raw.trim()&&!raw.includes('<')&&/{[\s\S]*}/.test(raw); if(looksCss){css.push(raw); raw='';} const rawCss=stripUnsafeCssText(css.join('\n')); const rules=[]; const hookVars=inferHookVars(rawCss); if(hookVars)rules.push(`#page-${page}{${hookVars}}`); rawCss.replace(/([^{}]+)\{([^{}]*)\}/g,(_,selector,body)=>{const mapped=mapMyspaceSelector(selector,page); const decls=cleanDeclarations(body); if(mapped&&decls)rules.push(`${mapped}{${decls}}`); return '';}); return {css:`/* OurSpace scoped MySpace styling for ${page} */\n`+rules.join('\n'),html:''};}
+const SAFE_CSS_PROPS=/^(?:--ms-|background(?:-(?:color|image|size|position|repeat|attachment|blend-mode|clip|origin))?|color|font(?:-(?:family|size|weight|style|variant))?|text-(?:align|decoration|transform|shadow)|letter-spacing|line-height|border(?:-(?:color|style|width|radius|top|right|bottom|left|top-color|right-color|bottom-color|left-color))?|box-shadow|opacity|outline|outline-color|outline-style|outline-width|padding(?:-(?:top|right|bottom|left))?|margin(?:-(?:top|right|bottom|left))?|width|max-width|min-width|height|max-height|min-height|grid-column|grid-row|order|align-self|justify-self|gap|row-gap|column-gap|overflow|overflow-x|overflow-y|cursor)$/i;
+const BODY_CSS_PROPS=/^(?:background(?:-(?:color|image|size|position|repeat|attachment|blend-mode|clip|origin))?|color|font(?:-(?:family|size|weight|style|variant))?|text-(?:align|decoration|transform|shadow)|letter-spacing|line-height|cursor)$/i;
+function stripUnsafeCssText(raw){return String(raw||'').replace(/<\/?(?:script|iframe|object|embed|applet|form|input|meta|link|base)\b[^>]*>/gi,'').replace(/on\w+\s*=\s*(['"]).*?\1/gi,'').replace(/javascript\s*:|vbscript\s*:|data\s*:\s*text\/html|expression\s*\([^)]*\)|behavior\s*:|-moz-binding\s*:|@import\b/gi,'').replace(/\{![\s\S]*?!\}/g,'').replace(/<\/?(?:td|tr|table|tbody|thead|tfoot)[^>]*>/gi,'').replace(/<!--([\s\S]*?)-->/g,'');}
+function normalizeCssValue(value){let v=String(value||'').trim(); if(/^(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(v)) v='#'+v; v=v.replace(/(^|\s)([0-9a-f]{3}|[0-9a-f]{6})(?=\s|$|;|!important)/gi,(m,p,h)=>p+'#'+h); if(/url\((['"]?)(.*?)\1\)/i.test(v)){const url=v.replace(/^.*?url\((['"]?)(.*?)\1\).*$/i,'$2').trim(); if(/^\s*(?:javascript|vbscript|data:text\/html)/i.test(url)) return ''; v=v.replace(/url\((['"]?)(.*?)\1\)/ig,(_,q,u)=>`url("${String(u).replace(/"/g,'%22')}")`);} return v;}
+function cleanDeclarations(block,scope='module'){
+  const allowed=scope==='body'?BODY_CSS_PROPS:SAFE_CSS_PROPS;
+  return String(block||'').split(';').map(part=>{
+    const i=part.indexOf(':'); if(i<0)return '';
+    const prop=part.slice(0,i).trim().toLowerCase(); let value=normalizeCssValue(part.slice(i+1));
+    if(!prop||!value||!allowed.test(prop))return '';
+    const pair=prop+':'+value;
+    if(/(?:position\s*:\s*(?:fixed|absolute|sticky)|z-index\s*:\s*999|clip\s*:|behavior\s*:|expression\s*\()/i.test(pair))return '';
+    if(/^(?:display)\s*:\s*none\b/i.test(pair))return '';
+    if(/^(?:opacity)\s*:\s*0(?:\.0+)?\b/i.test(pair))return '';
+    if(/^(?:width|height|min-width|min-height|max-width|max-height)\s*:\s*0(?:px|em|rem|%)?\b/i.test(pair))return '';
+    if(scope==='body'&&/^(?:margin|padding|width|height|max-width|min-width|max-height|min-height|overflow|display)/i.test(prop))return '';
+    return `${prop}:${value}`;
+  }).filter(Boolean).join(';');
+}
+function isBodySelector(s){return /^(?:html|body)(?:\b|[:.#\[])/i.test(String(s||'').trim());}
+function mapMyspaceSelector(selector,page){let out=[]; const pageSel='#page-'+page; String(selector||'').split(',').forEach(raw=>{let s=raw.trim(); if(!s)return; if(/(?:script|iframe|object|embed|applet|form|input\[type=['"]?hidden)/i.test(s))return; if(new RegExp('#page-(?:'+MYSPACE_PAGE_KEYS.join('|')+')','i').test(s)){out.push(s);return;} const low=s.toLowerCase(); if(isBodySelector(s)){out.push('body.ourspace-page-'+page+'.ourspace-myspace-coded');return;} if(/#topnav|#header|#footer|#googlebar|mslogo|navbar/.test(low)){out.push(pageSel+' .page-toolbar',pageSel+' .retro-nav',pageSel+' .card-head');return;} if(/a\s*:\s*hover|\.redlink\s*:\s*hover|hover/.test(low)){out.push(pageSel+' a:hover',pageSel+' .myspace-module button:hover',pageSel+' .myspace-module .button:hover');return;} if(/^a(?:\b|[:.#\[])/.test(low)||/\.redlink/.test(low)){out.push(pageSel+' a',pageSel+' .myspace-module button',pageSel+' .myspace-module .button');return;} if(/nametext|orangetext15|whitetext12|lightbluetext8|blacktext12|blacktext10|btext|redtext|modulehead|\.heading|h[1-6]/.test(low)){out.push(pageSel+' .card-head',pageSel+' .retro-panel .heading',pageSel+' h1',pageSel+' h2',pageSel+' h3');return;} if(/(?:contacttable|friendspacemodule|commentsmodule|blurbsmodule|detailsmodule|interestsmodule|basicinfomodule|musicplayermodule|module).*\ba(?::|\b|\.)/.test(low)){out.push(pageSel+' .myspace-module a',pageSel+' '+s.replace(/\s+/g,' '));return;} if(/contacttable|friendspacemodule|commentsmodule|blurbsmodule|detailsmodule|interestsmodule|basicinfomodule|musicplayermodule/.test(low)){out.push(pageSel+' .myspace-module',pageSel+' '+s.replace(/\s+/g,' '));return;} if(/table|td\.text|\.text\b|\.module|modulebody|modulemid|column0|column1|\.friends|\.comments|\.blurbs|\.details|\.interests|\.contact|\.journal|\.diary|\.profile/.test(low)){out.push(pageSel+' .myspace-module');return;} if(/^\.[a-z0-9_-]+$/i.test(s)||/^#[a-z0-9_-]+$/i.test(s)){out.push(pageSel+' '+s);return;} out.push(pageSel+' .myspace-module');}); return [...new Set(out)].join(', ');}
+function extractHomeCode(raw,page='home'){
+  raw=stripUnsafeCssText(raw); let css=[];
+  raw=raw.replace(/<style[^>]*>([\s\S]*?)<\/style>/gi,(_,s)=>{css.push(s); return '';});
+  const looksCss=raw.trim()&&!raw.includes('<')&&/{[\s\S]*}/.test(raw); if(looksCss){css.push(raw); raw='';}
+  const rawCss=stripUnsafeCssText(css.join('\n'));
+  const rules=[`/* OurSpace scoped MySpace styling for ${page}; visual only, rescue controls protected. */`];
+  rawCss.replace(/([^{}]+)\{([^{}]*)\}/g,(_,selector,body)=>{
+    const mapped=mapMyspaceSelector(selector,page); const scope=String(selector||'').split(',').some(isBodySelector)?'body':'module'; const decls=cleanDeclarations(body,scope);
+    if(mapped&&decls)rules.push(`${mapped}{${decls}}`);
+    return '';
+  });
+  return {css:rules.join('\n'),html:''};
+}
 function ensurePageCodes(){if(!state.pageMyspaceCodes||typeof state.pageMyspaceCodes!=='object')state.pageMyspaceCodes={}; if(state.myspaceCode&&!state.pageMyspaceCodes.home)state.pageMyspaceCodes.home=state.myspaceCode;}
 function currentPageCode(page=currentPage){ensurePageCodes(); return state.pageMyspaceCodes[page]||'';}
 function setPageCode(page,code){ensurePageCodes(); if(code)state.pageMyspaceCodes[page]=code; else delete state.pageMyspaceCodes[page]; state.myspaceCode=state.pageMyspaceCodes.home||'';}
 function parseOurSpaceStyleHooks(raw){const m=String(raw||'').match(/OURSPACE_STYLE_HOOKS\s*([\s\S]*?)\s*END_OURSPACE_STYLE_HOOKS/i); if(!m)return {}; try{return JSON.parse(m[1]);}catch(e){return {};}}
 function moduleMatchesAlias(module,alias){const hay=((module.dataset.msAlias||'')+' '+(module.id||'')+' '+(module.className||'')+' '+(module.querySelector('h2,h3,.heading')?.textContent||'')).toLowerCase(); return hay.includes(String(alias||'').toLowerCase());}
 function applyStyleHooks(){ensurePageCodes(); MYSPACE_PAGE_KEYS.forEach(page=>{const pageEl=document.getElementById('page-'+page); if(!pageEl)return; const hook=parseOurSpaceStyleHooks(state.pageMyspaceCodes[page]||''); pageEl.classList.remove('ms-place-left','ms-place-right','ms-place-stacked','ms-place-compact','ms-place-wide'); if(hook.placement)pageEl.classList.add('ms-place-'+String(hook.placement).replace(/[^a-z0-9_-]/gi,'')); if(hook.moduleGap)pageEl.style.setProperty('--ms-module-gap',hook.moduleGap); const title=pageEl.querySelector(page==='home'?'#homeSiteName':'.page-title'); if(title&&hook.headerText)title.textContent=hook.headerText; const sub=page==='home'?pageEl.querySelector('#homeStatus'):null; if(sub&&hook.subheaderText)sub.textContent=hook.subheaderText; let note=pageEl.querySelector('.ms-page-body-text'); if(hook.bodyText){if(!note){note=document.createElement('div'); note.className='ms-page-body-text'; const anchor=pageEl.querySelector('.page-toolbar')||pageEl.querySelector('.retro-nav')||pageEl.firstElementChild; if(anchor&&anchor.parentNode)anchor.insertAdjacentElement('afterend',note); else pageEl.prepend(note);} note.textContent=hook.bodyText;} else if(note){note.remove();} pageEl.querySelectorAll('.myspace-module').forEach(m=>m.style.removeProperty('order')); if(Array.isArray(hook.moduleOrder)){hook.moduleOrder.forEach((alias,idx)=>{const mod=[...pageEl.querySelectorAll('.myspace-module')].find(m=>moduleMatchesAlias(m,alias)); if(mod)mod.style.order=String(idx+1);});}});}
-function applyMyspaceCode(){ensurePageCodes(); const homeCode=currentPageCode('home'); const box=$('myspaceCode'); if(box)box.value=homeCode; const gbox=$('globalMyspaceCode'); if(gbox)gbox.value=currentPageCode($('themePageKey')?.value||currentPage); const css=MYSPACE_PAGE_KEYS.map(p=>state.pageMyspaceCodes[p]?extractHomeCode(state.pageMyspaceCodes[p],p).css:'').filter(Boolean).join('\n\n'); $('myspaceThemeStyle').textContent=css; applyStyleHooks(); document.querySelectorAll('.page').forEach(p=>{const key=p.dataset.page; p.setAttribute('data-myspace-page',key); p.classList.toggle('myspace-coded',!!state.pageMyspaceCodes[key]);}); if($('customHomeOutput'))$('customHomeOutput').innerHTML=homeCode?'<p class="tiny">Home styling applied safely to this page only.</p>':''; if($('globalCustomOutput'))$('globalCustomOutput').innerHTML=currentPageCode($('themePageKey')?.value||currentPage)?'<p class="tiny">Page styling applied safely to this page only.</p>':'';}
 function initMyspaceHooks(){const aliasByTitle=[[/journal/i,['friends','friendSpaceModule','blurbsModule','journalModule','redlink']],[/diary|mood/i,['friends','friendSpaceModule','contactTable','diaryModule','commentsModule']],[/saved dbt|entries/i,['comments','commentsModule','extendednetwork','moduleList']],[/skill/i,['interests','interestsModule','detailsModule','orangetext15']],[/music/i,['contactTable','whitetext12','musicModule']],[/gallery/i,['friends','friendSpaceModule','galleryModule']],[/positive/i,['blurbs','blurbsModule','aboutMe']],[/calendar|event/i,['details','detailsModule','basicInfoModule']],[/game/i,['blurbsModule','friendSpaceModule','gameModule']],[/wallet|cart|store|items|wishlist/i,['contactTable','detailsModule','storeModule']],[/backend|install|sync/i,['extendednetwork','detailsModule','syncModule']]]; document.querySelectorAll('.page').forEach(page=>{page.setAttribute('data-myspace-page',page.dataset.page||'page'); page.classList.add('myspace-page','layout_0_2_0');}); document.querySelectorAll('.page .card,.page .retro-panel').forEach((card,idx)=>{card.classList.add('myspace-module','module','moduleMid','moduleBody'); const title=(card.querySelector('h2,h3,.heading')?.textContent||'module').trim(); const aliases=['ms-module','legacy-card','Table1','tdText']; aliasByTitle.forEach(([re,arr])=>{if(re.test(title))aliases.push(...arr);}); aliases.forEach(a=>{try{card.classList.add(a);}catch(e){}}); card.dataset.msAlias=[...new Set(aliases)].join(' '); if(!card.querySelector('.myspace-alias')){const span=document.createElement('span'); span.className='myspace-alias'; span.textContent=card.dataset.msAlias; card.prepend(span);}});}
 
 function positivePack(){return (CATALOG.positiveMessages&&CATALOG.positiveMessages[PROFILE_ID])||{marquee_details:[],positive_affirmations:[]};}
@@ -936,40 +1067,7 @@ function initModals(){
   $('bgUpload')?.addEventListener('change',async e=>{const key=$('bgPageKey').value; const f=e.target.files[0]; if(!f||!f.type.startsWith('image/'))return; state.backgrounds[key]=await uploadFileToBackend(f,'page-background',{slot:'background',page:key}); saveState(); if(currentPage===key)applyPageBackground(); closeModals(); e.target.value='';});
 }
 
-/* OurSpace post-patch full-page MySpace support. */
-function mapMyspaceSelector(selector,page){
-  let out=[]; const pageSel='#page-'+page; const bodySel='body[data-current-page="'+page+'"]';
-  const add=(...items)=>items.forEach(x=>{if(x)out.push(x)});
-  String(selector||'').split(',').forEach(raw=>{
-    let s=raw.trim(); if(!s)return;
-    if(/(?:script|iframe|object|embed|applet|form|input\[type=['"]?hidden)/i.test(s))return;
-    if(new RegExp('#page-(?:'+MYSPACE_PAGE_KEYS.join('|')+')','i').test(s)){add(s);return;}
-    const low=s.toLowerCase();
-    if(/^(?:html|body)(?:\b|[:.#\[])/.test(low)){add(bodySel,pageSel);return;}
-    if(/(?:div\.)?wrap\b|#container|\.container|\.content|div\.contentmid2|div#header|#googlebar|#topnav|#footer/.test(low)){add(pageSel,pageSel+' .home-retro-bg',pageSel+' .retro-layout',pageSel+' .page-toolbar',pageSel+' .retro-nav');return;}
-    if(/a\s*:\s*hover|\.redlink\s*:\s*hover|hover/.test(low)){add(pageSel+' a:hover',pageSel+' button:hover',pageSel+' .button:hover',pageSel+' .retro-nav button:hover');return;}
-    if(/^a(?:\b|[:.#\[])/.test(low)||/\.redlink|\.url|urllink|urlLink|contactLinks/i.test(s)){add(pageSel+' a',pageSel+' .button',pageSel+' button',pageSel+' .retro-nav button');return;}
-    if(/h3\.modulehead|modulehead|nametext|orangetext15|whitetext12|lightbluetext8|\.heading|h[1-6]/.test(low)){add(pageSel+' .card-head',pageSel+' .retro-panel .heading',pageSel+' .moduleHead',pageSel+' h1',pageSel+' h2',pageSel+' h3',pageSel+' h4');return;}
-    if(/(?:module|contacttable|friendspace|commentsmodule|blurbsmodule|detailsmodule).*\ba(?::|\b)/.test(low)){add(pageSel+' .myspace-module a',pageSel+' .module a',pageSel+' .card a',pageSel+' .retro-panel a');return;}
-    if(/button|input\[type=['"]?submit|\.button/.test(low)){add(pageSel+' button',pageSel+' .button',pageSel+' input[type="button"]',pageSel+' input[type="submit"]');return;}
-    if(/photo|profiledemographics|basicinfodetails|basicinfomodule|profileheaderdetails|profile-info|pilrealname/.test(low)){add(pageSel+' aside .myspace-module',pageSel+' .basicInfoModule',pageSel+' .profile-info',pageSel+' .avatar-box');return;}
-    if(/contacttable|friendspacemodule|commentsmodule|blurbsmodule|detailsmodule|interestsmodule|blogsmodule|calendarmodule|musicplayermodule/.test(low)){add(pageSel+' '+s.replace(/\s+/g,' '),pageSel+' .myspace-module');return;}
-    if(/table|td\.text|\bdiv\.module\b|\.module\b|modulebody|modulemid|modulemid2|column0|column1|\.friends|\.comments|\.blurbs|\.details|\.interests|\.contact|\.journal|\.diary|modulelist|moduleitem/.test(low)){add(pageSel+' .myspace-module',pageSel+' .module',pageSel+' .card',pageSel+' .retro-panel');return;}
-    if(/^\.[a-z0-9_-]+$/i.test(s)||/^#[a-z0-9_-]+$/i.test(s)){add(pageSel+' '+s);return;}
-    add(pageSel+' .myspace-module');
-  });
-  return [...new Set(out)].join(', ');
-}
-function extractHomeCode(raw,page='home'){
-  raw=stripUnsafeCssText(raw); let css=[];
-  raw=raw.replace(/<style[^>]*>([\s\S]*?)<\/style>/gi,(_,s)=>{css.push(s); return '';});
-  const looksCss=raw.trim()&&!raw.includes('<')&&/{[\s\S]*}/.test(raw); if(looksCss){css.push(raw); raw='';}
-  const rawCss=stripUnsafeCssText(css.join('\n'));
-  const rules=[]; const hookVars=inferHookVars(rawCss);
-  if(hookVars)rules.push(`#page-${page}{${hookVars}}`);
-  rawCss.replace(/([^{}]+)\{([^{}]*)\}/g,(_,selector,body)=>{const mapped=mapMyspaceSelector(selector,page); const decls=cleanDeclarations(body); if(mapped&&decls)rules.push(`${mapped}{${decls}}`); return '';});
-  return {css:`/* OurSpace full-page scoped MySpace styling for ${page} */\n`+rules.join('\n'),html:''};
-}
+/* OurSpace MySpace support: alias refresh only. Sanitizing/mapping functions live above and stay rescue-safe. */
 function initMyspaceHooks(){
   const aliasByTitle=[[/journal/i,['friends','friendSpaceModule','blurbsModule','journalModule','redlink','aboutMe']],[/diary|mood/i,['friends','friendSpaceModule','contactTable','diaryModule','commentsModule']],[/saved dbt|entries/i,['comments','commentsModule','extendednetwork','moduleList']],[/skill/i,['interests','interestsModule','detailsModule','orangetext15']],[/music/i,['contactTable','whitetext12','musicModule','musicPlayerModule']],[/gallery/i,['friends','friendSpaceModule','galleryModule']],[/positive/i,['blurbs','blurbsModule','aboutMe']],[/calendar|event/i,['details','detailsModule','basicInfoModule','calendarModule']],[/game/i,['blurbsModule','friendSpaceModule','gameModule']],[/wallet|cart|store|items|wishlist/i,['contactTable','detailsModule','storeModule']],[/backend|install|sync|converter/i,['extendednetwork','detailsModule','syncModule','profileEditorModule']]];
   document.querySelectorAll('.page').forEach(page=>{page.setAttribute('data-myspace-page',page.dataset.page||'page'); page.classList.add('myspace-page','layout_0_2_0','wrap','contentMid2');});
@@ -977,7 +1075,7 @@ function initMyspaceHooks(){
   document.querySelectorAll('.page .card-head,.page .heading').forEach(el=>el.classList.add('moduleHead','orangetext15','whitetext12'));
   document.querySelectorAll('.page .card-body,.page .body').forEach(el=>el.classList.add('moduleBody','moduleList','contentMid2'));
   document.querySelectorAll('.page button,.page .button').forEach(el=>el.classList.add('contactLinks','redlink'));
-  document.querySelectorAll('.main-nav,.retro-nav').forEach(el=>el.classList.add('topnav','contactTable'));
+  document.querySelectorAll('.retro-nav').forEach(el=>el.classList.add('topnav','contactTable'));
 }
 function initDiaryCardFrame(){
   const frame=$('dbtDiaryFrame'); const source=$('dbtDiarySrcdocB64'); if(!frame)return;
@@ -1013,11 +1111,13 @@ function initWellness(){
 function applyMyspaceCode(){
   ensurePageCodes(); const homeCode=currentPageCode('home'); const box=$('myspaceCode'); if(box)box.value=homeCode; const gbox=$('globalMyspaceCode'); if(gbox)gbox.value=currentPageCode($('themePageKey')?.value||currentPage);
   const css=MYSPACE_PAGE_KEYS.map(p=>state.pageMyspaceCodes[p]?extractHomeCode(state.pageMyspaceCodes[p],p).css:'').filter(Boolean).join('\n\n');
-  if(SAFE_LAYOUT_MODE||document.body.classList.contains('ourspace-layout-safe-mode')){ $('myspaceThemeStyle').textContent=''; } else { $('myspaceThemeStyle').textContent=css; } applyStyleHooks();
-  document.body.classList.toggle('ourspace-myspace-coded',!!currentPageCode(currentPage) && !(SAFE_LAYOUT_MODE||document.body.classList.contains('ourspace-layout-safe-mode')));
+  if(SAFE_LAYOUT_MODE||document.body.classList.contains('ourspace-layout-safe-mode')){ $('myspaceThemeStyle').textContent=''; } else { $('myspaceThemeStyle').textContent=css; }
+  applyStyleHooks();
+  const hasCode=!!currentPageCode(currentPage) && !(SAFE_LAYOUT_MODE||document.body.classList.contains('ourspace-layout-safe-mode'));
+  document.body.classList.toggle('ourspace-myspace-coded',hasCode);
   document.querySelectorAll('.page').forEach(p=>{const key=p.dataset.page; p.setAttribute('data-myspace-page',key); p.classList.toggle('myspace-coded',!!state.pageMyspaceCodes[key]);});
-  if($('customHomeOutput'))$('customHomeOutput').innerHTML=homeCode?'<p class="tiny">Home styling applied to the full page.</p>':'';
-  if($('globalCustomOutput'))$('globalCustomOutput').innerHTML=currentPageCode($('themePageKey')?.value||currentPage)?'<p class="tiny">Page styling applied to the full page.</p>':'';
+  if($('customHomeOutput'))$('customHomeOutput').innerHTML=homeCode?'<p class="tiny">Home styling applied to the full page. The rescue bubble can remove it any time.</p>':'';
+  if($('globalCustomOutput'))$('globalCustomOutput').innerHTML=currentPageCode($('themePageKey')?.value||currentPage)?'<p class="tiny">Page styling applied independently to this page. Background buttons can still override the image.</p>':'';
 }
 function setPage(page){
   currentPage=page;
@@ -1025,6 +1125,7 @@ function setPage(page){
   document.body.classList.remove(...MYSPACE_PAGE_KEYS.map(p=>'ourspace-page-'+p));
   document.body.classList.add('ourspace-page-'+page);
   document.body.classList.toggle('ourspace-myspace-coded',!!currentPageCode(page));
+  const rescueSelect=$('rescuePageSelect'); if(rescueSelect)rescueSelect.value=page;
   document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.dataset.page===page));
   document.querySelectorAll('[data-page-link]').forEach(b=>b.classList.toggle('active',b.dataset.pageLink===page));
   $('messageDock')?.classList.toggle('visible',page==='daily');

@@ -1,4 +1,4 @@
-const OURSPACE_CACHE = 'ourspace-panic-layout-rescue-v1';
+const OURSPACE_CACHE = 'ourspace-layout-rescue-bubble-v2';
 const CORE_ASSETS = [
   "./ourspace.html",
   "./OurSpace.html",
