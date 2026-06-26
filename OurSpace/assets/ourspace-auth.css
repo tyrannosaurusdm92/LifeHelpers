@@ -1,0 +1,66 @@
+
+/* OurSpace font placeholders. Add real font files to these folders later. */
+@font-face{
+  font-family:"love-ya-like-a-sister";
+  src:url("fonts/love-ya-like-a-sister/love-ya-like-a-sister.woff2") format("woff2"),
+      url("fonts/love-ya-like-a-sister/love-ya-like-a-sister.woff") format("woff"),
+      url("fonts/love-ya-like-a-sister/love-ya-like-a-sister.ttf") format("truetype");
+  font-display:swap;
+}
+@font-face{
+  font-family:"morris-roman";
+  src:url("fonts/morris-roman/morris-roman.woff2") format("woff2"),
+      url("fonts/morris-roman/morris-roman.woff") format("woff"),
+      url("fonts/morris-roman/morris-roman.ttf") format("truetype");
+  font-display:swap;
+}
+
+:root{
+  --bg:#090b10;
+  --panel:#151b25;
+  --panel-soft:#1c2432;
+  --text:#f6f7fb;
+  --muted:#b8c0cf;
+  --line:rgba(255,255,255,.15);
+  --cyan:#00ffff;
+  --orange:#ca6309;
+  --good:#9dffc5;
+  --warn:#ffd79b;
+  --bad:#ffabab;
+  --radius:24px;
+  --shadow:0 24px 70px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 20% 10%,rgba(0,255,255,.22),transparent 30%),
+    radial-gradient(circle at 84% 14%,rgba(202,99,9,.28),transparent 28%),
+    linear-gradient(135deg,#080b10,#101927 52%,#0b1119);
+}
+a{color:#dfffff}
+button,input,select,textarea{font:inherit}
+button{
+  border:0;border-radius:16px;min-height:44px;padding:12px 15px;
+  font-weight:850;cursor:pointer;color:#061016;
+  background:linear-gradient(135deg,var(--cyan),#7ffaff);
+  box-shadow:0 10px 24px rgba(0,255,255,.18);
+}
+button.secondary{background:linear-gradient(135deg,var(--orange),#e99548);box-shadow:0 10px 24px rgba(202,99,9,.18)}
+button.ghost{background:rgba(255,255,255,.07);border:1px solid var(--line);color:var(--text);box-shadow:none}
+button.danger{background:linear-gradient(135deg,#ffb1b1,#ffe0e0);color:#21090a}
+input,select,textarea{
+  width:100%;min-height:46px;border-radius:15px;border:1px solid rgba(255,255,255,.18);
+  background:rgba(3,7,12,.70);color:var(--text);padding:12px 13px;outline:none;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,255,255,.13)}
+.app{width:min(1080px,calc(100% - 24px));margin:0 auto;padding:18px 0 42px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px;border:1px solid var(--line);border-radius:26px;background:rgba(8,12,18,.82);backdrop-filter:blur(16px);box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:50px;height:50px;border-radius:18px;background:radial-gradient(circle at 30% 24%,#fff,transparent 24%),linear-gradient(135deg,var(--cyan),var(--orange));box-shadow:0 0 30px rgba(0,255,255,.24)}
+.brand h1,.ourspace-brand{font-family:"love-ya-like-a-sister",Inter,system-ui,sans-serif;letter-spacing:.015em}
+h1{margin:0;font-size:clamp(1.5rem,5vw,2.6rem);line-height:1}.status{margin:.25rem 0 0;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,440px);gap:18px;align-items:start;margin-top:18px}.panel,.card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));box-shadow:var(--shadow);padding:clamp(16px,3vw,28px)}
+.hero-title{font-family:"love-ya-like-a-sister",Inter,system-ui,sans-serif;font-size:clamp(2.8rem,9vw,6rem);letter-spacing:-.04em;line-height:.86;margin:0 0 16px}.lede{font-size:1.08rem;max-width:64ch;color:#e8f3ff}.form-grid{display:grid;gap:13px}label{display:grid;gap:7px;font-weight:800}.label-row{display:flex;justify-content:space-between;gap:8px;align-items:center}.password-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.actions button,.actions a.button{flex:1 1 140px}.helper{color:var(--muted);font-size:.9rem;line-height:1.4}.message{min-height:24px;color:#dfffff;overflow-wrap:anywhere}.message.success{color:var(--good)}.message.warning{color:var(--warn)}.message.danger{color:var(--bad)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tabs button[aria-selected="true"]{outline:2px solid rgba(255,255,255,.7);background:linear-gradient(135deg,var(--orange),var(--cyan));}.tab-panel{display:none}.tab-panel.active{display:grid}.admin-box{display:none}.admin-mode .admin-box{display:grid}.admin-mode .normal-auth{display:none!important}.user-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.user-card{display:grid;gap:8px;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055)}.user-card h3{font-family:"morris-roman",Georgia,serif;margin:0;font-size:1.4rem}.button{display:inline-flex;justify-content:center;align-items:center;min-height:44px;padding:12px 15px;border-radius:16px;text-decoration:none;font-weight:850;color:#061016;background:linear-gradient(135deg,var(--cyan),#7ffaff)}
+@media(max-width:840px){.topbar,.hero{grid-template-columns:1fr;display:grid}.password-row,.user-card-grid{grid-template-columns:1fr}.app{width:calc(100% - 14px);padding-top:8px}.topbar{text-align:center}.brand{justify-content:center}}

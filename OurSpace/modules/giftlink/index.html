@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Private wishlist and link hub with server-side gift routing." />
+  <title>OurSpace GiftLink</title>
+  <style>
+    :root{
+      --bg:#071018;
+      --bg2:#102238;
+      --panel:rgba(255,255,255,.09);
+      --panel2:rgba(255,255,255,.14);
+      --text:#f7fbff;
+      --muted:#bed1e6;
+      --line:rgba(255,255,255,.18);
+      --cyan:#00ffff;
+      --orange:#ca6309;
+      --blue:#1677ff;
+      --green:#42d392;
+      --red:#ff5573;
+      --shadow:0 24px 70px rgba(0,0,0,.38);
+      --radius:24px;
+    }
+    [data-theme="light"]{
+      --bg:#f7fbff;
+      --bg2:#eaf2ff;
+      --panel:rgba(255,255,255,.9);
+      --panel2:#fff;
+      --text:#102238;
+      --muted:#475569;
+      --line:rgba(16,34,56,.15);
+      --shadow:0 18px 50px rgba(16,34,56,.14);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--text);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(0,255,255,.22), transparent 34rem),
+        radial-gradient(circle at 80% 10%, rgba(202,99,9,.22), transparent 28rem),
+        linear-gradient(135deg,var(--bg),var(--bg2));
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:34px 34px;
+      mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 72%);
+    }
+    a{color:inherit}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(1180px,calc(100% - 28px)); margin:0 auto; padding:24px 0 80px}
+    .skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:10px;border-radius:10px;z-index:99}
+    .skip:focus{left:12px;top:12px}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(18px);
+      background:linear-gradient(to bottom,rgba(7,16,24,.88),rgba(7,16,24,.45));
+      border-bottom:1px solid var(--line);
+    }
+    [data-theme="light"] .topbar{background:rgba(247,251,255,.84)}
+    .top-inner{width:min(1180px,calc(100% - 28px));margin:0 auto;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo{
+      width:44px;height:44px;border-radius:16px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--cyan),var(--orange));
+      color:#06111c;font-weight:950;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 12px 26px rgba(0,0,0,.23)
+    }
+    .brand strong{display:block;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand small{display:block;color:var(--muted);font-size:.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .pill,.btn{
+      border:1px solid var(--line);color:var(--text);background:var(--panel);border-radius:999px;padding:10px 14px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;
+    }
+    .pill:hover,.btn:hover{background:var(--panel2);transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,var(--cyan),#61b7ff);color:#03111b;border:0;font-weight:900}
+    .btn.orange{background:linear-gradient(135deg,var(--orange),#ffb26a);color:#190900;border:0;font-weight:900}
+    .btn.green{background:linear-gradient(135deg,var(--green),#c6ffdf);color:#062115;border:0;font-weight:900}
+    .btn.red{background:linear-gradient(135deg,var(--red),#ffc1ce);color:#2a0610;border:0;font-weight:900}
+    .btn.ghost{background:transparent}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch;padding-top:24px}
+    .card,.hero-card{
+      border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
+    }
+    .hero-card{padding:28px;position:relative}
+    .avatar{
+      width:110px;height:110px;border-radius:34px;object-fit:cover;background:linear-gradient(135deg,rgba(0,255,255,.28),rgba(202,99,9,.32));border:1px solid var(--line);display:grid;place-items:center;font-weight:950;font-size:2.4rem;color:var(--text);
+    }
+    h1{font-size:clamp(2rem,6vw,4.8rem);line-height:.95;margin:18px 0 12px;letter-spacing:-.06em}
+    h2{font-size:clamp(1.55rem,4vw,2.6rem);line-height:1.02;margin:0 0 14px;letter-spacing:-.04em}
+    h3{margin:0 0 10px;font-size:1.16rem}
+    p{line-height:1.55;color:var(--muted)}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .privacy-grid{display:grid;gap:12px;padding:18px}
+    .privacy-item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;border:1px solid var(--line);background:rgba(0,0,0,.13);border-radius:18px;padding:14px}
+    [data-theme="light"] .privacy-item{background:rgba(16,34,56,.04)}
+    .icon-dot{width:34px;height:34px;border-radius:14px;display:grid;place-items:center;background:rgba(0,255,255,.16);border:1px solid rgba(0,255,255,.28)}
+    .privacy-item strong{display:block;margin-bottom:2px}
+    .privacy-item span{color:var(--muted);font-size:.92rem;line-height:1.45}
+    .section{margin-top:26px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 0 14px}
+    .section-head p{margin:4px 0 0}
+    .tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .search{position:relative;flex:1;min-width:220px}
+    .search input{width:100%;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:12px 16px 12px 42px;outline:none}
+    .search span{position:absolute;left:15px;top:50%;transform:translateY(-50%);opacity:.8}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap}
+    .tab{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:9px 12px}
+    .tab.active{background:linear-gradient(135deg,var(--cyan),#61b7ff);color:#06111c;border:0;font-weight:900}
+    .link-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .link-button{
+      min-height:58px;border:1px solid var(--line);background:var(--panel);border-radius:18px;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 15px;transition:.2s ease;
+    }
+    .link-button:hover{background:var(--panel2);transform:translateY(-2px)}
+    .link-left{display:flex;align-items:center;gap:12px;min-width:0}
+    .link-icon{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.13);border:1px solid var(--line);flex:0 0 auto}
+    .link-title{font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .link-sub{font-size:.82rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .item-card{display:flex;flex-direction:column;min-height:100%;border:1px solid var(--line);background:var(--panel);border-radius:22px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,.18)}
+    .thumb{aspect-ratio:1.2/1;background:rgba(255,255,255,.08);display:grid;place-items:center;overflow:hidden}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .thumb .fallback{font-size:3rem;opacity:.78}
+    .item-body{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .badges{display:flex;gap:7px;flex-wrap:wrap}
+    .badge{font-size:.76rem;border:1px solid var(--line);background:rgba(255,255,255,.08);border-radius:999px;padding:4px 8px;color:var(--muted)}
+    .badge.priority{color:#06111c;background:linear-gradient(135deg,var(--cyan),#a6ffff);border:0;font-weight:800}
+    .item-title{font-weight:950;font-size:1.04rem;line-height:1.22;color:var(--text)}
+    .item-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font-size:.92rem}
+    .item-actions{display:grid;grid-template-columns:1fr;gap:8px;margin-top:auto}
+    .notice{border:1px solid var(--line);background:linear-gradient(135deg,rgba(0,255,255,.12),rgba(202,99,9,.12));border-radius:20px;padding:14px;color:var(--muted)}
+    .notice strong{color:var(--text)}
+    .owner-panel{display:none;margin-top:26px}
+    body.owner-mode .owner-panel{display:block}
+    body.owner-mode .owner-chip{display:inline-flex}
+    .owner-chip{display:none}
+    details.panel{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:14px;margin-bottom:14px}
+    details.panel summary{cursor:pointer;font-weight:900;font-size:1.04rem}
+    form{display:grid;gap:12px}
+    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    label{display:grid;gap:6px;color:var(--muted);font-size:.9rem;font-weight:700}
+    input,textarea,select{border:1px solid var(--line);background:rgba(0,0,0,.17);color:var(--text);border-radius:14px;padding:12px;outline:none;width:100%}
+    [data-theme="light"] input,[data-theme="light"] textarea,[data-theme="light"] select{background:#fff}
+    textarea{min-height:98px;resize:vertical}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .data-table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:18px}
+    .data-table th,.data-table td{text-align:left;border-bottom:1px solid var(--line);padding:10px;vertical-align:top;color:var(--muted);font-size:.9rem}
+    .data-table th{color:var(--text);background:rgba(255,255,255,.07)}
+    .modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.62);backdrop-filter:blur(10px)}
+    .modal.show{display:flex}
+    .modal-card{width:min(620px,100%);max-height:92vh;overflow:auto;border:1px solid var(--line);background:linear-gradient(180deg,var(--bg2),var(--bg));border-radius:26px;box-shadow:var(--shadow);padding:20px}
+    [data-theme="light"] .modal-card{background:#fff}
+    .modal-head{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .x{border:1px solid var(--line);background:var(--panel);color:var(--text);width:42px;height:42px;border-radius:16px}
+    .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(120px);z-index:80;border:1px solid var(--line);background:rgba(7,16,24,.92);color:#fff;border-radius:999px;padding:12px 18px;box-shadow:var(--shadow);transition:.22s ease;max-width:min(94vw,780px);text-align:center}
+    .toast.show{transform:translateX(-50%) translateY(0)}
+    .empty{padding:28px;border:1px dashed var(--line);border-radius:22px;text-align:center;color:var(--muted)}
+    .tiny{font-size:.8rem;color:var(--muted)}
+    .footer{margin-top:34px;text-align:center;color:var(--muted);font-size:.9rem}
+    .footer code{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:2px 6px;color:var(--text)}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.link-stack{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.top-inner{align-items:flex-start}.nav{max-width:56vw}}
+    @media (max-width:620px){.wrap{width:min(100% - 18px,1180px);padding-bottom:42px}.hero-card{padding:18px}.grid{grid-template-columns:1fr}.nav{max-width:none}.top-inner{flex-direction:column}.brand strong{font-size:.96rem}.section-head{align-items:flex-start;flex-direction:column}.tools{width:100%}.search{width:100%}.btn,.pill{width:auto}.row .btn{flex:1}.avatar{width:86px;height:86px;border-radius:28px}.data-table{font-size:.82rem}}
+    @media print{.topbar,.owner-panel,.modal,.toast,.hero-actions,.tools,.item-actions,.footer{display:none!important}body{background:#fff;color:#000}.card,.hero-card,.item-card{box-shadow:none;border:1px solid #ddd;background:#fff;color:#000}.wrap{width:100%;padding:0}.grid{grid-template-columns:repeat(2,1fr)}p,.badge,.item-meta,.link-sub{color:#333}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">✦</div>
+      <div>
+        <strong id="topTitle">OurSpace GiftLink</strong>
+        <small id="topSub">Address hidden in backend routing</small>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Page controls">
+      <a class="pill" href="#links">Links</a>
+      <a class="pill" href="#wishlist">Wishlist</a>
+      <button class="pill" id="themeToggle" type="button">Toggle theme</button>
+      <button class="pill owner-chip" id="exitOwner" type="button">Exit owner</button>
+      <a class="pill" href="#owner" id="ownerLink">Owner</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="hero">
+    <div class="hero-card">
+      <div id="avatar" class="avatar" aria-hidden="true">♡</div>
+      <h1 id="profileTitle">OurSpace GiftLink</h1>
+      <p id="profileSubtitle">A Linktree-style link page plus wishlist cards routed through a backend delivery profile, so visitors never see a shipping address.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#wishlist">View wishlist</a>
+        <a class="btn orange" href="#links">Open links</a>
+        <button class="btn ghost" id="copyShare" type="button">Copy share link</button>
+        <button class="btn ghost" onclick="window.print()" type="button">Print wishlist</button>
+      </div>
+    </div>
+    <aside class="card privacy-grid" aria-label="Privacy summary">
+      <div class="privacy-item"><div class="icon-dot">🔒</div><div><strong>No address in this HTML</strong><span>The page stores product links, labels, images, and public notes only. The shipping address is never embedded in this file.</span></div></div>
+      <div class="privacy-item"><div class="icon-dot">🚚</div><div><strong>Backend delivery routing</strong><span>Gift buttons send the selected item to the Apps Script backend with a private delivery profile key. The backend can attach your saved address server-side.</span></div></div>
+      <div class="privacy-item"><div class="icon-dot">🛒</div><div><strong>Store-aware wishlist cards</strong><span>Amazon, Walmart, Target, Etsy, custom stores, Cash App, and normal links can sit together in one mobile-friendly page.</span></div></div>
+    </aside>
+  </section>
+
+  <section id="links" class="section">
+    <div class="section-head">
+      <div><h2>Links</h2><p>Public links, official wishlists, socials, payment links, and anything else you want to share.</p></div>
+      <div class="tools"><button class="btn ghost" id="refreshBtn" type="button">Refresh from backend</button></div>
+    </div>
+    <div id="linkStack" class="link-stack"></div>
+  </section>
+
+  <section id="wishlist" class="section">
+    <div class="section-head">
+      <div><h2>Wishlist</h2><p>Friends and family can request or reserve a gift without seeing a private shipping address.</p></div>
+      <div class="tools">
+        <div class="search"><span>⌕</span><input id="searchBox" type="search" placeholder="Search wishlist items, stores, categories…" /></div>
+      </div>
+    </div>
+    <div class="tabs" id="tabs" aria-label="Wishlist filters"></div>
+    <div id="wishlistGrid" class="grid section"></div>
+  </section>
+
+  <section id="owner" class="owner-panel" aria-label="Owner editor">
+    <div class="section-head">
+      <div><h2>Owner editor</h2><p>Add links and wishlist items. Do not put your address here; the page routes to the backend delivery profile instead.</p></div>
+      <div class="tools"><button class="btn ghost" id="copyData" type="button">Copy page JSON</button><button class="btn ghost" id="downloadData" type="button">Download JSON</button></div>
+    </div>
+
+    <details class="panel" open>
+      <summary>Backend + profile settings</summary>
+      <form id="profileForm">
+        <div class="form-grid">
+          <label>Public page title<input id="fTitle" name="title" placeholder="My Gift Links" /></label>
+          <label>Public handle / site ID<input id="fSiteId" name="siteId" placeholder="my-wishlist" /></label>
+          <label>Avatar image URL<input id="fAvatar" name="avatar" placeholder="https://…" /></label>
+          <label>Backend delivery profile key<input id="fDeliveryKey" name="deliveryProfileKey" placeholder="primary" /></label>
+        </div>
+        <label>Public subtitle<textarea id="fSubtitle" name="subtitle" placeholder="Short note for visitors"></textarea></label>
+        <div class="form-grid">
+          <label>Owner key for backend edits<input id="ownerKey" type="password" autocomplete="off" placeholder="Only sent to backend for owner actions" /></label>
+          <label>Backend URL<input id="backendUrl" placeholder="Apps Script web app URL" /></label>
+        </div>
+        <label class="row" style="display:flex;align-items:center"><input id="rememberOwnerKey" type="checkbox" style="width:auto" /> Remember owner key on this device</label>
+        <div class="row">
+          <button class="btn primary" type="submit">Save profile to backend</button>
+          <button class="btn ghost" type="button" id="localProfile">Save profile locally</button>
+        </div>
+        <div class="notice"><strong>Address privacy rule:</strong> this editor has no street-address field. The private shipping address must live inside your Apps Script storage or official Amazon/Walmart wishlist settings, never in this HTML.</div>
+      </form>
+    </details>
+
+    <details class="panel" open>
+      <summary>Add or update a link button</summary>
+      <form id="linkForm">
+        <input type="hidden" id="linkId" />
+        <div class="form-grid">
+          <label>Label<input id="linkLabel" required placeholder="Amazon Wishlist" /></label>
+          <label>Type<select id="linkType"><option>Amazon</option><option>Walmart</option><option>Target</option><option>Etsy</option><option>Cash App</option><option>Linktree</option><option>Social</option><option>Custom</option></select></label>
+          <label>URL<input id="linkUrl" required placeholder="https://…" /></label>
+          <label>Small note<input id="linkNote" placeholder="Official wishlist / Gift list / Store" /></label>
+        </div>
+        <div class="row"><button class="btn primary" type="submit">Save link</button><button class="btn ghost" type="button" id="clearLink">Clear</button></div>
+      </form>
+      <div id="linkAdmin"></div>
+    </details>
+
+    <details class="panel" open>
+      <summary>Add or update a wishlist item</summary>
+      <form id="itemForm">
+        <input type="hidden" id="itemId" />
+        <div class="form-grid">
+          <label>Item title<input id="itemTitle" required placeholder="Weighted blanket" /></label>
+          <label>Store<select id="itemStore"><option>Amazon</option><option>Walmart</option><option>Target</option><option>Etsy</option><option>Custom</option></select></label>
+          <label>Product or wishlist URL<input id="itemUrl" required placeholder="https://…" /></label>
+          <label>Image URL<input id="itemImage" placeholder="https://…" /></label>
+          <label>Price / estimate<input id="itemPrice" placeholder="$25" /></label>
+          <label>Category<input id="itemCategory" placeholder="Home / Care / Fun" /></label>
+          <label>Priority<select id="itemPriority"><option>Anytime</option><option>High</option><option>Medium</option><option>Low</option><option>Need soon</option></select></label>
+          <label>Quantity wanted<input id="itemQuantity" type="number" min="1" step="1" value="1" /></label>
+          <label>Backend delivery profile key<input id="itemDeliveryKey" placeholder="primary" /></label>
+          <label>Status<select id="itemStatus"><option>Available</option><option>Reserved</option><option>Purchased</option><option>Hidden</option></select></label>
+        </div>
+        <label>Public notes<textarea id="itemNotes" placeholder="Size/color preferences, allergies, backup options, etc."></textarea></label>
+        <div class="row"><button class="btn primary" type="submit">Save wishlist item</button><button class="btn ghost" type="button" id="clearItem">Clear</button></div>
+      </form>
+      <div id="itemAdmin"></div>
+    </details>
+
+    <details class="panel">
+      <summary>Import JSON</summary>
+      <label>Paste exported page JSON<textarea id="importBox" placeholder='{"profile":{},"links":[],"items":[]}'></textarea></label>
+      <div class="row"><button class="btn orange" type="button" id="importJson">Import locally</button><button class="btn green" type="button" id="saveAllBackend">Save all to backend</button></div>
+    </details>
+  </section>
+
+  <footer class="footer">
+    <p>Private address status: <code>not in HTML</code> · Gift routing key: <code id="routeKeyView">primary</code> · Backend: <code>Apps Script</code></p>
+  </footer>
+</main>
+
+<div id="giftModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h2 id="giftModalTitle">Gift request</h2><p id="giftModalSub">This sends the item to the backend with the private delivery profile key. No address is shown here.</p></div>
+      <button class="x" id="closeGift" type="button" aria-label="Close">×</button>
+    </div>
+    <div id="giftItemSummary" class="notice"></div>
+    <form id="giftForm">
+      <div class="form-grid">
+        <label>Your name<input id="buyerName" required placeholder="Friend or family name" /></label>
+        <label>Your email<input id="buyerEmail" type="email" placeholder="optional@email.com" /></label>
+      </div>
+      <label>Message / purchase note<textarea id="buyerMessage" placeholder="I bought this / I want to reserve this / tracking number / notes"></textarea></label>
+      <div class="form-grid">
+        <label>Gift action<select id="giftAction"><option value="giftRequest">Ask backend to route this gift to me</option><option value="reserveGift">Reserve this item</option><option value="markPurchased">Mark as purchased</option></select></label>
+        <label>Quantity<input id="giftQuantity" type="number" min="1" step="1" value="1" /></label>
+      </div>
+      <div class="row">
+        <button class="btn primary" type="submit">Send to backend</button>
+        <a class="btn ghost" id="viewOnlyLink" target="_blank" rel="noopener">View item only</a>
+      </div>
+      <p class="tiny">Viewing a retailer page directly does not attach your hidden address unless that retailer link is an official gift-list/wishlist checkout. The private route button sends the request through your backend.</p>
+    </form>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+  const BACKEND_DEFAULT = 'https://script.google.com/macros/s/AKfycbwXZ9maNHUWZR68su4O3KXymU-z-RFYJI4JYBuWQUDvUYjfESY_ivEPXTe6odBDqDGrqQ/exec';
+  const STORAGE_KEY = 'privateGiftLinkHub.v1';
+  const OWNER_KEY_STORAGE = 'privateGiftLinkHub.ownerKey';
+  const $ = (id) => document.getElementById(id);
+  const nowIso = () => new Date().toISOString();
+  const uid = (prefix='id') => prefix + '-' + Math.random().toString(36).slice(2,9) + '-' + Date.now().toString(36);
+
+  const defaultState = {
+    backendUrl: BACKEND_DEFAULT,
+    profile: {
+      siteId: 'private-gift-hub',
+      title: 'OurSpace GiftLink',
+      subtitle: '',
+      avatar: '',
+      deliveryProfileKey: 'primary',
+      updatedAt: nowIso()
+    },
+    links: [],
+    items: []
+  };
+
+  let state = loadLocal();
+  let activeCategory = 'All';
+  let activeGiftItem = null;
+
+  function clone(obj){ return JSON.parse(JSON.stringify(obj)); }
+  function safeUrl(url){
+    const raw = (url || '').trim();
+    if(!raw) return '#';
+    try{
+      const u = new URL(raw, window.location.href);
+      const ok = ['http:','https:','mailto:','tel:'].includes(u.protocol);
+      return ok ? u.href : '#';
+    }catch(_){ return '#'; }
+  }
+  function hostLabel(url){
+    try { return new URL(url).hostname.replace(/^www\./,''); } catch(_) { return 'link'; }
+  }
+  function storeIcon(type){
+    const t = String(type || '').toLowerCase();
+    if(t.includes('amazon')) return '🛍️';
+    if(t.includes('walmart')) return '✦';
+    if(t.includes('target')) return '🎯';
+    if(t.includes('etsy')) return '🧵';
+    if(t.includes('cash')) return '$';
+    if(t.includes('link')) return '🔗';
+    if(t.includes('social')) return '💬';
+    return '♡';
+  }
+  function storeFromUrl(url){
+    const h = hostLabel(url).toLowerCase();
+    if(h.includes('amazon')) return 'Amazon';
+    if(h.includes('walmart')) return 'Walmart';
+    if(h.includes('target')) return 'Target';
+    if(h.includes('etsy')) return 'Etsy';
+    if(h.includes('cash.app')) return 'Cash App';
+    return 'Custom';
+  }
+  function loadLocal(){
+    try{
+      const local = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+      return mergeState(defaultState, local || {});
+    }catch(_){ return clone(defaultState); }
+  }
+  function mergeState(base, incoming){
+    const merged = clone(base);
+    if(incoming.backendUrl) merged.backendUrl = incoming.backendUrl;
+    merged.profile = Object.assign({}, merged.profile, incoming.profile || {});
+    if(Array.isArray(incoming.links)) merged.links = incoming.links;
+    if(Array.isArray(incoming.items)) merged.items = incoming.items;
+    return merged;
+  }
+  function saveLocal(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  function toast(msg){
+    const t = $('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(()=>t.classList.remove('show'), 4300);
+  }
+
+  async function api(action, payload={}, owner=false){
+    const backendUrl = $('backendUrl')?.value?.trim() || state.backendUrl || BACKEND_DEFAULT;
+    const ownerKey = $('ownerKey')?.value || '';
+    const body = Object.assign({ action, siteId: state.profile.siteId, timestamp: nowIso() }, payload);
+    if(owner) body.ownerKey = ownerKey;
+    const res = await fetch(backendUrl, {
+      method:'POST',
+      mode:'cors',
+      redirect:'follow',
+      headers:{ 'Content-Type':'text/plain;charset=utf-8' },
+      body: JSON.stringify(body)
+    });
+    const text = await res.text();
+    let data;
+    try { data = JSON.parse(text); } catch(_) { data = { ok: res.ok, raw:text }; }
+    if(!res.ok || data.ok === false){ throw new Error(data.error || data.message || ('Backend error ' + res.status)); }
+    return data;
+  }
+
+  async function loadBackend(){
+    const backendUrl = state.backendUrl || BACKEND_DEFAULT;
+    const siteId = encodeURIComponent(state.profile.siteId || 'private-gift-hub');
+    const url = backendUrl + '?action=publicData&siteId=' + siteId + '&_=' + Date.now();
+    const res = await fetch(url, { method:'GET', mode:'cors', redirect:'follow' });
+    const text = await res.text();
+    let data;
+    try { data = JSON.parse(text); } catch(_) { throw new Error('Backend did not return JSON.'); }
+    const incoming = data.data || data;
+    state = mergeState(state, incoming);
+    saveLocal();
+    render();
+    toast('Loaded public data from backend.');
+  }
+
+  function render(){
+    const p = state.profile;
+    document.title = p.title || 'OurSpace GiftLink';
+    $('topTitle').textContent = p.title || 'OurSpace GiftLink';
+    $('topSub').textContent = 'Address hidden in backend routing';
+    $('profileTitle').textContent = p.title || 'OurSpace GiftLink';
+    $('profileSubtitle').textContent = p.subtitle || '';
+    $('routeKeyView').textContent = p.deliveryProfileKey || 'primary';
+    const av = $('avatar');
+    av.innerHTML = '';
+    if(p.avatar){
+      const img = document.createElement('img');
+      img.src = safeUrl(p.avatar);
+      img.alt = '';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:inherit';
+      img.onerror = () => { av.textContent = '♡'; };
+      av.appendChild(img);
+    } else av.textContent = '♡';
+    fillProfileForm();
+    renderLinks();
+    renderTabs();
+    renderItems();
+    renderAdmins();
+  }
+
+  function fillProfileForm(){
+    if(!$('fTitle')) return;
+    $('fTitle').value = state.profile.title || '';
+    $('fSiteId').value = state.profile.siteId || '';
+    $('fAvatar').value = state.profile.avatar || '';
+    $('fDeliveryKey').value = state.profile.deliveryProfileKey || 'primary';
+    $('fSubtitle').value = state.profile.subtitle || '';
+    $('backendUrl').value = state.backendUrl || BACKEND_DEFAULT;
+    const savedKey = localStorage.getItem(OWNER_KEY_STORAGE) || '';
+    if(savedKey && !$('ownerKey').value){ $('ownerKey').value = savedKey; $('rememberOwnerKey').checked = true; }
+  }
+
+  function renderLinks(){
+    const stack = $('linkStack');
+    stack.innerHTML = '';
+    const links = (state.links || []).filter(l => l.visible !== false).sort((a,b)=>(a.order||0)-(b.order||0));
+    if(!links.length){ stack.innerHTML = '<div class="empty">No public links yet. Open the owner panel and add one.</div>'; return; }
+    for(const link of links){
+      const a = document.createElement('a');
+      a.className = 'link-button';
+      a.href = safeUrl(link.url);
+      a.target = '_blank';
+      a.rel = 'noopener';
+      const left = document.createElement('div'); left.className = 'link-left';
+      const icon = document.createElement('div'); icon.className = 'link-icon'; icon.textContent = storeIcon(link.type);
+      const text = document.createElement('div'); text.style.minWidth='0';
+      const title = document.createElement('div'); title.className = 'link-title'; title.textContent = link.label || 'Untitled link';
+      const sub = document.createElement('div'); sub.className = 'link-sub'; sub.textContent = link.note || hostLabel(link.url);
+      text.append(title,sub); left.append(icon,text);
+      const arrow = document.createElement('div'); arrow.textContent = '→'; arrow.setAttribute('aria-hidden','true');
+      a.append(left,arrow); stack.appendChild(a);
+    }
+  }
+
+  function categories(){
+    const set = new Set(['All']);
+    for(const item of state.items || []) if((item.status || 'Available') !== 'Hidden') set.add(item.category || item.store || 'Other');
+    return Array.from(set);
+  }
+  function renderTabs(){
+    const tabs = $('tabs'); tabs.innerHTML = '';
+    const cats = categories();
+    if(!cats.includes(activeCategory)) activeCategory = 'All';
+    for(const cat of cats){
+      const b = document.createElement('button');
+      b.className = 'tab' + (cat === activeCategory ? ' active' : '');
+      b.type = 'button';
+      b.textContent = cat;
+      b.onclick = () => { activeCategory = cat; renderTabs(); renderItems(); };
+      tabs.appendChild(b);
+    }
+  }
+  function renderItems(){
+    const grid = $('wishlistGrid'); grid.innerHTML = '';
+    const q = ($('searchBox').value || '').toLowerCase().trim();
+    const items = (state.items || []).filter(item => {
+      if((item.status || 'Available') === 'Hidden') return false;
+      if(activeCategory !== 'All' && (item.category || item.store || 'Other') !== activeCategory) return false;
+      if(q){
+        const hay = [item.title,item.store,item.category,item.priority,item.price,item.notes,item.status].join(' ').toLowerCase();
+        if(!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    if(!items.length){ grid.innerHTML = '<div class="empty">No wishlist items match this view.</div>'; return; }
+    for(const item of items){ grid.appendChild(itemCard(item)); }
+  }
+  function itemCard(item){
+    const card = document.createElement('article'); card.className = 'item-card';
+    const thumb = document.createElement('div'); thumb.className = 'thumb';
+    if(item.image){
+      const img = document.createElement('img'); img.src = safeUrl(item.image); img.alt = '';
+      img.onerror = () => { thumb.innerHTML = '<div class="fallback">' + storeIcon(item.store) + '</div>'; };
+      thumb.appendChild(img);
+    } else { const f = document.createElement('div'); f.className = 'fallback'; f.textContent = storeIcon(item.store); thumb.appendChild(f); }
+    const body = document.createElement('div'); body.className = 'item-body';
+    const badges = document.createElement('div'); badges.className = 'badges';
+    for(const text of [item.store, item.category, item.priority, item.status].filter(Boolean)){
+      const b = document.createElement('span'); b.className = 'badge' + ((text === 'High' || text === 'Need soon') ? ' priority' : ''); b.textContent = text; badges.appendChild(b);
+    }
+    const title = document.createElement('div'); title.className = 'item-title'; title.textContent = item.title || 'Untitled item';
+    const meta = document.createElement('div'); meta.className = 'item-meta';
+    const price = document.createElement('span'); price.textContent = item.price || 'Price unknown';
+    const qty = document.createElement('span'); qty.textContent = 'Qty ' + (item.quantity || 1);
+    meta.append(price,qty);
+    const notes = document.createElement('p'); notes.textContent = item.notes || 'No extra notes.'; notes.style.margin = '0';
+    const actions = document.createElement('div'); actions.className = 'item-actions';
+    const gift = document.createElement('button'); gift.className = 'btn primary'; gift.type='button'; gift.textContent = 'Gift through private route'; gift.onclick = () => openGift(item);
+    const view = document.createElement('a'); view.className = 'btn ghost'; view.href=safeUrl(item.url); view.target='_blank'; view.rel='noopener'; view.textContent='View item only';
+    if((item.status || 'Available') === 'Purchased') gift.disabled = true;
+    actions.append(gift,view);
+    body.append(badges,title,meta,notes,actions); card.append(thumb,body); return card;
+  }
+
+  function openGift(item){
+    activeGiftItem = item;
+    $('giftModalTitle').textContent = 'Gift request';
+    $('giftItemSummary').innerHTML = '';
+    const s = document.createElement('div');
+    s.innerHTML = '<strong></strong><br><span></span>';
+    s.querySelector('strong').textContent = item.title || 'Wishlist item';
+    s.querySelector('span').textContent = `${item.store || 'Store'} · ${item.price || 'Price unknown'} · route key ${item.deliveryProfileKey || state.profile.deliveryProfileKey || 'primary'}`;
+    $('giftItemSummary').appendChild(s);
+    $('giftQuantity').value = item.quantity || 1;
+    $('viewOnlyLink').href = safeUrl(item.url);
+    $('giftModal').classList.add('show');
+    $('buyerName').focus();
+  }
+  function closeGift(){ $('giftModal').classList.remove('show'); activeGiftItem = null; }
+
+  function collectProfile(){
+    state.backendUrl = $('backendUrl').value.trim() || BACKEND_DEFAULT;
+    state.profile = Object.assign({}, state.profile, {
+      title:$('fTitle').value.trim() || 'OurSpace GiftLink',
+      siteId:slug($('fSiteId').value.trim() || 'private-gift-hub'),
+      avatar:$('fAvatar').value.trim(),
+      deliveryProfileKey:$('fDeliveryKey').value.trim() || 'primary',
+      subtitle:$('fSubtitle').value.trim(),
+      updatedAt:nowIso()
+    });
+  }
+  function slug(text){ return String(text || '').toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'') || 'private-gift-hub'; }
+
+  function clearLinkForm(){ $('linkId').value=''; $('linkLabel').value=''; $('linkType').value='Amazon'; $('linkUrl').value=''; $('linkNote').value=''; }
+  function clearItemForm(){ $('itemId').value=''; $('itemTitle').value=''; $('itemStore').value='Amazon'; $('itemUrl').value=''; $('itemImage').value=''; $('itemPrice').value=''; $('itemCategory').value=''; $('itemPriority').value='Anytime'; $('itemQuantity').value=1; $('itemDeliveryKey').value=state.profile.deliveryProfileKey || 'primary'; $('itemStatus').value='Available'; $('itemNotes').value=''; }
+  function editLink(id){
+    const l = state.links.find(x=>x.id===id); if(!l) return;
+    $('linkId').value=l.id; $('linkLabel').value=l.label || ''; $('linkType').value=l.type || 'Custom'; $('linkUrl').value=l.url || ''; $('linkNote').value=l.note || ''; location.hash='owner';
+  }
+  function editItem(id){
+    const item = state.items.find(x=>x.id===id); if(!item) return;
+    $('itemId').value=item.id; $('itemTitle').value=item.title || ''; $('itemStore').value=item.store || 'Custom'; $('itemUrl').value=item.url || ''; $('itemImage').value=item.image || ''; $('itemPrice').value=item.price || ''; $('itemCategory').value=item.category || ''; $('itemPriority').value=item.priority || 'Anytime'; $('itemQuantity').value=item.quantity || 1; $('itemDeliveryKey').value=item.deliveryProfileKey || state.profile.deliveryProfileKey || 'primary'; $('itemStatus').value=item.status || 'Available'; $('itemNotes').value=item.notes || ''; location.hash='owner';
+  }
+  function removeLink(id){ state.links = state.links.filter(x=>x.id!==id); saveLocal(); render(); api('deleteLink',{ id },true).catch(()=>{}); toast('Link removed locally.'); }
+  function removeItem(id){ state.items = state.items.filter(x=>x.id!==id); saveLocal(); render(); api('deleteItem',{ id },true).catch(()=>{}); toast('Item removed locally.'); }
+
+  function renderAdmins(){
+    const la = $('linkAdmin'); if(la){
+      la.innerHTML = '<h3 style="margin-top:18px">Current links</h3>';
+      const table = document.createElement('table'); table.className='data-table'; table.innerHTML='<thead><tr><th>Label</th><th>Type</th><th>Actions</th></tr></thead><tbody></tbody>';
+      const tb = table.querySelector('tbody');
+      for(const l of state.links || []){
+        const tr=document.createElement('tr');
+        tr.innerHTML='<td></td><td></td><td></td>';
+        tr.children[0].textContent=l.label || 'Untitled'; tr.children[1].textContent=l.type || '';
+        const eb=document.createElement('button'); eb.className='btn ghost'; eb.type='button'; eb.textContent='Edit'; eb.onclick=()=>editLink(l.id);
+        const rb=document.createElement('button'); rb.className='btn red'; rb.type='button'; rb.textContent='Remove'; rb.onclick=()=>removeLink(l.id);
+        tr.children[2].append(eb,' ',rb); tb.appendChild(tr);
+      }
+      la.appendChild(table);
+    }
+    const ia = $('itemAdmin'); if(ia){
+      ia.innerHTML = '<h3 style="margin-top:18px">Current wishlist items</h3>';
+      const table = document.createElement('table'); table.className='data-table'; table.innerHTML='<thead><tr><th>Item</th><th>Store</th><th>Status</th><th>Actions</th></tr></thead><tbody></tbody>';
+      const tb = table.querySelector('tbody');
+      for(const item of state.items || []){
+        const tr=document.createElement('tr'); tr.innerHTML='<td></td><td></td><td></td><td></td>';
+        tr.children[0].textContent=item.title || 'Untitled'; tr.children[1].textContent=item.store || ''; tr.children[2].textContent=item.status || 'Available';
+        const eb=document.createElement('button'); eb.className='btn ghost'; eb.type='button'; eb.textContent='Edit'; eb.onclick=()=>editItem(item.id);
+        const rb=document.createElement('button'); rb.className='btn red'; rb.type='button'; rb.textContent='Remove'; rb.onclick=()=>removeItem(item.id);
+        tr.children[3].append(eb,' ',rb); tb.appendChild(tr);
+      }
+      ia.appendChild(table);
+    }
+  }
+
+  function exportState(){ return JSON.stringify({ backendUrl:state.backendUrl, profile:state.profile, links:state.links, items:state.items }, null, 2); }
+  function download(name, text){
+    const blob = new Blob([text], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),500);
+  }
+
+  function setOwnerMode(on){
+    document.body.classList.toggle('owner-mode', on);
+    if(on) location.hash = 'owner';
+  }
+  function checkOwnerHash(){
+    if(location.hash === '#owner' || new URLSearchParams(location.search).get('owner') === '1') setOwnerMode(true);
+  }
+
+  $('themeToggle').onclick = () => { document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'; };
+  $('ownerLink').onclick = () => setOwnerMode(true);
+  $('exitOwner').onclick = () => { setOwnerMode(false); if(location.hash === '#owner') history.replaceState(null,'',location.pathname + location.search); };
+  $('copyShare').onclick = async () => { await navigator.clipboard.writeText(location.origin + location.pathname); toast('Share link copied.'); };
+  $('refreshBtn').onclick = () => loadBackend().catch(err => toast('Could not load backend: ' + err.message));
+  $('searchBox').addEventListener('input', renderItems);
+  $('closeGift').onclick = closeGift;
+  $('giftModal').addEventListener('click', (e)=>{ if(e.target === $('giftModal')) closeGift(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeGift(); });
+
+  $('profileForm').onsubmit = async (e) => {
+    e.preventDefault(); collectProfile(); saveLocal(); render();
+    if($('rememberOwnerKey').checked) localStorage.setItem(OWNER_KEY_STORAGE, $('ownerKey').value); else localStorage.removeItem(OWNER_KEY_STORAGE);
+    try{ await api('saveProfile',{ profile:state.profile, backendUrl:state.backendUrl }, true); toast('Profile saved to backend.'); }
+    catch(err){ toast('Saved locally. Backend save failed: ' + err.message); }
+  };
+  $('localProfile').onclick = () => { collectProfile(); saveLocal(); render(); toast('Profile saved locally.'); };
+
+  $('linkForm').onsubmit = async (e) => {
+    e.preventDefault();
+    const id = $('linkId').value || uid('link');
+    const existing = state.links.find(x=>x.id===id);
+    const link = { id, label:$('linkLabel').value.trim(), type:$('linkType').value, url:safeUrl($('linkUrl').value), note:$('linkNote').value.trim(), order: existing?.order || (state.links.length + 1), visible:true, updatedAt:nowIso() };
+    state.links = state.links.filter(x=>x.id!==id).concat(link);
+    saveLocal(); clearLinkForm(); render();
+    try{ await api('saveLink',{ link }, true); toast('Link saved to backend.'); }catch(err){ toast('Link saved locally. Backend failed: ' + err.message); }
+  };
+  $('clearLink').onclick = clearLinkForm;
+
+  $('itemUrl').addEventListener('change', () => { const detected = storeFromUrl($('itemUrl').value); if(detected !== 'Custom') $('itemStore').value = detected; });
+  $('itemForm').onsubmit = async (e) => {
+    e.preventDefault();
+    const id = $('itemId').value || uid('item');
+    const existing = state.items.find(x=>x.id===id);
+    const item = {
+      id,
+      title:$('itemTitle').value.trim(),
+      store:$('itemStore').value,
+      url:safeUrl($('itemUrl').value),
+      image:safeUrl($('itemImage').value) === '#' ? '' : safeUrl($('itemImage').value),
+      price:$('itemPrice').value.trim(),
+      category:$('itemCategory').value.trim() || $('itemStore').value,
+      priority:$('itemPriority').value,
+      quantity:Math.max(1, Number($('itemQuantity').value || 1)),
+      deliveryProfileKey:$('itemDeliveryKey').value.trim() || state.profile.deliveryProfileKey || 'primary',
+      status:$('itemStatus').value,
+      notes:$('itemNotes').value.trim(),
+      createdAt: existing?.createdAt || nowIso(),
+      updatedAt: nowIso()
+    };
+    state.items = state.items.filter(x=>x.id!==id).concat(item);
+    saveLocal(); clearItemForm(); render();
+    try{ await api('saveItem',{ item }, true); toast('Item saved to backend.'); }catch(err){ toast('Item saved locally. Backend failed: ' + err.message); }
+  };
+  $('clearItem').onclick = clearItemForm;
+
+  $('giftForm').onsubmit = async (e) => {
+    e.preventDefault();
+    if(!activeGiftItem) return;
+    const action = $('giftAction').value;
+    const payload = {
+      item: activeGiftItem,
+      itemId: activeGiftItem.id,
+      gift: {
+        buyerName:$('buyerName').value.trim(),
+        buyerEmail:$('buyerEmail').value.trim(),
+        message:$('buyerMessage').value.trim(),
+        quantity:Math.max(1, Number($('giftQuantity').value || 1)),
+        deliveryProfileKey: activeGiftItem.deliveryProfileKey || state.profile.deliveryProfileKey || 'primary'
+      },
+      publicPage: location.origin + location.pathname
+    };
+    try{
+      await api(action, payload, false);
+      if(action === 'reserveGift') activeGiftItem.status = 'Reserved';
+      if(action === 'markPurchased') activeGiftItem.status = 'Purchased';
+      saveLocal(); render(); closeGift(); toast('Sent to backend. Thank you!');
+    }catch(err){ toast('Backend request failed: ' + err.message); }
+  };
+
+  $('copyData').onclick = async () => { await navigator.clipboard.writeText(exportState()); toast('Page JSON copied.'); };
+  $('downloadData').onclick = () => download((state.profile.siteId || 'gift-links') + '.json', exportState());
+  $('importJson').onclick = () => {
+    try{ const incoming = JSON.parse($('importBox').value); state = mergeState(state, incoming); saveLocal(); render(); toast('Imported locally.'); }
+    catch(err){ toast('Import failed: ' + err.message); }
+  };
+  $('saveAllBackend').onclick = async () => {
+    try{ await api('saveAll',{ profile:state.profile, links:state.links, items:state.items }, true); toast('Full page saved to backend.'); }
+    catch(err){ toast('Backend save failed: ' + err.message); }
+  };
+
+  checkOwnerHash();
+  render();
+  clearItemForm();
+  loadBackend().catch(()=>{});
+})();
+</script>
+</body>
+</html>

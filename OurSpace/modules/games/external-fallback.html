@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>OurSpace fallback game viewer</title>
+<link rel="stylesheet" href="../../assets/legacy-ourspace-game-rewards.css" data-ourspace-reward-css="true">
+<script src="../../assets/legacy-portal-storage.js" data-ourspace-portal-storage="true"></script>
+<script src="../../assets/legacy-ourspace-allowed-games.js" data-ourspace-allowed-games="true"></script>
+<script src="../../assets/legacy-ourspace-currency-core.js" data-ourspace-currency-core="true"></script>
+<script src="../../assets/legacy-ourspace-game-currency-bridge.js" data-ourspace-game-currency-bridge="true"></script>
+<style>
+:root{color-scheme:dark;--accent:#00ffff;--bg:#06131c;--panel:#003c42;--text:#e8ffff;--muted:#b8d6d6;--dark:#001e24;--light:#e8ffff}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(135deg,#020617,var(--bg));color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;display:grid;grid-template-rows:auto 1fr}.bar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:12px;background:rgba(0,30,36,.96);border-bottom:1px solid var(--accent)}h1{font-size:1rem;margin:0}.small{font-size:.85rem;color:var(--muted)}a,button{border-radius:12px;border:1px solid rgba(255,255,255,.3);padding:10px 12px;color:var(--dark);background:var(--light);font-weight:900;text-decoration:none}.viewer{position:relative;min-height:70vh}.viewer iframe{width:100%;height:100%;min-height:calc(100vh - 78px);border:0;background:#000}.fallback-note{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(0,30,36,.88);border:1px solid rgba(0,255,255,.45);border-radius:16px;padding:10px;font-size:.9rem;pointer-events:none}</style>
+</head>
+<body>
+<header class="bar"><div><h1 id="title">OurSpace fallback game viewer</h1><div class="small" id="status">Active minutes earn private OurSpace currency. Remote games cannot receive full score hooks.</div></div><div><a id="openLink" target="_blank" rel="noopener">Open external tab</a></div></header>
+<main class="viewer"><iframe id="fallbackFrame" title="External fallback game" allow="fullscreen; gamepad; autoplay"></iframe><div class="fallback-note">Fallback tracking mode: 100 copper for each active minute in this viewer, plus 500 copper every 5 active minutes. 10 copper=1 silver, 10 silver=1 gold, 10 gold=1 platinum.</div></main>
+<script>
+(function(){
+  'use strict';
+  const params=new URLSearchParams(location.search||'');
+  const slug=(params.get('fallbackGame')||params.get('gameId')||params.get('game')||'fallback').toLowerCase().replace(/[^a-z0-9_-]+/g,'-');
+  const hardcoded={fnaf2:'https://fnaffree.io/five-nights-at-freddy-s-2',fnaf3:'https://fnaffree.io/fnaf-free-3',fnafcustom:'https://fnaffree.io/fnaf-ultimate-custom-night',doodleroad:'https://www.crazygames.com/game/doodle-road'};
+  const title=params.get('title')||slug||'Fallback game';
+  let url=params.get('url')||hardcoded[slug]||'';
+  const cleanInt=v=>{v=Number(v);return Number.isFinite(v)?Math.max(0,Math.floor(v)):0};
+  function amount(cp){let total=cleanInt(cp);const platinum=Math.floor(total/1000);total%=1000;const gold=Math.floor(total/100);total%=100;const silver=Math.floor(total/10);const copper=total%10;return{platinum,gold,silver,copper,totalCopper:cleanInt(cp)}}
+  function award(eventId,totalCopper,detail){
+    const payload={type:'ourspace.game.reward.v1',source:'ourspace-external-fallback-minute-tracker',category:'mobile_games',gameId:slug,gameName:title,eventId,label:eventId.replace(/_/g,' '),totalCopper,amount:amount(totalCopper),privateCurrencyOnly:true,realCurrencyPayouts:false,detail:Object.assign({externalUrl:url,fallbackMinuteTracking:true},detail||{})};
+    try{if(window.parent&&window.parent!==window){window.parent.postMessage(payload,'*');return;}}catch(e){}
+    try{if(window.OurSpaceCurrency&&typeof window.OurSpaceCurrency.award==='function'){window.OurSpaceCurrency.award(payload);return;}}catch(e){}
+    try{const key='ourspace.currency.ledger.v1';const ledger=JSON.parse(localStorage.getItem(key)||'null')||{totalCopper:0,history:[]};ledger.totalCopper=cleanInt(ledger.totalCopper)+totalCopper;ledger.history=[Object.assign({at:new Date().toISOString()},payload)].concat(ledger.history||[]).slice(0,500);localStorage.setItem(key,JSON.stringify(ledger));}catch(e){}
+  }
+  function load(){
+    document.getElementById('title').textContent=title;
+    document.getElementById('openLink').href=url||'#';
+    if(!url){document.getElementById('status').textContent='No fallback URL configured for '+slug;return;}
+    document.getElementById('fallbackFrame').src=url;
+    award('external_fallback_opened',100,{started:true});
+  }
+  let minute=0;
+  setInterval(()=>{if(document.hidden||!url)return;minute+=1;award('external_fallback_minute',100,{minute});document.getElementById('status').textContent='Tracked fallback viewer minute '+minute+' for '+title+'.';if(minute%5===0)award('fallback_focus_block',500,{minute});},60000);
+  load();
+})();
+</script>
+</body>
+</html>
