@@ -1,0 +1,95 @@
+{
+  "id": "daily_emotion_regulation_diary_card",
+  "title": "Daily Emotion Regulation Diary Card",
+  "module": "Emotion Regulation",
+  "purpose": "Track emotions, facts, action urges, and emotion regulation skills.",
+  "fields": {
+    "basics": [
+      "Date",
+      "Name",
+      "Emotion/situation"
+    ],
+    "ratings": [
+      "Emotion intensity 0-5",
+      "Vulnerability 0-5",
+      "Skillfulness 0-5"
+    ],
+    "skills_used": [
+      "Name the Emotion",
+      "Check the Facts",
+      "Opposite Action",
+      "Problem Solving",
+      "Pleasant Events",
+      "Values Action",
+      "Build Mastery",
+      "Cope Ahead",
+      "PLEASE",
+      "Mindfulness of Current Emotions",
+      "Sleep Hygiene"
+    ],
+    "notes": [
+      "Prompting event",
+      "Interpretations/facts",
+      "Action urge",
+      "Skill used",
+      "Result"
+    ]
+  },
+  "generated_note": "Generated from the uploaded DBT emotion regulation module.",
+  "ourspace_shared_life_filter": {
+    "revision_id": "ourspace_shared_life_filter_v1",
+    "title": "Daily Emotion Regulation Diary Card",
+    "domain": "emotion_regulation",
+    "item_type": "document",
+    "shared_facing_summary": "Emotion work starts with the body and access needs. Hunger, pain, oxygen, sleep attacks, MCAS reactions, trauma cues, and exhaustion count.",
+    "tiny_steps": [
+      "Name the emotion.",
+      "Check body basics: breathing, pain, food/water, meds, temperature, sensory load.",
+      "Lower the demand by one size.",
+      "Choose soothe, solve, pause, or ask for help."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "accessibility_modifications": [
+      "Use low-exertion regulation first.",
+      "Allow anger and grief without turning them into shame.",
+      "Track patterns without moral judgment."
+    ],
+    "relationship_and_caregiver_notes": [
+      "William's needs and Jasper's capacity both count.",
+      "Ask before helping; ask before escalating; name the smallest next step.",
+      "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+      "What is needed, what capacity exists, what can be smaller, and what can wait?"
+    ],
+    "identity_and_trauma_filter": [
+      "Use William's masculine language and Jasper's they/them language.",
+      "Use consent-based, non-shaming, body-neutral language unless a person has explicitly chosen a term.",
+      "Do not turn symptoms, dysphoria, trauma responses, clutter, fatigue, or emotional intensity into moral failure."
+    ],
+    "avoid_or_adjust": [
+      "Do not demand immediate calm during respiratory distress, pain flares, dissociation, or overload."
+    ],
+    "suggested_cadence": [
+      "daily_optional",
+      "flare_day_as_needed"
+    ],
+    "app_tags": [
+      "adhd_friendly",
+      "disability_first",
+      "emotion_regulation",
+      "shared",
+      "tiny_steps",
+      "trauma_informed"
+    ]
+  },
+  "ourspace_shared_revision_metadata": {
+    "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/json/daily_emotion_regulation_diary_card.json",
+    "shared_output_path": "shared/06_dbt_diary_cards/json/daily_emotion_regulation_diary_card.json",
+    "revised_at_utc": "2026-06-26T00:24:16Z",
+    "copyright_note": "Original source text preserved from user-provided files; added OurSpace accessibility/life-filter metadata for private use."
+  },
+  "shared_json_path": "shared/06_dbt_diary_cards/json/daily_emotion_regulation_diary_card.json"
+}

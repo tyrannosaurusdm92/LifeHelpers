@@ -1,0 +1,92 @@
+{
+  "id": "daily_mindfulness_diary_card",
+  "title": "Daily Mindfulness Diary Card",
+  "module": "Mindfulness",
+  "purpose": "Track core mindfulness practice for one day.",
+  "fields": {
+    "basics": [
+      "Date",
+      "Name",
+      "Practice situation"
+    ],
+    "skills_used": [
+      "Wise Mind",
+      "Observe",
+      "Describe",
+      "Participate",
+      "Nonjudgmentally",
+      "One-Mindfully",
+      "Effectively",
+      "Loving Kindness",
+      "Doing Mind/Being Mind balance",
+      "Walking the Middle Path"
+    ],
+    "ratings": [
+      "Presence 0-5",
+      "Judgment 0-5",
+      "Effectiveness 0-5"
+    ],
+    "notes": [
+      "What I noticed",
+      "What helped",
+      "What I will practice next"
+    ]
+  },
+  "generated_note": "Generated from the uploaded DBT mindfulness module.",
+  "ourspace_shared_life_filter": {
+    "revision_id": "ourspace_shared_life_filter_v1",
+    "title": "Daily Mindfulness Diary Card",
+    "domain": "mindfulness",
+    "item_type": "document",
+    "shared_facing_summary": "Mindfulness is allowed to be tiny, sensory-safe, and done from bed or wheelchair. Noticing without judging counts even when the day is messy.",
+    "tiny_steps": [
+      "Notice one body signal.",
+      "Name one feeling or need.",
+      "Find one neutral thing in the room.",
+      "Return to the next safe action."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "accessibility_modifications": [
+      "Use eyes-open grounding if closing eyes feels unsafe.",
+      "Use quiet, low-scent, low-touch options for MCAS, trauma, and sensory overload.",
+      "No posture requirement; lying down or supported sitting is valid."
+    ],
+    "relationship_and_caregiver_notes": [
+      "William's needs and Jasper's capacity both count.",
+      "Ask before helping; ask before escalating; name the smallest next step.",
+      "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+      "What is needed, what capacity exists, what can be smaller, and what can wait?"
+    ],
+    "identity_and_trauma_filter": [
+      "Use William's masculine language and Jasper's they/them language.",
+      "Use consent-based, non-shaming, body-neutral language unless a person has explicitly chosen a term.",
+      "Do not turn symptoms, dysphoria, trauma responses, clutter, fatigue, or emotional intensity into moral failure."
+    ],
+    "avoid_or_adjust": [
+      "Do not force stillness when it increases pain, panic, dysphoria, or trauma activation."
+    ],
+    "suggested_cadence": [
+      "daily_optional",
+      "flare_day_as_needed"
+    ],
+    "app_tags": [
+      "adhd_friendly",
+      "disability_first",
+      "mindfulness",
+      "shared",
+      "tiny_steps",
+      "trauma_informed"
+    ]
+  },
+  "ourspace_shared_revision_metadata": {
+    "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/json/daily_mindfulness_diary_card.json",
+    "shared_output_path": "shared/06_dbt_diary_cards/json/daily_mindfulness_diary_card.json",
+    "revised_at_utc": "2026-06-26T00:24:16Z",
+    "copyright_note": "Original source text preserved from user-provided files; added OurSpace accessibility/life-filter metadata for private use."
+  },
+  "shared_json_path": "shared/06_dbt_diary_cards/json/daily_mindfulness_diary_card.json"
+}

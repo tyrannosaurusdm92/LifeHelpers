@@ -1,0 +1,65 @@
+{
+  "schema_name": "ourspace_shared_dbt_adhd_life_filter",
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-06-26T00:24:16Z",
+  "privacy_note": "Derived from William and Jasper/Squishy life-impact profiles. This package intentionally stores a practical shared filter instead of repeating full trauma histories.",
+  "medical_safety_note": "This is support-planning and accessibility language for an app. It is not medical, psychiatric, emergency, or crisis care.",
+  "people": {
+    "william": {
+      "display_name": "William / Dino",
+      "language": [
+        "Use masculine language for William.",
+        "Treat power wheelchair use, oxygen, bed-level access, pain, fatigue, short reach, and bathroom support as access needs, not failures.",
+        "Use direct, validating, autonomy-preserving language."
+      ],
+      "major_access_patterns": [
+        "Mostly bedbound / barely walking; power wheelchair user.",
+        "Oxygen and severe asthma/respiratory limits require low-exertion options and trigger reduction.",
+        "EDS, chronic pain, back injury, vertigo, lymphedema, narcolepsy, fatigue, and short reach mean tasks need seated/bed-level versions.",
+        "ADHD/autism/anxiety/attachment trauma/BPD/C-PTSD require tiny steps, predictable repair, reassurance without shame, and no abandonment-coded task language."
+      ]
+    },
+    "jasper": {
+      "display_name": "Jasper / Squishy",
+      "language": [
+        "Use they/them pronouns unless updated.",
+        "Feminine endearments are allowed because Jasper accepts them; do not turn that into she/her or woman assumptions.",
+        "Respect caregiver burnout and never design tasks as if Jasper has unlimited capacity."
+      ],
+      "major_access_patterns": [
+        "Manual wheelchair, shower chair, EDS, scoliosis/back/ankle/varicose vein pain, fatigue, and mobility limits require seated and low-lift versions.",
+        "MCAS/allergy/fragrance/chemical sensitivity means cleaning and sensory skills need scent-safe, low-trigger options.",
+        "Severe ADHD/autism/anxiety/attachment trauma/BPD/C-PTSD and people-pleasing mean support must be non-shaming, consent-based, and capacity-aware.",
+        "Caregiver role requires shared routines that include Jasper's rest, not just William's care."
+      ]
+    }
+  },
+  "shared_rules": [
+    "Every skill must have a 30-second version, a 2-minute version, and a full version.",
+    "Partial completion counts. Stopping before harm counts as success.",
+    "Use bed/chair-safe options first; standing, lifting, bending, scrubbing, and rushing are optional upgrades, never defaults.",
+    "Do not use shame, moral failure, laziness, cleanliness-as-worth, body blame, or 'just push through' language.",
+    "Build in caregiver capacity checks: 'Can we do this now, later, smaller, or not today?'",
+    "Avoid silent-treatment framing. A pause should mean: 'I am coming back; I am regulating.'",
+    "Protect privacy and safety. Do not expose addresses, medical details, trauma details, legal details, or identity history unless intentionally shared.",
+    "MCAS/respiratory-safe default: fragrance-free, low-dust, ventilated when appropriate, no harsh scents, and stop if breathing or allergic symptoms escalate.",
+    "TIPP/intense body skills need gentle alternatives because oxygen use, severe asthma, MCAS, EDS, vertigo, seizures, pain, and mobility limits may make cold shock, breath-holding, or intense exercise unsafe.",
+    "The app should invite, not command: 'try,' 'choose,' 'tiny version,' and 'restart' are preferred."
+  ],
+  "skill_defaults": {
+    "tiny_step_format": [
+      "Name the need in one sentence.",
+      "Pick the smallest safe action.",
+      "Set a tiny timer or single visible checkpoint.",
+      "Stop before a flare, panic, or resentment spike.",
+      "Mark partial completion as done enough for this round."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "relationship_repair_script": "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+    "caregiver_capacity_script": "What is needed, what capacity exists, what can be smaller, and what can wait?"
+  }
+}
