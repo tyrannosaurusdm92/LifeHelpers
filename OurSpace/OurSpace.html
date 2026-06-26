@@ -700,9 +700,16 @@
       .app-header-actions > * {
         flex: 1 1 100%;
       }
+      .install-actions{margin-top:.75rem}
     }
 
   </style>
+
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#00ffff">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="./assets/icons/ourspace-icon-180.png">
+<meta name="msapplication-config" content="./browserconfig.xml">
 </head>
 
 <body>
@@ -815,6 +822,8 @@
       </section>
 
       <p id="authStatus" class="status-message" role="status" aria-live="polite"></p>
+      <div class="form-actions install-actions"><button id="installOurSpaceButton" class="ghost-button" type="button">Install app</button></div>
+      <p id="installStatus" class="status-message" role="status" aria-live="polite"></p>
     </section>
   </main>
 
@@ -891,6 +900,43 @@
 
     let pendingSignup = null;
     let currentSession = null;
+    let deferredInstallPrompt = null;
+
+    function isStandaloneDisplay() {
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    }
+
+    function setInstallStatus(text, type = '') {
+      const el = $('installStatus');
+      if (!el) return;
+      el.textContent = text || '';
+      el.className = 'status-message ' + type;
+    }
+
+    function updateInstallButton() {
+      const button = $('installOurSpaceButton');
+      if (!button) return;
+      button.hidden = isStandaloneDisplay();
+      button.textContent = deferredInstallPrompt ? 'Install app' : 'Install app';
+    }
+
+    async function requestInstall() {
+      try {
+        if (deferredInstallPrompt) {
+          const promptEvent = deferredInstallPrompt;
+          deferredInstallPrompt = null;
+          promptEvent.prompt();
+          const choice = await promptEvent.userChoice;
+          setInstallStatus(choice && choice.outcome === 'accepted' ? 'Install started.' : 'Install not started.', choice && choice.outcome === 'accepted' ? 'good' : '');
+        } else {
+          setInstallStatus('Use the browser menu if the install prompt does not open automatically.', 'good');
+        }
+        backend('pwa.install.record', { platform:navigator.platform || '', displayMode:isStandaloneDisplay() ? 'standalone' : 'browser' }, { tolerateOpaque:true }).catch(() => {});
+      } catch (_error) {
+        setInstallStatus('Use the browser menu to install/add OurSpace.', 'good');
+      }
+      updateInstallButton();
+    }
 
     function readJSON(key, fallback) {
       try {
@@ -1389,7 +1435,21 @@
     }
 
     function boot() {
-      bindEvents();
+      window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      deferredInstallPrompt = event;
+      updateInstallButton();
+    });
+    window.addEventListener('appinstalled', () => {
+      setInstallStatus('Installed.', 'good');
+      backend('pwa.install.record', { platform:navigator.platform || '', displayMode:'standalone' }, { tolerateOpaque:true }).catch(() => {});
+      updateInstallButton();
+    });
+    $('installOurSpaceButton')?.addEventListener('click', requestInstall);
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+    updateInstallButton();
+
+    bindEvents();
 
       if (hasAdminHash()) {
         completeSignIn({

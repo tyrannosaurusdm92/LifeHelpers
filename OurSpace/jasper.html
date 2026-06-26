@@ -140,8 +140,20 @@ small,.tiny{color:var(--muted)}
   .message-panel{max-height:78vh;}
   .game-frame{min-height:70vh;}
 }
+
+.install-pill{border-color:var(--cyan)!important;background:linear-gradient(135deg,var(--cyan),#fff)!important;color:#031b2a!important;font-weight:900!important}
+.backend-action-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:.5rem}
+#backendPayloadBox,#backendResultBox,#backendStatusBox,#giftBackendOutput{min-height:9rem;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;font-size:.82rem}
+.install-actions{align-items:center}
+
 </style>
 <style id="myspaceThemeStyle"></style>
+
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#00ffff">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="./assets/icons/ourspace-icon-180.png">
+<meta name="msapplication-config" content="./browserconfig.xml">
 </head>
 <body data-ourspace-user="jasper" data-ourspace-partner="william">
 <header class="app-top">
@@ -154,6 +166,8 @@ small,.tiny{color:var(--muted)}
       <button data-page-link="dbt">DBT / ADHD</button>
       <button data-page-link="games">Games</button>
       <button data-page-link="store">Store</button>
+      <button data-page-link="sync">Sync</button>
+      <button id="installAppTop" type="button" class="install-pill">Install</button>
       <button id="returnHomepage" type="button">Sign out</button>
     </nav>
   </div>
@@ -285,6 +299,121 @@ small,.tiny{color:var(--muted)}
     <section class="card"><div class="card-head"><h2>Cart / Checkout</h2></div><div class="card-body"><div id="cartLines" class="scrollbox"></div><p><strong>Total:</strong> <span id="cartTotal"></span></p><label for="checkoutNote">Checkout note</label><textarea id="checkoutNote"></textarea><div class="row"><button id="checkoutCart" class="primary">Checkout with earned currency</button><button id="clearCart" class="danger">Clear cart</button></div><label for="receiptBox">Receipt / GiftLink status</label><textarea id="receiptBox" readonly></textarea></div></section>
   </div>
 </section>
+
+<section class="page" id="page-sync" data-page="sync">
+  <div class="page-toolbar"><div><h1 class="page-title">Sync</h1></div><button class="bg-button" data-bg-open="sync">Change Sync Background</button></div>
+  <div class="grid two">
+    <section class="card"><div class="card-head"><h2>Install App</h2></div><div class="card-body">
+      <div class="row"><button id="installAppButton" class="primary" type="button">Install app</button><button id="recordInstallButton" type="button">Record install</button></div>
+      <p id="installAppStatus" class="tiny"></p>
+    </div></section>
+    <section class="card"><div class="card-head"><h2>Backend Status</h2></div><div class="card-body">
+      <div class="row"><button data-backend-preset="health" class="primary">Health</button><button data-backend-preset="actions">Actions</button><button data-backend-preset="pwa.manifest.hints">PWA hints</button></div>
+      <label for="backendStatusBox">Status</label><textarea id="backendStatusBox" readonly></textarea>
+    </div></section>
+  </div>
+  <section class="card"><div class="card-head"><h2>Backend Actions</h2></div><div class="card-body">
+    <div class="grid two"><div><label for="backendActionSelect">Action</label><select id="backendActionSelect"><option value="setup">setup</option>
+<option value="health">health</option>
+<option value="actions">actions</option>
+<option value="signup">signup</option>
+<option value="signin">signin</option>
+<option value="signout">signout</option>
+<option value="me">me</option>
+<option value="bootstrap">bootstrap</option>
+<option value="requestPasswordReset">requestPasswordReset</option>
+<option value="resetPassword">resetPassword</option>
+<option value="auth.signup">auth.signup</option>
+<option value="auth.signin">auth.signin</option>
+<option value="auth.signout">auth.signout</option>
+<option value="auth.me">auth.me</option>
+<option value="auth.bootstrap">auth.bootstrap</option>
+<option value="profile.get">profile.get</option>
+<option value="profile.save">profile.save</option>
+<option value="profile.list">profile.list</option>
+<option value="preference.get">preference.get</option>
+<option value="preference.set">preference.set</option>
+<option value="preference.list">preference.list</option>
+<option value="link.add">link.add</option>
+<option value="link.list">link.list</option>
+<option value="link.remove">link.remove</option>
+<option value="music.add">music.add</option>
+<option value="music.list">music.list</option>
+<option value="app.event">app.event</option>
+<option value="pwa.install.record">pwa.install.record</option>
+<option value="pwa.manifest.hints">pwa.manifest.hints</option>
+<option value="channel.create">channel.create</option>
+<option value="channel.upsert">channel.upsert</option>
+<option value="channel.list">channel.list</option>
+<option value="message.send">message.send</option>
+<option value="message.create">message.create</option>
+<option value="message.list">message.list</option>
+<option value="message.react">message.react</option>
+<option value="message.delete">message.delete</option>
+<option value="call.create">call.create</option>
+<option value="call.update">call.update</option>
+<option value="call.end">call.end</option>
+<option value="call.signal.send">call.signal.send</option>
+<option value="call.signal">call.signal</option>
+<option value="call.signal.list">call.signal.list</option>
+<option value="call.signal.clear">call.signal.clear</option>
+<option value="upload.media">upload.media</option>
+<option value="media.list">media.list</option>
+<option value="gif.save">gif.save</option>
+<option value="gif.list">gif.list</option>
+<option value="sticker.save">sticker.save</option>
+<option value="sticker.fromText">sticker.fromText</option>
+<option value="sticker.list">sticker.list</option>
+<option value="effect.save">effect.save</option>
+<option value="effect.list">effect.list</option>
+<option value="voice.message.save">voice.message.save</option>
+<option value="audio.transcript.save">audio.transcript.save</option>
+<option value="audio.transcribe.request">audio.transcribe.request</option>
+<option value="currency.earn">currency.earn</option>
+<option value="currency.spend">currency.spend</option>
+<option value="currency.adjust">currency.adjust</option>
+<option value="currency.balance">currency.balance</option>
+<option value="recordPurchase">recordPurchase</option>
+<option value="purchase.create">purchase.create</option>
+<option value="purchase.list">purchase.list</option>
+<option value="store.catalog.save">store.catalog.save</option>
+<option value="store.catalog.get">store.catalog.get</option>
+<option value="calendar.event.upsert">calendar.event.upsert</option>
+<option value="calendar.event.list">calendar.event.list</option>
+<option value="schedule.item.upsert">schedule.item.upsert</option>
+<option value="schedule.item.list">schedule.item.list</option>
+<option value="task.complete">task.complete</option>
+<option value="record.save">record.save</option>
+<option value="record.list">record.list</option>
+<option value="login">login</option>
+<option value="logout">logout</option>
+<option value="whoami">whoami</option>
+<option value="getPublicShareUrl">getPublicShareUrl</option>
+<option value="rotateShareId">rotateShareId</option>
+<option value="savePrivateAddress">savePrivateAddress</option>
+<option value="getMyPrivateAddress">getMyPrivateAddress</option>
+<option value="upsertPublicLink">upsertPublicLink</option>
+<option value="deletePublicLink">deletePublicLink</option>
+<option value="listMyLinks">listMyLinks</option>
+<option value="listPurchaseRequests">listPurchaseRequests</option>
+<option value="updatePurchaseRequestStatus">updatePurchaseRequestStatus</option>
+<option value="publicPurchaseRequest">publicPurchaseRequest</option>
+<option value="publicLinks">publicLinks</option>
+<option value="share">share</option></select></div><div><label for="backendSessionToken">Session token</label><input id="backendSessionToken" autocomplete="off"></div></div>
+    <label for="backendPayloadBox">Payload JSON</label><textarea id="backendPayloadBox" spellcheck="false"></textarea>
+    <div class="row"><button id="fillBackendPayload" type="button">Fill payload</button><button id="sendBackendAction" class="primary" type="button">Send</button><button id="syncLocalState" class="good" type="button">Sync local state</button></div>
+    <label for="backendResultBox">Backend result</label><textarea id="backendResultBox" readonly></textarea>
+  </div></section>
+  <section class="card"><div class="card-head"><h2>GiftLink Backend</h2></div><div class="card-body">
+    <div class="grid two"><div><label for="giftBackendEmail">Private email</label><input id="giftBackendEmail" type="email" autocomplete="username"></div><div><label for="giftBackendPasscode">Private passcode</label><input id="giftBackendPasscode" type="password" autocomplete="current-password"></div></div>
+    <div class="row"><button id="giftBackendLogin" class="primary" type="button">Connect GiftLink</button><button id="giftBackendShareUrl" type="button">Get share URL</button><button id="giftBackendList" type="button">List links</button><button id="giftBackendRotate" class="warn" type="button">Rotate share ID</button></div>
+    <div class="grid two"><div><label for="giftPrivateName">Address name</label><input id="giftPrivateName"></div><div><label for="giftPrivateNote">Address note</label><input id="giftPrivateNote"></div></div>
+    <label for="giftPrivateAddress">Private delivery address</label><textarea id="giftPrivateAddress"></textarea>
+    <div class="row"><button id="giftBackendSaveAddress" type="button">Save private address</button><button id="giftBackendRequests" type="button">Purchase requests</button></div>
+    <label for="giftBackendOutput">GiftLink result</label><textarea id="giftBackendOutput" readonly></textarea>
+  </div></section>
+</section>
+
 </main>
 
 <div class="message-dock" id="messageDock"><section class="message-panel" id="messagePanel"><div class="message-head"><strong>Daily Messenger</strong><button id="toggleMessages">Open</button></div><div class="message-body"><div class="message-log" id="messageLog"></div><div class="grid two"><div><label for="messageName">Name</label><input id="messageName" placeholder="Jasper"></div><div><label for="messageTarget">To</label><input id="messageTarget" placeholder="William"></div></div><label for="messageText">Message</label><input id="messageText" placeholder="Type a short note"><div class="row"><button id="sendMessage" class="primary">Send</button><button id="clearMessages" class="danger">Clear messages</button></div></div></section></div>
@@ -357,11 +486,44 @@ function currencyToCopper(w){return Number(w.copper||0)+Number(w.silver||0)*10+N
 function copperToCurrency(n){return normalizeCurrency({platinum:0,gold:0,silver:0,copper:Math.max(0,Math.floor(n||0))});}
 function currencyText(w){w=normalizeCurrency(Object.assign({},w)); return `${w.platinum} platinum · ${w.gold} gold · ${w.silver} silver · ${w.copper} copper`;}
 function ledgerAmountToCopper(w){return Number(w.copper||0)+Number(w.silver||0)*10+Number(w.gold||0)*100+Number(w.platinum||0)*1000;}
-function syncCurrencyLedger(type,w,reason){const delta=ledgerAmountToCopper(w); if(!delta)return; const current=readJSON(CURRENCY_TOTAL_KEY,{schema:'ourspace.currency.v2',person:PROFILE_ID,totalCopper:0,currency:{platinum:0,gold:0,silver:0,copper:0}}); const signed=type==='spend'?-delta:delta; const total=Math.max(0,Number(current.totalCopper||0)+signed); const currency=copperToCurrency(total); writeJSON(CURRENCY_TOTAL_KEY,{schema:'ourspace.currency.v2',person:PROFILE_ID,totalCopper:total,currency,updatedAt:new Date().toISOString()}); const ledger=readJSON(CURRENCY_LEDGER_KEY,[]); const row={at:new Date().toISOString(),type,reason:reason||'Currency update',amountCopper:delta,display:(type==='spend'?'-':'+')+currencyText(copperToCurrency(delta)),source:'OurSpace'}; const next=(Array.isArray(ledger)?ledger:[]); next.unshift(row); writeJSON(CURRENCY_LEDGER_KEY,next.slice(0,500)); window.dispatchEvent(new CustomEvent('ourspace:currency-updated',{detail:{user:PROFILE_ID,totalCopper:total,entry:row}}));}
+function syncCurrencyLedger(type,w,reason){const delta=ledgerAmountToCopper(w); if(!delta)return; const current=readJSON(CURRENCY_TOTAL_KEY,{schema:'ourspace.currency.v2',person:PROFILE_ID,totalCopper:0,currency:{platinum:0,gold:0,silver:0,copper:0}}); const signed=type==='spend'?-delta:delta; const total=Math.max(0,Number(current.totalCopper||0)+signed); const currency=copperToCurrency(total); writeJSON(CURRENCY_TOTAL_KEY,{schema:'ourspace.currency.v2',person:PROFILE_ID,totalCopper:total,currency,updatedAt:new Date().toISOString()}); const ledger=readJSON(CURRENCY_LEDGER_KEY,[]); const row={at:new Date().toISOString(),type,reason:reason||'Currency update',amountCopper:delta,display:(type==='spend'?'-':'+')+currencyText(copperToCurrency(delta)),source:'OurSpace'}; const next=(Array.isArray(ledger)?ledger:[]); next.unshift(row); writeJSON(CURRENCY_LEDGER_KEY,next.slice(0,500)); window.dispatchEvent(new CustomEvent('ourspace:currency-updated',{detail:{user:PROFILE_ID,totalCopper:total,entry:row}})); if(typeof backendAction==='function')backendAction(type==='spend'?'currency.spend':'currency.earn',{profileKey:PROFILE_ID,amountCopper:delta,reason:reason||'Currency update',sourceType:'ourspace-local',sourceId:row.at},{tolerateOpaque:true}).catch(()=>{});}
 function addCurrency(w,reason){state.wallet.copper+=ledgerAmountToCopper(w); normalizeCurrency(); state.rewardFeed.unshift({time:new Date().toLocaleString(),reason:reason||'Reward',amount:currencyText(w)}); state.rewardFeed=state.rewardFeed.slice(0,50); syncCurrencyLedger('earn',w,reason||'Reward'); saveState(); renderCurrency(); renderRewardFeed();}
 function spendCurrency(total,reason){const current=currencyToCopper(state.wallet); if(current<total) return false; syncCurrencyLedger('spend',copperToCurrency(total),reason); state.wallet=copperToCurrency(current-total); saveState(); renderCurrency(); return true;}
+
+let deferredInstallPrompt=null;
+function activeSessionToken(){return activeSession?.token||activeSession?.sessionToken||readSession()?.token||readSession()?.sessionToken||'';}
+function isStandaloneDisplay(){return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;}
+function setInstallStatus(text){const el=$('installAppStatus'); if(el)el.textContent=text||'';}
+function updateInstallButton(){[$('installAppButton'),$('installAppTop')].filter(Boolean).forEach(b=>{b.hidden=isStandaloneDisplay();});}
+async function backendAction(action,data={},opts={}){const payload={app:'OurSpace',source:'OurSpace',action,authAction:action,profileKey:PROFILE_ID,profile:PROFILE_ID,sessionToken:activeSessionToken(),clientId:'ourspace-'+PROFILE_ID,updatedAt:new Date().toISOString(),data}; const merged=Object.assign({},payload,data||{},data&&data.__raw?data.__raw:{}); if(['publicLinks','share'].includes(action)){const params=new URLSearchParams(); Object.entries(merged).forEach(([k,v])=>params.set(k,typeof v==='object'?JSON.stringify(v):String(v))); const response=await fetch(BACKEND_URL+'?'+params.toString(),{method:'GET'}); const text=await response.text(); try{return text?JSON.parse(text):{};}catch(e){return {ok:true,raw:text};}} try{const response=await fetch(BACKEND_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(merged)}); const text=await response.text(); let parsed={}; try{parsed=text?JSON.parse(text):{};}catch(e){parsed={raw:text};} if(!response.ok||parsed.ok===false||parsed.error)throw new Error(parsed.error||parsed.message||'Backend rejected the request.'); return parsed;}catch(error){try{await fetch(BACKEND_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(merged)}); if(opts.tolerateOpaque!==false)return{ok:true,opaque:true,message:'Sent to backend.'};}catch(e){} if(opts.tolerateOpaque)return{ok:false,error:error.message||String(error)}; throw error;}}
+function defaultPayloadFor(action){const base={profileKey:PROFILE_ID,sessionToken:activeSessionToken()}; const store={profileKey:PROFILE_ID,catalog:storeProducts()}; const events=state.events||[]; const sampleEvent=events[0]||{title:'',date:todayStr(),start:'09:00',end:'09:30',recurrence:'none'}; const maps={
+'profile.save':{...base,profile:{profileKey:PROFILE_ID,siteName:state.siteName,profileName:state.profileName,status:state.status,profileImageSaved:!!state.profileImage}},
+'preference.set':{...base,key:'homeEdits',value:state.homeEdits||{}},'preference.get':{...base,key:'homeEdits'},'preference.list':base,
+'link.add':{...base,title:'',url:'',notes:''},'link.list':base,'link.remove':{...base,linkId:''},'music.add':{...base,title:'',url:'',notes:''},'music.list':base,
+'app.event':{...base,eventAction:'manual-sync',detail:{page:currentPage,profile:PROFILE_ID}},'pwa.install.record':{...base,platform:navigator.platform||'',displayMode:isStandaloneDisplay()?'standalone':'browser'},'pwa.manifest.hints':base,
+'channel.upsert':{...base,channelId:'tin-can-main',name:'William / Jasper',kind:'main',profileA:'william',profileB:'jasper'},'channel.create':{...base,channelId:'tin-can-main',name:'William / Jasper',kind:'main'},'channel.list':base,
+'message.send':{...base,fromProfile:PROFILE_ID,toProfile:PARTNER_ID,channelId:'tin-can-main',text:''},'message.create':{...base,fromProfile:PROFILE_ID,toProfile:PARTNER_ID,channelId:'tin-can-main',text:''},'message.list':{...base,channelId:'tin-can-main'},'message.react':{...base,messageId:'',reaction:'heart'},'message.delete':{...base,messageId:''},
+'call.create':{...base,channelId:'tin-can-main',kind:'audio'},'call.update':{...base,callId:'',status:'active'},'call.end':{...base,callId:''},'call.signal.send':{...base,callId:'',signal:{}},'call.signal':{...base,callId:'',signal:{}},'call.signal.list':{...base,callId:''},'call.signal.clear':{...base,callId:''},
+'upload.media':{...base,name:'',mimeType:'',dataUrl:''},'media.list':base,'gif.save':{...base,title:'',url:''},'gif.list':base,'sticker.save':{...base,title:'',url:''},'sticker.fromText':{...base,text:''},'sticker.list':base,'effect.save':{...base,title:'',settings:{}},'effect.list':base,
+'voice.message.save':{...base,title:'',audioDataUrl:''},'audio.transcript.save':{...base,title:'',transcript:''},'audio.transcribe.request':{...base,mediaId:''},
+'currency.earn':{...base,amountCopper:100,reason:'Manual earn'},'currency.spend':{...base,amountCopper:100,reason:'Manual spend'},'currency.adjust':{...base,amountCopper:0,reason:'Manual adjust'},'currency.balance':base,
+'recordPurchase':{...base,profileKey:PROFILE_ID,items:state.cart||[],totalCopper:cartTotal?cartTotal():0,storeName:'OurSpace'},'purchase.create':{...base,items:state.cart||[],totalCopper:cartTotal?cartTotal():0,storeName:'OurSpace',spendCurrency:false},'purchase.list':base,'store.catalog.save':store,'store.catalog.get':base,
+'calendar.event.upsert':{...base,title:sampleEvent.title,startAt:sampleEvent.date+'T'+(sampleEvent.start||'09:00'),endAt:sampleEvent.date+'T'+(sampleEvent.end||'09:30'),recurrence:sampleEvent.recurrence||'none',category:sampleEvent.type||''},'calendar.event.list':base,
+'schedule.item.upsert':{...base,title:'',respawn:'weekly',timeOfDay:'10:00',category:'task'},'schedule.item.list':base,'task.complete':{...base,taskId:'',title:'',rewardCopper:100,completedAt:new Date().toISOString()},
+'record.save':{...base,bucket:'ourspace-local-state',key:PROFILE_ID,value:{siteName:state.siteName,homeEdits:state.homeEdits,events:state.events,wishlist:state.wishlist}},'record.list':{...base,bucket:'ourspace-local-state'},
+'login':{email:activeSession?.email||'',passcode:'',password:''},'logout':{sessionToken:state.giftLinkSessionToken||''},'whoami':{sessionToken:state.giftLinkSessionToken||''},'getPublicShareUrl':{sessionToken:state.giftLinkSessionToken||''},'rotateShareId':{sessionToken:state.giftLinkSessionToken||''},'savePrivateAddress':{sessionToken:state.giftLinkSessionToken||'',address:{name:'',address:'',note:''}},'getMyPrivateAddress':{sessionToken:state.giftLinkSessionToken||''},'upsertPublicLink':{sessionToken:state.giftLinkSessionToken||'',link:{title:'',url:'',store:'',notes:'',ownerProfile:PROFILE_ID}},'deletePublicLink':{sessionToken:state.giftLinkSessionToken||'',itemId:''},'listMyLinks':{sessionToken:state.giftLinkSessionToken||''},'listPurchaseRequests':{sessionToken:state.giftLinkSessionToken||''},'updatePurchaseRequestStatus':{sessionToken:state.giftLinkSessionToken||'',requestId:'',status:'reviewed'},'publicPurchaseRequest':{itemId:'',buyerName:'',buyerEmail:'',buyerNote:''},'publicLinks':{},'share':{share_id:'',shareId:''}
+}; return maps[action]||base;}
+function pretty(obj){return JSON.stringify(obj,null,2);}
+function fillBackendPayload(){const a=$('backendActionSelect')?.value||'health'; const payload=defaultPayloadFor(a); const box=$('backendPayloadBox'); if(box)box.value=pretty(payload); const tok=$('backendSessionToken'); if(tok&&!tok.value)tok.value=activeSessionToken();}
+async function sendSelectedBackendAction(){const a=$('backendActionSelect')?.value||'health'; const result=$('backendResultBox'); let payload={}; try{payload=JSON.parse($('backendPayloadBox')?.value||'{}');}catch(e){if(result)result.value='Payload JSON is not valid.';return;} const tok=$('backendSessionToken')?.value.trim(); if(tok&&!payload.sessionToken)payload.sessionToken=tok; if(result)result.value='Sending...'; try{const data=await backendAction(a,payload,{tolerateOpaque:true}); if(result)result.value=pretty(data);}catch(e){if(result)result.value=e.message||String(e);}}
+async function runBackendPreset(action){const box=$('backendStatusBox')||$('backendResultBox'); if(box)box.value='Sending...'; try{const data=await backendAction(action,defaultPayloadFor(action),{tolerateOpaque:true}); if(box)box.value=pretty(data);}catch(e){if(box)box.value=e.message||String(e);}}
+async function syncLocalStateToBackend(){const result=$('backendResultBox'); if(result)result.value='Syncing local state...'; const actions=[['profile.save',defaultPayloadFor('profile.save')],['preference.set',defaultPayloadFor('preference.set')],['store.catalog.save',defaultPayloadFor('store.catalog.save')],['record.save',defaultPayloadFor('record.save')],['pwa.install.record',defaultPayloadFor('pwa.install.record')]]; const out=[]; for(const [a,p] of actions){try{out.push({action:a,result:await backendAction(a,p,{tolerateOpaque:true})});}catch(e){out.push({action:a,error:e.message||String(e)});}} if(result)result.value=pretty(out);}
+async function requestAppInstall(){try{if(deferredInstallPrompt){const e=deferredInstallPrompt; deferredInstallPrompt=null; e.prompt(); const choice=await e.userChoice; setInstallStatus(choice?.outcome==='accepted'?'Install started.':'Install not started.');}else setInstallStatus('Use the browser menu to install/add OurSpace if the prompt does not open.'); await backendAction('pwa.install.record',defaultPayloadFor('pwa.install.record'),{tolerateOpaque:true});}catch(e){setInstallStatus('Use the browser menu to install/add OurSpace.');} updateInstallButton();}
+function initInstall(){window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;updateInstallButton();}); window.addEventListener('appinstalled',()=>{setInstallStatus('Installed.');backendAction('pwa.install.record',defaultPayloadFor('pwa.install.record'),{tolerateOpaque:true}).catch(()=>{});updateInstallButton();}); $('installAppButton')?.addEventListener('click',requestAppInstall); $('installAppTop')?.addEventListener('click',requestAppInstall); $('recordInstallButton')?.addEventListener('click',()=>runBackendPreset('pwa.install.record')); updateInstallButton();}
+function initBackendTools(){const tok=$('backendSessionToken'); if(tok)tok.value=activeSessionToken(); $('backendActionSelect')?.addEventListener('change',fillBackendPayload); $('fillBackendPayload')?.addEventListener('click',fillBackendPayload); $('sendBackendAction')?.addEventListener('click',sendSelectedBackendAction); $('syncLocalState')?.addEventListener('click',syncLocalStateToBackend); document.querySelectorAll('[data-backend-preset]').forEach(b=>b.addEventListener('click',()=>runBackendPreset(b.dataset.backendPreset))); $('giftBackendEmail')&&( $('giftBackendEmail').value=activeSession?.email||'' ); $('giftBackendLogin')?.addEventListener('click',async()=>{const out=$('giftBackendOutput'); if(out)out.value='Connecting...'; try{const data=await backendAction('login',{email:$('giftBackendEmail').value,passcode:$('giftBackendPasscode').value,password:$('giftBackendPasscode').value},{tolerateOpaque:false}); if(data.sessionToken){state.giftLinkSessionToken=data.sessionToken; saveState();} if(out)out.value=pretty(data);}catch(e){if(out)out.value=e.message||String(e);}}); $('giftBackendShareUrl')?.addEventListener('click',async()=>{const out=$('giftBackendOutput'); if(out)out.value='Requesting...'; const data=await backendAction('getPublicShareUrl',{sessionToken:state.giftLinkSessionToken||''},{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); if(out)out.value=pretty(data);}); $('giftBackendList')?.addEventListener('click',async()=>{const out=$('giftBackendOutput'); const data=await backendAction('listMyLinks',{sessionToken:state.giftLinkSessionToken||''},{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); if(out)out.value=pretty(data);}); $('giftBackendRotate')?.addEventListener('click',async()=>{const out=$('giftBackendOutput'); const data=await backendAction('rotateShareId',{sessionToken:state.giftLinkSessionToken||''},{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); if(out)out.value=pretty(data);}); $('giftBackendSaveAddress')?.addEventListener('click',async()=>{const payload={sessionToken:state.giftLinkSessionToken||'',address:{name:$('giftPrivateName').value,address:$('giftPrivateAddress').value,note:$('giftPrivateNote').value}}; const data=await backendAction('savePrivateAddress',payload,{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); const out=$('giftBackendOutput'); if(out)out.value=pretty(data);}); $('giftBackendRequests')?.addEventListener('click',async()=>{const data=await backendAction('listPurchaseRequests',{sessionToken:state.giftLinkSessionToken||''},{tolerateOpaque:true}).catch(e=>({ok:false,error:e.message||String(e)})); const out=$('giftBackendOutput'); if(out)out.value=pretty(data);}); fillBackendPayload();}
+
 function applyPageBackground(){const val=state.backgrounds[currentPage]||''; document.body.style.setProperty('--page-bg-image',val?`url("${String(val).replace(/"/g,'%22')}")`:'none');}
-function setPage(page){currentPage=page; document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.dataset.page===page)); document.querySelectorAll('[data-page-link]').forEach(b=>b.classList.toggle('active',b.dataset.pageLink===page)); $('messageDock')?.classList.toggle('visible',page==='daily'); applyPageBackground(); if(page==='daily')renderDaily(); if(page==='calendar')renderCalendar(); if(page==='dbt')renderWellness(); if(page==='games'){renderGames(); renderCurrency();} if(page==='store'){renderStore(); renderWishlist(); renderCurrency();}}
+function setPage(page){currentPage=page; document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.dataset.page===page)); document.querySelectorAll('[data-page-link]').forEach(b=>b.classList.toggle('active',b.dataset.pageLink===page)); $('messageDock')?.classList.toggle('visible',page==='daily'); applyPageBackground(); if(page==='daily')renderDaily(); if(page==='calendar')renderCalendar(); if(page==='dbt')renderWellness(); if(page==='games'){renderGames(); renderCurrency();} if(page==='store'){renderStore(); renderWishlist(); renderCurrency();} if(page==='sync'){fillBackendPayload(); updateInstallButton();}}
 function initNav(){document.querySelectorAll('[data-page-link]').forEach(btn=>btn.addEventListener('click',()=>setPage(btn.dataset.pageLink))); document.querySelectorAll('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>$(btn.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'start'}))); $('returnHomepage')?.addEventListener('click',signOutToHomepage);}
 function initHome(){ $('homeSiteName').textContent=state.siteName; $('appTitle').textContent=state.siteName||'OurSpace'; $('homeStatus').textContent=state.status; $('userLine').textContent=PROFILE_LABEL+(activeSession.admin?' · #admin':''); $('siteNameInput').value=state.siteName; $('profileNameInput').value=state.profileName; $('statusInput').value=state.status; document.querySelectorAll('[data-home-edit]').forEach(el=>{const key=el.dataset.homeEdit; if(state.homeEdits[key])el.innerHTML=state.homeEdits[key]; el.addEventListener('input',()=>{state.homeEdits[key]=el.innerHTML; saveState();});}); applyProfileImage(); renderGallery(); applyMyspaceCode();}
 function applyProfileImage(){const img=$('profileImage'), ph=$('profilePlaceholder'); if(state.profileImage){img.src=state.profileImage; img.style.display='block'; ph.style.display='none';}else{img.removeAttribute('src'); img.style.display='none'; ph.style.display='block';}}
@@ -375,7 +537,7 @@ function loadTrack(i,play){const player=$('musicPlayer'); if(!state.musicTracks[
 function renderPlaylist(){const list=$('playlist'); list.innerHTML=''; if(!state.musicTracks.length){list.innerHTML='<li><span class="tiny">No saved tracks.</span></li>'; return;} state.musicTracks.forEach((t,i)=>{const li=document.createElement('li'); li.innerHTML=`<span>${i===musicIndex?'▶ ':''}${esc(t.name)}</span><span><button data-play-track="${i}">Play</button><button data-remove-track="${i}" class="danger">×</button></span>`; list.appendChild(li);}); list.querySelectorAll('[data-play-track]').forEach(b=>b.addEventListener('click',()=>loadTrack(Number(b.dataset.playTrack),true))); list.querySelectorAll('[data-remove-track]').forEach(b=>b.addEventListener('click',()=>{const i=Number(b.dataset.removeTrack); state.musicTracks.splice(i,1); if(musicIndex===i)musicIndex=-1; saveState(); renderPlaylist();}));}
 function recurrenceForCadence(cad){return cad==='yearly'?'annual':cad==='on_demand'?'none':cad||'daily';}
 function catalogRows(kind,cadence){const pack=kind==='skill'?(CATALOG.skills?.shared||{}):(kind==='self-care'?CATALOG.care:CATALOG.tasks); if(kind==='skill')return cadence==='all'?(pack.all||[]):(pack[cadence]||[]); const owners=['shared',PROFILE_ID]; let out=[]; owners.forEach(o=>{if(pack&&pack[o]){if(cadence==='all')Object.values(pack[o]).forEach(arr=>out.push(...(arr||[]))); else out.push(...(pack[o][cadence]||[]));}}); const seen=new Set(); return out.filter(x=>{const k=x.id||x.title; if(seen.has(k))return false; seen.add(k); return true;});}
-function catalogItemToEvent(item,date,start,end){return {id:'cat_'+(item.id||uid()),title:item.title,type:item.kind||'task',date,start:start||'09:00',end:end||'09:30',recurrence:'none',notes:item.notes||item.category||'',source:'catalog',catalogId:item.id,rewardCopper:item.rewardCopper||100};}
+function catalogItemToEvent(item,date,start,end){const steps=Array.isArray(item.tinySteps)&&item.tinySteps.length?'\nTiny steps:\n- '+item.tinySteps.join('\n- '):''; return {id:'cat_'+(item.id||uid()),title:item.title,type:item.kind||'task',date,start:start||'09:00',end:end||'09:30',recurrence:'none',notes:(item.notes||item.category||'')+steps,source:'catalog',catalogId:item.id,rewardCopper:item.rewardCopper||100};}
 function scheduleDailyCatalog(date){const started=readJSON(STARTED_DAYS_KEY,{}); const start=$('startDayTime')?.value||new Date().toTimeString().slice(0,5); const baseHour=timeHour(start); let minute=String(start).slice(3,5); if(!/^\d\d$/.test(minute))minute='00'; let candidates=[...catalogRows('task','daily'),...catalogRows('self-care','daily')]; const existing=new Set(state.events.filter(e=>e.date===date).map(e=>e.catalogId||e.title)); let added=0; candidates.forEach((item,idx)=>{if(existing.has(item.id)||existing.has(item.title))return; const hour=Math.min(23,baseHour+Math.floor(added/2)); const mins=(added%2===0)?minute:String((Number(minute)+30)%60).padStart(2,'0'); const startTime=String(hour).padStart(2,'0')+':'+mins; const endHour=mins==='30'?Math.min(23,hour+1):hour; const endMin=mins==='30'?'00':'30'; state.events.push(catalogItemToEvent(item,date,startTime,String(endHour).padStart(2,'0')+':'+endMin)); added++;}); started[date]=new Date().toISOString(); writeJSON(STARTED_DAYS_KEY,started); saveState(); renderDaily(); renderCalendar(); if(added)addCurrency(copperToCurrency(5000),'Started '+date);}
 function eventMatchesDate(ev,dateStr){if(!ev.date)return false; const d=parseDate(dateStr), base=parseDate(ev.date); if(ev.recurrence==='none'||!ev.recurrence)return ev.date===dateStr; if(base>d)return false; if(ev.recurrence==='daily')return true; if(ev.recurrence==='weekly')return base.getDay()===d.getDay(); if(ev.recurrence==='monthly')return base.getDate()===d.getDate(); if(ev.recurrence==='annual'||ev.recurrence==='yearly')return base.getMonth()===d.getMonth()&&base.getDate()===d.getDate(); return false;}
 function eventsForDate(dateStr){return state.events.filter(e=>eventMatchesDate(e,dateStr)).sort((a,b)=>String(a.start||'99:99').localeCompare(String(b.start||'99:99')));}
@@ -414,17 +576,17 @@ function cartTotal(){return state.cart.reduce((sum,c)=>{const p=storeProducts().
 function initStore(){ $('normalizeWallet').addEventListener('click',()=>{normalizeCurrency(); saveState(); renderCurrency();}); $('resetWallet').addEventListener('click',()=>{syncCurrencyLedger('spend',state.wallet,'Wallet reset'); state.wallet={platinum:0,gold:0,silver:0,copper:0}; writeJSON(CURRENCY_TOTAL_KEY,{schema:'ourspace.currency.v2',person:PROFILE_ID,totalCopper:0,currency:{platinum:0,gold:0,silver:0,copper:0},updatedAt:new Date().toISOString()}); saveState(); renderCurrency();}); $('clearCart').addEventListener('click',()=>{state.cart=[]; saveState(); renderCart();}); $('checkoutCart').addEventListener('click',()=>{const total=cartTotal(); const current=currencyToCopper(state.wallet); if(!state.cart.length){$('receiptBox').value='Cart is empty.'; return;} if(current<total){$('receiptBox').value=`Need ${currencyText(copperToCurrency(total-current))} more.`; return;} syncCurrencyLedger('spend',copperToCurrency(total),'Store checkout'); state.wallet=copperToCurrency(current-total); const lines=state.cart.map(c=>{const p=storeProducts().find(x=>x.id===c.id); return `${p.title} x ${c.qty}`;}); $('receiptBox').value=`Receipt\n${new Date().toLocaleString()}\n\n${lines.join('\n')}\n\nTotal: ${currencyText(copperToCurrency(total))}\nRemaining: ${currencyText(state.wallet)}\n\nNote: ${$('checkoutNote').value||''}`; state.cart=[]; saveState(); renderCurrency(); renderCart();}); $('addGiftLink').addEventListener('click',()=>{addWishlistItem({title:$('giftLinkTitle').value,store:$('giftLinkStore').value,url:$('giftLinkUrl').value,notes:$('giftLinkNotes').value}); ['giftLinkTitle','giftLinkStore','giftLinkUrl','giftLinkNotes'].forEach(id=>$(id).value='');}); $('storeAisleFilter')?.addEventListener('change',renderStore); populateStoreAisles(); renderStore(); renderWishlist();}
 function addWishlistItem(item){if(!item.title&&!item.url)return; const row={id:uid(),title:item.title||item.url,store:item.store||'Store',url:item.url||'',notes:item.notes||'',profile:PROFILE_ID,deliveryProfileKey:'primary',createdAt:new Date().toISOString(),source:item.source||'manual'}; state.wishlist.items.unshift(row); saveState(); renderWishlist(); return row;}
 function renderWishlist(){const host=$('giftLinkList'); if(!host)return; host.innerHTML=''; const items=state.wishlist.items||[]; if(!items.length){host.innerHTML='<div class="empty">No wishlist links saved.</div>'; return;} items.forEach(item=>{const div=document.createElement('div'); div.className='item'; div.innerHTML=`<strong>${esc(item.title)}</strong><div class="meta">${esc(item.store||'Store')}</div>${item.notes?`<p>${esc(item.notes)}</p>`:''}<div class="actions">${item.url?`<a class="button" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">Open</a>`:''}<button data-route-gift="${esc(item.id)}" class="primary">Private route</button><button data-del-gift="${esc(item.id)}" class="danger">Remove</button></div>`; host.appendChild(div);}); host.querySelectorAll('[data-del-gift]').forEach(b=>b.addEventListener('click',()=>{state.wishlist.items=state.wishlist.items.filter(x=>x.id!==b.dataset.delGift); saveState(); renderWishlist();})); host.querySelectorAll('[data-route-gift]').forEach(b=>b.addEventListener('click',()=>routeGift(state.wishlist.items.find(x=>x.id===b.dataset.routeGift))));}
-async function routeGift(item){if(!item)return; const payload={action:'giftRequest',profile:PROFILE_ID,deliveryProfileKey:item.deliveryProfileKey||'primary',item,site:'OurSpace'}; $('receiptBox').value='Sending GiftLink request...'; try{await fetch(BACKEND_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)}); $('receiptBox').value='GiftLink request sent.';}catch(e){$('receiptBox').value='GiftLink request saved locally. Backend send failed.';}}
+async function routeGift(item){if(!item)return; const box=$('receiptBox'); if(box)box.value='Sending GiftLink request...'; const payload={profileKey:PROFILE_ID,bucket:'giftlink',key:item.id,value:item}; const results=[]; try{results.push({action:'record.save',result:await backendAction('record.save',payload,{tolerateOpaque:true})});}catch(e){results.push({action:'record.save',error:e.message||String(e)});} if(state.giftLinkSessionToken){try{results.push({action:'upsertPublicLink',result:await backendAction('upsertPublicLink',{sessionToken:state.giftLinkSessionToken,link:{title:item.title,url:item.url,store:item.store,notes:item.notes,ownerProfile:PROFILE_ID,itemId:item.id}},{tolerateOpaque:true})});}catch(e){results.push({action:'upsertPublicLink',error:e.message||String(e)});}} else {results.push({giftlink:'Connect GiftLink on Sync page to publish private-route links.'});} if(box)box.value=JSON.stringify(results,null,2);}
 function renderCurrency(){normalizeCurrency(); const text=currencyText(state.wallet); ['storeCurrency','gameCurrency'].forEach(id=>{const el=$(id); if(el)el.innerHTML=text.split(' · ').map(x=>`<span class="coin">${x}</span>`).join('');}); saveState();}
 function messageThread(){return readJSON(MESSAGE_THREAD_KEY,[]);}
 function saveMessageThread(items){writeJSON(MESSAGE_THREAD_KEY,items.slice(-300));}
 function initMessenger(){ $('messageName').value=PROFILE_LABEL; $('messageName').readOnly=true; $('messageTarget').value=PARTNER_LABEL; $('messageTarget').readOnly=true; $('toggleMessages').addEventListener('click',()=>{const p=$('messagePanel'); p.classList.toggle('open'); $('toggleMessages').textContent=p.classList.contains('open')?'Close':'Open'; renderMessages(true);}); $('sendMessage').addEventListener('click',sendMessage); $('messageText').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault(); sendMessage();}}); $('clearMessages').addEventListener('click',()=>{saveMessageThread(messageThread().filter(m=>!((m.from===PROFILE_ID&&m.to===PARTNER_ID)||(m.from===PARTNER_ID&&m.to===PROFILE_ID)))); renderMessages();}); window.addEventListener('storage',e=>{if(e.key===MESSAGE_THREAD_KEY)renderMessages();}); renderMessages();}
-function sendMessage(){const text=$('messageText').value.trim(); if(!text)return; const items=messageThread(); items.push({id:uid(),from:PROFILE_ID,to:PARTNER_ID,text,time:new Date().toISOString(),readBy:{[PROFILE_ID]:true}}); saveMessageThread(items); $('messageText').value=''; renderMessages();}
+function sendMessage(){const text=$('messageText').value.trim(); if(!text)return; const items=messageThread(); items.push({id:uid(),from:PROFILE_ID,to:PARTNER_ID,text,time:new Date().toISOString(),readBy:{[PROFILE_ID]:true}}); saveMessageThread(items); if(typeof backendAction==='function')backendAction('message.send',{fromProfile:PROFILE_ID,toProfile:PARTNER_ID,channelId:'tin-can-main',text},{tolerateOpaque:true}).catch(()=>{}); $('messageText').value=''; renderMessages();}
 function renderMessages(mark){const log=$('messageLog'); if(!log)return; let items=messageThread(); if(mark){let changed=false; items.forEach(m=>{if(m.to===PROFILE_ID){m.readBy=m.readBy||{}; if(!m.readBy[PROFILE_ID]){m.readBy[PROFILE_ID]=true; changed=true;}}}); if(changed)saveMessageThread(items);} const visible=items.filter(m=>(m.from===PROFILE_ID&&m.to===PARTNER_ID)||(m.from===PARTNER_ID&&m.to===PROFILE_ID)); log.innerHTML=''; if(!visible.length){log.innerHTML='<div class="empty">No messages.</div>'; return;} visible.slice(-100).forEach(m=>{const div=document.createElement('div'); div.className='message-entry '+(m.from===PROFILE_ID?'me':''); const name=m.from===PROFILE_ID?PROFILE_LABEL:PARTNER_LABEL; const to=m.to===PROFILE_ID?PROFILE_LABEL:PARTNER_LABEL; div.innerHTML=`<strong>${esc(name)} → ${esc(to)}</strong><span>${esc(m.text)}</span><div class="tiny">${esc(new Date(m.time).toLocaleString())}</div>`; log.appendChild(div);}); log.scrollTop=log.scrollHeight;}
 function openModal(id){$(id).classList.add('open');}
 function closeModals(){document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'));}
 function initModals(){document.querySelectorAll('[data-close-modal]').forEach(b=>b.addEventListener('click',closeModals)); document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModals();})); document.querySelectorAll('[data-bg-open]').forEach(b=>b.addEventListener('click',()=>{$('bgPageKey').value=b.dataset.bgOpen; $('bgModalTitle').textContent='Change '+b.dataset.bgOpen+' background'; $('bgUrl').value=state.backgrounds[b.dataset.bgOpen]||''; openModal('bgModal');})); $('applyBgUrl').addEventListener('click',()=>{const key=$('bgPageKey').value; state.backgrounds[key]=$('bgUrl').value.trim(); saveState(); if(currentPage===key)applyPageBackground(); closeModals();}); $('clearBg').addEventListener('click',()=>{const key=$('bgPageKey').value; delete state.backgrounds[key]; saveState(); if(currentPage===key)applyPageBackground(); closeModals();}); $('bgUpload').addEventListener('change',e=>{const key=$('bgPageKey').value; const f=e.target.files[0]; if(!f)return; if(!f.type.startsWith('image/'))return; fileToDataURL(f,src=>{state.backgrounds[key]=src; saveState(); if(currentPage===key)applyPageBackground(); closeModals();}); e.target.value='';});}
-function boot(){initNav(); initHome(); initHomeEvents(); initDaily(); initCalendar(); initWellness(); initGames(); initStore(); initMessenger(); initModals(); renderCurrency(); setPage('home'); if('serviceWorker' in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});}
+function boot(){initNav(); initHome(); initHomeEvents(); initDaily(); initCalendar(); initWellness(); initGames(); initStore(); initMessenger(); initModals(); initInstall(); initBackendTools(); renderCurrency(); setPage('home'); if('serviceWorker' in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});}
 boot();
 })();
 </script>
