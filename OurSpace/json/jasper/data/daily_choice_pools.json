@@ -1,0 +1,34 @@
+{
+  "schema_name": "ourspace_daily_choice_pools",
+  "profile": "jasper",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "rule": "Jasper choice pools protect against ADHD overload and caregiver burnout. The app may select zero or one household/caregiver item unless Jasper manually adds more. Rest is never replaced by chores.",
+  "pools": {
+    "caregiver_support_one_only": [
+      "jasper_bring_william_food",
+      "jasper_bring_william_beverage",
+      "jasper_help_william_with_mobility_access_setup",
+      "jasper_help_with_oxygen_respiratory_setup_if_needed"
+    ],
+    "household_critical_one_only": [
+      "jasper_take_kitchen_trash_out_replace_bag",
+      "jasper_do_dishes_when_william_cannot",
+      "jasper_dust_wipe_kitchen_surfaces",
+      "jasper_sweep_kitchen"
+    ],
+    "jasper_recovery_required": [
+      "jasper_play_mobile_game_to_decompress",
+      "jasper_watch_comfort_content",
+      "jasper_dbt_adhd_caregiver_burnout_check",
+      "jasper_dbt_adhd_boundary_counts_as_care"
+    ]
+  },
+  "shared_dbt_adhd_library": {
+    "location": "s/skills/",
+    "daily_rotation_source": "s/data/dbt_adhd_daily.json",
+    "weekly_source": "s/data/dbt_adhd_weekly.json",
+    "monthly_source": "s/data/dbt_adhd_monthly.json",
+    "yearly_source": "s/data/dbt_adhd_yearly.json",
+    "rule": "Use at most one optional shared skill per available block; never more than two total items in an hour."
+  }
+}

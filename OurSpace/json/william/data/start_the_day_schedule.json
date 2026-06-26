@@ -1,0 +1,296 @@
+{
+  "schema_name": "ourspace_start_the_day_schedule_templates",
+  "schema_version": "3.0.0",
+  "generated_at_utc": "2026-06-25T21:00:29.329839+00:00",
+  "trigger": "start_the_day_button_press",
+  "clock_model": {
+    "start_time": "runtime timestamp captured when button is pressed",
+    "assignment_rule": "scheduled_time = start_time + hour_offset_from_start_button hours",
+    "reason": "With disability, ADHD, chronic illness, and caregiver burnout, days do not start at the same clock time and do not need to line up between users."
+  },
+  "hard_limits": {
+    "max_items_per_hour_block": 2,
+    "do_not_force_all_daily_pool_items_into_one_day": true,
+    "partial_completion_counts": true,
+    "rest_blocks_are_real_tasks": true
+  },
+  "adaptive_modes": {
+    "survival_day": "Load only critical body care, medication/medical supports, food, hydration, cats, and one regulation skill.",
+    "standard_day": "Load the schedule template exactly as written, plus at most one optional choice-pool item every few hours.",
+    "expanded_day": "Allow weekly/monthly items to be inserted into empty or optional blocks, still capped at two items per hour."
+  },
+  "profile": "william",
+  "hour_blocks": [
+    {
+      "hour_offset_from_start_button": 0,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-start-day-capacity-check",
+          "title": "Start-day capacity check",
+          "kind": "dbt_adhd_tool",
+          "profile": "william",
+          "optional": false,
+          "source": "s/skills",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts.",
+          "shared_skill_rotation": true,
+          "max_one_shared_skill_in_this_hour": true
+        },
+        {
+          "id": "william-take-meds",
+          "title": "Take meds",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        }
+      ],
+      "energy_assumption": "very_low",
+      "notes": "Start with capacity, not clock time."
+    },
+    {
+      "hour_offset_from_start_button": 1,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-hydrate",
+          "title": "Hydrate",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-oxygen-breathing-check-if-applicable",
+          "title": "Oxygen / breathing check if applicable",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        }
+      ],
+      "energy_assumption": "very_low",
+      "notes": ""
+    },
+    {
+      "hour_offset_from_start_button": 2,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-eat-at-least-one-safe-meal",
+          "title": "Eat at least one safe meal",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-pain-check-in",
+          "title": "Pain check-in",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        }
+      ],
+      "energy_assumption": "low",
+      "notes": ""
+    },
+    {
+      "hour_offset_from_start_button": 3,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-position-shift-pressure-relief",
+          "title": "Position shift / pressure relief",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-dbt-skill",
+          "title": "One DBT skill",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "s/skills",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts.",
+          "shared_skill_rotation": true,
+          "max_one_shared_skill_in_this_hour": true
+        }
+      ],
+      "energy_assumption": "low",
+      "notes": ""
+    },
+    {
+      "hour_offset_from_start_button": 4,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-brush-teeth-mouth-care",
+          "title": "Brush teeth / mouth care",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-rest-recovery-block",
+          "title": "Rest / recovery block",
+          "kind": "self_care",
+          "profile": "william",
+          "optional": false,
+          "source": "generated_from_disability_profile",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        }
+      ],
+      "energy_assumption": "very_low",
+      "notes": ""
+    },
+    {
+      "hour_offset_from_start_button": 5,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-autism-sensory-check-in",
+          "title": "Autism sensory check-in",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-cat-check-in-with-adhd-skills-harvey-and-callie",
+          "title": "Cat check-in with Harvey, Callie, and cat siblings",
+          "kind": "task",
+          "profile": "william",
+          "optional": true,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        }
+      ],
+      "energy_assumption": "low",
+      "notes": ""
+    },
+    {
+      "hour_offset_from_start_button": 6,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-eat-second-meal-snack-plate",
+          "title": "Eat second meal / snack plate",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-hydration-refill",
+          "title": "Hydration refill",
+          "kind": "self_care",
+          "profile": "william",
+          "optional": false,
+          "source": "generated_schedule",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        }
+      ],
+      "energy_assumption": "low",
+      "notes": ""
+    },
+    {
+      "hour_offset_from_start_button": 7,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-diary-card-daily-check-in",
+          "title": "Diary card / daily check-in",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-use-adhd-skills-support-chat",
+          "title": "Use ADHD skill card",
+          "kind": "task",
+          "profile": "william",
+          "optional": true,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        }
+      ],
+      "energy_assumption": "low",
+      "notes": ""
+    },
+    {
+      "hour_offset_from_start_button": 8,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-one-tiny-optional-contribution",
+          "title": "One tiny optional contribution: reachable surface, message, or creative step",
+          "kind": "choice_pool",
+          "profile": "william",
+          "optional": true,
+          "source": "daily_choice_pool",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-decompression-after-contribution",
+          "title": "Decompression after contribution",
+          "kind": "self_care",
+          "profile": "william",
+          "optional": false,
+          "source": "generated_from_disability_profile",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        }
+      ],
+      "energy_assumption": "variable",
+      "notes": ""
+    },
+    {
+      "hour_offset_from_start_button": 9,
+      "max_items_allowed_in_this_hour": 2,
+      "items": [
+        {
+          "id": "william-charge-power-wheelchair",
+          "title": "Charge power wheelchair",
+          "kind": "task",
+          "profile": "william",
+          "optional": false,
+          "source": "w/data/tasks.json",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts."
+        },
+        {
+          "id": "william-shutdown-soft-landing",
+          "title": "Soft landing / no-shame shutdown",
+          "kind": "dbt_adhd_tool",
+          "profile": "william",
+          "optional": false,
+          "source": "s/skills",
+          "low_spoon_version": "Do the smallest safe version; partial completion counts.",
+          "shared_skill_rotation": true,
+          "max_one_shared_skill_in_this_hour": true
+        }
+      ],
+      "energy_assumption": "very_low",
+      "notes": ""
+    }
+  ],
+  "shared_dbt_adhd_library": {
+    "location": "s/skills/",
+    "daily_rotation_source": "s/data/dbt_adhd_daily.json",
+    "rule": "Pick at most one shared daily DBT/ADHD skill for a Start the Day block, and never exceed two total items in that hour."
+  }
+}

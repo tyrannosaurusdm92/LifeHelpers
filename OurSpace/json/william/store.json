@@ -1,0 +1,616 @@
+{
+  "schema": "ourspace.user.store.v4",
+  "user": "william",
+  "items": [
+    {
+      "id": "pulp-heavy-orange-juice",
+      "title": "Pulp-heavy orange juice",
+      "desc": "High-pulp / pulp-heavy orange juice.",
+      "aisle": "Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "regular-red-bull-20-oz",
+      "title": "Regular Red Bull 20 oz",
+      "desc": "Preferred Red Bull size.",
+      "aisle": "Energy Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "energy_drink",
+        "favorite"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "green-apple-c4",
+      "title": "Green apple C4",
+      "desc": "Preferred C4 flavor.",
+      "aisle": "Energy Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "energy_drink"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "watermelon-ghost",
+      "title": "Watermelon Ghost",
+      "desc": "Preferred Ghost flavor.",
+      "aisle": "Energy Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "energy_drink"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "starburst",
+      "title": "Starburst",
+      "desc": "Priority candy favorite.",
+      "aisle": "Candy",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "candy",
+        "favorite"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "blue-cheese",
+      "title": "Blue cheese",
+      "desc": "Favorite savory snack.",
+      "aisle": "Snack Plate",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "strawberries",
+      "title": "Strawberries",
+      "desc": "Favorite fruit snack.",
+      "aisle": "Snack Plate",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack",
+        "fruit"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "blue-cheese-and-strawberries-plate",
+      "title": "Blue cheese and strawberries plate",
+      "desc": "Favorite snack combo.",
+      "aisle": "Snack Plate",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack",
+        "combo"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "d-d-lore-book",
+      "title": "D&D lore book",
+      "desc": "Digital or physical lore book reward.",
+      "aisle": "D&D Books + Lore",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "d-d-handbook",
+      "title": "D&D handbook",
+      "desc": "Digital or physical handbook reward.",
+      "aisle": "D&D Books + Lore",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "monster-book",
+      "title": "Monster book",
+      "desc": "Monster or creature reference reward.",
+      "aisle": "D&D Books + Lore",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "campaign-book",
+      "title": "Campaign book",
+      "desc": "Adventure/campaign sourcebook reward.",
+      "aisle": "D&D Books + Lore",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "foundry-vtt-license",
+      "title": "Foundry VTT license",
+      "desc": "High-tier virtual tabletop purchase.",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "priceCopper": 5000,
+      "priceTier": "premium",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "foundry-vtt-premium-package",
+      "title": "Foundry VTT premium package",
+      "desc": "Premium/exclusive Foundry content package.",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "foundry-vtt-module",
+      "title": "Foundry VTT module",
+      "desc": "Add-on module, system, world, or tool package.",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "foundry-vtt-world-package",
+      "title": "Foundry VTT world package",
+      "desc": "World or campaign package for virtual play.",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "arkenforge-map-pack",
+      "title": "Arkenforge map pack",
+      "desc": "Map asset or content pack for virtual D&D prep.",
+      "aisle": "Arkenforge / Mapmaking",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "arkenforge",
+        "mapmaking",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "arkenforge-asset-bundle",
+      "title": "Arkenforge asset bundle",
+      "desc": "Asset bundle for maps, tokens, or worldbuilding.",
+      "aisle": "Arkenforge / Mapmaking",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "arkenforge",
+        "mapmaking",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "t-rex-collectible",
+      "title": "T-rex collectible",
+      "desc": "William collects T-rexes.",
+      "aisle": "Collectibles",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "collector",
+        "t_rex"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "t-rex-plush-or-figure",
+      "title": "T-rex plush or figure",
+      "desc": "Comfort or display collectible.",
+      "aisle": "Collectibles",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "collector",
+        "t_rex"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "band-t-shirt",
+      "title": "Band T-shirt",
+      "desc": "Masculine-only clothing reward.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "d-d-shirt",
+      "title": "D&D shirt",
+      "desc": "Masculine-only clothing reward.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "clothes",
+        "dnd",
+        "masculine"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "pun-shirt",
+      "title": "Pun shirt",
+      "desc": "Masculine-only clothing reward.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "tripp-pants",
+      "title": "Tripp pants",
+      "desc": "Masculine-only style priority.",
+      "aisle": "Clothes",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cargo-pants",
+      "title": "Cargo pants",
+      "desc": "Masculine-only clothing reward.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "lip-jewelry",
+      "title": "Lip jewelry",
+      "desc": "Body jewelry reward.",
+      "aisle": "Piercings + Gauges",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "piercing"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "eyebrow-jewelry",
+      "title": "Eyebrow jewelry",
+      "desc": "Body jewelry reward.",
+      "aisle": "Piercings + Gauges",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "piercing"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "tunnels-or-plugs",
+      "title": "Tunnels or plugs",
+      "desc": "Gauged-ear jewelry reward.",
+      "aisle": "Piercings + Gauges",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "gauges"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "brev-ai-music-session",
+      "title": "Brev.ai music session",
+      "desc": "Music creation session or subscription contribution.",
+      "aisle": "Music Creation",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "music",
+        "brev_ai"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "facebook-comfort-link",
+      "title": "Facebook comfort link",
+      "desc": "Facebook comfort/social replacement for TikTok.",
+      "aisle": "Social + Serotonin",
+      "priceCopper": 50,
+      "priceTier": "gentle",
+      "tags": [
+        "facebook",
+        "serotonin"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "snapchat-connection-item",
+      "title": "Snapchat connection item",
+      "desc": "Snapchat social/comfort module item.",
+      "aisle": "Social + Serotonin",
+      "priceCopper": 50,
+      "priceTier": "gentle",
+      "tags": [
+        "snapchat",
+        "serotonin"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "wheelchair-bag",
+      "title": "Wheelchair bag",
+      "desc": "Accessibility and storage support.",
+      "aisle": "Accessibility Comforts",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "accessibility"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "bed-tray",
+      "title": "Bed tray",
+      "desc": "Bed-level activity support.",
+      "aisle": "Accessibility Comforts",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "accessibility"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "reacher-or-extender-tool",
+      "title": "Reacher or extender tool",
+      "desc": "Reach-access support.",
+      "aisle": "Accessibility Comforts",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "accessibility"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "heating-pad",
+      "title": "Heating pad",
+      "desc": "Pain comfort support.",
+      "aisle": "Accessibility Comforts",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "accessibility",
+        "pain"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "nicotine-e-cig-budget-tracker",
+      "title": "Nicotine / e-cig budget tracker",
+      "desc": "Track budget/restock only; do not treat as a reward loop.",
+      "aisle": "Budget Only",
+      "priceCopper": 50,
+      "priceTier": "budget",
+      "tags": [
+        "nicotine",
+        "budget_only"
+      ],
+      "profile": "william",
+      "origin": "william",
+      "cartEnabled": false,
+      "adultOnly": false,
+      "budgetOnly": true
+    }
+  ]
+}

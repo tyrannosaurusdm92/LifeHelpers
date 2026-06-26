@@ -1,0 +1,447 @@
+{
+  "schema_name": "ourspace_self_care_by_cadence",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "profile": "william",
+  "cadence": "on_demand",
+  "selection_rule": "Subset of tasks that directly support body care, mental health, access, medical needs, relationship/social care, decompression, or low-spoon regulation.",
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "count": 16,
+  "records": [
+    {
+      "id": "william-attend-doctor-appointment",
+      "person": "William",
+      "task": "Attend doctor appointment",
+      "category": "Medical admin",
+      "room_or_area": "Medical",
+      "respawn": "As needed",
+      "priority": "Critical",
+      "used_for": "Major health task",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-ask-for-help-before-crash",
+      "person": "William",
+      "task": "Ask for help before crash",
+      "category": "Mental health / relationship",
+      "room_or_area": "Self-care",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Prevent isolation/shutdown",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-doctor-appointment-prep",
+      "person": "William",
+      "task": "Doctor appointment prep",
+      "category": "Medical admin",
+      "room_or_area": "Admin / Medical",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Medical access",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-schedule-doctor-appointment",
+      "person": "William",
+      "task": "Schedule doctor appointment",
+      "category": "Medical admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Hard phone/admin task",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-shower-chair-hygiene-step",
+      "person": "William",
+      "task": "Shower-chair hygiene step",
+      "category": "Hygiene",
+      "room_or_area": "Bathroom",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Dignity-sensitive hygiene",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-grounding-exercise",
+      "person": "William",
+      "task": "Grounding exercise",
+      "category": "Mental health",
+      "room_or_area": "DBT / ADHD skills",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Panic/dissociation support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-one-repair-apology-check-in-message",
+      "person": "William",
+      "task": "One repair/apology/check-in message",
+      "category": "Relationship",
+      "room_or_area": "Communication",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Conflict repair",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-say-i-m-withdrawn-but-i-love-you",
+      "person": "William",
+      "task": "Say \"I'm withdrawn but I love you\"",
+      "category": "Relationship",
+      "room_or_area": "Communication",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Repair during shutdown",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-send-doctor-portal-message",
+      "person": "William",
+      "task": "Send doctor portal message",
+      "category": "Medical admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Communication without phone call",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-stop-before-overstimulation",
+      "person": "William",
+      "task": "Stop before overstimulation",
+      "category": "Self-care / autism",
+      "room_or_area": "Games / Serotonin",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Reward stopping safely",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-partial-completion-log",
+      "person": "William",
+      "task": "Partial completion log",
+      "category": "Self-care / accessibility",
+      "room_or_area": "Any",
+      "respawn": "As needed",
+      "priority": "Medium",
+      "used_for": "Reward effort, not perfection",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-send-low-energy-but-i-care-message",
+      "person": "William",
+      "task": "Send \"low energy but I care\" message",
+      "category": "Social care",
+      "room_or_area": "Communication",
+      "respawn": "As needed",
+      "priority": "Medium",
+      "used_for": "Friendship maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-facebook-check-in-social-module",
+      "person": "William",
+      "task": "Facebook check-in / social module",
+      "category": "Serotonin / social",
+      "room_or_area": "Serotonin",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Replacement for TikTok in William's version",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-play-game-to-decompress",
+      "person": "William",
+      "task": "Play game to decompress",
+      "category": "Hobby / decompression",
+      "room_or_area": "Games",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Recovery",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-snapchat-check-in-message",
+      "person": "William",
+      "task": "Snapchat check-in / message",
+      "category": "Serotonin / social",
+      "room_or_area": "Serotonin",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Social/comfort connection",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "william-youtube-comfort-learning-playlist",
+      "person": "William",
+      "task": "YouTube comfort / learning playlist",
+      "category": "Serotonin",
+      "room_or_area": "Serotonin",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Comfort or D&D/writing content",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    }
+  ]
+}

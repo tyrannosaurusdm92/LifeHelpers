@@ -1,0 +1,796 @@
+{
+  "schema_name": "ourspace_tasks_by_cadence",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "profile": "jasper",
+  "cadence": "weekly",
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "count": 27,
+  "records": [
+    {
+      "id": "jasper-clean-cat-litter-boxes",
+      "person": "Jasper",
+      "task": "Clean cat litter boxes",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Daily / every 2 days",
+      "priority": "Critical",
+      "used_for": "Cat health",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily",
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Daily / every 2 days"
+    },
+    {
+      "id": "jasper-clean-shower",
+      "person": "Jasper",
+      "task": "Clean shower",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / monthly",
+      "priority": "High",
+      "used_for": "Sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    },
+    {
+      "id": "jasper-clean-toilet",
+      "person": "Jasper",
+      "task": "Clean toilet",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-dust-wipe-kitchen-surfaces",
+      "person": "Jasper",
+      "task": "Dust / wipe kitchen surfaces",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / every 2 days",
+      "priority": "High",
+      "used_for": "Sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily",
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Daily / every 2 days"
+    },
+    {
+      "id": "jasper-grocery-delivery-order",
+      "person": "Jasper",
+      "task": "Grocery delivery order",
+      "category": "Shopping",
+      "room_or_area": "Kitchen / Shopping",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Household food restock",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-mop-bathroom",
+      "person": "Jasper",
+      "task": "Mop bathroom",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Floor cleaning",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-mop-kitchen",
+      "person": "Jasper",
+      "task": "Mop kitchen",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Floor cleaning",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-shower-bathe-wash-up",
+      "person": "Jasper",
+      "task": "Shower / bathe / wash-up",
+      "category": "Self-care",
+      "room_or_area": "Bathroom",
+      "respawn": "As needed / every 2 days",
+      "priority": "High",
+      "used_for": "Hygiene and comfort",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily",
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "As needed / every 2 days"
+    },
+    {
+      "id": "jasper-sweep-kitchen",
+      "person": "Jasper",
+      "task": "Sweep kitchen",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / every 2 days",
+      "priority": "High",
+      "used_for": "Food-area upkeep",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily",
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Daily / every 2 days"
+    },
+    {
+      "id": "jasper-brush-cats",
+      "person": "Jasper",
+      "task": "Brush cats",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Coat care/bonding",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-cat-supply-inventory",
+      "person": "Jasper",
+      "task": "Cat supply inventory",
+      "category": "Cat care / shopping",
+      "room_or_area": "Cats",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Litter/food/supplies",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-dust-bathroom-surfaces",
+      "person": "Jasper",
+      "task": "Dust bathroom surfaces",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Room upkeep",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-dust-bedroom",
+      "person": "Jasper",
+      "task": "Dust bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Allergen/dust control",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-dust-living-room",
+      "person": "Jasper",
+      "task": "Dust living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Allergen/dust control",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-inventory-what-the-house-needs",
+      "person": "Jasper",
+      "task": "Inventory what the house needs",
+      "category": "Shopping",
+      "room_or_area": "Kitchen / Whole home",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Prevent running out",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-mop-bedroom",
+      "person": "Jasper",
+      "task": "Mop bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Floor cleaning",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-mop-living-room",
+      "person": "Jasper",
+      "task": "Mop living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Floor cleaning",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-organize-bathroom-items",
+      "person": "Jasper",
+      "task": "Organize bathroom items",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Accessibility/cleanliness",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    },
+    {
+      "id": "jasper-organize-bedroom",
+      "person": "Jasper",
+      "task": "Organize bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Reduce chaos",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    },
+    {
+      "id": "jasper-organize-kitchen",
+      "person": "Jasper",
+      "task": "Organize kitchen",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Food access",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-organize-living-room",
+      "person": "Jasper",
+      "task": "Organize living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Reduce clutter",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    },
+    {
+      "id": "jasper-sweep-bathroom",
+      "person": "Jasper",
+      "task": "Sweep bathroom",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Room upkeep",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-sweep-bedroom",
+      "person": "Jasper",
+      "task": "Sweep bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Room upkeep",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-sweep-living-room",
+      "person": "Jasper",
+      "task": "Sweep living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Room upkeep",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-take-bathroom-trash-out-replace-bag",
+      "person": "Jasper",
+      "task": "Take bathroom trash out + replace bag",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / as needed",
+      "priority": "Medium",
+      "used_for": "Trash maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly / as needed"
+    },
+    {
+      "id": "jasper-take-bedroom-trash-out-replace-bag",
+      "person": "Jasper",
+      "task": "Take bedroom trash out + replace bag",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly / as needed",
+      "priority": "Medium",
+      "used_for": "Trash maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly / as needed"
+    },
+    {
+      "id": "jasper-take-living-room-trash-out-replace-bag",
+      "person": "Jasper",
+      "task": "Take living room trash out + replace bag",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly / as needed",
+      "priority": "Medium",
+      "used_for": "Trash maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly / as needed"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "jasper-weekly-mcas-trigger-reset",
+      "title": "MCAS trigger reset — tiny pass",
+      "kind": "self-care",
+      "cadence": "weekly",
+      "category": "MCAS support",
+      "area": "Household",
+      "priority": "High",
+      "notes": "Reduce triggers without making Jasper push through symptoms.",
+      "tinySteps": [
+        "Pick one trigger zone: scent, food, trash, laundry, or cleaner.",
+        "Use mask/ventilation and stop at early symptoms.",
+        "Move one trigger item away or bag it.",
+        "Rest with safe drink/meds plan afterward."
+      ],
+      "rewardCopper": 180,
+      "origin": "jasper"
+    },
+    {
+      "id": "jasper-weekly-spine-kindness-reset",
+      "title": "Scoliosis kindness reset",
+      "kind": "self-care",
+      "cadence": "weekly",
+      "category": "Pain support",
+      "area": "Body care",
+      "priority": "High",
+      "notes": "Protect back/neck before chores.",
+      "tinySteps": [
+        "Check pain level before starting.",
+        "Choose seated, braced, or no-bend version.",
+        "Set a five-minute timer.",
+        "Stop before the pain spike, not after."
+      ],
+      "rewardCopper": 180,
+      "origin": "jasper"
+    },
+    {
+      "id": "jasper-weekly-caregiver-burnout-check",
+      "title": "Caregiver burnout check",
+      "kind": "self-care",
+      "cadence": "weekly",
+      "category": "Caregiver support",
+      "area": "Mental health",
+      "priority": "High",
+      "notes": "Caregiver care is household care.",
+      "tinySteps": [
+        "Name one thing that is too much.",
+        "Pick one thing William can decide, simplify, or remove.",
+        "Schedule one non-caregiving pocket of time.",
+        "Use ADHD/DBT skill if guilt shows up."
+      ],
+      "rewardCopper": 180,
+      "origin": "jasper"
+    }
+  ]
+}

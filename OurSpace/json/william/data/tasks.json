@@ -1,0 +1,1714 @@
+{
+  "schema_name": "william_tasks",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-25T00:00:00-04:00",
+  "language_rules": {
+    "allowed_person_labels": [
+      "Jasper",
+      "William",
+      "shared"
+    ],
+    "note": "This export intentionally uses names only and avoids the removed family-role labels."
+  },
+  "description": "William-specific tasks from the task master table.",
+  "count": 76,
+  "records": [
+    {
+      "id": "william-take-meds",
+      "person": "William",
+      "task": "Take meds",
+      "category": "Physical health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Core health maintenance",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-hydrate",
+      "person": "William",
+      "task": "Hydrate",
+      "category": "Physical health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Body support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-eat-at-least-one-safe-meal",
+      "person": "William",
+      "task": "Eat at least one safe meal",
+      "category": "Physical health",
+      "room_or_area": "Kitchen / Bedside",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Low-spoon food care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-eat-second-meal-snack-plate",
+      "person": "William",
+      "task": "Eat second meal / snack plate",
+      "category": "Physical health",
+      "room_or_area": "Kitchen / Bedside",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Food support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-oxygen-breathing-check-if-applicable",
+      "person": "William",
+      "task": "Oxygen / breathing check if applicable",
+      "category": "Physical health",
+      "room_or_area": "Bedroom / Living room",
+      "respawn": "Daily / as needed",
+      "priority": "Critical",
+      "used_for": "Respiratory safety",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-pain-check-in",
+      "person": "William",
+      "task": "Pain check-in",
+      "category": "Physical health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Track body aches/flares",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-ms-fatigue-check-in",
+      "person": "William",
+      "task": "MS/fatigue check-in",
+      "category": "Physical health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Pace the day",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-position-shift-pressure-relief",
+      "person": "William",
+      "task": "Position shift / pressure relief",
+      "category": "Physical health",
+      "room_or_area": "Bed / Wheelchair",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Pain/skin/body support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-stretch-one-safe-body-area",
+      "person": "William",
+      "task": "Stretch one safe body area",
+      "category": "Physical health",
+      "room_or_area": "Bed / Wheelchair",
+      "respawn": "Daily / as able",
+      "priority": "Gentle",
+      "used_for": "Low-spoon movement",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-shower-chair-hygiene-step",
+      "person": "William",
+      "task": "Shower-chair hygiene step",
+      "category": "Hygiene",
+      "room_or_area": "Bathroom",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Dignity-sensitive hygiene",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-bed-level-wash-up",
+      "person": "William",
+      "task": "Bed-level wash-up",
+      "category": "Hygiene",
+      "room_or_area": "Bedroom",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Low-spoon hygiene alternative",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-brush-teeth-mouth-care",
+      "person": "William",
+      "task": "Brush teeth / mouth care",
+      "category": "Hygiene",
+      "room_or_area": "Bathroom / Bedside",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Basic care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-change-clothes-masc-comfort-outfit",
+      "person": "William",
+      "task": "Change clothes / masc comfort outfit",
+      "category": "Hygiene / gender care",
+      "room_or_area": "Bedroom",
+      "respawn": "Daily / as able",
+      "priority": "Medium",
+      "used_for": "Comfort and gender affirmation",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-toileting-tool-bidet-setup-check",
+      "person": "William",
+      "task": "Toileting tool/bidet setup check",
+      "category": "Hygiene / accessibility",
+      "room_or_area": "Bathroom",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Independence/dignity",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-charge-power-wheelchair",
+      "person": "William",
+      "task": "Charge power wheelchair",
+      "category": "Accessibility",
+      "room_or_area": "Wheelchair",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Mobility access",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-check-wheelchair-bag-essentials",
+      "person": "William",
+      "task": "Check wheelchair bag / essentials",
+      "category": "Accessibility",
+      "room_or_area": "Wheelchair",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Leaving-room readiness",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-refill-bedside-supplies",
+      "person": "William",
+      "task": "Refill bedside supplies",
+      "category": "Accessibility",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly / as needed",
+      "priority": "High",
+      "used_for": "Keep items within reach",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-doctor-appointment-prep",
+      "person": "William",
+      "task": "Doctor appointment prep",
+      "category": "Medical admin",
+      "room_or_area": "Admin / Medical",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Medical access",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-schedule-doctor-appointment",
+      "person": "William",
+      "task": "Schedule doctor appointment",
+      "category": "Medical admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Hard phone/admin task",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-attend-doctor-appointment",
+      "person": "William",
+      "task": "Attend doctor appointment",
+      "category": "Medical admin",
+      "room_or_area": "Medical",
+      "respawn": "As needed",
+      "priority": "Critical",
+      "used_for": "Major health task",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-send-doctor-portal-message",
+      "person": "William",
+      "task": "Send doctor portal message",
+      "category": "Medical admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Communication without phone call",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-medication-refill-task",
+      "person": "William",
+      "task": "Medication refill task",
+      "category": "Medical admin",
+      "room_or_area": "Admin",
+      "respawn": "Monthly / as needed",
+      "priority": "High",
+      "used_for": "Medication continuity",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-one-paperwork-task",
+      "person": "William",
+      "task": "One paperwork task",
+      "category": "Admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Life admin",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-make-important-phone-call",
+      "person": "William",
+      "task": "Make important phone call",
+      "category": "Admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "High-friction communication",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-open-mail-documents",
+      "person": "William",
+      "task": "Open mail / documents",
+      "category": "Admin",
+      "room_or_area": "Admin",
+      "respawn": "Weekly / as needed",
+      "priority": "Medium",
+      "used_for": "Reduce backlog",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-dishes-small-batch",
+      "person": "William",
+      "task": "Dishes — small batch",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / as able",
+      "priority": "High",
+      "used_for": "Main chore, lower reward than Jasper taking it over",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-dishes-one-category-only",
+      "person": "William",
+      "task": "Dishes — one category only",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / as able",
+      "priority": "Medium",
+      "used_for": "Low-spoon version: cups OR plates OR utensils",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-load-unload-dishwasher-if-available",
+      "person": "William",
+      "task": "Load / unload dishwasher if available",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / as able",
+      "priority": "Medium",
+      "used_for": "Kitchen maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-laundry-start-load",
+      "person": "William",
+      "task": "Laundry — start load",
+      "category": "Chore",
+      "room_or_area": "Bedroom / Laundry",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Clothing care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-laundry-switch-load",
+      "person": "William",
+      "task": "Laundry — switch load",
+      "category": "Chore",
+      "room_or_area": "Bedroom / Laundry",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Laundry progress",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-laundry-fold-or-sort-one-basket",
+      "person": "William",
+      "task": "Laundry — fold or sort one basket",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Low-spoon finish",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-take-out-trash",
+      "person": "William",
+      "task": "Take out trash",
+      "category": "Chore",
+      "room_or_area": "Kitchen / Whole home",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Household sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-replace-trash-bag",
+      "person": "William",
+      "task": "Replace trash bag",
+      "category": "Chore",
+      "room_or_area": "Kitchen / Whole home",
+      "respawn": "As needed",
+      "priority": "Medium",
+      "used_for": "Finish trash task",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-clean-out-fridge-one-shelf",
+      "person": "William",
+      "task": "Clean out fridge — one shelf",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly / monthly",
+      "priority": "High",
+      "used_for": "Low-spoon fridge reset",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-clean-out-fridge-expired-items-only",
+      "person": "William",
+      "task": "Clean out fridge — expired items only",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Smaller version",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-wipe-counter-surface-within-reach",
+      "person": "William",
+      "task": "Wipe counter / surface within reach",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / as needed",
+      "priority": "Medium",
+      "used_for": "Small cleaning win",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-inventory-snacks-drinks",
+      "person": "William",
+      "task": "Inventory snacks/drinks",
+      "category": "Shopping",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Store/restock planning",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-grocery-list-item-add",
+      "person": "William",
+      "task": "Grocery list item add",
+      "category": "Shopping",
+      "room_or_area": "Kitchen",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Low-spoon contribution",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-cat-check-in-with-adhd-skills-harvey-and-callie",
+      "person": "William",
+      "task": "Cat check-in with Harvey, Callie, and cat siblings",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Bonding/cat care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-feed-cats-if-accessible",
+      "person": "William",
+      "task": "Feed cats if accessible",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Daily / as able",
+      "priority": "High",
+      "used_for": "Cat care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-refresh-cat-water-if-accessible",
+      "person": "William",
+      "task": "Refresh cat water if accessible",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Daily / as able",
+      "priority": "High",
+      "used_for": "Cat care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-brush-one-cat-if-accessible",
+      "person": "William",
+      "task": "Brush one cat if accessible",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Weekly / as able",
+      "priority": "Medium",
+      "used_for": "Cat bonding/care",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-cat-supply-inventory",
+      "person": "William",
+      "task": "Cat supply inventory",
+      "category": "Cat care / shopping",
+      "room_or_area": "Cats",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Litter/food/supplies",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-use-adhd-skills-support-chat",
+      "person": "William",
+      "task": "Use ADHD skill card",
+      "category": "Mental health",
+      "room_or_area": "ADHD skills",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Support and grounding",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-dbt-skill",
+      "person": "William",
+      "task": "DBT skill",
+      "category": "Mental health",
+      "room_or_area": "DBT",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Regulation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-depression-survival-check-in",
+      "person": "William",
+      "task": "Depression survival check-in",
+      "category": "Mental health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "\"Still here\" task",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-autism-sensory-check-in",
+      "person": "William",
+      "task": "Autism sensory check-in",
+      "category": "Mental health / autism",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Overload prevention",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-grounding-exercise",
+      "person": "William",
+      "task": "Grounding exercise",
+      "category": "Mental health",
+      "room_or_area": "DBT / ADHD skills",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Panic/dissociation support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-diary-card-daily-check-in",
+      "person": "William",
+      "task": "Diary card / daily check-in",
+      "category": "Mental health",
+      "room_or_area": "DBT Daily Cards",
+      "respawn": "Daily",
+      "priority": "Medium",
+      "used_for": "Track mood/pain/energy",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-journal-entry",
+      "person": "William",
+      "task": "Journal entry",
+      "category": "Mental health / writing",
+      "room_or_area": "Journaling",
+      "respawn": "Daily / as needed",
+      "priority": "Medium",
+      "used_for": "Processing",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-ask-for-help-before-crash",
+      "person": "William",
+      "task": "Ask for help before crash",
+      "category": "Mental health / relationship",
+      "room_or_area": "Self-care",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Prevent isolation/shutdown",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-send-fianc-love-appreciation-message",
+      "person": "William",
+      "task": "Send fiancé love/appreciation message",
+      "category": "Relationship",
+      "room_or_area": "Communication",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Better partner goal",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-say-i-m-withdrawn-but-i-love-you",
+      "person": "William",
+      "task": "Say \"I'm withdrawn but I love you\"",
+      "category": "Relationship",
+      "room_or_area": "Communication",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Repair during shutdown",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-one-repair-apology-check-in-message",
+      "person": "William",
+      "task": "One repair/apology/check-in message",
+      "category": "Relationship",
+      "room_or_area": "Communication",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Conflict repair",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-reply-to-one-friend",
+      "person": "William",
+      "task": "Reply to one friend",
+      "category": "Social care",
+      "room_or_area": "Communication",
+      "respawn": "Daily / every 2 days",
+      "priority": "High",
+      "used_for": "Reduce friendship loss",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-open-unread-messages",
+      "person": "William",
+      "task": "Open unread messages",
+      "category": "Social care",
+      "room_or_area": "Communication",
+      "respawn": "Daily / as able",
+      "priority": "Medium",
+      "used_for": "Low-spoon communication step",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-send-low-energy-but-i-care-message",
+      "person": "William",
+      "task": "Send \"low energy but I care\" message",
+      "category": "Social care",
+      "room_or_area": "Communication",
+      "respawn": "As needed",
+      "priority": "Medium",
+      "used_for": "Friendship maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-facebook-check-in-social-module",
+      "person": "William",
+      "task": "Facebook check-in / social module",
+      "category": "Serotonin / social",
+      "room_or_area": "Serotonin",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Replacement for TikTok in William's version",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-snapchat-check-in-message",
+      "person": "William",
+      "task": "Snapchat check-in / message",
+      "category": "Serotonin / social",
+      "room_or_area": "Serotonin",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Social/comfort connection",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-youtube-comfort-learning-playlist",
+      "person": "William",
+      "task": "YouTube comfort / learning playlist",
+      "category": "Serotonin",
+      "room_or_area": "Serotonin",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Comfort or D&D/writing content",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-brev-ai-song-making-session",
+      "person": "William",
+      "task": "Brev.ai song-making session",
+      "category": "Hobby / music",
+      "room_or_area": "Serotonin / Creative",
+      "respawn": "As needed",
+      "priority": "Medium",
+      "used_for": "Music creativity",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-d-d-campaign-work-tiny-step",
+      "person": "William",
+      "task": "D&D campaign work — tiny step",
+      "category": "Hobby / working",
+      "room_or_area": "D&D / Creative",
+      "respawn": "Daily / as able",
+      "priority": "Medium",
+      "used_for": "Homebrew campaign progress",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-d-d-campaign-work-deep-session",
+      "person": "William",
+      "task": "D&D campaign work — deep session",
+      "category": "Hobby / working",
+      "room_or_area": "D&D / Creative",
+      "respawn": "Weekly / as able",
+      "priority": "High",
+      "used_for": "Larger creative work",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-foundry-vtt-prep-module-planning",
+      "person": "William",
+      "task": "Foundry VTT prep / module planning",
+      "category": "Hobby / working",
+      "room_or_area": "Virtual D&D",
+      "respawn": "Weekly / as able",
+      "priority": "High",
+      "used_for": "Virtual D&D setup",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-arkenforge-map-worldbuilding-planning",
+      "person": "William",
+      "task": "Arkenforge map/worldbuilding planning",
+      "category": "Hobby / working",
+      "room_or_area": "Virtual D&D",
+      "respawn": "Weekly / as able",
+      "priority": "High",
+      "used_for": "Map/tool planning",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-fantasy-saga-outline",
+      "person": "William",
+      "task": "Fantasy saga outline",
+      "category": "Hobby / writing",
+      "room_or_area": "Writing",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "6-book saga planning",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-fantasy-saga-chapter-scene-draft",
+      "person": "William",
+      "task": "Fantasy saga chapter/scene draft",
+      "category": "Hobby / writing",
+      "room_or_area": "Writing",
+      "respawn": "Weekly / as able",
+      "priority": "High",
+      "used_for": "Book writing progress",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-mmorpg-idea-note",
+      "person": "William",
+      "task": "MMORPG idea note",
+      "category": "Hobby / game design",
+      "room_or_area": "Creative",
+      "respawn": "Weekly / as able",
+      "priority": "Medium",
+      "used_for": "Game concept progress",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-song-draft-lyric-idea",
+      "person": "William",
+      "task": "Song draft / lyric idea",
+      "category": "Hobby / music",
+      "room_or_area": "Creative",
+      "respawn": "As needed",
+      "priority": "Medium",
+      "used_for": "Songwriting",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-poem-draft",
+      "person": "William",
+      "task": "Poem draft",
+      "category": "Hobby / writing",
+      "room_or_area": "Creative",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Creative expression",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-short-story-draft",
+      "person": "William",
+      "task": "Short story draft",
+      "category": "Hobby / writing",
+      "room_or_area": "Creative",
+      "respawn": "Weekly / as able",
+      "priority": "Medium",
+      "used_for": "Fiction progress",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-lore-note-worldbuilding-note",
+      "person": "William",
+      "task": "Lore note / worldbuilding note",
+      "category": "Hobby / writing",
+      "room_or_area": "Creative",
+      "respawn": "Daily / as able",
+      "priority": "Gentle",
+      "used_for": "Low-spoon creative win",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-play-game-to-decompress",
+      "person": "William",
+      "task": "Play game to decompress",
+      "category": "Hobby / decompression",
+      "room_or_area": "Games",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Recovery",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-stop-before-overstimulation",
+      "person": "William",
+      "task": "Stop before overstimulation",
+      "category": "Self-care / autism",
+      "room_or_area": "Games / Serotonin",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Reward stopping safely",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-rest-without-guilt",
+      "person": "William",
+      "task": "Rest without guilt",
+      "category": "Self-care",
+      "room_or_area": "Bed / Anywhere",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Recovery is a task",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "william-partial-completion-log",
+      "person": "William",
+      "task": "Partial completion log",
+      "category": "Self-care / accessibility",
+      "room_or_area": "Any",
+      "respawn": "As needed",
+      "priority": "Medium",
+      "used_for": "Reward effort, not perfection",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    }
+  ],
+  "currency_rules": {
+    "exchange_rates": {
+      "copper_per_silver": 10,
+      "silver_per_gold": 10,
+      "gold_per_platinum": 10
+    },
+    "display_rules": {
+      "copper_min": 0,
+      "copper_max": 9,
+      "silver_min": 0,
+      "silver_max": 9,
+      "gold_min": 0,
+      "gold_max": 9,
+      "platinum_min": 0,
+      "platinum_max": null
+    },
+    "normalization": "Carry overflow upward so lower denominations stay from 0 through 9; platinum has no upper limit."
+  },
+  "split_metadata": {
+    "category": "william",
+    "source_file": "william_tasks.json",
+    "cleaned_at_utc": "2026-06-25T20:15:41+00:00",
+    "family_title_scrub_applied": true,
+    "currency_normalization_applied": true
+  }
+}

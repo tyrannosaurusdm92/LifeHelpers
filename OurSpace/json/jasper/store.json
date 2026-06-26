@@ -1,0 +1,304 @@
+{
+  "schema": "ourspace.user.store.v4",
+  "user": "jasper",
+  "items": [
+    {
+      "id": "regular-coke",
+      "title": "Regular Coke",
+      "desc": "Jasper cola favorite.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "cola"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cherry-pepsi",
+      "title": "Cherry Pepsi",
+      "desc": "Jasper cola favorite.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "cola"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "other-cola-choice",
+      "title": "Other cola choice",
+      "desc": "Only show in Jasper store, not William store.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "cola"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "nutella-and-crackers",
+      "title": "Nutella and crackers",
+      "desc": "Jasper-specific sweet snack.",
+      "aisle": "Sweet Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cream-cheese-frosting-and-nilla-wafers",
+      "title": "Cream cheese frosting and Nilla wafers",
+      "desc": "Jasper-specific sweet snack combo.",
+      "aisle": "Sweet Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "music-cd",
+      "title": "Music CD",
+      "desc": "Only if Jasper wants CDs; William does not use this aisle.",
+      "aisle": "Music / Media",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "media"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "rubber-duck-of-choice",
+      "title": "Rubber duck of choice",
+      "desc": "Jasper collects ducks.",
+      "aisle": "Collectibles",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "collector",
+        "duck"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "duck-collectible-bundle",
+      "title": "Duck collectible bundle",
+      "desc": "Higher-tier duck collection reward.",
+      "aisle": "Collectibles",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "collector",
+        "duck"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "tiktok-shop-link-item",
+      "title": "TikTok Shop link item",
+      "desc": "Quick-add TikTok Shop item, past order, or favorite store for Jasper only.",
+      "aisle": "Social Shopping",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "tiktok",
+        "link_item"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "tiktok-shop-past-order-reorder",
+      "title": "TikTok Shop past order reorder",
+      "desc": "Jasper can paste or save a past TikTok order.",
+      "aisle": "Social Shopping",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "tiktok",
+        "past_order"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "clothes-skirts",
+      "title": "Clothes: skirts",
+      "desc": "Clothing link category for Jasper only.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "clothes"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "clothes-purses",
+      "title": "Clothes: purses",
+      "desc": "Clothing link category for Jasper only.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "clothes",
+        "accessory"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "clothes-shirts",
+      "title": "Clothes: shirts",
+      "desc": "Jasper clothing link category.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "clothes"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "clothes-pants",
+      "title": "Clothes: pants",
+      "desc": "Jasper clothing link category.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "clothes"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "clothes-shorts",
+      "title": "Clothes: shorts",
+      "desc": "Jasper clothing link category.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "clothes"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "clothes-jackets",
+      "title": "Clothes: jackets",
+      "desc": "Jasper clothing link category.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "clothes"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "clothes-shoes",
+      "title": "Clothes: shoes",
+      "desc": "Jasper clothing link category.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "clothes"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "clothes-socks",
+      "title": "Clothes: socks",
+      "desc": "Jasper clothing link category.",
+      "aisle": "Clothes",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "clothes"
+      ],
+      "profile": "jasper",
+      "origin": "jasper",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    }
+  ]
+}

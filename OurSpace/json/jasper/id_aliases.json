@@ -1,0 +1,141 @@
+{
+  "schema": "ourspace.id.aliases.v1",
+  "purpose": "Flexible aliases so loading keeps working when section or item IDs are slightly different.",
+  "section_aliases": {
+    "home": [
+      "home",
+      "homepage",
+      "profile",
+      "profile_home",
+      "myspace_home",
+      "landing"
+    ],
+    "daily": [
+      "daily",
+      "day",
+      "today",
+      "daily_tasks",
+      "tasks_today",
+      "start_day",
+      "routine",
+      "schedule"
+    ],
+    "calendar": [
+      "calendar",
+      "events",
+      "appointments",
+      "appointment",
+      "reminders",
+      "reminder",
+      "shared_calendar",
+      "schedule"
+    ],
+    "skills": [
+      "skills",
+      "dbt",
+      "adhd",
+      "worksheets",
+      "worksheet",
+      "handouts",
+      "handout",
+      "diary_cards",
+      "daily_diary_cards",
+      "resources"
+    ],
+    "games": [
+      "games",
+      "mobile_games",
+      "game_library",
+      "play_to_win",
+      "playtowin",
+      "game_rewards"
+    ],
+    "store": [
+      "store",
+      "shop",
+      "reward_store",
+      "rewards",
+      "inventory",
+      "aisle",
+      "items",
+      "wishlist",
+      "checkout"
+    ],
+    "currency": [
+      "currency",
+      "coins",
+      "wallet",
+      "ledger",
+      "earnings",
+      "rewards_ledger"
+    ]
+  },
+  "item_id_keys": [
+    "id",
+    "itemId",
+    "item_id",
+    "itemID",
+    "slug",
+    "key",
+    "code",
+    "handle",
+    "name",
+    "title",
+    "label",
+    "itemName",
+    "item_name",
+    "taskId",
+    "task_id",
+    "eventId",
+    "event_id",
+    "skillId",
+    "skill_id",
+    "worksheetId",
+    "worksheet_id",
+    "handoutId",
+    "handout_id"
+  ],
+  "section_keys": [
+    "section",
+    "sectionId",
+    "section_id",
+    "category",
+    "categoryId",
+    "category_id",
+    "aisle",
+    "aisleId",
+    "list",
+    "listId",
+    "module",
+    "moduleId",
+    "type",
+    "kind",
+    "group",
+    "folder",
+    "collection"
+  ],
+  "date_keys": [
+    "date",
+    "day",
+    "taskDate",
+    "task_date",
+    "dueDate",
+    "due_date",
+    "scheduledDate",
+    "scheduled_date",
+    "startDate",
+    "start_date"
+  ],
+  "price_reward_keys": [
+    "priceCopper",
+    "price_copper",
+    "costCopper",
+    "cost_copper",
+    "rewardCopper",
+    "reward_copper",
+    "coins",
+    "currency",
+    "valueCopper",
+    "value_copper"
+  ]
+}

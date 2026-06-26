@@ -1,0 +1,682 @@
+{
+  "schema_name": "ourspace_self_care_by_cadence",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "profile": "william",
+  "cadence": "daily",
+  "selection_rule": "Subset of tasks that directly support body care, mental health, access, medical needs, relationship/social care, decompression, or low-spoon regulation.",
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "count": 25,
+  "records": [
+    {
+      "id": "william-charge-power-wheelchair",
+      "person": "William",
+      "task": "Charge power wheelchair",
+      "category": "Accessibility",
+      "room_or_area": "Wheelchair",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Mobility access",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-depression-survival-check-in",
+      "person": "William",
+      "task": "Depression survival check-in",
+      "category": "Mental health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "\"Still here\" task",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-eat-at-least-one-safe-meal",
+      "person": "William",
+      "task": "Eat at least one safe meal",
+      "category": "Physical health",
+      "room_or_area": "Kitchen / Bedside",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Low-spoon food care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-hydrate",
+      "person": "William",
+      "task": "Hydrate",
+      "category": "Physical health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Body support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-oxygen-breathing-check-if-applicable",
+      "person": "William",
+      "task": "Oxygen / breathing check if applicable",
+      "category": "Physical health",
+      "room_or_area": "Bedroom / Living room",
+      "respawn": "Daily / as needed",
+      "priority": "Critical",
+      "used_for": "Respiratory safety",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as needed"
+    },
+    {
+      "id": "william-rest-without-guilt",
+      "person": "William",
+      "task": "Rest without guilt",
+      "category": "Self-care",
+      "room_or_area": "Bed / Anywhere",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Recovery is a task",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-take-meds",
+      "person": "William",
+      "task": "Take meds",
+      "category": "Physical health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Core health maintenance",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-autism-sensory-check-in",
+      "person": "William",
+      "task": "Autism sensory check-in",
+      "category": "Mental health / autism",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Overload prevention",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-bed-level-wash-up",
+      "person": "William",
+      "task": "Bed-level wash-up",
+      "category": "Hygiene",
+      "room_or_area": "Bedroom",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Low-spoon hygiene alternative",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as needed"
+    },
+    {
+      "id": "william-brush-teeth-mouth-care",
+      "person": "William",
+      "task": "Brush teeth / mouth care",
+      "category": "Hygiene",
+      "room_or_area": "Bathroom / Bedside",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Basic care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-check-wheelchair-bag-essentials",
+      "person": "William",
+      "task": "Check wheelchair bag / essentials",
+      "category": "Accessibility",
+      "room_or_area": "Wheelchair",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Leaving-room readiness",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as needed"
+    },
+    {
+      "id": "william-dbt-skill",
+      "person": "William",
+      "task": "DBT skill",
+      "category": "Mental health",
+      "room_or_area": "DBT",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Regulation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as needed"
+    },
+    {
+      "id": "william-eat-second-meal-snack-plate",
+      "person": "William",
+      "task": "Eat second meal / snack plate",
+      "category": "Physical health",
+      "room_or_area": "Kitchen / Bedside",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Food support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-ms-fatigue-check-in",
+      "person": "William",
+      "task": "MS/fatigue check-in",
+      "category": "Physical health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Pace the day",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-pain-check-in",
+      "person": "William",
+      "task": "Pain check-in",
+      "category": "Physical health",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Track body aches/flares",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-position-shift-pressure-relief",
+      "person": "William",
+      "task": "Position shift / pressure relief",
+      "category": "Physical health",
+      "room_or_area": "Bed / Wheelchair",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Pain/skin/body support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-reply-to-one-friend",
+      "person": "William",
+      "task": "Reply to one friend",
+      "category": "Social care",
+      "room_or_area": "Communication",
+      "respawn": "Daily / every 2 days",
+      "priority": "High",
+      "used_for": "Reduce friendship loss",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily",
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Daily / every 2 days"
+    },
+    {
+      "id": "william-send-fianc-love-appreciation-message",
+      "person": "William",
+      "task": "Send fiancé love/appreciation message",
+      "category": "Relationship",
+      "room_or_area": "Communication",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Better partner goal",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as needed"
+    },
+    {
+      "id": "william-toileting-tool-bidet-setup-check",
+      "person": "William",
+      "task": "Toileting tool/bidet setup check",
+      "category": "Hygiene / accessibility",
+      "room_or_area": "Bathroom",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Independence/dignity",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as needed"
+    },
+    {
+      "id": "william-use-adhd-skills-support-chat",
+      "person": "William",
+      "task": "Use ADHD skill card",
+      "category": "Mental health",
+      "room_or_area": "ADHD skills",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Support and grounding",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as needed"
+    },
+    {
+      "id": "william-change-clothes-masc-comfort-outfit",
+      "person": "William",
+      "task": "Change clothes / masc comfort outfit",
+      "category": "Hygiene / gender care",
+      "room_or_area": "Bedroom",
+      "respawn": "Daily / as able",
+      "priority": "Medium",
+      "used_for": "Comfort and gender affirmation",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as able"
+    },
+    {
+      "id": "william-diary-card-daily-check-in",
+      "person": "William",
+      "task": "Diary card / daily check-in",
+      "category": "Mental health",
+      "room_or_area": "DBT Daily Cards",
+      "respawn": "Daily",
+      "priority": "Medium",
+      "used_for": "Track mood/pain/energy",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily"
+    },
+    {
+      "id": "william-journal-entry",
+      "person": "William",
+      "task": "Journal entry",
+      "category": "Mental health / writing",
+      "room_or_area": "Journaling",
+      "respawn": "Daily / as needed",
+      "priority": "Medium",
+      "used_for": "Processing",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as needed"
+    },
+    {
+      "id": "william-open-unread-messages",
+      "person": "William",
+      "task": "Open unread messages",
+      "category": "Social care",
+      "room_or_area": "Communication",
+      "respawn": "Daily / as able",
+      "priority": "Medium",
+      "used_for": "Low-spoon communication step",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as able"
+    },
+    {
+      "id": "william-stretch-one-safe-body-area",
+      "person": "William",
+      "task": "Stretch one safe body area",
+      "category": "Physical health",
+      "room_or_area": "Bed / Wheelchair",
+      "respawn": "Daily / as able",
+      "priority": "Gentle",
+      "used_for": "Low-spoon movement",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily"
+      ],
+      "cadence_split_source_respawn": "Daily / as able"
+    }
+  ]
+}

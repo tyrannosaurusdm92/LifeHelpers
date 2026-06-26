@@ -1,0 +1,202 @@
+{
+  "schema_name": "ourspace_tasks_by_cadence",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "profile": "jasper",
+  "cadence": "monthly",
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "count": 5,
+  "records": [
+    {
+      "id": "jasper-clean-shower",
+      "person": "Jasper",
+      "task": "Clean shower",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / monthly",
+      "priority": "High",
+      "used_for": "Sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    },
+    {
+      "id": "jasper-trim-cat-nails",
+      "person": "Jasper",
+      "task": "Trim cat nails",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Monthly / as needed",
+      "priority": "High",
+      "used_for": "Cat safety/care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Monthly / as needed"
+    },
+    {
+      "id": "jasper-organize-bathroom-items",
+      "person": "Jasper",
+      "task": "Organize bathroom items",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Accessibility/cleanliness",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    },
+    {
+      "id": "jasper-organize-bedroom",
+      "person": "Jasper",
+      "task": "Organize bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Reduce chaos",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    },
+    {
+      "id": "jasper-organize-living-room",
+      "person": "Jasper",
+      "task": "Organize living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Reduce clutter",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "jasper-monthly-care-load-review",
+      "title": "Care load review",
+      "kind": "self-care",
+      "cadence": "monthly",
+      "category": "Caregiver support",
+      "area": "Planning",
+      "priority": "High",
+      "notes": "Monthly review keeps the system kind instead of invisible.",
+      "tinySteps": [
+        "List recurring care tasks that are draining.",
+        "Mark what can be shared, automated, delayed, or removed.",
+        "Move one task into GiftLink/shopping/support if helpful.",
+        "End with rest, not another chore."
+      ],
+      "rewardCopper": 260,
+      "origin": "jasper"
+    },
+    {
+      "id": "jasper-monthly-mcas-safe-supplies",
+      "title": "MCAS safe supplies check",
+      "kind": "task",
+      "cadence": "monthly",
+      "category": "MCAS support",
+      "area": "Supplies",
+      "priority": "High",
+      "notes": "Check safe foods, masks, cleaners, meds-adjacent supplies, and comfort items.",
+      "tinySteps": [
+        "Check only one category at a time.",
+        "Add missing safe items to shopping/GiftLink.",
+        "Avoid scented or high-trigger products.",
+        "Stop after list-making if symptoms start."
+      ],
+      "rewardCopper": 260,
+      "origin": "jasper"
+    }
+  ]
+}

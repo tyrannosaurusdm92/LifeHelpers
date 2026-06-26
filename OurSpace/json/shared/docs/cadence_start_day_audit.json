@@ -1,0 +1,100 @@
+{
+  "schema_name": "ourspace_cadence_start_day_audit",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "output_root": "OurSpace_William_Jasper_Shared_Cadence_StartDay",
+  "cadence_counts": {
+    "william": {
+      "tasks_by_cadence": {
+        "daily": 34,
+        "monthly": 2,
+        "on_demand": 24,
+        "weekly": 18,
+        "yearly": 0
+      },
+      "self_care_by_cadence": {
+        "daily": 25,
+        "monthly": 1,
+        "on_demand": 16,
+        "weekly": 4,
+        "yearly": 0
+      },
+      "dbt_adhd_tools_skills_by_cadence": {
+        "daily": 8,
+        "monthly": 3,
+        "weekly": 5,
+        "yearly": 3
+      }
+    },
+    "jasper": {
+      "tasks_by_cadence": {
+        "daily": 20,
+        "monthly": 5,
+        "on_demand": 16,
+        "weekly": 27,
+        "yearly": 0
+      },
+      "self_care_by_cadence": {
+        "daily": 13,
+        "monthly": 1,
+        "on_demand": 7,
+        "weekly": 6,
+        "yearly": 0
+      },
+      "dbt_adhd_tools_skills_by_cadence": {
+        "daily": 9,
+        "monthly": 4,
+        "weekly": 6,
+        "yearly": 3
+      }
+    },
+    "shared": {
+      "tasks_by_cadence": {
+        "daily": 13,
+        "monthly": 0,
+        "on_demand": 7,
+        "weekly": 5,
+        "yearly": 0
+      },
+      "self_care_by_cadence": {
+        "daily": 12,
+        "monthly": 0,
+        "on_demand": 4,
+        "weekly": 3,
+        "yearly": 0
+      },
+      "dbt_adhd_tools_skills_by_cadence": {
+        "daily": 7,
+        "monthly": 3,
+        "weekly": 4,
+        "yearly": 3
+      }
+    }
+  },
+  "start_the_day_hour_block_counts": {
+    "william": 10,
+    "jasper": 12,
+    "shared": 6
+  },
+  "start_the_day_max_items_per_hour_validation": {
+    "invalid_blocks": [],
+    "passed": true
+  },
+  "jasper_care_note": "Jasper schedule intentionally includes ADHD transition support, caregiver-burnout checks, protected rest, boundaries, and decompression as real scheduled care.",
+  "currency_validation": {
+    "currency_dicts_checked": 962,
+    "invalid_currency_dicts": [],
+    "passed": true
+  },
+  "family_title_scrub_validation": {
+    "hits": [],
+    "passed": true,
+    "family_title_terms_checked_redacted": [
+      "d*d",
+      "p*pa",
+      "m*m*a",
+      "Dino + family-title phrase"
+    ]
+  },
+  "json_file_count": 67
+}

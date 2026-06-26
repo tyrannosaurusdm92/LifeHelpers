@@ -1,0 +1,1298 @@
+{
+  "schema": "ourspace.shared.store.v4",
+  "items": [
+    {
+      "id": "root-beer",
+      "title": "Root beer",
+      "desc": "Shared soda option.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "7-up",
+      "title": "7-Up",
+      "desc": "Shared soda option.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "orange-pop",
+      "title": "Orange pop",
+      "desc": "Shared soda option.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "grape-pop",
+      "title": "Grape pop",
+      "desc": "Shared soda option.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "mountain-dew",
+      "title": "Mountain Dew",
+      "desc": "Shared soda option.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "shasta-ginger-ale",
+      "title": "Shasta ginger ale",
+      "desc": "Shared soda option.",
+      "aisle": "Pop + Soda",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "watermelon-red-bull",
+      "title": "Watermelon Red Bull",
+      "desc": "Shared energy drink option.",
+      "aisle": "Energy Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "energy_drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "grape-ghost",
+      "title": "Grape Ghost",
+      "desc": "Shared energy drink option.",
+      "aisle": "Energy Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "energy_drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "gold-peak-sweet-tea",
+      "title": "Gold Peak sweet tea",
+      "desc": "Shared tea option.",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "tea"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "yoohoo",
+      "title": "Yoohoo",
+      "desc": "Shared drink option.",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "juice-boxes",
+      "title": "Juice boxes",
+      "desc": "Shared drink option.",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "capri-sun-pouches",
+      "title": "Capri Sun pouches",
+      "desc": "Shared drink option.",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cran-grape-juice",
+      "title": "Cran-grape juice",
+      "desc": "Shared drink option.",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cran-apple-juice",
+      "title": "Cran-apple juice",
+      "desc": "Shared drink option.",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "candy-bar",
+      "title": "Candy bar",
+      "desc": "Shared candy reward.",
+      "aisle": "Candy",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "candy"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "bag-of-candy",
+      "title": "Bag of candy",
+      "desc": "Shared candy reward.",
+      "aisle": "Candy",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "candy"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "gum",
+      "title": "Gum",
+      "desc": "Shared small reward.",
+      "aisle": "Candy",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "candy"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "mints",
+      "title": "Mints",
+      "desc": "Shared small reward.",
+      "aisle": "Candy",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "candy"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "box-of-chocolates",
+      "title": "Box of chocolates",
+      "desc": "Shared treat reward.",
+      "aisle": "Candy",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "candy"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "pop-tarts",
+      "title": "Pop-Tarts",
+      "desc": "Shared snack reward.",
+      "aisle": "Sweet Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies",
+      "desc": "Shared snack reward.",
+      "aisle": "Sweet Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "sheet-cake",
+      "title": "Sheet cake",
+      "desc": "Higher-tier sweet treat.",
+      "aisle": "Sweet Snacks",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "applesauce",
+      "title": "Applesauce",
+      "desc": "Shared snack reward.",
+      "aisle": "Sweet Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "trail-mix",
+      "title": "Trail mix",
+      "desc": "Shared snack reward.",
+      "aisle": "Salty Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "potato-chips",
+      "title": "Potato chips",
+      "desc": "Shared snack reward.",
+      "aisle": "Salty Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "salt-and-vinegar-chips",
+      "title": "Salt and vinegar chips",
+      "desc": "Shared chip flavor.",
+      "aisle": "Salty Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "bbq-chips",
+      "title": "BBQ chips",
+      "desc": "Shared chip flavor.",
+      "aisle": "Salty Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "sour-cream-and-onion-chips",
+      "title": "Sour cream and onion chips",
+      "desc": "Shared chip flavor.",
+      "aisle": "Salty Snacks",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "snack"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "spam",
+      "title": "Spam",
+      "desc": "Shared pantry reward.",
+      "aisle": "Pantry / Oddball Food Joy",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "pantry"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "uber-eats-gift-card-or-order",
+      "title": "Uber Eats gift card or order",
+      "desc": "Shared delivery reward.",
+      "aisle": "Food Delivery",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "delivery"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "walmart-link-item",
+      "title": "Walmart link item",
+      "desc": "Paste Walmart item URL, past order, or favorite store.",
+      "aisle": "Walmart-Style Quick Add",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "walmart",
+        "link_item"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "amazon-link-item",
+      "title": "Amazon link item",
+      "desc": "Paste Amazon item URL or wishlist item.",
+      "aisle": "Amazon / Online Shopping",
+      "priceCopper": 500,
+      "priceTier": "variable",
+      "tags": [
+        "amazon",
+        "link_item"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "youtube-comfort-playlist-item",
+      "title": "YouTube comfort playlist item",
+      "desc": "Shared comfort, learning, or background playlist item.",
+      "aisle": "Music / Media",
+      "priceCopper": 50,
+      "priceTier": "gentle",
+      "tags": [
+        "youtube",
+        "serotonin"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "craft-supplies",
+      "title": "Craft supplies",
+      "desc": "Shared craft/art supply reward.",
+      "aisle": "Craft Supplies",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "crafts"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "phone-pop-socket",
+      "title": "Phone pop socket",
+      "desc": "Shared phone accessory.",
+      "aisle": "Phone Accessories",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "phone"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "phone-charger-cable",
+      "title": "Phone charger cable",
+      "desc": "Shared practical accessory.",
+      "aisle": "Phone Accessories",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "phone"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "candle",
+      "title": "Candle",
+      "desc": "Shared comfort reward.",
+      "aisle": "Comfort Objects",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "comfort"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "stuffed-animal-small",
+      "title": "Stuffed animal - small",
+      "desc": "Shared comfort reward.",
+      "aisle": "Comfort Objects",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "comfort"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "stuffed-animal-medium",
+      "title": "Stuffed animal - medium",
+      "desc": "Shared comfort reward.",
+      "aisle": "Comfort Objects",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "comfort"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "stuffed-animal-large",
+      "title": "Stuffed animal - large",
+      "desc": "Shared comfort reward.",
+      "aisle": "Comfort Objects",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "comfort"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cat-treats",
+      "title": "Cat treats",
+      "desc": "Reward that spoils the cats.",
+      "aisle": "Cat Kingdom Tribute",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "cats"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cat-toys",
+      "title": "Cat toys",
+      "desc": "Reward that spoils the cats.",
+      "aisle": "Cat Kingdom Tribute",
+      "priceCopper": 100,
+      "priceTier": "small",
+      "tags": [
+        "cats"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cat-brush-or-nail-supplies",
+      "title": "Cat brush or nail supplies",
+      "desc": "Cat care supplies.",
+      "aisle": "Cat Kingdom Tribute",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "cats"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "cat-litter-or-food-restock-contribution",
+      "title": "Cat litter or food restock contribution",
+      "desc": "Practical cat supply support.",
+      "aisle": "Cat Kingdom Tribute",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "cats"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "put-money-on-games",
+      "title": "Put money on games",
+      "desc": "Shared game currency/top-up reward.",
+      "aisle": "Games",
+      "priceCopper": 500,
+      "priceTier": "medium",
+      "tags": [
+        "games"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "buy-a-video-game",
+      "title": "Buy a video game",
+      "desc": "Shared higher-tier game reward.",
+      "aisle": "Games",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "games"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "pancake-burgers",
+      "title": "Pancake burgers",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "barbecue-chicken",
+      "title": "Barbecue chicken",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "alfredo",
+      "title": "Alfredo",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "kielbasa-and-pierogies",
+      "title": "Kielbasa and pierogies",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "shrimp-taco-supplies",
+      "title": "Shrimp taco supplies",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "sticky-sausage-and-hard-boiled-eggs",
+      "title": "Sticky sausage and hard boiled eggs",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "steak-with-starch-and-vegetable",
+      "title": "Steak with starch and vegetable",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "swedish-meatballs",
+      "title": "Swedish meatballs",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "pork-chops-with-starch-and-vegetable",
+      "title": "Pork chops with starch and vegetable",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "stuffed-mushrooms",
+      "title": "Stuffed mushrooms",
+      "desc": "Shared homecooked meal ticket.",
+      "aisle": "Homecooked Meals",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "meal"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "vernors",
+      "title": "Vernors",
+      "desc": "Special-run or high-tier treat.",
+      "aisle": "Michigan / Exclusive Treats",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "exclusive"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "mackinac-island-fudge",
+      "title": "Mackinac Island fudge",
+      "desc": "Special-run or high-tier treat.",
+      "aisle": "Michigan / Exclusive Treats",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "exclusive"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "michigan-cherries-food",
+      "title": "Michigan cherries food",
+      "desc": "Special-run or high-tier treat.",
+      "aisle": "Michigan / Exclusive Treats",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "exclusive"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "michigan-maple-syrup",
+      "title": "Michigan maple syrup",
+      "desc": "Special-run or high-tier treat.",
+      "aisle": "Michigan / Exclusive Treats",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "exclusive"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "arby-s-in-person-trip",
+      "title": "Arby's in-person trip",
+      "desc": "Special-run or high-tier treat.",
+      "aisle": "Michigan / Exclusive Treats",
+      "priceCopper": 2000,
+      "priceTier": "high",
+      "tags": [
+        "exclusive"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": false,
+      "budgetOnly": false
+    },
+    {
+      "id": "dispensary-order-contribution",
+      "title": "Dispensary order contribution",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "flower",
+      "title": "Flower",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "pre-roll",
+      "title": "Pre-roll",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "edible",
+      "title": "Edible",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "tincture",
+      "title": "Tincture",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "topical",
+      "title": "Topical",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "pipe",
+      "title": "Pipe",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "bong",
+      "title": "Bong",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "grinder",
+      "title": "Grinder",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "rolling-papers",
+      "title": "Rolling papers",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "lighter",
+      "title": "Lighter",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "smell-proof-pouch",
+      "title": "Smell-proof pouch",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "stash-jar",
+      "title": "Stash jar",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "cleaning-supplies",
+      "title": "Cleaning supplies",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "medical-card-renewal-reminder",
+      "title": "Medical card renewal reminder",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "dispensary-menu-planning",
+      "title": "Dispensary menu planning",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    },
+    {
+      "id": "accessible-pickup-or-delivery-planning",
+      "title": "Accessible pickup or delivery planning",
+      "desc": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "priceCopper": 900,
+      "priceTier": "adult",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "profile": "shared",
+      "origin": "shared",
+      "cartEnabled": true,
+      "adultOnly": true,
+      "budgetOnly": false
+    }
+  ]
+}

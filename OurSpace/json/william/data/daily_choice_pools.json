@@ -1,0 +1,31 @@
+{
+  "schema_name": "ourspace_daily_choice_pools",
+  "profile": "william",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "rule": "The app may select zero or one item from each pool per day unless the user manually adds more. Never insert a choice-pool item into an hour that already has two scheduled items.",
+  "pools": {
+    "tiny_household_contribution": [
+      "william_dishes_one_category_only",
+      "william_wipe_counter_surface_within_reach",
+      "william_grocery_list_item_add"
+    ],
+    "social_or_relationship": [
+      "william_reply_to_one_friend",
+      "william_send_fianc_love_appreciation_message",
+      "william_open_unread_messages"
+    ],
+    "creative_or_serotonin": [
+      "william_d_d_campaign_work_tiny_step",
+      "william_youtube_comfort_learning_playlist",
+      "william_brev_ai_song_making_session"
+    ]
+  },
+  "shared_dbt_adhd_library": {
+    "location": "s/skills/",
+    "daily_rotation_source": "s/data/dbt_adhd_daily.json",
+    "weekly_source": "s/data/dbt_adhd_weekly.json",
+    "monthly_source": "s/data/dbt_adhd_monthly.json",
+    "yearly_source": "s/data/dbt_adhd_yearly.json",
+    "rule": "Use at most one optional shared skill per available block; never more than two total items in an hour."
+  }
+}

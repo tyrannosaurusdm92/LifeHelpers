@@ -1,0 +1,32 @@
+{
+  "schema_name": "ourspace_user_dbt_adhd_shared_library_pointer",
+  "schema_version": "3.0.0",
+  "generated_at_utc": "2026-06-25T21:00:29.329839+00:00",
+  "profile": "jasper",
+  "actual_skill_files_location": "s/skills/",
+  "shared_cadence_files": {
+    "daily": "s/data/dbt_adhd_daily.json",
+    "weekly": "s/data/dbt_adhd_weekly.json",
+    "monthly": "s/data/dbt_adhd_monthly.json",
+    "yearly": "s/data/dbt_adhd_yearly.json"
+  },
+  "reason": "DBT and ADHD skills are now shared household tools, with user-specific adaptations applied through the kindness pass and schedule overlays.",
+  "max_items_per_hour_block": 2,
+  "profile_specific_overlay": {
+    "main_doability_needs": [
+      "ADHD transition support before task demands",
+      "caregiver burnout recovery treated as care, not avoidance",
+      "protected rest, boundaries, decompression, sensory needs, and people-pleasing checks",
+      "low-energy, one-field, one-minute versions allowed",
+      "no assumption that Jasper has unlimited caregiver capacity"
+    ],
+    "care_language": "they/them, body-neutral, consent-based, non-shaming, burnout-aware"
+  },
+  "completion_rules": {
+    "partial_completion_counts": true,
+    "low_spoon_version_required": true,
+    "no_shame_if_skipped": true,
+    "rest_and_boundaries_count": true
+  },
+  "cadence": "daily"
+}

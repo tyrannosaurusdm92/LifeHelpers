@@ -1,0 +1,577 @@
+{
+  "schema_name": "william_store_items",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-25T00:00:00-04:00",
+  "language_rules": {
+    "allowed_person_labels": [
+      "Jasper",
+      "William",
+      "shared"
+    ],
+    "note": "This export intentionally uses names only and avoids the removed family-role labels."
+  },
+  "description": "William-specific store items from the unified store table.",
+  "count": 37,
+  "records": [
+    {
+      "id": "polar-orange-dry",
+      "name": "Polar Orange Dry",
+      "aisle": "Drinks",
+      "notes": "Local orange soda favorite. No cola.",
+      "price_tier": "small",
+      "tags": [
+        "drink",
+        "local_favorite"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "pulp-heavy-orange-juice",
+      "name": "Pulp-heavy orange juice",
+      "aisle": "Drinks",
+      "notes": "High-pulp / pulp-heavy orange juice.",
+      "price_tier": "small",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "regular-red-bull-20-oz",
+      "name": "Regular Red Bull 20 oz",
+      "aisle": "Energy Drinks",
+      "notes": "Preferred Red Bull size.",
+      "price_tier": "small",
+      "tags": [
+        "energy_drink",
+        "favorite"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "green-apple-c4",
+      "name": "Green apple C4",
+      "aisle": "Energy Drinks",
+      "notes": "Preferred C4 flavor.",
+      "price_tier": "small",
+      "tags": [
+        "energy_drink"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "watermelon-ghost",
+      "name": "Watermelon Ghost",
+      "aisle": "Energy Drinks",
+      "notes": "Preferred Ghost flavor.",
+      "price_tier": "small",
+      "tags": [
+        "energy_drink"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "starburst",
+      "name": "Starburst",
+      "aisle": "Candy",
+      "notes": "Priority candy favorite.",
+      "price_tier": "small",
+      "tags": [
+        "candy",
+        "favorite"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "blue-cheese",
+      "name": "Blue cheese",
+      "aisle": "Snack Plate",
+      "notes": "Favorite savory snack.",
+      "price_tier": "small",
+      "tags": [
+        "snack"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "strawberries",
+      "name": "Strawberries",
+      "aisle": "Snack Plate",
+      "notes": "Favorite fruit snack.",
+      "price_tier": "small",
+      "tags": [
+        "snack",
+        "fruit"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "blue-cheese-and-strawberries-plate",
+      "name": "Blue cheese and strawberries plate",
+      "aisle": "Snack Plate",
+      "notes": "Favorite snack combo.",
+      "price_tier": "small",
+      "tags": [
+        "snack",
+        "combo"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "d-d-lore-book",
+      "name": "D&D lore book",
+      "aisle": "D&D Books + Lore",
+      "notes": "Digital or physical lore book reward.",
+      "price_tier": "high",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "d-d-handbook",
+      "name": "D&D handbook",
+      "aisle": "D&D Books + Lore",
+      "notes": "Digital or physical handbook reward.",
+      "price_tier": "high",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "monster-book",
+      "name": "Monster book",
+      "aisle": "D&D Books + Lore",
+      "notes": "Monster or creature reference reward.",
+      "price_tier": "high",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "campaign-book",
+      "name": "Campaign book",
+      "aisle": "D&D Books + Lore",
+      "notes": "Adventure/campaign sourcebook reward.",
+      "price_tier": "high",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "foundry-vtt-license",
+      "name": "Foundry VTT license",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "notes": "High-tier virtual tabletop purchase.",
+      "price_tier": "premium",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "foundry-vtt-premium-package",
+      "name": "Foundry VTT premium package",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "notes": "Premium/exclusive Foundry content package.",
+      "price_tier": "high",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "foundry-vtt-module",
+      "name": "Foundry VTT module",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "notes": "Add-on module, system, world, or tool package.",
+      "price_tier": "medium",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "foundry-vtt-world-package",
+      "name": "Foundry VTT world package",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "notes": "World or campaign package for virtual play.",
+      "price_tier": "high",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "arkenforge-map-pack",
+      "name": "Arkenforge map pack",
+      "aisle": "Arkenforge / Mapmaking",
+      "notes": "Map asset or content pack for virtual D&D prep.",
+      "price_tier": "high",
+      "tags": [
+        "arkenforge",
+        "mapmaking",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "arkenforge-asset-bundle",
+      "name": "Arkenforge asset bundle",
+      "aisle": "Arkenforge / Mapmaking",
+      "notes": "Asset bundle for maps, tokens, or worldbuilding.",
+      "price_tier": "high",
+      "tags": [
+        "arkenforge",
+        "mapmaking",
+        "digital_dnd"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "t-rex-collectible",
+      "name": "T-rex collectible",
+      "aisle": "Collectibles",
+      "notes": "William collects T-rexes.",
+      "price_tier": "small",
+      "tags": [
+        "collector",
+        "t_rex"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "t-rex-plush-or-figure",
+      "name": "T-rex plush or figure",
+      "aisle": "Collectibles",
+      "notes": "Comfort or display collectible.",
+      "price_tier": "medium",
+      "tags": [
+        "collector",
+        "t_rex"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "band-t-shirt",
+      "name": "Band T-shirt",
+      "aisle": "Clothes",
+      "notes": "Masculine-only clothing reward.",
+      "price_tier": "medium",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "d-d-shirt",
+      "name": "D&D shirt",
+      "aisle": "Clothes",
+      "notes": "Masculine-only clothing reward.",
+      "price_tier": "medium",
+      "tags": [
+        "clothes",
+        "dnd",
+        "masculine"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "pun-shirt",
+      "name": "Pun shirt",
+      "aisle": "Clothes",
+      "notes": "Masculine-only clothing reward.",
+      "price_tier": "medium",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "tripp-pants",
+      "name": "Tripp pants",
+      "aisle": "Clothes",
+      "notes": "Masculine-only style priority.",
+      "price_tier": "high",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "cargo-pants",
+      "name": "Cargo pants",
+      "aisle": "Clothes",
+      "notes": "Masculine-only clothing reward.",
+      "price_tier": "medium",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "lip-jewelry",
+      "name": "Lip jewelry",
+      "aisle": "Piercings + Gauges",
+      "notes": "Body jewelry reward.",
+      "price_tier": "small",
+      "tags": [
+        "piercing"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "eyebrow-jewelry",
+      "name": "Eyebrow jewelry",
+      "aisle": "Piercings + Gauges",
+      "notes": "Body jewelry reward.",
+      "price_tier": "small",
+      "tags": [
+        "piercing"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "tunnels-or-plugs",
+      "name": "Tunnels or plugs",
+      "aisle": "Piercings + Gauges",
+      "notes": "Gauged-ear jewelry reward.",
+      "price_tier": "small",
+      "tags": [
+        "gauges"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "brev-ai-music-session",
+      "name": "Brev.ai music session",
+      "aisle": "Music Creation",
+      "notes": "Music creation session or subscription contribution.",
+      "price_tier": "medium",
+      "tags": [
+        "music",
+        "brev_ai"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "facebook-comfort-link",
+      "name": "Facebook comfort link",
+      "aisle": "Social + Serotonin",
+      "notes": "Facebook comfort/social replacement for TikTok.",
+      "price_tier": "gentle",
+      "tags": [
+        "facebook",
+        "serotonin"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "snapchat-connection-item",
+      "name": "Snapchat connection item",
+      "aisle": "Social + Serotonin",
+      "notes": "Snapchat social/comfort module item.",
+      "price_tier": "gentle",
+      "tags": [
+        "snapchat",
+        "serotonin"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "wheelchair-bag",
+      "name": "Wheelchair bag",
+      "aisle": "Accessibility Comforts",
+      "notes": "Accessibility and storage support.",
+      "price_tier": "medium",
+      "tags": [
+        "accessibility"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "bed-tray",
+      "name": "Bed tray",
+      "aisle": "Accessibility Comforts",
+      "notes": "Bed-level activity support.",
+      "price_tier": "medium",
+      "tags": [
+        "accessibility"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "reacher-or-extender-tool",
+      "name": "Reacher or extender tool",
+      "aisle": "Accessibility Comforts",
+      "notes": "Reach-access support.",
+      "price_tier": "medium",
+      "tags": [
+        "accessibility"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "heating-pad",
+      "name": "Heating pad",
+      "aisle": "Accessibility Comforts",
+      "notes": "Pain comfort support.",
+      "price_tier": "medium",
+      "tags": [
+        "accessibility",
+        "pain"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": false,
+      "cart_enabled": true
+    },
+    {
+      "id": "nicotine-e-cig-budget-tracker",
+      "name": "Nicotine / e-cig budget tracker",
+      "aisle": "Budget Only",
+      "notes": "Track budget/restock only; do not treat as a reward loop.",
+      "price_tier": "budget",
+      "tags": [
+        "nicotine",
+        "budget_only"
+      ],
+      "profile": "william",
+      "adult_only": false,
+      "budget_only": true,
+      "cart_enabled": false
+    }
+  ],
+  "split_metadata": {
+    "category": "william",
+    "source_file": "william_store_items.json",
+    "cleaned_at_utc": "2026-06-25T20:15:41+00:00",
+    "family_title_scrub_applied": true,
+    "currency_normalization_applied": true
+  }
+}

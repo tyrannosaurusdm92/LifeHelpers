@@ -1,0 +1,174 @@
+{
+  "schema_name": "ourspace_self_care_by_cadence",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "profile": "william",
+  "cadence": "weekly",
+  "selection_rule": "Subset of tasks that directly support body care, mental health, access, medical needs, relationship/social care, decompression, or low-spoon regulation.",
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "count": 4,
+  "records": [
+    {
+      "id": "william-refill-bedside-supplies",
+      "person": "William",
+      "task": "Refill bedside supplies",
+      "category": "Accessibility",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly / as needed",
+      "priority": "High",
+      "used_for": "Keep items within reach",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly / as needed"
+    },
+    {
+      "id": "william-reply-to-one-friend",
+      "person": "William",
+      "task": "Reply to one friend",
+      "category": "Social care",
+      "room_or_area": "Communication",
+      "respawn": "Daily / every 2 days",
+      "priority": "High",
+      "used_for": "Reduce friendship loss",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily",
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Daily / every 2 days"
+    },
+    {
+      "id": "william-cat-supply-inventory",
+      "person": "William",
+      "task": "Cat supply inventory",
+      "category": "Cat care / shopping",
+      "room_or_area": "Cats",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Litter/food/supplies",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "william-inventory-snacks-drinks",
+      "person": "William",
+      "task": "Inventory snacks/drinks",
+      "category": "Shopping",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Store/restock planning",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "william-weekly-oxygen-supply-check",
+      "title": "Oxygen supply check",
+      "kind": "self-care",
+      "cadence": "weekly",
+      "category": "Accessibility",
+      "area": "Oxygen / bedside",
+      "priority": "High",
+      "notes": "Small safety check for oxygen and breathing supports.",
+      "tinySteps": [
+        "Check tubing path for kinks.",
+        "Check backup cannula/supplies location.",
+        "Move only lightweight reachable items.",
+        "Rest after; this is a body task."
+      ],
+      "rewardCopper": 180,
+      "origin": "william"
+    },
+    {
+      "id": "william-weekly-therapy-prep-one-note",
+      "title": "Therapy prep — one note",
+      "kind": "self-care",
+      "cadence": "weekly",
+      "category": "Therapy",
+      "area": "Mental health",
+      "priority": "High",
+      "notes": "One note is enough.",
+      "tinySteps": [
+        "Write one thing that hurt.",
+        "Write one thing that helped.",
+        "Pick one topic for therapy.",
+        "Stop there."
+      ],
+      "rewardCopper": 150,
+      "origin": "william"
+    }
+  ]
+}

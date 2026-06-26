@@ -1,0 +1,2165 @@
+{
+  "schema_name": "person_specific_life_impact_profile",
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-06-12T23:01:18Z",
+  "privacy_notice": "Contains highly sensitive personal, medical, disability, trauma, and identity information. Store privately, share only with William's consent, and avoid using it to make assumptions beyond this profile.",
+  "medical_safety_note": "This JSON is a support-planning and accessibility profile assembled from user-supplied information plus selected uploaded life-impact JSON entries. It is not a diagnosis, treatment plan, emergency plan, or substitute for medical/mental-health care.",
+  "source_archive": {
+    "uploaded_file": "health_life_impact_json_files.zip",
+    "source_file_count": 7,
+    "base_source_jsons_used": [
+      "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "autoimmune_diseases_types_symptoms_treatments.life_impact.json",
+      "what_is_spoon_theory.life_impact.json",
+      "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "mobility_guide_mobility_aids.life_impact.json",
+      "types_of_endocrine_disorders.life_impact.json"
+    ],
+    "selection_method": "Matched only uploaded JSON entries relevant to the user-supplied William/T-Rex/Dino list, then added user-supplied items that were not present in the base JSONs.",
+    "source_entries_used_count": 48
+  },
+  "person": {
+    "preferred_name": "William",
+    "aliases": [
+      "T-Rex",
+      "Dino"
+    ],
+    "identity_summary": {
+      "gender_identity": "Strictly binary male-identifying man",
+      "legal_gender": "Male",
+      "assigned_sex_at_birth": "Assigned female at birth",
+      "transition_context_user_supplied": "Pre-surgery and has facial hair",
+      "language_guidance": [
+        "Use masculine language for William.",
+        "Do not describe William as nonbinary or feminine.",
+        "Do not reduce William to his diagnoses, trauma history, body size, mobility aids, or assigned sex at birth."
+      ]
+    },
+    "care_context": {
+      "fiance_is_caregiver": true,
+      "caregiver_role_summary": "William's fiancé helps with daily care, mobility/access support, and practical tasks. The caregiver's capacity should be respected and pacing/back-up planning may be needed.",
+      "communication_preference": "Trauma-informed, direct, validating, non-shaming, autonomy-preserving language."
+    }
+  },
+  "mobility_aids_adaptive_equipment_and_daily_living_supports": [
+    {
+      "id": "adaptive-equipment-shower-chair",
+      "name": "Shower chair",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "mobility_aid_umbrella_mobility_aid_device",
+        "functional_limitation_accommodation_target_sitting"
+      ],
+      "life_limitations_addressed": [
+        "Bathing while standing may be unsafe, exhausting, painful, or impossible during weakness, vertigo, MS/EDS flares, back pain, asthma symptoms, or severe fatigue.",
+        "Bathroom tasks can carry high fall risk because of wet surfaces, transfers, dizziness, and limited stamina."
+      ],
+      "possible_life_improvements_or_supports": [
+        "Can make bathing more possible while seated.",
+        "Can reduce fall risk and reduce spoon cost of hygiene.",
+        "Can allow pacing, partial bathing, or caregiver-assisted bathing with more safety and dignity."
+      ],
+      "accessibility_notes": [
+        "Needs stable placement, reachable supplies, non-slip setup, transfer planning, and enough space for the power wheelchair or caregiver assistance."
+      ]
+    },
+    {
+      "id": "mobility-aid-power-wheelchair",
+      "name": "Power wheelchair",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "mobility_aid_powered_wheelchair_power_wheelchair",
+        "mobility_aid_umbrella_mobility_aid_device",
+        "functional_limitation_accommodation_target_use_of_mobility_aids"
+      ],
+      "life_limitations_addressed": [
+        "Barely being able to walk/being mostly bedbound can make distance, errands, appointments, standing lines, transfers, and basic movement unsafe or impossible without powered mobility.",
+        "Manual propulsion may be unrealistic because of extreme short arms, back injury, EDS pain, MS fatigue/weakness, respiratory limitations, and limited stamina."
+      ],
+      "possible_life_improvements_or_supports": [
+        "Can conserve energy by making movement less physically expensive.",
+        "Can reduce fall risk and increase access to appointments, home spaces, stores, and social participation.",
+        "Can provide independence when walking or manual wheelchair use is not reliable."
+      ],
+      "accessibility_notes": [
+        "Needs charging routine, maintenance, accessible route planning, turning-radius checks, transfer planning, and backup options during equipment failure."
+      ]
+    },
+    {
+      "id": "respiratory-support-oxygen",
+      "name": "Oxygen",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "physical_chronic_health_disability_respiratory_impairments",
+        "functional_limitation_accommodation_target_respiratory_distress_breathing_proble"
+      ],
+      "life_limitations_addressed": [
+        "Severe asthma/respiratory impairment can affect stamina, sleep, speaking, showering, transfers, walking, and safe recovery from exertion or infection.",
+        "Oxygen equipment can add tubing, tank/concentrator logistics, power needs, travel planning, stigma, and safety precautions."
+      ],
+      "possible_life_improvements_or_supports": [
+        "Can support breathing and daily functioning when prescribed/needed.",
+        "Can make pacing and recovery safer when coordinated with medical instructions.",
+        "Can reduce fear when respiratory symptoms are unpredictable, if an emergency plan is clear."
+      ],
+      "accessibility_notes": [
+        "Needs tubing management, trip-hazard reduction, equipment access near bed/chair/bathroom, emergency instructions, and fire/smoke safety."
+      ]
+    },
+    {
+      "id": "caregiver-support-fiance",
+      "name": "Fiancé as caregiver",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "energy_pacing_concept_spoon_theory_limited_daily_energy",
+        "support_concept_boundary_communication",
+        "energy_pacing_concept_day_to_day_variability"
+      ],
+      "life_limitations_addressed": [
+        "Bedbound/barely-walking status and complex chronic illness can make daily activities difficult to complete alone.",
+        "Frequent hospitalizations, mobility limits, toileting/bathing barriers, oxygen needs, and cognitive/energy crashes can require practical and emotional support."
+      ],
+      "possible_life_improvements_or_supports": [
+        "Consistent caregiver support can improve safety, reduce missed needs, preserve energy, support emotional regulation, and make home routines more possible.",
+        "Clear task lists and boundaries can reduce stress for both William and the caregiver."
+      ],
+      "accessibility_notes": [
+        "Care routines should be split into small steps, include rest breaks, and avoid assuming unlimited caregiver capacity."
+      ]
+    },
+    {
+      "id": "bathroom-adaptation-bidet",
+      "name": "Bidet",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "functional_limitation_accommodation_target_toileting_grooming_issue",
+        "mobility_musculoskeletal_neuromotor_disability_arm_conditions",
+        "functional_limitation_accommodation_target_use_of_one_hand_arm",
+        "mobility_musculoskeletal_neuromotor_disability_back_impairment"
+      ],
+      "life_limitations_addressed": [
+        "Toileting hygiene may be limited by back injury, extreme short arms, EDS pain, mobility limits, body size, fatigue, vertigo, and difficulty twisting/reaching.",
+        "Relying on caregiver help for intimate hygiene can affect privacy, dignity, and trauma safety."
+      ],
+      "possible_life_improvements_or_supports": [
+        "Can increase independence and dignity during toileting.",
+        "Can reduce painful reaching/twisting and reduce dependence on caregiver help for hygiene."
+      ],
+      "accessibility_notes": [
+        "Needs reachable controls, safe transfer setup, cleaning plan, and compatibility with William's bathroom arrangement."
+      ]
+    },
+    {
+      "id": "toileting-reach-extender-tool",
+      "name": "Extender tool for toileting",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "functional_limitation_accommodation_target_toileting_grooming_issue",
+        "mobility_musculoskeletal_neuromotor_disability_arm_conditions",
+        "functional_limitation_accommodation_target_use_of_one_hand_arm",
+        "mobility_musculoskeletal_neuromotor_disability_back_impairment"
+      ],
+      "life_limitations_addressed": [
+        "Short arm reach, back injury, body size, EDS instability, pain, and limited mobility can make wiping/cleaning physically difficult or unsafe.",
+        "Toileting assistance can be emotionally vulnerable, especially with trauma history and gender dysphoria."
+      ],
+      "possible_life_improvements_or_supports": [
+        "Can reduce painful twisting/reaching.",
+        "Can improve independence, privacy, and confidence with toileting."
+      ],
+      "accessibility_notes": [
+        "Needs a discreet storage place, cleaning routine, and backup plan for flare days."
+      ]
+    }
+  ],
+  "user_reported_health_disability_and_neurodivergence_profile": [
+    {
+      "id": "condition-multiple-sclerosis",
+      "name": "Multiple Sclerosis",
+      "category": "autoimmune / neurological / mobility-impacting",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "autoimmune_disease_nervous_system_multiple_sclerosis_ms",
+        "physical_chronic_health_disability_multiple_sclerosis"
+      ],
+      "william_specific_context": [
+        "Part of William's complex chronic illness profile.",
+        "Interacts with power wheelchair use, oxygen/respiratory strain, fatigue, vertigo, seizure hospitalizations, infection vulnerability, and limited walking."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Unpredictable fatigue, weakness, numbness/tingling, pain, coordination issues, balance problems, possible cognitive fog, and variable flare days.",
+        "May make walking, transfers, bathing, errands, cooking, appointments, and social plans unreliable.",
+        "Heat, infections, stress, poor sleep, or overexertion may worsen functioning."
+      ],
+      "support_design_notes": [
+        "Use pacing, rest breaks, accessible routes, seated options, appointment reminders, symptom tracking, and flexible expectations.",
+        "Avoid interpreting inconsistency as unwillingness."
+      ]
+    },
+    {
+      "id": "condition-pcos-pmos",
+      "name": "PCOS / PMOS",
+      "category": "endocrine / metabolic / reproductive-health-related",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "physical_chronic_health_disability_thyroid_disorders",
+        "endocrine_metabolic_disorder_hypothyroidism"
+      ],
+      "terminology_note": "User supplied: 'Polycystic Ovary Syndrome has officially been renamed Polyendocrine Metabolic Ovarian Syndrome.' This profile preserves both PCOS and PMOS language as provided by William.",
+      "william_specific_context": [
+        "May intersect with gender dysphoria because reproductive/gynecologic care can be misgendering or body-dysphoria-triggering for a binary trans man.",
+        "May interact with morbid obesity, metabolic concerns, fatigue, pain, and endocrine symptoms."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Hormonal/metabolic symptoms can affect weight, energy, pain, mood, bleeding/cycles if present, skin/hair changes, insulin resistance risk, and medical appointments.",
+        "Care may require extra privacy, consent, correct gendering, and avoidance of language that feminizes William."
+      ],
+      "support_design_notes": [
+        "Use neutral/anatomical or William-approved language for body-specific care.",
+        "Offer reminders and tracking without shaming body size, food, hormones, fertility, or gender."
+      ]
+    },
+    {
+      "id": "functional-status-bedridden-barely-can-walk",
+      "name": "Bedridden / barely can walk",
+      "category": "functional mobility status",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "mobility_aid_umbrella_mobility_aid_device",
+        "mobility_aid_powered_wheelchair_power_wheelchair",
+        "functional_limitation_accommodation_target_sitting",
+        "functional_limitation_accommodation_target_use_of_mobility_aids"
+      ],
+      "william_specific_context": [
+        "William is mostly bedbound and barely able to walk.",
+        "This should be treated as a central access need, not as laziness, avoidance, or lack of willpower."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "High spoon cost for transfers, toileting, showering, dressing, leaving home, cooking, cleaning, and appointments.",
+        "Increased risk from falls, pressure discomfort/injury, deconditioning, isolation, pain flares, and emergency access barriers."
+      ],
+      "support_design_notes": [
+        "Default to bed-level, seated, or wheelchair-accessible task options.",
+        "Split tasks into micro-steps and reward partial completion.",
+        "Build in recovery time and caregiver backup options."
+      ]
+    },
+    {
+      "id": "condition-ehlers-danlos-hypermobile",
+      "name": "Ehlers-Danlos syndrome, hypermobile type",
+      "category": "connective tissue / pain / joint stability",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "physical_chronic_health_disability_ehlers_danlos_syndrome",
+        "physical_chronic_health_disability_chronic_pain",
+        "functional_limitation_accommodation_target_pain",
+        "mobility_musculoskeletal_neuromotor_disability_arm_conditions"
+      ],
+      "william_specific_context": [
+        "Part of William's mobility, pain, bathroom, showering, and reach-access profile.",
+        "Interacts with back injury, short arms, power wheelchair use, and toileting/shower adaptations."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can cause joint instability, subluxations/dislocations, widespread pain, fatigue, soft-tissue injury, and difficulty with repetitive or forceful tasks.",
+        "May make reaching, bending, twisting, transfers, standing, and showering painful or unsafe."
+      ],
+      "support_design_notes": [
+        "Use joint-protection strategies, seated tasks, adaptive tools, reduced reaching, careful transfers, and gentle pacing.",
+        "Avoid pushing through pain as a default."
+      ]
+    },
+    {
+      "id": "condition-hypothyroidism",
+      "name": "Hypothyroidism",
+      "category": "endocrine / metabolic",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "endocrine_metabolic_disorder_hypothyroidism",
+        "physical_chronic_health_disability_thyroid_disorders"
+      ],
+      "william_specific_context": [
+        "Interacts with fatigue, brain fog, mood, weight/metabolic concerns, cold intolerance, sleep disruption, and overall spoon budget."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "May affect energy, cognition, mood, body temperature, weight, skin/hair, sleep, and daily reliability.",
+        "Can make task initiation and follow-through harder when symptoms are undertreated or fluctuating."
+      ],
+      "support_design_notes": [
+        "Use medication/routine reminders if wanted, flexible scheduling, low-energy task options, and non-shaming check-ins."
+      ]
+    },
+    {
+      "id": "injury-broken-back-2011-reinjury",
+      "name": "Broken back from being struck/flung across an intersection as a pedestrian in 2011, with repeated re-injury",
+      "category": "traumatic physical injury / chronic pain / mobility",
+      "source_status": "user_supplied_addition_with_related_source_match",
+      "related_source_entry_ids": [
+        "mobility_musculoskeletal_neuromotor_disability_back_impairment",
+        "physical_chronic_health_disability_chronic_pain",
+        "functional_limitation_accommodation_target_pain",
+        "mental_health_psychiatric_disability_post_traumatic_stress_disorder_ptsd"
+      ],
+      "william_specific_context": [
+        "A major traumatic injury from 2011 with repeated re-injury.",
+        "May create both physical limitations and trauma triggers around traffic, intersections, pedestrians, pain, loss of mobility, and medical systems."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can limit walking, standing, sitting, transfers, lifting, bending, reaching, bathing, toileting, sleep, transportation, and appointments.",
+        "Repeated re-injury may make symptom flares unpredictable and recovery non-linear."
+      ],
+      "support_design_notes": [
+        "Use no-lift/no-bend task alternatives, reachable supplies, transfer safety, seated routines, pain pacing, and trauma-informed language."
+      ]
+    },
+    {
+      "id": "condition-bpd-discouraged-petulant-self-destructive",
+      "name": "Borderline Personality Disorder: Discouraged, Petulant, and Self-Destructive patterns",
+      "category": "mental health / emotion regulation / attachment trauma",
+      "source_status": "matched_uploaded_json_plus_user_specific_subtypes",
+      "related_source_entry_ids": [
+        "personality_relationship_pattern_condition_borderline_personality_disorder",
+        "mental_health_psychiatric_disability_personality_disorder",
+        "mental_health_psychiatric_disability_mental_health_conditions"
+      ],
+      "william_specific_context": [
+        "William identifies Discouraged, Petulant, and Self-Destructive BPD patterns.",
+        "Should be supported without stigma, villainizing, or assuming manipulation."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "May include intense fear of abandonment, shame, anger, emotional swings, dependence needs, self-hatred, rejection sensitivity, impulsivity, relationship insecurity, and crisis vulnerability.",
+        "Discouraged pattern may look quiet, passive, clingy, withdrawn, self-blaming, or intensely afraid of rejection.",
+        "Petulant pattern may involve anger, dissatisfaction, possessiveness, control fears, and feeling unworthy or unseen.",
+        "Self-destructive pattern may involve self-hatred, bitterness, risky behavior, or self-harm urges."
+      ],
+      "support_design_notes": [
+        "Use DBT-informed validation, clear reassurance, predictable follow-through, gentle boundaries, repair after conflict, and non-shaming crisis planning.",
+        "Avoid silent treatment, abandonment threats, baiting, moralizing, or dismissing emotions as 'too much'."
+      ]
+    },
+    {
+      "id": "condition-reactive-attachment-disorder",
+      "name": "Reactive Attachment Disorder / attachment trauma",
+      "category": "attachment / developmental trauma",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "anxiety_trauma_stress_related_mental_health_condition_post_traumatic_stress_diso",
+        "mental_health_psychiatric_disability_post_traumatic_stress_disorder_ptsd",
+        "anxiety_trauma_stress_related_mental_health_condition_acute_stress_disorder",
+        "support_concept_boundary_communication"
+      ],
+      "william_specific_context": [
+        "Interacts with foster care abuse, repeated abandonment/loss, abusive caregivers/parents, relationship trauma, and loss of support systems."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "May affect trust, closeness, fear of rejection, emotional safety, conflict response, help-seeking, and ability to believe support will stay.",
+        "Can make inconsistency, sudden changes, unclear tone, or perceived abandonment feel dangerous."
+      ],
+      "support_design_notes": [
+        "Use consistency, transparency, reassurance, consent, repair language, and clear expectations.",
+        "Do not punish bids for reassurance; guide them into safe, sustainable requests."
+      ]
+    },
+    {
+      "id": "condition-complex-ptsd",
+      "name": "C-PTSD / complex trauma",
+      "category": "trauma / nervous system / mental health",
+      "source_status": "user_supplied_addition_with_ptsd_source_match",
+      "related_source_entry_ids": [
+        "anxiety_trauma_stress_related_mental_health_condition_post_traumatic_stress_diso",
+        "mental_health_psychiatric_disability_post_traumatic_stress_disorder_ptsd",
+        "anxiety_trauma_stress_related_mental_health_condition_acute_stress_disorder"
+      ],
+      "william_specific_context": [
+        "Multiple long-term trauma exposures: childhood abuse, foster care abuse, trafficking/sexual assault, hate crime, stalking/doxxing, abusive partners, repeated losses, homelessness, and medical trauma."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "May involve hypervigilance, nightmares, flashbacks, dissociation, shame, avoidance, startle response, mistrust, emotional flooding, and difficulty feeling safe.",
+        "Can worsen pain, fatigue, asthma/breathing distress, sleep, executive function, and hospital stress."
+      ],
+      "support_design_notes": [
+        "Use grounding options, consent, predictable steps, privacy protections, emotional validation, and gentle choices.",
+        "Avoid surprise demands, coercion, graphic reminders, blame, or forced disclosure."
+      ]
+    },
+    {
+      "id": "condition-narcolepsy",
+      "name": "Narcolepsy",
+      "category": "sleep / neurological / safety",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "sleep_wake_condition_narcolepsy",
+        "physical_chronic_health_disability_sleep_disorder",
+        "energy_pacing_concept_day_to_day_variability"
+      ],
+      "william_specific_context": [
+        "Interacts with fatigue, bedbound status, driving/transportation safety, cooking/showering risk, medication routines, and daily scheduling."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can cause sudden sleepiness, sleep attacks, disrupted sleep/wake cycles, brain fog, and safety risks during transfers, bathing, cooking, or travel.",
+        "May be misunderstood as laziness or avoidance."
+      ],
+      "support_design_notes": [
+        "Use flexible scheduling, nap/recovery blocks, alarms/reminders, safety checks for risky tasks, and non-shaming language."
+      ]
+    },
+    {
+      "id": "condition-lymphedema",
+      "name": "Lymphedema",
+      "category": "swelling / lymphatic / mobility / infection-risk",
+      "source_status": "user_supplied_addition",
+      "related_source_entry_ids": [
+        "mobility_musculoskeletal_neuromotor_disability_leg_impairment",
+        "physical_chronic_health_disability_skin_conditions",
+        "functional_limitation_accommodation_target_pain",
+        "functional_limitation_accommodation_target_use_of_mobility_aids"
+      ],
+      "william_specific_context": [
+        "May interact with morbid obesity, mobility limits, pain, recurrent infections/hospitalizations, and wheelchair/bed positioning."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can cause swelling, heaviness, pain, skin tightness, difficulty with clothes/shoes/transfers, reduced mobility, and increased infection concern.",
+        "May make standing/walking, showering, and wound/skin monitoring harder."
+      ],
+      "support_design_notes": [
+        "Use skin checks, gentle positioning, accessible clothing, pacing, and clinician-approved compression/elevation routines if applicable."
+      ]
+    },
+    {
+      "id": "condition-severe-asthma",
+      "name": "Severe asthma",
+      "category": "respiratory / chronic health / emergency planning",
+      "source_status": "user_supplied_addition_with_related_source_match",
+      "related_source_entry_ids": [
+        "physical_chronic_health_disability_respiratory_impairments",
+        "functional_limitation_accommodation_target_respiratory_distress_breathing_proble"
+      ],
+      "william_specific_context": [
+        "Interacts with oxygen use, infections, fatigue, showering, transfers, anxiety, and hospitalizations."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can limit exertion, speaking, bathing, walking, household chores, exposure to fragrances/smoke/dust/cold air, and safe recovery from illness.",
+        "Breathing distress may escalate quickly and can be frightening."
+      ],
+      "support_design_notes": [
+        "Keep rescue/emergency plan accessible, reduce respiratory triggers, build rest breaks into tasks, and keep supplies within reach."
+      ]
+    },
+    {
+      "id": "condition-vertigo",
+      "name": "Vertigo",
+      "category": "balance / vestibular / fall-risk",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "physical_chronic_health_disability_vertigo",
+        "functional_limitation_accommodation_target_dizziness",
+        "functional_limitation_accommodation_target_sitting"
+      ],
+      "william_specific_context": [
+        "Interacts with showering, transfers, walking, power wheelchair navigation, bed-to-chair movement, and seizure/fall safety."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can cause dizziness, spinning sensation, nausea, disorientation, falls, and avoidance of movement.",
+        "May make bathroom and transfer tasks high-risk."
+      ],
+      "support_design_notes": [
+        "Use seated options, slow transitions, grab bars/supports when available, clear floors, and caregiver standby for risky tasks."
+      ]
+    },
+    {
+      "id": "hospitalization-pattern-infections-and-seizures",
+      "name": "Frequent infection and seizure hospitalizations",
+      "category": "medical complexity / emergency planning",
+      "source_status": "user_supplied_addition_with_related_source_match",
+      "related_source_entry_ids": [
+        "neurological_cognitive_disability_epilepsy_seizure_disorder",
+        "functional_limitation_accommodation_target_seizure_activity",
+        "physical_chronic_health_disability_respiratory_impairments",
+        "energy_pacing_concept_day_to_day_variability"
+      ],
+      "william_specific_context": [
+        "Frequent hospitalizations can increase medical trauma, disrupt routines, drain spoons, and create fear around symptoms."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "May require emergency information, medication lists, hospital bag planning, seizure/infection warning-sign tracking, and caregiver communication.",
+        "Recovery days after hospitalization may require reduced expectations and extra emotional support."
+      ],
+      "support_design_notes": [
+        "Use an emergency profile, calm checklists, post-hospital rest plan, and clear thresholds for when to seek urgent help as directed by clinicians."
+      ]
+    },
+    {
+      "id": "condition-gender-dysphoria-binary-trans-man",
+      "name": "Gender dysphoria as a binary trans man",
+      "category": "identity / trauma-informed body care / healthcare access",
+      "source_status": "matched_uploaded_json_plus_user_context",
+      "related_source_entry_ids": [
+        "sexual_intimacy_gender_related_condition_gender_dysphoria",
+        "mental_health_psychiatric_disability_mental_health_conditions",
+        "anxiety_trauma_stress_related_mental_health_condition_anxiety_disorder"
+      ],
+      "william_specific_context": [
+        "William is strictly binary male, legally male, assigned female at birth, pre-surgery, and has facial hair.",
+        "Gendered body care, bathroom help, reproductive/gynecologic topics, and medical paperwork can be dysphoria-triggering if misgendered or feminized."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can affect bathing, toileting assistance, medical care, clothing, body talk, intimacy, documentation, and willingness to seek care.",
+        "Misgendering can worsen anxiety, shame, anger, avoidance, and trauma responses."
+      ],
+      "support_design_notes": [
+        "Use male language, correct name/identity, privacy, consent, and William-approved anatomy language.",
+        "Never frame care needs as making him less of a man."
+      ]
+    },
+    {
+      "id": "condition-morbid-obesity",
+      "name": "Morbid obesity",
+      "category": "body size / mobility / stigma / equipment access",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "physical_chronic_health_disability_obesity",
+        "functional_limitation_accommodation_target_use_of_mobility_aids",
+        "physical_chronic_health_disability_respiratory_impairments",
+        "functional_limitation_accommodation_target_toileting_grooming_issue"
+      ],
+      "william_specific_context": [
+        "Interacts with mobility, oxygen/asthma, lymphedema, PCOS/PMOS, back injury, power wheelchair needs, shower chair sizing, toileting tools, and medical stigma."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can affect equipment fit, safe transfers, bathroom access, seating, transportation, respiratory effort, pain, and clinician bias.",
+        "Weight stigma can create avoidance, shame, delayed care, and mistrust."
+      ],
+      "support_design_notes": [
+        "Use size-inclusive equipment, non-shaming language, practical access planning, and focus on safety/function rather than blame."
+      ]
+    },
+    {
+      "id": "neurodivergence-severe-adhd",
+      "name": "Severe ADHD",
+      "category": "neurodivergence / executive function / attention regulation",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "neurodevelopmental_learning_communication_condition_attention_deficit_hyperactiv",
+        "neurodevelopmental_communication_disability_attention_deficit_hyperactivity"
+      ],
+      "william_specific_context": [
+        "Interacts with anxiety, autism, trauma, narcolepsy, chronic pain, medical routines, task initiation, and overwhelm."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can affect memory, initiation, prioritizing, time awareness, emotional regulation, follow-through, organization, and switching tasks.",
+        "Medical and accessibility tasks can be especially hard when urgent, boring, or emotionally loaded."
+      ],
+      "support_design_notes": [
+        "Use tiny steps, timers, visible checklists, rewards, body-doubling, low-demand restarts, and no-shame reminders."
+      ]
+    },
+    {
+      "id": "neurodivergence-autism-spectrum-disorder",
+      "name": "Autism Spectrum Disorder",
+      "category": "neurodivergence / sensory-social-processing",
+      "source_status": "matched_uploaded_json",
+      "related_source_entry_ids": [
+        "neurodevelopmental_learning_communication_condition_autism_spectrum_disorder",
+        "neurodevelopmental_communication_disability_autism_spectrum",
+        "neurodevelopmental_communication_disability_neurodiversity"
+      ],
+      "william_specific_context": [
+        "Interacts with trauma, anxiety, sensory overload, medical settings, communication needs, routine disruptions, and social misunderstandings."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "May affect sensory tolerance, transitions, communication, social energy, routines, food/clothing tolerance, and overload recovery.",
+        "Stress, pain, hospitals, and conflict may reduce communication capacity."
+      ],
+      "support_design_notes": [
+        "Use clear language, predictable routines, sensory-friendly options, low-pressure choices, and time to process."
+      ]
+    },
+    {
+      "id": "mental-health-anxiety-stress-imposter-people-pleasing",
+      "name": "Anxiety, stress, imposter syndrome, and people-pleasing",
+      "category": "mental health / self-worth / stress response",
+      "source_status": "user_supplied_addition_with_anxiety_source_match",
+      "related_source_entry_ids": [
+        "anxiety_trauma_stress_related_mental_health_condition_anxiety_disorder",
+        "anxiety_trauma_stress_related_mental_health_condition_generalized_anxiety_disord",
+        "support_concept_boundary_communication"
+      ],
+      "william_specific_context": [
+        "Interacts with BPD/RAD/C-PTSD, repeated losses, abusive relationships, medical complexity, and caregiver dynamics."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can make William over-apologize, over-explain, minimize needs, fear being a burden, accept unsafe situations, or push past limits to avoid disappointing others.",
+        "Can worsen shutdowns, anger, panic, dysphoria, pain, and fatigue."
+      ],
+      "support_design_notes": [
+        "Use reassurance that needs are real, permission to rest, consent-based care, boundary scripts, and gentle reminders that accommodations are not failure."
+      ]
+    },
+    {
+      "id": "body-access-extremely-short-arms-trex",
+      "name": "Extremely short arms / T-Rex nickname",
+      "category": "body mechanics / reach access / adaptive tools",
+      "source_status": "user_supplied_addition_with_related_source_match",
+      "related_source_entry_ids": [
+        "mobility_musculoskeletal_neuromotor_disability_arm_conditions",
+        "functional_limitation_accommodation_target_use_of_one_hand_arm",
+        "functional_limitation_accommodation_target_toileting_grooming_issue"
+      ],
+      "william_specific_context": [
+        "William's nickname T-Rex relates to extremely short arms.",
+        "This directly affects reaching, toileting, dressing, bathing, transfers, wheelchair propulsion/control setup, grabbing objects, and using standard home layouts."
+      ],
+      "likely_life_impacts_to_account_for": [
+        "Can make ordinary items functionally out of reach even when they seem nearby to other people.",
+        "Can increase dependence on extender tools, caregiver help, adaptive storage, reachable controls, and bed/chair-side organization."
+      ],
+      "support_design_notes": [
+        "Keep essentials within William-specific reach, use reachers/extenders, avoid high/low storage, and treat reach barriers as access issues, not inconvenience."
+      ]
+    }
+  ],
+  "trauma_loss_and_safety_history_user_supplied": [
+    {
+      "id": "loss-major-support-systems",
+      "name": "Loss of major support systems",
+      "care_implications": [
+        "May intensify abandonment fear, grief, distrust, and panic when support feels unstable.",
+        "Consistency, repair, and clear communication are especially important."
+      ]
+    },
+    {
+      "id": "foster-care-abuse-placement-center",
+      "name": "Foster care: six months in a placement center with abuse",
+      "care_implications": [
+        "May create intense triggers around institutions, being controlled, being trapped, staff-like authority, and not being believed.",
+        "Support should emphasize choice, consent, and present-day safety."
+      ]
+    },
+    {
+      "id": "hate-crime-pellet-bb-gun",
+      "name": "Victim of hate crime: shot with pest-control pellet/BB gun, multiple entry points, right leg fracture, lead pellet still embedded in bone, international news exposure",
+      "care_implications": [
+        "Can affect physical pain, leg function, trust, public safety feelings, medical trauma, and fear of being targeted.",
+        "International news exposure can intensify privacy needs and loss of control over personal story."
+      ]
+    },
+    {
+      "id": "doxxing-stalking-hate-group",
+      "name": "Doxxing and stalking by a hate group",
+      "care_implications": [
+        "Creates high privacy and safety needs.",
+        "Avoid exposing identifying information, location patterns, documents, or contact details without explicit consent."
+      ]
+    },
+    {
+      "id": "first-husband-abuse-trafficking",
+      "name": "Severely abusive first husband; perpetrator of human trafficking",
+      "care_implications": [
+        "May create triggers around control, coercion, money, sex, threats, dependence, caregiving, and being disbelieved.",
+        "Support should avoid coercive language and emphasize William's control over decisions."
+      ]
+    },
+    {
+      "id": "second-husband-abuse-csam-report",
+      "name": "Emotionally/mentally abusive second husband; William reported him to police after finding child sexual abuse material on his devices; arrested; no contact since 2023; still legally married",
+      "care_implications": [
+        "Can create grief, disgust, betrayal trauma, legal stress, and relationship safety concerns.",
+        "Use language that affirms William was not together with him when he discovered the abuse and that reporting was protective action."
+      ]
+    },
+    {
+      "id": "several-failed-engagements",
+      "name": "Several failed engagements",
+      "care_implications": [
+        "May intensify fears of abandonment, failure, instability, and being hard to love.",
+        "Support should separate relationship outcomes from William's worth."
+      ]
+    },
+    {
+      "id": "death-first-love-2007",
+      "name": "Death of first love in 2007 after forced estrangement; both were 15; she developed skin cancer",
+      "care_implications": [
+        "May carry grief, unresolved goodbye, forced separation trauma, and adolescent loss.",
+        "Anniversaries and reminders may affect mood and functioning."
+      ]
+    },
+    {
+      "id": "miscarriages-andrea-marjorie-canon",
+      "name": "Miscarriages, including one pregnancy to 17 weeks; baby named Andrea Marjorie Canon",
+      "care_implications": [
+        "Pregnancy loss may involve grief, body trauma, medical trauma, anniversary pain, and dysphoria-sensitive grief.",
+        "Use Andrea Marjorie Canon's name respectfully if William wants that."
+      ]
+    },
+    {
+      "id": "death-second-love-suicide-2020",
+      "name": "Death of second love by suicide in 2020",
+      "care_implications": [
+        "May trigger grief, guilt, abandonment pain, trauma anniversaries, and fear of losing loved ones."
+      ]
+    },
+    {
+      "id": "death-daughters-father-suicide-2022",
+      "name": "Death of daughter's father by suicide in 2022",
+      "care_implications": [
+        "May involve grief, parenting-related grief, trauma, anger, and fear around suicide loss."
+      ]
+    },
+    {
+      "id": "death-father-estrangement-2024",
+      "name": "Death of father after estrangement in 2024",
+      "care_implications": [
+        "May involve complicated grief, unresolved abuse/estrangement feelings, anger, relief, guilt, and family-system triggers."
+      ]
+    },
+    {
+      "id": "sexual-assault-human-trafficking-survivor",
+      "name": "Sexual assault survivor and human trafficking survivor",
+      "care_implications": [
+        "Body care, bathing, toileting, medical exams, intimate relationships, and caregiver assistance must be consent-forward and privacy-protective.",
+        "Avoid coercive framing, surprise touch, shaming, or graphic language."
+      ]
+    },
+    {
+      "id": "homelessness-repeated-loss-of-homes",
+      "name": "Past homelessness on streets, couch/floor surfing, shelters, and repeated loss of homes",
+      "care_implications": [
+        "May create scarcity fear, attachment to possessions/home security, panic around instability, and difficulty trusting safety.",
+        "Support should respect the emotional importance of stable shelter and belongings."
+      ]
+    },
+    {
+      "id": "abusive-parents-and-stepfather",
+      "name": "All four parents abusive in all ways except sexual; stepfather was sexually abusive",
+      "care_implications": [
+        "May create complex family trauma, authority triggers, distrust, shame, and difficulty accepting care.",
+        "Family references should not assume parents are safe or supportive."
+      ]
+    },
+    {
+      "id": "sibling-favoritism",
+      "name": "Sibling favoritism",
+      "care_implications": [
+        "May create sensitivity to comparison, exclusion, being less valued, or being replaced.",
+        "Avoid comparing William's needs, grief, progress, or disability to siblings/others."
+      ]
+    }
+  ],
+  "high_priority_access_needs": {
+    "mobility": [
+      "Assume wheelchair-first access.",
+      "Offer bed-level and seated options before standing/walking options.",
+      "Avoid stairs, long distances, tight spaces, and tasks requiring bending/lifting/reaching unless explicitly marked accessible."
+    ],
+    "bathroom_and_hygiene": [
+      "Use shower chair, bidet, toileting extender, reachable supplies, and privacy-respecting caregiver assistance when needed.",
+      "Treat toileting/bathing as dignity-sensitive and trauma-sensitive.",
+      "Use male language and William-approved anatomy language."
+    ],
+    "respiratory": [
+      "Account for oxygen access, asthma triggers, infection recovery, exertion limits, and emergency planning.",
+      "Reduce smoke, strong fragrance, dust, cold-air exposure, and rushed exertion when possible."
+    ],
+    "energy_and_spoons": [
+      "Use spoon-theory pacing.",
+      "Split every care task into tiny steps.",
+      "Count partial completion as real progress.",
+      "Build rest and recovery into the plan after bathing, toileting, transfers, appointments, emotional conversations, and hospitalizations."
+    ],
+    "neurodivergence_and_executive_function": [
+      "Use clear steps, visual lists, reminders, timers, body-doubling, predictable routines, and low-demand restarts.",
+      "Avoid shame for forgetfulness, task paralysis, overwhelm, or inconsistent capacity."
+    ],
+    "trauma_and_attachment": [
+      "Use consent, validation, consistency, repair, and explicit reassurance.",
+      "Avoid threats of abandonment, silent treatment, moralizing, coercion, and surprise demands.",
+      "Protect privacy because of doxxing/stalking history."
+    ],
+    "body_size_and_reach": [
+      "Use size-inclusive equipment and room layouts.",
+      "Keep essentials within William's actual arm reach from bed and wheelchair.",
+      "Use adaptive tools without jokes unless William initiates humor."
+    ]
+  },
+  "application_design_guidance_for_squishy_helper_or_care_site": {
+    "tone": [
+      "Warm, validating, direct, masculine-affirming, disability-affirming, and non-shaming.",
+      "William is not lazy, dramatic, manipulative, or failing because his capacity changes."
+    ],
+    "task_system": [
+      "Every task should have micro-steps, optional caregiver support flags, and a low-spoon version.",
+      "Examples: 'sit up', 'take inhaler/oxygen check if applicable', 'transfer safely', 'gather supplies', 'wash one body area', 'rest', 'continue if able'.",
+      "Reward effort and safety, not just task completion."
+    ],
+    "caregiver_system": [
+      "Let caregiver tasks show William's access needs while also honoring caregiver limits.",
+      "Include backup plans and 'not today, try smaller' options."
+    ],
+    "crisis_or_escalation_language": [
+      "Use grounding and support prompts, but do not replace emergency/clinical care.",
+      "For seizure, respiratory distress, severe infection signs, suicidal crisis, or acute safety threats, follow William's real emergency plan and local emergency services."
+    ],
+    "privacy": [
+      "Do not expose legal name, location, medical details, trauma details, or contact information in public-facing UI.",
+      "Use display names/aliases where possible."
+    ],
+    "gender_affirming_care": [
+      "Use William/T-Rex/Dino and masculine terms.",
+      "Avoid feminizing reproductive or anatomy-related care language.",
+      "Give privacy and control during bathing, toileting, and medical reminders."
+    ]
+  },
+  "items_added_from_user_prompt_without_direct_uploaded_source_entry": [
+    "Shower chair",
+    "Oxygen",
+    "Fiancé as caregiver",
+    "Bidet",
+    "Extender tool for toileting",
+    "PCOS / PMOS terminology and William-specific gender-dysphoria interaction",
+    "Bedridden / barely can walk",
+    "Broken back from 2011 pedestrian impact and repeated re-injury",
+    "Reactive attachment disorder",
+    "C-PTSD / complex trauma",
+    "Loss of major support systems",
+    "Foster care placement-center abuse",
+    "Hate crime with pellet/BB gun injuries and embedded lead pellet",
+    "Doxxing and stalking by hate group",
+    "Abusive first husband / trafficking perpetrator",
+    "Abusive second husband / CSAM report / no contact since 2023",
+    "Several failed engagements",
+    "Death of first love in 2007",
+    "Miscarriages including Andrea Marjorie Canon",
+    "Death of second love by suicide in 2020",
+    "Death of daughter's father by suicide in 2022",
+    "Death of father after estrangement in 2024",
+    "Lymphedema",
+    "Severe asthma specifics",
+    "Frequent infection and seizure hospitalizations",
+    "Sexual assault and human trafficking survivorship",
+    "Binary trans male specifics: legally male, AFAB, pre-surgery, facial hair",
+    "Past homelessness and repeated loss of homes",
+    "Abusive parents and sexually abusive stepfather",
+    "Sibling favoritism",
+    "Imposter syndrome",
+    "People-pleasing",
+    "Extremely short arms / T-Rex nickname"
+  ],
+  "source_entries_used": [
+    {
+      "id": "mobility-aid-umbrella-mobility-aid-device",
+      "name": "Mobility aid/device",
+      "source_group": "mobility aid - umbrella",
+      "source_file": "mobility_guide_mobility_aids.life_impact.json",
+      "source_pdf": "Your Complete Mobility Guide_ A Simple Guide to Mobility Aids _ Southern.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "May require learning, fit/measurement, maintenance, storage, transportation space, accessible routes, and social confidence to use well.",
+        "Can be limited by stairs, narrow doorways, uneven ground, snow/ice, inaccessible bathrooms, crowded spaces, or stigma."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Can improve safety, independence, comfort, confidence, and participation by reducing falls, pain, fatigue, or distance barriers.",
+        "Can conserve spoons by making movement less physically expensive."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "accessible route planning",
+        "maintenance/checks",
+        "professional fitting when possible",
+        "rest breaks",
+        "safe transfer/use training"
+      ],
+      "imported_spoon_energy_notes": "Usually reduces mobility spoon cost when matched well; may add setup/transportation spoon cost.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mobility-aid-powered-wheelchair-power-wheelchair",
+      "name": "Power Wheelchair",
+      "source_group": "mobility aid - powered wheelchair",
+      "source_file": "mobility_guide_mobility_aids.life_impact.json",
+      "source_pdf": "Your Complete Mobility Guide_ A Simple Guide to Mobility Aids _ Southern.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "May require learning, fit/measurement, maintenance, storage, transportation space, accessible routes, and social confidence to use well.",
+        "Can be limited by stairs, narrow doorways, uneven ground, snow/ice, inaccessible bathrooms, crowded spaces, or stigma.",
+        "Requires battery charging, transport planning, enough space to turn, maintenance, and safe controls; some drive types trade obstacle climbing for tight turns or comfort."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Can improve safety, independence, comfort, confidence, and participation by reducing falls, pain, fatigue, or distance barriers.",
+        "Can conserve spoons by making movement less physically expensive.",
+        "Can provide movement without manual propulsion and may offer power seating/custom controls for complex needs."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "accessible route planning",
+        "assistive technology professional fitting",
+        "backup plan",
+        "charging routine",
+        "home turning-radius check",
+        "maintenance/checks",
+        "professional fitting when possible",
+        "rest breaks",
+        "safe transfer/use training"
+      ],
+      "imported_spoon_energy_notes": "Usually reduces mobility spoon cost when matched well; may add setup/transportation spoon cost.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mobility-aid-wheelchair-manual-wheelchair",
+      "name": "Manual Wheelchair",
+      "source_group": "mobility aid - wheelchair",
+      "source_file": "mobility_guide_mobility_aids.life_impact.json",
+      "source_pdf": "Your Complete Mobility Guide_ A Simple Guide to Mobility Aids _ Southern.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "May require learning, fit/measurement, maintenance, storage, transportation space, accessible routes, and social confidence to use well.",
+        "Can be limited by stairs, narrow doorways, uneven ground, snow/ice, inaccessible bathrooms, crowded spaces, or stigma.",
+        "May require upper-body strength or another person for propulsion depending on chair/person; inaccessible spaces and transport can be major barriers."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Can improve safety, independence, comfort, confidence, and participation by reducing falls, pain, fatigue, or distance barriers.",
+        "Can conserve spoons by making movement less physically expensive.",
+        "Can make indoor/outdoor movement possible with reduced walking/standing demands and may support everyday activities despite reduced mobility."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "accessible entrances",
+        "accessible route planning",
+        "maintenance/checks",
+        "pressure relief plan",
+        "professional fitting when possible",
+        "rest breaks",
+        "safe transfer/use training",
+        "seat/cushion fit",
+        "transfer planning"
+      ],
+      "imported_spoon_energy_notes": "Usually reduces mobility spoon cost when matched well; may add setup/transportation spoon cost.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "functional-limitation-accommodation-target-toileting-grooming-issue",
+      "name": "Toileting/Grooming Issue",
+      "source_group": "functional limitation / accommodation target",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 6,
+      "imported_life_limitations": [
+        "Can limit the specific daily/work function named here: Toileting/Grooming Issue.",
+        "May make tasks slower, less safe, more painful, more tiring, or less reliable unless the environment is adjusted.",
+        "Can interact with other conditions, so a person may need supports that address multiple limitations at once."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the limitation can make accommodation conversations more practical because support can focus on the actual barrier instead of only the diagnosis.",
+        "Assistive technology, altered timing, task redesign, or environmental changes can slightly improve independence and reduce exhaustion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "case-by-case accommodation discussion",
+        "task redesign",
+        "assistive technology",
+        "breaks or flexible timing",
+        "written/visual supports when helpful",
+        "environmental changes"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost rises when the task repeatedly demands this function without breaks or tools.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "functional-limitation-accommodation-target-sitting",
+      "name": "Sitting",
+      "source_group": "functional limitation / accommodation target",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 6,
+      "imported_life_limitations": [
+        "Can limit the specific daily/work function named here: Sitting.",
+        "May make tasks slower, less safe, more painful, more tiring, or less reliable unless the environment is adjusted.",
+        "Can interact with other conditions, so a person may need supports that address multiple limitations at once."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the limitation can make accommodation conversations more practical because support can focus on the actual barrier instead of only the diagnosis.",
+        "Assistive technology, altered timing, task redesign, or environmental changes can slightly improve independence and reduce exhaustion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "case-by-case accommodation discussion",
+        "task redesign",
+        "assistive technology",
+        "breaks or flexible timing",
+        "written/visual supports when helpful",
+        "environmental changes"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost rises when the task repeatedly demands this function without breaks or tools.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-respiratory-impairments",
+      "name": "Respiratory Impairments",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "functional-limitation-accommodation-target-respiratory-distress-breathing-proble",
+      "name": "Respiratory Distress/Breathing Problem",
+      "source_group": "functional limitation / accommodation target",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 6,
+      "imported_life_limitations": [
+        "Can limit the specific daily/work function named here: Respiratory Distress/Breathing Problem.",
+        "May make tasks slower, less safe, more painful, more tiring, or less reliable unless the environment is adjusted.",
+        "Can interact with other conditions, so a person may need supports that address multiple limitations at once."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the limitation can make accommodation conversations more practical because support can focus on the actual barrier instead of only the diagnosis.",
+        "Assistive technology, altered timing, task redesign, or environmental changes can slightly improve independence and reduce exhaustion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "case-by-case accommodation discussion",
+        "task redesign",
+        "assistive technology",
+        "breaks or flexible timing",
+        "written/visual supports when helpful",
+        "environmental changes"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost rises when the task repeatedly demands this function without breaks or tools.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "autoimmune-disease-nervous-system-multiple-sclerosis-ms",
+      "name": "Multiple sclerosis (MS)",
+      "source_group": "autoimmune disease - nervous system",
+      "source_file": "autoimmune_diseases_types_symptoms_treatments.life_impact.json",
+      "source_pdf": "Autoimmune Diseases_ Types, Symptoms & Treatments.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "Autoimmune disease can be chronic and may require lifelong symptom management, flare planning, appointments, and treatment decisions.",
+        "Symptoms may come and go, which can make work, chores, caregiving, social plans, and mobility less predictable.",
+        "Can limit walking, balance, vision, strength, breathing/swallowing in serious cases, heat tolerance, endurance, fine motor tasks, and independence."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "A clear diagnosis can support treatment, flare tracking, accommodations, and self-advocacy.",
+        "Recognizing triggers and early warning signs can slightly improve pacing and reduce preventable crashes.",
+        "Mobility aids, therapy, cooling/rest strategies, and safety planning can improve participation and reduce falls or overexertion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "accessible transportation",
+        "activity pacing",
+        "cooling strategies",
+        "fall prevention",
+        "flare plan",
+        "flexible scheduling",
+        "medical follow-up",
+        "mobility aids",
+        "rest breaks",
+        "symptom tracker",
+        "therapy support"
+      ],
+      "imported_spoon_energy_notes": "Spoons may fluctuate with inflammation, pain, fatigue, treatment side effects, infection risk, and flares.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-multiple-sclerosis",
+      "name": "Multiple Sclerosis",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-ehlers-danlos-syndrome",
+      "name": "Ehlers-Danlos Syndrome",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "endocrine-metabolic-disorder-hypothyroidism",
+      "name": "Hypothyroidism",
+      "source_group": "endocrine / metabolic disorder",
+      "source_file": "types_of_endocrine_disorders.life_impact.json",
+      "source_pdf": "Types of Endocrine Disorders _ UI Health.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "Hormone imbalance can affect multiple body systems, so symptoms may interfere with energy, mood, body temperature, appetite/weight, sleep, concentration, strength, blood pressure, and daily reliability.",
+        "May limit energy, warmth, mood, focus, digestion, weight regulation, heart rate, skin/hair comfort, and motivation through slowed body processes."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Diagnosis and monitoring can slightly improve life by making symptoms explainable, treatable, and easier to plan around.",
+        "Correct thyroid replacement and routine tracking can restore more predictable energy for many people."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "food/water access when needed",
+        "lab/appointment access",
+        "medication routine support",
+        "rest breaks",
+        "symptom tracking"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost depends on whether hormones are stable, undertreated, overtreated, or affected by illness/stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-thyroid-disorders",
+      "name": "Thyroid Disorders",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mobility-musculoskeletal-neuromotor-disability-back-impairment",
+      "name": "Back Impairment",
+      "source_group": "mobility / musculoskeletal / neuromotor disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit walking, standing, lifting, reaching, transfers, balance, speed, endurance, pain control, and access to inaccessible spaces.",
+        "Can make errands, bathing, cooking, transportation, cleaning, work sites, and social activities dependent on ramps, seating, rest, or assistance.",
+        "Fall risk, pain flares, and inaccessible buildings can reduce independence even when the person has strong coping skills."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Mobility aids, ergonomic tools, accessible layouts, and pacing can improve safety, range, and dignity.",
+        "Planning around energy, pain, and access can slightly increase participation and reduce injury."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "ramps/elevators/accessible routes",
+        "seating",
+        "reduced lifting",
+        "mobility aids",
+        "ergonomic setup",
+        "transportation/parking access",
+        "rest breaks"
+      ],
+      "imported_spoon_energy_notes": "Physical spoon cost rises with distance, stairs, carrying, transfers, and repeated movements.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-chronic-pain",
+      "name": "Chronic Pain",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "functional-limitation-accommodation-target-pain",
+      "name": "Pain",
+      "source_group": "functional limitation / accommodation target",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "Can limit the specific daily/work function named here: Pain.",
+        "May make tasks slower, less safe, more painful, more tiring, or less reliable unless the environment is adjusted.",
+        "Can interact with other conditions, so a person may need supports that address multiple limitations at once."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the limitation can make accommodation conversations more practical because support can focus on the actual barrier instead of only the diagnosis.",
+        "Assistive technology, altered timing, task redesign, or environmental changes can slightly improve independence and reduce exhaustion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "case-by-case accommodation discussion",
+        "task redesign",
+        "assistive technology",
+        "breaks or flexible timing",
+        "written/visual supports when helpful",
+        "environmental changes"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost rises when the task repeatedly demands this function without breaks or tools.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "personality-relationship-pattern-condition-borderline-personality-disorder",
+      "name": "Borderline Personality Disorder",
+      "source_group": "personality/relationship-pattern condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 6,
+      "imported_life_limitations": [
+        "Can affect emotion regulation, identity, trust, boundaries, attachment, impulse control, conflict, and relationship stability.",
+        "May lead to intense rejection sensitivity, withdrawal, anger, control struggles, dependency, isolation, or repeated interpersonal crises depending on the pattern.",
+        "Daily functioning can be limited by the energy spent managing feelings, perceived threat, shame, or social consequences."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Recognition can support skills-based treatment, clearer boundaries, repair conversations, and less self-blame.",
+        "Consistent routines, validation, and agreed coping steps can slightly improve relationship safety and self-control."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "DBT/skills practice when appropriate",
+        "calm conflict scripts",
+        "clear boundaries",
+        "emotion labeling",
+        "predictable communication",
+        "repair plans"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost spikes during conflict, abandonment fear, criticism, shame, or interpersonal uncertainty.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "anxiety-trauma-stress-related-mental-health-condition-post-traumatic-stress-diso",
+      "name": "Post Traumatic Stress Disorder",
+      "source_group": "anxiety/trauma/stress-related mental health condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 14,
+      "imported_life_limitations": [
+        "Can shrink the person’s world through avoidance, panic, hypervigilance, intrusive worry, and fear of places/situations where escape or safety feels uncertain.",
+        "May limit appointments, errands, work/school, social connection, sleep, concentration, travel, conflict resolution, and asking for help.",
+        "The person may appear “fine” while spending a large amount of internal energy monitoring threat or preventing a panic/trauma response."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Recognizing the condition can support grounding skills, exposure at a tolerable pace, trauma-informed care, and clearer boundaries.",
+        "Predictable routines, safety plans, and permission to pause can slightly improve autonomy and reduce shame."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "grounding plan",
+        "permission to step away",
+        "predictable scheduling",
+        "quiet/low-stimulation space",
+        "therapy/medical support as appropriate",
+        "written instructions"
+      ],
+      "imported_spoon_energy_notes": "Variable spoon cost; even short tasks may become expensive when they involve crowds, uncertainty, conflict, trauma cues, or sensory overload.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mental-health-psychiatric-disability-post-traumatic-stress-disorder-ptsd",
+      "name": "Post-Traumatic Stress Disorder (PTSD)",
+      "source_group": "mental health / psychiatric disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": null,
+      "imported_life_limitations": [
+        "May limit concentration, emotional regulation, reliability, sleep, stress tolerance, communication, social safety, or ability to handle conflict and change.",
+        "Can make work/school, appointments, self-care, relationships, and public settings harder even if the disability is invisible.",
+        "Stigma and fear of disclosure may create extra barriers to accommodations."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Disclosure to safe people or formal accommodation processes can open access to flexible schedules, quiet space, written instructions, and supportive check-ins.",
+        "Skills, treatment, routines, and validation can slightly improve consistency and reduce shame."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "quiet workspace",
+        "flexible scheduling",
+        "written expectations",
+        "predictable routines",
+        "reduced unnecessary conflict",
+        "mental health leave/support when needed"
+      ],
+      "imported_spoon_energy_notes": "Mental load may drain spoons before visible tasks start, especially under stress or masking.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "anxiety-trauma-stress-related-mental-health-condition-acute-stress-disorder",
+      "name": "Acute Stress Disorder",
+      "source_group": "anxiety/trauma/stress-related mental health condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "Can shrink the person’s world through avoidance, panic, hypervigilance, intrusive worry, and fear of places/situations where escape or safety feels uncertain.",
+        "May limit appointments, errands, work/school, social connection, sleep, concentration, travel, conflict resolution, and asking for help.",
+        "The person may appear “fine” while spending a large amount of internal energy monitoring threat or preventing a panic/trauma response."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Recognizing the condition can support grounding skills, exposure at a tolerable pace, trauma-informed care, and clearer boundaries.",
+        "Predictable routines, safety plans, and permission to pause can slightly improve autonomy and reduce shame."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "grounding plan",
+        "permission to step away",
+        "predictable scheduling",
+        "quiet/low-stimulation space",
+        "therapy/medical support as appropriate",
+        "written instructions"
+      ],
+      "imported_spoon_energy_notes": "Variable spoon cost; even short tasks may become expensive when they involve crowds, uncertainty, conflict, trauma cues, or sensory overload.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "anxiety-trauma-stress-related-mental-health-condition-anxiety-disorder",
+      "name": "Anxiety Disorder",
+      "source_group": "anxiety/trauma/stress-related mental health condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 4,
+      "imported_life_limitations": [
+        "Can shrink the person’s world through avoidance, panic, hypervigilance, intrusive worry, and fear of places/situations where escape or safety feels uncertain.",
+        "May limit appointments, errands, work/school, social connection, sleep, concentration, travel, conflict resolution, and asking for help.",
+        "The person may appear “fine” while spending a large amount of internal energy monitoring threat or preventing a panic/trauma response."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Recognizing the condition can support grounding skills, exposure at a tolerable pace, trauma-informed care, and clearer boundaries.",
+        "Predictable routines, safety plans, and permission to pause can slightly improve autonomy and reduce shame."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "grounding plan",
+        "permission to step away",
+        "predictable scheduling",
+        "quiet/low-stimulation space",
+        "therapy/medical support as appropriate",
+        "written instructions"
+      ],
+      "imported_spoon_energy_notes": "Variable spoon cost; even short tasks may become expensive when they involve crowds, uncertainty, conflict, trauma cues, or sensory overload.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "neurodevelopmental-learning-communication-condition-attention-deficit-hyperactiv",
+      "name": "Attention Deficit Hyperactivity Disorder",
+      "source_group": "neurodevelopmental/learning/communication condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 4,
+      "imported_life_limitations": [
+        "Can affect attention, communication, sensory processing, speech/language, learning, coordination, executive functioning, memory, transitions, and social expectations.",
+        "May make school/work, forms, appointments, chores, hygiene, crowded places, multitasking, or verbal instructions harder without accommodations.",
+        "Mismatch between the person’s needs and the environment can be more disabling than the diagnosis alone."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Understanding the profile can unlock accommodations, assistive technology, communication supports, routines, special interests, and strengths-based planning.",
+        "Clear structure and sensory-respectful environments can slightly improve independence, confidence, and task completion.",
+        "External structure, novelty, body-doubling, and reward systems can make tasks more doable and may harness creativity or quick pattern-shifting."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "alternative communication when needed",
+        "assistive tech",
+        "reduced multitasking",
+        "sensory breaks",
+        "task chunking",
+        "visual schedules",
+        "written instructions"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often rises with transitions, sensory overload, unclear instructions, masking, or executive-function demands.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "neurodevelopmental-communication-disability-attention-deficit-hyperactivity",
+      "name": "Attention Deficit/Hyperactivity",
+      "source_group": "neurodevelopmental / communication disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": null,
+      "imported_life_limitations": [
+        "May limit communication, executive functioning, sensory tolerance, reading/writing, attention, social navigation, or learning in standard environments.",
+        "Can make multitasking, vague instructions, loud spaces, transitions, or rapid deadlines disproportionately exhausting.",
+        "The person may be capable but needs a different format, pace, or sensory setup."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Accommodations can reveal strengths by removing unnecessary barriers in communication, timing, sensory load, or format.",
+        "Assistive technology, visual supports, and predictable routines can slightly improve independence and task completion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "clear written instructions",
+        "visual schedules",
+        "alternative formats",
+        "noise/sensory supports",
+        "task chunking",
+        "assistive technology"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost increases with sensory overload, transitions, masking, and executive-function demands.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "neurodevelopmental-learning-communication-condition-autism-spectrum-disorder",
+      "name": "Autism Spectrum Disorder",
+      "source_group": "neurodevelopmental/learning/communication condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 4,
+      "imported_life_limitations": [
+        "Can affect attention, communication, sensory processing, speech/language, learning, coordination, executive functioning, memory, transitions, and social expectations.",
+        "May make school/work, forms, appointments, chores, hygiene, crowded places, multitasking, or verbal instructions harder without accommodations.",
+        "Mismatch between the person’s needs and the environment can be more disabling than the diagnosis alone."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Understanding the profile can unlock accommodations, assistive technology, communication supports, routines, special interests, and strengths-based planning.",
+        "Clear structure and sensory-respectful environments can slightly improve independence, confidence, and task completion.",
+        "Respecting sensory needs and communication style can let strengths such as deep focus, pattern recognition, honesty, or specialized interests show more easily."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "alternative communication when needed",
+        "assistive tech",
+        "reduced multitasking",
+        "sensory breaks",
+        "task chunking",
+        "visual schedules",
+        "written instructions"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often rises with transitions, sensory overload, unclear instructions, masking, or executive-function demands.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "neurodevelopmental-communication-disability-autism-spectrum",
+      "name": "Autism Spectrum",
+      "source_group": "neurodevelopmental / communication disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit communication, executive functioning, sensory tolerance, reading/writing, attention, social navigation, or learning in standard environments.",
+        "Can make multitasking, vague instructions, loud spaces, transitions, or rapid deadlines disproportionately exhausting.",
+        "The person may be capable but needs a different format, pace, or sensory setup."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Accommodations can reveal strengths by removing unnecessary barriers in communication, timing, sensory load, or format.",
+        "Assistive technology, visual supports, and predictable routines can slightly improve independence and task completion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "clear written instructions",
+        "visual schedules",
+        "alternative formats",
+        "noise/sensory supports",
+        "task chunking",
+        "assistive technology"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost increases with sensory overload, transitions, masking, and executive-function demands.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "sexual-intimacy-gender-related-condition-gender-dysphoria",
+      "name": "Gender Dysphoria",
+      "source_group": "sexual/intimacy/gender-related condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 10,
+      "imported_life_limitations": [
+        "Can affect intimacy, body safety, pain, consent communication, relationships, shame, medical care, or gender-related distress depending on the condition.",
+        "May make closeness, touch, dating, pelvic/sexual health care, or identity expression emotionally and physically complicated.",
+        "Stigma can prevent people from seeking support.",
+        "Can be intensified by misgendering, unsafe environments, barriers to gender-affirming care, or inability to express identity safely."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Recognition can support trauma-informed care, pelvic/sexual health treatment, safer communication, and identity-affirming support when relevant.",
+        "Clear consent and pacing can slightly improve safety, trust, and comfort.",
+        "Affirming names/pronouns, privacy, and safe identity expression can improve comfort and reduce distress."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "affirming name/pronoun use",
+        "consent-based communication",
+        "identity-affirming support",
+        "identity-safe spaces",
+        "no-shame language",
+        "pelvic/sexual health evaluation when relevant",
+        "privacy",
+        "privacy protection",
+        "trauma-informed providers"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost depends on pain, dysphoria, shame, fear, relational safety, and sensory needs.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mood-related-mental-health-condition-bereavement",
+      "name": "Bereavement",
+      "source_group": "mood-related mental health condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 5,
+      "imported_life_limitations": [
+        "Can affect energy, motivation, sleep, appetite, self-care, emotional regulation, follow-through, pleasure, and hope.",
+        "May make chores, hygiene, work/school, communication, socializing, and long-term planning feel heavy or inconsistent.",
+        "Mood swings or episodes can disrupt routines and relationships even when the person is trying hard."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "A clear label can help the person track cycles, ask for support earlier, and use treatment/routine strategies before symptoms snowball.",
+        "Mood tracking and compassionate pacing can slightly improve predictability, self-advocacy, and recovery time after difficult days.",
+        "Grief recognition can allow community care, rituals, and reduced expectations while the person mourns."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "check-ins without shaming",
+        "low-barrier task lists",
+        "medication/therapy support if applicable",
+        "mood tracking",
+        "sleep routine support",
+        "small-step rewards"
+      ],
+      "imported_spoon_energy_notes": "Spoon availability may change by episode/day; tiny tasks may need to be split into steps with rest and reinforcement.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "sleep-wake-condition-narcolepsy",
+      "name": "Narcolepsy",
+      "source_group": "sleep/wake condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 12,
+      "imported_life_limitations": [
+        "Can reduce daytime energy, focus, mood stability, pain tolerance, reaction time, immune resilience, and ability to keep schedules.",
+        "May limit driving, work/school consistency, social life, self-care, and safety when sleep is disrupted or attacks occur.",
+        "Poor sleep can worsen other physical and mental health conditions."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the sleep pattern can support sleep hygiene, medical evaluation, schedule accommodations, and safety planning.",
+        "Predictable rest windows and lower morning demands can slightly improve daily reliability."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "low-stimulation nighttime routine",
+        "medical sleep evaluation",
+        "reduced driving when unsafe",
+        "rest breaks",
+        "sleep routine"
+      ],
+      "imported_spoon_energy_notes": "Often reduces starting spoon count for the whole day; sleep loss makes every later task cost more.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-sleep-disorder",
+      "name": "Sleep Disorder",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-vertigo",
+      "name": "Vertigo",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "functional-limitation-accommodation-target-dizziness",
+      "name": "Dizziness",
+      "source_group": "functional limitation / accommodation target",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 3,
+      "imported_life_limitations": [
+        "Can limit the specific daily/work function named here: Dizziness.",
+        "May make tasks slower, less safe, more painful, more tiring, or less reliable unless the environment is adjusted.",
+        "Can interact with other conditions, so a person may need supports that address multiple limitations at once."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the limitation can make accommodation conversations more practical because support can focus on the actual barrier instead of only the diagnosis.",
+        "Assistive technology, altered timing, task redesign, or environmental changes can slightly improve independence and reduce exhaustion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "case-by-case accommodation discussion",
+        "task redesign",
+        "assistive technology",
+        "breaks or flexible timing",
+        "written/visual supports when helpful",
+        "environmental changes"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost rises when the task repeatedly demands this function without breaks or tools.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "neurological-cognitive-disability-epilepsy-seizure-disorder",
+      "name": "Epilepsy/Seizure Disorder",
+      "source_group": "neurological / cognitive disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit memory, coordination, seizure safety, movement, balance, speech, stamina, pain control, cognition, or independence.",
+        "Can make driving, machinery, stairs, deadlines, public settings, and complex tasks unsafe or inconsistent during flares/episodes.",
+        "Symptoms may be episodic or progressive, requiring flexible planning."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Safety plans, assistive technology, therapy, routines, and flexible expectations can improve predictability and reduce risk.",
+        "Recognizing triggers/episodes can slightly improve planning and confidence."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "emergency action plan",
+        "flexible scheduling",
+        "memory aids",
+        "fall/seizure safety",
+        "assistive technology",
+        "reduced hazards"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost varies sharply with episodes, fatigue, medication effects, and sensory/cognitive load.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "functional-limitation-accommodation-target-seizure-activity",
+      "name": "Seizure Activity",
+      "source_group": "functional limitation / accommodation target",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 6,
+      "imported_life_limitations": [
+        "Can limit the specific daily/work function named here: Seizure Activity.",
+        "May make tasks slower, less safe, more painful, more tiring, or less reliable unless the environment is adjusted.",
+        "Can interact with other conditions, so a person may need supports that address multiple limitations at once."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the limitation can make accommodation conversations more practical because support can focus on the actual barrier instead of only the diagnosis.",
+        "Assistive technology, altered timing, task redesign, or environmental changes can slightly improve independence and reduce exhaustion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "case-by-case accommodation discussion",
+        "task redesign",
+        "assistive technology",
+        "breaks or flexible timing",
+        "written/visual supports when helpful",
+        "environmental changes"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost rises when the task repeatedly demands this function without breaks or tools.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-obesity",
+      "name": "Obesity",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mobility-musculoskeletal-neuromotor-disability-arm-conditions",
+      "name": "Arm Conditions",
+      "source_group": "mobility / musculoskeletal / neuromotor disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "May limit walking, standing, lifting, reaching, transfers, balance, speed, endurance, pain control, and access to inaccessible spaces.",
+        "Can make errands, bathing, cooking, transportation, cleaning, work sites, and social activities dependent on ramps, seating, rest, or assistance.",
+        "Fall risk, pain flares, and inaccessible buildings can reduce independence even when the person has strong coping skills."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Mobility aids, ergonomic tools, accessible layouts, and pacing can improve safety, range, and dignity.",
+        "Planning around energy, pain, and access can slightly increase participation and reduce injury."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "ramps/elevators/accessible routes",
+        "seating",
+        "reduced lifting",
+        "mobility aids",
+        "ergonomic setup",
+        "transportation/parking access",
+        "rest breaks"
+      ],
+      "imported_spoon_energy_notes": "Physical spoon cost rises with distance, stairs, carrying, transfers, and repeated movements.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "functional-limitation-accommodation-target-use-of-one-hand-arm",
+      "name": "Use of One Hand/Arm",
+      "source_group": "functional limitation / accommodation target",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 7,
+      "imported_life_limitations": [
+        "Can limit the specific daily/work function named here: Use of One Hand/Arm.",
+        "May make tasks slower, less safe, more painful, more tiring, or less reliable unless the environment is adjusted.",
+        "Can interact with other conditions, so a person may need supports that address multiple limitations at once."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the limitation can make accommodation conversations more practical because support can focus on the actual barrier instead of only the diagnosis.",
+        "Assistive technology, altered timing, task redesign, or environmental changes can slightly improve independence and reduce exhaustion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "case-by-case accommodation discussion",
+        "task redesign",
+        "assistive technology",
+        "breaks or flexible timing",
+        "written/visual supports when helpful",
+        "environmental changes"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost rises when the task repeatedly demands this function without breaks or tools.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "energy-pacing-concept-spoon-theory-limited-daily-energy",
+      "name": "Spoon Theory / limited daily energy",
+      "source_group": "energy pacing concept",
+      "source_file": "what_is_spoon_theory.life_impact.json",
+      "source_pdf": "What Is Spoon Theory__ Eric K. Fanaee, MD_ Board Certified in Pain Medicine and Anesthesiology.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "Can limit how many tasks, appointments, chores, social plans, and care activities fit into a day.",
+        "Forces tradeoffs: doing one task may mean losing capacity for another, even when the person wants to do both.",
+        "Can make invisible effort hard for others to understand."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Provides a simple shared language for boundaries, pacing, task prioritization, and compassion.",
+        "Can slightly improve planning by making energy visible and countable."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "daily spoon budget",
+        "prioritize essentials",
+        "split tasks",
+        "schedule recovery",
+        "communicate limits"
+      ],
+      "imported_spoon_energy_notes": "Every task should have an estimated spoon cost and a recovery option.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "energy-pacing-concept-day-to-day-variability",
+      "name": "Day-to-day variability",
+      "source_group": "energy pacing concept",
+      "source_file": "what_is_spoon_theory.life_impact.json",
+      "source_pdf": "What Is Spoon Theory__ Eric K. Fanaee, MD_ Board Certified in Pain Medicine and Anesthesiology.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "Makes future planning difficult because tomorrow’s capacity may not match today’s.",
+        "Can cause guilt or conflict when commitments must change."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Encourages flexible planning, backup options, and permission to reschedule without shame."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible plans",
+        "backup supports",
+        "low-energy alternatives",
+        "rescheduling without punishment"
+      ],
+      "imported_spoon_energy_notes": "Use ranges rather than fixed costs; include flare/crash mode.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "social-access-concept-invisible-illness-visibility",
+      "name": "Invisible illness visibility",
+      "source_group": "social/access concept",
+      "source_file": "what_is_spoon_theory.life_impact.json",
+      "source_pdf": "What Is Spoon Theory__ Eric K. Fanaee, MD_ Board Certified in Pain Medicine and Anesthesiology.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "Can cause disbelief, pressure to overperform, lack of accommodations, and social misunderstanding.",
+        "May make people feel obligated to explain private health details."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "A shared term such as “spoonie” can help people find community and explain needs quickly if they choose."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "respect privacy",
+        "believe stated limits",
+        "ask what helps",
+        "avoid judging how energy is spent"
+      ],
+      "imported_spoon_energy_notes": "Social invalidation itself costs spoons.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "support-concept-boundary-communication",
+      "name": "Boundary communication",
+      "source_group": "support concept",
+      "source_file": "what_is_spoon_theory.life_impact.json",
+      "source_pdf": "What Is Spoon Theory__ Eric K. Fanaee, MD_ Board Certified in Pain Medicine and Anesthesiology.pdf",
+      "source_page": null,
+      "imported_life_limitations": [
+        "People may still judge how someone spends limited energy or expect justification.",
+        "The person may need to protect energy by saying no."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Can make it easier to ask for help, explain cancellations, and honor needs without over-explaining."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "scripts for no/maybe/later",
+        "shared energy language",
+        "task triage",
+        "caregiver check-ins"
+      ],
+      "imported_spoon_energy_notes": "Boundary-setting may cost spoons at first but can prevent larger crashes later.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "support-concept-community-and-peer-support",
+      "name": "Community and peer support",
+      "source_group": "support concept",
+      "source_file": "what_is_spoon_theory.life_impact.json",
+      "source_pdf": "What Is Spoon Theory__ Eric K. Fanaee, MD_ Board Certified in Pain Medicine and Anesthesiology.pdf",
+      "source_page": null,
+      "imported_life_limitations": [
+        "Without community, chronic illness/disability can feel isolating and misunderstood.",
+        "Peer spaces can still be tiring if comparison or unsolicited advice becomes overwhelming."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Peer support can offer emotional support, practical tips, identity validation, and reduced isolation."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "opt-in peer groups",
+        "moderate info overload",
+        "community without forced disclosure"
+      ],
+      "imported_spoon_energy_notes": "Community can return spoons emotionally, but only when it is safe and not demanding.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "functional-limitation-accommodation-target-use-of-mobility-aids",
+      "name": "Use of Mobility Aids",
+      "source_group": "functional limitation / accommodation target",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 7,
+      "imported_life_limitations": [
+        "Can limit the specific daily/work function named here: Use of Mobility Aids.",
+        "May make tasks slower, less safe, more painful, more tiring, or less reliable unless the environment is adjusted.",
+        "Can interact with other conditions, so a person may need supports that address multiple limitations at once."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Naming the limitation can make accommodation conversations more practical because support can focus on the actual barrier instead of only the diagnosis.",
+        "Assistive technology, altered timing, task redesign, or environmental changes can slightly improve independence and reduce exhaustion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "case-by-case accommodation discussion",
+        "task redesign",
+        "assistive technology",
+        "breaks or flexible timing",
+        "written/visual supports when helpful",
+        "environmental changes"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost rises when the task repeatedly demands this function without breaks or tools.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mental-health-psychiatric-disability-personality-disorder",
+      "name": "Personality Disorder",
+      "source_group": "mental health / psychiatric disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "May limit concentration, emotional regulation, reliability, sleep, stress tolerance, communication, social safety, or ability to handle conflict and change.",
+        "Can make work/school, appointments, self-care, relationships, and public settings harder even if the disability is invisible.",
+        "Stigma and fear of disclosure may create extra barriers to accommodations."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Disclosure to safe people or formal accommodation processes can open access to flexible schedules, quiet space, written instructions, and supportive check-ins.",
+        "Skills, treatment, routines, and validation can slightly improve consistency and reduce shame."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "quiet workspace",
+        "flexible scheduling",
+        "written expectations",
+        "predictable routines",
+        "reduced unnecessary conflict",
+        "mental health leave/support when needed"
+      ],
+      "imported_spoon_energy_notes": "Mental load may drain spoons before visible tasks start, especially under stress or masking.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mental-health-psychiatric-disability-mental-health-conditions",
+      "name": "Mental Health Conditions",
+      "source_group": "mental health / psychiatric disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit concentration, emotional regulation, reliability, sleep, stress tolerance, communication, social safety, or ability to handle conflict and change.",
+        "Can make work/school, appointments, self-care, relationships, and public settings harder even if the disability is invisible.",
+        "Stigma and fear of disclosure may create extra barriers to accommodations."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Disclosure to safe people or formal accommodation processes can open access to flexible schedules, quiet space, written instructions, and supportive check-ins.",
+        "Skills, treatment, routines, and validation can slightly improve consistency and reduce shame."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "quiet workspace",
+        "flexible scheduling",
+        "written expectations",
+        "predictable routines",
+        "reduced unnecessary conflict",
+        "mental health leave/support when needed"
+      ],
+      "imported_spoon_energy_notes": "Mental load may drain spoons before visible tasks start, especially under stress or masking.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "mobility-musculoskeletal-neuromotor-disability-leg-impairment",
+      "name": "Leg Impairment",
+      "source_group": "mobility / musculoskeletal / neuromotor disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "May limit walking, standing, lifting, reaching, transfers, balance, speed, endurance, pain control, and access to inaccessible spaces.",
+        "Can make errands, bathing, cooking, transportation, cleaning, work sites, and social activities dependent on ramps, seating, rest, or assistance.",
+        "Fall risk, pain flares, and inaccessible buildings can reduce independence even when the person has strong coping skills."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Mobility aids, ergonomic tools, accessible layouts, and pacing can improve safety, range, and dignity.",
+        "Planning around energy, pain, and access can slightly increase participation and reduce injury."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "ramps/elevators/accessible routes",
+        "seating",
+        "reduced lifting",
+        "mobility aids",
+        "ergonomic setup",
+        "transportation/parking access",
+        "rest breaks"
+      ],
+      "imported_spoon_energy_notes": "Physical spoon cost rises with distance, stairs, carrying, transfers, and repeated movements.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "physical-chronic-health-disability-skin-conditions",
+      "name": "Skin Conditions",
+      "source_group": "physical / chronic health disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit stamina, pain tolerance, immune safety, digestion, breathing, sleep, temperature tolerance, medical scheduling, or physical reliability.",
+        "Can make work/school, errands, self-care, food planning, socializing, and travel harder due to symptoms, flares, treatment, or environmental triggers.",
+        "Invisible symptoms may be misunderstood, causing pressure to overexert."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Medical recognition and accommodations can support safer pacing, trigger reduction, treatment access, and clearer expectations.",
+        "Adaptive routines can slightly improve autonomy and reduce flares or crashes."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "flexible scheduling",
+        "rest breaks",
+        "trigger reduction",
+        "temperature/air-quality control",
+        "remote options when possible",
+        "medical leave/appointments access",
+        "ergonomic setup"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost often fluctuates with flares, treatment side effects, pain, fatigue, weather, food, sleep, and stress.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "neurodevelopmental-communication-disability-neurodiversity",
+      "name": "Neurodiversity",
+      "source_group": "neurodevelopmental / communication disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 2,
+      "imported_life_limitations": [
+        "May limit communication, executive functioning, sensory tolerance, reading/writing, attention, social navigation, or learning in standard environments.",
+        "Can make multitasking, vague instructions, loud spaces, transitions, or rapid deadlines disproportionately exhausting.",
+        "The person may be capable but needs a different format, pace, or sensory setup."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Accommodations can reveal strengths by removing unnecessary barriers in communication, timing, sensory load, or format.",
+        "Assistive technology, visual supports, and predictable routines can slightly improve independence and task completion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "clear written instructions",
+        "visual schedules",
+        "alternative formats",
+        "noise/sensory supports",
+        "task chunking",
+        "assistive technology"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost increases with sensory overload, transitions, masking, and executive-function demands.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "anxiety-trauma-stress-related-mental-health-condition-generalized-anxiety-disord",
+      "name": "Generalized Anxiety Disorder",
+      "source_group": "anxiety/trauma/stress-related mental health condition",
+      "source_file": "alphabetical_listing_of_mental_disorders.life_impact.json",
+      "source_pdf": "Alphabetical Listing of Mental Disorders.pdf",
+      "source_page": 4,
+      "imported_life_limitations": [
+        "Can shrink the person’s world through avoidance, panic, hypervigilance, intrusive worry, and fear of places/situations where escape or safety feels uncertain.",
+        "May limit appointments, errands, work/school, social connection, sleep, concentration, travel, conflict resolution, and asking for help.",
+        "The person may appear “fine” while spending a large amount of internal energy monitoring threat or preventing a panic/trauma response."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Recognizing the condition can support grounding skills, exposure at a tolerable pace, trauma-informed care, and clearer boundaries.",
+        "Predictable routines, safety plans, and permission to pause can slightly improve autonomy and reduce shame."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "grounding plan",
+        "permission to step away",
+        "predictable scheduling",
+        "quiet/low-stimulation space",
+        "therapy/medical support as appropriate",
+        "written instructions"
+      ],
+      "imported_spoon_energy_notes": "Variable spoon cost; even short tasks may become expensive when they involve crowds, uncertainty, conflict, trauma cues, or sensory overload.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    },
+    {
+      "id": "neurodevelopmental-communication-disability-learning-disability",
+      "name": "Learning Disability",
+      "source_group": "neurodevelopmental / communication disability",
+      "source_file": "a_to_z_disabilities_and_accommodations.life_impact.json",
+      "source_pdf": "A to Z of Disabilities and Accommodations.pdf",
+      "source_page": 1,
+      "imported_life_limitations": [
+        "May limit communication, executive functioning, sensory tolerance, reading/writing, attention, social navigation, or learning in standard environments.",
+        "Can make multitasking, vague instructions, loud spaces, transitions, or rapid deadlines disproportionately exhausting.",
+        "The person may be capable but needs a different format, pace, or sensory setup."
+      ],
+      "imported_possible_life_improvements_or_supports": [
+        "Accommodations can reveal strengths by removing unnecessary barriers in communication, timing, sensory load, or format.",
+        "Assistive technology, visual supports, and predictable routines can slightly improve independence and task completion."
+      ],
+      "imported_support_or_accommodation_ideas": [
+        "clear written instructions",
+        "visual schedules",
+        "alternative formats",
+        "noise/sensory supports",
+        "task chunking",
+        "assistive technology"
+      ],
+      "imported_spoon_energy_notes": "Spoon cost increases with sensory overload, transitions, masking, and executive-function demands.",
+      "imported_individual_variability_note": "Impact can be mild, moderate, severe, intermittent, progressive, or invisible depending on the person and context."
+    }
+  ],
+  "split_metadata": {
+    "category": "william",
+    "source_file": "william_dino_person_specific_life_impact.json",
+    "cleaned_at_utc": "2026-06-25T20:15:41+00:00",
+    "family_title_scrub_applied": true,
+    "currency_normalization_applied": true
+  }
+}

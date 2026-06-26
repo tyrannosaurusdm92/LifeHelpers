@@ -1,0 +1,77 @@
+{
+  "schema_name": "ourspace_self_care_by_cadence",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "profile": "william",
+  "cadence": "monthly",
+  "selection_rule": "Subset of tasks that directly support body care, mental health, access, medical needs, relationship/social care, decompression, or low-spoon regulation.",
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "count": 1,
+  "records": [
+    {
+      "id": "william-medication-refill-task",
+      "person": "William",
+      "task": "Medication refill task",
+      "category": "Medical admin",
+      "room_or_area": "Admin",
+      "respawn": "Monthly / as needed",
+      "priority": "High",
+      "used_for": "Medication continuity",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Monthly / as needed"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "william-monthly-medical-admin-one-step",
+      "title": "Medical admin — one step",
+      "kind": "self-care",
+      "cadence": "monthly",
+      "category": "Medical admin",
+      "area": "Admin",
+      "priority": "High",
+      "notes": "One appointment, refill, message, or document step counts.",
+      "tinySteps": [
+        "Pick one admin target only.",
+        "Open the portal or write the message draft.",
+        "Ask for help with calls if needed.",
+        "Recover afterward."
+      ],
+      "rewardCopper": 260,
+      "origin": "william"
+    }
+  ]
+}

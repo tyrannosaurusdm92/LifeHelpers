@@ -1,0 +1,213 @@
+{
+  "schema_name": "ourspace_self_care_by_cadence",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "profile": "jasper",
+  "cadence": "on_demand",
+  "selection_rule": "Subset of tasks that directly support body care, mental health, access, medical needs, relationship/social care, decompression, or low-spoon regulation.",
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "count": 7,
+  "records": [
+    {
+      "id": "jasper-help-william-with-hygiene",
+      "person": "Jasper",
+      "task": "Help William with hygiene",
+      "category": "Caregiver support",
+      "room_or_area": "Bathroom / Bedroom",
+      "respawn": "As needed",
+      "priority": "Critical",
+      "used_for": "Care support, dignity-sensitive",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "jasper-help-with-oxygen-respiratory-setup-if-needed",
+      "person": "Jasper",
+      "task": "Help with oxygen / respiratory setup if needed",
+      "category": "Caregiver support",
+      "room_or_area": "Bedroom / Living room",
+      "respawn": "As needed",
+      "priority": "Critical",
+      "used_for": "Safety support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "jasper-take-a-workday-decompression-break",
+      "person": "Jasper",
+      "task": "Take a workday decompression break",
+      "category": "Caregiver work",
+      "room_or_area": "Self-care",
+      "respawn": "Weekdays",
+      "priority": "Critical",
+      "used_for": "Prevent caregiver crash",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "Weekdays"
+    },
+    {
+      "id": "jasper-go-to-doctor-appointment",
+      "person": "Jasper",
+      "task": "Go to doctor / appointment",
+      "category": "Self-care / admin",
+      "room_or_area": "Medical",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Jasper's own healthcare",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "jasper-help-william-with-doctor-appointment-prep",
+      "person": "Jasper",
+      "task": "Help William with doctor appointment prep",
+      "category": "Caregiver support",
+      "room_or_area": "Admin / Medical",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Medical access support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "jasper-play-mobile-game-to-decompress",
+      "person": "Jasper",
+      "task": "Play mobile game to decompress",
+      "category": "Hobby / decompression",
+      "room_or_area": "Games",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Regulated rest",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    },
+    {
+      "id": "jasper-watch-comfort-content",
+      "person": "Jasper",
+      "task": "Watch comfort content",
+      "category": "Hobby / serotonin",
+      "room_or_area": "Serotonin",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Mood boost",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "on_demand"
+      ],
+      "cadence_split_source_respawn": "As needed"
+    }
+  ]
+}

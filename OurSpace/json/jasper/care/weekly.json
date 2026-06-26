@@ -1,0 +1,246 @@
+{
+  "schema_name": "ourspace_self_care_by_cadence",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "profile": "jasper",
+  "cadence": "weekly",
+  "selection_rule": "Subset of tasks that directly support body care, mental health, access, medical needs, relationship/social care, decompression, or low-spoon regulation.",
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "count": 6,
+  "records": [
+    {
+      "id": "jasper-grocery-delivery-order",
+      "person": "Jasper",
+      "task": "Grocery delivery order",
+      "category": "Shopping",
+      "room_or_area": "Kitchen / Shopping",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Household food restock",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-shower-bathe-wash-up",
+      "person": "Jasper",
+      "task": "Shower / bathe / wash-up",
+      "category": "Self-care",
+      "room_or_area": "Bathroom",
+      "respawn": "As needed / every 2 days",
+      "priority": "High",
+      "used_for": "Hygiene and comfort",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily",
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "As needed / every 2 days"
+    },
+    {
+      "id": "jasper-sweep-kitchen",
+      "person": "Jasper",
+      "task": "Sweep kitchen",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / every 2 days",
+      "priority": "High",
+      "used_for": "Food-area upkeep",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "daily",
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Daily / every 2 days"
+    },
+    {
+      "id": "jasper-cat-supply-inventory",
+      "person": "Jasper",
+      "task": "Cat supply inventory",
+      "category": "Cat care / shopping",
+      "room_or_area": "Cats",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Litter/food/supplies",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    },
+    {
+      "id": "jasper-organize-bathroom-items",
+      "person": "Jasper",
+      "task": "Organize bathroom items",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Accessibility/cleanliness",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly",
+        "monthly"
+      ],
+      "cadence_split_source_respawn": "Weekly / monthly"
+    },
+    {
+      "id": "jasper-organize-kitchen",
+      "person": "Jasper",
+      "task": "Organize kitchen",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Food access",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      },
+      "cadence_tags": [
+        "weekly"
+      ],
+      "cadence_split_source_respawn": "Weekly"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "jasper-weekly-mcas-trigger-reset",
+      "title": "MCAS trigger reset — tiny pass",
+      "kind": "self-care",
+      "cadence": "weekly",
+      "category": "MCAS support",
+      "area": "Household",
+      "priority": "High",
+      "notes": "Reduce triggers without making Jasper push through symptoms.",
+      "tinySteps": [
+        "Pick one trigger zone: scent, food, trash, laundry, or cleaner.",
+        "Use mask/ventilation and stop at early symptoms.",
+        "Move one trigger item away or bag it.",
+        "Rest with safe drink/meds plan afterward."
+      ],
+      "rewardCopper": 180,
+      "origin": "jasper"
+    },
+    {
+      "id": "jasper-weekly-spine-kindness-reset",
+      "title": "Scoliosis kindness reset",
+      "kind": "self-care",
+      "cadence": "weekly",
+      "category": "Pain support",
+      "area": "Body care",
+      "priority": "High",
+      "notes": "Protect back/neck before chores.",
+      "tinySteps": [
+        "Check pain level before starting.",
+        "Choose seated, braced, or no-bend version.",
+        "Set a five-minute timer.",
+        "Stop before the pain spike, not after."
+      ],
+      "rewardCopper": 180,
+      "origin": "jasper"
+    },
+    {
+      "id": "jasper-weekly-caregiver-burnout-check",
+      "title": "Caregiver burnout check",
+      "kind": "self-care",
+      "cadence": "weekly",
+      "category": "Caregiver support",
+      "area": "Mental health",
+      "priority": "High",
+      "notes": "Caregiver care is household care.",
+      "tinySteps": [
+        "Name one thing that is too much.",
+        "Pick one thing William can decide, simplify, or remove.",
+        "Schedule one non-caregiving pocket of time.",
+        "Use ADHD/DBT skill if guilt shows up."
+      ],
+      "rewardCopper": 180,
+      "origin": "jasper"
+    }
+  ]
+}

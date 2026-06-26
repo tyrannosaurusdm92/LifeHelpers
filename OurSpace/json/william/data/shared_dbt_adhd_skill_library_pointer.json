@@ -1,0 +1,31 @@
+{
+  "schema_name": "ourspace_user_dbt_adhd_shared_library_pointer",
+  "schema_version": "3.0.0",
+  "generated_at_utc": "2026-06-25T21:00:29.329839+00:00",
+  "profile": "william",
+  "actual_skill_files_location": "s/skills/",
+  "shared_cadence_files": {
+    "daily": "s/data/dbt_adhd_daily.json",
+    "weekly": "s/data/dbt_adhd_weekly.json",
+    "monthly": "s/data/dbt_adhd_monthly.json",
+    "yearly": "s/data/dbt_adhd_yearly.json"
+  },
+  "reason": "DBT and ADHD skills are now shared household tools, with user-specific adaptations applied through the kindness pass and schedule overlays.",
+  "max_items_per_hour_block": 2,
+  "profile_specific_overlay": {
+    "main_doability_needs": [
+      "bed-level or seated options by default",
+      "oxygen/breathing, pain, vertigo, fatigue, mobility, and recovery time respected",
+      "ADHD/autism supports: transitions, low-stimulation starts, tiny visible steps",
+      "partial completion and stopping before a crash count as success",
+      "no shame, no body blame, no pressure to push through pain or dysphoria"
+    ],
+    "care_language": "direct, validating, masculine, autonomy-preserving, privacy-respecting"
+  },
+  "completion_rules": {
+    "partial_completion_counts": true,
+    "low_spoon_version_required": true,
+    "no_shame_if_skipped": true,
+    "rest_and_boundaries_count": true
+  }
+}

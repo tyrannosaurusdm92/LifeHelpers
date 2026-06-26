@@ -1,0 +1,1362 @@
+{
+  "schema_name": "jasper_tasks",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-25T00:00:00-04:00",
+  "language_rules": {
+    "allowed_person_labels": [
+      "Jasper",
+      "William",
+      "shared"
+    ],
+    "note": "This export intentionally uses names only and avoids the removed family-role labels."
+  },
+  "description": "Jasper-specific tasks from the task master table.",
+  "count": 60,
+  "records": [
+    {
+      "id": "jasper-take-meds",
+      "person": "Jasper",
+      "task": "Take meds",
+      "category": "Self-care",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Daily health maintenance",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-eat-meal-1",
+      "person": "Jasper",
+      "task": "Eat meal 1",
+      "category": "Self-care",
+      "room_or_area": "Self-care / Kitchen",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Minimum food care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-eat-meal-2",
+      "person": "Jasper",
+      "task": "Eat meal 2",
+      "category": "Self-care",
+      "room_or_area": "Self-care / Kitchen",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Minimum food care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-hydrate",
+      "person": "Jasper",
+      "task": "Hydrate",
+      "category": "Self-care",
+      "room_or_area": "Self-care",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Water/body support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-hygiene-check",
+      "person": "Jasper",
+      "task": "Hygiene check",
+      "category": "Self-care",
+      "room_or_area": "Bathroom / Bedroom",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Basic personal care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-shower-bathe-wash-up",
+      "person": "Jasper",
+      "task": "Shower / bathe / wash-up",
+      "category": "Self-care",
+      "room_or_area": "Bathroom",
+      "respawn": "As needed / every 2 days",
+      "priority": "High",
+      "used_for": "Hygiene and comfort",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-decompression-break",
+      "person": "Jasper",
+      "task": "Decompression break",
+      "category": "Self-care",
+      "room_or_area": "Bedroom / Living room",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Prevent burnout",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-use-dbt-skill",
+      "person": "Jasper",
+      "task": "Use DBT skill",
+      "category": "Mental health",
+      "room_or_area": "ADHD skills / DBT",
+      "respawn": "Daily",
+      "priority": "High",
+      "used_for": "Emotion regulation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-use-adhd-skills-support-chat",
+      "person": "Jasper",
+      "task": "Use ADHD skill card",
+      "category": "Mental health",
+      "room_or_area": "ADHD skills",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Support, reminders, grounding",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-diary-card",
+      "person": "Jasper",
+      "task": "Diary card",
+      "category": "Mental health",
+      "room_or_area": "DBT Daily Cards",
+      "respawn": "Daily",
+      "priority": "Medium",
+      "used_for": "Mood/skills tracking",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-journal-entry",
+      "person": "Jasper",
+      "task": "Journal entry",
+      "category": "Mental health",
+      "room_or_area": "DBT Journaling",
+      "respawn": "Daily / as needed",
+      "priority": "Medium",
+      "used_for": "Processing thoughts",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-body-double-with-adhd-skills",
+      "person": "Jasper",
+      "task": "Body-double with ADHD timer",
+      "category": "ADHD / support",
+      "room_or_area": "ADHD skills",
+      "respawn": "As needed",
+      "priority": "Medium",
+      "used_for": "Task initiation",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-take-a-workday-meal-break",
+      "person": "Jasper",
+      "task": "Take a workday meal break",
+      "category": "Caregiver work",
+      "room_or_area": "Self-care",
+      "respawn": "Weekdays",
+      "priority": "Critical",
+      "used_for": "Protected break during care hours",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-take-a-workday-hydration-break",
+      "person": "Jasper",
+      "task": "Take a workday hydration break",
+      "category": "Caregiver work",
+      "room_or_area": "Self-care",
+      "respawn": "Weekdays",
+      "priority": "Critical",
+      "used_for": "Protected break during care hours",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-take-a-workday-decompression-break",
+      "person": "Jasper",
+      "task": "Take a workday decompression break",
+      "category": "Caregiver work",
+      "room_or_area": "Self-care",
+      "respawn": "Weekdays",
+      "priority": "Critical",
+      "used_for": "Prevent caregiver crash",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-complete-caregiver-work-block",
+      "person": "Jasper",
+      "task": "Complete caregiver work block",
+      "category": "Caregiver work",
+      "room_or_area": "Whole home",
+      "respawn": "Weekdays",
+      "priority": "Critical",
+      "used_for": "7h45 Monday, 5h Tuesday-Friday",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-bring-william-food",
+      "person": "Jasper",
+      "task": "Bring William food",
+      "category": "Caregiver support",
+      "room_or_area": "Bedroom / Living room",
+      "respawn": "Daily / as needed",
+      "priority": "Very High",
+      "used_for": "Direct care support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-bring-william-beverage",
+      "person": "Jasper",
+      "task": "Bring William beverage",
+      "category": "Caregiver support",
+      "room_or_area": "Bedroom / Living room",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Hydration support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-help-william-with-hygiene",
+      "person": "Jasper",
+      "task": "Help William with hygiene",
+      "category": "Caregiver support",
+      "room_or_area": "Bathroom / Bedroom",
+      "respawn": "As needed",
+      "priority": "Critical",
+      "used_for": "Care support, dignity-sensitive",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-help-william-with-mobility-access-setup",
+      "person": "Jasper",
+      "task": "Help William with mobility/access setup",
+      "category": "Caregiver support",
+      "room_or_area": "Whole home",
+      "respawn": "As needed",
+      "priority": "Critical",
+      "used_for": "Wheelchair/access assistance",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-help-with-oxygen-respiratory-setup-if-needed",
+      "person": "Jasper",
+      "task": "Help with oxygen / respiratory setup if needed",
+      "category": "Caregiver support",
+      "room_or_area": "Bedroom / Living room",
+      "respawn": "As needed",
+      "priority": "Critical",
+      "used_for": "Safety support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-help-william-with-doctor-appointment-prep",
+      "person": "Jasper",
+      "task": "Help William with doctor appointment prep",
+      "category": "Caregiver support",
+      "room_or_area": "Admin / Medical",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Medical access support",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-go-to-doctor-appointment",
+      "person": "Jasper",
+      "task": "Go to doctor / appointment",
+      "category": "Self-care / admin",
+      "room_or_area": "Medical",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Jasper's own healthcare",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-make-important-phone-call",
+      "person": "Jasper",
+      "task": "Make important phone call",
+      "category": "Admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Life admin",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-complete-1-paperwork-task",
+      "person": "Jasper",
+      "task": "Complete 1 paperwork task",
+      "category": "Admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "High",
+      "used_for": "Forms, applications, benefits",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-grocery-delivery-order",
+      "person": "Jasper",
+      "task": "Grocery delivery order",
+      "category": "Shopping",
+      "room_or_area": "Kitchen / Shopping",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Household food restock",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-inventory-what-the-house-needs",
+      "person": "Jasper",
+      "task": "Inventory what the house needs",
+      "category": "Shopping",
+      "room_or_area": "Kitchen / Whole home",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Prevent running out",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-apply-for-apartment-housing-task",
+      "person": "Jasper",
+      "task": "Apply for apartment / housing task",
+      "category": "Admin",
+      "room_or_area": "Admin",
+      "respawn": "As needed",
+      "priority": "Very High",
+      "used_for": "Major life admin",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 1
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-sweep-bathroom",
+      "person": "Jasper",
+      "task": "Sweep bathroom",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Room upkeep",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-mop-bathroom",
+      "person": "Jasper",
+      "task": "Mop bathroom",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Floor cleaning",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-dust-bathroom-surfaces",
+      "person": "Jasper",
+      "task": "Dust bathroom surfaces",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Room upkeep",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-organize-bathroom-items",
+      "person": "Jasper",
+      "task": "Organize bathroom items",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Accessibility/cleanliness",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-clean-toilet",
+      "person": "Jasper",
+      "task": "Clean toilet",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-clean-shower",
+      "person": "Jasper",
+      "task": "Clean shower",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / monthly",
+      "priority": "High",
+      "used_for": "Sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-take-bathroom-trash-out-replace-bag",
+      "person": "Jasper",
+      "task": "Take bathroom trash out + replace bag",
+      "category": "Chore",
+      "room_or_area": "Bathroom",
+      "respawn": "Weekly / as needed",
+      "priority": "Medium",
+      "used_for": "Trash maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-sweep-bedroom",
+      "person": "Jasper",
+      "task": "Sweep bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Room upkeep",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-mop-bedroom",
+      "person": "Jasper",
+      "task": "Mop bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Floor cleaning",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-dust-bedroom",
+      "person": "Jasper",
+      "task": "Dust bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Allergen/dust control",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-organize-bedroom",
+      "person": "Jasper",
+      "task": "Organize bedroom",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Reduce chaos",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-take-bedroom-trash-out-replace-bag",
+      "person": "Jasper",
+      "task": "Take bedroom trash out + replace bag",
+      "category": "Chore",
+      "room_or_area": "Bedroom",
+      "respawn": "Weekly / as needed",
+      "priority": "Medium",
+      "used_for": "Trash maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-sweep-living-room",
+      "person": "Jasper",
+      "task": "Sweep living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Room upkeep",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-mop-living-room",
+      "person": "Jasper",
+      "task": "Mop living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Floor cleaning",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-dust-living-room",
+      "person": "Jasper",
+      "task": "Dust living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Allergen/dust control",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-organize-living-room",
+      "person": "Jasper",
+      "task": "Organize living room",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly / monthly",
+      "priority": "Medium",
+      "used_for": "Reduce clutter",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-take-living-room-trash-out-replace-bag",
+      "person": "Jasper",
+      "task": "Take living room trash out + replace bag",
+      "category": "Chore",
+      "room_or_area": "Living room",
+      "respawn": "Weekly / as needed",
+      "priority": "Medium",
+      "used_for": "Trash maintenance",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-sweep-kitchen",
+      "person": "Jasper",
+      "task": "Sweep kitchen",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / every 2 days",
+      "priority": "High",
+      "used_for": "Food-area upkeep",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-mop-kitchen",
+      "person": "Jasper",
+      "task": "Mop kitchen",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly",
+      "priority": "High",
+      "used_for": "Floor cleaning",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-dust-wipe-kitchen-surfaces",
+      "person": "Jasper",
+      "task": "Dust / wipe kitchen surfaces",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / every 2 days",
+      "priority": "High",
+      "used_for": "Sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-organize-kitchen",
+      "person": "Jasper",
+      "task": "Organize kitchen",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Food access",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-take-kitchen-trash-out-replace-bag",
+      "person": "Jasper",
+      "task": "Take kitchen trash out + replace bag",
+      "category": "Chore",
+      "room_or_area": "Kitchen",
+      "respawn": "Daily / as needed",
+      "priority": "High",
+      "used_for": "Odor/sanitation",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-do-dishes-when-william-cannot",
+      "person": "Jasper",
+      "task": "Do dishes when William cannot",
+      "category": "Chore / caregiver support",
+      "room_or_area": "Kitchen",
+      "respawn": "As needed / daily lock",
+      "priority": "Critical",
+      "used_for": "High-platinum task because dishes are William's chore but body-limited",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-clean-cat-litter-boxes",
+      "person": "Jasper",
+      "task": "Clean cat litter boxes",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Daily / every 2 days",
+      "priority": "Critical",
+      "used_for": "Cat health",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-brush-cats",
+      "person": "Jasper",
+      "task": "Brush cats",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Coat care/bonding",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-trim-cat-nails",
+      "person": "Jasper",
+      "task": "Trim cat nails",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Monthly / as needed",
+      "priority": "High",
+      "used_for": "Cat safety/care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 3,
+        "gold": 1,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-feed-cats",
+      "person": "Jasper",
+      "task": "Feed cats",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Cat care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-refresh-cat-water",
+      "person": "Jasper",
+      "task": "Refresh cat water",
+      "category": "Cat care",
+      "room_or_area": "Cats",
+      "respawn": "Daily",
+      "priority": "Critical",
+      "used_for": "Cat care",
+      "currency_suggestion": {
+        "copper": 0,
+        "silver": 2,
+        "gold": 1,
+        "platinum": 2
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-cat-supply-inventory",
+      "person": "Jasper",
+      "task": "Cat supply inventory",
+      "category": "Cat care / shopping",
+      "room_or_area": "Cats",
+      "respawn": "Weekly",
+      "priority": "Medium",
+      "used_for": "Litter/food/supplies",
+      "currency_suggestion": {
+        "copper": 5,
+        "silver": 2,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-play-mobile-game-to-decompress",
+      "person": "Jasper",
+      "task": "Play mobile game to decompress",
+      "category": "Hobby / decompression",
+      "room_or_area": "Games",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Regulated rest",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-watch-comfort-content",
+      "person": "Jasper",
+      "task": "Watch comfort content",
+      "category": "Hobby / serotonin",
+      "room_or_area": "Serotonin",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Mood boost",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    },
+    {
+      "id": "jasper-add-shop-link-past-order-favorite-store",
+      "person": "Jasper",
+      "task": "Add shop link / past order / favorite store",
+      "category": "Shopping",
+      "room_or_area": "Squishy Store",
+      "respawn": "As needed",
+      "priority": "Gentle",
+      "used_for": "Store management",
+      "currency_suggestion": {
+        "copper": 3,
+        "silver": 0,
+        "gold": 0,
+        "platinum": 0
+      },
+      "completion_rules": {
+        "allow_partial_completion": true,
+        "lock_until_respawn": true,
+        "show_on_daily_schedule_when_due": true,
+        "can_be_added_to_today": true
+      }
+    }
+  ],
+  "currency_rules": {
+    "exchange_rates": {
+      "copper_per_silver": 10,
+      "silver_per_gold": 10,
+      "gold_per_platinum": 10
+    },
+    "display_rules": {
+      "copper_min": 0,
+      "copper_max": 9,
+      "silver_min": 0,
+      "silver_max": 9,
+      "gold_min": 0,
+      "gold_max": 9,
+      "platinum_min": 0,
+      "platinum_max": null
+    },
+    "normalization": "Carry overflow upward so lower denominations stay from 0 through 9; platinum has no upper limit."
+  },
+  "split_metadata": {
+    "category": "jasper",
+    "source_file": "jasper_tasks.json",
+    "cleaned_at_utc": "2026-06-25T20:15:41+00:00",
+    "family_title_scrub_applied": true,
+    "currency_normalization_applied": true
+  }
+}

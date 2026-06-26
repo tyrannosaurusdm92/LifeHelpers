@@ -1,0 +1,473 @@
+{
+  "schema": "ourspace.shared.tasks.v4",
+  "tasks": [
+    {
+      "id": "shared-cat-food-and-water-check",
+      "title": "Cat food and water check",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Cat care",
+      "area": "Cats",
+      "priority": "Critical",
+      "notes": "Care for Harvey, Callie, and cat siblings as applicable.",
+      "rewardCopper": 2120,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-eat-meal-1",
+      "title": "Eat meal 1",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Self-care",
+      "area": "Kitchen / Bedside",
+      "priority": "Critical",
+      "notes": "Minimum food care.",
+      "rewardCopper": 2120,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-hydrate",
+      "title": "Hydrate",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Self-care",
+      "area": "Self-care",
+      "priority": "Critical",
+      "notes": "Water/body support.",
+      "rewardCopper": 2120,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-take-meds",
+      "title": "Take meds",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Self-care",
+      "area": "Self-care",
+      "priority": "Critical",
+      "notes": "Daily medication/routine support for either person.",
+      "rewardCopper": 2120,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-decompression-break",
+      "title": "Decompression break",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Self-care",
+      "area": "Bedroom / Living room",
+      "priority": "High",
+      "notes": "Rest, sensory reset, or burnout prevention.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-dishes-kitchen-reset",
+      "title": "Dishes / kitchen reset",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Chore",
+      "area": "Kitchen",
+      "priority": "High",
+      "notes": "Kitchen maintenance, with low-spoon versions allowed.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-eat-meal-2",
+      "title": "Eat meal 2",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Self-care",
+      "area": "Kitchen / Bedside",
+      "priority": "High",
+      "notes": "Second meal or safe snack support.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-hygiene-check",
+      "title": "Hygiene check",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Self-care",
+      "area": "Bathroom / Bedroom",
+      "priority": "High",
+      "notes": "Basic hygiene, comfort, and dignity.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-shower-bathe-wash-up",
+      "title": "Shower / bathe / wash-up",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Self-care",
+      "area": "Bathroom",
+      "priority": "High",
+      "notes": "Hygiene support with low-spoon alternatives allowed.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-use-dbt-skill",
+      "title": "Use DBT skill",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Mental health",
+      "area": "DBT",
+      "priority": "High",
+      "notes": "Emotion regulation and coping.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-use-adhd-skills-support-chat",
+      "title": "Use ADHD skill card",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Mental health",
+      "area": "ADHD skills",
+      "priority": "High",
+      "notes": "Support, reminders, grounding, and task initiation.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-diary-card-daily-check-in",
+      "title": "Diary card / daily check-in",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Mental health",
+      "area": "DBT Daily Cards",
+      "priority": "Medium",
+      "notes": "Mood, skill, pain, energy, or stress tracking.",
+      "rewardCopper": 25,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-journal-entry",
+      "title": "Journal entry",
+      "kind": "task",
+      "cadence": "daily",
+      "category": "Mental health / writing",
+      "area": "DBT Journaling",
+      "priority": "Medium",
+      "notes": "Processing thoughts and feelings.",
+      "rewardCopper": 25,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-grocery-delivery-order",
+      "title": "Grocery delivery order",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Shopping",
+      "area": "Kitchen / Shopping",
+      "priority": "High",
+      "notes": "Household food restock.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-cat-supply-inventory",
+      "title": "Cat supply inventory",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Cat care / shopping",
+      "area": "Cats",
+      "priority": "Medium",
+      "notes": "Track litter, food, treats, and care supplies.",
+      "rewardCopper": 25,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-inventory-what-the-house-needs",
+      "title": "Inventory what the house needs",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Shopping",
+      "area": "Kitchen / Whole home",
+      "priority": "Medium",
+      "notes": "Prevent running out of important supplies.",
+      "rewardCopper": 25,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-laundry-step",
+      "title": "Laundry step",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Chore",
+      "area": "Bedroom / Laundry",
+      "priority": "Medium",
+      "notes": "Start, switch, fold, sort, or put away one manageable step.",
+      "rewardCopper": 25,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-go-to-doctor-appointment",
+      "title": "Go to doctor / appointment",
+      "kind": "task",
+      "cadence": "on_demand",
+      "category": "Medical admin",
+      "area": "Medical",
+      "priority": "Very High",
+      "notes": "Healthcare access and follow-through.",
+      "rewardCopper": 1120,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-complete-1-paperwork-task",
+      "title": "Complete 1 paperwork task",
+      "kind": "task",
+      "cadence": "on_demand",
+      "category": "Admin",
+      "area": "Admin",
+      "priority": "High",
+      "notes": "Forms, benefits, housing, medical, or household paperwork.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-make-important-phone-call",
+      "title": "Make important phone call",
+      "kind": "task",
+      "cadence": "on_demand",
+      "category": "Admin",
+      "area": "Admin",
+      "priority": "High",
+      "notes": "Life admin and communication.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-take-trash-out-replace-bag",
+      "title": "Take trash out + replace bag",
+      "kind": "task",
+      "cadence": "on_demand",
+      "category": "Chore",
+      "area": "Whole home",
+      "priority": "High",
+      "notes": "Trash maintenance and sanitation.",
+      "rewardCopper": 130,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-add-shop-link-past-order-favorite-store",
+      "title": "Add shop link / past order / favorite store",
+      "kind": "task",
+      "cadence": "on_demand",
+      "category": "Shopping",
+      "area": "Store",
+      "priority": "Gentle",
+      "notes": "Store management for rewards and wish items.",
+      "rewardCopper": 3,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-play-game-to-decompress",
+      "title": "Play game to decompress",
+      "kind": "task",
+      "cadence": "on_demand",
+      "category": "Hobby / decompression",
+      "area": "Games",
+      "priority": "Gentle",
+      "notes": "Regulated rest and recovery.",
+      "rewardCopper": 3,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-watch-comfort-content",
+      "title": "Watch comfort content",
+      "kind": "task",
+      "cadence": "on_demand",
+      "category": "Hobby / serotonin",
+      "area": "Serotonin",
+      "priority": "Gentle",
+      "notes": "Mood boost and decompression.",
+      "rewardCopper": 3,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-weekly-clean-shower-tiny-steps",
+      "title": "Clean shower — tiny steps",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Chore",
+      "area": "Bathroom",
+      "priority": "High",
+      "notes": "Break into one micro-step at a time; stop before pain, dizziness, MCAS symptoms, or breathing strain spikes.",
+      "tinySteps": [
+        "Choose one piece only: spray, rinse, wipe, or put supplies away.",
+        "Use ventilation/mask or unscented cleaner; Jasper avoids triggers.",
+        "William can do reachable planning/checkoff from wheelchair or bed if useful.",
+        "Pause between steps; finishing later still counts."
+      ],
+      "rewardCopper": 180,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-weekly-clean-toilet-tiny-steps",
+      "title": "Clean toilet — tiny steps",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Chore",
+      "area": "Bathroom",
+      "priority": "High",
+      "notes": "A small sanitation pass counts; do not turn this into a full bathroom reset.",
+      "tinySteps": [
+        "Gather one safe cleaner and gloves.",
+        "Do bowl, seat, or outside surfaces as separate steps.",
+        "Sit, brace, or ask for help before bending/twisting.",
+        "Stop when symptoms say stop."
+      ],
+      "rewardCopper": 180,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-weekly-therapy-support-check",
+      "title": "Therapy support check",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Therapy",
+      "area": "Mental health",
+      "priority": "High",
+      "notes": "Make therapy easier, not bigger.",
+      "tinySteps": [
+        "Check date/time for therapy or therapy homework.",
+        "Write one sentence about what needs support.",
+        "Put meds, water, stim/comfort item, and charger within reach.",
+        "Afterward, schedule a decompression block."
+      ],
+      "rewardCopper": 180,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-weekly-trash-one-bag",
+      "title": "Trash — one bag or one bin",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Chore",
+      "area": "Household",
+      "priority": "Medium",
+      "notes": "Only one small trash step is required.",
+      "tinySteps": [
+        "Tie one bag or empty one small bin.",
+        "Use wheelchair-accessible route or handoff.",
+        "Replace liner only if that is safe today.",
+        "Wash hands or sanitize afterward."
+      ],
+      "rewardCopper": 120,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-weekly-laundry-one-step",
+      "title": "Laundry — one tiny step",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Chore",
+      "area": "Clothes / bedding",
+      "priority": "Medium",
+      "notes": "Any single laundry step counts.",
+      "tinySteps": [
+        "Choose one: gather, start washer, move to dryer, fold five items, or put away five items.",
+        "Use baskets at reachable height.",
+        "No stairs/heavy loads without help.",
+        "Stop at one step if bodies are done."
+      ],
+      "rewardCopper": 120,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-weekly-safe-food-plan",
+      "title": "Safe food plan",
+      "kind": "task",
+      "cadence": "weekly",
+      "category": "Food / MCAS",
+      "area": "Kitchen",
+      "priority": "High",
+      "notes": "Plan a few low-effort safe options for both bodies.",
+      "tinySteps": [
+        "List two safe foods and one backup drink.",
+        "Check for trigger foods/smells before ordering or cooking.",
+        "Put easy items within reach.",
+        "Save one emergency fallback option."
+      ],
+      "rewardCopper": 180,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-monthly-bathroom-reset-micro",
+      "title": "Bathroom reset — micro version",
+      "kind": "task",
+      "cadence": "monthly",
+      "category": "Chore",
+      "area": "Bathroom",
+      "priority": "High",
+      "notes": "Monthly reset is split across tiny bathroom zones.",
+      "tinySteps": [
+        "Pick only one zone: sink, shower shelf, toilet supplies, floor corner, or trash.",
+        "Use fragrance-safe products and ventilation.",
+        "Sit whenever possible; no twisting through scoliosis pain.",
+        "Leave the rest for another day."
+      ],
+      "rewardCopper": 260,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-monthly-accessibility-supplies-check",
+      "title": "Accessibility supplies check",
+      "kind": "task",
+      "cadence": "monthly",
+      "category": "Accessibility",
+      "area": "Household",
+      "priority": "High",
+      "notes": "Check supplies that keep the house easier and safer.",
+      "tinySteps": [
+        "Check wipes, gloves, masks, meds organizers, chargers, trash bags, and hydration supplies.",
+        "Add missing items to GiftLink or shopping list.",
+        "Move high-use items into reach zones.",
+        "Stop after the list; buying can be separate."
+      ],
+      "rewardCopper": 260,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-monthly-therapy-admin-light",
+      "title": "Therapy admin — light pass",
+      "kind": "task",
+      "cadence": "monthly",
+      "category": "Therapy",
+      "area": "Admin",
+      "priority": "High",
+      "notes": "One small admin pass for appointments, paperwork, or goals.",
+      "tinySteps": [
+        "Check upcoming therapy dates.",
+        "Write one therapy goal or one concern.",
+        "Save paperwork/photo/portal note if needed.",
+        "Schedule recovery time after hard calls."
+      ],
+      "rewardCopper": 260,
+      "origin": "shared"
+    },
+    {
+      "id": "shared-monthly-deep-clean-plan-not-deep-clean",
+      "title": "Deep clean plan, not deep clean",
+      "kind": "task",
+      "cadence": "monthly",
+      "category": "Chore planning",
+      "area": "Household",
+      "priority": "Medium",
+      "notes": "Plan the next tiny cleaning steps without forcing a cleaning marathon.",
+      "tinySteps": [
+        "Name the one area causing the most stress.",
+        "Break it into five-minute pieces.",
+        "Assign only what each body can safely do.",
+        "Put the rest into weekly pulls."
+      ],
+      "rewardCopper": 180,
+      "origin": "shared"
+    }
+  ]
+}
