@@ -1,0 +1,16 @@
+# OurSpace cadence + Start The Day update Generated: 2026-06-25T20:52:40Z This package preserves the previous William / Jasper / Shared split, then adds cadence folders and Start The Day scheduling files. ## Added structure Each profile now includes: - `tasks_by_cadence/daily.json`
+- `tasks_by_cadence/weekly.json`
+- `tasks_by_cadence/monthly.json`
+- `tasks_by_cadence/yearly.json`
+- `tasks_by_cadence/on_demand.json`
+- `self_care_by_cadence/daily.json`
+- `self_care_by_cadence/weekly.json`
+- `self_care_by_cadence/monthly.json`
+- `self_care_by_cadence/yearly.json`
+- `self_care_by_cadence/on_demand.json`
+- `dbt_adhd_tools_skills_by_cadence/daily.json`
+- `dbt_adhd_tools_skills_by_cadence/weekly.json`
+- `dbt_adhd_tools_skills_by_cadence/monthly.json`
+- `dbt_adhd_tools_skills_by_cadence/yearly.json`
+- `start_the_day_schedule.json`
+- `daily_choice_pools.json` Shared app-level docs live in `s/docs/start_the_day_engine_config.json` and `s/docs/start_the_day_schedule_templates.json`. ## Start The Day behavior The app should not assume midnight, morning, or matching schedules. When the `start the day` button is pressed, capture that timestamp and assign each hour block relative to that moment. Hard rule: no hour block contains more than 2 items. Daily/as-needed items are not all forced into the schedule. They are available as choice-pool or on-demand tasks so the app stays achievable. ## Jasper care change Jasper is treated as needing the same level of care, and often more protective scheduling, because severe ADHD plus caregiver burnout can make transitions, interruptions, people-pleasing, sensory load, and self-care neglect a core access issue. Jasper's daily template schedules burnout checks, transition support, decompression, protected rest, and boundaries as real care tasks. ## Currency rule retained 10 copper = 1 silver. 10 silver = 1 gold. 10 gold = 1 platinum. Copper, silver, and gold are normalized to 0-9. Platinum has no cap.

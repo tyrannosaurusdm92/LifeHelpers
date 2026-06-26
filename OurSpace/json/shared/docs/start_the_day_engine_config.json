@@ -1,0 +1,61 @@
+{
+  "schema_name": "ourspace_start_the_day_engine_config",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "button_name": "start the day",
+  "purpose": "Load daily tasks relative to the actual moment the user starts their day, rather than a fixed clock time.",
+  "runtime_algorithm": [
+    "When the user presses start the day, capture start_timestamp.",
+    "Choose profile schedule: william, jasper, or shared.",
+    "Choose adaptive mode: survival_day, standard_day, or expanded_day. Default to standard_day unless user chooses or app detects overload.",
+    "For each hour block, assign scheduled_time = start_timestamp + hour_offset hours.",
+    "Never place more than two items in the same hour block.",
+    "Do not auto-load every Daily / as needed task. Use daily_choice_pools for optional flexible items.",
+    "If a weekly, monthly, or yearly task is due, insert it only into an empty/optional slot and never into an hour already containing two items.",
+    "Rest, decompression, boundaries, and caregiver-burnout checks count as real tasks and must not be replaced automatically.",
+    "Allow pause/resume and partial completion without resetting the whole day."
+  ],
+  "selection_weights": {
+    "critical_body_care": "highest",
+    "cats_and_safety": "high",
+    "dbt_adhd_regulation": "high",
+    "caregiver_burnout_protection_for_jasper": "highest",
+    "chores": "limited_to_one_choice_pool_item_at_a_time",
+    "admin": "only_when_due_or_manual",
+    "hobbies_and_decompression": "valid_recovery_not_filler"
+  },
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; then rebuild as platinum, gold, silver, copper with copper/silver/gold each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "shared_dbt_adhd_kindness_library": {
+    "location": "s/skills/",
+    "cadence_sources": {
+      "daily": "s/data/dbt_adhd_daily.json",
+      "weekly": "s/data/dbt_adhd_weekly.json",
+      "monthly": "s/data/dbt_adhd_monthly.json",
+      "yearly": "s/data/dbt_adhd_yearly.json"
+    },
+    "daily_skill_rotation_rule": "After Start the Day is pressed, load no more than one daily DBT/ADHD skill into an eligible open block and keep every hour block at two total items or fewer.",
+    "survival_day_rule": "Daily skill may be reduced to one breath, one checkbox, or one sentence; weekly/monthly/yearly skills do not auto-load."
+  },
+  "hard_limits": {
+    "max_items_per_hour_block": 2
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_name": "ourspace_clean_split_manifest",
+  "schema_version": "1.0.0-cleaned",
+  "generated_at_utc": "2026-06-25T20:15:41+00:00",
+  "output_root": "OurSpace_William_Jasper_Shared_Cleaned",
+  "categories": {
+    "william": [
+      "life_impact_profile.json",
+      "positive_messages.json",
+      "store_items.json",
+      "tasks.json",
+      "william_bundle.json"
+    ],
+    "jasper": [
+      "jasper_bundle.json",
+      "life_impact_profile.json",
+      "positive_messages.json",
+      "store_items.json",
+      "tasks.json"
+    ],
+    "shared": [
+      "shared_bundle.json",
+      "store_items.json",
+      "tasks_self_care.json"
+    ]
+  },
+  "source_files_loaded": [
+    {
+      "name": "jasper_store_items.json",
+      "source": "uploaded_zip"
+    },
+    {
+      "name": "jasper_tasks.json",
+      "source": "uploaded_zip"
+    },
+    {
+      "name": "shared_store_items.json",
+      "source": "uploaded_zip"
+    },
+    {
+      "name": "shared_tasks_self_care.json",
+      "source": "uploaded_zip"
+    },
+    {
+      "name": "william_store_items.json",
+      "source": "uploaded_zip"
+    },
+    {
+      "name": "william_tasks.json",
+      "source": "uploaded_zip"
+    },
+    {
+      "name": "ourspace_marquees_positive_messages.json",
+      "source": "direct_upload"
+    },
+    {
+      "name": "jasper_squishy_person_specific_life_impact.json",
+      "source": "direct_upload"
+    },
+    {
+      "name": "william_dino_person_specific_life_impact.json",
+      "source": "direct_upload"
+    }
+  ],
+  "currency_rules": {
+    "exchange_rates": {
+      "copper_per_silver": 10,
+      "silver_per_gold": 10,
+      "gold_per_platinum": 10
+    },
+    "display_rules": {
+      "copper_min": 0,
+      "copper_max": 9,
+      "silver_min": 0,
+      "silver_max": 9,
+      "gold_min": 0,
+      "gold_max": 9,
+      "platinum_min": 0,
+      "platinum_max": null
+    },
+    "normalization": "Carry overflow upward so lower denominations stay from 0 through 9; platinum has no upper limit."
+  },
+  "split_rules": {
+    "william": "William-only tasks, store items, messages, and life-impact profile.",
+    "jasper": "Jasper-only tasks, store items, messages, and life-impact profile.",
+    "shared": "Shared tasks and shared store items usable by either person.",
+    "cross_person_context_note": "Person-specific profiles may mention the other person only when needed for care/support context."
+  },
+  "cleanup_summary": {
+    "family_title_scrub_applied": true,
+    "use_names_instead_of_family_titles": true,
+    "currency_denominations_normalized": true,
+    "lower_denomination_maximum": 9,
+    "highest_denomination_has_no_cap": true
+  }
+}

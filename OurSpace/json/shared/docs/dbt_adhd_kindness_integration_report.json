@@ -1,0 +1,81 @@
+{
+  "schema_name": "ourspace_dbt_adhd_kindness_integration_report",
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-06-25T21:00:29.329839+00:00",
+  "source_files": {
+    "ourspace_package": "OurSpace_William_Jasper_Shared_Cadence_StartDay.zip",
+    "dbt_adhd_skill_files": "DBT_ADHD_Skill_Files.zip"
+  },
+  "summary": {
+    "dbt_adhd_files_processed": 404,
+    "json_files_kindness_metadata_added": 265,
+    "html_files_kindness_banner_added": 121,
+    "md_files_notes_added": 18,
+    "actual_skill_files_now_under_shared": true,
+    "william_jasper_skill_dirs_are_pointers": true,
+    "max_items_per_hour_block_preserved": true
+  },
+  "cadence_counts": {
+    "yearly": 27,
+    "monthly": 31,
+    "daily": 255,
+    "weekly": 91
+  },
+  "profile_basis": {
+    "william": {
+      "main_doability_needs": [
+        "bed-level or seated options by default",
+        "oxygen/breathing, pain, vertigo, fatigue, mobility, and recovery time respected",
+        "ADHD/autism supports: transitions, low-stimulation starts, tiny visible steps",
+        "partial completion and stopping before a crash count as success",
+        "no shame, no body blame, no pressure to push through pain or dysphoria"
+      ],
+      "care_language": "direct, validating, masculine, autonomy-preserving, privacy-respecting"
+    },
+    "jasper": {
+      "main_doability_needs": [
+        "ADHD transition support before task demands",
+        "caregiver burnout recovery treated as care, not avoidance",
+        "protected rest, boundaries, decompression, sensory needs, and people-pleasing checks",
+        "low-energy, one-field, one-minute versions allowed",
+        "no assumption that Jasper has unlimited caregiver capacity"
+      ],
+      "care_language": "they/them, body-neutral, consent-based, non-shaming, burnout-aware"
+    },
+    "shared": {
+      "household_rules": [
+        "no hour block may hold more than two tasks/tools",
+        "skills may be used as one-breath or one-field versions",
+        "survival days load critical care first and skip optional worksheets",
+        "rest, boundaries, decompression, and asking for help count as care",
+        "skills are for support, not grades"
+      ]
+    }
+  },
+  "currency_rules": {
+    "exchange_rates": {
+      "10 copper": "1 silver",
+      "10 silver": "1 gold",
+      "10 gold": "1 platinum"
+    },
+    "limits": {
+      "copper_max": 9,
+      "silver_max": 9,
+      "gold_max": 9,
+      "platinum_max": null
+    },
+    "normalization_formula": "total_copper = copper + 10*silver + 100*gold + 1000*platinum; rebuild as platinum, gold, silver, copper so copper/silver/gold are each 0-9.",
+    "required_display_order": [
+      "platinum",
+      "gold",
+      "silver",
+      "copper"
+    ]
+  },
+  "routines": {
+    "daily": "rotating tiny support skills only; never all daily skills at once",
+    "weekly": "one to three larger reflections/resets per week, inserted into open blocks",
+    "monthly": "care plan and pattern review; optional and low-spoon",
+    "yearly": "library/reference/audit review"
+  }
+}

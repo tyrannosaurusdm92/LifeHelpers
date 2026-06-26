@@ -1,0 +1,12 @@
+# OurSpace William / Jasper / Shared Clean Split This folder is the cleaned JSON split for OurSpace. ## Folder layout - `w/data/` contains William-only tasks, store items, messages, life-impact profile, and a William import bundle.
+- `j/data/` contains Jasper-only tasks, store items, messages, life-impact profile, and a Jasper import bundle.
+- `s/data/` contains shared tasks, shared store items, and a shared import bundle.
+- `docs/` contains the split manifest, cleanup audit, and canonical currency rules. ## Cleanup applied - Person-role labels requested for removal were scrubbed from all output JSON and docs.
+- The data uses names instead of those removed role labels.
+- Structured currency values were normalized so copper, silver, and gold stay from 0 through 9.
+- Platinum remains uncapped.
+- Category bundles were added so the site can import one file per profile if desired. ## Currency rules - 10 copper = 1 silver.
+- 10 silver = 1 gold.
+- 10 gold = 1 platinum.
+- Copper, silver, and gold may only be 0 through 9.
+- Platinum has no upper limit. ## DBT + ADHD shared kindness library Updated: 2026-06-25T21:00:29.329839+00:00 The DBT/ADHD skill files are now housed in `s/skills/` and sorted into daily, weekly, monthly, and yearly routine cadence folders after a kindness pass based on William and Jasper's disability/support profiles. William and Jasper folders now contain pointer JSON files instead of duplicated DBT/ADHD skill libraries. Their schedules still use the shared library with profile-specific accessibility overlays. Hard rule preserved: **no Start the Day hour block may contain more than two items.**

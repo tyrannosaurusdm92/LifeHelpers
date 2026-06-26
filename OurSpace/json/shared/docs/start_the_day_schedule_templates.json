@@ -1,0 +1,758 @@
+{
+  "schema_name": "ourspace_start_the_day_schedule_templates",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-25T20:52:40Z",
+  "trigger": "start_the_day_button_press",
+  "clock_model": {
+    "start_time": "runtime timestamp captured when button is pressed",
+    "assignment_rule": "scheduled_time = start_time + hour_offset_from_start_button hours",
+    "reason": "With disability, ADHD, chronic illness, and caregiver burnout, days do not start at the same clock time and do not need to line up between users."
+  },
+  "hard_limits": {
+    "max_items_per_hour_block": 2,
+    "do_not_force_all_daily_pool_items_into_one_day": true,
+    "partial_completion_counts": true,
+    "rest_blocks_are_real_tasks": true
+  },
+  "adaptive_modes": {
+    "survival_day": "Load only critical body care, medication/medical supports, food, hydration, cats, and one regulation skill.",
+    "standard_day": "Load the schedule template exactly as written, plus at most one optional choice-pool item every few hours.",
+    "expanded_day": "Allow weekly/monthly items to be inserted into empty or optional blocks, still capped at two items per hour."
+  },
+  "schedules": {
+    "william": [
+      {
+        "hour_offset_from_start_button": 0,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-start-day-capacity-check",
+            "title": "Start-day capacity check",
+            "kind": "dbt_adhd_tool",
+            "profile": "william",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-take-meds",
+            "title": "Take meds",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": "Start with capacity, not clock time."
+      },
+      {
+        "hour_offset_from_start_button": 1,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-hydrate",
+            "title": "Hydrate",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-oxygen-breathing-check-if-applicable",
+            "title": "Oxygen / breathing check if applicable",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 2,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-eat-at-least-one-safe-meal",
+            "title": "Eat at least one safe meal",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-pain-check-in",
+            "title": "Pain check-in",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 3,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-position-shift-pressure-relief",
+            "title": "Position shift / pressure relief",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-dbt-skill",
+            "title": "One DBT skill",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 4,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-brush-teeth-mouth-care",
+            "title": "Brush teeth / mouth care",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-rest-recovery-block",
+            "title": "Rest / recovery block",
+            "kind": "self_care",
+            "profile": "william",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 5,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-autism-sensory-check-in",
+            "title": "Autism sensory check-in",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-cat-check-in-with-adhd-skills-harvey-and-callie",
+            "title": "Cat check-in with Harvey, Callie, and cat siblings",
+            "kind": "task",
+            "profile": "william",
+            "optional": true,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 6,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-eat-second-meal-snack-plate",
+            "title": "Eat second meal / snack plate",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-hydration-refill",
+            "title": "Hydration refill",
+            "kind": "self_care",
+            "profile": "william",
+            "optional": false,
+            "source": "generated_schedule",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 7,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-diary-card-daily-check-in",
+            "title": "Diary card / daily check-in",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-use-adhd-skills-support-chat",
+            "title": "Use ADHD skill card",
+            "kind": "task",
+            "profile": "william",
+            "optional": true,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 8,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-one-tiny-optional-contribution",
+            "title": "One tiny optional contribution: reachable surface, message, or creative step",
+            "kind": "choice_pool",
+            "profile": "william",
+            "optional": true,
+            "source": "daily_choice_pool",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-decompression-after-contribution",
+            "title": "Decompression after contribution",
+            "kind": "self_care",
+            "profile": "william",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "variable",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 9,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "william-charge-power-wheelchair",
+            "title": "Charge power wheelchair",
+            "kind": "task",
+            "profile": "william",
+            "optional": false,
+            "source": "w/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "william-shutdown-soft-landing",
+            "title": "Soft landing / no-shame shutdown",
+            "kind": "dbt_adhd_tool",
+            "profile": "william",
+            "optional": false,
+            "source": "generated_schedule",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": ""
+      }
+    ],
+    "jasper": [
+      {
+        "hour_offset_from_start_button": 0,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-start-day-transition-check",
+            "title": "Start-day transition + capacity check",
+            "kind": "dbt_adhd_tool",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-take-meds",
+            "title": "Take meds",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": false,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": "ADHD transition ramp first; no productivity demand before orientation."
+      },
+      {
+        "hour_offset_from_start_button": 1,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-hydrate",
+            "title": "Hydrate",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": false,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-caregiver-burnout-check",
+            "title": "Caregiver burnout check",
+            "kind": "dbt_adhd_tool",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 2,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-eat-meal-1",
+            "title": "Eat meal 1",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": false,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-low-sensory-body-check",
+            "title": "Low-sensory body check",
+            "kind": "self_care",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 3,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-feed-cats",
+            "title": "Feed cats",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": false,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-refresh-cat-water",
+            "title": "Refresh cat water",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": false,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "medium",
+        "notes": "Cat care can be merged in UI if needed, but still counts as two max."
+      },
+      {
+        "hour_offset_from_start_button": 4,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-clean-cat-litter-boxes",
+            "title": "Clean cat litter boxes",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": false,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-decompression-break-after-cat-care",
+            "title": "Decompression break after cat care",
+            "kind": "self_care",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_caregiver_burnout_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "medium",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 5,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-william-care-triage",
+            "title": "William care triage: food, beverage, access, or urgent support",
+            "kind": "caregiver_support",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_disability_profiles",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-boundary-counts-as-care",
+            "title": "Boundary counts as care",
+            "kind": "dbt_adhd_tool",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_caregiver_burnout_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "variable",
+        "notes": "One triage item only; the app should not auto-load every caregiver task into this block."
+      },
+      {
+        "hour_offset_from_start_button": 6,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-hygiene-check",
+            "title": "Hygiene check",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": false,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-dbt-adhd-one-next-step",
+            "title": "One DBT/ADHD skill or one next step",
+            "kind": "dbt_adhd_tool",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 7,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-one-household-critical-only",
+            "title": "One household critical task only: kitchen trash, dishes support, or surface wipe",
+            "kind": "choice_pool",
+            "profile": "jasper",
+            "optional": true,
+            "source": "daily_choice_pool",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-rest-after-household-task",
+            "title": "Protected rest after household task",
+            "kind": "self_care",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_caregiver_burnout_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "medium",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 8,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-eat-meal-2",
+            "title": "Eat meal 2",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": false,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-hydration-refill",
+            "title": "Hydration refill",
+            "kind": "self_care",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_schedule",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 9,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-admin-or-shopping-if-needed",
+            "title": "Admin/shopping only if needed: one tiny step",
+            "kind": "choice_pool",
+            "profile": "jasper",
+            "optional": true,
+            "source": "weekly_or_on_demand_pool",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-adhd-body-double-timer",
+            "title": "ADHD body-double/timer bridge",
+            "kind": "dbt_adhd_tool",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "variable",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 10,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-play-mobile-game-to-decompress",
+            "title": "Play mobile game to decompress",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": true,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-watch-comfort-content",
+            "title": "Watch comfort content",
+            "kind": "task",
+            "profile": "jasper",
+            "optional": true,
+            "source": "j/data/tasks.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": "Two recovery options are allowed, not chores."
+      },
+      {
+        "hour_offset_from_start_button": 11,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "jasper-tiny-diary-card",
+            "title": "Tiny diary card / stress log",
+            "kind": "dbt_adhd_tool",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_disability_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "jasper-soft-shutdown",
+            "title": "Soft shutdown routine",
+            "kind": "self_care",
+            "profile": "jasper",
+            "optional": false,
+            "source": "generated_from_caregiver_burnout_profile",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": ""
+      }
+    ],
+    "shared": [
+      {
+        "hour_offset_from_start_button": 0,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "shared-start-day-check-in",
+            "title": "Shared start-day check-in",
+            "kind": "dbt_adhd_tool",
+            "profile": "shared",
+            "optional": false,
+            "source": "generated_schedule",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "shared-take-meds",
+            "title": "Take meds",
+            "kind": "task",
+            "profile": "shared",
+            "optional": false,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "very_low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 1,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "shared-hydrate",
+            "title": "Hydrate",
+            "kind": "task",
+            "profile": "shared",
+            "optional": false,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "shared-cat-food-and-water-check",
+            "title": "Cat food and water check",
+            "kind": "task",
+            "profile": "shared",
+            "optional": false,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 2,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "shared-eat-meal-1",
+            "title": "Eat meal 1",
+            "kind": "task",
+            "profile": "shared",
+            "optional": false,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "shared-use-dbt-skill",
+            "title": "Use DBT skill",
+            "kind": "task",
+            "profile": "shared",
+            "optional": false,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 3,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "shared-decompression-break",
+            "title": "Decompression break",
+            "kind": "task",
+            "profile": "shared",
+            "optional": false,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "shared-hygiene-check",
+            "title": "Hygiene check",
+            "kind": "task",
+            "profile": "shared",
+            "optional": true,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 4,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "shared-dishes-kitchen-reset",
+            "title": "Dishes / kitchen reset",
+            "kind": "task",
+            "profile": "shared",
+            "optional": true,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "shared-rest-after-reset",
+            "title": "Rest after reset",
+            "kind": "self_care",
+            "profile": "shared",
+            "optional": false,
+            "source": "generated_schedule",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "variable",
+        "notes": ""
+      },
+      {
+        "hour_offset_from_start_button": 5,
+        "max_items_allowed_in_this_hour": 2,
+        "items": [
+          {
+            "id": "shared-eat-meal-2",
+            "title": "Eat meal 2",
+            "kind": "task",
+            "profile": "shared",
+            "optional": false,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          },
+          {
+            "id": "shared-diary-card-daily-check-in",
+            "title": "Diary card / daily check-in",
+            "kind": "task",
+            "profile": "shared",
+            "optional": true,
+            "source": "s/data/tasks_self_care.json",
+            "low_spoon_version": "Do the smallest safe version; partial completion counts."
+          }
+        ],
+        "energy_assumption": "low",
+        "notes": ""
+      }
+    ]
+  }
+}

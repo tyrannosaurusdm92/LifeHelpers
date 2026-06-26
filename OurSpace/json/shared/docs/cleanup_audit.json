@@ -1,0 +1,46 @@
+{
+  "schema_name": "ourspace_cleaning_audit",
+  "schema_version": "1.0.0-cleaned",
+  "generated_at_utc": "2026-06-25T20:15:41+00:00",
+  "source_file_count": 9,
+  "json_files_written_count": 16,
+  "json_files_written": [
+    "j/data/tasks.json",
+    "j/data/store_items.json",
+    "w/data/tasks.json",
+    "w/data/store_items.json",
+    "s/data/tasks_self_care.json",
+    "s/data/store_items.json",
+    "w/data/positive_messages.json",
+    "j/data/positive_messages.json",
+    "j/data/life_impact_profile.json",
+    "w/data/life_impact_profile.json",
+    "w/data/william_bundle.json",
+    "j/data/jasper_bundle.json",
+    "s/data/shared_bundle.json",
+    "s/docs/split_manifest.json",
+    "s/docs/cleanup_audit.json",
+    "s/docs/currency_rules.json"
+  ],
+  "records_by_output_file": {
+    "j/data/tasks.json": 60,
+    "j/data/store_items.json": 18,
+    "w/data/tasks.json": 76,
+    "w/data/store_items.json": 37,
+    "s/data/tasks_self_care.json": 24,
+    "s/data/store_items.json": 78
+  },
+  "scrub_stats": {
+    "strings_changed": 7,
+    "list_items_removed": 1
+  },
+  "currency_stats": {
+    "currency_dicts_seen": 320,
+    "currency_dicts_changed": 0,
+    "changed_currency_dicts": []
+  },
+  "validation": {
+    "requested_family_title_hits_after_cleaning": [],
+    "invalid_currency_values_after_cleaning": []
+  }
+}
