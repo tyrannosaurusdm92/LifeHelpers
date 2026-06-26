@@ -1,15 +1,20 @@
-const OURSPACE_CACHE = 'ourspace-pwa-v11-sync-diary-readability';
+const OURSPACE_CACHE = 'ourspace-pwa-v13-full-myspace-diary-converter';
 const CORE_ASSETS = [
   "./ourspace.html",
   "./OurSpace.html",
   "./william.html",
   "./jasper.html",
   "./manifest.webmanifest",
+  "./OurSpace_Profile_Style_Converter.html",
   "./browserconfig.xml",
   "./assets/ourspace-data-catalogs.js",
   "./assets/ourspace-embedded-catalogs.js",
   "./assets/ourspace-user-core.js",
   "./assets/ourspace-user.css",
+  "./diary_cards/william_dbt_disability_guilt_diary_card.html",
+  "./diary_cards/jasper_dbt_adhd_caregiver_diary_card.html",
+  "./json/william/data/positive_messages.json",
+  "./json/jasper/data/positive_messages.json",
   "./assets/ourspace-auth.js",
   "./assets/ourspace-auth.css",
   "./assets/legacy-portal-storage.js",
@@ -23,11 +28,7 @@ const CORE_ASSETS = [
   "./assets/icons/ourspace-icon-180.png",
   "./assets/icons/ourspace-icon-192.png",
   "./assets/icons/ourspace-icon-512.png",
-  "./assets/icons/ourspace-icon-384.png",
-  "./modules/dbt/william_dbt_disability_guilt_diary_card.html",
-  "./modules/dbt/jasper_dbt_adhd_caregiver_diary_card.html",
-  "./json/william/data/positive_messages.json",
-  "./json/jasper/data/positive_messages.json",
+  "./assets/icons/ourspace-icon-384.png"
 ];
 
 self.addEventListener('install', event => {
