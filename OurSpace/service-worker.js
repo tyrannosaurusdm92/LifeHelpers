@@ -1,4 +1,4 @@
-const OURSPACE_CACHE = 'ourspace-pwa-v11-appearance-sync-diary';
+const OURSPACE_CACHE = 'ourspace-pwa-v12-diary-brandfont-fixed';
 const CORE_ASSETS = [
   "./ourspace.html",
   "./OurSpace.html",
@@ -18,6 +18,9 @@ const CORE_ASSETS = [
   "./assets/ourspace-positive-messages.js",
   "./assets/ourspace-revision-20260626.js",
   "./assets/ourspace-revision-20260626.css",
+  "./assets/fonts/love-ya-like-a-sister/LoveYaLikeASister.ttf",
+  "./assets/ourspace-brand-font.js",
+  "./assets/ourspace-brand-font.css",
   "./assets/legacy-portal-storage.js",
   "./assets/legacy-ourspace-allowed-games.js",
   "./assets/legacy-ourspace-currency-core.js",

@@ -1,3 +1,4 @@
+@font-face{font-family:'OurSpaceBrand';src:url('./fonts/love-ya-like-a-sister/LoveYaLikeASister.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
 /* OurSpace revision layer: readability, safe appearance editor, inventory visibility */
 :root{
   --os-page-bg-image: var(--page-bg-image, none);
@@ -85,3 +86,21 @@ label,small,.tiny,.meta,.pill,.coin,.currency-line,.cart-line,.product p,.produc
 .os-sync-status{border:1px solid var(--os-module-border);background:var(--os-module-bg);border-radius:14px;padding:.55rem;margin:.5rem 0;font-weight:800;}
 [data-jump="home-code"],#home-code{display:none !important;}
 @media(max-width:760px){.os-appearance-grid,.os-preset-row{grid-template-columns:1fr}.os-dbt-frame{min-height:82vh}.os-journal-big textarea{min-height:15rem}}
+
+
+/* Diary card direct mount + OurSpace brand enforcement */
+.os-diary-card-mount{
+  width:100%;
+  min-height:36rem;
+  border:2px solid #111827;
+  border-radius:16px;
+  background:#ffffff;
+  color:#000000;
+  padding:.75rem;
+  overflow:visible;
+}
+.os-diary-card-mount .dbt-diary-module{
+  box-shadow:none;
+  margin:0;
+}
+.os-dbt-frame{display:none !important;}

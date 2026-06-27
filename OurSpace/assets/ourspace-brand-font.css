@@ -1,0 +1,25 @@
+/* OurSpace brand font layer */
+@font-face{
+  font-family:'OurSpaceBrand';
+  src:url('./fonts/love-ya-like-a-sister/LoveYaLikeASister.ttf') format('truetype');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+.ourspace-brand-text,
+[data-ourspace-brand],
+.brand-ourspace{
+  font-family:'OurSpaceBrand','Love Ya Like A Sister','Comic Sans MS','Comic Sans',cursive !important;
+  font-weight:400 !important;
+  letter-spacing:.025em;
+  text-transform:none !important;
+}
+button .ourspace-brand-text,
+a .ourspace-brand-text,
+label .ourspace-brand-text,
+nav .ourspace-brand-text,
+h1 .ourspace-brand-text,
+h2 .ourspace-brand-text,
+h3 .ourspace-brand-text{
+  font-family:'OurSpaceBrand','Love Ya Like A Sister','Comic Sans MS','Comic Sans',cursive !important;
+}
