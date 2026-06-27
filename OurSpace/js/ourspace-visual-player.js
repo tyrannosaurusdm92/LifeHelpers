@@ -22,13 +22,14 @@
   const VIDEO_EXT = /\.(mp4|m4v|mov|webm|ogv|mpeg|mpg)$/i;
 
   const defaultLibrary = () => ({
-    schemaVersion: 1,
+    schemaVersion: 2,
     folders: [
-      { id: 'folder-all', name: 'All Visuals', system: true, createdAt: Date.now() },
-      { id: 'folder-uploads', name: 'Uploads', system: true, createdAt: Date.now() }
+      { id: 'folder-all', name: 'All Visuals', system: true, createdAt: Date.now(), parentId: '' },
+      { id: 'folder-uploads', name: 'Uploads', system: true, createdAt: Date.now(), parentId: '' }
     ],
     playlists: [
-      { id: 'playlist-favorites', name: 'Favorites', assetIds: [], system: true, createdAt: Date.now() }
+      { id: 'playlist-favorites', name: 'Favorites', assetIds: [], system: true, createdAt: Date.now() },
+      { id: 'playlist-shared-visual', name: 'William + Jasper Shared Visuals', assetIds: [], system: true, shared: true, createdAt: Date.now() }
     ],
     assets: [],
     selectedFolderId: 'folder-all',
@@ -39,6 +40,7 @@
     fitMode: 'contain',
     slideshowSeconds: 8,
     videoVolume: 0.85,
+    links: [],
     updatedAt: Date.now(),
     backendUrl: BACKEND_URL
   });
@@ -85,6 +87,18 @@
   const isVideoFile = (file) => ACCEPTED_VIDEOS.includes(file.type) || VIDEO_EXT.test(file.name);
   const isVisualFile = (file) => isImageFile(file) || isVideoFile(file);
   const currentAsset = () => state.library.assets.find(a => a.id === state.library.currentAssetId) || null;
+  const folderAndDescendantIds = (folderId) => {
+    const ids = new Set([folderId]);
+    let changed = true;
+    while (changed) {
+      changed = false;
+      for (const folder of state.library.folders || []) {
+        if (folder.parentId && ids.has(folder.parentId) && !ids.has(folder.id)) { ids.add(folder.id); changed = true; }
+      }
+    }
+    return ids;
+  };
+
 
   function openDb() {
     return new Promise((resolve, reject) => {
@@ -141,9 +155,12 @@
     next.folders = Array.isArray(next.folders) ? next.folders : [];
     next.playlists = Array.isArray(next.playlists) ? next.playlists : [];
     next.assets = Array.isArray(next.assets) ? next.assets : [];
-    if (!next.folders.some(f => f.id === 'folder-all')) next.folders.unshift({ id:'folder-all', name:'All Visuals', system:true, createdAt:Date.now() });
-    if (!next.folders.some(f => f.id === 'folder-uploads')) next.folders.push({ id:'folder-uploads', name:'Uploads', system:true, createdAt:Date.now() });
+    if (!next.folders.some(f => f.id === 'folder-all')) next.folders.unshift({ id:'folder-all', name:'All Visuals', system:true, createdAt:Date.now(), parentId:'' });
+    if (!next.folders.some(f => f.id === 'folder-uploads')) next.folders.push({ id:'folder-uploads', name:'Uploads', system:true, createdAt:Date.now(), parentId:'' });
     if (!next.playlists.some(p => p.id === 'playlist-favorites')) next.playlists.unshift({ id:'playlist-favorites', name:'Favorites', assetIds:[], system:true, createdAt:Date.now() });
+    if (!next.playlists.some(p => p.id === 'playlist-shared-visual')) next.playlists.push({ id:'playlist-shared-visual', name:'William + Jasper Shared Visuals', assetIds:[], system:true, shared:true, createdAt:Date.now() });
+    next.folders = next.folders.map(folder => ({ id: folder.id || uid('folder'), name: folder.name || 'New Folder', system: Boolean(folder.system), shared: Boolean(folder.shared), parentId: folder.id === 'folder-all' ? '' : (folder.parentId || ''), createdAt: folder.createdAt || Date.now(), updatedAt: folder.updatedAt || folder.createdAt || Date.now() }));
+    next.links = Array.isArray(next.links) ? next.links.map(link => ({ id: link.id || uid('link'), title: link.title || link.url || 'Link', url: link.url || '', targetKind: link.targetKind || 'folder', targetId: link.targetId || 'folder-all', createdAt: link.createdAt || Date.now() })).filter(link => link.url) : [];
     next.assets = next.assets.map(asset => ({
       id: asset.id || uid('asset'),
       title: asset.title || asset.name || 'Untitled Visual',
@@ -183,7 +200,10 @@
       const ids = new Set(playlist?.assetIds || []);
       assets = assets.filter(a => ids.has(a.id));
     } else if (lib.selectedFolderId && lib.selectedFolderId !== 'folder-all') {
-      assets = assets.filter(a => a.folderId === lib.selectedFolderId);
+      {
+        const ids = folderAndDescendantIds(lib.selectedFolderId);
+        assets = assets.filter(a => ids.has(a.folderId));
+      }
     }
     return assets.sort((a,b) => (b.addedAt || 0) - (a.addedAt || 0));
   }
@@ -251,7 +271,7 @@
       <div class="ospv-top">
         <div class="ospv-title">
           <h2>Visual Player</h2>
-          <p>Photo + video library with folders, playlists, upload, playback controls, downloads, and local-first storage.</p>
+          <p>Photo + video library with folders/subfolders, playlists, shared William + Jasper collections, drag-and-drop organizing, downloads, and external links.</p>
         </div>
         <div class="ospv-status">
           <span class="ospv-pill"><strong>${lib.assets.length}</strong> items</span>
@@ -280,8 +300,10 @@
             </div>
             <label class="ospv-label">Folder</label>
             <select class="ospv-field" data-field="folder-select">
-              ${lib.folders.map(f => `<option value="${esc(f.id)}" ${f.id === lib.selectedFolderId ? 'selected' : ''}>${esc(f.name)}</option>`).join('')}
+              ${lib.folders.map(f => `<option value="${esc(f.id)}" ${f.id === lib.selectedFolderId ? 'selected' : ''}>${esc(folderNameWithPath(f))}</option>`).join('')}
             </select>
+            <div class="ospv-action-row"><button class="ospv-btn ospv-btn-small" data-action="rename-folder">Rename folder</button><button class="ospv-btn ospv-btn-small ospv-btn-danger" data-action="delete-folder">Delete folder</button></div>
+            <div class="ospv-drop-list" data-folder-drop-list>${lib.folders.map(folderDropItem).join('')}</div>
             <div class="ospv-field-row">
               <input class="ospv-field" type="text" placeholder="New playlist name" data-field="playlist-name">
               <button class="ospv-btn" data-action="create-playlist">Create</button>
@@ -291,8 +313,15 @@
               <option value="">No playlist filter</option>
               ${lib.playlists.map(p => `<option value="${esc(p.id)}" ${p.id === lib.selectedPlaylistId ? 'selected' : ''}>${esc(p.name)} (${p.assetIds.length})</option>`).join('')}
             </select>
+            <div class="ospv-action-row"><button class="ospv-btn ospv-btn-small" data-action="rename-playlist">Rename playlist</button><button class="ospv-btn ospv-btn-small ospv-btn-danger" data-action="delete-playlist">Delete playlist</button></div>
+            <div class="ospv-drop-list" data-playlist-drop-list>${lib.playlists.map(playlistDropItem).join('')}</div>
             <button class="ospv-btn" data-action="add-selected-to-playlist">Add checked items to playlist</button>
             <button class="ospv-btn ospv-btn-danger" data-action="delete-selected">Delete checked items</button>
+            <div class="ospv-section-title"><h3>Website links</h3><span class="ospv-tag">external</span></div>
+            <input class="ospv-field" type="text" placeholder="Link title" data-field="link-title">
+            <input class="ospv-field" type="url" placeholder="https://example.com" data-field="link-url">
+            <button class="ospv-btn" data-action="add-link">Add link to current folder/playlist</button>
+            <div class="ospv-link-list">${currentLinks().length ? currentLinks().map(linkItem).join('') : '<div class="ospv-empty">No links saved here yet.</div>'}</div>
           </div>
         </aside>
 
@@ -358,7 +387,7 @@
     const isCurrent = asset.id === state.library.currentAssetId;
     const meta = [asset.kind, formatBytes(asset.size), asset.width && asset.height ? `${asset.width}×${asset.height}` : '', asset.duration ? formatTime(asset.duration) : ''].filter(Boolean).join(' • ');
     return `
-      <article class="ospv-card-item ${isCurrent ? 'is-current' : ''}" data-asset-id="${esc(asset.id)}">
+      <article class="ospv-card-item ${isCurrent ? 'is-current' : ''}" data-asset-id="${esc(asset.id)}" draggable="true"> 
         <label class="ospv-check"><input type="checkbox" class="ospv-select-asset" value="${esc(asset.id)}"><span></span></label>
         <button class="ospv-preview" data-action="select-asset" data-asset-id="${esc(asset.id)}" title="Open ${esc(asset.title)}">
           ${asset.thumbDataUrl ? `<img src="${asset.thumbDataUrl}" alt="">` : `<span class="ospv-preview-fallback">${asset.kind === 'video' ? '🎞' : '🖼'}</span>`}
@@ -376,12 +405,66 @@
     `;
   }
 
+  function folderDepth(folder) {
+    let depth = 0, current = folder;
+    const seen = new Set();
+    while (current?.parentId && !seen.has(current.parentId)) {
+      seen.add(current.parentId);
+      current = state.library.folders.find(f => f.id === current.parentId);
+      if (current && current.id !== 'folder-all') depth += 1;
+      else break;
+    }
+    return depth;
+  }
+  function folderNameWithPath(folder) {
+    const chain = [];
+    let current = folder;
+    const seen = new Set();
+    while (current && !seen.has(current.id)) {
+      seen.add(current.id);
+      if (current.id !== 'folder-all') chain.unshift(current.name);
+      current = current.parentId ? state.library.folders.find(f => f.id === current.parentId) : null;
+    }
+    return chain.length ? chain.join(' / ') : folder.name;
+  }
+  function folderAssetCount(folder) {
+    if (folder.id === 'folder-all') return state.library.assets.length;
+    const ids = folderAndDescendantIds(folder.id);
+    return state.library.assets.filter(a => ids.has(a.folderId)).length;
+  }
+  function folderDropItem(folder) {
+    const depth = folderDepth(folder);
+    const current = state.library.selectedFolderId === folder.id && !state.library.selectedPlaylistId;
+    return `<button class="ospv-drop-target ${current ? 'is-current' : ''}" data-drop-kind="folder" data-id="${esc(folder.id)}" style="margin-left:${Math.min(depth,5)*10}px" type="button">${folder.id === 'folder-all' ? '' : '↳ '}${esc(folder.name)} <span>${folderAssetCount(folder)}</span></button>`;
+  }
+  function playlistDropItem(playlist) {
+    const current = state.library.selectedPlaylistId === playlist.id;
+    return `<button class="ospv-drop-target ${current ? 'is-current' : ''}" data-drop-kind="playlist" data-id="${esc(playlist.id)}" type="button">${playlist.shared ? '♥ ' : ''}${esc(playlist.name)} <span>${playlist.assetIds.length}</span></button>`;
+  }
+  function currentLinkTarget() {
+    if (state.library.selectedPlaylistId) return { targetKind:'playlist', targetId:state.library.selectedPlaylistId };
+    return { targetKind:'folder', targetId:state.library.selectedFolderId || 'folder-all' };
+  }
+  function currentLinks() {
+    const target = currentLinkTarget();
+    return (state.library.links || []).filter(link => link.targetKind === target.targetKind && link.targetId === target.targetId);
+  }
+  function linkItem(link) {
+    return `<div class="ospv-link-item"><a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">${esc(link.title || link.url)} ↗</a><button class="ospv-btn ospv-btn-small ospv-btn-danger" data-action="delete-link" data-link-id="${esc(link.id)}">Delete</button></div>`;
+  }
+
   function bindEvents() {
     const root = state.root;
     $('[data-action="upload-files"]', root)?.addEventListener('change', event => handleFiles(event.target.files));
     $('[data-action="upload-folder"]', root)?.addEventListener('change', event => handleFiles(event.target.files, { useRelativeFolders: true }));
     $('[data-action="create-folder"]', root)?.addEventListener('click', createFolderFromInput);
     $('[data-action="create-playlist"]', root)?.addEventListener('click', createPlaylistFromInput);
+    $('[data-action="rename-folder"]', root)?.addEventListener('click', renameSelectedFolder);
+    $('[data-action="delete-folder"]', root)?.addEventListener('click', deleteSelectedFolder);
+    $('[data-action="rename-playlist"]', root)?.addEventListener('click', renameSelectedPlaylist);
+    $('[data-action="delete-playlist"]', root)?.addEventListener('click', deleteSelectedPlaylist);
+    $('[data-action="add-link"]', root)?.addEventListener('click', addLink);
+    $$('[data-action="delete-link"]', root).forEach(btn => btn.addEventListener('click', () => deleteLink(btn.dataset.linkId)));
     $('[data-action="add-selected-to-playlist"]', root)?.addEventListener('click', addCheckedToPlaylist);
     $('[data-action="delete-selected"]', root)?.addEventListener('click', deleteCheckedAssets);
     $('[data-field="folder-select"]', root)?.addEventListener('change', event => {
@@ -411,6 +494,8 @@
       applyFitMode(); scheduleSave(); scheduleSync('updateSettings', { fitMode: state.library.fitMode });
     });
 
+    $$('[data-drop-kind="folder"]', root).forEach(btn => btn.addEventListener('click', () => { state.library.selectedFolderId = btn.dataset.id || 'folder-all'; state.library.selectedPlaylistId = ''; state.library.currentAssetId = visibleAssets()[0]?.id || ''; pause(); state.imageElapsed = 0; scheduleSave(); render(); }));
+    $$('[data-drop-kind="playlist"]', root).forEach(btn => btn.addEventListener('click', () => { state.library.selectedPlaylistId = btn.dataset.id || ''; state.library.currentAssetId = visibleAssets()[0]?.id || state.library.currentAssetId; pause(); state.imageElapsed = 0; scheduleSave(); render(); }));
     $$('[data-action="select-asset"]', root).forEach(btn => btn.addEventListener('click', () => selectAsset(btn.dataset.assetId, false)));
     $$('[data-action="download-asset"]', root).forEach(btn => btn.addEventListener('click', () => downloadAsset(btn.dataset.assetId)));
     $('[data-action="previous"]', root)?.addEventListener('click', previous);
@@ -424,6 +509,10 @@
     $('[data-action="download"]', root)?.addEventListener('click', () => downloadAsset(state.library.currentAssetId));
     $('[data-action="fullscreen"]', root)?.addEventListener('click', requestFullscreen);
 
+    root.ondragstart = onDragStart;
+    root.ondragover = onDragOver;
+    root.ondrop = onDrop;
+
     $$('[data-action="upload-picker"], [data-action="folder-picker"]', root).forEach(drop => {
       drop.addEventListener('dragover', event => { event.preventDefault(); drop.classList.add('is-drag'); });
       drop.addEventListener('dragleave', () => drop.classList.remove('is-drag'));
@@ -434,6 +523,38 @@
     });
   }
 
+
+  function onDragStart(event) {
+    const card = event.target.closest('[data-asset-id]');
+    if (!card || !event.dataTransfer) return;
+    event.dataTransfer.setData('text/plain', card.dataset.assetId);
+    event.dataTransfer.setData('application/x-ourspace-asset-id', card.dataset.assetId);
+    event.dataTransfer.effectAllowed = 'copyMove';
+  }
+  function onDragOver(event) {
+    const target = event.target.closest('.ospv-drop-target');
+    if (!target) return;
+    event.preventDefault();
+    target.classList.add('is-drag');
+    event.dataTransfer.dropEffect = event.dataTransfer?.files?.length ? 'copy' : 'move';
+  }
+  async function onDrop(event) {
+    const target = event.target.closest('.ospv-drop-target');
+    if (!target) return;
+    event.preventDefault();
+    target.classList.remove('is-drag');
+    const kind = target.dataset.dropKind;
+    const id = target.dataset.id;
+    const files = Array.from(event.dataTransfer?.files || []);
+    const assetId = event.dataTransfer?.getData('application/x-ourspace-asset-id') || event.dataTransfer?.getData('text/plain');
+    if (files.length) {
+      await handleFiles(files, kind === 'folder' ? { targetFolderId:id, useRelativeFolders:true } : { targetPlaylistId:id, useRelativeFolders:true });
+      return;
+    }
+    if (!assetId) return;
+    if (kind === 'folder') moveAssetToFolder(assetId, id);
+    if (kind === 'playlist') addAssetToPlaylist(assetId, id);
+  }
   async function refreshMediaDisplay() {
     const token = ++state.pendingRenderMedia;
     const screen = $('[data-visual-screen]', state.root);
@@ -548,12 +669,14 @@
     if (!files.length) { notify('No supported photo or video files were found.', 'error'); return; }
     notify(`Adding ${files.length} visual item${files.length === 1 ? '' : 's'}…`);
     let added = 0;
+    const addedIds = [];
     for (const file of files) {
       try {
-        const folderId = options.useRelativeFolders ? ensureFolderFromRelativePath(file.webkitRelativePath) : selectedUploadFolderId();
+        const folderId = options.targetFolderId || (options.useRelativeFolders ? ensureFolderFromRelativePath(file.webkitRelativePath) : selectedUploadFolderId());
         const asset = await buildAssetFromFile(file, folderId);
         await idbSet(STORE_BLOBS, asset.id, file);
         state.library.assets.push(asset);
+        addedIds.push(asset.id);
         if (!state.library.currentAssetId) state.library.currentAssetId = asset.id;
         added += 1;
         scheduleSync('upsertAsset', await metadataForSync(asset, file));
@@ -561,9 +684,20 @@
         notify(`Could not add ${file.name}: ${err.message}`, 'error');
       }
     }
+    if (options.targetPlaylistId) {
+      const playlist = state.library.playlists.find(p => p.id === options.targetPlaylistId);
+      if (playlist) {
+        const set = new Set(playlist.assetIds || []);
+        addedIds.forEach(id => set.add(id));
+        playlist.assetIds = Array.from(set);
+        playlist.updatedAt = Date.now();
+        scheduleSync('upsertPlaylist', playlist);
+      }
+    }
     scheduleSave();
     render();
     notify(`Added ${added} visual item${added === 1 ? '' : 's'}.`);
+    return addedIds;
   }
 
   function selectedUploadFolderId() {
@@ -572,14 +706,20 @@
   }
 
   function ensureFolderFromRelativePath(relativePath = '') {
-    const first = String(relativePath).split('/').filter(Boolean)[0];
-    if (!first) return selectedUploadFolderId();
-    const existing = state.library.folders.find(f => f.name.toLowerCase() === first.toLowerCase());
-    if (existing) return existing.id;
-    const folder = { id: uid('folder'), name: first, system: false, createdAt: Date.now() };
-    state.library.folders.push(folder);
-    scheduleSync('upsertFolder', folder);
-    return folder.id;
+    const parts = String(relativePath).split('/').filter(Boolean).slice(0, -1);
+    if (!parts.length) return selectedUploadFolderId();
+    let parentId = '';
+    let folder = null;
+    for (const part of parts) {
+      folder = state.library.folders.find(f => (f.parentId || '') === (parentId || '') && f.name.toLowerCase() === part.toLowerCase());
+      if (!folder) {
+        folder = { id: uid('folder'), name: part, system: false, parentId, createdAt: Date.now(), updatedAt: Date.now() };
+        state.library.folders.push(folder);
+        scheduleSync('upsertFolder', folder);
+      }
+      parentId = folder.id;
+    }
+    return folder ? folder.id : selectedUploadFolderId();
   }
 
   async function buildAssetFromFile(file, folderId) {
@@ -704,8 +844,9 @@
     const input = $('[data-field="folder-name"]', state.root);
     const name = input?.value.trim();
     if (!name) return notify('Type a folder name first.', 'error');
-    if (state.library.folders.some(f => f.name.toLowerCase() === name.toLowerCase())) return notify('That folder already exists.', 'error');
-    const folder = { id: uid('folder'), name, system: false, createdAt: Date.now() };
+    const parentId = state.library.selectedFolderId && state.library.selectedFolderId !== 'folder-all' ? state.library.selectedFolderId : '';
+    if (state.library.folders.some(f => (f.parentId || '') === parentId && f.name.toLowerCase() === name.toLowerCase())) return notify('That folder already exists here.', 'error');
+    const folder = { id: uid('folder'), name, system: false, parentId, createdAt: Date.now(), updatedAt: Date.now() };
     state.library.folders.push(folder);
     state.library.selectedFolderId = folder.id;
     state.library.selectedPlaylistId = '';
@@ -723,6 +864,78 @@
     state.library.selectedPlaylistId = playlist.id;
     scheduleSave(); scheduleSync('upsertPlaylist', playlist); render();
     notify(`Created playlist: ${name}`);
+  }
+
+  function selectedFolder() { return state.library.folders.find(f => f.id === state.library.selectedFolderId); }
+  function selectedPlaylist() { return state.library.playlists.find(p => p.id === state.library.selectedPlaylistId); }
+  function renameSelectedFolder() {
+    const folder = selectedFolder();
+    if (!folder || folder.system) return notify('Choose a user-created folder to rename.', 'error');
+    const name = prompt('Rename folder:', folder.name);
+    if (!name) return;
+    folder.name = name.trim(); folder.updatedAt = Date.now();
+    scheduleSave(); scheduleSync('upsertFolder', folder); render(); notify('Folder renamed.');
+  }
+  function deleteSelectedFolder() {
+    const folder = selectedFolder();
+    if (!folder || folder.system) return notify('Choose a user-created folder to delete.', 'error');
+    const children = state.library.folders.filter(f => f.parentId === folder.id);
+    const count = state.library.assets.filter(a => a.folderId === folder.id).length;
+    if (!confirm(`Delete folder “${folder.name}”? ${count} item(s) move to its parent/Uploads, and ${children.length} subfolder(s) move up one level.`)) return;
+    const fallback = folder.parentId || 'folder-uploads';
+    state.library.assets.forEach(a => { if (a.folderId === folder.id) a.folderId = fallback; });
+    children.forEach(child => { child.parentId = folder.parentId || ''; });
+    state.library.links = (state.library.links || []).filter(link => !(link.targetKind === 'folder' && link.targetId === folder.id));
+    state.library.folders = state.library.folders.filter(f => f.id !== folder.id);
+    state.library.selectedFolderId = fallback;
+    scheduleSave(); scheduleSync('deleteFolder', { id: folder.id }); render(); notify('Folder deleted.');
+  }
+  function renameSelectedPlaylist() {
+    const playlist = selectedPlaylist();
+    if (!playlist || playlist.system) return notify('Choose a user-created playlist to rename.', 'error');
+    const name = prompt('Rename playlist:', playlist.name);
+    if (!name) return;
+    playlist.name = name.trim(); playlist.updatedAt = Date.now();
+    scheduleSave(); scheduleSync('upsertPlaylist', playlist); render(); notify('Playlist renamed.');
+  }
+  function deleteSelectedPlaylist() {
+    const playlist = selectedPlaylist();
+    if (!playlist || playlist.system) return notify('Choose a user-created playlist to delete.', 'error');
+    if (!confirm(`Delete playlist “${playlist.name}”? Visuals stay in your library.`)) return;
+    state.library.links = (state.library.links || []).filter(link => !(link.targetKind === 'playlist' && link.targetId === playlist.id));
+    state.library.playlists = state.library.playlists.filter(p => p.id !== playlist.id);
+    state.library.selectedPlaylistId = '';
+    scheduleSave(); scheduleSync('deletePlaylist', { id: playlist.id }); render(); notify('Playlist deleted.');
+  }
+  function moveAssetToFolder(assetId, folderId) {
+    const asset = state.library.assets.find(a => a.id === assetId);
+    const folder = state.library.folders.find(f => f.id === folderId);
+    if (!asset || !folder) return;
+    asset.folderId = folder.id;
+    scheduleSave(); scheduleSync('upsertAsset', asset); render(); notify(`Moved to ${folder.name}.`);
+  }
+  function addAssetToPlaylist(assetId, playlistId) {
+    const playlist = state.library.playlists.find(p => p.id === playlistId);
+    if (!playlist || !state.library.assets.some(a => a.id === assetId)) return;
+    if (!playlist.assetIds.includes(assetId)) playlist.assetIds.push(assetId);
+    playlist.updatedAt = Date.now();
+    scheduleSave(); scheduleSync('upsertPlaylist', playlist); render(); notify(`Added to ${playlist.name}.`);
+  }
+  function addLink() {
+    const titleInput = $('[data-field="link-title"]', state.root);
+    const urlInput = $('[data-field="link-url"]', state.root);
+    const raw = String(urlInput?.value || '').trim();
+    if (!raw) return notify('Paste a website link first.', 'error');
+    const url = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+    state.library.links = state.library.links || [];
+    state.library.links.push({ id: uid('link'), title: (titleInput?.value || url).trim(), url, ...currentLinkTarget(), createdAt: Date.now() });
+    if (titleInput) titleInput.value = '';
+    if (urlInput) urlInput.value = '';
+    scheduleSave(); scheduleSync('upsertLink', state.library.links[state.library.links.length - 1]); render(); notify('Website link saved.');
+  }
+  function deleteLink(id) {
+    state.library.links = (state.library.links || []).filter(link => link.id !== id);
+    scheduleSave(); scheduleSync('deleteLink', { id }); render(); notify('Website link deleted.');
   }
 
   function checkedAssetIds() {

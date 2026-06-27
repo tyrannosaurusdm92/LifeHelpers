@@ -106,7 +106,7 @@ small,.tiny{color:var(--muted)}
 .retro-panel .heading{background:#6699cc; color:#fff; padding:.42rem .55rem; font-weight:bold; display:flex; justify-content:space-between}
 .retro-panel .body{padding:.65rem}
 .avatar-box{width:100%; aspect-ratio:1/1; border:1px solid #111; background:linear-gradient(135deg,#fff,#e7eef9); display:grid; place-items:center; overflow:hidden}
-.avatar-box img{width:100%; height:100%; object-fit:cover; display:none}
+.avatar-box img{width:100%; height:100%; object-fit:cover; object-position:50% 50%; display:none; transform-origin:center center}.profile-image-controls{display:grid;gap:.45rem;margin-top:.6rem}.profile-image-controls label{font-size:.82rem;font-weight:800}.profile-image-controls .mini-row{display:grid;grid-template-columns:1fr 1fr;gap:.45rem}
 .retro-module-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem}
 .retro-module-grid .wide{grid-column:1/-1}.editable{min-height:4rem; border:1px dashed #a6b6ca; padding:.55rem; background:rgba(255,255,255,.76); outline:none}.editable:focus{border-style:solid; box-shadow:0 0 0 2px rgba(102,153,204,.28)}
 .playlist{list-style:none; padding:0; margin:.4rem 0 0; max-height:9rem; overflow:auto; border:1px solid #c9d4e2; background:#fff}.playlist li{display:flex; justify-content:space-between; gap:.35rem; padding:.35rem; border-bottom:1px solid #e5edf7}
@@ -713,7 +713,15 @@ small,.tiny{color:var(--muted)}
           <div class="body">
             <div class="avatar-box"><img id="profileImage" alt="profile image"><div id="profilePlaceholder">Upload an image</div></div>
             <label for="profileImageInput">Upload image</label><input id="profileImageInput" type="file" accept="image/*">
-            <div class="row"><button id="clearProfileImage" type="button">Clear</button></div>
+            <div class="profile-image-controls" aria-label="Profile image fit and scale options">
+              <label>Fit / crop style<select id="profileImageFit"><option value="cover">Cover / crop to square</option><option value="contain">Contain / show whole image</option><option value="fill">Stretch to fill</option><option value="scale-down">Scale down if needed</option><option value="none">Actual size</option></select></label>
+              <label>Scale <input id="profileImageScale" type="range" min="50" max="200" step="1"></label>
+              <div class="mini-row">
+                <label>Left / right <input id="profileImagePosX" type="range" min="0" max="100" step="1"></label>
+                <label>Up / down <input id="profileImagePosY" type="range" min="0" max="100" step="1"></label>
+              </div>
+            </div>
+            <div class="row"><button id="resetProfileImageFit" type="button">Reset fit</button><button id="clearProfileImage" type="button">Clear</button></div>
           </div>
         </section>
       </aside>
@@ -1078,13 +1086,18 @@ if(location.hash.toLowerCase()==='#admin'){activeSession={profile:PROFILE_ID,ema
 if(activeSession&&activeSession.admin&&activeSession.profile!==PROFILE_ID){activeSession={...activeSession,profile:PROFILE_ID}; writeSession(activeSession,false);}
 if(!activeSession||(!activeSession.admin&&activeSession.profile!==PROFILE_ID)){location.replace(LOGIN_PAGE+'?needs='+encodeURIComponent(PROFILE_ID)); throw new Error('OurSpace sign-in required');}
 function signOutToHomepage(){clearSession(); location.href=LOGIN_PAGE+'?signedout=1';}
-const defaultState={siteName:'OurSpace',profileName:PROFILE_LABEL,status:'',homeEdits:{},profileImage:'',gallery:[],backgrounds:{},events:[],wallet:{platinum:0,gold:0,silver:0,copper:0},cart:[],wellness:[],rewardFeed:[],musicTracks:[],wishlist:{links:[],items:[]}};
+const defaultState={siteName:'OurSpace',profileName:PROFILE_LABEL,status:'',homeEdits:{},profileImage:'',profileImageSettings:{fit:'cover',scale:100,x:50,y:50},gallery:[],backgrounds:{},events:[],wallet:{platinum:0,gold:0,silver:0,copper:0},cart:[],wellness:[],rewardFeed:[],musicTracks:[],wishlist:{links:[],items:[]}};
 function loadState(){try{return Object.assign({},defaultState,JSON.parse(localStorage.getItem(STORE_KEY)||'{}'));}catch(e){return structuredClone(defaultState);}}
 function saveState(){localStorage.setItem(STORE_KEY,JSON.stringify(state));}
 let state=loadState();
 if(!state.wishlist) state.wishlist={links:[],items:[]};
 if(!Array.isArray(state.wishlist.links)) state.wishlist.links=[];
 if(!Array.isArray(state.wishlist.items)) state.wishlist.items=[];
+if(!state.profileImageSettings) state.profileImageSettings={fit:'cover',scale:100,x:50,y:50};
+if(!state.profileImageSettings.fit) state.profileImageSettings.fit='cover';
+if(!Number.isFinite(Number(state.profileImageSettings.scale))) state.profileImageSettings.scale=100;
+if(!Number.isFinite(Number(state.profileImageSettings.x))) state.profileImageSettings.x=50;
+if(!Number.isFinite(Number(state.profileImageSettings.y))) state.profileImageSettings.y=50;
 if(!Array.isArray(state.gallery)) state.gallery=[];
 if(!Array.isArray(state.musicTracks)) state.musicTracks=[];
 if(!state.profileName||state.profileName==='<user>')state.profileName=PROFILE_LABEL;
@@ -1181,7 +1194,7 @@ function applyPageBackground(){const val=state.backgrounds[currentPage]||''; doc
 function setPage(page){currentPage=page; document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.dataset.page===page)); document.querySelectorAll('[data-page-link]').forEach(b=>b.classList.toggle('active',b.dataset.pageLink===page)); $('messageDock')?.classList.toggle('visible',page==='daily'); applyPageBackground(); if(page==='daily')renderDaily(); if(page==='calendar')renderCalendar(); if(page==='dbt')renderWellness(); if(page==='games'){renderGames(); renderCurrency();} if(page==='store'){renderStore(); renderWishlist(); renderCurrency();} if(page==='sync'){fillBackendPayload(); updateInstallButton();} window.dispatchEvent(new CustomEvent('ourspace:page-changed',{detail:{page}})); window.OurSpaceMedia?.refresh?.();}
 function initNav(){document.querySelectorAll('[data-page-link]').forEach(btn=>btn.addEventListener('click',()=>{setPage(btn.dataset.pageLink); btn.closest('details.nav-menu')?.removeAttribute('open');})); document.querySelectorAll('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>$(btn.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'start'}))); $('returnHomepage')?.addEventListener('click',signOutToHomepage);}
 function initHome(){ $('homeSiteName').textContent=state.siteName; $('appTitle').textContent=state.siteName||'OurSpace'; $('homeStatus').textContent=state.status; $('userLine').textContent=PROFILE_LABEL+(activeSession.admin?' · #admin':''); $('siteNameInput').value=state.siteName; $('profileNameInput').value=state.profileName; $('statusInput').value=state.status; document.querySelectorAll('[data-home-edit]').forEach(el=>{const key=el.dataset.homeEdit; if(state.homeEdits[key])el.innerHTML=state.homeEdits[key]; el.addEventListener('input',()=>{state.homeEdits[key]=el.innerHTML; saveState();});}); applyProfileImage(); renderGallery();}
-function applyProfileImage(){const img=$('profileImage'), ph=$('profilePlaceholder'); if(state.profileImage){img.src=state.profileImage; img.style.display='block'; ph.style.display='none';}else{img.removeAttribute('src'); img.style.display='none'; ph.style.display='block';}}
+function applyProfileImage(){const img=$('profileImage'), ph=$('profilePlaceholder'); if(!img||!ph)return; const cfg=state.profileImageSettings||{fit:'cover',scale:100,x:50,y:50}; const fit=$('profileImageFit'), scale=$('profileImageScale'), x=$('profileImagePosX'), y=$('profileImagePosY'); if(fit)fit.value=cfg.fit||'cover'; if(scale)scale.value=Number(cfg.scale||100); if(x)x.value=Number(cfg.x??50); if(y)y.value=Number(cfg.y??50); img.style.objectFit=cfg.fit||'cover'; img.style.objectPosition=`${Number(cfg.x??50)}% ${Number(cfg.y??50)}%`; img.style.transform=`scale(${Number(cfg.scale||100)/100})`; if(state.profileImage){img.src=state.profileImage; img.style.display='block'; ph.style.display='none';}else{img.removeAttribute('src'); img.style.display='none'; ph.style.display='block';}}
 function fileToDataURL(file,cb){const r=new FileReader(); r.onload=()=>cb(String(r.result||'')); r.readAsDataURL(file);}
 function renderGallery(){const grid=$('galleryGrid'); if(!grid)return; grid.innerHTML=''; if(!state.gallery.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">No saved media yet.</div>'; return;} state.gallery.forEach((entry,i)=>{const item=typeof entry==='string'?{type:'image',src:entry,name:'media'}:entry; const wrap=document.createElement('div'); const isVideo=(item.type||'').startsWith('video'); wrap.innerHTML=(isVideo?`<video src="${esc(item.src)}" controls style="width:100%;border-radius:12px"></video>`:`<img src="${esc(item.src)}" alt="${esc(item.name||'Gallery image')}">`)+`<button data-del-gallery="${i}" class="danger" style="width:100%;margin-top:.25rem">Remove</button>`; grid.appendChild(wrap);}); grid.querySelectorAll('[data-del-gallery]').forEach(b=>b.addEventListener('click',()=>{state.gallery.splice(Number(b.dataset.delGallery),1); saveState(); renderGallery();}));}
 function extractHomeCode(raw){raw=String(raw||''); let css=[]; let html=raw.replace(/<style[^>]*>([\s\S]*?)<\/style>/gi,(_,s)=>{css.push(s); return '';}); const looksCss=raw.trim()&&!raw.includes('<')&&/{[\s\S]*}/.test(raw); if(looksCss){css.push(raw); html='';} return {css:css.join('\n'),html:html.trim()};}
@@ -1191,6 +1204,8 @@ function initHomeEvents(){
   bind('openHomeSettings','click',()=>openModal('homeSettingsModal'));
   bind('saveHomeSettings','click',()=>{state.siteName=$('siteNameInput')?.value||'OurSpace'; state.profileName=$('profileNameInput')?.value||PROFILE_LABEL; state.status=$('statusInput')?.value||''; saveState(); initHome(); closeModals();});
   bind('profileImageInput','change',e=>{const f=e.target.files[0]; if(!f)return; if(!f.type.startsWith('image/'))return; fileToDataURL(f,src=>{state.profileImage=src; saveState(); applyProfileImage();}); e.target.value='';});
+  ['profileImageFit','profileImageScale','profileImagePosX','profileImagePosY'].forEach(id=>bind(id,id==='profileImageFit'?'change':'input',()=>{state.profileImageSettings={fit:$('profileImageFit')?.value||'cover',scale:Number($('profileImageScale')?.value||100),x:Number($('profileImagePosX')?.value||50),y:Number($('profileImagePosY')?.value||50)}; saveState(); applyProfileImage();}));
+  bind('resetProfileImageFit','click',()=>{state.profileImageSettings={fit:'cover',scale:100,x:50,y:50}; saveState(); applyProfileImage();});
   bind('clearProfileImage','click',()=>{state.profileImage=''; saveState(); applyProfileImage();});
   bind('galleryUpload','change',e=>{[...e.target.files].forEach(f=>{if(!(f.type.startsWith('image/')||f.type.startsWith('video/')))return; fileToDataURL(f,src=>{state.gallery.push({type:f.type.startsWith('video/')?'video':'image',src,name:f.name}); saveState(); renderGallery();});}); e.target.value='';});
   bind('clearGallery','click',()=>{state.gallery=[]; saveState(); renderGallery();});

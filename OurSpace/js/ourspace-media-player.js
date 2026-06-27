@@ -16,9 +16,12 @@
   const GAME_SELECTOR = '[data-ourspace-game], [data-game-loaded="true"], iframe[data-game], iframe[src*="game"], canvas.game, .game canvas, .games canvas';
 
   const defaultLibrary = () => ({
-    schemaVersion: 1,
-    folders: [{ id: 'folder-all', name: 'All Music', system: true, createdAt: Date.now() }],
-    playlists: [{ id: 'playlist-favorites', name: 'Favorites', trackIds: [], system: true, createdAt: Date.now() }],
+    schemaVersion: 2,
+    folders: [{ id: 'folder-all', name: 'All Music', system: true, createdAt: Date.now(), parentId: '' }],
+    playlists: [
+      { id: 'playlist-favorites', name: 'Favorites', trackIds: [], system: true, createdAt: Date.now() },
+      { id: 'playlist-shared-audio', name: 'William + Jasper Shared Audio', trackIds: [], system: true, shared: true, createdAt: Date.now() }
+    ],
     tracks: [],
     selectedFolderId: 'folder-all',
     selectedPlaylistId: '',
@@ -27,6 +30,7 @@
     shuffle: false,
     repeat: 'all',
     volume: 0.9,
+    links: [],
     updatedAt: Date.now(),
     backendUrl: BACKEND_URL
   });
@@ -76,6 +80,18 @@
     return { artist: '', title: clean || file.name };
   };
   const isAudioFile = (file) => ACCEPTED_AUDIO.includes(file.type) || AUDIO_EXT.test(file.name);
+  const folderAndDescendantIds = (folderId) => {
+    const ids = new Set([folderId]);
+    let changed = true;
+    while (changed) {
+      changed = false;
+      for (const folder of state.library.folders || []) {
+        if (folder.parentId && ids.has(folder.parentId) && !ids.has(folder.id)) { ids.add(folder.id); changed = true; }
+      }
+    }
+    return ids;
+  };
+
   const selectedTracks = () => {
     const lib = state.library;
     if (lib.selectedPlaylistId) {
@@ -83,7 +99,10 @@
       const ids = new Set(playlist?.trackIds || []);
       return lib.tracks.filter(t => ids.has(t.id));
     }
-    if (lib.selectedFolderId && lib.selectedFolderId !== 'folder-all') return lib.tracks.filter(t => t.folderId === lib.selectedFolderId);
+    if (lib.selectedFolderId && lib.selectedFolderId !== 'folder-all') {
+      const ids = folderAndDescendantIds(lib.selectedFolderId);
+      return lib.tracks.filter(t => ids.has(t.folderId));
+    }
     return lib.tracks.slice();
   };
   const currentTrack = () => state.library.tracks.find(t => t.id === state.library.currentTrackId) || null;
@@ -142,8 +161,11 @@
     next.folders = Array.isArray(next.folders) ? next.folders : [];
     next.playlists = Array.isArray(next.playlists) ? next.playlists : [];
     next.tracks = Array.isArray(next.tracks) ? next.tracks : [];
-    if (!next.folders.some(f => f.id === 'folder-all')) next.folders.unshift({ id:'folder-all', name:'All Music', system:true, createdAt:Date.now() });
+    if (!next.folders.some(f => f.id === 'folder-all')) next.folders.unshift({ id:'folder-all', name:'All Music', system:true, createdAt:Date.now(), parentId:'' });
     if (!next.playlists.some(p => p.id === 'playlist-favorites')) next.playlists.unshift({ id:'playlist-favorites', name:'Favorites', trackIds:[], system:true, createdAt:Date.now() });
+    if (!next.playlists.some(p => p.id === 'playlist-shared-audio')) next.playlists.push({ id:'playlist-shared-audio', name:'William + Jasper Shared Audio', trackIds:[], system:true, shared:true, createdAt:Date.now() });
+    next.folders = next.folders.map(folder => ({ id: folder.id || uid('folder'), name: folder.name || 'New Folder', system: Boolean(folder.system), shared: Boolean(folder.shared), parentId: folder.id === 'folder-all' ? '' : (folder.parentId || ''), createdAt: folder.createdAt || Date.now(), updatedAt: folder.updatedAt || folder.createdAt || Date.now() }));
+    next.links = Array.isArray(next.links) ? next.links.map(link => ({ id: link.id || uid('link'), title: link.title || link.url || 'Link', url: link.url || '', targetKind: link.targetKind || 'folder', targetId: link.targetId || 'folder-all', createdAt: link.createdAt || Date.now() })).filter(link => link.url) : [];
     next.tracks = next.tracks.map(track => ({
       id: track.id || uid('track'),
       title: track.title || track.name || 'Untitled Track',
@@ -160,7 +182,7 @@
       downloadUrl: track.downloadUrl || track.remoteUrl || track.streamUrl || track.url || '',
       source: track.source || 'local'
     }));
-    next.playlists = next.playlists.map(p => ({...p, trackIds: Array.isArray(p.trackIds) ? p.trackIds.filter(id => next.tracks.some(t => t.id === id)) : []}));
+    next.playlists = next.playlists.map(p => ({...p, id:p.id || uid('playlist'), name:p.name || 'Playlist', trackIds: Array.isArray(p.trackIds) ? p.trackIds.filter(id => next.tracks.some(t => t.id === id)) : [], createdAt:p.createdAt || Date.now(), updatedAt:p.updatedAt || p.createdAt || Date.now()}));
     if (!next.selectedFolderId) next.selectedFolderId = 'folder-all';
     return next;
   }
@@ -222,7 +244,7 @@
       <div class="osm-top">
         <div class="osm-title">
           <h2>OurSpace Media Player</h2>
-          <p>Upload music, make folders and playlists, shuffle, download, and keep audio alive while using the site.</p>
+          <p>Upload music, create folders/subfolders and playlists, drag tracks or files into them, keep shared William + Jasper favorites, and save useful external links.</p>
         </div>
         <div class="osm-status" aria-label="Media library status">
           <span class="osm-pill"><strong>${lib.tracks.length}</strong> tracks</span>
@@ -246,17 +268,20 @@
           </div>
           <div class="osm-section-title"><h3>Folders</h3><button class="osm-btn osm-btn-small" data-action="new-folder">New</button></div>
           <div class="osm-list" aria-label="Folders">
-            ${folders.map(folder => `
-              <button class="osm-item ${lib.selectedFolderId === folder.id && !lib.selectedPlaylistId ? 'is-current' : ''}" data-action="select-folder" data-id="${esc(folder.id)}">
-                <span class="osm-item-head"><span class="osm-item-title">${esc(folder.name)}</span><span class="osm-tag">${folder.id === 'folder-all' ? lib.tracks.length : lib.tracks.filter(t => t.folderId === folder.id).length}</span></span>
-              </button>`).join('')}
+            ${folders.map(folderSidebarItem).join('')}
           </div>
           <div class="osm-section-title"><h3>Playlists</h3><button class="osm-btn osm-btn-small" data-action="new-playlist">New</button></div>
           <div class="osm-list" aria-label="Playlists">
-            ${playlists.map(playlist => `
-              <button class="osm-item ${lib.selectedPlaylistId === playlist.id ? 'is-current' : ''}" data-action="select-playlist" data-id="${esc(playlist.id)}">
-                <span class="osm-item-head"><span class="osm-item-title">${esc(playlist.name)}</span><span class="osm-tag">${playlist.trackIds.length}</span></span>
-              </button>`).join('')}
+            ${playlists.map(playlistSidebarItem).join('')}
+          </div>
+          <div class="osm-section-title"><h3>Website links</h3><span class="osm-tag">open externally</span></div>
+          <div class="osm-link-form">
+            <input class="osm-field" data-field="link-title" placeholder="Link title, like Game wiki">
+            <input class="osm-field" data-field="link-url" placeholder="https://example.com">
+            <button class="osm-btn osm-btn-small" data-action="add-link">Add link to current folder/playlist</button>
+          </div>
+          <div class="osm-list osm-link-list" aria-label="Saved website links">
+            ${currentLinks().length ? currentLinks().map(linkItem).join('') : '<div class="osm-empty">No links saved for this folder or playlist yet.</div>'}
           </div>
           <button class="osm-btn" data-action="sync-now">Sync metadata to backend</button>
         </aside>
@@ -314,7 +339,7 @@
   }
   function trackItem(track) {
     const folder = state.library.folders.find(f => f.id === track.folderId)?.name || 'All Music';
-    return `<article class="osm-item ${state.library.currentTrackId === track.id ? 'is-current' : ''}" data-track-row="${esc(track.id)}">
+    return `<article class="osm-item ${state.library.currentTrackId === track.id ? 'is-current' : ''}" data-track-row="${esc(track.id)}" draggable="true"> 
       <div class="osm-item-head">
         <div style="min-width:0">
           <div class="osm-item-title">${esc(track.title)}</div>
@@ -330,9 +355,81 @@
       </div>
     </article>`;
   }
+
+  function folderDepth(folder) {
+    let depth = 0, current = folder;
+    const seen = new Set();
+    while (current?.parentId && !seen.has(current.parentId)) {
+      seen.add(current.parentId);
+      current = state.library.folders.find(f => f.id === current.parentId);
+      if (current && current.id !== 'folder-all') depth += 1;
+      else break;
+    }
+    return depth;
+  }
+  function folderNameWithPath(folder) {
+    const chain = [];
+    let current = folder;
+    const seen = new Set();
+    while (current && !seen.has(current.id)) {
+      seen.add(current.id);
+      if (current.id !== 'folder-all') chain.unshift(current.name);
+      current = current.parentId ? state.library.folders.find(f => f.id === current.parentId) : null;
+    }
+    return chain.length ? chain.join(' / ') : folder.name;
+  }
+  function folderTrackCount(folder) {
+    if (folder.id === 'folder-all') return state.library.tracks.length;
+    const ids = folderAndDescendantIds(folder.id);
+    return state.library.tracks.filter(t => ids.has(t.folderId)).length;
+  }
+  function folderSidebarItem(folder) {
+    const current = state.library.selectedFolderId === folder.id && !state.library.selectedPlaylistId;
+    const depth = folderDepth(folder);
+    return `<div class="osm-item osm-drop-target ${current ? 'is-current' : ''}" data-drop-kind="folder" data-id="${esc(folder.id)}" style="margin-left:${Math.min(depth, 5) * 10}px">
+      <button class="osm-plain-target" data-action="select-folder" data-id="${esc(folder.id)}" title="Open ${esc(folderNameWithPath(folder))}">
+        <span class="osm-item-head"><span class="osm-item-title">${folder.id === 'folder-all' ? '' : '↳ '}${esc(folder.name)}</span><span class="osm-tag">${folderTrackCount(folder)}</span></span>
+        <span class="osm-item-meta">Drop files or tracks here${folder.parentId ? ' · subfolder' : ''}</span>
+      </button>
+      <div class="osm-actions">
+        <button class="osm-btn osm-btn-small" data-action="rename-folder" data-id="${esc(folder.id)}" ${folder.system ? 'disabled' : ''}>Rename</button>
+        <button class="osm-btn osm-btn-small osm-btn-danger" data-action="delete-folder" data-id="${esc(folder.id)}" ${folder.system ? 'disabled' : ''}>Delete</button>
+      </div>
+    </div>`;
+  }
+  function playlistSidebarItem(playlist) {
+    const current = state.library.selectedPlaylistId === playlist.id;
+    return `<div class="osm-item osm-drop-target ${current ? 'is-current' : ''}" data-drop-kind="playlist" data-id="${esc(playlist.id)}">
+      <button class="osm-plain-target" data-action="select-playlist" data-id="${esc(playlist.id)}">
+        <span class="osm-item-head"><span class="osm-item-title">${playlist.shared ? '♥ ' : ''}${esc(playlist.name)}</span><span class="osm-tag">${playlist.trackIds.length}</span></span>
+        <span class="osm-item-meta">Drop tracks here to add them.</span>
+      </button>
+      <div class="osm-actions">
+        <button class="osm-btn osm-btn-small" data-action="rename-playlist" data-id="${esc(playlist.id)}" ${playlist.system ? 'disabled' : ''}>Rename</button>
+        <button class="osm-btn osm-btn-small osm-btn-danger" data-action="delete-playlist" data-id="${esc(playlist.id)}" ${playlist.system ? 'disabled' : ''}>Delete</button>
+      </div>
+    </div>`;
+  }
+  function currentLinkTarget() {
+    if (state.library.selectedPlaylistId) return { targetKind:'playlist', targetId:state.library.selectedPlaylistId };
+    return { targetKind:'folder', targetId:state.library.selectedFolderId || 'folder-all' };
+  }
+  function currentLinks() {
+    const target = currentLinkTarget();
+    return (state.library.links || []).filter(link => link.targetKind === target.targetKind && link.targetId === target.targetId);
+  }
+  function linkItem(link) {
+    return `<div class="osm-item osm-link-item">
+      <div class="osm-item-head"><a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer" class="osm-external-link">${esc(link.title || link.url)}</a><span class="osm-tag">↗</span></div>
+      <div class="osm-actions"><button class="osm-btn osm-btn-small osm-btn-danger" data-action="delete-link" data-id="${esc(link.id)}">Delete link</button></div>
+    </div>`;
+  }
   function bindFullEvents() {
     const root = state.root;
     root.onclick = onFullClick;
+    root.ondragstart = onDragStart;
+    root.ondragover = onDragOver;
+    root.ondrop = onDrop;
     const fileInput = $('#osmFileInput', root);
     const folderInput = $('#osmFolderInput', root);
     const drop = $('#osmDropZone', root);
@@ -362,6 +459,12 @@
     if (action === 'choose-folder') $('#osmFolderInput', state.root)?.click();
     if (action === 'new-folder') createFolder();
     if (action === 'new-playlist') createPlaylist();
+    if (action === 'rename-folder') renameFolder(id);
+    if (action === 'delete-folder') deleteFolder(id);
+    if (action === 'rename-playlist') renamePlaylist(id);
+    if (action === 'delete-playlist') deletePlaylist(id);
+    if (action === 'add-link') addLink();
+    if (action === 'delete-link') deleteLink(id);
     if (action === 'select-folder') selectFolder(id);
     if (action === 'select-playlist') selectPlaylist(id);
     if (action === 'clear-filter') selectFolder('folder-all');
@@ -379,6 +482,38 @@
     if (action === 'delete-track') deleteTrack(id);
     if (action === 'add-to-playlist') addToPlaylist(id);
     if (action === 'sync-now') syncNow(true);
+  }
+
+  function onDragStart(event) {
+    const row = event.target.closest('[data-track-row]');
+    if (!row || !event.dataTransfer) return;
+    event.dataTransfer.setData('text/plain', row.dataset.trackRow);
+    event.dataTransfer.setData('application/x-ourspace-track-id', row.dataset.trackRow);
+    event.dataTransfer.effectAllowed = 'copyMove';
+  }
+  function onDragOver(event) {
+    const target = event.target.closest('.osm-drop-target');
+    if (!target) return;
+    event.preventDefault();
+    target.classList.add('is-drag');
+    event.dataTransfer.dropEffect = event.dataTransfer?.files?.length ? 'copy' : 'move';
+  }
+  async function onDrop(event) {
+    const target = event.target.closest('.osm-drop-target');
+    if (!target) return;
+    event.preventDefault();
+    target.classList.remove('is-drag');
+    const kind = target.dataset.dropKind;
+    const id = target.dataset.id;
+    const files = Array.from(event.dataTransfer?.files || []);
+    const trackId = event.dataTransfer?.getData('application/x-ourspace-track-id') || event.dataTransfer?.getData('text/plain');
+    if (files.length) {
+      await addFiles(files, kind === 'folder' ? { targetFolderId:id, preserveFolders:true } : { targetPlaylistId:id, preserveFolders:true });
+      return;
+    }
+    if (!trackId) return;
+    if (kind === 'folder') moveTrackToFolder(trackId, id);
+    if (kind === 'playlist') addTrackToPlaylist(trackId, id);
   }
   function filterTrackList(query, sort) {
     const q = String(query || '').trim().toLowerCase();
@@ -426,6 +561,7 @@
     notify(`Adding ${audioFiles.length} audio file${audioFiles.length === 1 ? '' : 's'}...`);
     const folderCache = new Map();
     let added = 0;
+    const addedIds = [];
     for (const file of audioFiles) {
       const folderId = resolveFolderForFile(file, options, folderCache);
       const meta = parseName(file);
@@ -446,31 +582,53 @@
         source: 'local'
       };
       state.library.tracks.push(track);
+      addedIds.push(track.id);
       await idbSet(STORE_BLOBS, track.id, file);
       readDuration(track).then(duration => { if (duration) { track.duration = duration; scheduleSave(); render(); } });
       uploadToBackend(track, file).catch(() => {});
       added++;
     }
+    if (options.targetPlaylistId) {
+      const playlist = state.library.playlists.find(p => p.id === options.targetPlaylistId);
+      if (playlist) {
+        const set = new Set(playlist.trackIds || []);
+        addedIds.forEach(id => set.add(id));
+        playlist.trackIds = Array.from(set);
+        playlist.updatedAt = Date.now();
+      }
+    }
     if (!state.library.currentTrackId && state.library.tracks[0]) state.library.currentTrackId = state.library.tracks[0].id;
     scheduleSave();
     render();
     notify(`Added ${added} track${added === 1 ? '' : 's'}.`);
+    return addedIds;
   }
   function resolveFolderForFile(file, options, folderCache) {
+    if (options.targetFolderId && state.library.folders.some(f => f.id === options.targetFolderId)) return options.targetFolderId;
     if (options.preserveFolders && file.webkitRelativePath) {
-      const top = file.webkitRelativePath.split('/').filter(Boolean)[0];
-      if (top) {
-        if (!folderCache.has(top)) folderCache.set(top, ensureFolder(top));
-        return folderCache.get(top);
+      const parts = file.webkitRelativePath.split('/').filter(Boolean).slice(0, -1);
+      if (parts.length) {
+        const key = parts.join('/');
+        if (!folderCache.has(key)) folderCache.set(key, ensureFolderPath(parts));
+        return folderCache.get(key);
       }
     }
     return state.library.selectedFolderId && state.library.selectedFolderId !== 'folder-all' ? state.library.selectedFolderId : 'folder-all';
   }
-  function ensureFolder(name) {
+  function ensureFolderPath(parts) {
+    let parentId = '';
+    let folderId = 'folder-all';
+    for (const part of parts) {
+      folderId = ensureFolder(part, parentId);
+      parentId = folderId;
+    }
+    return folderId;
+  }
+  function ensureFolder(name, parentId = '') {
     const trimmed = String(name || '').trim() || 'New Folder';
-    const existing = state.library.folders.find(f => f.name.toLowerCase() === trimmed.toLowerCase());
+    const existing = state.library.folders.find(f => (f.parentId || '') === (parentId || '') && f.name.toLowerCase() === trimmed.toLowerCase());
     if (existing) return existing.id;
-    const folder = { id: uid('folder'), name: trimmed, createdAt: Date.now() };
+    const folder = { id: uid('folder'), name: trimmed, parentId: parentId || '', createdAt: Date.now(), updatedAt: Date.now() };
     state.library.folders.push(folder);
     return folder.id;
   }
@@ -596,11 +754,13 @@
   function createFolder() {
     const name = prompt('Folder name:');
     if (!name) return;
-    const id = ensureFolder(name);
+    const parentId = state.library.selectedFolderId && state.library.selectedFolderId !== 'folder-all' ? state.library.selectedFolderId : '';
+    const id = ensureFolder(name, parentId);
     state.library.selectedFolderId = id;
     state.library.selectedPlaylistId = '';
     scheduleSave();
     render();
+    notify(parentId ? 'Subfolder created.' : 'Folder created.');
   }
   function createPlaylist() {
     const name = prompt('Playlist name:');
@@ -610,6 +770,78 @@
     state.library.selectedPlaylistId = playlist.id;
     scheduleSave();
     render();
+  }
+
+  function renameFolder(id) {
+    const folder = state.library.folders.find(f => f.id === id);
+    if (!folder || folder.system) return;
+    const name = prompt('Rename folder:', folder.name);
+    if (!name) return;
+    folder.name = name.trim(); folder.updatedAt = Date.now();
+    scheduleSave(); render(); notify('Folder renamed.');
+  }
+  function deleteFolder(id) {
+    const folder = state.library.folders.find(f => f.id === id);
+    if (!folder || folder.system) return;
+    const children = state.library.folders.filter(f => f.parentId === id);
+    const count = state.library.tracks.filter(t => t.folderId === id).length;
+    if (!confirm(`Delete folder “${folder.name}”? ${count} track(s) will move to its parent/All Music, and ${children.length} subfolder(s) will move up one level.`)) return;
+    const fallback = folder.parentId || 'folder-all';
+    state.library.tracks.forEach(t => { if (t.folderId === id) t.folderId = fallback; });
+    children.forEach(child => { child.parentId = folder.parentId || ''; });
+    state.library.links = (state.library.links || []).filter(link => !(link.targetKind === 'folder' && link.targetId === id));
+    state.library.folders = state.library.folders.filter(f => f.id !== id);
+    if (state.library.selectedFolderId === id) state.library.selectedFolderId = fallback;
+    scheduleSave(); render(); notify('Folder deleted.');
+  }
+  function renamePlaylist(id) {
+    const playlist = state.library.playlists.find(p => p.id === id);
+    if (!playlist || playlist.system) return;
+    const name = prompt('Rename playlist:', playlist.name);
+    if (!name) return;
+    playlist.name = name.trim(); playlist.updatedAt = Date.now();
+    scheduleSave(); render(); notify('Playlist renamed.');
+  }
+  function deletePlaylist(id) {
+    const playlist = state.library.playlists.find(p => p.id === id);
+    if (!playlist || playlist.system) return;
+    if (!confirm(`Delete playlist “${playlist.name}”? Tracks stay in your library.`)) return;
+    state.library.links = (state.library.links || []).filter(link => !(link.targetKind === 'playlist' && link.targetId === id));
+    state.library.playlists = state.library.playlists.filter(p => p.id !== id);
+    if (state.library.selectedPlaylistId === id) state.library.selectedPlaylistId = '';
+    scheduleSave(); render(); notify('Playlist deleted.');
+  }
+  function addTrackToPlaylist(trackId, playlistId) {
+    const playlist = state.library.playlists.find(p => p.id === playlistId);
+    if (!playlist || !state.library.tracks.some(t => t.id === trackId)) return;
+    if (!playlist.trackIds.includes(trackId)) playlist.trackIds.push(trackId);
+    playlist.updatedAt = Date.now();
+    scheduleSave(); render(); notify(`Added to ${playlist.name}.`);
+  }
+  function moveTrackToFolder(trackId, folderId) {
+    const track = state.library.tracks.find(t => t.id === trackId);
+    const folder = state.library.folders.find(f => f.id === folderId);
+    if (!track || !folder) return;
+    track.folderId = folder.id;
+    scheduleSave(); render(); notify(`Moved to ${folder.name}.`);
+  }
+  function addLink() {
+    const titleInput = $('[data-field="link-title"]', state.root);
+    const urlInput = $('[data-field="link-url"]', state.root);
+    const url = String(urlInput?.value || '').trim();
+    if (!url) return notify('Paste a website link first.', 'error');
+    let safeUrl = url;
+    if (!/^https?:\/\//i.test(safeUrl)) safeUrl = `https://${safeUrl}`;
+    const target = currentLinkTarget();
+    state.library.links = state.library.links || [];
+    state.library.links.push({ id: uid('link'), title: (titleInput?.value || safeUrl).trim(), url: safeUrl, ...target, createdAt: Date.now() });
+    if (titleInput) titleInput.value = '';
+    if (urlInput) urlInput.value = '';
+    scheduleSave(); render(); notify('Website link saved.');
+  }
+  function deleteLink(id) {
+    state.library.links = (state.library.links || []).filter(link => link.id !== id);
+    scheduleSave(); render(); notify('Website link deleted.');
   }
   function selectFolder(id) {
     state.library.selectedFolderId = id || 'folder-all';
@@ -679,6 +911,9 @@
       exportedAt: new Date().toISOString(),
       selectedFolderId: state.library.selectedFolderId,
       selectedPlaylistId: state.library.selectedPlaylistId,
+      folders: state.library.folders,
+      playlists: state.library.playlists,
+      links: state.library.links || [],
       tracks: selectedTracks().map(({id,title,artist,album,folderId,originalName,size,duration,addedAt,remoteUrl,downloadUrl}) => ({id,title,artist,album,folderId,originalName,size,duration,addedAt,remoteUrl,downloadUrl}))
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type:'application/json' });
@@ -748,6 +983,7 @@
       schemaVersion: state.library.schemaVersion,
       folders: state.library.folders,
       playlists: state.library.playlists,
+      links: state.library.links || [],
       tracks: state.library.tracks.map(({id,title,artist,album,folderId,mime,size,duration,originalName,addedAt,backendId,remoteUrl,downloadUrl,source}) => ({id,title,artist,album,folderId,mime,size,duration,originalName,addedAt,backendId,remoteUrl,downloadUrl,source})),
       playback: readPlayback()
     };
@@ -769,6 +1005,9 @@
       const existing = merged.playlists.find(p => p.id === playlist.id || p.name === playlist.name);
       if (existing) existing.trackIds = Array.from(new Set([...(existing.trackIds || []), ...(playlist.trackIds || [])]));
       else merged.playlists.push(playlist);
+    }
+    for (const link of remote.links || []) {
+      if (!merged.links.some(l => l.id === link.id || (l.url === link.url && l.targetKind === link.targetKind && l.targetId === link.targetId))) merged.links.push(link);
     }
     for (const track of remote.tracks || []) {
       if (!merged.tracks.some(t => t.id === track.id || (t.originalName && t.originalName === track.originalName && t.size === track.size))) merged.tracks.push({ ...track, source:'backend' });
