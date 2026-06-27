@@ -1,0 +1,146 @@
+{
+  "name": "OurSpace Journaling Module Integrated Accessibility Scanner",
+  "version": "1.0.0-integrated",
+  "generatedAt": "2026-06-27",
+  "backendUrl": "https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec",
+  "mainFile": "journal-module.html",
+  "features": [
+    "folder creation",
+    "category creation",
+    "manual journal entries",
+    "TXT upload",
+    "DOCX upload",
+    "entry reader",
+    "entry download",
+    "journal JSON import/export",
+    "Google Apps Script sync",
+    "image upload OCR",
+    "mobile/tablet camera scanning",
+    "scan enhancement",
+    "auto-crop",
+    "browser OCR",
+    "optional backend OCR hook",
+    "OCR-to-journal new/append/replace",
+    "text-to-speech for entries",
+    "text-to-speech for extracted OCR text",
+    "text-to-speech for highlighted or drag-selected text",
+    "speech pause/resume/stop controls"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2879,
+      "sha256": "2c6035ce7384da0e95c207e33b1c7658d5cd9a4fe4cdd4609a2b1b7936f8e9de"
+    },
+    {
+      "path": "assets/css/journal-accessibility-addon.css",
+      "bytes": 7639,
+      "sha256": "c9c09a9b8321faf31474bbf7c0985afd797533b73ca5a2984814bcd9ce3bfdce"
+    },
+    {
+      "path": "assets/css/journal-module.css",
+      "bytes": 6576,
+      "sha256": "22c603671a8e2b81a562f7df230454fa737087c908d5abf3445a67a393d1707a"
+    },
+    {
+      "path": "assets/js/docx-lite-reader.js",
+      "bytes": 5017,
+      "sha256": "88dca3be1aaf7f58e71f8eda64c8027bf36305baed73847bf22b1745f999eed2"
+    },
+    {
+      "path": "assets/js/journal-accessibility-addon.js",
+      "bytes": 39807,
+      "sha256": "e6795363cdbc4e666df809c2e426b6db2751616cf2ebe27ec9a39329c6a79018"
+    },
+    {
+      "path": "assets/js/journal-module.js",
+      "bytes": 28358,
+      "sha256": "edba54cd0dbc22683abecf56c152b6716570a4005d04b216ed8f017a41fb083d"
+    },
+    {
+      "path": "docs/audits/accessibility-source-repo-audit.md",
+      "bytes": 4279,
+      "sha256": "eef9692f49dcc8ef529404c2b30ceaa925bda030d726185bdbe9c4130728cc85"
+    },
+    {
+      "path": "docs/audits/journaling-source-repo-audit.md",
+      "bytes": 2607,
+      "sha256": "77d24edd2140c7605228b035124a7e4123ca253cc9d5b0134bcb425971ba52a6"
+    },
+    {
+      "path": "docs/licenses/accessibility-license-notes.md",
+      "bytes": 889,
+      "sha256": "c5790152b9e90d1724735df3f4be05e226d818ea37c1366ffe4201836e782bca"
+    },
+    {
+      "path": "docs/licenses/generated-integrated-module-license.md",
+      "bytes": 575,
+      "sha256": "b2597750c9b78dcb30969bc9582790503fd67bacd26444d702b016bea5ebcc6c"
+    },
+    {
+      "path": "docs/licenses/journaling-license-notes.md",
+      "bytes": 1060,
+      "sha256": "9f9f993b4a295d50f8aef44aa218c4e13e657c09eb4028d015d6803b5ef45dae"
+    },
+    {
+      "path": "docs/manifests/accessibility-source-repo-manifest.json",
+      "bytes": 9872,
+      "sha256": "2656e2bf8ae45f2ad5f234e4b8b0eb4aecee25a56531f43340ab74eab87a77b2"
+    },
+    {
+      "path": "docs/manifests/journaling-source-repo-manifest.json",
+      "bytes": 4137,
+      "sha256": "6c0be87843e5d787d38c85d2e2b736be63e6e9b541a5a86547f2d40145b7f183"
+    },
+    {
+      "path": "docs/manifests/module-manifest.json",
+      "bytes": 4865,
+      "sha256": "022d631bf1cc6ff922cce37480e6c7a08a4a6c1f309ef6ab6129c3f969e335d5"
+    },
+    {
+      "path": "docs/readmes/ACCESSIBILITY_NOTES.md",
+      "bytes": 1361,
+      "sha256": "946883a4321cb02c7b9dc10fb16537e719335c9f4d3225e06c13112893b775e8"
+    },
+    {
+      "path": "docs/readmes/BACKEND_CONTRACT.md",
+      "bytes": 1642,
+      "sha256": "f5e0baf704c77b45e4f7be411117e8cd95e1168164ecff35567e7270d1ff7896"
+    },
+    {
+      "path": "docs/readmes/INTEGRATION.md",
+      "bytes": 1433,
+      "sha256": "e84d487c88982fab9dc87212d9bd1f3e3901c85e03783a63c010549fd1050d47"
+    },
+    {
+      "path": "docs/readmes/README.md",
+      "bytes": 509,
+      "sha256": "e13daf7efb06cb68b98cb1f5e9d5286ff53196f2681830dda53fb201c4101a00"
+    },
+    {
+      "path": "docs/readmes/TESTING_CHECKLIST.md",
+      "bytes": 1141,
+      "sha256": "aeaf3160330a566ee639e61c10e1fdc632c5a94ce78edc4493f2a592fdafbad9"
+    },
+    {
+      "path": "docs/readmes/UNUSED_CODE.md",
+      "bytes": 1042,
+      "sha256": "04ffd80e5730810b9f645ec60fe699d651735c0dd967fd71279ac04662a2aec8"
+    },
+    {
+      "path": "integration-snippets/embed-in-site.html",
+      "bytes": 884,
+      "sha256": "559c69a921e933cf00dd7105939326c110f9af8ecd17cbe48e37f282cf4db44f"
+    },
+    {
+      "path": "journal-module-with-accessibility.html",
+      "bytes": 1299,
+      "sha256": "7a97a9f1a9c78fe2abadd3dcc5ee30262ddb075b3ec2d3cb4110624f4c393407"
+    },
+    {
+      "path": "journal-module.html",
+      "bytes": 1299,
+      "sha256": "7a97a9f1a9c78fe2abadd3dcc5ee30262ddb075b3ec2d3cb4110624f4c393407"
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+[
+  {
+    "archive": "OSS-DocumentScanner-main.zip",
+    "purpose": "NativeScript/Android document scanner concepts",
+    "license_note": "MIT",
+    "decision": "Useful ideas: mobile document workflow, capture, crop, file export. Not included: native/mobile app shell and heavy dependencies.",
+    "copied_source_code": false,
+    "archive_size_bytes": 25496706,
+    "entry_count": 1404,
+    "detected_license_files": [
+      "OSS-DocumentScanner-main/LICENSE",
+      "OSS-DocumentScanner-main/webpdfviewer/LICENSE"
+    ],
+    "detected_readmes": [
+      "OSS-DocumentScanner-main/Readme.md",
+      "OSS-DocumentScanner-main/docs-site/README.md",
+      "OSS-DocumentScanner-main/docs-site/maestro/README.md",
+      "OSS-DocumentScanner-main/fastlane/README.md",
+      "OSS-DocumentScanner-main/fastlane/metadata/com.akylas.documentscanner/ios/screenshots/README.txt",
+      "OSS-DocumentScanner-main/opencv/ios/README.md",
+      "OSS-DocumentScanner-main/plugin-nativeprocessor/src-native/android/README.md"
+    ]
+  },
+  {
+    "archive": "text-element-master.zip",
+    "purpose": "Static text UI element",
+    "license_note": "Apache-2.0",
+    "decision": "Not relevant to OCR; no code used.",
+    "copied_source_code": false,
+    "archive_size_bytes": 37018,
+    "entry_count": 14,
+    "detected_license_files": [
+      "text-element-master/LICENSE"
+    ],
+    "detected_readmes": [
+      "text-element-master/README.md"
+    ]
+  },
+  {
+    "archive": "PictureText-master.zip",
+    "purpose": "Python picture/text experiments",
+    "license_note": "Unknown",
+    "decision": "No license/readme found; no code used.",
+    "copied_source_code": false,
+    "archive_size_bytes": 495656,
+    "entry_count": 9,
+    "detected_license_files": [],
+    "detected_readmes": []
+  },
+  {
+    "archive": "PictureToAnswer-main.zip",
+    "purpose": "Python/Flask image-to-answer OCR experiment",
+    "license_note": "MIT",
+    "decision": "Useful idea: upload image and extract text. Not included: server app.",
+    "copied_source_code": false,
+    "archive_size_bytes": 4178,
+    "entry_count": 8,
+    "detected_license_files": [
+      "PictureToAnswer-main/LICENSE"
+    ],
+    "detected_readmes": [
+      "PictureToAnswer-main/README.md"
+    ]
+  },
+  {
+    "archive": "text-extract-api-main.zip",
+    "purpose": "FastAPI OCR/document extraction service",
+    "license_note": "MIT",
+    "decision": "Useful idea: backend OCR action and structured extraction. Not included: FastAPI/Celery/Redis/Docker stack.",
+    "copied_source_code": false,
+    "archive_size_bytes": 4472668,
+    "entry_count": 88,
+    "detected_license_files": [
+      "text-extract-api-main/LICENSE"
+    ],
+    "detected_readmes": [
+      "text-extract-api-main/README.md"
+    ]
+  },
+  {
+    "archive": "OpenNoteScanner-master.zip",
+    "purpose": "Android note/document scanner",
+    "license_note": "GPL-3.0",
+    "decision": "Useful idea: document scan/crop workflow. Not included due to Android native code and GPL obligations.",
+    "copied_source_code": false,
+    "archive_size_bytes": 1255328,
+    "entry_count": 231,
+    "detected_license_files": [
+      "OpenNoteScanner-master/LICENSE.txt"
+    ],
+    "detected_readmes": [
+      "OpenNoteScanner-master/README.md"
+    ]
+  },
+  {
+    "archive": "RocketBookPages-master.zip",
+    "purpose": "RocketBook page template generator",
+    "license_note": "GPL-3.0",
+    "decision": "Unrelated to OCR scanner module; no code used.",
+    "copied_source_code": false,
+    "archive_size_bytes": 71477,
+    "entry_count": 32,
+    "detected_license_files": [
+      "RocketBookPages-master/LICENSE"
+    ],
+    "detected_readmes": [
+      "RocketBookPages-master/README.md"
+    ]
+  },
+  {
+    "archive": "AndroidDocumentScanner-master.zip",
+    "purpose": "Android document scanner library",
+    "license_note": "MIT",
+    "decision": "Useful ideas: edge capture/crop/enhance. Not included: Android library cannot run in site HTML.",
+    "copied_source_code": false,
+    "archive_size_bytes": 830966,
+    "entry_count": 139,
+    "detected_license_files": [
+      "AndroidDocumentScanner-master/LICENSE"
+    ],
+    "detected_readmes": [
+      "AndroidDocumentScanner-master/readme.adoc"
+    ]
+  },
+  {
+    "archive": "react-native-document-scanner-master.zip",
+    "purpose": "React Native live document detector",
+    "license_note": "MIT-style",
+    "decision": "Useful idea: live capture and page boundary detection. Not included: React Native/OpenCV mobile stack.",
+    "copied_source_code": false,
+    "archive_size_bytes": 87130766,
+    "entry_count": 409,
+    "detected_license_files": [
+      "react-native-document-scanner-master/LICENSE.md"
+    ],
+    "detected_readmes": [
+      "react-native-document-scanner-master/README.md"
+    ]
+  },
+  {
+    "archive": "document-scanner-master.zip",
+    "purpose": "Python/OpenCV document scanner",
+    "license_note": "Unclear/no license found",
+    "decision": "Useful idea: perspective/crop/enhance. No code used due to missing license and Python/OpenCV dependency.",
+    "copied_source_code": false,
+    "archive_size_bytes": 2067973,
+    "entry_count": 6,
+    "detected_license_files": [],
+    "detected_readmes": [
+      "document-scanner-master/README.md"
+    ]
+  },
+  {
+    "archive": "Pic2Text-master.zip",
+    "purpose": "Android picture-to-text/SMS tool",
+    "license_note": "Unclear/no license found",
+    "decision": "Useful idea: picture-to-text flow. No code used due to Android app/APK and unclear license.",
+    "copied_source_code": false,
+    "archive_size_bytes": 5449560,
+    "entry_count": 210,
+    "detected_license_files": [],
+    "detected_readmes": [
+      "Pic2Text-master/README.md"
+    ]
+  },
+  {
+    "archive": "nvda-audio-volume-control-application-main.zip",
+    "purpose": "NVDA volume control add-on",
+    "license_note": "GPL-2.0",
+    "decision": "Accessibility reference only. Not relevant to journal OCR; no code used.",
+    "copied_source_code": false,
+    "archive_size_bytes": 71297,
+    "entry_count": 65,
+    "detected_license_files": [
+      "nvda-audio-volume-control-application-main/COPYING.txt",
+      "nvda-audio-volume-control-application-main/LICENSE"
+    ],
+    "detected_readmes": [
+      "nvda-audio-volume-control-application-main/readme.md"
+    ]
+  },
+  {
+    "archive": "Screen-Reader-Simulator-master.zip",
+    "purpose": "Python screen reader simulation concept",
+    "license_note": "Unclear/no license found",
+    "decision": "Useful concept: read text aloud. No code used.",
+    "copied_source_code": false,
+    "archive_size_bytes": 1625,
+    "entry_count": 3,
+    "detected_license_files": [],
+    "detected_readmes": [
+      "Screen-Reader-Simulator-master/README.md"
+    ]
+  },
+  {
+    "archive": "EchoLens-main.zip",
+    "purpose": "Chrome extension/image accessibility concept",
+    "license_note": "Unclear/no license found",
+    "decision": "Useful concept: image-to-accessible text. No code used.",
+    "copied_source_code": false,
+    "archive_size_bytes": 1564293,
+    "entry_count": 17,
+    "detected_license_files": [],
+    "detected_readmes": [
+      "EchoLens-main/README.md"
+    ]
+  },
+  {
+    "archive": "NonvisualAudio-main.zip",
+    "purpose": "Accessible audio analyzer",
+    "license_note": "MIT",
+    "decision": "Accessibility documentation approach noted. Not relevant to OCR; no code used.",
+    "copied_source_code": false,
+    "archive_size_bytes": 317011,
+    "entry_count": 108,
+    "detected_license_files": [
+      "NonvisualAudio-main/LICENSE"
+    ],
+    "detected_readmes": [
+      "NonvisualAudio-main/README.md"
+    ]
+  },
+  {
+    "archive": "TextScannerApp-Android-master.zip",
+    "purpose": "Android OCR app",
+    "license_note": "Apache-2.0",
+    "decision": "Useful idea: image scanner into text. Not included: Android app shell.",
+    "copied_source_code": false,
+    "archive_size_bytes": 4560630,
+    "entry_count": 83,
+    "detected_license_files": [
+      "TextScannerApp-Android-master/LICENSE"
+    ],
+    "detected_readmes": [
+      "TextScannerApp-Android-master/README.md"
+    ]
+  },
+  {
+    "archive": "agk-tts-master.zip",
+    "purpose": "JavaScript WebTTS/ARIA wrapper",
+    "license_note": "MIT",
+    "decision": "Useful idea: Web Speech + ARIA announcements. No source copied; generated add-on uses native Web Speech directly.",
+    "copied_source_code": false,
+    "archive_size_bytes": 412628,
+    "entry_count": 39,
+    "detected_license_files": [
+      "agk-tts-master/LICENSE.md"
+    ],
+    "detected_readmes": [
+      "agk-tts-master/README.md"
+    ]
+  },
+  {
+    "archive": "BookTalk-master.zip",
+    "purpose": "Ebook management/listening platform",
+    "license_note": "Unclear/no license found",
+    "decision": "Useful idea: book/text reading workflow. Not included: Rails app shell.",
+    "copied_source_code": false,
+    "archive_size_bytes": 84919672,
+    "entry_count": 306,
+    "detected_license_files": [],
+    "detected_readmes": [
+      "BookTalk-master/README.md"
+    ]
+  },
+  {
+    "archive": "FastPlay-master.zip",
+    "purpose": "Accessible Windows audio player",
+    "license_note": "Unclear/no license found",
+    "decision": "Useful idea: clear playback controls. Not included: Windows/C++ audio app.",
+    "copied_source_code": false,
+    "archive_size_bytes": 411301,
+    "entry_count": 80,
+    "detected_license_files": [],
+    "detected_readmes": [
+      "FastPlay-master/README.md",
+      "FastPlay-master/docs/readme.txt"
+    ]
+  },
+  {
+    "archive": "text-to-picture-master.zip",
+    "purpose": "Text-to-picture generator",
+    "license_note": "MIT",
+    "decision": "Reverse direction from requested feature; no code used.",
+    "copied_source_code": false,
+    "archive_size_bytes": 28229,
+    "entry_count": 9,
+    "detected_license_files": [
+      "text-to-picture-master/LICENSE"
+    ],
+    "detected_readmes": [
+      "text-to-picture-master/README.md"
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-const OURSPACE_CACHE = 'ourspace-20260627-home-modules-dbt-layout-v1';
+const OURSPACE_CACHE = 'ourspace-20260627-journal-a11y-dbt-urges-v1';
 const CORE_ASSETS = [
   "./ourspace.html",
   "./OurSpace.html",
@@ -22,7 +22,9 @@ const CORE_ASSETS = [
   "./assets/ourspace-extensive-audit-fixes.js",
   "./assets/js/docx-lite-reader.js",
   "./assets/js/journal-module.js",
+  "./assets/js/journal-accessibility-addon.js",
   "./assets/css/journal-module.css",
+  "./assets/css/journal-accessibility-addon.css",
   "./js/ourspace-visual-player.js",
   "./css/ourspace-visual-player.css",
   "./js/ourspace-media-player.js",
