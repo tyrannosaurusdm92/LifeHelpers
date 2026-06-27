@@ -194,9 +194,10 @@ function loadDiaryCardNew(){
 function enhanceDBT(){
   const page=$('page-dbt');
   if(!page)return;
+  const preservedDiary=(page.querySelector('.os-diary-only-card[data-os-direct-diary]')||{}).outerHTML||'';
   page.innerHTML=`<div class="page-toolbar"><div><h1 class="page-title">DBT / ADHD</h1></div><button class="bg-button" data-bg-open="dbt" type="button">Change DBT / ADHD Background</button></div>
   <section class="card"><div class="card-head"><h2>Saved DBT / ADHD Entries</h2><button id="clearWellnessNew" class="danger" type="button">Clear entries</button></div><div class="card-body"><div class="scrollbox" id="wellnessLogNew"></div></div></section>
-  <section class="card os-diary-only-card"><div class="card-head"><h2>Diary Cards</h2></div><div class="card-body"><div class="os-diary-card-mount" id="diaryCardMountNew"><div class="empty">Loading personalized diary card…</div></div></div></section>
+  ${preservedDiary || '<section class="card os-diary-only-card"><div class="card-head"><h2>Diary Cards</h2></div><div class="card-body"><div class="os-diary-card-mount" id="diaryCardMountNew"><div class="empty">Loading personalized diary card…</div></div></div></section>'}
   <section class="card"><div class="card-head"><h2>Skill Menu</h2></div><div class="card-body"><div class="grid two" id="skillCardsNew"></div></div></section>`;
   const clear=$('clearWellnessNew');
   if(clear) clear.addEventListener('click',()=>{
@@ -209,8 +210,10 @@ function enhanceDBT(){
   });
   renderCombinedEntries();
   renderSkillMenuNew();
-  loadDiaryCardNew();
+  if(!preservedDiary) loadDiaryCardNew();
+  if(window.OurSpaceDiaryDirect?.mount) window.OurSpaceDiaryDirect.mount();
   addPositiveToAllPages();
+  if(window.OurSpaceDiaryDirect?.positives) window.OurSpaceDiaryDirect.positives();
   addAppearanceButtons();
   document.querySelectorAll('[data-bg-open]').forEach(b=>{if(!b.dataset.osBgBound){b.dataset.osBgBound='1'; b.addEventListener('click',()=>openAppearanceEditor(b.dataset.bgOpen||getPage()));}});
 }
@@ -226,6 +229,6 @@ async function pullSync(){if(!sessionToken())return; try{const data=await backen
 function setSyncStatus(text){['backendStatusBox','appearanceSyncStatus','osSyncStatus'].forEach(id=>{const el=$(id); if(!el)return; if(el.tagName==='TEXTAREA')el.value=text; else el.textContent=text;});}
 function patchStorageSync(){const original=Storage.prototype.setItem; if(Storage.prototype.__ourspaceRevisionPatched)return; Storage.prototype.__ourspaceRevisionPatched=true; Storage.prototype.setItem=function(key,value){let v=value; try{if(key===STORE_KEY){const obj=JSON.parse(value); obj.__updatedAt=new Date().toISOString(); obj.__deviceId=deviceId; v=JSON.stringify(obj);}}catch(e){} const out=original.call(this,key,v); if(String(key).includes(profile)||key===STORE_KEY||key===APPEARANCE_KEY||key===HOME_JOURNAL_KEY||key===WELLNESS_KEY||String(key).includes('ourspace_private_william_jasper_messages'))scheduleSync('storage:'+key); return out;};}
 function addSyncPanel(){const page=$('page-sync'); if(!page||$('osSyncStatus'))return; const sec=document.createElement('section'); sec.className='card'; sec.innerHTML='<div class="card-head"><h2>Cross-device Sync</h2></div><div class="card-body"><div class="row"><button id="osPushSync" type="button" class="primary">Sync now</button><button id="osPullSync" type="button">Pull latest</button></div><div class="os-sync-status" id="osSyncStatus">Ready.</div></div>'; page.prepend(sec); $('osPushSync').addEventListener('click',()=>pushSync('manual')); $('osPullSync').addEventListener('click',()=>pullSync());}
-function initRevision(){document.querySelectorAll('script[src*="ourspace-data-catalogs"],script[src*="ourspace-embedded-catalogs"]').forEach(()=>{}); removeCustomCodeUI(); enhanceHome(); enhanceDBT(); addPositiveToAllPages(); buildAppearanceModal(); addAppearanceButtons(); applyAppearance(getPage()); patchUploads(); disableCustomGameCode(); patchStorageSync(); addSyncPanel(); document.querySelectorAll('[data-page-link]').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{applyAppearance(getPage()); addAppearanceButtons(); patchUploads(); disableCustomGameCode(); addPositiveToAllPages();},50))); document.querySelectorAll('[data-bg-open]').forEach(b=>{if(!b.dataset.osBgBound){b.dataset.osBgBound='1'; b.addEventListener('click',()=>openAppearanceEditor(b.dataset.bgOpen||getPage()));}}); pullSync(); clearInterval(pullTimer); pullTimer=setInterval(pullSync,20000); scheduleSync('revision-load');}
+function initRevision(){document.querySelectorAll('script[src*="ourspace-data-catalogs"],script[src*="ourspace-embedded-catalogs"]').forEach(()=>{}); removeCustomCodeUI(); enhanceHome(); enhanceDBT(); addPositiveToAllPages(); if(window.OurSpaceDiaryDirect?.positives) window.OurSpaceDiaryDirect.positives(); buildAppearanceModal(); addAppearanceButtons(); applyAppearance(getPage()); patchUploads(); disableCustomGameCode(); patchStorageSync(); addSyncPanel(); document.querySelectorAll('[data-page-link]').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{applyAppearance(getPage()); addAppearanceButtons(); patchUploads(); disableCustomGameCode(); addPositiveToAllPages(); if(window.OurSpaceDiaryDirect?.positives) window.OurSpaceDiaryDirect.positives();},50))); document.querySelectorAll('[data-bg-open]').forEach(b=>{if(!b.dataset.osBgBound){b.dataset.osBgBound='1'; b.addEventListener('click',()=>openAppearanceEditor(b.dataset.bgOpen||getPage()));}}); pullSync(); clearInterval(pullTimer); pullTimer=setInterval(pullSync,20000); scheduleSync('revision-load');}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(initRevision,0)); else setTimeout(initRevision,0);
 })();

@@ -1,0 +1,15 @@
+/* Hard fallback: visible, written-in diary cards and positive banners. */
+.os-page-positive{display:block !important; visibility:visible !important; opacity:1 !important; margin:.85rem 0 1rem; border:2px solid var(--os-module-border,#111827); border-radius:18px; background:var(--os-module-bg,rgba(255,255,255,.96)); color:var(--os-body-text,#000); overflow:hidden; text-shadow:-1px -1px 0 var(--os-outline,#fff),1px -1px 0 var(--os-outline,#fff),-1px 1px 0 var(--os-outline,#fff),1px 1px 0 var(--os-outline,#fff);}
+.os-page-marquee{display:block !important; white-space:nowrap; overflow:hidden; background:var(--os-nav-bg,#111827); color:#fff !important; padding:.55rem 0; font-weight:900; text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;}
+.os-page-marquee span{display:inline-block; min-width:100%; padding-left:100%; animation:osMarqueeSlide 28s linear infinite;}
+.os-page-affirmation{display:block !important; padding:.8rem 1rem; font-weight:900; color:var(--os-body-text,#000) !important;}
+.os-diary-written-in{width:100% !important; max-width:none !important; grid-column:1 / -1 !important;}
+.os-diary-written-in .card-body.os-diary-card-scroll{padding:.75rem !important; overflow-x:auto !important; overflow-y:visible !important; -webkit-overflow-scrolling:touch;}
+.os-diary-written-in .os-integrated-diary-card{width:100%; min-width:1120px;}
+.os-diary-written-in .dbt-diary-module{width:100% !important; max-width:none !important; margin:0 !important; overflow:visible !important;}
+.os-diary-written-in .dbt-layout{grid-template-columns:minmax(420px, 560px) minmax(620px, 1fr) !important; width:100% !important;}
+.os-diary-written-in .dbt-module-topbar{grid-template-columns:minmax(360px,1fr) minmax(320px,440px) !important;}
+.os-diary-written-in .dbt-sheet,.os-diary-written-in .dbt-side-menu{min-width:0 !important;}
+.os-diary-written-in .dbt-side-menu{position:relative !important; top:auto !important; max-height:none !important;}
+@media (max-width:900px){.os-diary-written-in .os-integrated-diary-card{min-width:980px}.os-diary-written-in .card-body.os-diary-card-scroll::before{content:'Swipe sideways to use the full diary card.';display:block;margin:0 0 .5rem;font-weight:900;color:#000;background:#fff;border:2px solid #111827;border-radius:12px;padding:.5rem;text-shadow:-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff;}}
+@media (prefers-reduced-motion: reduce){.os-page-marquee span{animation:none;padding-left:1rem;}}
