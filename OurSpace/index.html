@@ -1,41 +1,52 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Living Sunset Tree Scene</title>
-  <meta name="description" content="Animated painterly sunset scene with a smiling tree, rope swing, moving river, waterfall shimmer, drifting leaves, swaying grass, and tiny layered asset textures." />
-  <link rel="stylesheet" href="css/scene.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OurSpace</title>
+<meta name="description" content="OurSpace profile chooser for William and Jasper.">
+<meta name="theme-color" content="#00ffff">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./assets/icons/ourspace-icon-180.png">
+<meta name="msapplication-config" content="./browserconfig.xml">
+<style>
+:root{--cyan:#00ffff;--orange:#ca6309;--ink:#071018;--card:rgba(7,16,24,.84);--line:rgba(255,255,255,.22);--text:#f7ffff;--muted:#cde7ec;--shadow:0 24px 70px rgba(0,0,0,.36)}
+*{box-sizing:border-box}html,body{min-height:100%;margin:0}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 18% 12%,rgba(0,255,255,.28),transparent 24rem),radial-gradient(circle at 82% 14%,rgba(202,99,9,.34),transparent 24rem),linear-gradient(135deg,#071018,#10172a 52%,#210f05);display:grid;place-items:center;padding:clamp(1rem,4vw,2rem);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20%;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.06),transparent 22rem);animation:floatGlow 18s ease-in-out infinite alternate;pointer-events:none}@keyframes floatGlow{from{transform:translate3d(-3%,2%,0) scale(1)}to{transform:translate3d(4%,-3%,0) scale(1.08)}}
+main{width:min(720px,100%);position:relative;z-index:1}.card{border:1px solid var(--line);border-radius:32px;background:var(--card);box-shadow:var(--shadow);backdrop-filter:blur(18px);padding:clamp(1.25rem,5vw,2.25rem);text-align:center}.logo{width:84px;height:84px;margin:0 auto 1rem;border-radius:28px;background:radial-gradient(circle at 30% 25%,#fff 0 12%,transparent 13%),linear-gradient(135deg,var(--cyan),var(--orange));box-shadow:0 0 42px rgba(0,255,255,.26)}h1{font-size:clamp(2.4rem,12vw,5rem);line-height:.9;margin:.2rem 0 .5rem;letter-spacing:-.07em}.subtitle{margin:0 auto 1.4rem;max-width:34rem;color:var(--muted);font-size:clamp(1rem,3vw,1.15rem)}.profile-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.25rem}.profile-button{min-height:9rem;display:grid;place-items:center;text-decoration:none;border:2px solid rgba(255,255,255,.26);border-radius:28px;background:linear-gradient(135deg,rgba(0,255,255,.94),rgba(255,255,255,.88));color:#061016;font-weight:950;font-size:clamp(1.7rem,7vw,3rem);box-shadow:0 12px 0 rgba(0,0,0,.24),0 0 28px rgba(0,255,255,.16);transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}.profile-button:nth-child(2){background:linear-gradient(135deg,rgba(202,99,9,.96),rgba(255,222,177,.96));color:#130904}.profile-button:hover,.profile-button:focus-visible{transform:translateY(-3px);filter:brightness(1.05);outline:4px solid rgba(255,255,255,.82);outline-offset:4px}.profile-button:active{transform:translateY(2px);box-shadow:0 6px 0 rgba(0,0,0,.26),0 0 20px rgba(0,255,255,.12)}@media(max-width:560px){.profile-buttons{grid-template-columns:1fr}.profile-button{min-height:7.5rem}.card{border-radius:24px}}
+</style>
 </head>
 <body>
-  <main class="scene-shell" aria-label="Animated sunset landscape scene">
-    <section id="scene" class="scene" aria-label="Living sunset scene based on the uploaded tree and waterfall image">
-      <img class="base-bg" src="assets/base/sunset-tree-base.png" alt="Painterly sunset landscape with a smiling tree, river, and waterfall" />
-      <div class="tree-shadow-breath" aria-hidden="true"></div>
-      <div class="tree-breath" aria-hidden="true"></div>
-      <div class="sky-swirl" aria-hidden="true"></div>
-      <div class="cloud-veil" aria-hidden="true"></div>
-      <div class="cloud-veil two" aria-hidden="true"></div>
-      <div id="skyLayer" class="motion-layer layer sky" aria-hidden="true"></div>
-      <div id="mountainLayer" class="motion-layer layer mountain" aria-hidden="true"></div>
-      <div id="waterLayer" class="motion-layer layer water" aria-hidden="true"></div>
-      <div class="water-ribbon" aria-hidden="true"></div>
-      <div class="water-ribbon small" aria-hidden="true"></div>
-      <div class="water-ribbon riverline" aria-hidden="true"></div>
-      <div id="mistLayer" class="motion-layer layer mist" aria-hidden="true"></div>
-      <div id="microLayer" class="motion-layer layer micro" aria-hidden="true"></div>
-      <div id="vegetationLayer" class="motion-layer layer vegetation" aria-hidden="true"></div>
-      <div class="swing-rig" aria-hidden="true"><div class="swing-seat"></div></div>
-      <div id="leavesLayer" class="motion-layer layer leaves" aria-hidden="true"></div>
-      <div id="foregroundLayer" class="motion-layer layer foreground" aria-hidden="true"></div>
-      <div id="grassLayer" class="motion-layer layer grass" aria-hidden="true"></div>
-      <aside class="fx-toggle" aria-label="Scene controls">
-        <button id="motionBtn" type="button">Motion on</button>
-        <button id="densityBtn" type="button">Tiny layers on</button>
-      </aside>
-    </section>
-  </main>
-  <script src="js/scene-assets.js"></script>
-  <script src="js/scene.js"></script>
+<main aria-label="OurSpace profile chooser">
+  <section class="card">
+    <div class="logo" aria-hidden="true"></div>
+    <h1>OurSpace</h1>
+    <p class="subtitle">Choose a profile.</p>
+    <nav class="profile-buttons" aria-label="Profiles">
+      <a class="profile-button" href="./william.html" data-profile="william">William</a>
+      <a class="profile-button" href="./jasper.html" data-profile="jasper">Jasper</a>
+    </nav>
+  </section>
+</main>
+<script>
+(() => {
+  'use strict';
+  const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec';
+  const SESSION_KEY = 'ourspace.session.v1';
+  const LEGACY_SESSION_KEY = 'portal-active-session-v2';
+  function clientId(){
+    try{let id=localStorage.getItem('ourspace.client.id.v1'); if(!id){id='client_'+Math.random().toString(36).slice(2)+'_'+Date.now().toString(36); localStorage.setItem('ourspace.client.id.v1',id);} return id;}catch(_){return 'client_ephemeral_'+Math.random().toString(36).slice(2);}
+  }
+  function saveSession(profile){
+    const label = profile === 'jasper' ? 'Jasper' : 'William';
+    const session = { profile, displayName: label, email: profile + '@ourspace.local', noSignIn: true, clientId: clientId(), signedInAt: new Date().toISOString() };
+    try{ sessionStorage.setItem(SESSION_KEY, JSON.stringify(session)); localStorage.removeItem(SESSION_KEY); localStorage.removeItem(LEGACY_SESSION_KEY); }catch(_){}
+    try{ fetch(BACKEND_URL,{method:'POST',mode:'no-cors',cache:'no-store',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({app:'OurSpace',action:'profile.open',profileKey:profile,source:'profile-chooser',clientId:session.clientId,timestamp:new Date().toISOString()})}); }catch(_){}
+  }
+  document.querySelectorAll('[data-profile]').forEach(button => button.addEventListener('click', () => saveSession(button.dataset.profile)));
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('./service-worker.js').catch(()=>{}); }
+})();
+</script>
 </body>
 </html>

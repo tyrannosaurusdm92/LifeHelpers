@@ -689,7 +689,7 @@ small,.tiny{color:var(--muted)}
       <button data-page-link="store">Store</button>
       <button data-page-link="sync">Sync</button>
       <button id="installAppTop" type="button" class="install-pill">Install</button>
-      <button id="returnHomepage" type="button">Sign out</button>
+      <button id="returnHomepage" type="button">Profile chooser</button>
     </nav>
   </div>
 </header>
@@ -744,8 +744,8 @@ small,.tiny{color:var(--muted)}
   <div class="page-toolbar"><div><h1 class="page-title">Home · Journal</h1></div><button class="os-appearance-button" type="button">Appearance</button></div>
   <div class="home-back-row"><button data-page-link="home" type="button">Back to Profile + Music</button><button data-page-link="home-visual" type="button">Visual Player</button></div>
   <div class="home-module-page">
-    <div id="ourspace-journal-root" data-ourspace-journal-auto data-profile="jasper" data-backend-url="https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec"></div>
-    <div id="ourspace-journal-a11y-root" data-ourspace-journal-a11y-auto data-journal-root="#ourspace-journal-root" data-profile="jasper" data-backend-url="https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec"></div>
+    <div id="ourspace-journal-root" data-ourspace-journal-auto data-profile="jasper" data-backend-url="https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec"></div>
+    <div id="ourspace-journal-a11y-root" data-ourspace-journal-a11y-auto data-journal-root="#ourspace-journal-root" data-profile="jasper" data-backend-url="https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec"></div>
   </div>
 </section>
 
@@ -1052,8 +1052,8 @@ const PROFILE_ID='jasper';
 const PROFILE_LABEL='Jasper';
 const PARTNER_ID=PROFILE_ID==='william'?'jasper':'william';
 const PARTNER_LABEL=PARTNER_ID.charAt(0).toUpperCase()+PARTNER_ID.slice(1);
-const LOGIN_PAGE='OurSpace.html';
-const BACKEND_URL=(window.OURSPACE_DATA_CATALOGS&&window.OURSPACE_DATA_CATALOGS.backendUrl)||'https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec';
+const LOGIN_PAGE='ourspace.html';
+const BACKEND_URL=(window.OURSPACE_DATA_CATALOGS&&window.OURSPACE_DATA_CATALOGS.backendUrl)||'https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec';
 const SESSION_KEY='ourspace.session.v1';
 const LEGACY_SESSION_KEY='portal-active-session-v2';
 const LEGACY_LOGIN_KEY='portal-homepage-login';
@@ -1082,10 +1082,9 @@ function readSession(){try{return JSON.parse(sessionStorage.getItem(SESSION_KEY)
 function writeSession(session, remember=false){const raw=JSON.stringify(session); if(remember){localStorage.setItem(SESSION_KEY,raw); sessionStorage.removeItem(SESSION_KEY);}else{sessionStorage.setItem(SESSION_KEY,raw); localStorage.removeItem(SESSION_KEY);} localStorage.removeItem(LEGACY_SESSION_KEY);}
 function clearSession(){sessionStorage.removeItem(SESSION_KEY); localStorage.removeItem(SESSION_KEY); localStorage.removeItem(LEGACY_SESSION_KEY); localStorage.removeItem(LEGACY_LOGIN_KEY);}
 let activeSession=readSession();
-if(location.hash.toLowerCase()==='#admin'){activeSession={profile:PROFILE_ID,email:'testing+'+PROFILE_ID+'@ourspace.local',displayName:'Testing '+PROFILE_LABEL,admin:true,startedAt:new Date().toISOString()}; writeSession(activeSession,false); history.replaceState(null,document.title,location.pathname+location.search);}
-if(activeSession&&activeSession.admin&&activeSession.profile!==PROFILE_ID){activeSession={...activeSession,profile:PROFILE_ID}; writeSession(activeSession,false);}
-if(!activeSession||(!activeSession.admin&&activeSession.profile!==PROFILE_ID)){location.replace(LOGIN_PAGE+'?needs='+encodeURIComponent(PROFILE_ID)); throw new Error('OurSpace sign-in required');}
-function signOutToHomepage(){clearSession(); location.href=LOGIN_PAGE+'?signedout=1';}
+if(location.hash.toLowerCase()==='#admin'){history.replaceState(null,document.title,location.pathname+location.search);}
+if(!activeSession||activeSession.profile!==PROFILE_ID){activeSession={profile:PROFILE_ID,email:PROFILE_ID+'@ourspace.local',displayName:PROFILE_LABEL,noSignIn:true,clientId:getClientId(),startedAt:new Date().toISOString()}; writeSession(activeSession,false);}
+function signOutToHomepage(){clearSession(); location.href=LOGIN_PAGE;}
 const defaultState={siteName:'OurSpace',profileName:PROFILE_LABEL,status:'',homeEdits:{},profileImage:'',profileImageSettings:{fit:'cover',scale:100,x:50,y:50},gallery:[],backgrounds:{},events:[],wallet:{platinum:0,gold:0,silver:0,copper:0},cart:[],wellness:[],rewardFeed:[],musicTracks:[],wishlist:{links:[],items:[]}};
 function loadState(){try{return Object.assign({},defaultState,JSON.parse(localStorage.getItem(STORE_KEY)||'{}'));}catch(e){return structuredClone(defaultState);}}
 function saveState(){localStorage.setItem(STORE_KEY,JSON.stringify(state));}
@@ -1193,7 +1192,7 @@ function initBackendTools(){const tok=$('backendSessionToken'); if(tok)tok.value
 function applyPageBackground(){const val=state.backgrounds[currentPage]||''; document.body.style.setProperty('--page-bg-image',val?`url("${String(val).replace(/"/g,'%22')}")`:'none');}
 function setPage(page){currentPage=page; document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.dataset.page===page)); document.querySelectorAll('[data-page-link]').forEach(b=>b.classList.toggle('active',b.dataset.pageLink===page)); $('messageDock')?.classList.toggle('visible',page==='daily'); applyPageBackground(); if(page==='daily')renderDaily(); if(page==='calendar')renderCalendar(); if(page==='dbt')renderWellness(); if(page==='games'){renderGames(); renderCurrency();} if(page==='store'){renderStore(); renderWishlist(); renderCurrency();} if(page==='sync'){fillBackendPayload(); updateInstallButton();} window.dispatchEvent(new CustomEvent('ourspace:page-changed',{detail:{page}})); window.OurSpaceMedia?.refresh?.();}
 function initNav(){document.querySelectorAll('[data-page-link]').forEach(btn=>btn.addEventListener('click',()=>{setPage(btn.dataset.pageLink); btn.closest('details.nav-menu')?.removeAttribute('open');})); document.querySelectorAll('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>$(btn.dataset.jump)?.scrollIntoView({behavior:'smooth',block:'start'}))); $('returnHomepage')?.addEventListener('click',signOutToHomepage);}
-function initHome(){ $('homeSiteName').textContent=state.siteName; $('appTitle').textContent=state.siteName||'OurSpace'; $('homeStatus').textContent=state.status; $('userLine').textContent=PROFILE_LABEL+(activeSession.admin?' · #admin':''); $('siteNameInput').value=state.siteName; $('profileNameInput').value=state.profileName; $('statusInput').value=state.status; document.querySelectorAll('[data-home-edit]').forEach(el=>{const key=el.dataset.homeEdit; if(state.homeEdits[key])el.innerHTML=state.homeEdits[key]; el.addEventListener('input',()=>{state.homeEdits[key]=el.innerHTML; saveState();});}); applyProfileImage(); renderGallery();}
+function initHome(){ $('homeSiteName').textContent=state.siteName; $('appTitle').textContent=state.siteName||'OurSpace'; $('homeStatus').textContent=state.status; $('userLine').textContent=PROFILE_LABEL; $('siteNameInput').value=state.siteName; $('profileNameInput').value=state.profileName; $('statusInput').value=state.status; document.querySelectorAll('[data-home-edit]').forEach(el=>{const key=el.dataset.homeEdit; if(state.homeEdits[key])el.innerHTML=state.homeEdits[key]; el.addEventListener('input',()=>{state.homeEdits[key]=el.innerHTML; saveState();});}); applyProfileImage(); renderGallery();}
 function applyProfileImage(){const img=$('profileImage'), ph=$('profilePlaceholder'); if(!img||!ph)return; const cfg=state.profileImageSettings||{fit:'cover',scale:100,x:50,y:50}; const fit=$('profileImageFit'), scale=$('profileImageScale'), x=$('profileImagePosX'), y=$('profileImagePosY'); if(fit)fit.value=cfg.fit||'cover'; if(scale)scale.value=Number(cfg.scale||100); if(x)x.value=Number(cfg.x??50); if(y)y.value=Number(cfg.y??50); img.style.objectFit=cfg.fit||'cover'; img.style.objectPosition=`${Number(cfg.x??50)}% ${Number(cfg.y??50)}%`; img.style.transform=`scale(${Number(cfg.scale||100)/100})`; if(state.profileImage){img.src=state.profileImage; img.style.display='block'; ph.style.display='none';}else{img.removeAttribute('src'); img.style.display='none'; ph.style.display='block';}}
 function fileToDataURL(file,cb){const r=new FileReader(); r.onload=()=>cb(String(r.result||'')); r.readAsDataURL(file);}
 function renderGallery(){const grid=$('galleryGrid'); if(!grid)return; grid.innerHTML=''; if(!state.gallery.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">No saved media yet.</div>'; return;} state.gallery.forEach((entry,i)=>{const item=typeof entry==='string'?{type:'image',src:entry,name:'media'}:entry; const wrap=document.createElement('div'); const isVideo=(item.type||'').startsWith('video'); wrap.innerHTML=(isVideo?`<video src="${esc(item.src)}" controls style="width:100%;border-radius:12px"></video>`:`<img src="${esc(item.src)}" alt="${esc(item.name||'Gallery image')}">`)+`<button data-del-gallery="${i}" class="danger" style="width:100%;margin-top:.25rem">Remove</button>`; grid.appendChild(wrap);}); grid.querySelectorAll('[data-del-gallery]').forEach(b=>b.addEventListener('click',()=>{state.gallery.splice(Number(b.dataset.delGallery),1); saveState(); renderGallery();}));}
