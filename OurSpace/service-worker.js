@@ -1,7 +1,6 @@
 const OURSPACE_CACHE = 'ourspace-20260627-journal-a11y-dbt-urges-v1';
 const CORE_ASSETS = [
   "./ourspace.html",
-  "./OurSpace.html",
   "./william.html",
   "./jasper.html",
   "./manifest.webmanifest",
@@ -68,7 +67,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(
       fetch(request)
         .then(response => { const copy = response.clone(); caches.open(OURSPACE_CACHE).then(cache => cache.put(request, copy)); return response; })
-        .catch(() => caches.match(request).then(match => match || caches.match('./ourspace.html') || caches.match('./OurSpace.html')))
+        .catch(() => caches.match(request).then(match => match || caches.match('./ourspace.html')))
     );
     return;
   }

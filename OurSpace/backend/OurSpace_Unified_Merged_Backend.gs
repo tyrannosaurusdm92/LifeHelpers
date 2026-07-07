@@ -711,7 +711,7 @@ function site_pwaInstallRecord_(payload) {
 }
 
 function site_pwaManifestHints_(payload) {
-  return { ok:true, manifestHints:{ appName:'OurSpace', shortName:'OurSpace', installable:true, startUrl:'./index.html', display:'standalone', iconsExpected:['icon-192.png','icon-512.png'], note:'The install bubble is browser controlled; backend stores install events and preferences.' } };
+  return { ok:true, manifestHints:{ appName:'OurSpace', shortName:'OurSpace', installable:true, startUrl:'./ourspace.html', display:'standalone', iconsExpected:['icon-192.png','icon-512.png'], note:'The install bubble is browser controlled; backend stores install events and preferences.' } };
 }
 
 /*************** messenger ***************/

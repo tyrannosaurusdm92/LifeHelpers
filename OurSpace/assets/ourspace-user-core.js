@@ -72,7 +72,7 @@
   function ensureAccess(){
     if(isAdmin()) return;
     const s = session();
-    if(!s || !s.email){ location.href = 'OurSpace.html'; }
+    if(!s || !s.email){ location.href = 'ourspace.html'; }
   }
   function showMessage(id, text, cls=''){const el=$(id); if(!el) return; el.textContent = text || ''; el.className = 'message ' + cls;}
   const totalToCoins = (total) => {
@@ -243,7 +243,7 @@
 
   function renderAll(){renderCurrency(); renderLedger(); renderTasks(); renderSchedule(); renderCalendar(); renderStore(); renderSkills(); renderGames(); renderMessages();}
   function attachEvents(){
-    $('logout')?.addEventListener('click',()=>{if(!isAdmin()) localStorage.removeItem(SESSION_KEY); location.href='OurSpace.html';});
+    $('logout')?.addEventListener('click',()=>{if(!isAdmin()) localStorage.removeItem(SESSION_KEY); location.href='ourspace.html';});
     $('dailyDate').value = todayISO(); $('eventDate').value = todayISO();
     $('startDay')?.addEventListener('click', startDay); $('dailyDate')?.addEventListener('change', renderTasks);
     $('addTask')?.addEventListener('click',()=>{const title=$('newTaskTitle').value.trim(); if(!title){showMessage('taskMessage','Add a task title first.','warning');return;} addLocalTask(normalizeTask({title,date:$('newTaskDate').value || $('dailyDate').value || todayISO(), section:$('newTaskSection').value || 'daily', durationMinutes:$('newTaskDuration').value || 45}, person)); $('newTaskTitle').value=''; showMessage('taskMessage','Task added locally.','success');});

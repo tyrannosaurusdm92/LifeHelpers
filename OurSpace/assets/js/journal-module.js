@@ -155,7 +155,7 @@
       this.render();
       this.bind();
       this.refresh();
-      this.status('Ready. Local saving is on. Drag entries or uploaded files into folders and categories.');
+      this.status('Ready. Local saving is on. Drag entries into folders/categories and choose move or copy. Merge tools are available beside folders/categories.');
       if (this.options.autoLoadBackend !== false) this.loadBackend({ quiet: true });
     }
 
@@ -173,7 +173,7 @@
           <header class="os-journal__header">
             <div>
               <h2>Journal</h2>
-              <p>Folders, subfolders, categories, subcategories, TXT/DOCX imports, drag-and-drop organizing, external links, reading, saving, syncing, and downloads.</p>
+              <p>Folders, subfolders, categories, subcategories, TXT/DOCX imports, drag-and-drop move/copy organizing, merging, external links, reading, saving, syncing, and downloads.</p>
             </div>
             <div class="os-journal__header-actions">
               <button type="button" data-journal="newEntry">New entry</button>
@@ -202,7 +202,7 @@
           </div>
 
           <div class="os-journal__drop-zone" data-journal="dropZone" tabindex="0">
-            Drop TXT/DOCX files here, or drag existing entries into folders/categories below.
+            Drop TXT/DOCX files here, or drag existing entries into folders/categories below. Existing entries ask whether to move or copy.
           </div>
 
           <div class="os-journal__grid">
@@ -212,11 +212,11 @@
               <label>Category filter<select data-journal="categoryFilter"></select></label>
 
               <div class="os-journal__manager">
-                <div class="os-journal__manager-head"><strong>Folders</strong><span>drop entries/files here</span></div>
+                <div class="os-journal__manager-head"><strong>Folders</strong><span>drop entries/files here · move/copy · merge</span></div>
                 <div data-journal="folderManager" class="os-journal__tree"></div>
               </div>
               <div class="os-journal__manager">
-                <div class="os-journal__manager-head"><strong>Categories</strong><span>drop entries here</span></div>
+                <div class="os-journal__manager-head"><strong>Categories</strong><span>drop entries here · move/copy · merge</span></div>
                 <div data-journal="categoryManager" class="os-journal__tree"></div>
               </div>
 
@@ -391,6 +391,26 @@
       if (this.filters.folderId === id) this.filters.folderId = 'all';
       this.touch(); this.status('Folder deleted.', 'warn');
     }
+    mergeFolder(id) {
+      const source = this.getFolder(id);
+      if (!source || source.system) return;
+      const blocked = this.descendantIds('folder', id);
+      const targets = this.sortedTree('folder').filter((folder) => !blocked.has(folder.id));
+      if (!targets.length) return this.status('Create another folder before merging.', 'warn');
+      const choices = targets.map((folder, index) => `${index + 1}. ${this.itemPath('folder', folder)}`).join('\n');
+      const answer = window.prompt(`Merge folder "${source.name}" into which folder?\n${choices}\n\nType a number or exact folder path:`, '1');
+      if (!answer) return;
+      const numeric = Number(answer);
+      const target = Number.isInteger(numeric) ? targets[numeric - 1] : targets.find((folder) => this.itemPath('folder', folder).toLowerCase() === answer.trim().toLowerCase() || folder.name.toLowerCase() === answer.trim().toLowerCase());
+      if (!target) return this.status('Folder merge canceled because no matching target was found.', 'warn');
+      if (!window.confirm(`Merge "${source.name}" into "${this.itemPath('folder', target)}"? Entries in the source folder move there, subfolders move under the target, and the source folder is removed.`)) return;
+      this.state.entries.forEach((entry) => { if (entry.folderId === source.id) { entry.folderId = target.id; entry.updatedAt = nowIso(); } });
+      this.state.folders.forEach((folder) => { if (folder.parentId === source.id) { folder.parentId = target.id; folder.updatedAt = nowIso(); } });
+      this.state.links = this.state.links.map((link) => link.targetKind === 'folder' && link.targetId === source.id ? Object.assign({}, link, { targetId: target.id }) : link);
+      this.state.folders = this.state.folders.filter((folder) => folder.id !== source.id);
+      if (this.filters.folderId === source.id) this.filters.folderId = target.id;
+      this.touch(); this.status(`Merged folder into ${this.itemPath('folder', target)}.`);
+    }
     renameCategory(id) {
       const category = this.getCategory(id);
       if (!category) return;
@@ -410,6 +430,30 @@
       this.state.categories = this.state.categories.filter((item) => item.id !== id);
       if (this.filters.categoryId === id) this.filters.categoryId = 'all';
       this.touch(); this.status('Category deleted.', 'warn');
+    }
+    mergeCategory(id) {
+      const source = this.getCategory(id);
+      if (!source) return;
+      const blocked = this.descendantIds('category', id);
+      const targets = this.sortedTree('category').filter((category) => !blocked.has(category.id));
+      if (!targets.length) return this.status('Create another category before merging.', 'warn');
+      const choices = targets.map((category, index) => `${index + 1}. ${this.itemPath('category', category)}`).join('\n');
+      const answer = window.prompt(`Merge category "${source.name}" into which category?\n${choices}\n\nType a number or exact category path:`, '1');
+      if (!answer) return;
+      const numeric = Number(answer);
+      const target = Number.isInteger(numeric) ? targets[numeric - 1] : targets.find((category) => this.itemPath('category', category).toLowerCase() === answer.trim().toLowerCase() || category.name.toLowerCase() === answer.trim().toLowerCase());
+      if (!target) return this.status('Category merge canceled because no matching target was found.', 'warn');
+      if (!window.confirm(`Merge "${source.name}" into "${this.itemPath('category', target)}"? Entries get the target category, subcategories move under the target, and the source category is removed.`)) return;
+      this.state.entries.forEach((entry) => {
+        if (entry.categoryIds.includes(source.id) && !entry.categoryIds.includes(target.id)) entry.categoryIds.push(target.id);
+        entry.categoryIds = entry.categoryIds.filter((catId) => catId !== source.id);
+        if (entry.categoryIds.includes(target.id)) entry.updatedAt = nowIso();
+      });
+      this.state.categories.forEach((category) => { if (category.parentId === source.id) { category.parentId = target.id; category.updatedAt = nowIso(); } });
+      this.state.links = this.state.links.map((link) => link.targetKind === 'category' && link.targetId === source.id ? Object.assign({}, link, { targetId: target.id }) : link);
+      this.state.categories = this.state.categories.filter((category) => category.id !== source.id);
+      if (this.filters.categoryId === source.id) this.filters.categoryId = target.id;
+      this.touch(); this.status(`Merged category into ${this.itemPath('category', target)}.`);
     }
 
     newEntry() {
@@ -594,6 +638,7 @@
         return `<div class="os-journal__tree-row os-journal__drop-target ${this.filters.folderId === folder.id ? 'is-current' : ''}" data-drop-kind="folder" data-id="${escapeHtml(folder.id)}" style="margin-left:${Math.min(this.itemDepth('folder', folder), 5) * 10}px">
           <button type="button" data-manager="select-folder" data-id="${escapeHtml(folder.id)}">${folder.id === 'folder_unfiled' ? '' : '↳ '}${escapeHtml(folder.name)} <span>${count}</span></button>
           <button type="button" data-manager="rename-folder" data-id="${escapeHtml(folder.id)}" ${folder.system ? 'disabled' : ''}>Rename</button>
+          <button type="button" data-manager="merge-folder" data-id="${escapeHtml(folder.id)}" ${folder.system ? 'disabled' : ''}>Merge</button>
           <button type="button" data-manager="delete-folder" data-id="${escapeHtml(folder.id)}" class="os-journal__danger" ${folder.system ? 'disabled' : ''}>Delete</button>
         </div>`;
       }).join('');
@@ -603,6 +648,7 @@
         return `<div class="os-journal__tree-row os-journal__drop-target ${this.filters.categoryId === category.id ? 'is-current' : ''}" data-drop-kind="category" data-id="${escapeHtml(category.id)}" style="margin-left:${Math.min(this.itemDepth('category', category), 5) * 10}px">
           <button type="button" data-manager="select-category" data-id="${escapeHtml(category.id)}">↳ ${escapeHtml(category.name)} <span>${count}</span></button>
           <button type="button" data-manager="rename-category" data-id="${escapeHtml(category.id)}">Rename</button>
+          <button type="button" data-manager="merge-category" data-id="${escapeHtml(category.id)}">Merge</button>
           <button type="button" data-manager="delete-category" data-id="${escapeHtml(category.id)}" class="os-journal__danger">Delete</button>
         </div>`;
       }).join('') || '<div class="os-journal__empty">No categories yet.</div>';
@@ -682,9 +728,11 @@
       const id = button.dataset.id;
       if (button.dataset.manager === 'select-folder') { this.filters.folderId = id; this.refs.folderFilter.value = id; this.refresh(); }
       if (button.dataset.manager === 'rename-folder') this.renameFolder(id);
+      if (button.dataset.manager === 'merge-folder') this.mergeFolder(id);
       if (button.dataset.manager === 'delete-folder') this.deleteFolder(id);
       if (button.dataset.manager === 'select-category') { this.filters.categoryId = id; this.refs.categoryFilter.value = id; this.refresh(); }
       if (button.dataset.manager === 'rename-category') this.renameCategory(id);
+      if (button.dataset.manager === 'merge-category') this.mergeCategory(id);
       if (button.dataset.manager === 'delete-category') this.deleteCategory(id);
     }
     onDragStart(event) {
@@ -702,6 +750,29 @@
       event.dataTransfer.dropEffect = event.dataTransfer?.files?.length ? 'copy' : 'move';
     }
     onDragLeave(event) { const target = event.target.closest('.os-journal__drop-target, .os-journal__drop-zone'); if (target) target.classList.remove('is-drag'); }
+    askMoveOrCopy(entry, targetName, targetKind) {
+      const defaultAction = targetKind === 'category' ? 'copy' : 'move';
+      const answer = window.prompt(`Move or copy "${entry.title}" to "${targetName}"?\n\nFor folders: MOVE changes the entry folder; COPY duplicates the entry there.\nFor categories: MOVE replaces current categories; COPY adds the category while keeping existing ones.`, defaultAction);
+      if (!answer) return '';
+      const clean = answer.trim().toLowerCase();
+      if (clean.startsWith('m')) return 'move';
+      if (clean.startsWith('c')) return 'copy';
+      this.status('Please type move or copy.', 'warn');
+      return '';
+    }
+    duplicateEntry(entry, changes) {
+      const ts = nowIso();
+      const copy = Object.assign({}, entry, changes || {}, {
+        id: uid('entry'),
+        title: `${entry.title || 'Untitled entry'} (copy)`,
+        createdAt: ts,
+        updatedAt: ts,
+        copiedFrom: entry.id
+      });
+      this.state.entries.unshift(copy);
+      this.selectedEntryId = copy.id;
+      return copy;
+    }
     async onDrop(event) {
       const target = event.target.closest('.os-journal__drop-target, .os-journal__drop-zone');
       if (!target) return;
@@ -713,9 +784,22 @@
       if (files.length) { await this.importFileList(files, { folderId: kind === 'folder' ? id : undefined, categoryId: kind === 'category' ? id : undefined, preserveFolders: !kind }); return; }
       const entryId = event.dataTransfer?.getData('application/x-ourspace-entry-id') || event.dataTransfer?.getData('text/plain');
       const entry = this.getEntry(entryId);
-      if (!entry) return;
-      if (kind === 'folder') { entry.folderId = id; entry.updatedAt = nowIso(); this.touch(); this.status('Entry moved to folder.'); }
-      if (kind === 'category') { if (!entry.categoryIds.includes(id)) entry.categoryIds.push(id); entry.updatedAt = nowIso(); this.touch(); this.status('Category added to entry.'); }
+      if (!entry || !kind) return;
+      if (kind === 'folder') {
+        const folder = this.getFolder(id);
+        if (!folder) return;
+        if (entry.folderId === id) return this.status('Entry is already in that folder.');
+        const action = this.askMoveOrCopy(entry, this.itemPath('folder', folder), 'folder');
+        if (action === 'move') { entry.folderId = id; entry.updatedAt = nowIso(); this.touch(); this.status('Entry moved to folder.'); }
+        if (action === 'copy') { this.duplicateEntry(entry, { folderId: id, categoryIds: Array.isArray(entry.categoryIds) ? entry.categoryIds.slice() : [] }); this.touch(); this.status('Entry copied to folder.'); }
+      }
+      if (kind === 'category') {
+        const category = this.getCategory(id);
+        if (!category) return;
+        const action = this.askMoveOrCopy(entry, this.itemPath('category', category), 'category');
+        if (action === 'move') { entry.categoryIds = [id]; entry.updatedAt = nowIso(); this.touch(); this.status('Entry moved to category.'); }
+        if (action === 'copy') { if (!entry.categoryIds.includes(id)) entry.categoryIds.push(id); entry.updatedAt = nowIso(); this.touch(); this.status('Category copied onto entry.'); }
+      }
     }
   }
 

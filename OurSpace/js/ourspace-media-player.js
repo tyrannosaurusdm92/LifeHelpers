@@ -31,6 +31,7 @@
     repeat: 'all',
     volume: 0.9,
     links: [],
+    deletedPlaylistIds: [],
     updatedAt: Date.now(),
     backendUrl: BACKEND_URL
   });
@@ -161,9 +162,10 @@
     next.folders = Array.isArray(next.folders) ? next.folders : [];
     next.playlists = Array.isArray(next.playlists) ? next.playlists : [];
     next.tracks = Array.isArray(next.tracks) ? next.tracks : [];
+    next.deletedPlaylistIds = Array.isArray(next.deletedPlaylistIds) ? next.deletedPlaylistIds : [];
     if (!next.folders.some(f => f.id === 'folder-all')) next.folders.unshift({ id:'folder-all', name:'All Music', system:true, createdAt:Date.now(), parentId:'' });
-    if (!next.playlists.some(p => p.id === 'playlist-favorites')) next.playlists.unshift({ id:'playlist-favorites', name:'Favorites', trackIds:[], system:true, createdAt:Date.now() });
-    if (!next.playlists.some(p => p.id === 'playlist-shared-audio')) next.playlists.push({ id:'playlist-shared-audio', name:'William + Jasper Shared Audio', trackIds:[], system:true, shared:true, createdAt:Date.now() });
+    if (!next.deletedPlaylistIds.includes('playlist-favorites') && !next.playlists.some(p => p.id === 'playlist-favorites')) next.playlists.unshift({ id:'playlist-favorites', name:'Favorites', trackIds:[], system:true, createdAt:Date.now() });
+    if (!next.deletedPlaylistIds.includes('playlist-shared-audio') && !next.playlists.some(p => p.id === 'playlist-shared-audio')) next.playlists.push({ id:'playlist-shared-audio', name:'William + Jasper Shared Audio', trackIds:[], system:true, shared:true, createdAt:Date.now() });
     next.folders = next.folders.map(folder => ({ id: folder.id || uid('folder'), name: folder.name || 'New Folder', system: Boolean(folder.system), shared: Boolean(folder.shared), parentId: folder.id === 'folder-all' ? '' : (folder.parentId || ''), createdAt: folder.createdAt || Date.now(), updatedAt: folder.updatedAt || folder.createdAt || Date.now() }));
     next.links = Array.isArray(next.links) ? next.links.map(link => ({ id: link.id || uid('link'), title: link.title || link.url || 'Link', url: link.url || '', targetKind: link.targetKind || 'folder', targetId: link.targetId || 'folder-all', createdAt: link.createdAt || Date.now() })).filter(link => link.url) : [];
     next.tracks = next.tracks.map(track => ({
@@ -402,11 +404,12 @@
     return `<div class="osm-item osm-drop-target ${current ? 'is-current' : ''}" data-drop-kind="playlist" data-id="${esc(playlist.id)}">
       <button class="osm-plain-target" data-action="select-playlist" data-id="${esc(playlist.id)}">
         <span class="osm-item-head"><span class="osm-item-title">${playlist.shared ? '♥ ' : ''}${esc(playlist.name)}</span><span class="osm-tag">${playlist.trackIds.length}</span></span>
-        <span class="osm-item-meta">Drop tracks here to add them.</span>
+        <span class="osm-item-meta">Drop tracks here to add them. Use Merge to combine playlists.</span>
       </button>
       <div class="osm-actions">
-        <button class="osm-btn osm-btn-small" data-action="rename-playlist" data-id="${esc(playlist.id)}" ${playlist.system ? 'disabled' : ''}>Rename</button>
-        <button class="osm-btn osm-btn-small osm-btn-danger" data-action="delete-playlist" data-id="${esc(playlist.id)}" ${playlist.system ? 'disabled' : ''}>Delete</button>
+        <button class="osm-btn osm-btn-small" data-action="rename-playlist" data-id="${esc(playlist.id)}">Rename</button>
+        <button class="osm-btn osm-btn-small" data-action="merge-playlist" data-id="${esc(playlist.id)}">Merge</button>
+        <button class="osm-btn osm-btn-small osm-btn-danger" data-action="delete-playlist" data-id="${esc(playlist.id)}">Delete</button>
       </div>
     </div>`;
   }
@@ -462,6 +465,7 @@
     if (action === 'rename-folder') renameFolder(id);
     if (action === 'delete-folder') deleteFolder(id);
     if (action === 'rename-playlist') renamePlaylist(id);
+    if (action === 'merge-playlist') mergePlaylist(id);
     if (action === 'delete-playlist') deletePlaylist(id);
     if (action === 'add-link') addLink();
     if (action === 'delete-link') deleteLink(id);
@@ -512,7 +516,7 @@
       return;
     }
     if (!trackId) return;
-    if (kind === 'folder') moveTrackToFolder(trackId, id);
+    if (kind === 'folder') await moveOrCopyTrackToFolder(trackId, id);
     if (kind === 'playlist') addTrackToPlaylist(trackId, id);
   }
   function filterTrackList(query, sort) {
@@ -796,7 +800,7 @@
   }
   function renamePlaylist(id) {
     const playlist = state.library.playlists.find(p => p.id === id);
-    if (!playlist || playlist.system) return;
+    if (!playlist) return;
     const name = prompt('Rename playlist:', playlist.name);
     if (!name) return;
     playlist.name = name.trim(); playlist.updatedAt = Date.now();
@@ -804,12 +808,37 @@
   }
   function deletePlaylist(id) {
     const playlist = state.library.playlists.find(p => p.id === id);
-    if (!playlist || playlist.system) return;
+    if (!playlist) return;
     if (!confirm(`Delete playlist “${playlist.name}”? Tracks stay in your library.`)) return;
+    if (playlist.system) {
+      state.library.deletedPlaylistIds = Array.from(new Set([...(state.library.deletedPlaylistIds || []), playlist.id]));
+    }
     state.library.links = (state.library.links || []).filter(link => !(link.targetKind === 'playlist' && link.targetId === id));
     state.library.playlists = state.library.playlists.filter(p => p.id !== id);
     if (state.library.selectedPlaylistId === id) state.library.selectedPlaylistId = '';
     scheduleSave(); render(); notify('Playlist deleted.');
+  }
+  function mergePlaylist(id) {
+    const source = state.library.playlists.find(p => p.id === id);
+    if (!source) return;
+    const targets = state.library.playlists.filter(p => p.id !== id);
+    if (!targets.length) return notify('Create another playlist before merging.', 'error');
+    const choices = targets.map((p, i) => `${i + 1}. ${p.name} (${p.trackIds.length} tracks)`).join('\n');
+    const answer = prompt(`Merge “${source.name}” into which playlist?\n${choices}\n\nType a number or exact playlist name:`);
+    if (!answer) return;
+    const numeric = Number(answer);
+    const target = Number.isInteger(numeric) ? targets[numeric - 1] : targets.find(p => p.name.toLowerCase() === answer.trim().toLowerCase());
+    if (!target) return notify('Playlist merge canceled because no matching target was found.', 'error');
+    if (!confirm(`Merge “${source.name}” into “${target.name}”? “${source.name}” will be removed, and tracks stay in your library.`)) return;
+    target.trackIds = Array.from(new Set([...(target.trackIds || []), ...(source.trackIds || [])]));
+    target.updatedAt = Date.now();
+    if (source.system) {
+      state.library.deletedPlaylistIds = Array.from(new Set([...(state.library.deletedPlaylistIds || []), source.id]));
+    }
+    state.library.links = (state.library.links || []).map(link => link.targetKind === 'playlist' && link.targetId === source.id ? { ...link, targetId: target.id } : link);
+    state.library.playlists = state.library.playlists.filter(p => p.id !== source.id);
+    if (state.library.selectedPlaylistId === source.id) state.library.selectedPlaylistId = target.id;
+    scheduleSave(); render(); notify(`Merged into ${target.name}.`);
   }
   function addTrackToPlaylist(trackId, playlistId) {
     const playlist = state.library.playlists.find(p => p.id === playlistId);
@@ -818,12 +847,41 @@
     playlist.updatedAt = Date.now();
     scheduleSave(); render(); notify(`Added to ${playlist.name}.`);
   }
+  function askMoveOrCopy(itemName, targetName, itemType = 'track') {
+    const answer = prompt(`Move or copy “${itemName}” to “${targetName}”?\n\nType MOVE to move it, or COPY to duplicate it.`, 'move');
+    if (!answer) return '';
+    const clean = answer.trim().toLowerCase();
+    if (clean.startsWith('m')) return 'move';
+    if (clean.startsWith('c')) return 'copy';
+    notify(`Could not understand that ${itemType} action. Type move or copy.`, 'error');
+    return '';
+  }
+  async function moveOrCopyTrackToFolder(trackId, folderId) {
+    const track = state.library.tracks.find(t => t.id === trackId);
+    const folder = state.library.folders.find(f => f.id === folderId);
+    if (!track || !folder) return;
+    if (track.folderId === folder.id) return notify(`“${track.title}” is already in ${folder.name}.`);
+    const action = askMoveOrCopy(track.title, folder.name, 'track');
+    if (action === 'move') moveTrackToFolder(trackId, folderId);
+    if (action === 'copy') await copyTrackToFolder(trackId, folderId);
+  }
   function moveTrackToFolder(trackId, folderId) {
     const track = state.library.tracks.find(t => t.id === trackId);
     const folder = state.library.folders.find(f => f.id === folderId);
     if (!track || !folder) return;
     track.folderId = folder.id;
     scheduleSave(); render(); notify(`Moved to ${folder.name}.`);
+  }
+  async function copyTrackToFolder(trackId, folderId) {
+    const track = state.library.tracks.find(t => t.id === trackId);
+    const folder = state.library.folders.find(f => f.id === folderId);
+    if (!track || !folder) return;
+    const copy = { ...track, id: uid('track'), folderId: folder.id, title: `${track.title} (copy)`, addedAt: Date.now(), copiedFrom: track.id };
+    state.library.tracks.push(copy);
+    const blob = await idbGet(STORE_BLOBS, track.id).catch(() => null);
+    if (blob) await idbSet(STORE_BLOBS, copy.id, blob).catch(() => {});
+    if (!blob && !copy.remoteUrl) notify('Copied the track info, but the local audio file was not available. Re-upload if it will not play.', 'error');
+    scheduleSave(); render(); notify(`Copied to ${folder.name}.`);
   }
   function addLink() {
     const titleInput = $('[data-field="link-title"]', state.root);
@@ -984,6 +1042,7 @@
       folders: state.library.folders,
       playlists: state.library.playlists,
       links: state.library.links || [],
+      deletedPlaylistIds: state.library.deletedPlaylistIds || [],
       tracks: state.library.tracks.map(({id,title,artist,album,folderId,mime,size,duration,originalName,addedAt,backendId,remoteUrl,downloadUrl,source}) => ({id,title,artist,album,folderId,mime,size,duration,originalName,addedAt,backendId,remoteUrl,downloadUrl,source})),
       playback: readPlayback()
     };
