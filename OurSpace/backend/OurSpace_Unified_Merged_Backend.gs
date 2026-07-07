@@ -2237,9 +2237,9 @@ function link_escAttr_(value) {
  * multiple separate projects/sites. The backend stores each project separately in the same spreadsheet.
  *
  * Current deployed web app URL embedded in the frontend:
- * https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec
+ * https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec
  * Deployment ID:
- * AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA
+ * AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA
  *
  * Important architecture note:
  * - Google Apps Script can store messages/files/events, authenticate sessions, enforce the 10-person cap,

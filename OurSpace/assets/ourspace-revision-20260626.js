@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-const LOCKED_BACKEND_URL='https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec';
+const LOCKED_BACKEND_URL='https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec';
 const profile=(document.body.dataset.ourspaceUser||'william').toLowerCase();
 const partner=(document.body.dataset.ourspacePartner||(profile==='william'?'jasper':'william')).toLowerCase();
 const label=profile.charAt(0).toUpperCase()+profile.slice(1);

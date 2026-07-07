@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  const DEFAULT_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec';
+  const DEFAULT_BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec';
   const MODULE_NAME = 'ourspace_journal';
   const STATE_VERSION = 2;
 
