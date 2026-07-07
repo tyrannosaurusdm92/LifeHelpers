@@ -49,7 +49,7 @@ For markup-only games, add one of these:
 The frontend is already wired to the backend URL you gave:
 
 ```js
-https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec
+https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec
 ```
 
 The module works local-first if the backend does not yet support media actions. Metadata sync is sent to the backend; small audio files are attempted as base64 uploads. Large files remain local unless the backend is expanded to receive Drive uploads.

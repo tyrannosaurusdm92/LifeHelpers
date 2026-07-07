@@ -15,7 +15,7 @@ Add the module root wherever the journal should appear:
   id="ourspace-journal-root"
   data-ourspace-journal-auto
   data-profile="william"
-  data-backend-url="https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec">
+  data-backend-url="https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec">
 </div>
 ```
 
@@ -35,7 +35,7 @@ Add scripts before the closing body tag:
 <script>
   OurSpaceJournal.mount('#ourspace-journal-root', {
     profile: 'william',
-    backendUrl: 'https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec'
+    backendUrl: 'https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec'
   });
 </script>
 ```

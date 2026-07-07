@@ -13,7 +13,7 @@ A clean drop-in photo/video player for OurSpace. It was built as a vanilla JavaS
 - Download current item or individual gallery items.
 - Local-first storage through IndexedDB for real uploaded files.
 - Backend sync queue pointed to the supplied Apps Script URL:
-  `https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec`
+  `https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec`
 - Responsive, portrait-friendly layout styled to fit the OurSpace cyan/orange visual language.
 
 ## Files

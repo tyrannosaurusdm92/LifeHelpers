@@ -1,7 +1,7 @@
 # Patch 2026-06-26 — cross-device design/media sync, readability, diary cards
 
 Locked backend URL, unchanged:
-https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec
+https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec
 
 ## Changes
 - Added backend-backed profile-state sync for per-user design state, MySpace/site CSS, profile image metadata, gallery media metadata, music metadata, page backgrounds, wishlist/cart/home state, events, and custom game metadata.

@@ -14,7 +14,7 @@ Browser rendering is not available in this sandbox environment, so device-mode t
 
 
 ## 2026-06-26 mobile/backend sign-in patch
-- Locked frontend backend URL to `https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec`.
+- Locked frontend backend URL to `https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec`.
 - Changed frontend backend calls from JSON POST to simple `text/plain` POST with GET fallback to reduce mobile browser/CORS/preflight failures.
 - Fixed login-page JavaScript duplicate `const password` declaration.
 - Moved server-side account creation to the profile-claim step so signup sends `profileKey` and creates the real backend account instead of only a browser-local account.

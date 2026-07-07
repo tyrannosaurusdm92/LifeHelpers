@@ -31,7 +31,7 @@ Then add this where the module should appear:
   id="ourspace-journal-root"
   data-ourspace-journal-auto
   data-profile="william"
-  data-backend-url="https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec">
+  data-backend-url="https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec">
 </div>
 
 <script src="assets/js/docx-lite-reader.js"></script>

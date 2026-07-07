@@ -2,7 +2,7 @@
 
 The module posts JSON to:
 
-`https://script.google.com/macros/s/AKfycbwL1e8Gv-o0wC8kAhseMwoNhs97OBvCfCB5FV4zwNnCRa9jYWbYwm2B-wYwUOjlnjg_vA/exec`
+`https://script.google.com/macros/s/AKfycbwK-F1BfXbkiVkQXFA0Z1acKxFJgeGU6zckChEmSc8ANqLA1mbqUOWSf6_H1CGFtwW7WA/exec`
 
 The body is sent as `text/plain;charset=utf-8` so Google Apps Script can receive it without requiring a CORS preflight.
 
