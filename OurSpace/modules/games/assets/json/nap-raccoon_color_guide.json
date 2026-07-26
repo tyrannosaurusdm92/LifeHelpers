@@ -1,127 +1,88 @@
 {
   "title": "Fuck This, I Need a Nap",
   "file": "nap-raccoon.svg",
-  "method": "Original hand-authored vector regions merged into the offline cozy paint-by-number library. No image-generation system was used.",
+  "method": "Rebuilt as hand-authored SVG geometry after reference research; no image generation was used.",
   "interaction": {
-    "click": "Toggle one region between paper and its suggested color.",
-    "shift_click": "Toggle all regions carrying the same number.",
+    "click": "Paint one region with its suggested color.",
+    "shift_click": "Paint every region carrying the same number.",
     "palette_swatch_click": "Paint every region assigned to that number.",
     "keyboard": "Focus a region or swatch and press Enter or Space."
   },
   "palette": [
     {
       "number": 1,
-      "name": "Ink",
-      "hex": "#2d2930",
-      "region_count": 4,
-      "regions": [
-        "region-009",
-        "region-010",
-        "region-013",
-        "region-014"
-      ]
+      "name": "Warm cream",
+      "hex": "#f6ecdc",
+      "preview_pixel_count": 154
     },
     {
       "number": 2,
-      "name": "Cream",
-      "hex": "#f3eadb",
-      "region_count": 1,
-      "regions": [
-        "region-001"
-      ]
+      "name": "Blanket green",
+      "hex": "#6aa95c",
+      "preview_pixel_count": 217
     },
     {
       "number": 3,
-      "name": "Console charcoal",
-      "hex": "#393c45",
-      "region_count": 2,
-      "regions": [
-        "region-004",
-        "region-005"
-      ]
+      "name": "Raccoon gray",
+      "hex": "#5a5e68",
+      "preview_pixel_count": 234
     },
     {
       "number": 4,
-      "name": "Steel",
-      "hex": "#6c7480",
-      "region_count": 3,
-      "regions": [
-        "region-003",
-        "region-006",
-        "region-007"
-      ]
+      "name": "Mask charcoal",
+      "hex": "#2d3038",
+      "preview_pixel_count": 556
     },
     {
       "number": 5,
-      "name": "Xbox green",
-      "hex": "#55a84f",
-      "region_count": 1,
-      "regions": [
-        "region-002"
-      ]
+      "name": "Muzzle light",
+      "hex": "#b9b9b3",
+      "preview_pixel_count": 2381
     },
     {
       "number": 6,
-      "name": "Neon cyan",
-      "hex": "#35c8d7",
-      "region_count": 0,
-      "regions": []
+      "name": "Nose pink",
+      "hex": "#d68a82",
+      "preview_pixel_count": 131
     },
     {
       "number": 7,
-      "name": "Electric violet",
-      "hex": "#8155b6",
-      "region_count": 0,
-      "regions": []
+      "name": "Tail gray",
+      "hex": "#7c6b5c",
+      "preview_pixel_count": 109
     },
     {
       "number": 8,
-      "name": "Hot coral",
-      "hex": "#d96363",
-      "region_count": 1,
-      "regions": [
-        "region-015"
-      ]
+      "name": "Tail dark",
+      "hex": "#2d3038",
+      "preview_pixel_count": 0
     },
     {
       "number": 9,
-      "name": "Gold",
-      "hex": "#d6a43e",
-      "region_count": 0,
-      "regions": []
+      "name": "Pillow coral",
+      "hex": "#d8646b",
+      "preview_pixel_count": 183
     },
     {
       "number": 10,
-      "name": "Wood",
-      "hex": "#7d533b",
-      "region_count": 0,
-      "regions": []
+      "name": "Bed gold",
+      "hex": "#e8c05b",
+      "preview_pixel_count": 1117
     },
     {
       "number": 11,
-      "name": "Shadow navy",
-      "hex": "#26384d",
-      "region_count": 1,
-      "regions": [
-        "region-008"
-      ]
-    },
-    {
-      "number": 12,
-      "name": "White",
-      "hex": "#fffaf1",
-      "region_count": 2,
-      "regions": [
-        "region-011",
-        "region-012"
-      ]
+      "name": "Sleep blue",
+      "hex": "#92c8da",
+      "preview_pixel_count": 5734
     }
   ],
-  "region_count": 15,
+  "region_count": 19,
   "tags": [
-    "Humor",
+    "Animals",
     "Raccoon",
-    "Sweary"
+    "Humor"
   ],
-  "complexity": "Moderate"
+  "complexity": "Moderate",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
 }

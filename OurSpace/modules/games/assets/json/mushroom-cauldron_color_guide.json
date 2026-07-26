@@ -13,118 +13,73 @@
       "number": 1,
       "name": "Ink",
       "hex": "#2d2930",
-      "region_count": 1,
-      "regions": [
-        "region-005"
-      ]
+      "preview_pixel_count": 7632
     },
     {
       "number": 2,
       "name": "Parchment",
       "hex": "#f3e7d2",
-      "region_count": 1,
-      "regions": [
-        "region-001"
-      ]
+      "preview_pixel_count": 135
     },
     {
       "number": 3,
       "name": "Deep plum",
       "hex": "#4b314f",
-      "region_count": 2,
-      "regions": [
-        "region-003",
-        "region-017"
-      ]
+      "preview_pixel_count": 1299
     },
     {
       "number": 4,
       "name": "Moon violet",
       "hex": "#76507d",
-      "region_count": 2,
-      "regions": [
-        "region-002",
-        "region-015"
-      ]
+      "preview_pixel_count": 67
     },
     {
       "number": 5,
       "name": "Sage",
       "hex": "#7f946f",
-      "region_count": 1,
-      "regions": [
-        "region-006"
-      ]
+      "preview_pixel_count": 55
     },
     {
       "number": 6,
       "name": "Forest",
       "hex": "#3f604e",
-      "region_count": 2,
-      "regions": [
-        "region-012",
-        "region-019"
-      ]
+      "preview_pixel_count": 99
     },
     {
       "number": 7,
       "name": "Amber",
       "hex": "#d49a43",
-      "region_count": 1,
-      "regions": [
-        "region-011"
-      ]
+      "preview_pixel_count": 620
     },
     {
       "number": 8,
       "name": "Copper",
       "hex": "#aa653a",
-      "region_count": 1,
-      "regions": [
-        "region-010"
-      ]
+      "preview_pixel_count": 580
     },
     {
       "number": 9,
       "name": "Rose",
       "hex": "#b86d78",
-      "region_count": 2,
-      "regions": [
-        "region-009",
-        "region-021"
-      ]
+      "preview_pixel_count": 54
     },
     {
       "number": 10,
       "name": "Teal",
       "hex": "#3c8290",
-      "region_count": 2,
-      "regions": [
-        "region-007",
-        "region-013"
-      ]
+      "preview_pixel_count": 185
     },
     {
       "number": 11,
       "name": "Glow",
       "hex": "#d8e9ac",
-      "region_count": 1,
-      "regions": [
-        "region-008"
-      ]
+      "preview_pixel_count": 49
     },
     {
       "number": 12,
       "name": "Bone",
       "hex": "#e8d8bd",
-      "region_count": 5,
-      "regions": [
-        "region-004",
-        "region-014",
-        "region-016",
-        "region-018",
-        "region-020"
-      ]
+      "preview_pixel_count": 41
     }
   ],
   "region_count": 21,
@@ -133,5 +88,7 @@
     "Mushroom",
     "Cauldron"
   ],
-  "complexity": "Detailed"
+  "complexity": "Detailed",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
 }

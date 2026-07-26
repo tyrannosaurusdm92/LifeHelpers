@@ -1,0 +1,88 @@
+{
+  "title": "Owl & Night Blooms",
+  "file": "owl-and-night-blooms.svg",
+  "method": "Rebuilt as hand-authored SVG geometry after reference research; no image generation was used.",
+  "interaction": {
+    "click": "Paint one region with its suggested color.",
+    "shift_click": "Paint every region carrying the same number.",
+    "palette_swatch_click": "Paint every region assigned to that number.",
+    "keyboard": "Focus a region or swatch and press Enter or Space."
+  },
+  "palette": [
+    {
+      "number": 1,
+      "name": "Moonlit cream",
+      "hex": "#f5eadb",
+      "preview_pixel_count": 166
+    },
+    {
+      "number": 2,
+      "name": "Night teal",
+      "hex": "#173948",
+      "preview_pixel_count": 1009
+    },
+    {
+      "number": 3,
+      "name": "Moon gold",
+      "hex": "#e7c75a",
+      "preview_pixel_count": 737
+    },
+    {
+      "number": 4,
+      "name": "Owl brown",
+      "hex": "#9a744d",
+      "preview_pixel_count": 67
+    },
+    {
+      "number": 5,
+      "name": "Face gold",
+      "hex": "#d7b36b",
+      "preview_pixel_count": 699
+    },
+    {
+      "number": 6,
+      "name": "Eye light",
+      "hex": "#f1e7d3",
+      "preview_pixel_count": 1011
+    },
+    {
+      "number": 7,
+      "name": "Eye dark",
+      "hex": "#24282e",
+      "preview_pixel_count": 242
+    },
+    {
+      "number": 8,
+      "name": "Wing shadow",
+      "hex": "#6d5849",
+      "preview_pixel_count": 58
+    },
+    {
+      "number": 9,
+      "name": "Leaf green",
+      "hex": "#486b4c",
+      "preview_pixel_count": 38
+    },
+    {
+      "number": 10,
+      "name": "Night bloom",
+      "hex": "#c65f7c",
+      "preview_pixel_count": 6700
+    },
+    {
+      "number": 11,
+      "name": "Bloom plum",
+      "hex": "#7b6591",
+      "preview_pixel_count": 89
+    }
+  ],
+  "region_count": 28,
+  "tags": [
+    "Animals",
+    "Birds",
+    "Floral"
+  ],
+  "complexity": "Detailed",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
+}

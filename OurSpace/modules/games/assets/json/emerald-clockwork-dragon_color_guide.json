@@ -1,140 +1,88 @@
 {
   "title": "Emerald Clockwork Dragon",
   "file": "emerald-clockwork-dragon.svg",
-  "method": "Original hand-authored vector regions merged into the offline cozy paint-by-number library. No image-generation system was used.",
+  "method": "Rebuilt as hand-authored SVG geometry after reference research; no image generation was used.",
   "interaction": {
-    "click": "Toggle one region between paper and its suggested color.",
-    "shift_click": "Toggle all regions carrying the same number.",
+    "click": "Paint one region with its suggested color.",
+    "shift_click": "Paint every region carrying the same number.",
     "palette_swatch_click": "Paint every region assigned to that number.",
     "keyboard": "Focus a region or swatch and press Enter or Space."
   },
   "palette": [
     {
       "number": 1,
-      "name": "Ink",
-      "hex": "#2d2930",
-      "region_count": 1,
-      "regions": [
-        "region-014"
-      ]
+      "name": "Warm cream",
+      "hex": "#f5ead9",
+      "preview_pixel_count": 1594
     },
     {
       "number": 2,
-      "name": "Parchment",
-      "hex": "#efe2ca",
-      "region_count": 1,
-      "regions": [
-        "region-001"
-      ]
+      "name": "Emerald scale",
+      "hex": "#184b3c",
+      "preview_pixel_count": 5357
     },
     {
       "number": 3,
-      "name": "Brass",
-      "hex": "#d09a38",
-      "region_count": 7,
-      "regions": [
-        "region-005",
-        "region-015",
-        "region-016",
-        "region-018",
-        "region-020",
-        "region-022",
-        "region-024"
-      ]
+      "name": "Scale light",
+      "hex": "#2d7659",
+      "preview_pixel_count": 265
     },
     {
       "number": 4,
-      "name": "Copper",
-      "hex": "#a96336",
-      "region_count": 1,
-      "regions": [
-        "region-004"
-      ]
+      "name": "Brass gear",
+      "hex": "#d09a38",
+      "preview_pixel_count": 1220
     },
     {
       "number": 5,
-      "name": "Bronze",
-      "hex": "#745033",
-      "region_count": 1,
-      "regions": [
-        "region-003"
-      ]
+      "name": "Copper",
+      "hex": "#a55a2c",
+      "preview_pixel_count": 163
     },
     {
       "number": 6,
       "name": "Iron",
-      "hex": "#59616a",
-      "region_count": 1,
-      "regions": [
-        "region-008"
-      ]
+      "hex": "#4b5259",
+      "preview_pixel_count": 40
     },
     {
       "number": 7,
-      "name": "Steel",
-      "hex": "#89919a",
-      "region_count": 2,
-      "regions": [
-        "region-010",
-        "region-011"
-      ]
+      "name": "Ichor glass",
+      "hex": "#86d7d0",
+      "preview_pixel_count": 268
     },
     {
       "number": 8,
-      "name": "Teal glass",
-      "hex": "#3f8e91",
-      "region_count": 5,
-      "regions": [
-        "region-006",
-        "region-017",
-        "region-019",
-        "region-021",
-        "region-023"
-      ]
+      "name": "Eye gold",
+      "hex": "#d7c15d",
+      "preview_pixel_count": 873
     },
     {
       "number": 9,
-      "name": "Sage",
-      "hex": "#71826a",
-      "region_count": 1,
-      "regions": [
-        "region-007"
-      ]
+      "name": "Wing membrane",
+      "hex": "#7b4f3e",
+      "preview_pixel_count": 150
     },
     {
       "number": 10,
-      "name": "Burgundy",
-      "hex": "#7f3e46",
-      "region_count": 1,
-      "regions": [
-        "region-009"
-      ]
+      "name": "Deep shadow",
+      "hex": "#2b2d33",
+      "preview_pixel_count": 91
     },
     {
       "number": 11,
-      "name": "Smoke",
-      "hex": "#b5aea4",
-      "region_count": 1,
-      "regions": [
-        "region-002"
-      ]
-    },
-    {
-      "number": 12,
-      "name": "Cream",
-      "hex": "#f7f0df",
-      "region_count": 2,
-      "regions": [
-        "region-012",
-        "region-013"
-      ]
+      "name": "Mouth coral",
+      "hex": "#d98273",
+      "preview_pixel_count": 795
     }
   ],
-  "region_count": 24,
+  "region_count": 23,
   "tags": [
+    "Animals",
     "Dragon",
-    "Steampunk",
-    "Fantasy"
+    "Steampunk"
   ],
-  "complexity": "Detailed"
+  "complexity": "Detailed",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
 }

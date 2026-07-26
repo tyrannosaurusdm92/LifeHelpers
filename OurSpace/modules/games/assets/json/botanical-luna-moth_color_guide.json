@@ -1,0 +1,76 @@
+{
+  "title": "Botanical Luna Moth",
+  "file": "botanical-luna-moth.svg",
+  "method": "Rebuilt as hand-authored SVG geometry after reference research; no image generation was used.",
+  "interaction": {
+    "click": "Paint one region with its suggested color.",
+    "shift_click": "Paint every region carrying the same number.",
+    "palette_swatch_click": "Paint every region assigned to that number.",
+    "keyboard": "Focus a region or swatch and press Enter or Space."
+  },
+  "palette": [
+    {
+      "number": 1,
+      "name": "Warm cream",
+      "hex": "#f5ecdc",
+      "preview_pixel_count": 653
+    },
+    {
+      "number": 2,
+      "name": "Luna green",
+      "hex": "#b8d99a",
+      "preview_pixel_count": 1172
+    },
+    {
+      "number": 3,
+      "name": "Wing shadow",
+      "hex": "#7eb28a",
+      "preview_pixel_count": 1360
+    },
+    {
+      "number": 4,
+      "name": "Moon gold",
+      "hex": "#e5c15a",
+      "preview_pixel_count": 1431
+    },
+    {
+      "number": 5,
+      "name": "Body dark",
+      "hex": "#3e5150",
+      "preview_pixel_count": 4801
+    },
+    {
+      "number": 6,
+      "name": "Eyespot coral",
+      "hex": "#d58a7a",
+      "preview_pixel_count": 155
+    },
+    {
+      "number": 7,
+      "name": "Eyespot plum",
+      "hex": "#7d6392",
+      "preview_pixel_count": 135
+    },
+    {
+      "number": 8,
+      "name": "Fern green",
+      "hex": "#5f8a61",
+      "preview_pixel_count": 1005
+    },
+    {
+      "number": 9,
+      "name": "Fern light",
+      "hex": "#9dbd75",
+      "preview_pixel_count": 104
+    }
+  ],
+  "region_count": 16,
+  "tags": [
+    "Animals",
+    "Insects",
+    "Botanical"
+  ],
+  "complexity": "Detailed",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
+}

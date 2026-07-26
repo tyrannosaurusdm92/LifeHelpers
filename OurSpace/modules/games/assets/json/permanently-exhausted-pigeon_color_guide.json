@@ -1,125 +1,94 @@
 {
   "title": "Permanently Exhausted Pigeon",
   "file": "permanently-exhausted-pigeon.svg",
-  "method": "Original hand-authored vector regions merged into the offline cozy paint-by-number library. No image-generation system was used.",
+  "method": "Rebuilt as hand-authored SVG geometry after reference research; no image generation was used.",
   "interaction": {
-    "click": "Toggle one region between paper and its suggested color.",
-    "shift_click": "Toggle all regions carrying the same number.",
+    "click": "Paint one region with its suggested color.",
+    "shift_click": "Paint every region carrying the same number.",
     "palette_swatch_click": "Paint every region assigned to that number.",
     "keyboard": "Focus a region or swatch and press Enter or Space."
   },
   "palette": [
     {
       "number": 1,
-      "name": "Ink",
-      "hex": "#2d2930",
-      "region_count": 1,
-      "regions": [
-        "region-008"
-      ]
+      "name": "Warm cream",
+      "hex": "#f6ecdd",
+      "preview_pixel_count": 497
     },
     {
       "number": 2,
-      "name": "Cream",
-      "hex": "#f3eadb",
-      "region_count": 1,
-      "regions": [
-        "region-001"
-      ]
+      "name": "Blanket coral",
+      "hex": "#c96d70",
+      "preview_pixel_count": 120
     },
     {
       "number": 3,
-      "name": "Console charcoal",
-      "hex": "#393c45",
-      "region_count": 0,
-      "regions": []
+      "name": "Bed wood",
+      "hex": "#7b5a43",
+      "preview_pixel_count": 74
     },
     {
       "number": 4,
-      "name": "Steel",
-      "hex": "#6c7480",
-      "region_count": 1,
-      "regions": [
-        "region-005"
-      ]
+      "name": "Pigeon gray",
+      "hex": "#8a9297",
+      "preview_pixel_count": 588
     },
     {
       "number": 5,
-      "name": "Xbox green",
-      "hex": "#55a84f",
-      "region_count": 1,
-      "regions": [
-        "region-006"
-      ]
+      "name": "Wing slate",
+      "hex": "#4c5967",
+      "preview_pixel_count": 956
     },
     {
       "number": 6,
-      "name": "Neon cyan",
-      "hex": "#35c8d7",
-      "region_count": 1,
-      "regions": [
-        "region-004"
-      ]
+      "name": "Neck green",
+      "hex": "#467f6a",
+      "preview_pixel_count": 5795
     },
     {
       "number": 7,
-      "name": "Electric violet",
-      "hex": "#8155b6",
-      "region_count": 0,
-      "regions": []
+      "name": "Neck violet",
+      "hex": "#76518d",
+      "preview_pixel_count": 150
     },
     {
       "number": 8,
-      "name": "Hot coral",
-      "hex": "#d96363",
-      "region_count": 1,
-      "regions": [
-        "region-011"
-      ]
+      "name": "Tail dark",
+      "hex": "#242b33",
+      "preview_pixel_count": 507
     },
     {
       "number": 9,
-      "name": "Gold",
-      "hex": "#d6a43e",
-      "region_count": 1,
-      "regions": [
-        "region-007"
-      ]
+      "name": "Beak tan",
+      "hex": "#d9c5a4",
+      "preview_pixel_count": 365
     },
     {
       "number": 10,
-      "name": "Wood",
-      "hex": "#7d533b",
-      "region_count": 1,
-      "regions": [
-        "region-002"
-      ]
+      "name": "Cere white",
+      "hex": "#eef0e8",
+      "preview_pixel_count": 874
     },
     {
       "number": 11,
-      "name": "Shadow navy",
-      "hex": "#26384d",
-      "region_count": 1,
-      "regions": [
-        "region-010"
-      ]
+      "name": "Feet pink",
+      "hex": "#d98a82",
+      "preview_pixel_count": 448
     },
     {
       "number": 12,
-      "name": "White",
-      "hex": "#fffaf1",
-      "region_count": 2,
-      "regions": [
-        "region-003",
-        "region-009"
-      ]
+      "name": "Sleep blue",
+      "hex": "#63bcd0",
+      "preview_pixel_count": 442
     }
   ],
-  "region_count": 11,
+  "region_count": 15,
   "tags": [
-    "Pigeon",
-    "Humor",
-    "Cozy"
+    "Animals",
+    "Birds",
+    "Humor"
   ],
-  "complexity": "Moderate"
+  "complexity": "Moderate",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
 }

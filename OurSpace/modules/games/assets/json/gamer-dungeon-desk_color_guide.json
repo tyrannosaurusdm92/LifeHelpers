@@ -13,120 +13,73 @@
       "number": 1,
       "name": "Ink",
       "hex": "#2d2930",
-      "region_count": 1,
-      "regions": [
-        "region-004"
-      ]
+      "preview_pixel_count": 159
     },
     {
       "number": 2,
       "name": "Cream",
       "hex": "#f3eadb",
-      "region_count": 1,
-      "regions": [
-        "region-001"
-      ]
+      "preview_pixel_count": 148
     },
     {
       "number": 3,
       "name": "Console charcoal",
       "hex": "#393c45",
-      "region_count": 2,
-      "regions": [
-        "region-003",
-        "region-012"
-      ]
+      "preview_pixel_count": 176
     },
     {
       "number": 4,
       "name": "Steel",
       "hex": "#6c7480",
-      "region_count": 1,
-      "regions": [
-        "region-007"
-      ]
+      "preview_pixel_count": 1915
     },
     {
       "number": 5,
       "name": "Xbox green",
       "hex": "#55a84f",
-      "region_count": 3,
-      "regions": [
-        "region-008",
-        "region-011",
-        "region-021"
-      ]
+      "preview_pixel_count": 1254
     },
     {
       "number": 6,
       "name": "Neon cyan",
       "hex": "#35c8d7",
-      "region_count": 3,
-      "regions": [
-        "region-005",
-        "region-013",
-        "region-022"
-      ]
+      "preview_pixel_count": 36
     },
     {
       "number": 7,
       "name": "Electric violet",
       "hex": "#8155b6",
-      "region_count": 4,
-      "regions": [
-        "region-006",
-        "region-009",
-        "region-014",
-        "region-023"
-      ]
+      "preview_pixel_count": 958
     },
     {
       "number": 8,
       "name": "Hot coral",
       "hex": "#d96363",
-      "region_count": 4,
-      "regions": [
-        "region-015",
-        "region-018",
-        "region-020",
-        "region-024"
-      ]
+      "preview_pixel_count": 4624
     },
     {
       "number": 9,
       "name": "Gold",
       "hex": "#d6a43e",
-      "region_count": 3,
-      "regions": [
-        "region-016",
-        "region-017",
-        "region-019"
-      ]
+      "preview_pixel_count": 144
     },
     {
       "number": 10,
       "name": "Wood",
       "hex": "#7d533b",
-      "region_count": 1,
-      "regions": [
-        "region-010"
-      ]
+      "preview_pixel_count": 885
     },
     {
       "number": 11,
       "name": "Shadow navy",
       "hex": "#26384d",
-      "region_count": 1,
-      "regions": [
-        "region-002"
-      ]
+      "preview_pixel_count": 335
     },
     {
       "number": 12,
       "name": "White",
       "hex": "#fffaf1",
-      "region_count": 0,
-      "regions": []
+      "preview_pixel_count": 182
     }
   ],
   "region_count": 24,
@@ -135,5 +88,7 @@
     "Desk",
     "TTRPG"
   ],
-  "complexity": "Detailed"
+  "complexity": "Detailed",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
 }

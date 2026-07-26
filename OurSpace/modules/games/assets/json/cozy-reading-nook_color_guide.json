@@ -1,0 +1,94 @@
+{
+  "title": "Cozy Reading Nook",
+  "file": "cozy-reading-nook.svg",
+  "method": "Rebuilt as hand-authored SVG geometry after reference research; no image generation was used.",
+  "interaction": {
+    "click": "Paint one region with its suggested color.",
+    "shift_click": "Paint every region carrying the same number.",
+    "palette_swatch_click": "Paint every region assigned to that number.",
+    "keyboard": "Focus a region or swatch and press Enter or Space."
+  },
+  "palette": [
+    {
+      "number": 1,
+      "name": "Wall cream",
+      "hex": "#f4eadc",
+      "preview_pixel_count": 141
+    },
+    {
+      "number": 2,
+      "name": "Window blue",
+      "hex": "#8aaab4",
+      "preview_pixel_count": 215
+    },
+    {
+      "number": 3,
+      "name": "Lamp gold",
+      "hex": "#eac45b",
+      "preview_pixel_count": 4423
+    },
+    {
+      "number": 4,
+      "name": "Wood brown",
+      "hex": "#7b5b42",
+      "preview_pixel_count": 66
+    },
+    {
+      "number": 5,
+      "name": "Chair plum",
+      "hex": "#816b94",
+      "preview_pixel_count": 54
+    },
+    {
+      "number": 6,
+      "name": "Cushion tan",
+      "hex": "#c59a72",
+      "preview_pixel_count": 276
+    },
+    {
+      "number": 7,
+      "name": "Cat cream",
+      "hex": "#ece2d4",
+      "preview_pixel_count": 1655
+    },
+    {
+      "number": 8,
+      "name": "Cat charcoal",
+      "hex": "#3a3b40",
+      "preview_pixel_count": 582
+    },
+    {
+      "number": 9,
+      "name": "Book rust",
+      "hex": "#c36f3f",
+      "preview_pixel_count": 373
+    },
+    {
+      "number": 10,
+      "name": "Book green",
+      "hex": "#607f5c",
+      "preview_pixel_count": 1260
+    },
+    {
+      "number": 11,
+      "name": "Book blue",
+      "hex": "#506b89",
+      "preview_pixel_count": 141
+    },
+    {
+      "number": 12,
+      "name": "Nose pink",
+      "hex": "#d68178",
+      "preview_pixel_count": 1630
+    }
+  ],
+  "region_count": 16,
+  "tags": [
+    "Cozy",
+    "Interior",
+    "Cats"
+  ],
+  "complexity": "Detailed",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
+}

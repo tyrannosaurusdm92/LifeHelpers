@@ -13,145 +13,73 @@
       "number": 1,
       "name": "Ink",
       "hex": "#2d2930",
-      "region_count": 1,
-      "regions": [
-        "region-003"
-      ]
+      "preview_pixel_count": 5794
     },
     {
       "number": 2,
       "name": "Parchment",
       "hex": "#f3e7d2",
-      "region_count": 2,
-      "regions": [
-        "region-001",
-        "region-004"
-      ]
+      "preview_pixel_count": 517
     },
     {
       "number": 3,
       "name": "Deep plum",
       "hex": "#4b314f",
-      "region_count": 3,
-      "regions": [
-        "region-009",
-        "region-027",
-        "region-042"
-      ]
+      "preview_pixel_count": 1244
     },
     {
       "number": 4,
       "name": "Moon violet",
       "hex": "#76507d",
-      "region_count": 3,
-      "regions": [
-        "region-018",
-        "region-033",
-        "region-045"
-      ]
+      "preview_pixel_count": 669
     },
     {
       "number": 5,
       "name": "Sage",
       "hex": "#7f946f",
-      "region_count": 2,
-      "regions": [
-        "region-002",
-        "region-021"
-      ]
+      "preview_pixel_count": 107
     },
     {
       "number": 6,
       "name": "Forest",
       "hex": "#3f604e",
-      "region_count": 5,
-      "regions": [
-        "region-008",
-        "region-020",
-        "region-024",
-        "region-035",
-        "region-048"
-      ]
+      "preview_pixel_count": 290
     },
     {
       "number": 7,
       "name": "Amber",
       "hex": "#d49a43",
-      "region_count": 3,
-      "regions": [
-        "region-011",
-        "region-029",
-        "region-041"
-      ]
+      "preview_pixel_count": 486
     },
     {
       "number": 8,
       "name": "Copper",
       "hex": "#aa653a",
-      "region_count": 5,
-      "regions": [
-        "region-005",
-        "region-006",
-        "region-007",
-        "region-017",
-        "region-044"
-      ]
+      "preview_pixel_count": 570
     },
     {
       "number": 9,
       "name": "Rose",
       "hex": "#b86d78",
-      "region_count": 3,
-      "regions": [
-        "region-012",
-        "region-030",
-        "region-039"
-      ]
+      "preview_pixel_count": 86
     },
     {
       "number": 10,
       "name": "Teal",
       "hex": "#3c8290",
-      "region_count": 5,
-      "regions": [
-        "region-015",
-        "region-023",
-        "region-032",
-        "region-036",
-        "region-047"
-      ]
+      "preview_pixel_count": 298
     },
     {
       "number": 11,
       "name": "Glow",
       "hex": "#d8e9ac",
-      "region_count": 17,
-      "regions": [
-        "region-010",
-        "region-013",
-        "region-014",
-        "region-016",
-        "region-019",
-        "region-022",
-        "region-025",
-        "region-026",
-        "region-028",
-        "region-031",
-        "region-034",
-        "region-037",
-        "region-038",
-        "region-040",
-        "region-043",
-        "region-046",
-        "region-049"
-      ]
+      "preview_pixel_count": 326
     },
     {
       "number": 12,
       "name": "Bone",
       "hex": "#e8d8bd",
-      "region_count": 0,
-      "regions": []
+      "preview_pixel_count": 429
     }
   ],
   "region_count": 49,
@@ -160,5 +88,7 @@
     "Potions",
     "Apothecary"
   ],
-  "complexity": "Detailed"
+  "complexity": "Detailed",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
 }

@@ -1,0 +1,70 @@
+{
+  "title": "Fuck It, Bloom Anyway",
+  "file": "fuck-it-bloom-anyway.svg",
+  "method": "Rebuilt as hand-authored SVG geometry after reference research; no image generation was used.",
+  "interaction": {
+    "click": "Paint one region with its suggested color.",
+    "shift_click": "Paint every region carrying the same number.",
+    "palette_swatch_click": "Paint every region assigned to that number.",
+    "keyboard": "Focus a region or swatch and press Enter or Space."
+  },
+  "palette": [
+    {
+      "number": 1,
+      "name": "Warm cream",
+      "hex": "#f5eadc",
+      "preview_pixel_count": 225
+    },
+    {
+      "number": 2,
+      "name": "Leaf green",
+      "hex": "#486c50",
+      "preview_pixel_count": 201
+    },
+    {
+      "number": 3,
+      "name": "Leaf light",
+      "hex": "#8eae6f",
+      "preview_pixel_count": 166
+    },
+    {
+      "number": 4,
+      "name": "Flower berry",
+      "hex": "#d45f79",
+      "preview_pixel_count": 7924
+    },
+    {
+      "number": 5,
+      "name": "Flower orange",
+      "hex": "#e49a4a",
+      "preview_pixel_count": 627
+    },
+    {
+      "number": 6,
+      "name": "Flower plum",
+      "hex": "#7b6290",
+      "preview_pixel_count": 312
+    },
+    {
+      "number": 7,
+      "name": "Flower gold",
+      "hex": "#e8c85b",
+      "preview_pixel_count": 400
+    },
+    {
+      "number": 8,
+      "name": "Flower teal",
+      "hex": "#6aa9ad",
+      "preview_pixel_count": 961
+    }
+  ],
+  "region_count": 66,
+  "tags": [
+    "Floral",
+    "Typography",
+    "Humor"
+  ],
+  "complexity": "Moderate",
+  "svg_standard": "mandala-v5-reference-based",
+  "preview": "colorized"
+}
