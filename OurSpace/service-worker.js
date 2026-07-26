@@ -1,4 +1,4 @@
-const OURSPACE_CACHE = 'ourspace-20260627-journal-a11y-dbt-urges-v1';
+const OURSPACE_CACHE = 'ourspace-20260725-games-pbn-v2';
 const CORE_ASSETS = [
   "./ourspace.html",
   "./william.html",
@@ -58,26 +58,66 @@ self.addEventListener('activate', event => {
   );
 });
 
+const OURSPACE_GAME_BUILD = '20260725-games-pbn-v2';
+const GAME_SUPPORT_PATHS = new Set([
+  '/assets/ourspace-embedded-catalogs.js',
+  '/assets/game-reward-rules.json',
+  '/assets/legacy-ourspace-allowed-games.js',
+  '/assets/legacy-ourspace-currency-core.js',
+  '/assets/legacy-ourspace-game-currency-bridge.js',
+  '/assets/legacy-ourspace-game-reward-override.js',
+  '/assets/legacy-ourspace-game-rewards.css',
+  '/assets/legacy-ourspace-play-to-win-adapter.js',
+  '/assets/legacy-portal-storage.js'
+]);
+
+function isGameResource(url) {
+  const path = url.pathname;
+  if (path.includes('/modules/games/')) return true;
+  if (path.includes('/assets/game-bots/')) return true;
+  for (const suffix of GAME_SUPPORT_PATHS) {
+    if (path.endsWith(suffix)) return true;
+  }
+  return false;
+}
+
+async function cacheResponse(request, response) {
+  if (response && response.status === 200) {
+    const cache = await caches.open(OURSPACE_CACHE);
+    await cache.put(request, response.clone());
+  }
+  return response;
+}
+
+async function networkFirst(request, fallback) {
+  try {
+    const freshRequest = new Request(request, { cache: 'no-store' });
+    const response = await fetch(freshRequest);
+    return await cacheResponse(request, response);
+  } catch (error) {
+    return (await caches.match(request)) || fallback || Response.error();
+  }
+}
+
 self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
   if (url.origin !== location.origin) return;
+
+  if (isGameResource(url)) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
   if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(request)
-        .then(response => { const copy = response.clone(); caches.open(OURSPACE_CACHE).then(cache => cache.put(request, copy)); return response; })
-        .catch(() => caches.match(request).then(match => match || caches.match('./ourspace.html')))
+      networkFirst(request, caches.match('./ourspace.html'))
     );
     return;
   }
+
   event.respondWith(
-    caches.match(request).then(cached => cached || fetch(request).then(response => {
-      if (response && response.status === 200) {
-        const copy = response.clone();
-        caches.open(OURSPACE_CACHE).then(cache => cache.put(request, copy));
-      }
-      return response;
-    }).catch(() => cached))
+    caches.match(request).then(cached => cached || fetch(request).then(response => cacheResponse(request, response)).catch(() => cached))
   );
 });
