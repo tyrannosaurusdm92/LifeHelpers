@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>LifeHelpers Arcade</title>
-    <meta name="description" content="LifeHelpers Arcade loads browser games from the local both and desktop game folders.">
-    <meta name="keywords" content="LifeHelpers, browser games, offline games, arcade games">
+    <meta name="description" content="LifeHelpers Arcade loads browser games from the project-local Both and Desktop collections.">
+    <meta name="keywords" content="LifeHelpers, browser games, offline games, arcade, desktop games, mobile games">
     <meta property="og:type" content="website">
     <meta property="og:title" content="LifeHelpers Arcade">
-    <meta property="og:description" content="Browse and launch desktop and cross-device HTML games.">
+    <meta property="og:description" content="Browse Desktop + Mobile and Desktop browser games from the LifeHelpers game library.">
     <meta property="og:image" content="./images/og-image.svg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="LifeHelpers Arcade">
+    <meta property="twitter:description" content="Browse Desktop + Mobile and Desktop browser games from the LifeHelpers game library.">
+    <meta property="twitter:image" content="./images/og-image.svg">
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="apple-touch-icon" href="./favicon.svg">
@@ -26,7 +30,10 @@
 <body>
     <header class="header glass">
         <nav class="nav" aria-label="Primary navigation">
-            <a href="#home" class="logo"><span class="logo-icon">🎮</span><span>LifeHelpers Arcade</span></a>
+            <a href="#home" class="logo" aria-label="LifeHelpers Arcade home">
+                <span class="logo-icon" aria-hidden="true">🎮</span>
+                <span>LifeHelpers Arcade</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#games" class="nav-link">Games</a></li>
@@ -39,34 +46,33 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">LifeHelpers Arcade</h1>
-                <p class="hero-subtitle">One arcade loader for the games in <strong>both/</strong> and <strong>desktop/</strong>. Search the complete manifests, filter by compatibility, and launch a game without changing the arcade shell.</p>
-                <a href="#games" class="hero-cta"><span>🚀</span>Browse Games</a>
+                <p class="hero-subtitle">One loader for both game collections. Games in <strong>Both</strong> are intended for desktop + mobile, while games in <strong>Desktop</strong> are desktop-focused.</p>
+                <a href="#games" class="hero-cta"><span aria-hidden="true">🎮</span> Browse Games</a>
             </div>
         </section>
 
         <section id="games" class="games">
             <div class="container">
                 <h2 class="section-title">Game Library</h2>
+                <p class="catalog-intro">The loader uses the exact GitHub paths <code>Both</code> and <code>Desktop</code>. Folder capitalization is intentionally preserved.</p>
 
-                <div class="arcade-toolbar glass" aria-label="Game library controls">
-                    <label class="search-wrap" for="game-search">
-                        <span aria-hidden="true">🔎</span>
-                        <input id="game-search" type="search" autocomplete="off" placeholder="Search games…" aria-label="Search games">
-                    </label>
-                    <div class="filter-group" role="group" aria-label="Compatibility filter">
-                        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
-                        <button class="filter-button" type="button" data-filter="both" aria-pressed="false">Desktop + Mobile</button>
-                        <button class="filter-button" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
+                <div class="arcade-toolbar glass" aria-label="Game filters">
+                    <div class="filter-group" role="group" aria-label="Compatibility collection">
+                        <button type="button" class="filter-button active" data-filter="All" aria-pressed="true">All <span id="count-all" class="filter-count"></span></button>
+                        <button type="button" class="filter-button" data-filter="Both" aria-pressed="false">Both <span id="count-both" class="filter-count"></span></button>
+                        <button type="button" class="filter-button" data-filter="Desktop" aria-pressed="false">Desktop <span id="count-desktop" class="filter-count"></span></button>
                     </div>
+                    <label class="search-label" for="game-search">Search games</label>
+                    <input id="game-search" class="game-search" type="search" placeholder="Search by title or filename…" autocomplete="off">
                 </div>
 
-                <div class="library-summary" aria-live="polite">
-                    <span id="visible-count">0 games</span>
-                    <span id="device-note"></span>
+                <div class="catalog-status" aria-live="polite">
+                    <span id="catalog-summary">Loading catalog…</span>
+                    <button id="clear-search" type="button" class="text-button" hidden>Clear search</button>
                 </div>
 
                 <div id="games-grid" class="games-grid" aria-live="polite"></div>
-                <div id="empty-state" class="empty-state glass" hidden>No games match this search and filter.</div>
+                <noscript><p class="empty-state glass">JavaScript is required for the arcade catalog. Individual games can still be opened directly from <code>Both</code> or <code>Desktop</code>.</p></noscript>
             </div>
         </section>
 
@@ -74,9 +80,21 @@
             <div class="container">
                 <h2 class="section-title">How the folders work</h2>
                 <div class="about-grid">
-                    <div class="glass about-card"><div class="about-icon">📱</div><h3>both/</h3><p>Games intended to work on desktop and mobile/touch devices. The arcade's original bundled games have been moved here intact.</p></div>
-                    <div class="glass about-card"><div class="about-icon">🖥️</div><h3>desktop/</h3><p>Games classified as desktop-first. They remain browsable on all devices, with a desktop compatibility label.</p></div>
-                    <div class="glass about-card"><div class="about-icon">📚</div><h3>docs/</h3><p>The project README, license, audit, project manifest, and the complete desktop/both game manifests live together here.</p></div>
+                    <article class="about-card glass">
+                        <div class="about-icon">📱💻</div>
+                        <h3>Both</h3>
+                        <p>Games intended for desktop and mobile/touch devices live at <code>Both/</code>.</p>
+                    </article>
+                    <article class="about-card glass">
+                        <div class="about-icon">💻</div>
+                        <h3>Desktop</h3>
+                        <p>Desktop-focused games live at <code>Desktop/</code>. They remain browsable from the same arcade.</p>
+                    </article>
+                    <article class="about-card glass">
+                        <div class="about-icon">📚</div>
+                        <h3>Docs</h3>
+                        <p>The project documentation, source manifests, audit, and license are kept in <code>docs/</code>.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -84,24 +102,15 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-links"><a href="#home" class="footer-link">Home</a><a href="#games" class="footer-link">Games</a><a href="./docs/README.md" class="footer-link">Docs</a></div>
-            <p class="footer-text">LifeHelpers Arcade game loader.</p>
+            <div class="footer-links">
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#games" class="footer-link">Games</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="./docs/README.md" class="footer-link">Docs</a>
+            </div>
+            <p class="footer-text">LifeHelpers Arcade • project-relative paths for GitHub and local use</p>
         </div>
     </footer>
-
-    <div id="game-modal" class="game-modal" hidden>
-        <div class="game-modal-backdrop" data-close-game></div>
-        <section class="game-player glass" role="dialog" aria-modal="true" aria-labelledby="game-player-title">
-            <header class="game-player-header">
-                <div><span id="game-player-compat" class="compat-badge"></span><h2 id="game-player-title">Game</h2></div>
-                <div class="game-player-actions">
-                    <a id="open-game-new" class="player-action" href="#" target="_blank" rel="noopener">Open separately ↗</a>
-                    <button id="close-game" class="player-action" type="button" data-close-game>Close ✕</button>
-                </div>
-            </header>
-            <iframe id="game-frame" title="Game player" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe>
-        </section>
-    </div>
 
     <script src="./js/game-catalog.js"></script>
     <script src="./js/main.js"></script>

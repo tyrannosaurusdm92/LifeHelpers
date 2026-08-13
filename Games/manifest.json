@@ -1,8 +1,8 @@
 {
   "name": "LifeHelpers Arcade",
   "short_name": "LifeHelpers Arcade",
-  "description": "Browse and launch LifeHelpers HTML games from both and desktop folders.",
-  "start_url": "./",
+  "description": "Browse LifeHelpers games from the Both and Desktop collections.",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#87CEEB",
   "theme_color": "#4f46e5",
@@ -10,13 +10,13 @@
   "scope": "./",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "./favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "favicon.ico",
+      "src": "./favicon.ico",
       "sizes": "16x16 32x32 48x48",
       "type": "image/x-icon"
     }
@@ -29,46 +29,43 @@
   "dir": "ltr",
   "shortcuts": [
     {
-      "name": "Rainbow Bottles",
-      "short_name": "Rainbow Bottles",
-      "description": "Play the bundled Rainbow Bottles puzzle game",
-      "url": "./both/3d-rainbow-bottles.html",
-      "icons": [
-        {
-          "src": "favicon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
-        }
-      ]
-    },
-    {
       "name": "All Games",
       "short_name": "Games",
       "description": "Browse the complete game catalog",
-      "url": "./#games",
+      "url": "./index.html#games",
       "icons": [
         {
-          "src": "favicon.svg",
+          "src": "./favicon.svg",
           "sizes": "any",
           "type": "image/svg+xml"
         }
       ]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "favicon.svg",
-      "sizes": "1280x720",
-      "type": "image/svg+xml",
-      "form_factor": "wide",
-      "label": "Mini Arcade homepage showing featured games"
     },
     {
-      "src": "favicon.svg",
-      "sizes": "750x1334",
-      "type": "image/svg+xml",
-      "form_factor": "narrow",
-      "label": "Mini Arcade mobile view"
+      "name": "Both Games",
+      "short_name": "Both",
+      "description": "Browse desktop + mobile games",
+      "url": "./index.html#games",
+      "icons": [
+        {
+          "src": "./favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Desktop Games",
+      "short_name": "Desktop",
+      "description": "Browse desktop-focused games",
+      "url": "./index.html#games",
+      "icons": [
+        {
+          "src": "./favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
     }
   ]
 }
