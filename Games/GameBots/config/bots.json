@@ -1,0 +1,242 @@
+{
+  "version": "1.0.0",
+  "count": 26,
+  "specificCount": 16,
+  "universalCount": 10,
+  "bots": [
+    {
+      "id": "bad-ice-cream-2-bot",
+      "name": "Bad Ice-Cream 2 Partner",
+      "type": "specific",
+      "game": "bad-ice-cream-2",
+      "seat": 2,
+      "archetype": "grid-collector",
+      "file": "js/bots/specific/bad-ice-cream-2-bot.js"
+    },
+    {
+      "id": "bad-ice-cream-3-bot",
+      "name": "Bad Ice-Cream 3 Partner",
+      "type": "specific",
+      "game": "bad-ice-cream-3",
+      "seat": 2,
+      "archetype": "grid-collector",
+      "file": "js/bots/specific/bad-ice-cream-3-bot.js"
+    },
+    {
+      "id": "bad-ice-cream-bot",
+      "name": "Bad Ice-Cream Partner",
+      "type": "specific",
+      "game": "bad-ice-cream",
+      "seat": 2,
+      "archetype": "grid-collector",
+      "file": "js/bots/specific/bad-ice-cream-bot.js"
+    },
+    {
+      "id": "chess-bot",
+      "name": "Chess Rival",
+      "type": "specific",
+      "game": "chess",
+      "seat": 2,
+      "archetype": "minimax",
+      "file": "js/bots/specific/chess-bot.js"
+    },
+    {
+      "id": "eight-ball-classic-bot",
+      "name": "8 Ball Classic Rival",
+      "type": "specific",
+      "game": "8-ball-classic",
+      "seat": 2,
+      "archetype": "physics-turn",
+      "file": "js/bots/specific/eight-ball-classic-bot.js"
+    },
+    {
+      "id": "house-of-hazards-bot-1",
+      "name": "House of Hazards Bot 1",
+      "type": "specific",
+      "game": "house-of-hazards",
+      "seat": 2,
+      "archetype": "hazard-platform",
+      "file": "js/bots/specific/house-of-hazards-bot-1.js"
+    },
+    {
+      "id": "house-of-hazards-bot-2",
+      "name": "House of Hazards Bot 2",
+      "type": "specific",
+      "game": "house-of-hazards",
+      "seat": 3,
+      "archetype": "hazard-platform",
+      "file": "js/bots/specific/house-of-hazards-bot-2.js"
+    },
+    {
+      "id": "poor-bunny-bot",
+      "name": "Poor Bunny Partner/Rival",
+      "type": "specific",
+      "game": "poor-bunny",
+      "seat": 2,
+      "archetype": "hazard-platform",
+      "file": "js/bots/specific/poor-bunny-bot.js"
+    },
+    {
+      "id": "rooftop-snipers-2-bot",
+      "name": "Rooftop Snipers 2 Rival",
+      "type": "specific",
+      "game": "rooftop-snipers-2",
+      "seat": 2,
+      "archetype": "one-button-duel",
+      "file": "js/bots/specific/rooftop-snipers-2-bot.js"
+    },
+    {
+      "id": "stick-archers-battle-bot",
+      "name": "Stick Archers Battle Rival",
+      "type": "specific",
+      "game": "stick-archers-battle",
+      "seat": 2,
+      "archetype": "projectile-duel",
+      "file": "js/bots/specific/stick-archers-battle-bot.js"
+    },
+    {
+      "id": "stick-fighter-bot",
+      "name": "Stick Fighter Rival",
+      "type": "specific",
+      "game": "stick-fighter",
+      "seat": 2,
+      "archetype": "fighter",
+      "file": "js/bots/specific/stick-fighter-bot.js"
+    },
+    {
+      "id": "tag-bot-1",
+      "name": "Tag Bot 1",
+      "type": "specific",
+      "game": "tag",
+      "seat": 2,
+      "archetype": "chase-evade",
+      "file": "js/bots/specific/tag-bot-1.js"
+    },
+    {
+      "id": "tag-bot-2",
+      "name": "Tag Bot 2",
+      "type": "specific",
+      "game": "tag",
+      "seat": 3,
+      "archetype": "chase-evade",
+      "file": "js/bots/specific/tag-bot-2.js"
+    },
+    {
+      "id": "temple-of-boom-bot",
+      "name": "Temple of Boom Partner/Rival",
+      "type": "specific",
+      "game": "temple-of-boom",
+      "seat": 2,
+      "archetype": "platform-shooter",
+      "file": "js/bots/specific/temple-of-boom-bot.js"
+    },
+    {
+      "id": "tube-jumpers-bot-1",
+      "name": "Tube Jumpers Bot 1",
+      "type": "specific",
+      "game": "tube-jumpers",
+      "seat": 2,
+      "archetype": "one-button-survival",
+      "file": "js/bots/specific/tube-jumpers-bot-1.js"
+    },
+    {
+      "id": "tube-jumpers-bot-2",
+      "name": "Tube Jumpers Bot 2",
+      "type": "specific",
+      "game": "tube-jumpers",
+      "seat": 3,
+      "archetype": "one-button-survival",
+      "file": "js/bots/specific/tube-jumpers-bot-2.js"
+    },
+    {
+      "id": "universal-agile-navigator",
+      "name": "Agile Navigator",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "navigation",
+      "file": "js/bots/universal/universal-agile-navigator.js"
+    },
+    {
+      "id": "universal-coop-partner",
+      "name": "Co-op Partner",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "cooperative",
+      "file": "js/bots/universal/universal-coop-partner.js"
+    },
+    {
+      "id": "universal-duelist",
+      "name": "Adaptive Duelist",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "fighter",
+      "file": "js/bots/universal/universal-duelist.js"
+    },
+    {
+      "id": "universal-hazard-runner",
+      "name": "Hazard Runner",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "avoidance",
+      "file": "js/bots/universal/universal-hazard-runner.js"
+    },
+    {
+      "id": "universal-physics-pilot",
+      "name": "Physics Pilot",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "physics",
+      "file": "js/bots/universal/universal-physics-pilot.js"
+    },
+    {
+      "id": "universal-projectile-sniper",
+      "name": "Projectile Sniper",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "aiming",
+      "file": "js/bots/universal/universal-projectile-sniper.js"
+    },
+    {
+      "id": "universal-racer",
+      "name": "Racing Line Bot",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "racing",
+      "file": "js/bots/universal/universal-racer.js"
+    },
+    {
+      "id": "universal-survivalist",
+      "name": "Survivalist",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "survival",
+      "file": "js/bots/universal/universal-survivalist.js"
+    },
+    {
+      "id": "universal-tactical-commander",
+      "name": "Tactical Commander",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "utility-ai",
+      "file": "js/bots/universal/universal-tactical-commander.js"
+    },
+    {
+      "id": "universal-turn-planner",
+      "name": "Turn Planner",
+      "type": "universal",
+      "game": "multiple",
+      "seat": null,
+      "archetype": "minimax",
+      "file": "js/bots/universal/universal-turn-planner.js"
+    }
+  ]
+}

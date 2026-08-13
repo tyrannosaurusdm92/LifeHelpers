@@ -1,0 +1,113 @@
+{
+  "version": "1.0.0",
+  "note": "Common control assumptions for the offline game families. Exact GitHub builds may differ; specific bot files are authoritative and may be tuned per build.",
+  "games": {
+    "bad-ice-cream": {
+      "botSeat2": {
+        "up": "W",
+        "left": "A",
+        "down": "S",
+        "right": "D",
+        "action": "F"
+      }
+    },
+    "bad-ice-cream-2": {
+      "botSeat2": {
+        "up": "W",
+        "left": "A",
+        "down": "S",
+        "right": "D",
+        "action": "F"
+      }
+    },
+    "bad-ice-cream-3": {
+      "botSeat2": {
+        "up": "W",
+        "left": "A",
+        "down": "S",
+        "right": "D",
+        "action": "F"
+      }
+    },
+    "house-of-hazards": {
+      "botSeat2": {
+        "left": "ArrowLeft",
+        "right": "ArrowRight",
+        "jump": "ArrowUp",
+        "action": "L"
+      },
+      "botSeat3": {
+        "left": "J",
+        "right": "L",
+        "jump": "I",
+        "action": "O"
+      }
+    },
+    "rooftop-snipers-2": {
+      "botSeat2": {
+        "jump": "I",
+        "shoot": "O"
+      }
+    },
+    "stick-archers-battle": {
+      "botSeat2": {
+        "chargeShoot": "ArrowUp"
+      }
+    },
+    "tag": {
+      "botSeat2": {
+        "left": "ArrowLeft",
+        "right": "ArrowRight",
+        "jump": "ArrowUp"
+      },
+      "botSeat3": {
+        "left": "J",
+        "right": "L",
+        "jump": "I"
+      }
+    },
+    "tube-jumpers": {
+      "botSeat2": {
+        "jump": "I"
+      },
+      "botSeat3": {
+        "jump": "ArrowUp"
+      }
+    },
+    "stick-fighter": {
+      "botSeat2": {
+        "left": "ArrowLeft",
+        "right": "ArrowRight",
+        "jump": "ArrowUp",
+        "attack": "/",
+        "altAttack": "."
+      }
+    },
+    "poor-bunny": {
+      "botSeat2": {
+        "left": "ArrowLeft",
+        "right": "ArrowRight",
+        "jump": "ArrowUp"
+      }
+    },
+    "temple-of-boom": {
+      "botSeat2": {
+        "left": "ArrowLeft",
+        "right": "ArrowRight",
+        "jump": "ArrowUp",
+        "shoot": "ArrowDown"
+      }
+    },
+    "8-ball-classic": {
+      "botSeat2": {
+        "aim": "pointer",
+        "shoot": "pointer hold/release"
+      }
+    },
+    "chess": {
+      "botSeat2": {
+        "move": "LifeHelpersBotBridge.performMove(move) preferred; data-square click fallback"
+      }
+    }
+  }
+}

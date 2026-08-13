@@ -1,118 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>LifeHelpers Arcade</title>
-    <meta name="description" content="LifeHelpers Arcade loads browser games from the project-local Both and Desktop collections.">
-    <meta name="keywords" content="LifeHelpers, browser games, offline games, arcade, desktop games, mobile games">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="LifeHelpers Arcade">
-    <meta property="og:description" content="Browse Desktop + Mobile and Desktop browser games from the LifeHelpers game library.">
-    <meta property="og:image" content="./images/og-image.svg">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="LifeHelpers Arcade">
-    <meta property="twitter:description" content="Browse Desktop + Mobile and Desktop browser games from the LifeHelpers game library.">
-    <meta property="twitter:image" content="./images/og-image.svg">
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="apple-touch-icon" href="./favicon.svg">
-    <link rel="manifest" href="./manifest.json">
-    <meta name="theme-color" content="#4f46e5">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="LifeHelpers Arcade">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="preload" href="./css/main.css" as="style">
-    <link rel="preload" href="./js/game-catalog.js" as="script">
-    <link rel="preload" href="./js/main.js" as="script">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#001e24">
+  <title>LifeHelpers Arcade</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header class="header glass">
-        <nav class="nav" aria-label="Primary navigation">
-            <a href="#home" class="logo" aria-label="LifeHelpers Arcade home">
-                <span class="logo-icon" aria-hidden="true">🎮</span>
-                <span>LifeHelpers Arcade</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#games" class="nav-link">Games</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="arcade-shell">
+  <header class="main-header">
+    <div class="masthead">
+      <div class="brand-row">
+        <div class="logo">LifeHelpers <em>Arcade</em></div>
+        <div class="badge">HTML Game Loader</div>
+      </div>
+      <p class="tagline">Desktop + mobile HTML game launcher.</p>
+    </div>
+    <nav class="navbar" aria-label="Arcade navigation">
+      <a href="#game-search">Games</a>
+      <a href="#arcade-viewer">Viewer</a>
+    </nav>
+  </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">LifeHelpers Arcade</h1>
-                <p class="hero-subtitle">One loader for both game collections. Games in <strong>Both</strong> are intended for desktop + mobile, while games in <strong>Desktop</strong> are desktop-focused.</p>
-                <a href="#games" class="hero-cta"><span aria-hidden="true">🎮</span> Browse Games</a>
-            </div>
-        </section>
-
-        <section id="games" class="games">
-            <div class="container">
-                <h2 class="section-title">Game Library</h2>
-                <p class="catalog-intro">The loader uses the exact GitHub paths <code>Both</code> and <code>Desktop</code>. Folder capitalization is intentionally preserved.</p>
-
-                <div class="arcade-toolbar glass" aria-label="Game filters">
-                    <div class="filter-group" role="group" aria-label="Compatibility collection">
-                        <button type="button" class="filter-button active" data-filter="All" aria-pressed="true">All <span id="count-all" class="filter-count"></span></button>
-                        <button type="button" class="filter-button" data-filter="Both" aria-pressed="false">Both <span id="count-both" class="filter-count"></span></button>
-                        <button type="button" class="filter-button" data-filter="Desktop" aria-pressed="false">Desktop <span id="count-desktop" class="filter-count"></span></button>
-                    </div>
-                    <label class="search-label" for="game-search">Search games</label>
-                    <input id="game-search" class="game-search" type="search" placeholder="Search by title or filename…" autocomplete="off">
-                </div>
-
-                <div class="catalog-status" aria-live="polite">
-                    <span id="catalog-summary">Loading catalog…</span>
-                    <button id="clear-search" type="button" class="text-button" hidden>Clear search</button>
-                </div>
-
-                <div id="games-grid" class="games-grid" aria-live="polite"></div>
-                <noscript><p class="empty-state glass">JavaScript is required for the arcade catalog. Individual games can still be opened directly from <code>Both</code> or <code>Desktop</code>.</p></noscript>
-            </div>
-        </section>
-
-        <section id="about" class="games about-section">
-            <div class="container">
-                <h2 class="section-title">How the folders work</h2>
-                <div class="about-grid">
-                    <article class="about-card glass">
-                        <div class="about-icon">📱💻</div>
-                        <h3>Both</h3>
-                        <p>Games intended for desktop and mobile/touch devices live at <code>Both/</code>.</p>
-                    </article>
-                    <article class="about-card glass">
-                        <div class="about-icon">💻</div>
-                        <h3>Desktop</h3>
-                        <p>Desktop-focused games live at <code>Desktop/</code>. They remain browsable from the same arcade.</p>
-                    </article>
-                    <article class="about-card glass">
-                        <div class="about-icon">📚</div>
-                        <h3>Docs</h3>
-                        <p>The project documentation, source manifests, audit, and license are kept in <code>docs/</code>.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#home" class="footer-link">Home</a>
-                <a href="#games" class="footer-link">Games</a>
-                <a href="#about" class="footer-link">About</a>
-                <a href="./docs/README.md" class="footer-link">Docs</a>
-            </div>
-            <p class="footer-text">LifeHelpers Arcade • project-relative paths for GitHub and local use</p>
+  <main>
+    <section class="module" id="game-search">
+      <div class="module-hd"><h2>Find a Game</h2><span aria-hidden="true">⌕</span></div>
+      <p class="module-subtitle">Search and filter games.</p>
+      <div class="module-body">
+        <div class="search-panel">
+          <label class="field search-field" for="gameSearch">
+            <span>Search games</span>
+            <input id="gameSearch" type="search" placeholder="Try shooter, cozy, zombies, Papa's, racing…" autocomplete="off">
+          </label>
+          <label class="field" for="genreFilter">
+            <span>Genre</span>
+            <select id="genreFilter">
+              <option value="all">All genres</option>
+              <option value="action">Action</option>
+              <option value="adventure">Adventure</option>
+              <option value="arcade">Arcade</option>
+              <option value="fighting">Fighting</option>
+              <option value="horror">Horror</option>
+              <option value="idle">Idle / Clicker</option>
+              <option value="platformer">Platformer</option>
+              <option value="puzzle">Puzzle / Logic</option>
+              <option value="racing">Racing / Driving</option>
+              <option value="shooter">Shooter</option>
+              <option value="simulation">Simulation / Management</option>
+              <option value="sports">Sports</option>
+              <option value="strategy">Strategy / Tower Defense</option>
+              <option value="word">Word / Trivia</option>
+            </select>
+          </label>
+          <label class="field" for="vibeFilter">
+            <span>Vibe</span>
+            <select id="vibeFilter">
+              <option value="all">Any vibe</option>
+              <option value="cozy">Cozy / Casual</option>
+              <option value="challenging">Challenging</option>
+              <option value="spooky">Spooky</option>
+              <option value="fast">Fast-paced</option>
+              <option value="silly">Silly</option>
+            </select>
+          </label>
+          <label class="field" for="playerFilter">
+            <span>Players</span>
+            <select id="playerFilter">
+              <option value="all">Any player mode</option>
+              <option value="single">Single-player / any</option>
+              <option value="multiplayer">Multiplayer / versus</option>
+            </select>
+          </label>
+          <button class="dark reset-button" id="resetFiltersButton" type="button">Reset Filters</button>
         </div>
-    </footer>
+        <div class="filter-summary" id="filterSummary" role="status" aria-live="polite"></div>
 
-    <script src="./js/game-catalog.js"></script>
-    <script src="./js/main.js"></script>
+        <div class="collection-grid" aria-label="Game collections">
+          <section class="collection-card both-card">
+            <div class="collection-heading">
+              <div>
+                <span class="collection-kicker">Desktop + Mobile</span>
+                <h3>Both</h3>
+              </div>
+              <span class="count-chip" id="bothCount">0 games</span>
+            </div>
+            <label class="field" for="bothGameSelect">
+              <span>Select game</span>
+              <select id="bothGameSelect"></select>
+            </label>
+            <button id="loadBothButton" type="button">Load Selected Both Game</button>
+          </section>
+
+          <section class="collection-card desktop-card">
+            <div class="collection-heading">
+              <div>
+                <span class="collection-kicker">Desktop Focused</span>
+                <h3>Desktop</h3>
+              </div>
+              <span class="count-chip" id="desktopCount">0 games</span>
+            </div>
+            <label class="field" for="desktopGameSelect">
+              <span>Select game</span>
+              <select id="desktopGameSelect"></select>
+            </label>
+            <button class="orange" id="loadDesktopButton" type="button">Load Selected Desktop Game</button>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="arcade-viewer">
+      <div class="module-hd"><h2>Arcade Viewer</h2><span aria-hidden="true">✦</span></div>
+      <p class="module-subtitle">Games load here.</p>
+      <div class="module-body viewer-module-body">
+        <div class="viewer-shell" id="viewerShell">
+          <div class="viewer-bar">
+            <div>
+              <div class="viewer-kicker">Now Playing</div>
+              <div class="viewer-title" id="viewerTitle">No game loaded</div>
+            </div>
+            <div class="viewer-tools" aria-label="Game viewer controls">
+              <button class="dark" id="reloadGameButton" type="button">Reload</button>
+              <button class="dark" id="closeGameButton" type="button">Close Game</button>
+              <button class="dark" id="bot1Button" type="button" disabled>Bot 1</button>
+              <button class="dark" id="bot2Button" type="button" disabled>Bot 2</button>
+              <button class="dark" id="botsOffButton" type="button" disabled>Bots Off</button>
+              <button class="orange" id="fullscreenDesktopButton" type="button">Fullscreen Desktop</button>
+              <button id="fullscreenMobileButton" type="button">Fullscreen Mobile</button>
+            </div>
+          </div>
+          <div class="game-window" id="gameWindow" role="region" aria-label="LifeHelpers Arcade game viewer">
+            <iframe class="game-frame" id="gameFrame" title="Loaded HTML game" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write" allowfullscreen referrerpolicy="no-referrer"></iframe>
+            <div class="viewer-empty" id="viewerEmpty">
+              <div class="viewer-empty-inner">
+                <strong>Choose a game above to begin.</strong>
+              </div>
+            </div>
+          </div>
+          <div class="viewer-status" id="viewerStatus" role="status">Ready. <span class="mobile-safe-note">Mobile fullscreen.</span></div>
+          <div class="viewer-status bot-status" id="botStatus" role="status" aria-live="polite">Bots ready.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><strong>LifeHelpers Arcade</strong><span>Desktop + mobile HTML game launcher</span></footer>
+</div>
+<script src="GameBots/js/gamebots.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

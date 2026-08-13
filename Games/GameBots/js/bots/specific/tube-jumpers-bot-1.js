@@ -1,0 +1,1 @@
+(function(ns){ns.registerBot({id:"tube-jumpers-bot-1",name:"Tube Jumpers Bot 1",type:"specific",games:["tube-jumpers"],seat:2,archetype:"one-button-survival",tick(obs,ctx){const b=obs.bridge||{},danger=b.waveDistance??(obs.visual?.activity||0)/100;if(danger>.48||b.aboutToFlip||Math.random()<.028)ctx.input.tap("i",65);}});})(window.LifeHelpersGameBots);

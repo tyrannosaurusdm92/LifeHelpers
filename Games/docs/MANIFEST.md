@@ -1,62 +1,27 @@
 # LifeHelpers Arcade Manifest
 
-## Deployment location
+## Root files
 
-The contents of this package belong **inside the existing GitHub `games/` folder**. `games/` is the parent destination, not an internal project subfolder.
+- `index.html` — LifeHelpers Arcade page shell
+- `css/main.css` — all arcade styling
+- `js/main.js` — all loader behavior, filters, catalog, and fullscreen logic
 
-## Project structure
+## Folders
 
-```text
-games/
-├── index.html
-├── manifest.json
-├── favicon.ico
-├── favicon.svg
-├── Both/
-│   └── [desktop + mobile games]
-├── Desktop/
-│   ├── .gitkeep
-│   └── [desktop-focused games]
-├── css/
-│   └── main.css
-├── js/
-│   ├── game-catalog.js
-│   └── main.js
-├── images/
-│   └── ...
-└── docs/
-    ├── README.md
-    ├── README_BOTH.md
-    ├── README_DESKTOP.md
-    ├── LICENSE.md
-    ├── AUDIT.md
-    └── MANIFEST.md
-```
+- `Both/` — existing desktop + mobile games; package contains only `.gitkeep`
+- `Desktop/` — existing desktop-focused games; package contains only `.gitkeep`
+- `GameBots/` — multiplayer bot runtime and GitHub-safe backend
+- `images/` — retained current LifeHelpers image assets
+- `docs/` — documentation and source game manifests
 
-## Catalog totals
+## Catalog
 
-- Both source manifest: **82**
-- Desktop source manifest: **47**
-- Prebundled loader games moved to `Both/`: **9**
-- Total loader catalog entries: **138**
+- Both manifest games: 82
+- Existing additional Both loader games: 9
+- Both dropdown total: 91
+- Desktop dropdown total: 47
+- Total selectable entries: 138
 
-## Prebundled games now in `Both/`
+The package contains no game HTML files. Existing GitHub `Both/` and `Desktop/` contents should remain in place.
 
-- **Chess Game** — `Both/03-Chess-Game/index.html`
-- **Solitaire Game** — `Both/05-Solitaire-Game/index.html`
-- **Sudoku Game** — `Both/06-Sudoku-Game/index.html`
-- **Wordle Game** — `Both/11-Wordle-Game/index.html`
-- **Hangman Game** — `Both/12-Hangman-Game/index.html`
-- **Archery Game** — `Both/14-Archery-Game/index.html`
-- **Tic-Tac-Toe** — `Both/15-Tic-Tac-Toe/index.html`
-- **Ping Pong Game** — `Both/19-Ping-Pong-Game/index.html`
-- **Rainbow Bottles** — `Both/3d-rainbow-bottles.html`
-
-## Source manifests
-
-The complete expected HTML filenames are preserved in:
-
-- `docs/README_BOTH.md`
-- `docs/README_DESKTOP.md`
-
-Those source manifests are also compiled into `js/game-catalog.js`, so the UI does not need to parse Markdown at runtime.
+- `GameBots/` — bot runtime, config, docs, and GitHub-safe `backend/LifeHelpers.gs`.
