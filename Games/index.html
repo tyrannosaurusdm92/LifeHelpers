@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>LifeHelpers Arcade</title>
+    <meta name="description" content="LifeHelpers Arcade loads browser games from the local both and desktop game folders.">
+    <meta name="keywords" content="LifeHelpers, browser games, offline games, arcade games">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LifeHelpers Arcade">
+    <meta property="og:description" content="Browse and launch desktop and cross-device HTML games.">
+    <meta property="og:image" content="./images/og-image.svg">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./favicon.svg">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="LifeHelpers Arcade">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preload" href="./css/main.css" as="style">
+    <link rel="preload" href="./js/game-catalog.js" as="script">
+    <link rel="preload" href="./js/main.js" as="script">
+</head>
+<body>
+    <header class="header glass">
+        <nav class="nav" aria-label="Primary navigation">
+            <a href="#home" class="logo"><span class="logo-icon">🎮</span><span>LifeHelpers Arcade</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#games" class="nav-link">Games</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">LifeHelpers Arcade</h1>
+                <p class="hero-subtitle">One arcade loader for the games in <strong>both/</strong> and <strong>desktop/</strong>. Search the complete manifests, filter by compatibility, and launch a game without changing the arcade shell.</p>
+                <a href="#games" class="hero-cta"><span>🚀</span>Browse Games</a>
+            </div>
+        </section>
+
+        <section id="games" class="games">
+            <div class="container">
+                <h2 class="section-title">Game Library</h2>
+
+                <div class="arcade-toolbar glass" aria-label="Game library controls">
+                    <label class="search-wrap" for="game-search">
+                        <span aria-hidden="true">🔎</span>
+                        <input id="game-search" type="search" autocomplete="off" placeholder="Search games…" aria-label="Search games">
+                    </label>
+                    <div class="filter-group" role="group" aria-label="Compatibility filter">
+                        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+                        <button class="filter-button" type="button" data-filter="both" aria-pressed="false">Desktop + Mobile</button>
+                        <button class="filter-button" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
+                    </div>
+                </div>
+
+                <div class="library-summary" aria-live="polite">
+                    <span id="visible-count">0 games</span>
+                    <span id="device-note"></span>
+                </div>
+
+                <div id="games-grid" class="games-grid" aria-live="polite"></div>
+                <div id="empty-state" class="empty-state glass" hidden>No games match this search and filter.</div>
+            </div>
+        </section>
+
+        <section id="about" class="games about-section">
+            <div class="container">
+                <h2 class="section-title">How the folders work</h2>
+                <div class="about-grid">
+                    <div class="glass about-card"><div class="about-icon">📱</div><h3>both/</h3><p>Games intended to work on desktop and mobile/touch devices. The arcade's original bundled games have been moved here intact.</p></div>
+                    <div class="glass about-card"><div class="about-icon">🖥️</div><h3>desktop/</h3><p>Games classified as desktop-first. They remain browsable on all devices, with a desktop compatibility label.</p></div>
+                    <div class="glass about-card"><div class="about-icon">📚</div><h3>docs/</h3><p>The project README, license, audit, project manifest, and the complete desktop/both game manifests live together here.</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links"><a href="#home" class="footer-link">Home</a><a href="#games" class="footer-link">Games</a><a href="./docs/README.md" class="footer-link">Docs</a></div>
+            <p class="footer-text">LifeHelpers Arcade game loader.</p>
+        </div>
+    </footer>
+
+    <div id="game-modal" class="game-modal" hidden>
+        <div class="game-modal-backdrop" data-close-game></div>
+        <section class="game-player glass" role="dialog" aria-modal="true" aria-labelledby="game-player-title">
+            <header class="game-player-header">
+                <div><span id="game-player-compat" class="compat-badge"></span><h2 id="game-player-title">Game</h2></div>
+                <div class="game-player-actions">
+                    <a id="open-game-new" class="player-action" href="#" target="_blank" rel="noopener">Open separately ↗</a>
+                    <button id="close-game" class="player-action" type="button" data-close-game>Close ✕</button>
+                </div>
+            </header>
+            <iframe id="game-frame" title="Game player" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe>
+        </section>
+    </div>
+
+    <script src="./js/game-catalog.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
