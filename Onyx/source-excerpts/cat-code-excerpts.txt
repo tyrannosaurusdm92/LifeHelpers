@@ -1,0 +1,207 @@
+SmellyCat cat-specific source excerpts
+Extracted verbatim from smellycat.js; unrelated game logic has been omitted.
+Line numbers refer to the original smellycat.js in smellycat-master.zip.
+
+===== Cat heading/jump state (original lines 103-104) =====
+0103: var rotay=2;
+0104: var space = false;
+
+===== Cat AnimationMixer state (original lines 110-110) =====
+0110: var catmixer;
+
+===== Run modifier and idle state (original lines 118-119) =====
+0118: var shiftisup = true;
+0119: var idle = true;
+
+===== Jump debounce state (original lines 134-134) =====
+0134: var stilljumping=0;
+
+===== SmellyCat model configuration (original lines 164-173) =====
+0164: var MODELS = [
+0165:         { 
+0166:             name: "SmellyCat", 
+0167:             path: "./src/three/examples/models/fbx/cat.fbx",
+0168:             position: { x: 0, y: 0, z: 0 }, 
+0169:             rotation: { x: 0, y: 0, z: 0},
+0170:             scale: 0.0003, 
+0171:             animationName: 5 // Name of animation to run            
+0172:         },    
+0173:         { 
+
+===== Cat loading, fur texture application, animation, physics body (original lines 690-732) =====
+0690: function loadCat( model ) {
+0691:         var loader = new FBXLoader();
+0692:         var textureloader = new THREE.TextureLoader();        
+0693:         loader.load( model.path, function ( gltf ) {
+0694:                 gltf.traverse( function ( object ) {
+0695:                         if ( object.isMesh ) {
+0696:                                 object.castShadow = true;
+0697:                                 object.receiveShadow = true;
+0698:                                 if(Array.isArray(object.material)){
+0699:                                     if(object.material[0].name=="skin"){
+0700:                                         var cattex = textureloader.load('./src/three/examples/pics/orange.png');                                             
+0701:                                         object.material[0].map = cattex;
+0702:                                         object.material[0].shininess = 0;
+0703:                                         object.material[0].reflectivity = 0;
+0704:                                     }
+0705:                                 }
+0706:                                 else{
+0707:                                         object.material.color=new THREE.Color( 0.3,0.8,0.0 );                                    
+0708:                                 }
+0709:                         }
+0710:                 } );
+0711:                 if ( model.position ) {
+0712:                         gltf.position.copy(  new THREE.Vector3( model.position.x, model.position.y, model.position.z ));
+0713:                 }
+0714:                 if ( model.scale ) {
+0715:                         gltf.scale.copy(  new THREE.Vector3( model.scale, model.scale, model.scale ));
+0716:                 }
+0717:                 if ( model.rotation ) {
+0718:                         gltf.rotation.copy( new THREE.Euler( model.rotation.x,model.rotation.y,model.rotation.z));
+0719:                 }
+0720:                 var mixer = new THREE.AnimationMixer( gltf );
+0721:                 var action = mixer.clipAction(gltf.animations[model.animationName]);
+0722:                 action.play();
+0723:                 catmixer=mixer;                
+0724:                 var catMass = 10;
+0725:                 var catShape = new Ammo.btBoxShape( new Ammo.btVector3( 0.1,0.1,0.4 )  );
+0726:                 catShape.setMargin( 0.0 );
+0727:                 gltf.name="thecat";
+0728:                 var body = createRigidBody( gltf, catShape, catMass, gltf.position, gltf.quaternion );
+0729:                 body.setFriction( 0.5 );
+0730:         } );
+0731: }
+0732: /**
+
+===== Animation mixer update and movement controls update (original lines 758-759) =====
+0758:             if(!idle) catmixer.update(delta);
+0759:             controls.update( delta );  
+
+===== Third-person control setup relevant to cat movement (original lines 1056-1077) =====
+1056: function ThirdPersonControls ( object, domElement ) {
+1057: 
+1058: 	this.object = object;
+1059: 	this.domElement = domElement;
+1060: 
+1061: 	// API
+1062: 
+1063:         this.movementSpeed = 25;
+1064: 
+1065:         this.mouseX = 0;
+1066: 	this.mouseY = 0;
+1067: 
+1068: 	this.moveForward = false;
+1069: 	this.moveBackward = false;
+1070: 	this.moveLeft = false;
+1071: 	this.moveRight = false;
+1072: 
+1073: 	this.viewHalfX = 0;
+1074: 	this.viewHalfY = 0;
+1075: 
+1076: 
+1077: 	if ( this.domElement !== document ) {
+
+===== Keyboard movement controls (original lines 1152-1199) =====
+1152: 		switch ( event.keyCode ) {
+1153:                         
+1154:                          case 27: /*esc*/ 
+1155:                             escispressed=!escispressed;
+1156:                             instructions.style.display='none';
+1157:                             if(escispressed) {stopTime();gui.domElement.hidden= false;}
+1158:                             else {startTime();gui.domElement.hidden=true;}
+1159:                             break;
+1160:                         
+1161: 			case 38: /*up*/
+1162: 			case 87: /*W*/ this.moveForward = true; break;
+1163: 
+1164: 			case 37: /*left*/
+1165: 			case 65: /*A*/ this.moveRight = true; break;
+1166: 
+1167: 			case 40: /*down*/
+1168: 			case 83: /*S*/ this.moveBackward = true; break;
+1169: 
+1170: 			case 39: /*right*/
+1171: 			case 68: /*D*/ this.moveLeft = true; break;
+1172: 
+1173:                         case 16: /*Shift*/ event.preventDefault(); shiftisup = false; break;
+1174:                         case 32: /*Space*/ {
+1175:                                 event.preventDefault();
+1176:                                 space = true; break;}
+1177: 		}
+1178: 	};
+1179: 
+1180: 	this.onKeyUp = function ( event ) {
+1181:                 event.preventDefault();
+1182: 		switch ( event.keyCode ) {
+1183: 			case 38: /*up*/
+1184: 			case 87: /*W*/ this.moveForward = false; break;
+1185: 
+1186: 			case 37: /*left*/
+1187: 			case 65: /*A*/ this.moveRight = false; break;
+1188: 
+1189: 			case 40: /*down*/
+1190: 			case 83: /*S*/ this.moveBackward = false; break;
+1191: 
+1192: 			case 39: /*right*/
+1193: 			case 68: /*D*/ this.moveLeft = false; break;
+1194: 
+1195:                         case 16: /*Shift*/ shiftisup = true; break;
+1196: 		}
+1197: 	};
+1198: 
+1199: 	this.update = function () {
+
+===== Movement speed, turning, walking velocity, and jumping (original lines 1200-1248) =====
+1200: 		return function update( delta ) {
+1201: 
+1202:                         var actualMoveSpeed  = delta * this.movementSpeed;
+1203:                         if(!shiftisup) actualMoveSpeed = delta * this.movementSpeed * 1.5;// Increase speed when shift is down - but also increases jump velocity ??
+1204: 
+1205:                         var velox=0;
+1206:                         var veloz=0;
+1207:                         
+1208:                         if ( this.moveLeft) { //A
+1209:                             idle=false; 
+1210:                             rotay-=0.1;
+1211:                         }
+1212: 			else if ( this.moveRight ) { //D
+1213:                             idle=false;
+1214:                             rotay+=0.1;                            
+1215:                         }
+1216:                         else { //IDLE
+1217:                             idle=true;
+1218:                         }
+1219: 
+1220: 			if ( this.moveBackward) { //S
+1221:                             idle=false; 
+1222:                             veloz = -actualMoveSpeed*Math.cos(rotay)/2.2;
+1223:                             velox = -actualMoveSpeed*Math.sin(rotay)/2.2;
+1224:                         }
+1225: 			else if ( this.moveForward ) { //W
+1226:                             idle=false;
+1227:                             veloz = actualMoveSpeed*Math.cos(rotay)/2.2;
+1228:                             velox = actualMoveSpeed*Math.sin(rotay)/2.2;
+1229:                         }
+1230:                         else{ //IDLE
+1231:                             if(!this.moveLeft && !this.moveRight) idle=true;
+1232:                         }
+1233:                         // WALK CAT
+1234:                         this.object.userData.physicsBody.setLinearVelocity(new Ammo.btVector3( velox, 0, veloz));                        
+1235:                         
+1236:                         // JUMP CAT 
+1237:                         if(space) {
+1238:                             if(stilljumping==0) {
+1239:                                 stilljumping=21; // to prevent multiple jumps count down from 50
+1240:                                 this.object.userData.physicsBody.setLinearVelocity(new Ammo.btVector3( 0, 10, 0));
+1241:                             }
+1242:                             space=false;
+1243:                         }
+1244:                         if(stilljumping!==0){
+1245:                             stilljumping-=1; 
+1246:                            if(stilljumping<3) stilljumping=0;
+1247:                         }
+1248:                         
+
+===== Apply cat facing rotation (original lines 1286-1286) =====
+1286:                         this.object.rotation.y = rotay;
+

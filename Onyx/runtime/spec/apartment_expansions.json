@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0.0",
+  "principles": [
+    "Basic placement, accessibility, preview, safe scaling, and undo are never gated.",
+    "All room licenses and design abilities are permanent once unlocked.",
+    "No room can be repossessed, rented, or lost through inactivity.",
+    "The original starter room remains restorable after every expansion."
+  ],
+  "design_ability_tiers": [
+    {
+      "tier": 0,
+      "label": "Foundation",
+      "abilities": [
+        "move",
+        "rotate",
+        "safe_scale",
+        "precision_nudge",
+        "undo_redo",
+        "preview",
+        "storage",
+        "save_layout",
+        "accessibility_checks"
+      ]
+    },
+    {
+      "tier": 1,
+      "label": "Surface Designer",
+      "abilities": [
+        "expanded_palettes",
+        "trim",
+        "ceiling_finishes",
+        "coordinated_collections"
+      ]
+    },
+    {
+      "tier": 2,
+      "label": "Pattern Maker",
+      "abilities": [
+        "custom_wallpaper",
+        "approved_pattern_import",
+        "lighting_scenes",
+        "room_soundscapes"
+      ]
+    },
+    {
+      "tier": 3,
+      "label": "Interior Builder",
+      "abilities": [
+        "built_ins",
+        "shelves",
+        "room_dividers",
+        "platforms",
+        "beams",
+        "grouped_placement"
+      ]
+    },
+    {
+      "tier": 4,
+      "label": "Room Architect",
+      "abilities": [
+        "door_placement",
+        "window_placement",
+        "room_shell_selection",
+        "multi_room_cutaway"
+      ]
+    },
+    {
+      "tier": 5,
+      "label": "Apartment Planner",
+      "abilities": [
+        "floor_plan_overview",
+        "room_copy",
+        "apartment_wide_themes",
+        "global_lighting"
+      ]
+    },
+    {
+      "tier": 6,
+      "label": "Exterior Stylist",
+      "abilities": [
+        "balcony",
+        "exterior_ambience",
+        "seasonal_schemes",
+        "weather_views"
+      ]
+    }
+  ],
+  "spaces": [
+    {
+      "id": "starter_room",
+      "label": "Starter Room",
+      "status": "available",
+      "prerequisite": null
+    },
+    {
+      "id": "reading_nook",
+      "label": "Reading Nook",
+      "status": "unlockable",
+      "prerequisite": "early_discovery"
+    },
+    {
+      "id": "studio_apartment",
+      "label": "Studio Apartment",
+      "status": "unlockable",
+      "prerequisite": "career_foundation"
+    },
+    {
+      "id": "bedroom",
+      "label": "Separate Bedroom",
+      "status": "unlockable",
+      "prerequisite": "mid_career"
+    },
+    {
+      "id": "professor_study",
+      "label": "Professor Study",
+      "status": "unlockable",
+      "prerequisite": "counseling_or_therapy_rank"
+    },
+    {
+      "id": "full_kitchen",
+      "label": "Full Kitchen and Dining",
+      "status": "unlockable",
+      "prerequisite": "apartment_permit"
+    },
+    {
+      "id": "recovery_bathroom",
+      "label": "Bathroom and Recovery Room",
+      "status": "unlockable",
+      "prerequisite": "wellness_collection"
+    },
+    {
+      "id": "balcony_garden",
+      "label": "Balcony or Window Garden",
+      "status": "unlockable",
+      "prerequisite": "exploration_milestone"
+    },
+    {
+      "id": "studio_workshop",
+      "label": "Studio Workshop",
+      "status": "unlockable",
+      "prerequisite": "creative_mastery"
+    },
+    {
+      "id": "quiet_room",
+      "label": "Guest or Quiet Room",
+      "status": "unlockable",
+      "prerequisite": "high_career_rank"
+    },
+    {
+      "id": "library_suite",
+      "label": "Library Suite",
+      "status": "unlockable",
+      "prerequisite": "professor_capstone"
+    },
+    {
+      "id": "full_apartment",
+      "label": "Full Apartment Shell",
+      "status": "unlockable",
+      "prerequisite": "all_core_permits"
+    }
+  ],
+  "unlock_sources": [
+    "career_pay",
+    "promotion_reward",
+    "knowledge_card",
+    "decorating_milestone",
+    "user_selected_growth_bonus",
+    "onyx_only_play"
+  ],
+  "persistence_fields": [
+    "room_shell",
+    "finishes",
+    "objects",
+    "interaction_anchors",
+    "lighting",
+    "ambience",
+    "accessibility_result",
+    "layout_history"
+  ]
+}
