@@ -1,0 +1,305 @@
+{
+  "package": "Onyx_Cat_Only_relative_room_scale_pass",
+  "source_archive": "smellycat-master.zip",
+  "purpose": "Cat-only Onyx asset package with a real-world calibrated blank-room viewer. Room, cat scale, physics mass, grid, and reference markers are expressed in real measurements.",
+  "cat_model": {
+    "runtime_model": "models/fbx/cat.fbx",
+    "associated_source_blob": "models/fbx/cat.bin",
+    "fbx_version": 7400,
+    "configured_scale": 0.000775003,
+    "configured_position": {
+      "x": 0,
+      "y": 0.24,
+      "z": 0
+    },
+    "configured_rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "mesh_summary": [
+      {
+        "name": "Cat",
+        "type": "SkinnedMesh",
+        "vertices": 33972,
+        "materials": [
+          "skin",
+          "hair",
+          "Material.002"
+        ]
+      },
+      {
+        "name": "Sphere001",
+        "type": "SkinnedMesh",
+        "vertices": 11904,
+        "materials": [
+          "PBR Dielectric"
+        ]
+      },
+      {
+        "name": "Sphere",
+        "type": "SkinnedMesh",
+        "vertices": 11904,
+        "materials": [
+          "PBR Dielectric"
+        ]
+      },
+      {
+        "name": "eye",
+        "type": "Mesh",
+        "materials": [
+          "Sclera_and_Iris",
+          "Pupil",
+          "Cornea"
+        ]
+      }
+    ]
+  },
+  "fur_and_appearance": {
+    "texture_pass": "rendering-fix pass after documented screenshot audit",
+    "runtime_fur_albedo": "textures/onyx/onyx_fur_albedo_renderfix.png",
+    "legacy_compatibility_texture": "textures/fur/onyx.png",
+    "source_fur_albedo": "textures/onyx/onyx_fur_albedo.png",
+    "source_maps_preserved": [
+      "textures/onyx/onyx_fur_normal.png",
+      "textures/onyx/onyx_fur_roughness.png",
+      "textures/onyx/onyx_fur_ao.png",
+      "textures/onyx/onyx_inner_ear_albedo.png",
+      "textures/onyx/onyx_nose_albedo.png",
+      "textures/onyx/onyx_paw_pad_albedo.png",
+      "textures/onyx/onyx_whisker_mask.png",
+      "textures/onyx/onyx_fur_albedo_composite.png"
+    ],
+    "runtime_eye_albedo": "textures/onyx/onyx_eye_sphere_albedo_renderfix.png",
+    "runtime_eye_emissive": "textures/onyx/onyx_eye_sphere_emissive_renderfix.png",
+    "body_material_strategy": "One opaque double-sided MeshStandardMaterial is assigned to the Cat mesh. The FBX audit confirmed the Cat geometry has only one active group and it uses material index 0 (skin).",
+    "highlight_fix": "Removed runtime normal/roughness maps from the body material and compressed bright albedo outliers to stop silver-white streaks on the back, shoulders, head and spine.",
+    "paw_and_ear_fix": "The incorrectly UV-localized purple paw/ear/nose composite is no longer used at runtime. The source detail maps remain preserved for future model-specific UV work.",
+    "black_fur_rule": "Runtime fur is neutral-black and highlight-compressed so the coat reads black rather than brown/grey while retaining visible strand texture.",
+    "coverage_fix": "Body material is forced transparent=false, opacity=1, alphaTest=0, depthWrite=true, depthTest=true, DoubleSide, with frustum culling disabled for animated meshes.",
+    "eye_visibility_fix": "The supplied green-yellow iris was expanded into corrected sphere maps and given capped emissive support so both eyes remain visibly green-yellow without white bloom."
+  },
+  "animations_embedded_in_fbx": [
+    {
+      "index": 0,
+      "name": "Armature|run",
+      "duration_seconds": 0.5833333134651184,
+      "tracks": 258,
+      "locomotion": true
+    },
+    {
+      "index": 1,
+      "name": "Armature|CameraAction",
+      "duration_seconds": 0.0416666679084301,
+      "tracks": 258,
+      "locomotion": false
+    },
+    {
+      "index": 2,
+      "name": "Sphere.001|CameraAction",
+      "duration_seconds": 0.0,
+      "tracks": 0,
+      "locomotion": false
+    },
+    {
+      "index": 3,
+      "name": "Camera|CameraAction",
+      "duration_seconds": 0.0416666679084301,
+      "tracks": 3,
+      "locomotion": false
+    },
+    {
+      "index": 4,
+      "name": "Sphere|CameraAction",
+      "duration_seconds": 0.0,
+      "tracks": 0,
+      "locomotion": false
+    },
+    {
+      "index": 5,
+      "name": "Armature|Walk",
+      "duration_seconds": 1.125,
+      "tracks": 258,
+      "locomotion": true,
+      "used_by_original_game": true
+    }
+  ],
+  "movement_behavior_from_original_code": {
+    "movement_speed": 25,
+    "shift_speed_multiplier": 1.5,
+    "backward_and_forward_velocity_divisor": 2.2,
+    "turn_increment_radians_per_update": 0.1,
+    "jump_vertical_velocity": 10,
+    "jump_debounce_counter": 21,
+    "physics_mass": 12.246994,
+    "physics_collision_half_extents": [
+      0.1397,
+      0.225,
+      0.29845
+    ],
+    "physics_friction": 0.5,
+    "physics_world_step_delta_multiplier": 2.5,
+    "key_mapping": {
+      "forward": [
+        "W",
+        "ArrowUp"
+      ],
+      "backward": [
+        "S",
+        "ArrowDown"
+      ],
+      "turn_left": [
+        "D",
+        "ArrowRight"
+      ],
+      "turn_right": [
+        "A",
+        "ArrowLeft"
+      ],
+      "speed_modifier": "Shift",
+      "jump": "Space"
+    },
+    "animation_update_rule": "Walk mixer advances only while idle == false in the original game loop.",
+    "orientation_rule": "Cat rotation.y is set to rotay; physics quaternion is deliberately not copied back to the cat so it lands on its legs.",
+    "physics_mass_units": "kg (calibrated from 27 lb)",
+    "physics_collision_units": "meters; half-width from 11 in chest reference, 0.225 m vertical half-extent to align the calibrated FBX root/paws with the floor, half nose-to-tail-base body length; tail excluded"
+  },
+  "excluded_as_game_content": [
+    "index.html",
+    "smellycat.js (full game file)",
+    "SmellyCat.gif",
+    "SmellyCatOpening.gif",
+    "bedroom/prop/bird/vase models",
+    "sounds/music",
+    "game UI",
+    "score/timer/game-over logic",
+    "Three.js and Ammo.js dependency libraries"
+  ],
+  "documentation": {
+    "original_readme_preserved_unchanged": "README.md",
+    "license_file_present_in_source_archive": false,
+    "licensing_note": "docs/LICENSING_STATUS.md",
+    "source_excerpts": "source-excerpts/cat-code-excerpts.txt"
+  },
+  "viewer": {
+    "entry_point": "index.html",
+    "runtime": "viewer.js",
+    "room": "12 ft W \u00d7 14 ft D \u00d7 8 ft H measured calibration room; clear interior dimensions, 4.5 in walls, 6 in floor slab",
+    "cat_loader": "FBXLoader with audited one-group Cat material replacement and corrected direct-open runtime textures",
+    "movement": "Ammo.js + ThirdPersonControls-style movement matching original values",
+    "local_launchers": [],
+    "third_party_runtime": [
+      "Three.js r111 modules required by FBXLoader",
+      "Ammo.js from the supplied SmellyCat source"
+    ],
+    "runtime_texture_stack": [
+      "render-fix neutral-black fur albedo",
+      "render-fix green-yellow eye sphere albedo",
+      "render-fix capped eye emissive"
+    ],
+    "direct_open_assets": "viewer-assets.js embeds cat.fbx plus only the runtime render-fix fur and eye maps.",
+    "camera_controls": "Pointer-drag orbit with full 360-degree yaw, top-down and underside vertical range, pointer capture to prevent sticky dragging, wheel zoom, and R reset.",
+    "rendering_issue_reference": "rendering issues screenshots/",
+    "measurement_guides": "1 ft floor grid, stronger 5 ft grid lines, 1 ft wall ruler, 5 ft 4 in user-height reference, 14 in Onyx shoulder marker, 38 in Onyx overall-length floor bar; M toggles visibility",
+    "world_units": "1 Three.js/Ammo world unit = 1 meter",
+    "scale_note": "The calibration room is a relative reference room, not a claim about the user\u2019s real room dimensions."
+  },
+  "viewer_entry_point": "index.html",
+  "viewer_direct_open": true,
+  "viewer_runtime_assets": [
+    "viewer.js",
+    "viewer-assets.js",
+    "vendor/three/classic/three.js",
+    "vendor/three/classic/FBXLoader.js",
+    "vendor/ammo/ammo.js"
+  ],
+  "realism_pass": {
+    "goal": "Make Onyx read as a realistic domestic shorthair with selective Maine Coon structural influence rather than a fluffy purebred caricature.",
+    "morphology": {
+      "forequarters": "~10.5% localized shoulder/ribcage widening plus a smaller lower-chest expansion",
+      "abdomen": "localized low primordial-pouch deformation behind the ribcage; topline remains sleek",
+      "waist": "slight narrowing behind ribcage to preserve long lean silhouette",
+      "head": "small broadening of head and muzzle only",
+      "coat": "existing sleek opaque black rendering preserved; no floof geometry added"
+    },
+    "whiskers": "12 procedural whiskers parented to Nose bone; 10 white/pale and 2 charcoal, curved with TubeBufferGeometry.",
+    "secondary_motion": "subtle post-mixer spine counter-motion and tail sway while walking; original FBX remains the primary gait.",
+    "research_basis": [
+      "CFA Maine Coon breed standard",
+      "TICA Maine Coon breed overview/standard",
+      "cat shoulder-girdle locomotion studies",
+      "open-source quadruped rig architecture research on GitHub"
+    ]
+  },
+  "cat_shape_pass": {
+    "tum_tum": "Re-targeted to the actual abdominal underside band rather than low leg vertices; stronger downward/outward pouch with slight rearward hang and runtime sway while walking.",
+    "body": "Broader shoulders/chest retained; previous waist-pinching pass removed; slight mid-body substance added so Onyx reads stocky-sleek rather than skinny.",
+    "eyes": "Visible eye spheres moved forward ~4.2 FBX object units and enlarged modestly to reduce the sunken-eye look while retaining green-yellow irises.",
+    "nose": "Nose-weighted vertices get a small feline tip/bridge protrusion and narrowed tip; procedural rounded-triangle satin-black nose plane follows the Nose bone.",
+    "mouth": "Mouth-weighted lower muzzle/chin receives independent volume plus subtle philtrum and curved W-shaped mouth creases parented to Mouth bone.",
+    "whiskers": "14 curved, asymmetrical whiskers; 12 white/pale and 2 charcoal.",
+    "coat": "Color textures are now explicitly decoded as sRGB before gamma output, preventing near-black albedo from being lifted into charcoal gray.",
+    "research_note": "Sims 3/4 pet sculpting informed separating weight/mass from muscle/forequarter structure instead of globally scaling the cat."
+  },
+  "real_world_scale_pass": {
+    "world_unit": "1 meter",
+    "onyx_measurement_inputs": {
+      "weight_lb": 27,
+      "nose_to_tail_base_in_range": [
+        22,
+        25
+      ],
+      "nose_to_tail_base_in_calibration_midpoint": 23.5,
+      "tail_in_range": [
+        13,
+        16
+      ],
+      "tail_in_calibration_midpoint": 14.5,
+      "normal_overall_in_range": [
+        35,
+        41
+      ],
+      "normal_overall_in_reference": 38,
+      "stretched_in_range": [
+        38,
+        44
+      ],
+      "stretched_in_reference": 41,
+      "shoulder_height_in_range": [
+        13,
+        15
+      ],
+      "shoulder_height_in_reference": 14,
+      "chest_body_width_in_range": [
+        10,
+        12
+      ],
+      "chest_body_width_in_reference": 11,
+      "curled_sleeping_footprint_in_reference": [
+        19.5,
+        13.5
+      ]
+    },
+    "fbx_scale_derivation": "Raw nose-front to tail-base longitudinal span is ~7.702 FBX mesh units. The Cat node carries ~100x internal scale. 23.5 in / (7.702 \u00d7 100) gives root scale \u2248 0.000775 when one world unit is one meter.",
+    "calibrated_model_checks": {
+      "paw_to_shoulder_region": "approximately 15 in in bind-pose geometry, within the supplied 13-15 in target band when interpreted at the shoulder surface rather than neck/head vertices",
+      "tail": "bone chain plus modeled tip falls in approximately the supplied 13-16 in target region",
+      "physics_mass_kg": 12.246994
+    },
+    "human_reference": {
+      "height_in": 64,
+      "weight_lb": 500,
+      "long_torso": true,
+      "wheelchair": "custom-sized to user; photos/videos used as a visual relationship check only",
+      "non_inference_rule": "No wheelchair width, user body width, seated height, or reach was fabricated from weight. Exact chair/body dimensions should be entered only if measured values are supplied."
+    },
+    "calibration_room": {
+      "clear_width_ft": 12,
+      "clear_depth_ft": 14,
+      "clear_height_ft": 8,
+      "wall_thickness_in": 4.5,
+      "floor_slab_in": 6,
+      "status": "explicit measured relative/test room, not the user\u2019s claimed real room size"
+    }
+  }
+}

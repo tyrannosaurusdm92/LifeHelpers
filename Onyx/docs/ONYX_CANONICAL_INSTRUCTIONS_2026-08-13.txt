@@ -1,0 +1,711 @@
+
+
+I want you to **edit the actual attached Onyx package**, not create a separate theoretical editor, not just research possibilities, and not stop after giving me recommendations.
+
+Use the existing Onyx build as the protected foundation, then improve him by **adding carefully designed layers, corrections, morphs, geometry, rigging adjustments, materials, animation improvements, and behavior support on top of his current base build**.
+
+The goal is **not to replace Onyx or rebuild him from scratch**. His existing model, proportions, textures, rig, animations, measurements, personality information, and dossier are the canonical base. Work nondestructively wherever possible, preserving what is already correct while layering improvements over the current version.
+
+## Research before and during the edit
+
+I want you to perform extensive research specifically to help you make the actual edits.
+
+Search GitHub deeply for open-source or permissively licensed projects, code, examples, algorithms, scripts, workflows, and techniques related to:
+
+- Blender
+- MeshLab
+- OpenSCAD
+- 3D cats
+- realistic cat models
+- quadruped rigging
+- feline skeletons
+- feline locomotion
+- procedural anatomy
+- mesh deformation
+- morph targets / shape keys
+- vertex groups
+- corrective shape keys
+- soft-body belly movement
+- skin weighting
+- secondary motion
+- fur rendering
+- whiskers
+- eyes
+- facial sculpting
+- animal animation
+- cat procedural animation
+- gait cycles
+- idle behavior
+- pet AI
+- Sims-style character creation
+- Sims-style direct manipulation
+- Sims-style morph sliders
+- layered coat systems
+
+I specifically want you using **MeshLab, Blender, and OpenSCAD repositories and related open-source projects as practical building material for the Onyx package**.
+
+Do not simply tell me those programs exist. Study how their tools and algorithms work and adapt useful concepts, scripts, math, workflows, or permissively licensed code where appropriate.
+
+## Sims 3 and Sims 4 are major visual and technical references
+
+Research **The Sims 3 Pets** and **The Sims 4 Cats & Dogs** extensively.
+
+I want you to investigate how cats are created, shaped, animated, textured, posed, and given personality in those games.
+
+Look for Sims-adjacent open-source code and GitHub repositories that can help reproduce similar ideas legally without copying proprietary EA code.
+
+Research things such as:
+
+- Create-a-Pet morph systems
+- body sliders
+- head sliders
+- muzzle shaping
+- eye shaping
+- nose shaping
+- ear controls
+- body length
+- shoulder width
+- chest depth
+- stomach/body mass
+- leg proportions
+- tail proportions
+- coat layers
+- coat painting
+- markings
+- fur appearance
+- whiskers
+- posture
+- gait
+- cat idle animations
+- sitting
+- crouching
+- stretching
+- running
+- jumping
+- turning
+- grooming
+- sleeping
+- tail behavior
+- ear behavior
+- eye tracking
+- blinking
+- head tracking
+- personality-driven animation
+- learned pet behavior
+
+Use **Sims 3 and Sims 4 cats as references for how to add additional editable/corrective layers over an existing base animal**, rather than flattening everything into one destructive mesh operation.
+
+I especially want a workflow conceptually similar to:
+
+**canonical Onyx base + anatomy morphs + corrective morphs + coat/material layers + rig corrections + animation corrections + secondary motion + personality behavior**
+
+rather than repeatedly rebuilding the original mesh.
+
+## Watch actual Sims cat-creation videos
+
+Go onto **YouTube** and research videos of people creating cats in:
+
+- The Sims 3 Pets
+- The Sims 4 Cats & Dogs
+
+Do not limit this to official trailers.
+
+Look at people actually using Create-a-Pet in detail.
+
+Study how experienced Sims players manipulate:
+
+- face shape
+- eyes
+- eyelids
+- eye depth
+- nose
+- muzzle
+- cheeks
+- chin
+- ears
+- head width
+- neck
+- shoulders
+- torso
+- stomach
+- hips
+- legs
+- paws
+- tail
+- coat markings
+- fur coloration
+- body proportions
+
+Pay attention to which combinations make a cat look like a believable real cat instead of a generic game animal.
+
+Look specifically for videos recreating:
+
+- real cats
+- black cats
+- large cats
+- Maine Coons
+- domestic shorthairs
+- stocky cats
+- long-bodied cats
+- chunky cats
+- cats with primordial pouches
+
+Use those demonstrations as practical visual research while editing Onyx.
+
+## Search Sims community websites too
+
+Do broad research across Sims communities and modding resources, including places such as:
+
+- Mod The Sims
+- The Sims Resource
+- Sims community sites
+- Sims modding forums
+- Sims Wiki resources
+- Tumblr Sims creators where accessible
+- Reddit Sims creation/modding discussions where useful
+- GitHub Sims utilities
+- Sims 3 modding documentation
+- Sims 4 modding documentation
+- custom pet creators
+- pet presets
+- sliders
+- morph mods
+- fur/coat mods
+- cat eye mods
+- cat anatomy mods
+- pet animation mods
+
+I am not asking you to redistribute proprietary Sims assets.
+
+I want you to **learn from the techniques, visual references, community knowledge, open-source utilities, and legal adjacent implementations** and apply those lessons to Onyx.
+
+## The dossier is the authority
+
+Read the entire Onyx dossier and use it as the behavioral, anatomical, personality, scale, and animation specification.
+
+His movement cannot just be "generic cat animation."
+
+Everything should gradually move toward **Onyx specifically**.
+
+Use his documented measurements and proportions.
+
+Onyx is approximately:
+
+- **Weight:** \~27 lb
+- **Nose → tail base:** 22–25 in
+- **Tail:** 13–16 in
+- **Overall normal length:** 35–41 in
+- **Fully stretched length:** 38–44 in
+- **Shoulder height:** 13–15 in
+- **Chest/body width:** 10–12 in
+- **Curled sleeping footprint:** 18–21 in long × 12–15 in wide
+
+He is a **large, long, slightly buff but sleek black cat**.
+
+Think of the Maine Coon influence primarily in:
+
+- overall size
+- length
+- broad-ish chest
+- wide shoulders
+- substantial frame
+
+But **not** in huge fluffy Maine Coon fur.
+
+He has short-to-medium hair and should remain sleek.
+
+He should look something like the feline equivalent of a breed mix where one parent contributes an unusually long/large body structure without turning the animal into a stereotypical purebred version.
+
+## The tum is essential
+
+Do **not** make him thinner.
+
+His primordial pouch / lower belly is an important part of his appearance and motion.
+
+He needs:
+
+- believable abdominal volume
+- a visible lower-hanging primordial pouch
+- appropriate fullness
+- attachment to the torso that looks anatomically plausible
+- movement while walking
+- lateral sway
+- vertical secondary motion
+- settling after stopping
+- different behavior while running versus walking
+- compression while sitting or crouching
+- believable deformation while stretching
+- gravity-aware motion
+
+The pouch should not look like:
+
+- a spherical growth
+- pregnancy
+- obesity pasted onto the mesh
+- a rigid bump
+- a disconnected flap
+
+Use feline anatomy research, Sims references, Blender soft-body/corrective techniques, and open-source quadruped solutions to improve it.
+
+His tum should have **secondary motion**.
+
+The dossier's Fancy Feast emperor requires proper tum physics. 😂
+
+## Face corrections are equally important
+
+Continue improving:
+
+### Eyes
+
+His eyes should be:
+
+- clearly visible
+- green-yellow
+- not buried inside the skull
+- not severely sunken
+- properly seated within believable eyelids
+- glossy without looking plastic
+- readable in different lighting
+- capable of natural blinking
+- capable of subtle tracking
+
+Research real feline orbital anatomy and Sims cat creation techniques for getting believable placement.
+
+### Nose
+
+His nose needs actual sculpted form.
+
+It should not appear painted onto a flat muzzle.
+
+Improve:
+
+- bridge
+- tip
+- nostril region
+- nose pad
+- transitions into muzzle
+- relationship to philtrum
+- material response
+
+### Mouth and muzzle
+
+Improve:
+
+- muzzle projection
+- whisker pads
+- cheek transition
+- chin
+- mouth line
+- lower lip region where appropriate
+- facial volume
+- resting expression
+
+Do not make him look like a dog or miniature lion.
+
+He should remain recognizably a domestic cat.
+
+## Whiskers
+
+His whiskers are mostly white.
+
+They should not all be perfectly straight.
+
+Add natural:
+
+- curvature
+- variation
+- droop
+- spread
+- different lengths
+- subtle asymmetry
+- separate left/right variation
+
+If necessary, create them as curves/splines rather than forcing them into the body mesh.
+
+They should move slightly with head motion without behaving like rigid sticks.
+
+And no, symmetry does not need to be perfect. He had a boyfriend cat. His whiskers are under no heterosexual alignment requirement. 😂
+
+## Fur and color
+
+He is **black**, not dark gray and not a gray-and-white tuxedo.
+
+Prioritize the sleek black texture work already established in the package.
+
+His fur can reveal form through:
+
+- roughness
+- specular response
+- subtle warm/cool highlights
+- normal detail
+- lighting
+
+But the actual cat should still read as black.
+
+Do not solve visibility problems by turning his coat charcoal gray.
+
+Preserve the real Onyx texture references already supplied.
+
+## Use layered geometry instead of destructive replacement
+
+Where practical, create additional layers around his canonical base.
+
+For example:
+
+**Base mesh**
+↓
+**primary anatomy corrections**
+↓
+**face morphs**
+↓
+**body morphs**
+↓
+**primordial pouch morphs**
+↓
+**corrective animation shapes**
+↓
+**secondary motion**
+↓
+**fur/material corrections**
+↓
+**whiskers**
+↓
+**final animation/behavior layer**
+
+Use Blender shape keys or equivalent sparse vertex-delta concepts wherever helpful.
+
+Morphs should preserve:
+
+- topology
+- vertex ordering
+- UVs
+- skinning
+- skeleton
+- animation compatibility
+
+Do **not** remesh him casually.
+
+Do not use dynamic topology on the canonical model unless you have an extremely strong reason and can prove that the rig, UVs, weights, animations, and appearance remain intact.
+
+## Rigging and skinning need a serious pass
+
+Audit the current Onyx rig carefully.
+
+Previously identified issues suggest that some vertices may have more influences than a basic Three.js workflow preserves.
+
+Do not blindly pass the FBX through a toolchain that truncates his original skinning data.
+
+Use Blender, MeshLab, FBX tooling, ufbx or other appropriate open-source utilities to inspect:
+
+- skeleton hierarchy
+- bind pose
+- bone weights
+- number of influences per vertex
+- normalization
+- deformation
+- twisting
+- shoulder collapse
+- hip collapse
+- belly deformation
+- neck bending
+- paw placement
+- tail deformation
+
+Keep the original FBX protected.
+
+If you need to generate a modified FBX, retain the original alongside it until you have verified that the edited version preserved everything important.
+
+## Movement needs to become Onyx-specific
+
+This is one of the biggest goals of this pass.
+
+Use the dossier, cat anatomy research, real-cat videos, Sims 3/4 research, GitHub animation projects, quadruped locomotion systems, and Blender resources to improve how he moves.
+
+Do not make him move like:
+
+- a tiny kitten
+- a generic lightweight game cat
+- a dog
+- a tiger
+- a rigid quadruped robot
+
+He is a **large 27-pound domestic cat with long body proportions, broad shoulders, a substantial chest, a low-hanging primordial pouch, and attitude.**
+
+His mass should visually exist.
+
+### Walking
+
+Research real feline walk cycles.
+
+Improve:
+
+- paw timing
+- shoulder movement
+- scapular motion
+- spinal flexion
+- hip movement
+- tail counterbalance
+- head stabilization
+- paw placement
+- weight transfer
+- belly sway
+- subtle body compression
+- turning
+
+His belly should visibly respond to walking.
+
+### Running
+
+His run should have:
+
+- increased spinal extension/flexion
+- convincing rear-leg propulsion
+- shoulder reach
+- appropriate paw cycles
+- body stretch
+- recovery compression
+- heavier secondary motion than a tiny cat
+
+### Sitting
+
+His body mass should settle.
+
+The pouch should compress and redistribute rather than clip through him.
+
+The hindquarters should actually support the torso.
+
+### Crouching
+
+He should lower naturally through:
+
+- shoulders
+- elbows
+- spine
+- hips
+- hind legs
+
+without simply scaling vertically.
+
+### Stretching
+
+He is lengthy.
+
+Make that visible.
+
+A full stretch should emphasize his long torso and approximately 38–44 inch fully stretched scale.
+
+### Turning
+
+Avoid skating.
+
+Paws and body need convincing turn preparation and weight shifts.
+
+### Idle behavior
+
+Use the dossier heavily.
+
+Look for ways to incorporate things such as:
+
+- head turns
+- ear rotations
+- blinking
+- tail tip movement
+- weight shifts
+- sitting
+- grooming
+- looking at nearby people
+- demanding attention
+- looking toward food
+- loafing
+- stretching
+- investigating
+- resting
+
+## Personality should affect animation
+
+Use the behavioral information in the dossier.
+
+I want his personality to eventually influence which animations and movement choices happen.
+
+Research Sims-style pet autonomy and open-source AI/state-machine/behavior-tree systems where helpful.
+
+His movement library should support combinations of:
+
+**base personality + relationship + current need + learned behavior + environment + stimulus**
+
+For example, food-related behavior should not just trigger a generic walk animation.
+
+A Fancy Feast or treat stimulus may eventually produce sequences such as:
+
+**hear container → ears orient → head snaps toward sound → get up → approach → vocalize → stare → circle person → increase insistence**
+
+His attitude problem is part of the specification. 😂
+
+## Use Blender where Blender is strongest
+
+Use Blender-compatible/open-source techniques for:
+
+- sculpt corrections
+- shape keys
+- rig inspection
+- vertex weights
+- corrective shape keys
+- animation retargeting
+- feline animation editing
+- secondary motion
+- soft-body/jiggle concepts
+- whisker curves
+- material work
+- normal maps
+- texture checking
+- pose inspection
+- FBX/glTF validation
+
+If Blender scripts are useful, include them inside the development/tools portion of the package where appropriate.
+
+## Use MeshLab where MeshLab is useful
+
+Use MeshLab and MeshLab-derived/open-source tooling for things such as:
+
+- mesh inspection
+- geometry validation
+- normal inspection
+- manifold checks
+- duplicate geometry
+- flipped faces
+- surface problems
+- accidental holes
+- degenerate triangles
+- mesh measurement
+- geometric comparisons between revisions
+
+Do not let "cleaning" change his topology unnecessarily.
+
+## Use OpenSCAD where procedural geometry helps
+
+OpenSCAD is not the primary character sculptor, but research and use relevant procedural concepts where appropriate.
+
+It may be useful for:
+
+- measurement guides
+- scale reference geometry
+- bounding boxes
+- measurement rigs
+- procedural viewer helpers
+- collision/reference objects
+- debug geometry
+- room-scale references
+- proportional comparison tools
+
+Do not turn Onyx into a collection of primitive solids. 😂
+
+## Preserve the viewer
+
+The resulting package still needs a functioning viewer where I can inspect him thoroughly.
+
+I need:
+
+- full 360-degree rotation
+- top-down inspection
+- underside inspection
+- side-to-side inspection
+- unrestricted smooth zoom
+- non-sticky controls
+- useful lighting
+- ability to see black fur details
+- animation selection
+- slow-motion animation inspection
+- pause
+- frame inspection where feasible
+- wireframe/debug mode where useful
+- skeleton/debug mode if appropriate
+- before/after comparison if feasible
+
+I specifically need to be able to look for:
+
+- holes
+- inverted polygons
+- transparency errors
+- clipping
+- detached geometry
+- belly problems
+- face problems
+- eye placement
+- whiskers
+- paws
+- tail
+- underside coverage
+- deformation during movement
+
+## Preserve his scale
+
+Do not arbitrarily rescale him.
+
+Use the established measurements as canonical references.
+
+Create measurement/debug helpers if necessary so his virtual proportions can be checked consistently.
+
+His size relative to people and rooms matters because he appears in people's arms and interacts with furniture and spaces.
+
+## Validate the final build
+
+Before returning the package, perform an actual audit.
+
+Check:
+
+- package structure
+- missing dependencies
+- broken asset references
+- model loading
+- textures
+- materials
+- fur appearance
+- face appearance
+- eyes
+- whiskers
+- belly
+- rig
+- weights
+- animations
+- underside geometry
+- normals
+- camera controls
+- rotation
+- zoom
+- scale
+- performance
+- console errors
+- duplicate files
+- accidental nested ZIPs
+
+Test multiple animation poses and camera angles.
+
+I do not want another case where he looks correct from one side but I can see through him from another.
+
+## Preserve the canonical original internally
+
+Keep a protected copy of the original important model data inside the development structure or backup location so corrections can always be compared against the untouched base.
+
+The final package should make it obvious which model is:
+
+- canonical original
+- current working model
+- current corrected/runtime model
+
+Do not silently overwrite the only good copy.
+
+## Most importantly
+
+This is an **implementation task**.
+
+I am giving you permission to research extensively because I want that research to improve the actual package.
+
+The workflow should be:
+
+**inspect Onyx package → read dossier → inspect current model/rig/textures/animations → research Blender/MeshLab/OpenSCAD/GitHub → research Sims 3 and Sims 4 → watch actual Create-a-Pet YouTube workflows → research Sims community/modding resources → identify useful legal/open-source techniques → implement those techniques into Onyx → test him from every angle and animation → repair problems → package the revised Onyx build.**
+
+Do not finish by giving me a proposal for what could theoretically be done.
+
+**Do the edits.**
+
+The entire point of the research is to help you make Mr. Huffin Muffin look and move increasingly like the real Onyx while protecting the excellent work that is already present in his base build.
