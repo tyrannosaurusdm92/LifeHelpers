@@ -1,0 +1,699 @@
+{
+  "generatedAt": "2026-08-13T22:31:51.735Z",
+  "root": "onyx_control_repair",
+  "passed": true,
+  "passedCount": 138,
+  "totalChecks": 138,
+  "checks": [
+    {
+      "name": "canonical FBX protected byte-for-byte",
+      "ok": true,
+      "detail": "8eaf0de737301de0f378ef3cf42c55a0bf2978514f6ebcc1d6d8c427597edd37"
+    },
+    {
+      "name": "canonical BIN protected byte-for-byte",
+      "ok": true,
+      "detail": "779934308199e3641dd59983c6cb61f1125e33ad58686c4465577d44fcbc122c"
+    },
+    {
+      "name": "embedded FBX matches protected runtime FBX",
+      "ok": true,
+      "detail": "8eaf0de737301de0f378ef3cf42c55a0bf2978514f6ebcc1d6d8c427597edd37"
+    },
+    {
+      "name": "viewer.js syntax",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "runtime/onyx-dossier-runtime.js syntax",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "runtime/onyx-progression-runtime.js syntax",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Python development tools compile",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "direct-open startup race regression test",
+      "ok": true,
+      "detail": "synchronous Ammo thenable deferred until declarations initialize"
+    },
+    {
+      "name": "movement donor recovery regression test",
+      "ok": true,
+      "detail": "older locomotion restored without rolling back phased jump/viewer repair"
+    },
+    {
+      "name": "script exists: vendor/three/classic/three.js",
+      "ok": true,
+      "detail": "vendor/three/classic/three.js"
+    },
+    {
+      "name": "script exists: vendor/three/classic/inflate.js",
+      "ok": true,
+      "detail": "vendor/three/classic/inflate.js"
+    },
+    {
+      "name": "script exists: vendor/three/classic/NURBSUtils.js",
+      "ok": true,
+      "detail": "vendor/three/classic/NURBSUtils.js"
+    },
+    {
+      "name": "script exists: vendor/three/classic/NURBSCurve.js",
+      "ok": true,
+      "detail": "vendor/three/classic/NURBSCurve.js"
+    },
+    {
+      "name": "script exists: vendor/three/classic/FBXLoader.js",
+      "ok": true,
+      "detail": "vendor/three/classic/FBXLoader.js"
+    },
+    {
+      "name": "script exists: vendor/ammo/ammo.js",
+      "ok": true,
+      "detail": "vendor/ammo/ammo.js"
+    },
+    {
+      "name": "script exists: viewer-assets.js",
+      "ok": true,
+      "detail": "viewer-assets.js"
+    },
+    {
+      "name": "script exists: runtime/onyx-dossier-runtime.js",
+      "ok": true,
+      "detail": "runtime/onyx-dossier-runtime.js"
+    },
+    {
+      "name": "script exists: runtime/onyx-progression-runtime.js",
+      "ok": true,
+      "detail": "runtime/onyx-progression-runtime.js"
+    },
+    {
+      "name": "script exists: viewer.js",
+      "ok": true,
+      "detail": "viewer.js"
+    },
+    {
+      "name": "viewer control #cameraMode",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #cameraPreset",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #behaviorState",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #behaviorAuto",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #dossierAction",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #backendConnect",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #morphAnatomy",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #morphCarriage",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #morphChest",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #morphPouch",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #morphFace",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #eyeDepth",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #animationMode",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #movementProfile",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #animationSpeed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #pauseAnimation",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #stepAnimation",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #wireframeToggle",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #skeletonToggle",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #measurementToggle",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "viewer control #correctionToggle",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "behavior graph explicitly needs-free",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all dossier behavior states loaded",
+      "ok": true,
+      "detail": "13"
+    },
+    {
+      "name": "behavior event wired: pet",
+      "ok": true,
+      "detail": "pet"
+    },
+    {
+      "name": "behavior event wired: snuggle",
+      "ok": true,
+      "detail": "snuggle"
+    },
+    {
+      "name": "behavior event wired: play",
+      "ok": true,
+      "detail": "play"
+    },
+    {
+      "name": "behavior event wired: meow",
+      "ok": true,
+      "detail": "meow"
+    },
+    {
+      "name": "behavior event wired: yowl",
+      "ok": true,
+      "detail": "yowl"
+    },
+    {
+      "name": "behavior event wired: sleep",
+      "ok": true,
+      "detail": "sleep"
+    },
+    {
+      "name": "behavior event wired: wake",
+      "ok": true,
+      "detail": "wake"
+    },
+    {
+      "name": "behavior event wired: food_context",
+      "ok": true,
+      "detail": "food_context"
+    },
+    {
+      "name": "behavior event wired: quiet_context",
+      "ok": true,
+      "detail": "quiet_context"
+    },
+    {
+      "name": "behavior event wired: professor_mode",
+      "ok": true,
+      "detail": "professor_mode"
+    },
+    {
+      "name": "hungry expression explicitly not a need",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "sleepy expression explicitly not a need",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "26 dossier animation actions registered by runtime selector",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "20 dossier pose references declared",
+      "ok": true,
+      "detail": "20"
+    },
+    {
+      "name": "pose reference exists: 01_front_view.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 02_front_three_quarter_left.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 03_left_profile.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 04_rear_three_quarter_left.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 05_rear_view.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 06_rear_three_quarter_right.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 07_right_profile.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 08_front_three_quarter_right.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 09_front_hero_pose.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 10_high_angle_view.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 11_onyx_hungry.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 12_onyx_professor.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 13_onyx_thinking.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 14_onyx_caring.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 15_onyx_thoughtful.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 16_onyx_listening.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 17_onyx_snuggly.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 18_onyx_sleepy.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 19_onyx_judgmental.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pose reference exists: 20_onyx_purring.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "ordinary camera spec forbids free orbit",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "dedicated free inspection mode exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all dossier camera presets runtime-populated",
+      "ok": true,
+      "detail": "8"
+    },
+    {
+      "name": "physics failure falls back to inspection-safe mode",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "kinematic fallback movement exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Ammo synchronous thenable uses native Promise assimilation",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "unsafe Ammo thenable catch chain removed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "single viewer boot guard exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "single animation loop guard exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "renderer clears stale canvases before creation",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "deliberate pointer orbit exits locked 2.5D preset",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "window blur clears movement input",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "older dossier_documented(4) input donor preserved",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phased feline jump exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "walk/run crossfade exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "recovered movement profile is default",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "older donor walk velocity normalized to 60 Hz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "older donor turn rate normalized to 60 Hz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "recovered run keeps original Walk clip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "recovered legacy spine-tail gait layer exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "recovered pouch sway exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "procedural bone overlays are restored each frame",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scapular gait layer exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "pouch secondary spring exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "eye depth correction and slider exist",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "eye tracking/blink layer exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curved asymmetric whiskers exist",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "professor clipboard only preview exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "host API exposed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "backend sends JSON data envelope",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "backend behavior contract uses behavior/activity",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "old mismatched currentBehavior/currentActivity absent",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "backend capability report wired",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "backend activity sync wired",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "profile bridge allow-lists william/jasper",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "core traits are exactly dossier core traits",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "progression runtime rejects sensitive inference",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "learned trait evidence never decays",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "career runtime has no demotion",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "foundation design tier available",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "starter room permanent in projection",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "currency conversion matches dossier 10/10/10",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "surface comparison preserves vertex count",
+      "ok": true,
+      "detail": "33972"
+    },
+    {
+      "name": "surface comparison records no remesh/UV/skin/skeleton change",
+      "ok": true,
+      "detail": "{\"remesh\":false,\"vertexOrderChanged\":false,\"uvChanged\":false,\"skinningChanged\":false,\"skeletonChanged\":false}"
+    },
+    {
+      "name": "FBX no degenerate triangles",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "FBX no NaN triangles",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "FBX normals finite",
+      "ok": true,
+      "detail": "{\"present\":true,\"count\":33972,\"badNormals\":0,\"zeroNormals\":0}"
+    },
+    {
+      "name": "source >4-influence risk remains documented",
+      "ok": true,
+      "detail": "7610/38520"
+    },
+    {
+      "name": "required artifact exists: docs/ONYX_SINGLE_CANVAS_CONTROL_RECOVERY_2026-08-13.md",
+      "ok": true,
+      "detail": "docs/ONYX_SINGLE_CANVAS_CONTROL_RECOVERY_2026-08-13.md"
+    },
+    {
+      "name": "required artifact exists: docs/ONYX_REPAIR_THE_REPAIR_MOVEMENT_RECOVERY_2026-08-13.md",
+      "ok": true,
+      "detail": "docs/ONYX_REPAIR_THE_REPAIR_MOVEMENT_RECOVERY_2026-08-13.md"
+    },
+    {
+      "name": "required artifact exists: docs/ONYX_FULL_DOSSIER_IMPLEMENTATION_PASS.md",
+      "ok": true,
+      "detail": "docs/ONYX_FULL_DOSSIER_IMPLEMENTATION_PASS.md"
+    },
+    {
+      "name": "required artifact exists: docs/VIEWER_RECOVERY_AND_BACKEND_CONTRACT.md",
+      "ok": true,
+      "detail": "docs/VIEWER_RECOVERY_AND_BACKEND_CONTRACT.md"
+    },
+    {
+      "name": "required artifact exists: docs/RESEARCH_REFERENCE_DECISIONS_2026-08-13.md",
+      "ok": true,
+      "detail": "docs/RESEARCH_REFERENCE_DECISIONS_2026-08-13.md"
+    },
+    {
+      "name": "required artifact exists: docs/OURSPACE_RUNTIME_CONTRACT.md",
+      "ok": true,
+      "detail": "docs/OURSPACE_RUNTIME_CONTRACT.md"
+    },
+    {
+      "name": "required artifact exists: docs/ONYX_CANONICAL_INSTRUCTIONS_2026-08-13.txt",
+      "ok": true,
+      "detail": "docs/ONYX_CANONICAL_INSTRUCTIONS_2026-08-13.txt"
+    },
+    {
+      "name": "required artifact exists: development/tools/blender_build_onyx_shape_keys.py",
+      "ok": true,
+      "detail": "development/tools/blender_build_onyx_shape_keys.py"
+    },
+    {
+      "name": "required artifact exists: development/tools/compare_surface_points.py",
+      "ok": true,
+      "detail": "development/tools/compare_surface_points.py"
+    },
+    {
+      "name": "required artifact exists: development/tools/onyx_measurement_jig.scad",
+      "ok": true,
+      "detail": "development/tools/onyx_measurement_jig.scad"
+    },
+    {
+      "name": "required artifact exists: development/reference/onyx_measurement_jig.stl",
+      "ok": true,
+      "detail": "development/reference/onyx_measurement_jig.stl"
+    },
+    {
+      "name": "required artifact exists: development/tools/test_movement_recovery.js",
+      "ok": true,
+      "detail": "development/tools/test_movement_recovery.js"
+    },
+    {
+      "name": "required artifact exists: development/movement_donor/Onyx_Cat_Only_dossier_documented_5_viewer.js",
+      "ok": true,
+      "detail": "development/movement_donor/Onyx_Cat_Only_dossier_documented_5_viewer.js"
+    },
+    {
+      "name": "no accidental nested ZIPs",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

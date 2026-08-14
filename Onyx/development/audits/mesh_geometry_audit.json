@@ -1,0 +1,66 @@
+{
+  "mesh": "Cat",
+  "vertexCount": 33972,
+  "triangleCount": 11324,
+  "indexed": false,
+  "degenerateTriangles": 0,
+  "tinyTriangles": 0,
+  "nanTriangles": 0,
+  "minTriangleArea": 0.000006831657845568659,
+  "maxTriangleArea": 0.06434813732947997,
+  "meanTriangleArea": 0.009810744445709063,
+  "expandedDuplicatePositionOccurrences": 28308,
+  "uniqueQuantizedPositions": 5664,
+  "normals": {
+    "present": true,
+    "count": 33972,
+    "badNormals": 0,
+    "zeroNormals": 0
+  },
+  "groups": [
+    {
+      "start": 0,
+      "count": 33972,
+      "materialIndex": 0
+    }
+  ],
+  "boneCount": 85,
+  "animations": [
+    {
+      "index": 0,
+      "name": "Armature|run",
+      "duration": 0.5833333134651184,
+      "tracks": 258
+    },
+    {
+      "index": 1,
+      "name": "Armature|CameraAction",
+      "duration": 0.0416666679084301,
+      "tracks": 258
+    },
+    {
+      "index": 2,
+      "name": "Sphere.001|CameraAction",
+      "duration": 0,
+      "tracks": 0
+    },
+    {
+      "index": 3,
+      "name": "Camera|CameraAction",
+      "duration": 0.0416666679084301,
+      "tracks": 3
+    },
+    {
+      "index": 4,
+      "name": "Sphere|CameraAction",
+      "duration": 0,
+      "tracks": 0
+    },
+    {
+      "index": 5,
+      "name": "Armature|Walk",
+      "duration": 1.125,
+      "tracks": 258
+    }
+  ]
+}

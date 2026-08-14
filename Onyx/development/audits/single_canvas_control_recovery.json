@@ -1,0 +1,20 @@
+{
+  "repair": "single-canvas input/control recovery",
+  "rootCause": "synchronous Ammo thenable plus unsafe .then(...).catch(...) chain could start viewer twice",
+  "workingControlDonor": "Onyx_Cat_Only_dossier_documented(4)",
+  "checks": {
+    "nativePromiseAssimilation": true,
+    "singleViewerGuard": true,
+    "singleAnimationLoopGuard": true,
+    "staleCanvasCleanup": true,
+    "pointerOrbitRecovered": true,
+    "wheelOrbitRecovered": true,
+    "wasdArrowMovementHandlersPreserved": true,
+    "windowBlurClearsInput": true,
+    "play25dDoesNotBlockDeliberateOrbit": true
+  },
+  "modelHashes": {
+    "cat.fbx": "8eaf0de737301de0f378ef3cf42c55a0bf2978514f6ebcc1d6d8c427597edd37",
+    "cat.bin": "779934308199e3641dd59983c6cb61f1125e33ad58686c4465577d44fcbc122c"
+  }
+}

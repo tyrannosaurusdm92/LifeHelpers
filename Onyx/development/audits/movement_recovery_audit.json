@@ -1,0 +1,27 @@
+{
+  "pass": "repair-the-repair movement recovery",
+  "olderDonorViewerSha256": "433745c807e4d956beebccf4d36f05eb7465aaadc8d743aaba50a0aa0de19fa6",
+  "currentViewerSha256": "ae8a96ab11f1510e11d88d36047947b9129ff6c21cf66b0c91f802b0f30a29c8",
+  "defaultMovementProfile": "recovered",
+  "recoveredProfile": {
+    "walkSpeedMps": 0.4734848484848485,
+    "runSpeedMps": 0.7102272727272727,
+    "backwardSpeedMps": 0.4734848484848485,
+    "turnSpeedRadPerSec": 6.0,
+    "autoRunClip": "Armature|Walk (index 5)",
+    "gaitOverlay": "older restrained spine/tail donor motion",
+    "pouchMotion": "older direct sway donor motion",
+    "jump": "newer phased feline jump retained"
+  },
+  "enhancedProfile": "preserved for comparison",
+  "boneOverlayDriftRepair": true,
+  "canonicalModelHashes": {
+    "cat.fbx": "8eaf0de737301de0f378ef3cf42c55a0bf2978514f6ebcc1d6d8c427597edd37",
+    "cat.bin": "779934308199e3641dd59983c6cb61f1125e33ad58686c4465577d44fcbc122c"
+  },
+  "validation": {
+    "passed": true,
+    "passedCount": 129,
+    "totalChecks": 129
+  }
+}

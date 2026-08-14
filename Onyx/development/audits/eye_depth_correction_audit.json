@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-08-13",
+  "method": "Analytical eye-node transform audit plus approximate Cat-mesh local cross-section check using the current morph equations.",
+  "intent": "Keep the visible corneal front nearly where the prior pass placed it while moving the rear hemisphere forward out of the deep skull volume.",
+  "rootScale": 0.000775003,
+  "transformChange": {
+    "previous": "position.z += 4.2; scale x/y/z *= 1.105/1.070/1.085",
+    "current": "position.z += 16.5; scale x/y/z *= 1.040/1.030/0.420"
+  },
+  "eyes": [
+    {
+      "name": "Sphere001",
+      "canonicalCenterZSource": 410.9735412597656,
+      "canonicalDepthRadiusMetersApprox": 0.013142096976113953,
+      "previousPass": {
+        "centerForwardMetersApprox": 0.0032550126,
+        "depthRadiusMetersApprox": 0.014259175219083637,
+        "rearSurfaceRelativeCanonicalCenterMetersApprox": -0.011004162619083636,
+        "frontSurfaceRelativeCanonicalCenterMetersApprox": 0.017514187819083638
+      },
+      "currentPass": {
+        "centerForwardMetersApprox": 0.0127875495,
+        "depthRadiusMetersApprox": 0.0055196807299678595,
+        "rearSurfaceRelativeCanonicalCenterMetersApprox": 0.007267868770032141,
+        "frontSurfaceRelativeCanonicalCenterMetersApprox": 0.018307230229967858
+      },
+      "headCrossSectionApprox": {
+        "catLocalEyeCenter": [
+          -0.3707003979492188,
+          -4.274735412597656,
+          3.0569253540039063
+        ],
+        "catLocalDepthRadius": 0.07122141114250989,
+        "catLocalEyeRearY": -4.203514001455146,
+        "catLocalEyeFrontY": -4.345956823740166,
+        "nearbyBodySampleFrontY20thPercentile": -4.268144955027637,
+        "nearbyBodySampleMedianY": -4.206467234224667,
+        "note": "Cat local Y is longitudinal; more negative is farther forward. Nearest-body samples are an approximation, not a watertight orbital collision test."
+      }
+    },
+    {
+      "name": "Sphere",
+      "canonicalCenterZSource": 410.9735412597656,
+      "canonicalDepthRadiusMetersApprox": 0.013142098450731351,
+      "previousPass": {
+        "centerForwardMetersApprox": 0.0032550126,
+        "depthRadiusMetersApprox": 0.014259176819043515,
+        "rearSurfaceRelativeCanonicalCenterMetersApprox": -0.011004164219043516,
+        "frontSurfaceRelativeCanonicalCenterMetersApprox": 0.017514189419043515
+      },
+      "currentPass": {
+        "centerForwardMetersApprox": 0.0127875495,
+        "depthRadiusMetersApprox": 0.005519681349307168,
+        "rearSurfaceRelativeCanonicalCenterMetersApprox": 0.007267868150692833,
+        "frontSurfaceRelativeCanonicalCenterMetersApprox": 0.018307230849307167
+      },
+      "headCrossSectionApprox": {
+        "catLocalEyeCenter": [
+          0.38494318908691405,
+          -4.274735412597656,
+          3.0569253540039063
+        ],
+        "catLocalDepthRadius": 0.0712214191339539,
+        "catLocalEyeRearY": -4.2035139934637025,
+        "catLocalEyeFrontY": -4.34595683173161,
+        "nearbyBodySampleFrontY20thPercentile": -4.26814543817735,
+        "nearbyBodySampleMedianY": -4.219312347590538,
+        "note": "Cat local Y is longitudinal; more negative is farther forward. Nearest-body samples are an approximation, not a watertight orbital collision test."
+      }
+    }
+  ]
+}

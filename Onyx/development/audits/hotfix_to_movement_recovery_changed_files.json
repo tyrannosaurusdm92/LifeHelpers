@@ -1,0 +1,98 @@
+{
+  "base": "Onyx_Cat_Only_Dossier_Full_Implementation_Viewer_Direct_Open_Hotfix_2026-08-13(1).zip",
+  "movementDonor": "Onyx_Cat_Only_dossier_documented(5).zip",
+  "changedFileCount": 14,
+  "changedFiles": [
+    {
+      "path": "README.md",
+      "change": "modified",
+      "baseSha256": "a750b044f86540827b33faa54d4a0326b6e59291c7f34e65f7d9832cb1a768e8",
+      "currentSha256": "1cba246d8934f0ca34874ad3b042f8c25e133a1bbd7965b4039467148bed37db"
+    },
+    {
+      "path": "development/audits/movement_recovery_audit.json",
+      "change": "added",
+      "baseSha256": null,
+      "currentSha256": "b1568bac57fc04f1f95c2edb4c5ead0af72fb7dee1be9182c6af1b0e3be48aaa"
+    },
+    {
+      "path": "development/audits/package_validation.json",
+      "change": "modified",
+      "baseSha256": "01400e3837033d3f31854f25bd16a0bff3a3c59064b8370767183c4f5514ab91",
+      "currentSha256": "b1d57b1cfe601d087c7b91ff7c9125ad531855cc85f5f5cb3870305eb1d56312"
+    },
+    {
+      "path": "development/audits/package_validation_console.txt",
+      "change": "modified",
+      "baseSha256": "10f68e1f77e897d0a07435ad6898e635e7adf702b33e270c8f4881ade09f64dd",
+      "currentSha256": "bc5a980d6cd621e46dc3766051389abcb7d231440687df765c50fac520644279"
+    },
+    {
+      "path": "development/movement_donor/Onyx_Cat_Only_dossier_documented_5_viewer.js",
+      "change": "added",
+      "baseSha256": null,
+      "currentSha256": "433745c807e4d956beebccf4d36f05eb7465aaadc8d743aaba50a0aa0de19fa6"
+    },
+    {
+      "path": "development/movement_donor/README.md",
+      "change": "added",
+      "baseSha256": null,
+      "currentSha256": "c90ff2fcac367affc5f7eecd4c5e57d3e36c9e125dc6f9de471826671bb1cb3f"
+    },
+    {
+      "path": "development/tools/__pycache__/blender_build_onyx_shape_keys.cpython-313.pyc",
+      "change": "modified",
+      "baseSha256": "e0e5928455c435f5ae0a1d921b27fc49e6a68d7e796f5e327ae021affca6f474",
+      "currentSha256": "cba3bfecd5ac8e2182209b435527777dac5e0b04ae6baa7804fa4822b44c8552"
+    },
+    {
+      "path": "development/tools/__pycache__/compare_surface_points.cpython-313.pyc",
+      "change": "modified",
+      "baseSha256": "f97a114d669954bcabb3dc67bdfa0bc4dcd1b654039183dc6917e922c81da846",
+      "currentSha256": "a7e80490a258cd8b0c8fa5e12569236f540e651447ad7274c785a41fef958867"
+    },
+    {
+      "path": "development/tools/test_movement_recovery.js",
+      "change": "added",
+      "baseSha256": null,
+      "currentSha256": "acc11f992f1ea4ccb8fef2e6a680da41774f6fc1b500c9ac995672d12c1fe963"
+    },
+    {
+      "path": "development/tools/validate_package.js",
+      "change": "modified",
+      "baseSha256": "e96e978fc9c9f858902152808e33a3152cdd893ef40832cf36d66e5ee5ebf4c9",
+      "currentSha256": "35695f09ddcedf48d37c6cb2cdc557e9617fa566bec4e6d69450b1bafa365948"
+    },
+    {
+      "path": "docs/ONYX_REPAIR_THE_REPAIR_MOVEMENT_RECOVERY_2026-08-13.md",
+      "change": "added",
+      "baseSha256": null,
+      "currentSha256": "75a908b0a05df06d1f982b965c54b00d6d5fae85c58afcbc6a669638b538dc48"
+    },
+    {
+      "path": "docs/SHA256SUMS.txt",
+      "change": "modified",
+      "baseSha256": "f3cb3eba0bdc39029156325bcc120629caa55fb0cd3c23c53c7caf2d6a75be83",
+      "currentSha256": "6d399e70fe040e5dd71bb8e1b9fa49d62f46e59a0f97f49f00863dc545cfa9b8"
+    },
+    {
+      "path": "index.html",
+      "change": "modified",
+      "baseSha256": "0e5b3bade3796bd800b83024fba89c67e3746e1d236c9bb36e316b7829e78f56",
+      "currentSha256": "b844afa8fd5825ed9c5267f0e12b9909812f25140a3c50f70d87d4c6c97e096d"
+    },
+    {
+      "path": "viewer.js",
+      "change": "modified",
+      "baseSha256": "798a5be72dc2c3d48d65c17c3bd246d9af2030bc62139f44be37a407c2c80210",
+      "currentSha256": "ae8a96ab11f1510e11d88d36047947b9129ff6c21cf66b0c91f802b0f30a29c8"
+    }
+  ],
+  "protectedUnchanged": {
+    "models/fbx/cat.fbx": true,
+    "models/fbx/cat.bin": true,
+    "viewer-assets.js": true,
+    "runtime/onyx-dossier-runtime.js": true,
+    "runtime/onyx-progression-runtime.js": true
+  }
+}

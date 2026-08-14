@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-08-13",
+  "method": "Offline evaluation of the exact viewer.js layer equations against the dumped runtime Cat position/skinIndex/skinWeight buffers.",
+  "topology": {
+    "sourceVertices": 33972,
+    "outputVertices": 33972,
+    "vertexCountPreserved": true
+  },
+  "sourceToRuntimeMetersApprox": 0.07750030000000001,
+  "layers": {
+    "primaryAnatomy": {
+      "verticesAffected": 6538,
+      "maxSourceUnits": 0.10282314138936366,
+      "maxRuntimeMetersApprox": 0.007968824304618101,
+      "maxRuntimeInchesApprox": 0.31373324033929534,
+      "p95SourceUnits": 0.019756891229487872
+    },
+    "hindquarterCarriage": {
+      "verticesAffected": 7716,
+      "maxSourceUnits": 0.2745181481392308,
+      "maxRuntimeMetersApprox": 0.021275238836234833,
+      "maxRuntimeInchesApprox": 0.8376078281982218,
+      "p95SourceUnits": 0.08655906321317006
+    },
+    "chestFlow": {
+      "verticesAffected": 4792,
+      "maxSourceUnits": 0.07891359641739823,
+      "maxRuntimeMetersApprox": 0.0061158273964272885,
+      "maxRuntimeInchesApprox": 0.24078060615855468,
+      "p95SourceUnits": 0.013212516736250285
+    },
+    "primordialPouch": {
+      "verticesAffected": 1228,
+      "maxSourceUnits": 0.4969696276186055,
+      "maxRuntimeMetersApprox": 0.03851529523133022,
+      "maxRuntimeInchesApprox": 1.5163502059578826,
+      "p95SourceUnits": 0.0
+    },
+    "faceCorrections": {
+      "verticesAffected": 5682,
+      "maxSourceUnits": 0.1271849912574247,
+      "maxRuntimeMetersApprox": 0.009856874977947792,
+      "maxRuntimeInchesApprox": 0.3880659440136926,
+      "p95SourceUnits": 0.06628296413795023
+    }
+  },
+  "combined": {
+    "maxSourceUnits": 0.5105850492395217,
+    "maxRuntimeMetersApprox": 0.039570494491577714,
+    "maxRuntimeInchesApprox": 1.5578934839203824,
+    "verticesAffected": 16190
+  },
+  "rearCarriage": {
+    "rearDorsalRegionVertexCount": 3666,
+    "medianVerticalDeltaSourceUnits": -0.07202692214736439,
+    "p10VerticalDeltaSourceUnits": -0.23206971406877663,
+    "minVerticalDeltaSourceUnits": -0.2713134663330492,
+    "note": "Negative is lower. Paws/leg-heavy vertices are conservatively limited."
+  }
+}
