@@ -1,0 +1,1211 @@
+{
+  "schema": "pdf_to_json_text_layout_v1",
+  "created_at_utc": "2026-06-25T17:18:50.890535+00:00",
+  "group_type": "single_pdf_json",
+  "merge_policy": {
+    "threshold": "merge documents when TF-IDF cosine similarity >= 0.60 OR 5-token shingle containment of the smaller document >= 0.60",
+    "why_containment_is_used": "Containment catches shorter PDFs that are substantially embedded inside longer PDFs even when whole-document Jaccard/cosine is lower."
+  },
+  "source_document_count": 1,
+  "source_documents": [
+    {
+      "document_id": "time_management_skills_for_adhd_brains_practical_advice",
+      "source_index": 20,
+      "original_filename": "Time Management Skills for ADHD Brains_ Practical Advice.pdf",
+      "source_relative_path": "adhd/Time Management Skills for ADHD Brains_ Practical Advice.pdf",
+      "sha256": "96b28971a1a401210271815f7703754f3e44e9d271c6acbe522bf03acfae0f64",
+      "title": "Time Management Skills for ADHD Brains: Practical Advice",
+      "page_count": 5,
+      "character_count": 11317,
+      "word_count": 2004,
+      "link_count": 29,
+      "image_count": 2,
+      "form_field_count": 0,
+      "annotation_count": 0
+    }
+  ],
+  "within_group_similarity": [],
+  "documents": [
+    {
+      "document_id": "time_management_skills_for_adhd_brains_practical_advice",
+      "source_index": 20,
+      "original_filename": "Time Management Skills for ADHD Brains_ Practical Advice.pdf",
+      "source_relative_path": "adhd/Time Management Skills for ADHD Brains_ Practical Advice.pdf",
+      "sha256": "96b28971a1a401210271815f7703754f3e44e9d271c6acbe522bf03acfae0f64",
+      "title": "Time Management Skills for ADHD Brains: Practical Advice",
+      "pdf_metadata": {
+        "format": "PDF 1.4",
+        "title": "Time Management Skills for ADHD Brains: Practical Advice",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "producer": "Skia/PDF m149",
+        "creationDate": "D:20260625143435+00'00'",
+        "modDate": "D:20260625143435+00'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "page_count": 5,
+      "character_count": 11317,
+      "word_count": 2004,
+      "link_count": 29,
+      "image_count": 2,
+      "form_field_count": 0,
+      "annotation_count": 0,
+      "full_text": "ADHD Adults > Getting Things Done\nTIME & PRODUCTIVITY\nADHD Minds Are Trapped in Now (& Other Time Management\nTruths)\nAdults with ADHD think about time differently. Our inability to anticipate future rewards and\nconsequences, our remarkable ability to procrastinate, our inability to ignore the static around us —\nthese traits all contribute to our trouble with deadlines, punctuality, and planning. Here, learn how\nto combat these ADD tendencies to get more done every day.\nUpdated on September 5, 2025\n8 min read\nClick to Read 3 Comments 💬\nBy Ari Tuckman, Psy.D.\nIn This Article\n1. ADHD Is Too Much Present, Not Enough Future\n2. See Time by Externalizing It\n3. Feel Time by Maximizing Motivation\n4. Tip the Balance\n5. Practical Ways for ADHD Brains to See Time\n6. Practical Ways to Be Mindful of Time\nThe unofficial adage of ADHD time management is, “By the time you feel it, it’s too late.” ADHD expert Russell\nBarkley, Ph.D., has famously said that ADHD is not a disorder of knowing what to do, it’s a disorder of doing\nwhat you know — at the right times and places.\nStruggles with time management cause the most heartache and difficulties with getting things done for\nindividuals with attention deficit hyperactivity disorder (ADHD or ADD). I had a client whose coworker noticed\nthat if she asked him to do something, and he did it immediately, he would do a great job. If she said he could do\nit later, it probably wouldn’t get done. The task was easy, but time management was hard.\nADHD is mostly about executive dysfunction. Those deficits explain why people with ADHD have the struggles\nthey do. Our executive functions help us do what we know we should do. Individuals with ADHD are stuck in the\npresent, and have a hard time doing what will benefit them later. The benefit to doing tomorrow’s office\nADHD Science & Strategies\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n1/5\n\n\nassignment or embracing healthy habits now might be avoiding problems and illness later. Looking at ADHD as\nbeing about the use of time will change how you understand it and manage it.\nADHD Is Too Much Present, Not Enough Future\nLife brings a constant barrage of stimuli competing for our attention and goals needing our efforts. Some of\nthese stimuli and tasks are fun and easy, whereas others are boring, frustrating, or exhausting. Some give us\nimmediate payoff (“Ooh, that tweet is hysterical!”), but others involve doing something now for a future benefit\n(“If I put away the receipts, I’ll be better off for next year’s taxes.”)\nWe should try to strike a good balance between enjoying today and preparing for tomorrow. It is hard to\ndisconnect from the distractions and temptations of the moment to create the space where we can mull over our\noptions and make the best decision. Individuals with ADHD are more absorbed than others by what is\nhappening now. It’s harder to create that space to give the future its due until the future becomes the present\nand the scramble begins.\n[Take This Test: Could You Have an Executive Function Deficit?]\nThose with ADHD are heavily influenced by what is going on around them. Those without ADHD have an easier\ntime ignoring external stimuli. Neurotypicals can apply their executive functions to decide what to do based on\ntheir goals. The further away a potential reward or punishment is, the less people with ADHD are motivated by\nit. A Friday deadline doesn’t mean much on Monday. Setting tomorrow’s 6 a.m. alarm doesn’t get them into bed\nat 10 p.m. People with ADHD understand that it would be good to act sooner rather than later — they just have\ntrouble actually doing it.\nI have a client who has been a salesman for 20 years. He is great with his customers, but he has trouble taking\nnotes while meeting with them, and is always late with his sales report. Yet the inability to do the sales report\non the 31st doesn’t motivate him to take notes when the new month comes around.\nFor many adults with ADHD, future events and consequences don’t show up on their mental radars until much\nlater, and they don’t notice them. Even if some task is on their radar screen, they can’t muster the motivation to\nact on it. This leaves them overly dependent on the pressure of the looming deadline, and, therefore, free to\nprocrastinate, as my salesman client usually does.\nSee Time by Externalizing It\nPeople with ADHD don’t understand time as clearly as they should — What’s due when? How long will that task\ntake? How long have I been doing this task? Is it time to leave yet? But that’s OK, if you supplement internal\nabilities with external tools, beginning with plenty of clocks within easy eye-shot. Analog clocks are best\nbecause they make the passage of time more visible. Make it easy to see what time it is, and also make an\nintentional choice to look at those clocks and think about what time means — Should I keep doing what I am\ndoing? Is it time to do something else? Success starts with awareness, but requires intention.\n[Get This Free Handout: How to Manage Your Time at Work]\nIt’s hard to do the right thing at the right time if you don’t know what you’re supposed to be doing now.\nTherefore, some sort of scheduling system is necessary for most of us. Whether you use a paper or an electronic\nschedule, the more you pay attention to it, the better it works. If you have a lot of items in your schedule, set\nreminders and alarms to help you stay on track. Get rid of low-priority alerts, so the important ones stand out.\nEven if you aren’t perfect about consulting your schedule, having one is better than winging it from memory.\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n2/5\n\n\nI often recommend that my clients put to-do list items into their schedule. Tasks tend to languish on to-do lists\n(“Is now the time to do that?”). By planning to take action at an actual time, you are more likely to get a task\ndone, and less likely to merely react to whatever comes at you during the day. I have a client who runs a busy\noffice and could spend all week just responding to emails, calls, and drop-ins. He has been planning his time\nbetter and shutting his office door to work on specific tasks.\nScheduling tasks lets you see your day filling up, which can reduce over-commitment. Block out chunks of time\nfor each task, rather than having a list of tasks to be completed. If circumstances change or something isn’t\ncompleted, no big deal — move it to somewhere else on your schedule. You will see the big picture: the time you\nhave in the day and the tasks that are beginning to fill that time.\nFeel Time by Maximizing Motivation\nI’m a believer in natural consequences, but they have their limits. The problem for individuals with ADHD is\nthat the last awful, late-night marathon doesn’t affect what happens this time. Even if they know they should\nget started earlier, they don’t feel the pressure soon enough. Meanwhile, the temptations of the present create\nan unfair fight, and the future has a hard time winning. (“OK, let’s go out to eat. We’ll save for retirement next\nweek.”) My programmer client knows that he should use breaks to stay current on documentation, but instead\nfinds himself on YouTube.\nIn order to feel future consequences, we need to remember past experiences and bring that feeling to the\npresent. Imagine the future in as much detail as possible: “Won’t I feel better on Thursday night if I start\npreparing for that Friday morning meeting now? How will I feel about myself on Thursday night and also during\nthe meeting? What if I wait until Thursday evening — how will that feel?” The more vividly you can imagine\nfeelings and consequences, the more motivating it will be.\nTip the Balance\nTime management may feel like a slippery, foreign concept, but it basically comes down to the tug of war\nbetween maximizing the present or maximizing the future. The siren song of the present will always call\nsweetly, so apply some intentional effort to keep those future goals front and center. Managing ADHD mostly\ninvolves helping the future to win over the present.\nPractical Ways for ADHD Brains to See Time\n1. For your morning routine, post a note in the bathroom stating the time you need to leave the bathroom. Put\na similar note in your bedroom, and another in the kitchen. Make sure there is a visible clock in each room.\n2. When putting appointments into your schedule, include travel time before and after, as well as prep or\ntransition time. Then set an alarm to go off when that first step begins.\n3. Take a couple minutes at the start of your day to plan your priorities — and when you will work on them.\n4. Put your lights and/or TV on a timer to shut off, to remind you to go to bed.\n5. Use Internet-limiting devices, like Circle, to limit time online.\n6. Turn off auto-play on your various streaming services, so you see the current time between videos.\nPractical Ways to Be Mindful of Time\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n3/5\n\n\n1. Schedule frequent check-ins with your boss or coworkers, so you can’t procrastinate.\n2. Create external accountability by telling someone else what you intend to get done, then asking him to\ncheck in with you.\n3. Create intermediate deadlines for your big projects (finish writing the report by Sunday, first draft by\nWednesday).\n4. Make sleep, diet, and exercise a priority, since these will give you more energy and allow you to use your time\nwell.\n5. Create rewards for completing tasks (you can go out after you finish the dishes).\n6. Have a set bedtime, so that you feel pressure to get things done earlier in the evening.\n7. If delaying is costing you financially (in late fees, etc.), imagine what you can do with the money you will save\nby acting sooner.\n[Read This Next: 4 Steps to Restore Order & Productivity]\nSUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you.\n \n \n \n\n\n\nThe ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare.\nREVIEW OUR EDITORIAL PROCESS\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n4/5\n\n\nContent is periodically reviewed and updated to reflect new health insights.\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only.\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n5/5",
+      "pages": [
+        {
+          "page_number": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "ADHD Adults > Getting Things Done\nTIME & PRODUCTIVITY\nADHD Minds Are Trapped in Now (& Other Time Management\nTruths)\nAdults with ADHD think about time differently. Our inability to anticipate future rewards and\nconsequences, our remarkable ability to procrastinate, our inability to ignore the static around us —\nthese traits all contribute to our trouble with deadlines, punctuality, and planning. Here, learn how\nto combat these ADD tendencies to get more done every day.\nUpdated on September 5, 2025\n8 min read\nClick to Read 3 Comments 💬\nBy Ari Tuckman, Psy.D.\nIn This Article\n1. ADHD Is Too Much Present, Not Enough Future\n2. See Time by Externalizing It\n3. Feel Time by Maximizing Motivation\n4. Tip the Balance\n5. Practical Ways for ADHD Brains to See Time\n6. Practical Ways to Be Mindful of Time\nThe unofficial adage of ADHD time management is, “By the time you feel it, it’s too late.” ADHD expert Russell\nBarkley, Ph.D., has famously said that ADHD is not a disorder of knowing what to do, it’s a disorder of doing\nwhat you know — at the right times and places.\nStruggles with time management cause the most heartache and difficulties with getting things done for\nindividuals with attention deficit hyperactivity disorder (ADHD or ADD). I had a client whose coworker noticed\nthat if she asked him to do something, and he did it immediately, he would do a great job. If she said he could do\nit later, it probably wouldn’t get done. The task was easy, but time management was hard.\nADHD is mostly about executive dysfunction. Those deficits explain why people with ADHD have the struggles\nthey do. Our executive functions help us do what we know we should do. Individuals with ADHD are stuck in the\npresent, and have a hard time doing what will benefit them later. The benefit to doing tomorrow’s office\nADHD Science & Strategies\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n1/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                102.18,
+                220.75,
+                116.32
+              ],
+              "text": "ADHD Adults > Getting Things Done"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                123.92,
+                157.75,
+                137.12
+              ],
+              "text": "TIME & PRODUCTIVITY"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                142.88,
+                538.71,
+                186.18
+              ],
+              "text": "ADHD Minds Are Trapped in Now (& Other Time Management\nTruths)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                186.19,
+                550.59,
+                247.78
+              ],
+              "text": "Adults with ADHD think about time differently. Our inability to anticipate future rewards and\nconsequences, our remarkable ability to procrastinate, our inability to ignore the static around us —\nthese traits all contribute to our trouble with deadlines, punctuality, and planning. Here, learn how\nto combat these ADD tendencies to get more done every day."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                229.28,
+                255.93,
+                439.88,
+                271.57
+              ],
+              "text": "Updated on September 5, 2025\n8 min read"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                288.19,
+                210.49,
+                303.28
+              ],
+              "text": "Click to Read 3 Comments 💬"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                106.88,
+                255.93,
+                212.77,
+                270.07
+              ],
+              "text": "By Ari Tuckman, Psy.D."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                68.77,
+                321.42,
+                144.21,
+                337.17
+              ],
+              "text": "In This Article"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                71.67,
+                346.31,
+                365.5,
+                369.09
+              ],
+              "text": "1. ADHD Is Too Much Present, Not Enough Future"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                69.8,
+                382.31,
+                251.68,
+                405.09
+              ],
+              "text": "2. See Time by Externalizing It"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                70.77,
+                419.06,
+                302.86,
+                441.84
+              ],
+              "text": "3. Feel Time by Maximizing Motivation"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                69.57,
+                455.81,
+                177.19,
+                478.59
+              ],
+              "text": "4. Tip the Balance"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                70.72,
+                492.56,
+                345.68,
+                515.34
+              ],
+              "text": "5. Practical Ways for ADHD Brains to See Time"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                69.59,
+                529.31,
+                303.48,
+                552.09
+              ],
+              "text": "6. Practical Ways to Be Mindful of Time"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                55.12,
+                586.88,
+                549.81,
+                629.06
+              ],
+              "text": "The unofficial adage of ADHD time management is, “By the time you feel it, it’s too late.” ADHD expert Russell\nBarkley, Ph.D., has famously said that ADHD is not a disorder of knowing what to do, it’s a disorder of doing\nwhat you know — at the right times and places."
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                55.12,
+                642.38,
+                553.61,
+                698.06
+              ],
+              "text": "Struggles with time management cause the most heartache and difficulties with getting things done for\nindividuals with attention deficit hyperactivity disorder (ADHD or ADD). I had a client whose coworker noticed\nthat if she asked him to do something, and he did it immediately, he would do a great job. If she said he could do\nit later, it probably wouldn’t get done. The task was easy, but time management was hard."
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                55.12,
+                711.38,
+                552.56,
+                753.56
+              ],
+              "text": "ADHD is mostly about executive dysfunction. Those deficits explain why people with ADHD have the struggles\nthey do. Our executive functions help us do what we know we should do. Individuals with ADHD are stuck in the\npresent, and have a hard time doing what will benefit them later. The benefit to doing tomorrow’s office"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                193.47,
+                52.22,
+                308.92,
+                66.14
+              ],
+              "text": "ADHD Science & Strategies"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                24.0,
+                15.26,
+                457.93,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/time-management-skills-adhd-brain/\n1/5"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 7,
+              "bbox": [
+                55.5,
+                246.75,
+                87.0,
+                282.0
+              ],
+              "width_px": 120,
+              "height_px": 135,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/",
+              "bbox": [
+                55.5,
+                102.0,
+                114.75,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/getting-things-done/",
+              "bbox": [
+                126.0,
+                102.0,
+                220.5,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/getting-things-done/time-productivity/",
+              "bbox": [
+                55.5,
+                123.75,
+                157.5,
+                137.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/reviews/post/time-management-skills-adhd-brain/",
+              "bbox": [
+                55.5,
+                288.0,
+                210.75,
+                303.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/author/ari-tuckman-psy-d-mba/",
+              "bbox": [
+                120.75,
+                255.75,
+                213.0,
+                270.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/time-management-tools-adhd-deadlines/",
+              "bbox": [
+                189.0,
+                586.5,
+                271.5,
+                602.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/author/russell-barkley-ph-d/",
+              "bbox": [
+                517.5,
+                586.5,
+                549.75,
+                602.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/author/russell-barkley-ph-d/",
+              "bbox": [
+                55.5,
+                600.0,
+                119.25,
+                615.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/slideshows/getting-things-done/",
+              "bbox": [
+                415.5,
+                642.0,
+                503.25,
+                657.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/what-is-adhd-symptoms-causes-treatments/",
+              "bbox": [
+                309.75,
+                655.5,
+                337.5,
+                671.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/add-adhd-symptoms-difference/",
+              "bbox": [
+                351.0,
+                655.5,
+                372.0,
+                671.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/what-is-executive-function-disorder/",
+              "bbox": [
+                156.0,
+                711.0,
+                254.25,
+                726.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/what-is-executive-function-disorder/",
+              "bbox": [
+                156.0,
+                711.0,
+                254.25,
+                726.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/",
+              "bbox": [
+                55.5,
+                46.5,
+                558.0,
+                68.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "assignment or embracing healthy habits now might be avoiding problems and illness later. Looking at ADHD as\nbeing about the use of time will change how you understand it and manage it.\nADHD Is Too Much Present, Not Enough Future\nLife brings a constant barrage of stimuli competing for our attention and goals needing our efforts. Some of\nthese stimuli and tasks are fun and easy, whereas others are boring, frustrating, or exhausting. Some give us\nimmediate payoff (“Ooh, that tweet is hysterical!”), but others involve doing something now for a future benefit\n(“If I put away the receipts, I’ll be better off for next year’s taxes.”)\nWe should try to strike a good balance between enjoying today and preparing for tomorrow. It is hard to\ndisconnect from the distractions and temptations of the moment to create the space where we can mull over our\noptions and make the best decision. Individuals with ADHD are more absorbed than others by what is\nhappening now. It’s harder to create that space to give the future its due until the future becomes the present\nand the scramble begins.\n[Take This Test: Could You Have an Executive Function Deficit?]\nThose with ADHD are heavily influenced by what is going on around them. Those without ADHD have an easier\ntime ignoring external stimuli. Neurotypicals can apply their executive functions to decide what to do based on\ntheir goals. The further away a potential reward or punishment is, the less people with ADHD are motivated by\nit. A Friday deadline doesn’t mean much on Monday. Setting tomorrow’s 6 a.m. alarm doesn’t get them into bed\nat 10 p.m. People with ADHD understand that it would be good to act sooner rather than later — they just have\ntrouble actually doing it.\nI have a client who has been a salesman for 20 years. He is great with his customers, but he has trouble taking\nnotes while meeting with them, and is always late with his sales report. Yet the inability to do the sales report\non the 31st doesn’t motivate him to take notes when the new month comes around.\nFor many adults with ADHD, future events and consequences don’t show up on their mental radars until much\nlater, and they don’t notice them. Even if some task is on their radar screen, they can’t muster the motivation to\nact on it. This leaves them overly dependent on the pressure of the looming deadline, and, therefore, free to\nprocrastinate, as my salesman client usually does.\nSee Time by Externalizing It\nPeople with ADHD don’t understand time as clearly as they should — What’s due when? How long will that task\ntake? How long have I been doing this task? Is it time to leave yet? But that’s OK, if you supplement internal\nabilities with external tools, beginning with plenty of clocks within easy eye-shot. Analog clocks are best\nbecause they make the passage of time more visible. Make it easy to see what time it is, and also make an\nintentional choice to look at those clocks and think about what time means — Should I keep doing what I am\ndoing? Is it time to do something else? Success starts with awareness, but requires intention.\n[Get This Free Handout: How to Manage Your Time at Work]\nIt’s hard to do the right thing at the right time if you don’t know what you’re supposed to be doing now.\nTherefore, some sort of scheduling system is necessary for most of us. Whether you use a paper or an electronic\nschedule, the more you pay attention to it, the better it works. If you have a lot of items in your schedule, set\nreminders and alarms to help you stay on track. Get rid of low-priority alerts, so the important ones stand out.\nEven if you aren’t perfect about consulting your schedule, having one is better than winging it from memory.\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n2/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                27.38,
+                552.71,
+                56.06
+              ],
+              "text": "assignment or embracing healthy habits now might be avoiding problems and illness later. Looking at ADHD as\nbeing about the use of time will change how you understand it and manage it."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                70.79,
+                418.35,
+                93.41
+              ],
+              "text": "ADHD Is Too Much Present, Not Enough Future"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                107.62,
+                556.82,
+                163.31
+              ],
+              "text": "Life brings a constant barrage of stimuli competing for our attention and goals needing our efforts. Some of\nthese stimuli and tasks are fun and easy, whereas others are boring, frustrating, or exhausting. Some give us\nimmediate payoff (“Ooh, that tweet is hysterical!”), but others involve doing something now for a future benefit\n(“If I put away the receipts, I’ll be better off for next year’s taxes.”)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                176.62,
+                556.31,
+                245.81
+              ],
+              "text": "We should try to strike a good balance between enjoying today and preparing for tomorrow. It is hard to\ndisconnect from the distractions and temptations of the moment to create the space where we can mull over our\noptions and make the best decision. Individuals with ADHD are more absorbed than others by what is\nhappening now. It’s harder to create that space to give the future its due until the future becomes the present\nand the scramble begins."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                53.86,
+                259.12,
+                341.77,
+                274.31
+              ],
+              "text": "[Take This Test: Could You Have an Executive Function Deficit?]"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                287.62,
+                555.33,
+                370.31
+              ],
+              "text": "Those with ADHD are heavily influenced by what is going on around them. Those without ADHD have an easier\ntime ignoring external stimuli. Neurotypicals can apply their executive functions to decide what to do based on\ntheir goals. The further away a potential reward or punishment is, the less people with ADHD are motivated by\nit. A Friday deadline doesn’t mean much on Monday. Setting tomorrow’s 6 a.m. alarm doesn’t get them into bed\nat 10 p.m. People with ADHD understand that it would be good to act sooner rather than later — they just have\ntrouble actually doing it."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                383.62,
+                544.11,
+                425.81
+              ],
+              "text": "I have a client who has been a salesman for 20 years. He is great with his customers, but he has trouble taking\nnotes while meeting with them, and is always late with his sales report. Yet the inability to do the sales report\non the 31st doesn’t motivate him to take notes when the new month comes around."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                439.12,
+                556.52,
+                494.81
+              ],
+              "text": "For many adults with ADHD, future events and consequences don’t show up on their mental radars until much\nlater, and they don’t notice them. Even if some task is on their radar screen, they can’t muster the motivation to\nact on it. This leaves them overly dependent on the pressure of the looming deadline, and, therefore, free to\nprocrastinate, as my salesman client usually does."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                509.54,
+                273.68,
+                532.16
+              ],
+              "text": "See Time by Externalizing It"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                53.86,
+                546.38,
+                555.7,
+                629.06
+              ],
+              "text": "People with ADHD don’t understand time as clearly as they should — What’s due when? How long will that task\ntake? How long have I been doing this task? Is it time to leave yet? But that’s OK, if you supplement internal\nabilities with external tools, beginning with plenty of clocks within easy eye-shot. Analog clocks are best\nbecause they make the passage of time more visible. Make it easy to see what time it is, and also make an\nintentional choice to look at those clocks and think about what time means — Should I keep doing what I am\ndoing? Is it time to do something else? Success starts with awareness, but requires intention."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                53.86,
+                642.38,
+                324.56,
+                657.56
+              ],
+              "text": "[Get This Free Handout: How to Manage Your Time at Work]"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                55.12,
+                670.88,
+                552.12,
+                740.06
+              ],
+              "text": "It’s hard to do the right thing at the right time if you don’t know what you’re supposed to be doing now.\nTherefore, some sort of scheduling system is necessary for most of us. Whether you use a paper or an electronic\nschedule, the more you pay attention to it, the better it works. If you have a lot of items in your schedule, set\nreminders and alarms to help you stay on track. Get rid of low-priority alerts, so the important ones stand out.\nEven if you aren’t perfect about consulting your schedule, having one is better than winging it from memory."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                24.0,
+                15.26,
+                457.93,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/time-management-skills-adhd-brain/\n2/5"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/executive-function-deficit-adhd-symptoms-test-for-adults/?src=embed_link",
+              "bbox": [
+                59.25,
+                258.75,
+                335.25,
+                274.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/download/be-more-productive-at-work/?src=embed_link",
+              "bbox": [
+                59.25,
+                642.0,
+                318.0,
+                657.75
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "I often recommend that my clients put to-do list items into their schedule. Tasks tend to languish on to-do lists\n(“Is now the time to do that?”). By planning to take action at an actual time, you are more likely to get a task\ndone, and less likely to merely react to whatever comes at you during the day. I have a client who runs a busy\noffice and could spend all week just responding to emails, calls, and drop-ins. He has been planning his time\nbetter and shutting his office door to work on specific tasks.\nScheduling tasks lets you see your day filling up, which can reduce over-commitment. Block out chunks of time\nfor each task, rather than having a list of tasks to be completed. If circumstances change or something isn’t\ncompleted, no big deal — move it to somewhere else on your schedule. You will see the big picture: the time you\nhave in the day and the tasks that are beginning to fill that time.\nFeel Time by Maximizing Motivation\nI’m a believer in natural consequences, but they have their limits. The problem for individuals with ADHD is\nthat the last awful, late-night marathon doesn’t affect what happens this time. Even if they know they should\nget started earlier, they don’t feel the pressure soon enough. Meanwhile, the temptations of the present create\nan unfair fight, and the future has a hard time winning. (“OK, let’s go out to eat. We’ll save for retirement next\nweek.”) My programmer client knows that he should use breaks to stay current on documentation, but instead\nfinds himself on YouTube.\nIn order to feel future consequences, we need to remember past experiences and bring that feeling to the\npresent. Imagine the future in as much detail as possible: “Won’t I feel better on Thursday night if I start\npreparing for that Friday morning meeting now? How will I feel about myself on Thursday night and also during\nthe meeting? What if I wait until Thursday evening — how will that feel?” The more vividly you can imagine\nfeelings and consequences, the more motivating it will be.\nTip the Balance\nTime management may feel like a slippery, foreign concept, but it basically comes down to the tug of war\nbetween maximizing the present or maximizing the future. The siren song of the present will always call\nsweetly, so apply some intentional effort to keep those future goals front and center. Managing ADHD mostly\ninvolves helping the future to win over the present.\nPractical Ways for ADHD Brains to See Time\n1. For your morning routine, post a note in the bathroom stating the time you need to leave the bathroom. Put\na similar note in your bedroom, and another in the kitchen. Make sure there is a visible clock in each room.\n2. When putting appointments into your schedule, include travel time before and after, as well as prep or\ntransition time. Then set an alarm to go off when that first step begins.\n3. Take a couple minutes at the start of your day to plan your priorities — and when you will work on them.\n4. Put your lights and/or TV on a timer to shut off, to remind you to go to bed.\n5. Use Internet-limiting devices, like Circle, to limit time online.\n6. Turn off auto-play on your various streaming services, so you see the current time between videos.\nPractical Ways to Be Mindful of Time\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n3/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                27.38,
+                554.42,
+                96.56
+              ],
+              "text": "I often recommend that my clients put to-do list items into their schedule. Tasks tend to languish on to-do lists\n(“Is now the time to do that?”). By planning to take action at an actual time, you are more likely to get a task\ndone, and less likely to merely react to whatever comes at you during the day. I have a client who runs a busy\noffice and could spend all week just responding to emails, calls, and drop-ins. He has been planning his time\nbetter and shutting his office door to work on specific tasks."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                109.88,
+                553.56,
+                165.56
+              ],
+              "text": "Scheduling tasks lets you see your day filling up, which can reduce over-commitment. Block out chunks of time\nfor each task, rather than having a list of tasks to be completed. If circumstances change or something isn’t\ncompleted, no big deal — move it to somewhere else on your schedule. You will see the big picture: the time you\nhave in the day and the tasks that are beginning to fill that time."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                180.29,
+                338.14,
+                202.91
+              ],
+              "text": "Feel Time by Maximizing Motivation"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                217.12,
+                549.9,
+                299.81
+              ],
+              "text": "I’m a believer in natural consequences, but they have their limits. The problem for individuals with ADHD is\nthat the last awful, late-night marathon doesn’t affect what happens this time. Even if they know they should\nget started earlier, they don’t feel the pressure soon enough. Meanwhile, the temptations of the present create\nan unfair fight, and the future has a hard time winning. (“OK, let’s go out to eat. We’ll save for retirement next\nweek.”) My programmer client knows that he should use breaks to stay current on documentation, but instead\nfinds himself on YouTube."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                313.12,
+                552.44,
+                382.31
+              ],
+              "text": "In order to feel future consequences, we need to remember past experiences and bring that feeling to the\npresent. Imagine the future in as much detail as possible: “Won’t I feel better on Thursday night if I start\npreparing for that Friday morning meeting now? How will I feel about myself on Thursday night and also during\nthe meeting? What if I wait until Thursday evening — how will that feel?” The more vividly you can imagine\nfeelings and consequences, the more motivating it will be."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                397.04,
+                176.64,
+                419.66
+              ],
+              "text": "Tip the Balance"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                433.88,
+                543.37,
+                489.56
+              ],
+              "text": "Time management may feel like a slippery, foreign concept, but it basically comes down to the tug of war\nbetween maximizing the present or maximizing the future. The siren song of the present will always call\nsweetly, so apply some intentional effort to keep those future goals front and center. Managing ADHD mostly\ninvolves helping the future to win over the present."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                504.29,
+                395.04,
+                526.91
+              ],
+              "text": "Practical Ways for ADHD Brains to See Time"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                541.12,
+                551.45,
+                569.81
+              ],
+              "text": "1. For your morning routine, post a note in the bathroom stating the time you need to leave the bathroom. Put\na similar note in your bedroom, and another in the kitchen. Make sure there is a visible clock in each room."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                583.12,
+                529.34,
+                611.81
+              ],
+              "text": "2. When putting appointments into your schedule, include travel time before and after, as well as prep or\ntransition time. Then set an alarm to go off when that first step begins."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                55.12,
+                625.12,
+                534.13,
+                640.31
+              ],
+              "text": "3. Take a couple minutes at the start of your day to plan your priorities — and when you will work on them."
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                55.12,
+                653.62,
+                400.91,
+                668.81
+              ],
+              "text": "4. Put your lights and/or TV on a timer to shut off, to remind you to go to bed."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                682.12,
+                346.05,
+                697.31
+              ],
+              "text": "5. Use Internet-limiting devices, like Circle, to limit time online."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                55.12,
+                710.62,
+                509.96,
+                725.81
+              ],
+              "text": "6. Turn off auto-play on your various streaming services, so you see the current time between videos."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                740.54,
+                341.14,
+                763.16
+              ],
+              "text": "Practical Ways to Be Mindful of Time"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                24.0,
+                15.26,
+                457.93,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/time-management-skills-adhd-brain/\n3/5"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/adhd-morning-routine-stress-free-kids/",
+              "bbox": [
+                104.25,
+                540.75,
+                180.0,
+                556.5
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "1. Schedule frequent check-ins with your boss or coworkers, so you can’t procrastinate.\n2. Create external accountability by telling someone else what you intend to get done, then asking him to\ncheck in with you.\n3. Create intermediate deadlines for your big projects (finish writing the report by Sunday, first draft by\nWednesday).\n4. Make sleep, diet, and exercise a priority, since these will give you more energy and allow you to use your time\nwell.\n5. Create rewards for completing tasks (you can go out after you finish the dishes).\n6. Have a set bedtime, so that you feel pressure to get things done earlier in the evening.\n7. If delaying is costing you financially (in late fees, etc.), imagine what you can do with the money you will save\nby acting sooner.\n[Read This Next: 4 Steps to Restore Order & Productivity]\nSUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you.\n \n \n \n\n\n\nThe ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare.\nREVIEW OUR EDITORIAL PROCESS\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n4/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                27.38,
+                448.87,
+                42.56
+              ],
+              "text": "1. Schedule frequent check-ins with your boss or coworkers, so you can’t procrastinate."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                55.88,
+                529.69,
+                84.56
+              ],
+              "text": "2. Create external accountability by telling someone else what you intend to get done, then asking him to\ncheck in with you."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                97.88,
+                519.18,
+                126.56
+              ],
+              "text": "3. Create intermediate deadlines for your big projects (finish writing the report by Sunday, first draft by\nWednesday)."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                139.88,
+                554.51,
+                168.56
+              ],
+              "text": "4. Make sleep, diet, and exercise a priority, since these will give you more energy and allow you to use your time\nwell."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                181.88,
+                424.28,
+                197.06
+              ],
+              "text": "5. Create rewards for completing tasks (you can go out after you finish the dishes)."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                210.38,
+                449.65,
+                225.56
+              ],
+              "text": "6. Have a set bedtime, so that you feel pressure to get things done earlier in the evening."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                238.88,
+                554.95,
+                267.56
+              ],
+              "text": "7. If delaying is costing you financially (in late fees, etc.), imagine what you can do with the money you will save\nby acting sooner."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                53.86,
+                280.88,
+                310.67,
+                296.06
+              ],
+              "text": "[Read This Next: 4 Steps to Restore Order & Productivity]"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                316.88,
+                538.98,
+                359.06
+              ],
+              "text": "SUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                63.69,
+                379.64,
+                158.66,
+                394.82
+              ],
+              "text": "\n\n"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                148.21,
+                440.52,
+                464.54,
+                473.71
+              ],
+              "text": "The ADDITUDE Commitment"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                43.5,
+                476.06,
+                544.05,
+                536.92
+              ],
+              "text": "ADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                212.85,
+                564.18,
+                399.14,
+                578.32
+              ],
+              "text": "REVIEW OUR EDITORIAL PROCESS"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                202.7,
+                606.93,
+                409.28,
+                621.07
+              ],
+              "text": "MEET OUR MEDICAL ADVISORY PANEL"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                84.75,
+                656.44,
+                367.87,
+                671.53
+              ],
+              "text": "ADDitude verifies the factual accuracy of all new content."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                84.75,
+                707.44,
+                361.16,
+                722.53
+              ],
+              "text": "Sources are cited for all scientific research and findings."
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                24.0,
+                15.26,
+                457.93,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/time-management-skills-adhd-brain/\n4/5"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/how-to-manage-time-productivity-pandemic-adhd/?src=embed_link",
+              "bbox": [
+                59.25,
+                280.5,
+                304.5,
+                296.25
+              ]
+            },
+            {
+              "uri": "https://additu.de/subscribe/",
+              "bbox": [
+                501.75,
+                330.0,
+                530.25,
+                345.75
+              ]
+            },
+            {
+              "uri": "https://additu.de/subscribe/",
+              "bbox": [
+                55.5,
+                343.5,
+                147.75,
+                359.25
+              ]
+            },
+            {
+              "uri": "https://www.facebook.com/sharer/sharer.php?u=https://www.additudemag.com/time-management-skills-adhd-brain/",
+              "bbox": [
+                55.5,
+                373.5,
+                79.5,
+                398.25
+              ]
+            },
+            {
+              "uri": "https://twitter.com/intent/tweet/?text=ADHD+Minds+Are+Trapped+in+Now+%28%26%23038%3B+Other+Time+Management+Truths%29&url=https://www.additudemag.com/time-management-skills-adhd-brain/&via=",
+              "bbox": [
+                84.0,
+                373.5,
+                108.0,
+                397.5
+              ]
+            },
+            {
+              "uri": "https://www.instagram.com/additudemag/",
+              "bbox": [
+                113.25,
+                373.5,
+                137.25,
+                398.25
+              ]
+            },
+            {
+              "uri": "https://pinterest.com/pin/create/button/?url=https://www.additudemag.com/time-management-skills-adhd-brain/&media=https://i0.wp.com/www.additudemag.com/wp-content/uploads/2019/07/Reset-the-ADHD-Time-Machine.jpg?resize=1280%2C720px&ssl=1&description=Adults%20with%20ADHD%20think%20about%20time%20differently.%20Our%20inability%20to%20anticipate%20future%20rewards%20and%20consequences,%20our%20remarkable%20ability%20to%20procrastinate,%20our%20inability%20to%20ignore%20the%20static%20around%20us%20%E2%80%94%20these%20traits%20all%20contribute%20to%20our%20trouble%20with%20deadlines,%20punctuality,%20and%20planning.%20Here,%20learn%20how%20to%20combat%20these%20ADD%20tendencies%20to%20get%20more%20done%20every%20day.%20",
+              "bbox": [
+                142.5,
+                373.5,
+                166.5,
+                398.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/editorial-process-standards/",
+              "bbox": [
+                201.0,
+                553.5,
+                411.75,
+                588.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/adhd-medical-advisory-panel/",
+              "bbox": [
+                190.5,
+                596.25,
+                422.25,
+                631.5
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Content is periodically reviewed and updated to reflect new health insights.\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only.\n6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice\nhttps://www.additudemag.com/time-management-skills-adhd-brain/\n5/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                84.75,
+                45.94,
+                460.91,
+                61.03
+              ],
+              "text": "Content is periodically reviewed and updated to reflect new health insights."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                84.75,
+                96.94,
+                339.77,
+                112.03
+              ],
+              "text": "We strive to feature diverse voices and experiences."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                247.69,
+                532.39,
+                292.78
+              ],
+              "text": "Copyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                24.0,
+                15.26,
+                457.93,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Management Skills for ADHD Brains: Practical Advice"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/time-management-skills-adhd-brain/\n5/5"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 3,
+              "bbox": [
+                500.25,
+                225.0,
+                558.0,
+                237.0
+              ],
+              "width_px": 77,
+              "height_px": 16,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/contact-us/terms-and-conditions/",
+              "bbox": [
+                55.5,
+                262.5,
+                121.5,
+                277.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/privacy-policy/",
+              "bbox": [
+                143.25,
+                262.5,
+                214.5,
+                277.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/ai-policy/",
+              "bbox": [
+                242.25,
+                262.5,
+                286.5,
+                277.5
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        }
+      ]
+    }
+  ],
+  "ourspace_shared_life_filter": {
+    "revision_id": "ourspace_shared_life_filter_v1",
+    "title": "Time Management Skills For Adhd Brains Practical Advice",
+    "domain": "time_planning",
+    "item_type": "document",
+    "shared_facing_summary": "Time planning must flex around disability. The day starts when the body can start; timers are supports, not punishments.",
+    "tiny_steps": [
+      "Press Start Day.",
+      "Choose capacity: tiny, medium, full, or recovery.",
+      "Pick one anchor task.",
+      "Place rest before and after body-costly tasks."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "accessibility_modifications": [
+      "Use floating starts instead of fixed mornings.",
+      "Add prep/recovery blocks for showers, appointments, cleaning, cooking, and conflict repair.",
+      "Use alarms only when they help, not when they shame."
+    ],
+    "relationship_and_caregiver_notes": [
+      "William's needs and Jasper's capacity both count.",
+      "Ask before helping; ask before escalating; name the smallest next step.",
+      "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+      "What is needed, what capacity exists, what can be smaller, and what can wait?"
+    ],
+    "identity_and_trauma_filter": [
+      "Use William's masculine language and Jasper's they/them language.",
+      "Use consent-based, non-shaming, body-neutral language unless a person has explicitly chosen a term.",
+      "Do not turn symptoms, dysphoria, trauma responses, clutter, fatigue, or emotional intensity into moral failure."
+    ],
+    "avoid_or_adjust": [
+      "Do not compare today with an able-bodied schedule."
+    ],
+    "suggested_cadence": [
+      "daily_optional",
+      "flare_day_as_needed"
+    ],
+    "app_tags": [
+      "adhd_friendly",
+      "disability_first",
+      "shared",
+      "time_planning",
+      "tiny_steps",
+      "trauma_informed"
+    ]
+  },
+  "ourspace_shared_revision_metadata": {
+    "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/json/time_management_skills_for_adhd_brains_practical_advice.json",
+    "shared_output_path": "shared/08_adhd_time_management_and_planning/json/time_management_skills_for_adhd_brains_practical_advice.json",
+    "revised_at_utc": "2026-06-26T00:24:16Z",
+    "copyright_note": "Original source text preserved from user-provided files; added OurSpace accessibility/life-filter metadata for private use."
+  },
+  "shared_json_path": "shared/08_adhd_time_management_and_planning/json/time_management_skills_for_adhd_brains_practical_advice.json"
+}

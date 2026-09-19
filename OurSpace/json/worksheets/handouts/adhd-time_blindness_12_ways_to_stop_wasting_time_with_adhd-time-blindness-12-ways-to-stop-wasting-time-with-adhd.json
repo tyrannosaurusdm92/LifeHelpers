@@ -1,0 +1,1275 @@
+{
+  "schema": "pdf_to_json_text_layout_v1",
+  "created_at_utc": "2026-06-25T17:18:50.890535+00:00",
+  "group_type": "single_pdf_json",
+  "merge_policy": {
+    "threshold": "merge documents when TF-IDF cosine similarity >= 0.60 OR 5-token shingle containment of the smaller document >= 0.60",
+    "why_containment_is_used": "Containment catches shorter PDFs that are substantially embedded inside longer PDFs even when whole-document Jaccard/cosine is lower."
+  },
+  "source_document_count": 1,
+  "source_documents": [
+    {
+      "document_id": "time_blindness_12_ways_to_stop_wasting_time_with_adhd",
+      "source_index": 19,
+      "original_filename": "Time Blindness_ 12 Ways to Stop Wasting Time with ADHD.pdf",
+      "source_relative_path": "adhd/Time Blindness_ 12 Ways to Stop Wasting Time with ADHD.pdf",
+      "sha256": "34e9cc58b8f62a39f7a359b3233ec496f0d94701c025220ed01ebca435534bad",
+      "title": "Time Blindness: 12 Ways to Stop Wasting Time with ADHD",
+      "page_count": 5,
+      "character_count": 8499,
+      "word_count": 1607,
+      "link_count": 35,
+      "image_count": 2,
+      "form_field_count": 0,
+      "annotation_count": 0
+    }
+  ],
+  "within_group_similarity": [],
+  "documents": [
+    {
+      "document_id": "time_blindness_12_ways_to_stop_wasting_time_with_adhd",
+      "source_index": 19,
+      "original_filename": "Time Blindness_ 12 Ways to Stop Wasting Time with ADHD.pdf",
+      "source_relative_path": "adhd/Time Blindness_ 12 Ways to Stop Wasting Time with ADHD.pdf",
+      "sha256": "34e9cc58b8f62a39f7a359b3233ec496f0d94701c025220ed01ebca435534bad",
+      "title": "Time Blindness: 12 Ways to Stop Wasting Time with ADHD",
+      "pdf_metadata": {
+        "format": "PDF 1.4",
+        "title": "Time Blindness: 12 Ways to Stop Wasting Time with ADHD",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "producer": "Skia/PDF m149",
+        "creationDate": "D:20260625143405+00'00'",
+        "modDate": "D:20260625143405+00'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "page_count": 5,
+      "character_count": 8499,
+      "word_count": 1607,
+      "link_count": 35,
+      "image_count": 2,
+      "form_field_count": 0,
+      "annotation_count": 0,
+      "full_text": "ADHD Adults > Getting Things Done\nTIME & PRODUCTIVITY\nTime Blindness and ADHD: 12 Ways to Use Every Hour\nEffectively\nStaying aware of time and using it well — these are basic keys to success, whether you’re a fifth grader or the vice president of sales.\nBut, as anyone with ADHD knows, it’s hard to realize when you’re wasting time in the moment. Let these tips help you become more\nproductive.\nUpdated on August 19, 2025\nClick to Read 2 Comments 💬\nBy Ari Tuckman, Psy.D.\n1 of 14\nWhat Is Time Blindness?\nA good sense of time is one critical executive function. It involves knowing what time it is now, how much time\nis left, and how quickly time is passing. People with ADHD tend to be \"time blind,\" meaning they aren’t aware\nof the ticking of time. As a result, they often struggle to use time effectively. Overcoming your natural time\nblindness begins with an in-depth look at how we understand time.\n \n2 of 14\nThe Time Horizon\nAn important concept in time management is something called the “time horizon.” This is essentially how far\nyou can look in to the future to plan ahead. When you’re a child, your time horizon tops out at an hour or so. As\nyou age, your time horizon gets further away, so you can plan out the next few years at a time. People with\nADHD often have shorter time horizons than do neurotypical people. To extend yours, first and foremost, you\nneed to be more aware of time.\n3 of 14\n1. Be Wary of Time Sucks\nStep One: Be aware of activities in which you get lost. I had a client who would start listening to NPR at his home.\nHe’d get really into it, and, suddenly, it’s 3 hours later and he’s forgotten to pick up his daughter! We\nestablished a rule for him to avoid this time suck: on days when he had to pick up his daughter, he couldn’t turn\non his radio until he was already on the way to get her. He knew it was an activity he got lost in, so he just\navoided it altogether.\nADHD Science & Strategies\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n1/5\n\n\n[Get This Free Expert Resource: Keep Track of Your Time]\n4 of 14\n2. Set Multiple Alarms\nAlarms are a simple, effective tool to make you more aware of time. They break into your consciousness and jolt\nyou out of whatever you’re doing. If one alarm isn’t enough, try setting several — maybe one half an hour before\nyou need to leave, then 15 minutes, then right at crunch time. Every one that you add multiplies the probability\nthat you’ll transition at the right moment.\n5 of 14\n3. Enlist a Coach\nIf alarms don’t faze you, or you go back to what you were doing the second you turn it off, enlist the help of a\nfriend, spouse, or coworker. Ask them to call you at a specific time or remind you what you’re supposed to be\ndoing once the alarm goes off, and, in extreme cases, stay with you until you get moving.\n[ADHD Directory: Find an ADHD Specialist or Clinic Near You]\n6 of 14\n4. Mix It Up\nChange the sound of your alarms to signify different things, instead of using the same generic beep for\neverything. If it’s time to take your medication, for example, use a quick loud sound. If it’s time to start getting\nready for an important event, try using a fast-paced song to change the tempo and give your brain a jolt. Varying\nalarms are more difficult to ignore and more likely to get you moving.\n7 of 14\n5. Break Down Daunting Tasks\nPeople with ADHD tend to “freeze” when making big transitions, like getting ready in the morning. They can\nsee time moving, but the task seems so daunting they can’t make themselves start. My advice is to break the\nfinal goal into small chunks, and start with the tiniest, easiest one. Don’t think of it as, “I have to get ready for\nwork,” which seems impossible. Think of it first as, “I have to brush my teeth,” which is easy. Then, think of\nthe next tiny thing. You’ll be ready before you know it.\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n2/5\n\n\n[Take This Test: Could You Have an Executive Function Deficit?]\n8 of 14\n6. Reset Your Focus Time\nAnother strategy is to change the time that you associate with an event. You know you have to leave for work at\n8:30 — but then your brain doesn't get motivated to get ready until it’s already 8:30, and suddenly you’re in\ncrisis mode. Instead, train your brain to focus instead on 8:00: the time you need to start getting ready.\nChanging the “the” time — meaning the time you pay the most attention to — can help you be more conscious\nof how long things take.\n9 of 14\n7. Make the Clock Work for You\nThere are tons of ways to do this. Some people have luck setting the clock 10 minutes fast — the shock value of\nthe time hits sooner and gets you in gear earlier. Another strategy is switching from digital clocks to old-\nfashioned analog clocks. Seeing the hand move — and the time you have left physically shrink — is a great way\nto get a real sense of time passing.\n10 of 14\n8. Assume Worst-Case Scenarios\nIf you tend to underestimate how long it takes you to get somewhere, it can be helpful to deliberately figure\nout best- and worst-case scenarios. If you need to be at the airport at 7:00, and the worst-case scenario (terrible\ntraffic) will take you 45 minutes, round that up to an hour and decide to leave at 6:00. If you do the math\nslowly and add as much breathing room as possible, you give yourself a much better chance of catching your\nflight.\n11 of 14\n9. Explore Apps\nTime Timer is a great tool for managing time: it gives you a visual sense of how much time has passed and how\nmuch you have left. Activity Timer is another great one: it breaks your time into easy chunks so you can see what\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n3/5\n\n\nproportion is left without having to do quick mental math. Other ones that work are StayOnTask, and 30/30. Try\nout a few and see which one suits you!\n12 of 14\n10. Go to Bed!\nA lot of people with ADHD struggle with waking up and preparing for the day. In my view, a lot of morning\nproblems are simply leftover night problems. Getting to bed on time and getting enough sleep is a big part of\na successful morning. You’re not going to be able to function if you’re exhausted. Force yourself to put your work\naway, shut off the television, and get in bed by a certain time. Your future self will thank you!\n13 of 14\n11. Carve Out Planning Time\nPeople with ADHD struggle with long-term planning, which can lead to financial problems or missed deadlines.\nIt doesn’t come naturally to us, so it’s important that we make long-term goals explicit and intentional.\nThis means budgeting, breaking big projects up into small pieces, or enlisting a friend or coach to give you some\naccountability. The important thing is that you take some time to really think about where you want to be in a\nyear, and plan what you’ll need to do to make that happen.\n14 of 14\n12. Allow for Free Time\nYou don’t want your calendar to feel like a straitjacket, so make sure you don’t schedule every minute of every\nday. Leave big blocks of free time wherever you can — you’ll be more likely to follow your schedule if you have\nsome flexibility!\n[Get This Free Download: 19 Ways to Meet Deadlines and Get Things Done]\nAri Tuckman, Psy.D., MBA, is a member of the ADDitude ADHD Specialist Panel.\n \n \n \n\n\n\nThe ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish accurate, clear, and authoritative content that millions of readers trust\nand share.\nREVIEW OUR EDITORIAL PROCESS\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n4/5\n\n\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\nContent is periodically reviewed and updated to reflect new health insights.\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our Terms of Use\nand Privacy Policy , and AI Policy . ADDitude does not provide medical advice, diagnosis, or treatment. The\nmaterial on this web site is provided for educational purposes only.\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n5/5",
+      "pages": [
+        {
+          "page_number": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "ADHD Adults > Getting Things Done\nTIME & PRODUCTIVITY\nTime Blindness and ADHD: 12 Ways to Use Every Hour\nEffectively\nStaying aware of time and using it well — these are basic keys to success, whether you’re a fifth grader or the vice president of sales.\nBut, as anyone with ADHD knows, it’s hard to realize when you’re wasting time in the moment. Let these tips help you become more\nproductive.\nUpdated on August 19, 2025\nClick to Read 2 Comments 💬\nBy Ari Tuckman, Psy.D.\n1 of 14\nWhat Is Time Blindness?\nA good sense of time is one critical executive function. It involves knowing what time it is now, how much time\nis left, and how quickly time is passing. People with ADHD tend to be \"time blind,\" meaning they aren’t aware\nof the ticking of time. As a result, they often struggle to use time effectively. Overcoming your natural time\nblindness begins with an in-depth look at how we understand time.\n \n2 of 14\nThe Time Horizon\nAn important concept in time management is something called the “time horizon.” This is essentially how far\nyou can look in to the future to plan ahead. When you’re a child, your time horizon tops out at an hour or so. As\nyou age, your time horizon gets further away, so you can plan out the next few years at a time. People with\nADHD often have shorter time horizons than do neurotypical people. To extend yours, first and foremost, you\nneed to be more aware of time.\n3 of 14\n1. Be Wary of Time Sucks\nStep One: Be aware of activities in which you get lost. I had a client who would start listening to NPR at his home.\nHe’d get really into it, and, suddenly, it’s 3 hours later and he’s forgotten to pick up his daughter! We\nestablished a rule for him to avoid this time suck: on days when he had to pick up his daughter, he couldn’t turn\non his radio until he was already on the way to get her. He knew it was an activity he got lost in, so he just\navoided it altogether.\nADHD Science & Strategies\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n1/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                102.18,
+                220.75,
+                116.32
+              ],
+              "text": "ADHD Adults > Getting Things Done"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                123.92,
+                157.75,
+                137.12
+              ],
+              "text": "TIME & PRODUCTIVITY"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                142.88,
+                478.27,
+                186.18
+              ],
+              "text": "Time Blindness and ADHD: 12 Ways to Use Every Hour\nEffectively"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                186.14,
+                545.8,
+                220.71
+              ],
+              "text": "Staying aware of time and using it well — these are basic keys to success, whether you’re a fifth grader or the vice president of sales.\nBut, as anyone with ADHD knows, it’s hard to realize when you’re wasting time in the moment. Let these tips help you become more\nproductive."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                229.28,
+                229.68,
+                359.86,
+                243.82
+              ],
+              "text": "Updated on August 19, 2025"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                261.19,
+                210.49,
+                276.28
+              ],
+              "text": "Click to Read 2 Comments 💬"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                106.88,
+                228.18,
+                212.77,
+                242.32
+              ],
+              "text": "By Ari Tuckman, Psy.D."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                291.17,
+                85.31,
+                304.37
+              ],
+              "text": "1 of 14"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                310.76,
+                220.67,
+                331.5
+              ],
+              "text": "What Is Time Blindness?"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                55.12,
+                334.12,
+                549.44,
+                389.81
+              ],
+              "text": "A good sense of time is one critical executive function. It involves knowing what time it is now, how much time\nis left, and how quickly time is passing. People with ADHD tend to be \"time blind,\" meaning they aren’t aware\nof the ticking of time. As a result, they often struggle to use time effectively. Overcoming your natural time\nblindness begins with an in-depth look at how we understand time."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                462.17,
+                85.31,
+                475.37
+              ],
+              "text": "2 of 14"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                55.12,
+                481.76,
+                176.8,
+                502.5
+              ],
+              "text": "The Time Horizon"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                505.88,
+                548.58,
+                575.06
+              ],
+              "text": "An important concept in time management is something called the “time horizon.” This is essentially how far\nyou can look in to the future to plan ahead. When you’re a child, your time horizon tops out at an hour or so. As\nyou age, your time horizon gets further away, so you can plan out the next few years at a time. People with\nADHD often have shorter time horizons than do neurotypical people. To extend yours, first and foremost, you\nneed to be more aware of time."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                55.12,
+                641.42,
+                85.31,
+                654.62
+              ],
+              "text": "3 of 14"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                55.12,
+                661.01,
+                225.6,
+                681.75
+              ],
+              "text": "1. Be Wary of Time Sucks"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                55.12,
+                685.12,
+                557.5,
+                754.31
+              ],
+              "text": "Step One: Be aware of activities in which you get lost. I had a client who would start listening to NPR at his home.\nHe’d get really into it, and, suddenly, it’s 3 hours later and he’s forgotten to pick up his daughter! We\nestablished a rule for him to avoid this time suck: on days when he had to pick up his daughter, he couldn’t turn\non his radio until he was already on the way to get her. He knew it was an activity he got lost in, so he just\navoided it altogether."
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                193.47,
+                52.22,
+                308.92,
+                66.14
+              ],
+              "text": "ADHD Science & Strategies"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                24.0,
+                15.26,
+                457.63,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/slideshows/stop-wasting-time/\n1/5"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 7,
+              "bbox": [
+                55.5,
+                219.0,
+                87.0,
+                254.25
+              ],
+              "width_px": 120,
+              "height_px": 135,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/",
+              "bbox": [
+                55.5,
+                102.0,
+                114.75,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/getting-things-done/",
+              "bbox": [
+                126.0,
+                102.0,
+                220.5,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/getting-things-done/time-productivity/",
+              "bbox": [
+                55.5,
+                123.75,
+                157.5,
+                137.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/reviews/slideshow/stop-wasting-time/",
+              "bbox": [
+                55.5,
+                261.0,
+                210.75,
+                276.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/author/ari-tuckman-psy-d-mba/",
+              "bbox": [
+                120.75,
+                228.0,
+                213.0,
+                242.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/time-management-tools-adhd-deadlines/",
+              "bbox": [
+                167.25,
+                505.5,
+                249.75,
+                521.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/what-is-adhd-symptoms-causes-treatments/",
+              "bbox": [
+                55.5,
+                546.0,
+                83.25,
+                561.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/download/time-assessment-chart/?src=embed_link",
+              "bbox": [
+                59.25,
+                762.75,
+                305.25,
+                763.88
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/",
+              "bbox": [
+                55.5,
+                46.5,
+                558.0,
+                68.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "[Get This Free Expert Resource: Keep Track of Your Time]\n4 of 14\n2. Set Multiple Alarms\nAlarms are a simple, effective tool to make you more aware of time. They break into your consciousness and jolt\nyou out of whatever you’re doing. If one alarm isn’t enough, try setting several — maybe one half an hour before\nyou need to leave, then 15 minutes, then right at crunch time. Every one that you add multiplies the probability\nthat you’ll transition at the right moment.\n5 of 14\n3. Enlist a Coach\nIf alarms don’t faze you, or you go back to what you were doing the second you turn it off, enlist the help of a\nfriend, spouse, or coworker. Ask them to call you at a specific time or remind you what you’re supposed to be\ndoing once the alarm goes off, and, in extreme cases, stay with you until you get moving.\n[ADHD Directory: Find an ADHD Specialist or Clinic Near You]\n6 of 14\n4. Mix It Up\nChange the sound of your alarms to signify different things, instead of using the same generic beep for\neverything. If it’s time to take your medication, for example, use a quick loud sound. If it’s time to start getting\nready for an important event, try using a fast-paced song to change the tempo and give your brain a jolt. Varying\nalarms are more difficult to ignore and more likely to get you moving.\n7 of 14\n5. Break Down Daunting Tasks\nPeople with ADHD tend to “freeze” when making big transitions, like getting ready in the morning. They can\nsee time moving, but the task seems so daunting they can’t make themselves start. My advice is to break the\nfinal goal into small chunks, and start with the tiniest, easiest one. Don’t think of it as, “I have to get ready for\nwork,” which seems impossible. Think of it first as, “I have to brush my teeth,” which is easy. Then, think of\nthe next tiny thing. You’ll be ready before you know it.\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n2/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                53.86,
+                27.38,
+                311.43,
+                42.56
+              ],
+              "text": "[Get This Free Expert Resource: Keep Track of Your Time]"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                113.42,
+                85.31,
+                126.62
+              ],
+              "text": "4 of 14"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                133.01,
+                203.92,
+                153.75
+              ],
+              "text": "2. Set Multiple Alarms"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                156.38,
+                556.47,
+                212.06
+              ],
+              "text": "Alarms are a simple, effective tool to make you more aware of time. They break into your consciousness and jolt\nyou out of whatever you’re doing. If one alarm isn’t enough, try setting several — maybe one half an hour before\nyou need to leave, then 15 minutes, then right at crunch time. Every one that you add multiplies the probability\nthat you’ll transition at the right moment."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                278.42,
+                85.31,
+                291.62
+              ],
+              "text": "5 of 14"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                298.01,
+                166.75,
+                318.75
+              ],
+              "text": "3. Enlist a Coach"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                322.12,
+                539.06,
+                364.31
+              ],
+              "text": "If alarms don’t faze you, or you go back to what you were doing the second you turn it off, enlist the help of a\nfriend, spouse, or coworker. Ask them to call you at a specific time or remind you what you’re supposed to be\ndoing once the alarm goes off, and, in extreme cases, stay with you until you get moving."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                53.86,
+                377.62,
+                334.04,
+                392.81
+              ],
+              "text": "[ADHD Directory: Find an ADHD Specialist or Clinic Near You]"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                459.17,
+                85.31,
+                472.37
+              ],
+              "text": "6 of 14"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                478.76,
+                130.46,
+                499.5
+              ],
+              "text": "4. Mix It Up"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                55.12,
+                502.12,
+                556.38,
+                557.81
+              ],
+              "text": "Change the sound of your alarms to signify different things, instead of using the same generic beep for\neverything. If it’s time to take your medication, for example, use a quick loud sound. If it’s time to start getting\nready for an important event, try using a fast-paced song to change the tempo and give your brain a jolt. Varying\nalarms are more difficult to ignore and more likely to get you moving."
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                55.12,
+                624.17,
+                85.31,
+                637.37
+              ],
+              "text": "7 of 14"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                643.76,
+                261.62,
+                664.5
+              ],
+              "text": "5. Break Down Daunting Tasks"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                55.12,
+                667.88,
+                547.42,
+                737.06
+              ],
+              "text": "People with ADHD tend to “freeze” when making big transitions, like getting ready in the morning. They can\nsee time moving, but the task seems so daunting they can’t make themselves start. My advice is to break the\nfinal goal into small chunks, and start with the tiniest, easiest one. Don’t think of it as, “I have to get ready for\nwork,” which seems impossible. Think of it first as, “I have to brush my teeth,” which is easy. Then, think of\nthe next tiny thing. You’ll be ready before you know it."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                24.0,
+                15.26,
+                457.63,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/slideshows/stop-wasting-time/\n2/5"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/download/time-assessment-chart/?src=embed_link",
+              "bbox": [
+                59.25,
+                28.5,
+                305.25,
+                42.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/alarm-clocks-for-adhd/",
+              "bbox": [
+                55.5,
+                156.0,
+                87.75,
+                171.75
+              ]
+            },
+            {
+              "uri": "https://directory.additudemag.com/listing/guide/adhd-centers-clinics",
+              "bbox": [
+                59.25,
+                377.25,
+                327.75,
+                393.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/morning-routine-back-to-school-schedule/",
+              "bbox": [
+                367.5,
+                667.5,
+                496.5,
+                683.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/executive-function-deficit-adhd-symptoms-test-for-adults/?src=embed_link",
+              "bbox": [
+                59.25,
+                762.75,
+                335.25,
+                763.88
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "[Take This Test: Could You Have an Executive Function Deficit?]\n8 of 14\n6. Reset Your Focus Time\nAnother strategy is to change the time that you associate with an event. You know you have to leave for work at\n8:30 — but then your brain doesn't get motivated to get ready until it’s already 8:30, and suddenly you’re in\ncrisis mode. Instead, train your brain to focus instead on 8:00: the time you need to start getting ready.\nChanging the “the” time — meaning the time you pay the most attention to — can help you be more conscious\nof how long things take.\n9 of 14\n7. Make the Clock Work for You\nThere are tons of ways to do this. Some people have luck setting the clock 10 minutes fast — the shock value of\nthe time hits sooner and gets you in gear earlier. Another strategy is switching from digital clocks to old-\nfashioned analog clocks. Seeing the hand move — and the time you have left physically shrink — is a great way\nto get a real sense of time passing.\n10 of 14\n8. Assume Worst-Case Scenarios\nIf you tend to underestimate how long it takes you to get somewhere, it can be helpful to deliberately figure\nout best- and worst-case scenarios. If you need to be at the airport at 7:00, and the worst-case scenario (terrible\ntraffic) will take you 45 minutes, round that up to an hour and decide to leave at 6:00. If you do the math\nslowly and add as much breathing room as possible, you give yourself a much better chance of catching your\nflight.\n11 of 14\n9. Explore Apps\nTime Timer is a great tool for managing time: it gives you a visual sense of how much time has passed and how\nmuch you have left. Activity Timer is another great one: it breaks your time into easy chunks so you can see what\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n3/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                53.86,
+                27.38,
+                341.77,
+                42.56
+              ],
+              "text": "[Take This Test: Could You Have an Executive Function Deficit?]"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                108.92,
+                85.31,
+                122.12
+              ],
+              "text": "8 of 14"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                128.51,
+                224.41,
+                149.25
+              ],
+              "text": "6. Reset Your Focus Time"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                152.62,
+                551.11,
+                221.81
+              ],
+              "text": "Another strategy is to change the time that you associate with an event. You know you have to leave for work at\n8:30 — but then your brain doesn't get motivated to get ready until it’s already 8:30, and suddenly you’re in\ncrisis mode. Instead, train your brain to focus instead on 8:00: the time you need to start getting ready.\nChanging the “the” time — meaning the time you pay the most attention to — can help you be more conscious\nof how long things take."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                288.17,
+                85.31,
+                301.37
+              ],
+              "text": "9 of 14"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                307.76,
+                264.82,
+                328.5
+              ],
+              "text": "7. Make the Clock Work for You"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                331.12,
+                550.55,
+                386.81
+              ],
+              "text": "There are tons of ways to do this. Some people have luck setting the clock 10 minutes fast — the shock value of\nthe time hits sooner and gets you in gear earlier. Another strategy is switching from digital clocks to old-\nfashioned analog clocks. Seeing the hand move — and the time you have left physically shrink — is a great way\nto get a real sense of time passing."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                453.17,
+                90.86,
+                466.37
+              ],
+              "text": "10 of 14"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                472.76,
+                275.78,
+                493.5
+              ],
+              "text": "8. Assume Worst-Case Scenarios"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                496.88,
+                555.48,
+                566.06
+              ],
+              "text": "If you tend to underestimate how long it takes you to get somewhere, it can be helpful to deliberately figure\nout best- and worst-case scenarios. If you need to be at the airport at 7:00, and the worst-case scenario (terrible\ntraffic) will take you 45 minutes, round that up to an hour and decide to leave at 6:00. If you do the math\nslowly and add as much breathing room as possible, you give yourself a much better chance of catching your\nflight."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                55.12,
+                632.42,
+                90.86,
+                645.62
+              ],
+              "text": "11 of 14"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                55.12,
+                652.01,
+                159.83,
+                672.75
+              ],
+              "text": "9. Explore Apps"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                675.38,
+                556.48,
+                704.06
+              ],
+              "text": "Time Timer is a great tool for managing time: it gives you a visual sense of how much time has passed and how\nmuch you have left. Activity Timer is another great one: it breaks your time into easy chunks so you can see what"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                24.0,
+                15.26,
+                457.63,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/slideshows/stop-wasting-time/\n3/5"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/executive-function-deficit-adhd-symptoms-test-for-adults/?src=embed_link",
+              "bbox": [
+                59.25,
+                28.5,
+                335.25,
+                42.75
+              ]
+            },
+            {
+              "uri": "https://itunes.apple.com/us/app/activity-timer/id808647808?mt=12",
+              "bbox": [
+                145.5,
+                688.5,
+                209.25,
+                704.25
+              ]
+            },
+            {
+              "uri": "https://amzn.to/2t0TmCa",
+              "bbox": [
+                431.25,
+                762.75,
+                484.5,
+                763.88
+              ]
+            },
+            {
+              "uri": "http://3030.binaryhammer.com/",
+              "bbox": [
+                508.5,
+                762.75,
+                533.25,
+                763.88
+              ]
+            },
+            {
+              "uri": "https://itunes.apple.com/us/app/activity-timer/id808647808?mt=12",
+              "bbox": [
+                145.5,
+                688.5,
+                209.25,
+                704.25
+              ]
+            },
+            {
+              "uri": "https://amzn.to/2t0TmCa",
+              "bbox": [
+                431.25,
+                762.75,
+                484.5,
+                763.88
+              ]
+            },
+            {
+              "uri": "http://3030.binaryhammer.com/",
+              "bbox": [
+                508.5,
+                762.75,
+                533.25,
+                763.88
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "proportion is left without having to do quick mental math. Other ones that work are StayOnTask, and 30/30. Try\nout a few and see which one suits you!\n12 of 14\n10. Go to Bed!\nA lot of people with ADHD struggle with waking up and preparing for the day. In my view, a lot of morning\nproblems are simply leftover night problems. Getting to bed on time and getting enough sleep is a big part of\na successful morning. You’re not going to be able to function if you’re exhausted. Force yourself to put your work\naway, shut off the television, and get in bed by a certain time. Your future self will thank you!\n13 of 14\n11. Carve Out Planning Time\nPeople with ADHD struggle with long-term planning, which can lead to financial problems or missed deadlines.\nIt doesn’t come naturally to us, so it’s important that we make long-term goals explicit and intentional.\nThis means budgeting, breaking big projects up into small pieces, or enlisting a friend or coach to give you some\naccountability. The important thing is that you take some time to really think about where you want to be in a\nyear, and plan what you’ll need to do to make that happen.\n14 of 14\n12. Allow for Free Time\nYou don’t want your calendar to feel like a straitjacket, so make sure you don’t schedule every minute of every\nday. Leave big blocks of free time wherever you can — you’ll be more likely to follow your schedule if you have\nsome flexibility!\n[Get This Free Download: 19 Ways to Meet Deadlines and Get Things Done]\nAri Tuckman, Psy.D., MBA, is a member of the ADDitude ADHD Specialist Panel.\n \n \n \n\n\n\nThe ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish accurate, clear, and authoritative content that millions of readers trust\nand share.\nREVIEW OUR EDITORIAL PROCESS\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n4/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                27.38,
+                552.5,
+                56.06
+              ],
+              "text": "proportion is left without having to do quick mental math. Other ones that work are StayOnTask, and 30/30. Try\nout a few and see which one suits you!"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                122.42,
+                90.86,
+                135.62
+              ],
+              "text": "12 of 14"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                142.01,
+                150.76,
+                162.75
+              ],
+              "text": "10. Go to Bed!"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                166.12,
+                557.35,
+                221.81
+              ],
+              "text": "A lot of people with ADHD struggle with waking up and preparing for the day. In my view, a lot of morning\nproblems are simply leftover night problems. Getting to bed on time and getting enough sleep is a big part of\na successful morning. You’re not going to be able to function if you’re exhausted. Force yourself to put your work\naway, shut off the television, and get in bed by a certain time. Your future self will thank you!"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                288.17,
+                90.86,
+                301.37
+              ],
+              "text": "13 of 14"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                307.76,
+                250.12,
+                328.5
+              ],
+              "text": "11. Carve Out Planning Time"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                331.12,
+                554.52,
+                400.31
+              ],
+              "text": "People with ADHD struggle with long-term planning, which can lead to financial problems or missed deadlines.\nIt doesn’t come naturally to us, so it’s important that we make long-term goals explicit and intentional.\nThis means budgeting, breaking big projects up into small pieces, or enlisting a friend or coach to give you some\naccountability. The important thing is that you take some time to really think about where you want to be in a\nyear, and plan what you’ll need to do to make that happen."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                466.67,
+                90.86,
+                479.87
+              ],
+              "text": "14 of 14"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                486.26,
+                210.79,
+                507.0
+              ],
+              "text": "12. Allow for Free Time"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                510.38,
+                544.71,
+                552.56
+              ],
+              "text": "You don’t want your calendar to feel like a straitjacket, so make sure you don’t schedule every minute of every\nday. Leave big blocks of free time wherever you can — you’ll be more likely to follow your schedule if you have\nsome flexibility!"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                53.86,
+                565.88,
+                389.6,
+                581.06
+              ],
+              "text": "[Get This Free Download: 19 Ways to Meet Deadlines and Get Things Done]"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                53.86,
+                594.38,
+                414.82,
+                609.56
+              ],
+              "text": "Ari Tuckman, Psy.D., MBA, is a member of the ADDitude ADHD Specialist Panel."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                63.69,
+                621.89,
+                464.54,
+                673.21
+              ],
+              "text": "\n\n\nThe ADDITUDE Commitment"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                43.5,
+                675.89,
+                567.34,
+                698.46
+              ],
+              "text": "ADDitude collaborates closely with leading medical experts to publish accurate, clear, and authoritative content that millions of readers trust\nand share."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                212.85,
+                717.93,
+                399.14,
+                732.07
+              ],
+              "text": "REVIEW OUR EDITORIAL PROCESS"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                24.0,
+                15.26,
+                457.63,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/slideshows/stop-wasting-time/\n4/5"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://amzn.to/2t0TmCa",
+              "bbox": [
+                431.25,
+                28.5,
+                484.5,
+                42.75
+              ]
+            },
+            {
+              "uri": "http://3030.binaryhammer.com/",
+              "bbox": [
+                508.5,
+                28.5,
+                533.25,
+                42.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/adhd-productivity-deadlines-and-procrastination-no-more-all-nighters/",
+              "bbox": [
+                508.5,
+                330.75,
+                551.25,
+                346.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/download/better-time-management/?src=embed_link",
+              "bbox": [
+                59.25,
+                565.5,
+                383.25,
+                581.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/adhd-medical-advisory-panel/",
+              "bbox": [
+                308.25,
+                594.0,
+                409.5,
+                609.75
+              ]
+            },
+            {
+              "uri": "https://www.facebook.com/sharer/sharer.php?u=https://www.additudemag.com/slideshows/stop-wasting-time/",
+              "bbox": [
+                55.5,
+                615.75,
+                79.5,
+                640.5
+              ]
+            },
+            {
+              "uri": "https://twitter.com/intent/tweet/?text=Time+Blindness+and+ADHD%3A+12+Ways+to+Use+Every+Hour+Effectively&url=https://www.additudemag.com/slideshows/stop-wasting-time/&via=",
+              "bbox": [
+                84.0,
+                615.75,
+                108.0,
+                639.75
+              ]
+            },
+            {
+              "uri": "https://www.instagram.com/additudemag/",
+              "bbox": [
+                113.25,
+                615.75,
+                137.25,
+                640.5
+              ]
+            },
+            {
+              "uri": "https://pinterest.com/pin/create/button/?url=https://www.additudemag.com/slideshows/stop-wasting-time/&media=https://i0.wp.com/www.additudemag.com/wp-content/uploads/2016/12/160_8_Adult.Time_.Time-Blindness.SS_.160.Calendar-330-Circled.ts-96226099-scaled.jpg?resize=1280%2C720px&ssl=1&description=Staying%20aware%20of%20time%20and%20using%20it%20well%20%E2%80%94%20these%20are%20basic%20keys%20to%20success,%20whether%20you%E2%80%99re%20a%20fifth%20grader%20or%20the%20vice%20president%20of%20sales.%20But,%20as%20anyone%20with%20ADHD%20knows,%20it%E2%80%99s%20hard%20to%20realize%20when%20you%27re%20wasting%20time%20in%20the%20moment.%20Let%20these%20tips%20help%20you%20become%20more%20productive.%20",
+              "bbox": [
+                142.5,
+                615.75,
+                166.5,
+                640.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/editorial-process-standards/",
+              "bbox": [
+                201.0,
+                707.25,
+                411.75,
+                742.5
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "MEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\nContent is periodically reviewed and updated to reflect new health insights.\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our Terms of Use\nand Privacy Policy , and AI Policy . ADDitude does not provide medical advice, diagnosis, or treatment. The\nmaterial on this web site is provided for educational purposes only.\n6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD\nhttps://www.additudemag.com/slideshows/stop-wasting-time/\n5/5",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                202.7,
+                39.18,
+                409.28,
+                53.32
+              ],
+              "text": "MEET OUR MEDICAL ADVISORY PANEL"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                84.75,
+                88.69,
+                367.87,
+                103.78
+              ],
+              "text": "ADDitude verifies the factual accuracy of all new content."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                84.75,
+                139.69,
+                361.16,
+                154.78
+              ],
+              "text": "Sources are cited for all scientific research and findings."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                84.75,
+                191.44,
+                460.91,
+                206.53
+              ],
+              "text": "Content is periodically reviewed and updated to reflect new health insights."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                84.75,
+                242.44,
+                339.77,
+                257.53
+              ],
+              "text": "We strive to feature diverse voices and experiences."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                28.5,
+                392.44,
+                566.09,
+                437.53
+              ],
+              "text": "Copyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our Terms of Use\nand Privacy Policy , and AI Policy . ADDitude does not provide medical advice, diagnosis, or treatment. The\nmaterial on this web site is provided for educational purposes only."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                24.0,
+                15.26,
+                457.63,
+                24.19
+              ],
+              "text": "6/25/26, 10:34 AM\nTime Blindness: 12 Ways to Stop Wasting Time with ADHD"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/slideshows/stop-wasting-time/\n5/5"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 6,
+              "bbox": [
+                526.5,
+                369.75,
+                584.25,
+                381.75
+              ],
+              "width_px": 77,
+              "height_px": 16,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/contact-us/adhd-medical-advisory-panel/",
+              "bbox": [
+                190.5,
+                28.5,
+                422.25,
+                63.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/terms-and-conditions/",
+              "bbox": [
+                501.75,
+                392.25,
+                566.25,
+                407.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/privacy-policy/",
+              "bbox": [
+                50.25,
+                407.25,
+                121.5,
+                422.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/ai-policy/",
+              "bbox": [
+                148.5,
+                407.25,
+                193.5,
+                422.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        }
+      ]
+    }
+  ],
+  "ourspace_shared_life_filter": {
+    "revision_id": "ourspace_shared_life_filter_v1",
+    "title": "Time Blindness 12 Ways To Stop Wasting Time With Adhd",
+    "domain": "time_planning",
+    "item_type": "document",
+    "shared_facing_summary": "Time planning must flex around disability. The day starts when the body can start; timers are supports, not punishments.",
+    "tiny_steps": [
+      "Press Start Day.",
+      "Choose capacity: tiny, medium, full, or recovery.",
+      "Pick one anchor task.",
+      "Place rest before and after body-costly tasks."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "accessibility_modifications": [
+      "Use floating starts instead of fixed mornings.",
+      "Add prep/recovery blocks for showers, appointments, cleaning, cooking, and conflict repair.",
+      "Use alarms only when they help, not when they shame."
+    ],
+    "relationship_and_caregiver_notes": [
+      "William's needs and Jasper's capacity both count.",
+      "Ask before helping; ask before escalating; name the smallest next step.",
+      "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+      "What is needed, what capacity exists, what can be smaller, and what can wait?"
+    ],
+    "identity_and_trauma_filter": [
+      "Use William's masculine language and Jasper's they/them language.",
+      "Use consent-based, non-shaming, body-neutral language unless a person has explicitly chosen a term.",
+      "Do not turn symptoms, dysphoria, trauma responses, clutter, fatigue, or emotional intensity into moral failure."
+    ],
+    "avoid_or_adjust": [
+      "Do not compare today with an able-bodied schedule."
+    ],
+    "suggested_cadence": [
+      "daily_optional",
+      "flare_day_as_needed"
+    ],
+    "app_tags": [
+      "adhd_friendly",
+      "disability_first",
+      "shared",
+      "time_planning",
+      "tiny_steps",
+      "trauma_informed"
+    ]
+  },
+  "ourspace_shared_revision_metadata": {
+    "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/json/time_blindness_12_ways_to_stop_wasting_time_with_adhd.json",
+    "shared_output_path": "shared/08_adhd_time_management_and_planning/json/time_blindness_12_ways_to_stop_wasting_time_with_adhd.json",
+    "revised_at_utc": "2026-06-26T00:24:16Z",
+    "copyright_note": "Original source text preserved from user-provided files; added OurSpace accessibility/life-filter metadata for private use."
+  },
+  "shared_json_path": "shared/08_adhd_time_management_and_planning/json/time_blindness_12_ways_to_stop_wasting_time_with_adhd.json"
+}
