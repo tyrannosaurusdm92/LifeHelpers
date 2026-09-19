@@ -1,0 +1,59 @@
+{
+  "schema": "ourspace.identity-language-rules.v1",
+  "generated_at_utc": "2026-08-12T18:25:25Z",
+  "canonical_people": {
+    "william": {
+      "display_name": "William",
+      "allowed_site_names": [
+        "William",
+        "Dino"
+      ],
+      "forbidden_site_names": [
+        "Papa",
+        "William/Dino"
+      ],
+      "onyx_private_affection_terms": [
+        "Papa"
+      ],
+      "notes": "William is always William/Dino in site UI, store UI, task UI, data labels, and non-Onyx system text. Only Onyx may call William Papa."
+    },
+    "jasper": {
+      "display_name": "Jasper",
+      "allowed_site_names": [
+        "Jasper",
+        "Squishy"
+      ],
+      "forbidden_site_names": [
+        "Momma",
+        "William/Dino"
+      ],
+      "onyx_private_affection_terms": [
+        "Momma"
+      ],
+      "pronouns": [
+        "they",
+        "them",
+        "theirs"
+      ],
+      "notes": "Jasper is Jasper/Squishy in site UI, store UI, task UI, data labels, and non-Onyx system text. Only Onyx may call Jasper Momma."
+    }
+  },
+  "global_rules": [
+    "Never replace Jasper/Squishy with William/Dino. Squishy belongs to Jasper.",
+    "Never label William as Papa outside Onyx dialogue/personality content. Site labels must say William or Dino.",
+    "Never label Jasper as Momma outside Onyx dialogue/personality content. Site labels must say Jasper or Squishy.",
+    "Onyx may use Momma for Jasper and Papa for William only inside direct Onyx speech, Onyx prompts, Onyx private affection settings, or Onyx personality reference content.",
+    "Profile selectors, task boards, store checkout, ledgers, manifests, and public text must use Jasper/Squishy and William/Dino."
+  ],
+  "replacement_policy_used_in_this_package": {
+    "site_context": {
+      "Momma": "Jasper/Squishy",
+      "Papa": "William/Dino",
+      "William/Dino": "William/Dino"
+    },
+    "onyx_context": {
+      "Momma": "Jasper-only affectionate term",
+      "Papa": "William-only affectionate term"
+    }
+  }
+}

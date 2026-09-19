@@ -1,0 +1,148 @@
+{
+  "schema_name": "ourspace_shared_dbt_adhd_cadence",
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-06-26T00:24:16Z",
+  "principles": [
+    "Every skill must have a 30-second version, a 2-minute version, and a full version.",
+    "Partial completion counts. Stopping before harm counts as success.",
+    "Use bed/chair-safe options first; standing, lifting, bending, scrubbing, and rushing are optional upgrades, never defaults.",
+    "Do not use shame, moral failure, laziness, cleanliness-as-worth, body blame, or 'just push through' language.",
+    "Build in caregiver capacity checks: 'Can we do this now, later, smaller, or not today?'",
+    "Avoid silent-treatment framing. A pause should mean: 'I am coming back; I am regulating.'"
+  ],
+  "daily": [
+    {
+      "name": "Start Day capacity check",
+      "tiny_steps": [
+        "Pick: recovery / tiny / medium / full.",
+        "Check breathing, pain, MCAS/sensory load, sleepiness, and caregiver capacity.",
+        "Choose one anchor only."
+      ],
+      "success_definition": "The day is started when capacity is named, not when a task is finished."
+    },
+    {
+      "name": "One DBT/ADHD skill",
+      "tiny_steps": [
+        "Open one shared skill.",
+        "Do the 30-second version.",
+        "Mark partial completion."
+      ],
+      "success_definition": "Reading the tiny version counts on flare days."
+    },
+    {
+      "name": "Us check-in",
+      "tiny_steps": [
+        "What do you need?",
+        "What capacity do I have?",
+        "What can be smaller?",
+        "What can wait?"
+      ],
+      "success_definition": "Both needs are acknowledged."
+    },
+    {
+      "name": "Reset after conflict/overload",
+      "tiny_steps": [
+        "Say: pause means I am coming back.",
+        "Set a return cue/time if possible.",
+        "Use one body-safe grounding option."
+      ],
+      "success_definition": "No one has to chase reassurance through silence."
+    }
+  ],
+  "weekly": [
+    {
+      "name": "Shared skill review",
+      "tiny_steps": [
+        "Pick one skill that helped.",
+        "Pick one that felt too hard.",
+        "Shrink the hard one."
+      ],
+      "success_definition": "The system adapts to you."
+    },
+    {
+      "name": "Caregiver rest block",
+      "tiny_steps": [
+        "Put Jasper's rest on the plan.",
+        "Choose what will not be done during that rest.",
+        "Set up one backup/low-demand option."
+      ],
+      "success_definition": "Care includes the caregiver."
+    },
+    {
+      "name": "Tiny environment reset",
+      "tiny_steps": [
+        "Pick one reachable zone.",
+        "Use MCAS-safe supplies.",
+        "Stop at five minutes or before symptoms rise."
+      ],
+      "success_definition": "A safer tiny zone is enough."
+    },
+    {
+      "name": "Repair and reassurance check",
+      "tiny_steps": [
+        "Name one repair needed.",
+        "Name one appreciation.",
+        "Name one boundary for next week."
+      ],
+      "success_definition": "Connection is maintained without overexplaining."
+    }
+  ],
+  "monthly": [
+    {
+      "name": "Skill folder tune-up",
+      "tiny_steps": [
+        "Favorite the skills actually used.",
+        "Archive ones that shame or overwhelm.",
+        "Rewrite one prompt smaller."
+      ],
+      "success_definition": "The shared folder stays alive and usable."
+    },
+    {
+      "name": "Supplies and access check",
+      "tiny_steps": [
+        "Check fragrance-free cleaning/hygiene supplies.",
+        "Check mobility/oxygen/reacher/shower/toileting setup.",
+        "Add one missing support to the list."
+      ],
+      "success_definition": "Barriers are caught before crisis when possible."
+    },
+    {
+      "name": "Medical/admin gentle batch",
+      "tiny_steps": [
+        "Pick one form, appointment, refill, or phone call.",
+        "Body-double or split it.",
+        "Stop after one step."
+      ],
+      "success_definition": "Admin is moved without consuming the whole month."
+    }
+  ],
+  "yearly": [
+    {
+      "name": "Shared care language review",
+      "tiny_steps": [
+        "Confirm names/pronouns/endearments.",
+        "Confirm body-language boundaries.",
+        "Update scripts that no longer fit."
+      ],
+      "success_definition": "The app respects who you are now."
+    },
+    {
+      "name": "Privacy and safety review",
+      "tiny_steps": [
+        "Check what the app stores.",
+        "Remove sensitive details that do not need to be visible.",
+        "Confirm links/pages do not expose private info."
+      ],
+      "success_definition": "Support does not cost privacy."
+    },
+    {
+      "name": "Emergency/access documents review",
+      "tiny_steps": [
+        "Check emergency contacts and medical notes.",
+        "Check equipment/back-up needs.",
+        "Update only what changed."
+      ],
+      "success_definition": "A future hard day has less chaos."
+    }
+  ]
+}

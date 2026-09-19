@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "topic": "caregiving",
+  "domain": "cross-cutting impact dimension",
+  "definition": "A reusable reasoning dimension for understanding how illness, disability, trauma, injury, loss, or life events can affect a person's functioning and lived experience.",
+  "examples": [
+    "caregiver time, vigilance, scheduling, advocacy, transportation, and emotional load",
+    "role strain and changes in reciprocity within close relationships",
+    "need for respite, backup plans, training, and emergency preparation",
+    "caregiver employment or financial effects",
+    "importance of preserving the affected person's choice, dignity, privacy, and autonomy"
+  ],
+  "assessment_questions": [
+    "What changed immediately after this began or happened?",
+    "What is hardest on an ordinary day, not only on the worst day?",
+    "Which effects are constant, episodic, progressive, or triggered by context?",
+    "What tasks cost much more energy, planning, or recovery time than before?",
+    "What has changed in sleep, cognition, mood, sensory tolerance, pain, or stamina?",
+    "What has changed in relationships, intimacy, parenting, caregiving, or social connection?",
+    "What has changed at work, school, or in household responsibilities?",
+    "What financial or access burdens have appeared?",
+    "What does the person fear losing, and what has already been lost?",
+    "What support helps without reducing autonomy or dignity?",
+    "Are there reminders, environments, people, procedures, or sensations that trigger distress?",
+    "What accommodations or environmental changes make functioning easier?",
+    "What strengths, identities, communities, or routines remain protective?",
+    "What would a 'better day' look like from the person's perspective?"
+  ],
+  "protective_factors": [
+    "stable, trustworthy relationships",
+    "material stability: safe housing, food, transportation, income, and healthcare access",
+    "accessible and culturally responsive care",
+    "predictable routines with flexibility for bad days",
+    "peer support or community belonging when desired",
+    "autonomy, informed choice, and control over disclosure",
+    "accommodations that reduce preventable barriers",
+    "skills for pacing, emotion regulation, communication, problem-solving, or symptom tracking",
+    "care coordination that reduces administrative burden",
+    "meaningful roles, interests, creativity, spirituality, advocacy, or purpose when personally relevant"
+  ],
+  "trauma_informed_principles": [
+    "Do not assume that a diagnosis or life event is traumatic for every person; assess the person's own meaning and response.",
+    "Distinguish the original event/condition from secondary harms such as disbelief, stigma, poverty, inaccessible care, coercion, or relationship loss.",
+    "Avoid forcing disclosure of traumatic details when they are not necessary.",
+    "Offer choices, explain what will happen, and preserve control wherever possible.",
+    "Recognize that anniversaries, procedures, sensory cues, bodily symptoms, legal processes, and medical settings can reactivate distress.",
+    "Avoid framing adaptive survival responses as moral failures.",
+    "Consider cumulative and intersectional stress rather than analyzing each event in isolation.",
+    "Use person-preferred language and avoid reducing identity to a diagnosis or event."
+  ],
+  "evidence_sources": [
+    {
+      "title": "Trauma and Violence",
+      "publisher": "Substance Abuse and Mental Health Services Administration",
+      "url": "https://www.samhsa.gov/mental-health/trauma-violence",
+      "use": "Trauma definition and behavioral/physical health relationships.",
+      "source_id": "SAMHSA_TRAUMA"
+    },
+    {
+      "title": "Disability and Health Overview",
+      "publisher": "Centers for Disease Control and Prevention",
+      "url": "https://www.cdc.gov/disability-and-health/about/index.html",
+      "use": "Disability origins, functioning, participation, and health.",
+      "source_id": "CDC_DISABILITY"
+    },
+    {
+      "title": "Social Determinants of Health",
+      "publisher": "Centers for Disease Control and Prevention",
+      "url": "https://www.cdc.gov/about/priorities/why-is-addressing-sdoh-important.html",
+      "use": "Nonmedical conditions influencing health outcomes.",
+      "source_id": "CDC_SDOH"
+    },
+    {
+      "title": "Mental disorders",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/mental-disorders",
+      "use": "Mental health burden, functioning, and broad disorder categories.",
+      "source_id": "WHO_MENTAL"
+    }
+  ]
+}
