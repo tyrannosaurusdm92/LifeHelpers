@@ -1,0 +1,117 @@
+{
+  "id": "daily_dbt_diary_card_general",
+  "title": "Daily DBT Diary Card - General",
+  "module": "All DBT Modules",
+  "purpose": "Track emotions, urges, behaviors, skills used, and notes for one day.",
+  "fields": {
+    "basics": [
+      "Date",
+      "Name",
+      "Sleep",
+      "Medication/health notes",
+      "Meals/water",
+      "Movement/body care"
+    ],
+    "emotion_ratings": [
+      "Anger",
+      "Sadness",
+      "Fear/anxiety",
+      "Shame/guilt",
+      "Joy/pleasant emotion",
+      "Emotional intensity overall"
+    ],
+    "urge_ratings": [
+      "Self-harm urge",
+      "Substance/addiction urge",
+      "Avoidance urge",
+      "Anger/action urge",
+      "Other target urge"
+    ],
+    "skills_used": [
+      "Wise Mind",
+      "Observe",
+      "Describe",
+      "Participate",
+      "Nonjudgmentally",
+      "One-Mindfully",
+      "Effectively",
+      "DEAR MAN",
+      "GIVE",
+      "FAST",
+      "Check the Facts",
+      "Opposite Action",
+      "Problem Solving",
+      "ABC/PLEASE",
+      "STOP",
+      "TIP",
+      "ACCEPTS",
+      "Self-Soothing",
+      "IMPROVE",
+      "Radical Acceptance",
+      "Turning the Mind",
+      "Willingness",
+      "Mindfulness of Thoughts"
+    ],
+    "notes": [
+      "Prompting event",
+      "What I did skillfully",
+      "What I want to repair or try tomorrow"
+    ]
+  },
+  "generated_note": "Generated as a fillable daily card from the uploaded DBT workbook modules; no standalone diary card page was found in the source PDF.",
+  "ourspace_shared_life_filter": {
+    "revision_id": "ourspace_shared_life_filter_v1",
+    "title": "Daily DBT Diary Card - General",
+    "domain": "diary_cards",
+    "item_type": "document",
+    "shared_facing_summary": "Diary cards should track patterns with compassion. A blank day is data, not failure.",
+    "tiny_steps": [
+      "Check one box.",
+      "Write one word.",
+      "Mark spoons/capacity.",
+      "Name one support needed tomorrow."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "accessibility_modifications": [
+      "Allow voice dictation, icons, stickers, or one-tap entries.",
+      "Track caregiver load and flare days alongside emotions."
+    ],
+    "relationship_and_caregiver_notes": [
+      "William's needs and Jasper's capacity both count.",
+      "Ask before helping; ask before escalating; name the smallest next step.",
+      "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+      "What is needed, what capacity exists, what can be smaller, and what can wait?"
+    ],
+    "identity_and_trauma_filter": [
+      "Use William's masculine language and Jasper's they/them language.",
+      "Use consent-based, non-shaming, body-neutral language unless a person has explicitly chosen a term.",
+      "Do not turn symptoms, dysphoria, trauma responses, clutter, fatigue, or emotional intensity into moral failure."
+    ],
+    "avoid_or_adjust": [
+      "Do not require perfect daily streaks."
+    ],
+    "suggested_cadence": [
+      "daily_optional",
+      "flare_day_as_needed"
+    ],
+    "app_tags": [
+      "adhd_friendly",
+      "diary_cards",
+      "disability_first",
+      "shared",
+      "tiny_steps",
+      "trauma_informed"
+    ]
+  },
+  "ourspace_shared_revision_metadata": {
+    "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/json/daily_dbt_diary_card_general.json",
+    "shared_output_path": "shared/06_dbt_diary_cards/json/daily_dbt_diary_card_general.json",
+    "revised_at_utc": "2026-06-26T00:24:16Z",
+    "copyright_note": "Original source text preserved from user-provided files; added OurSpace accessibility/life-filter metadata for private use."
+  },
+  "shared_json_path": "shared/06_dbt_diary_cards/json/daily_dbt_diary_card_general.json"
+}
