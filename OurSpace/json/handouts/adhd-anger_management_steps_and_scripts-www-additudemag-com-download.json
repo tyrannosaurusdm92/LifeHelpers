@@ -1,0 +1,399 @@
+{
+  "schema": "pdf_to_json_text_layout_v1",
+  "created_at_utc": "2026-06-25T17:18:50.890535+00:00",
+  "group_type": "single_pdf_json",
+  "merge_policy": {
+    "threshold": "merge documents when TF-IDF cosine similarity >= 0.60 OR 5-token shingle containment of the smaller document >= 0.60",
+    "why_containment_is_used": "Containment catches shorter PDFs that are substantially embedded inside longer PDFs even when whole-document Jaccard/cosine is lower."
+  },
+  "source_document_count": 1,
+  "source_documents": [
+    {
+      "document_id": "anger_management_steps_and_scripts",
+      "source_index": 8,
+      "original_filename": "Anger-Management-Steps-and-Scripts.pdf",
+      "source_relative_path": "adhd/Anger-Management-Steps-and-Scripts.pdf",
+      "sha256": "273a9a40ef5d66323ab6570170b7683fab221c4d0bf68ab4d175cc2efeb8f98d",
+      "title": "www.additudemag.com/download/",
+      "page_count": 1,
+      "character_count": 2377,
+      "word_count": 374,
+      "link_count": 0,
+      "image_count": 0,
+      "form_field_count": 0,
+      "annotation_count": 0
+    }
+  ],
+  "within_group_similarity": [],
+  "documents": [
+    {
+      "document_id": "anger_management_steps_and_scripts",
+      "source_index": 8,
+      "original_filename": "Anger-Management-Steps-and-Scripts.pdf",
+      "source_relative_path": "adhd/Anger-Management-Steps-and-Scripts.pdf",
+      "sha256": "273a9a40ef5d66323ab6570170b7683fab221c4d0bf68ab4d175cc2efeb8f98d",
+      "title": "www.additudemag.com/download/",
+      "pdf_metadata": {
+        "format": "PDF 1.7",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Adobe InDesign 18.1 (Macintosh)",
+        "producer": "Adobe PDF Library 17.0",
+        "creationDate": "D:20230202125048-05'00'",
+        "modDate": "D:20230202130842-05'00'",
+        "trapped": "",
+        "encryption": "Standard V5 R6 256-bit AES"
+      },
+      "page_count": 1,
+      "character_count": 2377,
+      "word_count": 374,
+      "link_count": 0,
+      "image_count": 0,
+      "form_field_count": 0,
+      "annotation_count": 0,
+      "full_text": "www.additudemag.com/download/\nE\nmotional outbursts are habitual responses to uncomfort-\nable feelings. Since the ADHD brain is wired for intense \nfeelings, anger and frustration often ambush when adults with \nADHD underestimate their ability to cope with stressors. \nMetacognition is an awareness of your thought processes \nand patterns. This executive function can help you monitor \nand evaluate your thoughts and behaviors without \njudgment when experiencing anger, thereby changing your \nemotional reactivity. \nYou can’t control stressful situations, but you can control \nyour reactions by building metacognition skills.\nMetacognition Questions\n•\t \u0007What is happening to activate me or make me feel on \nedge (e.g., receiving negative feedback, being blamed \nunfairly, being chastised, or feeling shame)?\n•\t \u0007What sensations do I feel when I become angry or upset \n(e.g., headache, stomachache, sweating, chest tightness)?\n•\t \u0007What behaviors do I resort to when I’m upset or angry \n(e.g., lashing out, attacking, shutting down, catastrophiz-\ning, blaming, or denying)?\n•\t \u0007How are others reacting to my words and actions? What \nare their faces or bodies showing? \n•\t \u0007What has helped me calm down in the past? (Make a list \nof coping tools and save them on your phone and on \nsticky notes around your home). \nHow to Respond When You’re…\nMildly Uncomfortable\n•\t \u0007Notice the negative, critical voice changing your thoughts. \n•\t \u0007Compare your limiting beliefs about the situation or \nyourself to the real facts. \nActivated\n•\t \u0007Acknowledge and validate your feelings. Say, “It’s okay to \nbe angry. But what can I do to settle down?”\n•\t \u0007Repeat affirmations or supportive phrases like, “This \nis not the most fun or my best moment, but I’ll get \nthrough it.”\n•\t \u0007Visualize yourself settling down. Picture yourself by a \nlake, tossing in rocks. As each rock falls, feel yourself relax \ninto your feet or chair.\nOn High Alert\n•\t \u0007Try triangle breathing: Breath in four counts; hold for four \ncounts; exhale for six counts. Pause and repeat.\n•\t \u0007Physically remove yourself from the stressor or \nsituation.\n•\t \u0007Engage in physical activity (e.g., walk, run, or swim).\n•\t \u0007Turn to a timed distraction. Listen to music or play a \ngame on your phone.\nCopyright © 2023 by ADDitude, All rights reserved.\nANGER MANAGEMENT\nSteps & Scripts to \nUse When You’re \nFired Up\nBy Sharon Saline, Psy.D.",
+      "pages": [
+        {
+          "page_number": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "www.additudemag.com/download/\nE\nmotional outbursts are habitual responses to uncomfort-\nable feelings. Since the ADHD brain is wired for intense \nfeelings, anger and frustration often ambush when adults with \nADHD underestimate their ability to cope with stressors. \nMetacognition is an awareness of your thought processes \nand patterns. This executive function can help you monitor \nand evaluate your thoughts and behaviors without \njudgment when experiencing anger, thereby changing your \nemotional reactivity. \nYou can’t control stressful situations, but you can control \nyour reactions by building metacognition skills.\nMetacognition Questions\n•\t \u0007What is happening to activate me or make me feel on \nedge (e.g., receiving negative feedback, being blamed \nunfairly, being chastised, or feeling shame)?\n•\t \u0007What sensations do I feel when I become angry or upset \n(e.g., headache, stomachache, sweating, chest tightness)?\n•\t \u0007What behaviors do I resort to when I’m upset or angry \n(e.g., lashing out, attacking, shutting down, catastrophiz-\ning, blaming, or denying)?\n•\t \u0007How are others reacting to my words and actions? What \nare their faces or bodies showing? \n•\t \u0007What has helped me calm down in the past? (Make a list \nof coping tools and save them on your phone and on \nsticky notes around your home). \nHow to Respond When You’re…\nMildly Uncomfortable\n•\t \u0007Notice the negative, critical voice changing your thoughts. \n•\t \u0007Compare your limiting beliefs about the situation or \nyourself to the real facts. \nActivated\n•\t \u0007Acknowledge and validate your feelings. Say, “It’s okay to \nbe angry. But what can I do to settle down?”\n•\t \u0007Repeat affirmations or supportive phrases like, “This \nis not the most fun or my best moment, but I’ll get \nthrough it.”\n•\t \u0007Visualize yourself settling down. Picture yourself by a \nlake, tossing in rocks. As each rock falls, feel yourself relax \ninto your feet or chair.\nOn High Alert\n•\t \u0007Try triangle breathing: Breath in four counts; hold for four \ncounts; exhale for six counts. Pause and repeat.\n•\t \u0007Physically remove yourself from the stressor or \nsituation.\n•\t \u0007Engage in physical activity (e.g., walk, run, or swim).\n•\t \u0007Turn to a timed distraction. Listen to music or play a \ngame on your phone.\nCopyright © 2023 by ADDitude, All rights reserved.\nANGER MANAGEMENT\nSteps & Scripts to \nUse When You’re \nFired Up\nBy Sharon Saline, Psy.D.",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                399.61,
+                757.44,
+                576.0,
+                771.74
+              ],
+              "text": "www.additudemag.com/download/"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                54.0,
+                284.96,
+                69.93,
+                321.62
+              ],
+              "text": "E"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                54.0,
+                293.08,
+                297.13,
+                340.74
+              ],
+              "text": "motional outbursts are habitual responses to uncomfort-\nable feelings. Since the ADHD brain is wired for intense\nfeelings, anger and frustration often ambush when adults with\nADHD underestimate their ability to cope with stressors."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                54.0,
+                350.08,
+                297.11,
+                409.74
+              ],
+              "text": "Metacognition is an awareness of your thought processes\nand patterns. This executive function can help you monitor\nand evaluate your thoughts and behaviors without\njudgment when experiencing anger, thereby changing your\nemotional reactivity."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                54.0,
+                419.08,
+                297.1,
+                442.74
+              ],
+              "text": "You can’t control stressful situations, but you can control\nyour reactions by building metacognition skills."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                54.0,
+                451.88,
+                297.07,
+                508.74
+              ],
+              "text": "Metacognition Questions\n•\t \u0007What is happening to activate me or make me feel on\nedge (e.g., receiving negative feedback, being blamed\nunfairly, being chastised, or feeling shame)?"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                54.0,
+                515.3,
+                297.0,
+                541.74
+              ],
+              "text": "•\t \u0007What sensations do I feel when I become angry or upset\n(e.g., headache, stomachache, sweating, chest tightness)?"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                54.0,
+                548.3,
+                296.99,
+                586.74
+              ],
+              "text": "•\t \u0007What behaviors do I resort to when I’m upset or angry\n(e.g., lashing out, attacking, shutting down, catastrophiz-\ning, blaming, or denying)?"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                54.0,
+                593.3,
+                296.99,
+                619.73
+              ],
+              "text": "•\t \u0007How are others reacting to my words and actions? What\nare their faces or bodies showing?"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                54.0,
+                626.3,
+                297.07,
+                664.74
+              ],
+              "text": "•\t \u0007What has helped me calm down in the past? (Make a list\nof coping tools and save them on your phone and on\nsticky notes around your home)."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                317.25,
+                290.38,
+                498.72,
+                307.28
+              ],
+              "text": "How to Respond When You’re…"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                317.25,
+                314.85,
+                424.16,
+                329.15
+              ],
+              "text": "Mildly Uncomfortable"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                317.25,
+                331.24,
+                560.34,
+                345.78
+              ],
+              "text": "•\t \u0007Notice the negative, critical voice changing your thoughts."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                317.25,
+                352.24,
+                560.32,
+                378.68
+              ],
+              "text": "•\t \u0007Compare your limiting beliefs about the situation or\nyourself to the real facts."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                317.25,
+                389.85,
+                364.41,
+                404.15
+              ],
+              "text": "Activated"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                317.25,
+                406.24,
+                560.29,
+                432.68
+              ],
+              "text": "•\t \u0007Acknowledge and validate your feelings. Say, “It’s okay to\nbe angry. But what can I do to settle down?”"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                317.25,
+                439.24,
+                560.31,
+                477.68
+              ],
+              "text": "•\t \u0007Repeat affirmations or supportive phrases like, “This\nis not the most fun or my best moment, but I’ll get\nthrough it.”"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                317.25,
+                484.24,
+                560.31,
+                522.68
+              ],
+              "text": "•\t \u0007Visualize yourself settling down. Picture yourself by a\nlake, tossing in rocks. As each rock falls, feel yourself relax\ninto your feet or chair."
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                317.25,
+                533.85,
+                383.71,
+                548.15
+              ],
+              "text": "On High Alert"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                317.25,
+                550.24,
+                560.13,
+                576.68
+              ],
+              "text": "•\t \u0007Try triangle breathing: Breath in four counts; hold for four\ncounts; exhale for six counts. Pause and repeat."
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                317.25,
+                583.24,
+                560.29,
+                609.68
+              ],
+              "text": "•\t \u0007Physically remove yourself from the stressor or\nsituation."
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                317.25,
+                616.24,
+                541.02,
+                630.78
+              ],
+              "text": "•\t \u0007Engage in physical activity (e.g., walk, run, or swim)."
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                317.25,
+                637.24,
+                560.31,
+                663.68
+              ],
+              "text": "•\t \u0007Turn to a timed distraction. Listen to music or play a\ngame on your phone."
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                225.31,
+                713.67,
+                386.72,
+                723.7
+              ],
+              "text": "Copyright © 2023 by ADDitude, All rights reserved."
+            },
+            {
+              "block_index": 25,
+              "bbox": [
+                54.0,
+                64.34,
+                557.96,
+                127.8
+              ],
+              "text": "ANGER MANAGEMENT"
+            },
+            {
+              "block_index": 26,
+              "bbox": [
+                94.15,
+                124.21,
+                316.84,
+                216.61
+              ],
+              "text": "Steps & Scripts to\nUse When You’re\nFired Up"
+            },
+            {
+              "block_index": 27,
+              "bbox": [
+                152.6,
+                229.68,
+                252.02,
+                242.5
+              ],
+              "text": "By Sharon Saline, Psy.D."
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        }
+      ]
+    }
+  ],
+  "ourspace_shared_life_filter": {
+    "revision_id": "ourspace_shared_life_filter_v1",
+    "title": "Anger Management Steps And Scripts",
+    "domain": "emotion_regulation",
+    "item_type": "document",
+    "shared_facing_summary": "Emotion work starts with the body and access needs. Hunger, pain, oxygen, sleep attacks, MCAS reactions, trauma cues, and exhaustion count.",
+    "tiny_steps": [
+      "Name the emotion.",
+      "Check body basics: breathing, pain, food/water, meds, temperature, sensory load.",
+      "Lower the demand by one size.",
+      "Choose soothe, solve, pause, or ask for help."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "accessibility_modifications": [
+      "Use low-exertion regulation first.",
+      "Allow anger and grief without turning them into shame.",
+      "Track patterns without moral judgment."
+    ],
+    "relationship_and_caregiver_notes": [
+      "William's needs and Jasper's capacity both count.",
+      "Ask before helping; ask before escalating; name the smallest next step.",
+      "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+      "What is needed, what capacity exists, what can be smaller, and what can wait?"
+    ],
+    "identity_and_trauma_filter": [
+      "Use William's masculine language and Jasper's they/them language.",
+      "Use consent-based, non-shaming, body-neutral language unless a person has explicitly chosen a term.",
+      "Do not turn symptoms, dysphoria, trauma responses, clutter, fatigue, or emotional intensity into moral failure."
+    ],
+    "avoid_or_adjust": [
+      "Do not demand immediate calm during respiratory distress, pain flares, dissociation, or overload."
+    ],
+    "suggested_cadence": [
+      "daily_optional",
+      "flare_day_as_needed"
+    ],
+    "app_tags": [
+      "adhd_friendly",
+      "disability_first",
+      "emotion_regulation",
+      "shared",
+      "tiny_steps",
+      "trauma_informed"
+    ]
+  },
+  "ourspace_shared_revision_metadata": {
+    "source_path": "DBT+ADHD Skill Files/11_ADHD_Emotion_Regulation_Anger_and_Calming/json/anger_management_steps_and_scripts.json",
+    "shared_output_path": "shared/11_adhd_emotion_regulation_anger_and_calming/json/anger_management_steps_and_scripts.json",
+    "revised_at_utc": "2026-06-26T00:24:16Z",
+    "copyright_note": "Original source text preserved from user-provided files; added OurSpace accessibility/life-filter metadata for private use."
+  },
+  "shared_json_path": "shared/11_adhd_emotion_regulation_anger_and_calming/json/anger_management_steps_and_scripts.json"
+}

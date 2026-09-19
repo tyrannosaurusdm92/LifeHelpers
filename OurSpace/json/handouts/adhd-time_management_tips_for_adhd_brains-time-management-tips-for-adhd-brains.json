@@ -1,0 +1,966 @@
+{
+  "schema": "pdf_to_json_text_layout_v1",
+  "created_at_utc": "2026-06-25T17:18:50.890535+00:00",
+  "group_type": "single_pdf_json",
+  "merge_policy": {
+    "threshold": "merge documents when TF-IDF cosine similarity >= 0.60 OR 5-token shingle containment of the smaller document >= 0.60",
+    "why_containment_is_used": "Containment catches shorter PDFs that are substantially embedded inside longer PDFs even when whole-document Jaccard/cosine is lower."
+  },
+  "source_document_count": 1,
+  "source_documents": [
+    {
+      "document_id": "time_management_tips_for_adhd_brains",
+      "source_index": 21,
+      "original_filename": "Time Management Tips for ADHD Brains.pdf",
+      "source_relative_path": "adhd/Time Management Tips for ADHD Brains.pdf",
+      "sha256": "0eaeb1cedd3f41bf6842f260bbf1b36ee892b8861e81e3e4599d71310c6fd47e",
+      "title": "Time Management Tips for ADHD Brains",
+      "page_count": 3,
+      "character_count": 7016,
+      "word_count": 1240,
+      "link_count": 34,
+      "image_count": 1,
+      "form_field_count": 0,
+      "annotation_count": 0
+    }
+  ],
+  "within_group_similarity": [],
+  "documents": [
+    {
+      "document_id": "time_management_tips_for_adhd_brains",
+      "source_index": 21,
+      "original_filename": "Time Management Tips for ADHD Brains.pdf",
+      "source_relative_path": "adhd/Time Management Tips for ADHD Brains.pdf",
+      "sha256": "0eaeb1cedd3f41bf6842f260bbf1b36ee892b8861e81e3e4599d71310c6fd47e",
+      "title": "Time Management Tips for ADHD Brains",
+      "pdf_metadata": {
+        "format": "PDF 1.4",
+        "title": "Time Management Tips for ADHD Brains",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "producer": "Skia/PDF m149",
+        "creationDate": "D:20260625143618+00'00'",
+        "modDate": "D:20260625143618+00'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "page_count": 3,
+      "character_count": 7016,
+      "word_count": 1240,
+      "link_count": 34,
+      "image_count": 1,
+      "form_field_count": 0,
+      "annotation_count": 0,
+      "full_text": "ADHD Adults > Getting Things Done\nTIME & PRODUCTIVITY\n15 Time-Management Tricks for ADHD Brains\nTime management is tricky for ADHD brains. Good thing we are so good at devising clever, unconven-\ntional solutions to tricky problems. Here, our readers sound off about the techniques that help them\nkeep track of time.\nUpdated on May 12, 2025\n5 min read\nClick to Add Comments\nBy ADDitude Editors\nAsk anyone with ADHD for time-management tips, and you’ll undoubtedly get a mix of unconventional yet\nbrilliant strategies. That’s because ADHD brains are required to think outside the box on most things —\nespecially keeping track of time and staying organized.\nFrom unconventional reminder systems to literal thinking caps, indispensable apps, and, yes, some\nconventional organizing tools, here are ADDitude readers’ answers to the question: “What are your best\nstrategies for time management at home and at work?”\nTime Management Tips from ADDitude Readers\n“As each day winds to a close, I make use of Gmail’s built-in task reminder feature and pick three items that are\ngoing to be my main focus for the next day. I never have more than three tasks on my plate at any given time. It\nprevents me from getting overwhelmed with trying to prioritize.” —Karen, Washington\n“For everyday tasks like taking my ADHD medication or making sure my dog has food and water, I use the\nAny.do app. It sends pop-up reminders at exactly the time I need to do the task. I use the app only for things\nthat are absolute musts. For the ‘shoulds’ and everything else, I use my bullet journal.” — Krystal, Florida\n“My smart watch has a vibrating timer function. I use it to help with time blindness. If I’ve started a load of\nlaundry, for example, I set my watch for 30 minutes. When my watch vibrates, it re-minds me to put my clothes\nin the dryer so they’re not sitting in the washer.” — Kelly, Michigan\n[Get This Free Download: 19 Ways to Meet Deadlines and Get Things Done]\n“I use every avenue of reminders possible to keep myself on track: Write it on my wipe-off fridge calendar,\nwrite it in my agenda, put it in my Google calendar, ask my phone to remind me, etc.” — Ella, Canada\n“I use the body doubling technique (virtually) most days with one of my best friends who also has similar time\nmanagement issues. We remind each other to stop and eat or take a break. We cheer each other on when all we\nfeel is overwhelm and impostor syndrome.” — Kat, New York\n“If I am really worried about forgetting to do something, I write it on my bathroom mirror with a chalk pen.\nAnd when I really must focus on a task that I’m not excited about, I put on a special hat that I only wear when\nI’m working. I think it helps because I see the hat as part of my ‘hustle mode’ uniform.” — Kristen, California\nADHD Science & Strategies\n6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains\nhttps://www.additudemag.com/time-management-tips-adhd/\n1/3\n\n\n“Being retired and empty nested was horrific for my time management. I am useless at self-imposed deadlines.\nI trick myself into getting household tasks done by inviting guests and setting alarms to get those dull chores\ndone. Even though the alarms are irritating, the system works most of the time.” — Corinne\n[Read: Do You Shine Under Pressure? How to Manufacture a Sense of Urgency]\n“I keep a diary and notebook with me at all times. Every morning, I refer to these when I write a detailed plan\nfor the day. Some points on the plan are broken into smaller manageable chunks. P.S. It is generally much easier\nto get going with the plan after brisk exercise.” — An ADDitude reader\n“We use a whiteboard calendar for our monthly schedule. It has a notes column where I write weekly meal\nideas, appointments, and anything else I may need.” — Sara, Alabama\n“Being able to visualize time, having an alarm, and setting realistic time frames for tasks and/or projects that\nneed to get done helps with time management. I also try to be kind to myself when I’m late, or when my\nestimated time frame is off. Because no one is perfect, especially me.” — Chera\n“A buddy (my housemate) checks on me to make sure I am on task. I’m usually not, and she breaks the trance\nthat has taken my attention away from what I need to be doing.” — Susan, Michigan\n“I use a Time Timer to gamify tasks that I don’t enjoy doing. For example, I like to see if I can beat my record\ntime for putting away dishes or cleaning the floors. That way, I won’t get distracted by other things or go on a\nhyperfocus cleaning tangent.” — Mollie, Ohio\n“At work I have an electronic diary in Outlook that gives me 15-minute reminders before appointments with\ncustomers. This tells me what’s coming up and reminds me when a customer’s appointment needs to wrap up\nsoon.” — Sammie, United Kingdom\n“I use the Pomodoro method, paired with peer accountability. I message a group of friends, all of whom have\nADHD, to see who else may be interested in doing Pomodoros together. We set our timers and check in again at\nthe end and beginning of each Pomodoro round. This helps me to actually take breaks and stay focused on my\nintended tasks.” — Kimberly, California\n“I try to build my life around my brain as much as possible. I schedule less, not more. It’s easier to meet\nobligations when I’m not harried and hassled. The concept of ‘time management’ is very industrial and\nrobotic, and I’m tired of trying to fit into such an unnatural state of constant efficiency. But real life does require\nappointments and deadlines, so I make my yes’s count, and I try to schedule things around my capabilities.” —\nAmanda, Canada\nTime Management Tips: Next Steps\nFree Download: Get There On Time, Every Time\nRead: How to Tackle Your Toughest Daily Transitions\nRead: Beat the Clock — Time Management Tips for ADHD Adults\nSUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you.\n \n \n \n\n\n\n6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains\nhttps://www.additudemag.com/time-management-tips-adhd/\n2/3\n\n\nThe ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare.\nREVIEW OUR EDITORIAL PROCESS\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\nContent is periodically reviewed and updated to reflect new health insights.\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only.\n6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains\nhttps://www.additudemag.com/time-management-tips-adhd/\n3/3",
+      "pages": [
+        {
+          "page_number": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "ADHD Adults > Getting Things Done\nTIME & PRODUCTIVITY\n15 Time-Management Tricks for ADHD Brains\nTime management is tricky for ADHD brains. Good thing we are so good at devising clever, unconven-\ntional solutions to tricky problems. Here, our readers sound off about the techniques that help them\nkeep track of time.\nUpdated on May 12, 2025\n5 min read\nClick to Add Comments\nBy ADDitude Editors\nAsk anyone with ADHD for time-management tips, and you’ll undoubtedly get a mix of unconventional yet\nbrilliant strategies. That’s because ADHD brains are required to think outside the box on most things —\nespecially keeping track of time and staying organized.\nFrom unconventional reminder systems to literal thinking caps, indispensable apps, and, yes, some\nconventional organizing tools, here are ADDitude readers’ answers to the question: “What are your best\nstrategies for time management at home and at work?”\nTime Management Tips from ADDitude Readers\n“As each day winds to a close, I make use of Gmail’s built-in task reminder feature and pick three items that are\ngoing to be my main focus for the next day. I never have more than three tasks on my plate at any given time. It\nprevents me from getting overwhelmed with trying to prioritize.” —Karen, Washington\n“For everyday tasks like taking my ADHD medication or making sure my dog has food and water, I use the\nAny.do app. It sends pop-up reminders at exactly the time I need to do the task. I use the app only for things\nthat are absolute musts. For the ‘shoulds’ and everything else, I use my bullet journal.” — Krystal, Florida\n“My smart watch has a vibrating timer function. I use it to help with time blindness. If I’ve started a load of\nlaundry, for example, I set my watch for 30 minutes. When my watch vibrates, it re-minds me to put my clothes\nin the dryer so they’re not sitting in the washer.” — Kelly, Michigan\n[Get This Free Download: 19 Ways to Meet Deadlines and Get Things Done]\n“I use every avenue of reminders possible to keep myself on track: Write it on my wipe-off fridge calendar,\nwrite it in my agenda, put it in my Google calendar, ask my phone to remind me, etc.” — Ella, Canada\n“I use the body doubling technique (virtually) most days with one of my best friends who also has similar time\nmanagement issues. We remind each other to stop and eat or take a break. We cheer each other on when all we\nfeel is overwhelm and impostor syndrome.” — Kat, New York\n“If I am really worried about forgetting to do something, I write it on my bathroom mirror with a chalk pen.\nAnd when I really must focus on a task that I’m not excited about, I put on a special hat that I only wear when\nI’m working. I think it helps because I see the hat as part of my ‘hustle mode’ uniform.” — Kristen, California\nADHD Science & Strategies\n6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains\nhttps://www.additudemag.com/time-management-tips-adhd/\n1/3",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                102.18,
+                220.75,
+                116.32
+              ],
+              "text": "ADHD Adults > Getting Things Done"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                123.92,
+                157.75,
+                137.12
+              ],
+              "text": "TIME & PRODUCTIVITY"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                142.88,
+                415.69,
+                168.18
+              ],
+              "text": "15 Time-Management Tricks for ADHD Brains"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                168.19,
+                557.52,
+                214.78
+              ],
+              "text": "Time management is tricky for ADHD brains. Good thing we are so good at devising clever, unconven-\ntional solutions to tricky problems. Here, our readers sound off about the techniques that help them\nkeep track of time."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                174.47,
+                213.93,
+                357.87,
+                229.57
+              ],
+              "text": "Updated on May 12, 2025\n5 min read"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                238.69,
+                176.98,
+                253.78
+              ],
+              "text": "Click to Add Comments"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                64.12,
+                213.93,
+                157.96,
+                228.07
+              ],
+              "text": "By ADDitude Editors"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                261.38,
+                533.39,
+                303.56
+              ],
+              "text": "Ask anyone with ADHD for time-management tips, and you’ll undoubtedly get a mix of unconventional yet\nbrilliant strategies. That’s because ADHD brains are required to think outside the box on most things —\nespecially keeping track of time and staying organized."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                316.88,
+                518.55,
+                359.06
+              ],
+              "text": "From unconventional reminder systems to literal thinking caps, indispensable apps, and, yes, some\nconventional organizing tools, here are ADDitude readers’ answers to the question: “What are your best\nstrategies for time management at home and at work?”"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                373.79,
+                427.09,
+                396.41
+              ],
+              "text": "Time Management Tips from ADDitude Readers"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                55.12,
+                410.62,
+                554.1,
+                452.81
+              ],
+              "text": "“As each day winds to a close, I make use of Gmail’s built-in task reminder feature and pick three items that are\ngoing to be my main focus for the next day. I never have more than three tasks on my plate at any given time. It\nprevents me from getting overwhelmed with trying to prioritize.” —Karen, Washington"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                55.12,
+                466.12,
+                538.67,
+                508.31
+              ],
+              "text": "“For everyday tasks like taking my ADHD medication or making sure my dog has food and water, I use the\nAny.do app. It sends pop-up reminders at exactly the time I need to do the task. I use the app only for things\nthat are absolute musts. For the ‘shoulds’ and everything else, I use my bullet journal.” — Krystal, Florida"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                521.62,
+                553.66,
+                563.81
+              ],
+              "text": "“My smart watch has a vibrating timer function. I use it to help with time blindness. If I’ve started a load of\nlaundry, for example, I set my watch for 30 minutes. When my watch vibrates, it re-minds me to put my clothes\nin the dryer so they’re not sitting in the washer.” — Kelly, Michigan"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                53.86,
+                577.12,
+                389.6,
+                592.31
+              ],
+              "text": "[Get This Free Download: 19 Ways to Meet Deadlines and Get Things Done]"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                605.62,
+                536.06,
+                634.31
+              ],
+              "text": "“I use every avenue of reminders possible to keep myself on track: Write it on my wipe-off fridge calendar,\nwrite it in my agenda, put it in my Google calendar, ask my phone to remind me, etc.” — Ella, Canada"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                55.12,
+                647.62,
+                549.89,
+                689.81
+              ],
+              "text": "“I use the body doubling technique (virtually) most days with one of my best friends who also has similar time\nmanagement issues. We remind each other to stop and eat or take a break. We cheer each other on when all we\nfeel is overwhelm and impostor syndrome.” — Kat, New York"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                55.12,
+                703.12,
+                547.64,
+                745.31
+              ],
+              "text": "“If I am really worried about forgetting to do something, I write it on my bathroom mirror with a chalk pen.\nAnd when I really must focus on a task that I’m not excited about, I put on a special hat that I only wear when\nI’m working. I think it helps because I see the hat as part of my ‘hustle mode’ uniform.” — Kristen, California"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                193.47,
+                52.22,
+                308.92,
+                66.14
+              ],
+              "text": "ADHD Science & Strategies"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                24.0,
+                15.26,
+                425.5,
+                24.19
+              ],
+              "text": "6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/time-management-tips-adhd/\n1/3"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/",
+              "bbox": [
+                55.5,
+                102.0,
+                114.75,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/getting-things-done/",
+              "bbox": [
+                126.0,
+                102.0,
+                220.5,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/getting-things-done/time-productivity/",
+              "bbox": [
+                55.5,
+                123.75,
+                157.5,
+                137.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/reviews/post/time-management-tips-adhd/",
+              "bbox": [
+                55.5,
+                238.5,
+                177.0,
+                253.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/author/additude-editors/",
+              "bbox": [
+                78.0,
+                213.75,
+                158.25,
+                228.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/time-management-skills-adhd-brain/",
+              "bbox": [
+                117.0,
+                343.5,
+                199.5,
+                359.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/adhd-medication-for-adults-and-children/",
+              "bbox": [
+                211.5,
+                465.75,
+                292.5,
+                481.5
+              ]
+            },
+            {
+              "uri": "https://www.any.do/",
+              "bbox": [
+                55.5,
+                479.25,
+                106.5,
+                495.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/best-daily-planner-for-adhd-adults/",
+              "bbox": [
+                375.75,
+                492.75,
+                435.75,
+                508.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/slideshows/stop-wasting-time/",
+              "bbox": [
+                366.0,
+                521.25,
+                434.25,
+                537.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/download/better-time-management/?src=embed_link",
+              "bbox": [
+                59.25,
+                576.75,
+                383.25,
+                592.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/getting-stuff-done-easier-with-a-friend-body-double/",
+              "bbox": [
+                99.0,
+                647.25,
+                165.75,
+                663.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/time-management-tools-adhd-deadlines/",
+              "bbox": [
+                507.75,
+                762.75,
+                551.25,
+                763.88
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/",
+              "bbox": [
+                55.5,
+                46.5,
+                558.0,
+                68.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "“Being retired and empty nested was horrific for my time management. I am useless at self-imposed deadlines.\nI trick myself into getting household tasks done by inviting guests and setting alarms to get those dull chores\ndone. Even though the alarms are irritating, the system works most of the time.” — Corinne\n[Read: Do You Shine Under Pressure? How to Manufacture a Sense of Urgency]\n“I keep a diary and notebook with me at all times. Every morning, I refer to these when I write a detailed plan\nfor the day. Some points on the plan are broken into smaller manageable chunks. P.S. It is generally much easier\nto get going with the plan after brisk exercise.” — An ADDitude reader\n“We use a whiteboard calendar for our monthly schedule. It has a notes column where I write weekly meal\nideas, appointments, and anything else I may need.” — Sara, Alabama\n“Being able to visualize time, having an alarm, and setting realistic time frames for tasks and/or projects that\nneed to get done helps with time management. I also try to be kind to myself when I’m late, or when my\nestimated time frame is off. Because no one is perfect, especially me.” — Chera\n“A buddy (my housemate) checks on me to make sure I am on task. I’m usually not, and she breaks the trance\nthat has taken my attention away from what I need to be doing.” — Susan, Michigan\n“I use a Time Timer to gamify tasks that I don’t enjoy doing. For example, I like to see if I can beat my record\ntime for putting away dishes or cleaning the floors. That way, I won’t get distracted by other things or go on a\nhyperfocus cleaning tangent.” — Mollie, Ohio\n“At work I have an electronic diary in Outlook that gives me 15-minute reminders before appointments with\ncustomers. This tells me what’s coming up and reminds me when a customer’s appointment needs to wrap up\nsoon.” — Sammie, United Kingdom\n“I use the Pomodoro method, paired with peer accountability. I message a group of friends, all of whom have\nADHD, to see who else may be interested in doing Pomodoros together. We set our timers and check in again at\nthe end and beginning of each Pomodoro round. This helps me to actually take breaks and stay focused on my\nintended tasks.” — Kimberly, California\n“I try to build my life around my brain as much as possible. I schedule less, not more. It’s easier to meet\nobligations when I’m not harried and hassled. The concept of ‘time management’ is very industrial and\nrobotic, and I’m tired of trying to fit into such an unnatural state of constant efficiency. But real life does require\nappointments and deadlines, so I make my yes’s count, and I try to schedule things around my capabilities.” —\nAmanda, Canada\nTime Management Tips: Next Steps\nFree Download: Get There On Time, Every Time\nRead: How to Tackle Your Toughest Daily Transitions\nRead: Beat the Clock — Time Management Tips for ADHD Adults\nSUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you.\n \n \n \n\n\n\n6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains\nhttps://www.additudemag.com/time-management-tips-adhd/\n2/3",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                27.38,
+                554.25,
+                69.56
+              ],
+              "text": "“Being retired and empty nested was horrific for my time management. I am useless at self-imposed deadlines.\nI trick myself into getting household tasks done by inviting guests and setting alarms to get those dull chores\ndone. Even though the alarms are irritating, the system works most of the time.” — Corinne"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                53.86,
+                82.88,
+                405.93,
+                98.06
+              ],
+              "text": "[Read: Do You Shine Under Pressure? How to Manufacture a Sense of Urgency]"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                111.38,
+                556.81,
+                153.56
+              ],
+              "text": "“I keep a diary and notebook with me at all times. Every morning, I refer to these when I write a detailed plan\nfor the day. Some points on the plan are broken into smaller manageable chunks. P.S. It is generally much easier\nto get going with the plan after brisk exercise.” — An ADDitude reader"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                166.88,
+                532.16,
+                195.56
+              ],
+              "text": "“We use a whiteboard calendar for our monthly schedule. It has a notes column where I write weekly meal\nideas, appointments, and anything else I may need.” — Sara, Alabama"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                208.88,
+                545.3,
+                251.06
+              ],
+              "text": "“Being able to visualize time, having an alarm, and setting realistic time frames for tasks and/or projects that\nneed to get done helps with time management. I also try to be kind to myself when I’m late, or when my\nestimated time frame is off. Because no one is perfect, especially me.” — Chera"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                264.38,
+                546.75,
+                293.06
+              ],
+              "text": "“A buddy (my housemate) checks on me to make sure I am on task. I’m usually not, and she breaks the trance\nthat has taken my attention away from what I need to be doing.” — Susan, Michigan"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                306.38,
+                541.05,
+                348.56
+              ],
+              "text": "“I use a Time Timer to gamify tasks that I don’t enjoy doing. For example, I like to see if I can beat my record\ntime for putting away dishes or cleaning the floors. That way, I won’t get distracted by other things or go on a\nhyperfocus cleaning tangent.” — Mollie, Ohio"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                361.88,
+                546.34,
+                404.06
+              ],
+              "text": "“At work I have an electronic diary in Outlook that gives me 15-minute reminders before appointments with\ncustomers. This tells me what’s coming up and reminds me when a customer’s appointment needs to wrap up\nsoon.” — Sammie, United Kingdom"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                417.38,
+                549.23,
+                473.06
+              ],
+              "text": "“I use the Pomodoro method, paired with peer accountability. I message a group of friends, all of whom have\nADHD, to see who else may be interested in doing Pomodoros together. We set our timers and check in again at\nthe end and beginning of each Pomodoro round. This helps me to actually take breaks and stay focused on my\nintended tasks.” — Kimberly, California"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                53.86,
+                486.38,
+                556.59,
+                555.56
+              ],
+              "text": "“I try to build my life around my brain as much as possible. I schedule less, not more. It’s easier to meet\nobligations when I’m not harried and hassled. The concept of ‘time management’ is very industrial and\nrobotic, and I’m tired of trying to fit into such an unnatural state of constant efficiency. But real life does require\nappointments and deadlines, so I make my yes’s count, and I try to schedule things around my capabilities.” —\nAmanda, Canada"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                55.12,
+                570.29,
+                331.6,
+                592.91
+              ],
+              "text": "Time Management Tips: Next Steps"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                85.12,
+                607.12,
+                296.97,
+                622.31
+              ],
+              "text": "Free Download: Get There On Time, Every Time"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                85.12,
+                624.38,
+                320.43,
+                639.56
+              ],
+              "text": "Read: How to Tackle Your Toughest Daily Transitions"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                85.12,
+                641.62,
+                373.63,
+                656.81
+              ],
+              "text": "Read: Beat the Clock — Time Management Tips for ADHD Adults"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                677.62,
+                538.98,
+                719.81
+              ],
+              "text": "SUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                63.69,
+                740.39,
+                158.66,
+                755.57
+              ],
+              "text": "\n\n"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                24.0,
+                15.26,
+                425.5,
+                24.19
+              ],
+              "text": "6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/time-management-tips-adhd/\n2/3"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/time-management-tools-adhd-deadlines/",
+              "bbox": [
+                507.75,
+                28.5,
+                551.25,
+                42.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/sense-of-urgency-productivity-hack-adhd/?src=embed_link",
+              "bbox": [
+                59.25,
+                82.5,
+                399.75,
+                98.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/exercise-learning-adhd-brain/",
+              "bbox": [
+                220.5,
+                138.0,
+                256.5,
+                153.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/product/time-timer-original-8-inch-time-management/",
+              "bbox": [
+                91.5,
+                306.0,
+                144.0,
+                321.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/understanding-adhd-hyperfocus/",
+              "bbox": [
+                55.5,
+                333.0,
+                105.0,
+                348.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/what-is-adhd-symptoms-causes-treatments/",
+              "bbox": [
+                55.5,
+                430.5,
+                83.25,
+                446.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/download/chronic-lateness-in-adults-with-adhd-be-on-time-today/?src=embed_link",
+              "bbox": [
+                158.25,
+                606.75,
+                297.0,
+                622.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/daily-schedule-transitions-adhd-adults/?src=embed_link",
+              "bbox": [
+                113.25,
+                624.0,
+                320.25,
+                639.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/beat-the-clock/?src=embed_link",
+              "bbox": [
+                113.25,
+                641.25,
+                373.5,
+                657.0
+              ]
+            },
+            {
+              "uri": "https://additu.de/subscribe/",
+              "bbox": [
+                501.75,
+                690.75,
+                530.25,
+                706.5
+              ]
+            },
+            {
+              "uri": "https://additu.de/subscribe/",
+              "bbox": [
+                55.5,
+                704.25,
+                147.75,
+                720.0
+              ]
+            },
+            {
+              "uri": "https://www.facebook.com/sharer/sharer.php?u=https://www.additudemag.com/time-management-tips-adhd/",
+              "bbox": [
+                55.5,
+                734.25,
+                79.5,
+                759.0
+              ]
+            },
+            {
+              "uri": "https://twitter.com/intent/tweet/?text=15+Time-Management+Tricks+for+ADHD+Brains&url=https://www.additudemag.com/time-management-tips-adhd/&via=",
+              "bbox": [
+                84.0,
+                734.25,
+                108.0,
+                758.25
+              ]
+            },
+            {
+              "uri": "https://www.instagram.com/additudemag/",
+              "bbox": [
+                113.25,
+                734.25,
+                137.25,
+                759.0
+              ]
+            },
+            {
+              "uri": "https://pinterest.com/pin/create/button/?url=https://www.additudemag.com/time-management-tips-adhd/&media=https://i0.wp.com/www.additudemag.com/wp-content/uploads/2021/11/GettyImages-1185473184-scaled-e1637618817720.jpg?resize=1280%2C720px&ssl=1&description=Time%20management%20is%20tricky%20for%20ADHD%20brains.%20Good%20thing%20we%20are%20so%20good%20at%20devising%20clever,%20unconven-tional%20solutions%20to%20tricky%20problems.%20Here,%20our%20readers%20sound%20off%20about%20the%20techniques%20that%20help%20them%20keep%20track%20of%20time.",
+              "bbox": [
+                142.5,
+                734.25,
+                166.5,
+                759.0
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "The ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare.\nREVIEW OUR EDITORIAL PROCESS\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\nContent is periodically reviewed and updated to reflect new health insights.\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only.\n6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains\nhttps://www.additudemag.com/time-management-tips-adhd/\n3/3",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                148.21,
+                60.27,
+                464.54,
+                93.46
+              ],
+              "text": "The ADDITUDE Commitment"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                43.5,
+                95.81,
+                544.05,
+                156.67
+              ],
+              "text": "ADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                212.85,
+                183.93,
+                399.14,
+                198.07
+              ],
+              "text": "REVIEW OUR EDITORIAL PROCESS"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                202.7,
+                226.68,
+                409.28,
+                240.82
+              ],
+              "text": "MEET OUR MEDICAL ADVISORY PANEL"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                84.75,
+                276.19,
+                367.87,
+                291.28
+              ],
+              "text": "ADDitude verifies the factual accuracy of all new content."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                84.75,
+                327.19,
+                361.16,
+                342.28
+              ],
+              "text": "Sources are cited for all scientific research and findings."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                84.75,
+                378.94,
+                460.91,
+                394.03
+              ],
+              "text": "Content is periodically reviewed and updated to reflect new health insights."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                84.75,
+                429.94,
+                339.77,
+                445.03
+              ],
+              "text": "We strive to feature diverse voices and experiences."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                579.94,
+                532.39,
+                625.03
+              ],
+              "text": "Copyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                24.0,
+                15.26,
+                425.5,
+                24.19
+              ],
+              "text": "6/25/26, 10:36 AM\nTime Management Tips for ADHD Brains"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/time-management-tips-adhd/\n3/3"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 9,
+              "bbox": [
+                500.25,
+                557.25,
+                558.0,
+                569.25
+              ],
+              "width_px": 77,
+              "height_px": 16,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/contact-us/editorial-process-standards/",
+              "bbox": [
+                201.0,
+                173.25,
+                411.75,
+                208.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/adhd-medical-advisory-panel/",
+              "bbox": [
+                190.5,
+                216.0,
+                422.25,
+                251.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/terms-and-conditions/",
+              "bbox": [
+                55.5,
+                594.75,
+                121.5,
+                609.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/privacy-policy/",
+              "bbox": [
+                143.25,
+                594.75,
+                214.5,
+                609.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/ai-policy/",
+              "bbox": [
+                242.25,
+                594.75,
+                286.5,
+                609.75
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        }
+      ]
+    }
+  ],
+  "ourspace_shared_life_filter": {
+    "revision_id": "ourspace_shared_life_filter_v1",
+    "title": "Time Management Tips For Adhd Brains",
+    "domain": "time_planning",
+    "item_type": "document",
+    "shared_facing_summary": "Time planning must flex around disability. The day starts when the body can start; timers are supports, not punishments.",
+    "tiny_steps": [
+      "Press Start Day.",
+      "Choose capacity: tiny, medium, full, or recovery.",
+      "Pick one anchor task.",
+      "Place rest before and after body-costly tasks."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "accessibility_modifications": [
+      "Use floating starts instead of fixed mornings.",
+      "Add prep/recovery blocks for showers, appointments, cleaning, cooking, and conflict repair.",
+      "Use alarms only when they help, not when they shame."
+    ],
+    "relationship_and_caregiver_notes": [
+      "William's needs and Jasper's capacity both count.",
+      "Ask before helping; ask before escalating; name the smallest next step.",
+      "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+      "What is needed, what capacity exists, what can be smaller, and what can wait?"
+    ],
+    "identity_and_trauma_filter": [
+      "Use William's masculine language and Jasper's they/them language.",
+      "Use consent-based, non-shaming, body-neutral language unless a person has explicitly chosen a term.",
+      "Do not turn symptoms, dysphoria, trauma responses, clutter, fatigue, or emotional intensity into moral failure."
+    ],
+    "avoid_or_adjust": [
+      "Do not compare today with an able-bodied schedule."
+    ],
+    "suggested_cadence": [
+      "daily_optional",
+      "flare_day_as_needed"
+    ],
+    "app_tags": [
+      "adhd_friendly",
+      "disability_first",
+      "shared",
+      "time_planning",
+      "tiny_steps",
+      "trauma_informed"
+    ]
+  },
+  "ourspace_shared_revision_metadata": {
+    "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/json/time_management_tips_for_adhd_brains.json",
+    "shared_output_path": "shared/08_adhd_time_management_and_planning/json/time_management_tips_for_adhd_brains.json",
+    "revised_at_utc": "2026-06-26T00:24:16Z",
+    "copyright_note": "Original source text preserved from user-provided files; added OurSpace accessibility/life-filter metadata for private use."
+  },
+  "shared_json_path": "shared/08_adhd_time_management_and_planning/json/time_management_tips_for_adhd_brains.json"
+}
