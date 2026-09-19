@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0",
+  "dataset": "Life Events, Trauma, Illness, Disability, and Daily-Life Impact Knowledge Base",
+  "research_date": "2026-08-10",
+  "topic": "Complex post-traumatic stress disorder (CPTSD)",
+  "aliases_or_related_terms": [
+    "CPTSD",
+    "complex PTSD"
+  ],
+  "domain": "mental/behavioral health",
+  "subcategory": "trauma_stressor_and_dissociation",
+  "tags": [
+    "mental",
+    "trauma_stressor_and_dissociation"
+  ],
+  "scope_note": "This file is an evidence-informed support/reasoning aid, not a diagnostic rule. People vary widely; presence of a condition or event does not imply every listed impact.",
+  "core_reasoning": {
+    "separate_event_from_response": true,
+    "separate_primary_from_secondary_harms": true,
+    "consider_daily_and_long_term": true,
+    "consider_cumulative_load": true,
+    "preserve_person_specific_variation": true,
+    "avoid_diagnostic_inference_from_life_event_alone": true
+  },
+  "possible_impact_dimensions": {
+    "emotional": [
+      "fear, sadness, anger, shame, guilt, numbness, irritability, or uncertainty",
+      "grief for health, roles, identity, relationships, safety, or expected future",
+      "hypervigilance, avoidance, intrusive memories, or reactivity when trauma is involved",
+      "loss of confidence or increased sensitivity to perceived threat or rejection",
+      "periods of hope and adaptation alongside distress"
+    ],
+    "cognitive": [
+      "attention, working-memory, processing-speed, planning, or decision fatigue",
+      "brain fog or difficulty switching between tasks",
+      "reduced cognitive reserve during pain, fatigue, stress, or sleep loss",
+      "difficulty learning new routines or tracking complex care instructions",
+      "greater need for reminders, external structure, or reduced information load"
+    ],
+    "daily": [
+      "difficulty with bathing, dressing, eating, cooking, cleaning, transportation, or medication routines",
+      "need to pace activities, rest, use equipment, or change routines",
+      "unpredictable good and bad days that complicate planning",
+      "increased administrative work involving appointments, forms, insurance, benefits, or accommodations",
+      "reduced spontaneity because safety, symptoms, access, or energy must be considered"
+    ],
+    "relationships": [
+      "role changes with partners, family, friends, coworkers, or caregivers",
+      "misunderstanding when symptoms or trauma effects are invisible or variable",
+      "changes in intimacy, communication, conflict, dependence, or boundaries",
+      "social withdrawal or loss of shared activities",
+      "strengthened relationships when support is respectful, reliable, and autonomy-preserving"
+    ],
+    "work_school": [
+      "attendance, punctuality, concentration, workload, or performance changes",
+      "need for accommodations, leave, remote options, reduced hours, or role modification",
+      "fear of stigma, disclosure, retaliation, or being viewed as unreliable",
+      "interrupted education, career progression, or professional identity",
+      "financial consequences from lost time, reduced capacity, or treatment demands"
+    ],
+    "identity": [
+      "changes in self-concept, body image, independence, competence, or future expectations",
+      "identity conflict when old roles are no longer sustainable",
+      "stigma, internalized stigma, or pressure to appear recovered",
+      "meaning-making, advocacy, community connection, or post-adversity growth",
+      "need to integrate the experience without reducing the person to the diagnosis/event"
+    ],
+    "access": [
+      "physical, sensory, communication, cognitive, transportation, or financial barriers",
+      "provider scarcity, waitlists, fragmented specialties, or diagnostic delay",
+      "need for accessible environments and reasonable accommodations",
+      "care coordination burden across clinicians, schools, employers, insurers, and family",
+      "risk that bias or disbelief delays appropriate support"
+    ],
+    "safety": [
+      "risk assessment may include environment, mobility, medication, exploitation, violence, self-neglect, or crisis concerns depending on context",
+      "safety planning should be individualized and avoid assuming incapacity",
+      "emergency plans may need to account for disability, communication, transportation, dependents, and medical equipment",
+      "past coercion can make control-heavy interventions retraumatizing",
+      "privacy and confidentiality can be central to safety"
+    ]
+  },
+  "time_course_prompts": {
+    "immediate_hours_days": [
+      "acute physical or emotional response",
+      "safety and stabilization needs",
+      "disruption of routines and responsibilities",
+      "initial medical, legal, social, or practical decisions"
+    ],
+    "short_term_weeks_months": [
+      "recovery, adaptation, symptom fluctuation, or delayed reactions",
+      "work/school and relationship consequences",
+      "care coordination and financial burden",
+      "changes in sleep, cognition, confidence, and activity"
+    ],
+    "long_term_months_years": [
+      "persistent symptoms, disability, grief, changed roles, or altered life plans",
+      "secondary stress from systems, access barriers, finances, or stigma",
+      "adaptation, accommodation, community connection, and meaning-making",
+      "possible recurrence, triggers, anniversaries, progression, remission, or new phases"
+    ]
+  },
+  "assessment_questions_for_person_specific_context": [
+    "What changed immediately after this began or happened?",
+    "What is hardest on an ordinary day, not only on the worst day?",
+    "Which effects are constant, episodic, progressive, or triggered by context?",
+    "What tasks cost much more energy, planning, or recovery time than before?",
+    "What has changed in sleep, cognition, mood, sensory tolerance, pain, or stamina?",
+    "What has changed in relationships, intimacy, parenting, caregiving, or social connection?",
+    "What has changed at work, school, or in household responsibilities?",
+    "What financial or access burdens have appeared?",
+    "What does the person fear losing, and what has already been lost?",
+    "What support helps without reducing autonomy or dignity?",
+    "Are there reminders, environments, people, procedures, or sensations that trigger distress?",
+    "What accommodations or environmental changes make functioning easier?",
+    "What strengths, identities, communities, or routines remain protective?",
+    "What would a 'better day' look like from the person's perspective?"
+  ],
+  "protective_and_supportive_factors": [
+    "stable, trustworthy relationships",
+    "material stability: safe housing, food, transportation, income, and healthcare access",
+    "accessible and culturally responsive care",
+    "predictable routines with flexibility for bad days",
+    "peer support or community belonging when desired",
+    "autonomy, informed choice, and control over disclosure",
+    "accommodations that reduce preventable barriers",
+    "skills for pacing, emotion regulation, communication, problem-solving, or symptom tracking",
+    "care coordination that reduces administrative burden",
+    "meaningful roles, interests, creativity, spirituality, advocacy, or purpose when personally relevant"
+  ],
+  "trauma_informed_principles": [
+    "Do not assume that a diagnosis or life event is traumatic for every person; assess the person's own meaning and response.",
+    "Distinguish the original event/condition from secondary harms such as disbelief, stigma, poverty, inaccessible care, coercion, or relationship loss.",
+    "Avoid forcing disclosure of traumatic details when they are not necessary.",
+    "Offer choices, explain what will happen, and preserve control wherever possible.",
+    "Recognize that anniversaries, procedures, sensory cues, bodily symptoms, legal processes, and medical settings can reactivate distress.",
+    "Avoid framing adaptive survival responses as moral failures.",
+    "Consider cumulative and intersectional stress rather than analyzing each event in isolation.",
+    "Use person-preferred language and avoid reducing identity to a diagnosis or event."
+  ],
+  "red_flags_for_ai_reasoning": [
+    "Do not treat a list of symptoms as proof of a diagnosis.",
+    "Do not assume personality, dangerousness, dishonesty, incapacity, or prognosis from a label.",
+    "Do not assume trauma means PTSD; many trauma responses do not meet PTSD criteria.",
+    "Do not assume distress is purely psychological when physical illness, medication effects, sleep loss, pain, endocrine changes, or neurological disease may contribute.",
+    "Do not assume a person wants reconciliation, forgiveness, disclosure, legal action, or family involvement.",
+    "Do not recommend abrupt medication changes or substitute this dataset for individualized clinical care.",
+    "If there is an immediate medical or safety emergency, prioritize urgent real-world help rather than reflective self-help."
+  ],
+  "evidence_sources": [
+    {
+      "title": "ICD-11",
+      "publisher": "World Health Organization",
+      "url": "https://icd.who.int/",
+      "use": "Diagnostic/classification framework and terminology.",
+      "source_id": "WHO_ICD11"
+    },
+    {
+      "title": "Mental disorders",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/mental-disorders",
+      "use": "Mental health burden, functioning, and broad disorder categories.",
+      "source_id": "WHO_MENTAL"
+    },
+    {
+      "title": "Health Topics",
+      "publisher": "National Institute of Mental Health",
+      "url": "https://www.nimh.nih.gov/health/topics",
+      "use": "Authoritative mental-health topic overviews.",
+      "source_id": "NIMH_TOPICS"
+    },
+    {
+      "title": "Trauma and Violence",
+      "publisher": "Substance Abuse and Mental Health Services Administration",
+      "url": "https://www.samhsa.gov/mental-health/trauma-violence",
+      "use": "Trauma definition and behavioral/physical health relationships.",
+      "source_id": "SAMHSA_TRAUMA"
+    }
+  ],
+  "curation_notes": [
+    "Possible impacts are prompts for individualized assessment, not predictions.",
+    "The dataset intentionally includes both diagnosis/event files and lived-experience/process files so downstream AI can reason at more than one level."
+  ]
+}

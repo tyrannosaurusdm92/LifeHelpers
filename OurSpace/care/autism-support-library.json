@@ -1,0 +1,98 @@
+{
+  "version": "1.0.0",
+  "domain": "autism",
+  "cards": [
+    {
+      "id": "autism.communication.preference",
+      "use": "communication",
+      "guidance": [
+        "Ask whether spoken, written, visual, AAC, or extra processing time helps.",
+        "Treat communication difference as a support need, not defiance."
+      ]
+    },
+    {
+      "id": "autism.sensory.overload",
+      "use": "sensory regulation",
+      "guidance": [
+        "Reduce sound, light, touch, crowding, and competing demands when possible.",
+        "Offer exit, headphones, dimmer space, or fewer simultaneous instructions."
+      ]
+    },
+    {
+      "id": "autism.transition",
+      "use": "predictability",
+      "guidance": [
+        "Give concrete notice before changes.",
+        "Explain what is changing, what stays the same, and what happens next."
+      ]
+    },
+    {
+      "id": "autism.meltdown",
+      "use": "acute overload",
+      "guidance": [
+        "Prioritize safety and reduce demands.",
+        "Use fewer words and avoid arguing, teaching, or punishment during peak overload."
+      ]
+    },
+    {
+      "id": "autism.shutdown",
+      "use": "acute overload",
+      "guidance": [
+        "Allow reduced speech and lower-demand communication.",
+        "Support basic needs and recovery time without forcing immediate explanation."
+      ]
+    },
+    {
+      "id": "autism.stimming",
+      "use": "self regulation",
+      "guidance": [
+        "Allow safe self-regulatory movement or repetition.",
+        "Redirect only when the behavior is unsafe, harmful, or the person asks for alternatives."
+      ]
+    },
+    {
+      "id": "autism.masking",
+      "use": "burnout prevention",
+      "guidance": [
+        "Do not make appearing non-autistic the primary goal.",
+        "Support authentic communication, sensory needs, and recovery from sustained social effort."
+      ]
+    },
+    {
+      "id": "autism.executive_function",
+      "use": "daily living",
+      "guidance": [
+        "Break multistep tasks into visible concrete actions.",
+        "Use routines, checklists, visual schedules, or environmental cues when preferred."
+      ]
+    },
+    {
+      "id": "autism.interoception",
+      "use": "body awareness",
+      "guidance": [
+        "Use concrete body check-ins for hunger, thirst, pain, temperature, toileting, and fatigue.",
+        "Do not assume delayed body awareness means symptoms are unimportant."
+      ]
+    },
+    {
+      "id": "autism.clinician_prep",
+      "use": "healthcare access",
+      "guidance": [
+        "Document communication and sensory accommodations before visits.",
+        "List known triggers, preferred support person roles, and consent preferences."
+      ]
+    },
+    {
+      "id": "autism.boundary",
+      "use": "diagnostic safety",
+      "guidance": [
+        "A chat can organize traits and questions but cannot establish an autism diagnosis.",
+        "Encourage qualified evaluation when formal diagnosis or documentation is needed."
+      ]
+    }
+  ],
+  "sources": [
+    "nimh_autism",
+    "cdc_autism"
+  ]
+}
