@@ -149,5 +149,71 @@
 </div>
 <script src="GameBots/js/gamebots.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+/* =========================================================
+   SAVANSKI ART STUDIO — LifeHelpers/Games integration
+   Expected structure:
+   /Games
+     /Savanski_Art_Studio
+       studio.html
+   ========================================================= */
+(function () {
+  const SAVANSKI_STUDIO = {
+    title: "Savanski Art Studio",
+    path: "Savanski_Art_Studio/studio.html",
+    value: "__savanski_art_studio__"
+  };
+
+  function installSavanskiStudio() {
+    const select = document.getElementById("bothGameSelect");
+    const loadButton = document.getElementById("loadBothButton");
+    const frame = document.getElementById("gameFrame");
+    const empty = document.getElementById("viewerEmpty");
+    const title = document.getElementById("viewerTitle");
+    const status = document.getElementById("viewerStatus");
+    const viewer = document.getElementById("arcade-viewer");
+
+    if (!select || !loadButton || !frame) return;
+
+    if (!select.querySelector('option[value="' + SAVANSKI_STUDIO.value + '"]')) {
+      const option = document.createElement("option");
+      option.value = SAVANSKI_STUDIO.value;
+      option.textContent = SAVANSKI_STUDIO.title;
+      select.appendChild(option);
+    }
+
+    loadButton.addEventListener("click", function (event) {
+      if (select.value !== SAVANSKI_STUDIO.value) return;
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      frame.src = SAVANSKI_STUDIO.path;
+
+      if (empty) {
+        empty.hidden = true;
+        empty.style.display = "none";
+      }
+
+      if (title) title.textContent = SAVANSKI_STUDIO.title;
+      if (status) {
+        status.innerHTML = 'Loaded Savanski Art Studio. <span class="mobile-safe-note">Mobile fullscreen.</span>';
+      }
+
+      if (viewer) {
+        viewer.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, true);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", installSavanskiStudio);
+  } else {
+    installSavanskiStudio();
+  }
+})();
+</script>
+
 </body>
 </html>
