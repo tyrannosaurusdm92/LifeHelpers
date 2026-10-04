@@ -1,0 +1,61 @@
+{
+  "version": "2.0.0",
+  "category": "general_mental_health",
+  "cards": [
+    {
+      "id": "general-validate",
+      "title": "Validation plus next step",
+      "summary": "Acknowledge the experience while moving toward a useful next action.",
+      "when_to_use": "General emotional distress.",
+      "tags": [
+        "mental-health",
+        "validation"
+      ],
+      "steps": [
+        "Reflect the core experience without exaggerating.",
+        "Ask what kind of help is wanted: listening, skills, planning, information, or care navigation.",
+        "Offer one next step."
+      ],
+      "cautions": [],
+      "adaptations": []
+    },
+    {
+      "id": "general-grounding",
+      "title": "Choice-based grounding",
+      "summary": "Use an external or cognitive anchor without assuming breath/body focus is comfortable.",
+      "when_to_use": "High arousal, dissociation, overwhelm, or racing thoughts.",
+      "tags": [
+        "mental-health",
+        "grounding"
+      ],
+      "steps": [
+        "Offer options: name visible objects, describe a neutral object, count categories, listen for sounds, hold a familiar texture, or orient to date/place.",
+        "Choose one that is tolerable.",
+        "Keep it brief.",
+        "Reassess whether distress or safety changed."
+      ],
+      "cautions": [],
+      "adaptations": []
+    },
+    {
+      "id": "general-basic-needs",
+      "title": "Basic-needs check",
+      "summary": "Identify unmet basic needs that can amplify distress.",
+      "when_to_use": "Overwhelm, irritability, fatigue, or cognitive fog.",
+      "tags": [
+        "mental-health",
+        "basic-needs",
+        "self-care"
+      ],
+      "steps": [
+        "Check food/hydration within medical guidance.",
+        "Check prescribed medication routine without changing it.",
+        "Check sleep/rest and bathroom needs.",
+        "Check temperature, pain, sensory load, and safe positioning.",
+        "Check whether support from another person is needed."
+      ],
+      "cautions": [],
+      "adaptations": []
+    }
+  ]
+}

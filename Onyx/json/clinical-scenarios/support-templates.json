@@ -1,0 +1,401 @@
+{
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "adhd.check_in",
+      "domain": "adhd",
+      "mode": "check_in",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "adhd.skill_coaching",
+      "domain": "adhd",
+      "mode": "skill_coaching",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "adhd.clinician_prep",
+      "domain": "adhd",
+      "mode": "clinician_prep",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "adhd.reflection",
+      "domain": "adhd",
+      "mode": "reflection",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "adhd.accessibility",
+      "domain": "adhd",
+      "mode": "accessibility",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "adhd.follow_up",
+      "domain": "adhd",
+      "mode": "follow_up",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "autism.check_in",
+      "domain": "autism",
+      "mode": "check_in",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "autism.skill_coaching",
+      "domain": "autism",
+      "mode": "skill_coaching",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "autism.clinician_prep",
+      "domain": "autism",
+      "mode": "clinician_prep",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "autism.reflection",
+      "domain": "autism",
+      "mode": "reflection",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "autism.accessibility",
+      "domain": "autism",
+      "mode": "accessibility",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "autism.follow_up",
+      "domain": "autism",
+      "mode": "follow_up",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "cbt.check_in",
+      "domain": "cbt",
+      "mode": "check_in",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "cbt.skill_coaching",
+      "domain": "cbt",
+      "mode": "skill_coaching",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "cbt.clinician_prep",
+      "domain": "cbt",
+      "mode": "clinician_prep",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "cbt.reflection",
+      "domain": "cbt",
+      "mode": "reflection",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "cbt.accessibility",
+      "domain": "cbt",
+      "mode": "accessibility",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "cbt.follow_up",
+      "domain": "cbt",
+      "mode": "follow_up",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "dbt.check_in",
+      "domain": "dbt",
+      "mode": "check_in",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "dbt.skill_coaching",
+      "domain": "dbt",
+      "mode": "skill_coaching",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "dbt.clinician_prep",
+      "domain": "dbt",
+      "mode": "clinician_prep",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "dbt.reflection",
+      "domain": "dbt",
+      "mode": "reflection",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "dbt.accessibility",
+      "domain": "dbt",
+      "mode": "accessibility",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "dbt.follow_up",
+      "domain": "dbt",
+      "mode": "follow_up",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "psychiatry.check_in",
+      "domain": "psychiatry",
+      "mode": "check_in",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "psychiatry.skill_coaching",
+      "domain": "psychiatry",
+      "mode": "skill_coaching",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "psychiatry.clinician_prep",
+      "domain": "psychiatry",
+      "mode": "clinician_prep",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "psychiatry.reflection",
+      "domain": "psychiatry",
+      "mode": "reflection",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "psychiatry.accessibility",
+      "domain": "psychiatry",
+      "mode": "accessibility",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "psychiatry.follow_up",
+      "domain": "psychiatry",
+      "mode": "follow_up",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "physical_health.check_in",
+      "domain": "physical_health",
+      "mode": "check_in",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "physical_health.skill_coaching",
+      "domain": "physical_health",
+      "mode": "skill_coaching",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "physical_health.clinician_prep",
+      "domain": "physical_health",
+      "mode": "clinician_prep",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "physical_health.reflection",
+      "domain": "physical_health",
+      "mode": "reflection",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "physical_health.accessibility",
+      "domain": "physical_health",
+      "mode": "accessibility",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    },
+    {
+      "id": "physical_health.follow_up",
+      "domain": "physical_health",
+      "mode": "follow_up",
+      "instructions": [
+        "Start with the person’s stated goal and current capacity.",
+        "Offer 1–3 concrete options, not a wall of tasks.",
+        "State uncertainty when clinical interpretation is required.",
+        "If safety red flags appear, switch to the safety route before ordinary coaching."
+      ]
+    }
+  ]
+}

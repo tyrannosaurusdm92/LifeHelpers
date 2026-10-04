@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "category": "care_coordination",
+  "cards": [
+    {
+      "id": "care-message",
+      "title": "Message to clinician",
+      "summary": "Create a concise request for care.",
+      "when_to_use": "User knows they need care but struggles to explain the problem.",
+      "tags": [
+        "care-coordination",
+        "clinician",
+        "message"
+      ],
+      "steps": [
+        "State the main change/concern.",
+        "Give onset and severity/impact.",
+        "Mention safety or urgent symptoms.",
+        "List key medication/medical changes.",
+        "State the request: appointment, advice, refill question, urgent assessment, accommodation, etc."
+      ],
+      "cautions": [],
+      "adaptations": []
+    },
+    {
+      "id": "care-questions",
+      "title": "Appointment question builder",
+      "summary": "Prioritize questions so limited appointment time covers the most important decisions.",
+      "when_to_use": "Preparing for a visit.",
+      "tags": [
+        "care-coordination",
+        "appointment",
+        "questions"
+      ],
+      "steps": [
+        "What are the most likely categories of cause you are considering?",
+        "What would make this urgent?",
+        "What tests or monitoring are needed?",
+        "What should I do if symptoms worsen?",
+        "What medication side effects/interactions should I watch for?",
+        "What follow-up timing is appropriate?"
+      ],
+      "cautions": [],
+      "adaptations": []
+    }
+  ]
+}

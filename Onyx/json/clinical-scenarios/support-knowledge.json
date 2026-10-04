@@ -1,0 +1,570 @@
+{
+  "schema": "psychiatrypt3.support_knowledge.v1",
+  "count": 47,
+  "items": [
+    {
+      "id": "knowledge-df4fc530f823340f",
+      "domain": "adhd",
+      "title": "Executive dysfunction",
+      "summary": "Difficulty initiating, sequencing, remembering, switching, estimating time, or sustaining attention can occur even when a task matters deeply.",
+      "signals": [
+        "knows what to do but cannot start",
+        "loses steps",
+        "underestimates setup or transition time"
+      ],
+      "support_actions": [
+        "externalize steps",
+        "shrink the first action",
+        "use cues, timers, body doubling, and visible checklists"
+      ],
+      "boundary": "Support strategies do not establish or rule out an ADHD diagnosis."
+    },
+    {
+      "id": "knowledge-85590ad436e656ca",
+      "domain": "autism",
+      "title": "Sensory overload",
+      "summary": "Sound, light, touch, temperature, smell, movement, internal sensations, and social demands can accumulate until processing and communication capacity fall.",
+      "signals": [
+        "increased irritability",
+        "speech reduction",
+        "escape urge",
+        "shutdown",
+        "meltdown"
+      ],
+      "support_actions": [
+        "reduce stimulation",
+        "lower demands",
+        "offer alternate communication",
+        "protect recovery time"
+      ],
+      "boundary": "Do not treat overload behavior as deliberate misconduct by default."
+    },
+    {
+      "id": "knowledge-baabc43257811282",
+      "domain": "autism",
+      "title": "Autistic burnout",
+      "summary": "Long-term overload, masking, inaccessible environments, and insufficient recovery can produce marked loss of capacity.",
+      "signals": [
+        "fatigue",
+        "reduced executive function",
+        "lower sensory tolerance",
+        "reduced speech or social capacity"
+      ],
+      "support_actions": [
+        "reduce nonessential demands",
+        "increase accommodations",
+        "protect recovery",
+        "seek professional help for major functional decline or medical concerns"
+      ]
+    },
+    {
+      "id": "knowledge-a7dd4ffd50a018fa",
+      "domain": "cbt",
+      "title": "Cognitive model",
+      "summary": "Thoughts, emotions, body sensations, behaviors, and context influence one another. CBT tools can examine one link without assuming every distressing thought is inaccurate.",
+      "support_actions": [
+        "separate observations from interpretations",
+        "test predictions safely",
+        "use balanced alternatives",
+        "pair cognitive work with behavior change"
+      ]
+    },
+    {
+      "id": "knowledge-dafd04b64636d8c1",
+      "domain": "dbt",
+      "title": "Dialectics",
+      "summary": "Two apparently opposing things can both contain truth, such as accepting the present while working to change it.",
+      "support_actions": [
+        "validate what is true now",
+        "identify what needs change",
+        "avoid all-or-nothing framing"
+      ]
+    },
+    {
+      "id": "knowledge-06a6382e96cb2460",
+      "domain": "psychiatric_support",
+      "title": "Functional impact",
+      "summary": "Symptom severity is better understood when paired with what changed in sleep, relationships, self-care, work/school, decision-making, safety, and daily functioning.",
+      "support_actions": [
+        "track baseline and change",
+        "bring concrete examples to clinicians"
+      ]
+    },
+    {
+      "id": "knowledge-4f945634e0ec9bfb",
+      "domain": "psychiatric_support",
+      "title": "Psychosis-aware support",
+      "summary": "When someone reports hallucinations, paranoia, or unusual beliefs, emotional validation can be paired with reality-based language.",
+      "support_actions": [
+        "acknowledge distress",
+        "do not confirm implausible claims as fact",
+        "focus on observable safety",
+        "seek professional help when new, worsening, or dangerous"
+      ]
+    },
+    {
+      "id": "knowledge-059acd795c55be51",
+      "domain": "psychiatric_support",
+      "title": "Mania or severe activation",
+      "summary": "Markedly reduced need for sleep, unusually high or irritable energy, racing thoughts, grandiosity, pressured speech, or risky behavior can warrant prompt professional assessment, especially when new or escalating.",
+      "support_actions": [
+        "reduce stimulation",
+        "involve trusted support",
+        "avoid encouraging risky plans",
+        "seek urgent professional help if safety or judgment is impaired"
+      ]
+    },
+    {
+      "id": "knowledge-33804c3fde00e125",
+      "domain": "general_mental_health",
+      "title": "Dissociation",
+      "summary": "Detachment, unreality, fogginess, time loss, or feeling disconnected can be frightening and can reduce functioning.",
+      "support_actions": [
+        "orient to present facts",
+        "use tolerable sensory anchors",
+        "reduce demands",
+        "seek professional support for persistent, severe, or dangerous episodes"
+      ]
+    },
+    {
+      "id": "knowledge-88b8ac321cb59360",
+      "domain": "general_mental_health",
+      "title": "Grief variability",
+      "summary": "Grief can include sadness, anger, numbness, relief, guilt, longing, physical fatigue, and changing intensity over time.",
+      "support_actions": [
+        "support basic care",
+        "make room for different grief responses",
+        "seek additional help when safety or functioning is severely affected"
+      ]
+    },
+    {
+      "id": "knowledge-2906e25b5fefb39c",
+      "domain": "physical_health",
+      "title": "Symptom triage boundary",
+      "summary": "A chatbot can help organize symptoms but should not replace urgent medical evaluation or a clinician-specific plan.",
+      "support_actions": [
+        "document onset and associated symptoms",
+        "follow existing medical plan",
+        "escalate clear emergencies immediately"
+      ],
+      "boundary": "No medication dosing, diagnosis, or personalized emergency thresholds are generated by this brain."
+    },
+    {
+      "id": "knowledge-8271d09491eb1436",
+      "domain": "adhd",
+      "title": "Tiny Start support note",
+      "summary": "Task initiation is blocked by overwhelm, perfectionism, low energy, or unclear first steps.",
+      "support_actions": [
+        "Name the task in one sentence.",
+        "Shrink it until the first action takes about two minutes or less.",
+        "Place only the needed item or screen in front of the person."
+      ]
+    },
+    {
+      "id": "knowledge-1b87f55cef68ff0b",
+      "domain": "adhd",
+      "title": "Working Memory Externalization support note",
+      "summary": "The person keeps losing steps, ideas, or intentions.",
+      "support_actions": [
+        "Capture the thought immediately outside the brain.",
+        "Keep one visible list for the current task.",
+        "Cross off or hide completed steps."
+      ],
+      "boundary": "Avoid: Do not rely on 'just remember'."
+    },
+    {
+      "id": "knowledge-12de7481e695750c",
+      "domain": "adhd",
+      "title": "Transition Bridge support note",
+      "summary": "Stopping one activity and beginning another is hard.",
+      "support_actions": [
+        "Name the current activity and the next activity.",
+        "Give a predictable warning.",
+        "Choose one bridge action such as save, bathroom, drink, stretch, or pack materials."
+      ]
+    },
+    {
+      "id": "knowledge-d9ef7ec9eff31c4d",
+      "domain": "adhd",
+      "title": "Body Double support note",
+      "summary": "Presence helps task initiation or persistence.",
+      "support_actions": [
+        "Agree on the task and duration.",
+        "The support person stays present without taking over.",
+        "Use brief check-ins rather than constant reminders."
+      ]
+    },
+    {
+      "id": "knowledge-4566f40157126457",
+      "domain": "adhd",
+      "title": "Time Map support note",
+      "summary": "Time blindness makes planning unreliable.",
+      "support_actions": [
+        "Estimate the task in chunks.",
+        "Add setup, transition, and recovery time.",
+        "Anchor to a real event or alarm."
+      ]
+    },
+    {
+      "id": "knowledge-0c6b9982afaf5987",
+      "domain": "autism",
+      "title": "Sensory Map support note",
+      "summary": "Overload, shutdown, irritability, pain, or fatigue may be affected by sensory input.",
+      "support_actions": [
+        "Check sound, light, touch, temperature, smell, movement, hunger, thirst, pain, and social load.",
+        "Identify one input to reduce and one regulating input to add.",
+        "Lower communication demand while regulating."
+      ],
+      "boundary": "Avoid: Do not force eye contact or verbal explanation during overload."
+    },
+    {
+      "id": "knowledge-d87764cae4f54061",
+      "domain": "autism",
+      "title": "Shutdown Support support note",
+      "summary": "Speech, movement, decision-making, or processing has dropped sharply under stress.",
+      "support_actions": [
+        "Reduce demands and questions.",
+        "Offer yes/no, pointing, typing, AAC, or silence.",
+        "Reduce sensory load and preserve physical safety."
+      ],
+      "boundary": "Avoid: Do not interpret reduced speech as defiance."
+    },
+    {
+      "id": "knowledge-6f861bdee712991a",
+      "domain": "autism",
+      "title": "Meltdown Recovery support note",
+      "summary": "The nervous system is overloaded and behavioral control is reduced.",
+      "support_actions": [
+        "Prioritize safety and lower stimulation.",
+        "Reduce audience and demands.",
+        "Allow safe regulating movement or stillness."
+      ],
+      "boundary": "Avoid: Do not use punishment, argument, or forced processing during peak overload."
+    },
+    {
+      "id": "knowledge-fa91ab9726a8462b",
+      "domain": "autism",
+      "title": "Burnout Load Reduction support note",
+      "summary": "Sustained overload, masking, demands, or insufficient recovery have reduced capacity.",
+      "support_actions": [
+        "List essential and deferrable demands.",
+        "Protect recovery time and sensory safety.",
+        "Use communication shortcuts and accessibility supports."
+      ],
+      "boundary": "Avoid: Do not frame reduced capacity as laziness."
+    },
+    {
+      "id": "knowledge-cff9eb64cafb729e",
+      "domain": "autism",
+      "title": "Predictable Transition support note",
+      "summary": "Change or uncertainty is increasing distress.",
+      "support_actions": [
+        "Describe what will happen, in what order, and what is uncertain.",
+        "Name a fallback plan.",
+        "Allow a regulating object, routine, or communication method."
+      ]
+    },
+    {
+      "id": "knowledge-5324ff2fe0323fcf",
+      "domain": "cbt",
+      "title": "Thought Record support note",
+      "summary": "A strong emotion is linked to a specific interpretation or prediction.",
+      "support_actions": [
+        "Describe the situation briefly.",
+        "Name the automatic thought.",
+        "Rate emotion intensity."
+      ],
+      "boundary": "Avoid: Do not use cognitive restructuring to argue someone out of a real safety concern or discrimination experience."
+    },
+    {
+      "id": "knowledge-493ca38baa52914c",
+      "domain": "cbt",
+      "title": "Behavioral Activation support note",
+      "summary": "Low mood or avoidance has reduced meaningful activity.",
+      "support_actions": [
+        "Choose one very small activity tied to care, mastery, connection, or pleasure.",
+        "Set a low-effort version.",
+        "Schedule a specific start cue."
+      ],
+      "boundary": "Avoid: Do not prescribe exertion that conflicts with medical or disability limits."
+    },
+    {
+      "id": "knowledge-a326fb09737e4b17",
+      "domain": "cbt",
+      "title": "Structured Problem Solving support note",
+      "summary": "A solvable problem is looping without a concrete plan.",
+      "support_actions": [
+        "Define the problem narrowly.",
+        "Brainstorm options without judging them.",
+        "Compare effort, safety, accessibility, and likely benefit."
+      ]
+    },
+    {
+      "id": "knowledge-f582807b568854d2",
+      "domain": "cbt",
+      "title": "Worry Window support note",
+      "summary": "Repetitive worry is consuming the day.",
+      "support_actions": [
+        "Capture the worry in a note.",
+        "Choose a short scheduled time to review worries.",
+        "During the day, redirect to the present task when possible."
+      ],
+      "boundary": "Avoid: Do not postpone urgent safety or medical concerns."
+    },
+    {
+      "id": "knowledge-5443288a79a9c515",
+      "domain": "cbt",
+      "title": "Graded Practice support note",
+      "summary": "Avoidance is maintaining fear and the target is safe, consensual, and appropriate for gradual practice.",
+      "support_actions": [
+        "Define the feared but safe activity.",
+        "Create small steps from easier to harder.",
+        "Choose a manageable step and coping support."
+      ],
+      "boundary": "Avoid: Do not use for trauma processing, medical risk, abuse situations, psychosis content, self-harm urges, or unsafe environments without qualified clinical guidance."
+    },
+    {
+      "id": "knowledge-067041f9aaccc1d4",
+      "domain": "dbt",
+      "title": "STOP support note",
+      "summary": "A strong urge may lead to an impulsive action.",
+      "support_actions": [
+        "Stop.",
+        "Take a step back physically or mentally.",
+        "Observe body sensations, emotions, thoughts, urges, and facts."
+      ]
+    },
+    {
+      "id": "knowledge-cf45c9d47b5501cc",
+      "domain": "dbt",
+      "title": "TIPP support note",
+      "summary": "High physiological arousal needs short-term downshifting.",
+      "support_actions": [
+        "Use a safe temperature change that does not conflict with medical needs.",
+        "Use brief movement only within physical capacity.",
+        "Slow the exhale and pace breathing comfortably."
+      ],
+      "boundary": "Avoid: Do not use intense exercise or extreme temperature when medically unsafe; use gentler grounding instead."
+    },
+    {
+      "id": "knowledge-0ab098e46cf31b3a",
+      "domain": "dbt",
+      "title": "ACCEPTS support note",
+      "summary": "Short-term distraction is needed to survive a distress spike without making things worse.",
+      "support_actions": [
+        "Choose a safe activity, contribution, comparison, emotion shift, temporary pushing-away, different thoughts, or sensory focus.",
+        "Use it as a temporary bridge.",
+        "Return to the problem later if action is needed."
+      ]
+    },
+    {
+      "id": "knowledge-20ed78b74c868296",
+      "domain": "dbt",
+      "title": "Check the Facts support note",
+      "summary": "Emotion intensity may be amplified by assumptions or incomplete information.",
+      "support_actions": [
+        "Name the prompting event.",
+        "Separate observations from interpretations.",
+        "Check assumptions against available evidence."
+      ],
+      "boundary": "Avoid: Do not dismiss lived experience or real danger as a thinking error."
+    },
+    {
+      "id": "knowledge-801cb5d68f79d586",
+      "domain": "dbt",
+      "title": "Opposite Action support note",
+      "summary": "An emotion or urge does not fit the facts or acting on it would be ineffective.",
+      "support_actions": [
+        "Name the emotion and urge.",
+        "Check the facts and safety.",
+        "Identify the effective opposite behavior."
+      ],
+      "boundary": "Avoid: Do not use opposite action to override legitimate boundaries, pain limits, medical symptoms, or danger signals."
+    },
+    {
+      "id": "knowledge-0226f81f15aed2b8",
+      "domain": "dbt",
+      "title": "DEAR MAN support note",
+      "summary": "A clear request, refusal, or boundary is needed.",
+      "support_actions": [
+        "Describe the facts briefly.",
+        "Express feelings or impact.",
+        "Assert the request or boundary clearly."
+      ]
+    },
+    {
+      "id": "knowledge-5146a8b44e493790",
+      "domain": "dbt",
+      "title": "GIVE support note",
+      "summary": "The relationship matters during a conversation.",
+      "support_actions": [
+        "Be gentle.",
+        "Show interest.",
+        "Validate what makes sense in the other person's experience."
+      ]
+    },
+    {
+      "id": "knowledge-311ce277f33a2e67",
+      "domain": "dbt",
+      "title": "FAST support note",
+      "summary": "Self-respect needs protection in an interpersonal situation.",
+      "support_actions": [
+        "Be fair to self and others.",
+        "Avoid unnecessary apologies for existing or having needs.",
+        "Stick to values."
+      ]
+    },
+    {
+      "id": "knowledge-204c5916ab7d50c0",
+      "domain": "dbt",
+      "title": "Behavior Chain Analysis support note",
+      "summary": "A behavior needs a no-blame map of what led to it and what could change next time.",
+      "support_actions": [
+        "Name the target behavior neutrally.",
+        "Identify vulnerabilities before the event.",
+        "Map prompting event, thoughts, body sensations, emotions, actions, and consequences."
+      ],
+      "boundary": "Avoid: Do not turn chain analysis into interrogation, punishment, or proof of moral failure."
+    },
+    {
+      "id": "knowledge-214ab57ec5e0c90d",
+      "domain": "psychiatric_support",
+      "title": "Structured Psychiatric Check-In support note",
+      "summary": "The person wants to summarize symptoms and functioning for themselves or a clinician.",
+      "support_actions": [
+        "Review mood, anxiety, irritability, energy, sleep, appetite, concentration, trauma symptoms, dissociation, unusual perceptions/thoughts, substance use, and safety.",
+        "Record onset, frequency, intensity, duration, triggers, and functional impact.",
+        "Note medication taken as prescribed, missed doses, and side effects without changing treatment."
+      ],
+      "boundary": "Avoid: Do not convert a checklist score into a diagnosis."
+    },
+    {
+      "id": "knowledge-a36a504ca8cf5f4e",
+      "domain": "psychiatric_support",
+      "title": "Clinician Visit Preparation support note",
+      "summary": "A visit is coming up and important information needs organization.",
+      "support_actions": [
+        "List the top three concerns.",
+        "Add timeline, examples, and functional impact.",
+        "List current medications and side effects exactly as taken/reported."
+      ]
+    },
+    {
+      "id": "knowledge-ebcdc48cb5696266",
+      "domain": "psychiatric_support",
+      "title": "Medication Journal support note",
+      "summary": "The person wants to track medication experience without changing treatment.",
+      "support_actions": [
+        "Record medication name exactly as prescribed, time taken, missed dose if any, perceived benefit, side effects, sleep, appetite, and relevant symptoms.",
+        "Mark urgent reactions for professional or emergency review.",
+        "Bring trends to the prescriber or pharmacist."
+      ],
+      "boundary": "Avoid: Do not advise dose changes, taper schedules, substitutions, or combining substances."
+    },
+    {
+      "id": "knowledge-316c93ca79351828",
+      "domain": "psychiatric_support",
+      "title": "Reality-Grounded Support support note",
+      "summary": "A person reports paranoia, hallucinations, or unusual beliefs.",
+      "support_actions": [
+        "Acknowledge fear or distress.",
+        "Avoid confirming the unusual belief as fact.",
+        "Focus on what is directly observable and immediate safety."
+      ],
+      "boundary": "Avoid: Do not investigate, elaborate, or role-play the delusional framework as true."
+    },
+    {
+      "id": "knowledge-a8bdd8fa9eced297",
+      "domain": "general_mental_health",
+      "title": "5-4-3-2-1 Grounding support note",
+      "summary": "The person feels flooded, panicky, detached, or stuck in looping thoughts and sensory grounding is tolerable.",
+      "support_actions": [
+        "Notice five things you can see.",
+        "Notice four things you can feel safely.",
+        "Notice three things you can hear."
+      ]
+    },
+    {
+      "id": "knowledge-1249e9502cf3883a",
+      "domain": "general_mental_health",
+      "title": "Dissociation Anchor support note",
+      "summary": "The person feels unreal, detached, foggy, or disconnected.",
+      "support_actions": [
+        "State the current date and location if known.",
+        "Name one reliable fact about the present moment.",
+        "Press feet, hands, or another supported body area into a stable surface if comfortable."
+      ],
+      "boundary": "Avoid: Do not force intense sensory stimulation."
+    },
+    {
+      "id": "knowledge-e1a9d77fd0d02e75",
+      "domain": "general_mental_health",
+      "title": "Grief Support support note",
+      "summary": "Loss is producing waves of sadness, numbness, anger, longing, or disorientation.",
+      "support_actions": [
+        "Name what hurts most right now.",
+        "Choose care for the next hour rather than solving grief.",
+        "Use memory, ritual, connection, rest, food, hydration, or practical support as wanted."
+      ]
+    },
+    {
+      "id": "knowledge-1158d3bf30b2d360",
+      "domain": "general_mental_health",
+      "title": "Sleep Wind-Down support note",
+      "summary": "The person wants a low-pressure sleep routine.",
+      "support_actions": [
+        "Choose a repeatable wind-down cue.",
+        "Reduce stimulating tasks when possible.",
+        "Prepare accessibility, medications as prescribed, hydration, bathroom, temperature, and sensory needs before settling."
+      ],
+      "boundary": "Avoid: Do not present sleep hygiene as a cure for psychiatric or medical sleep disorders."
+    },
+    {
+      "id": "knowledge-1b772c161d768b4b",
+      "domain": "physical_health",
+      "title": "Symptom Journal support note",
+      "summary": "Symptoms need organized tracking for self-management or a clinician.",
+      "support_actions": [
+        "Record symptom, start time, intensity, duration, location, triggers, associated symptoms, function impact, and what helped or worsened it.",
+        "Add relevant device readings only if already part of the person's care plan.",
+        "Mark new severe or rapidly worsening symptoms for prompt professional review."
+      ],
+      "boundary": "Avoid: Do not use the journal to delay emergency care."
+    },
+    {
+      "id": "knowledge-8a5e7f26e580623b",
+      "domain": "physical_health",
+      "title": "Accessibility-Aware Care Plan support note",
+      "summary": "A care task conflicts with mobility, pain, fatigue, sensory, communication, or caregiver limits.",
+      "support_actions": [
+        "Define the goal rather than one required method.",
+        "Identify access barriers.",
+        "Create seated, bed-based, AAC, low-energy, or assisted alternatives where appropriate."
+      ]
+    },
+    {
+      "id": "knowledge-2bd59eb899c72b60",
+      "domain": "physical_health",
+      "title": "Follow Existing Medical Plan support note",
+      "summary": "A health condition already has clinician instructions.",
+      "support_actions": [
+        "Use the written plan as the source of truth for thresholds, medication, devices, and escalation.",
+        "Record what happened and what action the plan directs.",
+        "Contact the relevant clinician/pharmacist when instructions are unclear or symptoms are changing."
+      ],
+      "boundary": "Avoid: Do not invent personalized thresholds, correction doses, missed-dose instructions, or device settings."
+    },
+    {
+      "id": "knowledge-e5d16b5d176f8adf",
+      "domain": "physical_health",
+      "title": "Medical Emergency Escalation support note",
+      "summary": "Clear emergency symptoms may be present.",
+      "support_actions": [
+        "Stop chatbot problem solving.",
+        "Contact local emergency services now.",
+        "Get a nearby person if possible."
+      ],
+      "boundary": "Avoid: Do not reassure away severe symptoms or delay emergency help for a worksheet."
+    }
+  ]
+}

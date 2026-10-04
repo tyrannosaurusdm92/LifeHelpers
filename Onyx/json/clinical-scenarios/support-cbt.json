@@ -1,0 +1,145 @@
+{
+  "version": "2.0.0",
+  "category": "cbt",
+  "cards": [
+    {
+      "id": "cbt-thought-record",
+      "title": "Balanced thought record",
+      "summary": "Separate situation, automatic thought, emotion, evidence, and a more balanced interpretation.",
+      "when_to_use": "When a distressing thought is driving emotion or avoidance.",
+      "tags": [
+        "cbt",
+        "automatic-thought",
+        "reappraisal",
+        "cognitive"
+      ],
+      "steps": [
+        "Name the situation in observable terms.",
+        "Write the automatic thought.",
+        "Identify emotions and intensity if useful.",
+        "List evidence for and against the thought.",
+        "Write a balanced alternative that is believable, not artificially positive.",
+        "Choose one small action."
+      ],
+      "cautions": [
+        "Do not use this to debate trauma, discrimination, abuse, or real danger out of existence."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "cbt-behavioral-activation",
+      "title": "Behavioral activation, tiny version",
+      "summary": "Use small planned activity to reconnect with care, mastery, pleasure, or values.",
+      "when_to_use": "Low mood, withdrawal, loss of routine, or task paralysis.",
+      "tags": [
+        "cbt",
+        "depression",
+        "activation",
+        "routine"
+      ],
+      "steps": [
+        "Pick one category: care, connection, mastery, pleasure, or values.",
+        "Shrink the activity until it is startable.",
+        "Choose a cue and time.",
+        "Do the minimum version.",
+        "Notice effects without requiring immediate mood improvement."
+      ],
+      "cautions": [
+        "Screen for safety and severe physical limitations before activity coaching."
+      ],
+      "adaptations": [
+        "Offer bed/chair-compatible or low-energy versions."
+      ]
+    },
+    {
+      "id": "cbt-problem-solving",
+      "title": "Structured problem solving",
+      "summary": "Convert a broad problem into a bounded next decision.",
+      "when_to_use": "When rumination is high but some part of the problem is actionable.",
+      "tags": [
+        "cbt",
+        "problem-solving",
+        "planning"
+      ],
+      "steps": [
+        "Define the problem in one sentence.",
+        "Separate controllable and uncontrollable parts.",
+        "Generate several options before judging them.",
+        "Choose one workable next step.",
+        "Set a review point."
+      ],
+      "cautions": [],
+      "adaptations": []
+    },
+    {
+      "id": "cbt-worry-time",
+      "title": "Worry container",
+      "summary": "Capture worry and defer non-actionable rumination to a planned review period.",
+      "when_to_use": "Persistent repetitive worry that interrupts the day.",
+      "tags": [
+        "cbt",
+        "worry",
+        "anxiety",
+        "rumination"
+      ],
+      "steps": [
+        "Write the worry down.",
+        "Ask whether any action is possible now.",
+        "If actionable, choose one action.",
+        "If not, assign a review period.",
+        "Return to the present task using an external cue."
+      ],
+      "cautions": [
+        "Do not defer urgent safety or medical concerns."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "cbt-behavior-experiment",
+      "title": "Behavioral experiment",
+      "summary": "Test a prediction with a small, safe observation rather than arguing abstractly.",
+      "when_to_use": "When a belief makes a testable prediction and a safe experiment is available.",
+      "tags": [
+        "cbt",
+        "experiment",
+        "belief",
+        "anxiety"
+      ],
+      "steps": [
+        "Write the prediction.",
+        "Define what would count as evidence.",
+        "Design the smallest safe test.",
+        "Run it without stacking the deck.",
+        "Compare prediction with result.",
+        "Update the belief modestly."
+      ],
+      "cautions": [
+        "Do not use risky exposure or experiments involving abuse, medical danger, illegal acts, or unsafe substances."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "cbt-graded-exposure",
+      "title": "Graded exposure planning",
+      "summary": "Build a gradual, consent-based approach to feared but objectively safe situations.",
+      "when_to_use": "Avoidance is maintaining anxiety and the target is genuinely safe.",
+      "tags": [
+        "cbt",
+        "exposure",
+        "anxiety",
+        "avoidance"
+      ],
+      "steps": [
+        "Confirm the target is safe and appropriate.",
+        "Create a hierarchy from easier to harder.",
+        "Choose a manageable step.",
+        "Stay long enough to learn rather than to force distress to zero.",
+        "Repeat and review learning before increasing difficulty."
+      ],
+      "cautions": [
+        "Not for situations involving actual danger, active abuse, medical instability, or trauma processing without appropriate support."
+      ],
+      "adaptations": []
+    }
+  ]
+}

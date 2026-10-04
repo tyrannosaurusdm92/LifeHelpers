@@ -1,0 +1,112 @@
+{
+  "version": "2.0.0",
+  "category": "physical_health",
+  "cards": [
+    {
+      "id": "physical-emergency-screen",
+      "title": "Emergency symptom screen",
+      "summary": "Prioritize emergency evaluation for life-threatening warning signs.",
+      "when_to_use": "Any new or severe physical symptom before coaching.",
+      "tags": [
+        "physical-health",
+        "emergency",
+        "triage"
+      ],
+      "steps": [
+        "Check severe breathing difficulty/unresponsiveness.",
+        "Check severe chest pain/pressure or sudden neurologic deficits.",
+        "Check suspected poisoning/overdose, severe allergic reaction, uncontrolled bleeding, seizure, or sudden severe confusion.",
+        "Use local emergency services when immediate danger may be present."
+      ],
+      "cautions": [
+        "This is not a diagnostic screen and cannot rule out emergencies."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "physical-symptom-log",
+      "title": "Symptom timeline",
+      "summary": "Create a concise timeline for a clinician.",
+      "when_to_use": "New, changing, complex, or hard-to-describe symptoms.",
+      "tags": [
+        "physical-health",
+        "symptom-tracking",
+        "appointment"
+      ],
+      "steps": [
+        "Record onset/date.",
+        "Describe location/quality/intensity.",
+        "List triggers and relieving factors.",
+        "List associated symptoms.",
+        "Record medications/interventions tried.",
+        "Note impact on sleep, eating, mobility, cognition, and daily function."
+      ],
+      "cautions": [],
+      "adaptations": []
+    },
+    {
+      "id": "physical-pacing",
+      "title": "Energy pacing",
+      "summary": "Balance activity and recovery to reduce boom-bust cycles when pacing is part of the person's care strategy.",
+      "when_to_use": "Chronic fatigue, pain, disability, or post-exertional worsening where activity needs careful management.",
+      "tags": [
+        "physical-health",
+        "pacing",
+        "fatigue",
+        "pain"
+      ],
+      "steps": [
+        "Identify baseline capacity rather than best-day capacity.",
+        "Break tasks into smaller units.",
+        "Plan recovery before exhaustion peaks.",
+        "Use adaptive equipment/delegation.",
+        "Track delayed effects and adjust."
+      ],
+      "cautions": [
+        "For conditions with post-exertional symptom exacerbation, generic exercise advice can be inappropriate; follow condition-specific clinical guidance."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "physical-appointment-prep",
+      "title": "Medical appointment prep",
+      "summary": "Turn scattered symptoms and questions into a clinician-friendly brief.",
+      "when_to_use": "Before primary care, specialist, urgent-care, or telehealth visits.",
+      "tags": [
+        "physical-health",
+        "appointment",
+        "care-coordination"
+      ],
+      "steps": [
+        "List top three concerns.",
+        "Add timeline and functional impact.",
+        "List current medications/allergies if relevant.",
+        "List what has already been tried.",
+        "Write top questions and desired decisions.",
+        "Add accessibility/communication needs."
+      ],
+      "cautions": [],
+      "adaptations": []
+    },
+    {
+      "id": "physical-access",
+      "title": "Healthcare access planning",
+      "summary": "Identify practical barriers to receiving care.",
+      "when_to_use": "Mobility, sensory, communication, fatigue, transportation, or caregiver barriers.",
+      "tags": [
+        "physical-health",
+        "accessibility",
+        "disability"
+      ],
+      "steps": [
+        "Identify barriers before the visit.",
+        "Request accessible room/equipment/communication format.",
+        "Plan transport or telehealth if appropriate.",
+        "Bring written summary or support person if desired.",
+        "Confirm how follow-up results will be communicated."
+      ],
+      "cautions": [],
+      "adaptations": []
+    }
+  ]
+}

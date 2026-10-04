@@ -1,0 +1,132 @@
+{
+  "version": "2.0.0",
+  "category": "psychiatric",
+  "cards": [
+    {
+      "id": "psych-baseline-change",
+      "title": "Baseline change check",
+      "summary": "Focus on change from the person’s usual baseline and functional impact.",
+      "when_to_use": "Mood, anxiety, thought, sleep, or behavior changes.",
+      "tags": [
+        "psychiatric",
+        "assessment",
+        "function"
+      ],
+      "steps": [
+        "Ask what changed and when.",
+        "Check sleep, eating, self-care, work/school, relationships, and safety.",
+        "Ask about medication/substance changes.",
+        "Identify whether clinician contact is needed sooner."
+      ],
+      "cautions": [
+        "Do not convert a checklist into a diagnosis."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "psych-med-boundary",
+      "title": "Medication question organizer",
+      "summary": "Prepare questions and observations for a prescriber/pharmacist without changing treatment.",
+      "when_to_use": "Side effects, adherence, missed doses, or uncertainty about psychiatric medication.",
+      "tags": [
+        "psychiatric",
+        "medication",
+        "pharmacist"
+      ],
+      "steps": [
+        "Record medication name and prescribed instructions.",
+        "Record what changed and when.",
+        "List side effects/benefits and severity.",
+        "Note missed doses or substance/OTC changes.",
+        "Contact prescriber/pharmacist for dose/start/stop/taper decisions."
+      ],
+      "cautions": [
+        "Possible overdose, severe reaction, dangerous withdrawal, or immediate medical danger requires urgent/emergency help."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "psych-sleep-change",
+      "title": "Sleep change escalation check",
+      "summary": "Treat major sleep change as clinically relevant context rather than only a sleep-hygiene problem.",
+      "when_to_use": "Marked reduction/increase in sleep with mood, energy, or thought changes.",
+      "tags": [
+        "psychiatric",
+        "sleep",
+        "mood"
+      ],
+      "steps": [
+        "Record sleep amount and change from baseline.",
+        "Check energy, impulsivity, agitation, slowed behavior, and functioning.",
+        "Check medication/substance changes.",
+        "Contact a clinician if the change is marked, persistent, or concerning."
+      ],
+      "cautions": [],
+      "adaptations": []
+    },
+    {
+      "id": "psych-reality-support",
+      "title": "Reality-oriented support",
+      "summary": "Support safety and reduce confrontation when someone reports unusual perceptions or beliefs.",
+      "when_to_use": "Possible hallucinations, paranoia, or difficulty distinguishing internal experience from external reality.",
+      "tags": [
+        "psychiatric",
+        "psychosis",
+        "reality-testing"
+      ],
+      "steps": [
+        "Validate distress without confirming an unverified belief as fact.",
+        "Ask whether the experience is creating danger or commands to act.",
+        "Reduce stimulation and involve trusted support if wanted.",
+        "Encourage timely professional assessment, urgent if safety/function is deteriorating."
+      ],
+      "cautions": [
+        "Do not ridicule, aggressively debate, or reinforce delusions as established fact."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "psych-panic",
+      "title": "Panic support",
+      "summary": "Reduce secondary fear and orient to safety while keeping medical uncertainty in mind.",
+      "when_to_use": "Panic-like episodes when no emergency has been established.",
+      "tags": [
+        "psychiatric",
+        "panic",
+        "anxiety"
+      ],
+      "steps": [
+        "Check whether symptoms could need emergency medical evaluation, especially if new/severe.",
+        "Name the experience as intense and time-limited without guaranteeing the cause.",
+        "Use a tolerable grounding anchor.",
+        "Slow the next action and reduce stimulation.",
+        "Discuss recurrent episodes with a clinician."
+      ],
+      "cautions": [
+        "Do not tell someone chest pain or breathing difficulty is definitely anxiety."
+      ],
+      "adaptations": []
+    },
+    {
+      "id": "psych-trauma-choice",
+      "title": "Trauma-informed choice",
+      "summary": "Increase control and predictability rather than forcing disclosure.",
+      "when_to_use": "Trauma-related distress or when sensitive topics arise.",
+      "tags": [
+        "psychiatric",
+        "trauma",
+        "ptsd",
+        "consent"
+      ],
+      "steps": [
+        "Ask permission before detailed exploration.",
+        "Offer choices and explain why a question matters.",
+        "Allow stopping or changing topic.",
+        "Prioritize stabilization and safety.",
+        "Support connection to trauma-informed professional care when desired."
+      ],
+      "cautions": [],
+      "adaptations": []
+    }
+  ]
+}
