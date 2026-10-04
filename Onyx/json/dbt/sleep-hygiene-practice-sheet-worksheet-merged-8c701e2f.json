@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "sleep-hygiene-practice-sheet-dade8c701e2f",
+  "title": "Sleep Hygiene Practice Sheet",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9509
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-14b-sleep-hygiene-practice-sheet-bf98941787.json",
+        "sha256": "bf98941787657efbc9561137634c9c7deff26ef277c1cb530dbfe4d9f4785585",
+        "domain": "dbt",
+        "bytes": 3545
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-14b-sleep-hygiene-practice-sheet-bb4c831f88.json",
+        "sha256": "bb4c831f8813cf65fd8ef16963e72bc617b2cc0b1762aa69d1561d675c5630a2",
+        "domain": "dbt",
+        "bytes": 3404
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 331,
+        "book_page": "307",
+        "text": "307\nEmotion Regulation Worksheet 14b\nSleep Hygiene Practice Sheet\nDue Date:             Name:                                    Week Starting:\nIn the far left column, put down the days of the week. Then put times/hours in bed, and what you did in the 4 hours before bed, in the next\nthree columns. Along with describing the strategies you used, please rate your degree of rumination before and after using skills. Write in 0 if\nyou had no rumination. Finally, rate the overall usefulness of your strategies.\nDay\nTime\nto bed/\ntime up\nHours/\nminutes\nin bed\nduring the\nday\nFood, drink, exercise\nwithin 4 hours of bed\nStarting\nemotion/\nrumination\nintensity\n(0–100)\nDescribe strategies used to get to sleep (or\nback to sleep)\nEnding\nemotion/\nrumination\nintensity\n(0–100)\nUsefulness\nof\nstrategies\n(0–100)\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 14b",
+    "source_pdf_pages": [
+      331
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_14b_sleep_hygiene_practice_sheet.json",
+    "item_number": "14b",
+    "full_text": "Emotion Regulation Worksheet 14b\nSleep Hygiene Practice Sheet\nDue Date:             Name:                                    Week Starting:\nIn the far left column, put down the days of the week. Then put times/hours in bed, and what you did in the 4 hours before bed, in the next\nthree columns. Along with describing the strategies you used, please rate your degree of rumination before and after using skills. Write in 0 if\nyou had no rumination. Finally, rate the overall usefulness of your strategies.\nDay\nTime\nto bed/\ntime up\nHours/\nminutes\nin bed\nduring the\nday\nFood, drink, exercise\nwithin 4 hours of bed\nStarting\nemotion/\nrumination\nintensity\n(0–100)\nDescribe strategies used to get to sleep (or\nback to sleep)\nEnding\nemotion/\nrumination\nintensity\n(0–100)\nUsefulness\nof\nstrategies\n(0–100)\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:\n\n\nHrs:\nMin:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_14b_sleep_hygiene_practice_sheet.html",
+    "id": "emotion_regulation_worksheet_14b",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "307"
+    ],
+    "title": "Sleep Hygiene Practice Sheet",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_14b_sleep_hygiene_practice_sheet.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Hygiene",
+      "Practice",
+      "Sheet",
+      "Sleep"
+    ]
+  }
+}

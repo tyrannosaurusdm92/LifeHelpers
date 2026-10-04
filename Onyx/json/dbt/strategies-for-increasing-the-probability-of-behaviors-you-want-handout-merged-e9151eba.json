@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "strategies-for-increasing-the-probability-of-behaviors-you-want-0e97e9151eba",
+  "title": "Strategies for Increasing the Probability of Behaviors You Want",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9553
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/03-dbt-interpersonal-effectiveness-interpersonal-effectiveness-handout-20-strategies-for-inc-ff25bcac4e.json",
+        "sha256": "ff25bcac4eadd75dff39b8105cb14d797be99a1df31598f00b5385d3fd4631e8",
+        "domain": "dbt",
+        "bytes": 4093
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/interpersonal-effectiveness-handout-20-strategies-for-increasing-the-probability-of-behavior-44081c1233.json",
+        "sha256": "44081c123331149efb49e9e78899a6a17eadc17b8fb44069d25bd2856ca0e1a6",
+        "domain": "dbt",
+        "bytes": 3924
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 185,
+        "book_page": "161",
+        "text": "161\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nInterpersonal Effectiveness Handout 20   (I. E. Worksheet 14)\nStrategies for Increasing the Probability\nof Behaviors You Want\nDescribe behaviors for yourself or others that you would like to start or increase:\n\nReinforcer = A consequence that increases frequency of a behavior.\nPositive reinforcement = positive consequences (i.e., reward).\nBehavior is increased by consequences a person wants, likes, or will work to get.\nExamples:\nNegative reinforcement = removal of negative events (i.e., relief).\nBehavior is increased by consequences that stop or reduce something negative.\nExamples:\nShaping = Reinforcing small steps toward the behavior you want.\n•• Reinforce small steps that lead toward the goal.\n•• As new behavior stabilizes, require a little bit more before reinforcing.\n•• Continue until you reach the goal behavior.\nExamples of steps to a goal behavior:\n\nTiming counts.\n•• Reinforce behavior immediately after it occurs.\n•• When shaping new behavior, at first reinforce every instance of the behavior.\n•• Once behavior is established, gradually start to reinforce only some of the time.\nCAUTION: When you vary reinforcement, behavior becomes very hard to stop."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Interpersonal Effectiveness Handout 20   (I. E. Worksheet 14)",
+    "source_pdf_pages": [
+      185
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/interpersonal_effectiveness/handouts/interpersonal_effectiveness_handout_20_strategies_for_increasing_the_probability_of_behaviors_you_want.json",
+    "item_number": "20",
+    "full_text": "Interpersonal Effectiveness Handout 20   (I. E. Worksheet 14)\nStrategies for Increasing the Probability\nof Behaviors You Want\nDescribe behaviors for yourself or others that you would like to start or increase:\n\nReinforcer = A consequence that increases frequency of a behavior.\nPositive reinforcement = positive consequences (i.e., reward).\nBehavior is increased by consequences a person wants, likes, or will work to get.\nExamples:\nNegative reinforcement = removal of negative events (i.e., relief).\nBehavior is increased by consequences that stop or reduce something negative.\nExamples:\nShaping = Reinforcing small steps toward the behavior you want.\n•• Reinforce small steps that lead toward the goal.\n•• As new behavior stabilizes, require a little bit more before reinforcing.\n•• Continue until you reach the goal behavior.\nExamples of steps to a goal behavior:\n\nTiming counts.\n•• Reinforce behavior immediately after it occurs.\n•• When shaping new behavior, at first reinforce every instance of the behavior.\n•• Once behavior is established, gradually start to reinforce only some of the time.\nCAUTION: When you vary reinforcement, behavior becomes very hard to stop.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "I. E. Worksheet 14"
+    ],
+    "id": "interpersonal_effectiveness_handout_20",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "161"
+    ],
+    "title": "Strategies for Increasing the Probability of Behaviors You Want",
+    "module_category": "Interpersonal Effectiveness Skills",
+    "shared_json_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_20_strategies_for_increasing_the_prob_c1192d45.json",
+    "module": "Interpersonal Effectiveness",
+    "keywords": [
+      "Behaviors",
+      "Increasing",
+      "Probability",
+      "Strategies",
+      "Want"
+    ]
+  }
+}

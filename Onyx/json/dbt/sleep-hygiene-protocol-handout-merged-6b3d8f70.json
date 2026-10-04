@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "sleep-hygiene-protocol-46bb6b3d8f70",
+  "title": "Sleep Hygiene Protocol",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.982
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-20b-sleep-hygiene-protocol-cab560aae5.json",
+        "sha256": "cab560aae51d0a1ff8589043ae2653212de48b105a485c98ba862ae768e9deca",
+        "domain": "dbt",
+        "bytes": 8691
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-20b-sleep-hygiene-protocol-a736d93344.json",
+        "sha256": "a736d93344ad60cc31abb6f26a75c5314bba96e415fa1b976bd08f45cb57a104",
+        "domain": "dbt",
+        "bytes": 8560
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 283,
+        "book_page": "259",
+        "text": "259\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nEmotion Regulation Handout 20b   (Emotion Regulation Worksheet 14b)\nSleep Hygiene Protocol\nWhen You Can’t Sleep, What to Do Instead of Ruminating\nTo Increase the Likelihood of Restfulness/Sleep:\n  1.\tDevelop and follow a consistent sleep schedule even on weekends. Go to bed and get up\nat the same times each day, and avoid anything longer than a 10-minute nap during the day.\n  2.\tDo not use your bed in the daytime for things like watching TV, talking on the phone, or\nreading.\n  3.\tAvoid caffeine, nicotine, alcohol, heavy meals, and exercise late in the day before going to\nsleep.\n  4.\tWhen prepared to sleep, turn off the light, and keep the room quiet and the\ntemperature comfortable and relatively cool. Try an electric blanket if you are cold; putting\nyour feet outside of the blanket or turning on a fan directed toward your bed if you are hot; or\nwearing a sleeping mask, using earplugs, or turning on a “white noise” machine if needed.\n  5.\tGive yourself half an hour to at most an hour to fall asleep. If it doesn’t work, evaluate\nwhether you are calm, or anxious (even if only “background anxiety”), or ruminating.\n  6.\tDo not catastrophize. Remind yourself that you need rest, and aim for reverie (i.e.,\ndreaminess) and resting your brain. Sell yourself on the idea that staying awake is not a\ncatastrophe. Do not decide to give up on sleeping for the night and get up for the “day.”\nIf You Are Calm but Wide Awake:\n  7.\tGet out of bed; go to another room and read a book or do some other activity that will not\nwake you up further. As you begin to get tired and/or sleepy, go back to bed.\n  8.\tTry a light snack (e.g., an apple).\nIf You Are Anxious or Ruminating\n  9.\tUse the cold water TIP skill. Get right back in bed and do the paced breathing TIP skill.\n(See Distress Tolerance Handout 6: TIP Skills: Changing Your Body Chemistry.)\nRemember, if you have any medical condition, get medical approval before using cold water.\n10.\tTry the 9–0 meditation practice. Breathe in deeply and breathe out slowly, saying in your\nmind the number 9. On the next breath out, say 8; then say 7; and so on until you breathe out\nsaying 0. Then start over, but this time start with 8 (instead of 9) as you breathe out, followed\nby 7, and so on until you reach 0. Next start with 6 as you breathe out, and so on to 0. Then\nstart with 5, then with 4, and so on until you have gone all the way down to starting with 1. (If\nyou get lost, start over with the last number you remember.) Continue until you fall asleep.\n11.\tFocus on the bodily sensation of the rumination (rumination is often escape from difficult\nemotional sensations).\n12.\tReassure yourself that worries in the middle of the night are just “middle-of-the-night-\nthinking,” and that in the morning you will think and feel differently.\n13.\tRead an emotionally engrossing novel for a few minutes until you feel somewhat tired. Then\nstop reading, close your eyes, and try to continue the novel in your head.\n14.\tIf rumination doesn’t stop, follow these guidelines: “If it’s solvable, solve it. If it is insolvable,\ngo deep into the worry all the way to the “catastrophe”—the very worst outcome you can\nimagine—and then imagine coping ahead with the catastrophe.\n(See Emotion Regulation Handout 19: Build Mastery and Cope Ahead.)\nIf nothing else works, with eyes closed, listen to public radio (BBC, NPR, etc.) at low volume\n(use headphones if necessary). Public radio is a good choice for this, because there is little fluctua-\ntion in voice tone or volume."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 20b   (Emotion Regulation Worksheet 14b)",
+    "source_pdf_pages": [
+      283
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_20b_sleep_hygiene_protocol.json",
+    "item_number": "20b",
+    "full_text": "Emotion Regulation Handout 20b   (Emotion Regulation Worksheet 14b)\nSleep Hygiene Protocol\nWhen You Can’t Sleep, What to Do Instead of Ruminating\nTo Increase the Likelihood of Restfulness/Sleep:\n  1.\tDevelop and follow a consistent sleep schedule even on weekends. Go to bed and get up\nat the same times each day, and avoid anything longer than a 10-minute nap during the day.\n  2.\tDo not use your bed in the daytime for things like watching TV, talking on the phone, or\nreading.\n  3.\tAvoid caffeine, nicotine, alcohol, heavy meals, and exercise late in the day before going to\nsleep.\n  4.\tWhen prepared to sleep, turn off the light, and keep the room quiet and the\ntemperature comfortable and relatively cool. Try an electric blanket if you are cold; putting\nyour feet outside of the blanket or turning on a fan directed toward your bed if you are hot; or\nwearing a sleeping mask, using earplugs, or turning on a “white noise” machine if needed.\n  5.\tGive yourself half an hour to at most an hour to fall asleep. If it doesn’t work, evaluate\nwhether you are calm, or anxious (even if only “background anxiety”), or ruminating.\n  6.\tDo not catastrophize. Remind yourself that you need rest, and aim for reverie (i.e.,\ndreaminess) and resting your brain. Sell yourself on the idea that staying awake is not a\ncatastrophe. Do not decide to give up on sleeping for the night and get up for the “day.”\nIf You Are Calm but Wide Awake:\n  7.\tGet out of bed; go to another room and read a book or do some other activity that will not\nwake you up further. As you begin to get tired and/or sleepy, go back to bed.\n  8.\tTry a light snack (e.g., an apple).\nIf You Are Anxious or Ruminating\n  9.\tUse the cold water TIP skill. Get right back in bed and do the paced breathing TIP skill.\n(See Distress Tolerance Handout 6: TIP Skills: Changing Your Body Chemistry.)\nRemember, if you have any medical condition, get medical approval before using cold water.\n10.\tTry the 9–0 meditation practice. Breathe in deeply and breathe out slowly, saying in your\nmind the number 9. On the next breath out, say 8; then say 7; and so on until you breathe out\nsaying 0. Then start over, but this time start with 8 (instead of 9) as you breathe out, followed\nby 7, and so on until you reach 0. Next start with 6 as you breathe out, and so on to 0. Then\nstart with 5, then with 4, and so on until you have gone all the way down to starting with 1. (If\nyou get lost, start over with the last number you remember.) Continue until you fall asleep.\n11.\tFocus on the bodily sensation of the rumination (rumination is often escape from difficult\nemotional sensations).\n12.\tReassure yourself that worries in the middle of the night are just “middle-of-the-night-\nthinking,” and that in the morning you will think and feel differently.\n13.\tRead an emotionally engrossing novel for a few minutes until you feel somewhat tired. Then\nstop reading, close your eyes, and try to continue the novel in your head.\n14.\tIf rumination doesn’t stop, follow these guidelines: “If it’s solvable, solve it. If it is insolvable,\ngo deep into the worry all the way to the “catastrophe”—the very worst outcome you can\nimagine—and then imagine coping ahead with the catastrophe.\n(See Emotion Regulation Handout 19: Build Mastery and Cope Ahead.)\nIf nothing else works, with eyes closed, listen to public radio (BBC, NPR, etc.) at low volume\n(use headphones if necessary). Public radio is a good choice for this, because there is little fluctua-\ntion in voice tone or volume.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheet 14b"
+    ],
+    "id": "emotion_regulation_handout_20b",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "259"
+    ],
+    "title": "Sleep Hygiene Protocol",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_20b_sleep_hygiene_protocol.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Hygiene",
+      "Protocol",
+      "Sleep"
+    ]
+  }
+}

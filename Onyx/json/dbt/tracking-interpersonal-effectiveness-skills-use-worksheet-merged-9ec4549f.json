@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "tracking-interpersonal-effectiveness-skills-use-1b829ec4549f",
+  "title": "Tracking Interpersonal Effectiveness Skills Use",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9638
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/03-dbt-interpersonal-effectiveness-interpersonal-effectiveness-worksheet-5-tracking-interper-5301ce6c35.json",
+        "sha256": "5301ce6c3535fff3464360fc9ef6ac2de4313d3f3e4c5ae965181ae8cc356f1d",
+        "domain": "dbt",
+        "bytes": 5158
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/interpersonal-effectiveness-worksheet-5-tracking-interpersonal-effectiveness-skills-use-30492c794b.json",
+        "sha256": "30492c794b5e16d78da37907538b94045c59e0ad6851b6b8a8fe3a1e4eee76f3",
+        "domain": "dbt",
+        "bytes": 4987
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 199,
+        "book_page": "175",
+        "text": "175\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nInterpersonal Effectiveness Worksheet 5   (I. E. Handouts 5, 6, 7)\nTracking Interpersonal Effectiveness Skills Use\nDue Date:             Name:                                    Week Starting:\nFill out this sheet whenever you practice your interpersonal skills and whenever you have an oppor-\ntunity to practice, even if you don’t (or almost don’t) do anything to practice. Write on the back of this\nsheet if you need more room.\nPrompting event for my problem: Who did what to whom? What led up to what?\n\nObjectives in Situation (What results I want):\n\nRelationship Issue (How I want the other person to feel about me):\n\nSelf-Respect Issue (How I want to feel about myself):\nMy priorities in this situation: Rate priorities 1 (most important), 2 (second most important),\nor 3 (least important).\n    Objectives              Relationship              Self-respect\nImbalances and conflicts in priorities that made it hard to be effective in this situation:\nWhat I said or did in the situation: (Describe and check below.)\nDEAR MAN (Getting what I want):\n      Described situation?\n      Mindful?\n      Expressed feelings/opinions?\n      Broken record?\n      Asserted?\n      Ignored attacks?\n      Reinforced?\n      Appeared confident?\nGIVE (Keeping the relationship):\n      Negotiated?\n      Gentle?\n      Interested?\n      No threats?\n      Validated?\n      No attacks?\n      Easy manner?\n      No judgments?\nFAST (Keeping my respect for myself):\n      Fair?\n      Stuck to values?\n      (No) Apologies?\n      Truthful?\nHow effective was the interaction?"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Interpersonal Effectiveness Worksheet 5   (I. E. Handouts 5, 6, 7)",
+    "source_pdf_pages": [
+      199
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/interpersonal_effectiveness/worksheets/interpersonal_effectiveness_worksheet_5_tracking_interpersonal_effectiveness_skills_use.json",
+    "item_number": "5",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nInterpersonal Effectiveness Worksheet 5   (I. E. Handouts 5, 6, 7)\nTracking Interpersonal Effectiveness Skills Use\nDue Date:             Name:                                    Week Starting:\nFill out this sheet whenever you practice your interpersonal skills and whenever you have an oppor-\ntunity to practice, even if you don’t (or almost don’t) do anything to practice. Write on the back of this\nsheet if you need more room.\nPrompting event for my problem: Who did what to whom? What led up to what?\n\nObjectives in Situation (What results I want):\n\nRelationship Issue (How I want the other person to feel about me):\n\nSelf-Respect Issue (How I want to feel about myself):\nMy priorities in this situation: Rate priorities 1 (most important), 2 (second most important),\nor 3 (least important).\n    Objectives              Relationship              Self-respect\nImbalances and conflicts in priorities that made it hard to be effective in this situation:\nWhat I said or did in the situation: (Describe and check below.)\nDEAR MAN (Getting what I want):\n      Described situation?\n      Mindful?\n      Expressed feelings/opinions?\n      Broken record?\n      Asserted?\n      Ignored attacks?\n      Reinforced?\n      Appeared confident?\nGIVE (Keeping the relationship):\n      Negotiated?\n      Gentle?\n      Interested?\n      No threats?\n      Validated?\n      No attacks?\n      Easy manner?\n      No judgments?\nFAST (Keeping my respect for myself):\n      Fair?\n      Stuck to values?\n      (No) Apologies?\n      Truthful?\nHow effective was the interaction?",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "I. E. Handouts 5, 6, 7"
+    ],
+    "html_path": "html/worksheets/interpersonal_effectiveness/interpersonal_effectiveness_worksheet_5_tracking_interpersonal_effectiveness_skills_use.html",
+    "id": "interpersonal_effectiveness_worksheet_5",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "175"
+    ],
+    "title": "Tracking Interpersonal Effectiveness Skills Use",
+    "module_category": "Interpersonal Effectiveness Skills",
+    "shared_json_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_5_tracking_interpersonal_effectiven_9c5c40ac.json",
+    "module": "Interpersonal Effectiveness",
+    "keywords": [
+      "Effectiveness",
+      "Interpersonal",
+      "Skills",
+      "Tracking"
+    ]
+  }
+}

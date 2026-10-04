@@ -1,0 +1,85 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "stop-skill-stop-do-not-just-react-stop-freeze-do-not-move-a-muscle-your-emotions-46e6d0e82f3b",
+  "title": "STOP Skill Stop Do not just react. Stop! Freeze! Do not move a muscle! Your emotions may try to make you act",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9522
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-handout-4-stop-skill-stop-do-not-just-react-sto-5ef7a7a797.json",
+        "sha256": "5ef7a7a797b6935f78e3e7a69c5c0dec314d3c6ae8b8aa228d766de623bb72d7",
+        "domain": "dbt",
+        "bytes": 3506
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-handout-4-stop-skill-stop-do-not-just-react-stop-freeze-do-not-move-a-mus-f30da24a15.json",
+        "sha256": "f30da24a159189748e43858c59176961cca926b2b368dc1ecee8e6460039d5d8",
+        "domain": "dbt",
+        "bytes": 3346
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 351,
+        "book_page": "327",
+        "text": "327\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n«\nDistress Tolerance Handout 4   (Distress Tolerance Worksheets 2, 2a)\nSTOP Skill\nStop\nDo not just react. Stop! Freeze! Do not move a\nmuscle! Your emotions may try to make you act\nwithout thinking. Stay in control!\nTake a step back\nTake a step back from the situation. Take a break. Let\ngo. Take a deep breath. Do not let your feelings make\nyou act impulsively.\nObserve\nNotice what is going on inside and outside you. What\nis the situation? What are your thoughts and feelings?\nWhat are others saying or doing?\nProceed mindfully\nAct with awareness. In deciding what to do, consider\nyour thoughts and feelings, the situation, and other\npeople’s thoughts and feelings. Think about your\ngoals. Ask Wise Mind: Which actions will make it\nbetter or worse?\nNote. Adapted from an unpublished worksheet by Francheska Perepletchikova and Seth Axelrod, with their permission."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Handout 4   (Distress Tolerance Worksheets 2, 2a)",
+    "source_pdf_pages": [
+      351
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/handouts/distress_tolerance_handout_4_stop_skill_stop_do_not_just_react_stop_freeze_do_not_move_a_muscle_you.json",
+    "item_number": "4",
+    "full_text": "«\nDistress Tolerance Handout 4   (Distress Tolerance Worksheets 2, 2a)\nSTOP Skill\nStop\nDo not just react. Stop! Freeze! Do not move a\nmuscle! Your emotions may try to make you act\nwithout thinking. Stay in control!\nTake a step back\nTake a step back from the situation. Take a break. Let\ngo. Take a deep breath. Do not let your feelings make\nyou act impulsively.\nObserve\nNotice what is going on inside and outside you. What\nis the situation? What are your thoughts and feelings?\nWhat are others saying or doing?\nProceed mindfully\nAct with awareness. In deciding what to do, consider\nyour thoughts and feelings, the situation, and other\npeople’s thoughts and feelings. Think about your\ngoals. Ask Wise Mind: Which actions will make it\nbetter or worse?\nNote. Adapted from an unpublished worksheet by Francheska Perepletchikova and Seth Axelrod, with their permission.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Worksheets 2, 2a"
+    ],
+    "id": "distress_tolerance_handout_4",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "327"
+    ],
+    "title": "STOP Skill Stop Do not just react. Stop! Freeze! Do not move a muscle! Your emotions may try to make you act",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_4_stop_skill_stop_do_not_just_react_stop_freez_eba61ecc.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Freeze",
+      "STOP",
+      "Skill",
+      "Stop",
+      "Your",
+      "emotions",
+      "just",
+      "make",
+      "move",
+      "muscle",
+      "react"
+    ]
+  }
+}

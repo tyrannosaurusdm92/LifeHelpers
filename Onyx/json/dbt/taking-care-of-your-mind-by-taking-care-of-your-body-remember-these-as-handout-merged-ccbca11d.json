@@ -1,0 +1,83 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "taking-care-of-your-mind-by-taking-care-of-your-body-remember-these-as-please-sk-547bccbca11d",
+  "title": "Taking Care of Your Mind by Taking Care of Your Body Remember these as PLEASE skills. P",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9529
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-20-taking-care-of-your-mind-by-taking-c-a986f0c815.json",
+        "sha256": "a986f0c81568ec4a22179b35a6acfa8375a9bbc8586038b86a382c83d078e06d",
+        "domain": "dbt",
+        "bytes": 3445
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-20-taking-care-of-your-mind-by-taking-care-of-your-body-remember--37cb07755d.json",
+        "sha256": "37cb07755d5879da34b35ba52160433091e19bc58b1f52f58db183344b07b0d4",
+        "domain": "dbt",
+        "bytes": 3286
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 281,
+        "book_page": "257",
+        "text": "257\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nEmotion Regulation Handout 20   (Emotion Regulation Worksheets 9, 14)\nTaking Care of Your Mind by Taking Care\nof Your Body\nRemember these as PLEASE skills.\nP\nL\n1. Treat PhysicaL Illness.\nTake care of your body. See a doctor when\nnecessary. Take prescribed medication.\nE\n2. Balance Eating.\nDon’t eat too much or too little. Eat regularly\nand mindfully throughout the day. Stay\naway from foods that make you feel overly\nemotional.\nA\n3. Avoid Mood-Altering Substances.\nStay off illicit drugs, and use alcohol in\nmoderation (if at all).\nS\n4. Balance Sleep.\nTry to get 7–9 hours of sleep a night, or at\nleast the amount of sleep that helps you feel\ngood. Keep to a consistent sleep schedule,\nespecially if you are having difficulty\nsleeping.\nE\n5. Get Exercise.\nDo some sort of exercise every day. Try to\nbuild up to 20 minutes of daily exercise."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 20   (Emotion Regulation Worksheets 9, 14)",
+    "source_pdf_pages": [
+      281
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_20_taking_care_of_your_mind_by_taking_care_of_your_body_remember_these_as.json",
+    "item_number": "20",
+    "full_text": "☐\nEmotion Regulation Handout 20   (Emotion Regulation Worksheets 9, 14)\nTaking Care of Your Mind by Taking Care\nof Your Body\nRemember these as PLEASE skills.\nP\nL\n1. Treat PhysicaL Illness.\nTake care of your body. See a doctor when\nnecessary. Take prescribed medication.\nE\n2. Balance Eating.\nDon’t eat too much or too little. Eat regularly\nand mindfully throughout the day. Stay\naway from foods that make you feel overly\nemotional.\nA\n3. Avoid Mood-Altering Substances.\nStay off illicit drugs, and use alcohol in\nmoderation (if at all).\nS\n4. Balance Sleep.\nTry to get 7–9 hours of sleep a night, or at\nleast the amount of sleep that helps you feel\ngood. Keep to a consistent sleep schedule,\nespecially if you are having difficulty\nsleeping.\nE\n5. Get Exercise.\nDo some sort of exercise every day. Try to\nbuild up to 20 minutes of daily exercise.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheets 9, 14"
+    ],
+    "id": "emotion_regulation_handout_20",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "257"
+    ],
+    "title": "Taking Care of Your Mind by Taking Care of Your Body Remember these as PLEASE skills. P",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_20_taking_care_of_your_mind_by_taking_care_of_fd7bf495.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Body",
+      "Care",
+      "Mind",
+      "PLEASE",
+      "Remember",
+      "Taking",
+      "Your",
+      "skills",
+      "these"
+    ]
+  }
+}
