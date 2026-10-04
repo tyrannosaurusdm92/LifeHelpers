@@ -1,0 +1,3514 @@
+{
+  "schema": "psychiatrypt3.domain_index.v1",
+  "domains": {
+    "adhd": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/adhd/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/adhd/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "autism": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/autism/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/autism/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "cbt": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/cbt/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/cbt/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "clinician_prep": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/clinician_prep/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/clinician_prep/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "crisis_safety": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/crisis_safety/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/crisis_safety/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "dbt": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/dbt/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dbt/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "dissociation": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/dissociation/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/dissociation/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "grief": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/grief/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grief/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "grounding": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/grounding/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/grounding/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "medication_journal": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/medication_journal/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/medication_journal/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "pain_accessibility": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/pain_accessibility/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/pain_accessibility/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "psychiatric_checkin": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/psychiatric_checkin/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "relationships": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/relationships/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/relationships/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "self_care": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/self_care/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/self_care/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "sleep": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/sleep/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/sleep/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "task_planning": {
+      "count": 15200,
+      "shards": [
+        {
+          "path": "json/scenarios/task_planning/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-040.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-041.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-042.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-043.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-044.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-045.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-046.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-047.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-048.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-049.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-050.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/task_planning/part-051.json",
+          "count": 200
+        }
+      ]
+    },
+    "physical_health": {
+      "count": 11771,
+      "shards": [
+        {
+          "path": "json/scenarios/physical_health/part-001.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-002.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-003.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-004.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-005.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-006.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-007.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-008.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-009.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-010.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-011.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-012.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-013.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-014.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-015.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-016.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-017.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-018.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-019.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-020.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-021.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-022.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-023.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-024.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-025.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-026.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-027.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-028.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-029.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-030.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-031.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-032.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-033.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-034.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-035.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-036.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-037.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-038.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-039.json",
+          "count": 300
+        },
+        {
+          "path": "json/scenarios/physical_health/part-040.json",
+          "count": 71
+        }
+      ]
+    }
+  }
+}

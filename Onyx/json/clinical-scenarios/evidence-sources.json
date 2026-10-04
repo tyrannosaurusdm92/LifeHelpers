@@ -1,0 +1,65 @@
+{
+  "generated_on": "2026-08-10",
+  "purpose": "authoritative anchors for generated support modules; source-project material remains independently attributed",
+  "sources": [
+    {
+      "id": "nimh_adhd",
+      "title": "Attention-Deficit/Hyperactivity Disorder: What You Need to Know",
+      "publisher": "National Institute of Mental Health",
+      "url": "https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know",
+      "use": [
+        "ADHD overview",
+        "diagnosis boundaries",
+        "treatment is clinician-directed"
+      ]
+    },
+    {
+      "id": "nimh_autism",
+      "title": "Autism Spectrum Disorder",
+      "publisher": "National Institute of Mental Health",
+      "url": "https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd",
+      "use": [
+        "autism overview",
+        "supports and services"
+      ]
+    },
+    {
+      "id": "cdc_autism",
+      "title": "About Autism Spectrum Disorder",
+      "publisher": "Centers for Disease Control and Prevention",
+      "url": "https://www.cdc.gov/autism/about/index.html",
+      "use": [
+        "developmental framing",
+        "support needs"
+      ]
+    },
+    {
+      "id": "samhsa_crisis",
+      "title": "National Behavioral Health Crisis Care Guidance",
+      "publisher": "SAMHSA",
+      "url": "https://www.samhsa.gov/mental-health/national-behavioral-health-crisis-care",
+      "use": [
+        "crisis escalation",
+        "timely support"
+      ]
+    },
+    {
+      "id": "samhsa_safety_plan",
+      "title": "Safety Plan",
+      "publisher": "SAMHSA",
+      "url": "https://www.samhsa.gov/resource/988/safety-plan",
+      "use": [
+        "collaborative safety planning"
+      ]
+    },
+    {
+      "id": "openai_responses",
+      "title": "Responses API",
+      "publisher": "OpenAI",
+      "url": "https://platform.openai.com/docs/api-reference/responses",
+      "use": [
+        "backend API integration"
+      ]
+    }
+  ]
+}
