@@ -1,0 +1,33 @@
+{
+  "schema_name": "ourspace_shared_dbt_adhd_audit",
+  "generated_at_utc": "2026-06-26T00:24:16Z",
+  "output_file_count": 412,
+  "source_counts": {
+    "docs": 18,
+    "json": 265,
+    "html": 121
+  },
+  "domain_counts": {
+    "general_chain_analysis": 18,
+    "mindfulness": 64,
+    "interpersonal_effectiveness": 70,
+    "emotion_regulation": 86,
+    "distress_tolerance": 107,
+    "diary_cards": 2,
+    "shared_skill": 5,
+    "time_planning": 5,
+    "cleaning_organization": 12,
+    "motivation_initiation": 4,
+    "burnout_sensory": 6,
+    "adhd_general": 6
+  },
+  "validated": {
+    "json_files_load": true,
+    "html_files_have_shared_filter": true,
+    "full_profiles_not_copied": true,
+    "max_folder_depth_under_shared": 3
+  },
+  "checks": [],
+  "bad_json": [],
+  "missing_html_filter": []
+}

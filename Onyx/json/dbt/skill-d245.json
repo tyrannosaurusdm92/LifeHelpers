@@ -1,0 +1,1183 @@
+{
+  "schema": "pdf_to_json_text_layout_v1",
+  "created_at_utc": "2026-06-25T17:18:50.890535+00:00",
+  "group_type": "single_pdf_json",
+  "merge_policy": {
+    "threshold": "merge documents when TF-IDF cosine similarity >= 0.60 OR 5-token shingle containment of the smaller document >= 0.60",
+    "why_containment_is_used": "Containment catches shorter PDFs that are substantially embedded inside longer PDFs even when whole-document Jaccard/cosine is lower."
+  },
+  "source_document_count": 1,
+  "source_documents": [
+    {
+      "document_id": "when_adhd_leads_to_lack_of_motivation_how_to_get_it_done",
+      "source_index": 22,
+      "original_filename": "When ADHD Leads to Lack of Motivation_ How to Get It Done.pdf",
+      "source_relative_path": "adhd/When ADHD Leads to Lack of Motivation_ How to Get It Done.pdf",
+      "sha256": "b99db56ae2c419eff0c10302a0062ff04acb3e0d5a19af701caa4d130d83d355",
+      "title": "When ADHD Leads to Lack of Motivation: How to Get It Done",
+      "page_count": 4,
+      "character_count": 9268,
+      "word_count": 1689,
+      "link_count": 24,
+      "image_count": 2,
+      "form_field_count": 0,
+      "annotation_count": 0
+    }
+  ],
+  "within_group_similarity": [],
+  "documents": [
+    {
+      "document_id": "when_adhd_leads_to_lack_of_motivation_how_to_get_it_done",
+      "source_index": 22,
+      "original_filename": "When ADHD Leads to Lack of Motivation_ How to Get It Done.pdf",
+      "source_relative_path": "adhd/When ADHD Leads to Lack of Motivation_ How to Get It Done.pdf",
+      "sha256": "b99db56ae2c419eff0c10302a0062ff04acb3e0d5a19af701caa4d130d83d355",
+      "title": "When ADHD Leads to Lack of Motivation: How to Get It Done",
+      "pdf_metadata": {
+        "format": "PDF 1.4",
+        "title": "When ADHD Leads to Lack of Motivation: How to Get It Done",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "producer": "Skia/PDF m149",
+        "creationDate": "D:20260625143528+00'00'",
+        "modDate": "D:20260625143528+00'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "page_count": 4,
+      "character_count": 9268,
+      "word_count": 1689,
+      "link_count": 24,
+      "image_count": 2,
+      "form_field_count": 0,
+      "annotation_count": 0,
+      "full_text": "ADHD Adults > Getting Things Done\nSTOP PROCRASTINATING\nWhat’s My Motivation? (No, Seriously, I Need to Get Started.)\nNo one enjoys cleaning bathrooms or paying bills, but most people can ‘suck it up’ and get the job\ndone. However, when a person with ADHD lacks interest in or motivation to complete a job, it is\npainful (if not impossible) to tackle it. Here, learn how to trick your brain into doing what you need it\nto do.\nUpdated on May 9, 2025\n6 min read\nClick to Read 8 Comments 💬\nBy Laurie Dupar, PMHNP, RN, PCC\nIn This Article\n1. You Can Conquer Your Lack of Motivation\n2. 6 Expert Strategies for Overcoming Lack of Motivation\n3. Bust Your Lack of Motivation by Asking the Right Questions\nTackling a to-do list when you lack motivation is not impossible, but it takes a lot of energy, and, for some, it\nactually feels physically painful. Spending our days trying to complete tasks we are not motivated to do makes\nus feel bad. It’s a feeling that knocks many of us back to the couch, raising the white flag and surrendering\nourselves to failure once again.\nAn ADDitude reader recently wrote to me: “I know that I’m supposed to do the things on my to-do list each day,\nbut I don’t. I have no motivation — and I feel down on myself because of the mistakes and missteps I have made\ndue to my attention deficit disorder (ADHD) symptoms. How do I get motivated to do what I’m supposed to do\nwhen I’m not feeling good about myself and my abilities?”\nYou Can Conquer Your Lack of Motivation\nNot being able to get things done when we feel unmotivated ranks up there with other things humans can’t do\n— breathing underwater, licking our elbows, or sneezing with our eyes open. Granted, there are a few people out\nthere who can manage to-do lists without any inspiration, but not many of us can pull off getting started.\nSo, how can we get rid of those negative feelings? How can we get motivated? What gets our juices flowing so we\ncan get up and do what we want or need to do? Simple — doing something that feels good or pleasurable to us.\nPeople with ADHD need to learn to tap into the meaning, importance, or worth of the task at hand.\nADHD Science & Strategies\n6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done\nhttps://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n1/4 6 Expert Strategies for Overcoming Lack of Motivation\nMotivation Hack #1: Celebrate Small Successes\nFirst, to feel less down on yourself, plan to do something that feels rewarding to you several times a day. This is\nnot an option. It is essential. Do something creative or pleasurable. It will recharge your battery. It’s like making\nsure you have your oxygen mask on first before putting on someone else’s.\n[Take This Self-Test: How Badly Do You Procrastinate?]\nMaybe you’d enjoy listening to upbeat music, talking to a friend, going outside, spending 15 minutes working on\na hobby. Make a list of 10 things you enjoy, and refer to it when you are feeling down. Make sure you have little\nsuccesses, no matter how small, every day.\nMotivation Hack #2: Remove the “Shoulds” or “Supposed to’s” in\nYour Life\nYou will notice that you use these words only when you are trying to do something that someone else considers\nimportant. “Should” and “supposed to” are motivation killers and need to be eliminated from your vocabulary.\nYou can minimize “shoulds” by turning them into “wants.” Think about the “un-motivating” task before you.\nAsk yourself, “What, if anything, about this task is OK with me? What piece of it might I enjoy?”\nA common “should” is doing the laundry. Seeing this tedious chore as a “want” might mean noticing how you\nenjoy the scent of your favorite detergent as you put it in the washer. You don’t look forward to doing the\nlaundry, but you like the smell of the fabric softener sheet. Or maybe you enjoy the warmth of the laundry\ncoming out of the dryer. Or maybe you love that sense of accomplishment when the laundry baskets are\nmomentarily empty. Focusing on the “want to” changes the “should” into “I want to do the laundry because I\nlike the way it smells right out of the dryer!”\nMotivation Hack #3: Tap into Your Creativity\nWhen you face a difficult task, tap into your creative ADHD brain for inspiration. Ask yourself: Is this something\nI have to do…or is there someone else who could do this easier, or who would actually find it rewarding?\n[Download This Free Resource: 19 Ways to Meet Deadlines and Get Things Done]\nMotivation Hack #4: Give Yourself Permission to Delegate\nAnother person might actually enjoy doing a task you find dreary. Give yourself permission to let go of what you\ndon’t do well, and let someone else do the chore or task. For instance, dry cleaners are brilliant at doing laundry,\nand grocery shopping can be turned into a new experience when done online or completed by a spouse, teen, or\nneighbor in exchange for your doing something for them that they don’t enjoy and that you do. Maybe working\nin the back yard in the fresh air turns you on.\nMotivation Hack #5: Tailor Tasks to Your Interests\nIf the task cannot be eliminated as a “should,” and you are the only person who can complete it, make it more\nbearable by asking, “How can I do this in a way that works for me? What might make it feel worthwhile?” People\nwith ADHD do things differently. Going grocery shopping with a friend would be fun if you get to spend time\nsocializing. Shopping late at night, when there are fewer people, minimizes the agony of waiting in lines.\nShopping at a different store might turn picking up groceries into an adventure.\n6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done\nhttps://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n2/4 Motivation Hack #6: Turn Your Boring Tasks Exciting Games\nAsk, “How can I make this boring task fun or rewarding for me?” Make it into a new game: Challenge yourself to\nget the best deal by using coupons; time yourself to get in and out of the store in under 30 minutes. Treat\nyourself to a new fruit, bakery item, bouquet of flowers, or beverage when you are done. Use your ADHD\nimagination.\nFeeling unmotivated is a big obstacle for adults with ADHD. You can’t change that by trying harder or “just\ndoing it.” We don’t work that way. Nobody works that way. I like to look at obstacles as opportunities to enlist\nour creative problem-solving abilities.\nThe key to putting the meaning back in motivation is to let go of the way it works for everybody else. Use your\nout-of-the-box thinking to come up with a fun, interesting, and rewarding way to make it work for you. I have\nno doubt you can do it.\nBust Your Lack of Motivation by Asking the Right Questions\nWhen I work with a client who has motivation challenges, I ask the following questions. You or your coach can\ndo the same.\nWhat excites or reenergizes you? What recharges your batteries?\nWhat old beliefs about what you “should” do might not be true?\nWho else can do this task more easily than you?\nThink about a time in your past when completing a similar type of task wasn’t so hard. What was\ndifferent? Can you bring some of those elements into the situation now?\nHow can you break this task down into three pieces so it feels more manageable?\nHow will you reward yourself when you complete this task?\nWhat would you need to let go of to allow someone else to take it over?\nWhat needs to change to turn this “should” into a “want”?\nWhat are you good at?\nWhat self-talk do you notice that you can let go of?\nWhat about this task is important or meaningful to you?\nWhen is the best time for you to do this task?\nWhat support do you have to get this task done?\nWhat obstacles are preventing you from completing this task? Which of these can you eliminate now?\nHow can you make this task fun, interesting, or enjoyable?\n[Get Unstuck Now: Adults with ADHD Share Their Procrastination Fixes]\nSUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you. \n\n\n6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done\nhttps://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n3/4 The ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare.\nREVIEW OUR EDITORIAL PROCESS\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\nContent is periodically reviewed and updated to reflect new health insights.\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy, and AI Policy. ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only.\n6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done\nhttps://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n4/4",
+      "pages": [
+        {
+          "page_number": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "ADHD Adults > Getting Things Done\nSTOP PROCRASTINATING\nWhat’s My Motivation? (No, Seriously, I Need to Get Started.)\nNo one enjoys cleaning bathrooms or paying bills, but most people can ‘suck it up’ and get the job\ndone. However, when a person with ADHD lacks interest in or motivation to complete a job, it is\npainful (if not impossible) to tackle it. Here, learn how to trick your brain into doing what you need it\nto do.\nUpdated on May 9, 2025\n6 min read\nClick to Read 8 Comments 💬\nBy Laurie Dupar, PMHNP, RN, PCC\nIn This Article\n1. You Can Conquer Your Lack of Motivation\n2. 6 Expert Strategies for Overcoming Lack of Motivation\n3. Bust Your Lack of Motivation by Asking the Right Questions\nTackling a to-do list when you lack motivation is not impossible, but it takes a lot of energy, and, for some, it\nactually feels physically painful. Spending our days trying to complete tasks we are not motivated to do makes\nus feel bad. It’s a feeling that knocks many of us back to the couch, raising the white flag and surrendering\nourselves to failure once again.\nAn ADDitude reader recently wrote to me: “I know that I’m supposed to do the things on my to-do list each day,\nbut I don’t. I have no motivation — and I feel down on myself because of the mistakes and missteps I have made\ndue to my attention deficit disorder (ADHD) symptoms. How do I get motivated to do what I’m supposed to do\nwhen I’m not feeling good about myself and my abilities?”\nYou Can Conquer Your Lack of Motivation\nNot being able to get things done when we feel unmotivated ranks up there with other things humans can’t do\n— breathing underwater, licking our elbows, or sneezing with our eyes open. Granted, there are a few people out\nthere who can manage to-do lists without any inspiration, but not many of us can pull off getting started.\nSo, how can we get rid of those negative feelings? How can we get motivated? What gets our juices flowing so we\ncan get up and do what we want or need to do? Simple — doing something that feels good or pleasurable to us.\nPeople with ADHD need to learn to tap into the meaning, importance, or worth of the task at hand.\nADHD Science & Strategies\n6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done\nhttps://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n1/4",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                102.18,
+                220.75,
+                116.32
+              ],
+              "text": "ADHD Adults > Getting Things Done"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                123.92,
+                169.73,
+                137.12
+              ],
+              "text": "STOP PROCRASTINATING"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                142.88,
+                540.51,
+                168.18
+              ],
+              "text": "What’s My Motivation? (No, Seriously, I Need to Get Started.)"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                168.19,
+                552.21,
+                229.78
+              ],
+              "text": "No one enjoys cleaning bathrooms or paying bills, but most people can ‘suck it up’ and get the job\ndone. However, when a person with ADHD lacks interest in or motivation to complete a job, it is\npainful (if not impossible) to tackle it. Here, learn how to trick your brain into doing what you need it\nto do."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                279.15,
+                237.93,
+                456.96,
+                253.57
+              ],
+              "text": "Updated on May 9, 2025\n6 min read"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                270.19,
+                210.49,
+                285.28
+              ],
+              "text": "Click to Read 8 Comments 💬"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                106.88,
+                237.93,
+                262.65,
+                252.07
+              ],
+              "text": "By Laurie Dupar, PMHNP, RN, PCC"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                68.77,
+                303.42,
+                144.21,
+                319.17
+              ],
+              "text": "In This Article"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                71.67,
+                328.31,
+                332.77,
+                351.09
+              ],
+              "text": "1. You Can Conquer Your Lack of Motivation"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                69.8,
+                364.31,
+                408.43,
+                387.09
+              ],
+              "text": "2. 6 Expert Strategies for Overcoming Lack of Motivation"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                70.77,
+                401.06,
+                440.29,
+                423.84
+              ],
+              "text": "3. Bust Your Lack of Motivation by Asking the Right Questions"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                459.38,
+                545.88,
+                515.06
+              ],
+              "text": "Tackling a to-do list when you lack motivation is not impossible, but it takes a lot of energy, and, for some, it\nactually feels physically painful. Spending our days trying to complete tasks we are not motivated to do makes\nus feel bad. It’s a feeling that knocks many of us back to the couch, raising the white flag and surrendering\nourselves to failure once again."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                55.12,
+                528.38,
+                554.67,
+                584.06
+              ],
+              "text": "An ADDitude reader recently wrote to me: “I know that I’m supposed to do the things on my to-do list each day,\nbut I don’t. I have no motivation — and I feel down on myself because of the mistakes and missteps I have made\ndue to my attention deficit disorder (ADHD) symptoms. How do I get motivated to do what I’m supposed to do\nwhen I’m not feeling good about myself and my abilities?”"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                598.79,
+                377.89,
+                621.41
+              ],
+              "text": "You Can Conquer Your Lack of Motivation"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                55.12,
+                634.88,
+                556.44,
+                677.06
+              ],
+              "text": "Not being able to get things done when we feel unmotivated ranks up there with other things humans can’t do\n— breathing underwater, licking our elbows, or sneezing with our eyes open. Granted, there are a few people out\nthere who can manage to-do lists without any inspiration, but not many of us can pull off getting started."
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                55.12,
+                690.38,
+                553.54,
+                732.56
+              ],
+              "text": "So, how can we get rid of those negative feelings? How can we get motivated? What gets our juices flowing so we\ncan get up and do what we want or need to do? Simple — doing something that feels good or pleasurable to us.\nPeople with ADHD need to learn to tap into the meaning, importance, or worth of the task at hand."
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                193.47,
+                52.22,
+                308.92,
+                66.14
+              ],
+              "text": "ADHD Science & Strategies"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                24.0,
+                15.26,
+                462.09,
+                24.19
+              ],
+              "text": "6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n1/4"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 7,
+              "bbox": [
+                55.5,
+                230.25,
+                87.0,
+                261.75
+              ],
+              "width_px": 120,
+              "height_px": 120,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/",
+              "bbox": [
+                55.5,
+                102.0,
+                114.75,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/getting-things-done/",
+              "bbox": [
+                126.0,
+                102.0,
+                220.5,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/getting-things-done/procrastination/",
+              "bbox": [
+                55.5,
+                123.75,
+                169.5,
+                137.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/reviews/post/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/",
+              "bbox": [
+                55.5,
+                270.0,
+                210.75,
+                285.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/author/laurie-dupar-pmhnp-rn-pcc/",
+              "bbox": [
+                120.75,
+                237.75,
+                262.5,
+                252.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/what-is-adhd-symptoms-causes-treatments/",
+              "bbox": [
+                219.0,
+                555.0,
+                247.5,
+                570.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/getting-started-adhd-challenges/",
+              "bbox": [
+                456.0,
+                661.5,
+                525.75,
+                677.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/",
+              "bbox": [
+                55.5,
+                46.5,
+                558.0,
+                68.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "6 Expert Strategies for Overcoming Lack of Motivation\nMotivation Hack #1: Celebrate Small Successes\nFirst, to feel less down on yourself, plan to do something that feels rewarding to you several times a day. This is\nnot an option. It is essential. Do something creative or pleasurable. It will recharge your battery. It’s like making\nsure you have your oxygen mask on first before putting on someone else’s.\n[Take This Self-Test: How Badly Do You Procrastinate?]\nMaybe you’d enjoy listening to upbeat music, talking to a friend, going outside, spending 15 minutes working on\na hobby. Make a list of 10 things you enjoy, and refer to it when you are feeling down. Make sure you have little\nsuccesses, no matter how small, every day.\nMotivation Hack #2: Remove the “Shoulds” or “Supposed to’s” in\nYour Life\nYou will notice that you use these words only when you are trying to do something that someone else considers\nimportant. “Should” and “supposed to” are motivation killers and need to be eliminated from your vocabulary.\nYou can minimize “shoulds” by turning them into “wants.” Think about the “un-motivating” task before you.\nAsk yourself, “What, if anything, about this task is OK with me? What piece of it might I enjoy?”\nA common “should” is doing the laundry. Seeing this tedious chore as a “want” might mean noticing how you\nenjoy the scent of your favorite detergent as you put it in the washer. You don’t look forward to doing the\nlaundry, but you like the smell of the fabric softener sheet. Or maybe you enjoy the warmth of the laundry\ncoming out of the dryer. Or maybe you love that sense of accomplishment when the laundry baskets are\nmomentarily empty. Focusing on the “want to” changes the “should” into “I want to do the laundry because I\nlike the way it smells right out of the dryer!”\nMotivation Hack #3: Tap into Your Creativity\nWhen you face a difficult task, tap into your creative ADHD brain for inspiration. Ask yourself: Is this something\nI have to do…or is there someone else who could do this easier, or who would actually find it rewarding?\n[Download This Free Resource: 19 Ways to Meet Deadlines and Get Things Done]\nMotivation Hack #4: Give Yourself Permission to Delegate\nAnother person might actually enjoy doing a task you find dreary. Give yourself permission to let go of what you\ndon’t do well, and let someone else do the chore or task. For instance, dry cleaners are brilliant at doing laundry,\nand grocery shopping can be turned into a new experience when done online or completed by a spouse, teen, or\nneighbor in exchange for your doing something for them that they don’t enjoy and that you do. Maybe working\nin the back yard in the fresh air turns you on.\nMotivation Hack #5: Tailor Tasks to Your Interests\nIf the task cannot be eliminated as a “should,” and you are the only person who can complete it, make it more\nbearable by asking, “How can I do this in a way that works for me? What might make it feel worthwhile?” People\nwith ADHD do things differently. Going grocery shopping with a friend would be fun if you get to spend time\nsocializing. Shopping late at night, when there are fewer people, minimizes the agony of waiting in lines.\nShopping at a different store might turn picking up groceries into an adventure.\n6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done\nhttps://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n2/4",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                28.79,
+                479.42,
+                51.41
+              ],
+              "text": "6 Expert Strategies for Overcoming Lack of Motivation"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                66.26,
+                392.35,
+                87.0
+              ],
+              "text": "Motivation Hack #1: Celebrate Small Successes"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                89.62,
+                556.26,
+                131.81
+              ],
+              "text": "First, to feel less down on yourself, plan to do something that feels rewarding to you several times a day. This is\nnot an option. It is essential. Do something creative or pleasurable. It will recharge your battery. It’s like making\nsure you have your oxygen mask on first before putting on someone else’s."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                53.86,
+                145.12,
+                304.86,
+                160.31
+              ],
+              "text": "[Take This Self-Test: How Badly Do You Procrastinate?]"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                173.62,
+                554.26,
+                215.81
+              ],
+              "text": "Maybe you’d enjoy listening to upbeat music, talking to a friend, going outside, spending 15 minutes working on\na hobby. Make a list of 10 things you enjoy, and refer to it when you are feeling down. Make sure you have little\nsuccesses, no matter how small, every day."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                229.76,
+                525.56,
+                270.0
+              ],
+              "text": "Motivation Hack #2: Remove the “Shoulds” or “Supposed to’s” in\nYour Life"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                272.62,
+                552.77,
+                328.31
+              ],
+              "text": "You will notice that you use these words only when you are trying to do something that someone else considers\nimportant. “Should” and “supposed to” are motivation killers and need to be eliminated from your vocabulary.\nYou can minimize “shoulds” by turning them into “wants.” Think about the “un-motivating” task before you.\nAsk yourself, “What, if anything, about this task is OK with me? What piece of it might I enjoy?”"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                341.62,
+                546.82,
+                424.31
+              ],
+              "text": "A common “should” is doing the laundry. Seeing this tedious chore as a “want” might mean noticing how you\nenjoy the scent of your favorite detergent as you put it in the washer. You don’t look forward to doing the\nlaundry, but you like the smell of the fabric softener sheet. Or maybe you enjoy the warmth of the laundry\ncoming out of the dryer. Or maybe you love that sense of accomplishment when the laundry baskets are\nmomentarily empty. Focusing on the “want to” changes the “should” into “I want to do the laundry because I\nlike the way it smells right out of the dryer!”"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                438.26,
+                372.24,
+                459.0
+              ],
+              "text": "Motivation Hack #3: Tap into Your Creativity"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                461.62,
+                554.84,
+                490.31
+              ],
+              "text": "When you face a difficult task, tap into your creative ADHD brain for inspiration. Ask yourself: Is this something\nI have to do…or is there someone else who could do this easier, or who would actually find it rewarding?"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                53.86,
+                503.62,
+                414.65,
+                518.81
+              ],
+              "text": "[Download This Free Resource: 19 Ways to Meet Deadlines and Get Things Done]"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                55.12,
+                532.76,
+                466.39,
+                553.5
+              ],
+              "text": "Motivation Hack #4: Give Yourself Permission to Delegate"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                556.12,
+                555.43,
+                625.31
+              ],
+              "text": "Another person might actually enjoy doing a task you find dreary. Give yourself permission to let go of what you\ndon’t do well, and let someone else do the chore or task. For instance, dry cleaners are brilliant at doing laundry,\nand grocery shopping can be turned into a new experience when done online or completed by a spouse, teen, or\nneighbor in exchange for your doing something for them that they don’t enjoy and that you do. Maybe working\nin the back yard in the fresh air turns you on."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                55.12,
+                639.26,
+                410.19,
+                660.0
+              ],
+              "text": "Motivation Hack #5: Tailor Tasks to Your Interests"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                662.62,
+                555.84,
+                731.81
+              ],
+              "text": "If the task cannot be eliminated as a “should,” and you are the only person who can complete it, make it more\nbearable by asking, “How can I do this in a way that works for me? What might make it feel worthwhile?” People\nwith ADHD do things differently. Going grocery shopping with a friend would be fun if you get to spend time\nsocializing. Shopping late at night, when there are fewer people, minimizes the agony of waiting in lines.\nShopping at a different store might turn picking up groceries into an adventure."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                24.0,
+                15.26,
+                462.09,
+                24.19
+              ],
+              "text": "6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n2/4"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/quiz-procrastinate-adhd-adults/?src=embed_link",
+              "bbox": [
+                59.25,
+                144.75,
+                298.5,
+                160.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/secrets-of-the-adhd-brain/",
+              "bbox": [
+                289.5,
+                461.25,
+                343.5,
+                477.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/download/better-time-management/?src=embed_link",
+              "bbox": [
+                59.25,
+                503.25,
+                408.0,
+                519.0
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Motivation Hack #6: Turn Your Boring Tasks Exciting Games\nAsk, “How can I make this boring task fun or rewarding for me?” Make it into a new game: Challenge yourself to\nget the best deal by using coupons; time yourself to get in and out of the store in under 30 minutes. Treat\nyourself to a new fruit, bakery item, bouquet of flowers, or beverage when you are done. Use your ADHD\nimagination.\nFeeling unmotivated is a big obstacle for adults with ADHD. You can’t change that by trying harder or “just\ndoing it.” We don’t work that way. Nobody works that way. I like to look at obstacles as opportunities to enlist\nour creative problem-solving abilities.\nThe key to putting the meaning back in motivation is to let go of the way it works for everybody else. Use your\nout-of-the-box thinking to come up with a fun, interesting, and rewarding way to make it work for you. I have\nno doubt you can do it.\nBust Your Lack of Motivation by Asking the Right Questions\nWhen I work with a client who has motivation challenges, I ask the following questions. You or your coach can\ndo the same.\nWhat excites or reenergizes you? What recharges your batteries?\nWhat old beliefs about what you “should” do might not be true?\nWho else can do this task more easily than you?\nThink about a time in your past when completing a similar type of task wasn’t so hard. What was\ndifferent? Can you bring some of those elements into the situation now?\nHow can you break this task down into three pieces so it feels more manageable?\nHow will you reward yourself when you complete this task?\nWhat would you need to let go of to allow someone else to take it over?\nWhat needs to change to turn this “should” into a “want”?\nWhat are you good at?\nWhat self-talk do you notice that you can let go of?\nWhat about this task is important or meaningful to you?\nWhen is the best time for you to do this task?\nWhat support do you have to get this task done?\nWhat obstacles are preventing you from completing this task? Which of these can you eliminate now?\nHow can you make this task fun, interesting, or enjoyable?\n[Get Unstuck Now: Adults with ADHD Share Their Procrastination Fixes]\nSUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you. \n\n\n6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done\nhttps://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n3/4",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                28.01,
+                481.45,
+                48.75
+              ],
+              "text": "Motivation Hack #6: Turn Your Boring Tasks Exciting Games"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                51.38,
+                554.7,
+                107.06
+              ],
+              "text": "Ask, “How can I make this boring task fun or rewarding for me?” Make it into a new game: Challenge yourself to\nget the best deal by using coupons; time yourself to get in and out of the store in under 30 minutes. Treat\nyourself to a new fruit, bakery item, bouquet of flowers, or beverage when you are done. Use your ADHD\nimagination."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                120.38,
+                544.8,
+                162.56
+              ],
+              "text": "Feeling unmotivated is a big obstacle for adults with ADHD. You can’t change that by trying harder or “just\ndoing it.” We don’t work that way. Nobody works that way. I like to look at obstacles as opportunities to enlist\nour creative problem-solving abilities."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                53.86,
+                175.88,
+                547.45,
+                218.06
+              ],
+              "text": "The key to putting the meaning back in motivation is to let go of the way it works for everybody else. Use your\nout-of-the-box thinking to come up with a fun, interesting, and rewarding way to make it work for you. I have\nno doubt you can do it."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                249.29,
+                519.27,
+                271.91
+              ],
+              "text": "Bust Your Lack of Motivation by Asking the Right Questions"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                286.12,
+                545.62,
+                314.81
+              ],
+              "text": "When I work with a client who has motivation challenges, I ask the following questions. You or your coach can\ndo the same."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                85.12,
+                328.12,
+                372.17,
+                343.31
+              ],
+              "text": "What excites or reenergizes you? What recharges your batteries?"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                85.12,
+                345.38,
+                369.96,
+                360.56
+              ],
+              "text": "What old beliefs about what you “should” do might not be true?"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                85.12,
+                361.88,
+                297.1,
+                377.06
+              ],
+              "text": "Who else can do this task more easily than you?"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                85.12,
+                379.12,
+                515.87,
+                407.81
+              ],
+              "text": "Think about a time in your past when completing a similar type of task wasn’t so hard. What was\ndifferent? Can you bring some of those elements into the situation now?"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                85.12,
+                409.88,
+                444.42,
+                425.06
+              ],
+              "text": "How can you break this task down into three pieces so it feels more manageable?"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                85.12,
+                427.12,
+                348.71,
+                442.31
+              ],
+              "text": "How will you reward yourself when you complete this task?"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                85.12,
+                443.62,
+                398.18,
+                458.81
+              ],
+              "text": "What would you need to let go of to allow someone else to take it over?"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                85.12,
+                460.88,
+                348.54,
+                476.06
+              ],
+              "text": "What needs to change to turn this “should” into a “want”?"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                85.12,
+                478.12,
+                183.01,
+                493.31
+              ],
+              "text": "What are you good at?"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                85.12,
+                495.38,
+                311.68,
+                510.56
+              ],
+              "text": "What self-talk do you notice that you can let go of?"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                85.12,
+                512.62,
+                335.56,
+                527.81
+              ],
+              "text": "What about this task is important or meaningful to you?"
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                85.12,
+                529.12,
+                285.75,
+                544.31
+              ],
+              "text": "When is the best time for you to do this task?"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                85.12,
+                546.38,
+                298.4,
+                561.56
+              ],
+              "text": "What support do you have to get this task done?"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                85.12,
+                563.62,
+                538.51,
+                578.81
+              ],
+              "text": "What obstacles are preventing you from completing this task? Which of these can you eliminate now?"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                85.12,
+                580.88,
+                346.24,
+                596.06
+              ],
+              "text": "How can you make this task fun, interesting, or enjoyable?"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                53.86,
+                609.38,
+                380.68,
+                624.56
+              ],
+              "text": "[Get Unstuck Now: Adults with ADHD Share Their Procrastination Fixes]"
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                55.12,
+                645.38,
+                538.98,
+                687.56
+              ],
+              "text": "SUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you."
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                63.69,
+                708.14,
+                158.66,
+                723.32
+              ],
+              "text": "\n\n"
+            },
+            {
+              "block_index": 25,
+              "bbox": [
+                24.0,
+                15.26,
+                462.09,
+                24.19
+              ],
+              "text": "6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done"
+            },
+            {
+              "block_index": 26,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n3/4"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/how-to-be-your-own-life-coach-positive-self-talk/",
+              "bbox": [
+                111.75,
+                495.0,
+                150.75,
+                510.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/beat-procrastination-unstuck-with-adhd/?src=embed_link",
+              "bbox": [
+                59.25,
+                609.0,
+                374.25,
+                624.75
+              ]
+            },
+            {
+              "uri": "https://additu.de/subscribe/",
+              "bbox": [
+                501.75,
+                658.5,
+                530.25,
+                674.25
+              ]
+            },
+            {
+              "uri": "https://additu.de/subscribe/",
+              "bbox": [
+                55.5,
+                672.0,
+                147.75,
+                687.75
+              ]
+            },
+            {
+              "uri": "https://www.facebook.com/sharer/sharer.php?u=https://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/",
+              "bbox": [
+                55.5,
+                702.0,
+                79.5,
+                726.75
+              ]
+            },
+            {
+              "uri": "https://twitter.com/intent/tweet/?text=What%26%238217%3Bs+My+Motivation%3F+%28No%2C+Seriously%2C+I+Need+to+Get+Started.%29&url=https://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/&via=",
+              "bbox": [
+                84.0,
+                702.0,
+                108.0,
+                726.0
+              ]
+            },
+            {
+              "uri": "https://www.instagram.com/additudemag/",
+              "bbox": [
+                113.25,
+                702.0,
+                137.25,
+                726.75
+              ]
+            },
+            {
+              "uri": "https://pinterest.com/pin/create/button/?url=https://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/&media=https://i0.wp.com/www.additudemag.com/wp-content/uploads/2015/02/Adult_Time_NoMotivationHowToPushForward_Article_11169_11169_man-climbing-stairs.jpg?resize=1280%2C720px&ssl=1&description=No%20one%20enjoys%20cleaning%20bathrooms%20or%20paying%20bills,%20but%20most%20people%20can%20%27suck%20it%20up%27%20and%20get%20the%20job%20done.%20However,%20when%20a%20person%20with%20ADHD%20lacks%20interest%20in%20or%20motivation%20to%20complete%20a%20job,%20it%20is%20painful%20(if%20not%20impossible)%20to%20tackle%20it.%20Here,%20learn%20how%20to%20trick%20your%20brain%20into%20doing%20what%20you%20need%20it%20to%20do.",
+              "bbox": [
+                142.5,
+                702.0,
+                166.5,
+                726.75
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "The ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare.\nREVIEW OUR EDITORIAL PROCESS\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\nContent is periodically reviewed and updated to reflect new health insights.\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy, and AI Policy. ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only.\n6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done\nhttps://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n4/4",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                148.21,
+                52.77,
+                464.54,
+                85.96
+              ],
+              "text": "The ADDITUDE Commitment"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                43.5,
+                89.06,
+                544.05,
+                149.92
+              ],
+              "text": "ADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                212.85,
+                176.43,
+                399.14,
+                190.57
+              ],
+              "text": "REVIEW OUR EDITORIAL PROCESS"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                202.7,
+                219.18,
+                409.28,
+                233.32
+              ],
+              "text": "MEET OUR MEDICAL ADVISORY PANEL"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                84.75,
+                268.69,
+                367.87,
+                283.78
+              ],
+              "text": "ADDitude verifies the factual accuracy of all new content."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                84.75,
+                319.69,
+                361.16,
+                334.78
+              ],
+              "text": "Sources are cited for all scientific research and findings."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                84.75,
+                371.44,
+                460.91,
+                386.53
+              ],
+              "text": "Content is periodically reviewed and updated to reflect new health insights."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                84.75,
+                422.44,
+                339.77,
+                437.53
+              ],
+              "text": "We strive to feature diverse voices and experiences."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                572.44,
+                532.39,
+                617.53
+              ],
+              "text": "Copyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy, and AI Policy. ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                24.0,
+                15.26,
+                462.09,
+                24.19
+              ],
+              "text": "6/25/26, 10:35 AM\nWhen ADHD Leads to Lack of Motivation: How to Get It Done"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/when-adhd-leads-to-lack-of-motivation-how-to-get-work-done/\n4/4"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 9,
+              "bbox": [
+                500.25,
+                549.75,
+                558.0,
+                561.75
+              ],
+              "width_px": 77,
+              "height_px": 16,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/contact-us/editorial-process-standards/",
+              "bbox": [
+                201.0,
+                165.75,
+                411.75,
+                201.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/adhd-medical-advisory-panel/",
+              "bbox": [
+                190.5,
+                208.5,
+                422.25,
+                243.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/terms-and-conditions/",
+              "bbox": [
+                55.5,
+                587.25,
+                121.5,
+                602.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/privacy-policy/",
+              "bbox": [
+                143.25,
+                587.25,
+                214.5,
+                602.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/ai-policy/",
+              "bbox": [
+                242.25,
+                587.25,
+                286.5,
+                602.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        }
+      ]
+    }
+  ],
+  "ourspace_kindness_pass": {
+    "schema_name": "ourspace_dbt_adhd_kindness_pass",
+    "schema_version": "1.0.0",
+    "generated_at_utc": "2026-06-25T21:00:29.329839+00:00",
+    "shared_library": true,
+    "routine_cadence": "daily",
+    "source_relative_path": "10_ADHD_Motivation_Dopamine_and_Task_Initiation/json/when_adhd_leads_to_lack_of_motivation_how_to_get_it_done.json",
+    "title": "pdf_to_json_text_layout_v1",
+    "category": "ADHD Motivation Dopamine and Task Initiation",
+    "source_type": "reference",
+    "disability_profile_basis": {
+      "william": {
+        "main_doability_needs": [
+          "bed-level or seated options by default",
+          "oxygen/breathing, pain, vertigo, fatigue, mobility, and recovery time respected",
+          "ADHD/autism supports: transitions, low-stimulation starts, tiny visible steps",
+          "partial completion and stopping before a crash count as success",
+          "no shame, no body blame, no pressure to push through pain or dysphoria"
+        ],
+        "care_language": "direct, validating, masculine, autonomy-preserving, privacy-respecting"
+      },
+      "jasper": {
+        "main_doability_needs": [
+          "ADHD transition support before task demands",
+          "caregiver burnout recovery treated as care, not avoidance",
+          "protected rest, boundaries, decompression, sensory needs, and people-pleasing checks",
+          "low-energy, one-field, one-minute versions allowed",
+          "no assumption that Jasper has unlimited caregiver capacity"
+        ],
+        "care_language": "they/them, body-neutral, consent-based, non-shaming, burnout-aware"
+      },
+      "shared": {
+        "household_rules": [
+          "no hour block may hold more than two tasks/tools",
+          "skills may be used as one-breath or one-field versions",
+          "survival days load critical care first and skip optional worksheets",
+          "rest, boundaries, decompression, and asking for help count as care",
+          "skills are for support, not grades"
+        ]
+      }
+    },
+    "universal_kindness_rules": [
+      "This is a support tool, not a test.",
+      "One line, one checkbox, one breath, or one tiny step counts.",
+      "Skipping a skill because the body is unsafe, exhausted, dysregulated, or overloaded is allowed.",
+      "Do not stack this with more than one other task inside the same hour.",
+      "Survival-day version always wins over perfection."
+    ],
+    "william_accessibility_adaptations": [
+      "Use bed-level, seated, voice-note, or caregiver-assisted versions when needed.",
+      "Avoid pain escalation, respiratory strain, unsafe transfers, and dysphoria-triggering language.",
+      "Break worksheets into one-field chunks; stopping before a crash is success."
+    ],
+    "jasper_accessibility_adaptations": [
+      "Start with transition support before expecting focus.",
+      "Protect caregiver burnout recovery; rest and boundaries are valid completion.",
+      "Use body-doubling, timers, low-stimulation versions, and one-minute starts."
+    ],
+    "tiny_steps": [
+      "Pick the smallest visible version.",
+      "Use a timer, body double, or transition cue.",
+      "Stop after one tiny step if energy drops."
+    ],
+    "routine_integration": {
+      "routine_role": "small daily support option",
+      "start_the_day_use": "eligible as a rotating daily skill, never more than one DBT/ADHD skill in an hour block",
+      "recommended_block": "after body check or before decompression"
+    },
+    "completion_rules": {
+      "partial_completion_counts": true,
+      "can_be_paused_and_resumed": true,
+      "no_shame_if_skipped": true,
+      "low_spoon_version_required": true,
+      "can_be_done_separately_by_william_and_jasper": true,
+      "can_be_done_together_only_if_both_people_have_capacity": true
+    },
+    "schedule_policy": {
+      "start_the_day_eligible": true,
+      "expanded_day_eligible": true,
+      "max_items_per_hour_block": 2,
+      "do_not_force_into_day": false,
+      "do_not_stack_with": [
+        "appointment",
+        "heavy_chore",
+        "conflict_repair",
+        "hygiene_overload",
+        "caregiver_overload"
+      ]
+    },
+    "currency_suggestion": {
+      "platinum": 0,
+      "gold": 0,
+      "silver": 3,
+      "copper": 0
+    }
+  }
+}

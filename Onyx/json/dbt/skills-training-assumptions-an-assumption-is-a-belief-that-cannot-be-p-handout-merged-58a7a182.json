@@ -1,0 +1,83 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "skills-training-assumptions-an-assumption-is-a-belief-that-cannot-be-proved-but-fa9758a7a182",
+  "title": "Skills Training Assumptions An assumption is a belief that cannot be proved, but we agree to abide by it anyway.",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.968
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/01-dbt-general-orientation-and-analyzing-behavior-general-handout-4-skills-training-assumpti-3d6935d261.json",
+        "sha256": "3d6935d261240831475b07e9e5b29dfc11e510ab006ce5cac1bfbfd2336885e3",
+        "domain": "dbt",
+        "bytes": 4959
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/general-handout-4-skills-training-assumptions-an-assumption-is-a-belief-that-cannot-be-p-05b3cca88f.json",
+        "sha256": "05b3cca88f43feeb6bf10d7fae3d7122d09a4a2af3e995c1243c624c7338582a",
+        "domain": "dbt",
+        "bytes": 4775
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 37,
+        "book_page": "13",
+        "text": "13\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nGeneral Handout 4\nSkills Training Assumptions\nAn assumption is a belief that cannot be proved,\nbut we agree to abide by it anyway.\n1.\t People are doing the best they can.\nAll people at any given point in time are doing the best they can.\n2.\t People want to improve.\nThe common characteristic of all people is that they want to improve their lives and be happy.\n3.\t People need to do better, try harder, and be more motivated to change.*\nThe fact that people are doing the best they can, and want to do even better, does not mean\nthat these things are enough to solve the problem.\n4.\t People may not have caused all of our own problems, but they have to solve them\nanyway.**\nPeople have to change their own behavioral responses and alter their environment for their life\nto change.\n5.\t New behavior has to be learned in all relevant contexts.\nNew behavioral skills have to be practiced in the situations where the skills are needed, not just\nin the situation where the skills are first learned.\n6.\t All behaviors (actions, thoughts, emotions) are caused.\nThere is always a cause or set of causes for our actions, thoughts, and emotions, even if we do\nnot know what the causes are.\n7.\t Figuring out and changing the causes of behavior work better than judging and blaming.\nJudging and blaming are easier, but if we want to create change in the world, we have to\nchange the chains of events that cause unwanted behaviors and events.\n*But trying harder and being more motivated may not be needed if progress is steady and at a realistic rate of improvement.\n**Parents and caregivers must assist children in this task."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "General Handout 4",
+    "source_pdf_pages": [
+      37
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/general/handouts/general_handout_4_skills_training_assumptions_an_assumption_is_a_belief_that_cannot_be_p.json",
+    "item_number": "4",
+    "full_text": "☐\nGeneral Handout 4\nSkills Training Assumptions\nAn assumption is a belief that cannot be proved,\nbut we agree to abide by it anyway.\n1.\t People are doing the best they can.\nAll people at any given point in time are doing the best they can.\n2.\t People want to improve.\nThe common characteristic of all people is that they want to improve their lives and be happy.\n3.\t People need to do better, try harder, and be more motivated to change.*\nThe fact that people are doing the best they can, and want to do even better, does not mean\nthat these things are enough to solve the problem.\n4.\t People may not have caused all of our own problems, but they have to solve them\nanyway.**\nPeople have to change their own behavioral responses and alter their environment for their life\nto change.\n5.\t New behavior has to be learned in all relevant contexts.\nNew behavioral skills have to be practiced in the situations where the skills are needed, not just\nin the situation where the skills are first learned.\n6.\t All behaviors (actions, thoughts, emotions) are caused.\nThere is always a cause or set of causes for our actions, thoughts, and emotions, even if we do\nnot know what the causes are.\n7.\t Figuring out and changing the causes of behavior work better than judging and blaming.\nJudging and blaming are easier, but if we want to create change in the world, we have to\nchange the chains of events that cause unwanted behaviors and events.\n*But trying harder and being more motivated may not be needed if progress is steady and at a realistic rate of improvement.\n**Parents and caregivers must assist children in this task.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "id": "general_handout_4",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "13"
+    ],
+    "title": "Skills Training Assumptions An assumption is a belief that cannot be proved, but we agree to abide by it anyway.",
+    "module_category": "General Skills: Orientation and Analyzing Behavior",
+    "shared_json_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_4_skills_training_assumptions_an_assumption_is_a_belief_t_0cdadbfd.json",
+    "module": "General",
+    "keywords": [
+      "Assumptions",
+      "Skills",
+      "Training",
+      "abide",
+      "agree",
+      "anyway",
+      "assumption",
+      "belief",
+      "cannot",
+      "proved",
+      "that"
+    ]
+  }
+}

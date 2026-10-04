@@ -1,0 +1,2870 @@
+{
+  "schema_name": "ourspace_shared_dbt_adhd_transform_manifest",
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-06-26T00:24:16Z",
+  "source_zip_sha256": "7ab9d2ff74b843d7ec4058dc9e7a962952063bfeac0ab06019015d885d3c33de",
+  "source_profile_hashes": {
+    "william_dino_person_specific_life_impact.json": "9d00b20ce878f16168b25f082694d9b9181974f9838e63d4dc06b610e9a7d320",
+    "jasper_squishy_person_specific_life_impact.json": "426051f3b2ae59bdf9dafc2018faee879266ff510720c9b994062a6a3bfab14f"
+  },
+  "counts": {
+    "docs": 18,
+    "json": 265,
+    "html": 121
+  },
+  "files": [
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/README.md",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/docs/readme.md",
+      "kind": "docs",
+      "domain": "general_chain_analysis",
+      "sha256": "78a45392f6e4a62bfe6a144f1221ed834e84b50a265233511f096a5b8c63d81d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_1_goals_of_skills_training.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_1_goals_of_skills_training.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "5db6a5c7ebe7de81cd6f98ae965f4244e4aaf3ac2cb5b1e15304a2af5d81cbbc"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_1a_options_for_solving_any_problem.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_1a_options_for_solving_any_problem.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "dc09ce77214333a28b8931803f99f753df9fcec3372a654bfd0ed793b769e0ba"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_2_overview_introduction_to_skills_training_guidelines_for_skills_trainin.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_2_overview_introduction_to_skills_training_guidelines_for_55f75817.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "0d0d26f86e193a3c4eb91450e7226de0e5747252c15616fa93d921d65e5a7c7e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_3_guidelines_for_skills_training.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_3_guidelines_for_skills_training.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "c5f9f96135756c7399fae977af8663a165d2554ad347e4088bb99c4592e016aa"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_4_skills_training_assumptions_an_assumption_is_a_belief_that_cannot_be_p.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_4_skills_training_assumptions_an_assumption_is_a_belief_t_0cdadbfd.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "b505f4125df5aeb8386c145a2eb7c85ceae5916e4e59a2faa750e0b91b56930c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_5_biosocial_theory.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_5_biosocial_theory.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "946f3107ebbf098cde3c01baa95d76b1c649c9f9bc512258850e65f6a4afcd8f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_6_overview_analyzing_behavior.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_6_overview_analyzing_behavior.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "c3e2b52a91231855f7023cf411ccb479c7d3762423aad025f6185c926ce98c83"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_7_chain_analysis.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_7_chain_analysis.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "71f416baa3f7be9a2df3e88a8ba13ea30731e71d54e2fa79128187f906f3ace2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_7a_chain_analysis_step_by_step.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_7a_chain_analysis_step_by_step.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "8034ab472ee34679719aef16bc9b1a2dafecfb562504aed63fbfabd0d3271ead"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/handouts/json/general_handout_8_missing_links_analysis_ask_the_following_questions_to_understand_how_a.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_8_missing_links_analysis_ask_the_following_questions_to_u_2550c59d.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "69cb89e02382106553cb11c15e94ad1ec48cdb31947369d129f721fb3f4847a4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/worksheets/html/general_worksheet_1_pros_and_cons_of_using_skills.html",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/worksheets_html/general_worksheet_1_pros_and_cons_of_using_skills.html",
+      "kind": "html",
+      "domain": "general_chain_analysis",
+      "sha256": "c3a4655218f2f224551f53e38f2a486413e97f95aa7379bd6f29a2bf0a44fc75"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/worksheets/html/general_worksheet_2_chain_analysis_of_problem_behavior.html",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/worksheets_html/general_worksheet_2_chain_analysis_of_problem_behavior.html",
+      "kind": "html",
+      "domain": "general_chain_analysis",
+      "sha256": "76cda37ef0bb08fefebabfd92372b06de9274ed046607400f63bf25a7b3a674e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/worksheets/html/general_worksheet_2a_example_chain_analysis_of_problem_behavior.html",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/worksheets_html/general_worksheet_2a_example_chain_analysis_of_problem_behavior.html",
+      "kind": "html",
+      "domain": "general_chain_analysis",
+      "sha256": "c11d2c21bc6e109265dbcc77def9d866ec148334ed706f3a687ce146c741e6df"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/worksheets/html/general_worksheet_3_missing_links_analysis.html",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/worksheets_html/general_worksheet_3_missing_links_analysis.html",
+      "kind": "html",
+      "domain": "general_chain_analysis",
+      "sha256": "cd71aed806628be42dab74b269834598f1e34667ef4586a03b18c26f5266c1f5"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/worksheets/json/general_worksheet_1_pros_and_cons_of_using_skills.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/worksheets_json/general_worksheet_1_pros_and_cons_of_using_skills.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "9fa96e0d62e39acf5a8bf638afc3930ff2f3c2dd1625ca63bf8988b6a66c0899"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/worksheets/json/general_worksheet_2_chain_analysis_of_problem_behavior.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/worksheets_json/general_worksheet_2_chain_analysis_of_problem_behavior.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "0e1171c923c2bed51729e25df12012040564ae2e66ef69dc6b20dc0a239663f1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/worksheets/json/general_worksheet_2a_example_chain_analysis_of_problem_behavior.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/worksheets_json/general_worksheet_2a_example_chain_analysis_of_problem_behavior.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "ba64cd50b9a9f4d87fc496990ad75094ee428d48553086c040ddce6613ae61eb"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/01_DBT_General_Orientation_and_Analyzing_Behavior/worksheets/json/general_worksheet_3_missing_links_analysis.json",
+      "output_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/worksheets_json/general_worksheet_3_missing_links_analysis.json",
+      "kind": "json",
+      "domain": "general_chain_analysis",
+      "sha256": "121674efbda753656eb597cb914011e468f2fd252098f93061d6b2eaaa44a741"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/README.md",
+      "output_path": "shared/02_dbt_mindfulness/docs/readme.md",
+      "kind": "docs",
+      "domain": "mindfulness",
+      "sha256": "d34ea7e79ea7a08ac778eb9646896f05cda68db885e8fd7bb14abfb561296c05"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_10_walking_the_middle_path_finding_the_synthesis_between_opposites_reason.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_10_walking_the_middle_path_finding_the_synthesis_betw_ddc263c7.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "bf4c8a943a90d8db3d922c44e410c24f87abbeaef4a88f876cbbed475942e175"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_1_goals_of_mindfulness_practice_reduce_suffering_and_increase_happiness.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_1_goals_of_mindfulness_practice_reduce_suffering_and_f30eed5e.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "daff3b11034fb387a3aa3a253c5fbfe167971f8fee468504b485d7590f5c144b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_1a_mindfulness_definitions.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_1a_mindfulness_definitions.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "e6e15b5bab8be3f609a1b3faa3edc5e9b32590c14e96b0fe9140085ca130db2a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_2_overview_core_mindfulness_skills_wise_mind_states_of_mind.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_2_overview_core_mindfulness_skills_wise_mind_states_of_mind.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "27d97e7b77e56c778be4c595784f83cdaeee0f9ae0a48bebc2f94a78177338c3"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_3_wise_mind_states_of_mind.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_3_wise_mind_states_of_mind.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "6351211c14df569d2ff073a290663aa6280e0a979926eb35c278b9ff194c06fc"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_3a_ideas_for_practicing_wise_mind_the_mindfulness_skills_often_require_a.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_3a_ideas_for_practicing_wise_mind_the_mindfulness_ski_04fb9dbc.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "6ea794804900493c6a77bf89c34fa19ff090f4a776330f00719d3c237c210bd7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_4_taking_hold_of_your_mind_what_skills_observe_notice_your_body_sensatio.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_4_taking_hold_of_your_mind_what_skills_observe_notice_b277ebd2.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "961a0cdc2924a3da4956bba27291aab4309ce8658a13335e261b39d9daf48cce"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_4a_ideas_for_practicing_observing_by_coming_back_to_your_senses_remember.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_4a_ideas_for_practicing_observing_by_coming_back_to_y_91ad10e2.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "2c33f42866ea838d6885ae6bbe6895201651c49603dccc085704117818cc6473"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_4b_ideas_for_practicing_describing.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_4b_ideas_for_practicing_describing.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "8239f49813f09d7a9a0cfe8f25d3a2d6df040e647477681c31db1f0ecc9a9a72"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_4c_ideas_for_practicing_participating_participate_with_awareness_of_conne.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_4c_ideas_for_practicing_participating_participate_wit_67ebd5e4.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "a922fa7d97ccc0355033cc44c91f428fdf2d12f98ac6f84e9df00089fa304c8c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_5_taking_hold_of_your_mind_how_skills_nonjudgmentally_see_but_don_t_eval.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_5_taking_hold_of_your_mind_how_skills_nonjudgmentally_76ac5dce.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "f593a8b994b2325d6ee555305849714fa4d5ad71100caaaa4940f4f58fcfc896"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_5a_ideas_for_practicing_nonjudgmentalness_leaving_out_comparisons_judgmen.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_5a_ideas_for_practicing_nonjudgmentalness_leaving_out_b21d2ea5.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "1216ad089d3492bf075ee16c3a88f4025cb58d25f07076ff43d6ce3ab6aa6c7f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_5b_ideas_for_practicing_one_mindfulness.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_5b_ideas_for_practicing_one_mindfulness.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "f186fc1b738ab6563493531d9d22e284ffad9e27198b9623e8a54840f91914f9"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_5c_ideas_for_practicing_effectiveness.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_5c_ideas_for_practicing_effectiveness.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "65c9fdae49ffcad474a65c6e00bfe69892c1948dba0c315decf1bbe7076c9d89"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_6_overview_other_perspectives_on_mindfulness_mindfulness_practice_a_spir.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_6_overview_other_perspectives_on_mindfulness_mindfuln_5621edad.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "d6558f3f295bd522db56b4b9e90865a14d1b9bf56668dd842dfcd2ad27211ba5"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_7_goals_of_mindfulness_practice_a_spiritual_perspective.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_7_goals_of_mindfulness_practice_a_spiritual_perspective.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "61df2375e9f0b5059d39d3466193f14bbf92b32be6897d54ba99e4c28e0c19a4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_7a_wise_mind_from_a_spiritual_perspective_wise_mind_as_contemplative_prac.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_7a_wise_mind_from_a_spiritual_perspective_wise_mind_a_3724f0d4.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "deca6b6617062f6d2db62eb305d9648c752987cff2e4a2ec44567ea708653f95"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_8_practicing_loving_kindness_to_increase_love_and_compassion.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_8_practicing_loving_kindness_to_increase_love_and_compassion.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "649b193e73453bf138b1b9c3e82406ba792b8c4f8657ccb7b046220426900f51"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_9_skillful_means_balancing_doing_mind_and_being_mind_note_the_terms_doin.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_9_skillful_means_balancing_doing_mind_and_being_mind_936424b6.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "0506db3db902274f483b3ecbe4b962f1b5a619b447642927b56f8e7aba320b41"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/handouts/json/mindfulness_handout_9a_ideas_for_practicing_balancing_doing_mind_and_being_mind_the_mindfulne.json",
+      "output_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_9a_ideas_for_practicing_balancing_doing_mind_and_bein_b08e908c.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "66700b6b5e8ab1a5e36b33e412328a4f5b025381c86b5e26b06142d7cb5e4c54"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_10_walking_the_middle_path_to_wise_mind.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_10_walking_the_middle_path_to_wise_mind.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "a15b6f7f6b0dc5bc4954e2d245a5e05c1b6b696cc29f69d44f43b959ffd985f4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_10a_analyzing_yourself_on_the_middle_path.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_10a_analyzing_yourself_on_the_middle_path.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "c7edb59ca175427ed1945e5985118b6c4ad5fe0016caaa06b0d052bfd76856c8"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_10b_walking_the_middle_path_calendar.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_10b_walking_the_middle_path_calendar.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "78dd502727aa6d2df8c8377b2080abc7d4a97b793c4501f25e0b3a0fd9a03fb4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_1_pros_and_cons_of_practicing_mindfulness.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_1_pros_and_cons_of_practicing_mindfulness.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "678f7a04eacd1b125bf2270e42393394ec35be070c3aea1dac6a49c669b9ea79"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_2_mindfulness_core_skills_practice.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_2_mindfulness_core_skills_practice.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "8290f8ef73c9ffa52f2fbf2534454f7e13d8fee7f6cc28408883c330792fa08e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_2a_mindfulness_core_skills_practice.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_2a_mindfulness_core_skills_practice.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "43cc1f75ff35a5120a562581a1c214eecc72ea1b07aae6e4df78596d69988a33"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_2b_mindfulness_core_skills_practice.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_2b_mindfulness_core_skills_practice.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "c287cc564ccb9c76ab5916b5eab437b3e313a38b523bc00104858cab07b86b21"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_2c_mindfulness_core_skills_calendar.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_2c_mindfulness_core_skills_calendar.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "de2d957f666acba052efcbd0b1c0232d9cf671a754d993fcacdd7882643522ad"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_3_wise_mind_practice.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_3_wise_mind_practice.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "edf67b4cc50e0d443be7e85a83646e8a8cc74c3f9b2ed92f543ec6b4b2e32cfe"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_4_mindfulness_what_skills_observing_describing_participating.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_4_mindfulness_what_skills_observing_describing_participating.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "03953b609801183976da4d79dda402c4db766ed3d80e4dbf0573756629d83aa8"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_4a_observing_describing_participating_checklist.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_4a_observing_describing_participating_checklist.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "2bb7d9a963a1fea0091dec549c38d1bc85f669ed8226547b00a6d42df48ca8b0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_4b_observing_describing_participating_calendar.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_4b_observing_describing_participating_calendar.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "42e101af665813f568a55a225dee6bb89c0cec524275a1c489b7eba4ecbab40c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_5_mindfulness_how_skills_nonjudgmentalness_one_mindfulness_effectiveness.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_5_mindfulness_how_skills_nonjudgmentalness_one_mind_c1095bec.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "7629b5df0724cc4fa63b819d13547075e60275b52d4ce8432db36db021a43815"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_5a_nonjudgmentalness_one_mindfulness_effectiveness_checklist.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_5a_nonjudgmentalness_one_mindfulness_effectiveness_checklist.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "2f42a677c3a7aec3162a338361cdf302ae4bf255a1f1e8b3bd924ce55167a12d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_5b_nonjudgmentalness_one_mindfulness_effectiveness_calendar.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_5b_nonjudgmentalness_one_mindfulness_effectiveness_calendar.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "8e2d6942998e65c463587d8eea28a3606c2ba1bcc77e5c21932d17aacf74c23b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_5c_nonjudgmentalness_calendar.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_5c_nonjudgmentalness_calendar.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "ffa87df2ac12ad1a5ba83e13f953e0496eed30a5f0fb507e2423b07b07a141b7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_6_loving_kindness.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_6_loving_kindness.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "ac6722470093c60aa6a9d68c921c2ea718dfc0caa5ba330f41c387946f00b022"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_7_balancing_being_mind_with_doing_mind.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_7_balancing_being_mind_with_doing_mind.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "7314229ad2ac565b0b6518559d218c4b817aea87ca747632f4a863a9cb2c9e08"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_7a_mindfulness_of_being_and_doing_calendar.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_7a_mindfulness_of_being_and_doing_calendar.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "180b8388f09230f26c372ce52cd9afe193be53513fd9192c8508e1d14ecb358a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_8_mindfulness_of_pleasant_events_calendar.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_8_mindfulness_of_pleasant_events_calendar.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "4ca5af69179646f4908cda4a18f63a6b49788286e1bb2b92d3ce0dcc51b649b9"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/html/mindfulness_worksheet_9_mindfulness_of_unpleasant_events_calendar.html",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_html/mindfulness_worksheet_9_mindfulness_of_unpleasant_events_calendar.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "eca0f3b92d3fcf2aef93a650b1e6928e918e112848a1906dbfe6b30bc20ad829"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_10_walking_the_middle_path_to_wise_mind.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_10_walking_the_middle_path_to_wise_mind.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "69f4c081e3abb079569bae84e68cfb65fa3caae91566574159b5a072ce5962e2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_10a_analyzing_yourself_on_the_middle_path.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_10a_analyzing_yourself_on_the_middle_path.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "644ad9556b3ead5bd1b7c7acc26b5e270aa3957a63ac6606171d3e1e04e2c7e1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_10b_walking_the_middle_path_calendar.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_10b_walking_the_middle_path_calendar.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "171d806e4ee81556ea87a91db9f5d2e8d6e2d2e1b8655a279bc0ccf04b4a4a5d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_1_pros_and_cons_of_practicing_mindfulness.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_1_pros_and_cons_of_practicing_mindfulness.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "fd34ab86b5d0e21e0bc5c96db8fe9d8de0fbe40dce08fd866ba59641aa1ec313"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_2_mindfulness_core_skills_practice.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_2_mindfulness_core_skills_practice.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "36981abadc41d24c3bc3a3097560ccaef02e504f0ebbb6a20d69aea321321fc4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_2a_mindfulness_core_skills_practice.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_2a_mindfulness_core_skills_practice.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "e8a8da16bf5f9aa5feda2a1884f6d0abc1176af879fbf1f14ac2ddb730ece370"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_2b_mindfulness_core_skills_practice.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_2b_mindfulness_core_skills_practice.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "6023e9c4846634c5a92038946bbe1207011c1940f5e50b1ff194df4eaca9fc57"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_2c_mindfulness_core_skills_calendar.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_2c_mindfulness_core_skills_calendar.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "6548047d3746fcd53aca065f3dc0f219dbff8767b9331998ed9d759d21f64b93"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_3_wise_mind_practice.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_3_wise_mind_practice.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "be31aec09b3672796d7f75a8cccea11fd440ee7527831c979d40b014ea19d625"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_4_mindfulness_what_skills_observing_describing_participating.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_4_mindfulness_what_skills_observing_describing_participating.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "1985ece8a26e48f3bd2a0a6cd70dc06f3fa222b115a32cf7876cd00533cc883c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_4a_observing_describing_participating_checklist.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_4a_observing_describing_participating_checklist.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "c33e04f750f5f71aa4327c7813dddffb3ecd338d7da273a588ed6cc06365a742"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_4b_observing_describing_participating_calendar.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_4b_observing_describing_participating_calendar.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "5fc7438bc5b1170b11aceb1808acbd940181689f73da9f83d0402bac666938a0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_5_mindfulness_how_skills_nonjudgmentalness_one_mindfulness_effectiveness.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_5_mindfulness_how_skills_nonjudgmentalness_one_mind_c1095bec.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "a3d0ebb7cdfe98dfbbe4c3e60127f59c3b0a3def3a717ccc85623e7d2a803c07"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_5a_nonjudgmentalness_one_mindfulness_effectiveness_checklist.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_5a_nonjudgmentalness_one_mindfulness_effectiveness_checklist.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "2a4ef312a22bc894766cb9bd2a1a0d2395d9a480798510f0f391640a4cec3e32"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_5b_nonjudgmentalness_one_mindfulness_effectiveness_calendar.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_5b_nonjudgmentalness_one_mindfulness_effectiveness_calendar.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "afb47d29a25200cf34052861c5da4e2bc5250fd73d35393c11c5695cf88b7626"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_5c_nonjudgmentalness_calendar.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_5c_nonjudgmentalness_calendar.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "24b90705d4881919fd789ba896baeeaac1a5323b998ea251a8b0abfc41353366"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_6_loving_kindness.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_6_loving_kindness.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "ff8c1febfa0e008d62174cdd691d14efdd82888788296f6e6b3f938e602e9d7c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_7_balancing_being_mind_with_doing_mind.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_7_balancing_being_mind_with_doing_mind.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "67b92644201a44ebd3a4fd5e0f06b06f5d058d32ad506b3244b058531f9975ff"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_7a_mindfulness_of_being_and_doing_calendar.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_7a_mindfulness_of_being_and_doing_calendar.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "a3a33815d3e7e3d0bd55daca499be0b6f61344ab3cf4f1457ed7957f1b5ab2a9"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_8_mindfulness_of_pleasant_events_calendar.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_8_mindfulness_of_pleasant_events_calendar.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "d79aae4facff364cda8cf7ec8017853e262db4f9993dd028f92ae4ea8ec2dbe0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/02_DBT_Mindfulness/worksheets/json/mindfulness_worksheet_9_mindfulness_of_unpleasant_events_calendar.json",
+      "output_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_9_mindfulness_of_unpleasant_events_calendar.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "a3f84ab07efc3d787a71160a8ea64644190ea279ebb3ec5e8613bf5ad4278f78"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/README.md",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/docs/readme.md",
+      "kind": "docs",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "25e6c521c52c28ee24dfe8073f849f6d0ec06fca5567696d37d3c5e61fa5bcb7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_10_overview_building_relationships_and_ending_destructive_ones_finding_an.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_10_overview_building_relationships_an_9dd092e1.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "79cf1fcc9aafb5ab09140d15d4c156fdeb157733a5dc9f0030ffca0d36d95446"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_11_finding_and_getting_people_to_like_you_remember_all_human_beings_are_l.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_11_finding_and_getting_people_to_like_eaa98046.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "f586c4125cd5c7650c1096dd36a3035b8ae2d44615e3c7cbb0d3ac9b8a89c612"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_11a_identifying_skills_to_find_people_and_get_them_to_like_you_for_each_a.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_11a_identifying_skills_to_find_people_6e9a0119.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "caddabbed51626ea8ca354b66f7732b31f31fe0f65a8bf101b1f3ba31e135684"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_12_mindfulness_of_others_friendships_last_longer_when_we_are_mindful_obse.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_12_mindfulness_of_others_friendships_66264af1.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "a2f6cb5ed854f1cf67d053618d8635cf4767e9b34c4387658ebf5994cb6d3126"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_12a_identifying_mindfulness_of_others_for_each_a_and_b_pair_check_the_more.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_12a_identifying_mindfulness_of_others_df5cd7c8.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "3f80453f74dcbd8048c630e63d2d866251dc0690930da9a0b340072f71b655e6"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_13_ending_relationships_a_destructive_relationship_has_the_quality_of_des.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_13_ending_relationships_a_destructive_601cfb9d.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "b93ccf7b689b4227d585a59c53b02ce91de77418832a72d9699121fdb16aa16f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_13a_identifying_how_to_end_relationships_for_each_a_and_b_pair_check_the_m.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_13a_identifying_how_to_end_relationsh_8915ce88.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "adb24ec78f31c34bbaa6b00bc9e95b4d90873d5347568293dd6aa14eb0855b4f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_14_overview_walking_the_middle_path_balancing_acceptance_and_change_diale.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_14_overview_walking_the_middle_path_b_e753db88.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "619c9f6af32015331a5a4c4a8afffd5990e5192629b50e53cdcffc40895a2ac2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_15_dialectics_dialectics_reminds_us_that.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_15_dialectics_dialectics_reminds_us_that.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "911df48c8dcc3cf890eba3de717d9a7f76fe79a73b66c2c9dbcfa46dc4775b05"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_16_1_there_is_always_more_than_one_side_to_anything_that_exists_look_for.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_16_1_there_is_always_more_than_one_si_18747142.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "aa4f5c971a8ab55bae74aea94bdeba46f0b2707405bf63eb00aa2c261f82b7b2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_16a_examples_of_opposite_sides_that_can_both_be_true_1_you_can_want_to_cha.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_16a_examples_of_opposite_sides_that_c_f3b96875.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "41acf98cba29523ce17de8c8ed5f43e1696e812d27d0b032df9a5cc1fcdc4c69"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_16b_important_opposites_to_balance_1_accepting_reality_and_working_to_chan.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_16b_important_opposites_to_balance_1_ad5c3fea.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "7193f6e2532be0773121c701c99904c32c8db743d027e5244d01e9c97d56998a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_16c_identifying_dialectics_for_each_group_check_the_most_dialectical_respo.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_16c_identifying_dialectics_for_each_g_6e2cbffa.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "ee029f46f94d680c2bc3dcc96c641ec80bdf97ddbacaf0c7524638193e7d64b2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_17_validation_validation_means.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_17_validation_validation_means.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "e0c9f45afebde2fc2e656668b343ecdcb8c8004f2dc64e8b32901ec37a541364"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_18_a_how_to_guide_to_validation.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_18_a_how_to_guide_to_validation.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "0348a596ade577d160c028d02618d203c6d476f73b11a9fe3bca5f64eb707901"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_18a_identifying_validation_for_each_a_and_b_pair_check_the_more_effective.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_18a_identifying_validation_for_each_a_6e6a0176.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "f249d1106d62dbfac03067508f36866edd6ee953550091d6f5bafb1b0c465205"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_19_recovering_from_invalidation_notice_that_invalidation_can_be_helpful_a.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_19_recovering_from_invalidation_notic_42d31250.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "79409d5862192dfa8bc4189ea3616465d821198fe2762f1c49ab50595deada52"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_19a_identifying_self_validation_for_each_a_and_b_pair_check_the_more_effec.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_19a_identifying_self_validation_for_e_7d6a27c0.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "a8cb070a772c31bbedfd5134d8da0fa230a4a8df2ee375c4e2449e9e40644172"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_1_goals_of_interpersonal_effectiveness_be_skillful_in_getting_what_you_w.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_1_goals_of_interpersonal_effectivenes_84aa1cec.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "da74f5c9e69e84ea739975c5a04f861ac291fdb9364aa9d4509ebe8250143e79"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_20_strategies_for_increasing_the_probability_of_behaviors_you_want.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_20_strategies_for_increasing_the_prob_c1192d45.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "7d578b61a2c0a4cfb1faeec2a7bb8025bcbf85786a9a8384493d03e26b29415d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_21_strategies_for_decreasing_or_stopping_unwanted_behaviors_extinction_st.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_21_strategies_for_decreasing_or_stopp_00512b95.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "fed031b76e86303ac3648b55e17f8fba2ff4c59d1b33fba339de1aee80900d74"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_22_tips_for_using_behavior_change_strategies_effectively_summary_so_far_g.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_22_tips_for_using_behavior_change_str_8cb7f047.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "cd0f5ed358efee7217086a82585f51a9d5bf5c3a2043533145eca0f27cde46d6"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_22a_identifying_effective_behavior_change_strategies_for_each_a_and_b_pair.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_22a_identifying_effective_behavior_ch_3ab8b296.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "d078887128b47ab6d255d33c9626846cf762b1b145e25df32d3c90006e92993f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_2_factors_in_the_way_of_interpersonal_effectiveness_you_don_t_have_the_i.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_2_factors_in_the_way_of_interpersonal_a78d2eb6.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "a0707c6e13381477dc6cff9dd0dde8d1de535fe35661da210ce728d9fb15d02b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_2a_myths_in_the_way_of_interpersonal_effectiveness_myths_in_the_way_of_ob.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_2a_myths_in_the_way_of_interpersonal_4edbde1a.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "397060e6f57f8fca444dcc4b2e667ea09c612bc754df031b1db217acc9ff31f6"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_3_overview_obtaining_objectives_skillfully_clarifying_priorities.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_3_overview_obtaining_objectives_skill_f24a44c3.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "f062031018064ce3d2a910d2b9ddb8e47249b3550e80b5e10ad648f0a7b5b0ba"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_4_clarifying_goals_in_interpersonal_situations_objectives_effectiveness.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_4_clarifying_goals_in_interpersonal_s_805ff5b3.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "9cde33cb8962f6fb86bac18766c1d93d6be786110edb239dc88bee8267d73dce"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_5_guidelines_for_objectives_effectiveness_getting_what_you_want_dear_man.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_5_guidelines_for_objectives_effective_d02532b6.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "73ab677c6a589b278469e323dd01b93c5152353f40a9156743f3419c6146bac2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_5a_applying_dear_man_skills_to_a_difficult_current_interaction.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_5a_applying_dear_man_skills_to_a_diff_dabf7f67.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "55c8cf9f6468695ba13452487dc76159fe7263c8e741cb908691c40d155afd6d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_6_guidelines_for_relationship_effectiveness_keeping_the_relationship_giv.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_6_guidelines_for_relationship_effecti_1826b8de.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "de04e5c5e626456dbe506b4d3a819fb45546f408e817090697d13995020181b4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_6a_expanding_the_v_in_give_levels_of_validation.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_6a_expanding_the_v_in_give_levels_of_26d73d84.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "0879384409d93c200840bf1c3c245393b508828e3cc4c163e51c87e7446521dd"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_7_guidelines_for_self_respect_effectiveness_keeping_respect_for_yourself.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_7_guidelines_for_self_respect_effecti_0c6ae23c.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "6b6e2f49bac4e274c172b61bccd7103f7e55772b250018e25c4462e7b988efea"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_8_evaluating_options_for_whether_or_how_intensely_to_ask_for_something_o.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_8_evaluating_options_for_whether_or_h_bff37a85.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "2972537a810fb08b9d5409cbf0f6e779f89875063145422a60cffa0043eb1721"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/handouts/json/interpersonal_effectiveness_handout_9_troubleshooting.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_9_troubleshooting.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "33ab0aa0914cd12666aedcc490bf795d04b177f10233fbf300a934f7b9b2e643"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_10_ending_relationships.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_10_ending_relationships.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "8fa18649c2f76572eccebd68badb17095f9ee2eb66032a20a6667bef4a00d121"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_11_practicing_dialectics.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_11_practicing_dialectics.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "fbfc64cea79c0a148a0d84dbd10cdae35a0cfab8c130cb9a8f89396da2954e82"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_11a_dialectics_checklist.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_11a_dialectics_checklist.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "5e82e8b8759280e032afc33e4b8f6ad56c9106a50196978b7cc5241199b58732"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_11b_noticing_when_you_re_not_dialectical.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_11b_noticing_when_you_re_not_dialectical.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "1268ad8e505dcf4fbda0625e2edaa2d9a9be1c9e33fb908679747013c332d754"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_12_validating_others.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_12_validating_others.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "c29f37de129087726f4ebe1e0bfbf7514258ceae8f2686f1946c87c54b11fdf9"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_13_self_validation_and_self_respect.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_13_self_validation_and_self_respect.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "787440dd2986571c3636c95c92f3630f27bf993e82562e549032842b19c4bb96"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_14_changing_behavior_with_reinforcement.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_14_changing_behavior_with_reinforcement.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "d8c821071dab72ac1f7a66078019aac58e13513f6cce75a530cefeed693c67ef"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_15_changing_behavior_by_extinguishing_or_punishing_it.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_15_changing_behavior_by_extinguishi_a74227f1.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "fed88776faa18910364b7b3f9d5da9d3b8a8f2b44ce9783c20e06460c74484c4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_1_pros_and_cons_of_using_interpersonal_effectiveness_skills.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_1_pros_and_cons_of_using_interperso_c434b9b6.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "00f4cbca4c7f11d39762aac72613250c3a387c49bda3b43b6294f61183af8bd4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_2_challenging_myths_in_the_way_of_obtaining_objectives_challenging_myths.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_2_challenging_myths_in_the_way_of_o_6d4f00cc.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "560a928f1eb432e6dbf19989529911a4ad66ed445851e7f417c318ab61c0bd75"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_3_clarifying_priorities_in_interpersonal_situations.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_3_clarifying_priorities_in_interper_d7d0924e.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "048fb742cf068c459e650758bbc912d6cd2af18a7eb0fe082f397e486609b23a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_4_writing_out_interpersonal_effectiveness_scripts.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_4_writing_out_interpersonal_effecti_a7d82f40.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "d6c9516ae5e3b948b228253907d65cfc92cd0535bfb80642d9456388b9ad142b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_5_tracking_interpersonal_effectiveness_skills_use.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_5_tracking_interpersonal_effectiven_9c5c40ac.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "31a0499d52de5e9f63ef1c87a16b6f89d09f5821c859ae6c8fb160009d1a531f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_6_the_dime_game_figuring_out_how_strongly_to_ask_or_say_no.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_6_the_dime_game_figuring_out_how_st_2e0d5595.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "a8fa2695e92ecea26fd22803d90fbe306b9d9a96c7dfa7521be57fdf8a56639d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_7_troubleshooting_interpersonal_effectiveness_skills.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_7_troubleshooting_interpersonal_eff_dab139b0.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "dcca007bd424c841b36b797c7c0010c9149de96740315dbd38a3a39d4f3af091"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_8_finding_and_getting_people_to_like_you.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_8_finding_and_getting_people_to_like_you.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "2ad2cd37e0f4396f82349337e0b15539de625936b35618f3d1bd139981ffb60b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/html/interpersonal_effectiveness_worksheet_9_mindfulness_of_others.html",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_html/interpersonal_effectiveness_worksheet_9_mindfulness_of_others.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "ad7ea02312e3f0b19836d73e2bfd97ef66ca571603429d225378038e09bf61aa"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_10_ending_relationships.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_10_ending_relationships.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "a0658a243b0a6080b42ae9c02f7c0bfec9dec4a1567cf0df84d9a9add2e1ca0f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_11_practicing_dialectics.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_11_practicing_dialectics.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "6b83833406cb828d214b4f651274db3f8d369074c11ac36a389c9c5fecec333b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_11a_dialectics_checklist.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_11a_dialectics_checklist.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "65db90efa426b7e6f52da8f6d4740537d3091965895b5b01082a58ad3289cbbc"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_11b_noticing_when_you_re_not_dialectical.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_11b_noticing_when_you_re_not_dialectical.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "12fdfc04ee9fb2da6c2a0aae4fae2e72e6eca61e411e4418957c6d05eec42afb"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_12_validating_others.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_12_validating_others.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "b31db317dcd0c7ffd52eea9f7c9207e08a01c62f541e92f3834d1cab7334671c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_13_self_validation_and_self_respect.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_13_self_validation_and_self_respect.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "f83958a306f4e3ffd3ecd1870316e0b275e8b9cd063409c95011fcb0d28febf9"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_14_changing_behavior_with_reinforcement.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_14_changing_behavior_with_reinforcement.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "cfc1cdc1467451b12bfea3f976ea9920ea303e44c6186c05a3838640e0162046"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_15_changing_behavior_by_extinguishing_or_punishing_it.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_15_changing_behavior_by_extinguishi_a74227f1.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "294e91917885eb40b59fc739f8d841fc119d3444e6596fb79a65b82c4a41a623"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_1_pros_and_cons_of_using_interpersonal_effectiveness_skills.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_1_pros_and_cons_of_using_interperso_c434b9b6.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "34c43945d9c399a78b432915440fa775c806d27ee0de0e22b24734990a91c071"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_2_challenging_myths_in_the_way_of_obtaining_objectives_challenging_myths.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_2_challenging_myths_in_the_way_of_o_6d4f00cc.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "aff6b5370a01841d7eb29df88b9338732179ebc720abaabe6abe7772f439209a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_3_clarifying_priorities_in_interpersonal_situations.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_3_clarifying_priorities_in_interper_d7d0924e.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "e52eac6fa02a0884bd421e5eaa662e8668cad8a331fa0b8f8067efebfebb62ab"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_4_writing_out_interpersonal_effectiveness_scripts.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_4_writing_out_interpersonal_effecti_a7d82f40.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "5fcb18dd07c92907840aa7f30527cfc85c8927d3b6aa589aa0d578eee01d5c06"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_5_tracking_interpersonal_effectiveness_skills_use.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_5_tracking_interpersonal_effectiven_9c5c40ac.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "e81e944401eef22bebb5d5c5bd55b1a0dece31ea7ca7a9318dab8e507a59bf60"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_6_the_dime_game_figuring_out_how_strongly_to_ask_or_say_no.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_6_the_dime_game_figuring_out_how_st_2e0d5595.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "0b6d4fe1fa843c48bf3ad1af2b7146b087a17ceaa5825fd673fea9a15aee848e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_7_troubleshooting_interpersonal_effectiveness_skills.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_7_troubleshooting_interpersonal_eff_dab139b0.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "81409d496020f7dd529b356dffc7567403fea78bd91a1022baab18cac717d081"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_8_finding_and_getting_people_to_like_you.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_8_finding_and_getting_people_to_like_you.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "958d5d0238962fff3dc41c99a5fd5b2c730669ae6ebba25daa5af3660b2b6b2a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/03_DBT_Interpersonal_Effectiveness/worksheets/json/interpersonal_effectiveness_worksheet_9_mindfulness_of_others.json",
+      "output_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_9_mindfulness_of_others.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "70d484421d6cb755436cffd63c09c955cb2fd3e51a52a2a4f0c0adfcac9a06ad"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/README.md",
+      "output_path": "shared/04_dbt_emotion_regulation/docs/readme.md",
+      "kind": "docs",
+      "domain": "emotion_regulation",
+      "sha256": "c48e9f355d2b47a40e69d2f3cd19b27a826dc0d0425233d5a7f0379818597d87"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_10_opposite_action.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_10_opposite_action.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "bf12bc7f79b8dbddd5f76e367feac876c70a966ef9af5bdd2968906af4b3af85"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_11_figuring_out_opposite_actions_fear_fear_fits_the_facts_of_a_situation.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_11_figuring_out_opposite_actions_fear_fear_fit_20fcc3e2.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "7f26150e65df7a3095e65e1aed96847b8c769c1f95f31e72f4b2d0e30a5f736b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_12_problem_solving.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_12_problem_solving.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "1b0444f93700cedb4735314c669a20452076d5ab9d60ea9a6cb8f7e69c2eab29"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_13_reviewing_opposite_action_and_problem_solving_justifying_events_act_op.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_13_reviewing_opposite_action_and_problem_solvi_a650fadd.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "19421661f231f24a644e5f4d37cfd057b802e34ffcda496552b90eade29afa3f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_14_overview_reducing_vulnerability_to_emotion_mind_building_a_life_worth.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_14_overview_reducing_vulnerability_to_emotion_3687eac6.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "54107f6be33811e0fdc8c0ff0c1eab255a8de2e414abc0c1b8417cde4d9b1890"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_15_accumulating_positive_emotions_short_term_accumulate_positive_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_15_accumulating_positive_emotions_short_term_a_468b3c29.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "82d271f6ad914aff36c8a00ee9e524d3a384cdbcb9b191e4409017ed9ea3f1da"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_16_pleasant_events_list.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_16_pleasant_events_list.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "fb2bf5dd6dc406769b13edbb160ed1c39f6b3f98daf4cbc312feccb026376c39"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_17_accumulating_positive_emotions_long_term_accumulate_positive_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_17_accumulating_positive_emotions_long_term_ac_af2c9333.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "0ce152a234d2190523e42aafc50e814630600767993717d088aa3a5297cca32c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_18_values_and_priorities_list_in_my_own_wise_mind_i_believe_it_is_importa.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_18_values_and_priorities_list_in_my_own_wise_m_65a175b2.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "8d1fa977535e0f28dcd96fab0eee75e00dcde0a973c453088e58b9a37713935f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_19_build_mastery_and_cope_ahead_build_mastery.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_19_build_mastery_and_cope_ahead_build_mastery.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "3b2d6ceab7742157368cc48962050387bd4e616e59b8a3acf733b8a787c9b9d7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_1_goals_of_emotion_regulation_understand_and_name_your_own_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_1_goals_of_emotion_regulation_understand_and_n_96656093.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "b36c179ad76253ef6c0730feca354b74e3d2e5e708dfd5aa50521c3b2609f25c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_20_taking_care_of_your_mind_by_taking_care_of_your_body_remember_these_as.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_20_taking_care_of_your_mind_by_taking_care_of_fd7bf495.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "0d8709c2c49cbcd85aa05bef3d748984975ab8209c01e7006a915ac1088b1222"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_20a_nightmare_protocol_step_by_step.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_20a_nightmare_protocol_step_by_step.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "3a9f4c96cadc78dcfb95b19817364f2d6f77a031b852122351556912983d043e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_20b_sleep_hygiene_protocol.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_20b_sleep_hygiene_protocol.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "5e667fe6383b59b47c5081768c47e5958d3ea238ddb78ef190887114585944ff"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_21_overview_managing_really_difficult_emotions_mindfulness_of_current_emo.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_21_overview_managing_really_difficult_emotions_9d0ed0ad.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "b0d29c08064585705d2c87559432c5f40ed089da00185ee4fcc450b22834f6fb"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_22_mindfulness_of_current_emotions_letting_go_of_emotional_suffering_obse.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_22_mindfulness_of_current_emotions_letting_go_860d62f6.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "c0c3be89de99e0fd0fa68d8d899ec074cbd4c73585950d38c286f712dbecada9"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_23_managing_extreme_emotions_follow_these_suggestions_when_emotional_arou.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_23_managing_extreme_emotions_follow_these_sugg_cf7afa12.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "39450a4c6fbaf6c68698c090ce38493139e4a4ef7462772ac72e44d686287fb1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_24_troubleshooting_emotion_regulation_skills_when_what_you_are_doing_isn.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_24_troubleshooting_emotion_regulation_skills_w_d31375c6.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "a5f579e6c8eef57480ba98e0b184a6fcf8d3b5418bf70fc2e23dce7298095329"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_25_review_of_skills_for_emotion_regulation_name_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_25_review_of_skills_for_emotion_regulation_nam_78066904.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "2419a8a97f5c5487a42fa04b880465f4542e29316cadc5ee32ee0b70f7667379"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_2_overview_understanding_and_naming_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_2_overview_understanding_and_naming_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "df28b8201cd9f844410124e361684909f5c1a4973c0c6beaad2a8ee44c7344b1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_3_emotions_motivate_and_organize_us_for_action.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_3_emotions_motivate_and_organize_us_for_action.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "70969c4bcba34361d3b43dc33ab1bfaa3c8ade92a447a4e81bd40935e7fdd4b5"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_4_biology_biological_factors_can_make_emotion_regulation_harder_lack_of.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_4_biology_biological_factors_can_make_emotion_cfea94bd.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "a5d877c8a50af7d0dac64486aaee18b4e382262991953446426b78f9f4788ccf"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_4a_myths_about_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_4a_myths_about_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "93eef4fdf1ab9836f8677bf56f30b9c03e5bc8a2b45f2782f47232e6e6cf6c1f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_5_model_for_describing_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_5_model_for_describing_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "2d55f65d67b7a46a8021e78aa5f19b653a421f8f9b8fcc227a5a7a26671010ed"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_6_guilt_words_guilt_culpability_remorse.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_6_guilt_words_guilt_culpability_remorse.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "1f1a7c6a82f8f55b3885ff798c843bde3c81d4eddf7260f9d6eddc2f7643f245"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_6_ways_to_describe_emotions_anger_words_anger_bitterness.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_6_ways_to_describe_emotions_anger_words_anger_26020865.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "0310ef1fb5c1ec75e9d36d43ede32f730670e1c86adfee819fd8d9b65717e653"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_7_overview_changing_emotional_responses.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_7_overview_changing_emotional_responses.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "dfb32008df4c4400140778e6915852537bb5501775bdf2994236d737ddc15e92"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_8_facts_many_emotions_and_actions_are_set_off_by_our_thoughts_and_interp.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_8_facts_many_emotions_and_actions_are_set_off_a70ea688.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "3b435a0c0824eb546161fce9fe373b8da8090716dc25139fff4cc75cd9381f94"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_8a_examples_of_emotions_that_fit_the_facts_fear.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_8a_examples_of_emotions_that_fit_the_facts_fear.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "a2316db90cc59d2d6b1839457ffa615b1df80da95a23ab8b123f9fd131fd0dbb"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/handouts/json/emotion_regulation_handout_9_opposite_action_and_problem_solving_deciding_which_to_use_opposite_act.json",
+      "output_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_9_opposite_action_and_problem_solving_deciding_ec45bebf.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "5a4df41693ea2f5d7cf9dfbdde998b45fc6acecf6482e35cdb6d40ccfc1d1d19"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_10_pleasant_events_diary.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_10_pleasant_events_diary.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "c48c10c860287a7b48f2f9e1b8910b5028e39789e254c3765e667dbb3187c175"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_11_getting_from_values_to_specific_action_steps.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_11_getting_from_values_to_specific_action_steps.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "51bc1d92b321a59b47aef5d5b1fd121961cfef948b136ad6853f8e461c86265f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_11a_getting_from_values_to_specific_action_steps.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_11a_getting_from_values_to_specific_action_steps.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "d425841638e48d42fa2bff337d1686aafd50749948cd924c2910dedefc7bcbda"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_11b_diary_of_daily_actions_on_values_and_priorities.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_11b_diary_of_daily_actions_on_values_and_priorities.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "3775be3d26561532b7d7ccb1d3c67333af54bb5f7f588d9541ccb739400c7a9b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_12_build_mastery_and_cope_ahead.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_12_build_mastery_and_cope_ahead.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "d3c89e9bb6d6f79bc1b6834b1e28b54fe231f20d53e11d5bc2214a921e770032"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_13_putting_abc_skills_together_day_by_day.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_13_putting_abc_skills_together_day_by_day.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "9089766a7c5ef546261114fe9fc1d4879c72088a47eb928a8b7c64e54ed45b3a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_14_practicing_please_skills.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_14_practicing_please_skills.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "e1fed55f74825f031a244742bf07671357680e3239822f0a63b56e96f48038f5"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_14a_dream_rehearsal_and_relaxation_record.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_14a_dream_rehearsal_and_relaxation_record.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "8bb2a6860c50a3a16cc3fd4ba9ce82ebd3c742de2adaff82c24a1fcc1d9fc6fa"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_14a_target_nightmare_experience_forms_set_of_3.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_14a_target_nightmare_experience_forms_set_of_3.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "d17df57c028eae934fdcddf5681cb5dbfaeaea7ca8b9ec1d74a2a3715658be5e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_14b_sleep_hygiene_practice_sheet.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_14b_sleep_hygiene_practice_sheet.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "76cbac6927d8845994682df2a0bee9eb84a0e9b8c5fd8aa6c358c1dfe585e70e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_15_mindfulness_of_current_emotions.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_15_mindfulness_of_current_emotions.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "479c402884f9f43d0e3cc0a8b8387065e73615012819f00831b600f8ea2ffac6"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_16_troubleshooting_emotion_regulation_skills.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_16_troubleshooting_emotion_regulation_skills.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "34cda13a45d167f929695f4462c2dcff72641927c1c4b472c93c86770d1e663a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_1_pros_and_cons_of_changing_emotions.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_1_pros_and_cons_of_changing_emotions.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "06a002970a1700dff9ea5834d689a5beaf0f14ecad669d30cb4333fd2d787808"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_2_figuring_out_what_my_emotions_are_doing_for_me.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_2_figuring_out_what_my_emotions_are_doing_for_me.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "f8922a8d98945be941638179811d626f6701a317f48c1502a94858a3a19b6080"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_2a_example_figuring_out_what_my_emotions_are_doing_for_me.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_2a_example_figuring_out_what_my_emotions_are_fe4c49f4.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "79ebc8eb28c6de541ee2d3a2087236cf17fa15e7f209c1926580a3060adff050"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_2b_emotion_diary.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_2b_emotion_diary.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "340c54863a530589253d11147682befb014c202bd21538e70b4d51024693c5d0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_2c_example_emotion_diary.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_2c_example_emotion_diary.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "efade7c3bd4e3b9d315dd54929a4e4bf7a6426cd336c14a1bbb63f602ee46650"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_3_myths_about_emotions.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_3_myths_about_emotions.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "54d3c0277aae715ccc4ccfe75eed77c24fec87851ba813642d81b0a7c551709c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_4_observing_and_describing_emotions.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_4_observing_and_describing_emotions.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "e879c530a872ce3396c058e42ed4fa1fe0a3eeccb65459d2ad7ea0fe426c0777"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_4a_observing_and_describing_emotions.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_4a_observing_and_describing_emotions.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "c71be0edd47e1caaeb1b1a3b668f54e1131ef2a2fceada2080e910444c59afda"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_5_it_is_hard_to_problem_solve_an_emotional_situation_if_you_don_t_have_y.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_5_it_is_hard_to_problem_solve_an_emotional_s_246739e6.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "efe7d2141ff318b0bb07874d97d9fb6719a103ddefba9db7ab39bb5075749016"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_6_figuring_out_how_to_change_unwanted_emotions.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_6_figuring_out_how_to_change_unwanted_emotions.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "9cad0d8b3e200b0f84768a2666f2204c79a3d20da552efa36d90f18f24ba387b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_7_opposite_action_to_change_emotions.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_7_opposite_action_to_change_emotions.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "c096ecc6608f1de4212fc72a3797dd68e2158e50d844361efd8e503aabafc5df"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_8_problem_solving_to_change_emotions.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_8_problem_solving_to_change_emotions.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "b3f11dee40eadf91514612012a8fd278480012ea64f85ecbee633e9fe2958f05"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/html/emotion_regulation_worksheet_9_steps_for_reducing_vulnerability_to_emotion_mind.html",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_html/emotion_regulation_worksheet_9_steps_for_reducing_vulnerability_to_emotion_mind.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "045d9ad13a70e51b2c3bf8692977655f11a9c5359ee7a3eabea5caa329bba4bd"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_10_pleasant_events_diary.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_10_pleasant_events_diary.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "435c609a797ee4f152f35c2e693a1252d238155a3c986a40bca2e74432be6a92"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_11_getting_from_values_to_specific_action_steps.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_11_getting_from_values_to_specific_action_steps.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "6b96b730ee7561fba2f62d63338a1d1d30651236e6e694fbc62fb8620ce0e62d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_11a_getting_from_values_to_specific_action_steps.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_11a_getting_from_values_to_specific_action_steps.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "0bb0570e6b7d2021b2e8164c6d9ebe30daaa8ac42831633395a2e97863ec7c0e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_11b_diary_of_daily_actions_on_values_and_priorities.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_11b_diary_of_daily_actions_on_values_and_priorities.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "406ae34ce0b5f926ea40c78c4cc9a1f1d9b0b2af2fce2dfb3cd5582fee5040b7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_12_build_mastery_and_cope_ahead.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_12_build_mastery_and_cope_ahead.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "8940474c2eb8cd6b05af2125a62898457916b72839c8da5a7f2b7a18ded8f0b2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_13_putting_abc_skills_together_day_by_day.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_13_putting_abc_skills_together_day_by_day.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "a676d39303933e8b0273f6d577f1c6eb717e3352e28ce3c2ba3803122b73b0b6"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_14_practicing_please_skills.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_14_practicing_please_skills.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "3189e08ec75faef652d6f8207e918331f446ccf7abd2f71ba83478fda0d6a08c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_14a_dream_rehearsal_and_relaxation_record.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_14a_dream_rehearsal_and_relaxation_record.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "ebd74c02649b9091b0fa790e3ccfe99fd6e6a8a082403d670f9c13cae9917b67"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_14a_target_nightmare_experience_forms_set_of_3.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_14a_target_nightmare_experience_forms_set_of_3.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "69ba6030b1aa04e83a0a84541b8a580b605fddef63301fc104ff29166692106a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_14b_sleep_hygiene_practice_sheet.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_14b_sleep_hygiene_practice_sheet.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "d7525814851f009487f87fdbd651196e344a5910051c1fab4950b678b80fe652"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_15_mindfulness_of_current_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_15_mindfulness_of_current_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "da4ec100d61c734d0c191e62c18939502b869bd2aad1e769e7782c1a1de29cff"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_16_troubleshooting_emotion_regulation_skills.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_16_troubleshooting_emotion_regulation_skills.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "fe894fae7391ca1fb2b419b3773ba5d9a039e3e6b8b5b48b673e19800c58d9b2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_1_pros_and_cons_of_changing_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_1_pros_and_cons_of_changing_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "ab0396bf5570918f153fff628d949597bc2e441356034408396035611a63f555"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_2_figuring_out_what_my_emotions_are_doing_for_me.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_2_figuring_out_what_my_emotions_are_doing_for_me.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "5ffd11f6ac36264b89b4d4b433781a27faeb523a17964d67cf1aa68a07bb49b3"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_2a_example_figuring_out_what_my_emotions_are_doing_for_me.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_2a_example_figuring_out_what_my_emotions_are_fe4c49f4.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "88fe4d5a53bc156f20b15479f3a5ae1afea15ec2538f1dcace4c7f753dd8617c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_2b_emotion_diary.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_2b_emotion_diary.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "9001137d96bf6d3eac22195bdc220f0adee3accb8de1efdf203ff6870eb81ec5"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_2c_example_emotion_diary.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_2c_example_emotion_diary.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "e83a16476f70a3526e0be7697298168e5f5b553d28344ce6f0352105f72e1f6a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_3_myths_about_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_3_myths_about_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "2d4829fb98df5869a8c8486eb85a47749691fc26601394248100f95dd9cce7b0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_4_observing_and_describing_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_4_observing_and_describing_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "a33026a3b64917b66ee812d56f4b06959d0608d2746e33e54747d6cefcedd0d8"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_4a_observing_and_describing_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_4a_observing_and_describing_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "5eccc0df3ee59bb73848845c9425d99c1dc498484516bd58f5c068c4003df6fb"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_5_it_is_hard_to_problem_solve_an_emotional_situation_if_you_don_t_have_y.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_5_it_is_hard_to_problem_solve_an_emotional_s_246739e6.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "465c8d408bb310e16f8706edc5c9bb210d940037248977b7db41a3aec1c1c5ab"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_6_figuring_out_how_to_change_unwanted_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_6_figuring_out_how_to_change_unwanted_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "ddde9331d17300d091008d81f2cf7719ac51a69b87d6c1f14d0fd0124b33960e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_7_opposite_action_to_change_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_7_opposite_action_to_change_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "d08faab5296110f853dbbe5a767c3dce8aaf331921b85cca4a5f5b2fd40a5738"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_8_problem_solving_to_change_emotions.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_8_problem_solving_to_change_emotions.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "580d8f81fa77d8c26c785cdc48241cc98869fc86e20f5adad9a15d0b5b1998d1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/04_DBT_Emotion_Regulation/worksheets/json/emotion_regulation_worksheet_9_steps_for_reducing_vulnerability_to_emotion_mind.json",
+      "output_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_9_steps_for_reducing_vulnerability_to_emotion_mind.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "d7927e835b4af8b44c22d2425c02472ce41a1d8464f70baa6280c1926af11926"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/README.md",
+      "output_path": "shared/05_dbt_distress_tolerance/docs/readme.md",
+      "kind": "docs",
+      "domain": "distress_tolerance",
+      "sha256": "746206bcbd4a868f61f082beafb690a5c392a7753697ee7bbbf8bbf6d057900b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_10_overview_reality_acceptance_skills_these_are_skills_for_how_to_live_a.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_10_overview_reality_acceptance_skills_these_ar_d2a50ac7.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "0fe6e840399abd2f277b61df803142d420c71b29ea8495608bd753fc194dbfb7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_11_radical_acceptance_when_you_cannot_keep_painful_events_and_emotions_fr.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_11_radical_acceptance_when_you_cannot_keep_pai_9bce96c9.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "8467337ce4dc506acfc33a254176d736da1d121ccf796ce10a5ac6b1fc73eec4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_11a_radical_acceptance_factors_that_interfere_radical_acceptance_is_not_ap.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_11a_radical_acceptance_factors_that_interfere_16baddb8.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "0355f83391fe87bd041beb221549fbe8808d0fbb8d06da9d013d57ba783b91af"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_11b_practicing_radical_acceptance_step_by_step_observe_that_you_are_questi.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_11b_practicing_radical_acceptance_step_by_step_712c6082.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "0495f6df556dd01a6433cb87c1141173a552eec3aa50b113e6499e369b93f289"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_12_turning_the_mind_turning_the_mind_is_like_facing_a_fork_in_the_road_yo.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_12_turning_the_mind_turning_the_mind_is_like_f_c99cdd59.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "e5f620b535306f88ac1ff7755920d5a67099f45733fa3d4ee43d1759a99f5622"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_13_willingness_willingness_is_readiness_to_enter_and_participate_fully_in.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_13_willingness_willingness_is_readiness_to_ent_172fdfcb.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "d6635e03c348ee1b214b2881024f1a24d2546da66fe92bfdb277b987cc898223"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_14_half_smiling_and_willing_hands_accepting_reality_with_your_body_half_s.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_14_half_smiling_and_willing_hands_accepting_re_a70b0fe9.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "e4699f019600aa501cd9475c5f326bafe9380c142c07efc96609bb46c360a16a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_14a_practicing_half_smiling_and_willing_hands.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_14a_practicing_half_smiling_and_willing_hands.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "e01470abba69323ec230ec301d25ff2dc403df8522c935525b082497eb0b66ab"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_15_mindfulness_of_current_thoughts.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_15_mindfulness_of_current_thoughts.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "157e18ccef7dfaed87586fbcd496834a70336ea33cf59c7325416ff80587378e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_15a_practicing_mindfulness_of_thoughts.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_15a_practicing_mindfulness_of_thoughts.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "11fe800c74df65c6b3bac82dfbc4568b81f6c03b0d99c2a2b2dc4fdd3ddb8738"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_16_overview.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_16_overview.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "84bbf322df346ca82080ef5531bbfdf8c8adc2d94cc8500eb29692e5b0f1a0cc"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_16a_common_addictions_in_case_you_thought_you_had_no_addictions_here_is_a.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_16a_common_addictions_in_case_you_thought_you_95112ac7.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "1d608a00727422a2325804e39ed7c4533ebaffe7b4959d8053d97de17029cd62"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_17_dialectical_abstinence_synthesis_dialectical_abstinence_the_goal_is_no.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_17_dialectical_abstinence_synthesis_dialectica_64ffcb74.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "d841ccb1151ac7a30c6822d2a6ca5d61776ec8fe90b400ed30195fb88cb6476e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_17a_planning_for_dialectical_abstinence_plan_for_abstinence_1_enjoy_your_s.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_17a_planning_for_dialectical_abstinence_plan_f_2da35374.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "2f7cceda772d30727652561adc0aa842f2f44f60afd33e43a9b98a93c7b43619"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_18_clear_mind_addict_mind_is_impulsive_one_minded.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_18_clear_mind_addict_mind_is_impulsive_one_minded.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "b83427be96360b684957046eec170b63979adf479f55203e7bea44ac90ce92f6"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_18a_behavior_patterns_characteristic_of_addict_mind_and_of_clean_mind_addi.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_18a_behavior_patterns_characteristic_of_addict_3960bf89.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "a705be780166bf722921ee859c57cacce71cfdc87b336161f2a682c526990ae2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_19_community_reinforcement_community_reinforcement_means_replacing_addict.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_19_community_reinforcement_community_reinforce_9fcef93c.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "a68ff0d68c3e77813e29c19e4f6bea471e2ed29ab7f1a42415f67e21ccc31e2a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_1_goals_of_distress_tolerance_survive_crisis_situations_without_making_t.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_1_goals_of_distress_tolerance_survive_crisis_s_da2e16bd.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "aa08b368dfa6a65832858b90a20955030be43aaeedf568c449237412b72078f5"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_20_burning_bridges_and_building_new_ones_burning_bridges_accept_at_the_mo.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_20_burning_bridges_and_building_new_ones_burni_e6d5b94e.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "d550cb72cf55ceaf1e67ee0b35b887c9ffe257e66309804096222028fc3ee93d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_21_alternate_rebellion_and_adaptive_denial_alternate_rebellion.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_21_alternate_rebellion_and_adaptive_denial_alt_aff897e2.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "3008024fa4660aa989805fa872139e8b36996c19850723c71972a43b341ca0a0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_2_overview_crisis_survival_skills_these_are_skills_for_tolerating_painfu.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_2_overview_crisis_survival_skills_these_are_sk_346a9a12.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "5d359298c61feadeddb09c9611bfb37ac7d3452084b7d60a0e40ca774e04d75c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_3_you_are_in_a_crisis_when_the_situation_is.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_3_you_are_in_a_crisis_when_the_situation_is.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "4c7adb9ac5e2a14f4dfa59adba856cee6db612861199682c522c331cdd9a0362"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_4_stop_skill_stop_do_not_just_react_stop_freeze_do_not_move_a_muscle_you.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_4_stop_skill_stop_do_not_just_react_stop_freez_eba61ecc.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "6ca3bcf0395ce498456534623642f558df7f36307c58306bae28d0ea8f71041d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_5_pros_and_cons.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_5_pros_and_cons.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "6524253003640ccf74bb7067b1757e4989a46847a8a828f447d2ef09b975cfa1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_6_tip_skills_changing_your_body_chemistry.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_6_tip_skills_changing_your_body_chemistry.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "3771838bbe9d245b7e2fce1a6dd11fff767fc0cdce2dd7c269493956f1f503af"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_6a_using_cold_water_step_by_step_cold_water_can_work_wonders.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_6a_using_cold_water_step_by_step_cold_water_ca_fa92ec9b.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "8973c87704c00202bef9ec4d376ecf3df5152a48649add65dd650bae8cc47514"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_6b_paired_muscle_relaxation_step_by_step_if_you_have_decided_to_practice.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_6b_paired_muscle_relaxation_step_by_step_if_yo_dcd1de2d.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "60449c59ce9337351f2581a9c2de2e4d36591763f914075bdf9a39b602eeb778"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_6c_effective_rethinking_and_paired_relaxation_step_by_step.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_6c_effective_rethinking_and_paired_relaxation_31c21423.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "456dba9076b3ba57e6dbff762d196b96fd29593ede38ff464e7526972473ee1b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_7_distracting_a_way_to_remember_these_skills_is_the_phrase_wise_mind_acc.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_7_distracting_a_way_to_remember_these_skills_i_e0a03a69.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "ecd7f2d4cf094b4081a386bc2af7f7557ba2f77613ced9c6c822f26c68114796"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_8_self_soothing_a_way_to_remember_these_skills_is_to_think_of_soothing_e.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_8_self_soothing_a_way_to_remember_these_skills_688b40a9.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "fc78f94f1b7fc37fc174527fca303798ed1ff8499aaa45fa8dc9da3fde79a6a1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_8a_body_scan_meditation_step_by_step_sit_on_a_chair_or_lie_on_your_back_o.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_8a_body_scan_meditation_step_by_step_sit_on_a_3d727880.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "b205b31c8eb5f4da731dce9ca0c7b578ecf5a27fcbe6ed0adfc87fb4c3955762"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_9_improving_the_moment_a_way_to_remember_these_skills_is_the_word_improv.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_9_improving_the_moment_a_way_to_remember_these_406d3788.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "652bfdb2e652e9f6be43cbab5ff3bbabd3636df82cf3a03a2f95f5178c5c8c80"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/handouts/json/distress_tolerance_handout_9a_sensory_awareness_step_by_step_find_a_comfortable_position_staying_in.json",
+      "output_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_9a_sensory_awareness_step_by_step_find_a_comfo_c17d0d3c.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "56009134b7e01ba0c87d59ac19a69b06420ccb9ef6b015362b5ba9a09037d1bf"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_10_turning_the_mind_willingness_willfulness.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_10_turning_the_mind_willingness_willfulness.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "a4c8bce213b76276658eb443ec05508f7989a88fae38089738fa1703abad4ae0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_11_half_smiling_and_willing_hands.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_11_half_smiling_and_willing_hands.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "c40ef81bb8e208878831bb4fc835711e53b38e3d2bfefe35aef149d906bee7ca"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_11a_practicing_half_smiling_and_willing_hands.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_11a_practicing_half_smiling_and_willing_hands.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "2ef09ad53092a50a801bb6fbddee2773ea28f4f9b8b3bd399c61f9622ccfa41e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_12_mindfulness_of_current_thoughts.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_12_mindfulness_of_current_thoughts.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "8a78c63aab31bc980af7eee0028f1b8ec2202531933f5fa1d8bcbd6fbc134203"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_12a_practicing_mindfulness_of_thoughts.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_12a_practicing_mindfulness_of_thoughts.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "fa5d8b0279555625e82ab93680e312e3988bf2a214a8dea76f012952e67f74ae"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_13_skills_when_the_crisis_is_addiction.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_13_skills_when_the_crisis_is_addiction.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "7da502445b42a65d202318b7fb06aa8c3e6eeb0b37f7964d80d9d972b8572150"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_14_planning_for_dialectical_abstinence.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_14_planning_for_dialectical_abstinence.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "449fde23652006728144da68e15e19b88d45cd15fbb7f404705ca9202199e95b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_15_from_clean_mind_to_clear_mind.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_15_from_clean_mind_to_clear_mind.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "ccfaa6eacbe22e013a38ea170d618fc1ff815a52582c5cbbfc446226095ff040"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_16_reinforcing_nonaddictive_behaviors.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_16_reinforcing_nonaddictive_behaviors.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "6f948a286290b56cda6f66cbb16949501b8ee2d800e3da5b4162dbf6d03fd0bb"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_17_burning_bridges_and_building_new_ones.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_17_burning_bridges_and_building_new_ones.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "d00ee08183dc93b450be4e75bc3363daf1cbaeb511e574b72c1264c0dfcd7312"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_18_practicing_alternate_rebellion_and_adaptive_denial.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_18_practicing_alternate_rebellion_and_adaptive_denial.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "8563db753a1be3e461689a3b7c75681aa7b3503ea0233a00f0ac255c0046e08c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_1_crisis_survival_skills.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_1_crisis_survival_skills.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "04e461261caf661468a986cc6363da89667adbe0f8f9bd1eff972bb74726e92b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_1a_crisis_survival_skills.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_1a_crisis_survival_skills.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "8d889e26ab036c22861e6c2cdd69d9a5a0289074af782cbad918cb775b4d0fa8"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_1b_crisis_survival_skills.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_1b_crisis_survival_skills.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "6bdf00206ad3e8d70f33f59f71725acc43e9bf5423573288d6be6581bf62fdfe"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_2_practicing_the_stop_skill.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_2_practicing_the_stop_skill.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "845207eb6a7583e8e59f59952603a54cc04f32ab50a4db9639578bbb7f5c98f7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_2a_practicing_the_stop_skill.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_2a_practicing_the_stop_skill.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "c4d479f5da49ee711f3a69dd96d4dfe5ade020925136ab439f2144ef6ec2c971"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_3_pros_and_cons_of_acting_on_crisis_urges.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_3_pros_and_cons_of_acting_on_crisis_urges.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "b6865e1b3173bc77b613d7d4e90701a0c3b555ff41bcc0de851bc7705fed4eef"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_3a_pros_and_cons_of_acting_on_crisis_urges.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_3a_pros_and_cons_of_acting_on_crisis_urges.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "fbec2ff91f534d92d379731a8e10d6548a24b69fb2c59c64aebbb422918aea0a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_4_changing_body_chemistry_with_tip_skills.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_4_changing_body_chemistry_with_tip_skills.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "3276705f41a81ed2639a0750070aa9b32495e0bbe32b08fddd11f6e7cbe59f1e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_4a_paired_muscle_relaxation.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_4a_paired_muscle_relaxation.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "ef99d7bf355c142db1e2a37c913035f1683860d2329427feea7652d540ed2a12"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_4b_effective_rethinking_and_paired_relaxation.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_4b_effective_rethinking_and_paired_relaxation.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "d729503f6df6051ce833ace8fb7fe0f7b88e20a85715be83554114b82f1991ab"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_5_distracting_with_wise_mind_accepts.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_5_distracting_with_wise_mind_accepts.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "1ca8c1c03823c2e4010aaece7c82addf72a8fba09e042b16a63c70e93b0a9329"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_5a_distracting_with_wise_mind_accepts.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_5a_distracting_with_wise_mind_accepts.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "f973375d42a34a08b5c93fe2b39207ccf11b3b42189803fa4fd1e665ded4b351"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_5b_distracting_with_wise_mind_accepts.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_5b_distracting_with_wise_mind_accepts.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "02ff1de0751634a0db65af4735bbc580aa1484e72042b3cb595d53a9e9468e7f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_6_self_soothing.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_6_self_soothing.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "f4d4dd2f1bcf82fdc093701fd0773e24ae2de515af46093425b2984f19cb3748"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_6a_self_soothing.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_6a_self_soothing.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "0bc968cb962c182abb5c92fd2db091bcf6b069cfbdd1b48a3c60d4fd6a665cfc"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_6b_self_soothing.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_6b_self_soothing.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "d74f47c78652b49eb30e4eb93a5d44156dbb6a19e182db4b8a7a4b5022deee7f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_6c_body_scan_meditation_step_by_step.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_6c_body_scan_meditation_step_by_step.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "a9f30391b72bde995c0502ef5cd5bea1ee14af6e1ed194cceb9270ec44bd3247"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_7_improve_the_moment.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_7_improve_the_moment.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "348da01ca8879fefd5aceb6c645399e08138b82b2610a574d3b1e8885b791634"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_7a_improve_the_moment.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_7a_improve_the_moment.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "9a6912fa77649a28d9fd3fc556b2cd948a29850bacebf0b31e914ebcc4f24569"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_7b_improve_the_moment.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_7b_improve_the_moment.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "8e5e785f9346da0a19e2658444469295d60efa76947a5e7c5e82f70e8a6fb865"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_8_reality_acceptance_skills.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_8_reality_acceptance_skills.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "b43e176c0231576020b6d78c2c08ee6fb1a9290c9ac031d830f504015f9a8875"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_8a_reality_acceptance_skills.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_8a_reality_acceptance_skills.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "f944986275557f7ddaac9262ecdfccc60cdfc50b38c317ab7817beda41605f53"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_8b_reality_acceptance_skills.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_8b_reality_acceptance_skills.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "1d7bb5af3d96a1d401ddf774b839af1dae19d71bac86ba49ae34355aa6803fd7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_9_radical_acceptance.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_9_radical_acceptance.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "6f88f6711f9529f646eabca05a3683b545ce4ab88015d1d4f0080ac150cddb4f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/html/distress_tolerance_worksheet_9a_practicing_radical_acceptance.html",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_html/distress_tolerance_worksheet_9a_practicing_radical_acceptance.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "d9d46a2d00e8e244ebb9f8b5ab372b1ef7334bf19c7deb77c27a271cc25766c6"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_10_turning_the_mind_willingness_willfulness.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_10_turning_the_mind_willingness_willfulness.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "ad5661523f14263133301c795e397d5f054da149610548b6ea95ff782cbd7de8"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_11_half_smiling_and_willing_hands.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_11_half_smiling_and_willing_hands.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "941b21fd39943b3a6fff1b8fbadac67e8a465a201a28f59f627b5f14bf9c8e25"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_11a_practicing_half_smiling_and_willing_hands.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_11a_practicing_half_smiling_and_willing_hands.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "ae529d858fb0751167a769f45861628a0f2786c6a81631daebb6302e352968ae"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_12_mindfulness_of_current_thoughts.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_12_mindfulness_of_current_thoughts.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "aa5c687c77da4f5bea570db992ad4e7c853dc95589cfc7ad1e136c50e140b10f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_12a_practicing_mindfulness_of_thoughts.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_12a_practicing_mindfulness_of_thoughts.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "090b77e3932799c1adb69015ffd8c88be5525281150fa0222a48d9c6256e33b1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_13_skills_when_the_crisis_is_addiction.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_13_skills_when_the_crisis_is_addiction.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "2b09a88a6b1207f0d664a2b32925735fb94a3a6a8af943b6dfdef3fb68dcaf1e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_14_planning_for_dialectical_abstinence.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_14_planning_for_dialectical_abstinence.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "b840679d2d75338fac5081f2a8364a913d8c93f0f2f184c3875edae63e0b0831"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_15_from_clean_mind_to_clear_mind.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_15_from_clean_mind_to_clear_mind.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "f0d5991da08979d45e4b761c5d69cfab2549cfa1852b19261d1c22e9a21d2bdd"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_16_reinforcing_nonaddictive_behaviors.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_16_reinforcing_nonaddictive_behaviors.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "871cdb51fee2440a5faadc1b1bb53a71dcdc10e0f4d992e3cfcbcb44a65d517f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_17_burning_bridges_and_building_new_ones.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_17_burning_bridges_and_building_new_ones.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "dccf21990c84b565df92c784327172afb82a07b22efb864bc6bcd41297edff59"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_18_practicing_alternate_rebellion_and_adaptive_denial.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_18_practicing_alternate_rebellion_and_adaptive_denial.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "28be7977c6b1175eb2f1e6bb64725dab75089a4ff605b9e2ebffc61f27e1c731"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_1_crisis_survival_skills.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_1_crisis_survival_skills.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "4597a9c0b213069b1dd76df42708161593660ee98632b5e75857cab9deb56392"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_1a_crisis_survival_skills.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_1a_crisis_survival_skills.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "d23b27ef792d97aaa7df65d1e087eb53e1943806ee7e9fd7e21e281b94a20ad1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_1b_crisis_survival_skills.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_1b_crisis_survival_skills.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "03cfd13b32614e31010cb6747b2add903133ba8f32071b9eba0f917192522595"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_2_practicing_the_stop_skill.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_2_practicing_the_stop_skill.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "a14827c17bdf771c87bb5eec9cd01bc1728dcafa7a027068d5ecb0b08b64bdff"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_2a_practicing_the_stop_skill.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_2a_practicing_the_stop_skill.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "bb0f594457aa30227691f393e071157b32ae033683f25430a8366cabab93d175"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_3_pros_and_cons_of_acting_on_crisis_urges.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_3_pros_and_cons_of_acting_on_crisis_urges.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "8fe8b6cae93a3e2743e7a2d2ac602da79d7b3f5273e77c25e905bb3f0182a58c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_3a_pros_and_cons_of_acting_on_crisis_urges.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_3a_pros_and_cons_of_acting_on_crisis_urges.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "ea09d06ee7cf947be126f312cd6bc0f273f322663aa948f31eb5ac6f57350b93"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_4_changing_body_chemistry_with_tip_skills.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_4_changing_body_chemistry_with_tip_skills.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "f2ac7f40ae7fdb519193d8306e9678fefb5d9d1cc3918cadcfafc76d33cb5f05"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_4a_paired_muscle_relaxation.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_4a_paired_muscle_relaxation.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "7f06d70d7f8341fc92ccff32935ac4d242bc77463b214b96c6fda29171ab8ec4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_4b_effective_rethinking_and_paired_relaxation.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_4b_effective_rethinking_and_paired_relaxation.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "ce8df02cc101f3335afca826f93351ca21510beec6530d853f2b9285b92974d6"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_5_distracting_with_wise_mind_accepts.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_5_distracting_with_wise_mind_accepts.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "bdc12e55cb41c9092f75be69fefdecff89e5ae203c9d73ccd280d7b0b77e4969"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_5a_distracting_with_wise_mind_accepts.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_5a_distracting_with_wise_mind_accepts.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "d9ab7d133b4a5306810a09b50b4f60250a3aec416b9e822303c51f1628ba04dc"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_5b_distracting_with_wise_mind_accepts.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_5b_distracting_with_wise_mind_accepts.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "0c90c1e5acf85cc1f255a6183fa84e526531fe7096f77e9fc4a416045dfca9ff"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_6_self_soothing.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_6_self_soothing.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "4edd43ceb2a4bbc306ed679a6da7eedffa71571da37c13ae1e5c73ca9eede3f3"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_6a_self_soothing.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_6a_self_soothing.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "4da76584bbde8944b166baebc0634f60fde16abb7bb77c86b3842d784b73ada1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_6b_self_soothing.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_6b_self_soothing.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "2395d358b430bc41a8c62791dd28536a0f7d405994fc50b16e2cf46e0bdc0f4a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_6c_body_scan_meditation_step_by_step.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_6c_body_scan_meditation_step_by_step.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "c5f60a3419b36e8278137ba639359505d2a838822f26b8c6a443ca1a1d012158"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_7_improve_the_moment.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_7_improve_the_moment.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "32e77fb8f9664801a8432b9b8df73c373209f2ca7157d8a26dc9cc38ab1d1681"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_7a_improve_the_moment.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_7a_improve_the_moment.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "993987d46af46b09320b489844b7c95d4ab1948522d94c2ea82f30a1d6142dd1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_7b_improve_the_moment.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_7b_improve_the_moment.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "8f948c6ca46068337b1cc11b976c6b0d9bb1fb63f8a812522ee559f8f884f860"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_8_reality_acceptance_skills.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_8_reality_acceptance_skills.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "286cee6abecaf7b9593adf1485efe6eb7995c11d8ff5d9ec4cd6c69b41909c53"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_8a_reality_acceptance_skills.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_8a_reality_acceptance_skills.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "a49dc0f5df132b6c7646ec12f2b3b1c0d450825092222eb9330a746fadb4d857"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_8b_reality_acceptance_skills.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_8b_reality_acceptance_skills.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "15192faafcfaf1a7ebf1d0b2e6bf46a04d5fedf1b2391dd19a1771903174ccd4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_9_radical_acceptance.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_9_radical_acceptance.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "134250a86378a001bb005e1454c02138c686d497dc20f742d26fef571a73208e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/05_DBT_Distress_Tolerance/worksheets/json/distress_tolerance_worksheet_9a_practicing_radical_acceptance.json",
+      "output_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_9a_practicing_radical_acceptance.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "495ddc8ca0336b05ba24fbf1f01c3c92c3bd07820ac51f75fe45e088ecac2e6a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/README.md",
+      "output_path": "shared/06_dbt_diary_cards/docs/readme.md",
+      "kind": "docs",
+      "domain": "diary_cards",
+      "sha256": "23a4de01f6a8d59aa217d7148f71b97f1cc3a792b00d3c29b9f119dc5d56f81b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/html/daily_dbt_diary_card_general.html",
+      "output_path": "shared/06_dbt_diary_cards/html/daily_dbt_diary_card_general.html",
+      "kind": "html",
+      "domain": "diary_cards",
+      "sha256": "4bc4b9c21682d80064d006e9a174baedafcb0b75f1168cd7c6558ceb6b621e2b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/html/daily_distress_tolerance_diary_card.html",
+      "output_path": "shared/06_dbt_diary_cards/html/daily_distress_tolerance_diary_card.html",
+      "kind": "html",
+      "domain": "distress_tolerance",
+      "sha256": "e36ca11b09108c265d78789cabdb35f62c1b4b8021192deb4ebb02163a9f2a3b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/html/daily_emotion_regulation_diary_card.html",
+      "output_path": "shared/06_dbt_diary_cards/html/daily_emotion_regulation_diary_card.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "c838c35acf2945aeb788268df8bb42f6133bc88d4c1c91dc164dd04ffa638655"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/html/daily_interpersonal_effectiveness_diary_card.html",
+      "output_path": "shared/06_dbt_diary_cards/html/daily_interpersonal_effectiveness_diary_card.html",
+      "kind": "html",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "a75f5532e38093087f0936baf4780577fc4c7a2953241bb406bef1e1c570e2c9"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/html/daily_mindfulness_diary_card.html",
+      "output_path": "shared/06_dbt_diary_cards/html/daily_mindfulness_diary_card.html",
+      "kind": "html",
+      "domain": "mindfulness",
+      "sha256": "3a4443074b06fd882f9c655321dfb2258d5accc4c5dd2f5e05925e341eea1e17"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/json/daily_dbt_diary_card_general.json",
+      "output_path": "shared/06_dbt_diary_cards/json/daily_dbt_diary_card_general.json",
+      "kind": "json",
+      "domain": "diary_cards",
+      "sha256": "9600d801a62782136720921060f5fe64263db6c3a7458dd3b38191498f7862e0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/json/daily_distress_tolerance_diary_card.json",
+      "output_path": "shared/06_dbt_diary_cards/json/daily_distress_tolerance_diary_card.json",
+      "kind": "json",
+      "domain": "distress_tolerance",
+      "sha256": "bc92a2724f7de16b71d864baaee715524687839ec766cd00e4275f63f7c568b2"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/json/daily_emotion_regulation_diary_card.json",
+      "output_path": "shared/06_dbt_diary_cards/json/daily_emotion_regulation_diary_card.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "fcd19b666358bc479c108845feb2e96f7db2fda6c5b48f8ce8bbe192a652c267"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/json/daily_interpersonal_effectiveness_diary_card.json",
+      "output_path": "shared/06_dbt_diary_cards/json/daily_interpersonal_effectiveness_diary_card.json",
+      "kind": "json",
+      "domain": "interpersonal_effectiveness",
+      "sha256": "ee5f6fc31c49f6842374b5d05b0556f56a5937cd2ed69eca88deb3f433e2c302"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/06_DBT_Diary_Cards/json/daily_mindfulness_diary_card.json",
+      "output_path": "shared/06_dbt_diary_cards/json/daily_mindfulness_diary_card.json",
+      "kind": "json",
+      "domain": "mindfulness",
+      "sha256": "3efeca32cb8aa41c3fe11d1630175198af04df69832553b31014a10ec73f8567"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/07_DBT_Indexes_and_Compact_Exports/README.md",
+      "output_path": "shared/07_dbt_indexes_and_compact_exports/docs/readme.md",
+      "kind": "docs",
+      "domain": "shared_skill",
+      "sha256": "58978b7d898770c3828613860924fdd0c865ef32d0c23cf5705f6314bf64e217"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/07_DBT_Indexes_and_Compact_Exports/json/all_items_compact.json",
+      "output_path": "shared/07_dbt_indexes_and_compact_exports/json/all_items_compact.json",
+      "status": "copied_with_transform_error",
+      "error": "AttributeError(\"'list' object has no attribute 'get'\")"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/07_DBT_Indexes_and_Compact_Exports/json/all_items_compact.json",
+      "output_path": "shared/07_dbt_indexes_and_compact_exports/json/all_items_compact.json",
+      "kind": "json",
+      "domain": "shared_skill",
+      "sha256": "bc2bc86b116b8729f6ffba1ac0bd967cd8ef24e40166bf2dd8c2c0d395b74b29"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/07_DBT_Indexes_and_Compact_Exports/json/dbt_skills_index.json",
+      "output_path": "shared/07_dbt_indexes_and_compact_exports/json/dbt_skills_index.json",
+      "kind": "json",
+      "domain": "shared_skill",
+      "sha256": "f09b2e1585e6a8b77bd2d5df31f5667e2cbb5b0ad4d7fdba01c04e88f50cf43d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/README.md",
+      "output_path": "shared/08_adhd_time_management_and_planning/docs/readme.md",
+      "kind": "docs",
+      "domain": "time_planning",
+      "sha256": "93ef1235c45922407499a29ecd3829c9cca7583da309cb5667c6b1fbaf2ab5de"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/html/10208_manage_your_life_adhd_time_assessment_c_bettertimemanagement_merged.html",
+      "output_path": "shared/08_adhd_time_management_and_planning/html/10208_manage_your_life_adhd_time_assessment_c_bettertimemanagement_merged.html",
+      "kind": "html",
+      "domain": "time_planning",
+      "sha256": "1cbb702d31bdd3c04e14409a8e1c20dbfb63a2dd7b2aabade129b9e74e7d66d5"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/json/10208_manage_your_life_adhd_time_assessment_c_bettertimemanagement_merged.json",
+      "output_path": "shared/08_adhd_time_management_and_planning/json/10208_manage_your_life_adhd_time_assessment_c_bettertimemanagement_merged.json",
+      "kind": "json",
+      "domain": "time_planning",
+      "sha256": "e6be38068c8eac5e62d3fd94fcc1b1c7490243eb0dfa8ad0503478ab79ecd931"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/json/time_blindness_12_ways_to_stop_wasting_time_with_adhd.json",
+      "output_path": "shared/08_adhd_time_management_and_planning/json/time_blindness_12_ways_to_stop_wasting_time_with_adhd.json",
+      "kind": "json",
+      "domain": "time_planning",
+      "sha256": "490712362a988b0fdc80c73c5ba50926f074f66e214501b18db8d448aaab8458"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/json/time_management_skills_for_adhd_brains_practical_advice.json",
+      "output_path": "shared/08_adhd_time_management_and_planning/json/time_management_skills_for_adhd_brains_practical_advice.json",
+      "kind": "json",
+      "domain": "time_planning",
+      "sha256": "31df9ba3c7004103a1d51d623f35dc576ffa5c55fa4b85723cec560573292bb8"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/08_ADHD_Time_Management_and_Planning/json/time_management_tips_for_adhd_brains.json",
+      "output_path": "shared/08_adhd_time_management_and_planning/json/time_management_tips_for_adhd_brains.json",
+      "kind": "json",
+      "domain": "time_planning",
+      "sha256": "ae88d41ec02ca9a04c861fb8cf8e0faa2f2a7f3fbc47aabcede0222102fb21ef"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/README.md",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/docs/readme.md",
+      "kind": "docs",
+      "domain": "cleaning_organization",
+      "sha256": "3cf0f9b0d5cb81abde46186a96ad5bc883370956114c3e8915cbf456fac615e0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/html/cleaning_planner_printables_kit.html",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/html/cleaning_planner_printables_kit.html",
+      "kind": "html",
+      "domain": "cleaning_organization",
+      "sha256": "6d547e882fde95231c98cf37d680544a4a83ccb031723440b7de9549f5e28d2d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/html/how_to_create_an_adhd_cleaning_schedule_you_ll_actually_stick_to_adda_attention_deficit_di.html",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/html/how_to_create_an_adhd_cleaning_schedule_you_ll_actually_stick_to_adda_att_da41ef86.html",
+      "kind": "html",
+      "domain": "cleaning_organization",
+      "sha256": "86856927431159aaa4d7d8be00326dceb8957515d96b809dcb132ae3debe178b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/html/how_to_declutter_7_tips_for_adhd_adults.html",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/html/how_to_declutter_7_tips_for_adhd_adults.html",
+      "kind": "html",
+      "domain": "cleaning_organization",
+      "sha256": "e09c147e2e859a7fd60aebda075597a7068929ba237c71f486bcc60fe4a14f8e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/html/printable_adhd_daily_cleaning_planner_free_pdf_download.html",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/html/printable_adhd_daily_cleaning_planner_free_pdf_download.html",
+      "kind": "html",
+      "domain": "cleaning_organization",
+      "sha256": "e3bb3218145580fc31c3a14a5d2fd4c38ba2a228bcc292501908b38c42abe04a"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/json/10235_manage_your_life_25_clutter_busting_strategies_for_adults_with_adhd.json",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/json/10235_manage_your_life_25_clutter_busting_strategies_for_adults_with_adhd.json",
+      "kind": "json",
+      "domain": "cleaning_organization",
+      "sha256": "d298fb2dfc86d9a4ebd6da95d729138bd54dee1d29c5eb39e992e7e6ee0057aa"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/json/add_organization_hacks_real_life_tips_from_adhd_experts.json",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/json/add_organization_hacks_real_life_tips_from_adhd_experts.json",
+      "kind": "json",
+      "domain": "cleaning_organization",
+      "sha256": "44197f5aed984d2ced746769ca90dbdae55098796aaded7c2812d76f70afc81c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/json/cleaning_planner_printables_kit.json",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/json/cleaning_planner_printables_kit.json",
+      "kind": "json",
+      "domain": "cleaning_organization",
+      "sha256": "3d6e0b08d9397b7b1d65498b464f60bc652b962480dbf90304baad5f8f420f1e"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/json/how_to_create_an_adhd_cleaning_schedule_you_ll_actually_stick_to_adda_attention_deficit_di.json",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/json/how_to_create_an_adhd_cleaning_schedule_you_ll_actually_stick_to_adda_att_da41ef86.json",
+      "kind": "json",
+      "domain": "cleaning_organization",
+      "sha256": "ef7627a1d624b7d9fe961dfe4dec4b38824819c53bce16c950e0b665bc8e78c7"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/json/how_to_declutter_7_tips_for_adhd_adults.json",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/json/how_to_declutter_7_tips_for_adhd_adults.json",
+      "kind": "json",
+      "domain": "cleaning_organization",
+      "sha256": "e2227988440167fcc751ca64f5acdc09f685ab69405bcabf495c79408c3b6bf4"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/json/how_to_tidy_up_like_a_pro_2.json",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/json/how_to_tidy_up_like_a_pro_2.json",
+      "kind": "json",
+      "domain": "cleaning_organization",
+      "sha256": "37ebdf3c230299f938318b1f3d348af5fe332a873ddc223de23f89006b0f7d80"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/json/pdf_adhd_organization_and_cleaning_made_easy_summary_papercuts_publishing.json",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/json/pdf_adhd_organization_and_cleaning_made_easy_summary_papercuts_publishing.json",
+      "kind": "json",
+      "domain": "cleaning_organization",
+      "sha256": "649d019009392bd216a046492e59531529f9e480a6b3786af2190ee8e802e911"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/09_ADHD_Cleaning_Decluttering_and_Organization/json/printable_adhd_daily_cleaning_planner_free_pdf_download.json",
+      "output_path": "shared/09_adhd_cleaning_decluttering_and_organization/json/printable_adhd_daily_cleaning_planner_free_pdf_download.json",
+      "kind": "json",
+      "domain": "cleaning_organization",
+      "sha256": "f4a32eeacc58a1deb81d126bad2076b219651c51f3e89375ad2ed95335a0d0aa"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/10_ADHD_Motivation_Dopamine_and_Task_Initiation/README.md",
+      "output_path": "shared/10_adhd_motivation_dopamine_and_task_initiation/docs/readme.md",
+      "kind": "docs",
+      "domain": "motivation_initiation",
+      "sha256": "5e891d6239668ae39031a3201e18c5ffcf4c7e701dc52ff8e23f6dc7416542ae"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/10_ADHD_Motivation_Dopamine_and_Task_Initiation/html/a_dopamine_menu_for_adhd_brains_1.html",
+      "output_path": "shared/10_adhd_motivation_dopamine_and_task_initiation/html/a_dopamine_menu_for_adhd_brains_1.html",
+      "kind": "html",
+      "domain": "motivation_initiation",
+      "sha256": "b6b5c56591b22340dfb02d15b283609effc5192c604ea19f9b9555c29fabae78"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/10_ADHD_Motivation_Dopamine_and_Task_Initiation/html/when_adhd_leads_to_lack_of_motivation_how_to_get_it_done.html",
+      "output_path": "shared/10_adhd_motivation_dopamine_and_task_initiation/html/when_adhd_leads_to_lack_of_motivation_how_to_get_it_done.html",
+      "kind": "html",
+      "domain": "motivation_initiation",
+      "sha256": "447287e9bbc210f8259e1889335fe76c2d2dbdef4ffdff21f59cef649796593c"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/10_ADHD_Motivation_Dopamine_and_Task_Initiation/json/a_dopamine_menu_for_adhd_brains_1.json",
+      "output_path": "shared/10_adhd_motivation_dopamine_and_task_initiation/json/a_dopamine_menu_for_adhd_brains_1.json",
+      "kind": "json",
+      "domain": "motivation_initiation",
+      "sha256": "907dee1f3fa1fe16d0060481f43161edb2980652224e94eb339a0605215da612"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/10_ADHD_Motivation_Dopamine_and_Task_Initiation/json/when_adhd_leads_to_lack_of_motivation_how_to_get_it_done.json",
+      "output_path": "shared/10_adhd_motivation_dopamine_and_task_initiation/json/when_adhd_leads_to_lack_of_motivation_how_to_get_it_done.json",
+      "kind": "json",
+      "domain": "motivation_initiation",
+      "sha256": "7832b1e1b7266b3a2832ca6e0409c500b5593bcf31d260c396a847305bc18753"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/11_ADHD_Emotion_Regulation_Anger_and_Calming/README.md",
+      "output_path": "shared/11_adhd_emotion_regulation_anger_and_calming/docs/readme.md",
+      "kind": "docs",
+      "domain": "emotion_regulation",
+      "sha256": "3eaf6211c9bde140cca164a1fbf121a600f08611ad07c826e446f13e2a1863f1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/11_ADHD_Emotion_Regulation_Anger_and_Calming/html/anger_management_steps_and_scripts.html",
+      "output_path": "shared/11_adhd_emotion_regulation_anger_and_calming/html/anger_management_steps_and_scripts.html",
+      "kind": "html",
+      "domain": "emotion_regulation",
+      "sha256": "fae7f6729eb1078804e7aabaf8403dfefcb5eef04eb8479379d04f508542bd2d"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/11_ADHD_Emotion_Regulation_Anger_and_Calming/json/anger_management_steps_and_scripts.json",
+      "output_path": "shared/11_adhd_emotion_regulation_anger_and_calming/json/anger_management_steps_and_scripts.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "eba09df4dbb956cd2c0fcd55f9e1bb5c880d6e58c16576a749fd6db66ca2bfc1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/11_ADHD_Emotion_Regulation_Anger_and_Calming/json/how_to_calm_down_14_relaxation_techniques_for_adhd_brains.json",
+      "output_path": "shared/11_adhd_emotion_regulation_anger_and_calming/json/how_to_calm_down_14_relaxation_techniques_for_adhd_brains.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "d605ef64809e62d5e851c799e3440142f8b0c32a5c45a9a2eab4967aed2dbd14"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/11_ADHD_Emotion_Regulation_Anger_and_Calming/json/how_to_control_anger_and_adhd_emotional_reactivity.json",
+      "output_path": "shared/11_adhd_emotion_regulation_anger_and_calming/json/how_to_control_anger_and_adhd_emotional_reactivity.json",
+      "kind": "json",
+      "domain": "emotion_regulation",
+      "sha256": "b5b1ef3e466ec3449fb392f7c9d9e23db488cfcbee32383f0528107f242709dd"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/12_ADHD_Burnout_Sensory_and_Self_Help/README.md",
+      "output_path": "shared/12_adhd_burnout_sensory_and_self_help/docs/readme.md",
+      "kind": "docs",
+      "domain": "burnout_sensory",
+      "sha256": "6bfbb93f60c9bb09ab3cc8d3daaafc1a3731689f3202fc2b6c0d8fd3579c00cb"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/12_ADHD_Burnout_Sensory_and_Self_Help/html/adhd_self_help_resource_pack.html",
+      "output_path": "shared/12_adhd_burnout_sensory_and_self_help/html/adhd_self_help_resource_pack.html",
+      "kind": "html",
+      "domain": "burnout_sensory",
+      "sha256": "be36999ab113be340bab8588551821479b583a8d38bc5641b71a0176586cf5f1"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/12_ADHD_Burnout_Sensory_and_Self_Help/html/adhd_workbook.html",
+      "output_path": "shared/12_adhd_burnout_sensory_and_self_help/html/adhd_workbook.html",
+      "kind": "html",
+      "domain": "burnout_sensory",
+      "sha256": "eb5fb3b2dc726a02bb5b63ad6047c40571a65c749359809a74930abb5d9587ee"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/12_ADHD_Burnout_Sensory_and_Self_Help/json/adhd_burnout_recovery_neurodivergent_insights.json",
+      "output_path": "shared/12_adhd_burnout_sensory_and_self_help/json/adhd_burnout_recovery_neurodivergent_insights.json",
+      "kind": "json",
+      "domain": "burnout_sensory",
+      "sha256": "cd3dae785bc56dee42a93baa73a615af2617298770218ddf547b47e2e1aebe4b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/12_ADHD_Burnout_Sensory_and_Self_Help/json/adhd_self_help_resource_pack.json",
+      "output_path": "shared/12_adhd_burnout_sensory_and_self_help/json/adhd_self_help_resource_pack.json",
+      "kind": "json",
+      "domain": "burnout_sensory",
+      "sha256": "95e69096280905d0de5b0128bb1761ea6e4d1931a14b945842efb14365d7e68b"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/12_ADHD_Burnout_Sensory_and_Self_Help/json/adhd_workbook.json",
+      "output_path": "shared/12_adhd_burnout_sensory_and_self_help/json/adhd_workbook.json",
+      "kind": "json",
+      "domain": "burnout_sensory",
+      "sha256": "5de0e2e1df0c7136cd1c5e15748e85ee4cf3c88b7c850546fa00af898816eef3"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/12_ADHD_Burnout_Sensory_and_Self_Help/json/overstimulated_by_life_20_ways_to_give_your_adhd_senses_a_break.json",
+      "output_path": "shared/12_adhd_burnout_sensory_and_self_help/json/overstimulated_by_life_20_ways_to_give_your_adhd_senses_a_break.json",
+      "kind": "json",
+      "domain": "burnout_sensory",
+      "sha256": "ac75b90abe5fbf1590003953295381cf30ee18283f0fed89b780d54f41627a28"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/13_ADHD_General_Reference_and_Diagnosis/README.md",
+      "output_path": "shared/13_adhd_general_reference_and_diagnosis/docs/readme.md",
+      "kind": "docs",
+      "domain": "adhd_general",
+      "sha256": "404cd608067891b40cb8dab932b665cdf9b1d47fac8a6813e5aa23181f0d6df3"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/13_ADHD_General_Reference_and_Diagnosis/json/the_professionals_who_diagnose_and_treat_adhd.json",
+      "output_path": "shared/13_adhd_general_reference_and_diagnosis/json/the_professionals_who_diagnose_and_treat_adhd.json",
+      "kind": "json",
+      "domain": "adhd_general",
+      "sha256": "b657bcd2d2eea20ccc08c6b4a8d5aac921a2e78f903b1cbff6362a1a0b2b0603"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/ADHD_README.md",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/docs/adhd_readme.md",
+      "kind": "docs",
+      "domain": "adhd_general",
+      "sha256": "d0ab0bdaa34fa64e98b9fbb5f91de91a06a12eea436d8f0552fa082722ad7810"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/ADHD_README_HTML_EXPORT.md",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/docs/adhd_readme_html_export.md",
+      "kind": "docs",
+      "domain": "adhd_general",
+      "sha256": "776bd34aa52aee004d31b74e549e7873ce0543d0f9297b9f29d1f6e2987319dc"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/ADHD_html_generation_manifest.json",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/files/adhd_html_generation_manifest.json",
+      "kind": "json",
+      "domain": "adhd_general",
+      "sha256": "4d3c7ae3a9c3d89736261ea2b094e9bc1a1503249dc6c11dcd20af6be46351ed"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/ADHD_manifest.json",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/files/adhd_manifest.json",
+      "kind": "json",
+      "domain": "adhd_general",
+      "sha256": "7187e6729fce6659f76332e0c20525352e18b73815581c00429f709cdc4d36f5"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/ADHD_original_html_index.html",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/files/adhd_original_html_index.html",
+      "kind": "html",
+      "domain": "adhd_general",
+      "sha256": "3b2e2c019d110748ba4218a01d1a559ca73ab2d1929d377582dde4b12cfe097f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/ADHD_similarity_report.json",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/files/adhd_similarity_report.json",
+      "kind": "json",
+      "domain": "adhd_general",
+      "sha256": "1f7b575b8c45f03dfc094e206298cac18fc2b077a90a5331579cb9da44748320"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/DBT_README.md",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/docs/dbt_readme.md",
+      "kind": "docs",
+      "domain": "shared_skill",
+      "sha256": "e9ccbe2abffd1eb2b0498f2c9687450649508d6a1bff4b4cb2034c71d4cf31d0"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/DBT_manifest.json",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/files/dbt_manifest.json",
+      "kind": "json",
+      "domain": "shared_skill",
+      "sha256": "34ac154d14b081951691c1487833f2ac893f7194dafaafd9476be92612318303"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/DBT_original_html_index.html",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/files/dbt_original_html_index.html",
+      "kind": "html",
+      "domain": "shared_skill",
+      "sha256": "51a8cb502bf556103e587d88969017bdcad66c73e55358ee84a42829092363ab"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/DBT_validation_report.json",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/files/dbt_validation_report.json",
+      "kind": "json",
+      "domain": "shared_skill",
+      "sha256": "c288217c2aa6bcc94f9dd26acba7cf79906e16ad918b34406a3840bd63b6226f"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/99_Source_Manifests_Readmes_and_Reports/README.md",
+      "output_path": "shared/99_source_manifests_readmes_and_reports/docs/readme.md",
+      "kind": "docs",
+      "domain": "shared_skill",
+      "sha256": "aa3489b96ec5c295fedc1e1c59de975b4a838d655e774602f62899b192724e99"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/README.md",
+      "output_path": "shared/00_root/docs/readme.md",
+      "kind": "docs",
+      "domain": "shared_skill",
+      "sha256": "5e3119b9c564fc744850cc7ab2c7cbd1d03898af44461ef0bcdb63dd27025a37"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/combined_manifest.json",
+      "output_path": "shared/00_root/docs/combined_manifest.json",
+      "kind": "json",
+      "domain": "adhd_general",
+      "sha256": "45501874261885a43d9dd35afad11e91eee61e76d0c16356e856f39814cf6366"
+    },
+    {
+      "source_path": "DBT+ADHD Skill Files/index.html",
+      "output_path": "shared/00_root/indexes/index.html",
+      "kind": "html",
+      "domain": "shared_skill",
+      "sha256": "04e26f00456747fa49514f478532af0d3909af35c09a5404febb89b2e698fd80"
+    }
+  ],
+  "domain_counts": {
+    "general_chain_analysis": 18,
+    "mindfulness": 64,
+    "interpersonal_effectiveness": 70,
+    "emotion_regulation": 86,
+    "distress_tolerance": 107,
+    "diary_cards": 2,
+    "shared_skill": 5,
+    "time_planning": 5,
+    "cleaning_organization": 12,
+    "motivation_initiation": 4,
+    "burnout_sensory": 6,
+    "adhd_general": 6
+  },
+  "notes": [
+    "All original skill content was preserved unless a small wrapper note was added to markdown/html or metadata was added to JSON.",
+    "Paths were shortened: nested handouts/json style folders were flattened into handouts_json, worksheets_html, etc.",
+    "A shared life filter was added to every JSON item and every HTML worksheet/diary/planner."
+  ]
+}
