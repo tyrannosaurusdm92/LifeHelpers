@@ -1,0 +1,44 @@
+{
+  "schema": "ai-brain.domain-guide.v1",
+  "version": "1.0.0",
+  "id": "domain-code",
+  "title": "Code",
+  "domain": "code",
+  "description": "Programming, debugging, architecture, tests, refactors, performance, accessibility and implementation patterns.",
+  "tags": [
+    "code",
+    "code",
+    "javascript",
+    "html",
+    "css",
+    "json",
+    "debug",
+    "program",
+    "app",
+    "software",
+    "api"
+  ],
+  "capabilities": [
+    "coding",
+    "debugging",
+    "architecture",
+    "testing"
+  ],
+  "relatedDomains": [
+    "web-apps",
+    "mobile-apps",
+    "data-schemas",
+    "auth-security",
+    "testing"
+  ],
+  "useCases": [
+    "route user requests into this domain",
+    "combine this domain with related disciplines",
+    "select more specific source shards by corpus index"
+  ],
+  "retrievalPolicy": "Use this guide as a routing seed. Prefer deeper topic/source shards from the corpus index when they match the request.",
+  "provenance": {
+    "source": "AI-Brain Project Pitch and unified source-package architecture",
+    "type": "source-derived routing seed"
+  }
+}

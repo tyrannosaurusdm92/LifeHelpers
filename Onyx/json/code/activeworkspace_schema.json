@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ActiveWorkspace Encounter v3.2",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "map",
+    "tokens",
+    "initiative",
+    "rules"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "initiative",
+        "active",
+        "complete",
+        "ended"
+      ]
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "map": {
+      "type": "object",
+      "required": [
+        "cols",
+        "rows",
+        "cellFeet",
+        "terrain"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "imageDataUrl": {
+          "type": "string"
+        },
+        "cols": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300
+        },
+        "rows": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300
+        },
+        "cellFeet": {
+          "const": 5
+        },
+        "terrain": {
+          "type": "object"
+        },
+        "gridScan": {
+          "type": "object",
+          "properties": {
+            "detected": {
+              "type": "boolean"
+            },
+            "manual": {
+              "type": "boolean"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "originX": {
+              "type": "number"
+            },
+            "originY": {
+              "type": "number"
+            },
+            "cellPixelWidth": {
+              "type": "number"
+            },
+            "cellPixelHeight": {
+              "type": "number"
+            },
+            "crop": {
+              "type": [
+                "object",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "tokens": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "x",
+          "y"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "player",
+              "hostile",
+              "npc",
+              "mob"
+            ]
+          },
+          "x": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "y": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          },
+          "hp": {
+            "type": "number"
+          },
+          "maxHp": {
+            "type": "number"
+          },
+          "ac": {
+            "type": "number"
+          },
+          "speed": {
+            "type": "number"
+          },
+          "actions": {
+            "type": "array"
+          },
+          "spells": {
+            "type": "array"
+          },
+          "resistances": {
+            "type": "array"
+          },
+          "immunities": {
+            "type": "array"
+          },
+          "vulnerabilities": {
+            "type": "array"
+          },
+          "conditionImmunities": {
+            "type": "array"
+          },
+          "effects": {
+            "type": "array"
+          },
+          "conditions": {
+            "type": "array"
+          },
+          "ai": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "initiative": {
+      "type": "object",
+      "required": [
+        "round",
+        "index",
+        "order",
+        "started"
+      ]
+    },
+    "rules": {
+      "type": "object"
+    },
+    "dynamicEvents": {
+      "type": "array"
+    },
+    "dm": {
+      "type": "object"
+    }
+  }
+}

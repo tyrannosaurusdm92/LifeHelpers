@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://universal.local/schemas/relationship.schema.json",
+  "title": "universal.relationship.v8",
+  "type": "object",
+  "required": [
+    "relationshipId",
+    "fromNpcId",
+    "toNpcId",
+    "type",
+    "consensual",
+    "publicity"
+  ],
+  "properties": {
+    "relationshipId": {
+      "type": "string"
+    },
+    "fromNpcId": {
+      "type": "string"
+    },
+    "toNpcId": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "consensual": {
+      "type": "boolean"
+    },
+    "publicity": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "code",
+  "capabilities": [
+    "character",
+    "class",
+    "merge",
+    "search",
+    "speech",
+    "voice"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "__init__",
+      "_espeak_exe",
+      "_phonemize",
+      "auto_set_espeak_lib",
+      "backend",
+      "backend_version",
+      "get_espeak_version",
+      "get_espeakng_version",
+      "is_available",
+      "is_tool",
+      "name",
+      "phonemize_espeak",
+      "supported_languages",
+      "version"
+    ],
+    "classes": [
+      "ESpeak"
+    ],
+    "imports": [],
+    "lineCount": 269,
+    "characterCount": 8682
+  },
+  "selectedComments": [
+    "Use a regex pattern to match the espeak version, because it may be",
+    "symlinked to espeak-ng, which moves the version bits to another spot.",
+    "priority: espeakng > espeak",
+    "band-aid for backwards compatibility",
+    "set arguments",
+    "espeak and espeak-ng parses `ipa` differently",
+    "use '͡' between phonemes",
+    "split with '_'",
+    "compute phonemes",
+    "espeak need to skip first two characters of the retuned text:",
+    "version 1.48.03: \"_ p_ɹ_ˈaɪ_ɚ t_ə n_oʊ_v_ˈɛ_m_b_ɚ t_w_ˈɛ_n_t_i t_ˈuː\\n\"",
+    "version 1.48.15: \" p_ɹ_ˈaɪ_ɚ t_ə n_oʊ_v_ˈɛ_m_b_ɚ t_w_ˈɛ_n_t_i t_ˈuː\\n\"",
+    "espeak-ng need to skip the first character of the retuned text:",
+    "\"_p_ɹ_ˈaɪ_ɚ t_ə n_oʊ_v_ˈɛ_m_b_ɚ t_w_ˈɛ_n_t_i t_ˈuː\\n\"",
+    "dealing with the conditions descrived above",
+    "espeak-ng backend can add language flags that need to be removed:",
+    "\"sɛʁtˈɛ̃ mˈo kɔm (en)fˈʊtbɔːl(fr) ʒenˈɛʁ de- flˈaɡ də- lˈɑ̃ɡ.\"",
+    "phonemize needs to remove the language flags of the returned text:",
+    "\"sɛʁtˈɛ̃ mˈo kɔm fˈʊtbɔːl ʒenˈɛʁ de- flˈaɡ də- lˈɑ̃ɡ.\""
+  ]
+}

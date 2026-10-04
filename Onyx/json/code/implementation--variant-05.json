@@ -1,0 +1,58 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "code",
+  "capabilities": [
+    "character",
+    "class",
+    "effect",
+    "merge",
+    "shape",
+    "voice"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "generate",
+      "is_available",
+      "registry_sandbox",
+      "sample_rate",
+      "sidecar_script",
+      "supported_languages",
+      "test_existing_engines_still_listed",
+      "test_install_hint_preserved",
+      "test_isolation_mode_in_process_vs_subprocess",
+      "test_last_error_cleared_after_recovery",
+      "test_list_backends_resilient",
+      "test_list_backends_shape",
+      "venv_python"
+    ],
+    "classes": [
+      "BrokenBackend",
+      "FakeSubBackend",
+      "FlakyBackend",
+      "HealthyInProcessBackend"
+    ],
+    "imports": [],
+    "lineCount": 237,
+    "characterCount": 7700
+  },
+  "selectedComments": [
+    "tests/conftest.py prepends ./backend to sys.path so `services.*` resolves.",
+    "── helpers — context-managed registry mutations ───────────────────────────",
+    "── synthetic backends used across tests ───────────────────────────────────",
+    "── ENGINE-05 — graceful degradation ───────────────────────────────────────",
+    "And every production backend still appears.",
+    "`gpu_compat` joined the documented shape in Plan 02-04 alongside the",
+    "Engine Compatibility Matrix UI (ENGINE-06). The three routing keys",
+    "(effective_device / routing_status / routing_reason) joined in #21 so the",
+    "matrix can show the device each engine actually uses on THIS host.",
+    "The pre-existing OmniVoice backend is in-process — sanity check.",
+    "First listing — failure populates last_error.",
+    "Second listing — success clears the cache.",
+    "The pre-existing _INSTALL_HINTS dict carries this one."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://universal.local/schemas/project.schema.json",
+  "title": "universal-simulator.project.v8",
+  "type": "object",
+  "required": [
+    "schema",
+    "schemaVersion",
+    "project",
+    "worldContext",
+    "settlements",
+    "locations",
+    "npcs"
+  ],
+  "properties": {
+    "schema": {
+      "const": "universal-simulator.project.v8"
+    },
+    "schemaVersion": {
+      "type": "string"
+    },
+    "project": {
+      "type": "object"
+    },
+    "worldContext": {
+      "type": "object"
+    },
+    "settlements": {
+      "type": "array"
+    },
+    "locations": {
+      "type": "array"
+    },
+    "services": {
+      "type": "array"
+    },
+    "jobs": {
+      "type": "array"
+    },
+    "households": {
+      "type": "array"
+    },
+    "npcs": {
+      "type": "array"
+    },
+    "relationships": {
+      "type": "array"
+    },
+    "transitRoutes": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

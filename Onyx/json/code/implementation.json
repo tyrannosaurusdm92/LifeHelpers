@@ -1,0 +1,29 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "code",
+  "capabilities": [
+    "character",
+    "merge",
+    "world"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "init_distributed",
+      "reduce_tensor"
+    ],
+    "classes": [],
+    "imports": [],
+    "lineCount": 21,
+    "characterCount": 716
+  },
+  "selectedComments": [
+    "edited from https://github.com/fastai/imagenet-fast/blob/master/imagenet_nv/distributed.py",
+    "Set cuda device so everything is done on the right GPU.",
+    "Initialize distributed communication"
+  ]
+}

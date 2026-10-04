@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://universal.local/schemas/npc.schema.json",
+  "title": "universal.npc.v8",
+  "type": "object",
+  "required": [
+    "npcId",
+    "name",
+    "genderIdentity",
+    "raceId",
+    "schedule",
+    "covenantEngine"
+  ],
+  "properties": {
+    "npcId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "genderIdentity": {
+      "type": "string"
+    },
+    "raceId": {
+      "type": "string"
+    },
+    "schedule": {
+      "type": [
+        "object",
+        "array"
+      ]
+    },
+    "covenantEngine": {
+      "type": "object"
+    },
+    "simulation": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

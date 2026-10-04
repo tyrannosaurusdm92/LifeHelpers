@@ -1,0 +1,23 @@
+{
+  "schema": "ourspace.package-validation.v2",
+  "project": "WorldBuilder+LifeSimulation",
+  "date": "2026-07-23",
+  "checks": {
+    "keyHtmlFilesPresent": true,
+    "keyLocalReferencesMissing": [],
+    "addedJsonErrors": [],
+    "sharedBackendPresent": true,
+    "sharedLibraryPresent": true,
+    "painterlyMapLabPresent": true,
+    "effectsStudioPresent": true,
+    "websiteTemplatePresent": true,
+    "sourceManifestCount": 29,
+    "windowsLauncherPresent": true
+  },
+  "notes": [
+    "Added JavaScript passed node --check.",
+    "Key HTML local src/href references were resolved statically.",
+    "Existing application files were preserved except for backend URL normalization and integration link injection."
+  ],
+  "ok": true
+}

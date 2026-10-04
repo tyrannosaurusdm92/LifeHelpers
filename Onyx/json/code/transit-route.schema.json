@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://universal.local/schemas/transit-route.schema.json",
+  "title": "universal.transit-route.v8",
+  "type": "object",
+  "required": [
+    "routeId",
+    "type",
+    "durationMinutes",
+    "stepFree"
+  ],
+  "properties": {
+    "routeId": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "originLocationId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "destinationLocationId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "durationMinutes": {
+      "type": "number",
+      "minimum": 1
+    },
+    "stepFree": {
+      "type": "boolean"
+    },
+    "accessRestrictions": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}
