@@ -1,0 +1,51 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "art-design",
+  "capabilities": [
+    "character",
+    "class",
+    "merge",
+    "npc",
+    "quest",
+    "rules",
+    "voice"
+  ],
+  "provenance": {
+    "sourceGroup": "voice-persona-creator",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "build_system_prompt",
+      "build_user_prompt"
+    ],
+    "classes": [
+      "PromptBuilder",
+      "PromptTemplates"
+    ],
+    "imports": [],
+    "lineCount": 229,
+    "characterCount": 11361
+  },
+  "selectedComments": [
+    "Tier 1: Base components (shared across all prompts)",
+    "Tier 2: Field-specific guidelines",
+    "Edit instructions guideline (appended when user provides edit instructions)",
+    "Tier 3: Field markers (format specifications)",
+    "1. Base role",
+    "2. Thinking steps (full if generating multiple fields, simplified if single)",
+    "3. Format instructions",
+    "3.5. Edit instructions guideline (when user provides edit instructions)",
+    "4. Field markers (show format for requested fields)",
+    "5. Field-specific guidelines (only for requested fields)",
+    "Determine if we have any context",
+    "Build context section",
+    "Description (always as context if present and not being generated)",
+    "Other fields - show as \"already set\" if not being regenerated",
+    "Being regenerated - show as draft to improve/extend",
+    "Not being regenerated - show as fixed context",
+    "Duration constraint",
+    "No context - generate from scratch"
+  ]
+}

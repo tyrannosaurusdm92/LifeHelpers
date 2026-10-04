@@ -1,0 +1,16 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "art-design",
+  "capabilities": [
+    "color",
+    "layer",
+    "manifest"
+  ],
+  "provenance": {
+    "sourceGroup": "player-reference-runtime-b",
+    "sourceType": "provided-project-material",
+    "archiveHash": "4e095c60734d391f"
+  },
+  "title": "manifest.webmanifest",
+  "content": "{\n  \"name\": \"Universal Project AI Directory\",\n  \"short_name\": \"Project AI\",\n  \"start_url\": \"./index.html\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#0b1018\",\n  \"theme_color\": \"#0b1018\",\n  \"icons\": [\n    {\n      \"src\": \"assets/icon.svg\",\n      \"sizes\": \"any\",\n      \"type\": \"image/svg+xml\"\n    }\n  ]\n}"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "art-design",
+  "capabilities": [
+    "merge",
+    "npc",
+    "speech",
+    "voice"
+  ],
+  "provenance": {
+    "sourceGroup": "voice-persona-creator",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "get_transcriptor",
+      "transcribe_audio",
+      "unload_transcriptor"
+    ],
+    "classes": [],
+    "imports": [],
+    "lineCount": 72,
+    "characterCount": 2119
+  },
+  "selectedComments": []
+}

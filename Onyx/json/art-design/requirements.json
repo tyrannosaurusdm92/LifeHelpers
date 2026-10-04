@@ -1,0 +1,16 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "art-design",
+  "capabilities": [
+    "merge",
+    "npc",
+    "voice"
+  ],
+  "provenance": {
+    "sourceGroup": "voice-persona-creator",
+    "sourceType": "provided-project-material",
+    "archiveHash": "dbee8a4098e0be3b"
+  },
+  "title": "requirements.txt",
+  "content": "# Core bridge has no mandatory package dependencies beyond Python 3.10+ and ffmpeg for conversion.\n# Optional local model paths use dependencies from the original repositories:\n# - vendor/heartmuse requirements if using HeartMuse/HeartMuLa generation\n# - vendor/yue requirements if using YuE generation\nflask>=3.0.0\n"
+}

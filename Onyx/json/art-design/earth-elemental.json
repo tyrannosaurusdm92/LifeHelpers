@@ -1,0 +1,189 @@
+{
+  "schema_version": "phase3.monster.mob.v1",
+  "id": "earth-elemental",
+  "name": "Earth Elemental",
+  "source": "Universal Encounter Manager quick-play index + Phase 3 generated auto-roll wrapper",
+  "classification": {
+    "type": "elemental",
+    "subtype": "",
+    "role": "mob/npc/monster",
+    "cr": "5",
+    "environments": [
+      "Dungeon",
+      "Mountain",
+      "Underground"
+    ]
+  },
+  "board_token": {
+    "shape": "blank circular slot",
+    "feet": 5,
+    "size_cells": 1,
+    "external": true,
+    "token_key": "earth-elemental",
+    "token_candidates": [
+      "earth-elemental.webp",
+      "earth-elemental.png",
+      "earth-elemental.jpg",
+      "Earth Elemental/earth-elemental.webp",
+      "Earth Elemental/earth-elemental.png",
+      "hostiles/earth-elemental.webp",
+      "hostiles/earth-elemental.png",
+      "creatures/earth-elemental.webp",
+      "creatures/earth-elemental.png",
+      "placeholders/hostiles/elemental.png",
+      "placeholders/hostiles/default-hostile.png"
+    ],
+    "icon": "🪨",
+    "class": "monster",
+    "color": "#ff455c"
+  },
+  "combat": {
+    "hp": 110,
+    "max_hp": 110,
+    "ac": 15,
+    "initiative_bonus": 0,
+    "speed_ft": 30,
+    "xp": 1800,
+    "cr_numeric": 5.0,
+    "proficiency_bonus": 3
+  },
+  "ability_scores": {
+    "str": 13,
+    "dex": 13,
+    "con": 13,
+    "int": 10,
+    "wis": 11,
+    "cha": 10
+  },
+  "saves": {
+    "str": 1,
+    "dex": 1,
+    "con": 1,
+    "wis": 0
+  },
+  "traits": [
+    {
+      "id": "elite_presence",
+      "name": "Elite Presence",
+      "summary": "Counts as a priority threat for initiative, targeting, and boss/battle audio."
+    }
+  ],
+  "abilities": [
+    {
+      "id": "primary_attack",
+      "name": "Attack",
+      "kind": "attack_roll",
+      "action_type": "melee_or_ranged_attack",
+      "to_hit": 7,
+      "reach_ft": 5,
+      "range_ft": 5,
+      "targeting": "nearest_hostile_pc",
+      "roll": "1d20+7",
+      "damage_roll": "3d8+4",
+      "damage_type": "slashing",
+      "on_hit": {
+        "apply_damage": true,
+        "amount": "damage_roll",
+        "critical": "double_damage_dice"
+      },
+      "board_dice": [
+        "d20",
+        "8"
+      ],
+      "log_template": "{actor} uses {ability} on {target}: {attack_total} vs AC {target_ac}. {hit_text}"
+    },
+    {
+      "id": "pressure_ability",
+      "name": "Pressure Move",
+      "kind": "saving_throw_or_area",
+      "action_type": "special",
+      "save_dc": 12,
+      "save_ability": "dex",
+      "damage_roll": "3d8+4",
+      "damage_type": "slashing",
+      "recharge": "5-6",
+      "radius_ft": 10,
+      "summary": "Optional MOL-triggered area or special move generated from the quick-play record."
+    }
+  ],
+  "random_encounters": {
+    "description": "",
+    "hitDice": "12d10",
+    "skills": "",
+    "senses": "darkvision 60 ft., tremorsense 60 ft., passive Perception 10",
+    "languages": "Terran",
+    "legendaryActions": [],
+    "multiattackCount": 2,
+    "hasHands": false,
+    "divineCandidate": false,
+    "roles": [
+      "brute"
+    ],
+    "environments": [
+      "underdark"
+    ],
+    "homebrewAlignment": {
+      "profileId": "neutral-scoundrel",
+      "name": "Neutral Scoundrel",
+      "axes": {
+        "altruism": "Neutral",
+        "lawfulness": "Neutral",
+        "cooperation": "Combative",
+        "honor": "Neutral"
+      },
+      "scores": {
+        "altruism": 1500,
+        "lawfulness": 1500,
+        "cooperation": 750,
+        "honor": 1500
+      },
+      "description": "A fighter without a cause. May brawl for coin, pride, or boredom - but rarely cares who wins the war."
+    },
+    "tokenKey": "earth-elemental",
+    "tokenCandidates": [
+      "earth-elemental.webp",
+      "earth-elemental.png",
+      "earth-elemental.jpg",
+      "Earth Elemental/earth-elemental.webp",
+      "Earth Elemental/earth-elemental.png",
+      "hostiles/earth-elemental.webp",
+      "hostiles/earth-elemental.png",
+      "creatures/earth-elemental.webp",
+      "creatures/earth-elemental.png",
+      "placeholders/hostiles/elemental.png",
+      "placeholders/hostiles/default-hostile.png"
+    ]
+  },
+  "resistances": [],
+  "immunities": [],
+  "vulnerabilities": [],
+  "condition_immunities": [],
+  "file": "json/monsters/earth-elemental.json",
+  "legal_note": "Quick-play manager data only. This is not a copied official statblock; use owned books/compendiums for full rules text.",
+  "senses": {
+    "passive_perception": 10,
+    "notes": "Generated quick-play passive value."
+  },
+  "auto_roll": {
+    "enabled": true,
+    "trigger": "after_dm_moves_mob_token",
+    "ability_priority": [
+      "primary_attack",
+      "pressure_ability"
+    ],
+    "targeting": "nearest_hostile_pc_within_range_else_nearest_pc",
+    "roll_dice_on_board": true,
+    "show_total_on_board": true,
+    "apply_damage_on_hit": true
+  },
+  "ai_tactics": {
+    "movement": "MOL-controlled; no autonomous movement in Phase 3.",
+    "target_priority": [
+      "nearest hostile PC",
+      "injured PC",
+      "caster/healer if tagged"
+    ],
+    "morale": "MOL decides; elite monsters fight longer."
+  },
+  "notes": "Quick-play SRD-style index entry. CR 5; use owned sourcebooks/official compendium for exact traits."
+}

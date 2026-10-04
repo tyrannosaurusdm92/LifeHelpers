@@ -1,0 +1,14 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "art-design",
+  "capabilities": [
+    "layer"
+  ],
+  "provenance": {
+    "sourceGroup": "player-reference-runtime-a",
+    "sourceType": "provided-project-material",
+    "archiveHash": "ff8940c1250d6e84"
+  },
+  "title": "third_party_notices.txt",
+  "content": "THIRD-PARTY NOTICES\n\nThis package includes or adapts components from the following supplied open-source projects:\n- Three.js and associated example loaders/exporters: MIT License.\n- Draco decoder components: Apache License 2.0.\n- Langflow visual references: MIT License.\n- Hermes agent visual reference: MIT License.\n- Prompt dataset: mixed MIT and public-domain/CC0 coverage as documented in docs/sources/prompts-chat/.\n- JS ZIP functionality in this package is a new minimal browser implementation and does not include JSZip source.\n\nFull source-specific license records are stored under docs/sources/.\n"
+}

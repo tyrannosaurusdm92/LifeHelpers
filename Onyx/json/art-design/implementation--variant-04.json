@@ -1,0 +1,48 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "art-design",
+  "capabilities": [
+    "class",
+    "generator",
+    "merge",
+    "npc",
+    "quest",
+    "voice"
+  ],
+  "provenance": {
+    "sourceGroup": "voice-persona-creator",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "_force_gpu_cleanup",
+      "_patched_preprocess",
+      "cancel_generation",
+      "cancellable_generate_frame",
+      "ensure_models_downloaded",
+      "ensure_pipeline_loaded",
+      "generate_music",
+      "get_pipeline",
+      "is_generation_cancelled",
+      "unload_pipeline"
+    ],
+    "classes": [
+      "GenerationCancelled",
+      "method"
+    ],
+    "imports": [],
+    "lineCount": 247,
+    "characterCount": 8958
+  },
+  "selectedComments": [
+    "Suppress harmless torchtune warning when setup_caches() is called on a model",
+    "whose KV caches are already allocated (e.g. after cancel + re-generate).",
+    "The caches are properly reused; the warning is just noise.",
+    "Install style embedding monkeypatch (inject real MuQ embedding instead of zeros)",
+    "Install cancellation hook using weak references so that heartlib's",
+    "_unload() can actually free the model from VRAM between stages.",
+    "Strong references (bound methods, local vars) would prevent GC.",
+    "Clean up style embedding monkeypatch"
+  ]
+}
