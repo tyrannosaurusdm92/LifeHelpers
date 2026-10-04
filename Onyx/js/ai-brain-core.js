@@ -1,0 +1,16 @@
+(function(root){'use strict';
+const A=root.AIBrain=root.AIBrain||{};
+A.version='3.0.0-static-corpus';
+A.norm=A.norm||function(v){return String(v??'').normalize('NFKC').toLocaleLowerCase().replace(/[^\p{L}\p{N}+_#&/-]+/gu,' ').replace(/\s+/g,' ').trim();};
+A.tokens=A.tokens||function(v){const stop=A.stopWords||new Set(['the','a','an','and','or','to','of','in','on','for','with','is','are','i','me','my','it','that','this','be','as','at','by']);return [...new Set(A.norm(v).split(/\s+/).filter(x=>x.length>1&&!stop.has(x)))];};
+A.unique=A.unique||function(xs){return [...new Set((xs||[]).filter(Boolean))];};
+A.arr=A.arr||function(x){return Array.isArray(x)?x:(x==null?[]:[x]);};
+A.clamp=A.clamp||function(n,min,max){return Math.max(min,Math.min(max,Number(n)||0));};
+A.scoreTerms=A.scoreTerms||function(text,terms){const h=' '+A.norm(text)+' ';let n=0;for(const raw of terms||[]){const q=A.norm(raw);if(!q)continue;if(h.includes(' '+q+' '))n+=q.includes(' ')?4:2;else if(h.includes(q))n+=1;}return n;};
+A.mergeScores=A.mergeScores||function(target,key,delta,reason){if(!key)return null;if(!target[key])target[key]={score:0,reasons:[]};target[key].score+=Number(delta)||0;if(reason&&!target[key].reasons.includes(reason))target[key].reasons.push(reason);return target[key];};
+A.safeJsonParse=A.safeJsonParse||function(text,fallback=null){try{return JSON.parse(text);}catch{return fallback;}};
+A.fnv1a=A.fnv1a||function(text){let h=2166136261;for(const c of String(text||'')){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;};
+A.pathKind=A.pathKind||function(path){const p=String(path||'').replace(/\\/g,'/').toLowerCase();if(p.includes('/json/')||p.startsWith('json/'))return'knowledge';if(p.includes('/assets/')||p.startsWith('assets/'))return'asset';if(p.includes('/js/')||p.startsWith('js/')||p.endsWith('.js'))return'javascript';return'other';};
+A.normalizeRecord=A.normalizeRecord||function(x){if(!x||typeof x!=='object')return x;return{...x,path:String(x.path||x.name||''),domains:A.unique(A.arr(x.domains||x.domain)),capabilities:A.unique(A.arr(x.capabilities)),tags:A.unique(A.arr(x.tags))};};
+if(typeof module!=='undefined'&&module.exports)module.exports=A;
+})(typeof globalThis!=='undefined'?globalThis:this);
