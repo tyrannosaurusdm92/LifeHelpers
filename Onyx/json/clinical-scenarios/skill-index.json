@@ -1,0 +1,199 @@
+{
+  "schema": "psychiatrypt3.skill_index.v1",
+  "domains": {
+    "adhd": [
+      {
+        "id": "adhd-tiny-start",
+        "title": "Tiny Start",
+        "use_when": "Task initiation is blocked by overwhelm, perfectionism, low energy, or unclear first steps."
+      },
+      {
+        "id": "adhd-working-memory",
+        "title": "Working Memory Externalization",
+        "use_when": "The person keeps losing steps, ideas, or intentions."
+      },
+      {
+        "id": "adhd-transition-bridge",
+        "title": "Transition Bridge",
+        "use_when": "Stopping one activity and beginning another is hard."
+      },
+      {
+        "id": "adhd-body-double",
+        "title": "Body Double",
+        "use_when": "Presence helps task initiation or persistence."
+      },
+      {
+        "id": "adhd-time-map",
+        "title": "Time Map",
+        "use_when": "Time blindness makes planning unreliable."
+      }
+    ],
+    "autism": [
+      {
+        "id": "autism-sensory-map",
+        "title": "Sensory Map",
+        "use_when": "Overload, shutdown, irritability, pain, or fatigue may be affected by sensory input."
+      },
+      {
+        "id": "autism-shutdown-support",
+        "title": "Shutdown Support",
+        "use_when": "Speech, movement, decision-making, or processing has dropped sharply under stress."
+      },
+      {
+        "id": "autism-meltdown-recovery",
+        "title": "Meltdown Recovery",
+        "use_when": "The nervous system is overloaded and behavioral control is reduced."
+      },
+      {
+        "id": "autism-burnout",
+        "title": "Burnout Load Reduction",
+        "use_when": "Sustained overload, masking, demands, or insufficient recovery have reduced capacity."
+      },
+      {
+        "id": "autism-transition-plan",
+        "title": "Predictable Transition",
+        "use_when": "Change or uncertainty is increasing distress."
+      }
+    ],
+    "cbt": [
+      {
+        "id": "cbt-thought-record",
+        "title": "Thought Record",
+        "use_when": "A strong emotion is linked to a specific interpretation or prediction."
+      },
+      {
+        "id": "cbt-behavioral-activation",
+        "title": "Behavioral Activation",
+        "use_when": "Low mood or avoidance has reduced meaningful activity."
+      },
+      {
+        "id": "cbt-problem-solving",
+        "title": "Structured Problem Solving",
+        "use_when": "A solvable problem is looping without a concrete plan."
+      },
+      {
+        "id": "cbt-worry-window",
+        "title": "Worry Window",
+        "use_when": "Repetitive worry is consuming the day."
+      },
+      {
+        "id": "cbt-graded-practice",
+        "title": "Graded Practice",
+        "use_when": "Avoidance is maintaining fear and the target is safe, consensual, and appropriate for gradual practice."
+      }
+    ],
+    "dbt": [
+      {
+        "id": "dbt-stop",
+        "title": "STOP",
+        "use_when": "A strong urge may lead to an impulsive action."
+      },
+      {
+        "id": "dbt-tipp",
+        "title": "TIPP",
+        "use_when": "High physiological arousal needs short-term downshifting."
+      },
+      {
+        "id": "dbt-accepts",
+        "title": "ACCEPTS",
+        "use_when": "Short-term distraction is needed to survive a distress spike without making things worse."
+      },
+      {
+        "id": "dbt-check-facts",
+        "title": "Check the Facts",
+        "use_when": "Emotion intensity may be amplified by assumptions or incomplete information."
+      },
+      {
+        "id": "dbt-opposite-action",
+        "title": "Opposite Action",
+        "use_when": "An emotion or urge does not fit the facts or acting on it would be ineffective."
+      },
+      {
+        "id": "dbt-dear-man",
+        "title": "DEAR MAN",
+        "use_when": "A clear request, refusal, or boundary is needed."
+      },
+      {
+        "id": "dbt-give",
+        "title": "GIVE",
+        "use_when": "The relationship matters during a conversation."
+      },
+      {
+        "id": "dbt-fast",
+        "title": "FAST",
+        "use_when": "Self-respect needs protection in an interpersonal situation."
+      },
+      {
+        "id": "dbt-chain",
+        "title": "Behavior Chain Analysis",
+        "use_when": "A behavior needs a no-blame map of what led to it and what could change next time."
+      }
+    ],
+    "psychiatric_support": [
+      {
+        "id": "psych-checkin",
+        "title": "Structured Psychiatric Check-In",
+        "use_when": "The person wants to summarize symptoms and functioning for themselves or a clinician."
+      },
+      {
+        "id": "psych-clinician-prep",
+        "title": "Clinician Visit Preparation",
+        "use_when": "A visit is coming up and important information needs organization."
+      },
+      {
+        "id": "psych-med-journal",
+        "title": "Medication Journal",
+        "use_when": "The person wants to track medication experience without changing treatment."
+      },
+      {
+        "id": "psych-reality-grounding",
+        "title": "Reality-Grounded Support",
+        "use_when": "A person reports paranoia, hallucinations, or unusual beliefs."
+      }
+    ],
+    "general_mental_health": [
+      {
+        "id": "mh-grounding-54321",
+        "title": "5-4-3-2-1 Grounding",
+        "use_when": "The person feels flooded, panicky, detached, or stuck in looping thoughts and sensory grounding is tolerable."
+      },
+      {
+        "id": "mh-dissociation-anchor",
+        "title": "Dissociation Anchor",
+        "use_when": "The person feels unreal, detached, foggy, or disconnected."
+      },
+      {
+        "id": "mh-grief",
+        "title": "Grief Support",
+        "use_when": "Loss is producing waves of sadness, numbness, anger, longing, or disorientation."
+      },
+      {
+        "id": "mh-sleep-winddown",
+        "title": "Sleep Wind-Down",
+        "use_when": "The person wants a low-pressure sleep routine."
+      }
+    ],
+    "physical_health": [
+      {
+        "id": "physical-symptom-journal",
+        "title": "Symptom Journal",
+        "use_when": "Symptoms need organized tracking for self-management or a clinician."
+      },
+      {
+        "id": "physical-accessibility",
+        "title": "Accessibility-Aware Care Plan",
+        "use_when": "A care task conflicts with mobility, pain, fatigue, sensory, communication, or caregiver limits."
+      },
+      {
+        "id": "physical-existing-plan",
+        "title": "Follow Existing Medical Plan",
+        "use_when": "A health condition already has clinician instructions."
+      },
+      {
+        "id": "physical-emergency",
+        "title": "Medical Emergency Escalation",
+        "use_when": "Clear emergency symptoms may be present."
+      }
+    ]
+  }
+}
