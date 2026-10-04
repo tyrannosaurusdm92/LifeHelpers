@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "default": {
+    "emergency": "Use the local emergency number or nearest emergency department for life-threatening situations.",
+    "crisis": "Use a local crisis service appropriate to the user's country/region."
+  },
+  "US": {
+    "suicide_crisis": "Call or text 988 for suicide, mental-health, or substance-use crisis support.",
+    "life_threatening": "Call 911 or go to the nearest emergency department."
+  },
+  "note": "Location-specific resources should be shown only when the user's region is known or configured."
+}
