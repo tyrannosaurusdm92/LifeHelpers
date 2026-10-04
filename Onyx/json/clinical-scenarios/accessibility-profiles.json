@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "profiles": {
+    "low_energy": {
+      "instructions": [
+        "offer minimum viable step first",
+        "allow rest/stop points",
+        "avoid productivity pressure"
+      ]
+    },
+    "mobility_limited": {
+      "instructions": [
+        "offer seated/lying-down alternatives",
+        "do not assume walking/exercise/showering is available",
+        "include equipment/caregiver/telehealth options"
+      ]
+    },
+    "sensory_sensitive": {
+      "instructions": [
+        "offer multiple grounding modalities",
+        "avoid assuming cold, music, touch, bright light, or breath focus helps"
+      ]
+    },
+    "low_verbal": {
+      "instructions": [
+        "offer yes/no, scale, multiple choice, or written responses",
+        "ask one question at a time"
+      ]
+    },
+    "literal_communication": {
+      "instructions": [
+        "use concrete language",
+        "state implied expectations",
+        "avoid sarcasm as instruction"
+      ]
+    }
+  }
+}
