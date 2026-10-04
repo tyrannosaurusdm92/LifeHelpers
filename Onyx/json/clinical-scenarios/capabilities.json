@@ -1,0 +1,89 @@
+{
+  "schema": "psychiatrypt3.capabilities.v1",
+  "domains": {
+    "adhd": [
+      "task initiation",
+      "task decomposition",
+      "working-memory externalization",
+      "time-blindness support",
+      "body doubling",
+      "focus sprints",
+      "transition bridges",
+      "low-shame reset",
+      "motivation scaffolding"
+    ],
+    "autism": [
+      "sensory profiling",
+      "shutdown support",
+      "meltdown recovery",
+      "autistic burnout support",
+      "masking recovery",
+      "low-demand communication",
+      "AAC scripting",
+      "transition support",
+      "interoception prompts",
+      "social-energy budgeting"
+    ],
+    "cbt": [
+      "thought records",
+      "automatic-thought identification",
+      "cognitive-distortion prompts",
+      "evidence review",
+      "balanced alternatives",
+      "behavioral activation",
+      "graded practice planning",
+      "worry scheduling",
+      "problem solving",
+      "relapse planning"
+    ],
+    "dbt": [
+      "mindfulness",
+      "Wise Mind",
+      "STOP",
+      "TIPP",
+      "ACCEPTS",
+      "self-soothe",
+      "IMPROVE",
+      "pros and cons",
+      "radical acceptance",
+      "Check the Facts",
+      "Opposite Action",
+      "PLEASE",
+      "DEAR MAN",
+      "GIVE",
+      "FAST",
+      "behavior chain analysis",
+      "solution analysis",
+      "diary-card style tracking"
+    ],
+    "psychiatric_support": [
+      "symptom check-ins",
+      "functional-impact review",
+      "sleep and circadian review",
+      "mood/anxiety/trauma/dissociation/psychosis/mania/substance-use signal flagging",
+      "medication journaling without medication changes",
+      "clinician visit preparation",
+      "warning-sign planning"
+    ],
+    "physical_health": [
+      "symptom journal",
+      "pain and fatigue support",
+      "hydration and nutrition prompts",
+      "mobility and accessibility planning",
+      "existing-plan adherence reminders",
+      "care coordination",
+      "medical appointment preparation",
+      "emergency red-flag escalation"
+    ],
+    "general_mental_health": [
+      "grounding",
+      "grief support",
+      "relationship communication",
+      "self-care",
+      "sleep routines",
+      "emotion labeling",
+      "stress reduction",
+      "care navigation"
+    ]
+  }
+}

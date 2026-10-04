@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "domain": "cbt",
+  "cards": [
+    {
+      "id": "cbt.model",
+      "use": "formulation",
+      "guidance": [
+        "Separate situation, automatic thought, emotion, body sensation, urge, action, and consequence."
+      ]
+    },
+    {
+      "id": "cbt.evidence",
+      "use": "reappraisal",
+      "guidance": [
+        "List evidence supporting the thought and evidence that does not fit it.",
+        "Aim for a balanced thought, not forced positivity."
+      ]
+    },
+    {
+      "id": "cbt.alternative_explanations",
+      "use": "reappraisal",
+      "guidance": [
+        "Generate at least two plausible explanations before treating the first interpretation as fact."
+      ]
+    },
+    {
+      "id": "cbt.behavioral_experiment",
+      "use": "testing beliefs",
+      "guidance": [
+        "Turn a belief into a small testable prediction.",
+        "Define what result would support or weaken the prediction before doing the experiment."
+      ]
+    },
+    {
+      "id": "cbt.behavioral_activation",
+      "use": "low mood",
+      "guidance": [
+        "Choose a small meaningful or mastery-linked action that fits current capacity.",
+        "Track effect on mood and function rather than demanding motivation first."
+      ]
+    },
+    {
+      "id": "cbt.exposure_boundary",
+      "use": "anxiety",
+      "guidance": [
+        "Exposure should be planned, consent-based, and appropriate to the problem.",
+        "Do not use exposure to override medical danger, trauma boundaries, or unsafe environments."
+      ]
+    },
+    {
+      "id": "cbt.problem_solving",
+      "use": "practical stress",
+      "guidance": [
+        "Define the solvable problem, list options, choose one small action, and review the result."
+      ]
+    },
+    {
+      "id": "cbt.crisis_boundary",
+      "use": "safety",
+      "guidance": [
+        "During immediate crisis, stabilization and safety take priority over debating thoughts."
+      ]
+    }
+  ]
+}
