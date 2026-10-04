@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "goals-of-mindfulness-practice-a-spiritual-perspective-fa50998b4f4e",
+  "title": "Goals of Mindfulness Practice: A Spiritual Perspective",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9455
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/02-dbt-mindfulness-mindfulness-handout-7-goals-of-mindfulness-practice-a-spiritual-perspecti-19b911a303.json",
+        "sha256": "19b911a303b44aa9c5bc5593d0cd248de91fb86333a43b2e2ee802d187d4a29f",
+        "domain": "dbt",
+        "bytes": 3020
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/mindfulness-handout-7-goals-of-mindfulness-practice-a-spiritual-perspective-2770d607d4.json",
+        "sha256": "2770d607d4d27631bb3583ff8388a70fc1842d567baa258ac3fcfdc08d67026c",
+        "domain": "dbt",
+        "bytes": 2874
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 92,
+        "book_page": "68",
+        "text": "68\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nMindfulness Handout 7   (Mindfulness Worksheet 1)\nGoals of Mindfulness Practice:\nA Spiritual Perspective\nTo Experience:\n\u0003\n Ultimate reality as it is which leads to a sense of inner spaciousness and awareness of\nintimate wholeness with the entire universe, the transcendence of boundaries, and the\nground of our being.\n\u0003\n Other:\nTo Grow in Wisdom:\n\u0003\n Of the heart and of action.\n\u0003\n Other:\nTo Experience Freedom:\n\u0003\n By letting go of attachments to the demands of your own desires, cravings, and intense\nemotions, and radically accepting reality as it is.\n\u0003\n Other:\nTo Increase Love and Compassion:\n\u0003\n Toward yourself.\n\u0003\n Toward others.\n\u0003\n Other:\n\u0003\n Other:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Mindfulness Handout 7   (Mindfulness Worksheet 1)",
+    "source_pdf_pages": [
+      92
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/mindfulness/handouts/mindfulness_handout_7_goals_of_mindfulness_practice_a_spiritual_perspective.json",
+    "item_number": "7",
+    "full_text": "Mindfulness Handout 7   (Mindfulness Worksheet 1)\nGoals of Mindfulness Practice:\nA Spiritual Perspective\nTo Experience:\n\u0003\n Ultimate reality as it is which leads to a sense of inner spaciousness and awareness of\nintimate wholeness with the entire universe, the transcendence of boundaries, and the\nground of our being.\n\u0003\n Other:\nTo Grow in Wisdom:\n\u0003\n Of the heart and of action.\n\u0003\n Other:\nTo Experience Freedom:\n\u0003\n By letting go of attachments to the demands of your own desires, cravings, and intense\nemotions, and radically accepting reality as it is.\n\u0003\n Other:\nTo Increase Love and Compassion:\n\u0003\n Toward yourself.\n\u0003\n Toward others.\n\u0003\n Other:\n\u0003\n Other:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Mindfulness Worksheet 1"
+    ],
+    "id": "mindfulness_handout_7",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "68"
+    ],
+    "title": "Goals of Mindfulness Practice: A Spiritual Perspective",
+    "module_category": "Mindfulness Skills",
+    "shared_json_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_7_goals_of_mindfulness_practice_a_spiritual_perspective.json",
+    "module": "Mindfulness",
+    "keywords": [
+      "Goals",
+      "Mindfulness",
+      "Perspective",
+      "Practice",
+      "Spiritual"
+    ]
+  }
+}

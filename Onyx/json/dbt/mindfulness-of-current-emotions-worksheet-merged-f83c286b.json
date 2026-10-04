@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "mindfulness-of-current-emotions-ce33f83c286b",
+  "title": "Mindfulness of Current Emotions",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9659
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-15-mindfulness-of-current-emotions-8d1af34110.json",
+        "sha256": "8d1af3411038e69cae4f15fafec6c777fdd56be1ec24c7240b55abd977c405af",
+        "domain": "dbt",
+        "bytes": 5079
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-15-mindfulness-of-current-emotions-29f63ee8a5.json",
+        "sha256": "29f63ee8a56bf2c339535a497447acebd69c9bf1d29c10b7b9f0cf7169cec42d",
+        "domain": "dbt",
+        "bytes": 4936
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 335,
+        "book_page": "311",
+        "text": "311\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 15   (Emotion Regulation Handouts 21, 22)\nMindfulness of Current Emotions\nDue Date:             Name:                                    Week Starting:\nEmotion Name:                            Intensity (0–100) Before:        After:\nDescribe situation that prompts emotion. (Fill out Steps 1 and 2 on Emotion Regulation Worksheet\n5, if necessary.)\nWhen emotional intensity is extreme, go to crisis survival skills first and fill out Distress\nTolerance Worksheets 2–6. With any emotion, high or low, practice radical acceptance with mind-\nfulness of current emotions.\nCheck off any of the following that you did:\n\u0003\n Stepped back and just noticed the emotions I was experiencing.\n\u0003\n Experienced the emotion as waves, coming and going on the beach.\n\u0003\n Let go of judgments about my emotions.\n\u0003\n Noticed where in my body I was feeling the emotional sensations.\n\u0003\n Paid attention to the physical sensations of the emotions as much as I could.\n\u0003\n Observed how long it took the emotion to go away.\n\u0003\n Reminded myself that being critical of emotions does not work.\n\u0003\n Practiced willingness to have unwelcome emotions.\n\u0003\n Imagined my emotions as clouds in the sky, coming and going.\n\u0003\n Just noticed the action urge that went with my emotion.\n\u0003\n Got myself to avoid acting on my emotion.\n\u0003\n Reminded myself of times when I have felt different.\n\u0003\n Practiced radically accepting my emotion.\n\u0003\n Tried to love my emotions.\n\nOther:\nComments and descriptions of experiences:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 15   (Emotion Regulation Handouts 21, 22)",
+    "source_pdf_pages": [
+      335
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_15_mindfulness_of_current_emotions.json",
+    "item_number": "15",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 15   (Emotion Regulation Handouts 21, 22)\nMindfulness of Current Emotions\nDue Date:             Name:                                    Week Starting:\nEmotion Name:                            Intensity (0–100) Before:        After:\nDescribe situation that prompts emotion. (Fill out Steps 1 and 2 on Emotion Regulation Worksheet\n5, if necessary.)\nWhen emotional intensity is extreme, go to crisis survival skills first and fill out Distress\nTolerance Worksheets 2–6. With any emotion, high or low, practice radical acceptance with mind-\nfulness of current emotions.\nCheck off any of the following that you did:\n\u0003\n Stepped back and just noticed the emotions I was experiencing.\n\u0003\n Experienced the emotion as waves, coming and going on the beach.\n\u0003\n Let go of judgments about my emotions.\n\u0003\n Noticed where in my body I was feeling the emotional sensations.\n\u0003\n Paid attention to the physical sensations of the emotions as much as I could.\n\u0003\n Observed how long it took the emotion to go away.\n\u0003\n Reminded myself that being critical of emotions does not work.\n\u0003\n Practiced willingness to have unwelcome emotions.\n\u0003\n Imagined my emotions as clouds in the sky, coming and going.\n\u0003\n Just noticed the action urge that went with my emotion.\n\u0003\n Got myself to avoid acting on my emotion.\n\u0003\n Reminded myself of times when I have felt different.\n\u0003\n Practiced radically accepting my emotion.\n\u0003\n Tried to love my emotions.\n\nOther:\nComments and descriptions of experiences:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handouts 21, 22"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_15_mindfulness_of_current_emotions.html",
+    "id": "emotion_regulation_worksheet_15",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "311"
+    ],
+    "title": "Mindfulness of Current Emotions",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_15_mindfulness_of_current_emotions.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Current",
+      "Emotions",
+      "Mindfulness"
+    ]
+  }
+}

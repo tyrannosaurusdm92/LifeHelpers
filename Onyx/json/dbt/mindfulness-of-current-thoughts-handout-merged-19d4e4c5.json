@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "mindfulness-of-current-thoughts-692b19d4e4c5",
+  "title": "Mindfulness of Current Thoughts",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9638
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-handout-15-mindfulness-of-current-thoughts-e23b758d99.json",
+        "sha256": "e23b758d993edca82d33f824a675d0bc552cd49f395dea2d48e4baf24237144f",
+        "domain": "dbt",
+        "bytes": 4741
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-handout-15-mindfulness-of-current-thoughts-dc1d7f3d72.json",
+        "sha256": "dc1d7f3d72e41165ed081f12605dc7460b77e764b55bfc1d78d23500f332cf2e",
+        "domain": "dbt",
+        "bytes": 4602
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 374,
+        "book_page": "350",
+        "text": "350\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n«\nDistress Tolerance Handout 15   (Distress Tolerance Worksheets 8, 8a, 12)\nMindfulness of Current Thoughts\n1.  Observe your thoughts.\n•• As waves, coming and going.\n•• Not suppressing thoughts.\n•• Not judging thoughts.\n•• Acknowledging their presence.\n•• Not keeping thoughts around.\n•• Not analyzing thoughts.\n•• Practicing willingness.\n•• Stepping back and observing\nthoughts as they run in and out of\nyour mind.\n2.  Adopt a curious mind.\n•• Ask, “Where do my thoughts come from?” Watch and see.\n•• Notice that every thought that comes also goes out of your mind.\n•• Observe but do not evaluate your thoughts. Let go of judgments.\n3.  Remember: You are not your thoughts.\n•• Do not necessarily act on thoughts.\n•• Remember times when you have had very different thoughts.\n•• Remind yourself that catastrophic thinking is “emotion mind.”\n•• Remember how you think when you are not feeling such intense suffering\nand pain.\n4.  Don’t block or suppress thoughts.\n•• Ask, “What sensations are these thoughts trying to avoid?” Turn your mind\nto the sensation. Then come back to the thought. Repeat several times.\n•• Step back; allow your thoughts to come and go as you observe your breath.\n•• Play with your thoughts: Repeat them out loud over and over as fast as\nyou can. Sing them. Imagine the thoughts as the words of a clown, as\nrecordings getting all tangled up; as cute animals you can cuddle up to; as\nbright colors running through your mind; as only sounds.\n•• Try loving your thoughts."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Handout 15   (Distress Tolerance Worksheets 8, 8a, 12)",
+    "source_pdf_pages": [
+      374
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/handouts/distress_tolerance_handout_15_mindfulness_of_current_thoughts.json",
+    "item_number": "15",
+    "full_text": "«\nDistress Tolerance Handout 15   (Distress Tolerance Worksheets 8, 8a, 12)\nMindfulness of Current Thoughts\n1.  Observe your thoughts.\n•• As waves, coming and going.\n•• Not suppressing thoughts.\n•• Not judging thoughts.\n•• Acknowledging their presence.\n•• Not keeping thoughts around.\n•• Not analyzing thoughts.\n•• Practicing willingness.\n•• Stepping back and observing\nthoughts as they run in and out of\nyour mind.\n2.  Adopt a curious mind.\n•• Ask, “Where do my thoughts come from?” Watch and see.\n•• Notice that every thought that comes also goes out of your mind.\n•• Observe but do not evaluate your thoughts. Let go of judgments.\n3.  Remember: You are not your thoughts.\n•• Do not necessarily act on thoughts.\n•• Remember times when you have had very different thoughts.\n•• Remind yourself that catastrophic thinking is “emotion mind.”\n•• Remember how you think when you are not feeling such intense suffering\nand pain.\n4.  Don’t block or suppress thoughts.\n•• Ask, “What sensations are these thoughts trying to avoid?” Turn your mind\nto the sensation. Then come back to the thought. Repeat several times.\n•• Step back; allow your thoughts to come and go as you observe your breath.\n•• Play with your thoughts: Repeat them out loud over and over as fast as\nyou can. Sing them. Imagine the thoughts as the words of a clown, as\nrecordings getting all tangled up; as cute animals you can cuddle up to; as\nbright colors running through your mind; as only sounds.\n•• Try loving your thoughts.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Worksheets 8, 8a, 12"
+    ],
+    "id": "distress_tolerance_handout_15",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "350"
+    ],
+    "title": "Mindfulness of Current Thoughts",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_15_mindfulness_of_current_thoughts.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Current",
+      "Mindfulness",
+      "Thoughts"
+    ]
+  }
+}

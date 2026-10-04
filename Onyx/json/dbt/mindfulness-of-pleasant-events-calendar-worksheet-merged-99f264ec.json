@@ -1,0 +1,86 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "mindfulness-of-pleasant-events-calendar-4f3a99f264ec",
+  "title": "Mindfulness of Pleasant Events Calendar",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9626
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/02-dbt-mindfulness-mindfulness-worksheet-8-mindfulness-of-pleasant-events-calendar-565a434775.json",
+        "sha256": "565a43477509cce38cc7249767a14ffb74afb4877cb289ce96957a05d92fbfa3",
+        "domain": "dbt",
+        "bytes": 4882
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/mindfulness-worksheet-8-mindfulness-of-pleasant-events-calendar-82c3a43b28.json",
+        "sha256": "82c3a43b287d86b4ccd2deadf2971a606d605d85e9118efea5be6a5b25fad478",
+        "domain": "dbt",
+        "bytes": 4746
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 125,
+        "book_page": "101",
+        "text": "101\nMindfulness Worksheet 8   (Mindfulness Handouts 9, 9a)\nMindfulness of Pleasant Events Calendar\nDue Date:\n  Name:\n Week Starting:\nBe aware of a pleasant event at the time it is happening. Pay attention to everyday, ordinary events that at the time feel pleasant to you.\nTry to experience the moment, even if it is only fleeting. Use the following questions to focus your awareness on the details of the experience\nas it is happening. Write it down later.\nWhat was the\nexperience?\nWhat was the one\nactivity in just one\nmoment that you could\nbring your attention to?\nHow did your body feel\nduring this experience?\nDescribe your emotions\nand thoughts while\npracticing the skill.\nWhat is your experience\nnow, after using the\nskill?\nExample: Seeing a bird while\nwalking around green lake.\nYes.\nLightness across the face,\naware of shoulders dropping,\nuplift of corners of mouth.\nRelief, pleasure, “That’s\ngood,” “How lovely (the bird)\nsings,” “It’s so nice to be\noutside.”\nIt was such a small thing but\nI’m glad I noticed it.\nMonday:\nTuesday:\nWednesday:\n(continued on next page)\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      },
+      {
+        "pdf_page": 126,
+        "book_page": "102",
+        "text": "102\nWhat was the\nexperience?\nWhat was the one\nactivity in just one\nmoment that you could\nbring your attention to?\nHow did your body feel\nduring this experience?\nDescribe your emotions\nand thoughts while\npracticing the skill.\nWhat is your experience\nnow, after using the\nskill?\nThursday:\nFriday:\nSaturday:\nSunday:\nList any and all wise things you did this week:\n\nMindfulness Worksheet 8   (p. 2 of 2)"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Mindfulness Worksheet 8   (Mindfulness Handouts 9, 9a)",
+    "source_pdf_pages": [
+      125,
+      126
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/mindfulness/worksheets/mindfulness_worksheet_8_mindfulness_of_pleasant_events_calendar.json",
+    "item_number": "8",
+    "full_text": "Mindfulness Worksheet 8   (Mindfulness Handouts 9, 9a)\nMindfulness of Pleasant Events Calendar\nDue Date:\n  Name:\n Week Starting:\nBe aware of a pleasant event at the time it is happening. Pay attention to everyday, ordinary events that at the time feel pleasant to you.\nTry to experience the moment, even if it is only fleeting. Use the following questions to focus your awareness on the details of the experience\nas it is happening. Write it down later.\nWhat was the\nexperience?\nWhat was the one\nactivity in just one\nmoment that you could\nbring your attention to?\nHow did your body feel\nduring this experience?\nDescribe your emotions\nand thoughts while\npracticing the skill.\nWhat is your experience\nnow, after using the\nskill?\nExample: Seeing a bird while\nwalking around green lake.\nYes.\nLightness across the face,\naware of shoulders dropping,\nuplift of corners of mouth.\nRelief, pleasure, “That’s\ngood,” “How lovely (the bird)\nsings,” “It’s so nice to be\noutside.”\nIt was such a small thing but\nI’m glad I noticed it.\nMonday:\nTuesday:\nWednesday:\n(continued on next page)\n\nWhat was the\nexperience?\nWhat was the one\nactivity in just one\nmoment that you could\nbring your attention to?\nHow did your body feel\nduring this experience?\nDescribe your emotions\nand thoughts while\npracticing the skill.\nWhat is your experience\nnow, after using the\nskill?\nThursday:\nFriday:\nSaturday:\nSunday:\nList any and all wise things you did this week:\n\nMindfulness Worksheet 8   (p. 2 of 2)",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Mindfulness Handouts 9, 9a"
+    ],
+    "html_path": "html/worksheets/mindfulness/mindfulness_worksheet_8_mindfulness_of_pleasant_events_calendar.html",
+    "id": "mindfulness_worksheet_8",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "101",
+      "102"
+    ],
+    "title": "Mindfulness of Pleasant Events Calendar",
+    "module_category": "Mindfulness Skills",
+    "shared_json_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_8_mindfulness_of_pleasant_events_calendar.json",
+    "module": "Mindfulness",
+    "keywords": [
+      "Calendar",
+      "Events",
+      "Mindfulness",
+      "Pleasant"
+    ]
+  }
+}

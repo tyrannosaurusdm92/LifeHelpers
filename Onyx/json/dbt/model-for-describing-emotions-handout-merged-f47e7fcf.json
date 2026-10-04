@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "model-for-describing-emotions-427ef47e7fcf",
+  "title": "Model for Describing Emotions",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9381
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-5-model-for-describing-emotions-d6a9c02908.json",
+        "sha256": "d6a9c029088befeadf3946f5e7b8a3297e151d69a3a660acaf8c100c48fd53b0",
+        "domain": "dbt",
+        "bytes": 2943
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-5-model-for-describing-emotions-7547ddd657.json",
+        "sha256": "7547ddd6576938987f441554a55df131c2bad6b8542a7209e249acbc6ea54993",
+        "domain": "dbt",
+        "bytes": 2807
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 237,
+        "book_page": "213",
+        "text": "213\n☐\nEmotion Regulation Handout 5   (Emotion Regulation Worksheets 4, 4a)\nModel for Describing Emotions\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this handout is granted to purchasers of this\nbook for personal use only (see copyright page for details).\n(Thoughts/beliefs about\nprompting event)\nBiological Changes\nBrain changes\n(neural firing)\nNervous system changes\n(internal body changes\nthat affect muscles\nand autonomic system\nfiring—blood vessels,\nheart rate, temperature)\nExperiences\nBody sensations (feelings)\nAction urges\nExpressions\nFace and Body Language\n(facial expression, posture,\ngestures, skin color)\nWords\n(what you say)\nActions\n(your behavior)\nPreexisting\nVulnerability Factors\nInterpretation\nAttention/Awareness\nPrompting Event\nAttention/Awareness\nPrompting Event 2\nSecondary\nEmotions\nAftereffects\nEmotion\nName\nAwareness"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 5   (Emotion Regulation Worksheets 4, 4a)",
+    "source_pdf_pages": [
+      237
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_5_model_for_describing_emotions.json",
+    "item_number": "5",
+    "full_text": "☐\nEmotion Regulation Handout 5   (Emotion Regulation Worksheets 4, 4a)\nModel for Describing Emotions\n(Thoughts/beliefs about\nprompting event)\nBiological Changes\nBrain changes\n(neural firing)\nNervous system changes\n(internal body changes\nthat affect muscles\nand autonomic system\nfiring—blood vessels,\nheart rate, temperature)\nExperiences\nBody sensations (feelings)\nAction urges\nExpressions\nFace and Body Language\n(facial expression, posture,\ngestures, skin color)\nWords\n(what you say)\nActions\n(your behavior)\nPreexisting\nVulnerability Factors\nInterpretation\nAttention/Awareness\nPrompting Event\nAttention/Awareness\nPrompting Event 2\nSecondary\nEmotions\nAftereffects\nEmotion\nName\nAwareness",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheets 4, 4a"
+    ],
+    "id": "emotion_regulation_handout_5",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "213"
+    ],
+    "title": "Model for Describing Emotions",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_5_model_for_describing_emotions.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Describing",
+      "Emotions",
+      "Model"
+    ]
+  }
+}

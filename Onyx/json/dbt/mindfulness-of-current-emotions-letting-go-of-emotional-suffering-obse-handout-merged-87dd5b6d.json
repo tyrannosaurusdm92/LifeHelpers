@@ -1,0 +1,83 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "mindfulness-of-current-emotions-letting-go-of-emotional-suffering-observe-your-e-c31b87dd5b6d",
+  "title": "Mindfulness of Current Emotions: Letting Go of Emotional Suffering Observe Your Emotion",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9547
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-22-mindfulness-of-current-emotions-lett-6dcc4ed29d.json",
+        "sha256": "6dcc4ed29de698960bb88b8c01ae547b567cac7b5910ffe8a0a5608fd9e8ac96",
+        "domain": "dbt",
+        "bytes": 3835
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-22-mindfulness-of-current-emotions-letting-go-of-emotional-suffer-dd8ba60c31.json",
+        "sha256": "dd8ba60c3170352cb7f16a94bf57751e66a508c499eb504a489c16144ed0784f",
+        "domain": "dbt",
+        "bytes": 3676
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 288,
+        "book_page": "264",
+        "text": "264\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nEmotion Regulation Handout 22   (Emotion Regulation Worksheet 15)\nMindfulness of Current Emotions:\nLetting Go of Emotional Suffering\nObserve Your Emotion\n•• Step back and just notice your emotion.\n•• Experience your emotion as a wave, coming and going.\n•• Now imagine surfing the emotion wave.\n•• Try not to block or suppress the emotion.\n•• Don’t try to get rid of or push away the emotion.\n•• Don’t try to keep the emotion around.\n•• Don’t hold on to it.\n•• Don’t amplify it.\nPractice Mindfulness of Body Sensations\n•• Notice where in your body you are feeling emotional sensations.\n•• Experience the sensations as fully as you can.\n•• Observe how long it takes before the emotion goes down.\nRemember: You Are Not Your Emotion\n•• Do not necessarily act on your emotion.\n•• Remember times when you have felt different.\nPractice Loving Your Emotion\n•• Respect your emotion.\n•• Do not judge your emotion.\n•• Practice willingness.\n•• Radically accept your emotion."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 22   (Emotion Regulation Worksheet 15)",
+    "source_pdf_pages": [
+      288
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_22_mindfulness_of_current_emotions_letting_go_of_emotional_suffering_obse.json",
+    "item_number": "22",
+    "full_text": "☐\nEmotion Regulation Handout 22   (Emotion Regulation Worksheet 15)\nMindfulness of Current Emotions:\nLetting Go of Emotional Suffering\nObserve Your Emotion\n•• Step back and just notice your emotion.\n•• Experience your emotion as a wave, coming and going.\n•• Now imagine surfing the emotion wave.\n•• Try not to block or suppress the emotion.\n•• Don’t try to get rid of or push away the emotion.\n•• Don’t try to keep the emotion around.\n•• Don’t hold on to it.\n•• Don’t amplify it.\nPractice Mindfulness of Body Sensations\n•• Notice where in your body you are feeling emotional sensations.\n•• Experience the sensations as fully as you can.\n•• Observe how long it takes before the emotion goes down.\nRemember: You Are Not Your Emotion\n•• Do not necessarily act on your emotion.\n•• Remember times when you have felt different.\nPractice Loving Your Emotion\n•• Respect your emotion.\n•• Do not judge your emotion.\n•• Practice willingness.\n•• Radically accept your emotion.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheet 15"
+    ],
+    "id": "emotion_regulation_handout_22",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "264"
+    ],
+    "title": "Mindfulness of Current Emotions: Letting Go of Emotional Suffering Observe Your Emotion",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_22_mindfulness_of_current_emotions_letting_go_860d62f6.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Current",
+      "Emotion",
+      "Emotional",
+      "Emotions",
+      "Letting",
+      "Mindfulness",
+      "Observe",
+      "Suffering",
+      "Your"
+    ]
+  }
+}

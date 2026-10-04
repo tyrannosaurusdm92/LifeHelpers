@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "guilt-words-guilt-culpability-remorse-1e3ae4be5073",
+  "title": "Guilt Words guilt culpability remorse",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9612
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-6-guilt-words-guilt-culpability-remorse-340d5d01f5.json",
+        "sha256": "340d5d01f5dcacc7711556bf1892382ce99fd4ffb17df51135220f9a54d1980d",
+        "domain": "dbt",
+        "bytes": 5281
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-6-guilt-words-guilt-culpability-remorse-35955ea7cf.json",
+        "sha256": "35955ea7cfd7584d7e5451a4d1cb4c429d9d5dbfeb90645a47bf27fc37272bf3",
+        "domain": "dbt",
+        "bytes": 5137
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 247,
+        "book_page": "223",
+        "text": "223\nEmotion Regulation Handout 6   (p. 10 of 10)\nGuilt Words\nguilt\nculpability\nremorse\napologetic\nregret\nsorry\nPrompting Events for Feeling Guilt\n•• Doing or thinking something you believe is\nwrong.\n•• Doing or thinking something that violates your\npersonal values.\n•• Not doing something you said that you would\ndo.\n•• Committing a transgression against another\nperson or something you value.\n•• Causing harm/damage to another person or\nobject.\n•• Causing harm/damage to yourself.\n•• Being reminded of something wrong you did\nin the past.\n•• Other:\n\nInterpretations of Events That Prompt Feelings of Guilt\n•• Thinking that your actions are to blame for\nsomething.\n•• Thinking that you behaved badly.\n•• Thinking, “If only I had done something\ndifferently . . . ”\n•• Other:\nBiological Changes and Experiences of Guilt\n•• Hot, red face.\n•• Jitteriness, nervousness.\n•• Suffocating.\n•• Other:\nExpressions and Actions of Guilt\n•• Trying to repair the harm, make amends for the wrongdoing, fix the damage, change the\noutcome.\n•• Asking for forgiveness, apologizing, confessing.\n•• Giving gifts/making sacrifices to try to make up for the transgression.\n•• Bowing your head; kneeling before the person.\nAftereffects of Guilt\n•• Making resolutions to change.\n•• Making changes in behavior.\n•• Joining self-help programs.\n•• Other:\nOther Important Emotion Words\n•• Weariness, dissatisfaction, disinclination.\n•• Distress.\n•• Shyness, fragility, reserve, bashfulness, coyness, reticence.\n•• Cautiousness, reluctance, suspiciousness, caginess, wariness.\n•• Surprise, amazement, astonishment, awe, startle, wonder.\n•• Boldness, bravery, courage, determination.\n•• Powerfulness, a sense of competence, capability, mastery.\n•• Dubiousness, skepticism, doubtfulness.\n•• Apathy, boredom, dullness, ennui, fidgetiness, impatience, indifference, listlessness."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 6   (p. 10 of 10)",
+    "source_pdf_pages": [
+      247
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_6_guilt_words_guilt_culpability_remorse.json",
+    "item_number": "6",
+    "full_text": "Emotion Regulation Handout 6   (p. 10 of 10)\nGuilt Words\nguilt\nculpability\nremorse\napologetic\nregret\nsorry\nPrompting Events for Feeling Guilt\n•• Doing or thinking something you believe is\nwrong.\n•• Doing or thinking something that violates your\npersonal values.\n•• Not doing something you said that you would\ndo.\n•• Committing a transgression against another\nperson or something you value.\n•• Causing harm/damage to another person or\nobject.\n•• Causing harm/damage to yourself.\n•• Being reminded of something wrong you did\nin the past.\n•• Other:\n\nInterpretations of Events That Prompt Feelings of Guilt\n•• Thinking that your actions are to blame for\nsomething.\n•• Thinking that you behaved badly.\n•• Thinking, “If only I had done something\ndifferently . . . ”\n•• Other:\nBiological Changes and Experiences of Guilt\n•• Hot, red face.\n•• Jitteriness, nervousness.\n•• Suffocating.\n•• Other:\nExpressions and Actions of Guilt\n•• Trying to repair the harm, make amends for the wrongdoing, fix the damage, change the\noutcome.\n•• Asking for forgiveness, apologizing, confessing.\n•• Giving gifts/making sacrifices to try to make up for the transgression.\n•• Bowing your head; kneeling before the person.\nAftereffects of Guilt\n•• Making resolutions to change.\n•• Making changes in behavior.\n•• Joining self-help programs.\n•• Other:\nOther Important Emotion Words\n•• Weariness, dissatisfaction, disinclination.\n•• Distress.\n•• Shyness, fragility, reserve, bashfulness, coyness, reticence.\n•• Cautiousness, reluctance, suspiciousness, caginess, wariness.\n•• Surprise, amazement, astonishment, awe, startle, wonder.\n•• Boldness, bravery, courage, determination.\n•• Powerfulness, a sense of competence, capability, mastery.\n•• Dubiousness, skepticism, doubtfulness.\n•• Apathy, boredom, dullness, ennui, fidgetiness, impatience, indifference, listlessness.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "id": "emotion_regulation_handout_6",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "223"
+    ],
+    "title": "Guilt Words guilt culpability remorse",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_6_guilt_words_guilt_culpability_remorse.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Guilt",
+      "Words",
+      "culpability",
+      "guilt",
+      "remorse"
+    ]
+  }
+}

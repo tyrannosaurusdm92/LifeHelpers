@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "improve-the-moment-d1fb235aefdb",
+  "title": "IMPROVE the Moment",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9522
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-7a-improve-the-moment-82710b880a.json",
+        "sha256": "82710b880a2c345b2bf67a4198729730a1c6a64589f38ac6e4619d56fcadd68b",
+        "domain": "dbt",
+        "bytes": 3570
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-7a-improve-the-moment-30e705ee4b.json",
+        "sha256": "30e705ee4be43cf07eff082480a275e1c2ee20263ef35c112a251a0d38e7dedd",
+        "domain": "dbt",
+        "bytes": 3440
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 411,
+        "book_page": "387",
+        "text": "387\nDistress Tolerance Worksheet 7a   (Distress Tolerance Handout 9)\nIMPROVE the Moment\nDue Date:             Name:                                    Week Starting:\nPractice each IMPROVE skill twice, and describe your experience as follows:\nWhen did you practice this skill, and\nwhat did you do to practice?\nWhat was going on that\nwas painful or stressful (if\nanything)?\nHow\nmuch\ntime\npassed in\ndoing this\nskill?\nRate before/after skill use\nConclusions or questions\nabout this skills practice\nDistress tolerance\n(0 = I can’t stand it;\n5 = I can definitely\nsurvive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\nImagery:\n/\n/\n/\n/\n/\n/\nMeaning:\n/\n/\n/\n/\n/\n/\nPrayer:\n/\n/\n/\n/\n/\n/\nRelaxation:\n/\n/\n/\n/\n/\n/\nOne thing:\n/\n/\n/\n/\n/\n/\nVacation:\n/\n/\n/\n/\n/\n/\nEncouragement:\n/\n/\n/\n/\n/\n/\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 7a   (Distress Tolerance Handout 9)",
+    "source_pdf_pages": [
+      411
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_7a_improve_the_moment.json",
+    "item_number": "7a",
+    "full_text": "Distress Tolerance Worksheet 7a   (Distress Tolerance Handout 9)\nIMPROVE the Moment\nDue Date:             Name:                                    Week Starting:\nPractice each IMPROVE skill twice, and describe your experience as follows:\nWhen did you practice this skill, and\nwhat did you do to practice?\nWhat was going on that\nwas painful or stressful (if\nanything)?\nHow\nmuch\ntime\npassed in\ndoing this\nskill?\nRate before/after skill use\nConclusions or questions\nabout this skills practice\nDistress tolerance\n(0 = I can’t stand it;\n5 = I can definitely\nsurvive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\nImagery:\n/\n/\n/\n/\n/\n/\nMeaning:\n/\n/\n/\n/\n/\n/\nPrayer:\n/\n/\n/\n/\n/\n/\nRelaxation:\n/\n/\n/\n/\n/\n/\nOne thing:\n/\n/\n/\n/\n/\n/\nVacation:\n/\n/\n/\n/\n/\n/\nEncouragement:\n/\n/\n/\n/\n/\n/\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handout 9"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_7a_improve_the_moment.html",
+    "id": "distress_tolerance_worksheet_7a",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "387"
+    ],
+    "title": "IMPROVE the Moment",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_7a_improve_the_moment.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "IMPROVE",
+      "Moment"
+    ]
+  }
+}

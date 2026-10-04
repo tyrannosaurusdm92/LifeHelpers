@@ -1,0 +1,84 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "goals-of-distress-tolerance-survive-crisis-situations-without-making-them-worse-e57d5b821c6a",
+  "title": "Goals of Distress Tolerance Survive Crisis Situations Without Making Them Worse Accept Reality",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9271
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-handout-1-goals-of-distress-tolerance-survive-c-c2a60fa247.json",
+        "sha256": "c2a60fa24732114608097d361bd2799ea4b32ab699a9748488c96369a8701ca3",
+        "domain": "dbt",
+        "bytes": 2339
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-handout-1-goals-of-distress-tolerance-survive-crisis-situations-without-m-90910676b6.json",
+        "sha256": "90910676b6f842e3c954e3e245885aa51a9e9c2568a0149dbb555fd7454aea08",
+        "domain": "dbt",
+        "bytes": 2179
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 345,
+        "book_page": "321",
+        "text": "321\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n«\nDistress Tolerance Handout 1\nGoals of Distress Tolerance\nSurvive Crisis Situations\nWithout Making Them Worse\nAccept Reality\nReplace Suffering and Being “Stuck”\nwith Ordinary Pain and the Possibility of Moving Forward\nBecome Free\nOf Having to Satisfy\nthe Demands of Your Own\nDesires, Urges, and Intense Emotions\nOther:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Handout 1",
+    "source_pdf_pages": [
+      345
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/handouts/distress_tolerance_handout_1_goals_of_distress_tolerance_survive_crisis_situations_without_making_t.json",
+    "item_number": "1",
+    "full_text": "«\nDistress Tolerance Handout 1\nGoals of Distress Tolerance\nSurvive Crisis Situations\nWithout Making Them Worse\nAccept Reality\nReplace Suffering and Being “Stuck”\nwith Ordinary Pain and the Possibility of Moving Forward\nBecome Free\nOf Having to Satisfy\nthe Demands of Your Own\nDesires, Urges, and Intense Emotions\nOther:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "id": "distress_tolerance_handout_1",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "321"
+    ],
+    "title": "Goals of Distress Tolerance Survive Crisis Situations Without Making Them Worse Accept Reality",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_1_goals_of_distress_tolerance_survive_crisis_s_da2e16bd.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Accept",
+      "Crisis",
+      "Distress",
+      "Goals",
+      "Making",
+      "Reality",
+      "Situations",
+      "Survive",
+      "Them",
+      "Tolerance",
+      "Without",
+      "Worse"
+    ]
+  }
+}

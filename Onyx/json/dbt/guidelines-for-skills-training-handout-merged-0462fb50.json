@@ -1,0 +1,75 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "guidelines-for-skills-training-65ea0462fb50",
+  "title": "Guidelines for Skills Training",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9646
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/01-dbt-general-orientation-and-analyzing-behavior-general-handout-3-guidelines-for-skills-tr-061fa39def.json",
+        "sha256": "061fa39deffefc353a43e13ea42bc7a653c9c2b147dc2b24727b7af92572dfb5",
+        "domain": "dbt",
+        "bytes": 4486
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/general-handout-3-guidelines-for-skills-training-3820a1320b.json",
+        "sha256": "3820a1320ba421769b3815b8aff812cd41a9eda49dd54e657f42c4354a6e3987",
+        "domain": "dbt",
+        "bytes": 4336
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 36,
+        "book_page": "12",
+        "text": "12\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nGeneral Handout 3\nGuidelines for Skills Training\n1.\t Participants who drop out of skills training are not out of skills training.\na.\t The only way out is to miss four scheduled sessions of skills training in a row.\n2.\t Participants who join the skills training group support each other and:\na.\t Keep names of other participants and information obtained during sessions confidential.\nb.\t Come to each group session on time and stay until the end.\nc.\t Make every effort to practice skills between sessions.\nd.\t Validate each other, avoid judging each other, and assume the best about each other.\ne.\t Give helpful, noncritical feedback when asked.\nf.\t Are willing to accept help from a person they ask or call for help.\n3.\t Participants who join the skills training group:\na.\t Call ahead of time if they are going to be late or miss a session.\n4.\t Participants do not tempt others to engage in problem behaviors and:\na.\t Do not come to sessions under the influence of drugs or alcohol.\nb.\t If drugs or alcohol have already been used, come to sessions acting and appearing clean\nand sober.\nc.\t Do not discuss, inside or outside sessions, current or past problem behaviors that could be\ncontagious to others.\n5.\t Participants do not form confidential relationships with each other outside of skills\ntraining sessions and:\na.\t Do not start a sexual or a private relationship that cannot be discussed in group.\nb.\t Are not partners in risky behaviors, crime, or drug use.\nOther guidelines for this group/notes:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "General Handout 3",
+    "source_pdf_pages": [
+      36
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/general/handouts/general_handout_3_guidelines_for_skills_training.json",
+    "item_number": "3",
+    "full_text": "☐\nGeneral Handout 3\nGuidelines for Skills Training\n1.\t Participants who drop out of skills training are not out of skills training.\na.\t The only way out is to miss four scheduled sessions of skills training in a row.\n2.\t Participants who join the skills training group support each other and:\na.\t Keep names of other participants and information obtained during sessions confidential.\nb.\t Come to each group session on time and stay until the end.\nc.\t Make every effort to practice skills between sessions.\nd.\t Validate each other, avoid judging each other, and assume the best about each other.\ne.\t Give helpful, noncritical feedback when asked.\nf.\t Are willing to accept help from a person they ask or call for help.\n3.\t Participants who join the skills training group:\na.\t Call ahead of time if they are going to be late or miss a session.\n4.\t Participants do not tempt others to engage in problem behaviors and:\na.\t Do not come to sessions under the influence of drugs or alcohol.\nb.\t If drugs or alcohol have already been used, come to sessions acting and appearing clean\nand sober.\nc.\t Do not discuss, inside or outside sessions, current or past problem behaviors that could be\ncontagious to others.\n5.\t Participants do not form confidential relationships with each other outside of skills\ntraining sessions and:\na.\t Do not start a sexual or a private relationship that cannot be discussed in group.\nb.\t Are not partners in risky behaviors, crime, or drug use.\nOther guidelines for this group/notes:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "id": "general_handout_3",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "12"
+    ],
+    "title": "Guidelines for Skills Training",
+    "module_category": "General Skills: Orientation and Analyzing Behavior",
+    "shared_json_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_3_guidelines_for_skills_training.json",
+    "module": "General",
+    "keywords": [
+      "Guidelines",
+      "Skills",
+      "Training"
+    ]
+  }
+}

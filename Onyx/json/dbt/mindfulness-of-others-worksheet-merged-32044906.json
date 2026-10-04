@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "mindfulness-of-others-439332044906",
+  "title": "Mindfulness of Others",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9677
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/03-dbt-interpersonal-effectiveness-interpersonal-effectiveness-worksheet-9-mindfulness-of-ot-ed3c7b4ff3.json",
+        "sha256": "ed3c7b4ff380c700524ce7eb1fdd0f9f592d168226015f6b3bffd19dc62c8856",
+        "domain": "dbt",
+        "bytes": 5184
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/interpersonal-effectiveness-worksheet-9-mindfulness-of-others-445d3bdef9.json",
+        "sha256": "445d3bdef9d014187a38bed2a67157d31589580af104f430854baeb19e1d63d7",
+        "domain": "dbt",
+        "bytes": 5034
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 208,
+        "book_page": "184",
+        "text": "184\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nInterpersonal Effectiveness Worksheet 9   (I. E. Handout 12)\nMindfulness of Others\nDue Date:             Name:                                    Week Starting:\nFill out this sheet whenever you practice mindfulness of others and whenever you have an opportu-\nnity to practice even if you don’t (or almost don’t) do anything to practice. Write on the back of this\nsheet if you need more room.\nCheck off any of the following that you practiced:\n\u0003\n Paid attention with interest and curiosity to others around me.\n\u0003\n Let go of a focus on myself, and focused on the people I was with.\n\u0003\n Noticed judgmental thoughts about others and let them go.\n\u0003\n Stayed in the present (instead of planning what I would say next) and listened.\n\u0003\n Put my entire attention on the other person and did not multitask.\n\u0003\n Gave up clinging to being right.\n\u0003\n Other:\n\u0003\n Described in a matter-of-fact way what I observed.\n\u0003\n Replaced judgmental descriptions with descriptive words.\n\u0003\n Described what I observed, instead of making assumptions and interpretations of others.\n\u0003\n Avoided questioning others’ motives.\n\u0003\n Other:\n\u0003\n Threw myself into interactions with others.\n\u0003\n Went with the flow, rather than trying to control everything.\n\u0003\n Became one with the conversation I was in.\n\u0003\n Other:\nDescribe a situation where you practiced mindfulness of others in the last week.\n\nWho was the person you were with?\nHow exactly did you practice mindfulness?\nWhat was the outcome?\n\nHow did you feel afterward?\nDid being mindful make a difference? If so, what?"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Interpersonal Effectiveness Worksheet 9   (I. E. Handout 12)",
+    "source_pdf_pages": [
+      208
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/interpersonal_effectiveness/worksheets/interpersonal_effectiveness_worksheet_9_mindfulness_of_others.json",
+    "item_number": "9",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nInterpersonal Effectiveness Worksheet 9   (I. E. Handout 12)\nMindfulness of Others\nDue Date:             Name:                                    Week Starting:\nFill out this sheet whenever you practice mindfulness of others and whenever you have an opportu-\nnity to practice even if you don’t (or almost don’t) do anything to practice. Write on the back of this\nsheet if you need more room.\nCheck off any of the following that you practiced:\n\u0003\n Paid attention with interest and curiosity to others around me.\n\u0003\n Let go of a focus on myself, and focused on the people I was with.\n\u0003\n Noticed judgmental thoughts about others and let them go.\n\u0003\n Stayed in the present (instead of planning what I would say next) and listened.\n\u0003\n Put my entire attention on the other person and did not multitask.\n\u0003\n Gave up clinging to being right.\n\u0003\n Other:\n\u0003\n Described in a matter-of-fact way what I observed.\n\u0003\n Replaced judgmental descriptions with descriptive words.\n\u0003\n Described what I observed, instead of making assumptions and interpretations of others.\n\u0003\n Avoided questioning others’ motives.\n\u0003\n Other:\n\u0003\n Threw myself into interactions with others.\n\u0003\n Went with the flow, rather than trying to control everything.\n\u0003\n Became one with the conversation I was in.\n\u0003\n Other:\nDescribe a situation where you practiced mindfulness of others in the last week.\n\nWho was the person you were with?\nHow exactly did you practice mindfulness?\nWhat was the outcome?\n\nHow did you feel afterward?\nDid being mindful make a difference? If so, what?",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "I. E. Handout 12"
+    ],
+    "html_path": "html/worksheets/interpersonal_effectiveness/interpersonal_effectiveness_worksheet_9_mindfulness_of_others.html",
+    "id": "interpersonal_effectiveness_worksheet_9",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "184"
+    ],
+    "title": "Mindfulness of Others",
+    "module_category": "Interpersonal Effectiveness Skills",
+    "shared_json_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_9_mindfulness_of_others.json",
+    "module": "Interpersonal Effectiveness",
+    "keywords": [
+      "Mindfulness",
+      "Others"
+    ]
+  }
+}

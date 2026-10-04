@@ -1,0 +1,85 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "missing-links-analysis-ask-the-following-questions-to-understand-how-and-why-eff-a0b32a8ce1d6",
+  "title": "Missing-Links Analysis Ask the following questions to understand how and why effective behavior that is needed or expected did not occur.",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9712
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/01-dbt-general-orientation-and-analyzing-behavior-general-handout-8-missing-links-analysis-a-04ac3115ee.json",
+        "sha256": "04ac3115eef136291d634a334d773edba2c37f21205d26b236bda14a264318fe",
+        "domain": "dbt",
+        "bytes": 6011
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/general-handout-8-missing-links-analysis-ask-the-following-questions-to-understand-how-a-84d6b999b5.json",
+        "sha256": "84d6b999b57e6df2ea66a411592df1e526e94cc201c6f8303b659abd4c278f4b",
+        "domain": "dbt",
+        "bytes": 5827
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 47,
+        "book_page": "23",
+        "text": "23\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nGeneral Handout 8   (General Worksheet 3)\nMissing-Links Analysis\nAsk the following questions to understand how and why\neffective behavior that is needed or expected did not occur.\n1.\t Did you know what effective behavior was needed or expected (what skills\nhomework was given, what skills to use, etc.)?\nIf no to Question 1, ask what got in the way of knowing what was needed or expected.\nIdeas might include not paying attention, unclear instructions, never getting the instructions\nin the first place, becoming too overwhelmed and couldn’t process the information, and so\non.\nProblem-solve what got in the way. For example, you might work on paying\nattention, ask for clarification when you don’t understand instructions, call others, look\nup information, and so on.\n2.\t If yes to Question 1, ask were you willing to do the needed or expected effective\nbehavior?\nIf no to Question 2, ask what got in the way of willingness to do effective behaviors.\nIdeas might include willfulness, feeling inadequate, or feeling demoralized.\nProblem-solve what got in the way of willingness. For example, you might practice\nradical acceptance, do pros and cons, practice opposite action, and so on.\n3.\t If yes to Question 2, ask did the thought of doing the needed or expected effective\nbehavior ever enter your mind?\nIf no to Question 3,\nProblem-solve how to get the thought of doing effective behaviors into your mind.\nFor example, you might put it on your calendar, set your alarm to go off, put your skills\nnotebook next to your bed, practice coping ahead with difficult situations (see Emotion\nRegulation Handout 19), and so on.\n4.\t If yes to Question 3, ask what got in the way of doing the needed or expected\neffective behavior right away? Ideas might include putting it off, continuing to\nprocrastinate, not being in the mood, forgetting how to do what was needed, thinking that\nno one would care anyway (or no one would find out), and so on.\nProblem-solve what got in the way. For example, you might set a reward for doing\nwhat is expected, practice opposite action, do pros and cons, and so on."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "General Handout 8   (General Worksheet 3)",
+    "source_pdf_pages": [
+      47
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/general/handouts/general_handout_8_missing_links_analysis_ask_the_following_questions_to_understand_how_a.json",
+    "item_number": "8",
+    "full_text": "General Handout 8   (General Worksheet 3)\nMissing-Links Analysis\nAsk the following questions to understand how and why\neffective behavior that is needed or expected did not occur.\n1.\t Did you know what effective behavior was needed or expected (what skills\nhomework was given, what skills to use, etc.)?\nIf no to Question 1, ask what got in the way of knowing what was needed or expected.\nIdeas might include not paying attention, unclear instructions, never getting the instructions\nin the first place, becoming too overwhelmed and couldn’t process the information, and so\non.\nProblem-solve what got in the way. For example, you might work on paying\nattention, ask for clarification when you don’t understand instructions, call others, look\nup information, and so on.\n2.\t If yes to Question 1, ask were you willing to do the needed or expected effective\nbehavior?\nIf no to Question 2, ask what got in the way of willingness to do effective behaviors.\nIdeas might include willfulness, feeling inadequate, or feeling demoralized.\nProblem-solve what got in the way of willingness. For example, you might practice\nradical acceptance, do pros and cons, practice opposite action, and so on.\n3.\t If yes to Question 2, ask did the thought of doing the needed or expected effective\nbehavior ever enter your mind?\nIf no to Question 3,\nProblem-solve how to get the thought of doing effective behaviors into your mind.\nFor example, you might put it on your calendar, set your alarm to go off, put your skills\nnotebook next to your bed, practice coping ahead with difficult situations (see Emotion\nRegulation Handout 19), and so on.\n4.\t If yes to Question 3, ask what got in the way of doing the needed or expected\neffective behavior right away? Ideas might include putting it off, continuing to\nprocrastinate, not being in the mood, forgetting how to do what was needed, thinking that\nno one would care anyway (or no one would find out), and so on.\nProblem-solve what got in the way. For example, you might set a reward for doing\nwhat is expected, practice opposite action, do pros and cons, and so on.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "General Worksheet 3"
+    ],
+    "id": "general_handout_8",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "23"
+    ],
+    "title": "Missing-Links Analysis Ask the following questions to understand how and why effective behavior that is needed or expected did not occur.",
+    "module_category": "General Skills: Orientation and Analyzing Behavior",
+    "shared_json_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_8_missing_links_analysis_ask_the_following_questions_to_u_2550c59d.json",
+    "module": "General",
+    "keywords": [
+      "Analysis",
+      "Missing-Links",
+      "behavior",
+      "effective",
+      "expected",
+      "following",
+      "needed",
+      "occur",
+      "questions",
+      "that",
+      "understand"
+    ]
+  }
+}

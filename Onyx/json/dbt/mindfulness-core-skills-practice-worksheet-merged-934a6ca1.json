@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "mindfulness-core-skills-practice-5d5e934a6ca1",
+  "title": "Mindfulness Core Skills Practice",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9538
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/02-dbt-mindfulness-mindfulness-worksheet-2a-mindfulness-core-skills-practice-633ebda8bd.json",
+        "sha256": "633ebda8bd6fbf9f5d7882786da03dfb11beeabfeb70110a4b35140116796484",
+        "domain": "dbt",
+        "bytes": 4185
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/mindfulness-worksheet-2a-mindfulness-core-skills-practice-7a42037e3f.json",
+        "sha256": "7a42037e3f01696de2007fce4c654672624054d28a43e196be315e4fa158f9dc",
+        "domain": "dbt",
+        "bytes": 4055
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 103,
+        "book_page": "79",
+        "text": "79\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nMindfulness Worksheet 2a   (Mindfulness Handouts 2–5c)\nMindfulness Core Skills Practice\nDue Date:\n  Name:\n Week Starting:\nFor each mindfulness skill, write down what you did during the week, and then rate the quality of\nmindfulness you experienced during your practice.\nI could not focus my mind\nfor even 1 second; I was\ncompletely mindless and quit.\nI was able to focus my\nmind somewhat and stay\nin the present moment.\nI became centered in Wise\nMind and was free to let go\nand do what was needed.\n1\n         2\n         3\n         4\n5\nDay\nWise Mind\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nObserve\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nDescribe\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nParticipate\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nNonjudgmentally\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nOne-mindfully\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nEffectively\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nList any and all wise things you did this week."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Mindfulness Worksheet 2a   (Mindfulness Handouts 2–5c)",
+    "source_pdf_pages": [
+      103
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/mindfulness/worksheets/mindfulness_worksheet_2a_mindfulness_core_skills_practice.json",
+    "item_number": "2a",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nMindfulness Worksheet 2a   (Mindfulness Handouts 2–5c)\nMindfulness Core Skills Practice\nDue Date:\n  Name:\n Week Starting:\nFor each mindfulness skill, write down what you did during the week, and then rate the quality of\nmindfulness you experienced during your practice.\nI could not focus my mind\nfor even 1 second; I was\ncompletely mindless and quit.\nI was able to focus my\nmind somewhat and stay\nin the present moment.\nI became centered in Wise\nMind and was free to let go\nand do what was needed.\nDay\nWise Mind\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nObserve\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nDescribe\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nParticipate\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nNonjudgmentally\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nOne-mindfully\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nDay:\nEffectively\n      /\n Mindfulness:\n      /\n Mindfulness:\n      /\n Mindfulness:\nList any and all wise things you did this week.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Mindfulness Handouts 2–5c"
+    ],
+    "html_path": "html/worksheets/mindfulness/mindfulness_worksheet_2a_mindfulness_core_skills_practice.html",
+    "id": "mindfulness_worksheet_2a",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "79"
+    ],
+    "title": "Mindfulness Core Skills Practice",
+    "module_category": "Mindfulness Skills",
+    "shared_json_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_2a_mindfulness_core_skills_practice.json",
+    "module": "Mindfulness",
+    "keywords": [
+      "Core",
+      "Mindfulness",
+      "Practice",
+      "Skills"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "mindfulness-core-skills-practice-7c27405e2c1b",
+  "title": "Mindfulness Core Skills Practice",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.953
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/02-dbt-mindfulness-mindfulness-worksheet-2b-mindfulness-core-skills-practice-0d1269ae93.json",
+        "sha256": "0d1269ae93642b4e325bd4b5701eef95048c802349f114be9dcb4f589cdb5e50",
+        "domain": "dbt",
+        "bytes": 3549
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/mindfulness-worksheet-2b-mindfulness-core-skills-practice-0948c28bf5.json",
+        "sha256": "0948c28bf5246f270394286ae721c6cac522ab2668455fd42ba8584fada8fcc9",
+        "domain": "dbt",
+        "bytes": 3419
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 104,
+        "book_page": "80",
+        "text": "80\nMindfulness Worksheet 2b   (Mindfulness Handouts 2–5c)\nMindfulness Core Skills Practice\nDue Date:             Name:                                    Week Starting:\nPractice each mindfulness skill twice, and describe your experience as follows:\nWhen did you practice this\nskill, and what did you do to\npractice?\nWhat was going on that\nprompted practicing\nmindfulness (if anything)?\nHow much\ntime passed\nwhen you\nwere doing\nthis skill?\nRate before/after skill use\nConclusions or\nquestions about this\nskills practice\nDegree of\nfocusing\nmy mind\n(0–100)\nDegree of\nbeing centered\nin Wise Mind\n(0–100)\nWise Mind:\n/\n/\n/\n/\nObserve:\n/\n/\n/\n/\nDescribe:\n/\n/\n/\n/\nParticipate:\n/\n/\n/\n/\nNonjudgmentally:\n/\n/\n/\n/\nOne-mindfully:\n/\n/\n/\n/\nEffectively:\n/\n/\n/\n/\nList any and all wise things you did this week:\n\nNote. Adapted from an unpublished worksheet by Seth Axelrod, with his permission.\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Mindfulness Worksheet 2b   (Mindfulness Handouts 2–5c)",
+    "source_pdf_pages": [
+      104
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/mindfulness/worksheets/mindfulness_worksheet_2b_mindfulness_core_skills_practice.json",
+    "item_number": "2b",
+    "full_text": "Mindfulness Worksheet 2b   (Mindfulness Handouts 2–5c)\nMindfulness Core Skills Practice\nDue Date:             Name:                                    Week Starting:\nPractice each mindfulness skill twice, and describe your experience as follows:\nWhen did you practice this\nskill, and what did you do to\npractice?\nWhat was going on that\nprompted practicing\nmindfulness (if anything)?\nHow much\ntime passed\nwhen you\nwere doing\nthis skill?\nRate before/after skill use\nConclusions or\nquestions about this\nskills practice\nDegree of\nfocusing\nmy mind\n(0–100)\nDegree of\nbeing centered\nin Wise Mind\n(0–100)\nWise Mind:\n/\n/\n/\n/\nObserve:\n/\n/\n/\n/\nDescribe:\n/\n/\n/\n/\nParticipate:\n/\n/\n/\n/\nNonjudgmentally:\n/\n/\n/\n/\nOne-mindfully:\n/\n/\n/\n/\nEffectively:\n/\n/\n/\n/\nList any and all wise things you did this week:\n\nNote. Adapted from an unpublished worksheet by Seth Axelrod, with his permission.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Mindfulness Handouts 2–5c"
+    ],
+    "html_path": "html/worksheets/mindfulness/mindfulness_worksheet_2b_mindfulness_core_skills_practice.html",
+    "id": "mindfulness_worksheet_2b",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "80"
+    ],
+    "title": "Mindfulness Core Skills Practice",
+    "module_category": "Mindfulness Skills",
+    "shared_json_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_2b_mindfulness_core_skills_practice.json",
+    "module": "Mindfulness",
+    "keywords": [
+      "Core",
+      "Mindfulness",
+      "Practice",
+      "Skills"
+    ]
+  }
+}

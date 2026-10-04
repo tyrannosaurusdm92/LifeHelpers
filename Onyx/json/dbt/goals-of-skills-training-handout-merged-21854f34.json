@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "goals-of-skills-training-300821854f34",
+  "title": "Goals of Skills Training",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9487
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/01-dbt-general-orientation-and-analyzing-behavior-general-handout-1-goals-of-skills-training-d747f0256e.json",
+        "sha256": "d747f0256e274012a060f57aae5b2c085ce8e164d924f8d6888b8eef229fa42b",
+        "domain": "dbt",
+        "bytes": 3377
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/general-handout-1-goals-of-skills-training-06c906fc13.json",
+        "sha256": "06c906fc13d17d2d745a5a5857231445f63d3204a054e9911c0113933a5f5622",
+        "domain": "dbt",
+        "bytes": 3233
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 33,
+        "book_page": "9",
+        "text": "9\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nGeneral Handout 1   (General Worksheet 1)\nGoals of Skills Training\nGeneral Goal\nTo learn how to change your own behaviors, emotions, and thoughts\nthat are linked to problems in living and are causing misery and distress.\nSpecific Goals\nBehaviors to Decrease:\n\u0003\n Mindlessness; emptiness; being out of touch with self and others; judgmentalness.\n\u0003\n Interpersonal conflict and stress; loneliness.\n\u0003\n Absence of flexibility; difficulties with change.\n\u0003\n Up-and-down and extreme emotions; mood-dependent behavior; difficulties in regulating\nemotions.\n\u0003\n Impulsive behaviors; acting without thinking; difficulties accepting reality as it is; willfulness;\naddiction.\nSkills to Increase:\n\u0003\n Mindfulness skills.\n\u0003\n Interpersonal effectiveness skills.\n\u0003\n Emotion regulation skills.\n\u0003\n Distress tolerance skills.\nPersonal Goals\nBehaviors to Decrease:\n1.\n2.\n3.\nSkills to Increase:\n1.\n2.\n3."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "General Handout 1   (General Worksheet 1)",
+    "source_pdf_pages": [
+      33
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/general/handouts/general_handout_1_goals_of_skills_training.json",
+    "item_number": "1",
+    "full_text": "☐\nGeneral Handout 1   (General Worksheet 1)\nGoals of Skills Training\nGeneral Goal\nTo learn how to change your own behaviors, emotions, and thoughts\nthat are linked to problems in living and are causing misery and distress.\nSpecific Goals\nBehaviors to Decrease:\n\u0003\n Mindlessness; emptiness; being out of touch with self and others; judgmentalness.\n\u0003\n Interpersonal conflict and stress; loneliness.\n\u0003\n Absence of flexibility; difficulties with change.\n\u0003\n Up-and-down and extreme emotions; mood-dependent behavior; difficulties in regulating\nemotions.\n\u0003\n Impulsive behaviors; acting without thinking; difficulties accepting reality as it is; willfulness;\naddiction.\nSkills to Increase:\n\u0003\n Mindfulness skills.\n\u0003\n Interpersonal effectiveness skills.\n\u0003\n Emotion regulation skills.\n\u0003\n Distress tolerance skills.\nPersonal Goals\nBehaviors to Decrease:\n1.\n2.\n3.\nSkills to Increase:\n1.\n2.\n3.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "General Worksheet 1"
+    ],
+    "id": "general_handout_1",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "9"
+    ],
+    "title": "Goals of Skills Training",
+    "module_category": "General Skills: Orientation and Analyzing Behavior",
+    "shared_json_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_1_goals_of_skills_training.json",
+    "module": "General",
+    "keywords": [
+      "Goals",
+      "Skills",
+      "Training"
+    ]
+  }
+}

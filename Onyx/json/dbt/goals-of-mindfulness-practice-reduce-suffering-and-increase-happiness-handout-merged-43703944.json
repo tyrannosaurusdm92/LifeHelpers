@@ -1,0 +1,84 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "goals-of-mindfulness-practice-reduce-suffering-and-increase-happiness-reduce-pai-285543703944",
+  "title": "Goals of Mindfulness Practice Reduce Suffering and Increase Happiness \u0003  Reduce pain, tension, and stress.",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9394
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/02-dbt-mindfulness-mindfulness-handout-1-goals-of-mindfulness-practice-reduce-suffering-and--27a1a5e16a.json",
+        "sha256": "27a1a5e16a0a21d691c9862046525514c1ece21faf91bb9f477d6c221217b383",
+        "domain": "dbt",
+        "bytes": 2746
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/mindfulness-handout-1-goals-of-mindfulness-practice-reduce-suffering-and-increase-happiness-82a2a8596f.json",
+        "sha256": "82a2a8596f77a0d2f7be486fc76cbb40938ccbe2179742e8e4ca26e28f0d9123",
+        "domain": "dbt",
+        "bytes": 2594
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 69,
+        "book_page": "45",
+        "text": "45\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n«\nMindfulness Handout 1   (Mindfulness Worksheet 1)\nGoals of Mindfulness Practice\nReduce Suffering and Increase Happiness\n\u0003\n Reduce pain, tension, and stress.\n\u0003\n Other:\nIncrease Control of Your Mind\n\u0003\n Stop letting your mind be in control of you.\n\u0003\n Other:\nExperience Reality as It Is\n\u0003\n Live life with your eyes wide open.\n\u0003\n Experience the reality of your . . .\n•• connection to the universe.\n•• essential “goodness.”\n•• essential validity.\n\u0003\n Other:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Mindfulness Handout 1   (Mindfulness Worksheet 1)",
+    "source_pdf_pages": [
+      69
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/mindfulness/handouts/mindfulness_handout_1_goals_of_mindfulness_practice_reduce_suffering_and_increase_happiness.json",
+    "item_number": "1",
+    "full_text": "«\nMindfulness Handout 1   (Mindfulness Worksheet 1)\nGoals of Mindfulness Practice\nReduce Suffering and Increase Happiness\n\u0003\n Reduce pain, tension, and stress.\n\u0003\n Other:\nIncrease Control of Your Mind\n\u0003\n Stop letting your mind be in control of you.\n\u0003\n Other:\nExperience Reality as It Is\n\u0003\n Live life with your eyes wide open.\n\u0003\n Experience the reality of your . . .\n•• connection to the universe.\n•• essential “goodness.”\n•• essential validity.\n\u0003\n Other:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Mindfulness Worksheet 1"
+    ],
+    "id": "mindfulness_handout_1",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "45"
+    ],
+    "title": "Goals of Mindfulness Practice Reduce Suffering and Increase Happiness \u0003  Reduce pain, tension, and stress.",
+    "module_category": "Mindfulness Skills",
+    "shared_json_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_1_goals_of_mindfulness_practice_reduce_suffering_and_f30eed5e.json",
+    "module": "Mindfulness",
+    "keywords": [
+      "Goals",
+      "Happiness",
+      "Increase",
+      "Mindfulness",
+      "Practice",
+      "Reduce",
+      "Suffering",
+      "pain",
+      "stress",
+      "tension"
+    ]
+  }
+}
