@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0",
+  "domain": "psychiatry",
+  "cards": [
+    {
+      "id": "psych.timeline",
+      "use": "assessment support",
+      "guidance": [
+        "Organize onset, duration, frequency, severity, triggers, periods of remission, and functional impact."
+      ]
+    },
+    {
+      "id": "psych.screening_boundary",
+      "use": "screeners",
+      "guidance": [
+        "Screeners can flag concerns but do not establish a diagnosis by themselves."
+      ]
+    },
+    {
+      "id": "psych.med_list",
+      "use": "medication review",
+      "guidance": [
+        "Track prescriptions, over-the-counter medicines, supplements, substances, adherence, benefits, and side effects.",
+        "Do not alter doses without the prescribing clinician or pharmacist."
+      ]
+    },
+    {
+      "id": "psych.mania_red_flags",
+      "use": "urgent evaluation",
+      "guidance": [
+        "Markedly reduced need for sleep with escalating energy, risky behavior, severe agitation, or psychosis can warrant prompt clinical evaluation."
+      ]
+    },
+    {
+      "id": "psych.psychosis_support",
+      "use": "support",
+      "guidance": [
+        "Validate distress without confirming unverified beliefs as facts.",
+        "Encourage urgent professional assessment when hallucinations, delusions, confusion, or severe functional decline create safety concerns."
+      ]
+    },
+    {
+      "id": "psych.substance_context",
+      "use": "assessment support",
+      "guidance": [
+        "Ask about alcohol, cannabis, stimulants, sedatives, opioids, and other substances because they can affect mood, sleep, anxiety, cognition, and safety."
+      ]
+    },
+    {
+      "id": "psych.clinician_questions",
+      "use": "visit prep",
+      "guidance": [
+        "Prepare questions about diagnosis, alternatives, expected benefit, common side effects, monitoring, interactions, and what should trigger urgent contact."
+      ]
+    },
+    {
+      "id": "psych.boundary",
+      "use": "scope",
+      "guidance": [
+        "The AI may organize and explain information, but diagnosis and prescribing require qualified clinicians."
+      ]
+    }
+  ]
+}

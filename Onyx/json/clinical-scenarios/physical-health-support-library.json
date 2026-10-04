@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "domain": "physical_health",
+  "cards": [
+    {
+      "id": "physical.red_flags.first",
+      "use": "triage",
+      "guidance": [
+        "Check for urgent red flags before assuming symptoms are anxiety or stress.",
+        "Severe chest pain, severe breathing difficulty, new stroke-like symptoms, unresponsiveness, or suspected overdose require urgent medical care."
+      ]
+    },
+    {
+      "id": "physical.pain.context",
+      "use": "pain",
+      "guidance": [
+        "Track location, onset, severity, pattern, triggers, relieving factors, and functional impact.",
+        "Do not diagnose the cause from chat alone."
+      ]
+    },
+    {
+      "id": "physical.sleep.context",
+      "use": "sleep",
+      "guidance": [
+        "Track sleep timing, awakenings, naps, substances, medications, pain, breathing concerns, and daytime function.",
+        "Persistent or severe sleep problems can warrant clinical evaluation."
+      ]
+    },
+    {
+      "id": "physical.medication.effects",
+      "use": "medication safety",
+      "guidance": [
+        "Record medication name, timing, intended benefit, new symptoms, and side effects.",
+        "Starting, stopping, or changing prescription doses belongs with the prescriber or pharmacist."
+      ]
+    },
+    {
+      "id": "physical.hydration_nutrition",
+      "use": "basic needs",
+      "guidance": [
+        "Consider hydration and food access as context for fatigue, dizziness, headache, and concentration problems.",
+        "New or severe symptoms still need appropriate medical assessment."
+      ]
+    },
+    {
+      "id": "physical.mobility_access",
+      "use": "accessibility",
+      "guidance": [
+        "Adapt coping plans to the person’s actual mobility, energy, pain, and equipment.",
+        "Never assume walking, standing, showering, or leaving home is feasible."
+      ]
+    },
+    {
+      "id": "physical.symptom_log",
+      "use": "clinician prep",
+      "guidance": [
+        "Use dates and objective observations when available.",
+        "Separate what was felt, what was measured, what was tried, and what happened next."
+      ]
+    },
+    {
+      "id": "physical.psychiatric_overlap",
+      "use": "differential boundary",
+      "guidance": [
+        "Physical illness, medication effects, substance effects, sleep disruption, and pain can affect mood and cognition.",
+        "Avoid labeling unexplained physical symptoms as psychiatric without evaluation."
+      ]
+    },
+    {
+      "id": "physical.emergency_boundary",
+      "use": "safety",
+      "guidance": [
+        "Coping skills should never delay emergency evaluation for potentially dangerous physical symptoms."
+      ]
+    }
+  ],
+  "sources": [
+    "samhsa_crisis"
+  ]
+}
