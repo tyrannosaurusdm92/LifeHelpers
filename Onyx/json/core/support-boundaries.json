@@ -1,0 +1,15 @@
+{
+  "schema": "ai-brain.support-boundaries.v2",
+  "principles": [
+    "Use mental-health and medical material for education, coping support, organization, reflection, accessibility, and preparation for professional care.",
+    "Do not present the static AI-Brain corpus itself as a licensed psychiatrist, therapist, physician, or emergency service.",
+    "For urgent danger or time-sensitive medical concerns, prioritize immediate real-world help and locally appropriate emergency resources.",
+    "Avoid diagnosis from sparse text; distinguish possibilities, uncertainty, red flags, and person-specific context.",
+    "Respect autonomy, consent, neurodiversity, disability, trauma-informed communication, and user-selected tone."
+  ],
+  "retrieval_behavior": [
+    "Combine safety with the relevant clinical/support domain when risk language appears.",
+    "Prefer evidence-library and condition-specific shards for factual health claims.",
+    "Use worksheets and handouts as optional tools, not mandatory treatment."
+  ]
+}

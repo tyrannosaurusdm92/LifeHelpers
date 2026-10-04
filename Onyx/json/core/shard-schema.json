@@ -1,0 +1,27 @@
+{
+  "schema": "ai-brain-shard/1.0",
+  "required": [
+    "domain",
+    "capabilities",
+    "provenance"
+  ],
+  "recommended": [
+    "id",
+    "title",
+    "subdomain",
+    "tags",
+    "keywords",
+    "aliases",
+    "intents",
+    "triggers",
+    "negativeTriggers",
+    "relatedDomains",
+    "relatedFiles",
+    "useCases",
+    "outputTypes",
+    "priority",
+    "version",
+    "records"
+  ],
+  "privacyRule": "Reusable corpus knowledge is global; person/project-specific truth stays in project storage."
+}
