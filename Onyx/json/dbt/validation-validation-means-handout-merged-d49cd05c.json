@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "validation-validation-means-d06dd49cd05c",
+  "title": "Validation Validation Means:",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9589
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/03-dbt-interpersonal-effectiveness-interpersonal-effectiveness-handout-17-validation-validat-3206a65cf9.json",
+        "sha256": "3206a65cf9b51c00544499ffe254491c02d97ffc87bc79ae8cc15adf486861fe",
+        "domain": "dbt",
+        "bytes": 4555
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/interpersonal-effectiveness-handout-17-validation-validation-means-42e57d6796.json",
+        "sha256": "42e57d67968b372db12afe67c3a29036ebd51e7591db6af79f3bd5f64eea86a7",
+        "domain": "dbt",
+        "bytes": 4402
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 179,
+        "book_page": "155",
+        "text": "155\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nInterpersonal Effectiveness Handout 17   (I. E. Worksheet 12)\nValidation\nValidation Means:\n•• Finding the kernel of truth in another person’s perspective or situation; verifying the facts of\na situation.\n•• Acknowledging that a person’s emotions, thoughts, and behaviors have causes and are\ntherefore understandable.\n•• Not necessarily agreeing with the other person.\n•• Not validating what is actually invalid.\nWhy Validate?\n•• It improves our relationships by showing we are listening and understand.\n•• It improves interpersonal effectiveness by reducing:\n1.\t Pressure to prove who is right\n2.\t Negative reactivity\n3.\t Anger\n•• It makes problem solving, closeness, and support possible.\n•• Invalidation hurts.\nImportant Things to Validate\n•• The valid (and only the valid).\n•• The facts of a situation.\n•• A person’s experiences, feelings/emotions, beliefs, opinions, or thoughts about something.\n•• Suffering and difficulties.\nRemember:\n•• Every invalid response makes sense in some way.\n•• Validation is not necessarily agreeing.\n•• Validation doesn’t mean you like it.\n•• Only validate the valid!\nNote. Adapted from Linehan, M. M. (1997). Validation and psychotherapy. In A. Bohart & L. Greenberg (Eds.), Empathy reconsidered: New\ndirections in psychotherapy (pp. 353–392). Washington, DC: American Psychological Association. Copyright 1997 by the American Psycho-\nlogical Association. Adapted by permission."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Interpersonal Effectiveness Handout 17   (I. E. Worksheet 12)",
+    "source_pdf_pages": [
+      179
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/interpersonal_effectiveness/handouts/interpersonal_effectiveness_handout_17_validation_validation_means.json",
+    "item_number": "17",
+    "full_text": "Interpersonal Effectiveness Handout 17   (I. E. Worksheet 12)\nValidation\nValidation Means:\n•• Finding the kernel of truth in another person’s perspective or situation; verifying the facts of\na situation.\n•• Acknowledging that a person’s emotions, thoughts, and behaviors have causes and are\ntherefore understandable.\n•• Not necessarily agreeing with the other person.\n•• Not validating what is actually invalid.\nWhy Validate?\n•• It improves our relationships by showing we are listening and understand.\n•• It improves interpersonal effectiveness by reducing:\n1.\t Pressure to prove who is right\n2.\t Negative reactivity\n3.\t Anger\n•• It makes problem solving, closeness, and support possible.\n•• Invalidation hurts.\nImportant Things to Validate\n•• The valid (and only the valid).\n•• The facts of a situation.\n•• A person’s experiences, feelings/emotions, beliefs, opinions, or thoughts about something.\n•• Suffering and difficulties.\nRemember:\n•• Every invalid response makes sense in some way.\n•• Validation is not necessarily agreeing.\n•• Validation doesn’t mean you like it.\n•• Only validate the valid!\nNote. Adapted from Linehan, M. M. (1997). Validation and psychotherapy. In A. Bohart & L. Greenberg (Eds.), Empathy reconsidered: New\ndirections in psychotherapy (pp. 353–392). Washington, DC: American Psychological Association. Copyright 1997 by the American Psycho-\nlogical Association. Adapted by permission.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "I. E. Worksheet 12"
+    ],
+    "id": "interpersonal_effectiveness_handout_17",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "155"
+    ],
+    "title": "Validation Validation Means:",
+    "module_category": "Interpersonal Effectiveness Skills",
+    "shared_json_path": "shared/03_dbt_interpersonal_effectiveness/handouts_json/interpersonal_effectiveness_handout_17_validation_validation_means.json",
+    "module": "Interpersonal Effectiveness",
+    "keywords": [
+      "Means",
+      "Validation"
+    ]
+  }
+}

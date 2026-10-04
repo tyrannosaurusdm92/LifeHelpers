@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "validating-others-d6709381b5d1",
+  "title": "Validating Others",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9617
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/03-dbt-interpersonal-effectiveness-interpersonal-effectiveness-worksheet-12-validating-other-ce8cc321e3.json",
+        "sha256": "ce8cc321e3bdc919647d1eeeb11cc914fafc310c57a599f7b5275ada03b7dd1b",
+        "domain": "dbt",
+        "bytes": 4295
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/interpersonal-effectiveness-worksheet-12-validating-others-f2b58f6072.json",
+        "sha256": "f2b58f6072dde972bb695f9ebd522ba70fdd8b2db7813b045ef27e67d1b25a09",
+        "domain": "dbt",
+        "bytes": 4148
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 216,
+        "book_page": "192",
+        "text": "192\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nInterpersonal Effectiveness Worksheet 12   (I. E. Handouts 17, 18)\nValidating Others\nDue Date:\n  Name:\n Week Starting:\nFill out this sheet whenever you practice your validation skills and whenever you have an opportunity\nto practice even if you don’t (or almost don’t) do anything to practice. Write on the back of this sheet\nif you need more room.\nCheck off types of validation that you practiced (on purpose) with others:\n\u0003\n 1.\t Paid attention.\n\u0003\n 2.\tReflected back what was said or done,\nremaining open to correction.\n\u0003\n 3.\tWas sensitive to what was unsaid.\n\u0003\n 4.\tExpressed how what was felt, done, or said\nmade sense, given the causes.\n\u0003\n 5.\tAcknowledged and acted on what was valid.\n\u0003\n 6.\tActed authentically and as an equal.\nList one invalidating and two validating statements made to others.\n1.\n2.\n3.\nDescribe a situation where you were nonjudgmental of someone in the past week.\nDescribe a situation where you used validation in the past week.\nWho was the person you validated?\nWhat exactly did you do or say to validate the person?\nWhat was the outcome?\nHow did you feel afterward?\nWould you say or do something differently next time? If so, what?"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Interpersonal Effectiveness Worksheet 12   (I. E. Handouts 17, 18)",
+    "source_pdf_pages": [
+      216
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/interpersonal_effectiveness/worksheets/interpersonal_effectiveness_worksheet_12_validating_others.json",
+    "item_number": "12",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nInterpersonal Effectiveness Worksheet 12   (I. E. Handouts 17, 18)\nValidating Others\nDue Date:\n  Name:\n Week Starting:\nFill out this sheet whenever you practice your validation skills and whenever you have an opportunity\nto practice even if you don’t (or almost don’t) do anything to practice. Write on the back of this sheet\nif you need more room.\nCheck off types of validation that you practiced (on purpose) with others:\n\u0003\n 1.\t Paid attention.\n\u0003\n 2.\tReflected back what was said or done,\nremaining open to correction.\n\u0003\n 3.\tWas sensitive to what was unsaid.\n\u0003\n 4.\tExpressed how what was felt, done, or said\nmade sense, given the causes.\n\u0003\n 5.\tAcknowledged and acted on what was valid.\n\u0003\n 6.\tActed authentically and as an equal.\nList one invalidating and two validating statements made to others.\n1.\n2.\n3.\nDescribe a situation where you were nonjudgmental of someone in the past week.\nDescribe a situation where you used validation in the past week.\nWho was the person you validated?\nWhat exactly did you do or say to validate the person?\nWhat was the outcome?\nHow did you feel afterward?\nWould you say or do something differently next time? If so, what?",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "I. E. Handouts 17, 18"
+    ],
+    "html_path": "html/worksheets/interpersonal_effectiveness/interpersonal_effectiveness_worksheet_12_validating_others.html",
+    "id": "interpersonal_effectiveness_worksheet_12",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "192"
+    ],
+    "title": "Validating Others",
+    "module_category": "Interpersonal Effectiveness Skills",
+    "shared_json_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_12_validating_others.json",
+    "module": "Interpersonal Effectiveness",
+    "keywords": [
+      "Others",
+      "Validating"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "turning-the-mind-willingness-willfulness-5a0cd9b767d9",
+  "title": "Turning the Mind, Willingness, Willfulness",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9576
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-10-turning-the-mind-willingness-willf-6b5d0fa097.json",
+        "sha256": "6b5d0fa097c7dc3346b97c11b97eb81afc17891cd7f77955c4ec47f8f03ef39f",
+        "domain": "dbt",
+        "bytes": 4368
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-10-turning-the-mind-willingness-willfulness-025269cf76.json",
+        "sha256": "025269cf7632625f19390545e682c6be9e3f3c0f58123a10b655b699e5dad36c",
+        "domain": "dbt",
+        "bytes": 4216
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 420,
+        "book_page": "396",
+        "text": "396\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 10   (Distress Tolerance Handouts 12, 13)\nTurning the Mind, Willingness, Willfulness\nDue Date:             Name:                                    Week Starting:\nPractice each skill, and rate your level of acceptance of reality as it is before and after: from 0 (no\nacceptance at all) to 5 (I’m at peace with this). List what you tried specifically under the rating.\nTurning the Mind: Acceptance    Before:        After:\nObserve not accepting. What did you observe? What were you having trouble accepting?\nMake an inner commitment to accept what feels unacceptable. How did you do this?\nDescribe your plan for catching yourself the next time you drift from acceptance.\nWillingness (rate 0–5): Acceptance    Before:        After:\nWillfulness    Before:        After:\nDescribe effective behavior you did to move forward toward a goal.\nNotice willfulness. Describe how you are not participating effectively in the world as it\nis, or how you are not doing something you know needs to be done to move toward a goal.\nDescribe how you practiced radically accepting your willfulness.\nMake an inner commitment to accept what feels unacceptable. How did you do this?\nDescribe what you did that was willing."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 10   (Distress Tolerance Handouts 12, 13)",
+    "source_pdf_pages": [
+      420
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_10_turning_the_mind_willingness_willfulness.json",
+    "item_number": "10",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 10   (Distress Tolerance Handouts 12, 13)\nTurning the Mind, Willingness, Willfulness\nDue Date:             Name:                                    Week Starting:\nPractice each skill, and rate your level of acceptance of reality as it is before and after: from 0 (no\nacceptance at all) to 5 (I’m at peace with this). List what you tried specifically under the rating.\nTurning the Mind: Acceptance    Before:        After:\nObserve not accepting. What did you observe? What were you having trouble accepting?\nMake an inner commitment to accept what feels unacceptable. How did you do this?\nDescribe your plan for catching yourself the next time you drift from acceptance.\nWillingness (rate 0–5): Acceptance    Before:        After:\nWillfulness    Before:        After:\nDescribe effective behavior you did to move forward toward a goal.\nNotice willfulness. Describe how you are not participating effectively in the world as it\nis, or how you are not doing something you know needs to be done to move toward a goal.\nDescribe how you practiced radically accepting your willfulness.\nMake an inner commitment to accept what feels unacceptable. How did you do this?\nDescribe what you did that was willing.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handouts 12, 13"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_10_turning_the_mind_willingness_willfulness.html",
+    "id": "distress_tolerance_worksheet_10",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "396"
+    ],
+    "title": "Turning the Mind, Willingness, Willfulness",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_10_turning_the_mind_willingness_willfulness.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Mind",
+      "Turning",
+      "Willfulness",
+      "Willingness"
+    ]
+  }
+}
