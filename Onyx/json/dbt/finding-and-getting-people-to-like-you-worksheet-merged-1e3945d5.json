@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "finding-and-getting-people-to-like-you-5fd81e3945d5",
+  "title": "Finding and Getting People to Like You",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9645
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/03-dbt-interpersonal-effectiveness-interpersonal-effectiveness-worksheet-8-finding-and-getti-b7f9eef645.json",
+        "sha256": "b7f9eef6452d79b2de578215c633c92528f41aae4fadfc7962c3db3a2daf30a9",
+        "domain": "dbt",
+        "bytes": 4859
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/interpersonal-effectiveness-worksheet-8-finding-and-getting-people-to-like-you-d21bc1bdc2.json",
+        "sha256": "d21bc1bdc25045f1a4589090ba7f9181b15efbe1611b25c0180c44335eae9c03",
+        "domain": "dbt",
+        "bytes": 4692
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 207,
+        "book_page": "183",
+        "text": "183\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nInterpersonal Effectiveness Worksheet 8   (I. E. Handout 11)\nFinding and Getting People to Like You\nDue Date:             Name:                                    Week Starting:\nFill out this sheet whenever you practice finding friends and whenever you have an opportunity to\npractice, even if you don’t (or almost don’t) do anything to practice. Write on the back of this sheet\nif you need more room.\nList two ways you could (or do) make casual but regular contact with people.\n1.\n2.\nList two ways you could find (or have found) people whose attitudes are similar to yours.\n1.\n2.\nList two ways you could get in conversations (or have been in them) where you could ask a question,\ngive an answer, give a compliment, or express liking to others.\n1.\n2.\nList times you have been near a group conversation you could practice joining (or how you could\nfind one).\n1.\n2.\nCheck the facts and be sure you have listed all of your opportunities to find potential friends. Add\nmore ideas if necessary or ask your current friends or family for ideas.\nDescribe one thing you have done to make a new friend and get someone to like you.\n\n\nCheck off and describe each skill that you used.\n    Proximity              Similarity              Conversation skills\n    Expressed liking\n\n\nDescribe any efforts you made to join a conversational group.\n\nDescribe any efforts you made to use your conversation skills with others.\n\nHow effective was the interaction?"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Interpersonal Effectiveness Worksheet 8   (I. E. Handout 11)",
+    "source_pdf_pages": [
+      207
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/interpersonal_effectiveness/worksheets/interpersonal_effectiveness_worksheet_8_finding_and_getting_people_to_like_you.json",
+    "item_number": "8",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nInterpersonal Effectiveness Worksheet 8   (I. E. Handout 11)\nFinding and Getting People to Like You\nDue Date:             Name:                                    Week Starting:\nFill out this sheet whenever you practice finding friends and whenever you have an opportunity to\npractice, even if you don’t (or almost don’t) do anything to practice. Write on the back of this sheet\nif you need more room.\nList two ways you could (or do) make casual but regular contact with people.\n1.\n2.\nList two ways you could find (or have found) people whose attitudes are similar to yours.\n1.\n2.\nList two ways you could get in conversations (or have been in them) where you could ask a question,\ngive an answer, give a compliment, or express liking to others.\n1.\n2.\nList times you have been near a group conversation you could practice joining (or how you could\nfind one).\n1.\n2.\nCheck the facts and be sure you have listed all of your opportunities to find potential friends. Add\nmore ideas if necessary or ask your current friends or family for ideas.\nDescribe one thing you have done to make a new friend and get someone to like you.\n\n\nCheck off and describe each skill that you used.\n    Proximity              Similarity              Conversation skills\n    Expressed liking\n\n\nDescribe any efforts you made to join a conversational group.\n\nDescribe any efforts you made to use your conversation skills with others.\n\nHow effective was the interaction?",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "I. E. Handout 11"
+    ],
+    "html_path": "html/worksheets/interpersonal_effectiveness/interpersonal_effectiveness_worksheet_8_finding_and_getting_people_to_like_you.html",
+    "id": "interpersonal_effectiveness_worksheet_8",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "183"
+    ],
+    "title": "Finding and Getting People to Like You",
+    "module_category": "Interpersonal Effectiveness Skills",
+    "shared_json_path": "shared/03_dbt_interpersonal_effectiveness/worksheets_json/interpersonal_effectiveness_worksheet_8_finding_and_getting_people_to_like_you.json",
+    "module": "Interpersonal Effectiveness",
+    "keywords": [
+      "Finding",
+      "Getting",
+      "Like",
+      "People"
+    ]
+  }
+}

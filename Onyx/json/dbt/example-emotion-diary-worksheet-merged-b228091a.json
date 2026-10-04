@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "example-emotion-diary-5b46b228091a",
+  "title": "Example: Emotion Diary",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9744
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-2c-example-emotion-diary-57f53bbe56.json",
+        "sha256": "57f53bbe56bfc406e455985f438e33d9720f123cfa70372d838fcad78826ce9b",
+        "domain": "dbt",
+        "bytes": 6286
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-2c-example-emotion-diary-634b51349c.json",
+        "sha256": "634b51349cd83410404da24d29fb2a8f15be55db5d335f545d6321f0772e0d20",
+        "domain": "dbt",
+        "bytes": 6153
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 302,
+        "book_page": "278",
+        "text": "278\nEmotion Regulation Worksheet 2c   (Emotion Regulation Handout 3)\nExample: Emotion Diary\nDue Date:             Name:                                    Week Starting:\nRecord an emotion (either the strongest emotion of the day, the longest-lasting one, or the one that was the most painful or gave you the\nmost trouble). Analyze that emotion. Fill out an Observing and Describing Emotions worksheet (Emotion Regulation Worksheet 4 or 4a) if\nnecessary, plus this diary sheet.\nEmotions\nMotivate\nCommunicate to others\nCommunicate to me\nEmotion\nname\nWhat did my emotion\nmotivate me to do\n(i.e., what goal did\nmy emotion serve)?\nHow was my emotion\nexpressed to others (my\nnonverbal appearance,\nmy words, my actions)?\nWhat message\ndid my emotion\nexpress\nto others?\nWhat was the\neffect of my\nemotion on others?\nWhat was\nmy emotion\nsaying to\nme?\nHow did I check the\nfacts?\nFear/\nanxiety\nNot to go to skills\ntraining group.\nI did not go to group.\nThat group was\nnot important\nto me.\n(1) They called to\nencourage me to\ncome.\n(2) They wonder if I\nam committed.\n(3) They might be\nconcerned.\nThat group is\nunsafe.\nI didn’t.\nI could have evaluated\nif my life, health, or\nwell-being was in\ndanger. I could have\ndone pros and cons of\ngoing to group.\nShame\nTo keep to myself, to\nnot draw attention to\nmyself.\nI wanted to go home\nfrom the office party\nat work.\nI didn’t make much\neye contact, I didn’t\nsay much or initiate\nconversation, or do\nanything to attract\nattention.\nThere are\nseveral\npossibilities:\n(1) I want to be\nleft alone. (2) I\nam feeling bad.\nMost everyone at\nwork left me alone.\nOne person tried to\ntalk to me but gave\nup.\nThat I was\nuninteresting,\na failure with\nnothing to\ncontribute.\nI tried to recall times\nwhen people have\nlistened to me. I tried\nto talk to others and\nnotice if they seemed\ninterested.\nSadness\nWithdraw. Isolate.\nCry.\nMy expression was\ndowncast. My mouth\nturned down.\nI was tearful. I told\nsomeone I was sad.\nThat I was sad.\n(1) My boyfriend\napproached me,\nsoothed me, and\ninvited me to sit\nwith him. (2) Some\npeople avoided me.\nI am so sad. I\nam alone.\nNo one\ncares.\nI reached out and\nnoticed if someone\nresponded. I thought\nabout a time when I\ndid not feel sad.\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 2c   (Emotion Regulation Handout 3)",
+    "source_pdf_pages": [
+      302
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_2c_example_emotion_diary.json",
+    "item_number": "2c",
+    "full_text": "Emotion Regulation Worksheet 2c   (Emotion Regulation Handout 3)\nExample: Emotion Diary\nDue Date:             Name:                                    Week Starting:\nRecord an emotion (either the strongest emotion of the day, the longest-lasting one, or the one that was the most painful or gave you the\nmost trouble). Analyze that emotion. Fill out an Observing and Describing Emotions worksheet (Emotion Regulation Worksheet 4 or 4a) if\nnecessary, plus this diary sheet.\nEmotions\nMotivate\nCommunicate to others\nCommunicate to me\nEmotion\nname\nWhat did my emotion\nmotivate me to do\n(i.e., what goal did\nmy emotion serve)?\nHow was my emotion\nexpressed to others (my\nnonverbal appearance,\nmy words, my actions)?\nWhat message\ndid my emotion\nexpress\nto others?\nWhat was the\neffect of my\nemotion on others?\nWhat was\nmy emotion\nsaying to\nme?\nHow did I check the\nfacts?\nFear/\nanxiety\nNot to go to skills\ntraining group.\nI did not go to group.\nThat group was\nnot important\nto me.\n(1) They called to\nencourage me to\ncome.\n(2) They wonder if I\nam committed.\n(3) They might be\nconcerned.\nThat group is\nunsafe.\nI didn’t.\nI could have evaluated\nif my life, health, or\nwell-being was in\ndanger. I could have\ndone pros and cons of\ngoing to group.\nShame\nTo keep to myself, to\nnot draw attention to\nmyself.\nI wanted to go home\nfrom the office party\nat work.\nI didn’t make much\neye contact, I didn’t\nsay much or initiate\nconversation, or do\nanything to attract\nattention.\nThere are\nseveral\npossibilities:\n(1) I want to be\nleft alone. (2) I\nam feeling bad.\nMost everyone at\nwork left me alone.\nOne person tried to\ntalk to me but gave\nup.\nThat I was\nuninteresting,\na failure with\nnothing to\ncontribute.\nI tried to recall times\nwhen people have\nlistened to me. I tried\nto talk to others and\nnotice if they seemed\ninterested.\nSadness\nWithdraw. Isolate.\nCry.\nMy expression was\ndowncast. My mouth\nturned down.\nI was tearful. I told\nsomeone I was sad.\nThat I was sad.\n(1) My boyfriend\napproached me,\nsoothed me, and\ninvited me to sit\nwith him. (2) Some\npeople avoided me.\nI am so sad. I\nam alone.\nNo one\ncares.\nI reached out and\nnoticed if someone\nresponded. I thought\nabout a time when I\ndid not feel sad.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handout 3"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_2c_example_emotion_diary.html",
+    "id": "emotion_regulation_worksheet_2c",
+    "item_type": "worksheet",
+    "is_example": true,
+    "source_book_pages": [
+      "278"
+    ],
+    "title": "Example: Emotion Diary",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_2c_example_emotion_diary.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Diary",
+      "Emotion",
+      "Example"
+    ]
+  }
+}

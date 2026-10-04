@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "effective-rethinking-and-paired-relaxation-38859722ee15",
+  "title": "Effective Rethinking and Paired Relaxation",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9622
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-4b-effective-rethinking-and-paired-re-bb2b976568.json",
+        "sha256": "bb2b9765684e6bc64b612d14abbebc3f288afc2be541c1dee1a2ebc3053a2cb9",
+        "domain": "dbt",
+        "bytes": 4932
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-4b-effective-rethinking-and-paired-relaxation-e96191113d.json",
+        "sha256": "e96191113d5219a121412d7978e7bb53f5e04767bc55ba6c821c7111e6065418",
+        "domain": "dbt",
+        "bytes": 4778
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 402,
+        "book_page": "378",
+        "text": "378\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 4b   (Distress Tolerance Handout 6c)\nEffective Rethinking and Paired Relaxation\nDue Date:             Name:                                    Week Starting:\nStep 1. Describe one typical prompting event for distress in your life: What led up to what? What\nis it about this event that is a problem for you? Be very specific in your answers. Use describing\nskills. Check the facts.\nStep 2. Ask: “What must I be telling myself (or what are my interpretations and thoughts)\nabout this event that contributes to my stress?” Write them down.\nStep 3. Rethink the thoughts that lead to distress. Rethinking involves reevaluating the situation\nand its meaning in ways that counteract stress-producing thoughts and thereby reduce stress\nresponses. Write down as many effective thoughts as you can to replace the stressful thoughts.\nStep 4. Did you practice in your imagination effective rethinking of a stressful situation this\nweek? Yes      No\nIf you engaged in rethinking, did it reduce fear of the situation happening again? (0–5,\n0 = not at all; 5 = very much):\nWhat effective thoughts did you use to replace stress-causing thoughts?\nRate average level of relaxation (0–100): Before      After\nStep 5. Did you practice rethinking plus paired relaxation? Yes      No\nIf you engaged in rethinking plus paired relaxation, did it help you reduce your stress? (0–5,\n0 = not at all; 5 = very much):\nWhat effective thoughts did you use to replace stress-causing thoughts?\nComments:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 4b   (Distress Tolerance Handout 6c)",
+    "source_pdf_pages": [
+      402
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_4b_effective_rethinking_and_paired_relaxation.json",
+    "item_number": "4b",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 4b   (Distress Tolerance Handout 6c)\nEffective Rethinking and Paired Relaxation\nDue Date:             Name:                                    Week Starting:\nStep 1. Describe one typical prompting event for distress in your life: What led up to what? What\nis it about this event that is a problem for you? Be very specific in your answers. Use describing\nskills. Check the facts.\nStep 2. Ask: “What must I be telling myself (or what are my interpretations and thoughts)\nabout this event that contributes to my stress?” Write them down.\nStep 3. Rethink the thoughts that lead to distress. Rethinking involves reevaluating the situation\nand its meaning in ways that counteract stress-producing thoughts and thereby reduce stress\nresponses. Write down as many effective thoughts as you can to replace the stressful thoughts.\nStep 4. Did you practice in your imagination effective rethinking of a stressful situation this\nweek? Yes      No\nIf you engaged in rethinking, did it reduce fear of the situation happening again? (0–5,\n0 = not at all; 5 = very much):\nWhat effective thoughts did you use to replace stress-causing thoughts?\nRate average level of relaxation (0–100): Before      After\nStep 5. Did you practice rethinking plus paired relaxation? Yes      No\nIf you engaged in rethinking plus paired relaxation, did it help you reduce your stress? (0–5,\n0 = not at all; 5 = very much):\nWhat effective thoughts did you use to replace stress-causing thoughts?\nComments:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handout 6c"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_4b_effective_rethinking_and_paired_relaxation.html",
+    "id": "distress_tolerance_worksheet_4b",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "378"
+    ],
+    "title": "Effective Rethinking and Paired Relaxation",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_4b_effective_rethinking_and_paired_relaxation.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Effective",
+      "Paired",
+      "Relaxation",
+      "Rethinking"
+    ]
+  }
+}

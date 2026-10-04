@@ -1,0 +1,85 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "facts-many-emotions-and-actions-are-set-off-by-our-thoughts-and-interpretations-610572d82f74",
+  "title": "Facts Many emotions and actions are set off by our thoughts and interpretations of events, not by the events themselves. Event → Thoughts → Emotions",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9667
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-8-facts-many-emotions-and-actions-are-s-3336693052.json",
+        "sha256": "333669305288a00cc69707159a66503500c70129b2297d10bcbf7e55517379b9",
+        "domain": "dbt",
+        "bytes": 5257
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-8-facts-many-emotions-and-actions-are-set-off-by-our-thoughts-and-24848ad706.json",
+        "sha256": "24848ad706d331e6ec05bdba3433b150de2a499a56f6dcdd6e96e05ffcdefe94",
+        "domain": "dbt",
+        "bytes": 5098
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 252,
+        "book_page": "228",
+        "text": "228\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nEmotion Regulation Handout 8   (Emotion Regulation Worksheet 5)\nCheck the Facts\nFacts\nMany emotions and actions are set off by our thoughts and interpretations of events,\nnot by the events themselves.\nEvent → Thoughts → Emotions\nOur emotions can also have a big effect on our thoughts about events.\nEvent → Emotion → Thoughts\nExamining our thoughts and checking the facts can help us change our emotions.\nHow to Check the Facts\n1.\t Ask: What is the emotion I want to change?\n\n(See Emotion Regulation Handout 6: Ways of Describing Emotions.)\n2.\t Ask: What is the event prompting my emotion?\nDescribe the facts that you observed through your senses.\nChallenge judgments, absolutes, and black-and-white descriptions.\n\n(See Mindfulness Handout 4: Taking Hold of Your Mind: “What” Skills.)\n3.\t Ask: What are my interpretations, thoughts, and assumptions about the\nevent?\nThink of other possible interpretations.\nPractice looking at all sides of a situation and all points of view.\nTest your interpretations and assumptions to see if they fit the facts.\n4.\t Ask: Am I assuming a threat?\nLabel the threat.\nAssess the probability that the threatening event will really occur.\nThink of as many other possible outcomes as you can.\n5.\t Ask: What’s the catastrophe?\nImagine the catastrophe really occurring.\nImagine coping well with a catastrophe (through problem solving, coping\nahead, or radical acceptance).\n6.\t Ask: Does my emotion and/or its intensity fit the actual facts?\nCheck out facts that fit each emotion.\nAsk Wise Mind.\n\n(See Emotion Regulation Handout 11: Figuring Out Opposite Actions, and Emotion\nRegulation Handout 13: Reviewing Problem Solving and Opposite Action.)"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 8   (Emotion Regulation Worksheet 5)",
+    "source_pdf_pages": [
+      252
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_8_facts_many_emotions_and_actions_are_set_off_by_our_thoughts_and_interp.json",
+    "item_number": "8",
+    "full_text": "☐\nEmotion Regulation Handout 8   (Emotion Regulation Worksheet 5)\nCheck the Facts\nFacts\nMany emotions and actions are set off by our thoughts and interpretations of events,\nnot by the events themselves.\nEvent → Thoughts → Emotions\nOur emotions can also have a big effect on our thoughts about events.\nEvent → Emotion → Thoughts\nExamining our thoughts and checking the facts can help us change our emotions.\nHow to Check the Facts\n1.\t Ask: What is the emotion I want to change?\n\n(See Emotion Regulation Handout 6: Ways of Describing Emotions.)\n2.\t Ask: What is the event prompting my emotion?\nDescribe the facts that you observed through your senses.\nChallenge judgments, absolutes, and black-and-white descriptions.\n\n(See Mindfulness Handout 4: Taking Hold of Your Mind: “What” Skills.)\n3.\t Ask: What are my interpretations, thoughts, and assumptions about the\nevent?\nThink of other possible interpretations.\nPractice looking at all sides of a situation and all points of view.\nTest your interpretations and assumptions to see if they fit the facts.\n4.\t Ask: Am I assuming a threat?\nLabel the threat.\nAssess the probability that the threatening event will really occur.\nThink of as many other possible outcomes as you can.\n5.\t Ask: What’s the catastrophe?\nImagine the catastrophe really occurring.\nImagine coping well with a catastrophe (through problem solving, coping\nahead, or radical acceptance).\n6.\t Ask: Does my emotion and/or its intensity fit the actual facts?\nCheck out facts that fit each emotion.\nAsk Wise Mind.\n\n(See Emotion Regulation Handout 11: Figuring Out Opposite Actions, and Emotion\nRegulation Handout 13: Reviewing Problem Solving and Opposite Action.)",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheet 5"
+    ],
+    "id": "emotion_regulation_handout_8",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "228"
+    ],
+    "title": "Facts Many emotions and actions are set off by our thoughts and interpretations of events, not by the events themselves. Event → Thoughts → Emotions",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_8_facts_many_emotions_and_actions_are_set_off_a70ea688.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Emotions",
+      "Event",
+      "Facts",
+      "Many",
+      "Thoughts",
+      "actions",
+      "emotions",
+      "events",
+      "interpretations",
+      "themselves",
+      "thoughts"
+    ]
+  }
+}

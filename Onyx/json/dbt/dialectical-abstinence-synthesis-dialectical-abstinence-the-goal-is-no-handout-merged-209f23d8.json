@@ -1,0 +1,87 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "dialectical-abstinence-synthesis-dialectical-abstinence-the-goal-is-not-to-engag-6e0b209f23d8",
+  "title": "Dialectical Abstinence Synthesis = Dialectical Abstinence The goal is not to engage in addictive behavior again— in other words, to achieve complete abstinence.",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9582
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-handout-17-dialectical-abstinence-synthesis-dia-7bb10b373e.json",
+        "sha256": "7bb10b373ef3994c3fe1ecf0b07a16d747f5c43f7d4a670824746cf16140ebb3",
+        "domain": "dbt",
+        "bytes": 4097
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-handout-17-dialectical-abstinence-synthesis-dialectical-abstinence-the-go-2440289eec.json",
+        "sha256": "2440289eecd2a7e78b0cc82cf256909a2ba518ae1b4cf392cddcf3068852cd81",
+        "domain": "dbt",
+        "bytes": 3937
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 381,
+        "book_page": "357",
+        "text": "357\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nDistress Tolerance Handout 17   (Distress Tolerance Worksheet 14)\nDialectical Abstinence\nSynthesis = Dialectical Abstinence\nThe goal is not to engage in addictive behavior again—\nin other words, to achieve complete abstinence.\nHowever, if there is a slip, the goal is to minimize harm\nand get back to abstinence as soon as possible.\nPros: It works!\nCons: It’s work. You don’t get a vacation.\n(You’re always either abstinent or working to get back to abstinence.)\nAn example of expecting the best and planning for the trouble spots:\nOlympic athletes must believe and behave as though they can win\nevery race, even though they have lost before and will lose again.\n\n\nHARM REDUCTION\n(Acknowledging there will be\nslips; minimizing the damage,\nbut not demanding perfection)\nABSTINENCE\n(Swearing off\naddictive behavior)\nvs.\nPro: People who commit to\nabstinence stay off longer.\nCon: It takes longer for people\nto get back “on the wagon”\nonce they fall off.\nPro: When a slip does happen,\npeople can get back “on the\nwagon” faster.\nCon: People who commit to\nharm reduction relapse quicker."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Handout 17   (Distress Tolerance Worksheet 14)",
+    "source_pdf_pages": [
+      381
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/handouts/distress_tolerance_handout_17_dialectical_abstinence_synthesis_dialectical_abstinence_the_goal_is_no.json",
+    "item_number": "17",
+    "full_text": "Distress Tolerance Handout 17   (Distress Tolerance Worksheet 14)\nDialectical Abstinence\nSynthesis = Dialectical Abstinence\nThe goal is not to engage in addictive behavior again—\nin other words, to achieve complete abstinence.\nHowever, if there is a slip, the goal is to minimize harm\nand get back to abstinence as soon as possible.\nPros: It works!\nCons: It’s work. You don’t get a vacation.\n(You’re always either abstinent or working to get back to abstinence.)\nAn example of expecting the best and planning for the trouble spots:\nOlympic athletes must believe and behave as though they can win\nevery race, even though they have lost before and will lose again.\n\n\nHARM REDUCTION\n(Acknowledging there will be\nslips; minimizing the damage,\nbut not demanding perfection)\nABSTINENCE\n(Swearing off\naddictive behavior)\nvs.\nPro: People who commit to\nabstinence stay off longer.\nCon: It takes longer for people\nto get back “on the wagon”\nonce they fall off.\nPro: When a slip does happen,\npeople can get back “on the\nwagon” faster.\nCon: People who commit to\nharm reduction relapse quicker.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Worksheet 14"
+    ],
+    "id": "distress_tolerance_handout_17",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "357"
+    ],
+    "title": "Dialectical Abstinence Synthesis = Dialectical Abstinence The goal is not to engage in addictive behavior again— in other words, to achieve complete abstinence.",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_17_dialectical_abstinence_synthesis_dialectica_64ffcb74.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Abstinence",
+      "Dialectical",
+      "Synthesis",
+      "abstinence",
+      "achieve",
+      "addictive",
+      "again",
+      "behavior",
+      "complete",
+      "engage",
+      "goal",
+      "other",
+      "words"
+    ]
+  }
+}

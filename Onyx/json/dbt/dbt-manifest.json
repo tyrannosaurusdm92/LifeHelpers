@@ -1,0 +1,37 @@
+{
+  "source_pdf": "DBT Skills Workbook.pdf",
+  "source_pdf_pages_total": 446,
+  "created_at": "2026-06-25T17:33:55",
+  "parsed_items_total": 230,
+  "handout_json_count": 127,
+  "worksheet_json_count": 103,
+  "worksheet_html_count": 103,
+  "daily_diary_card_json_count": 5,
+  "daily_diary_card_html_count": 5,
+  "skill_index_count": 49,
+  "counts_by_module_and_type": {
+    "Distress Tolerance / handout": 33,
+    "Distress Tolerance / worksheet": 36,
+    "Emotion Regulation / handout": 30,
+    "Emotion Regulation / worksheet": 25,
+    "General / handout": 10,
+    "General / worksheet": 4,
+    "Interpersonal Effectiveness / handout": 34,
+    "Interpersonal Effectiveness / worksheet": 17,
+    "Mindfulness / handout": 20,
+    "Mindfulness / worksheet": 21
+  },
+  "notes": [
+    "JSON files were created for all detected DBT handouts and worksheets in the body of the uploaded PDF.",
+    "Fillable/printable HTML files were created for all detected worksheets.",
+    "Five daily diary cards were generated because no standalone Daily Diary Card item was detected in the uploaded PDF text.",
+    "HTML forms include Print, Save in browser, and Clear buttons; printed output hides buttons."
+  ],
+  "paths": {
+    "html_index": "html/index.html",
+    "items_json_root": "json/items/",
+    "skills_index": "json/skills/dbt_skills_index.json",
+    "diary_card_json_root": "json/diary_cards/",
+    "diary_card_html_root": "html/diary_cards/"
+  }
+}

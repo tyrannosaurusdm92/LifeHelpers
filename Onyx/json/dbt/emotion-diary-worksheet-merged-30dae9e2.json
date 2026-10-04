@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "emotion-diary-802830dae9e2",
+  "title": "Emotion Diary",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9502
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-2b-emotion-diary-2b2c7e0582.json",
+        "sha256": "2b2c7e0582ad03cec7d198758c609ded99244220ada91455e4ac0688678bf26d",
+        "domain": "dbt",
+        "bytes": 3389
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-2b-emotion-diary-c1d09c5601.json",
+        "sha256": "c1d09c5601bd3638ac7da9d43bade15cbb6abf6ff3cb58f74204449a980baf2b",
+        "domain": "dbt",
+        "bytes": 3264
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 301,
+        "book_page": "277",
+        "text": "277\nEmotion Regulation Worksheet 2b   (Emotion Regulation Handout 3)\nEmotion Diary\nName:                                                Week Starting:\nRecord an emotion (either the strongest emotion of the day, the longest-lasting one, or the one that was the most painful or gave you the\nmost trouble). Analyze that emotion. Fill out an Observing and Describing Emotions worksheet (Emotion Regulation Worksheet 4 or 4a) if\nnecessary, plus this diary sheet.\nEmotions\nMotivate\nCommunicate to others\nCommunicate to me\nEmotion\nname\nWhat did my\nemotion motivate\nme to do (i.e.,\nwhat goal did my\nemotion serve)?\nHow was my emotion\nexpressed to others\n(my nonverbal\nappearance, my\nwords, my actions)?\nWhat message\ndid my emotion\nexpress to others?\nWhat was\nthe effect of\nmy emotion\non others?\nWhat was my\nemotion saying\nto me?\nHow did I check\nthe facts?\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 2b   (Emotion Regulation Handout 3)",
+    "source_pdf_pages": [
+      301
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_2b_emotion_diary.json",
+    "item_number": "2b",
+    "full_text": "Emotion Regulation Worksheet 2b   (Emotion Regulation Handout 3)\nEmotion Diary\nName:                                                Week Starting:\nRecord an emotion (either the strongest emotion of the day, the longest-lasting one, or the one that was the most painful or gave you the\nmost trouble). Analyze that emotion. Fill out an Observing and Describing Emotions worksheet (Emotion Regulation Worksheet 4 or 4a) if\nnecessary, plus this diary sheet.\nEmotions\nMotivate\nCommunicate to others\nCommunicate to me\nEmotion\nname\nWhat did my\nemotion motivate\nme to do (i.e.,\nwhat goal did my\nemotion serve)?\nHow was my emotion\nexpressed to others\n(my nonverbal\nappearance, my\nwords, my actions)?\nWhat message\ndid my emotion\nexpress to others?\nWhat was\nthe effect of\nmy emotion\non others?\nWhat was my\nemotion saying\nto me?\nHow did I check\nthe facts?",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handout 3"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_2b_emotion_diary.html",
+    "id": "emotion_regulation_worksheet_2b",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "277"
+    ],
+    "title": "Emotion Diary",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_2b_emotion_diary.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Diary",
+      "Emotion"
+    ]
+  }
+}

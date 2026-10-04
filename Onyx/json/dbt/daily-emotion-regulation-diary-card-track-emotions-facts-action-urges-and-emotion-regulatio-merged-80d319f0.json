@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "daily-emotion-regulation-diary-card-f83780d319f0",
+  "title": "Daily Emotion Regulation Diary Card",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "Track emotions, facts, action urges, and emotion regulation skills.",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.8372
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/06-dbt-diary-cards-daily-emotion-regulation-diary-card-ea38c97832.json",
+        "sha256": "ea38c97832b0b2ee3820ee4c5f43e925ffec03755d9569e69267e571aa6266e4",
+        "domain": "dbt",
+        "bytes": 1031
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/daily-emotion-regulation-diary-card-640c8ad439.json",
+        "sha256": "640c8ad4397dda453318563fe883246fe65a4def12e29bac18afdf88ef019d73",
+        "domain": "dbt",
+        "bytes": 934
+      }
+    ]
+  },
+  "data": {
+    "title": "Daily Emotion Regulation Diary Card",
+    "purpose": "Track emotions, facts, action urges, and emotion regulation skills.",
+    "fields": {
+      "basics": [
+        "Date",
+        "Name",
+        "Emotion/situation"
+      ],
+      "ratings": [
+        "Emotion intensity 0-5",
+        "Vulnerability 0-5",
+        "Skillfulness 0-5"
+      ],
+      "skills_used": [
+        "Name the Emotion",
+        "Check the Facts",
+        "Opposite Action",
+        "Problem Solving",
+        "Pleasant Events",
+        "Values Action",
+        "Build Mastery",
+        "Cope Ahead",
+        "PLEASE",
+        "Mindfulness of Current Emotions",
+        "Sleep Hygiene"
+      ],
+      "notes": [
+        "Prompting event",
+        "Interpretations/facts",
+        "Action urge",
+        "Skill used",
+        "Result"
+      ]
+    },
+    "id": "daily_emotion_regulation_diary_card",
+    "generated_note": "Generated from the uploaded DBT emotion regulation module.",
+    "module": "Emotion Regulation",
+    "shared_json_path": "shared/06_dbt_diary_cards/json/daily_emotion_regulation_diary_card.json"
+  }
+}

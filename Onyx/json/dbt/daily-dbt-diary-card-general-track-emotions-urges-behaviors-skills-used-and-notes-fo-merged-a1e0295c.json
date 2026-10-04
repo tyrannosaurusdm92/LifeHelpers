@@ -1,0 +1,102 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "daily-dbt-diary-card-general-6e96a1e0295c",
+  "title": "Daily DBT Diary Card - General",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "Track emotions, urges, behaviors, skills used, and notes for one day.",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9041
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/06-dbt-diary-cards-daily-dbt-diary-card-general-486a8f0719.json",
+        "sha256": "486a8f071989fb1cc08e0ceb659b2bbf1a1b652bedd994a4d42f04ce73b2eb21",
+        "domain": "dbt",
+        "bytes": 1581
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/daily-dbt-diary-card-general-ff74403f6a.json",
+        "sha256": "ff74403f6a2184d9260a22e6f16d5be515670ce55d481ab685356c8489d77122",
+        "domain": "dbt",
+        "bytes": 1491
+      }
+    ]
+  },
+  "data": {
+    "title": "Daily DBT Diary Card - General",
+    "purpose": "Track emotions, urges, behaviors, skills used, and notes for one day.",
+    "fields": {
+      "basics": [
+        "Date",
+        "Name",
+        "Sleep",
+        "Medication/health notes",
+        "Meals/water",
+        "Movement/body care"
+      ],
+      "emotion_ratings": [
+        "Anger",
+        "Sadness",
+        "Fear/anxiety",
+        "Shame/guilt",
+        "Joy/pleasant emotion",
+        "Emotional intensity overall"
+      ],
+      "urge_ratings": [
+        "Self-harm urge",
+        "Substance/addiction urge",
+        "Avoidance urge",
+        "Anger/action urge",
+        "Other target urge"
+      ],
+      "skills_used": [
+        "Wise Mind",
+        "Observe",
+        "Describe",
+        "Participate",
+        "Nonjudgmentally",
+        "One-Mindfully",
+        "Effectively",
+        "DEAR MAN",
+        "GIVE",
+        "FAST",
+        "Check the Facts",
+        "Opposite Action",
+        "Problem Solving",
+        "ABC/PLEASE",
+        "STOP",
+        "TIP",
+        "ACCEPTS",
+        "Self-Soothing",
+        "IMPROVE",
+        "Radical Acceptance",
+        "Turning the Mind",
+        "Willingness",
+        "Mindfulness of Thoughts"
+      ],
+      "notes": [
+        "Prompting event",
+        "What I did skillfully",
+        "What I want to repair or try tomorrow"
+      ]
+    },
+    "id": "daily_dbt_diary_card_general",
+    "generated_note": "Generated as a fillable daily card from the uploaded DBT workbook modules; no standalone diary card page was found in the source PDF.",
+    "module": "All DBT Modules",
+    "shared_json_path": "shared/06_dbt_diary_cards/json/daily_dbt_diary_card_general.json"
+  }
+}

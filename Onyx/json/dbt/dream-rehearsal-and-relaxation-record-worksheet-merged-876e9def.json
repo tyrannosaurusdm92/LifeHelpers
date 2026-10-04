@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "dream-rehearsal-and-relaxation-record-49ad876e9def",
+  "title": "Dream Rehearsal and Relaxation Record",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9314
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-14a-dream-rehearsal-and-relaxation-re-64b0850535.json",
+        "sha256": "64b0850535bbd75be91b0665044d5fec4c09c287caf70b32fc9759c6825e0689",
+        "domain": "dbt",
+        "bytes": 3240
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-14a-dream-rehearsal-and-relaxation-record-ff55a2ae4b.json",
+        "sha256": "ff55a2ae4b5bb6cd85361e461d6f3e8ffe1e431d1ad2458ef87eee19eb0e9e09",
+        "domain": "dbt",
+        "bytes": 3090
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 330,
+        "book_page": "306",
+        "text": "306\nEmotion Regulation Worksheet 14a   (p. 3 or 3)\nDream Rehearsal and Relaxation Record\nDue Date:             Name:                                    Week Starting:\nIn the left column, put down the days of the week. Then write down what you did to practice dream rehearsal and relaxation during the week.\nIn the morning write down the intensity of your nightmare. (Put a 0 if you did not have the nightmare.) Continue practicing until you do not have\nthe nightmare again.\nDay\nDescribe daytime visual\nrehearsal and relaxation\nNegative\nemotion\nintensity\n(0–100)\nDescribe daytime visual\nrehearsal and relaxation\nNegative\nemotion\nintensity\n(0–100)\nDescribe daytime visual\nrehearsal and relaxation\nNightmare\nintensity\n(0–100)\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 14a   (p. 3 or 3)",
+    "source_pdf_pages": [
+      330
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_14a_dream_rehearsal_and_relaxation_record.json",
+    "item_number": "14a",
+    "full_text": "Emotion Regulation Worksheet 14a   (p. 3 or 3)\nDream Rehearsal and Relaxation Record\nDue Date:             Name:                                    Week Starting:\nIn the left column, put down the days of the week. Then write down what you did to practice dream rehearsal and relaxation during the week.\nIn the morning write down the intensity of your nightmare. (Put a 0 if you did not have the nightmare.) Continue practicing until you do not have\nthe nightmare again.\nDay\nDescribe daytime visual\nrehearsal and relaxation\nNegative\nemotion\nintensity\n(0–100)\nDescribe daytime visual\nrehearsal and relaxation\nNegative\nemotion\nintensity\n(0–100)\nDescribe daytime visual\nrehearsal and relaxation\nNightmare\nintensity\n(0–100)\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:\nStart:\nEnd:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_14a_dream_rehearsal_and_relaxation_record.html",
+    "id": "emotion_regulation_worksheet_14a",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "306"
+    ],
+    "title": "Dream Rehearsal and Relaxation Record",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_14a_dream_rehearsal_and_relaxation_record.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Dream",
+      "Record",
+      "Rehearsal",
+      "Relaxation"
+    ]
+  }
+}

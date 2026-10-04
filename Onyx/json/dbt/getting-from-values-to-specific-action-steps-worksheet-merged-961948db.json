@@ -1,0 +1,81 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "getting-from-values-to-specific-action-steps-5189961948db",
+  "title": "Getting from Values to Specific Action Steps",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.961
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-11a-getting-from-values-to-specific-a-8749a80328.json",
+        "sha256": "8749a80328ad4e70f389f0d939cf49245c70aadfb36e7bb09206e6fb87f63d6d",
+        "domain": "dbt",
+        "bytes": 4249
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-11a-getting-from-values-to-specific-action-steps-665b753299.json",
+        "sha256": "665b7532995f76edf10aa0bb814177e45ceb297af1d7b951220d9210ebb27515",
+        "domain": "dbt",
+        "bytes": 4092
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 323,
+        "book_page": "299",
+        "text": "299\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 11a   (Emotion Regulation Handouts 17–18)\nGetting from Values to Specific Action Steps\nDue Date:             Name:                                    Week Starting:\nOnce you have figured out your values, the next step is to decide on specific things you can do\nor achieve (goals) that will make your life more in line with your values. Once you have goals, you\ncan figure out what action steps are necessary to achieve the goal.\nExample: Value: Be part of a group.\nPossible goals:\n•• Reconnect with old friends.\n•• Get a more social job.\n•• Join a club.\nPick one goal to work on right now.\n•• Join a club.\nFigure out a few action steps that will move me toward my goal.\n•• Look for clubs on craigslist.\n•• Go to the bookstore by my house and ask about book groups.\n•• Join an interactive online game or chat room.\n1.  Pick one of your values:\n\n2.  Identify three goals:\n\n\n3.  Circle one goal to\nwork on right now.\n4.  Identify action steps you can take right now to move closer to this goal.\n\n\n5.  Take one action step now. Describe what you did:\n\n\nDescribe what happened next:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 11a   (Emotion Regulation Handouts 17–18)",
+    "source_pdf_pages": [
+      323
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_11a_getting_from_values_to_specific_action_steps.json",
+    "item_number": "11a",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 11a   (Emotion Regulation Handouts 17–18)\nGetting from Values to Specific Action Steps\nDue Date:             Name:                                    Week Starting:\nOnce you have figured out your values, the next step is to decide on specific things you can do\nor achieve (goals) that will make your life more in line with your values. Once you have goals, you\ncan figure out what action steps are necessary to achieve the goal.\nExample: Value: Be part of a group.\nPossible goals:\n•• Reconnect with old friends.\n•• Get a more social job.\n•• Join a club.\nPick one goal to work on right now.\n•• Join a club.\nFigure out a few action steps that will move me toward my goal.\n•• Look for clubs on craigslist.\n•• Go to the bookstore by my house and ask about book groups.\n•• Join an interactive online game or chat room.\n1.  Pick one of your values:\n\n2.  Identify three goals:\n\n\n3.  Circle one goal to\nwork on right now.\n4.  Identify action steps you can take right now to move closer to this goal.\n\n\n5.  Take one action step now. Describe what you did:\n\n\nDescribe what happened next:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handouts 17–18"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_11a_getting_from_values_to_specific_action_steps.html",
+    "id": "emotion_regulation_worksheet_11a",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "299"
+    ],
+    "title": "Getting from Values to Specific Action Steps",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_11a_getting_from_values_to_specific_action_steps.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Action",
+      "Getting",
+      "Specific",
+      "Steps",
+      "Values",
+      "from"
+    ]
+  }
+}

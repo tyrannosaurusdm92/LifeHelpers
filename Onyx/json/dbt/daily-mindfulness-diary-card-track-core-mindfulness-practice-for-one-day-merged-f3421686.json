@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "daily-mindfulness-diary-card-ddeff3421686",
+  "title": "Daily Mindfulness Diary Card",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "Track core mindfulness practice for one day.",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.8133
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/06-dbt-diary-cards-daily-mindfulness-diary-card-4be5a721aa.json",
+        "sha256": "4be5a721aa833a36704aa37f1bd6829c09b12b339c13dea5f0b9f04d69eab83b",
+        "domain": "dbt",
+        "bytes": 897
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/daily-mindfulness-diary-card-0dd7178299.json",
+        "sha256": "0dd7178299ac5de19e80ab352bb4ef8b80fc184ce0da765694ef91ec45225d43",
+        "domain": "dbt",
+        "bytes": 807
+      }
+    ]
+  },
+  "data": {
+    "title": "Daily Mindfulness Diary Card",
+    "purpose": "Track core mindfulness practice for one day.",
+    "fields": {
+      "basics": [
+        "Date",
+        "Name",
+        "Practice situation"
+      ],
+      "skills_used": [
+        "Wise Mind",
+        "Observe",
+        "Describe",
+        "Participate",
+        "Nonjudgmentally",
+        "One-Mindfully",
+        "Effectively",
+        "Loving Kindness",
+        "Doing Mind/Being Mind balance",
+        "Walking the Middle Path"
+      ],
+      "ratings": [
+        "Presence 0-5",
+        "Judgment 0-5",
+        "Effectiveness 0-5"
+      ],
+      "notes": [
+        "What I noticed",
+        "What helped",
+        "What I will practice next"
+      ]
+    },
+    "id": "daily_mindfulness_diary_card",
+    "generated_note": "Generated from the uploaded DBT mindfulness module.",
+    "module": "Mindfulness",
+    "shared_json_path": "shared/06_dbt_diary_cards/json/daily_mindfulness_diary_card.json"
+  }
+}

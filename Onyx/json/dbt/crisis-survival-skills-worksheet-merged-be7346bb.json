@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "crisis-survival-skills-cf8dbe7346bb",
+  "title": "Crisis Survival Skills",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9521
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-1a-crisis-survival-skills-60f2875640.json",
+        "sha256": "60f28756400ae3859015557d9c0cc779a39e06b1a214ab47c64f1bc57df941df",
+        "domain": "dbt",
+        "bytes": 3597
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-1a-crisis-survival-skills-68ca5b935b.json",
+        "sha256": "68ca5b935bc0cae0936ccb5e71bd7afe9b20966566a2940539cbde5b04e64bd8",
+        "domain": "dbt",
+        "bytes": 3463
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 394,
+        "book_page": "370",
+        "text": "370\nDistress Tolerance Worksheet 1a   (Distress Tolerance Handouts 2–9a)\nCrisis Survival Skills\nName:                                                Week Starting:\nPractice each crisis survival skill twice, and describe your experience as follows:\nWhen did you practice this skill, and\nwhat did you do to practice?\nWhat was the crisis (what\nprompted needing the skill)?\nAmount\nof time\npracticing\nskill?\nRate before/after skill use\nConclusions or questions\nabout this skills practice\nYour level of\ndistress tolerance\n(0 = I can’t stand\nit; 5 = I can\ndefinitely survive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\nStop:\n/\n/\n/\n/\n/\n/\nPros and cons:\n/\n/\n/\n/\n/\n/\nTIP:\n/\n/\n/\n/\n/\n/\nDistract with ACCEPTS:\n/\n/\n/\n/\n/\n/\nSelf-soothe:\n/\n/\n/\n/\n/\n/\nIMPROVE the moment:\n/\n/\n/\n/\n/\n/\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 1a   (Distress Tolerance Handouts 2–9a)",
+    "source_pdf_pages": [
+      394
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_1a_crisis_survival_skills.json",
+    "item_number": "1a",
+    "full_text": "Distress Tolerance Worksheet 1a   (Distress Tolerance Handouts 2–9a)\nCrisis Survival Skills\nName:                                                Week Starting:\nPractice each crisis survival skill twice, and describe your experience as follows:\nWhen did you practice this skill, and\nwhat did you do to practice?\nWhat was the crisis (what\nprompted needing the skill)?\nAmount\nof time\npracticing\nskill?\nRate before/after skill use\nConclusions or questions\nabout this skills practice\nYour level of\ndistress tolerance\n(0 = I can’t stand\nit; 5 = I can\ndefinitely survive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\nStop:\n/\n/\n/\n/\n/\n/\nPros and cons:\n/\n/\n/\n/\n/\n/\nTIP:\n/\n/\n/\n/\n/\n/\nDistract with ACCEPTS:\n/\n/\n/\n/\n/\n/\nSelf-soothe:\n/\n/\n/\n/\n/\n/\nIMPROVE the moment:\n/\n/\n/\n/\n/\n/\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handouts 2–9a"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_1a_crisis_survival_skills.html",
+    "id": "distress_tolerance_worksheet_1a",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "370"
+    ],
+    "title": "Crisis Survival Skills",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_1a_crisis_survival_skills.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Crisis",
+      "Skills",
+      "Survival"
+    ]
+  }
+}

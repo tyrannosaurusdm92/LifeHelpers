@@ -1,0 +1,75 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "daily-interpersonal-effectiveness-diary-card-c540cfc315dc",
+  "title": "Daily Interpersonal Effectiveness Diary Card",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "Track interpersonal goals, scripts, and relationship/self-respect skills.",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.8108
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/06-dbt-diary-cards-daily-interpersonal-effectiveness-diary-card-dd976e14e2.json",
+        "sha256": "dd976e14e2904cda08ef85691696a24abb5a6d5685c91888940dc534c47065ac",
+        "domain": "dbt",
+        "bytes": 967
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/daily-interpersonal-effectiveness-diary-card-3e4f67a8d8.json",
+        "sha256": "3e4f67a8d804c32c30d2f09f487d297aa59d6b54ea02d5b9ef1b91f8bdc45278",
+        "domain": "dbt",
+        "bytes": 861
+      }
+    ]
+  },
+  "data": {
+    "title": "Daily Interpersonal Effectiveness Diary Card",
+    "purpose": "Track interpersonal goals, scripts, and relationship/self-respect skills.",
+    "fields": {
+      "basics": [
+        "Date",
+        "Name",
+        "Person/situation"
+      ],
+      "priorities": [
+        "Objective priority 0-5",
+        "Relationship priority 0-5",
+        "Self-respect priority 0-5"
+      ],
+      "skills_used": [
+        "DEAR MAN",
+        "GIVE",
+        "FAST",
+        "Validation",
+        "Self-validation",
+        "Dialectics",
+        "Dime Game",
+        "Troubleshooting"
+      ],
+      "notes": [
+        "What I wanted",
+        "What I said/did",
+        "What worked",
+        "Repair/follow-up"
+      ]
+    },
+    "id": "daily_interpersonal_effectiveness_diary_card",
+    "generated_note": "Generated from the uploaded DBT interpersonal effectiveness module.",
+    "module": "Interpersonal Effectiveness",
+    "shared_json_path": "shared/06_dbt_diary_cards/json/daily_interpersonal_effectiveness_diary_card.json"
+  }
+}

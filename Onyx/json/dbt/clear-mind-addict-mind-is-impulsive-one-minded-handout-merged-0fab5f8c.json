@@ -1,0 +1,80 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "clear-mind-addict-mind-is-impulsive-one-minded-03ee0fab5f8c",
+  "title": "Clear Mind Addict mind is: Impulsive One-minded",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9481
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-handout-18-clear-mind-addict-mind-is-impulsive--10ca24cbba.json",
+        "sha256": "10ca24cbba0880a3afdd0c94b4afae6ce6a122bfd2b16262added96117141a8d",
+        "domain": "dbt",
+        "bytes": 3321
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-handout-18-clear-mind-addict-mind-is-impulsive-one-minded-c9f208e450.json",
+        "sha256": "c9f208e45088caf241633c6978848962518cda90355e924c2bef368695451e6f",
+        "domain": "dbt",
+        "bytes": 3167
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 383,
+        "book_page": "359",
+        "text": "359\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nDistress Tolerance Handout 18   (Distress Tolerance Worksheet 15)\nClear Mind\nAddict mind is:\nImpulsive\nOne-minded\nWilling to do anything for a “fix”\nWhen in addict mind, you are ruled\nby the addiction. The urges for habitual\nproblem behaviors determine your\nthoughts, emotions, and behaviors.\nClean mind is:\nNaive\nRisk-taking\nOblivious to dangers\nWhen in clean mind, you are clean\nbut oblivious to dangers that might\ncue habitual problem behaviors. You\nbelieve you are invincible and immune\nto future temptation.\nBoth extremes are DANGEROUS!\nClear mind: The safest place to be.\nYou are clean, but you remember addict mind.\nYou radically accept that relapse is not impossible.\nYou enjoy your success, while still expecting urges and cues\nand planning for when you’re tempted.\nADDICT\nMIND\nFOGGY MIND\nCLEAR\nMIND\nCLEAN\nMIND\n\n\n"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Handout 18   (Distress Tolerance Worksheet 15)",
+    "source_pdf_pages": [
+      383
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/handouts/distress_tolerance_handout_18_clear_mind_addict_mind_is_impulsive_one_minded.json",
+    "item_number": "18",
+    "full_text": "Distress Tolerance Handout 18   (Distress Tolerance Worksheet 15)\nClear Mind\nAddict mind is:\nImpulsive\nOne-minded\nWilling to do anything for a “fix”\nWhen in addict mind, you are ruled\nby the addiction. The urges for habitual\nproblem behaviors determine your\nthoughts, emotions, and behaviors.\nClean mind is:\nNaive\nRisk-taking\nOblivious to dangers\nWhen in clean mind, you are clean\nbut oblivious to dangers that might\ncue habitual problem behaviors. You\nbelieve you are invincible and immune\nto future temptation.\nBoth extremes are DANGEROUS!\nClear mind: The safest place to be.\nYou are clean, but you remember addict mind.\nYou radically accept that relapse is not impossible.\nYou enjoy your success, while still expecting urges and cues\nand planning for when you’re tempted.\nADDICT\nMIND\nFOGGY MIND\nCLEAR\nMIND\nCLEAN\nMIND\n\n\n",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Worksheet 15"
+    ],
+    "id": "distress_tolerance_handout_18",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "359"
+    ],
+    "title": "Clear Mind Addict mind is: Impulsive One-minded",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_18_clear_mind_addict_mind_is_impulsive_one_minded.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Addict",
+      "Clear",
+      "Impulsive",
+      "Mind",
+      "One-minded",
+      "mind"
+    ]
+  }
+}

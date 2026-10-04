@@ -1,0 +1,80 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "example-figuring-out-what-my-emotions-are-doing-for-me-323cba281cb4",
+  "title": "Example: Figuring Out What My Emotions Are Doing for Me",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9807
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-2a-example-figuring-out-what-my-emoti-b7e4308fd8.json",
+        "sha256": "b7e4308fd8048c23cc8f0e273e3b261fc96a659dfd0be618105f1fd28f4d23b8",
+        "domain": "dbt",
+        "bytes": 8113
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-2a-example-figuring-out-what-my-emotions-are-doing-for-me-78e660b6d6.json",
+        "sha256": "78e660b6d61d880ddf8382d5d8a80b868492dfe699cef2ed22663778fb0eaca3",
+        "domain": "dbt",
+        "bytes": 7951
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 300,
+        "book_page": "276",
+        "text": "276\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 2a   (Emotion Regulation Handout 3)\nExample: Figuring Out What My Emotions Are Doing\nfor Me\nDue Date:             Name:                                    Week Starting:\nSelect a current or recent emotional reaction and fill out as much of this sheet as you can. If the\nprompting event for the emotion you are working on is another emotion that occurred first (for exam-\nple, feeling afraid prompted getting angry at yourself), then fill out a second worksheet for that first\nemotion. Use the back of the sheet if necessary. Use describe skills for each question.\nEmotion Name:     Shame and Guilt                         Intensity (0–100):   80\nPrompting Event\nWhat happened to prompt this emotion?\n\nI left my roommate’s pot on the burner and forgot about it. I destroyed it. I then threw the pot\naway without telling my roommate.\nMotivation to Action\nWhat action was my emotion motivating and preparing me to do? (Was there a problem my\nemotion was getting me to solve, overcome, or avoid?) What function or goal did my emotion\nserve?\n\nMy emotion was motivating me to shrink away from my friend, to hide myself. It’s possible that\nthe function was to get me to change that behavior. The emotion was also functioning to get me\nto try to hide that I destroyed the pot.\n\nTo influence my friend to stop being mad at me.\nCommunication to Others\nWhat was my facial expression? Posture? Gestures? Words? Actions?\n\nMy eyes were looking down. My lips were turned down. I was slouched slightly and turned\nslightly away from my friend. I did not say anything. I put my hands on my forehead.\nWhat message did my emotion send to others (even if I didn’t intend to send the message)?\n\nI think my friend realized that I felt bad.\nHow did my emotion influence others (even if I didn’t intend to influence them)? What did others\ndo or say as a result of my emotional expression or actions?\n\nMy friend tried to get me to talk. I think it influenced her to stop yelling at me and be more kind.\nCommunication to Myself\nWhat did my emotion say to me?\n\nIt was wrong to do what I did. I feel badly about it because I disappointed my friend. I have really\nmessed this up and now she will never trust or like me.\nWhat facts could I check out to be sure the message my emotions were sending to me was\ncorrect?\n\nI could ask myself if what I did would get me kicked out of my house/friendship. I could try to\nfigure out if what I did crossed my own wise/clear mind, moral code, values. I could ask her:\nHave I destroyed the relationship? Is she going to kick me out? Stop spending time with me? I\ncould also ask what I can do that would help her to trust me again.\nWhat facts did I check out?\n\nI felt bad about burning the pot—but it wasn’t a moral code or values issue yet until I tried to\nhide that I had done it. That behavior did go against my Wise Mind. I asked my roommate if she\nhated me now and she said no. I asked if there was anything I could do to fix the situation, and\nshe asked me to buy a new pot, and I did."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 2a   (Emotion Regulation Handout 3)",
+    "source_pdf_pages": [
+      300
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_2a_example_figuring_out_what_my_emotions_are_doing_for_me.json",
+    "item_number": "2a",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 2a   (Emotion Regulation Handout 3)\nExample: Figuring Out What My Emotions Are Doing\nfor Me\nDue Date:             Name:                                    Week Starting:\nSelect a current or recent emotional reaction and fill out as much of this sheet as you can. If the\nprompting event for the emotion you are working on is another emotion that occurred first (for exam-\nple, feeling afraid prompted getting angry at yourself), then fill out a second worksheet for that first\nemotion. Use the back of the sheet if necessary. Use describe skills for each question.\nEmotion Name:     Shame and Guilt                         Intensity (0–100):   80\nPrompting Event\nWhat happened to prompt this emotion?\n\nI left my roommate’s pot on the burner and forgot about it. I destroyed it. I then threw the pot\naway without telling my roommate.\nMotivation to Action\nWhat action was my emotion motivating and preparing me to do? (Was there a problem my\nemotion was getting me to solve, overcome, or avoid?) What function or goal did my emotion\nserve?\n\nMy emotion was motivating me to shrink away from my friend, to hide myself. It’s possible that\nthe function was to get me to change that behavior. The emotion was also functioning to get me\nto try to hide that I destroyed the pot.\n\nTo influence my friend to stop being mad at me.\nCommunication to Others\nWhat was my facial expression? Posture? Gestures? Words? Actions?\n\nMy eyes were looking down. My lips were turned down. I was slouched slightly and turned\nslightly away from my friend. I did not say anything. I put my hands on my forehead.\nWhat message did my emotion send to others (even if I didn’t intend to send the message)?\n\nI think my friend realized that I felt bad.\nHow did my emotion influence others (even if I didn’t intend to influence them)? What did others\ndo or say as a result of my emotional expression or actions?\n\nMy friend tried to get me to talk. I think it influenced her to stop yelling at me and be more kind.\nCommunication to Myself\nWhat did my emotion say to me?\n\nIt was wrong to do what I did. I feel badly about it because I disappointed my friend. I have really\nmessed this up and now she will never trust or like me.\nWhat facts could I check out to be sure the message my emotions were sending to me was\ncorrect?\n\nI could ask myself if what I did would get me kicked out of my house/friendship. I could try to\nfigure out if what I did crossed my own wise/clear mind, moral code, values. I could ask her:\nHave I destroyed the relationship? Is she going to kick me out? Stop spending time with me? I\ncould also ask what I can do that would help her to trust me again.\nWhat facts did I check out?\n\nI felt bad about burning the pot—but it wasn’t a moral code or values issue yet until I tried to\nhide that I had done it. That behavior did go against my Wise Mind. I asked my roommate if she\nhated me now and she said no. I asked if there was anything I could do to fix the situation, and\nshe asked me to buy a new pot, and I did.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handout 3"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_2a_example_figuring_out_what_my_emotions_are_doing_for_me.html",
+    "id": "emotion_regulation_worksheet_2a",
+    "item_type": "worksheet",
+    "is_example": true,
+    "source_book_pages": [
+      "276"
+    ],
+    "title": "Example: Figuring Out What My Emotions Are Doing for Me",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_2a_example_figuring_out_what_my_emotions_are_fe4c49f4.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Doing",
+      "Emotions",
+      "Example",
+      "Figuring",
+      "What"
+    ]
+  }
+}

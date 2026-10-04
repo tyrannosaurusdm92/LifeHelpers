@@ -1,0 +1,84 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "daily-distress-tolerance-diary-card-4d3b63d74055",
+  "title": "Daily Distress Tolerance Diary Card",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "Track crisis intensity, urges, and distress tolerance skills used.",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.8614
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/06-dbt-diary-cards-daily-distress-tolerance-diary-card-01e26b0641.json",
+        "sha256": "01e26b0641c6f4e2f03775eab631e9a849fa1cd122eba7039e4be89c6652d9c9",
+        "domain": "dbt",
+        "bytes": 1146
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/daily-distress-tolerance-diary-card-c7063ca7c6.json",
+        "sha256": "c7063ca7c6edc66b34adc4907c3de59a6f10f7eb24ce7e0ba1aa4c754d0225a3",
+        "domain": "dbt",
+        "bytes": 1049
+      }
+    ]
+  },
+  "data": {
+    "title": "Daily Distress Tolerance Diary Card",
+    "purpose": "Track crisis intensity, urges, and distress tolerance skills used.",
+    "fields": {
+      "basics": [
+        "Date",
+        "Name",
+        "Crisis/situation"
+      ],
+      "ratings": [
+        "Distress before 0-5",
+        "Distress after 0-5",
+        "Urge intensity 0-5",
+        "Safety risk 0-5"
+      ],
+      "skills_used": [
+        "STOP",
+        "Pros and Cons",
+        "TIP",
+        "Cold Water",
+        "Paced Breathing",
+        "Paired Muscle Relaxation",
+        "ACCEPTS",
+        "Self-Soothing",
+        "Body Scan",
+        "IMPROVE",
+        "Radical Acceptance",
+        "Turning the Mind",
+        "Willingness",
+        "Half-Smiling",
+        "Willing Hands",
+        "Mindfulness of Thoughts"
+      ],
+      "notes": [
+        "What happened",
+        "What I did instead of making it worse",
+        "What helped",
+        "Next support step"
+      ]
+    },
+    "id": "daily_distress_tolerance_diary_card",
+    "generated_note": "Generated from the uploaded DBT distress tolerance module.",
+    "module": "Distress Tolerance",
+    "shared_json_path": "shared/06_dbt_diary_cards/json/daily_distress_tolerance_diary_card.json"
+  }
+}
