@@ -1,0 +1,336 @@
+{
+  "schema": "ai-brain.source-pointer-index.v1",
+  "title": "cbt source pointer index",
+  "domain": "cbt",
+  "capabilities": [
+    "cbt",
+    "retrieval",
+    "provenance"
+  ],
+  "recordCount": 53,
+  "resolvedCount": 53,
+  "records": [
+    {
+      "sourceSha256": "6d2abb17b68c0f64dd129cffa141bd473ab3e4009a9a6935acfc35fda22f6ec6",
+      "sourcePath": "json/cbt_support_library.json",
+      "resolvedPath": "json/clinical-scenarios/cbt-support-library-6d2abb17b6.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_Part1.zip"
+    },
+    {
+      "sourceSha256": "2c642985bfc0cc5bc3d91b34c4c73652751aa4c123885b2e18db67371446d46b",
+      "sourcePath": "json/psychiatry2/support_cbt.json",
+      "resolvedPath": "json/clinical-scenarios/support-cbt-2c642985bf.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_Pt2.zip"
+    },
+    {
+      "sourceSha256": "345620b793d86eea947eb8b583a25350fcbb405548a71007cad5bbd7ab9c3560",
+      "sourcePath": "json/scenarios/cbt/part-001.json",
+      "resolvedPath": "json/clinical-scenarios/part-001-345620b793.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "a4c0411ef957c76295757a7ef17893400618bb45299f6256cd28554e9993df9a",
+      "sourcePath": "json/scenarios/cbt/part-002.json",
+      "resolvedPath": "json/clinical-scenarios/part-002-a4c0411ef9.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "20458efef9fd6e8d09f08575aa017170acf128a114401eec773e92a6cf9b1526",
+      "sourcePath": "json/scenarios/cbt/part-003.json",
+      "resolvedPath": "json/clinical-scenarios/part-003-20458efef9.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "d69b778205b999129da7a4a7e2e590e4ebeba5f8cd61cec432598d5af4a62ae3",
+      "sourcePath": "json/scenarios/cbt/part-004.json",
+      "resolvedPath": "json/clinical-scenarios/part-004-d69b778205.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "bc95ff52b9adf7353c9be846b2c21e19ab944da1f34724d9698610cde1eb5416",
+      "sourcePath": "json/scenarios/cbt/part-005.json",
+      "resolvedPath": "json/clinical-scenarios/part-005-bc95ff52b9.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "55c820c4b75d5d168e3c894d96388ba939fd575a4e4cc2156575c4af31e3b18c",
+      "sourcePath": "json/scenarios/cbt/part-006.json",
+      "resolvedPath": "json/clinical-scenarios/part-006-55c820c4b7.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "b8a54ca7214bb2c8b2178d56ba8a6f06f16100491d4731d5fc4c739e64a7acc5",
+      "sourcePath": "json/scenarios/cbt/part-007.json",
+      "resolvedPath": "json/clinical-scenarios/part-007-b8a54ca721.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "14a0df83b430d916be65aaf8feaa0849b631bad29843a29f9d46bbc3db89984f",
+      "sourcePath": "json/scenarios/cbt/part-008.json",
+      "resolvedPath": "json/clinical-scenarios/part-008-14a0df83b4.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "d88d8b52f85aa8cfdc29065833a2e6af9f1eaf3963e9643b6d1fbc96bfcb6a9a",
+      "sourcePath": "json/scenarios/cbt/part-009.json",
+      "resolvedPath": "json/clinical-scenarios/part-009-d88d8b52f8.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "fd9a52028833c2c843f15072edad40a4026dcb3c21570a12954c7830f20062a5",
+      "sourcePath": "json/scenarios/cbt/part-010.json",
+      "resolvedPath": "json/clinical-scenarios/part-010-fd9a520288.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "bccdd5dedcdd2c95ee93849cba55fb9b8ec387a72885795dde4823f07169484b",
+      "sourcePath": "json/scenarios/cbt/part-011.json",
+      "resolvedPath": "json/clinical-scenarios/part-011-bccdd5dedc.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "65bcc4b6f92f486778c8769a48741853794c46e4f34abb3f912b0e9cc65a2249",
+      "sourcePath": "json/scenarios/cbt/part-012.json",
+      "resolvedPath": "json/clinical-scenarios/part-012-65bcc4b6f9.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "5962d48f50a2f085b6c49fc3fd4279ad1e095888d3a44a431cbfa5987ea53b09",
+      "sourcePath": "json/scenarios/cbt/part-013.json",
+      "resolvedPath": "json/clinical-scenarios/part-013-5962d48f50.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "49f453b808497401f04f640eba188accc8f7a48c2ddada47c0959beb38e3f721",
+      "sourcePath": "json/scenarios/cbt/part-014.json",
+      "resolvedPath": "json/clinical-scenarios/part-014-49f453b808.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "bcd905788c12623a4749eae590850484283ed33112706a01addeec43452d0b0b",
+      "sourcePath": "json/scenarios/cbt/part-015.json",
+      "resolvedPath": "json/clinical-scenarios/part-015-bcd905788c.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "cda3a86be7a67a36f6b7cb6e417feefa3f514d372d6d2554225741063c7ab534",
+      "sourcePath": "json/scenarios/cbt/part-016.json",
+      "resolvedPath": "json/clinical-scenarios/part-016-cda3a86be7.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "2103e0cabb33681283701b2a96dda34d042b849fabaf0d719999306355989077",
+      "sourcePath": "json/scenarios/cbt/part-017.json",
+      "resolvedPath": "json/clinical-scenarios/part-017-2103e0cabb.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "63c8c6090aa9df85df70ba8014014ad5f4447e53b63246f773341cbb6f716f76",
+      "sourcePath": "json/scenarios/cbt/part-018.json",
+      "resolvedPath": "json/clinical-scenarios/part-018-63c8c6090a.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "14f43864e6824c72def5a736df1c7fd4d1b1cd7391def4752c49bdec8037b8f7",
+      "sourcePath": "json/scenarios/cbt/part-019.json",
+      "resolvedPath": "json/clinical-scenarios/part-019-14f43864e6.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "4be2e48de42964e6943f1e7cdf8c9eae5911563a145c229858d239e964e4e844",
+      "sourcePath": "json/scenarios/cbt/part-020.json",
+      "resolvedPath": "json/clinical-scenarios/part-020-4be2e48de4.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "1f10354d76dd6e251641628bcd7c56b39fc8b5916795b37ddea90eae4ef15942",
+      "sourcePath": "json/scenarios/cbt/part-021.json",
+      "resolvedPath": "json/clinical-scenarios/part-021-1f10354d76.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "bd7d7820a8eb3e821f3331ab1c14e77c142157092ef0b587ea01211a2298259e",
+      "sourcePath": "json/scenarios/cbt/part-022.json",
+      "resolvedPath": "json/clinical-scenarios/part-022-bd7d7820a8.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "3e52fedc3428818d542e05b6f8c3cf1bfa4c59cb3c7765415fe36e72f1fe572e",
+      "sourcePath": "json/scenarios/cbt/part-023.json",
+      "resolvedPath": "json/clinical-scenarios/part-023-3e52fedc34.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "d647ed5c1ea166f3ae86340bfdf9ae0ef7ed024008d879397002adbe32207869",
+      "sourcePath": "json/scenarios/cbt/part-024.json",
+      "resolvedPath": "json/clinical-scenarios/part-024-d647ed5c1e.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "de1c95809599ada5af54193786b885d3aa40f6adaa109ab92058c102d57154d2",
+      "sourcePath": "json/scenarios/cbt/part-025.json",
+      "resolvedPath": "json/clinical-scenarios/part-025-de1c958095.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "17ba6b33ab559249feed1d1460f4fa57920f9201c6b7d32301e41417266f0f81",
+      "sourcePath": "json/scenarios/cbt/part-026.json",
+      "resolvedPath": "json/clinical-scenarios/part-026-17ba6b33ab.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "7b8a003e9e4eb6004df3b4787bfd79e483bff179d4ee9fee80f2f7bf6af2ec4d",
+      "sourcePath": "json/scenarios/cbt/part-027.json",
+      "resolvedPath": "json/clinical-scenarios/part-027-7b8a003e9e.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "23d2da9a7489eb71847209056849e8fef8278e8c9ecd2a07b4535699137702ad",
+      "sourcePath": "json/scenarios/cbt/part-028.json",
+      "resolvedPath": "json/clinical-scenarios/part-028-23d2da9a74.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "3a18d2dcc8ec5918fe3bd7b7b709cc47142021f56fafde4568b96b7c547998a9",
+      "sourcePath": "json/scenarios/cbt/part-029.json",
+      "resolvedPath": "json/clinical-scenarios/part-029-3a18d2dcc8.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "98589f3520b24098d3193dd781a20c0fa387908d63dc3a53d39d38fd29c7dd6f",
+      "sourcePath": "json/scenarios/cbt/part-030.json",
+      "resolvedPath": "json/clinical-scenarios/part-030-98589f3520.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "472f3f6c462f935b470bc15f3fc7e87b89b18b41f3da9709abf8866652b08d71",
+      "sourcePath": "json/scenarios/cbt/part-031.json",
+      "resolvedPath": "json/clinical-scenarios/part-031-472f3f6c46.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "208e10807fc7d12287973702b53ffce3fc16b5ed79c08ebb081487f06349f2c6",
+      "sourcePath": "json/scenarios/cbt/part-032.json",
+      "resolvedPath": "json/clinical-scenarios/part-032-208e10807f.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "53933914fd83b62708b4c5d39b4cd3f24a4e83e892d7776388f1afa363fce803",
+      "sourcePath": "json/scenarios/cbt/part-033.json",
+      "resolvedPath": "json/clinical-scenarios/part-033-53933914fd.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "065b2ba0feb63fcde7a36cc0197eca627d614fb6a5881c0c4de6e4b11968ec38",
+      "sourcePath": "json/scenarios/cbt/part-034.json",
+      "resolvedPath": "json/clinical-scenarios/part-034-065b2ba0fe.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "3451fa8937df101ab0e023608327dbde453cf99d3eb68101fc5671692d039033",
+      "sourcePath": "json/scenarios/cbt/part-035.json",
+      "resolvedPath": "json/clinical-scenarios/part-035-3451fa8937.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "aed6f1560fd0ecb25bf9950508b4e8da801cf71d80513506ff91cc41a83d3baa",
+      "sourcePath": "json/scenarios/cbt/part-036.json",
+      "resolvedPath": "json/clinical-scenarios/part-036-aed6f1560f.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "f7a883ef0e20c271d482588147084e40db7b8a74d00662ae2fae742529f90901",
+      "sourcePath": "json/scenarios/cbt/part-037.json",
+      "resolvedPath": "json/clinical-scenarios/part-037-f7a883ef0e.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "5f17b8c4bb1508dce7a019e03fa5c902124597dda48cc4dd8db220a55b697252",
+      "sourcePath": "json/scenarios/cbt/part-038.json",
+      "resolvedPath": "json/clinical-scenarios/part-038-5f17b8c4bb.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "fb8137ab4daccf6c40859ed22b4a92082abcc27dd4dbd60e12e3752136b33ebe",
+      "sourcePath": "json/scenarios/cbt/part-039.json",
+      "resolvedPath": "json/clinical-scenarios/part-039-fb8137ab4d.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "7e96377a941d3df3a19851a3c2ccf2b2755d945eeff109539b0cb42c1190bc93",
+      "sourcePath": "json/scenarios/cbt/part-040.json",
+      "resolvedPath": "json/clinical-scenarios/part-040-7e96377a94.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "26b01808d9a11c3927170189161101353d0bcebb8de0338f644a2407d3637962",
+      "sourcePath": "json/scenarios/cbt/part-041.json",
+      "resolvedPath": "json/clinical-scenarios/part-041-26b01808d9.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "a34392461ce146e19f5ae83458ecac4ac07160ed189021862fae2cafe6e6d8de",
+      "sourcePath": "json/scenarios/cbt/part-042.json",
+      "resolvedPath": "json/clinical-scenarios/part-042-a34392461c.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "bb832eea163d87a83dba9e276cf1caf763cfb8d44eb84a3f44086f5a3e0ebf20",
+      "sourcePath": "json/scenarios/cbt/part-043.json",
+      "resolvedPath": "json/clinical-scenarios/part-043-bb832eea16.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "b5ec05a155e66e671303664e16e389b3970c5cc1bc4aebc9f439b0306606662b",
+      "sourcePath": "json/scenarios/cbt/part-044.json",
+      "resolvedPath": "json/clinical-scenarios/part-044-b5ec05a155.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "d34b046cc5b9428f44cc6aa499918a6d5730a8afb1474147ff83c1bdbb1b2757",
+      "sourcePath": "json/scenarios/cbt/part-045.json",
+      "resolvedPath": "json/clinical-scenarios/part-045-d34b046cc5.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "ea87fe040840966f92bd6042e312095bff22469ead255b9a10a4b8f85d0a063b",
+      "sourcePath": "json/scenarios/cbt/part-046.json",
+      "resolvedPath": "json/clinical-scenarios/part-046-ea87fe0408.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "c22646eebd66665aa355d184443015376f6bb1fb1820ff01c967b959eb585c16",
+      "sourcePath": "json/scenarios/cbt/part-047.json",
+      "resolvedPath": "json/clinical-scenarios/part-047-c22646eebd.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "9c4b528c9a9f6d93b64e8d5d37b57638ba28a69018e88d2fa1e00e752f14138c",
+      "sourcePath": "json/scenarios/cbt/part-048.json",
+      "resolvedPath": "json/clinical-scenarios/part-048-9c4b528c9a.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "699cdf4d37da4a3b8a3f7c4222c365e68682086d24d1aa48c516632c6b7c91c0",
+      "sourcePath": "json/scenarios/cbt/part-049.json",
+      "resolvedPath": "json/clinical-scenarios/part-049-699cdf4d37.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "f9b216600a7d6c9e6963d7af5e6655ea5c7a3de69c9e212eefffb4a99749e712",
+      "sourcePath": "json/scenarios/cbt/part-050.json",
+      "resolvedPath": "json/clinical-scenarios/part-050-f9b216600a.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "c7e8d12c3ba3fab17f1fb279ddf7c17e6611efa25409478cccad04ee23a2c600",
+      "sourcePath": "json/scenarios/cbt/part-051.json",
+      "resolvedPath": "json/clinical-scenarios/part-051-c7e8d12c3b.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    }
+  ],
+  "provenance": {
+    "source": "redundant consolidated wrapper metadata",
+    "note": "Knowledge bodies are not duplicated here; pointers resolve to canonical final shards."
+  }
+}

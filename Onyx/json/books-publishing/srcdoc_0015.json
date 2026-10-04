@@ -1,0 +1,17 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "books-publishing",
+  "capabilities": [
+    "character",
+    "map",
+    "merge",
+    "sort"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "provided-project-material",
+    "archiveHash": "4d43e23471259cad"
+  },
+  "title": "srcdoc_0015.txt",
+  "content": "cython==0.29.28\nscipy>=1.4.0\ntorch>=1.7\ntorchaudio\nsoundfile\nlibrosa==0.8.0\ninflect==5.6.0\ntqdm\nanyascii\npyyaml\nfsspec>=2021.04.0\naiohttp\npackaging\nflask\npysbd\numap-learn==0.5.1\npandas\nmatplotlib\ntrainer==0.0.20\ncoqpit>=0.0.16\njieba\npypinyin\nmecab-python3==1.0.5\nunidic-lite==1.0.8\ngruut[de]==2.2.3\njamo\nnltk\ng2pkk>=0.1.1\n\n[:python_version < \"3.10\"]\nnumpy==1.21.6\n\n[:python_version < \"3.9\"]\nnumba==0.55.1\n\n[:python_version == \"3.10\"]\nnumpy\n\n[:python_version >= \"3.9\"]\nnumba==0.56.4\n\n[all]\nblack\ncoverage\nisort\nnose2\npylint==2.10.2\nbokeh==1.4.0\n\n[dev]\nblack\ncoverage\nisort\nnose2\npylint==2.10.2\n\n[notebooks]\nbokeh==1.4.0\n"
+}

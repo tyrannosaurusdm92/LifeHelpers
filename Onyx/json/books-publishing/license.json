@@ -1,0 +1,15 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "books-publishing",
+  "capabilities": [
+    "auth",
+    "layer"
+  ],
+  "provenance": {
+    "sourceGroup": "player-reference-runtime-a",
+    "sourceType": "provided-project-material",
+    "archiveHash": "ff8940c1250d6e84"
+  },
+  "title": "license.txt",
+  "content": "This project uses a dual-license model:\n\n- **Source code and site-authored content** (everything under src/,\n  prisma/, scripts/, and all configuration/build files) is licensed under\n  the MIT License. This includes the interactive book content in\n  src/content/book/.\n  See LICENSE-MIT for the full text.\n\n- **Prompt content and data** (prompts.csv, PROMPTS.md, and all user-submitted\n  prompt text) is dedicated to the public domain under CC0 1.0 Universal.\n  See LICENSE-CC0 for the full text.\n\nIf you are unsure which license applies to a particular file, the MIT License\napplies by default.\n"
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "books-publishing",
+  "capabilities": [
+    "class",
+    "layer",
+    "merge",
+    "npc",
+    "shape",
+    "voice"
+  ],
+  "provenance": {
+    "sourceGroup": "voice-persona-creator",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "__init__",
+      "check_codec_type_from_path",
+      "flatten",
+      "get_codec_type_from_range",
+      "ids2npy",
+      "npy2ids",
+      "npy_to_json_str",
+      "offset_tok_ids",
+      "sep",
+      "sep_ids",
+      "unflatten",
+      "unoffset_tok_ids"
+    ],
+    "classes": [
+      "CodecManipulator"
+    ],
+    "imports": [],
+    "lineCount": 205,
+    "characterCount": 10528
+  },
+  "selectedComments": [
+    "*mm tokenizer v0.1**",
+    "\"hifi16k\": [53526, 57621],",
+    "def check_codec_type_from_path(self, path):",
+    "if self.codec_type == \"hifi16k\":",
+    "assert \"academicodec_hifi_16k_320d_large_uni\" in path",
+    "data = data.squeeze()",
+    "make sure token_ids starts with codebook 0"
+  ]
+}

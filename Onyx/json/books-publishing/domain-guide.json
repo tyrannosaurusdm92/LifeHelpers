@@ -1,0 +1,37 @@
+{
+  "schema": "ai-brain.domain-guide.v1",
+  "version": "1.0.0",
+  "id": "domain-books-publishing",
+  "title": "Books Publishing",
+  "domain": "books-publishing",
+  "description": "Book planning, trim/layout concepts, cover requirements, publishing workflows and interactive HTML book patterns.",
+  "tags": [
+    "books-publishing",
+    "book cover",
+    "publishing",
+    "trim size",
+    "manuscript",
+    "typesetting",
+    "cover"
+  ],
+  "capabilities": [
+    "publishing",
+    "book-design",
+    "cover-design"
+  ],
+  "relatedDomains": [
+    "creative-writing",
+    "art-design",
+    "story-intelligence"
+  ],
+  "useCases": [
+    "route user requests into this domain",
+    "combine this domain with related disciplines",
+    "select more specific source shards by corpus index"
+  ],
+  "retrievalPolicy": "Use this guide as a routing seed. Prefer deeper topic/source shards from the corpus index when they match the request.",
+  "provenance": {
+    "source": "AI-Brain Project Pitch and unified source-package architecture",
+    "type": "source-derived routing seed"
+  }
+}
