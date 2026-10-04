@@ -1,0 +1,95 @@
+{
+  "schema": "ai-brain.registry.capabilities.v2",
+  "version": "2.0.0",
+  "families": [
+    {
+      "id": "understand",
+      "capabilities": [
+        "intent-analysis",
+        "multi-label-classification",
+        "task-decomposition",
+        "constraint-detection",
+        "domain-routing"
+      ]
+    },
+    {
+      "id": "retrieve",
+      "capabilities": [
+        "local-catalog-search",
+        "selective-retrieval",
+        "relevance-ranking",
+        "alias-resolution",
+        "source-attribution",
+        "insufficient-evidence-fallback"
+      ]
+    },
+    {
+      "id": "organize",
+      "capabilities": [
+        "file-indexing",
+        "deduplication",
+        "version-comparison",
+        "manifest-generation",
+        "workflow-planning"
+      ]
+    },
+    {
+      "id": "create",
+      "capabilities": [
+        "writing",
+        "art-direction",
+        "image-planning",
+        "3d-creation",
+        "map-design",
+        "structured-generation"
+      ]
+    },
+    {
+      "id": "software",
+      "capabilities": [
+        "html",
+        "css",
+        "javascript",
+        "json",
+        "api-design",
+        "frontend-architecture",
+        "backend-architecture",
+        "testing",
+        "debugging",
+        "validation"
+      ]
+    },
+    {
+      "id": "continuity",
+      "capabilities": [
+        "project-scope",
+        "timeline-continuity",
+        "character-state",
+        "world-state",
+        "decision-history"
+      ]
+    },
+    {
+      "id": "safety-access",
+      "capabilities": [
+        "accessibility",
+        "privacy",
+        "consent",
+        "moderation",
+        "human-review",
+        "provenance",
+        "health-information-boundaries"
+      ]
+    }
+  ],
+  "execution_policy": {
+    "public_surface": "read-only knowledge retrieval and contact form",
+    "knowledge_actions": [
+      "site.knowledge"
+    ],
+    "contact_action": "site.contact",
+    "model_generation_in_public_chat": false,
+    "external_tools_in_public_chat": false,
+    "backend_changes_in_this_package": false
+  }
+}

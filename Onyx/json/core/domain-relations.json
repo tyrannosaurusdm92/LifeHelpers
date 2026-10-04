@@ -1,0 +1,288 @@
+{
+  "schema": "ai-brain.domain-graph.v1",
+  "version": "1.0.0",
+  "relations": {
+    "conversation": [
+      "memory",
+      "organization"
+    ],
+    "memory": [
+      "conversation",
+      "story-intelligence",
+      "organization"
+    ],
+    "creative-writing": [
+      "story-intelligence",
+      "worldbuilding",
+      "books-publishing"
+    ],
+    "books-publishing": [
+      "creative-writing",
+      "art-design",
+      "story-intelligence"
+    ],
+    "story-intelligence": [
+      "creative-writing",
+      "worldbuilding",
+      "memory"
+    ],
+    "worldbuilding": [
+      "simulation",
+      "story-intelligence",
+      "language",
+      "strategy"
+    ],
+    "language": [
+      "worldbuilding",
+      "creative-writing"
+    ],
+    "art-design": [
+      "books-publishing",
+      "media",
+      "vtt-maps"
+    ],
+    "media": [
+      "art-design",
+      "accessibility"
+    ],
+    "game-design": [
+      "strategy",
+      "simulation",
+      "ttrpg",
+      "mmorpg"
+    ],
+    "ttrpg": [
+      "game-design",
+      "vtt-maps",
+      "worldbuilding",
+      "simulation",
+      "safety-moderation"
+    ],
+    "mmorpg": [
+      "game-design",
+      "simulation",
+      "worldbuilding",
+      "social-community"
+    ],
+    "vtt-maps": [
+      "ttrpg",
+      "art-design",
+      "simulation"
+    ],
+    "simulation": [
+      "worldbuilding",
+      "game-design",
+      "strategy"
+    ],
+    "strategy": [
+      "organization",
+      "game-design",
+      "code"
+    ],
+    "code": [
+      "web-apps",
+      "mobile-apps",
+      "data-schemas",
+      "auth-security",
+      "testing"
+    ],
+    "web-apps": [
+      "code",
+      "auth-security",
+      "data-schemas",
+      "accessibility"
+    ],
+    "mobile-apps": [
+      "code",
+      "accessibility"
+    ],
+    "auth-security": [
+      "code",
+      "social-community",
+      "safety-moderation"
+    ],
+    "data-schemas": [
+      "code",
+      "organization",
+      "file-intelligence"
+    ],
+    "organization": [
+      "strategy",
+      "file-intelligence",
+      "memory"
+    ],
+    "file-intelligence": [
+      "organization",
+      "data-schemas",
+      "code"
+    ],
+    "social-community": [
+      "auth-security",
+      "safety-moderation",
+      "accessibility",
+      "code"
+    ],
+    "safety-moderation": [
+      "social-community",
+      "accessibility",
+      "auth-security"
+    ],
+    "accessibility": [
+      "code",
+      "healthcare",
+      "social-community"
+    ],
+    "education": [
+      "conversation",
+      "science",
+      "organization"
+    ],
+    "science": [
+      "evidence-library",
+      "healthcare"
+    ],
+    "healthcare": [
+      "physical-health",
+      "mental-health",
+      "psychiatry",
+      "accessibility",
+      "safety-moderation"
+    ],
+    "mental-health": [
+      "psychiatry",
+      "cbt",
+      "dbt",
+      "trauma",
+      "healthcare"
+    ],
+    "psychiatry": [
+      "mental-health",
+      "healthcare",
+      "clinical-scenarios"
+    ],
+    "adhd": [
+      "mental-health",
+      "accessibility",
+      "organization"
+    ],
+    "autism": [
+      "mental-health",
+      "accessibility",
+      "neurodevelopment"
+    ],
+    "cbt": [
+      "mental-health",
+      "psychiatry"
+    ],
+    "dbt": [
+      "mental-health",
+      "psychiatry"
+    ],
+    "trauma": [
+      "mental-health",
+      "life-events",
+      "safety-moderation"
+    ],
+    "physical-health": [
+      "healthcare",
+      "accessibility"
+    ],
+    "life-events": [
+      "trauma",
+      "mental-health",
+      "physical-health"
+    ]
+  },
+  "extraRelations": {
+    "cancer-oncology": [
+      "healthcare",
+      "physical-health",
+      "science"
+    ],
+    "chronic-physical-health": [
+      "healthcare",
+      "physical-health"
+    ],
+    "injury-medical-trauma": [
+      "healthcare",
+      "physical-health",
+      "trauma"
+    ],
+    "neurological-cognitive": [
+      "healthcare",
+      "physical-health",
+      "science"
+    ],
+    "neurodevelopment": [
+      "autism",
+      "adhd",
+      "healthcare",
+      "accessibility"
+    ],
+    "violence-abuse-victimization": [
+      "trauma",
+      "safety-moderation",
+      "mental-health"
+    ],
+    "grief-bereavement": [
+      "life-events",
+      "trauma",
+      "mental-health"
+    ],
+    "housing-economic-work-education": [
+      "life-events",
+      "organization",
+      "social-community"
+    ],
+    "migration-disaster-war": [
+      "life-events",
+      "trauma",
+      "safety-moderation"
+    ],
+    "endocrine-metabolic-reproductive": [
+      "healthcare",
+      "physical-health",
+      "science"
+    ],
+    "identity-discrimination": [
+      "mental-health",
+      "safety-moderation",
+      "social-community"
+    ],
+    "relationships-family-attachment": [
+      "mental-health",
+      "life-events",
+      "social-community"
+    ],
+    "disability-access-caregiving": [
+      "accessibility",
+      "healthcare",
+      "life-events"
+    ],
+    "legal-system-involvement": [
+      "life-events",
+      "safety-moderation"
+    ],
+    "cross-cutting-support": [
+      "healthcare",
+      "mental-health",
+      "accessibility",
+      "life-events"
+    ],
+    "evidence-library": [
+      "science",
+      "healthcare",
+      "research"
+    ],
+    "clinical-scenarios": [
+      "psychiatry",
+      "mental-health",
+      "healthcare"
+    ],
+    "reference-patterns": [
+      "code",
+      "organization",
+      "strategy"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "ai-brain.chunk-manifest.v1",
+  "generated": "2026-10-03",
+  "root_prefix": "AI-Brain/",
+  "extract_instruction": "Extract all nine ZIP files at the repository root; their contents merge without overwriting one another.",
+  "chunks": [
+    {
+      "id": "batch1_writing_language",
+      "file": "AI-Brain_batch1_writing_language.zip",
+      "domains": [
+        "Writing & Language"
+      ],
+      "path_prefix": "AI-Brain/"
+    },
+    {
+      "id": "batch2_ttrpg_worldbuilding",
+      "file": "AI-Brain_batch2_ttrpg_worldbuilding.zip",
+      "domains": [
+        "TTRPG & Worldbuilding"
+      ],
+      "path_prefix": "AI-Brain/"
+    },
+    {
+      "id": "batch3_art_images_3d",
+      "file": "AI-Brain_batch3_art_images_3d.zip",
+      "domains": [
+        "Art, Images & 3D"
+      ],
+      "path_prefix": "AI-Brain/"
+    },
+    {
+      "id": "batch4_video_games_game_creation",
+      "file": "AI-Brain_batch4_video_games_game_creation.zip",
+      "domains": [
+        "Video Games & Game Creation"
+      ],
+      "path_prefix": "AI-Brain/"
+    },
+    {
+      "id": "batch5_psychiatry",
+      "file": "AI-Brain_batch5_psychiatry.zip",
+      "domains": [
+        "Psychiatry"
+      ],
+      "path_prefix": "AI-Brain/"
+    },
+    {
+      "id": "batch6_mental_health",
+      "file": "AI-Brain_batch6_mental_health.zip",
+      "domains": [
+        "Mental Health & Coping"
+      ],
+      "path_prefix": "AI-Brain/"
+    },
+    {
+      "id": "batch7_physical_health",
+      "file": "AI-Brain_batch7_physical_health.zip",
+      "domains": [
+        "Physical Health"
+      ],
+      "path_prefix": "AI-Brain/"
+    },
+    {
+      "id": "batch8_health_context_support",
+      "file": "AI-Brain_batch8_health_context_support.zip",
+      "domains": [
+        "Health Context & Support"
+      ],
+      "path_prefix": "AI-Brain/"
+    },
+    {
+      "id": "batch9_core_chat_support",
+      "file": "AI-Brain_batch9_core_chat_support.zip",
+      "domains": [
+        "Core Knowledge & Support"
+      ],
+      "path_prefix": "AI-Brain/"
+    }
+  ],
+  "only_html_file": "AI-Brain/index.html"
+}

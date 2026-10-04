@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI-Brain Knowledge Shard",
+  "type": "object",
+  "properties": {
+    "schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "domain": {
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "subdomain": {
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "tags": {
+      "type": "array"
+    },
+    "keywords": {
+      "type": "array"
+    },
+    "aliases": {
+      "type": "array"
+    },
+    "capabilities": {
+      "type": "array"
+    },
+    "intents": {
+      "type": "array"
+    },
+    "triggers": {
+      "type": "array"
+    },
+    "negativeTriggers": {
+      "type": "array"
+    },
+    "relatedDomains": {
+      "type": "array"
+    },
+    "relatedFiles": {
+      "type": "array"
+    },
+    "useCases": {
+      "type": "array"
+    },
+    "outputTypes": {
+      "type": "array"
+    },
+    "priority": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "safety": {
+      "type": [
+        "object",
+        "string",
+        "array"
+      ]
+    },
+    "privacy": {
+      "type": [
+        "object",
+        "string",
+        "array"
+      ]
+    },
+    "provenance": {
+      "type": [
+        "object",
+        "array",
+        "string"
+      ]
+    },
+    "records": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

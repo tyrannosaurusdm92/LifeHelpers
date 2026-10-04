@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "cases": [
+    {
+      "prompt": "Create a book cover for my novel",
+      "expect": [
+        "books-publishing",
+        "art-design",
+        "layout",
+        "branding"
+      ]
+    },
+    {
+      "prompt": "Build a tabletop RPG with classes, rules, sheets, maps and combat",
+      "expect": [
+        "ttrpg",
+        "game-design",
+        "worldbuilding",
+        "vtt-maps",
+        "balancing"
+      ]
+    },
+    {
+      "prompt": "Make a private social network for friends",
+      "expect": [
+        "web-apps",
+        "auth-security",
+        "social-community",
+        "privacy",
+        "safety-moderation"
+      ]
+    },
+    {
+      "prompt": "Turn these brush strokes into a layered 3D effect and crop the selection",
+      "expect": [
+        "studio-tools",
+        "art-design",
+        "3d",
+        "selection",
+        "crop",
+        "layers"
+      ]
+    },
+    {
+      "prompt": "I have thirty versions of the same folder; consolidate them without losing unique work",
+      "expect": [
+        "file-intelligence",
+        "organization",
+        "dedupe",
+        "versioning",
+        "provenance"
+      ]
+    },
+    {
+      "prompt": "Run this character as a secretive NPC with persistent goals",
+      "expect": [
+        "persona-agents",
+        "state",
+        "goals",
+        "knowledge-boundary",
+        "continuity"
+      ]
+    }
+  ]
+}

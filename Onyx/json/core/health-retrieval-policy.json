@@ -1,0 +1,39 @@
+{
+  "schema": "ai-brain.health-retrieval-policy.v1",
+  "review_status": "general reference material; imported corpus is not clinically reviewed as a whole",
+  "intended_use": "General education and source-grounded retrieval only. Do not infer a person's diagnosis, recommend starting/stopping/changing medication, or replace a clinician.",
+  "limits": [
+    "No diagnosis or treatment plan.",
+    "Do not interpret an individual user's personal health history.",
+    "Separate reported evidence from general background; show a source when the corpus provides one.",
+    "If evidence is missing, say so without filling gaps.",
+    "For urgent symptoms or immediate danger, direct the person to local emergency services or a qualified crisis service."
+  ],
+  "public_mode": {
+    "knowledge_only": true,
+    "generation": false,
+    "web_search": false,
+    "personal_health_memory": false,
+    "external_actions": false
+  },
+  "source_guides": [
+    {
+      "organization": "World Health Organization",
+      "title": "Mental health strengthening response",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response",
+      "checked": "2026-10-03"
+    },
+    {
+      "organization": "SAMHSA",
+      "title": "988 Frequently Asked Questions",
+      "url": "https://www.samhsa.gov/find-help/988/faqs",
+      "checked": "2026-10-03"
+    },
+    {
+      "organization": "MedlinePlus",
+      "title": "Medical Encyclopedia",
+      "url": "https://medlineplus.gov/encyclopedia.html",
+      "checked": "2026-10-03"
+    }
+  ]
+}

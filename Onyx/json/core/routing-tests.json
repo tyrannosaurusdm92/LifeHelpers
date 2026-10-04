@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.routing-tests.v1",
+  "tests": [
+    {
+      "request": "Create a book cover for my novel.",
+      "expect": [
+        "books-publishing",
+        "art-design",
+        "creative-writing"
+      ]
+    },
+    {
+      "request": "I want to create a tabletop RPG with rules, sheets, maps, classes and combat.",
+      "expect": [
+        "ttrpg",
+        "game-design",
+        "vtt-maps",
+        "worldbuilding",
+        "strategy",
+        "organization"
+      ]
+    },
+    {
+      "request": "Build a private social network for my friends.",
+      "expect": [
+        "social-community",
+        "code",
+        "web-apps",
+        "auth-security",
+        "safety-moderation",
+        "accessibility"
+      ]
+    },
+    {
+      "request": "Invent a complete fantasy language for this culture.",
+      "expect": [
+        "language",
+        "worldbuilding",
+        "creative-writing"
+      ]
+    },
+    {
+      "request": "I have thirty versions of this project and need to know what is current.",
+      "expect": [
+        "file-intelligence",
+        "organization",
+        "strategy"
+      ]
+    },
+    {
+      "request": "Make a DBT diary card I can print and use online.",
+      "expect": [
+        "dbt",
+        "mental-health",
+        "accessibility"
+      ]
+    },
+    {
+      "request": "My login page is broken.",
+      "expect": [
+        "code",
+        "web-apps",
+        "auth-security"
+      ]
+    },
+    {
+      "request": "Build an MMORPG world 1700 years before my books.",
+      "expect": [
+        "mmorpg",
+        "worldbuilding",
+        "story-intelligence",
+        "simulation",
+        "game-design"
+      ]
+    }
+  ]
+}

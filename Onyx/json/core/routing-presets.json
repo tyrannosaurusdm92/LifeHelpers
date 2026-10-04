@@ -1,0 +1,102 @@
+{
+  "schema": "ai-brain.routing-presets.v2",
+  "examples": [
+    {
+      "request_pattern": "create a book cover",
+      "activate": [
+        "art",
+        "book",
+        "image_generation",
+        "writing",
+        "organization"
+      ]
+    },
+    {
+      "request_pattern": "create a TTRPG system with rules, sheets, maps and templates",
+      "activate": [
+        "ttrpg",
+        "rules",
+        "maps",
+        "art",
+        "strategy",
+        "organization",
+        "worldbuilding",
+        "character_npc",
+        "virtual_tabletop"
+      ]
+    },
+    {
+      "request_pattern": "create a social media site for friends",
+      "activate": [
+        "social_media",
+        "code",
+        "organization",
+        "art",
+        "authorization",
+        "safety",
+        "messaging",
+        "data",
+        "project_management"
+      ]
+    },
+    {
+      "request_pattern": "build or repair a video game",
+      "activate": [
+        "game_design",
+        "code",
+        "strategy",
+        "rules",
+        "character_npc",
+        "worldbuilding",
+        "art",
+        "data",
+        "project_management"
+      ]
+    },
+    {
+      "request_pattern": "support someone dealing with trauma, illness or disability",
+      "activate": [
+        "mental_health",
+        "physical_health",
+        "trauma_life_events",
+        "accessibility",
+        "research_evidence",
+        "safety",
+        "conversation"
+      ]
+    },
+    {
+      "request_pattern": "make a character, city, world or galaxy",
+      "activate": [
+        "worldbuilding",
+        "character_npc",
+        "writing",
+        "organization",
+        "maps",
+        "art",
+        "strategy"
+      ]
+    },
+    {
+      "request_pattern": "sort a huge pile of files and build a directory",
+      "activate": [
+        "organization",
+        "data",
+        "code",
+        "strategy",
+        "project_management"
+      ]
+    },
+    {
+      "request_pattern": "make a DBT worksheet or diary card",
+      "activate": [
+        "dbt",
+        "mental_health",
+        "education",
+        "safety",
+        "organization"
+      ]
+    }
+  ],
+  "rule": "Treat examples as composable retrieval patterns, not exhaustive categories. Add every capability that materially helps the request."
+}

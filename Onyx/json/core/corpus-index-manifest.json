@@ -1,0 +1,38 @@
+{
+  "schema": "ai-brain.corpus-index-manifest.v1",
+  "generatedAt": "2026-08-10T18:27:09.832145+00:00",
+  "entryCount": 11546,
+  "shards": [
+    {
+      "path": "json/core/corpus-index-001.json",
+      "entries": 2400,
+      "bytes": 1456181,
+      "sha256": "939e7104561ad3b697b1ea127a13d5b0970d9de411591f63fed5fecdd2ae3731"
+    },
+    {
+      "path": "json/core/corpus-index-002.json",
+      "entries": 2400,
+      "bytes": 1520990,
+      "sha256": "3818afa2ca971600b9f38843eb0c71010bfb5d87cb96b839f0a32478e583065a"
+    },
+    {
+      "path": "json/core/corpus-index-003.json",
+      "entries": 2400,
+      "bytes": 1367937,
+      "sha256": "191edfbbfa86b351d3fcb72576bc34ef377fc8b681d3cd777d5fdd78038d5032"
+    },
+    {
+      "path": "json/core/corpus-index-004.json",
+      "entries": 2400,
+      "bytes": 1546484,
+      "sha256": "813419914fc8472a3a67eceb6db6c4f01c8471710ee67700e8312dcbc5cccc63"
+    },
+    {
+      "path": "json/core/corpus-index-005.json",
+      "entries": 1946,
+      "bytes": 1097259,
+      "sha256": "705d2c308b3c6e05ae7c394cf21a9d64ae6485e56a6a2c63b3fa74ab585b8fbc"
+    }
+  ],
+  "retrievalRule": "Read index metadata first, rank candidate paths, then fetch only a bounded set of relevant knowledge files/records. Never load the full corpus for every request."
+}

@@ -1,0 +1,881 @@
+{
+  "schema": "ai-brain.capability-ontology.v1",
+  "version": "1.0.0",
+  "title": "AI-Brain capability ontology",
+  "domains": {
+    "conversation": {
+      "synonyms": [
+        "chat",
+        "talk",
+        "conversation",
+        "summarize",
+        "explain"
+      ],
+      "related": [
+        "memory",
+        "organization"
+      ],
+      "capabilities": [
+        "conversation",
+        "summarization",
+        "explanation"
+      ]
+    },
+    "memory": {
+      "synonyms": [
+        "remember",
+        "memory",
+        "continuity",
+        "previous work",
+        "preferences"
+      ],
+      "related": [
+        "conversation",
+        "story-intelligence",
+        "organization"
+      ],
+      "capabilities": [
+        "memory-selection",
+        "continuity"
+      ]
+    },
+    "creative-writing": {
+      "synonyms": [
+        "write",
+        "novel",
+        "story",
+        "book",
+        "scene",
+        "dialogue",
+        "poem",
+        "script"
+      ],
+      "related": [
+        "story-intelligence",
+        "worldbuilding",
+        "books-publishing"
+      ],
+      "capabilities": [
+        "writing",
+        "editing",
+        "outlining"
+      ]
+    },
+    "books-publishing": {
+      "synonyms": [
+        "book cover",
+        "publishing",
+        "trim size",
+        "manuscript",
+        "typesetting",
+        "cover"
+      ],
+      "related": [
+        "creative-writing",
+        "art-design",
+        "story-intelligence"
+      ],
+      "capabilities": [
+        "publishing",
+        "book-design",
+        "cover-design"
+      ]
+    },
+    "story-intelligence": {
+      "synonyms": [
+        "continuity",
+        "canon",
+        "plot hole",
+        "timeline",
+        "pov",
+        "series"
+      ],
+      "related": [
+        "creative-writing",
+        "worldbuilding",
+        "memory"
+      ],
+      "capabilities": [
+        "continuity",
+        "canon-analysis",
+        "timeline-analysis"
+      ]
+    },
+    "worldbuilding": {
+      "synonyms": [
+        "worldbuild",
+        "world",
+        "culture",
+        "species",
+        "galaxy",
+        "planet",
+        "city",
+        "faction",
+        "lore"
+      ],
+      "related": [
+        "simulation",
+        "story-intelligence",
+        "language",
+        "strategy"
+      ],
+      "capabilities": [
+        "worldbuilding",
+        "lore",
+        "hierarchy"
+      ]
+    },
+    "language": {
+      "synonyms": [
+        "conlang",
+        "fantasy language",
+        "grammar",
+        "phonology",
+        "lexicon",
+        "dictionary",
+        "naming language"
+      ],
+      "related": [
+        "worldbuilding",
+        "creative-writing"
+      ],
+      "capabilities": [
+        "conlang",
+        "naming",
+        "linguistic-consistency"
+      ]
+    },
+    "art-design": {
+      "synonyms": [
+        "art",
+        "image",
+        "illustration",
+        "design",
+        "layout",
+        "typography",
+        "branding",
+        "cover",
+        "composition",
+        "color"
+      ],
+      "related": [
+        "books-publishing",
+        "media",
+        "vtt-maps"
+      ],
+      "capabilities": [
+        "art-direction",
+        "image-concepts",
+        "layout",
+        "branding"
+      ]
+    },
+    "media": {
+      "synonyms": [
+        "audio",
+        "music",
+        "playlist",
+        "video",
+        "narration",
+        "ambiance",
+        "sound"
+      ],
+      "related": [
+        "art-design",
+        "accessibility"
+      ],
+      "capabilities": [
+        "media-organization",
+        "audio-planning",
+        "video-planning"
+      ]
+    },
+    "game-design": {
+      "synonyms": [
+        "game",
+        "gameplay",
+        "mechanic",
+        "balance",
+        "progression",
+        "combat",
+        "puzzle"
+      ],
+      "related": [
+        "strategy",
+        "simulation",
+        "ttrpg",
+        "mmorpg"
+      ],
+      "capabilities": [
+        "game-design",
+        "balancing",
+        "systems-design"
+      ]
+    },
+    "ttrpg": {
+      "synonyms": [
+        "ttrpg",
+        "tabletop rpg",
+        "dnd",
+        "d&d",
+        "dice",
+        "character sheet",
+        "campaign",
+        "gm",
+        "dm"
+      ],
+      "related": [
+        "game-design",
+        "vtt-maps",
+        "worldbuilding",
+        "simulation",
+        "safety-moderation"
+      ],
+      "capabilities": [
+        "rules-design",
+        "campaign-design",
+        "encounters",
+        "sheets"
+      ]
+    },
+    "mmorpg": {
+      "synonyms": [
+        "mmorpg",
+        "mmo",
+        "online rpg",
+        "persistent world",
+        "raid",
+        "quest hub"
+      ],
+      "related": [
+        "game-design",
+        "simulation",
+        "worldbuilding",
+        "social-community"
+      ],
+      "capabilities": [
+        "persistent-world",
+        "quests",
+        "economy",
+        "progression"
+      ]
+    },
+    "vtt-maps": {
+      "synonyms": [
+        "vtt",
+        "virtual tabletop",
+        "battlemap",
+        "map",
+        "fog of war",
+        "lighting",
+        "grid",
+        "token"
+      ],
+      "related": [
+        "ttrpg",
+        "art-design",
+        "simulation"
+      ],
+      "capabilities": [
+        "maps",
+        "vtt",
+        "geometry",
+        "scene-state"
+      ]
+    },
+    "simulation": {
+      "synonyms": [
+        "simulate",
+        "npc schedule",
+        "living world",
+        "household",
+        "consequence",
+        "clock",
+        "state machine"
+      ],
+      "related": [
+        "worldbuilding",
+        "game-design",
+        "strategy"
+      ],
+      "capabilities": [
+        "simulation",
+        "npc-state",
+        "world-state"
+      ]
+    },
+    "strategy": {
+      "synonyms": [
+        "strategy",
+        "plan",
+        "decision tree",
+        "prioritize",
+        "risk",
+        "scenario",
+        "tactics"
+      ],
+      "related": [
+        "organization",
+        "game-design",
+        "code"
+      ],
+      "capabilities": [
+        "planning",
+        "decision-support",
+        "risk-analysis"
+      ]
+    },
+    "code": {
+      "synonyms": [
+        "code",
+        "javascript",
+        "html",
+        "css",
+        "json",
+        "debug",
+        "program",
+        "app",
+        "software",
+        "api"
+      ],
+      "related": [
+        "web-apps",
+        "mobile-apps",
+        "data-schemas",
+        "auth-security",
+        "testing"
+      ],
+      "capabilities": [
+        "coding",
+        "debugging",
+        "architecture",
+        "testing"
+      ]
+    },
+    "web-apps": {
+      "synonyms": [
+        "website",
+        "web app",
+        "pwa",
+        "frontend",
+        "backend",
+        "browser"
+      ],
+      "related": [
+        "code",
+        "auth-security",
+        "data-schemas",
+        "accessibility"
+      ],
+      "capabilities": [
+        "web-architecture",
+        "pwa"
+      ]
+    },
+    "mobile-apps": {
+      "synonyms": [
+        "mobile app",
+        "phone app",
+        "tablet app",
+        "touch ui"
+      ],
+      "related": [
+        "code",
+        "accessibility"
+      ],
+      "capabilities": [
+        "mobile-ux",
+        "offline",
+        "touch"
+      ]
+    },
+    "auth-security": {
+      "synonyms": [
+        "login",
+        "sign in",
+        "authentication",
+        "authorization",
+        "password",
+        "session",
+        "privacy",
+        "permissions"
+      ],
+      "related": [
+        "code",
+        "social-community",
+        "safety-moderation"
+      ],
+      "capabilities": [
+        "authentication",
+        "authorization",
+        "privacy-by-design"
+      ]
+    },
+    "data-schemas": {
+      "synonyms": [
+        "schema",
+        "database",
+        "json contract",
+        "migration",
+        "id",
+        "relationship model"
+      ],
+      "related": [
+        "code",
+        "organization",
+        "file-intelligence"
+      ],
+      "capabilities": [
+        "schemas",
+        "validation",
+        "data-modeling"
+      ]
+    },
+    "organization": {
+      "synonyms": [
+        "organize",
+        "project plan",
+        "tasks",
+        "workflow",
+        "schedule",
+        "folder",
+        "tags",
+        "dashboard"
+      ],
+      "related": [
+        "strategy",
+        "file-intelligence",
+        "memory"
+      ],
+      "capabilities": [
+        "organization",
+        "project-management",
+        "workflow"
+      ]
+    },
+    "file-intelligence": {
+      "synonyms": [
+        "files",
+        "dedupe",
+        "duplicate",
+        "merge versions",
+        "consolidate",
+        "sort files",
+        "manifest",
+        "audit"
+      ],
+      "related": [
+        "organization",
+        "data-schemas",
+        "code"
+      ],
+      "capabilities": [
+        "classification",
+        "deduplication",
+        "version-consolidation",
+        "audit"
+      ]
+    },
+    "social-community": {
+      "synonyms": [
+        "social network",
+        "social media",
+        "friends",
+        "followers",
+        "messaging",
+        "profiles",
+        "community",
+        "notifications"
+      ],
+      "related": [
+        "auth-security",
+        "safety-moderation",
+        "accessibility",
+        "code"
+      ],
+      "capabilities": [
+        "social-systems",
+        "messaging",
+        "profiles",
+        "notifications"
+      ]
+    },
+    "safety-moderation": {
+      "synonyms": [
+        "safety",
+        "moderation",
+        "report",
+        "block",
+        "consent",
+        "abuse",
+        "harassment",
+        "human review"
+      ],
+      "related": [
+        "social-community",
+        "accessibility",
+        "auth-security"
+      ],
+      "capabilities": [
+        "safety",
+        "moderation",
+        "human-review"
+      ]
+    },
+    "accessibility": {
+      "synonyms": [
+        "accessibility",
+        "wheelchair",
+        "screen reader",
+        "keyboard",
+        "reduced motion",
+        "sensory",
+        "captions",
+        "aac"
+      ],
+      "related": [
+        "code",
+        "healthcare",
+        "social-community"
+      ],
+      "capabilities": [
+        "accessibility",
+        "inclusive-design"
+      ]
+    },
+    "education": {
+      "synonyms": [
+        "teach",
+        "tutor",
+        "lesson",
+        "study",
+        "quiz",
+        "learn"
+      ],
+      "related": [
+        "conversation",
+        "science",
+        "organization"
+      ],
+      "capabilities": [
+        "teaching",
+        "scaffolding",
+        "assessment"
+      ]
+    },
+    "science": {
+      "synonyms": [
+        "science",
+        "research",
+        "study",
+        "evidence",
+        "paper",
+        "publication"
+      ],
+      "related": [
+        "evidence-library",
+        "healthcare"
+      ],
+      "capabilities": [
+        "research",
+        "evidence-evaluation"
+      ]
+    },
+    "healthcare": {
+      "synonyms": [
+        "health",
+        "doctor",
+        "clinician",
+        "appointment",
+        "medical",
+        "symptom",
+        "care"
+      ],
+      "related": [
+        "physical-health",
+        "mental-health",
+        "psychiatry",
+        "accessibility",
+        "safety-moderation"
+      ],
+      "capabilities": [
+        "health-education",
+        "care-navigation",
+        "appointment-prep"
+      ]
+    },
+    "mental-health": {
+      "synonyms": [
+        "mental health",
+        "coping",
+        "emotion",
+        "stress",
+        "depression",
+        "anxiety",
+        "ocd",
+        "bipolar",
+        "bpd"
+      ],
+      "related": [
+        "psychiatry",
+        "cbt",
+        "dbt",
+        "trauma",
+        "healthcare"
+      ],
+      "capabilities": [
+        "psychoeducation",
+        "support",
+        "coping"
+      ]
+    },
+    "psychiatry": {
+      "synonyms": [
+        "psychiatry",
+        "psychiatrist",
+        "psychiatric",
+        "medication",
+        "diagnosis"
+      ],
+      "related": [
+        "mental-health",
+        "healthcare",
+        "clinical-scenarios"
+      ],
+      "capabilities": [
+        "psychiatry-education",
+        "clinician-communication"
+      ]
+    },
+    "adhd": {
+      "synonyms": [
+        "adhd",
+        "add",
+        "executive function",
+        "time blindness",
+        "task initiation"
+      ],
+      "related": [
+        "mental-health",
+        "accessibility",
+        "organization"
+      ],
+      "capabilities": [
+        "adhd-support",
+        "executive-function"
+      ]
+    },
+    "autism": {
+      "synonyms": [
+        "autism",
+        "autistic",
+        "sensory",
+        "masking",
+        "autistic burnout"
+      ],
+      "related": [
+        "mental-health",
+        "accessibility",
+        "neurodevelopment"
+      ],
+      "capabilities": [
+        "autism-support",
+        "sensory-support"
+      ]
+    },
+    "cbt": {
+      "synonyms": [
+        "cbt",
+        "cognitive behavioral",
+        "thought record",
+        "behavioral activation"
+      ],
+      "related": [
+        "mental-health",
+        "psychiatry"
+      ],
+      "capabilities": [
+        "cbt-skills",
+        "worksheets"
+      ]
+    },
+    "dbt": {
+      "synonyms": [
+        "dbt",
+        "dialectical behavior",
+        "distress tolerance",
+        "emotion regulation",
+        "dear man",
+        "diary card"
+      ],
+      "related": [
+        "mental-health",
+        "psychiatry"
+      ],
+      "capabilities": [
+        "dbt-skills",
+        "diary-cards"
+      ]
+    },
+    "trauma": {
+      "synonyms": [
+        "trauma",
+        "ptsd",
+        "cptsd",
+        "c-ptsd",
+        "abuse",
+        "violence",
+        "grief"
+      ],
+      "related": [
+        "mental-health",
+        "life-events",
+        "safety-moderation"
+      ],
+      "capabilities": [
+        "trauma-informed-support",
+        "stabilization"
+      ]
+    },
+    "physical-health": {
+      "synonyms": [
+        "physical health",
+        "illness",
+        "injury",
+        "pain",
+        "fatigue",
+        "disability",
+        "chronic illness"
+      ],
+      "related": [
+        "healthcare",
+        "accessibility"
+      ],
+      "capabilities": [
+        "physical-health-support",
+        "care-navigation"
+      ]
+    },
+    "life-events": {
+      "synonyms": [
+        "life event",
+        "grief",
+        "loss",
+        "divorce",
+        "job loss",
+        "housing",
+        "transition",
+        "caregiving"
+      ],
+      "related": [
+        "trauma",
+        "mental-health",
+        "physical-health"
+      ],
+      "capabilities": [
+        "life-event-support",
+        "adjustment"
+      ]
+    }
+  },
+  "extraDomainRelations": {
+    "cancer-oncology": [
+      "healthcare",
+      "physical-health",
+      "science"
+    ],
+    "chronic-physical-health": [
+      "healthcare",
+      "physical-health"
+    ],
+    "injury-medical-trauma": [
+      "healthcare",
+      "physical-health",
+      "trauma"
+    ],
+    "neurological-cognitive": [
+      "healthcare",
+      "physical-health",
+      "science"
+    ],
+    "neurodevelopment": [
+      "autism",
+      "adhd",
+      "healthcare",
+      "accessibility"
+    ],
+    "violence-abuse-victimization": [
+      "trauma",
+      "safety-moderation",
+      "mental-health"
+    ],
+    "grief-bereavement": [
+      "life-events",
+      "trauma",
+      "mental-health"
+    ],
+    "housing-economic-work-education": [
+      "life-events",
+      "organization",
+      "social-community"
+    ],
+    "migration-disaster-war": [
+      "life-events",
+      "trauma",
+      "safety-moderation"
+    ],
+    "endocrine-metabolic-reproductive": [
+      "healthcare",
+      "physical-health",
+      "science"
+    ],
+    "identity-discrimination": [
+      "mental-health",
+      "safety-moderation",
+      "social-community"
+    ],
+    "relationships-family-attachment": [
+      "mental-health",
+      "life-events",
+      "social-community"
+    ],
+    "disability-access-caregiving": [
+      "accessibility",
+      "healthcare",
+      "life-events"
+    ],
+    "legal-system-involvement": [
+      "life-events",
+      "safety-moderation"
+    ],
+    "cross-cutting-support": [
+      "healthcare",
+      "mental-health",
+      "accessibility",
+      "life-events"
+    ],
+    "evidence-library": [
+      "science",
+      "healthcare",
+      "research"
+    ],
+    "clinical-scenarios": [
+      "psychiatry",
+      "mental-health",
+      "healthcare"
+    ],
+    "reference-patterns": [
+      "code",
+      "organization",
+      "strategy"
+    ]
+  },
+  "routingPrinciples": [
+    "multi-label selection",
+    "explicit intent plus implied dependencies",
+    "negative routing",
+    "project context weighting",
+    "bounded retrieval",
+    "explainable trace"
+  ]
+}

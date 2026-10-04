@@ -1,0 +1,574 @@
+{
+  "schema": "ai-brain.capability-taxonomy.v2",
+  "version": "2.0.0",
+  "capabilities": {
+    "art": {
+      "triggers": [
+        "art",
+        "draw",
+        "drawing",
+        "paint",
+        "painting",
+        "illustration",
+        "design",
+        "graphic",
+        "canvas",
+        "brush",
+        "texture",
+        "palette",
+        "visual"
+      ],
+      "expands_to": [
+        "image_generation"
+      ]
+    },
+    "image_generation": {
+      "triggers": [
+        "image",
+        "picture",
+        "photo",
+        "cover",
+        "portrait",
+        "render",
+        "concept art",
+        "generate image",
+        "visualize"
+      ],
+      "expands_to": []
+    },
+    "3d": {
+      "triggers": [
+        "3d",
+        "three dimensional",
+        "modeling",
+        "mesh",
+        "voxel",
+        "sculpt",
+        "perspective",
+        "depth"
+      ],
+      "expands_to": [
+        "art",
+        "image_generation"
+      ]
+    },
+    "book": {
+      "triggers": [
+        "book",
+        "novel",
+        "manuscript",
+        "chapter",
+        "author",
+        "publishing",
+        "cover",
+        "trim size",
+        "paperback",
+        "hardcover"
+      ],
+      "expands_to": [
+        "writing",
+        "art",
+        "image_generation",
+        "organization",
+        "strategy",
+        "character_npc",
+        "worldbuilding"
+      ]
+    },
+    "writing": {
+      "triggers": [
+        "write",
+        "writing",
+        "story",
+        "fiction",
+        "nonfiction",
+        "essay",
+        "script",
+        "dialogue",
+        "prose",
+        "poetry",
+        "edit",
+        "rewrite"
+      ],
+      "expands_to": []
+    },
+    "ttrpg": {
+      "triggers": [
+        "ttrpg",
+        "tabletop rpg",
+        "dnd",
+        "d&d",
+        "roleplaying game",
+        "rpg system",
+        "character sheet",
+        "dice",
+        "campaign"
+      ],
+      "expands_to": [
+        "rules",
+        "maps",
+        "art",
+        "image_generation",
+        "organization",
+        "strategy",
+        "worldbuilding",
+        "character_npc",
+        "virtual_tabletop"
+      ]
+    },
+    "virtual_tabletop": {
+      "triggers": [
+        "virtual tabletop",
+        "vtt",
+        "battlemap",
+        "battle map",
+        "token",
+        "initiative",
+        "encounter map",
+        "fog of war"
+      ],
+      "expands_to": []
+    },
+    "game_design": {
+      "triggers": [
+        "game",
+        "video game",
+        "mobile game",
+        "mmorpg",
+        "mechanic",
+        "quest",
+        "level design",
+        "gameplay",
+        "npc",
+        "player"
+      ],
+      "expands_to": [
+        "code",
+        "art",
+        "image_generation",
+        "organization",
+        "strategy",
+        "rules",
+        "worldbuilding",
+        "character_npc",
+        "data"
+      ]
+    },
+    "worldbuilding": {
+      "triggers": [
+        "worldbuild",
+        "world building",
+        "lore",
+        "setting",
+        "kingdom",
+        "planet",
+        "galaxy",
+        "universe",
+        "culture",
+        "faction",
+        "species"
+      ],
+      "expands_to": [
+        "writing",
+        "organization",
+        "maps",
+        "character_npc"
+      ]
+    },
+    "character_npc": {
+      "triggers": [
+        "character",
+        "npc",
+        "cast",
+        "persona",
+        "backstory",
+        "character arc",
+        "villain",
+        "protagonist",
+        "companion"
+      ],
+      "expands_to": []
+    },
+    "code": {
+      "triggers": [
+        "code",
+        "coding",
+        "program",
+        "javascript",
+        "typescript",
+        "python",
+        "html",
+        "api",
+        "backend",
+        "frontend",
+        "debug",
+        "repository",
+        "github"
+      ],
+      "expands_to": [
+        "strategy",
+        "data",
+        "project_management"
+      ]
+    },
+    "organization": {
+      "triggers": [
+        "organize",
+        "organisation",
+        "folder",
+        "file",
+        "categorize",
+        "sort",
+        "taxonomy",
+        "directory",
+        "catalog",
+        "workspace"
+      ],
+      "expands_to": []
+    },
+    "strategy": {
+      "triggers": [
+        "strategy",
+        "plan",
+        "planning",
+        "roadmap",
+        "prioritize",
+        "decision",
+        "tradeoff",
+        "workflow",
+        "architecture"
+      ],
+      "expands_to": []
+    },
+    "rules": {
+      "triggers": [
+        "rules",
+        "rulebook",
+        "system rules",
+        "mechanics",
+        "policy",
+        "procedure",
+        "guideline"
+      ],
+      "expands_to": []
+    },
+    "maps": {
+      "triggers": [
+        "map",
+        "mapping",
+        "battlemap",
+        "world map",
+        "dungeon map",
+        "floor plan",
+        "atlas"
+      ],
+      "expands_to": []
+    },
+    "authorization": {
+      "triggers": [
+        "auth",
+        "authorization",
+        "authentication",
+        "login",
+        "sign in",
+        "signup",
+        "account",
+        "permission",
+        "role",
+        "access control"
+      ],
+      "expands_to": []
+    },
+    "safety": {
+      "triggers": [
+        "safety",
+        "risk",
+        "moderation",
+        "abuse",
+        "crisis",
+        "harm",
+        "privacy",
+        "security",
+        "guardrail"
+      ],
+      "expands_to": []
+    },
+    "messaging": {
+      "triggers": [
+        "message",
+        "messaging",
+        "chat",
+        "dm",
+        "inbox",
+        "notification",
+        "call",
+        "communication"
+      ],
+      "expands_to": []
+    },
+    "memory": {
+      "triggers": [
+        "memory",
+        "remember",
+        "persistent",
+        "recall",
+        "history",
+        "continuity",
+        "session",
+        "profile"
+      ],
+      "expands_to": []
+    },
+    "persona": {
+      "triggers": [
+        "persona",
+        "roleplay",
+        "role play",
+        "voice",
+        "character voice",
+        "act as",
+        "personality"
+      ],
+      "expands_to": []
+    },
+    "conversation": {
+      "triggers": [
+        "conversation",
+        "chat",
+        "talk",
+        "friend",
+        "companion",
+        "listen",
+        "discuss"
+      ],
+      "expands_to": []
+    },
+    "playlist_media": {
+      "triggers": [
+        "playlist",
+        "music",
+        "song",
+        "audio",
+        "video",
+        "media",
+        "album",
+        "queue"
+      ],
+      "expands_to": [
+        "organization"
+      ]
+    },
+    "mental_health": {
+      "triggers": [
+        "mental health",
+        "therapy",
+        "therapist",
+        "psychiatry",
+        "psychiatrist",
+        "depression",
+        "anxiety",
+        "trauma",
+        "ptsd",
+        "cptsd",
+        "ocd",
+        "bipolar",
+        "borderline"
+      ],
+      "expands_to": [
+        "safety",
+        "conversation",
+        "memory",
+        "trauma_life_events",
+        "research_evidence"
+      ]
+    },
+    "dbt": {
+      "triggers": [
+        "dbt",
+        "dialectical behavior",
+        "dialectical behaviour",
+        "distress tolerance",
+        "emotion regulation",
+        "wise mind",
+        "diary card"
+      ],
+      "expands_to": [
+        "mental_health",
+        "education",
+        "safety"
+      ]
+    },
+    "cbt": {
+      "triggers": [
+        "cbt",
+        "cognitive behavioral",
+        "cognitive behavioural",
+        "thought record",
+        "cognitive distortion",
+        "behavioral activation"
+      ],
+      "expands_to": [
+        "mental_health",
+        "education",
+        "safety"
+      ]
+    },
+    "adhd": {
+      "triggers": [
+        "adhd",
+        "add",
+        "executive function",
+        "time blindness",
+        "task initiation",
+        "working memory"
+      ],
+      "expands_to": [
+        "mental_health",
+        "accessibility",
+        "organization"
+      ]
+    },
+    "autism": {
+      "triggers": [
+        "autism",
+        "autistic",
+        "sensory",
+        "meltdown",
+        "shutdown",
+        "masking",
+        "aac",
+        "neurodivergent"
+      ],
+      "expands_to": [
+        "mental_health",
+        "accessibility",
+        "safety"
+      ]
+    },
+    "physical_health": {
+      "triggers": [
+        "physical health",
+        "illness",
+        "disease",
+        "injury",
+        "pain",
+        "symptom",
+        "medical",
+        "disability",
+        "chronic illness"
+      ],
+      "expands_to": [
+        "research_evidence",
+        "accessibility",
+        "trauma_life_events",
+        "safety"
+      ]
+    },
+    "trauma_life_events": {
+      "triggers": [
+        "trauma",
+        "life event",
+        "grief",
+        "bereavement",
+        "loss",
+        "abuse",
+        "violence",
+        "disaster",
+        "migration",
+        "discrimination"
+      ],
+      "expands_to": []
+    },
+    "accessibility": {
+      "triggers": [
+        "accessibility",
+        "accessible",
+        "disability",
+        "wheelchair",
+        "screen reader",
+        "aac",
+        "accommodation",
+        "assistive"
+      ],
+      "expands_to": []
+    },
+    "research_evidence": {
+      "triggers": [
+        "research",
+        "evidence",
+        "study",
+        "journal",
+        "publication",
+        "citation",
+        "source",
+        "literature",
+        "systematic review"
+      ],
+      "expands_to": []
+    },
+    "social_media": {
+      "triggers": [
+        "social media",
+        "social network",
+        "feed",
+        "post",
+        "profile",
+        "friends",
+        "followers",
+        "community"
+      ],
+      "expands_to": [
+        "code",
+        "organization",
+        "art",
+        "authorization",
+        "safety",
+        "messaging",
+        "data",
+        "project_management"
+      ]
+    },
+    "data": {
+      "triggers": [
+        "data",
+        "json",
+        "database",
+        "schema",
+        "dataset",
+        "index",
+        "retrieval",
+        "search",
+        "vector",
+        "embedding"
+      ],
+      "expands_to": []
+    },
+    "project_management": {
+      "triggers": [
+        "project",
+        "task",
+        "milestone",
+        "tracker",
+        "deadline",
+        "backlog",
+        "scope",
+        "requirements"
+      ],
+      "expands_to": []
+    },
+    "education": {
+      "triggers": [
+        "teach",
+        "learn",
+        "lesson",
+        "school",
+        "education",
+        "worksheet",
+        "handout",
+        "study",
+        "explain"
+      ],
+      "expands_to": []
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schema": "ai-brain.capability-graph.v2",
+  "principle": "User goals map to multiple reusable capabilities; source project names are provenance, not routing categories.",
+  "domains": {
+    "creative-writing": {
+      "aliases": [
+        "write",
+        "novel",
+        "story"
+      ],
+      "related": [
+        "story-intelligence",
+        "worldbuilding",
+        "books-publishing"
+      ]
+    },
+    "art-design": {
+      "aliases": [
+        "draw",
+        "paint",
+        "cover",
+        "branding",
+        "layout"
+      ],
+      "related": [
+        "studio-tools",
+        "books-publishing",
+        "3d-modeling",
+        "media",
+        "vtt-maps"
+      ]
+    },
+    "studio-tools": {
+      "aliases": [
+        "brush",
+        "crop",
+        "shape",
+        "layer",
+        "mask",
+        "effect",
+        "selection"
+      ],
+      "related": [
+        "art-design",
+        "3d-modeling",
+        "file-intelligence"
+      ]
+    },
+    "3d-modeling": {
+      "aliases": [
+        "3d",
+        "mesh",
+        "sculpt",
+        "csg",
+        "cad",
+        "gltf",
+        "stl",
+        "blender",
+        "openscad",
+        "meshlab"
+      ],
+      "related": [
+        "art-design",
+        "file-intelligence",
+        "vtt-maps",
+        "game-design"
+      ]
+    },
+    "game-design": {
+      "aliases": [
+        "game mechanics",
+        "gameplay",
+        "balance"
+      ],
+      "related": [
+        "ttrpg",
+        "mmorpg",
+        "simulation",
+        "strategy",
+        "worldbuilding"
+      ]
+    },
+    "ttrpg": {
+      "aliases": [
+        "tabletop rpg",
+        "character sheet",
+        "campaign",
+        "dice"
+      ],
+      "related": [
+        "game-design",
+        "vtt-maps",
+        "worldbuilding",
+        "simulation",
+        "persona-agents",
+        "organization"
+      ]
+    },
+    "code": {
+      "aliases": [
+        "programming",
+        "debug",
+        "javascript",
+        "html",
+        "css",
+        "api"
+      ],
+      "related": [
+        "web-apps",
+        "auth-security",
+        "data-schemas",
+        "file-intelligence"
+      ]
+    },
+    "file-intelligence": {
+      "aliases": [
+        "dedupe",
+        "merge versions",
+        "sort files"
+      ],
+      "related": [
+        "organization",
+        "provenance",
+        "code",
+        "research"
+      ]
+    },
+    "healthcare": {
+      "aliases": [
+        "health",
+        "clinician",
+        "medical"
+      ],
+      "related": [
+        "mental-health",
+        "psychiatry",
+        "physical-health",
+        "accessibility"
+      ]
+    },
+    "mental-health": {
+      "aliases": [
+        "coping",
+        "emotional support",
+        "therapy skills"
+      ],
+      "related": [
+        "psychiatry",
+        "cbt",
+        "dbt",
+        "trauma",
+        "adhd",
+        "autism",
+        "accessibility"
+      ]
+    }
+  }
+}

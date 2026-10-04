@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "principle": "multi-label composition",
+  "families": [
+    "conversation",
+    "creative-writing",
+    "art-design",
+    "studio-tools",
+    "game-design",
+    "ttrpg",
+    "mmorpg",
+    "simulation",
+    "strategy",
+    "code",
+    "organization",
+    "file-intelligence",
+    "social-community",
+    "healthcare",
+    "safety-moderation",
+    "accessibility"
+  ],
+  "crossDomainExamples": {
+    "book-cover": [
+      "books-publishing",
+      "art-design",
+      "typography",
+      "layout",
+      "branding"
+    ],
+    "new-ttrpg": [
+      "ttrpg",
+      "game-design",
+      "rules",
+      "worldbuilding",
+      "vtt-maps",
+      "balancing",
+      "organization",
+      "art-design"
+    ],
+    "social-network": [
+      "web-apps",
+      "auth-security",
+      "social-community",
+      "messaging",
+      "moderation",
+      "privacy",
+      "accessibility"
+    ],
+    "studio-edit": [
+      "studio-tools",
+      "selection",
+      "crop",
+      "layers",
+      "effects",
+      "3d-editing",
+      "color",
+      "export"
+    ]
+  }
+}
