@@ -1,0 +1,330 @@
+{
+  "schema": "ai-brain.source-pointer-index.v1",
+  "title": "adhd source pointer index",
+  "domain": "adhd",
+  "capabilities": [
+    "adhd",
+    "retrieval",
+    "provenance"
+  ],
+  "recordCount": 52,
+  "resolvedCount": 52,
+  "records": [
+    {
+      "sourceSha256": "1fb9d178b14a5123d725ddbb81b701ce35ad4533359bc4417127b501c700b58c",
+      "sourcePath": "json/psychiatry2/support_adhd.json",
+      "resolvedPath": "json/adhd/support-adhd-1fb9d178b1.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_Pt2.zip"
+    },
+    {
+      "sourceSha256": "457bc66cc0a09c47db24abf43269e6b0a1d001ad867839c88d10fb9ca247de7d",
+      "sourcePath": "json/scenarios/adhd/part-001.json",
+      "resolvedPath": "json/clinical-scenarios/part-001-457bc66cc0.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "c5e19bff5c982dcc14204880b1e08542073b7b41dae66e3a936c912cc9bfbd4d",
+      "sourcePath": "json/scenarios/adhd/part-002.json",
+      "resolvedPath": "json/clinical-scenarios/part-002-c5e19bff5c.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "45373a3fbd06924d076cde3062c08636b030b8829f620b73818a11f99d21c0d7",
+      "sourcePath": "json/scenarios/adhd/part-003.json",
+      "resolvedPath": "json/clinical-scenarios/part-003-45373a3fbd.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "da09ecb51f62dcd4d5ea36fc62f19892d223028da5cd8085a22f9e45916aa7a7",
+      "sourcePath": "json/scenarios/adhd/part-004.json",
+      "resolvedPath": "json/clinical-scenarios/part-004-da09ecb51f.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "b6b29767218e64860bd629b82b92fad9078b6a857d9ff94bf15aec8102592c67",
+      "sourcePath": "json/scenarios/adhd/part-005.json",
+      "resolvedPath": "json/clinical-scenarios/part-005-b6b2976721.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "1b77fcb7469a8a35d1f7fd8cb6ca8f6d129ed46f828e97bb75371260f87a2560",
+      "sourcePath": "json/scenarios/adhd/part-006.json",
+      "resolvedPath": "json/clinical-scenarios/part-006-1b77fcb746.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "e2203773f19a2aadccd17ab6ded8390725ee1b383c4d0e5570cd44a984fc2551",
+      "sourcePath": "json/scenarios/adhd/part-007.json",
+      "resolvedPath": "json/clinical-scenarios/part-007-e2203773f1.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "4f1078064c0395ce83ecd3122de610e5c8d38f9f27b4f87f29e2b97cb5bd785a",
+      "sourcePath": "json/scenarios/adhd/part-008.json",
+      "resolvedPath": "json/clinical-scenarios/part-008-4f1078064c.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "5fd928d192d3b86987d48d1c05aad8fc7d446e324f4a446b4f8303be065d89c6",
+      "sourcePath": "json/scenarios/adhd/part-009.json",
+      "resolvedPath": "json/clinical-scenarios/part-009-5fd928d192.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "b8c702d925847fd15dbbd479080f5b3b2f2efce8b704e8cbe7d0fd3955d21fc9",
+      "sourcePath": "json/scenarios/adhd/part-010.json",
+      "resolvedPath": "json/clinical-scenarios/part-010-b8c702d925.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "7848b0440e7575f3716149b697627fd45574e04edb4fb85ac25f17f48019f8dd",
+      "sourcePath": "json/scenarios/adhd/part-011.json",
+      "resolvedPath": "json/clinical-scenarios/part-011-7848b0440e.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "a824b0bcc6aa962fc382c032072eba5028ebadb3f3583ddc804421357aefcf90",
+      "sourcePath": "json/scenarios/adhd/part-012.json",
+      "resolvedPath": "json/clinical-scenarios/part-012-a824b0bcc6.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "ff565a33a52e66e25d1acce92f01098f410520cff6b4be2ba4fad46d808fb792",
+      "sourcePath": "json/scenarios/adhd/part-013.json",
+      "resolvedPath": "json/clinical-scenarios/part-013-ff565a33a5.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "d8f33568dc8b4668c854ea02ffaab89e548866b1ec72c3566e437cff9e481a53",
+      "sourcePath": "json/scenarios/adhd/part-014.json",
+      "resolvedPath": "json/clinical-scenarios/part-014-d8f33568dc.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "1abb6f46d6db4b02d522c6fa98b626e3445ea417f4891bcb4ec367d74b59281e",
+      "sourcePath": "json/scenarios/adhd/part-015.json",
+      "resolvedPath": "json/clinical-scenarios/part-015-1abb6f46d6.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "7b98aae4f00638945cb07f7ca4263bca362f17a01d730b10f9d759728e513586",
+      "sourcePath": "json/scenarios/adhd/part-016.json",
+      "resolvedPath": "json/clinical-scenarios/part-016-7b98aae4f0.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "8f9c0bb03c22cade9819f7e644f17d590a7b672e76570f732dae85268667ee88",
+      "sourcePath": "json/scenarios/adhd/part-017.json",
+      "resolvedPath": "json/clinical-scenarios/part-017-8f9c0bb03c.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "c2fb67e7e3e23fd9f05f56aa6f06df894fc02de7533840fa8445104562ffeeb5",
+      "sourcePath": "json/scenarios/adhd/part-018.json",
+      "resolvedPath": "json/clinical-scenarios/part-018-c2fb67e7e3.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "6f95b231c1225758966a1513c81b4b712a2da27b280dfcfcd0f5255280c2eb5b",
+      "sourcePath": "json/scenarios/adhd/part-019.json",
+      "resolvedPath": "json/clinical-scenarios/part-019-6f95b231c1.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "3e86242fbca17730a6045c7954b9b3b00b3b333ee21c5b3b42b1f723e3127fa8",
+      "sourcePath": "json/scenarios/adhd/part-020.json",
+      "resolvedPath": "json/clinical-scenarios/part-020-3e86242fbc.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "c18f97e3c8017a5450758862d1c730109abc2393fa258e7a3cc7cbc272236a0b",
+      "sourcePath": "json/scenarios/adhd/part-021.json",
+      "resolvedPath": "json/clinical-scenarios/part-021-c18f97e3c8.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "c126a83b01d6cc07e41f116e071bf46d90cd16bbd1e6563e0c66ed96c8f11593",
+      "sourcePath": "json/scenarios/adhd/part-022.json",
+      "resolvedPath": "json/clinical-scenarios/part-022-c126a83b01.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "adc1864878957ddee5811c5107627cd01ef0a00cdcbba9981976f5884b8dcc16",
+      "sourcePath": "json/scenarios/adhd/part-023.json",
+      "resolvedPath": "json/clinical-scenarios/part-023-adc1864878.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "b8544d5689dc8ecfa4ccbdd081cdb395846f291025ee9152698864805568bacb",
+      "sourcePath": "json/scenarios/adhd/part-024.json",
+      "resolvedPath": "json/clinical-scenarios/part-024-b8544d5689.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "d39583cb7a463cf5f6e75104981a83caec323435c592c5513167f098a118f55f",
+      "sourcePath": "json/scenarios/adhd/part-025.json",
+      "resolvedPath": "json/clinical-scenarios/part-025-d39583cb7a.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "59c86fd36752b71be2014dfff767dae73fd440ece9aceabad0eee99be077b0bc",
+      "sourcePath": "json/scenarios/adhd/part-026.json",
+      "resolvedPath": "json/clinical-scenarios/part-026-59c86fd367.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "62566c321cfc99fab10cdc98c7c4dafd278efc0d25b049aa78f65088dd7349b8",
+      "sourcePath": "json/scenarios/adhd/part-027.json",
+      "resolvedPath": "json/clinical-scenarios/part-027-62566c321c.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "7d834f2cbcc34c169e9ac7d7ff263186bcc7e821700322dce970f64155501e5f",
+      "sourcePath": "json/scenarios/adhd/part-028.json",
+      "resolvedPath": "json/clinical-scenarios/part-028-7d834f2cbc.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "c589e6341f115addc1692d17de72ed9e9040bec32792ab0caf45c8c8843686d6",
+      "sourcePath": "json/scenarios/adhd/part-029.json",
+      "resolvedPath": "json/clinical-scenarios/part-029-c589e6341f.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "b5b1b5ebca7df35e07de6d183f88c99f3c8f7d528fd3ccf99f7e22fe95158a0e",
+      "sourcePath": "json/scenarios/adhd/part-030.json",
+      "resolvedPath": "json/clinical-scenarios/part-030-b5b1b5ebca.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "55d0c77a3f103881d4769f5d4701f9a4c5f2ff515a788627fc00cb5c46858909",
+      "sourcePath": "json/scenarios/adhd/part-031.json",
+      "resolvedPath": "json/clinical-scenarios/part-031-55d0c77a3f.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "f813db05124a89594d1dc0f42d53812690cb2ecdb3bfcb18fccf4f4f040c5e53",
+      "sourcePath": "json/scenarios/adhd/part-032.json",
+      "resolvedPath": "json/clinical-scenarios/part-032-f813db0512.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "e81ac5be6246e19a8b0d3c2281707404223b7d902d4a817106d31219fa3949a6",
+      "sourcePath": "json/scenarios/adhd/part-033.json",
+      "resolvedPath": "json/clinical-scenarios/part-033-e81ac5be62.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "96d11265be6c2b53ebd808c1dc407a9ad4b7c26596cd69233150f361c756f4e5",
+      "sourcePath": "json/scenarios/adhd/part-034.json",
+      "resolvedPath": "json/clinical-scenarios/part-034-96d11265be.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "cb465067733f15ae263c81ce9d7865a0786632b131368e57073ddd19692965c3",
+      "sourcePath": "json/scenarios/adhd/part-035.json",
+      "resolvedPath": "json/clinical-scenarios/part-035-cb46506773.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "4d90197ab245c59395f99b2518cdae3bfc0085e565e02befcc74b1911e8e796f",
+      "sourcePath": "json/scenarios/adhd/part-036.json",
+      "resolvedPath": "json/clinical-scenarios/part-036-4d90197ab2.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "aac253548e87041a1cfa1cc778ceedda3f40c987cb16bbe2c9f7191a45ef0844",
+      "sourcePath": "json/scenarios/adhd/part-037.json",
+      "resolvedPath": "json/clinical-scenarios/part-037-aac253548e.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "e554c83b2095b4aa66c36c2592f5c04a13da9a832f3f83dec94b36137bc80a17",
+      "sourcePath": "json/scenarios/adhd/part-038.json",
+      "resolvedPath": "json/clinical-scenarios/part-038-e554c83b20.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "cbbb2898121fba8a26cbe1824c9b3592e45b451a7ad209c283c57cee748d4d33",
+      "sourcePath": "json/scenarios/adhd/part-039.json",
+      "resolvedPath": "json/clinical-scenarios/part-039-cbbb289812.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "b075df899b53321a4183d7063dd0668e5e85926c6a4ab8623664a8f9734f7ae7",
+      "sourcePath": "json/scenarios/adhd/part-040.json",
+      "resolvedPath": "json/clinical-scenarios/part-040-b075df899b.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "1df9cfc979441f5ae27e9e3fc8069189be0667d01eb02313501f545e561a58d4",
+      "sourcePath": "json/scenarios/adhd/part-041.json",
+      "resolvedPath": "json/clinical-scenarios/part-041-1df9cfc979.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "4df91c9fddbaf45b353ac2d046d154d8bb612bf3616c34043874312807921a75",
+      "sourcePath": "json/scenarios/adhd/part-042.json",
+      "resolvedPath": "json/clinical-scenarios/part-042-4df91c9fdd.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "f43ffe1fa70c857fbd1b751359ee416ca8973ae61d64820a1defe3e119d705ab",
+      "sourcePath": "json/scenarios/adhd/part-043.json",
+      "resolvedPath": "json/clinical-scenarios/part-043-f43ffe1fa7.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "86a8d2438eb9c3ae81100c7ab51bd060b860047aa08050138cbc602dd1abba48",
+      "sourcePath": "json/scenarios/adhd/part-044.json",
+      "resolvedPath": "json/clinical-scenarios/part-044-86a8d2438e.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "f44bd6f609f3230c25355f4f040df1f9ab53ae6d37c3fe405eed6a9e661c0e76",
+      "sourcePath": "json/scenarios/adhd/part-045.json",
+      "resolvedPath": "json/clinical-scenarios/part-045-f44bd6f609.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "cd5456e13422f66a27d989d68352b96d8b764756a20833b16d3c8e51d36e2514",
+      "sourcePath": "json/scenarios/adhd/part-046.json",
+      "resolvedPath": "json/clinical-scenarios/part-046-cd5456e134.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "b45ccae086f2eefebb38ba6df030dd5eb5f0cf9d5a01c54dc09dea0d8978a00e",
+      "sourcePath": "json/scenarios/adhd/part-047.json",
+      "resolvedPath": "json/clinical-scenarios/part-047-b45ccae086.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "565f89bf82b9cb420dc81750b5aaf4fd2720a91ab5bf7236d47b35eb1bd848d2",
+      "sourcePath": "json/scenarios/adhd/part-048.json",
+      "resolvedPath": "json/clinical-scenarios/part-048-565f89bf82.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "460fa5d9a523834d4cf0a8a4be40b99ce417a32cd348b4df9025116e48b1afcf",
+      "sourcePath": "json/scenarios/adhd/part-049.json",
+      "resolvedPath": "json/clinical-scenarios/part-049-460fa5d9a5.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "fba76146c1979c7b714578edd0532d020d43953b9d9255456c567a0219e03832",
+      "sourcePath": "json/scenarios/adhd/part-050.json",
+      "resolvedPath": "json/clinical-scenarios/part-050-fba76146c1.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    },
+    {
+      "sourceSha256": "d42c70e2fde31a902632addc715961bb4b1a2e881815237c42c1e4bfd8a9d830",
+      "sourcePath": "json/scenarios/adhd/part-051.json",
+      "resolvedPath": "json/clinical-scenarios/part-051-d42c70e2fd.json",
+      "sourceArchive": "Unified_Psychiatric_AI_Brain_pt3.zip"
+    }
+  ],
+  "provenance": {
+    "source": "redundant consolidated wrapper metadata",
+    "note": "Knowledge bodies are not duplicated here; pointers resolve to canonical final shards."
+  }
+}

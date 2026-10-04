@@ -1,0 +1,35 @@
+{
+  "schema": "ai-brain.domain-guide.v1",
+  "version": "1.0.0",
+  "id": "domain-adhd",
+  "title": "Adhd",
+  "domain": "adhd",
+  "description": "Executive-function science/support, planning, accommodations and accessibility patterns.",
+  "tags": [
+    "adhd",
+    "adhd",
+    "add",
+    "executive function",
+    "time blindness",
+    "task initiation"
+  ],
+  "capabilities": [
+    "adhd-support",
+    "executive-function"
+  ],
+  "relatedDomains": [
+    "mental-health",
+    "accessibility",
+    "organization"
+  ],
+  "useCases": [
+    "route user requests into this domain",
+    "combine this domain with related disciplines",
+    "select more specific source shards by corpus index"
+  ],
+  "retrievalPolicy": "Use this guide as a routing seed. Prefer deeper topic/source shards from the corpus index when they match the request.",
+  "provenance": {
+    "source": "AI-Brain Project Pitch and unified source-package architecture",
+    "type": "source-derived routing seed"
+  }
+}

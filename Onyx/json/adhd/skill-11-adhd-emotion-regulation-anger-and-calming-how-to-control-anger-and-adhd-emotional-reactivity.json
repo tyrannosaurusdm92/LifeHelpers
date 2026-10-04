@@ -1,0 +1,1619 @@
+{
+  "schema": "pdf_to_json_text_layout_v1",
+  "created_at_utc": "2026-06-25T17:18:50.890535+00:00",
+  "group_type": "single_pdf_json",
+  "merge_policy": {
+    "threshold": "merge documents when TF-IDF cosine similarity >= 0.60 OR 5-token shingle containment of the smaller document >= 0.60",
+    "why_containment_is_used": "Containment catches shorter PDFs that are substantially embedded inside longer PDFs even when whole-document Jaccard/cosine is lower."
+  },
+  "source_document_count": 1,
+  "source_documents": [
+    {
+      "document_id": "how_to_control_anger_and_adhd_emotional_reactivity",
+      "source_index": 12,
+      "original_filename": "How to Control Anger and ADHD Emotional Reactivity.pdf",
+      "source_relative_path": "adhd/How to Control Anger and ADHD Emotional Reactivity.pdf",
+      "sha256": "4c39eaf4a55199d72cf954af48ccc829c02849f328170dc1cafb4c1462d55ad1",
+      "title": "How to Control Anger and ADHD Emotional Reactivity",
+      "page_count": 6,
+      "character_count": 13176,
+      "word_count": 2176,
+      "link_count": 33,
+      "image_count": 2,
+      "form_field_count": 0,
+      "annotation_count": 0
+    }
+  ],
+  "within_group_similarity": [],
+  "documents": [
+    {
+      "document_id": "how_to_control_anger_and_adhd_emotional_reactivity",
+      "source_index": 12,
+      "original_filename": "How to Control Anger and ADHD Emotional Reactivity.pdf",
+      "source_relative_path": "adhd/How to Control Anger and ADHD Emotional Reactivity.pdf",
+      "sha256": "4c39eaf4a55199d72cf954af48ccc829c02849f328170dc1cafb4c1462d55ad1",
+      "title": "How to Control Anger and ADHD Emotional Reactivity",
+      "pdf_metadata": {
+        "format": "PDF 1.4",
+        "title": "How to Control Anger and ADHD Emotional Reactivity",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "producer": "Skia/PDF m149",
+        "creationDate": "D:20260625143902+00'00'",
+        "modDate": "D:20260625143902+00'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "page_count": 6,
+      "character_count": 13176,
+      "word_count": 2176,
+      "link_count": 33,
+      "image_count": 2,
+      "form_field_count": 0,
+      "annotation_count": 0,
+      "full_text": "ADHD Adults > Health & Nutrition\nEMOTIONS & SHAME\nHow to Control Your Anger When ADHD Emotional Reactivity\nKicks In\nYes, the ADHD brain is wired to overreact and to feel emotions intensely. But you are not your ADHD\nreactivity. Here, learn how to change your reactive, habitual anger responses with thoughtful,\nsoothing responses.\nUpdated on May 12, 2025\n9 min read\nClick to Read 1 Comment 💬\nBy Sharon Saline, Psy.D.\nIn This Article\n1. Why Anger and Big Emotions Rock ADHD Brains\n2. How to Control ADHD-Laced Anger\n3. More Ways to Improve Emotional Regulation\n4. How to Control ADHD Anger and Emotional Reactivity: Next Steps\nIt starts with a trigger. In an instant, a volcano of anger and negative emotion erupts. Before you can process\nwhat’s happening, you say or do things that you will surely regret later. But you can’t stop yourself. If we’re\nbeing honest, sometimes it feels good to let it all out.\nLiving with attention deficit hyperactivity disorder (ADHD) means living with a stress-producing condition that\nbegets emotional reactivity. Though the ADHD brain is wired to feel emotions like anger, frustration, and hurt\nquite intensely, emotional reactivity is ultimately a response pattern — one that you can shift with the right\ntools and frame of mind.\nWhy Anger and Big Emotions Rock ADHD Brains\nEmotional dysregulation is part and parcel of ADHD. Taken together, the following features explain why\nemotional eruptions occur so acutely and so often in ADHD.\nAmygdala Hijack and Emotional Flooding\nThe amygdala is the emotional part of the brain that drives the fight-flight-freeze response. Amygdala hijack, a\nterm coined by Daniel Goleman, Ph.D., occurs when the brain overreacts to a threat, real or perceived, and\nADHD Science & Strategies\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n1/6\n\n\neffectively takes over the prefrontal cortex — the thinking part of the brain.\nADHD brains appear more likely to experience amygdala hijack for a variety of reasons. For one, amygdala\nabnormalities are commonly seen in ADHD brains.1 2 The ADHD brain also struggles to turn off emotional\nprocessing — a problem when stress, either caused by systemic or individual forces, is persistently present. A\nconstant flooding of stress and emotions essentially causes individuals to lose access to the rational part of\nthemselves.\n[Get This Free Download: Emotional Regulation & Anger Management Scripts]\nPoor Working Memory\nStrong working memory is tied to effective emotional regulation, while weak working memory — which is\nassociated with ADHD and executive dysfunction — often compromises a person’s ability to manage and\nrespond appropriately to emotions.3 Weak working memory could explain why you struggle to recall and decide\non the coping strategies and tools available to you when faced with a trigger. Executive dysfunction also explains\nlimited impulse control — or why you might say or do things you regret when you’re overwhelmed.\nRejection Sensitive Dysphoria\nRejection sensitive dysphoria (RSD) causes extreme emotional responses to rejection and criticism, real or\nperceived. It is also associated with:\nintense feelings related to embarrassment, shame, and failure\nfear that others will withdraw their love, support, or friendship as a result of your mistakes\ndifficulty letting go of painful experiences of rejection and hurt\nRSD charges your thoughts and puts you on edge, which often contributes to emotional eruptions. As you brace\nto hear or experience the worst, for example, you may lash out as a defense mechanism. That’s why anger is\noften called a secondary emotion — fear and other feelings are often hidden beneath the surface. The possibility\nthat the negative outcome you’ve imagined might not occur doesn’t even come into sight.\n[Read: I Can’t Handle Rejection. Will I Ever Change?]\nHow to Control ADHD-Laced Anger\n1. Understand Your Anger Habits\nHabits are mostly involuntary patterns of behavior that develop to meet an emotional need. Habits are made up\nof triggers, the routine behavior, and the reinforcing outcome. Changing a habit only requires targeting one of\nthese components.\nNot all habits are good for us. Anger and emotional outbursts are habitual responses to uncomfortable feelings.\nThey often arise when we underestimate our ability to cope with stressors.\nInvestigate Your Reactivity\nBecome curious about how your anger works (think about it in terms of the components of a habit), when it\nshows up, and patterns associated with the emotion. Metacognitive thinking is a powerful tool (and an executive\nfunction skill) that can help you monitor and evaluate your thoughts and behaviors when you are experiencing\nanger. The following metacognitive questions can help you understand your reactive patterns:\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n2/6\n\n\n“What is happening that is activating me or making me feel on edge?” Receiving negative feedback,\nbeing blamed unfairly, having someone yell at you, and/or feeling ashamed over something can all test\nyour limits, as can other stressors.\n“What sensations do I feel when I become angry or upset?” Anger shows up in many forms: a headache;\na stomachache; sweating; chest tightness.\n“What behaviors do I resort to when I’m upset or angry?” Reactivity habits include lashing out,\nattacking, catastrophizing, blaming, denying, and more.\n“What’s helped me calm down when I’ve been in similar situations? Are those responses useful?”\nCreate a list of ‘slow me down’ options to manage the amygdala takeover more effectively.\n“How are others reacting to my words and actions? What are their faces or bodies showing?” Noticing\nother people’s facial or bodily expressions will also move you from a kneejerk response to something that\nis more thoughtful and measured.\nIt takes time and effort to strengthen metacognitive skills. Refrain from judgment as you observe your\nthoughts, sensations, and behaviors. Simply apply yourself to noticing and shifting one thing. Remember that\nyou are doing the best you can as you investigate your reactivity and apply different tools to control your anger.\n2. Change Old Anger Habits with Effective Responses\nGather Tools to Slow Anger at Every Stage\nYou need to access the modulated part of you that wants to stay calm. Here are ideas for responses at every stage\nof emotional intensity.\nWhen You’re Mildly Uncomfortable\nThis stage is just above your baseline of calm and comfortable. There is a soft trigger that is easy enough to\nignore, but it’s nonetheless there.\nNotice the negative, critical voice that is starting to charge your thoughts.\nCompare your limiting beliefs about the situation or about yourself to the real facts on the ground.\nWhen You’re Activated\nYou’re growing upset, angry, or overwhelmed at this stage — and it’s becoming difficult to ignore. Perhaps\nyou’re ruminating on something that is bothering you. There’s a battle of sorts between the emotional and\nthinking parts of the brain. Talk down the emotional brain.\nAcknowledge and validate your feelings. Say, “It’s okay to be angry. But what can I do to settle down?”\nRepeat affirmations or supportive phrases. Here is an example: “This is not the most fun moment, or\nyour best moment, but you’ll get through it.”\nVisualize yourself settling down. Imagine yourself by a lake, tossing in a few pebbles. As each one makes\nit journey to the sandy bottom, feel yourself settle into your feet or your chair.\nWhen You’re On “High Alert”\nYou’re at your most dysregulated at this stage. Your body is fully engaged to fight or flee. Physical signs of anger\nshow up here — and physical responses can help your body slow down in the middle of the tidal wave of\nemotion.\nTry focused breathing techniques — alternate nostril breathing, belly breathing, etc. I often recommend\ntriangle breathing: Breathe in for a count of four, hold for a count of four and exhale for a count of six.\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n3/6\n\n\nPause before repeating the cycle. The longer exhales slow the physiological response of fight or flight.\nPhysically remove yourself from the stressor or situation.\nEngage in a physical activity, like a walk or a run, to blow off steam.\nTurn to a timed distraction. Listen to music or play a game on your phone.\nIdentify your preferred soothers but know that you can mix and match responses. Breathing, for example, is\nuseful at every stage.\nPractice, Practice, Practice\nStressful situations are a part of life largely outside our control. But we can manage our responses using\ninsightful strategies. Keep the following pointers in mind as you move away from habits of reactivity to new\nhabits of responsiveness.\nCommit to change. List your coping tools in multiple places — in your phone, on sticky notes around\nyour home — to help you readily retrieve them.\nFocus on one thing that you can change at a time. Smaller goals mean greater progress.\nRely on a growth mindset. Expect to be challenged and frustrated as you adjust your emotional\nresponses. See your mistakes as learning opportunities and areas for improvement, not as personal\nflaws.\nRemember why you want to change your habits and move away from anger.\nDon’t be so hard on yourself. Shame and regret about your emotional responses will only hold you back.\nBerating yourself for things that you’ve done is useless if you can’t take helpful lessons from those\nexperiences. Practice self-compassion by honoring that you are doing the best you can. Accept that you\nwill lose it at times, despite your best efforts. Progress may look like two steps forward and one step back,\nbut that’s still one step forward.\nYou are not your ADHD reactivity. Intense feelings might have been a part of your life for a long time, but\nthey do not define you. You are more than your foibles. Stumbling helps us do what we are supposed to\ndo: learn.\nMore Ways to Improve Emotional Regulation\nManage RSD\nIdentify your strengths and notice the good. Each day, write down three things that went well, no matter\nhow small. Example: “I had a great cup of coffee. I smiled today. I like the clothes I wore.”\nTreat yourself with kindness. Gather a collection of affirmations and personal words of encouragement.\nPut these on your phone or post them around your house or office.\nPlan for how to respond to criticism, even the constructive kind. Use the STAR method (Stop, Think, Act,\nand Recover) outlined in this resource that explains how to cope with RSD.\nMaintain a Healthy Lifestyle\nTry to follow a routine that allows you to get enough sleep, eat nutritious meals, move your body, and\nconnect with others. A routine can ground you and help keep stress levels low.\nThink HALT throughout the day – are you hungry? Angry? Lonely? Tired? What are your options to\naddress these and regulate?\nFocus on building positive relationships with others. Learn how to resolve conflicts by planning for them\nwell in advance.\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n4/6\n\n\nHow to Control ADHD Anger and Emotional Reactivity: Next\nSteps\nQuiz: Am I Experiencing Rejection Sensitive Dysphoria?\nDownload: Emotional Regulation & Anger Management Scripts\nFrom Readers: How to Manage Your Anger Before It Bubbles to a Boil\nThe content for this article was derived, in part, from the ADDitude ADHD Experts webinar titled, “When ADHD\nTriggers Emotional Outbursts: Scripts for Your Flashpoints” [Video Replay & Podcast #426],” with Sharon\nSaline, Psy.D., which was broadcast on October 19, 2022.\nSUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you.\nView Article Sources\n \n \n \n\n\n\nThe ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare.\nREVIEW OUR EDITORIAL PROCESS\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\nContent is periodically reviewed and updated to reflect new health insights.\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n5/6\n\n\nWe strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only.\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n6/6",
+      "pages": [
+        {
+          "page_number": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "ADHD Adults > Health & Nutrition\nEMOTIONS & SHAME\nHow to Control Your Anger When ADHD Emotional Reactivity\nKicks In\nYes, the ADHD brain is wired to overreact and to feel emotions intensely. But you are not your ADHD\nreactivity. Here, learn how to change your reactive, habitual anger responses with thoughtful,\nsoothing responses.\nUpdated on May 12, 2025\n9 min read\nClick to Read 1 Comment 💬\nBy Sharon Saline, Psy.D.\nIn This Article\n1. Why Anger and Big Emotions Rock ADHD Brains\n2. How to Control ADHD-Laced Anger\n3. More Ways to Improve Emotional Regulation\n4. How to Control ADHD Anger and Emotional Reactivity: Next Steps\nIt starts with a trigger. In an instant, a volcano of anger and negative emotion erupts. Before you can process\nwhat’s happening, you say or do things that you will surely regret later. But you can’t stop yourself. If we’re\nbeing honest, sometimes it feels good to let it all out.\nLiving with attention deficit hyperactivity disorder (ADHD) means living with a stress-producing condition that\nbegets emotional reactivity. Though the ADHD brain is wired to feel emotions like anger, frustration, and hurt\nquite intensely, emotional reactivity is ultimately a response pattern — one that you can shift with the right\ntools and frame of mind.\nWhy Anger and Big Emotions Rock ADHD Brains\nEmotional dysregulation is part and parcel of ADHD. Taken together, the following features explain why\nemotional eruptions occur so acutely and so often in ADHD.\nAmygdala Hijack and Emotional Flooding\nThe amygdala is the emotional part of the brain that drives the fight-flight-freeze response. Amygdala hijack, a\nterm coined by Daniel Goleman, Ph.D., occurs when the brain overreacts to a threat, real or perceived, and\nADHD Science & Strategies\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n1/6",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                102.18,
+                210.92,
+                116.32
+              ],
+              "text": "ADHD Adults > Health & Nutrition"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                123.92,
+                148.66,
+                137.12
+              ],
+              "text": "EMOTIONS & SHAME"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                142.88,
+                539.67,
+                186.18
+              ],
+              "text": "How to Control Your Anger When ADHD Emotional Reactivity\nKicks In"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                55.12,
+                186.19,
+                547.75,
+                232.78
+              ],
+              "text": "Yes, the ADHD brain is wired to overreact and to feel emotions intensely. But you are not your ADHD\nreactivity. Here, learn how to change your reactive, habitual anger responses with thoughtful,\nsoothing responses."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                235.89,
+                240.18,
+                419.29,
+                255.82
+              ],
+              "text": "Updated on May 12, 2025\n9 min read"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                272.44,
+                205.29,
+                287.53
+              ],
+              "text": "Click to Read 1 Comment 💬"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                106.88,
+                240.18,
+                219.38,
+                254.32
+              ],
+              "text": "By Sharon Saline, Psy.D."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                68.77,
+                306.42,
+                144.21,
+                322.17
+              ],
+              "text": "In This Article"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                71.67,
+                330.56,
+                373.41,
+                353.34
+              ],
+              "text": "1. Why Anger and Big Emotions Rock ADHD Brains"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                69.8,
+                367.31,
+                296.82,
+                390.09
+              ],
+              "text": "2. How to Control ADHD-Laced Anger"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                70.77,
+                403.31,
+                352.64,
+                426.09
+              ],
+              "text": "3. More Ways to Improve Emotional Regulation"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                69.57,
+                440.06,
+                479.08,
+                462.84
+              ],
+              "text": "4. How to Control ADHD Anger and Emotional Reactivity: Next Steps"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                55.12,
+                498.38,
+                538.72,
+                540.56
+              ],
+              "text": "It starts with a trigger. In an instant, a volcano of anger and negative emotion erupts. Before you can process\nwhat’s happening, you say or do things that you will surely regret later. But you can’t stop yourself. If we’re\nbeing honest, sometimes it feels good to let it all out."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                553.88,
+                554.86,
+                609.56
+              ],
+              "text": "Living with attention deficit hyperactivity disorder (ADHD) means living with a stress-producing condition that\nbegets emotional reactivity. Though the ADHD brain is wired to feel emotions like anger, frustration, and hurt\nquite intensely, emotional reactivity is ultimately a response pattern — one that you can shift with the right\ntools and frame of mind."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                55.12,
+                624.29,
+                426.19,
+                646.91
+              ],
+              "text": "Why Anger and Big Emotions Rock ADHD Brains"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                55.12,
+                660.38,
+                519.39,
+                689.06
+              ],
+              "text": "Emotional dysregulation is part and parcel of ADHD. Taken together, the following features explain why\nemotional eruptions occur so acutely and so often in ADHD."
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                55.12,
+                703.01,
+                352.62,
+                723.75
+              ],
+              "text": "Amygdala Hijack and Emotional Flooding"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                55.12,
+                726.38,
+                554.6,
+                755.06
+              ],
+              "text": "The amygdala is the emotional part of the brain that drives the fight-flight-freeze response. Amygdala hijack, a\nterm coined by Daniel Goleman, Ph.D., occurs when the brain overreacts to a threat, real or perceived, and"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                193.47,
+                52.22,
+                308.92,
+                66.14
+              ],
+              "text": "ADHD Science & Strategies"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                24.0,
+                15.26,
+                448.76,
+                24.19
+              ],
+              "text": "6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n1/6"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 7,
+              "bbox": [
+                55.5,
+                232.5,
+                87.0,
+                264.0
+              ],
+              "width_px": 1,
+              "height_px": 1,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/",
+              "bbox": [
+                55.5,
+                102.0,
+                114.75,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/healthy-living/",
+              "bbox": [
+                126.0,
+                102.0,
+                210.75,
+                116.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/category/manage-adhd-life/healthy-living/emotions-shame/",
+              "bbox": [
+                55.5,
+                123.75,
+                148.5,
+                137.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/reviews/post/how-to-control-anger-emotional-reactivity-adhd/",
+              "bbox": [
+                55.5,
+                272.25,
+                205.5,
+                287.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/author/sharon-saline/",
+              "bbox": [
+                120.75,
+                240.0,
+                219.75,
+                254.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/slideshows/adhd-emotions-understanding-intense-feelings/",
+              "bbox": [
+                127.5,
+                580.5,
+                218.25,
+                596.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/emotional-dysregulation-adhd-video/",
+              "bbox": [
+                55.5,
+                660.0,
+                165.75,
+                675.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/",
+              "bbox": [
+                55.5,
+                46.5,
+                558.0,
+                68.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "effectively takes over the prefrontal cortex — the thinking part of the brain.\nADHD brains appear more likely to experience amygdala hijack for a variety of reasons. For one, amygdala\nabnormalities are commonly seen in ADHD brains.1 2 The ADHD brain also struggles to turn off emotional\nprocessing — a problem when stress, either caused by systemic or individual forces, is persistently present. A\nconstant flooding of stress and emotions essentially causes individuals to lose access to the rational part of\nthemselves.\n[Get This Free Download: Emotional Regulation & Anger Management Scripts]\nPoor Working Memory\nStrong working memory is tied to effective emotional regulation, while weak working memory — which is\nassociated with ADHD and executive dysfunction — often compromises a person’s ability to manage and\nrespond appropriately to emotions.3 Weak working memory could explain why you struggle to recall and decide\non the coping strategies and tools available to you when faced with a trigger. Executive dysfunction also explains\nlimited impulse control — or why you might say or do things you regret when you’re overwhelmed.\nRejection Sensitive Dysphoria\nRejection sensitive dysphoria (RSD) causes extreme emotional responses to rejection and criticism, real or\nperceived. It is also associated with:\nintense feelings related to embarrassment, shame, and failure\nfear that others will withdraw their love, support, or friendship as a result of your mistakes\ndifficulty letting go of painful experiences of rejection and hurt\nRSD charges your thoughts and puts you on edge, which often contributes to emotional eruptions. As you brace\nto hear or experience the worst, for example, you may lash out as a defense mechanism. That’s why anger is\noften called a secondary emotion — fear and other feelings are often hidden beneath the surface. The possibility\nthat the negative outcome you’ve imagined might not occur doesn’t even come into sight.\n[Read: I Can’t Handle Rejection. Will I Ever Change?]\nHow to Control ADHD-Laced Anger\n1. Understand Your Anger Habits\nHabits are mostly involuntary patterns of behavior that develop to meet an emotional need. Habits are made up\nof triggers, the routine behavior, and the reinforcing outcome. Changing a habit only requires targeting one of\nthese components.\nNot all habits are good for us. Anger and emotional outbursts are habitual responses to uncomfortable feelings.\nThey often arise when we underestimate our ability to cope with stressors.\nInvestigate Your Reactivity\nBecome curious about how your anger works (think about it in terms of the components of a habit), when it\nshows up, and patterns associated with the emotion. Metacognitive thinking is a powerful tool (and an executive\nfunction skill) that can help you monitor and evaluate your thoughts and behaviors when you are experiencing\nanger. The following metacognitive questions can help you understand your reactive patterns:\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n2/6",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                27.38,
+                394.88,
+                42.56
+              ],
+              "text": "effectively takes over the prefrontal cortex — the thinking part of the brain."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                55.12,
+                55.88,
+                527.26,
+                71.06
+              ],
+              "text": "ADHD brains appear more likely to experience amygdala hijack for a variety of reasons. For one, amygdala"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                69.56,
+                544.53,
+                127.31
+              ],
+              "text": "abnormalities are commonly seen in ADHD brains.1 2 The ADHD brain also struggles to turn off emotional\nprocessing — a problem when stress, either caused by systemic or individual forces, is persistently present. A\nconstant flooding of stress and emotions essentially causes individuals to lose access to the rational part of\nthemselves."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                53.86,
+                140.62,
+                406.92,
+                155.81
+              ],
+              "text": "[Get This Free Download: Emotional Regulation & Anger Management Scripts]"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                169.76,
+                216.78,
+                190.5
+              ],
+              "text": "Poor Working Memory"
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                193.12,
+                528.43,
+                221.81
+              ],
+              "text": "Strong working memory is tied to effective emotional regulation, while weak working memory — which is\nassociated with ADHD and executive dysfunction — often compromises a person’s ability to manage and"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                220.31,
+                557.0,
+                264.56
+              ],
+              "text": "respond appropriately to emotions.3 Weak working memory could explain why you struggle to recall and decide\non the coping strategies and tools available to you when faced with a trigger. Executive dysfunction also explains\nlimited impulse control — or why you might say or do things you regret when you’re overwhelmed."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                278.51,
+                271.54,
+                299.25
+              ],
+              "text": "Rejection Sensitive Dysphoria"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                301.88,
+                529.1,
+                330.56
+              ],
+              "text": "Rejection sensitive dysphoria (RSD) causes extreme emotional responses to rejection and criticism, real or\nperceived. It is also associated with:"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                85.12,
+                343.88,
+                363.78,
+                359.06
+              ],
+              "text": "intense feelings related to embarrassment, shame, and failure"
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                85.12,
+                361.12,
+                490.76,
+                376.31
+              ],
+              "text": "fear that others will withdraw their love, support, or friendship as a result of your mistakes"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                85.12,
+                377.62,
+                366.5,
+                392.81
+              ],
+              "text": "difficulty letting go of painful experiences of rejection and hurt"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                406.12,
+                556.21,
+                461.81
+              ],
+              "text": "RSD charges your thoughts and puts you on edge, which often contributes to emotional eruptions. As you brace\nto hear or experience the worst, for example, you may lash out as a defense mechanism. That’s why anger is\noften called a secondary emotion — fear and other feelings are often hidden beneath the surface. The possibility\nthat the negative outcome you’ve imagined might not occur doesn’t even come into sight."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                53.86,
+                475.12,
+                292.74,
+                490.31
+              ],
+              "text": "[Read: I Can’t Handle Rejection. Will I Ever Change?]"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                505.04,
+                325.83,
+                527.66
+              ],
+              "text": "How to Control ADHD-Laced Anger"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                55.12,
+                542.51,
+                290.05,
+                563.25
+              ],
+              "text": "1. Understand Your Anger Habits"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                55.12,
+                565.88,
+                552.88,
+                608.06
+              ],
+              "text": "Habits are mostly involuntary patterns of behavior that develop to meet an emotional need. Habits are made up\nof triggers, the routine behavior, and the reinforcing outcome. Changing a habit only requires targeting one of\nthese components."
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                55.12,
+                621.38,
+                551.44,
+                650.06
+              ],
+              "text": "Not all habits are good for us. Anger and emotional outbursts are habitual responses to uncomfortable feelings.\nThey often arise when we underestimate our ability to cope with stressors."
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                55.12,
+                664.01,
+                248.87,
+                684.75
+              ],
+              "text": "Investigate Your Reactivity"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                55.12,
+                687.38,
+                557.43,
+                743.06
+              ],
+              "text": "Become curious about how your anger works (think about it in terms of the components of a habit), when it\nshows up, and patterns associated with the emotion. Metacognitive thinking is a powerful tool (and an executive\nfunction skill) that can help you monitor and evaluate your thoughts and behaviors when you are experiencing\nanger. The following metacognitive questions can help you understand your reactive patterns:"
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                24.0,
+                15.26,
+                448.76,
+                24.19
+              ],
+              "text": "6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n2/6"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/download/anger-management-emotional-regulation-skills-adhd/?src=embed_link",
+              "bbox": [
+                59.25,
+                140.25,
+                400.5,
+                156.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/what-is-executive-function-disorder/",
+              "bbox": [
+                175.5,
+                206.25,
+                273.75,
+                222.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/rejection-sensitive-dysphoria-and-adhd/",
+              "bbox": [
+                55.5,
+                301.5,
+                186.75,
+                317.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/how-to-deal-with-rejection-rsd-adhd/?src=embed_link",
+              "bbox": [
+                59.25,
+                474.75,
+                286.5,
+                490.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/how-to-change-habits-adhd/",
+              "bbox": [
+                55.5,
+                565.5,
+                84.75,
+                581.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "“What is happening that is activating me or making me feel on edge?” Receiving negative feedback,\nbeing blamed unfairly, having someone yell at you, and/or feeling ashamed over something can all test\nyour limits, as can other stressors.\n“What sensations do I feel when I become angry or upset?” Anger shows up in many forms: a headache;\na stomachache; sweating; chest tightness.\n“What behaviors do I resort to when I’m upset or angry?” Reactivity habits include lashing out,\nattacking, catastrophizing, blaming, denying, and more.\n“What’s helped me calm down when I’ve been in similar situations? Are those responses useful?”\nCreate a list of ‘slow me down’ options to manage the amygdala takeover more effectively.\n“How are others reacting to my words and actions? What are their faces or bodies showing?” Noticing\nother people’s facial or bodily expressions will also move you from a kneejerk response to something that\nis more thoughtful and measured.\nIt takes time and effort to strengthen metacognitive skills. Refrain from judgment as you observe your\nthoughts, sensations, and behaviors. Simply apply yourself to noticing and shifting one thing. Remember that\nyou are doing the best you can as you investigate your reactivity and apply different tools to control your anger.\n2. Change Old Anger Habits with Effective Responses\nGather Tools to Slow Anger at Every Stage\nYou need to access the modulated part of you that wants to stay calm. Here are ideas for responses at every stage\nof emotional intensity.\nWhen You’re Mildly Uncomfortable\nThis stage is just above your baseline of calm and comfortable. There is a soft trigger that is easy enough to\nignore, but it’s nonetheless there.\nNotice the negative, critical voice that is starting to charge your thoughts.\nCompare your limiting beliefs about the situation or about yourself to the real facts on the ground.\nWhen You’re Activated\nYou’re growing upset, angry, or overwhelmed at this stage — and it’s becoming difficult to ignore. Perhaps\nyou’re ruminating on something that is bothering you. There’s a battle of sorts between the emotional and\nthinking parts of the brain. Talk down the emotional brain.\nAcknowledge and validate your feelings. Say, “It’s okay to be angry. But what can I do to settle down?”\nRepeat affirmations or supportive phrases. Here is an example: “This is not the most fun moment, or\nyour best moment, but you’ll get through it.”\nVisualize yourself settling down. Imagine yourself by a lake, tossing in a few pebbles. As each one makes\nit journey to the sandy bottom, feel yourself settle into your feet or your chair.\nWhen You’re On “High Alert”\nYou’re at your most dysregulated at this stage. Your body is fully engaged to fight or flee. Physical signs of anger\nshow up here — and physical responses can help your body slow down in the middle of the tidal wave of\nemotion.\nTry focused breathing techniques — alternate nostril breathing, belly breathing, etc. I often recommend\ntriangle breathing: Breathe in for a count of four, hold for a count of four and exhale for a count of six.\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n3/6",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                85.12,
+                27.38,
+                543.62,
+                69.56
+              ],
+              "text": "“What is happening that is activating me or making me feel on edge?” Receiving negative feedback,\nbeing blamed unfairly, having someone yell at you, and/or feeling ashamed over something can all test\nyour limits, as can other stressors."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                85.12,
+                71.62,
+                552.54,
+                100.31
+              ],
+              "text": "“What sensations do I feel when I become angry or upset?” Anger shows up in many forms: a headache;\na stomachache; sweating; chest tightness."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                85.12,
+                102.38,
+                514.14,
+                131.06
+              ],
+              "text": "“What behaviors do I resort to when I’m upset or angry?” Reactivity habits include lashing out,\nattacking, catastrophizing, blaming, denying, and more."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                85.12,
+                132.38,
+                529.98,
+                161.06
+              ],
+              "text": "“What’s helped me calm down when I’ve been in similar situations? Are those responses useful?”\nCreate a list of ‘slow me down’ options to manage the amygdala takeover more effectively."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                85.12,
+                163.12,
+                555.96,
+                205.31
+              ],
+              "text": "“How are others reacting to my words and actions? What are their faces or bodies showing?” Noticing\nother people’s facial or bodily expressions will also move you from a kneejerk response to something that\nis more thoughtful and measured."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                218.62,
+                549.53,
+                260.81
+              ],
+              "text": "It takes time and effort to strengthen metacognitive skills. Refrain from judgment as you observe your\nthoughts, sensations, and behaviors. Simply apply yourself to noticing and shifting one thing. Remember that\nyou are doing the best you can as you investigate your reactivity and apply different tools to control your anger."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                274.76,
+                435.22,
+                319.5
+              ],
+              "text": "2. Change Old Anger Habits with Effective Responses\nGather Tools to Slow Anger at Every Stage"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                55.12,
+                322.12,
+                555.72,
+                350.81
+              ],
+              "text": "You need to access the modulated part of you that wants to stay calm. Here are ideas for responses at every stage\nof emotional intensity."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                55.12,
+                364.76,
+                306.12,
+                385.5
+              ],
+              "text": "When You’re Mildly Uncomfortable"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                55.12,
+                388.12,
+                529.79,
+                416.81
+              ],
+              "text": "This stage is just above your baseline of calm and comfortable. There is a soft trigger that is easy enough to\nignore, but it’s nonetheless there."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                85.12,
+                430.12,
+                414.14,
+                445.31
+              ],
+              "text": "Notice the negative, critical voice that is starting to charge your thoughts."
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                85.12,
+                447.38,
+                523.24,
+                462.56
+              ],
+              "text": "Compare your limiting beliefs about the situation or about yourself to the real facts on the ground."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                55.12,
+                476.51,
+                217.25,
+                497.25
+              ],
+              "text": "When You’re Activated"
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                55.12,
+                499.88,
+                532.26,
+                542.06
+              ],
+              "text": "You’re growing upset, angry, or overwhelmed at this stage — and it’s becoming difficult to ignore. Perhaps\nyou’re ruminating on something that is bothering you. There’s a battle of sorts between the emotional and\nthinking parts of the brain. Talk down the emotional brain."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                85.12,
+                555.38,
+                540.84,
+                570.56
+              ],
+              "text": "Acknowledge and validate your feelings. Say, “It’s okay to be angry. But what can I do to settle down?”"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                85.12,
+                571.88,
+                536.78,
+                600.56
+              ],
+              "text": "Repeat affirmations or supportive phrases. Here is an example: “This is not the most fun moment, or\nyour best moment, but you’ll get through it.”"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                85.12,
+                602.62,
+                550.12,
+                631.31
+              ],
+              "text": "Visualize yourself settling down. Imagine yourself by a lake, tossing in a few pebbles. As each one makes\nit journey to the sandy bottom, feel yourself settle into your feet or your chair."
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                55.12,
+                645.26,
+                263.22,
+                666.0
+              ],
+              "text": "When You’re On “High Alert”"
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                55.12,
+                668.62,
+                553.93,
+                710.81
+              ],
+              "text": "You’re at your most dysregulated at this stage. Your body is fully engaged to fight or flee. Physical signs of anger\nshow up here — and physical responses can help your body slow down in the middle of the tidal wave of\nemotion."
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                85.12,
+                724.12,
+                550.82,
+                752.81
+              ],
+              "text": "Try focused breathing techniques — alternate nostril breathing, belly breathing, etc. I often recommend\ntriangle breathing: Breathe in for a count of four, hold for a count of four and exhale for a count of six."
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                24.0,
+                15.26,
+                448.76,
+                24.19
+              ],
+              "text": "6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n3/6"
+            }
+          ],
+          "images": [],
+          "links": [],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "Pause before repeating the cycle. The longer exhales slow the physiological response of fight or flight.\nPhysically remove yourself from the stressor or situation.\nEngage in a physical activity, like a walk or a run, to blow off steam.\nTurn to a timed distraction. Listen to music or play a game on your phone.\nIdentify your preferred soothers but know that you can mix and match responses. Breathing, for example, is\nuseful at every stage.\nPractice, Practice, Practice\nStressful situations are a part of life largely outside our control. But we can manage our responses using\ninsightful strategies. Keep the following pointers in mind as you move away from habits of reactivity to new\nhabits of responsiveness.\nCommit to change. List your coping tools in multiple places — in your phone, on sticky notes around\nyour home — to help you readily retrieve them.\nFocus on one thing that you can change at a time. Smaller goals mean greater progress.\nRely on a growth mindset. Expect to be challenged and frustrated as you adjust your emotional\nresponses. See your mistakes as learning opportunities and areas for improvement, not as personal\nflaws.\nRemember why you want to change your habits and move away from anger.\nDon’t be so hard on yourself. Shame and regret about your emotional responses will only hold you back.\nBerating yourself for things that you’ve done is useless if you can’t take helpful lessons from those\nexperiences. Practice self-compassion by honoring that you are doing the best you can. Accept that you\nwill lose it at times, despite your best efforts. Progress may look like two steps forward and one step back,\nbut that’s still one step forward.\nYou are not your ADHD reactivity. Intense feelings might have been a part of your life for a long time, but\nthey do not define you. You are more than your foibles. Stumbling helps us do what we are supposed to\ndo: learn.\nMore Ways to Improve Emotional Regulation\nManage RSD\nIdentify your strengths and notice the good. Each day, write down three things that went well, no matter\nhow small. Example: “I had a great cup of coffee. I smiled today. I like the clothes I wore.”\nTreat yourself with kindness. Gather a collection of affirmations and personal words of encouragement.\nPut these on your phone or post them around your house or office.\nPlan for how to respond to criticism, even the constructive kind. Use the STAR method (Stop, Think, Act,\nand Recover) outlined in this resource that explains how to cope with RSD.\nMaintain a Healthy Lifestyle\nTry to follow a routine that allows you to get enough sleep, eat nutritious meals, move your body, and\nconnect with others. A routine can ground you and help keep stress levels low.\nThink HALT throughout the day – are you hungry? Angry? Lonely? Tired? What are your options to\naddress these and regulate?\nFocus on building positive relationships with others. Learn how to resolve conflicts by planning for them\nwell in advance.\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n4/6",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                85.12,
+                27.38,
+                539.45,
+                42.56
+              ],
+              "text": "Pause before repeating the cycle. The longer exhales slow the physiological response of fight or flight."
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                85.12,
+                44.62,
+                342.14,
+                59.81
+              ],
+              "text": "Physically remove yourself from the stressor or situation."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                85.12,
+                61.88,
+                385.54,
+                77.06
+              ],
+              "text": "Engage in a physical activity, like a walk or a run, to blow off steam."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                85.12,
+                78.38,
+                413.82,
+                93.56
+              ],
+              "text": "Turn to a timed distraction. Listen to music or play a game on your phone."
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                55.12,
+                106.88,
+                537.32,
+                135.56
+              ],
+              "text": "Identify your preferred soothers but know that you can mix and match responses. Breathing, for example, is\nuseful at every stage."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                149.51,
+                248.14,
+                170.25
+              ],
+              "text": "Practice, Practice, Practice"
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                55.12,
+                172.88,
+                535.97,
+                215.06
+              ],
+              "text": "Stressful situations are a part of life largely outside our control. But we can manage our responses using\ninsightful strategies. Keep the following pointers in mind as you move away from habits of reactivity to new\nhabits of responsiveness."
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                85.12,
+                228.38,
+                535.52,
+                257.06
+              ],
+              "text": "Commit to change. List your coping tools in multiple places — in your phone, on sticky notes around\nyour home — to help you readily retrieve them."
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                85.12,
+                259.12,
+                474.88,
+                274.31
+              ],
+              "text": "Focus on one thing that you can change at a time. Smaller goals mean greater progress."
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                85.12,
+                276.38,
+                528.82,
+                318.56
+              ],
+              "text": "Rely on a growth mindset. Expect to be challenged and frustrated as you adjust your emotional\nresponses. See your mistakes as learning opportunities and areas for improvement, not as personal\nflaws."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                85.12,
+                320.62,
+                422.26,
+                335.81
+              ],
+              "text": "Remember why you want to change your habits and move away from anger."
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                85.12,
+                337.12,
+                555.52,
+                406.31
+              ],
+              "text": "Don’t be so hard on yourself. Shame and regret about your emotional responses will only hold you back.\nBerating yourself for things that you’ve done is useless if you can’t take helpful lessons from those\nexperiences. Practice self-compassion by honoring that you are doing the best you can. Accept that you\nwill lose it at times, despite your best efforts. Progress may look like two steps forward and one step back,\nbut that’s still one step forward."
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                85.12,
+                408.38,
+                555.5,
+                450.56
+              ],
+              "text": "You are not your ADHD reactivity. Intense feelings might have been a part of your life for a long time, but\nthey do not define you. You are more than your foibles. Stumbling helps us do what we are supposed to\ndo: learn."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                55.12,
+                465.29,
+                405.42,
+                487.91
+              ],
+              "text": "More Ways to Improve Emotional Regulation"
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                55.12,
+                502.76,
+                144.42,
+                523.5
+              ],
+              "text": "Manage RSD"
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                85.12,
+                526.12,
+                551.14,
+                554.81
+              ],
+              "text": "Identify your strengths and notice the good. Each day, write down three things that went well, no matter\nhow small. Example: “I had a great cup of coffee. I smiled today. I like the clothes I wore.”"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                85.12,
+                556.88,
+                547.71,
+                585.56
+              ],
+              "text": "Treat yourself with kindness. Gather a collection of affirmations and personal words of encouragement.\nPut these on your phone or post them around your house or office."
+            },
+            {
+              "block_index": 18,
+              "bbox": [
+                85.12,
+                587.62,
+                551.72,
+                616.31
+              ],
+              "text": "Plan for how to respond to criticism, even the constructive kind. Use the STAR method (Stop, Think, Act,\nand Recover) outlined in this resource that explains how to cope with RSD."
+            },
+            {
+              "block_index": 19,
+              "bbox": [
+                55.12,
+                630.26,
+                257.17,
+                651.0
+              ],
+              "text": "Maintain a Healthy Lifestyle"
+            },
+            {
+              "block_index": 20,
+              "bbox": [
+                85.12,
+                653.62,
+                535.21,
+                682.31
+              ],
+              "text": "Try to follow a routine that allows you to get enough sleep, eat nutritious meals, move your body, and\nconnect with others. A routine can ground you and help keep stress levels low."
+            },
+            {
+              "block_index": 21,
+              "bbox": [
+                85.12,
+                683.62,
+                521.9,
+                712.31
+              ],
+              "text": "Think HALT throughout the day – are you hungry? Angry? Lonely? Tired? What are your options to\naddress these and regulate?"
+            },
+            {
+              "block_index": 22,
+              "bbox": [
+                85.12,
+                714.38,
+                553.31,
+                743.06
+              ],
+              "text": "Focus on building positive relationships with others. Learn how to resolve conflicts by planning for them\nwell in advance."
+            },
+            {
+              "block_index": 23,
+              "bbox": [
+                24.0,
+                15.26,
+                448.76,
+                24.19
+              ],
+              "text": "6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity"
+            },
+            {
+              "block_index": 24,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n4/6"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/self-compassion-practice-adhd-shame/",
+              "bbox": [
+                181.5,
+                363.75,
+                257.25,
+                379.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/what-is-adhd-symptoms-causes-treatments/",
+              "bbox": [
+                161.25,
+                408.0,
+                189.75,
+                423.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/how-to-deal-with-rejection-rsd-adhd/",
+              "bbox": [
+                317.25,
+                600.75,
+                417.0,
+                616.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/how-to-stick-to-a-routine-adhd/",
+              "bbox": [
+                150.0,
+                653.25,
+                183.75,
+                669.0
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "How to Control ADHD Anger and Emotional Reactivity: Next\nSteps\nQuiz: Am I Experiencing Rejection Sensitive Dysphoria?\nDownload: Emotional Regulation & Anger Management Scripts\nFrom Readers: How to Manage Your Anger Before It Bubbles to a Boil\nThe content for this article was derived, in part, from the ADDitude ADHD Experts webinar titled, “When ADHD\nTriggers Emotional Outbursts: Scripts for Your Flashpoints” [Video Replay & Podcast #426],” with Sharon\nSaline, Psy.D., which was broadcast on October 19, 2022.\nSUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you.\nView Article Sources\n \n \n \n\n\n\nThe ADDITUDE Commitment\nADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare.\nREVIEW OUR EDITORIAL PROCESS\nMEET OUR MEDICAL ADVISORY PANEL\nADDitude verifies the factual accuracy of all new content.\nSources are cited for all scientific research and findings.\nContent is periodically reviewed and updated to reflect new health insights.\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n5/6",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                55.12,
+                28.79,
+                521.85,
+                74.66
+              ],
+              "text": "How to Control ADHD Anger and Emotional Reactivity: Next\nSteps"
+            },
+            {
+              "block_index": 2,
+              "bbox": [
+                85.12,
+                88.88,
+                333.6,
+                104.06
+              ],
+              "text": "Quiz: Am I Experiencing Rejection Sensitive Dysphoria?"
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                85.12,
+                106.12,
+                367.11,
+                121.31
+              ],
+              "text": "Download: Emotional Regulation & Anger Management Scripts"
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                85.12,
+                123.38,
+                391.55,
+                138.56
+              ],
+              "text": "From Readers: How to Manage Your Anger Before It Bubbles to a Boil"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                53.86,
+                151.88,
+                556.13,
+                194.06
+              ],
+              "text": "The content for this article was derived, in part, from the ADDitude ADHD Experts webinar titled, “When ADHD\nTriggers Emotional Outbursts: Scripts for Your Flashpoints” [Video Replay & Podcast #426],” with Sharon\nSaline, Psy.D., which was broadcast on October 19, 2022."
+            },
+            {
+              "block_index": 6,
+              "bbox": [
+                55.12,
+                214.88,
+                538.98,
+                257.06
+              ],
+              "text": "SUPPORT ADDITUDE\nThank you for reading ADDitude. To support our mission of providing ADHD education and support, please\nconsider subscribing. Your readership and support help make our content and outreach possible. Thank you."
+            },
+            {
+              "block_index": 7,
+              "bbox": [
+                66.38,
+                282.22,
+                186.36,
+                299.19
+              ],
+              "text": "View Article Sources"
+            },
+            {
+              "block_index": 8,
+              "bbox": [
+                63.69,
+                338.39,
+                158.66,
+                353.57
+              ],
+              "text": "\n\n"
+            },
+            {
+              "block_index": 9,
+              "bbox": [
+                148.21,
+                399.27,
+                464.54,
+                432.46
+              ],
+              "text": "The ADDITUDE Commitment"
+            },
+            {
+              "block_index": 10,
+              "bbox": [
+                43.5,
+                434.81,
+                544.05,
+                495.67
+              ],
+              "text": "ADDitude collaborates closely with leading medical experts to publish\naccurate, clear, and authoritative content that millions of readers trust and\nshare."
+            },
+            {
+              "block_index": 11,
+              "bbox": [
+                212.85,
+                522.93,
+                399.14,
+                537.07
+              ],
+              "text": "REVIEW OUR EDITORIAL PROCESS"
+            },
+            {
+              "block_index": 12,
+              "bbox": [
+                202.7,
+                565.68,
+                409.28,
+                579.82
+              ],
+              "text": "MEET OUR MEDICAL ADVISORY PANEL"
+            },
+            {
+              "block_index": 13,
+              "bbox": [
+                84.75,
+                615.19,
+                367.87,
+                630.28
+              ],
+              "text": "ADDitude verifies the factual accuracy of all new content."
+            },
+            {
+              "block_index": 14,
+              "bbox": [
+                84.75,
+                666.19,
+                361.16,
+                681.28
+              ],
+              "text": "Sources are cited for all scientific research and findings."
+            },
+            {
+              "block_index": 15,
+              "bbox": [
+                84.75,
+                717.94,
+                460.91,
+                733.03
+              ],
+              "text": "Content is periodically reviewed and updated to reflect new health insights."
+            },
+            {
+              "block_index": 16,
+              "bbox": [
+                24.0,
+                15.26,
+                448.76,
+                24.19
+              ],
+              "text": "6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity"
+            },
+            {
+              "block_index": 17,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n5/6"
+            }
+          ],
+          "images": [],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-symptom-test/?src=embed_link",
+              "bbox": [
+                111.0,
+                88.5,
+                333.75,
+                104.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/download/anger-management-emotional-regulation-skills-adhd/?src=embed_link",
+              "bbox": [
+                136.5,
+                105.75,
+                366.75,
+                121.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/how-to-manage-anger-adult-adhd/?src=embed_link",
+              "bbox": [
+                153.75,
+                123.0,
+                391.5,
+                138.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/webinar/anger-management-outbursts-adhd-triggers/",
+              "bbox": [
+                496.5,
+                151.5,
+                553.5,
+                167.25
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/webinar/anger-management-outbursts-adhd-triggers/",
+              "bbox": [
+                55.5,
+                165.0,
+                317.25,
+                180.75
+              ]
+            },
+            {
+              "uri": "https://additu.de/subscribe/",
+              "bbox": [
+                501.75,
+                228.0,
+                530.25,
+                243.75
+              ]
+            },
+            {
+              "uri": "https://additu.de/subscribe/",
+              "bbox": [
+                55.5,
+                241.5,
+                147.75,
+                257.25
+              ]
+            },
+            {
+              "uri": "https://www.facebook.com/sharer/sharer.php?u=https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/",
+              "bbox": [
+                55.5,
+                332.25,
+                79.5,
+                357.0
+              ]
+            },
+            {
+              "uri": "https://twitter.com/intent/tweet/?text=How+to+Control+Your+Anger+When+ADHD+Emotional+Reactivity+Kicks+In&url=https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/&via=",
+              "bbox": [
+                84.0,
+                332.25,
+                108.0,
+                356.25
+              ]
+            },
+            {
+              "uri": "https://www.instagram.com/additudemag/",
+              "bbox": [
+                113.25,
+                332.25,
+                137.25,
+                357.0
+              ]
+            },
+            {
+              "uri": "https://pinterest.com/pin/create/button/?url=https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/&media=https://i0.wp.com/www.additudemag.com/wp-content/uploads/2023/02/GettyImages-1003442698-scaled-e1677522038476.jpg?resize=1280%2C720px&ssl=1&description=Yes,%20the%20ADHD%20brain%20is%20wired%20to%20overreact%20and%20to%20feel%20emotions%20intensely.%20But%20you%20are%20not%20your%20ADHD%20reactivity.%20Here,%20learn%20how%20to%20change%20your%20reactive,%20habitual%20anger%20responses%20with%20thoughtful,%20soothing%20responses.",
+              "bbox": [
+                142.5,
+                332.25,
+                166.5,
+                357.0
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/editorial-process-standards/",
+              "bbox": [
+                201.0,
+                512.25,
+                411.75,
+                547.5
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/adhd-medical-advisory-panel/",
+              "bbox": [
+                190.5,
+                555.0,
+                422.25,
+                590.25
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        },
+        {
+          "page_number": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0,
+          "text": "We strive to feature diverse voices and experiences.\nCopyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only.\n6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity\nhttps://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n6/6",
+          "text_blocks": [
+            {
+              "block_index": 1,
+              "bbox": [
+                84.75,
+                45.94,
+                339.77,
+                61.03
+              ],
+              "text": "We strive to feature diverse voices and experiences."
+            },
+            {
+              "block_index": 3,
+              "bbox": [
+                55.12,
+                195.94,
+                532.39,
+                241.03
+              ],
+              "text": "Copyright © 1998 - 2026 WebMD LLC. All rights reserved. Your use of this site is governed by our\nTerms of Use and Privacy Policy , and AI Policy . ADDitude does not provide medical advice,\ndiagnosis, or treatment. The material on this web site is provided for educational purposes only."
+            },
+            {
+              "block_index": 4,
+              "bbox": [
+                24.0,
+                15.26,
+                448.76,
+                24.19
+              ],
+              "text": "6/25/26, 10:39 AM\nHow to Control Anger and ADHD Emotional Reactivity"
+            },
+            {
+              "block_index": 5,
+              "bbox": [
+                24.0,
+                768.26,
+                587.99,
+                777.19
+              ],
+              "text": "https://www.additudemag.com/how-to-control-anger-emotional-reactivity-adhd/\n6/6"
+            }
+          ],
+          "images": [
+            {
+              "block_index": 2,
+              "bbox": [
+                500.25,
+                173.25,
+                558.0,
+                185.25
+              ],
+              "width_px": 77,
+              "height_px": 16,
+              "extension": "png",
+              "note": "Image binary not embedded in JSON; location and metadata preserved."
+            }
+          ],
+          "links": [
+            {
+              "uri": "https://www.additudemag.com/contact-us/terms-and-conditions/",
+              "bbox": [
+                55.5,
+                210.75,
+                121.5,
+                225.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/contact-us/privacy-policy/",
+              "bbox": [
+                143.25,
+                210.75,
+                214.5,
+                225.75
+              ]
+            },
+            {
+              "uri": "https://www.additudemag.com/ai-policy/",
+              "bbox": [
+                242.25,
+                210.75,
+                286.5,
+                225.75
+              ]
+            }
+          ],
+          "form_fields": [],
+          "annotations": []
+        }
+      ]
+    }
+  ],
+  "ourspace_shared_life_filter": {
+    "revision_id": "ourspace_shared_life_filter_v1",
+    "title": "How To Control Anger And Adhd Emotional Reactivity",
+    "domain": "emotion_regulation",
+    "item_type": "document",
+    "shared_facing_summary": "Emotion work starts with the body and access needs. Hunger, pain, oxygen, sleep attacks, MCAS reactions, trauma cues, and exhaustion count.",
+    "tiny_steps": [
+      "Name the emotion.",
+      "Check body basics: breathing, pain, food/water, meds, temperature, sensory load.",
+      "Lower the demand by one size.",
+      "Choose soothe, solve, pause, or ask for help."
+    ],
+    "flare_day_versions": {
+      "minimum": "One breath, one label, one safe message, or one checkbox.",
+      "medium": "Two to five minutes with everything reachable from bed/chair.",
+      "full": "Use the original worksheet/handout when both bodies and brains have capacity."
+    },
+    "accessibility_modifications": [
+      "Use low-exertion regulation first.",
+      "Allow anger and grief without turning them into shame.",
+      "Track patterns without moral judgment."
+    ],
+    "relationship_and_caregiver_notes": [
+      "William's needs and Jasper's capacity both count.",
+      "Ask before helping; ask before escalating; name the smallest next step.",
+      "Pause means pause, not abandonment. I am coming back. I care about us. I need a smaller next step.",
+      "What is needed, what capacity exists, what can be smaller, and what can wait?"
+    ],
+    "identity_and_trauma_filter": [
+      "Use William's masculine language and Jasper's they/them language.",
+      "Use consent-based, non-shaming, body-neutral language unless a person has explicitly chosen a term.",
+      "Do not turn symptoms, dysphoria, trauma responses, clutter, fatigue, or emotional intensity into moral failure."
+    ],
+    "avoid_or_adjust": [
+      "Do not demand immediate calm during respiratory distress, pain flares, dissociation, or overload."
+    ],
+    "suggested_cadence": [
+      "daily_optional",
+      "flare_day_as_needed"
+    ],
+    "app_tags": [
+      "adhd_friendly",
+      "disability_first",
+      "emotion_regulation",
+      "shared",
+      "tiny_steps",
+      "trauma_informed"
+    ]
+  },
+  "ourspace_shared_revision_metadata": {
+    "source_path": "DBT+ADHD Skill Files/11_ADHD_Emotion_Regulation_Anger_and_Calming/json/how_to_control_anger_and_adhd_emotional_reactivity.json",
+    "shared_output_path": "shared/11_adhd_emotion_regulation_anger_and_calming/json/how_to_control_anger_and_adhd_emotional_reactivity.json",
+    "revised_at_utc": "2026-06-26T00:24:16Z",
+    "copyright_note": "Original source text preserved from user-provided files; added OurSpace accessibility/life-filter metadata for private use."
+  },
+  "shared_json_path": "shared/11_adhd_emotion_regulation_anger_and_calming/json/how_to_control_anger_and_adhd_emotional_reactivity.json"
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "ai-brain.domain-guide.v1",
+  "version": "1.0.0",
+  "id": "domain-accessibility",
+  "title": "Accessibility",
+  "domain": "accessibility",
+  "description": "Keyboard/touch, reduced motion, screen readers, captions, sensory control, AAC and cognitive-load adaptation.",
+  "tags": [
+    "accessibility",
+    "accessibility",
+    "wheelchair",
+    "screen reader",
+    "keyboard",
+    "reduced motion",
+    "sensory",
+    "captions",
+    "aac"
+  ],
+  "capabilities": [
+    "accessibility",
+    "inclusive-design"
+  ],
+  "relatedDomains": [
+    "code",
+    "healthcare",
+    "social-community"
+  ],
+  "useCases": [
+    "route user requests into this domain",
+    "combine this domain with related disciplines",
+    "select more specific source shards by corpus index"
+  ],
+  "retrievalPolicy": "Use this guide as a routing seed. Prefer deeper topic/source shards from the corpus index when they match the request.",
+  "provenance": {
+    "source": "AI-Brain Project Pitch and unified source-package architecture",
+    "type": "source-derived routing seed"
+  }
+}

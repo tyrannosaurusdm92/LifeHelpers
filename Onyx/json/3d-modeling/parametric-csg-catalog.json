@@ -1,0 +1,406 @@
+{
+  "schema": "ai-brain.3d.openscad.v1",
+  "domain": "3d-modeling",
+  "title": "Parametric CSG modeling knowledge",
+  "tags": [
+    "3d",
+    "parametric-modeling",
+    "csg",
+    "cad"
+  ],
+  "capabilities": [
+    "build-parametric-model",
+    "compose-csg",
+    "transform-geometry",
+    "extrude-2d",
+    "plan-scad-script"
+  ],
+  "provenance": {
+    "source": "OpenSCAD repository supplied by user",
+    "license": "GPL-2.0 with supplied project exceptions",
+    "integration": "operator/example taxonomy extraction; no wholesale source port"
+  },
+  "operators": [
+    {
+      "name": "cube",
+      "exampleOccurrences": 59,
+      "examplePaths": [
+        "examples/Parametric/candleStand.scad",
+        "examples/Functions/functions.scad",
+        "examples/Basics/LetterBlock.scad",
+        "examples/Basics/CSG.scad",
+        "examples/Basics/CSG-modules.scad",
+        "examples/Basics/text_on_cube.scad",
+        "examples/Basics/hull.scad",
+        "examples/Advanced/children_indexed.scad"
+      ]
+    },
+    {
+      "name": "sphere",
+      "exampleOccurrences": 32,
+      "examplePaths": [
+        "examples/Parametric/candleStand.scad",
+        "examples/Functions/functions.scad",
+        "examples/Basics/CSG.scad",
+        "examples/Basics/CSG-modules.scad",
+        "examples/Basics/hull.scad",
+        "examples/Basics/logo.scad",
+        "examples/Advanced/offset.scad",
+        "examples/Advanced/children_indexed.scad"
+      ]
+    },
+    {
+      "name": "cylinder",
+      "exampleOccurrences": 39,
+      "examplePaths": [
+        "examples/Parametric/sign.scad",
+        "examples/Parametric/candleStand.scad",
+        "examples/Basics/CSG-modules.scad",
+        "examples/Basics/hull.scad",
+        "examples/Basics/logo.scad",
+        "examples/Advanced/offset.scad",
+        "examples/Advanced/children_indexed.scad",
+        "examples/Advanced/children.scad"
+      ]
+    },
+    {
+      "name": "polyhedron",
+      "exampleOccurrences": 1,
+      "examplePaths": [
+        "examples/Old/example011.scad"
+      ]
+    },
+    {
+      "name": "circle",
+      "exampleOccurrences": 17,
+      "examplePaths": [
+        "examples/Parametric/candleStand.scad",
+        "examples/Basics/rotate_extrude.scad",
+        "examples/Advanced/offset.scad",
+        "examples/Old/example020.scad",
+        "examples/Old/example017.scad",
+        "examples/Old/example015.scad"
+      ]
+    },
+    {
+      "name": "square",
+      "exampleOccurrences": 29,
+      "examplePaths": [
+        "examples/Basics/linear_extrude.scad",
+        "examples/Basics/projection.scad",
+        "examples/Basics/rotate_extrude.scad",
+        "examples/Advanced/GEB.scad",
+        "examples/Advanced/offset.scad",
+        "examples/Advanced/module_recursion.scad",
+        "examples/Old/example017.scad",
+        "examples/Old/example015.scad"
+      ]
+    },
+    {
+      "name": "polygon",
+      "exampleOccurrences": 17,
+      "examplePaths": [
+        "examples/Functions/polygon_areas.scad",
+        "examples/Functions/list_comprehensions.scad",
+        "examples/Basics/rotate_extrude.scad",
+        "examples/Basics/roof.scad",
+        "examples/Advanced/animation.scad",
+        "examples/Old/example020.scad",
+        "examples/Old/example023.scad",
+        "examples/Old/example017.scad"
+      ]
+    },
+    {
+      "name": "text",
+      "exampleOccurrences": 24,
+      "examplePaths": [
+        "examples/Parametric/sign.scad",
+        "examples/Functions/recursion.scad",
+        "examples/Functions/polygon_areas.scad",
+        "examples/Basics/logo_and_text.scad",
+        "examples/Basics/LetterBlock.scad",
+        "examples/Basics/rotate_extrude.scad",
+        "examples/Basics/text_on_cube.scad",
+        "examples/Basics/roof.scad"
+      ]
+    },
+    {
+      "name": "translate",
+      "exampleOccurrences": 180,
+      "examplePaths": [
+        "examples/Parametric/sign.scad",
+        "examples/Parametric/candleStand.scad",
+        "examples/Functions/functions.scad",
+        "examples/Functions/polygon_areas.scad",
+        "examples/Functions/list_comprehensions.scad",
+        "examples/Basics/linear_extrude.scad",
+        "examples/Basics/projection.scad",
+        "examples/Basics/logo_and_text.scad"
+      ]
+    },
+    {
+      "name": "rotate",
+      "exampleOccurrences": 89,
+      "examplePaths": [
+        "examples/Parametric/candleStand.scad",
+        "examples/Basics/linear_extrude.scad",
+        "examples/Basics/projection.scad",
+        "examples/Basics/logo_and_text.scad",
+        "examples/Basics/rotate_extrude.scad",
+        "examples/Basics/CSG-modules.scad",
+        "examples/Basics/text_on_cube.scad",
+        "examples/Basics/logo.scad"
+      ]
+    },
+    {
+      "name": "scale",
+      "exampleOccurrences": 11,
+      "examplePaths": [
+        "examples/Parametric/sign.scad",
+        "examples/Basics/linear_extrude.scad",
+        "examples/Basics/CSG-modules.scad",
+        "examples/Advanced/offset.scad",
+        "examples/Advanced/children_indexed.scad",
+        "examples/Old/example017.scad",
+        "examples/Old/example015.scad"
+      ]
+    },
+    {
+      "name": "resize",
+      "exampleOccurrences": 0,
+      "examplePaths": []
+    },
+    {
+      "name": "mirror",
+      "exampleOccurrences": 0,
+      "examplePaths": []
+    },
+    {
+      "name": "multmatrix",
+      "exampleOccurrences": 1,
+      "examplePaths": [
+        "examples/Advanced/module_recursion.scad"
+      ]
+    },
+    {
+      "name": "color",
+      "exampleOccurrences": 47,
+      "examplePaths": [
+        "examples/Functions/recursion.scad",
+        "examples/Functions/functions.scad",
+        "examples/Functions/polygon_areas.scad",
+        "examples/Basics/linear_extrude.scad",
+        "examples/Basics/projection.scad",
+        "examples/Basics/logo_and_text.scad",
+        "examples/Basics/rotate_extrude.scad",
+        "examples/Basics/CSG-modules.scad"
+      ]
+    },
+    {
+      "name": "offset",
+      "exampleOccurrences": 10,
+      "examplePaths": [
+        "examples/Advanced/GEB.scad",
+        "examples/Advanced/offset.scad",
+        "examples/Advanced/animation.scad"
+      ]
+    },
+    {
+      "name": "hull",
+      "exampleOccurrences": 4,
+      "examplePaths": [
+        "examples/Basics/hull.scad",
+        "examples/Advanced/animation.scad",
+        "examples/Old/example006.scad"
+      ]
+    },
+    {
+      "name": "minkowski",
+      "exampleOccurrences": 0,
+      "examplePaths": []
+    },
+    {
+      "name": "union",
+      "exampleOccurrences": 12,
+      "examplePaths": [
+        "examples/Parametric/candleStand.scad",
+        "examples/Basics/CSG.scad",
+        "examples/Basics/CSG-modules.scad",
+        "examples/Basics/text_on_cube.scad",
+        "examples/Old/example002.scad",
+        "examples/Old/example003.scad",
+        "examples/Old/example006.scad",
+        "examples/Old/example017.scad"
+      ]
+    },
+    {
+      "name": "difference",
+      "exampleOccurrences": 43,
+      "examplePaths": [
+        "examples/Parametric/sign.scad",
+        "examples/Parametric/candleStand.scad",
+        "examples/Basics/projection.scad",
+        "examples/Basics/LetterBlock.scad",
+        "examples/Basics/CSG.scad",
+        "examples/Basics/CSG-modules.scad",
+        "examples/Basics/text_on_cube.scad",
+        "examples/Basics/logo.scad"
+      ]
+    },
+    {
+      "name": "intersection",
+      "exampleOccurrences": 18,
+      "examplePaths": [
+        "examples/Basics/CSG.scad",
+        "examples/Basics/CSG-modules.scad",
+        "examples/Advanced/GEB.scad",
+        "examples/Old/example002.scad",
+        "examples/Old/example008.scad",
+        "examples/Old/example017.scad",
+        "examples/Old/example009.scad",
+        "examples/Old/example015.scad"
+      ]
+    },
+    {
+      "name": "linear_extrude",
+      "exampleOccurrences": 53,
+      "examplePaths": [
+        "examples/Parametric/sign.scad",
+        "examples/Parametric/candleStand.scad",
+        "examples/Basics/linear_extrude.scad",
+        "examples/Basics/projection.scad",
+        "examples/Basics/logo_and_text.scad",
+        "examples/Basics/LetterBlock.scad",
+        "examples/Basics/text_on_cube.scad",
+        "examples/Advanced/GEB.scad"
+      ]
+    },
+    {
+      "name": "rotate_extrude",
+      "exampleOccurrences": 12,
+      "examplePaths": [
+        "examples/Basics/rotate_extrude.scad",
+        "examples/Old/example017.scad",
+        "examples/Old/example009.scad",
+        "examples/Old/example007.scad"
+      ]
+    },
+    {
+      "name": "projection",
+      "exampleOccurrences": 16,
+      "examplePaths": [
+        "examples/Basics/projection.scad",
+        "examples/Advanced/GEB.scad",
+        "examples/Advanced/surface_image.scad",
+        "examples/Old/example021.scad"
+      ]
+    },
+    {
+      "name": "surface",
+      "exampleOccurrences": 5,
+      "examplePaths": [
+        "examples/Advanced/surface_image.scad",
+        "examples/Old/example010.scad"
+      ]
+    },
+    {
+      "name": "import",
+      "exampleOccurrences": 24,
+      "examplePaths": [
+        "examples/Basics/projection.scad",
+        "examples/Advanced/surface_image.scad",
+        "examples/Old/example008.scad",
+        "examples/Old/example009.scad",
+        "examples/Old/example015.scad",
+        "examples/Old/example007.scad",
+        "examples/Old/example016.scad",
+        "examples/Old/example012.scad"
+      ]
+    },
+    {
+      "name": "children",
+      "exampleOccurrences": 27,
+      "examplePaths": [
+        "examples/Parametric/candleStand.scad",
+        "examples/Basics/logo_and_text.scad",
+        "examples/Advanced/offset.scad",
+        "examples/Advanced/children_indexed.scad",
+        "examples/Advanced/children.scad",
+        "examples/Old/example018.scad"
+      ]
+    },
+    {
+      "name": "for",
+      "exampleOccurrences": 69,
+      "examplePaths": [
+        "examples/Parametric/candleStand.scad",
+        "examples/Functions/recursion.scad",
+        "examples/Functions/functions.scad",
+        "examples/Functions/echo.scad",
+        "examples/Functions/polygon_areas.scad",
+        "examples/Functions/list_comprehensions.scad",
+        "examples/Basics/logo_and_text.scad",
+        "examples/Basics/LetterBlock.scad"
+      ]
+    },
+    {
+      "name": "let",
+      "exampleOccurrences": 23,
+      "examplePaths": [
+        "examples/Functions/echo.scad",
+        "examples/Functions/polygon_areas.scad",
+        "examples/Functions/list_comprehensions.scad",
+        "examples/Basics/LetterBlock.scad",
+        "examples/Basics/text_on_cube.scad"
+      ]
+    },
+    {
+      "name": "each",
+      "exampleOccurrences": 0,
+      "examplePaths": []
+    },
+    {
+      "name": "assert",
+      "exampleOccurrences": 6,
+      "examplePaths": [
+        "examples/Advanced/assert.scad"
+      ]
+    },
+    {
+      "name": "echo",
+      "exampleOccurrences": 56,
+      "examplePaths": [
+        "examples/Functions/recursion.scad",
+        "examples/Functions/functions.scad",
+        "examples/Functions/echo.scad",
+        "examples/Functions/polygon_areas.scad",
+        "examples/Functions/list_comprehensions.scad",
+        "examples/Basics/linear_extrude.scad",
+        "examples/Basics/projection.scad",
+        "examples/Basics/logo_and_text.scad"
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "csg-solid",
+      "steps": [
+        "define primitives",
+        "apply transforms",
+        "compose union/difference/intersection",
+        "validate manifold intent",
+        "parameterize dimensions",
+        "export mesh"
+      ]
+    },
+    {
+      "id": "profile-extrusion",
+      "steps": [
+        "create 2D profile",
+        "apply offset/boolean operations",
+        "extrude linearly or rotationally",
+        "validate thickness"
+      ]
+    }
+  ]
+}

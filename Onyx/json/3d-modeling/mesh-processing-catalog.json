@@ -1,0 +1,493 @@
+{
+  "schema": "ai-brain.3d.mesh-processing.v1",
+  "domain": "3d-modeling",
+  "title": "Mesh processing and repair capability catalog",
+  "tags": [
+    "mesh",
+    "repair",
+    "sampling",
+    "remeshing",
+    "texture",
+    "alignment",
+    "point-cloud",
+    "measurement",
+    "io"
+  ],
+  "capabilities": [
+    "inspect-mesh",
+    "repair-mesh",
+    "sample-mesh",
+    "align-scans",
+    "reconstruct-surface",
+    "parameterize",
+    "measure",
+    "convert-3d-format",
+    "optimize-topology"
+  ],
+  "provenance": {
+    "source": "MeshLab repository supplied by user",
+    "license": "GPL-3.0",
+    "integration": "plugin taxonomy extraction and generalized workflow knowledge"
+  },
+  "plugins": [
+    {
+      "id": "decorate_background",
+      "family": "decorate",
+      "sourceFiles": 7,
+      "capabilityHint": "decorate-background"
+    },
+    {
+      "id": "decorate_base",
+      "family": "decorate",
+      "sourceFiles": 13,
+      "capabilityHint": "decorate-base"
+    },
+    {
+      "id": "decorate_raster_proj",
+      "family": "decorate",
+      "sourceFiles": 3,
+      "capabilityHint": "decorate-raster-proj"
+    },
+    {
+      "id": "decorate_shadow",
+      "family": "decorate",
+      "sourceFiles": 14,
+      "capabilityHint": "decorate-shadow"
+    },
+    {
+      "id": "edit_align",
+      "family": "edit",
+      "sourceFiles": 18,
+      "capabilityHint": "edit-align"
+    },
+    {
+      "id": "edit_manipulators",
+      "family": "edit",
+      "sourceFiles": 8,
+      "capabilityHint": "edit-manipulators"
+    },
+    {
+      "id": "edit_measure",
+      "family": "edit",
+      "sourceFiles": 8,
+      "capabilityHint": "edit-measure"
+    },
+    {
+      "id": "edit_mutualcorrs",
+      "family": "edit",
+      "sourceFiles": 24,
+      "capabilityHint": "edit-mutualcorrs"
+    },
+    {
+      "id": "edit_paint",
+      "family": "edit",
+      "sourceFiles": 42,
+      "capabilityHint": "edit-paint"
+    },
+    {
+      "id": "edit_pickpoints",
+      "family": "edit",
+      "sourceFiles": 14,
+      "capabilityHint": "edit-pickpoints"
+    },
+    {
+      "id": "edit_point",
+      "family": "edit",
+      "sourceFiles": 10,
+      "capabilityHint": "edit-point"
+    },
+    {
+      "id": "edit_quality",
+      "family": "edit",
+      "sourceFiles": 29,
+      "capabilityHint": "edit-quality"
+    },
+    {
+      "id": "edit_referencing",
+      "family": "edit",
+      "sourceFiles": 11,
+      "capabilityHint": "edit-referencing"
+    },
+    {
+      "id": "edit_sample",
+      "family": "edit",
+      "sourceFiles": 9,
+      "capabilityHint": "edit-sample"
+    },
+    {
+      "id": "edit_select",
+      "family": "edit",
+      "sourceFiles": 18,
+      "capabilityHint": "edit-select"
+    },
+    {
+      "id": "filter_ao",
+      "family": "filter",
+      "sourceFiles": 7,
+      "capabilityHint": "filter-ao"
+    },
+    {
+      "id": "filter_camera",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-camera"
+    },
+    {
+      "id": "filter_clean",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-clean"
+    },
+    {
+      "id": "filter_color_projection",
+      "family": "filter",
+      "sourceFiles": 9,
+      "capabilityHint": "filter-color-projection"
+    },
+    {
+      "id": "filter_colorproc",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-colorproc"
+    },
+    {
+      "id": "filter_create",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-create"
+    },
+    {
+      "id": "filter_createiso",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-createiso"
+    },
+    {
+      "id": "filter_cubization",
+      "family": "filter",
+      "sourceFiles": 22,
+      "capabilityHint": "filter-cubization"
+    },
+    {
+      "id": "filter_developability",
+      "family": "filter",
+      "sourceFiles": 8,
+      "capabilityHint": "filter-developability"
+    },
+    {
+      "id": "filter_dirt",
+      "family": "filter",
+      "sourceFiles": 8,
+      "capabilityHint": "filter-dirt"
+    },
+    {
+      "id": "filter_embree",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-embree"
+    },
+    {
+      "id": "filter_fractal",
+      "family": "filter",
+      "sourceFiles": 6,
+      "capabilityHint": "filter-fractal"
+    },
+    {
+      "id": "filter_func",
+      "family": "filter",
+      "sourceFiles": 5,
+      "capabilityHint": "filter-func"
+    },
+    {
+      "id": "filter_geodesic",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-geodesic"
+    },
+    {
+      "id": "filter_icp",
+      "family": "filter",
+      "sourceFiles": 5,
+      "capabilityHint": "filter-icp"
+    },
+    {
+      "id": "filter_img_patch_param",
+      "family": "filter",
+      "sourceFiles": 10,
+      "capabilityHint": "filter-img-patch-param"
+    },
+    {
+      "id": "filter_io_nxs",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-io-nxs"
+    },
+    {
+      "id": "filter_isoparametrization",
+      "family": "filter",
+      "sourceFiles": 23,
+      "capabilityHint": "filter-isoparametrization"
+    },
+    {
+      "id": "filter_layer",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-layer"
+    },
+    {
+      "id": "filter_measure",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-measure"
+    },
+    {
+      "id": "filter_mesh_alpha_wrap",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-mesh-alpha-wrap"
+    },
+    {
+      "id": "filter_mesh_booleans",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-mesh-booleans"
+    },
+    {
+      "id": "filter_meshing",
+      "family": "filter",
+      "sourceFiles": 5,
+      "capabilityHint": "filter-meshing"
+    },
+    {
+      "id": "filter_mls",
+      "family": "filter",
+      "sourceFiles": 17,
+      "capabilityHint": "filter-mls"
+    },
+    {
+      "id": "filter_mutualglobal",
+      "family": "filter",
+      "sourceFiles": 18,
+      "capabilityHint": "filter-mutualglobal"
+    },
+    {
+      "id": "filter_mutualinfo",
+      "family": "filter",
+      "sourceFiles": 17,
+      "capabilityHint": "filter-mutualinfo"
+    },
+    {
+      "id": "filter_parametrization",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-parametrization"
+    },
+    {
+      "id": "filter_plymc",
+      "family": "filter",
+      "sourceFiles": 4,
+      "capabilityHint": "filter-plymc"
+    },
+    {
+      "id": "filter_qhull",
+      "family": "filter",
+      "sourceFiles": 5,
+      "capabilityHint": "filter-qhull"
+    },
+    {
+      "id": "filter_quality",
+      "family": "filter",
+      "sourceFiles": 4,
+      "capabilityHint": "filter-quality"
+    },
+    {
+      "id": "filter_sample",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-sample"
+    },
+    {
+      "id": "filter_sample_gpu",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-sample-gpu"
+    },
+    {
+      "id": "filter_sampling",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-sampling"
+    },
+    {
+      "id": "filter_screened_poisson",
+      "family": "filter",
+      "sourceFiles": 52,
+      "capabilityHint": "filter-screened-poisson"
+    },
+    {
+      "id": "filter_sdfgpu",
+      "family": "filter",
+      "sourceFiles": 9,
+      "capabilityHint": "filter-sdfgpu"
+    },
+    {
+      "id": "filter_select",
+      "family": "filter",
+      "sourceFiles": 12,
+      "capabilityHint": "filter-select"
+    },
+    {
+      "id": "filter_sketchfab",
+      "family": "filter",
+      "sourceFiles": 4,
+      "capabilityHint": "filter-sketchfab"
+    },
+    {
+      "id": "filter_ssynth",
+      "family": "filter",
+      "sourceFiles": 10,
+      "capabilityHint": "filter-ssynth"
+    },
+    {
+      "id": "filter_texture",
+      "family": "filter",
+      "sourceFiles": 5,
+      "capabilityHint": "filter-texture"
+    },
+    {
+      "id": "filter_texture_defragmentation",
+      "family": "filter",
+      "sourceFiles": 39,
+      "capabilityHint": "filter-texture-defragmentation"
+    },
+    {
+      "id": "filter_trioptimize",
+      "family": "filter",
+      "sourceFiles": 5,
+      "capabilityHint": "filter-trioptimize"
+    },
+    {
+      "id": "filter_unsharp",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-unsharp"
+    },
+    {
+      "id": "filter_voronoi",
+      "family": "filter",
+      "sourceFiles": 3,
+      "capabilityHint": "filter-voronoi"
+    },
+    {
+      "id": "io_3ds",
+      "family": "io",
+      "sourceFiles": 5,
+      "capabilityHint": "io-3ds"
+    },
+    {
+      "id": "io_3mf",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-3mf"
+    },
+    {
+      "id": "io_base",
+      "family": "io",
+      "sourceFiles": 7,
+      "capabilityHint": "io-base"
+    },
+    {
+      "id": "io_bre",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-bre"
+    },
+    {
+      "id": "io_collada",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-collada"
+    },
+    {
+      "id": "io_ctm",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-ctm"
+    },
+    {
+      "id": "io_e57",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-e57"
+    },
+    {
+      "id": "io_expe",
+      "family": "io",
+      "sourceFiles": 6,
+      "capabilityHint": "io-expe"
+    },
+    {
+      "id": "io_gltf",
+      "family": "io",
+      "sourceFiles": 6,
+      "capabilityHint": "io-gltf"
+    },
+    {
+      "id": "io_json",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-json"
+    },
+    {
+      "id": "io_pdb",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-pdb"
+    },
+    {
+      "id": "io_tri",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-tri"
+    },
+    {
+      "id": "io_txt",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-txt"
+    },
+    {
+      "id": "io_u3d",
+      "family": "io",
+      "sourceFiles": 3,
+      "capabilityHint": "io-u3d"
+    },
+    {
+      "id": "io_x3d",
+      "family": "io",
+      "sourceFiles": 12,
+      "capabilityHint": "io-x3d"
+    },
+    {
+      "id": "render_gdp",
+      "family": "render",
+      "sourceFiles": 9,
+      "capabilityHint": "render-gdp"
+    },
+    {
+      "id": "render_radiance_scaling",
+      "family": "render",
+      "sourceFiles": 29,
+      "capabilityHint": "render-radiance-scaling"
+    }
+  ],
+  "pipeline": [
+    "identify topology and scale",
+    "measure boundary/non-manifold conditions",
+    "clean duplicates/unreferenced elements",
+    "repair normals/topology",
+    "remesh/reconstruct only when needed",
+    "preserve UV/color attributes",
+    "validate format and units"
+  ]
+}

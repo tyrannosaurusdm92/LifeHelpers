@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.3d.formats.v1",
+  "domain": "3d-modeling",
+  "formats": [
+    {
+      "id": "gltf-glb",
+      "bestFor": [
+        "web",
+        "runtime exchange",
+        "materials",
+        "animation"
+      ],
+      "watch": [
+        "axes",
+        "compression support"
+      ]
+    },
+    {
+      "id": "stl",
+      "bestFor": [
+        "3d printing",
+        "simple solids"
+      ],
+      "watch": [
+        "no materials",
+        "implicit units"
+      ]
+    },
+    {
+      "id": "ply",
+      "bestFor": [
+        "scan meshes",
+        "vertex color",
+        "point clouds"
+      ]
+    },
+    {
+      "id": "fbx",
+      "bestFor": [
+        "DCC/game exchange",
+        "rigged animation"
+      ]
+    },
+    {
+      "id": "obj",
+      "bestFor": [
+        "simple mesh exchange"
+      ]
+    },
+    {
+      "id": "3mf",
+      "bestFor": [
+        "modern 3d printing"
+      ]
+    },
+    {
+      "id": "blend",
+      "bestFor": [
+        "authoring source projects"
+      ]
+    },
+    {
+      "id": "scad",
+      "bestFor": [
+        "parametric CSG source"
+      ]
+    }
+  ],
+  "selectionQuestions": [
+    "Need animation?",
+    "Need materials/textures?",
+    "Target web, print, editing or archival?",
+    "Must units be explicit?",
+    "Need hierarchy/instances?"
+  ]
+}
