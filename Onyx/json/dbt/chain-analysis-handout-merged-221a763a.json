@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "chain-analysis-a363221a763a",
+  "title": "Chain Analysis",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9466
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/01-dbt-general-orientation-and-analyzing-behavior-general-handout-7-chain-analysis-d25de8ed68.json",
+        "sha256": "d25de8ed681c30fd0e419262ab80069c23cb84f8adb35a3f15479dfae7d4f0a7",
+        "domain": "dbt",
+        "bytes": 3170
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/general-handout-7-chain-analysis-4c0a5cb935.json",
+        "sha256": "4c0a5cb935b1dfb565ff713d790756eae7dbec0c036ec7430e4af621752a9c27",
+        "domain": "dbt",
+        "bytes": 3036
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 44,
+        "book_page": "20",
+        "text": "20\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nGeneral Handout 7   (General Worksheets 2, 2a)\nChain Analysis\nTo understand behavior, do a chain analysis.\nStep 1: Describe the problem behavior.\nStep 2: Describe the prompting event that started the chain of events leading to the problem\nbehavior.\nStep 3: Describe the factors happening before the event that made you vulnerable to starting\ndown the chain of events toward the problem behavior.\nStep 4: Describe in excruciating detail the chain of events that led to the problem behavior.\nStep 5: Describe the consequences of the problem behavior.\nTo change behavior:\nStep 6: Describe skillful behaviors to replace problem links in the chain of events.\nStep 7: Develop prevention plans to reduce vulnerability to stressful events.\nStep 8: Repair important or significant consequences of the problem behavior.\nVULNERABILITY\nPROMPTING EVENT\nLINKS\nCONSEQUENCES\nPROBLEM BEHAVIOR"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "General Handout 7   (General Worksheets 2, 2a)",
+    "source_pdf_pages": [
+      44
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/general/handouts/general_handout_7_chain_analysis.json",
+    "item_number": "7",
+    "full_text": "General Handout 7   (General Worksheets 2, 2a)\nChain Analysis\nTo understand behavior, do a chain analysis.\nStep 1: Describe the problem behavior.\nStep 2: Describe the prompting event that started the chain of events leading to the problem\nbehavior.\nStep 3: Describe the factors happening before the event that made you vulnerable to starting\ndown the chain of events toward the problem behavior.\nStep 4: Describe in excruciating detail the chain of events that led to the problem behavior.\nStep 5: Describe the consequences of the problem behavior.\nTo change behavior:\nStep 6: Describe skillful behaviors to replace problem links in the chain of events.\nStep 7: Develop prevention plans to reduce vulnerability to stressful events.\nStep 8: Repair important or significant consequences of the problem behavior.\nVULNERABILITY\nPROMPTING EVENT\nLINKS\nCONSEQUENCES\nPROBLEM BEHAVIOR",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "General Worksheets 2, 2a"
+    ],
+    "id": "general_handout_7",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "20"
+    ],
+    "title": "Chain Analysis",
+    "module_category": "General Skills: Orientation and Analyzing Behavior",
+    "shared_json_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_7_chain_analysis.json",
+    "module": "General",
+    "keywords": [
+      "Analysis",
+      "Chain"
+    ]
+  }
+}

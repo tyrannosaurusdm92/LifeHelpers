@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "build-mastery-and-cope-ahead-build-mastery-f9bfa4eb9bca",
+  "title": "Build Mastery and Cope Ahead Build Mastery",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9628
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-19-build-mastery-and-cope-ahead-build-m-2cfd9baaea.json",
+        "sha256": "2cfd9baaea7bf7abfe9814251adedd73f92539971fbda632f9b9bc1bda8bbb8f",
+        "domain": "dbt",
+        "bytes": 4584
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-19-build-mastery-and-cope-ahead-build-mastery-ac270f97d4.json",
+        "sha256": "ac270f97d47bfb4b9d6a279b5bd9fd81f8da74564696c149869c61f555a860b1",
+        "domain": "dbt",
+        "bytes": 4434
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 280,
+        "book_page": "256",
+        "text": "256\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nEmotion Regulation Handout 19   (Emotion Regulation Worksheets 12, 13)\nBuild Mastery and Cope Ahead\nBuild Mastery\n1.  Plan on doing at least one thing each day to build a sense of accomplishment.\nExample:\n2.  Plan for success, not failure.\n•• Do something difficult, but possible.\n3.  Gradually increase the difficulty over time.\n•• If the first task is too difficult, do something a little easier next time.\n4.  Look for a challenge.\n•• If the task is too easy, try something a little harder next time.\nCope Ahead of Time with Difficult Situations\n1.  Describe the situation that is likely to prompt problem behavior.\n•• Check the facts. Be specific in describing the situation.\n•• Name the emotions and actions likely to interfere with using your skills.\n2.  Decide what coping or problem-solving skills you want to use in the situation.\n•• Be specific. Write out in detail how you will cope with the situation and with your\nemotions and action urges.\n3.  Imagine the situation in your mind as vividly as possible.\n•• Imagine yourself in the situation now, not watching the situation.\n4.  Rehearse in your mind coping effectively.\n•• Rehearse in your mind exactly what you can do to cope effectively.\n•• Rehearse your actions, your thoughts, what you say, and how to say it.\n•• Rehearse coping effectively with new problems that come up.\n•• Rehearse coping effectively with your most feared catastrophe.\n5.  Practice relaxation after rehearsing."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 19   (Emotion Regulation Worksheets 12, 13)",
+    "source_pdf_pages": [
+      280
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_19_build_mastery_and_cope_ahead_build_mastery.json",
+    "item_number": "19",
+    "full_text": "☐\nEmotion Regulation Handout 19   (Emotion Regulation Worksheets 12, 13)\nBuild Mastery and Cope Ahead\nBuild Mastery\n1.  Plan on doing at least one thing each day to build a sense of accomplishment.\nExample:\n2.  Plan for success, not failure.\n•• Do something difficult, but possible.\n3.  Gradually increase the difficulty over time.\n•• If the first task is too difficult, do something a little easier next time.\n4.  Look for a challenge.\n•• If the task is too easy, try something a little harder next time.\nCope Ahead of Time with Difficult Situations\n1.  Describe the situation that is likely to prompt problem behavior.\n•• Check the facts. Be specific in describing the situation.\n•• Name the emotions and actions likely to interfere with using your skills.\n2.  Decide what coping or problem-solving skills you want to use in the situation.\n•• Be specific. Write out in detail how you will cope with the situation and with your\nemotions and action urges.\n3.  Imagine the situation in your mind as vividly as possible.\n•• Imagine yourself in the situation now, not watching the situation.\n4.  Rehearse in your mind coping effectively.\n•• Rehearse in your mind exactly what you can do to cope effectively.\n•• Rehearse your actions, your thoughts, what you say, and how to say it.\n•• Rehearse coping effectively with new problems that come up.\n•• Rehearse coping effectively with your most feared catastrophe.\n5.  Practice relaxation after rehearsing.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheets 12, 13"
+    ],
+    "id": "emotion_regulation_handout_19",
+    "item_type": "handout",
+    "is_example": true,
+    "source_book_pages": [
+      "256"
+    ],
+    "title": "Build Mastery and Cope Ahead Build Mastery",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_19_build_mastery_and_cope_ahead_build_mastery.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Ahead",
+      "Build",
+      "Cope",
+      "Mastery"
+    ]
+  }
+}

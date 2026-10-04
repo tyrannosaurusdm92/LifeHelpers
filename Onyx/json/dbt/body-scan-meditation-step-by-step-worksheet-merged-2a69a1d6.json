@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "body-scan-meditation-step-by-step-87a52a69a1d6",
+  "title": "Body Scan Meditation, Step by Step",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9535
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-6c-body-scan-meditation-step-by-step-b0b0e5cb4b.json",
+        "sha256": "b0b0e5cb4bf24b9ed7fac5ceaebf83011a21db305dc990c5944b786bf4ffc98f",
+        "domain": "dbt",
+        "bytes": 4225
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-6c-body-scan-meditation-step-by-step-6eee8e2aa3.json",
+        "sha256": "6eee8e2aa3331bb2ff9c03a8acea58bede8121147c93d512393ed3eb525f19c0",
+        "domain": "dbt",
+        "bytes": 4080
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 409,
+        "book_page": "385",
+        "text": "385\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 6c   (Distress Tolerance Handout 8a)\nBody Scan Meditation, Step by Step\nDue Date:             Name:                                    Week Starting:\nPractice as many times as you can. Check whether you practiced alone, listening to a recording,\nwatching YouTube, or being guided by a person.\nDay\nDescribe your experience\nHow much time\npassed doing\nthis skiill?\nRate before and after body scan\nDistress tolerance\n(0 = I can’t stand\nit; 5 = I can\ndefinitely survive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\n1\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\n2\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\n3\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\n4\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\n5\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\nConclusions or questions about this skills practice:\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 6c   (Distress Tolerance Handout 8a)",
+    "source_pdf_pages": [
+      409
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_6c_body_scan_meditation_step_by_step.json",
+    "item_number": "6c",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 6c   (Distress Tolerance Handout 8a)\nBody Scan Meditation, Step by Step\nDue Date:             Name:                                    Week Starting:\nPractice as many times as you can. Check whether you practiced alone, listening to a recording,\nwatching YouTube, or being guided by a person.\nDay\nDescribe your experience\nHow much time\npassed doing\nthis skiill?\nRate before and after body scan\nDistress tolerance\n(0 = I can’t stand\nit; 5 = I can\ndefinitely survive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\n\u0003\n Alone            Recording\n\u0003\n Person guiding    YouTube\n/\n/\n/\nConclusions or questions about this skills practice:\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handout 8a"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_6c_body_scan_meditation_step_by_step.html",
+    "id": "distress_tolerance_worksheet_6c",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "385"
+    ],
+    "title": "Body Scan Meditation, Step by Step",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_6c_body_scan_meditation_step_by_step.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Body",
+      "Meditation",
+      "Scan",
+      "Step"
+    ]
+  }
+}

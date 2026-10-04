@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "build-mastery-and-cope-ahead-4b6ece4db06c",
+  "title": "Build Mastery and Cope Ahead",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9496
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-12-build-mastery-and-cope-ahead-83d5d2588e.json",
+        "sha256": "83d5d2588e8cf6f7b30eb2ead1fcece8eaa0e3c8f52b8d6da731d0013000db00",
+        "domain": "dbt",
+        "bytes": 3442
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-12-build-mastery-and-cope-ahead-5a82697eef.json",
+        "sha256": "5a82697eefe2fff068eaad1ac20544046104cdb4c33cbf0468b189a1c1d581b1",
+        "domain": "dbt",
+        "bytes": 3302
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 325,
+        "book_page": "301",
+        "text": "301\nEmotion Regulation Worksheet 12   (Emotion Regulation Handout 19)\nBuild Mastery and Cope Ahead\nDue Date:             Name:                                    Week Starting:\nIn the far left column, put down the days of the week. Then write plans for practicing mastery in the first column under “Build Mastery.” At\nthe end of the day, write in the second column what you actually did to increase your sense of mastery. Under “Cope Ahead,” describe a\nproblem situation in the first column, and then describe in the second column how you imagined coping skillfully. Also, check whether it\nhelped.\nDay\nBuild Mastery\nCope Ahead\nActivities planned\nfor building mastery\nActivities I actually did\nfor building mastery\nFuture problem situation\nHow I imagined coping\neffectively (describe)\n1.\nHelpful?  Yes  No\n2.\nHelpful?  Yes  No\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 12   (Emotion Regulation Handout 19)",
+    "source_pdf_pages": [
+      325
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_12_build_mastery_and_cope_ahead.json",
+    "item_number": "12",
+    "full_text": "Emotion Regulation Worksheet 12   (Emotion Regulation Handout 19)\nBuild Mastery and Cope Ahead\nDue Date:             Name:                                    Week Starting:\nIn the far left column, put down the days of the week. Then write plans for practicing mastery in the first column under “Build Mastery.” At\nthe end of the day, write in the second column what you actually did to increase your sense of mastery. Under “Cope Ahead,” describe a\nproblem situation in the first column, and then describe in the second column how you imagined coping skillfully. Also, check whether it\nhelped.\nDay\nBuild Mastery\nCope Ahead\nActivities planned\nfor building mastery\nActivities I actually did\nfor building mastery\nFuture problem situation\nHow I imagined coping\neffectively (describe)\n1.\nHelpful?  Yes  No\n2.\nHelpful?  Yes  No",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handout 19"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_12_build_mastery_and_cope_ahead.html",
+    "id": "emotion_regulation_worksheet_12",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "301"
+    ],
+    "title": "Build Mastery and Cope Ahead",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_12_build_mastery_and_cope_ahead.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Ahead",
+      "Build",
+      "Cope",
+      "Mastery"
+    ]
+  }
+}
