@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "emergency_signals": [
+    {
+      "id": "self_harm_imminent",
+      "examples": [
+        "active suicide intent",
+        "plan/means plus intent",
+        "cannot stay safe"
+      ],
+      "action": "immediate_crisis_connection"
+    },
+    {
+      "id": "violence_imminent",
+      "examples": [
+        "intent/plan to seriously harm someone"
+      ],
+      "action": "immediate_emergency_connection"
+    },
+    {
+      "id": "possible_overdose",
+      "examples": [
+        "overdose",
+        "too many pills",
+        "poisoning"
+      ],
+      "action": "immediate_medical_connection"
+    },
+    {
+      "id": "severe_breathing",
+      "examples": [
+        "cannot breathe",
+        "stopped breathing",
+        "blue/cyanotic appearance"
+      ],
+      "action": "immediate_medical_connection"
+    },
+    {
+      "id": "severe_chest",
+      "examples": [
+        "severe/crushing chest pain or pressure",
+        "chest symptoms with severe shortness of breath or faintness"
+      ],
+      "action": "immediate_medical_connection"
+    },
+    {
+      "id": "stroke_like",
+      "examples": [
+        "sudden face droop",
+        "sudden one-sided weakness",
+        "sudden speech difficulty"
+      ],
+      "action": "immediate_medical_connection"
+    },
+    {
+      "id": "altered_consciousness",
+      "examples": [
+        "unresponsive",
+        "cannot be awakened",
+        "sudden severe confusion"
+      ],
+      "action": "immediate_medical_connection"
+    }
+  ],
+  "response_order": [
+    "state urgency plainly",
+    "direct to local emergency/crisis service",
+    "encourage involving a trusted person when safe",
+    "reduce hazards if possible",
+    "keep response short",
+    "do not continue ordinary skills coaching until immediate safety is addressed"
+  ]
+}

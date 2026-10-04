@@ -1,0 +1,47 @@
+{
+  "schema": "psychiatrypt3.runtime_registry.v1",
+  "version": "3.0.0",
+  "github_relative_root": "AI-Brain",
+  "core": [
+    "json/core/system_policy.json",
+    "json/core/capabilities.json",
+    "json/core/safety_routes.json",
+    "json/core/response_style.json"
+  ],
+  "indexes": [
+    "json/indexes/domain_index.json",
+    "json/indexes/skill_index.json"
+  ],
+  "knowledge": [
+    "json/knowledge/support_knowledge.json",
+    "json/knowledge/response_patterns.json"
+  ],
+  "skills": "json/skills/skill_cards.json",
+  "backend": "backend/psychiatrypt3.gs",
+  "js": [
+    "js/clinical-safety.js",
+    "js/support-router.js",
+    "js/context-builder.js",
+    "js/skill-coach.js",
+    "js/openai-responses-client.js"
+  ],
+  "scenario_domains": [
+    "adhd",
+    "autism",
+    "cbt",
+    "clinician_prep",
+    "crisis_safety",
+    "dbt",
+    "dissociation",
+    "grief",
+    "grounding",
+    "medication_journal",
+    "pain_accessibility",
+    "physical_health",
+    "psychiatric_checkin",
+    "relationships",
+    "self_care",
+    "sleep",
+    "task_planning"
+  ]
+}

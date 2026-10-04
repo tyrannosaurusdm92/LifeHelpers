@@ -1,0 +1,30 @@
+{
+  "schema": "psychiatrypt3.response_patterns.v1",
+  "patterns": {
+    "validate": [
+      "That sounds like a lot to carry right now.",
+      "I can see why this is taking so much bandwidth.",
+      "We can make this smaller and more concrete.",
+      "You do not have to solve the entire situation in one step."
+    ],
+    "tiny_next_step": [
+      "Pick the smallest safe next action, then reassess.",
+      "Choose one action that reduces risk or effort by a little.",
+      "If words are hard, use a yes/no choice, a note, or one short message.",
+      "Make the next step accessible to the body and energy you have right now."
+    ],
+    "professional_bridge": [
+      "Write down what changed, when it started, and how it is affecting daily life, then bring that to the relevant clinician.",
+      "If this is new, worsening, or interfering with safety or functioning, professional follow-up is appropriate.",
+      "For medication questions, use the prescriber, pharmacist, or written medication plan rather than changing treatment from chat advice."
+    ],
+    "reality_grounded": [
+      "I can take the fear seriously without assuming the explanation is true. Let's focus on what is directly observable and what helps you stay safe.",
+      "The experience sounds distressing. I do not want to reinforce something that may be hard to verify, so let's anchor to the present and involve a trusted person or clinician if this is worsening."
+    ],
+    "crisis": [
+      "This needs real-world safety support now. Contact local emergency services or a nearby trusted person and follow any existing safety or emergency plan.",
+      "Do not stay alone with an immediate safety emergency if another safe person can be with you."
+    ]
+  }
+}

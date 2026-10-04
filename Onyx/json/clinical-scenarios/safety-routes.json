@@ -1,0 +1,51 @@
+{
+  "schema": "psychiatrypt3.safety_routes.v1",
+  "levels": [
+    {
+      "level": "routine",
+      "action": "support_and_skills",
+      "model_allowed": true
+    },
+    {
+      "level": "watch",
+      "action": "support_plus_check_in",
+      "model_allowed": true
+    },
+    {
+      "level": "urgent",
+      "action": "human_support_and_prompt_professional_contact",
+      "model_allowed": true
+    },
+    {
+      "level": "immediate",
+      "action": "deterministic_emergency_route",
+      "model_allowed": false
+    }
+  ],
+  "categories": {
+    "self_harm_or_suicide": {
+      "level": "immediate",
+      "when": "intent, attempt, active plan, current means, or inability to stay safe"
+    },
+    "violence": {
+      "level": "immediate",
+      "when": "credible intent to seriously harm another person"
+    },
+    "overdose_or_poisoning": {
+      "level": "immediate",
+      "when": "suspected or confirmed overdose, poisoning, or dangerous ingestion"
+    },
+    "medical_emergency": {
+      "level": "immediate",
+      "when": "severe breathing difficulty, loss of consciousness, seizure, stroke-like symptoms, severe allergic reaction, severe chest pressure, uncontrolled major bleeding, or other clear emergency"
+    },
+    "psychosis_or_mania": {
+      "level": "urgent",
+      "when": "new/worsening hallucinations, paranoia, disorganization, extreme sleep loss, dangerous impulsivity, command experiences, or impaired reality testing; immediate if danger is present"
+    },
+    "medication_question": {
+      "level": "watch",
+      "when": "questions about stopping, starting, tapering, side effects, missed doses, or dosing; defer medication changes to prescriber/pharmacist and written plan"
+    }
+  }
+}

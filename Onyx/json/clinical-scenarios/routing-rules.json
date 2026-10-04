@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "priority": [
+    "crisis",
+    "physical_health",
+    "psychiatric",
+    "autism",
+    "adhd",
+    "dbt",
+    "cbt",
+    "sleep",
+    "care_coordination",
+    "general_mental_health"
+  ],
+  "multi_route": true,
+  "max_categories_per_turn": 5,
+  "max_cards_per_turn": 8
+}
