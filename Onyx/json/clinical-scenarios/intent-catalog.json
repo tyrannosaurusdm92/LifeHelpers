@@ -1,0 +1,362 @@
+{
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "adhd.principle.01",
+      "domain": "adhd",
+      "type": "principle",
+      "text": "externalize memory with visible cues",
+      "safety": "educational_support"
+    },
+    {
+      "id": "adhd.principle.02",
+      "domain": "adhd",
+      "type": "principle",
+      "text": "reduce task activation energy",
+      "safety": "educational_support"
+    },
+    {
+      "id": "adhd.principle.03",
+      "domain": "adhd",
+      "type": "principle",
+      "text": "use short timed starts and explicit stop points",
+      "safety": "educational_support"
+    },
+    {
+      "id": "adhd.principle.04",
+      "domain": "adhd",
+      "type": "principle",
+      "text": "support sleep/routine without moralizing",
+      "safety": "educational_support"
+    },
+    {
+      "id": "adhd.principle.05",
+      "domain": "adhd",
+      "type": "principle",
+      "text": "distinguish executive-function difficulty from unwillingness",
+      "safety": "educational_support"
+    },
+    {
+      "id": "adhd.principle.06",
+      "domain": "adhd",
+      "type": "principle",
+      "text": "encourage formal evaluation for diagnostic questions",
+      "safety": "educational_support"
+    },
+    {
+      "id": "adhd.avoid.01",
+      "domain": "adhd",
+      "type": "avoid",
+      "text": "diagnosing from a chat",
+      "safety": "boundary"
+    },
+    {
+      "id": "adhd.avoid.02",
+      "domain": "adhd",
+      "type": "avoid",
+      "text": "assuming every concentration problem is ADHD",
+      "safety": "boundary"
+    },
+    {
+      "id": "adhd.avoid.03",
+      "domain": "adhd",
+      "type": "avoid",
+      "text": "framing ADHD as laziness",
+      "safety": "boundary"
+    },
+    {
+      "id": "adhd.avoid.04",
+      "domain": "adhd",
+      "type": "avoid",
+      "text": "medication dose advice",
+      "safety": "boundary"
+    },
+    {
+      "id": "autism.principle.01",
+      "domain": "autism",
+      "type": "principle",
+      "text": "respect communication preferences",
+      "safety": "educational_support"
+    },
+    {
+      "id": "autism.principle.02",
+      "domain": "autism",
+      "type": "principle",
+      "text": "reduce sensory load when possible",
+      "safety": "educational_support"
+    },
+    {
+      "id": "autism.principle.03",
+      "domain": "autism",
+      "type": "principle",
+      "text": "make expectations explicit",
+      "safety": "educational_support"
+    },
+    {
+      "id": "autism.principle.04",
+      "domain": "autism",
+      "type": "principle",
+      "text": "offer predictable transitions",
+      "safety": "educational_support"
+    },
+    {
+      "id": "autism.principle.05",
+      "domain": "autism",
+      "type": "principle",
+      "text": "allow stimming and self-regulation when safe",
+      "safety": "educational_support"
+    },
+    {
+      "id": "autism.principle.06",
+      "domain": "autism",
+      "type": "principle",
+      "text": "support autonomy and consent",
+      "safety": "educational_support"
+    },
+    {
+      "id": "autism.principle.07",
+      "domain": "autism",
+      "type": "principle",
+      "text": "avoid forcing eye contact or masking",
+      "safety": "educational_support"
+    },
+    {
+      "id": "autism.avoid.01",
+      "domain": "autism",
+      "type": "avoid",
+      "text": "treating autism as a character flaw",
+      "safety": "boundary"
+    },
+    {
+      "id": "autism.avoid.02",
+      "domain": "autism",
+      "type": "avoid",
+      "text": "assuming lack of empathy",
+      "safety": "boundary"
+    },
+    {
+      "id": "autism.avoid.03",
+      "domain": "autism",
+      "type": "avoid",
+      "text": "using compliance as the primary success metric",
+      "safety": "boundary"
+    },
+    {
+      "id": "autism.avoid.04",
+      "domain": "autism",
+      "type": "avoid",
+      "text": "diagnosing from a chat",
+      "safety": "boundary"
+    },
+    {
+      "id": "cbt.principle.01",
+      "domain": "cbt",
+      "type": "principle",
+      "text": "separate situation, thought, emotion, body sensation, and action",
+      "safety": "educational_support"
+    },
+    {
+      "id": "cbt.principle.02",
+      "domain": "cbt",
+      "type": "principle",
+      "text": "test interpretations against evidence",
+      "safety": "educational_support"
+    },
+    {
+      "id": "cbt.principle.03",
+      "domain": "cbt",
+      "type": "principle",
+      "text": "generate alternative balanced explanations",
+      "safety": "educational_support"
+    },
+    {
+      "id": "cbt.principle.04",
+      "domain": "cbt",
+      "type": "principle",
+      "text": "use graded behavioral experiments",
+      "safety": "educational_support"
+    },
+    {
+      "id": "cbt.principle.05",
+      "domain": "cbt",
+      "type": "principle",
+      "text": "track what changes rather than demanding positive thinking",
+      "safety": "educational_support"
+    },
+    {
+      "id": "cbt.avoid.01",
+      "domain": "cbt",
+      "type": "avoid",
+      "text": "arguing someone out of feelings",
+      "safety": "boundary"
+    },
+    {
+      "id": "cbt.avoid.02",
+      "domain": "cbt",
+      "type": "avoid",
+      "text": "using cognitive restructuring during immediate crisis when stabilization is needed first",
+      "safety": "boundary"
+    },
+    {
+      "id": "dbt.principle.01",
+      "domain": "dbt",
+      "type": "principle",
+      "text": "balance acceptance and change",
+      "safety": "educational_support"
+    },
+    {
+      "id": "dbt.principle.02",
+      "domain": "dbt",
+      "type": "principle",
+      "text": "mindfulness before action",
+      "safety": "educational_support"
+    },
+    {
+      "id": "dbt.principle.03",
+      "domain": "dbt",
+      "type": "principle",
+      "text": "use crisis-survival skills for short-term safety",
+      "safety": "educational_support"
+    },
+    {
+      "id": "dbt.principle.04",
+      "domain": "dbt",
+      "type": "principle",
+      "text": "use emotion-regulation skills outside peak crisis",
+      "safety": "educational_support"
+    },
+    {
+      "id": "dbt.principle.05",
+      "domain": "dbt",
+      "type": "principle",
+      "text": "use interpersonal-effectiveness skills to clarify goals and boundaries",
+      "safety": "educational_support"
+    },
+    {
+      "id": "dbt.avoid.01",
+      "domain": "dbt",
+      "type": "avoid",
+      "text": "presenting skills as punishment",
+      "safety": "boundary"
+    },
+    {
+      "id": "dbt.avoid.02",
+      "domain": "dbt",
+      "type": "avoid",
+      "text": "using distress tolerance to tolerate abuse or medical emergencies",
+      "safety": "boundary"
+    },
+    {
+      "id": "psychiatry.principle.01",
+      "domain": "psychiatry",
+      "type": "principle",
+      "text": "collect symptom timeline and functional impact",
+      "safety": "educational_support"
+    },
+    {
+      "id": "psychiatry.principle.02",
+      "domain": "psychiatry",
+      "type": "principle",
+      "text": "separate screening from diagnosis",
+      "safety": "educational_support"
+    },
+    {
+      "id": "psychiatry.principle.03",
+      "domain": "psychiatry",
+      "type": "principle",
+      "text": "track medications and side effects without changing doses",
+      "safety": "educational_support"
+    },
+    {
+      "id": "psychiatry.principle.04",
+      "domain": "psychiatry",
+      "type": "principle",
+      "text": "prepare concise clinician questions",
+      "safety": "educational_support"
+    },
+    {
+      "id": "psychiatry.principle.05",
+      "domain": "psychiatry",
+      "type": "principle",
+      "text": "consider physical-health and substance factors that can mimic psychiatric symptoms",
+      "safety": "educational_support"
+    },
+    {
+      "id": "psychiatry.avoid.01",
+      "domain": "psychiatry",
+      "type": "avoid",
+      "text": "prescribing",
+      "safety": "boundary"
+    },
+    {
+      "id": "psychiatry.avoid.02",
+      "domain": "psychiatry",
+      "type": "avoid",
+      "text": "diagnosing",
+      "safety": "boundary"
+    },
+    {
+      "id": "psychiatry.avoid.03",
+      "domain": "psychiatry",
+      "type": "avoid",
+      "text": "interpreting labs without clinician context",
+      "safety": "boundary"
+    },
+    {
+      "id": "psychiatry.avoid.04",
+      "domain": "psychiatry",
+      "type": "avoid",
+      "text": "discouraging professional care",
+      "safety": "boundary"
+    },
+    {
+      "id": "physical_health.principle.01",
+      "domain": "physical_health",
+      "type": "principle",
+      "text": "screen for urgent red flags before attributing symptoms to anxiety",
+      "safety": "educational_support"
+    },
+    {
+      "id": "physical_health.principle.02",
+      "domain": "physical_health",
+      "type": "principle",
+      "text": "encourage appropriate medical evaluation for new/severe symptoms",
+      "safety": "educational_support"
+    },
+    {
+      "id": "physical_health.principle.03",
+      "domain": "physical_health",
+      "type": "principle",
+      "text": "track sleep, pain, hydration, nutrition, mobility, and medication side effects as context",
+      "safety": "educational_support"
+    },
+    {
+      "id": "physical_health.principle.04",
+      "domain": "physical_health",
+      "type": "principle",
+      "text": "avoid over-medicalizing normal stress responses",
+      "safety": "educational_support"
+    },
+    {
+      "id": "physical_health.avoid.01",
+      "domain": "physical_health",
+      "type": "avoid",
+      "text": "calling chest pain or neurologic symptoms anxiety without evaluation",
+      "safety": "boundary"
+    },
+    {
+      "id": "physical_health.avoid.02",
+      "domain": "physical_health",
+      "type": "avoid",
+      "text": "giving dosing instructions",
+      "safety": "boundary"
+    },
+    {
+      "id": "physical_health.avoid.03",
+      "domain": "physical_health",
+      "type": "avoid",
+      "text": "ignoring medication interactions",
+      "safety": "boundary"
+    }
+  ]
+}

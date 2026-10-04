@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "name": "Unified Psychiatric AI Brain Part 2",
+  "categories": {
+    "cbt": "support_cbt.json",
+    "dbt": "support_dbt.json",
+    "adhd": "support_adhd.json",
+    "autism": "support_autism.json",
+    "physical_health": "support_physical_health.json",
+    "psychiatric": "support_psychiatric.json",
+    "general_mental_health": "support_general_mental_health.json",
+    "care_coordination": "support_care_coordination.json",
+    "sleep": "support_sleep.json"
+  },
+  "policy_files": {
+    "scope": "clinical_scope.json",
+    "safety": "safety_rules.json",
+    "crisis": "crisis_resources.json",
+    "accessibility": "accessibility_profiles.json",
+    "routing": "routing_rules.json",
+    "response": "response_policy.json"
+  },
+  "reference_indexes": {
+    "dbt_adhd": "dbt_adhd_reference_index.json",
+    "sources": "reference_source_inventory.json"
+  }
+}
