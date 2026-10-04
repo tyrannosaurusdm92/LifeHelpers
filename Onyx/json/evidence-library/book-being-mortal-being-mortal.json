@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0",
+  "source": {
+    "id": "BOOK_BEING_MORTAL",
+    "type": "nonfiction_book",
+    "tier": "narrative_context",
+    "year": 2014,
+    "title": "Being Mortal",
+    "url": "https://us.macmillan.com/books/9781250076229/beingmortal/",
+    "themes": [
+      "serious illness",
+      "aging",
+      "end of life",
+      "autonomy"
+    ],
+    "summary": "Atul Gawande's nonfiction work examines serious illness, aging, autonomy and end-of-life priorities through medicine and narrative cases."
+  },
+  "original_synthesis": "Atul Gawande's nonfiction work examines serious illness, aging, autonomy and end-of-life priorities through medicine and narrative cases.",
+  "use_rules": [
+    "Prefer systematic reviews/meta-analyses for broad population claims when quality is adequate.",
+    "Use government and specialty guidance for current terminology, safety and clinical framing.",
+    "Use qualitative and patient-reported research to identify lived-experience domains that quantitative endpoints can miss.",
+    "Use memoirs, books and documentaries as contextual evidence, never as prevalence or causal evidence.",
+    "Assess recency, study design, sample, bias, heterogeneity and population relevance rather than ranking by publication date alone."
+  ],
+  "copyright_rules": [
+    "Do not reproduce copyrighted articles, books, films or long passages.",
+    "Store bibliographic metadata and original paraphrased synthesis.",
+    "Keep URLs so downstream systems can retrieve or verify sources where legally available.",
+    "Do not transform narrative sources into clinical facts."
+  ]
+}
