@@ -1,0 +1,26 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "auth-security",
+  "capabilities": [
+    "character",
+    "merge"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "ts",
+  "summary": {
+    "functions": [
+      "createJSONStorage"
+    ],
+    "classes": [],
+    "imports": [
+      "zustand",
+      "zustand/middleware"
+    ],
+    "lineCount": 30,
+    "characterCount": 754
+  },
+  "selectedComments": []
+}

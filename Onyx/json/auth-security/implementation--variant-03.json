@@ -1,0 +1,33 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "auth-security",
+  "capabilities": [
+    "api",
+    "auth",
+    "character",
+    "class",
+    "color",
+    "merge",
+    "quest"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "tsx",
+  "summary": {
+    "functions": [
+      "ErrMessage",
+      "createGwLink",
+      "createReloginLink",
+      "getMessage"
+    ],
+    "classes": [],
+    "imports": [
+      "react"
+    ],
+    "lineCount": 356,
+    "characterCount": 9882
+  },
+  "selectedComments": []
+}

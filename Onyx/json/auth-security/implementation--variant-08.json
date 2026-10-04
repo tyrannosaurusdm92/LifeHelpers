@@ -1,0 +1,51 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "auth-security",
+  "capabilities": [
+    "character",
+    "class",
+    "effect",
+    "grid",
+    "merge",
+    "speech"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "tsx",
+  "summary": {
+    "functions": [
+      "formatTime",
+      "handleCopy",
+      "handleDownload",
+      "handleEnded",
+      "handlePlay",
+      "handleReset",
+      "language",
+      "updateTime"
+    ],
+    "classes": [],
+    "imports": [
+      "./FishAudioIcon",
+      "./MoonIcon",
+      "./page/home-page",
+      "@/hooks/use-speakers",
+      "@/stores/use-session-store",
+      "@/stores/use-sessions-store",
+      "@/utils/session-db",
+      "date-fns",
+      "date-fns/locale",
+      "react",
+      "react-hot-toast",
+      "react-icons/ai",
+      "react-icons/fa",
+      "react-icons/io5",
+      "react-icons/ri",
+      "react-icons/vsc"
+    ],
+    "lineCount": 288,
+    "characterCount": 8933
+  },
+  "selectedComments": []
+}

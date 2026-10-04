@@ -1,0 +1,20 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "auth-security",
+  "capabilities": [
+    "auth",
+    "canon",
+    "grid",
+    "layer",
+    "manifest",
+    "map",
+    "quest"
+  ],
+  "provenance": {
+    "sourceGroup": "active-session-runtime-a",
+    "sourceType": "provided-project-material",
+    "archiveHash": "69119512e7db343d"
+  },
+  "title": "deployment.md",
+  "content": "# ActiveWorkspace 4.2 Deployment\n\n1. Upload the entire `ActiveWorkspace` folder to the existing GitHub repository.\n2. Keep `ActiveWorkspace.html` as the only HTML file. The supporting `assets`, `css`, `docs`, `js`, and `json` folders must remain beside it.\n3. Keep the Apps Script URLs already present in `js/config.js`; this revision does not require changing either backend link.\n4. Configure the authentication backend to recognize the private authority fragment as the MOL credential and to return a signed/session-backed `role: \"dm\"` only after server verification.\n5. Open the normal `ActiveWorkspace.html` URL for player sign-in. For MOL entry, append the private authority fragment to the URL. Do not publish, link, log, or document the fragment value.\n6. ActiveWorkspace removes the fragment from the address bar immediately. The fragment remains in memory only for that sign-in attempt and is never stored by the client.\n7. Verify that a player-role response cannot open the MOL workspace and that every MOL mutation is rejected server-side without a valid MOL session token.\n8. Configure the raw GitHub token base or token manifest from the backend-confirmed MOL workspace. Deity tokens remain external and are not bundled.\n9. Create a draft, upload a canonical gridded map and encounter JSON, add or generate hostiles, then publish the encounter.\n\n## Required backend enforcement\n\nThe public client is not an authorization boundary. The unchanged backend endpoints must validate the session token, role, campaign, ownership, expected encounter version, and permitted action on every request. Player sessions must never receive MOL notes, hidden tokens, private hostile decision weights, unrevealed stat data, or authority leases.\n"
+}

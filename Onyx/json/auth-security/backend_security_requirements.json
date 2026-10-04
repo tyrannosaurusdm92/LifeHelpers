@@ -1,0 +1,19 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "auth-security",
+  "capabilities": [
+    "auth",
+    "character",
+    "grid",
+    "layer",
+    "quest",
+    "rules"
+  ],
+  "provenance": {
+    "sourceGroup": "active-session-runtime-b",
+    "sourceType": "provided-project-material",
+    "archiveHash": "164324aff6604b21"
+  },
+  "title": "backend_security_requirements.md",
+  "content": "# Backend Security Requirements\n\nActiveWorkspace keeps the existing Apps Script links. These requirements apply to the deployed handlers behind those links.\n\n- Treat `authorityFragment`, `routeFragment`, `fragmentCredential`, and the compatibility `password` field as equivalent credential inputs only during sign-in. Never return or log them.\n- Return the MOL role only after server-side credential verification. A requested role is never proof of authorization.\n- Issue a high-entropy session token and validate it for every persistent or multiplayer request.\n- Authorize each action by role and ownership. Client fields such as `dmAction`, `requestedRole`, `userId`, token ownership, or expected encounter version are claims that must be verified.\n- Sanitize encounter responses by role. Player responses must exclude MOL notes, hidden tokens, authority data, private hostile AI weights, and unrevealed exact statistics.\n- Enforce the ten-participant limit, character ownership, token ownership, initiative ownership, legal grid movement, occupied-square rules, Beat costs, and encounter-version checks on the server.\n- Rate-limit sign-in and temporary-access requests. Do not store passwords with fast unsalted hashes.\n- Reject unknown actions, missing tokens, expired sessions, cross-campaign access, stale encounter versions, and unauthorized MOL operations.\n"
+}

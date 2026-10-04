@@ -1,0 +1,39 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "auth-security",
+  "capabilities": [
+    "character",
+    "class",
+    "merge",
+    "sort",
+    "speech"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "ts",
+  "summary": {
+    "functions": [
+      "cloneableSession",
+      "query",
+      "read",
+      "remove",
+      "update",
+      "useSessionStateDB"
+    ],
+    "classes": [
+      "SessionStateDatabase"
+    ],
+    "imports": [
+      "dexie"
+    ],
+    "lineCount": 145,
+    "characterCount": 3602
+  },
+  "selectedComments": [
+    "Create a new object with only cloneable properties",
+    "Perform where query only on indexed fields",
+    "Calculate the total count"
+  ]
+}

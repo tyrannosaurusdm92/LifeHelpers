@@ -1,0 +1,15 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "auth-security",
+  "capabilities": [
+    "auth",
+    "layer"
+  ],
+  "provenance": {
+    "sourceGroup": "active-session-runtime-c",
+    "sourceType": "provided-project-material",
+    "archiveHash": "be64160633c6ca96"
+  },
+  "title": "security.md",
+  "content": "# ActiveWorkspace Public-Build Security\n\n- The public package contains no owner email, MOL route value, MOL password, password-derived verifier, or local authority fallback.\n- A private URL fragment may initiate an authority sign-in. The client accepts any non-empty fragment without knowing the secret value, immediately removes it from the address bar, keeps it only in memory for the current attempt, and forwards it to the unchanged Apps Script authentication service.\n- The fragment never grants a role locally. MOL navigation and every shared MOL action require a backend session token whose returned role is MOL.\n- A backend outage disables sign-in and shared authority.\n- Passwords, authority fragments, and authority decisions are not persisted in localStorage, IndexedDB, or the package.\n- The Content Security Policy blocks unapproved scripts, objects, media, and connection targets.\n- Player-visible encounter responses must remain sanitized by the backend; MOL notes and hostile private logic must never be sent to player sessions.\n"
+}
