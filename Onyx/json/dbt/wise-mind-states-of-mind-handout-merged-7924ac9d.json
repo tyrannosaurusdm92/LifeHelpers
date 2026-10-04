@@ -1,0 +1,77 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "wise-mind-states-of-mind-7d6b7924ac9d",
+  "title": "Wise Mind: States of Mind",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9419
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/02-dbt-mindfulness-mindfulness-handout-3-wise-mind-states-of-mind-9b3f3bbd46.json",
+        "sha256": "9b3f3bbd465fc1218bae43bebb2557de1d3b21a5e11a88fa4b99769ed62a8d4e",
+        "domain": "dbt",
+        "bytes": 2753
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/mindfulness-handout-3-wise-mind-states-of-mind-ac16a34a6a.json",
+        "sha256": "ac16a34a6a7f55b454c9ec9d38a8300755a44208f7405e5f233cc31497a273c8",
+        "domain": "dbt",
+        "bytes": 2636
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 74,
+        "book_page": "50",
+        "text": "50\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n«\nMindfulness Handout 3   (Mindfulness Worksheet 3)\nWise Mind:\nStates of Mind\nEMOTION\nMIND\nREASONABLE\nMIND\nWISE\nMIND\nReasonable Mind Is:\n Cool\n Rational\n Task-Focused\nWhen in reasonable mind,\nyou are ruled by facts, reason,\nlogic, and pragmatics. Values\nand feelings are not important.\n        Emotion Mind Is:\n         Hot\n Mood-Dependent\nEmotion-Focused\nWhen in emotion mind,\nyou are ruled by your\nmoods, feelings, and urges\nto do or say things. Facts,\nreason, and logic are not\nimportant.\nWise Mind Is:\n The wisdom within\n each person\n Seeing the value of\n both reason and\n emotion\n Bringing left brain and\n right brain together\n The middle path"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Mindfulness Handout 3   (Mindfulness Worksheet 3)",
+    "source_pdf_pages": [
+      74
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/mindfulness/handouts/mindfulness_handout_3_wise_mind_states_of_mind.json",
+    "item_number": "3",
+    "full_text": "«\nMindfulness Handout 3   (Mindfulness Worksheet 3)\nWise Mind:\nStates of Mind\nEMOTION\nMIND\nREASONABLE\nMIND\nWISE\nMIND\nReasonable Mind Is:\n Cool\n Rational\n Task-Focused\nWhen in reasonable mind,\nyou are ruled by facts, reason,\nlogic, and pragmatics. Values\nand feelings are not important.\n        Emotion Mind Is:\n         Hot\n Mood-Dependent\nEmotion-Focused\nWhen in emotion mind,\nyou are ruled by your\nmoods, feelings, and urges\nto do or say things. Facts,\nreason, and logic are not\nimportant.\nWise Mind Is:\n The wisdom within\n each person\n Seeing the value of\n both reason and\n emotion\n Bringing left brain and\n right brain together\n The middle path",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Mindfulness Worksheet 3"
+    ],
+    "id": "mindfulness_handout_3",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "50"
+    ],
+    "title": "Wise Mind: States of Mind",
+    "module_category": "Mindfulness Skills",
+    "shared_json_path": "shared/02_dbt_mindfulness/handouts_json/mindfulness_handout_3_wise_mind_states_of_mind.json",
+    "module": "Mindfulness",
+    "keywords": [
+      "Mind",
+      "States",
+      "Wise"
+    ]
+  }
+}

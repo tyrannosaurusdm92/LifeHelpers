@@ -1,0 +1,75 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "you-are-in-a-crisis-when-the-situation-is-3a9f1ad7d66e",
+  "title": "You are in a crisis when the situation is:",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9459
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-handout-3-you-are-in-a-crisis-when-the-situatio-55574ab7d9.json",
+        "sha256": "55574ab7d9db02887559b71121edf1108bd4c1963c6536cf1857a0aabd4e386e",
+        "domain": "dbt",
+        "bytes": 2985
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-handout-3-you-are-in-a-crisis-when-the-situation-is-2d5e943eb4.json",
+        "sha256": "2d5e943eb459b9a6ae77a97185e33e8b13b833684ec762539fbf5d9d82d4bed4",
+        "domain": "dbt",
+        "bytes": 2837
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 350,
+        "book_page": "326",
+        "text": "326\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n«\nDistress Tolerance Handout 3\nWhen to Use Crisis Survival Skills\nYou are in a crisis when the situation is:\n•• Highly stressful.\n•• Short-term (that is, it won’t last a long time).\n•• Creates intense pressure to resolve the crisis now.\nUse crisis survival skills when:\n1.\t You have intense pain that cannot be helped quickly.\n2.\t You want to act on your emotions, but it will only make things worse.\n3.\t Emotion mind threatens to overwhelm you, and you need to stay skillful.\n4.\t You are overwhelmed, yet demands must be met.\n5.\t Arousal is extreme, but problems can’t be solved immediately.\nDon’t use crisis survival skills for:\n•• Everyday problems.\n•• Solving all your life problems.\n•• Making your life worth living."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Handout 3",
+    "source_pdf_pages": [
+      350
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/handouts/distress_tolerance_handout_3_you_are_in_a_crisis_when_the_situation_is.json",
+    "item_number": "3",
+    "full_text": "«\nDistress Tolerance Handout 3\nWhen to Use Crisis Survival Skills\nYou are in a crisis when the situation is:\n•• Highly stressful.\n•• Short-term (that is, it won’t last a long time).\n•• Creates intense pressure to resolve the crisis now.\nUse crisis survival skills when:\n1.\t You have intense pain that cannot be helped quickly.\n2.\t You want to act on your emotions, but it will only make things worse.\n3.\t Emotion mind threatens to overwhelm you, and you need to stay skillful.\n4.\t You are overwhelmed, yet demands must be met.\n5.\t Arousal is extreme, but problems can’t be solved immediately.\nDon’t use crisis survival skills for:\n•• Everyday problems.\n•• Solving all your life problems.\n•• Making your life worth living.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "id": "distress_tolerance_handout_3",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "326"
+    ],
+    "title": "You are in a crisis when the situation is:",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_3_you_are_in_a_crisis_when_the_situation_is.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "crisis",
+      "situation",
+      "when"
+    ]
+  }
+}
