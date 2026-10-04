@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "opposite-action-bb9c55f93be4",
+  "title": "Opposite Action",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9614
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-10-opposite-action-30a867eca7.json",
+        "sha256": "30a867eca70709ddebcdb2fc1268f1f6a1f276ec77c38c9230d171e614edd04c",
+        "domain": "dbt",
+        "bytes": 4215
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-10-opposite-action-cef50ca8a4.json",
+        "sha256": "cef50ca8a410f7b42c7e8fac83d0284bfbe1dace7d8a959a61ef5fde8ddc9c68",
+        "domain": "dbt",
+        "bytes": 4092
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 255,
+        "book_page": "231",
+        "text": "231\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nEmotion Regulation Handout 10   (Emotion Regulation Worksheet 7)\nOpposite Action\nUse opposite action when your emotions do not fit the facts\nor when acting on your emotions is not effective.\nEvery emotion has an action urge.\nChange the emotion by acting opposite to its action urge.\nConsider these examples:\nEmotion\nAction urge\nOpposite action\nFear\nRun away/avoid\nApproach/don’t avoid\nAnger\nAttack\nGently avoid/be a little nice\nSadness\nWithdraw/isolate\nGet active\nShame\nHide/avoid\nTell the secret to people who will accept it\nHow to Do Opposite Action, Step by Step\nStep 1.\nIdentify and name the emotion you want to change.\nStep 2. Check the facts to see if your emotion is justified by the facts.\nCheck also whether the intensity and duration of the emotion fit the facts.\n(Example: “Irritation” fits the facts when your car is cut in front of; “road rage” does not.)\nAn emotion is justified when your emotion fits the facts.\nStep 3. Identify and describe your action urges.\nStep 4. Ask Wise Mind: Is expression or acting on this emotion effective in this situation?\nIf your emotion does not fit the facts or if acting on your emotion is not effective:\nStep 5. Identify opposite actions to your action urges.\nStep 6. Act opposite all the way to your action urges.\nStep 7.\nRepeat acting opposite to your action urges until your emotion changes."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 10   (Emotion Regulation Worksheet 7)",
+    "source_pdf_pages": [
+      255
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_10_opposite_action.json",
+    "item_number": "10",
+    "full_text": "☐\nEmotion Regulation Handout 10   (Emotion Regulation Worksheet 7)\nOpposite Action\nUse opposite action when your emotions do not fit the facts\nor when acting on your emotions is not effective.\nEvery emotion has an action urge.\nChange the emotion by acting opposite to its action urge.\nConsider these examples:\nEmotion\nAction urge\nOpposite action\nFear\nRun away/avoid\nApproach/don’t avoid\nAnger\nAttack\nGently avoid/be a little nice\nSadness\nWithdraw/isolate\nGet active\nShame\nHide/avoid\nTell the secret to people who will accept it\nHow to Do Opposite Action, Step by Step\nStep 1.\nIdentify and name the emotion you want to change.\nStep 2. Check the facts to see if your emotion is justified by the facts.\nCheck also whether the intensity and duration of the emotion fit the facts.\n(Example: “Irritation” fits the facts when your car is cut in front of; “road rage” does not.)\nAn emotion is justified when your emotion fits the facts.\nStep 3. Identify and describe your action urges.\nStep 4. Ask Wise Mind: Is expression or acting on this emotion effective in this situation?\nIf your emotion does not fit the facts or if acting on your emotion is not effective:\nStep 5. Identify opposite actions to your action urges.\nStep 6. Act opposite all the way to your action urges.\nStep 7.\nRepeat acting opposite to your action urges until your emotion changes.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheet 7"
+    ],
+    "id": "emotion_regulation_handout_10",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "231"
+    ],
+    "title": "Opposite Action",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_10_opposite_action.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Action",
+      "Opposite"
+    ]
+  }
+}

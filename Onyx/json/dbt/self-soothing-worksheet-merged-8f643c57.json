@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "self-soothing-acab8f643c57",
+  "title": "Self-Soothing",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.951
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-6b-self-soothing-f01ea6cce3.json",
+        "sha256": "f01ea6cce3d9023adfb84a08ab29f597a233f0ef5d31c6b2513f09476d9d59c7",
+        "domain": "dbt",
+        "bytes": 6683
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-6b-self-soothing-63931d0203.json",
+        "sha256": "63931d02039fabe5cf27c07f9c9120ad7c350312a72ec92249ba2d03941f6d6a",
+        "domain": "dbt",
+        "bytes": 6558
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 408,
+        "book_page": "384",
+        "text": "384\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 6b   (Distress Tolerance Handout 8)\nSelf-Soothing\nDue Date:             Name:                                    Week Starting:\nFor each self-soothing skill, write down what you did during the week, and write down a number to\nindicate how effective the skill was in helping you tolerate the distress and cope with the situation\n(keeping you from doing something to make the situation worse). Use the following scale:\nI still couldn’t stand\nthe situation, even\nfor one more minute.\nI was able to cope somewhat,\nat least for a little while.\nIt helped somewhat.\nI could use skills,\ntolerated distress, and\nresisted problem urges.\n1\n2\n3\n4\n5\nDay:\nVision\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nHearing\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nSmell\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nTaste\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nTouch\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 6b   (Distress Tolerance Handout 8)",
+    "source_pdf_pages": [
+      408
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_6b_self_soothing.json",
+    "item_number": "6b",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 6b   (Distress Tolerance Handout 8)\nSelf-Soothing\nDue Date:             Name:                                    Week Starting:\nFor each self-soothing skill, write down what you did during the week, and write down a number to\nindicate how effective the skill was in helping you tolerate the distress and cope with the situation\n(keeping you from doing something to make the situation worse). Use the following scale:\nI still couldn’t stand\nthe situation, even\nfor one more minute.\nI was able to cope somewhat,\nat least for a little while.\nIt helped somewhat.\nI could use skills,\ntolerated distress, and\nresisted problem urges.\nDay:\nVision\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nHearing\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nSmell\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nTaste\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nTouch\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handout 8"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_6b_self_soothing.html",
+    "id": "distress_tolerance_worksheet_6b",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "384"
+    ],
+    "title": "Self-Soothing",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_6b_self_soothing.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Self-Soothing"
+    ]
+  }
+}

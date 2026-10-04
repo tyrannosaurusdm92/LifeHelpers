@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "pros-and-cons-of-changing-emotions-dc2e2cf567b7",
+  "title": "Pros and Cons of Changing Emotions",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.964
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-1-pros-and-cons-of-changing-emotions-fe76802c56.json",
+        "sha256": "fe76802c5630fc1301a586c109436e5ba84b71068637c0e434006fddad718e79",
+        "domain": "dbt",
+        "bytes": 5067
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-1-pros-and-cons-of-changing-emotions-636ca04bba.json",
+        "sha256": "636ca04bba3bfa451117b23564a19654c5df47485e5767a4a91ecf6b91438f15",
+        "domain": "dbt",
+        "bytes": 4922
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 295,
+        "book_page": "271",
+        "text": "271\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 1   (Emotion Regulation Handout 1)\nPros and Cons of Changing Emotions\nDue Date:             Name:                                    Week Starting:\nEmotion Name:                            Intensity (0–100) Before:        After:\nFill this worksheet out when you are experiencing difficulties with:\n•• Trying to decide whether to work on changing ineffective emotions.\n•• Feeling willful/saying no to letting go of emotion mind.\n•• Deciding whether to work on reducing your emotional reactions to specific events.\n•• Feeling threatened whenever you think of letting go of emotions.\n•• Not in the mood for being effective.\nWhen filling out this worksheet, think about these questions:\n•• Is living in emotion mind in your best interest (i.e., effective) or not in your best interest (i.e.,\nineffective)?\n•• Will refusing to regulate your own emotions create a new problem for you?\n•• Is reducing immediate high emotions likely to increase your freedom or decrease it?\n•• Is being attached to your emotions about a situation useful or not?\n•• Is working to reduce your emotion really too much work?\nMake a list of the pros and cons of changing the emotion you are having difficulty with.\nMake another list of the pros and cons of not changing your emotion.\nPros\nStay in emotion mind, acting emotionally\n\n\nRegulate emotions and emotion actions\n\n\nCons\nStay in emotion mind, acting emotionally\n\n\nRegulate emotions and emotion actions\n\n\nWhat did you decide to do about your emotion?\nIs this the best decision (in Wise Mind)?"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 1   (Emotion Regulation Handout 1)",
+    "source_pdf_pages": [
+      295
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_1_pros_and_cons_of_changing_emotions.json",
+    "item_number": "1",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 1   (Emotion Regulation Handout 1)\nPros and Cons of Changing Emotions\nDue Date:             Name:                                    Week Starting:\nEmotion Name:                            Intensity (0–100) Before:        After:\nFill this worksheet out when you are experiencing difficulties with:\n•• Trying to decide whether to work on changing ineffective emotions.\n•• Feeling willful/saying no to letting go of emotion mind.\n•• Deciding whether to work on reducing your emotional reactions to specific events.\n•• Feeling threatened whenever you think of letting go of emotions.\n•• Not in the mood for being effective.\nWhen filling out this worksheet, think about these questions:\n•• Is living in emotion mind in your best interest (i.e., effective) or not in your best interest (i.e.,\nineffective)?\n•• Will refusing to regulate your own emotions create a new problem for you?\n•• Is reducing immediate high emotions likely to increase your freedom or decrease it?\n•• Is being attached to your emotions about a situation useful or not?\n•• Is working to reduce your emotion really too much work?\nMake a list of the pros and cons of changing the emotion you are having difficulty with.\nMake another list of the pros and cons of not changing your emotion.\nPros\nStay in emotion mind, acting emotionally\n\n\nRegulate emotions and emotion actions\n\n\nCons\nStay in emotion mind, acting emotionally\n\n\nRegulate emotions and emotion actions\n\n\nWhat did you decide to do about your emotion?\nIs this the best decision (in Wise Mind)?",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handout 1"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_1_pros_and_cons_of_changing_emotions.html",
+    "id": "emotion_regulation_worksheet_1",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "271"
+    ],
+    "title": "Pros and Cons of Changing Emotions",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_1_pros_and_cons_of_changing_emotions.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Changing",
+      "Cons",
+      "Emotions",
+      "Pros"
+    ]
+  }
+}

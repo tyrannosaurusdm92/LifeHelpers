@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "review-of-skills-for-emotion-regulation-name-emotions-41af3d7629cb",
+  "title": "Review of Skills for Emotion Regulation Name Emotions",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9343
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-25-review-of-skills-for-emotion-regulat-097d283610.json",
+        "sha256": "097d28361090ff88c3f0c84e73b1dada5f0dd9f0136d701161008d3a1e9a5c7b",
+        "domain": "dbt",
+        "bytes": 2808
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-25-review-of-skills-for-emotion-regulation-name-emotions-ee36ee4993.json",
+        "sha256": "ee36ee49931f84fecaa6d7d4ccdfeb2382fae5a40c034e14203f51a36702038e",
+        "domain": "dbt",
+        "bytes": 2648
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 292,
+        "book_page": "268",
+        "text": "268\nEmotion Regulation Handout 25\nReview of Skills for Emotion Regulation\nName Emotions\nDescribe Emotions\n1. Accumulate positive emotions\n2. Build mastery\n3. Cope ahead\n4. PLEASE skills\nReduce Emotional Vulnerability\nChange Emotional\nThoughts and Interpretations\nCheck the Facts\nReduce Emotional Prompting Events\nProblem Solving\nDistraction\nManage Aftereffects\nRepeat for Secondary Emotions\nDistress Tolerance Skills\nReduce\nEmotional Reactions\nand\nHigh Arousal\nCrisis Survival\nStrategies\nMindfulness\nof Current Emotions\nChange\nEmotional Reactions\nOpposite Action\n(all the way)\nOpposite\nBody Language\nOpposite Words\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this handout is granted to purchasers of this\nbook for personal use only (see copyright page for details)."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 25",
+    "source_pdf_pages": [
+      292
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_25_review_of_skills_for_emotion_regulation_name_emotions.json",
+    "item_number": "25",
+    "full_text": "Emotion Regulation Handout 25\nReview of Skills for Emotion Regulation\nName Emotions\nDescribe Emotions\n1. Accumulate positive emotions\n2. Build mastery\n3. Cope ahead\n4. PLEASE skills\nReduce Emotional Vulnerability\nChange Emotional\nThoughts and Interpretations\nCheck the Facts\nReduce Emotional Prompting Events\nProblem Solving\nDistraction\nManage Aftereffects\nRepeat for Secondary Emotions\nDistress Tolerance Skills\nReduce\nEmotional Reactions\nand\nHigh Arousal\nCrisis Survival\nStrategies\nMindfulness\nof Current Emotions\nChange\nEmotional Reactions\nOpposite Action\n(all the way)\nOpposite\nBody Language\nOpposite Words",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "id": "emotion_regulation_handout_25",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "268"
+    ],
+    "title": "Review of Skills for Emotion Regulation Name Emotions",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_25_review_of_skills_for_emotion_regulation_nam_78066904.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Emotion",
+      "Emotions",
+      "Name",
+      "Regulation",
+      "Review",
+      "Skills"
+    ]
+  }
+}

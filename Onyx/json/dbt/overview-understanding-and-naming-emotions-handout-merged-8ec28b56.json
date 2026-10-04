@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "overview-understanding-and-naming-emotions-25c48ec28b56",
+  "title": "Overview: Understanding and Naming Emotions",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9375
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-2-overview-understanding-and-naming-emo-a4e69b2e83.json",
+        "sha256": "a4e69b2e836f25915ea176b406fa77d9d3d1a306c259e73d51ce3fa923dad85c",
+        "domain": "dbt",
+        "bytes": 2855
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-2-overview-understanding-and-naming-emotions-ba0fbe2928.json",
+        "sha256": "ba0fbe2928e195c7a768a54668b6d2cca809ec1f750673d2c41f4ce30488d57b",
+        "domain": "dbt",
+        "bytes": 2706
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 233,
+        "book_page": "209",
+        "text": "209\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nEmotion Regulation Handout 2   (Emotion Regulation Worksheets 2–4a, 16)\nOverview:\nUnderstanding and Naming Emotions\nWhat Emotions Do for You\nThere are reasons why we have emotions.\nWe need them!\nFactors That Make\nRegulating Emotions Hard\nLack of skills, reinforcing consequences, moodiness, rumination/\nworrying, myths about emotions, and biology can interfere\nwith changing emotions.\nA Model for Describing Emotions\nEmotions are complex responses.\nChanging any part of the system can change the entire response.\nWays to Describe Emotions\nLearning to observe, describe, and name your emotion\ncan help you regulate your emotions."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 2   (Emotion Regulation Worksheets 2–4a, 16)",
+    "source_pdf_pages": [
+      233
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_2_overview_understanding_and_naming_emotions.json",
+    "item_number": "2",
+    "full_text": "Emotion Regulation Handout 2   (Emotion Regulation Worksheets 2–4a, 16)\nOverview:\nUnderstanding and Naming Emotions\nWhat Emotions Do for You\nThere are reasons why we have emotions.\nWe need them!\nFactors That Make\nRegulating Emotions Hard\nLack of skills, reinforcing consequences, moodiness, rumination/\nworrying, myths about emotions, and biology can interfere\nwith changing emotions.\nA Model for Describing Emotions\nEmotions are complex responses.\nChanging any part of the system can change the entire response.\nWays to Describe Emotions\nLearning to observe, describe, and name your emotion\ncan help you regulate your emotions.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheets 2–4a, 16"
+    ],
+    "id": "emotion_regulation_handout_2",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "209"
+    ],
+    "title": "Overview: Understanding and Naming Emotions",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_2_overview_understanding_and_naming_emotions.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Emotions",
+      "Naming",
+      "Overview",
+      "Understanding"
+    ]
+  }
+}

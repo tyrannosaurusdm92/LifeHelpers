@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "overview-introduction-to-skills-training-guidelines-for-skills-training-skills-t-f67759435993",
+  "title": "Overview: Introduction to Skills Training Guidelines for Skills Training Skills Training Assumptions",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9125
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/01-dbt-general-orientation-and-analyzing-behavior-general-handout-2-overview-introduction-to-f78dbb86f2.json",
+        "sha256": "f78dbb86f26fafb791c0a62db175eb897bfb8bae09fde542d0952aad8359b3bd",
+        "domain": "dbt",
+        "bytes": 1957
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/general-handout-2-overview-introduction-to-skills-training-guidelines-for-skills-trainin-a3c91827aa.json",
+        "sha256": "a3c91827aae49f6aeb08e3a93b672f2ff15febf924e998b6e1c213c136f56563",
+        "domain": "dbt",
+        "bytes": 1773
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 35,
+        "book_page": "11",
+        "text": "11\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nGeneral Handout 2\nOverview:\nIntroduction to Skills Training\nGuidelines for Skills Training\nSkills Training Assumptions\nBiosocial Theory\nof Emotional and\nBehavioral Dysregulation"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "General Handout 2",
+    "source_pdf_pages": [
+      35
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/general/handouts/general_handout_2_overview_introduction_to_skills_training_guidelines_for_skills_trainin.json",
+    "item_number": "2",
+    "full_text": "General Handout 2\nOverview:\nIntroduction to Skills Training\nGuidelines for Skills Training\nSkills Training Assumptions\nBiosocial Theory\nof Emotional and\nBehavioral Dysregulation",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "id": "general_handout_2",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "11"
+    ],
+    "title": "Overview: Introduction to Skills Training Guidelines for Skills Training Skills Training Assumptions",
+    "module_category": "General Skills: Orientation and Analyzing Behavior",
+    "shared_json_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_2_overview_introduction_to_skills_training_guidelines_for_55f75817.json",
+    "module": "General",
+    "keywords": [
+      "Assumptions",
+      "Guidelines",
+      "Introduction",
+      "Overview",
+      "Skills",
+      "Training"
+    ]
+  }
+}

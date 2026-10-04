@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "self-soothing-aa1f3029d968",
+  "title": "Self-Soothing",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9495
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-6a-self-soothing-08a3dcfb53.json",
+        "sha256": "08a3dcfb53a4868a14bcd4cbba38e05e22507d204cb43d992ef256f30cd4e5c5",
+        "domain": "dbt",
+        "bytes": 3396
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-6a-self-soothing-064f89dad2.json",
+        "sha256": "064f89dad294a9b72e7801fb93773cae51e90485858ad97bc2754c5e773a1262",
+        "domain": "dbt",
+        "bytes": 3271
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 407,
+        "book_page": "383",
+        "text": "383\nDistress Tolerance Worksheet 6a   (Distress Tolerance Handout 8)\nSelf-Soothing\nDue Date:             Name:                                    Week Starting:\nPractice each self-soothing skill twice, and describe your experience as follows:\nWhen did you practice this skill, and\nwhat did you do to practice?\nWhat was going on that\nwas painful or stressful (if\nanything)?\nHow\nmuch\ntime\npassed in\ndoing this\nskill?\nRate before/after skill use\nConclusions or questions\nabout this skills practice\nDistress tolerance\n(0 = I can’t stand it;\n5 = I can definitely\nsurvive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\nVision:\n/\n/\n/\n/\n/\n/\nHearing:\n/\n/\n/\n/\n/\n/\nSmell:\n/\n/\n/\n/\n/\n/\nTaste:\n/\n/\n/\n/\n/\n/\nTouch:\n/\n/\n/\n/\n/\n/\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 6a   (Distress Tolerance Handout 8)",
+    "source_pdf_pages": [
+      407
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_6a_self_soothing.json",
+    "item_number": "6a",
+    "full_text": "Distress Tolerance Worksheet 6a   (Distress Tolerance Handout 8)\nSelf-Soothing\nDue Date:             Name:                                    Week Starting:\nPractice each self-soothing skill twice, and describe your experience as follows:\nWhen did you practice this skill, and\nwhat did you do to practice?\nWhat was going on that\nwas painful or stressful (if\nanything)?\nHow\nmuch\ntime\npassed in\ndoing this\nskill?\nRate before/after skill use\nConclusions or questions\nabout this skills practice\nDistress tolerance\n(0 = I can’t stand it;\n5 = I can definitely\nsurvive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\nVision:\n/\n/\n/\n/\n/\n/\nHearing:\n/\n/\n/\n/\n/\n/\nSmell:\n/\n/\n/\n/\n/\n/\nTaste:\n/\n/\n/\n/\n/\n/\nTouch:\n/\n/\n/\n/\n/\n/\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handout 8"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_6a_self_soothing.html",
+    "id": "distress_tolerance_worksheet_6a",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "383"
+    ],
+    "title": "Self-Soothing",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_6a_self_soothing.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Self-Soothing"
+    ]
+  }
+}

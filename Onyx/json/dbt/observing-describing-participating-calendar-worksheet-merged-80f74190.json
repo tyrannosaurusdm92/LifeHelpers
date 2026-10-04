@@ -1,0 +1,86 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "observing-describing-participating-calendar-fd3980f74190",
+  "title": "Observing, Describing, Participating Calendar",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9606
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/02-dbt-mindfulness-mindfulness-worksheet-4b-observing-describing-participating-calendar-1bad289669.json",
+        "sha256": "1bad2896698a001500c8decb49be2eece327e96f9574c834cb4522348a930bdd",
+        "domain": "dbt",
+        "bytes": 4683
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/mindfulness-worksheet-4b-observing-describing-participating-calendar-53d2a20889.json",
+        "sha256": "53d2a20889fa91b4c5def980c9f1f145394d9132366bcc79412e222318fd56d9",
+        "domain": "dbt",
+        "bytes": 4542
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 110,
+        "book_page": "86",
+        "text": "86\nMindfulness Worksheet 4b   (Mindfulness Handouts 4–4c)\nObserving, Describing, Participating Calendar\nDue Date:             Name:                                    Week Starting:\nCheck off at least two skills to practice this week:     Observing     Describing     Participating\nWhile you are practicing skills, stay as aware and mindful as you can. Write it down later.\nName(s) of skill(s)\nHow did you\npractice the skill?\nDescribe your experience, including body sensations,\nemotions, and thoughts while practicing the skill\nWhat is your experience\nnow, after using the skill?\nExample: Observing\nI took a walk in the park\nand observed the trees I\nencountered.\nI felt calm, my shoulders relaxed. I felt curiosity toward the trees\nI was observing, a sense of detachment from my own worries; I\nthought the leaves of the trees were very green and refreshing.\nI feel somewhat relaxed; I think I\nshould go for walks more often. I am\nanxious that next time I might not be\nable to pay attention to the practice.\nMonday:\nTuesday:\nWednesday:\n(continued on next page)\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      },
+      {
+        "pdf_page": 111,
+        "book_page": "87",
+        "text": "87\nName(s) of skill(s)\nHow did you\npractice the skill?\nDescribe your experience, including body sensations,\nemotions, and thoughts while practicing the skill\nWhat is your experience\nnow, after using the skill?\nThursday:\nFriday:\nSaturday:\nSunday:\nList any and all wise things you did this week:\n\nMindfulness Worksheet 4B   (p. 2 of 2)"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Mindfulness Worksheet 4b   (Mindfulness Handouts 4–4c)",
+    "source_pdf_pages": [
+      110,
+      111
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/mindfulness/worksheets/mindfulness_worksheet_4b_observing_describing_participating_calendar.json",
+    "item_number": "4b",
+    "full_text": "Mindfulness Worksheet 4b   (Mindfulness Handouts 4–4c)\nObserving, Describing, Participating Calendar\nDue Date:             Name:                                    Week Starting:\nCheck off at least two skills to practice this week:     Observing     Describing     Participating\nWhile you are practicing skills, stay as aware and mindful as you can. Write it down later.\nName(s) of skill(s)\nHow did you\npractice the skill?\nDescribe your experience, including body sensations,\nemotions, and thoughts while practicing the skill\nWhat is your experience\nnow, after using the skill?\nExample: Observing\nI took a walk in the park\nand observed the trees I\nencountered.\nI felt calm, my shoulders relaxed. I felt curiosity toward the trees\nI was observing, a sense of detachment from my own worries; I\nthought the leaves of the trees were very green and refreshing.\nI feel somewhat relaxed; I think I\nshould go for walks more often. I am\nanxious that next time I might not be\nable to pay attention to the practice.\nMonday:\nTuesday:\nWednesday:\n(continued on next page)\n\nName(s) of skill(s)\nHow did you\npractice the skill?\nDescribe your experience, including body sensations,\nemotions, and thoughts while practicing the skill\nWhat is your experience\nnow, after using the skill?\nThursday:\nFriday:\nSaturday:\nSunday:\nList any and all wise things you did this week:\n\nMindfulness Worksheet 4B   (p. 2 of 2)",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Mindfulness Handouts 4–4c"
+    ],
+    "html_path": "html/worksheets/mindfulness/mindfulness_worksheet_4b_observing_describing_participating_calendar.html",
+    "id": "mindfulness_worksheet_4b",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "86",
+      "87"
+    ],
+    "title": "Observing, Describing, Participating Calendar",
+    "module_category": "Mindfulness Skills",
+    "shared_json_path": "shared/02_dbt_mindfulness/worksheets_json/mindfulness_worksheet_4b_observing_describing_participating_calendar.json",
+    "module": "Mindfulness",
+    "keywords": [
+      "Calendar",
+      "Describing",
+      "Observing",
+      "Participating"
+    ]
+  }
+}

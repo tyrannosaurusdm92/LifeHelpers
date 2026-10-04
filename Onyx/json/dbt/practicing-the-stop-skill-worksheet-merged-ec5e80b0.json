@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "practicing-the-stop-skill-afafec5e80b0",
+  "title": "Practicing the STOP Skill",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9478
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-2a-practicing-the-stop-skill-8e155b79fc.json",
+        "sha256": "8e155b79fca6ba03a1ba7170013e71ba2a72a2e29b31ea0e2a4b14e2bb69f68b",
+        "domain": "dbt",
+        "bytes": 3386
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-2a-practicing-the-stop-skill-e7d096937d.json",
+        "sha256": "e7d096937ddc33f8df8f78b51b068677532f11cdafa4653ccf5a62b02058e959",
+        "domain": "dbt",
+        "bytes": 3249
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 397,
+        "book_page": "373",
+        "text": "373\nDistress Tolerance Worksheet 2a   (Distress Tolerance Handout 4)\nPracticing the STOP Skill\nDue Date:             Name:                                    Week Starting:\nDescribe situations that happened to you where you used the STOP skill. Then describe how you used the STOP skill. Try to find a situation\neach day where you can practice your STOP skill.\nDay\nCrisis situation\nHow did you practice\nthis skill?\nBehavior\nstopped?\nRate before/after skill use\nConclusions or questions\nabout this skills practice\nYour level of\ndistress tolerance\n(0 = I can’t stand\nit; 5 = I can\ndefinitely survive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 2a   (Distress Tolerance Handout 4)",
+    "source_pdf_pages": [
+      397
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_2a_practicing_the_stop_skill.json",
+    "item_number": "2a",
+    "full_text": "Distress Tolerance Worksheet 2a   (Distress Tolerance Handout 4)\nPracticing the STOP Skill\nDue Date:             Name:                                    Week Starting:\nDescribe situations that happened to you where you used the STOP skill. Then describe how you used the STOP skill. Try to find a situation\neach day where you can practice your STOP skill.\nDay\nCrisis situation\nHow did you practice\nthis skill?\nBehavior\nstopped?\nRate before/after skill use\nConclusions or questions\nabout this skills practice\nYour level of\ndistress tolerance\n(0 = I can’t stand\nit; 5 = I can\ndefinitely survive)\nEmotion\nNegative\nemotion\nintensity\n(0–100)\nPositive\nemotion\nintensity\n(0–100)\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\n/\nAdapted from an unpublished worksheet by Seth Axelrod, with his permission.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handout 4"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_2a_practicing_the_stop_skill.html",
+    "id": "distress_tolerance_worksheet_2a",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "373"
+    ],
+    "title": "Practicing the STOP Skill",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_2a_practicing_the_stop_skill.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Practicing",
+      "STOP",
+      "Skill"
+    ]
+  }
+}

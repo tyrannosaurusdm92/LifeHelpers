@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "overview-changing-emotional-responses-6b327b4d1251",
+  "title": "Overview: Changing Emotional Responses",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9378
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-7-overview-changing-emotional-responses-dd63ccf438.json",
+        "sha256": "dd63ccf438bbabe93f6c0cc01675007a24222d2b9e3be93a376923fe0d82e7aa",
+        "domain": "dbt",
+        "bytes": 2797
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-7-overview-changing-emotional-responses-fb6a62015a.json",
+        "sha256": "fb6a62015a991868246a0a16e1323922fe5e5f69d814d8468c5282a87a2ad790",
+        "domain": "dbt",
+        "bytes": 2653
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 251,
+        "book_page": "227",
+        "text": "227\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nEmotion Regulation Handout 7   (Emotion Regulation Worksheets 5–8)\nOverview:\nChanging Emotional Responses\nCheck the Facts\nCheck out whether your emotional reactions fit the facts\nof the situation.\nChanging your beliefs and assumptions to fit the facts can help\nyou change your emotional reactions to situations.\nOpposite Action\nWhen your emotions do not fit the facts,\nor when acting on your emotions is not effective,\nacting opposite (all the way)\nwill change your emotional reactions.\nProblem Solving\nWhen the facts themselves are the problem,\nsolving the problem\nwill reduce the frequency of negative emotions."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 7   (Emotion Regulation Worksheets 5–8)",
+    "source_pdf_pages": [
+      251
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_7_overview_changing_emotional_responses.json",
+    "item_number": "7",
+    "full_text": "Emotion Regulation Handout 7   (Emotion Regulation Worksheets 5–8)\nOverview:\nChanging Emotional Responses\nCheck the Facts\nCheck out whether your emotional reactions fit the facts\nof the situation.\nChanging your beliefs and assumptions to fit the facts can help\nyou change your emotional reactions to situations.\nOpposite Action\nWhen your emotions do not fit the facts,\nor when acting on your emotions is not effective,\nacting opposite (all the way)\nwill change your emotional reactions.\nProblem Solving\nWhen the facts themselves are the problem,\nsolving the problem\nwill reduce the frequency of negative emotions.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheets 5–8"
+    ],
+    "id": "emotion_regulation_handout_7",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "227"
+    ],
+    "title": "Overview: Changing Emotional Responses",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_7_overview_changing_emotional_responses.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Changing",
+      "Emotional",
+      "Overview",
+      "Responses"
+    ]
+  }
+}

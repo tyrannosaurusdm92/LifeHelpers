@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "practicing-please-skills-dddc7f2e767d",
+  "title": "Practicing PLEASE Skills",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9419
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-14-practicing-please-skills-619f397084.json",
+        "sha256": "619f39708448d87706d7ee8e1cfb5accacb0f2d941eb7c05a64fc7bd95d67f2f",
+        "domain": "dbt",
+        "bytes": 3113
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-14-practicing-please-skills-f9400d7373.json",
+        "sha256": "f9400d7373b6be1765e4a80afdcee391438199b0897a5b24c8fa51b6c16b20a2",
+        "domain": "dbt",
+        "bytes": 2977
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 327,
+        "book_page": "303",
+        "text": "303\nEmotion Regulation Worksheet 14   (Emotion Regulation Handout 20)\nPracticing PLEASE Skills\nDue Date:             Name:                                    Week Starting:\nIn the left column, put down the days of the week. Then write down what you did to practice each of the PLEASE skills. At the bottom of each\ncolumn, check whether practicing this skill was helpful during the week.\nDay\nDescribe treating\nPhysicaL illness\nDescribe balanced\nEating efforts\nList mood-Altering\nsubstances used\nHours of Sleep\n(time to bed; time up)\nDescribe Exercise\n(hours and/or minutes)\nHelpful?  Yes  No\nHelpful?  Yes  No\nHelpful?  Yes  No\nHelpful?  Yes  No\nHelpful?  Yes  No\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 14   (Emotion Regulation Handout 20)",
+    "source_pdf_pages": [
+      327
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_14_practicing_please_skills.json",
+    "item_number": "14",
+    "full_text": "Emotion Regulation Worksheet 14   (Emotion Regulation Handout 20)\nPracticing PLEASE Skills\nDue Date:             Name:                                    Week Starting:\nIn the left column, put down the days of the week. Then write down what you did to practice each of the PLEASE skills. At the bottom of each\ncolumn, check whether practicing this skill was helpful during the week.\nDay\nDescribe treating\nPhysicaL illness\nDescribe balanced\nEating efforts\nList mood-Altering\nsubstances used\nHours of Sleep\n(time to bed; time up)\nDescribe Exercise\n(hours and/or minutes)\nHelpful?  Yes  No\nHelpful?  Yes  No\nHelpful?  Yes  No\nHelpful?  Yes  No\nHelpful?  Yes  No",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handout 20"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_14_practicing_please_skills.html",
+    "id": "emotion_regulation_worksheet_14",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "303"
+    ],
+    "title": "Practicing PLEASE Skills",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_14_practicing_please_skills.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "PLEASE",
+      "Practicing",
+      "Skills"
+    ]
+  }
+}

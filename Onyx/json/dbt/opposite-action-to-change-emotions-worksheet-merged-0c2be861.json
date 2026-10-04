@@ -1,0 +1,79 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "opposite-action-to-change-emotions-3b6c0c2be861",
+  "title": "Opposite Action to Change Emotions",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9652
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-7-opposite-action-to-change-emotions-5d05d3ca8e.json",
+        "sha256": "5d05d3ca8e355b4902ae38671d3631c5f9399ac1b3f426447db499a7b0716354",
+        "domain": "dbt",
+        "bytes": 4919
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-7-opposite-action-to-change-emotions-b72fdc5302.json",
+        "sha256": "b72fdc5302d140474b94f8a893e1202c74ccd7f8b1351636ddcf6ea18bd993b9",
+        "domain": "dbt",
+        "bytes": 4774
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 312,
+        "book_page": "288",
+        "text": "288\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 7   (Emotion Regulation Handouts 10, 11)\nOpposite Action to Change Emotions\nDue Date:             Name:                                    Week Starting:\nSelect a current or recent emotional reaction that you find painful or want to change. Figure out\nif the emotion fits the facts. If it does not, then notice your action urges; figure out what would be\nopposite actions; and then do the opposite actions. Remember to practice opposite action all the\nway. Describe what happened.\nEmotion Name:                            Intensity (0–100) Before:        After:\nPrompting event for my emotion (who, what, when, where): What prompted the emotion.\n\n\nIs my emotion (or its intensity or duration) justified? Does it fit the facts? Is it\neffective?\nList the facts that justify the emotion and those that do not. Check the answer that is mostly\ncorrect.\nJustified\n\n\nNot justified\n\n\n\u0003\n Justified: Go to problem solving\n(Emotion Regulation Worksheet 8)\n\u0003\n Not justified: Continue\nAction urges: What do I feel like doing or saying?\n\nOpposite action: What are the actions opposite to my urges? What am I not doing because\nof my emotions? Describe both what and how to act opposite all the way in the situation.\n\n\nWhat I did: Describe in detail.\n\n\nHow I did it: Describe body language, facial expression, posture, gestures, and thoughts.\n\n\nWhat aftereffect did the opposite action have on me (my state of mind, other emotions,\nbehavior, thoughts, memory, body, etc.)?"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 7   (Emotion Regulation Handouts 10, 11)",
+    "source_pdf_pages": [
+      312
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_7_opposite_action_to_change_emotions.json",
+    "item_number": "7",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nEmotion Regulation Worksheet 7   (Emotion Regulation Handouts 10, 11)\nOpposite Action to Change Emotions\nDue Date:             Name:                                    Week Starting:\nSelect a current or recent emotional reaction that you find painful or want to change. Figure out\nif the emotion fits the facts. If it does not, then notice your action urges; figure out what would be\nopposite actions; and then do the opposite actions. Remember to practice opposite action all the\nway. Describe what happened.\nEmotion Name:                            Intensity (0–100) Before:        After:\nPrompting event for my emotion (who, what, when, where): What prompted the emotion.\n\n\nIs my emotion (or its intensity or duration) justified? Does it fit the facts? Is it\neffective?\nList the facts that justify the emotion and those that do not. Check the answer that is mostly\ncorrect.\nJustified\n\n\nNot justified\n\n\n\u0003\n Justified: Go to problem solving\n(Emotion Regulation Worksheet 8)\n\u0003\n Not justified: Continue\nAction urges: What do I feel like doing or saying?\n\nOpposite action: What are the actions opposite to my urges? What am I not doing because\nof my emotions? Describe both what and how to act opposite all the way in the situation.\n\n\nWhat I did: Describe in detail.\n\n\nHow I did it: Describe body language, facial expression, posture, gestures, and thoughts.\n\n\nWhat aftereffect did the opposite action have on me (my state of mind, other emotions,\nbehavior, thoughts, memory, body, etc.)?",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handouts 10, 11"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_7_opposite_action_to_change_emotions.html",
+    "id": "emotion_regulation_worksheet_7",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "288"
+    ],
+    "title": "Opposite Action to Change Emotions",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_7_opposite_action_to_change_emotions.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Action",
+      "Change",
+      "Emotions",
+      "Opposite"
+    ]
+  }
+}

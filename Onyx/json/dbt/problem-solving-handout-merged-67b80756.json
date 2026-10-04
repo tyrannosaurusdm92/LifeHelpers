@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "problem-solving-f75e67b80756",
+  "title": "Problem Solving",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9605
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-12-problem-solving-3caafba525.json",
+        "sha256": "3caafba52581737259a82c79e4887afe044419b84e4f40c3f2a97619a7e01997",
+        "domain": "dbt",
+        "bytes": 4001
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-12-problem-solving-3937fb3e2b.json",
+        "sha256": "3937fb3e2bbf99144ddc84d64e95dda626859ae125787587fd9a41367db00bcc",
+        "domain": "dbt",
+        "bytes": 3878
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 265,
+        "book_page": "241",
+        "text": "241\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nEmotion Regulation Handout 12   (Emotion Regulation Worksheet 8)\nProblem Solving\nStep 1.  Figure out and describe the problem situation.\nStep 2.  Check the facts (all the facts) to be sure you have the right problem situation!\nIf your facts are correct and\nthe situation is the problem,\ncontinue with Step 3.\nIf your facts are not correct,\ngo back and repeat Step 1.\nStep 3.  Identify your goal in solving the problem.\n•• Identify what needs to happen or change for you to feel OK.\n•• Keep it simple, and choose something that can actually happen.\nStep 4.  Brainstorm lots of solutions.\n•• Think of as many solutions as you can. Ask for suggestions from people you trust.\n•• Do not be critical of any ideas at first. (Wait for Step 5 to evaluate ideas.)\nStep 5.  Choose a solution that fits the goal and is likely to work.\n•• If you are unsure, choose two solutions that look good.\n•• Do pros and cons to compare the solutions.\n•• Choose the best to try first.\nStep 6.  Put the solution into action.\n•• Act! Try out the solution.\n•• Take the first step, and then the second . . .\nStep 7.  Evaluate the results of using the solution.\nIt worked? Yea!!!\nIt didn’t work? Go back to Step 5 and choose a new solution to try."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 12   (Emotion Regulation Worksheet 8)",
+    "source_pdf_pages": [
+      265
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_12_problem_solving.json",
+    "item_number": "12",
+    "full_text": "☐\nEmotion Regulation Handout 12   (Emotion Regulation Worksheet 8)\nProblem Solving\nStep 1.  Figure out and describe the problem situation.\nStep 2.  Check the facts (all the facts) to be sure you have the right problem situation!\nIf your facts are correct and\nthe situation is the problem,\ncontinue with Step 3.\nIf your facts are not correct,\ngo back and repeat Step 1.\nStep 3.  Identify your goal in solving the problem.\n•• Identify what needs to happen or change for you to feel OK.\n•• Keep it simple, and choose something that can actually happen.\nStep 4.  Brainstorm lots of solutions.\n•• Think of as many solutions as you can. Ask for suggestions from people you trust.\n•• Do not be critical of any ideas at first. (Wait for Step 5 to evaluate ideas.)\nStep 5.  Choose a solution that fits the goal and is likely to work.\n•• If you are unsure, choose two solutions that look good.\n•• Do pros and cons to compare the solutions.\n•• Choose the best to try first.\nStep 6.  Put the solution into action.\n•• Act! Try out the solution.\n•• Take the first step, and then the second . . .\nStep 7.  Evaluate the results of using the solution.\nIt worked? Yea!!!\nIt didn’t work? Go back to Step 5 and choose a new solution to try.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheet 8"
+    ],
+    "id": "emotion_regulation_handout_12",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "241"
+    ],
+    "title": "Problem Solving",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_12_problem_solving.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Problem",
+      "Solving"
+    ]
+  }
+}

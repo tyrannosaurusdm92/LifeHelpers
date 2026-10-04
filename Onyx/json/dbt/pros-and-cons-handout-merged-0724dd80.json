@@ -1,0 +1,76 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "pros-and-cons-72bb0724dd80",
+  "title": "Pros and Cons",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.968
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-handout-5-pros-and-cons-700a8eac49.json",
+        "sha256": "700a8eac4984bb1165b9638aa27c0cc1a8482b85596253e53e0388b35323e21c",
+        "domain": "dbt",
+        "bytes": 5144
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-handout-5-pros-and-cons-5ab5103d18.json",
+        "sha256": "5ab5103d1810a826c6bee7021dad1c5229c36fcac56c84472a066fddfccae0fd",
+        "domain": "dbt",
+        "bytes": 5024
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 352,
+        "book_page": "328",
+        "text": "328\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n«\nDistress Tolerance Handout 5   (Distress Tolerance Worksheets 3, 3a)\nPros and Cons\nUse pros and cons any time you have to decide between two courses of action.\n\u0003\n An urge is a crisis when it is very strong and when acting on the urge will make things worse in\nthe long term.\n\u0003\n Make a list of the pros and cons of acting on your crisis urges. These might be to engage in\ndangerous, addictive, or harmful behaviors, or they might be to give in, give up, or avoid doing\nwhat is necessary to build a life you want to live.\n\u0003\n Make another list of the pros and cons of resisting crisis urges—that is, tolerating the distress\nand not giving in to the urges.\n\u0003\n Use the grid below to evaluate both sets of pros and cons (this type of grid is also used in\nDistress Tolerance Worksheet 3). Or you can use the type of grid seen in Distress Tolerance\nWorksheet 3a and in the pros-and-cons worksheets for other modules.\nPros\nCons\nActing\non crisis\nurges\nPros of acting on impulsive urges,\ngiving in, giving up, or avoiding what\nneeds to be done.\n\n\nCons of acting on impulsive urges,\ngiving in, giving up, or avoiding what\nneeds to be done.\n\n\nResisting\ncrisis\nurges\nPros of resisting impulsive urges,\ndoing what needs to be done, and\nnot giving up.\n\n\nCons of resisting impulsive urges,\ndoing what needs to be done, and\nnot giving up.\n\n\nBefore an overwhelming crisis urge hits:\nWrite out your pros and cons; carry them with you.\nRehearse your pros and cons over and over.\nWhen an overwhelming crisis urge hits:\nReview your pros and cons. Get out your list and read it over again.\n•• Imagine the positive consequences of resisting the urge.\n•• Think of the negative consequences of giving in to crisis behaviors.\n•• Remember past consequences when you have acted on crisis urges."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Handout 5   (Distress Tolerance Worksheets 3, 3a)",
+    "source_pdf_pages": [
+      352
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/handouts/distress_tolerance_handout_5_pros_and_cons.json",
+    "item_number": "5",
+    "full_text": "«\nDistress Tolerance Handout 5   (Distress Tolerance Worksheets 3, 3a)\nPros and Cons\nUse pros and cons any time you have to decide between two courses of action.\n\u0003\n An urge is a crisis when it is very strong and when acting on the urge will make things worse in\nthe long term.\n\u0003\n Make a list of the pros and cons of acting on your crisis urges. These might be to engage in\ndangerous, addictive, or harmful behaviors, or they might be to give in, give up, or avoid doing\nwhat is necessary to build a life you want to live.\n\u0003\n Make another list of the pros and cons of resisting crisis urges—that is, tolerating the distress\nand not giving in to the urges.\n\u0003\n Use the grid below to evaluate both sets of pros and cons (this type of grid is also used in\nDistress Tolerance Worksheet 3). Or you can use the type of grid seen in Distress Tolerance\nWorksheet 3a and in the pros-and-cons worksheets for other modules.\nPros\nCons\nActing\non crisis\nurges\nPros of acting on impulsive urges,\ngiving in, giving up, or avoiding what\nneeds to be done.\n\n\nCons of acting on impulsive urges,\ngiving in, giving up, or avoiding what\nneeds to be done.\n\n\nResisting\ncrisis\nurges\nPros of resisting impulsive urges,\ndoing what needs to be done, and\nnot giving up.\n\n\nCons of resisting impulsive urges,\ndoing what needs to be done, and\nnot giving up.\n\n\nBefore an overwhelming crisis urge hits:\nWrite out your pros and cons; carry them with you.\nRehearse your pros and cons over and over.\nWhen an overwhelming crisis urge hits:\nReview your pros and cons. Get out your list and read it over again.\n•• Imagine the positive consequences of resisting the urge.\n•• Think of the negative consequences of giving in to crisis behaviors.\n•• Remember past consequences when you have acted on crisis urges.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Worksheets 3, 3a"
+    ],
+    "id": "distress_tolerance_handout_5",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "328"
+    ],
+    "title": "Pros and Cons",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/handouts_json/distress_tolerance_handout_5_pros_and_cons.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Cons",
+      "Pros"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "pleasant-events-diary-278dc595d591",
+  "title": "Pleasant Events Diary",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9468
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-10-pleasant-events-diary-518127d972.json",
+        "sha256": "518127d972765c46bfa2bb48e2b5f4e53b1264cbf0823ce44ea3f117a9467486",
+        "domain": "dbt",
+        "bytes": 3206
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-10-pleasant-events-diary-7f6ecac115.json",
+        "sha256": "7f6ecac1159bd044df4c297095023757595806d1e23cc32d5faa7c5f6511fbd0",
+        "domain": "dbt",
+        "bytes": 3073
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 319,
+        "book_page": "295",
+        "text": "295\nEmotion Regulation Worksheet 10   (Emotion Regulation Handouts 15, 16)\nPleasant Events Diary\nDue Date:             Name:                                    Week Starting:\nAccumulating pleasant events can take planning. For each day of the week, write down at least one pleasant activity or event that is possible\nfor you. In the next column, write down for each day the pleasant event or activity that you actually engaged in. Fill out an Observing and\nDescribing Emotions worksheet (Emotion Regulation Worksheet 4 or 4a) if necessary, plus this diary sheet.\nDay\nof\nweek\nPleasant event(s) planned\nPleasant event(s) I\nactually did\nMindfulness\nof pleasant\nevent (0–5)\nLetting go\nof worries\n(0–5)\nPleasant\nexperience\n(0–100)\nComments\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 10   (Emotion Regulation Handouts 15, 16)",
+    "source_pdf_pages": [
+      319
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_10_pleasant_events_diary.json",
+    "item_number": "10",
+    "full_text": "Emotion Regulation Worksheet 10   (Emotion Regulation Handouts 15, 16)\nPleasant Events Diary\nDue Date:             Name:                                    Week Starting:\nAccumulating pleasant events can take planning. For each day of the week, write down at least one pleasant activity or event that is possible\nfor you. In the next column, write down for each day the pleasant event or activity that you actually engaged in. Fill out an Observing and\nDescribing Emotions worksheet (Emotion Regulation Worksheet 4 or 4a) if necessary, plus this diary sheet.\nDay\nof\nweek\nPleasant event(s) planned\nPleasant event(s) I\nactually did\nMindfulness\nof pleasant\nevent (0–5)\nLetting go\nof worries\n(0–5)\nPleasant\nexperience\n(0–100)\nComments",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handouts 15, 16"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_10_pleasant_events_diary.html",
+    "id": "emotion_regulation_worksheet_10",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "295"
+    ],
+    "title": "Pleasant Events Diary",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_10_pleasant_events_diary.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Diary",
+      "Events",
+      "Pleasant"
+    ]
+  }
+}

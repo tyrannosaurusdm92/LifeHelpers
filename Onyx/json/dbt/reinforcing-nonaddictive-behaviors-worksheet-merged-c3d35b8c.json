@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "reinforcing-nonaddictive-behaviors-1dc6c3d35b8c",
+  "title": "Reinforcing Nonaddictive Behaviors",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9556
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-16-reinforcing-nonaddictive-behaviors-3c71a481f6.json",
+        "sha256": "3c71a481f6bf19cbb8a5054a12e7c40805c34edb9a82ab22e5f67d02e21868a3",
+        "domain": "dbt",
+        "bytes": 4121
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-16-reinforcing-nonaddictive-behaviors-aa35cc27f6.json",
+        "sha256": "aa35cc27f635f43c542b60accc0c5855ce7d3ac69be19c325152f6aa50529a95",
+        "domain": "dbt",
+        "bytes": 3975
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 432,
+        "book_page": "408",
+        "text": "408\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 16   (Distress Tolerance Handout 19)\nReinforcing Nonaddictive Behaviors\nDue Date:             Name:                                    Week Starting:\nCheck off and describe each effort you made to replace addiction reinforcers with abstinence\nreinforcers.\n\u0003\n 1.\t Searched for people to spend time with who aren’t addicted. Describe what you did and who\nyou found.\n\n\n\u0003\n 2.\tIncreased number of enjoyable, nonaddictive activities. Describe activities.\n\n\n\u0003\n 3.\tSampled different groups and different activities. Describe what you did and what you found.\n\n\n\u0003\n 4.\tTook one or more action steps to build positive events to replace addiction. Describe.\n\n\nCheck off and describe your abstinence-sampling efforts.\n\u0003\n 5.\tCommitted to        days of abstinence. (Stayed abstinent        days.)\nDescribe abstinence plan and how you implemented it. (See Distress Tolerance Worksheet 14.)\n\u0003\n 6.\tObserve and describe positive events that occurred when you were not engaging in addictive\nbehaviors.\nNonaddictive activity\nPositive events and consequences"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 16   (Distress Tolerance Handout 19)",
+    "source_pdf_pages": [
+      432
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_16_reinforcing_nonaddictive_behaviors.json",
+    "item_number": "16",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 16   (Distress Tolerance Handout 19)\nReinforcing Nonaddictive Behaviors\nDue Date:             Name:                                    Week Starting:\nCheck off and describe each effort you made to replace addiction reinforcers with abstinence\nreinforcers.\n\u0003\n 1.\t Searched for people to spend time with who aren’t addicted. Describe what you did and who\nyou found.\n\n\n\u0003\n 2.\tIncreased number of enjoyable, nonaddictive activities. Describe activities.\n\n\n\u0003\n 3.\tSampled different groups and different activities. Describe what you did and what you found.\n\n\n\u0003\n 4.\tTook one or more action steps to build positive events to replace addiction. Describe.\n\n\nCheck off and describe your abstinence-sampling efforts.\n\u0003\n 5.\tCommitted to        days of abstinence. (Stayed abstinent        days.)\nDescribe abstinence plan and how you implemented it. (See Distress Tolerance Worksheet 14.)\n\u0003\n 6.\tObserve and describe positive events that occurred when you were not engaging in addictive\nbehaviors.\nNonaddictive activity\nPositive events and consequences",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handout 19"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_16_reinforcing_nonaddictive_behaviors.html",
+    "id": "distress_tolerance_worksheet_16",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "408"
+    ],
+    "title": "Reinforcing Nonaddictive Behaviors",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_16_reinforcing_nonaddictive_behaviors.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Behaviors",
+      "Nonaddictive",
+      "Reinforcing"
+    ]
+  }
+}

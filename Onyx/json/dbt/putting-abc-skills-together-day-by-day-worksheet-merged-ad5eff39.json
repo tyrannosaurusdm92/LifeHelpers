@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "putting-abc-skills-together-day-by-day-ebb1ad5eff39",
+  "title": "Putting ABC Skills Together Day by Day",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9564
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-worksheet-13-putting-abc-skills-together-day-by-e774bf8c97.json",
+        "sha256": "e774bf8c9775114ba3e7273a2c2f408bfcc9ac6b3bb296444691318f7747dc6f",
+        "domain": "dbt",
+        "bytes": 3798
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-worksheet-13-putting-abc-skills-together-day-by-day-6a54c427fd.json",
+        "sha256": "6a54c427fd075f523d6492b91aae46789ae25410ce6addfa63b8842e64daf2b8",
+        "domain": "dbt",
+        "bytes": 3648
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 326,
+        "book_page": "302",
+        "text": "302\nEmotion Regulation Worksheet 13   (Emotion Regulation Handout 19)\nPutting ABC Skills Together Day by Day\nDue Date:             Name:                                    Week Starting:\nThis worksheet is for tracking your planned ABC tasks throughout each day. At night or first thing in the morning, write down what you plan\nto do that day; as you go or at the end of the day, write down what you actually did. Over time, you will find that you can do more and more\nof what you plan, and as you do that you will find your vulnerability to negative emotions going down.\nRate your negative mood or emotions at start of day (0–100):      And negative mood or emotions at end of day (0–100):\nDaytime\nHours\nPlanned Activities\nWhat I Actually Did\nAccumulate Positive\nEmotions\nAction to Build\nMastery\nCope-Ahead Task\nAccumulate Positive\nEmotions\nAction to Build\nMastery\nCope-Ahead Task\nBefore\n8 a.m.\n8 a.m.\nto 12 noon\n12 noon to 4\np.m.\n4 p.m.\nto 8 p.m.\nAfter 8 p.m.\nTotal\nNumber of\nActivities\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission to photocopy this worksheet is granted to purchasers of\nthis book for personal use only (see copyright page for details). Purchasers may download a larger version of this worksheet from www.guilford.com/dbt-worksheets."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Worksheet 13   (Emotion Regulation Handout 19)",
+    "source_pdf_pages": [
+      326
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/worksheets/emotion_regulation_worksheet_13_putting_abc_skills_together_day_by_day.json",
+    "item_number": "13",
+    "full_text": "Emotion Regulation Worksheet 13   (Emotion Regulation Handout 19)\nPutting ABC Skills Together Day by Day\nDue Date:             Name:                                    Week Starting:\nThis worksheet is for tracking your planned ABC tasks throughout each day. At night or first thing in the morning, write down what you plan\nto do that day; as you go or at the end of the day, write down what you actually did. Over time, you will find that you can do more and more\nof what you plan, and as you do that you will find your vulnerability to negative emotions going down.\nRate your negative mood or emotions at start of day (0–100):      And negative mood or emotions at end of day (0–100):\nDaytime\nHours\nPlanned Activities\nWhat I Actually Did\nAccumulate Positive\nEmotions\nAction to Build\nMastery\nCope-Ahead Task\nAccumulate Positive\nEmotions\nAction to Build\nMastery\nCope-Ahead Task\nBefore\n8 a.m.\n8 a.m.\nto 12 noon\n12 noon to 4\np.m.\n4 p.m.\nto 8 p.m.\nAfter 8 p.m.\nTotal\nNumber of\nActivities",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Handout 19"
+    ],
+    "html_path": "html/worksheets/emotion_regulation/emotion_regulation_worksheet_13_putting_abc_skills_together_day_by_day.html",
+    "id": "emotion_regulation_worksheet_13",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "302"
+    ],
+    "title": "Putting ABC Skills Together Day by Day",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/worksheets_json/emotion_regulation_worksheet_13_putting_abc_skills_together_day_by_day.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Putting",
+      "Skills",
+      "Together"
+    ]
+  }
+}

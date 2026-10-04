@@ -1,0 +1,78 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "reality-acceptance-skills-0a3163e3cafb",
+  "title": "Reality Acceptance Skills",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "worksheet",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9578
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/05-dbt-distress-tolerance-distress-tolerance-worksheet-8b-reality-acceptance-skills-86cf601a62.json",
+        "sha256": "86cf601a62305bce120ffaa1fef1942aca2549d5717a43fc9c7fdd264822bc79",
+        "domain": "dbt",
+        "bytes": 7141
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/distress-tolerance-worksheet-8b-reality-acceptance-skills-ea4a07cd47.json",
+        "sha256": "ea4a07cd4756a2762044c74eb0738cdc921214e25fcd5e87082c95facd5418e9",
+        "domain": "dbt",
+        "bytes": 7004
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 417,
+        "book_page": "393",
+        "text": "393\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permis-\nsion to photocopy this worksheet is granted to purchasers of this book for personal use only (see copyright page for details). Purchasers may\ndownload a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 8b   (Distress Tolerance Handouts 10–15a)\nReality Acceptance Skills\nDue Date:             Name:                                    Week Starting:\nFor each reality acceptance skill, describe the skill you used during the week, and circle a number\n(0–5) indicating your own experience of acceptance of yourself, your life, or events outside\nyourself. Use the following scale:\nNo acceptance; I am\nin complete denial\nand/or rebellion\nI was able to\naccept somewhat or\nfor a little while.\nComplete\nacceptance; I am at\npeace with this.\n1\n2\n3\n4\n5\nDay:\nRadical acceptance (describe what and how often you practiced)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nTurning the mind (describe the cross-road you were at, and what you chose)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nWillingness (describe the situation, what you were willful about, and how\nyou practiced)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nHalf-smiling (describe the situation and how you practiced)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nWilling hands (describe the situation and how you practiced)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nMindfulness of current thoughts (describe what thoughts were\ngoing through your mind and how you observed your thoughts)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Distress Tolerance Worksheet 8b   (Distress Tolerance Handouts 10–15a)",
+    "source_pdf_pages": [
+      417
+    ],
+    "fillable_html_created": true,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/distress_tolerance/worksheets/distress_tolerance_worksheet_8b_reality_acceptance_skills.json",
+    "item_number": "8b",
+    "full_text": "download a larger version of this worksheet from www.guilford.com/dbt-worksheets.\nDistress Tolerance Worksheet 8b   (Distress Tolerance Handouts 10–15a)\nReality Acceptance Skills\nDue Date:             Name:                                    Week Starting:\nFor each reality acceptance skill, describe the skill you used during the week, and circle a number\n(0–5) indicating your own experience of acceptance of yourself, your life, or events outside\nyourself. Use the following scale:\nNo acceptance; I am\nin complete denial\nand/or rebellion\nI was able to\naccept somewhat or\nfor a little while.\nComplete\nacceptance; I am at\npeace with this.\nDay:\nRadical acceptance (describe what and how often you practiced)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nTurning the mind (describe the cross-road you were at, and what you chose)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nWillingness (describe the situation, what you were willful about, and how\nyou practiced)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nHalf-smiling (describe the situation and how you practiced)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nWilling hands (describe the situation and how you practiced)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\nDay:\nMindfulness of current thoughts (describe what thoughts were\ngoing through your mind and how you observed your thoughts)\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:\n       /                                                               Effectiveness:",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Distress Tolerance Handouts 10–15a"
+    ],
+    "html_path": "html/worksheets/distress_tolerance/distress_tolerance_worksheet_8b_reality_acceptance_skills.html",
+    "id": "distress_tolerance_worksheet_8b",
+    "item_type": "worksheet",
+    "is_example": false,
+    "source_book_pages": [
+      "393"
+    ],
+    "title": "Reality Acceptance Skills",
+    "module_category": "Distress Tolerance Skills",
+    "shared_json_path": "shared/05_dbt_distress_tolerance/worksheets_json/distress_tolerance_worksheet_8b_reality_acceptance_skills.json",
+    "module": "Distress Tolerance",
+    "keywords": [
+      "Acceptance",
+      "Reality",
+      "Skills"
+    ]
+  }
+}

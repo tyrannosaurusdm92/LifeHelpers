@@ -1,0 +1,75 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "options-for-solving-any-problem-a42061eb0be8",
+  "title": "Options for Solving Any Problem",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9464
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/01-dbt-general-orientation-and-analyzing-behavior-general-handout-1a-options-for-solving-any-09074f2c1a.json",
+        "sha256": "09074f2c1a42aac904d4b744fbddc362b0289514cf1ff57c30c39bfc729080ce",
+        "domain": "dbt",
+        "bytes": 3103
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/general-handout-1a-options-for-solving-any-problem-30568c4761.json",
+        "sha256": "30568c4761ab3c12cd0196b343f5cd9a9e4c3743bd9c69b825ada6e2e322129a",
+        "domain": "dbt",
+        "bytes": 2951
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 34,
+        "book_page": "10",
+        "text": "10\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\n☐\nGeneral Handout 1a\nOptions for Solving Any Problem\nWhen life presents you with problems, what are your options?\n1.\t Solve the Problem\nChange the situation . . . or avoid, leave, or get out of the situation for good.\n2.\t Feel Better about the Problem\nChange (or regulate) your emotional response to the problem.\n3.\t Tolerate the Problem\nAccept and tolerate both the problem and your response to the problem.\n4.\t Stay Miserable\nOr possibly make it worse!\n1.\t To Problem-Solve:\nUse interpersonal effectiveness skills\nWalking the Middle Path (from interpersonal effectiveness skills)\nUse problem-solving skills (from emotion regulation skills)\n2.\t To Feel Better about the Problem:\nUse emotion regulation skills\n3.\t To Tolerate the Problem:\nUse distress tolerance and mindfulness skills\n4.\t To Stay Miserable:\nUse no skills!"
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "General Handout 1a",
+    "source_pdf_pages": [
+      34
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/general/handouts/general_handout_1a_options_for_solving_any_problem.json",
+    "item_number": "1a",
+    "full_text": "☐\nGeneral Handout 1a\nOptions for Solving Any Problem\nWhen life presents you with problems, what are your options?\n1.\t Solve the Problem\nChange the situation . . . or avoid, leave, or get out of the situation for good.\n2.\t Feel Better about the Problem\nChange (or regulate) your emotional response to the problem.\n3.\t Tolerate the Problem\nAccept and tolerate both the problem and your response to the problem.\n4.\t Stay Miserable\nOr possibly make it worse!\n1.\t To Problem-Solve:\nUse interpersonal effectiveness skills\nWalking the Middle Path (from interpersonal effectiveness skills)\nUse problem-solving skills (from emotion regulation skills)\n2.\t To Feel Better about the Problem:\nUse emotion regulation skills\n3.\t To Tolerate the Problem:\nUse distress tolerance and mindfulness skills\n4.\t To Stay Miserable:\nUse no skills!",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [],
+    "id": "general_handout_1a",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "10"
+    ],
+    "title": "Options for Solving Any Problem",
+    "module_category": "General Skills: Orientation and Analyzing Behavior",
+    "shared_json_path": "shared/01_dbt_general_orientation_and_analyzing_behavior/handouts_json/general_handout_1a_options_for_solving_any_problem.json",
+    "module": "General",
+    "keywords": [
+      "Options",
+      "Problem",
+      "Solving"
+    ]
+  }
+}

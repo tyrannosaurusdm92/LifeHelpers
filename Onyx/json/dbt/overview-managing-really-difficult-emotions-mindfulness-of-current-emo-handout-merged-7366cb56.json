@@ -1,0 +1,85 @@
+{
+  "schema": "ai-brain.semantic-merge.v1",
+  "id": "overview-managing-really-difficult-emotions-mindfulness-of-current-emotions-supp-13447366cb56",
+  "title": "Overview: Managing Really Difficult Emotions Mindfulness of Current Emotions Suppressing emotion increases suffering.",
+  "domain": "dbt",
+  "relatedDomains": [
+    "dbt"
+  ],
+  "purpose": "handout",
+  "capabilities": [
+    "dbt",
+    "reference",
+    "research"
+  ],
+  "similarityReview": {
+    "threshold": 0.75,
+    "pairScores": [
+      0.9455
+    ],
+    "method": "5-token shingle Jaccard within same explicit purpose/title context"
+  },
+  "provenance": {
+    "mergePolicy": "shared structure/content consolidated; unique list items/fields retained; scalar conflicts retained as _merged_values",
+    "sources": [
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/04-dbt-emotion-regulation-emotion-regulation-handout-21-overview-managing-really-difficult-e-2e726d258f.json",
+        "sha256": "2e726d258fcf47293ef9f48038e4751d5d74367707717ddb4ab1c10697700419",
+        "domain": "dbt",
+        "bytes": 3232
+      },
+      {
+        "sourcePath": "Unified_AI-Brain_PART_2_of_6/AI-Brain/json/therapy_dbt/emotion-regulation-handout-21-overview-managing-really-difficult-emotions-mindfulness-of-cur-557dffe4ca.json",
+        "sha256": "557dffe4caa563f5058ed3458083f78093955b5abe0e92440a872baafece0673",
+        "domain": "dbt",
+        "bytes": 3072
+      }
+    ]
+  },
+  "data": {
+    "pages": [
+      {
+        "pdf_page": 287,
+        "book_page": "263",
+        "text": "263\nFrom DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Copyright 2015 by Marsha M. Linehan. Permission\nto photocopy this handout is granted to purchasers of this book for personal use only (see copyright page for details).\nEmotion Regulation Handout 21   (Emotion Regulation Worksheets 15–16)\nOverview:\nManaging Really Difficult Emotions\nMindfulness of Current Emotions\nSuppressing emotion increases suffering.\nMindfulness of current emotions is the path to emotional freedom.\nManaging Extreme Emotions\nSometimes emotional arousal is so high that you can’t use any skills,\nparticularly if the skills are complicated or take any thought on your part.\nThis is a skills breakdown point.\nCrisis survival skills are needed.\nTroubleshooting and Review\nThere are many ways to change emotions.\nIt can be helpful to have a list of the important skills\nto look at when you can’t remember the skills you need to regulate\nyour emotions."
+      }
+    ],
+    "copyright_notice": "Extracted from user-provided PDF: DBT Skills Training Handouts and Worksheets, Second Edition by Marsha M. Linehan. Respect source copyright and purchaser-use limits.",
+    "source_marker": "Emotion Regulation Handout 21   (Emotion Regulation Worksheets 15–16)",
+    "source_pdf_pages": [
+      287
+    ],
+    "fillable_html_created": false,
+    "created_at": "2026-06-25T17:33:54",
+    "json_path": "json/items/emotion_regulation/handouts/emotion_regulation_handout_21_overview_managing_really_difficult_emotions_mindfulness_of_current_emo.json",
+    "item_number": "21",
+    "full_text": "Emotion Regulation Handout 21   (Emotion Regulation Worksheets 15–16)\nOverview:\nManaging Really Difficult Emotions\nMindfulness of Current Emotions\nSuppressing emotion increases suffering.\nMindfulness of current emotions is the path to emotional freedom.\nManaging Extreme Emotions\nSometimes emotional arousal is so high that you can’t use any skills,\nparticularly if the skills are complicated or take any thought on your part.\nThis is a skills breakdown point.\nCrisis survival skills are needed.\nTroubleshooting and Review\nThere are many ways to change emotions.\nIt can be helpful to have a list of the important skills\nto look at when you can’t remember the skills you need to regulate\nyour emotions.",
+    "source_pdf": "DBT Skills Workbook.pdf",
+    "related_references": [
+      "Emotion Regulation Worksheets 15–16"
+    ],
+    "id": "emotion_regulation_handout_21",
+    "item_type": "handout",
+    "is_example": false,
+    "source_book_pages": [
+      "263"
+    ],
+    "title": "Overview: Managing Really Difficult Emotions Mindfulness of Current Emotions Suppressing emotion increases suffering.",
+    "module_category": "Emotion Regulation Skills",
+    "shared_json_path": "shared/04_dbt_emotion_regulation/handouts_json/emotion_regulation_handout_21_overview_managing_really_difficult_emotions_9d0ed0ad.json",
+    "module": "Emotion Regulation",
+    "keywords": [
+      "Current",
+      "Difficult",
+      "Emotions",
+      "Managing",
+      "Mindfulness",
+      "Overview",
+      "Really",
+      "Suppressing",
+      "emotion",
+      "increases",
+      "suffering"
+    ]
+  }
+}
