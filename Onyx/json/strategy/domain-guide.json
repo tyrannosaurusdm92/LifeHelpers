@@ -1,0 +1,38 @@
+{
+  "schema": "ai-brain.domain-guide.v1",
+  "version": "1.0.0",
+  "id": "domain-strategy",
+  "title": "Strategy",
+  "domain": "strategy",
+  "description": "Goals, constraints, resources, uncertainty, decision trees, risk, sequencing, tactics and fallback planning.",
+  "tags": [
+    "strategy",
+    "strategy",
+    "plan",
+    "decision tree",
+    "prioritize",
+    "risk",
+    "scenario",
+    "tactics"
+  ],
+  "capabilities": [
+    "planning",
+    "decision-support",
+    "risk-analysis"
+  ],
+  "relatedDomains": [
+    "organization",
+    "game-design",
+    "code"
+  ],
+  "useCases": [
+    "route user requests into this domain",
+    "combine this domain with related disciplines",
+    "select more specific source shards by corpus index"
+  ],
+  "retrievalPolicy": "Use this guide as a routing seed. Prefer deeper topic/source shards from the corpus index when they match the request.",
+  "provenance": {
+    "source": "AI-Brain Project Pitch and unified source-package architecture",
+    "type": "source-derived routing seed"
+  }
+}

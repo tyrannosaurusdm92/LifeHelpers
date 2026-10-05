@@ -1,0 +1,37 @@
+{
+  "schema": "ai-brain.domain-guide.v1",
+  "version": "1.0.0",
+  "id": "domain-story-intelligence",
+  "title": "Story Intelligence",
+  "domain": "story-intelligence",
+  "description": "Canon, continuity, temporal facts, knowledge/belief ledgers, plot threads, causal graphs, POV and series logic.",
+  "tags": [
+    "story-intelligence",
+    "continuity",
+    "canon",
+    "plot hole",
+    "timeline",
+    "pov",
+    "series"
+  ],
+  "capabilities": [
+    "continuity",
+    "canon-analysis",
+    "timeline-analysis"
+  ],
+  "relatedDomains": [
+    "creative-writing",
+    "worldbuilding",
+    "memory"
+  ],
+  "useCases": [
+    "route user requests into this domain",
+    "combine this domain with related disciplines",
+    "select more specific source shards by corpus index"
+  ],
+  "retrievalPolicy": "Use this guide as a routing seed. Prefer deeper topic/source shards from the corpus index when they match the request.",
+  "provenance": {
+    "source": "AI-Brain Project Pitch and unified source-package architecture",
+    "type": "source-derived routing seed"
+  }
+}

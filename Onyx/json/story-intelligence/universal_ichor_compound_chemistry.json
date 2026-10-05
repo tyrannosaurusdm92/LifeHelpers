@@ -1,0 +1,95 @@
+{
+  "schema": "universal.transit.ichor_compound_chemistry.v1",
+  "publicPremise": "Ichor is living divine residue forced into thermal, electrical, chemical, and field bookkeeping systems.",
+  "nuclearPattern": "Core-grade ichor behaves like nuclear-pattern civic power: extreme energy density, long endurance, shielding, cooldown, contamination control, and catastrophic runaway risk.",
+  "states": {
+    "freshIchor": {
+      "eMJkg": "300+",
+      "hazard": "alive, mutagenic, addictive"
+    },
+    "separatedPositiveFraction": {
+      "eMJkg": "20-100",
+      "use": "flow cells and regulators"
+    },
+    "separatedNegativeFraction": {
+      "eMJkg": "20-100",
+      "use": "paired flow cells only"
+    },
+    "godsbloodBrine": {
+      "eMJkg": "5-60",
+      "use": "conductive loops"
+    },
+    "refinedCatalystOil": {
+      "eMJkg": "50-300",
+      "use": "engines and boilers"
+    },
+    "driedBlackPowder": {
+      "eMJkg": "variable",
+      "use": "maintenance and forge catalysts"
+    },
+    "ionizedIchorPlasma": {
+      "eMJkg": "active state",
+      "use": "jets, portal films, braking fields"
+    },
+    "hungerAsh": {
+      "eMJkg": "spent",
+      "use": "forensic trace only"
+    }
+  },
+  "coreClasses": {
+    "lantern": {
+      "IPI": [
+        0.5,
+        1.5
+      ]
+    },
+    "household": {
+      "IPI": [
+        1,
+        2.5
+      ]
+    },
+    "regionalTransit": {
+      "IPI": [
+        3,
+        5
+      ]
+    },
+    "intercityExpress": {
+      "IPI": [
+        5,
+        7
+      ]
+    },
+    "coreGrade": {
+      "IPI": [
+        7,
+        8.5
+      ]
+    },
+    "unsafeFresh": {
+      "IPI": [
+        8,
+        10
+      ]
+    }
+  },
+  "canonicalRevision": {
+    "revisionId": "universal-four-compendium-canon-2026-07-17",
+    "revisedAtUtc": "2026-07-17T18:27:27+00:00",
+    "authorityOrder": [
+      "Universal_Pantheon_and_Races_Compendium_Current_Canon(3).docx",
+      "Universal_Full_Night_Sky_Galaxy_and_Time_Conversion_Compendium(3).docx",
+      "Life_in_Universal_Complete_Corrected_Compendium(2).docx",
+      "Universal_Full_Geological_Features_and_Weather_Compendium_Corrected(2).docx"
+    ],
+    "fullSourceJson": [
+      "canon_source_pantheon_races_full.json",
+      "canon_source_night_sky_galaxy_time_full.json",
+      "canon_source_life_in_universal_full.json",
+      "canon_source_geology_weather_spatial_full.json"
+    ],
+    "spatialAuthority": "Final 2048 x 1024 equirectangular anchors and province transforms from the corrected geological/weather compendium override every earlier coordinate, UTC, mapped-biome/depth, and route geometry value.",
+    "nonSpatialAuthority": "Current pantheon/races and life compendia preserve and extend non-spatial canon; the newest night-sky/time compendium governs calendar, celestial, and exact settlement UTC data."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "story-intelligence",
+  "capabilities": [
+    "alignment",
+    "character",
+    "color",
+    "merge",
+    "shape"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "plot_alignment",
+      "plot_avg_energy",
+      "plot_avg_pitch",
+      "plot_pitch",
+      "plot_spectrogram",
+      "visualize"
+    ],
+    "classes": [],
+    "imports": [],
+    "lineCount": 239,
+    "characterCount": 6672
+  },
+  "selectedComments": [
+    "plt.yticks(range(len(text)), list(text))",
+    "compute phoneme representation and back",
+    "plot stopnet predictions",
+    "plot postnet spectrogram"
+  ]
+}
