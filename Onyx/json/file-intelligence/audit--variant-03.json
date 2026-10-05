@@ -1,0 +1,15 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "file-intelligence",
+  "capabilities": [
+    "layer",
+    "manifest"
+  ],
+  "provenance": {
+    "sourceGroup": "player-reference-runtime-c",
+    "sourceType": "provided-project-material",
+    "archiveHash": "b25a1dee02bb3fec"
+  },
+  "title": "audit.md",
+  "content": "# Integration Audit: AutoGPT repository\n\n- Reviewed: 2026-07-23T10:40:24.148661+00:00\n- Implemented in final project: yes\n- Whole upstream tree copied: no\n- Source ZIP retained: no\n- Documentation set complete: audit, manifest, readme, license\n- Domain-specific directory schema exposed: no\n\n## Notes\n\nUsed as an architectural reference for task decomposition, agent loops, project execution, and audit checks. No original application tree is copied into the final package.\n"
+}

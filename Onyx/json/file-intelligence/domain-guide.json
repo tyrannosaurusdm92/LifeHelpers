@@ -1,0 +1,40 @@
+{
+  "schema": "ai-brain.domain-guide.v1",
+  "version": "1.0.0",
+  "id": "domain-file-intelligence",
+  "title": "File Intelligence",
+  "domain": "file-intelligence",
+  "description": "Classification, duplicate detection, version comparison, canonical consolidation, manifests and audits.",
+  "tags": [
+    "file-intelligence",
+    "files",
+    "dedupe",
+    "duplicate",
+    "merge versions",
+    "consolidate",
+    "sort files",
+    "manifest",
+    "audit"
+  ],
+  "capabilities": [
+    "classification",
+    "deduplication",
+    "version-consolidation",
+    "audit"
+  ],
+  "relatedDomains": [
+    "organization",
+    "data-schemas",
+    "code"
+  ],
+  "useCases": [
+    "route user requests into this domain",
+    "combine this domain with related disciplines",
+    "select more specific source shards by corpus index"
+  ],
+  "retrievalPolicy": "Use this guide as a routing seed. Prefer deeper topic/source shards from the corpus index when they match the request.",
+  "provenance": {
+    "source": "AI-Brain Project Pitch and unified source-package architecture",
+    "type": "source-derived routing seed"
+  }
+}

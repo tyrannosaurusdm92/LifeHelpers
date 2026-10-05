@@ -1,0 +1,35 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "file-intelligence",
+  "capabilities": [
+    "character",
+    "class",
+    "merge"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "py",
+  "summary": {
+    "functions": [
+      "__init__",
+      "__setstate__",
+      "step"
+    ],
+    "classes": [
+      "RAdam"
+    ],
+    "imports": [],
+    "lineCount": 106,
+    "characterCount": 4575
+  },
+  "selectedComments": [
+    "modified from https://github.com/LiyuanLucasLiu/RAdam",
+    "more conservative since it's an approximated value",
+    "(N_sma - 4)",
+    "(N_sma - 2)",
+    "N_sma_max",
+    "more conservative since it's an approximated value"
+  ]
+}

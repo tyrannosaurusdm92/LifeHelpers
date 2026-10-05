@@ -1,0 +1,56 @@
+{
+  "schema": "ai-brain-implementation-pattern/1.0",
+  "domain": "file-intelligence",
+  "capabilities": [
+    "character",
+    "class",
+    "effect",
+    "map",
+    "merge",
+    "quest",
+    "sort"
+  ],
+  "provenance": {
+    "sourceGroup": "character-voice-studio",
+    "sourceType": "implementation-pattern-extraction"
+  },
+  "sourceLanguage": "ts",
+  "summary": {
+    "functions": [
+      "getStoredValue",
+      "initDB",
+      "openDatabase"
+    ],
+    "classes": [
+      "IndexedDBError"
+    ],
+    "imports": [
+      "ahooks",
+      "lodash",
+      "react"
+    ],
+    "lineCount": 294,
+    "characterCount": 7447
+  },
+  "selectedComments": [
+    "Custom error type",
+    "Version control and migration",
+    "Configuration options",
+    "Memory cache",
+    "Open database",
+    "Execute migrations",
+    "Get value",
+    "Set value",
+    "Type checking",
+    "Main Hook",
+    "Update state reference",
+    "Get value from cache or database",
+    "Update state",
+    "@ts-ignore",
+    "@ts-ignore",
+    "Debounced update database",
+    "Initialize database and state",
+    "Clean up",
+    "Batch update function"
+  ]
+}

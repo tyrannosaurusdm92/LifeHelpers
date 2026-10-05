@@ -1,0 +1,1807 @@
+{
+  "schema": "universal.converted-docx-source.v1",
+  "metadata": {
+    "title": "1. Class Identity",
+    "source_file": "01_Derecho_Death_Dealer.docx",
+    "source_relative_path": "canon/classes/classes/01_Derecho_Death_Dealer.docx",
+    "converted_on": "2026-07-19",
+    "conversion_note": "The DOCX source was omitted from the release. Paragraphs, heading structure, tables, run emphasis, and embedded image assets were converted into JSON and ordinary asset files.",
+    "paragraph_count": 51,
+    "table_count": 16,
+    "image_count": 0
+  },
+  "sections": [
+    {
+      "heading": null,
+      "level": 0,
+      "paragraph_index": 0,
+      "content": [
+        {
+          "paragraph_index": 0,
+          "style": "Normal",
+          "text": "Derecho Death Dealer"
+        }
+      ],
+      "children": []
+    },
+    {
+      "heading": null,
+      "level": 0,
+      "paragraph_index": 1,
+      "content": [
+        {
+          "paragraph_index": 1,
+          "style": "Normal",
+          "text": "Universal Class Dossier - Rule-Audited Edition"
+        }
+      ],
+      "children": []
+    },
+    {
+      "heading": null,
+      "level": 0,
+      "paragraph_index": 2,
+      "content": [
+        {
+          "paragraph_index": 2,
+          "style": "Normal",
+          "text": "Canonical deity: Nefarokir | Legacy mechanical package: Soul Harbinger"
+        }
+      ],
+      "children": []
+    },
+    {
+      "heading": null,
+      "level": 0,
+      "paragraph_index": 3,
+      "content": [
+        {
+          "paragraph_index": 3,
+          "style": "Normal",
+          "text": "A necrotic storm-warrior who fights inside violent weather, channels the dead through weapons, and grows more dangerous as creatures fall nearby."
+        }
+      ],
+      "children": []
+    },
+    {
+      "heading": "1. Class Identity",
+      "level": 1,
+      "paragraph_index": 4,
+      "content": [
+        {
+          "paragraph_index": 5,
+          "style": "Normal",
+          "text": "Mobile melee damage, necrotic lightning, corpse-powered storm effects, and magical weapon techniques."
+        }
+      ],
+      "children": [
+        {
+          "heading": "Canonical Deity",
+          "level": 2,
+          "paragraph_index": 6,
+          "content": [],
+          "children": []
+        },
+        {
+          "heading": "D&D Transition Ancestry",
+          "level": 2,
+          "paragraph_index": 7,
+          "content": [
+            {
+              "paragraph_index": 8,
+              "style": "Normal",
+              "text": "These sources explain familiar play patterns for D&D players; they are inspirations, not additional selectable classes or subclasses in this homebrew roster."
+            },
+            {
+              "paragraph_index": 9,
+              "style": "List Bullet",
+              "text": "Death and Undeath: Cleric - Death; Druid - Spores; Monk - Long Death; Rogue - Phantom; Warlock - Undead; Wizard - Necromancy"
+            },
+            {
+              "paragraph_index": 10,
+              "style": "List Bullet",
+              "text": "Storm Power: Barbarian - Storm Herald; Cleric - Tempest; Sorcerer - Storm"
+            },
+            {
+              "paragraph_index": 11,
+              "style": "List Bullet",
+              "text": "Arcane Spellblade: Bard - Valor, Swords; Fighter - Eldritch Knight; Warlock - Hexblade; Wizard - Bladesinging"
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "heading": "2. Class Chassis",
+      "level": 1,
+      "paragraph_index": 12,
+      "content": [],
+      "children": [
+        {
+          "heading": "Rules Compliance",
+          "level": 2,
+          "paragraph_index": 13,
+          "content": [
+            {
+              "paragraph_index": 14,
+              "style": "List Bullet",
+              "text": "Proficiency Bonus: Use total character level: +2 at levels 1–4, +3 at 5–8, +4 at 9–12, +5 at 13–16, +6 at 17–20."
+            },
+            {
+              "paragraph_index": 15,
+              "style": "List Bullet",
+              "text": "Class Feature Save DC: 8 + proficiency bonus + the subclass spellcasting ability modifier; non-casters use the class primary mental ability listed in the chassis."
+            },
+            {
+              "paragraph_index": 16,
+              "style": "List Bullet",
+              "text": "Class Feature Attack: proficiency bonus + the relevant Strength, Dexterity, or spellcasting ability modifier."
+            },
+            {
+              "paragraph_index": 17,
+              "style": "List Bullet",
+              "text": "Action Economy: A turn normally provides movement, one action, and at most one bonus action. A creature has one reaction until the start of its next turn unless a feature explicitly says otherwise."
+            },
+            {
+              "paragraph_index": 18,
+              "style": "List Bullet",
+              "text": "Concentration: A creature can concentrate on only one effect requiring concentration. Damage triggers a Constitution saving throw with DC 10 or half the damage taken, whichever is higher."
+            },
+            {
+              "paragraph_index": 19,
+              "style": "List Bullet",
+              "text": "Extra Attack: Extra Attack never stacks with another Extra Attack feature. The character uses the highest number of attacks granted by any one feature."
+            },
+            {
+              "paragraph_index": 20,
+              "style": "List Bullet",
+              "text": "Spellcasting: A spell uses its printed casting time, range, components, duration, concentration, attack, and saving-throw rules unless a class feature explicitly changes one of them."
+            },
+            {
+              "paragraph_index": 21,
+              "style": "List Bullet",
+              "text": "Bounty Ichor Limits: Bounty Ichor cannot exceed its maximum and cannot fall below 0. A bounty trigger can restore at most 1 Ichor per round, and a single creature or event cannot be farmed repeatedly."
+            },
+            {
+              "paragraph_index": 22,
+              "style": "List Bullet",
+              "text": "Thundercoils: Thundercoils follow normal weapon proficiency and attack rules. Their charges, heat, Overload, instability, and maintenance are separate from Bounty Ichor unless a feature explicitly connects them."
+            },
+            {
+              "paragraph_index": 23,
+              "style": "List Bullet",
+              "text": "Multiclass Spell Slots: For multiclass spell slots, a half-caster path contributes half its class levels rounded down after the path is chosen; a full-caster path contributes its class levels minus 2, minimum 0. A non-caster path contributes none."
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "heading": "3. Magic Schools and Spellcasting",
+      "level": 1,
+      "paragraph_index": 24,
+      "content": [
+        {
+          "paragraph_index": 25,
+          "style": "Normal",
+          "text": "Eligibility counts exclude UA/playtest spells by default. Optional UA entries remain tagged in the JSON catalog."
+        }
+      ],
+      "children": [
+        {
+          "heading": "Spell-Slot Progression",
+          "level": 2,
+          "paragraph_index": 26,
+          "content": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "heading": "4. Deity Bounty and Ichor",
+      "level": 1,
+      "paragraph_index": 27,
+      "content": [],
+      "children": [
+        {
+          "heading": "How Each Path Uses Ichor",
+          "level": 2,
+          "paragraph_index": 28,
+          "content": [
+            {
+              "paragraph_index": 29,
+              "style": "List Bullet",
+              "text": "Melee / Non-Caster: Primary power source. Spent on weapon maneuvers, Thundercoil riders, pursuit, counters, and survival. No spell slots."
+            },
+            {
+              "paragraph_index": 30,
+              "style": "List Bullet",
+              "text": "Half-Caster: Shared between weapon techniques, spellstrikes, fields, and rank 1–5 magic."
+            },
+            {
+              "paragraph_index": 31,
+              "style": "List Bullet",
+              "text": "Full-Caster: Mostly spent to amplify, echo, protect, or reshape rank 1–9 magic; weapons are rarely required."
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "heading": "5. Thundercoil Integration",
+      "level": 1,
+      "paragraph_index": 32,
+      "content": [
+        {
+          "paragraph_index": 33,
+          "style": "List Bullet",
+          "text": "Thundercoils are optional equipment and do not replace standard weapons or spells."
+        },
+        {
+          "paragraph_index": 34,
+          "style": "List Bullet",
+          "text": "The wielder must be proficient with the underlying weapon type."
+        },
+        {
+          "paragraph_index": 35,
+          "style": "List Bullet",
+          "text": "Normal charge-pack, heat, Overload, Ichor-instability, maintenance, and corruption rules remain in force."
+        },
+        {
+          "paragraph_index": 36,
+          "style": "List Bullet",
+          "text": "A class feature delivered through a Thundercoil attack does not grant free charges or extra Overloads unless it explicitly says so."
+        }
+      ],
+      "children": []
+    },
+    {
+      "heading": "6. Level 1-20 Advancement",
+      "level": 1,
+      "paragraph_index": 37,
+      "content": [],
+      "children": []
+    },
+    {
+      "heading": "7. Subclasses",
+      "level": 1,
+      "paragraph_index": 38,
+      "content": [],
+      "children": [
+        {
+          "heading": "1. Rebellion Reaver - Melee / Non-Caster",
+          "level": 2,
+          "paragraph_index": 39,
+          "content": [
+            {
+              "paragraph_index": 40,
+              "style": "Normal",
+              "text": "A weapon-first path built from cursed blades, soulfire fury, and close warbringing. It has no spell slots and relies on standard D&D weapons, Thundercoils, positioning, and deity-awarded Bounty Ichor."
+            }
+          ],
+          "children": []
+        },
+        {
+          "heading": "2. Prophetic Detonator - Half-Caster",
+          "level": 2,
+          "paragraph_index": 41,
+          "content": [
+            {
+              "paragraph_index": 42,
+              "style": "Normal",
+              "text": "A weapon-and-magic path built from midrange marks, chain explosions, and battlefield prediction. It mixes melee or ranged combat with a rank 1–5 spell progression and uses Bounty Ichor to join attacks, fields, and spells."
+            }
+          ],
+          "children": []
+        },
+        {
+          "heading": "3. Soulimit Oracle - Full-Caster",
+          "level": 2,
+          "paragraph_index": 43,
+          "content": [
+            {
+              "paragraph_index": 44,
+              "style": "Normal",
+              "text": "A dedicated magical path built from high-damage area prophecy and soulfire devastation. It rarely needs weapons, reaches spell rank 9, and spends Bounty Ichor to reshape area, range, timing, or target count."
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "heading": "8. Implementation Notes",
+      "level": 1,
+      "paragraph_index": 45,
+      "content": [
+        {
+          "paragraph_index": 46,
+          "style": "List Bullet",
+          "text": "The melee/non-caster subclass receives no spell slots or class cantrips and relies on standard weapons, Thundercoils, positioning, and Bounty Ichor."
+        },
+        {
+          "paragraph_index": 47,
+          "style": "List Bullet",
+          "text": "The half-caster and full-caster paths use the slot table in this dossier and select spells from the restored spell catalog."
+        },
+        {
+          "paragraph_index": 48,
+          "style": "List Bullet",
+          "text": "UA/playtest spells are optional and require explicit DM approval."
+        },
+        {
+          "paragraph_index": 49,
+          "style": "List Bullet",
+          "text": "All D&D classes and subclasses listed above are transition references only; they are not additional selectable paths in this homebrew system."
+        },
+        {
+          "paragraph_index": 50,
+          "style": "List Bullet",
+          "text": "The JSON record and this DOCX are generated from the same source data model."
+        }
+      ],
+      "children": []
+    }
+  ],
+  "paragraphs": [
+    {
+      "index": 0,
+      "style": "Normal",
+      "text": "Derecho Death Dealer",
+      "runs": [
+        {
+          "text": "Derecho Death Dealer",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "style": "Normal",
+      "text": "Universal Class Dossier - Rule-Audited Edition",
+      "runs": [
+        {
+          "text": "Universal Class Dossier - Rule-Audited Edition",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "style": "Normal",
+      "text": "Canonical deity: Nefarokir | Legacy mechanical package: Soul Harbinger",
+      "runs": [
+        {
+          "text": "Canonical deity: Nefarokir | Legacy mechanical package: Soul Harbinger",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "style": "Normal",
+      "text": "A necrotic storm-warrior who fights inside violent weather, channels the dead through weapons, and grows more dangerous as creatures fall nearby.",
+      "runs": [
+        {
+          "text": "A necrotic storm-warrior who fights inside violent weather, channels the dead through weapons, and grows more dangerous as creatures fall nearby.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "style": "Heading 1",
+      "text": "1. Class Identity",
+      "runs": [
+        {
+          "text": "1. Class Identity",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "style": "Normal",
+      "text": "Mobile melee damage, necrotic lightning, corpse-powered storm effects, and magical weapon techniques.",
+      "runs": [
+        {
+          "text": "Mobile melee damage, necrotic lightning, corpse-powered storm effects, and magical weapon techniques.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "style": "Heading 2",
+      "text": "Canonical Deity",
+      "runs": [
+        {
+          "text": "Canonical Deity",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "style": "Heading 2",
+      "text": "D&D Transition Ancestry",
+      "runs": [
+        {
+          "text": "D&D Transition Ancestry",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "style": "Normal",
+      "text": "These sources explain familiar play patterns for D&D players; they are inspirations, not additional selectable classes or subclasses in this homebrew roster.",
+      "runs": [
+        {
+          "text": "These sources explain familiar play patterns for D&D players; they are inspirations, not additional selectable classes or subclasses in this homebrew roster.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "style": "List Bullet",
+      "text": "Death and Undeath: Cleric - Death; Druid - Spores; Monk - Long Death; Rogue - Phantom; Warlock - Undead; Wizard - Necromancy",
+      "runs": [
+        {
+          "text": "Death and Undeath: Cleric - Death; Druid - Spores; Monk - Long Death; Rogue - Phantom; Warlock - Undead; Wizard - Necromancy",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "style": "List Bullet",
+      "text": "Storm Power: Barbarian - Storm Herald; Cleric - Tempest; Sorcerer - Storm",
+      "runs": [
+        {
+          "text": "Storm Power: Barbarian - Storm Herald; Cleric - Tempest; Sorcerer - Storm",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "style": "List Bullet",
+      "text": "Arcane Spellblade: Bard - Valor, Swords; Fighter - Eldritch Knight; Warlock - Hexblade; Wizard - Bladesinging",
+      "runs": [
+        {
+          "text": "Arcane Spellblade: Bard - Valor, Swords; Fighter - Eldritch Knight; Warlock - Hexblade; Wizard - Bladesinging",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "style": "Heading 1",
+      "text": "2. Class Chassis",
+      "runs": [
+        {
+          "text": "2. Class Chassis",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "style": "Heading 2",
+      "text": "Rules Compliance",
+      "runs": [
+        {
+          "text": "Rules Compliance",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "style": "List Bullet",
+      "text": "Proficiency Bonus: Use total character level: +2 at levels 1–4, +3 at 5–8, +4 at 9–12, +5 at 13–16, +6 at 17–20.",
+      "runs": [
+        {
+          "text": "Proficiency Bonus: Use total character level: +2 at levels 1–4, +3 at 5–8, +4 at 9–12, +5 at 13–16, +6 at 17–20.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "style": "List Bullet",
+      "text": "Class Feature Save DC: 8 + proficiency bonus + the subclass spellcasting ability modifier; non-casters use the class primary mental ability listed in the chassis.",
+      "runs": [
+        {
+          "text": "Class Feature Save DC: 8 + proficiency bonus + the subclass spellcasting ability modifier; non-casters use the class primary mental ability listed in the chassis.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "style": "List Bullet",
+      "text": "Class Feature Attack: proficiency bonus + the relevant Strength, Dexterity, or spellcasting ability modifier.",
+      "runs": [
+        {
+          "text": "Class Feature Attack: proficiency bonus + the relevant Strength, Dexterity, or spellcasting ability modifier.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "style": "List Bullet",
+      "text": "Action Economy: A turn normally provides movement, one action, and at most one bonus action. A creature has one reaction until the start of its next turn unless a feature explicitly says otherwise.",
+      "runs": [
+        {
+          "text": "Action Economy: A turn normally provides movement, one action, and at most one bonus action. A creature has one reaction until the start of its next turn unless a feature explicitly says otherwise.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "style": "List Bullet",
+      "text": "Concentration: A creature can concentrate on only one effect requiring concentration. Damage triggers a Constitution saving throw with DC 10 or half the damage taken, whichever is higher.",
+      "runs": [
+        {
+          "text": "Concentration: A creature can concentrate on only one effect requiring concentration. Damage triggers a Constitution saving throw with DC 10 or half the damage taken, whichever is higher.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "style": "List Bullet",
+      "text": "Extra Attack: Extra Attack never stacks with another Extra Attack feature. The character uses the highest number of attacks granted by any one feature.",
+      "runs": [
+        {
+          "text": "Extra Attack: Extra Attack never stacks with another Extra Attack feature. The character uses the highest number of attacks granted by any one feature.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "style": "List Bullet",
+      "text": "Spellcasting: A spell uses its printed casting time, range, components, duration, concentration, attack, and saving-throw rules unless a class feature explicitly changes one of them.",
+      "runs": [
+        {
+          "text": "Spellcasting: A spell uses its printed casting time, range, components, duration, concentration, attack, and saving-throw rules unless a class feature explicitly changes one of them.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "style": "List Bullet",
+      "text": "Bounty Ichor Limits: Bounty Ichor cannot exceed its maximum and cannot fall below 0. A bounty trigger can restore at most 1 Ichor per round, and a single creature or event cannot be farmed repeatedly.",
+      "runs": [
+        {
+          "text": "Bounty Ichor Limits: Bounty Ichor cannot exceed its maximum and cannot fall below 0. A bounty trigger can restore at most 1 Ichor per round, and a single creature or event cannot be farmed repeatedly.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "style": "List Bullet",
+      "text": "Thundercoils: Thundercoils follow normal weapon proficiency and attack rules. Their charges, heat, Overload, instability, and maintenance are separate from Bounty Ichor unless a feature explicitly connects them.",
+      "runs": [
+        {
+          "text": "Thundercoils: Thundercoils follow normal weapon proficiency and attack rules. Their charges, heat, Overload, instability, and maintenance are separate from Bounty Ichor unless a feature explicitly connects them.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "style": "List Bullet",
+      "text": "Multiclass Spell Slots: For multiclass spell slots, a half-caster path contributes half its class levels rounded down after the path is chosen; a full-caster path contributes its class levels minus 2, minimum 0. A non-caster path contributes none.",
+      "runs": [
+        {
+          "text": "Multiclass Spell Slots: For multiclass spell slots, a half-caster path contributes half its class levels rounded down after the path is chosen; a full-caster path contributes its class levels minus 2, minimum 0. A non-caster path contributes none.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "style": "Heading 1",
+      "text": "3. Magic Schools and Spellcasting",
+      "runs": [
+        {
+          "text": "3. Magic Schools and Spellcasting",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "style": "Normal",
+      "text": "Eligibility counts exclude UA/playtest spells by default. Optional UA entries remain tagged in the JSON catalog.",
+      "runs": [
+        {
+          "text": "Eligibility counts exclude UA/playtest spells by default. Optional UA entries remain tagged in the JSON catalog.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "style": "Heading 2",
+      "text": "Spell-Slot Progression",
+      "runs": [
+        {
+          "text": "Spell-Slot Progression",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "style": "Heading 1",
+      "text": "4. Deity Bounty and Ichor",
+      "runs": [
+        {
+          "text": "4. Deity Bounty and Ichor",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "style": "Heading 2",
+      "text": "How Each Path Uses Ichor",
+      "runs": [
+        {
+          "text": "How Each Path Uses Ichor",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "style": "List Bullet",
+      "text": "Melee / Non-Caster: Primary power source. Spent on weapon maneuvers, Thundercoil riders, pursuit, counters, and survival. No spell slots.",
+      "runs": [
+        {
+          "text": "Melee / Non-Caster: Primary power source. Spent on weapon maneuvers, Thundercoil riders, pursuit, counters, and survival. No spell slots.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "style": "List Bullet",
+      "text": "Half-Caster: Shared between weapon techniques, spellstrikes, fields, and rank 1–5 magic.",
+      "runs": [
+        {
+          "text": "Half-Caster: Shared between weapon techniques, spellstrikes, fields, and rank 1–5 magic.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "style": "List Bullet",
+      "text": "Full-Caster: Mostly spent to amplify, echo, protect, or reshape rank 1–9 magic; weapons are rarely required.",
+      "runs": [
+        {
+          "text": "Full-Caster: Mostly spent to amplify, echo, protect, or reshape rank 1–9 magic; weapons are rarely required.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "style": "Heading 1",
+      "text": "5. Thundercoil Integration",
+      "runs": [
+        {
+          "text": "5. Thundercoil Integration",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "style": "List Bullet",
+      "text": "Thundercoils are optional equipment and do not replace standard weapons or spells.",
+      "runs": [
+        {
+          "text": "Thundercoils are optional equipment and do not replace standard weapons or spells.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "style": "List Bullet",
+      "text": "The wielder must be proficient with the underlying weapon type.",
+      "runs": [
+        {
+          "text": "The wielder must be proficient with the underlying weapon type.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "style": "List Bullet",
+      "text": "Normal charge-pack, heat, Overload, Ichor-instability, maintenance, and corruption rules remain in force.",
+      "runs": [
+        {
+          "text": "Normal charge-pack, heat, Overload, Ichor-instability, maintenance, and corruption rules remain in force.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "style": "List Bullet",
+      "text": "A class feature delivered through a Thundercoil attack does not grant free charges or extra Overloads unless it explicitly says so.",
+      "runs": [
+        {
+          "text": "A class feature delivered through a Thundercoil attack does not grant free charges or extra Overloads unless it explicitly says so.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "style": "Heading 1",
+      "text": "6. Level 1-20 Advancement",
+      "runs": [
+        {
+          "text": "6. Level 1-20 Advancement",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "style": "Heading 1",
+      "text": "7. Subclasses",
+      "runs": [
+        {
+          "text": "7. Subclasses",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "style": "Heading 2",
+      "text": "1. Rebellion Reaver - Melee / Non-Caster",
+      "runs": [
+        {
+          "text": "1. Rebellion Reaver - Melee / Non-Caster",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "style": "Normal",
+      "text": "A weapon-first path built from cursed blades, soulfire fury, and close warbringing. It has no spell slots and relies on standard D&D weapons, Thundercoils, positioning, and deity-awarded Bounty Ichor.",
+      "runs": [
+        {
+          "text": "A weapon-first path built from cursed blades, soulfire fury, and close warbringing. It has no spell slots and relies on standard D&D weapons, Thundercoils, positioning, and deity-awarded Bounty Ichor.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "style": "Heading 2",
+      "text": "2. Prophetic Detonator - Half-Caster",
+      "runs": [
+        {
+          "text": "2. Prophetic Detonator - Half-Caster",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "style": "Normal",
+      "text": "A weapon-and-magic path built from midrange marks, chain explosions, and battlefield prediction. It mixes melee or ranged combat with a rank 1–5 spell progression and uses Bounty Ichor to join attacks, fields, and spells.",
+      "runs": [
+        {
+          "text": "A weapon-and-magic path built from midrange marks, chain explosions, and battlefield prediction. It mixes melee or ranged combat with a rank 1–5 spell progression and uses Bounty Ichor to join attacks, fields, and spells.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "style": "Heading 2",
+      "text": "3. Soulimit Oracle - Full-Caster",
+      "runs": [
+        {
+          "text": "3. Soulimit Oracle - Full-Caster",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "style": "Normal",
+      "text": "A dedicated magical path built from high-damage area prophecy and soulfire devastation. It rarely needs weapons, reaches spell rank 9, and spends Bounty Ichor to reshape area, range, timing, or target count.",
+      "runs": [
+        {
+          "text": "A dedicated magical path built from high-damage area prophecy and soulfire devastation. It rarely needs weapons, reaches spell rank 9, and spends Bounty Ichor to reshape area, range, timing, or target count.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "style": "Heading 1",
+      "text": "8. Implementation Notes",
+      "runs": [
+        {
+          "text": "8. Implementation Notes",
+          "bold": true,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "style": "List Bullet",
+      "text": "The melee/non-caster subclass receives no spell slots or class cantrips and relies on standard weapons, Thundercoils, positioning, and Bounty Ichor.",
+      "runs": [
+        {
+          "text": "The melee/non-caster subclass receives no spell slots or class cantrips and relies on standard weapons, Thundercoils, positioning, and Bounty Ichor.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "style": "List Bullet",
+      "text": "The half-caster and full-caster paths use the slot table in this dossier and select spells from the restored spell catalog.",
+      "runs": [
+        {
+          "text": "The half-caster and full-caster paths use the slot table in this dossier and select spells from the restored spell catalog.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "style": "List Bullet",
+      "text": "UA/playtest spells are optional and require explicit DM approval.",
+      "runs": [
+        {
+          "text": "UA/playtest spells are optional and require explicit DM approval.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "style": "List Bullet",
+      "text": "All D&D classes and subclasses listed above are transition references only; they are not additional selectable paths in this homebrew system.",
+      "runs": [
+        {
+          "text": "All D&D classes and subclasses listed above are transition references only; they are not additional selectable paths in this homebrew system.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "style": "List Bullet",
+      "text": "The JSON record and this DOCX are generated from the same source data model.",
+      "runs": [
+        {
+          "text": "The JSON record and this DOCX are generated from the same source data model.",
+          "bold": false,
+          "italic": false,
+          "underline": false
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "index": 0,
+      "rows": [
+        [
+          "Class Element",
+          "Rule"
+        ],
+        [
+          "Core identity",
+          "Mobile melee damage, necrotic lightning, corpse-powered storm effects, and magical weapon techniques."
+        ],
+        [
+          "Hit Die",
+          "d10"
+        ],
+        [
+          "Primary abilities",
+          "Strength or Dexterity, Charisma"
+        ],
+        [
+          "Saving throws",
+          "Constitution, Charisma"
+        ],
+        [
+          "Subclass choice",
+          "Level 3"
+        ],
+        [
+          "Three paths",
+          "Melee / Non-Caster; Half-Caster; Full-Caster"
+        ],
+        [
+          "Subclasses",
+          "Rebellion Reaver; Prophetic Detonator; Soulimit Oracle"
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "rows": [
+        [
+          "Core feature",
+          "Gravesquall"
+        ],
+        [
+          "Core rule",
+          "Marked creatures trail soul-light and static; defeating or critically wounding them feeds the class’s storm rhythm."
+        ],
+        [
+          "Class resource",
+          "Deathstorm Marks"
+        ],
+        [
+          "Field expression",
+          "a stormfront of whispering dead that slows enemies and grants allies cover"
+        ],
+        [
+          "Counter expression",
+          "turn incoming spell or weapon damage into a retaliatory necrotic lightning arc"
+        ],
+        [
+          "Apex expression",
+          "become the eye of a death derecho, chaining weapon hits and soul-lightning between marked enemies"
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "rows": [
+        [
+          "Deity",
+          "Nefarokir"
+        ],
+        [
+          "Pantheon order",
+          "9"
+        ],
+        [
+          "Titles",
+          "Keeper of the Design; Administrator of Death; Lord of the Forgotten Dead"
+        ],
+        [
+          "Domains",
+          "death, spirits, memory, burial, forgotten dead, underworld"
+        ],
+        [
+          "Manifestation",
+          "An immaculate funerary sovereign whose stillness resembles a judgment already entered into an unseen ledger."
+        ],
+        [
+          "Assignment rule",
+          "Exactly one canonical deity is assigned to this class."
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "rows": [
+        [
+          "Hit Die",
+          "d10"
+        ],
+        [
+          "Primary abilities",
+          "Strength or Dexterity, Charisma"
+        ],
+        [
+          "Saving throws",
+          "Constitution, Charisma"
+        ],
+        [
+          "Armor training",
+          "Light armor, Medium armor, Shields"
+        ],
+        [
+          "Weapon training",
+          "Simple weapons, Martial weapons, Martial Thundercoils"
+        ],
+        [
+          "Skill choices",
+          "choose, from"
+        ],
+        [
+          "Spellcasting ability",
+          "Charisma"
+        ],
+        [
+          "Subclass feature levels",
+          "3, 6, 10, 14"
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "rows": [
+        [
+          "Melee / Non-Caster",
+          "No class spellcasting; Ichor and Thundercoil effects remain class features."
+        ],
+        [
+          "Half-Caster schools",
+          "Necromancy, Evocation, Transmutation"
+        ],
+        [
+          "Full-Caster schools",
+          "Necromancy, Evocation, Transmutation, Abjuration"
+        ],
+        [
+          "Thematic traditions",
+          "death and undeath, storm power, spirit binding, spellblade conduction"
+        ],
+        [
+          "Spell save DC",
+          "8 + proficiency bonus + Charisma modifier"
+        ],
+        [
+          "Spell attack modifier",
+          "proficiency bonus + Charisma modifier"
+        ],
+        [
+          "Spell catalog",
+          "dnd_5e_spells_by_school_and_level.json"
+        ],
+        [
+          "Selection restriction",
+          "Allowed school + at least one documented D&D parent-class list, unless a feature expressly grants the spell."
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "rows": [
+        [
+          "Spell rank",
+          "Half-caster eligible",
+          "Full-caster eligible"
+        ],
+        [
+          "Cantrip",
+          "31",
+          "33"
+        ],
+        [
+          "1st",
+          "29",
+          "38"
+        ],
+        [
+          "2nd",
+          "41",
+          "47"
+        ],
+        [
+          "3rd",
+          "36",
+          "45"
+        ],
+        [
+          "4th",
+          "20",
+          "28"
+        ],
+        [
+          "5th",
+          "28",
+          "32"
+        ],
+        [
+          "6th",
+          "0",
+          "32"
+        ],
+        [
+          "7th",
+          "0",
+          "16"
+        ],
+        [
+          "8th",
+          "0",
+          "13"
+        ],
+        [
+          "9th",
+          "0",
+          "14"
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "rows": [
+        [
+          "Lvl",
+          "PB",
+          "Half slots",
+          "Full slots",
+          "Ctrips",
+          "Lvl",
+          "PB",
+          "Half slots",
+          "Full slots",
+          "Ctrips"
+        ],
+        [
+          "1",
+          "+2",
+          "—",
+          "—",
+          "—",
+          "11",
+          "+4",
+          "R1:4, R2:3, R3:2",
+          "R1:4, R2:3, R3:3, R4:3, R5:1",
+          "4"
+        ],
+        [
+          "2",
+          "+2",
+          "—",
+          "—",
+          "—",
+          "12",
+          "+4",
+          "R1:4, R2:3, R3:2",
+          "R1:4, R2:3, R3:3, R4:3, R5:2",
+          "4"
+        ],
+        [
+          "3",
+          "+2",
+          "R1:2",
+          "R1:2",
+          "3",
+          "13",
+          "+5",
+          "R1:4, R2:3, R3:3",
+          "R1:4, R2:3, R3:3, R4:3, R5:2, R6:1",
+          "4"
+        ],
+        [
+          "4",
+          "+2",
+          "R1:3",
+          "R1:3",
+          "3",
+          "14",
+          "+5",
+          "R1:4, R2:3, R3:3",
+          "R1:4, R2:3, R3:3, R4:3, R5:2, R6:1",
+          "4"
+        ],
+        [
+          "5",
+          "+3",
+          "R1:3",
+          "R1:4, R2:2",
+          "3",
+          "15",
+          "+5",
+          "R1:4, R2:3, R3:3, R4:1",
+          "R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1",
+          "4"
+        ],
+        [
+          "6",
+          "+3",
+          "R1:4",
+          "R1:4, R2:3",
+          "3",
+          "16",
+          "+5",
+          "R1:4, R2:3, R3:3, R4:1",
+          "R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1",
+          "4"
+        ],
+        [
+          "7",
+          "+3",
+          "R1:4, R2:2",
+          "R1:4, R2:3, R3:2",
+          "3",
+          "17",
+          "+6",
+          "R1:4, R2:3, R3:3, R4:2",
+          "R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1, R8:1",
+          "5"
+        ],
+        [
+          "8",
+          "+3",
+          "R1:4, R2:2",
+          "R1:4, R2:3, R3:3",
+          "3",
+          "18",
+          "+6",
+          "R1:4, R2:3, R3:3, R4:2",
+          "R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1, R8:1",
+          "5"
+        ],
+        [
+          "9",
+          "+4",
+          "R1:4, R2:3",
+          "R1:4, R2:3, R3:3, R4:1",
+          "3",
+          "19",
+          "+6",
+          "R1:4, R2:3, R3:3, R4:3, R5:1",
+          "R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1, R8:1, R9:1",
+          "5"
+        ],
+        [
+          "10",
+          "+4",
+          "R1:4, R2:3",
+          "R1:4, R2:3, R3:3, R4:2",
+          "4",
+          "20",
+          "+6",
+          "R1:4, R2:3, R3:3, R4:3, R5:1",
+          "R1:4, R2:3, R3:3, R4:3, R5:3, R6:1, R7:1, R8:1, R9:1",
+          "5"
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "rows": [
+        [
+          "Resource",
+          "Bounty Ichor"
+        ],
+        [
+          "Reserve",
+          "proficiency bonus + the class spellcasting ability modifier (minimum 2; use the listed primary mental ability for the non-caster path)"
+        ],
+        [
+          "Refresh",
+          "Regain all expended Bounty Ichor when you finish a long rest. When the listed bounty trigger is completed during initiative, regain 1 expended Ichor, no more than once per round and never above the reserve maximum. The same creature, object, or event can satisfy the trigger only once."
+        ],
+        [
+          "Bounty trigger",
+          "Lay an unquiet dead creature to rest, defeat a soul-devourer, or recover a forgotten name for proper burial."
+        ],
+        [
+          "Deity boon",
+          "grave-black Ichor that adds necrotic thunder to a weapon hit and lets the wielder step through the dying creature’s storm-wake"
+        ],
+        [
+          "Fictional safety",
+          "Bounty Ichor and Thundercoil Ichor are fictional tabletop materials; this dataset contains no real-world construction, chemistry, electronics, or weapon instructions."
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "rows": [
+        [
+          "Training",
+          "Martial Thundercoils"
+        ],
+        [
+          "Preferred platforms",
+          "Thundercoil Sword, Thundercoil Axe, Thundercoil Shotgun, Thundercoil Handgun, Thundercoil Grenade"
+        ],
+        [
+          "Signature interaction",
+          "Deathstorm Conduction: When the Derecho activates a class feature through a charged Thundercoil strike, its necrotic and lightning effects may appear as a single supernatural discharge. Creatures defeated by these attacks can fuel its corpse-powered abilities, but the weapon still expends its normal charge."
+        ],
+        [
+          "Notes",
+          "['The Derecho Death Dealer channels necrotic storms through conductive weaponry. Its Sword supports fast spellblade combat and electrical parries, while its Axe excels when cutting through clustered enemies and harvesting power from defeated creatures.', 'The Shotgun gives the class a close-range storm burst for breaking formations before entering melee. A Derecho can treat the cyan discharge of a charged weapon as black, violet, corpse-blue, or grave-green lightning.']"
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "rows": [
+        [
+          "Lvl",
+          "PB",
+          "Common features",
+          "Melee / Non-Caster",
+          "Half-Caster",
+          "Full-Caster"
+        ],
+        [
+          "1",
+          "+2",
+          "Gravesquall: Marked creatures trail soul-light and static; when a marked hostile creature drops to 0 hit points or you score a critical hit against it, the class’s storm rhythm advances, no more than once per round. Deity Bounty: receive sealed Bounty Ichor and learn the class-specific bounty trigger.",
+          "—",
+          "—",
+          "—"
+        ],
+        [
+          "2",
+          "+2",
+          "Ichor Technique: spend 1 Bounty Ichor to express grave-black Ichor that adds necrotic thunder to a weapon hit and lets the wielder step through the dying creature’s storm-wake. Weapon and Thundercoil Familiarity: apply the class’s listed training and preferred platforms.",
+          "—",
+          "—",
+          "—"
+        ],
+        [
+          "3",
+          "+2",
+          "Subclass: choose the melee/non-caster, half-caster, or full-caster path.",
+          "No spellcasting. Gain Ichor Maneuvers and weapon mastery.",
+          "Half-caster spellcasting begins at spell rank 1. Slots R1:2.",
+          "Full-caster spellcasting begins at spell rank 1. Slots R1:2; 3 cantrips."
+        ],
+        [
+          "4",
+          "+2",
+          "Ability Score Improvement or feat.",
+          "—",
+          "Slots R1:3.",
+          "Slots R1:3; 3 cantrips."
+        ],
+        [
+          "5",
+          "+3",
+          "Path Engine: non-caster and half-caster paths gain Extra Attack; full-caster path gains Potent Casting.",
+          "Extra Attack.",
+          "Extra Attack. Slots R1:3.",
+          "Potent Casting: add casting ability to one damage or healing roll each turn. Slots R1:4, R2:2; 3 cantrips."
+        ],
+        [
+          "6",
+          "+3",
+          "Subclass feature.",
+          "—",
+          "Slots R1:4.",
+          "Slots R1:4, R2:3; 3 cantrips."
+        ],
+        [
+          "7",
+          "+3",
+          "Integrated Conduction: class features may mark the target with corpse-static, preventing reactions until the start of its next turn through an eligible standard or Thundercoil weapon.",
+          "—",
+          "Slots R1:4, R2:2.",
+          "Slots R1:4, R2:3, R3:2; 3 cantrips."
+        ],
+        [
+          "8",
+          "+3",
+          "Ability Score Improvement or feat.",
+          "—",
+          "Slots R1:4, R2:2.",
+          "Slots R1:4, R2:3, R3:3; 3 cantrips."
+        ],
+        [
+          "9",
+          "+4",
+          "Greater Deathstorm Marks: affect an additional target, larger area, or longer duration when spending 2 Bounty Ichor.",
+          "—",
+          "Slots R1:4, R2:3.",
+          "Slots R1:4, R2:3, R3:3, R4:1; 3 cantrips."
+        ],
+        [
+          "10",
+          "+4",
+          "Subclass feature.",
+          "—",
+          "Slots R1:4, R2:3.",
+          "Slots R1:4, R2:3, R3:3, R4:2; 4 cantrips."
+        ],
+        [
+          "11",
+          "+4",
+          "Path Mastery: non-caster improves weapon pressure; half-caster gains Ichor Spellstrike; full-caster gains Master Channeling.",
+          "Relentless Armament: once each turn, add one additional weapon die after spending Bounty Ichor.",
+          "Ichor Spellstrike: combine a weapon hit and a spell effect once each turn. Slots R1:4, R2:3, R3:2.",
+          "Master Channeling: alter range, area, or target count after spending Bounty Ichor. Slots R1:4, R2:3, R3:3, R4:3, R5:1; 4 cantrips."
+        ],
+        [
+          "12",
+          "+4",
+          "Ability Score Improvement or feat.",
+          "—",
+          "Slots R1:4, R2:3, R3:2.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:2; 4 cantrips."
+        ],
+        [
+          "13",
+          "+5",
+          "Deep Reserve: regain 2 spent Bounty Ichor when initiative is rolled with none remaining; maximum reserve increases by 1.",
+          "—",
+          "Slots R1:4, R2:3, R3:3.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:2, R6:1; 4 cantrips."
+        ],
+        [
+          "14",
+          "+5",
+          "Subclass feature.",
+          "—",
+          "Slots R1:4, R2:3, R3:3.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:2, R6:1; 4 cantrips."
+        ],
+        [
+          "15",
+          "+5",
+          "Unbroken Gravesquall: the core mechanic degrades rather than ending after one interruption, failed check, or forced movement.",
+          "—",
+          "Slots R1:4, R2:3, R3:3, R4:1.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1; 4 cantrips."
+        ],
+        [
+          "16",
+          "+5",
+          "Ability Score Improvement or feat.",
+          "—",
+          "Slots R1:4, R2:3, R3:3, R4:1.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1; 4 cantrips."
+        ],
+        [
+          "17",
+          "+6",
+          "Apex Bounty: once per long rest, become the eye of a death derecho, chaining weapon hits and soul-lightning between marked enemies.",
+          "—",
+          "Slots R1:4, R2:3, R3:3, R4:2.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1, R8:1; 5 cantrips."
+        ],
+        [
+          "18",
+          "+6",
+          "Deity’s Claim: when you roll initiative with no Bounty Ichor remaining, regain 1. Once per round, reduce the Ichor cost of a purely protective reaction by 1 (minimum 0); the feature still expends your reaction.",
+          "—",
+          "Slots R1:4, R2:3, R3:3, R4:2.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1, R8:1; 5 cantrips."
+        ],
+        [
+          "19",
+          "+6",
+          "Ability Score Improvement or feat; Epic Boon eligibility when used by the campaign.",
+          "—",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:1.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:2, R6:1, R7:1, R8:1, R9:1; 5 cantrips."
+        ],
+        [
+          "20",
+          "+6",
+          "Derecho Death Dealer Apotheosis: for 1 minute, begin each turn with at least 2 Bounty Ichor and invoke one subclass feature each round without its normal Ichor cost.",
+          "—",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:1.",
+          "Slots R1:4, R2:3, R3:3, R4:3, R5:3, R6:1, R7:1, R8:1, R9:1; 5 cantrips."
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "rows": [
+        [
+          "Caster tier",
+          "Melee / Non-Caster"
+        ],
+        [
+          "Legacy source class",
+          "Soul Harbinger"
+        ],
+        [
+          "Legacy focus",
+          "cursed blades, soulfire fury, and close warbringing"
+        ],
+        [
+          "Spellcasting",
+          "None"
+        ],
+        [
+          "Spellcasting ability",
+          "None"
+        ],
+        [
+          "Allowed schools",
+          "None"
+        ],
+        [
+          "Spell save DC",
+          "Not applicable"
+        ],
+        [
+          "Feature levels",
+          "3, 6, 10, 14"
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "rows": [
+        [
+          "Level",
+          "Feature",
+          "Effect"
+        ],
+        [
+          "3",
+          "Rebellion Reaver Bounty",
+          "When you hit with a proficient standard or Thundercoil weapon, spend 1 Bounty Ichor to add 1d6 themed damage and mark the target with corpse-static, preventing reactions until the start of its next turn. The die becomes d8 at level 10 and d10 at level 17. This path never gains spellcasting."
+        ],
+        [
+          "6",
+          "Rebellion Reaver Pursuit",
+          "After you spend Bounty Ichor on Rebellion Reaver Bounty, you may move up to half your speed without provoking opportunity attacks from the affected target. Until the start of your next turn, you gain +2 AC against that target. This expression retains the path theme of cursed blades, soulfire fury, and close warbringing."
+        ],
+        [
+          "10",
+          "Rebellion Reaver Reversal",
+          "When you or a creature within 5 feet of you takes damage, use your reaction and spend 1 Bounty Ichor to reduce that damage by 1d10 + your proficiency bonus + your relevant class ability modifier. If the source is within your weapon’s range, you may make one weapon attack against it as part of the same reaction."
+        ],
+        [
+          "14",
+          "Rebellion Reaver Apex",
+          "Once per long rest, or by spending 3 Bounty Ichor, enter a martial apex for 1 minute. The first Ichor Maneuver you use on each of your turns costs 0 Ichor, and after you hit with a weapon you may move 10 feet without provoking from that target. This path never gains spellcasting."
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "rows": [
+        [
+          "Caster tier",
+          "Half-Caster"
+        ],
+        [
+          "Legacy source class",
+          "Soul Harbinger"
+        ],
+        [
+          "Legacy focus",
+          "midrange marks, chain explosions, and battlefield prediction"
+        ],
+        [
+          "Spellcasting",
+          "Half"
+        ],
+        [
+          "Spellcasting ability",
+          "Charisma"
+        ],
+        [
+          "Allowed schools",
+          "Necromancy, Evocation, Transmutation"
+        ],
+        [
+          "Spell save DC",
+          "8 + proficiency bonus + Charisma modifier"
+        ],
+        [
+          "Feature levels",
+          "3, 6, 10, 14"
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "rows": [
+        [
+          "Level",
+          "Feature",
+          "Effect"
+        ],
+        [
+          "3",
+          "Prophetic Detonator Conduit",
+          "Gain half-caster spellcasting using Charisma. You prepare spells from Necromancy, Evocation, Transmutation. Once per turn when you hit with a weapon, you may expend one spell slot to deal an additional 1d8 thematic damage per rank of the slot, or to apply an equivalent healing or control rider defined by the feature."
+        ],
+        [
+          "6",
+          "Prophetic Detonator Relay",
+          "As an action, or by spending 2 Bounty Ichor as a bonus action, create a 10-foot-radius class field at a point within 60 feet for 1 minute. You can have only one such field. At the start of an ally’s turn in the field, it gains temporary hit points equal to your proficiency bonus. An enemy that enters the field for the first time on a turn or starts there must succeed on a class-feature saving throw or have its speed reduced by 10 feet until its next turn. The field expresses midrange marks, chain explosions, and battlefield prediction."
+        ],
+        [
+          "10",
+          "Prophetic Detonator Counter",
+          "When you or an ally in your class field takes damage, use your reaction and spend 1 Bounty Ichor to reduce the damage by 1d8 + your proficiency bonus + your Charisma modifier. You may then move the field up to 20 feet or make one weapon attack against the source if it is in range."
+        ],
+        [
+          "14",
+          "Prophetic Detonator Dominion",
+          "Once per long rest, or by spending 3 Bounty Ichor, enlarge your class field to a 20-foot radius for 1 minute. Its temporary hit points and speed penalty apply each round without further Ichor cost, and you may move the field up to 20 feet as a bonus action."
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "rows": [
+        [
+          "Caster tier",
+          "Full-Caster"
+        ],
+        [
+          "Legacy source class",
+          "Soul Harbinger"
+        ],
+        [
+          "Legacy focus",
+          "high-damage area prophecy and soulfire devastation"
+        ],
+        [
+          "Spellcasting",
+          "Full"
+        ],
+        [
+          "Spellcasting ability",
+          "Charisma"
+        ],
+        [
+          "Allowed schools",
+          "Necromancy, Evocation, Transmutation, Abjuration"
+        ],
+        [
+          "Spell save DC",
+          "8 + proficiency bonus + Charisma modifier"
+        ],
+        [
+          "Feature levels",
+          "3, 6, 10, 14"
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "rows": [
+        [
+          "Level",
+          "Feature",
+          "Effect"
+        ],
+        [
+          "3",
+          "Soulimit Oracle Invocation",
+          "Gain full-caster spellcasting using Charisma. You prepare spells from Necromancy, Evocation, Transmutation, Abjuration. When you cast a class spell, you may spend 1 Bounty Ichor to choose one: increase its range by 30 feet; change its damage to a class-appropriate type; or add one additional target when the spell normally targets only one creature and the second target is within 30 feet of the first."
+        ],
+        [
+          "6",
+          "Soulimit Oracle Echo",
+          "Once per turn when you spend Bounty Ichor on a spell that targets only one creature and is not Self-range, choose a second legal target. The echo uses the same attack roll; if it requires a saving throw, the second target has advantage. An echoed effect deals or restores half the rolled amount and cannot impose a condition lasting longer than one round."
+        ],
+        [
+          "10",
+          "Soulimit Oracle Mastery",
+          "Choose one damage type or control theme central to high-damage area prophecy and soulfire devastation; you gain resistance to that damage type when appropriate. Once per turn when you spend Bounty Ichor on a class spell, that spell ignores resistance to one of its damage types for that casting, but never ignores immunity."
+        ],
+        [
+          "14",
+          "Soulimit Oracle Apotheosis",
+          "Once per long rest, cast one prepared class spell of rank 6 or lower without expending a spell slot and apply one level-3 Bounty Ichor modification without spending Ichor. The spell still follows its normal casting time, components, concentration, attack, and saving-throw rules."
+        ]
+      ]
+    }
+  ],
+  "images": []
+}

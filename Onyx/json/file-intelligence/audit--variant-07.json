@@ -1,0 +1,17 @@
+{
+  "schema": "ai-brain-source-note/1.0",
+  "domain": "file-intelligence",
+  "capabilities": [
+    "class",
+    "layer",
+    "manifest",
+    "quest"
+  ],
+  "provenance": {
+    "sourceGroup": "player-reference-runtime-a",
+    "sourceType": "provided-project-material",
+    "archiveHash": "ff8940c1250d6e84"
+  },
+  "title": "audit.md",
+  "content": "# Integration Audit: ECC\n\n- Reviewed: 2026-07-23\n- Used as architectural reference: yes\n- Whole upstream tree copied: no\n- Source ZIP retained: no\n- Runtime dependency introduced: no\n- Documentation set: one audit, one manifest, one readme, one license record\n\n## Applied concepts\n\nReviewed its cross-harness agent workflow, explicit skill boundaries, debugging discipline, verification gates, and security-first integration approach. Applied those concepts to the request classifier, creator bridge, smoke tests, and audit workflow. No ECC source tree was copied.\n"
+}
