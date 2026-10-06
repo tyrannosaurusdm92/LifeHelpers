@@ -1,0 +1,1 @@
+export default JSON.parse("{\"schema\":\"ai-brain.knowledge-index-manifest.v1\",\"totalEntries\":11216,\"parts\":23,\"pattern\":\"json/core/knowledge-index-NNN.json\"}");
