@@ -1,0 +1,1 @@
+export default JSON.parse("{\"name\":\"unified-psychiatric-ai-brain-part2\",\"version\":\"2.0.0\",\"private\":true,\"type\":\"module\",\"scripts\":{\"test\":\"node tests/smoke.mjs\"}}");
