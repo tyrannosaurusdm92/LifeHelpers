@@ -1,0 +1,5 @@
+'use strict';
+function canonical(value){if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+canonical(value[k])).join(',')+'}';return JSON.stringify(value);}
+function checksum(value){const s=canonical(value);let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0).toString(16).padStart(8,'0');}
+function migrate(snapshot,targetVersion,migrations){if(!snapshot||!Number.isInteger(snapshot.version)||!Number.isInteger(targetVersion)||targetVersion<snapshot.version)throw new Error('invalid migration request');let state=structuredClone(snapshot.state),version=snapshot.version;while(version<targetVersion){const fn=migrations[version];if(typeof fn!=='function')throw new Error('missing migration from version '+version);state=fn(state);version++;}return {version,state,checksum:checksum(state)};}
+module.exports={canonical,checksum,migrate};
