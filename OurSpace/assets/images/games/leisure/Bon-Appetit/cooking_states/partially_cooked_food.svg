@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc" data-cook-state="partially-cooked">
+  <title id="title">Partially cooked food</title><desc id="desc">Food browned at the edges while the center is still pink.</desc>
+  <defs><radialGradient id="cook" cx="50%" cy="46%" r="60%"><stop offset="0" stop-color="#d88788"/><stop offset=".48" stop-color="#d99a67"/><stop offset="1" stop-color="#9b552d"/></radialGradient></defs>
+  <path d="M37 132c8-43 41-76 86-82 42-6 88 13 99 52 10 36-13 73-48 91-38 20-94 18-121-14-12-14-20-30-16-47Z" fill="#111" opacity=".18"/>
+  <path d="M29 119c8-43 41-76 86-82 42-6 88 13 99 52 10 36-13 73-48 91-38 20-94 18-121-14-12-14-20-30-16-47Z" fill="url(#cook)" stroke="#121212" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M69 92c35-22 84-17 112 10M56 157c31 22 83 24 123 2" fill="none" stroke="#75401f" stroke-width="8" stroke-linecap="round" opacity=".58"/>
+  <path d="M96 107c15-10 37-11 54-2 14 8 20 23 15 35-7 16-28 25-47 20-21-5-34-25-26-41 1-4 2-8 4-12Z" fill="#dc8d91" opacity=".9"/>
+  <path d="M83 46c-12-15 10-22 0-37M128 39c-12-15 10-22 0-37M172 48c-12-15 10-22 0-37" fill="none" stroke="#777" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+</svg>
