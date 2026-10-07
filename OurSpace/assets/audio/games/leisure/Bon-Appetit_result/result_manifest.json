@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "visualAssets": {
+    "hungry": "assets/images/shared/legacy-static/onyx_hungry.png",
+    "purring": "assets/images/shared/legacy-static/onyx_purring.png",
+    "judgmental": "assets/images/shared/legacy-static/onyx_judgmental.png",
+    "caring": "assets/images/shared/legacy-static/onyx_caring.png",
+    "listening": "assets/images/shared/legacy-static/onyx_listening.png",
+    "sleepy": "assets/images/shared/legacy-static/onyx_sleepy.png",
+    "snuggly": "assets/images/shared/legacy-static/onyx_snuggly.png",
+    "thinking": "assets/images/shared/legacy-static/onyx_thinking.png",
+    "thoughtful": "assets/images/shared/legacy-static/onyx_thoughtful.png"
+  },
+  "audioAssets": {
+    "purring": "assets/audio/games/leisure/Bon-Appetit_result/purring_result.mp3",
+    "judgmental": "assets/audio/games/leisure/Bon-Appetit_result/judgmental_result.mp3"
+  },
+  "rule": "Hungry decision beat; stars >= 3 => purring; stars < 3 => judgmental. Cat audio is supplemental and never scoring authority.",
+  "onyxCatFeedback": {
+    "votePrompt": "assets/audio/games/leisure/shared/onyx/vote_prompt.mp3",
+    "positive": "assets/audio/games/leisure/shared/onyx/vote_positive.mp3",
+    "negative": "assets/audio/games/leisure/shared/onyx/vote_negative.mp3",
+    "sourceManifest": "assets/audio/games/leisure/shared/onyx/cat_sound_manifest.json"
+  }
+}

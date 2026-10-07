@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "note": "User-supplied cat recordings selected for Feed Him MEOW UI/game feedback. Source filenames retained for provenance; license/provenance beyond the user-supplied archive was not independently verified in this pass.",
+  "events": {
+    "booster_menu_open": {
+      "asset": "assets/audio/games/leisure/shared/onyx/booster_menu_open.mp3",
+      "sourceFile": "kaggle_cat_51_1.wav",
+      "durationSeconds": 0.54,
+      "sha256": "726f61f5316d6a443d0536d8b29b0efebf6f52ac3a278578677189cd56fc4b8e"
+    },
+    "booster_confirm": {
+      "asset": "assets/audio/games/leisure/shared/onyx/booster_confirm.mp3",
+      "sourceFile": "kaggle_cat_31_1.wav",
+      "durationSeconds": 0.504,
+      "sha256": "0c6900c079e0131b72f78747c36ea506a9199801b12accc91e5c8a11644bd18e"
+    },
+    "booster_used": {
+      "asset": "assets/audio/games/leisure/shared/onyx/booster_used.mp3",
+      "sourceFile": "kaggle_cat_38_3.wav",
+      "durationSeconds": 0.684,
+      "sha256": "ae0d7c6a815835f86dc91edd82f879529956bd3a044028ef7d4d40d3c29266ef"
+    },
+    "vote_prompt": {
+      "asset": "assets/audio/games/leisure/shared/onyx/vote_prompt.mp3",
+      "sourceFile": "kaggle_cat_43_0.wav",
+      "durationSeconds": 0.828,
+      "sha256": "68ee0c5c26d20f722de28b19695f9e378454e93c52e9bade1aa51ba35c9fb0d9"
+    },
+    "vote_positive": {
+      "asset": "assets/audio/games/leisure/shared/onyx/vote_positive.mp3",
+      "sourceFile": "kaggle_cat_34_1.wav",
+      "durationSeconds": 1.404,
+      "sha256": "a8bc6e1eae0451b5cba9b11ccd1803bbb33f5daad5fa66c7605012a150f702ed"
+    },
+    "vote_negative": {
+      "asset": "assets/audio/games/leisure/shared/onyx/vote_negative.mp3",
+      "sourceFile": "kaggle_cat_14_7.wav",
+      "durationSeconds": 0.756,
+      "sha256": "0599238398f8b0d494191d222af3645ddeca6970cbec4209957df42f354a690a"
+    }
+  }
+}
