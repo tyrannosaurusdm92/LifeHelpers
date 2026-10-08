@@ -1,0 +1,7 @@
+/* Portal-era chest-up Judgmental styling.
+ * Deliberately restricted to the widget/module avatar; never styles game canvases. */
+.onyx-round-widget[data-mood="judgmental"] #onyxCanvas{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-round-widget[data-mood="judgmental"] #onyxFallback{image-rendering:auto;}

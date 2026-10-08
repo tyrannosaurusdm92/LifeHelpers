@@ -1,0 +1,16 @@
+/* Timing tokens for the snuggly flipbook-style full-body loop. */
+/* Pass 6: idle uses all five authored poses; walk/run phase follows traveled distance. */
+#catActor[data-behavior="snuggly"] {
+  --onyx-idle-cycle-ms:3450ms;
+  --onyx-idle-phase-weights:10 1 11 1 12;
+  --onyx-walk-phase-source:screen-distance;
+  --onyx-run-phase-source:screen-distance;
+  --onyx-walk-cycle-ms:630ms;
+  --onyx-walk-phase-weights:1 1 1 1 1;
+  --onyx-run-cycle-ms:470ms;
+  --onyx-run-phase-weights:1 1 1 1 1;
+}
+#catActor[data-behavior="snuggly"] #catSprite {
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}

@@ -1,0 +1,180 @@
+/* Pass 8 — measured main stage with a full-width, content-sized linked-board deck. */
+
+.game-shell[data-reference-pass="8"]{
+  width:100%;
+  height:100dvh;
+  min-height:640px;
+  overflow:auto;
+}
+.game-shell[data-reference-pass="8"] .game-layout{
+  width:100%;
+  height:100%;
+  min-height:640px;
+  grid-template-columns:minmax(0,1fr) minmax(270px,320px)!important;
+  grid-template-rows:minmax(0,1fr);
+}
+.game-shell[data-reference-pass="8"] .board-zone{
+  min-width:0;
+  min-height:640px;
+  grid-template-rows:auto minmax(300px,1fr) minmax(0,auto) auto;
+  overflow:hidden;
+}
+.game-shell[data-reference-pass="8"] .board-play-area{
+  display:grid!important;
+  grid-template-areas:"main"!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,1fr)!important;
+  min-width:0;
+  min-height:300px;
+  gap:0!important;
+  overflow:auto!important;
+  padding:8px!important;
+  align-items:center!important;
+  justify-items:center!important;
+}
+.game-shell[data-reference-pass="8"] .main-board-wrap{
+  grid-area:main!important;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  min-width:0;
+  min-height:0;
+  padding:20px 8px 8px;
+  display:grid;
+  place-items:center;
+  overflow:visible;
+}
+.game-shell[data-reference-pass="8"] .garden-grid.main-grid{
+  --cell:var(--main-cell,48px);
+  max-width:max-content;
+  margin:auto;
+}
+.game-shell[data-reference-pass="8"] .secondary-left,
+.game-shell[data-reference-pass="8"] .secondary-right,
+.game-shell[data-reference-pass="8"] .secondary-top{
+  display:none!important;
+}
+
+.game-shell[data-reference-pass="8"] .right-ui{
+  min-width:0;
+  min-height:0;
+  height:100%;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+.secondary-deck[hidden]{display:none!important}
+.game-shell[data-reference-pass="8"] .secondary-deck{
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  max-height:min(36vh,360px);
+  overflow:auto;
+  overscroll-behavior:contain;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
+  grid-auto-rows:max-content;
+  justify-items:center;
+  align-content:start;
+  gap:10px;
+  padding:10px;
+  border-top:3px solid rgba(255,255,255,.72);
+  border-bottom:2px solid rgba(255,255,255,.38);
+  background:rgba(4,25,36,.28);
+}
+.game-shell[data-reference-pass="8"] .secondary-deck-title{
+  grid-column:1/-1;
+  width:100%;
+  margin:0;
+  text-align:center;
+  color:#fff7a6;
+  font-size:clamp(11px,1.1vw,14px);
+  line-height:1.2;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  text-shadow:0 2px 2px #061e27;
+}
+.game-shell[data-reference-pass="8"] .secondary-card[data-sat-cols]{
+  box-sizing:border-box!important;
+  width:var(--sat-card-width,fit-content)!important;
+  min-width:0!important;
+  max-width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  margin:0;
+  padding:7px!important;
+  flex:none!important;
+  justify-self:center;
+  align-self:start;
+  overflow:visible!important;
+}
+.game-shell[data-reference-pass="8"] .secondary-card[data-sat-cols] > h3,
+.game-shell[data-reference-pass="8"] .secondary-card[data-sat-cols] > small,
+.game-shell[data-reference-pass="8"] .secondary-card[data-sat-cols] > .hybrid-helper,
+.game-shell[data-reference-pass="8"] .secondary-card[data-sat-cols] > .secondary-meter{
+  box-sizing:border-box;
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.game-shell[data-reference-pass="8"] .garden-grid.secondary-grid{
+  --cell:var(--sat-cell,40px)!important;
+  box-sizing:border-box!important;
+  width:var(--sat-grid-width,max-content)!important;
+  min-width:0!important;
+  max-width:100%!important;
+  grid-template-columns:repeat(var(--cols),var(--cell))!important;
+  grid-auto-rows:var(--cell)!important;
+  gap:2px!important;
+  padding:4px!important;
+  margin:0 auto!important;
+  overflow:visible!important;
+}
+.game-shell[data-reference-pass="8"] .secondary-grid .garden-cell{
+  width:var(--cell)!important;
+  height:var(--cell)!important;
+}
+.game-shell[data-reference-pass="8"] .bottom-hud{position:relative!important}
+
+/* Shorter/wider screens let the deck and right UI flow after the main level. */
+@media(max-width:1050px){
+  .game-shell[data-reference-pass="8"]{
+    height:auto;
+    min-height:100svh;
+    overflow:visible;
+  }
+  .game-shell[data-reference-pass="8"] .game-layout{
+    height:auto;
+    min-height:100svh;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:auto auto;
+  }
+  .game-shell[data-reference-pass="8"] .board-zone{
+    min-height:100svh;
+    grid-template-rows:auto minmax(340px,1fr) auto auto;
+  }
+  .game-shell[data-reference-pass="8"] .board-play-area{
+    min-height:min(58svh,580px);
+    max-height:none;
+  }
+  .game-shell[data-reference-pass="8"] .secondary-deck{
+    max-height:none;
+    overflow:visible;
+  }
+  .game-shell[data-reference-pass="8"] .right-ui{
+    height:auto;
+    max-height:none;
+    overflow:visible;
+    border-left:0;
+    border-top:3px solid rgba(255,255,255,.72);
+  }
+}
+
+@media(max-width:520px){
+  .game-shell[data-reference-pass="8"] .board-zone{padding:6px 4px 4px}
+  .game-shell[data-reference-pass="8"] .board-play-area{padding:4px!important}
+  .game-shell[data-reference-pass="8"] .main-board-wrap{padding:17px 2px 6px}
+  .game-shell[data-reference-pass="8"] .secondary-deck{grid-template-columns:minmax(0,1fr)}
+}

@@ -1,0 +1,122 @@
+/* Onyx Caring — Pass 3 of 5
+   Third caring-state refinement: two-paw reassurance pose, softer eye read, and steadier Portal-scale hearts. Character remains transparent and the electric-blue
+   environment stays on its independent runtime/composition surface. */
+:root{
+  --onyx-caring-ink:#090B0D;
+  --onyx-caring-fur:#212121;
+  --onyx-caring-eye:#BDD36B;
+  --onyx-caring-bow:#4F8C58;
+  --onyx-caring-heart:#E69AB2;
+}
+[data-onyx-caring-pass="3"] #generatorProcessedCanvas,
+[data-onyx-caring-pass="3"] .portal-runtime-canvas,
+[data-onyx-caring-pass="2"] #generatorProcessedCanvas,
+[data-onyx-caring-pass="2"] .portal-runtime-canvas,
+[data-onyx-caring-pass="1"] #generatorProcessedCanvas,
+[data-onyx-caring-pass="1"] .portal-runtime-canvas,
+canvas[data-onyx-caring-pass="3"],
+canvas[data-onyx-caring-pass="2"],
+canvas[data-onyx-caring-pass="1"]{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-caring-pass3-preview,
+.onyx-caring-pass2-preview,
+.onyx-caring-pass1-preview{
+  position:relative;
+  width:170px;
+  height:170px;
+  overflow:hidden;
+  background:transparent;
+  isolation:isolate;
+  contain:paint;
+}
+.onyx-caring-pass3-preview canvas,
+.onyx-caring-pass2-preview canvas,
+.onyx-caring-pass1-preview canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  background:transparent;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-caring-pass3-preview[data-portal-preview="true"],
+.onyx-caring-pass2-preview[data-portal-preview="true"],
+.onyx-caring-pass1-preview[data-portal-preview="true"],
+canvas[data-onyx-caring-portal="true"]{
+  width:160px;
+  height:160px;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+canvas[data-onyx-caring-portal-grid="80"]{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-caring-pass3-badge,
+.onyx-caring-pass2-badge,
+.onyx-caring-pass1-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.28rem .48rem;
+  border:1px solid currentColor;
+  border-radius:999px;
+  font-size:.72rem;
+  line-height:1;
+}
+.onyx-caring-pass3-badge::before,
+.onyx-caring-pass2-badge::before,
+.onyx-caring-pass1-badge::before{content:"♥";color:var(--onyx-caring-heart)}
+.onyx-caring-character-surface{background:transparent!important;isolation:isolate}
+.onyx-caring-environment-surface{pointer-events:none}
+canvas[data-onyx-caring-internal-first="true"],
+canvas[data-onyx-caring-portal="true"]{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+  filter:none!important;
+  mix-blend-mode:normal;
+}
+.onyx-widget[data-mood="caring"] #onyxCanvas[data-onyx-caring-export="pass3"],
+#onyxCanvas[data-onyx-caring-export="pass3"],
+.onyx-widget[data-mood="caring"] #onyxCanvas[data-onyx-caring-export="pass2"],
+#onyxCanvas[data-onyx-caring-export="pass2"],
+.onyx-widget[data-mood="caring"] #onyxCanvas[data-onyx-caring-export="pass1"],
+#onyxCanvas[data-onyx-caring-export="pass1"]{
+  background:transparent!important;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+  mix-blend-mode:normal;
+}
+html[data-onyx-caring-pass="3"] .onyx-widget[data-mood="caring"] #onyxCanvas,
+html[data-onyx-caring-pass="2"] .onyx-widget[data-mood="caring"] #onyxCanvas,
+html[data-onyx-caring-pass="1"] .onyx-widget[data-mood="caring"] #onyxCanvas{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+@media (prefers-reduced-motion:reduce){.onyx-caring-pass3-preview,
+.onyx-caring-pass2-preview,
+.onyx-caring-pass1-preview{scroll-behavior:auto}}
+
+/* Pass 3 protects the held-heart contact and both paw silhouettes from soft browser scaling. */
+.onyx-caring-heart-contact,.onyx-caring-paw-contact{image-rendering:pixelated;image-rendering:crisp-edges}
+
+
+/* Pass 3 reassurance readability: keep the heart/paw contact and soft eyes crisp at the actual Portal scale. */
+canvas[data-onyx-caring-portal="true"],
+.onyx-widget[data-mood="caring"] #onyxCanvas{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+  filter:none!important;
+}
+.onyx-widget[data-mood="caring"] #onyxCanvas[data-onyx-caring-export="pass3"]{
+  background:transparent!important;
+  mix-blend-mode:normal;
+}
+
+
+/* OurSpace scope lock: chest-up mood styling applies to the module/widget avatar only; game actor canvases are separate. */
+.onyx-round-widget[data-mood="caring"] #onyxCanvas{image-rendering:pixelated;image-rendering:crisp-edges;}

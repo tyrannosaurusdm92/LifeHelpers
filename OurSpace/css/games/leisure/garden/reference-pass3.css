@@ -1,0 +1,80 @@
+
+/* Pass 3: sparse paw underlays + transparent tile overlays + hybrid pudding-pop visuals */
+:root{
+  --aurora-a:#00ffff;
+  --aurora-b:#008080;
+  --aurora-c:#1e90ff;
+  --aurora-glow:rgba(0,255,255,.45);
+  --aurora-density:.55;
+}
+.garden-cell{
+  background-image:none !important;
+  background-color:transparent !important;
+  box-shadow:0 2px 2px rgba(0,0,0,.26), inset 0 0 0 1px rgba(255,255,255,.18);
+}
+.garden-cell::before{
+  content:"";
+  position:absolute;
+  inset:1px;
+  z-index:2;
+  pointer-events:none;
+  border-radius:8px;
+  background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.16), inset 0 -6px 10px rgba(0,0,0,.08);
+  backdrop-filter:saturate(1.02);
+}
+.garden-cell.has-underlay[data-underlay="row"]{background-image:var(--paw1) !important; background-size:82% 82%; background-repeat:no-repeat; background-position:center;}
+.garden-cell.has-underlay[data-underlay="col"]{background-image:var(--paw2) !important; background-size:82% 82%; background-repeat:no-repeat; background-position:center;}
+.garden-cell.has-underlay[data-underlay="burst9"]{background-image:var(--paw3) !important; background-size:82% 82%; background-repeat:no-repeat; background-position:center;}
+.garden-cell.has-underlay[data-underlay="zapper"]{background-image:var(--paw4) !important; background-size:82% 82%; background-repeat:no-repeat; background-position:center;}
+.garden-cell:not(.has-underlay){background-image:none !important;}
+.garden-cell.hole::before,.garden-cell.dormant-route::before{display:none;}
+.ingredient-piece{z-index:1; inset:10%; width:80%; height:80%; filter:drop-shadow(0 2px 1px rgba(0,0,0,.34));}
+.native-blocker,.blocker,.marker,.special-badge-preview,.special-badge{z-index:6;}
+.garden-cell.selected{outline:4px solid #fff600;}
+
+/* Underlay legend */
+.underlay-legend-card .underlay-legend{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px}
+.underlay-legend-item{display:grid;grid-template-columns:16px 1fr;gap:8px;align-items:start;font-size:12px;line-height:1.25}
+.underlay-swatch{width:14px;height:14px;border-radius:50%;border:2px solid rgba(0,0,0,.7);box-shadow:0 0 0 1px rgba(255,255,255,.2) inset}
+.underlay-cyan{background:#00ffff}.underlay-orange{background:#ff9800}.underlay-lime{background:#32cd32}.underlay-yellow{background:#ffe04d}
+.hybrid-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.12);font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.hybrid-chip::before{content:"◎";font-size:12px;color:#8cf}
+
+/* Hybrid satellites / aurora + connect trace */
+.secondary-card.hybrid-secondary{position:relative;overflow:hidden}
+.secondary-card.hybrid-secondary h3{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.secondary-card.hybrid-secondary .hybrid-helper{margin-top:6px;font-size:11px;opacity:.9}
+.aurora-board{position:relative;isolation:isolate;overflow:hidden;background:
+  radial-gradient(circle at 25% 20%,rgba(255,255,255,.12),transparent 28%),
+  linear-gradient(145deg,var(--aurora-a),var(--aurora-b) 52%,var(--aurora-c));}
+.aurora-board::before{content:"";position:absolute;inset:-22%;pointer-events:none;z-index:0;background:repeating-linear-gradient(117deg,transparent 0 12%,var(--aurora-glow) 13% 15%,transparent 16% 31%);opacity:.3;transform:translate3d(-7%,0,0) skewX(-9deg);animation:auroraFlow 5.8s linear infinite;}
+.aurora-board::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 50% 115%,var(--aurora-glow),transparent 58%),linear-gradient(90deg,transparent 0 28%,rgba(255,255,255,.08) 38%,transparent 48% 68%,rgba(255,255,255,.05) 76%,transparent 86%);opacity:calc(.08 + var(--aurora-density) * .2);mix-blend-mode:screen;animation:auroraVeil 4.7s ease-in-out infinite alternate;}
+.connect-dots{position:relative;isolation:isolate}
+.connect-dots .garden-cell{position:relative;z-index:3}
+.connect-dot.trace-selected{outline:4px solid var(--aurora-a);outline-offset:-5px;filter:brightness(1.2) saturate(1.25);box-shadow:0 0 8px var(--aurora-a),0 0 22px var(--aurora-glow),inset 0 0 0 2px rgba(255,255,255,.35);animation:dotPulse .65s ease-in-out infinite alternate}
+.connect-dot.trace-complete{box-shadow:0 0 8px var(--aurora-a),0 0 20px var(--aurora-glow),0 0 35px rgba(30,144,255,.25)}
+.connect-trace{position:absolute;inset:0;z-index:2;pointer-events:none}
+.connect-trace-line{position:absolute;height:6px;transform-origin:left center;border-radius:999px;background:linear-gradient(90deg,var(--aurora-a),#32cd32,var(--aurora-c),var(--aurora-a));background-size:200% 100%;box-shadow:0 0 5px var(--aurora-a),0 0 12px var(--aurora-glow),0 0 22px rgba(30,144,255,.35);animation:traceGlow 1.1s linear infinite,traceAppear .18s ease-out both}
+.connect-trace-line::before,.connect-trace-line::after{content:"";position:absolute;top:50%;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 6px #fff,0 0 14px var(--aurora-a),0 0 24px var(--aurora-glow);transform:translateY(-50%)}
+.connect-trace-line::before{left:-3px}.connect-trace-line::after{right:-3px}
+.connect-dots.chain-long .connect-dot{animation:chainGlow .8s ease-in-out infinite alternate}
+.connect-dots.chain-complete .connect-dot{animation:chainFinish .42s ease-out both}
+.connect-dots.chain-complete::after{content:"";position:absolute;inset:20%;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.55),var(--aurora-glow) 20%,transparent 68%);animation:chainBurst .5s ease-out both;z-index:4}
+.main-grid.hybrid-main{box-shadow:0 0 0 3px rgba(0,255,255,.12), 0 0 20px rgba(0,255,255,.14)}
+
+@keyframes auroraVeil{from{transform:translate3d(-2%,2%,0) scaleY(.96);filter:saturate(.9)}to{transform:translate3d(3%,-2%,0) scaleY(1.04);filter:saturate(1.18)}}
+@keyframes auroraFlow{0%{transform:translate3d(-12%,0,0) skewX(-9deg)}50%{transform:translate3d(10%,3%,0) skewX(-5deg)}100%{transform:translate3d(-12%,0,0) skewX(-9deg)}}
+@keyframes traceAppear{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+@keyframes traceGlow{from{background-position:0% 50%;filter:brightness(.95)}to{background-position:100% 50%;filter:brightness(1.35)}}
+@keyframes dotPulse{from{transform:scale(1)}to{transform:scale(1.08)}}
+@keyframes chainGlow{from{filter:brightness(1)}to{filter:brightness(1.3) saturate(1.25)}}
+@keyframes chainFinish{0%{transform:scale(1);filter:brightness(1)}45%{transform:scale(1.16);filter:brightness(1.65)}100%{transform:scale(.9);filter:brightness(1.1)}}
+@keyframes chainBurst{0%{opacity:0;transform:scale(.35)}35%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5)}}
+
+.reduce-motion .aurora-board::before,
+.reduce-motion .aurora-board::after,
+.reduce-motion .connect-dot,
+.reduce-motion .connect-trace-line,
+.reduce-motion .connect-dots.chain-complete::after,
+.reduce-motion .garden-cell::before{animation:none !important}

@@ -1,0 +1,71 @@
+:root{--bubble-size:190px;--onyx-shadow:0 16px 46px rgba(0,0,0,.42)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif}body{background:transparent;overflow-x:hidden}
+.onyx-widget{position:fixed;z-index:9999;top:22vh;right:16px;width:var(--bubble-size);touch-action:auto;user-select:none}
+.onyx-bubble{touch-action:none;position:relative;width:var(--bubble-size);height:var(--bubble-size);padding:0;border:4px solid #000;border-radius:50%;overflow:hidden;display:grid;place-items:center;cursor:grab;-webkit-tap-highlight-color:transparent;color:#fff;isolation:isolatebackground:transparent;}
+
+
+.onyx-bubble:focus-visible{outline:4px solid #fff;outline-offset:4px}
+.onyx-canvas,.onyx-static-fallback{position:absolute;z-index:2;width:164px;height:164px;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;background:transparent}
+.onyx-canvas{image-rendering:auto;backface-visibility:hidden;contain:paint}
+.onyx-static-fallback{image-rendering:auto}
+.onyx-static-fallback{object-fit:cover}.onyx-static-fallback[hidden]{display:none!important}
+.onyx-state-label{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:5;padding:4px 9px;border:1px solid rgba(255,255,255,.88);border-radius:999px;background:rgba(0,0,0,.82);color:#fff;font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;pointer-events:none}
+.onyx-loading .onyx-canvas{opacity:.84}
+@media(max-width:420px){.onyx-widget{right:8px}}@media(prefers-reduced-motion:reduce){.onyx-canvas{transition:none!important}}
+
+/* Living coded-avatar refinement: atlas motion remains procedural; high-resolution compositing adds expression/detail without tracing the static references. */
+.onyx-bubble{
+  
+  
+background:transparent;}
+
+
+.onyx-canvas,.onyx-static-fallback{
+  width:166px;
+  height:166px;
+}
+.onyx-canvas{image-rendering:auto}
+.onyx-static-fallback{image-rendering:auto}
+.onyx-canvas{
+  filter:contrast(1.06) saturate(1.07) drop-shadow(0 3px 0 rgba(0,0,0,.24));
+}
+.onyx-widget[data-mood="advising_professor"] .onyx-canvas{filter:contrast(1.08) saturate(1.08) drop-shadow(0 3px 0 rgba(0,0,0,.28))}
+.onyx-widget[data-mood="caring"] .onyx-canvas,.onyx-widget[data-mood="purring"] .onyx-canvas{filter:contrast(1.05) saturate(1.12) drop-shadow(0 3px 0 rgba(0,0,0,.22))}
+@media (prefers-reduced-motion:reduce){.onyx-canvas{filter:contrast(1.05) saturate(1.05)}}
+\n\n/* Campy mystic merge pass: brighter old-school bubble ambience without an opaque canvas rectangle.\n   Structural module chrome remains grayscale; black frame and alert loader are intentionally untouched. */\n.onyx-bubble{\n  \n  \nbackground:transparent;}\n\n.onyx-canvas{background:transparent!important;mix-blend-mode:normal;filter:contrast(1.08) saturate(1.16) drop-shadow(0 3px 0 rgba(0,0,0,.24))}\n.onyx-widget[data-mood="advising_professor"] .onyx-canvas{filter:contrast(1.09) saturate(1.13) drop-shadow(0 3px 0 rgba(0,0,0,.28))}\n.onyx-widget[data-mood="caring"] .onyx-canvas,.onyx-widget[data-mood="purring"] .onyx-canvas,.onyx-widget[data-mood="snuggly"] .onyx-canvas{filter:contrast(1.07) saturate(1.2) drop-shadow(0 3px 0 rgba(0,0,0,.22))}\n
+
+/* Size-state contract: 190px closed bubble is the hyper-reduced presentation.
+   The former tiny alert-only interpretation is intentionally not used. */
+.onyx-widget[data-size-state="hyper-reduced"]{--bubble-size:190px;width:190px;height:190px;min-width:190px;min-height:190px}
+.onyx-widget[data-size-state="mega-larger"],
+.onyx-widget.tab-fullscreen,
+.onyx-widget.is-fullscreen{width:100vw;height:100vh;max-width:none;max-height:none}
+
+
+/* =========================================================
+   STANDALONE OURSPACE 2× PAGE-SIZE PREVIEW
+   Size reference only: the RetroSite master page is 960px wide.
+   This blank host surface doubles that desktop width to 1920px.
+   The original 20px responsive gutter and 40px bottom allowance
+   are doubled geometrically as well. No RetroSite design, modules,
+   colors, borders, headers, or content are copied into Onyx.
+   ========================================================= */
+body[data-onyx-standalone-viewport="ourspace-main-page"]{
+  width:1920px;
+  max-width:calc(100% - 40px);
+  min-height:100vh;
+  margin:0 auto 80px;
+  background:#FFFFFF;
+  background-image:none;
+  position:relative;
+  overflow-x:auto;
+  overflow-y:auto;
+  scrollbar-gutter:stable both-edges;
+}
+
+@media (max-width:1700px){
+  body[data-onyx-standalone-viewport="ourspace-main-page"]{
+    max-width:100%;
+    margin-bottom:0;
+  }
+}

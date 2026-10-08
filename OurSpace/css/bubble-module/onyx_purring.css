@@ -1,0 +1,7 @@
+/* Portal-era chest-up Purring styling.
+ * Deliberately restricted to the widget/module avatar; never styles game canvases. */
+.onyx-round-widget[data-mood="purring"] #onyxCanvas{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-round-widget[data-mood="purring"] #onyxFallback{image-rendering:auto;}

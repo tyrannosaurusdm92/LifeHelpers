@@ -1,0 +1,43 @@
+/* Happy Home finished living-room integration */
+.viewer-screen{aspect-ratio:1916/821!important;min-height:280px!important}
+#happyHomeRoomFrame{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:10;background:#000;display:block;overflow:hidden}
+.viewer-backdrop{z-index:0!important}
+#catActor{z-index:30}
+.game-hud{z-index:700!important}.control-layer{z-index:850!important}
+
+.decor-panel{--panel-w:540px;width:min(var(--panel-w),calc(100vw - 18px));height:min(76vh,720px);max-height:min(82vh,760px)}
+.decor-panel .panel-body{padding:8px!important;overflow:auto!important}
+.decor-panel .panel-head{touch-action:none}
+.decor-panel.decor-collapsed{width:50px!important;height:50px!important;max-width:50px!important;max-height:50px!important;min-width:50px!important;min-height:50px!important;border-radius:50%!important;overflow:hidden!important}
+.decor-panel.decor-collapsed .panel-head{width:50px!important;height:50px!important;min-height:50px!important;padding:0!important;display:grid!important;grid-template-columns:1fr!important;place-items:center!important;border-radius:50%!important}
+.decor-panel.decor-collapsed .panel-head strong,.decor-panel.decor-collapsed .panel-actions,.decor-panel.decor-collapsed .panel-body,.decor-panel.decor-collapsed .resize-handle{display:none!important}
+.decor-panel.decor-collapsed .panel-icon{font-size:24px!important;display:grid!important;place-items:center!important;width:50px;height:50px;cursor:pointer}
+.decor-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-bottom:8px;position:sticky;top:0;z-index:3;background:var(--white);padding-bottom:5px}
+.decor-tab{min-height:42px;border:1px solid var(--deep);border-radius:7px;background:var(--pale);font:900 10px/1.15 var(--font);padding:6px;color:var(--black)}
+.decor-tab.active{background:var(--deep);color:var(--white)}
+.decor-pane{display:none}.decor-pane.active{display:block}
+.decor-empty{padding:22px 14px;text-align:center;border:2px dashed var(--anchor);border-radius:10px;background:var(--lighter);font-weight:800;line-height:1.45}
+.hh-design-section{display:grid;gap:7px;padding:8px;margin-bottom:8px;border:1px solid var(--anchor);border-radius:8px;background:var(--lighter)}
+.hh-design-section h3{margin:0;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+.hh-target-bubbles,.hh-channel-bubbles,.hh-scope-row,.hh-actions,.hh-preset-row{display:flex;gap:6px;flex-wrap:wrap;align-items:flex-start}
+.hh-target-wrap,.hh-channel-wrap{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:66px;max-width:92px;font:800 9px/1.1 var(--font);text-align:center}
+.hh-target-bubble,.hh-channel-bubble,.hh-color-swatch{width:52px;height:52px;min-width:52px;border:2px solid var(--black);border-radius:50%;background:var(--pale);color:var(--black);font:900 8px/1 var(--font);padding:3px;box-shadow:inset 0 0 0 2px var(--white);overflow:hidden}
+.hh-target-bubble.active,.hh-channel-bubble.active{outline:3px solid var(--cyan);outline-offset:2px}
+.hh-scope-row button,.hh-actions button{min-height:34px;padding:6px 8px;border:1px solid var(--deep);border-radius:6px;background:var(--pale);font:900 10px/1 var(--font);color:var(--black)}
+.hh-scope-row button.active{background:var(--deep);color:var(--white)}
+.hh-grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.hh-grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.hh-field{display:grid;gap:3px;font:800 9px/1 var(--font);color:var(--dark)}
+.hh-field input,.hh-field select{width:100%;min-height:32px;padding:5px 6px;border:1px solid var(--deep);border-radius:6px;background:#fff;color:#000;font:700 12px/1 var(--font)}
+.hh-color-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px;align-items:start}
+.hh-wheel-wrap{display:grid;justify-items:center;gap:5px}
+.hh-color-wheel{width:180px;height:180px;border:2px solid var(--black);border-radius:50%;touch-action:none;cursor:crosshair;background:#fff;box-shadow:0 0 0 2px var(--bright)}
+.hh-brightness{width:180px}
+.hh-color-swatch{width:34px;height:34px;min-width:34px;border-width:1px;padding:0}
+.hh-texture-grid{display:grid;grid-template-columns:repeat(6,minmax(42px,1fr));gap:5px;max-height:190px;overflow:auto;padding:3px;border:1px solid var(--anchor);background:#fff}
+.hh-texture{aspect-ratio:1;border:2px solid transparent;border-radius:6px;background-size:cover;background-position:center;min-width:0;padding:0}
+.hh-texture.active{border-color:var(--cyan);outline:1px solid var(--black)}
+.hh-muted{font-size:10px;color:var(--dark);line-height:1.35}
+.hh-status{padding:7px;border:1px solid var(--anchor);border-radius:6px;background:#fff;font:700 10px/1.35 var(--font)}
+.hh-pattern-block[hidden]{display:none!important}
+#furnitureObjectSelect{width:100%;min-height:35px}
+@media(max-width:620px){.decor-panel{width:calc(100vw - 12px)!important;height:min(74vh,690px)}.hh-color-layout{grid-template-columns:1fr}.hh-texture-grid{grid-template-columns:repeat(4,minmax(42px,1fr))}.decor-tabs{grid-template-columns:1fr}.decor-panel.decor-collapsed{width:50px!important;height:50px!important}}

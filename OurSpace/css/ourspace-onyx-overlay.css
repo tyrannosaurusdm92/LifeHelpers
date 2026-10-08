@@ -1,0 +1,61 @@
+/* Onyx is a page-level OurSpace overlay.  The iframe owns the widget UI; this
+   host owns visibility, fullscreen sizing, and the shared close affordance. */
+.ourspace-onyx-overlay-host {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 224px;
+  height: 224px;
+  z-index: 9100;
+  display: block;
+  pointer-events: none;
+  border: 0;
+  border-radius: 18px;
+  overflow: visible;
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,.28));
+}
+.ourspace-onyx-overlay-host[hidden] { display: none !important; }
+.ourspace-onyx-overlay-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  pointer-events: auto;
+}
+.ourspace-onyx-overlay-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #c91522;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(0,0,0,.35);
+  font: 900 28px/1 system-ui, sans-serif;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.ourspace-onyx-overlay-close:hover,
+.ourspace-onyx-overlay-close:focus-visible { background: #ef2633; }
+.ourspace-onyx-overlay-host[data-fullscreen="true"] {
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  filter: none;
+  background: #111;
+}
+.ourspace-onyx-overlay-host[data-fullscreen="true"] .ourspace-onyx-overlay-frame { border-radius: 0; }
+.ourspace-onyx-overlay-host[data-fullscreen="true"] .ourspace-onyx-overlay-close { display: block; }
+body.ourspace-onyx-fullscreen-open { overflow: hidden; }
+@media (max-width: 640px) {
+  .ourspace-onyx-overlay-host { right: 8px; bottom: 8px; width: 210px; height: 210px; }
+  .ourspace-onyx-overlay-host[data-fullscreen="true"] { right: 0; bottom: 0; width: 100vw; height: 100vh; }
+}

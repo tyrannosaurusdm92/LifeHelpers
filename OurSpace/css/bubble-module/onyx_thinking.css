@@ -1,0 +1,7 @@
+/* Portal-era chest-up Thinking styling.
+ * Deliberately restricted to the widget/module avatar; never styles game canvases. */
+.onyx-round-widget[data-mood="thinking"] #onyxCanvas{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-round-widget[data-mood="thinking"] #onyxFallback{image-rendering:auto;}
