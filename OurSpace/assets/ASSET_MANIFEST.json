@@ -1,0 +1,35 @@
+{
+  "schema": "ourspace.onyx.github-assets.v1",
+  "assetsOnly": true,
+  "testingCodeIncluded": false,
+  "notificationBorderIncluded": false,
+  "fileCount": 1049,
+  "totalBytes": 340652881,
+  "filesByExtension": {
+    ".jpg": 2,
+    ".json": 2,
+    ".mp3": 47,
+    ".mp4": 14,
+    ".png": 25,
+    ".svg": 832,
+    ".wav": 8,
+    ".webp": 112
+  },
+  "legacy": {
+    "frames": [
+      "base_cat",
+      "caring",
+      "hungry",
+      "judgmental",
+      "listening",
+      "professor",
+      "purring",
+      "sleepy",
+      "snuggly",
+      "thinking",
+      "thoughtful"
+    ],
+    "atlases": "images/legacy/atlases",
+    "contactSheets": "images/legacy/contact-sheets"
+  }
+}
