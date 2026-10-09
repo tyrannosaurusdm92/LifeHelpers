@@ -1,0 +1,34 @@
+{
+  "app": "Savanski Studio",
+  "host": "OurSpace",
+  "gameId": "savanski-art-studio",
+  "frontend": {
+    "html": "studio.html",
+    "embeddedGame": true,
+    "transparentCheckerboard": "CSS display aid only; never exported",
+    "hostMode": "ourspace-game",
+    "localResilience": true
+  },
+  "backend": {
+    "service": "OurSpace Backend",
+    "webAppEndpoint": "https://script.google.com/macros/s/AKfycbyuKFvcQGFjmhnIIcgoZUmPtDPDZYMjsO64Wf0-lDjQCnvUwoHSoHLNppN-cSy7IETs/exec",
+    "sessionScoped": true,
+    "maxUploadMb": 25
+  },
+  "projectFlow": {
+    "types": [
+      "Studio",
+      "3D Editor"
+    ],
+    "alternatives": [
+      "Import",
+      "Saved Work"
+    ]
+  },
+  "hosting": {
+    "mode": "public-static",
+    "repositoryPath": "Games/Savanski",
+    "accountRequiredToLaunch": false,
+    "backendOptional": true
+  }
+}

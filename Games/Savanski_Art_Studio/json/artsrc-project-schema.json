@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Savanski Art Studio Art Tool Host State",
+  "type": "object",
+  "properties": {
+    "presetId": {
+      "type": "string"
+    },
+    "background": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "activeTool": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "object"
+    },
+    "layers": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "presetId"
+  ]
+}

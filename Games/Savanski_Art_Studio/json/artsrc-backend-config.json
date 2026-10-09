@@ -1,0 +1,12 @@
+{
+  "schema": "ourspace.game-backend-config.v1",
+  "service": "OurSpace Backend",
+  "gameId": "savanski-art-studio",
+  "webAppUrl": "https://script.google.com/macros/s/AKfycbyuKFvcQGFjmhnIIcgoZUmPtDPDZYMjsO64Wf0-lDjQCnvUwoHSoHLNppN-cSy7IETs/exec",
+  "transport": {
+    "method": "POST",
+    "contentType": "text/plain;charset=utf-8",
+    "body": "{ action, sessionToken, clientId, data }"
+  },
+  "notes": "Frontend-safe connection metadata. Session tokens are supplied by the OurSpace host or existing OurSpace session storage."
+}

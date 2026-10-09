@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0",
+  "package": "Savanski Studio integrated upgrade",
+  "backend": "existing-config-only",
+  "wasm": [
+    "script/savanski-raster-fx.wasm",
+    "script/savanski-geometry.wasm"
+  ],
+  "assets": {
+    "brushes": "json/brush-library.json",
+    "brushCount": 240
+  },
+  "toolActionIds": [
+    "advanced-braid-brush",
+    "advanced-brush-stamp-layer",
+    "advanced-canvas-to-3d",
+    "advanced-chromatic",
+    "advanced-confetti-brush",
+    "advanced-desaturate",
+    "advanced-dither",
+    "advanced-edge-ink",
+    "advanced-export-brushes",
+    "advanced-export-contact",
+    "advanced-export-palette",
+    "advanced-export-sprites",
+    "advanced-extract-palette",
+    "advanced-glass",
+    "advanced-glitter-brush",
+    "advanced-glow",
+    "advanced-halftone",
+    "advanced-metallic",
+    "advanced-noise",
+    "advanced-normal-to-3d",
+    "advanced-outline-layer",
+    "advanced-pixelate",
+    "advanced-posterize",
+    "advanced-repeat-tile",
+    "advanced-ribbon-brush",
+    "advanced-rough-matte",
+    "advanced-seamless",
+    "advanced-texture-brush",
+    "advanced-threshold",
+    "advanced-uv-checker",
+    "advanced-vignette"
+  ]
+}

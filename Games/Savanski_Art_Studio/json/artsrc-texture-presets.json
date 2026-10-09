@@ -1,0 +1,45 @@
+{
+  "schema": "savanski.texture-presets.v3",
+  "presets": [
+    {
+      "id": "paper-fine",
+      "name": "Fine Paper",
+      "type": "paper",
+      "amount": 0.06,
+      "size": 6,
+      "blend": "multiply"
+    },
+    {
+      "id": "paper-rough",
+      "name": "Rough Paper",
+      "type": "paper",
+      "amount": 0.14,
+      "size": 12,
+      "blend": "multiply"
+    },
+    {
+      "id": "grain-light",
+      "name": "Light Grain",
+      "type": "grain",
+      "amount": 0.05,
+      "size": 9,
+      "blend": "multiply"
+    },
+    {
+      "id": "grain-heavy",
+      "name": "Heavy Grain",
+      "type": "grain",
+      "amount": 0.12,
+      "size": 5,
+      "blend": "multiply"
+    },
+    {
+      "id": "crosshatch",
+      "name": "Crosshatch",
+      "type": "crosshatch",
+      "amount": 0.08,
+      "size": 18,
+      "blend": "multiply"
+    }
+  ]
+}

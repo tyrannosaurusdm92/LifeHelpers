@@ -1,0 +1,8 @@
+{
+  "filters":[
+    {"id":"brightness","kind":"canvas-filter"},{"id":"contrast","kind":"canvas-filter"},{"id":"saturate","kind":"canvas-filter"},
+    {"id":"grayscale","kind":"canvas-filter"},{"id":"sepia","kind":"canvas-filter"},{"id":"invert","kind":"canvas-filter"},{"id":"blur","kind":"canvas-filter"},
+    {"id":"sharpen","kind":"convolution"},{"id":"posterize","kind":"pixel"},{"id":"pixelate","kind":"resample"},{"id":"warm","kind":"pixel"},{"id":"cool","kind":"pixel"},
+    {"id":"autoEnhance","kind":"histogram"}
+  ]
+}

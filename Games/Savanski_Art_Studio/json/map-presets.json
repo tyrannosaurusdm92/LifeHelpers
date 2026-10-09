@@ -1,0 +1,6 @@
+{
+  "canvasPresets":[{"name":"Wide","width":1920,"height":1080},{"name":"Square","width":2048,"height":2048},{"name":"Large","width":3000,"height":2000},{"name":"Huge","width":4096,"height":4096}],
+  "gridTypes":["square","hex","isometric","none"],
+  "defaults":{"cellPixels":70,"unitsPerCell":5,"unitName":"ft","opacity":0.38},
+  "mapLayerKinds":["raster","fog","lighting","collage"]
+}

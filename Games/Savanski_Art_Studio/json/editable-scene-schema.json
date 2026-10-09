@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Editable Scene v3",
+  "type": "object",
+  "required": [
+    "schema",
+    "canvases"
+  ],
+  "properties": {
+    "schema": {
+      "const": "savanski.scene/v3"
+    },
+    "version": {
+      "type": "string"
+    },
+    "canvasId": {
+      "type": "string"
+    },
+    "selectedId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "canvases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/object"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "object": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "transform",
+        "style",
+        "effects",
+        "crop"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "stroke",
+            "eraser-stroke",
+            "effect-stroke",
+            "shape",
+            "text",
+            "image",
+            "generated-image",
+            "fill"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "locked": {
+          "type": "boolean"
+        },
+        "geometry": {
+          "type": "object"
+        },
+        "transform": {
+          "type": "object"
+        },
+        "style": {
+          "type": "object"
+        },
+        "effects": {
+          "type": "object"
+        },
+        "crop": {
+          "type": "object"
+        },
+        "meta": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

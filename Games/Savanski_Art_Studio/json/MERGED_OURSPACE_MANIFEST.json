@@ -1,0 +1,1228 @@
+{
+  "format": "savanski.studio-manifest.v2",
+  "generated": "2026-09-23",
+  "entrypoint": "studio.html",
+  "hostMode": "public-static-browser-app",
+  "gameId": "savanski-art-studio",
+  "backendEndpoint": "https://script.google.com/macros/s/AKfycbyuKFvcQGFjmhnIIcgoZUmPtDPDZYMjsO64Wf0-lDjQCnvUwoHSoHLNppN-cSy7IETs/exec",
+  "workspaces": [
+    "Studio",
+    "3D Editor"
+  ],
+  "merge": {
+    "primaryShell": "SavanskiArtStudio.zip",
+    "uniform3dSource": "Savanski_Uniform_3D_Art_Studio_QA_Pass(1).zip",
+    "backendContractSource": "supplied Savanski backend contract",
+    "intentionalReplacements": [
+      "Authoritative existing Art Studio and 3D toolbar/menu families retained as the only visible toolbar/menu implementation.",
+      "Professional Art and 3D capabilities are injected only into existing authoritative tool panels.",
+      "Savanski frontend is configured for the supplied Savanski backend endpoint and contains no AI request path.",
+      "Browser install metadata is provided under assets/app while preserving the requested flat source-folder structure."
+    ]
+  },
+  "qa": {
+    "firstPartyJavaScriptSyntax": "passed",
+    "jsonParse": "passed",
+    "htmlLocalReferences": "passed",
+    "directoryPolicy": "passed",
+    "wasmInstantiation": "passed",
+    "singleRequestedBackendEndpoint": "passed",
+    "frontendAiRoutes": "none",
+    "toolbarFamiliesAdded": 0,
+    "fullBrowserRuntime": "attempted; Chromium local navigation is blocked by the execution environment administrator"
+  },
+  "fileCountExcludingThisManifest": 233,
+  "totalBytesExcludingThisManifest": 164589703,
+  "files": [
+    {
+      "path": "assets/app/icon-1024.png",
+      "bytes": 3274238,
+      "sha256": "3cc6f36166f9ed5cedc725f86dd5c2f54d28eb834529b49cdc6adcc8688532a1"
+    },
+    {
+      "path": "assets/app/icon-128.png",
+      "bytes": 41901,
+      "sha256": "19e6bd88f1aa2dda9d6a37215069724370aa38643853ebaff72f73820592eca1"
+    },
+    {
+      "path": "assets/app/icon-180.png",
+      "bytes": 80548,
+      "sha256": "e5dab6a5d76167ce1002f76decf049bf8ba0cad82cd26f8a2a9195346628659d"
+    },
+    {
+      "path": "assets/app/icon-192.png",
+      "bytes": 91449,
+      "sha256": "2aa51251c1d526911a5360408990a9c5b82f52bd6631ce058fcb1dc0930e78c8"
+    },
+    {
+      "path": "assets/app/icon-256.png",
+      "bytes": 159470,
+      "sha256": "cdc5f1639c9926c9673f862654a4237a57ac759234d28ae2e56162f19a2b776c"
+    },
+    {
+      "path": "assets/app/icon-32.png",
+      "bytes": 3046,
+      "sha256": "08b64c3b18dbb1017f3634ef0478024fe51577a196169696b97532c1d813b451"
+    },
+    {
+      "path": "assets/app/icon-512.png",
+      "bytes": 623248,
+      "sha256": "d222198f5ed53acc5d7cf20063353be3609d3c187560a31409ea02e057bfc122"
+    },
+    {
+      "path": "assets/app/icon-64.png",
+      "bytes": 11219,
+      "sha256": "23c40e09ee9575e2c75b6155dbd7bae311d13eb517a29fe06961632e2530ba31"
+    },
+    {
+      "path": "assets/app/manifest.webmanifest",
+      "bytes": 743,
+      "sha256": "f5b8f7a9920701b5dd99fb95a977026e42f4ee977678a69b8bffe833dcf54759"
+    },
+    {
+      "path": "assets/audio/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "assets/images/brush_dry_white.jpg",
+      "bytes": 3472460,
+      "sha256": "249e29188d2d5228323787260eb89de8c70ad9d93cc1da8619fd6c6d403ed17f"
+    },
+    {
+      "path": "assets/images/brush_grunge_dark.jpg",
+      "bytes": 3449345,
+      "sha256": "36f9ebb1437e984c6a8b4b97a1503d97f12d80758636d130e5a8156967eb116f"
+    },
+    {
+      "path": "assets/images/brush_ink_spatter.jpg",
+      "bytes": 3354098,
+      "sha256": "3dd3ed23ec566ca6aaabaeb57b073aef5e49128d26c980fe88d3137c3a2675f4"
+    },
+    {
+      "path": "assets/images/ceramic_cream.jpg",
+      "bytes": 3280964,
+      "sha256": "be6c218f7fc48c9ca4f348e575d68059cc62162652ff08c0374267c990f4bdea"
+    },
+    {
+      "path": "assets/images/clay_terracotta.jpg",
+      "bytes": 3067220,
+      "sha256": "9153fa24c0a261d67c0dc3d95f43bea7208172245994acec4d3d296a35cf566a"
+    },
+    {
+      "path": "assets/images/fabric_cotton_canvas.jpg",
+      "bytes": 3249318,
+      "sha256": "6ff71c408c4a54473399f877d64e56788b7ba711e90099ed46b55e6c0b138a3d"
+    },
+    {
+      "path": "assets/images/fabric_denim_blue.jpg",
+      "bytes": 3099499,
+      "sha256": "3b67203cfb2a07225a3ded469c5654325c7df9ac1f006abd2f1f6401d0249ae6"
+    },
+    {
+      "path": "assets/images/fabric_knit_cream.jpg",
+      "bytes": 3406674,
+      "sha256": "a2022fda1856d1617301fd4656066a21eaf2ad9114501d479dd9d4774002f825"
+    },
+    {
+      "path": "assets/images/hair_dark_brown.jpg",
+      "bytes": 3411907,
+      "sha256": "cc64005e695b7e1dd019313b2a3f74029e9894ef75978466ded014e2bb2dce58"
+    },
+    {
+      "path": "assets/images/leather_brown.jpg",
+      "bytes": 2965746,
+      "sha256": "7f0ca7e94e0477c99f835954dbf7da8808aaca34805e090a4f6a67466f91bc75"
+    },
+    {
+      "path": "assets/images/metal_brushed_steel.jpg",
+      "bytes": 3400054,
+      "sha256": "a2f9c069ab7d38f2354792cd865e030389927c243662845ed90670015078797c"
+    },
+    {
+      "path": "assets/images/paint_brushed_cyan.jpg",
+      "bytes": 3867305,
+      "sha256": "cb0916c4d7d416a7a0ec10797b1dec6908dd04a05faad8320742847856af2b0d"
+    },
+    {
+      "path": "assets/images/paint_matte_white.jpg",
+      "bytes": 3395503,
+      "sha256": "4f5608a7ed6e9239808f79989e49b746440f7214ce9814c738ad9a679ef65168"
+    },
+    {
+      "path": "assets/images/paint_orange_stipple.jpg",
+      "bytes": 4221007,
+      "sha256": "6a7deb5e7511512bfb4a54ce243630900f5a7d604bc0736661ba709d24d9db7b"
+    },
+    {
+      "path": "assets/images/paper_fiber.jpg",
+      "bytes": 3150288,
+      "sha256": "e8606515c6140bfa16e50d5b2f164336dd63c71e5ac375695944c4109b73b046"
+    },
+    {
+      "path": "assets/images/plastic_matte.jpg",
+      "bytes": 3226094,
+      "sha256": "d413e8768527535af4f36c275e64c5d6bcbc8de110a24e1c02d8621b2def48bd"
+    },
+    {
+      "path": "assets/images/rubber_matte_black.jpg",
+      "bytes": 3396651,
+      "sha256": "a1a4e3e0efa709907c9061ec82d7be6f62c7759d36c62fefe2cbed49bb36b9e0"
+    },
+    {
+      "path": "assets/images/rubber_soft_cyan.jpg",
+      "bytes": 3514543,
+      "sha256": "64871c53c4d905f362f352ce994d439e57d3e2e295b9febc21a57ef51abbdf24"
+    },
+    {
+      "path": "assets/images/rubber_speckled_gray.jpg",
+      "bytes": 3440410,
+      "sha256": "51eb1939f5e26f277362d02c9ba5a71b2f63b6bf16151815f64a192434c342be"
+    },
+    {
+      "path": "assets/images/skin_deep_warm.jpg",
+      "bytes": 3113544,
+      "sha256": "547dcad947e20d74c28baa47332d81df152c75dd8ff2d1ee5bd5ab7bd579c322"
+    },
+    {
+      "path": "assets/images/skin_neutral_medium.jpg",
+      "bytes": 3111832,
+      "sha256": "ea6530f8333c18ff50464d9e0e7910dc982d6bce3f154a85a24a906f01ca778e"
+    },
+    {
+      "path": "assets/images/skin_warm_light.jpg",
+      "bytes": 3112242,
+      "sha256": "5e4fd9f4dc5f672e7d02296739c0c4d3c33ba246142f5c4c67f255a93d68211d"
+    },
+    {
+      "path": "assets/images/stone_slate.jpg",
+      "bytes": 2935394,
+      "sha256": "b29726d72397154e57103483f3b4730d6ec8c6c874ec5c8567698846c3ca0327"
+    },
+    {
+      "path": "assets/images/wood_oak.jpg",
+      "bytes": 3173061,
+      "sha256": "b01f6127652704201285e918f4aeed92322db41145604aecbc51c71138e2fa28"
+    },
+    {
+      "path": "css/advanced-objects.css",
+      "bytes": 1461,
+      "sha256": "e27d28e20614f50ea0100af323adaa7db81d668859b6dfbb18044ed1f8d16eac"
+    },
+    {
+      "path": "css/artsrc-brand-token.css",
+      "bytes": 193,
+      "sha256": "7621d3795e1ca988a85eb3dc99b3b690d6eca83a37980b4d773031fb464074bb"
+    },
+    {
+      "path": "css/artsrc-material-hooks.css",
+      "bytes": 452,
+      "sha256": "ec3c6366ff517fc2826b6998fc7eb35b2c4de942d26934758177d0d8b71de6dc"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-landscape-10x8.css",
+      "bytes": 186,
+      "sha256": "73e4568f7605a08dd8626f3c8681543df6fa3bbad07fe858724334084e84fe89"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-4_25x6_87.css",
+      "bytes": 200,
+      "sha256": "1afae6e89d5947d08026b45e7adb2a7f20f3a821a642489b069a623e19db1e79"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-5_5x8_5-alt.css",
+      "bytes": 198,
+      "sha256": "29722e6df36bb097616d8078a08afdf9578aabb26e614dbf919b3d90f425e192"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-5_5x8_5.css",
+      "bytes": 194,
+      "sha256": "8be842ffd568a68834a5903663c5c1de5b86adaf4b5d6db9e235c689560cc813"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-5x8.css",
+      "bytes": 182,
+      "sha256": "6ae6dbffc80bd65a876358bc7c5c669c6e6cd0892e5790c840edb5837b3bd1ff"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-6_14x9_21.css",
+      "bytes": 200,
+      "sha256": "802c0f10cad5f76af0d1bc8ccda1386816be1101fa87f6cacd21ca5a4dfe2d98"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-6x9-alt.css",
+      "bytes": 186,
+      "sha256": "26b215c4a0a7f275a70bb3e0823e8155af46b0f643d6106a1d01b08419f11550"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-6x9.css",
+      "bytes": 182,
+      "sha256": "6193525250abfbf666ae1fd251373dd7fe77b516bfa7604e8652205dc809a1d2"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-7x10.css",
+      "bytes": 185,
+      "sha256": "662924eef6d9722abd684d8659cb04cdc8f155fd26da72c43b7a020502f9c7ea"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-8_5x11.css",
+      "bytes": 191,
+      "sha256": "a5786a84f57a15db2102e3c50b0c1d7c3db1f9e5aaa7c26f31e95028cec1fe8e"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-portrait-8x10.css",
+      "bytes": 185,
+      "sha256": "cfb3796440998782a72540c41366ddb3efc8671dadcc0c7e6c8ad477a320f05b"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-square-10x10.css",
+      "bytes": 186,
+      "sha256": "d1f6ad5e3c115e4f8432ee4ab6fc6341a00b85ffb036094a4a9bcfb59fbfc42b"
+    },
+    {
+      "path": "css/artsrc-sizes-canvas-square-12x12.css",
+      "bytes": 186,
+      "sha256": "420789452ddfd420270054604aeed9f87aeeaf0f63ee3c20884cf54f5b61e068"
+    },
+    {
+      "path": "css/authoritative-toolbar-integration.css",
+      "bytes": 3814,
+      "sha256": "9f5058d8c4f3c41c25f14268e0f18a7824ea39466d7d6e4715252ddabc8d2eed"
+    },
+    {
+      "path": "css/palette.css",
+      "bytes": 1493,
+      "sha256": "0b3044d6997aacd8d25de6f951d7fe3dfc56b6d89a3acce3cd4a04de7bf87bbf"
+    },
+    {
+      "path": "css/preset-catalog.css",
+      "bytes": 660,
+      "sha256": "22c96e20a9488c67bb1f8249dfa6d41d868ce7d6604f6b0b231b8f66910be975"
+    },
+    {
+      "path": "css/settings.css",
+      "bytes": 6002,
+      "sha256": "2fed29cb3019701b2d2d6af3cdcd49f74f25f62075e2e104074023c683251cf3"
+    },
+    {
+      "path": "css/single-shell.css",
+      "bytes": 608,
+      "sha256": "5a64dc2bee45b1422627bea83bb581a665216546fecac7643798e2122a5884d7"
+    },
+    {
+      "path": "css/size-canvas-landscape-10x8.css",
+      "bytes": 305,
+      "sha256": "84a2b010e214ae5613b9b052ed7ec5fb231962ff25973d51c558d9bc1048e442"
+    },
+    {
+      "path": "css/size-canvas-portrait-4_25x6_87.css",
+      "bytes": 333,
+      "sha256": "0d1dcc2598d560354d7f9d6740cd393b2de2cfc0a2bf85fefb526c19b38952b6"
+    },
+    {
+      "path": "css/size-canvas-portrait-5_5x8_5-alt.css",
+      "bytes": 329,
+      "sha256": "32c1148215f7887f779211e31417937d5ade9b4e6a2935d61bc1f01e9b0b87c4"
+    },
+    {
+      "path": "css/size-canvas-portrait-5_5x8_5.css",
+      "bytes": 321,
+      "sha256": "613745526db80ad5d9b231b48ed0c395aa9f10db5252493e0ac84fc1439865cd"
+    },
+    {
+      "path": "css/size-canvas-portrait-5x8.css",
+      "bytes": 297,
+      "sha256": "5fd2bbbcf3c9aa455ee5007d6671c2ec4f4265b014612fba1638709dca7ca5b7"
+    },
+    {
+      "path": "css/size-canvas-portrait-6_14x9_21.css",
+      "bytes": 333,
+      "sha256": "0458aad5169177e06860f73e4f7d1e5684be566f865fa51cd5e52c023bc2749f"
+    },
+    {
+      "path": "css/size-canvas-portrait-6x9-alt.css",
+      "bytes": 305,
+      "sha256": "ded38f7e01f4a682e2f0e33d4ff36d72c144e581623af302b4165ae73f0da150"
+    },
+    {
+      "path": "css/size-canvas-portrait-6x9.css",
+      "bytes": 297,
+      "sha256": "382a483b83740de9c004b4938c1d9f175e16472f72fbf4415102626b99f10519"
+    },
+    {
+      "path": "css/size-canvas-portrait-7x10.css",
+      "bytes": 303,
+      "sha256": "edfe491cdc1e52ccc8e8886511b659027f8cc9dbb9e597ddd163a1f3f59edba2"
+    },
+    {
+      "path": "css/size-canvas-portrait-8_5x11.css",
+      "bytes": 315,
+      "sha256": "42f5ab0d5cb18d178d70de46582712f7d80e9c60d8118b4da6521579d2d39679"
+    },
+    {
+      "path": "css/size-canvas-portrait-8x10.css",
+      "bytes": 303,
+      "sha256": "456bcf71c25dc89a0e06f25549b333c710508d1d9a7a44179a13b936ddbe1190"
+    },
+    {
+      "path": "css/size-canvas-square-10x10.css",
+      "bytes": 305,
+      "sha256": "bec95cfdb40f57fcdf3ef2f22e1ed755cd3399ce0f874598ea4ba6d50395d0d5"
+    },
+    {
+      "path": "css/size-canvas-square-12x12.css",
+      "bytes": 305,
+      "sha256": "bc62f138a5ad3f56ccd8fd63bb09a075c91ddd0b34d2e85f618f23428af6109e"
+    },
+    {
+      "path": "css/studio.css",
+      "bytes": 13736,
+      "sha256": "9ad0cc57b04158dc1db43e2fdb6980170b1655cf2ce91cffdaa20d2429ac49a6"
+    },
+    {
+      "path": "css/toolbar_menus.css",
+      "bytes": 31749,
+      "sha256": "63443eb654ad795b9f497668347f3a5704c233555ccd7390d3881743ba4c9e81"
+    },
+    {
+      "path": "css/uniform3d-embedded.css",
+      "bytes": 5119,
+      "sha256": "8e46706aabfbad1071f83053d5c4c2554820e4ad4225c8a55b3858bffa8ef04c"
+    },
+    {
+      "path": "css/uniform3d-palette.css",
+      "bytes": 845,
+      "sha256": "276b8f9a5a23301a26abdfb0e37288eeab8992e5f11e0c964ac5dfafe2c8e6ab"
+    },
+    {
+      "path": "css/uniform3d-responsive.css",
+      "bytes": 652,
+      "sha256": "b01c859b938b68a34d145a27fd74a3ef17b13c6bb4b1a3d6b351838bec83fa63"
+    },
+    {
+      "path": "css/uniform3d-studio.css",
+      "bytes": 6610,
+      "sha256": "2091e3312673dfb391055ab5bf7155ae47ba4594b96165e7fdb33d129f979689"
+    },
+    {
+      "path": "docs/3D_EDITOR_MANUAL.md",
+      "bytes": 3298,
+      "sha256": "3e10e9df657d03b9af869ee6bc56296e68ae20355fdf5289df3b2ddb466ce996"
+    },
+    {
+      "path": "docs/ASSETS.md",
+      "bytes": 296,
+      "sha256": "303f483d04185237eb7ce2ac596958d6997eee1ac2d247d22e64008703573c65"
+    },
+    {
+      "path": "docs/AUTHORITATIVE_TOOLBAR_FULL_VIEWPORT_IMPLEMENTATION.txt",
+      "bytes": 1191,
+      "sha256": "a7218d314cc115994919dfafb2a7cfb1fe1002720e8904fd3b901b6f4c93bbe2"
+    },
+    {
+      "path": "docs/BACKEND.md",
+      "bytes": 2429,
+      "sha256": "3b5fe1858903c2c214274a26531406d5ed729b0c878edbadc64891a161c4efb8"
+    },
+    {
+      "path": "docs/CSS_ORGANIZATION_AND_TOOLBAR_JS_MAP.md",
+      "bytes": 3469,
+      "sha256": "ce446c81fa173189eaf15cb1e95a484fd77b673516c2469192681c89b749910b"
+    },
+    {
+      "path": "docs/DEPLOYMENT_QA_2026-09-23.md",
+      "bytes": 2613,
+      "sha256": "1caab6dfe1413a0990ea72d83c30a61ace91c558aab2d405690caf07b2ecf0e0"
+    },
+    {
+      "path": "docs/LICENSES.md",
+      "bytes": 3061,
+      "sha256": "45cdc478fe019b589a97396bbd1cc6ac7fcaf0de756ce9fc2a821885a10775d8"
+    },
+    {
+      "path": "docs/MERGE_AUDIT.md",
+      "bytes": 2336,
+      "sha256": "7acf5df91e030f6931cbb3f090a1779839a183aeec9e25e7e5afdc4b96cc2768"
+    },
+    {
+      "path": "docs/ONYX_IMAGE_TOOL_GAP_AUDIT.txt",
+      "bytes": 2758,
+      "sha256": "fc398dfe77748b7fb01d9cd5f59d611f113d37c37dab45cbad759526f5ae3ce0"
+    },
+    {
+      "path": "docs/OURSPACE_GAME_INTEGRATION.md",
+      "bytes": 1099,
+      "sha256": "d5276b3331395804d8113c13cd563ed5c2cddd4269f77fa3922a782adeec28bc"
+    },
+    {
+      "path": "docs/PROFESSIONAL_PASS_CHANGELOG.md",
+      "bytes": 4986,
+      "sha256": "aecf277740dfa91a22d9a01b7a67f8054f7cd5b4cbaa42f263fc68caf065881a"
+    },
+    {
+      "path": "docs/QA_REPORT.md",
+      "bytes": 2914,
+      "sha256": "836ee333ed369fe4f0c570062a9d12bb4eb3ab8ad47f70a855a92731a0de270d"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 3983,
+      "sha256": "a2b64892222dbe465f1b17ae320b4d3e968759ce9e89d81bc9d5319f6230cb6a"
+    },
+    {
+      "path": "docs/RESEARCH_IMPLEMENTATION_NOTES.md",
+      "bytes": 15801,
+      "sha256": "6095fc9eb45f34d70345c8d1dfdd055235626d5e3d9f2944c3759e7ad865be95"
+    },
+    {
+      "path": "docs/SAVANSKI_COMPLETE_TOOLS_AND_FULL_COLOR_PALETTE.txt",
+      "bytes": 26226,
+      "sha256": "c5ab4f260d11b044cd99500e3369e00de5ba5e9d1bcc7143d269584d18e9835d"
+    },
+    {
+      "path": "docs/SETTINGS_ACCOUNT_STORAGE.md",
+      "bytes": 2552,
+      "sha256": "4927232019e587740593569eb140c2f6709d9e93b19e6ce77377906be242ff74"
+    },
+    {
+      "path": "docs/SETTINGS_QA_2026-09-23.md",
+      "bytes": 1230,
+      "sha256": "788f4afe3e75218014803c06290350f1d8c3ef04cdd34a6d3ba302d5519c7255"
+    },
+    {
+      "path": "docs/STUDIO_TOOLS_AND_COLOR_PALETTE.txt",
+      "bytes": 25314,
+      "sha256": "8199fd5ba7c3b70e689a0b39dbb96bc53430cf023faf8c008d00a84f4a9560be"
+    },
+    {
+      "path": "docs/Savanski_All_Art_Studio_and_3D_Editor_Tools.txt",
+      "bytes": 15379,
+      "sha256": "6693e754f8b916425995a633ddd3044f91abd29bfdd47e4d2496c806db5bdda6"
+    },
+    {
+      "path": "docs/UNIFORM_3D_MANUAL.md",
+      "bytes": 3298,
+      "sha256": "3e10e9df657d03b9af869ee6bc56296e68ae20355fdf5289df3b2ddb466ce996"
+    },
+    {
+      "path": "js/advanced-asset-bridge.js",
+      "bytes": 1799,
+      "sha256": "8f654bfa968259b5161f8861eb1a5db0b04d61b9f1e827f8b4f467a6f4e69834"
+    },
+    {
+      "path": "js/advanced-controller.js",
+      "bytes": 19621,
+      "sha256": "cd99b15aa4a07406c1c91136b5b8fb5dffabe05ff4622dd1e3c3f2e4702b8b0f"
+    },
+    {
+      "path": "js/advanced-object-model.js",
+      "bytes": 6667,
+      "sha256": "efa9a701d030120aba5cd74ec8cf4c91fe7dc97408847c3a229be8ab1623ea37"
+    },
+    {
+      "path": "js/advanced-renderer.js",
+      "bytes": 21146,
+      "sha256": "19a96803e2fce6d799ce8f69c3659e10bb8d47d4a74d3a5ee72796f0ca53a77c"
+    },
+    {
+      "path": "js/advanced-tool-bridge.js",
+      "bytes": 7251,
+      "sha256": "242f6988fa9c296b55e0e1aac5a494a71916b96100b7c8cea1d99edbfe56eb12"
+    },
+    {
+      "path": "js/animation.js",
+      "bytes": 4776,
+      "sha256": "a1875fa9044cd7f7ec13586c997bc3986cbe80888ae96a0c323ab014ad954816"
+    },
+    {
+      "path": "js/art-professional-pass2.js",
+      "bytes": 29759,
+      "sha256": "ec18f7f7ff2525bc69e8a2ba25516c855edcf2d8661902341ad385974d4a95f4"
+    },
+    {
+      "path": "js/art-professional-tools.js",
+      "bytes": 47330,
+      "sha256": "aaa9835e2c528b60393593e46f6c80900d273726840be8e40b107db04057760d"
+    },
+    {
+      "path": "js/artsrc-art-tools-bundle.js",
+      "bytes": 1946,
+      "sha256": "4e068f418075bff749be032d0232214e68d09e451616ce680dc90ecc69ffb8f3"
+    },
+    {
+      "path": "js/artsrc-core-backend-client.js",
+      "bytes": 1239,
+      "sha256": "12485b9d59396c1735d9e14afc0294fb441ea25c67f2f0f5d4c008840b48038f"
+    },
+    {
+      "path": "js/artsrc-core-canvas-adapter.js",
+      "bytes": 1160,
+      "sha256": "4506d5a16b9f3d6b3bf66895e4c96d5e1a6f8f6ac3d70283f07b75e35480c9d7"
+    },
+    {
+      "path": "js/artsrc-core-history.js",
+      "bytes": 1032,
+      "sha256": "fdd81f9f1965d89d2315e7da3b32b580dcdf341b3845a39841a3a45d9ef2813d"
+    },
+    {
+      "path": "js/artsrc-core-layers.js",
+      "bytes": 1696,
+      "sha256": "d1f10494af08e0d9f55bccca7d8a990b5fe692e7cdac666c098a78a3369bf71f"
+    },
+    {
+      "path": "js/artsrc-core-namespace.js",
+      "bytes": 1014,
+      "sha256": "cc54839d9a0d042017d64c49aef5bf9a9bfd99c4a62eafd3a39a3abc18350527"
+    },
+    {
+      "path": "js/artsrc-core-tool-registry.js",
+      "bytes": 782,
+      "sha256": "98366918c2e43603d3f97c5976188890d8d3947988bd0b20b980008a05314133"
+    },
+    {
+      "path": "js/artsrc-materials-brush-engine.js",
+      "bytes": 1050,
+      "sha256": "9488dc6c550f735557c46bcaaddc3b42543e4918c88ac83a87b31f37a3c59fbe"
+    },
+    {
+      "path": "js/artsrc-materials-texture-engine.js",
+      "bytes": 1237,
+      "sha256": "cd6a7fbcf74c8cd038967a02655c21c0c74f7f756b034982937227ac00c127d2"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-landscape-10x8.js",
+      "bytes": 516,
+      "sha256": "357f53078c6032ac67056b54c72833b8ea2647ab21f471604584f72abb3af0eb"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-4_25x6_87.js",
+      "bytes": 529,
+      "sha256": "69534de9caf8d719506fffa0771ae8f5c4287892b178944cb4ea105feb68102f"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-5_5x8_5-alt.js",
+      "bytes": 527,
+      "sha256": "03a4fb7a4eff5c2bca6759044f5abc57dc04dfea8d940c627ae0d4ca9e8892ed"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-5_5x8_5.js",
+      "bytes": 523,
+      "sha256": "360120de63780e95e336fff83c6ab1ed0cadf8331a6209268338f9c29b77f078"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-5x8.js",
+      "bytes": 511,
+      "sha256": "7059f645d912397ba4a7a267d5137817df9bc6f60295d252db28944c23e16d5b"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-6_14x9_21.js",
+      "bytes": 529,
+      "sha256": "63770317c209c83871c8c9b86ca3b90d5630d8f4f719342d1cae0e00afd2aaef"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-6x9-alt.js",
+      "bytes": 515,
+      "sha256": "188a14a1451f49853a31dd8f283b458efe62956e9ffab5961a21e148a2d98352"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-6x9.js",
+      "bytes": 511,
+      "sha256": "a108df21bd3b946f70a103d4760ebd547aabb651161f39d66f2ba21a707d930a"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-7x10.js",
+      "bytes": 514,
+      "sha256": "a8d0455f43cefa085a230b17ed6bd7f1a248e9b0c31352743f68ffd6c6309a2d"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-8_5x11.js",
+      "bytes": 520,
+      "sha256": "a902278126c96121af28c29129bc55aaefa2116bb68b11ad6962af6b64592a3f"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-portrait-8x10.js",
+      "bytes": 514,
+      "sha256": "acce4ec03b7c0e29e5fb7e1c606f860e7d5716d6d86e5cf0943ef43c68713353"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-square-10x10.js",
+      "bytes": 513,
+      "sha256": "deb326e8b830e7196334a3e3c2b8c4e75e540e762436ddb1067702d9355c5595"
+    },
+    {
+      "path": "js/artsrc-sizes-canvas-square-12x12.js",
+      "bytes": 513,
+      "sha256": "6657515b32034015a36b54f159509c651c7ff845d37120c0c765c2c08d103daa"
+    },
+    {
+      "path": "js/artsrc-tools-airbrush.js",
+      "bytes": 603,
+      "sha256": "6127e8f70d2ad3f6fb4f5190ad6ec1f23459832efb8f68f7a3517aeb9bf325a4"
+    },
+    {
+      "path": "js/artsrc-tools-blur.js",
+      "bytes": 550,
+      "sha256": "ed418d2d80847902ea800e86995b93e4d70b977896ccdd78d85d54cb898acfe7"
+    },
+    {
+      "path": "js/artsrc-tools-brush.js",
+      "bytes": 507,
+      "sha256": "ba13a3a60bc719800f25cf8b7b59390631a7b0c60369ba267aa1bdd6f0e78df8"
+    },
+    {
+      "path": "js/artsrc-tools-calligraphy.js",
+      "bytes": 727,
+      "sha256": "8e8b1b3604cf33029169865ceb697f9a14887ad2f0a867a50f371ed6d3b4e375"
+    },
+    {
+      "path": "js/artsrc-tools-clone.js",
+      "bytes": 947,
+      "sha256": "fa100bf4407a3a992acddcbc18ab0c4d51b01e5a73eabaf268ac019a2740a89d"
+    },
+    {
+      "path": "js/artsrc-tools-crop.js",
+      "bytes": 512,
+      "sha256": "953c8d0f0c1d0d2a676a9e11a8d16cd15e2f7412a099d6d27e087cb36a799f50"
+    },
+    {
+      "path": "js/artsrc-tools-ellipse.js",
+      "bytes": 780,
+      "sha256": "f29f9d57d52c42a1ba0b5e9ec351374d6f0b2505586c00d16bc1e093536a40ee"
+    },
+    {
+      "path": "js/artsrc-tools-eraser.js",
+      "bytes": 564,
+      "sha256": "eed0d8f6488dad7ca2d4dc6a35c27aee3a3ee12b00d13c16e9b7d4eb0c4814f7"
+    },
+    {
+      "path": "js/artsrc-tools-eyedropper.js",
+      "bytes": 480,
+      "sha256": "4ae2d08f6e71dd307b38b58e64cc2041210454d78c75d55042faa7591cad6d5d"
+    },
+    {
+      "path": "js/artsrc-tools-fill.js",
+      "bytes": 1251,
+      "sha256": "be588a5d8b7101dea85f1811bc9064699a0ce47494bdfac2c28c265c669ca3c5"
+    },
+    {
+      "path": "js/artsrc-tools-image.js",
+      "bytes": 486,
+      "sha256": "ae0b0b66691660e8beba275c71e041f5bf12bce974032fecd9360c049838df2f"
+    },
+    {
+      "path": "js/artsrc-tools-line.js",
+      "bytes": 600,
+      "sha256": "0704168c60196c98fe74e7a1759d52edb265c6ccb738c109fc8286843f8d422c"
+    },
+    {
+      "path": "js/artsrc-tools-marker.js",
+      "bytes": 563,
+      "sha256": "27bbcef44c2cbfd6b355e18981dea866e410237bada3b7d93c6358af862bb552"
+    },
+    {
+      "path": "js/artsrc-tools-oil.js",
+      "bytes": 583,
+      "sha256": "dad2f732b8f0da1c8d749a321f54406433384dcb7cb358ddd18646a65439c644"
+    },
+    {
+      "path": "js/artsrc-tools-pencil.js",
+      "bytes": 588,
+      "sha256": "0f4fd835d4903c6757dec8312d566b8f6e5032379643a2b13a0a2e57184bd016"
+    },
+    {
+      "path": "js/artsrc-tools-pixel.js",
+      "bytes": 555,
+      "sha256": "ff5850aff7eb881bddeb931dfa9eedda43656c257352270e89d923d684504203"
+    },
+    {
+      "path": "js/artsrc-tools-rectangle.js",
+      "bytes": 791,
+      "sha256": "9f9a8cf574d7922edba0fbcf1955a75ba377547ceb13e4c32f8e85f4279dc479"
+    },
+    {
+      "path": "js/artsrc-tools-selection.js",
+      "bytes": 676,
+      "sha256": "e746574e85046d222908a42ffca42ee5976e5be06a13d4eb17f6a3efe7b21e46"
+    },
+    {
+      "path": "js/artsrc-tools-smudge.js",
+      "bytes": 811,
+      "sha256": "e2d54b3abff4d3694820f32ed190bee9479ab931298fdd0a9f98ab7cb0fa3a22"
+    },
+    {
+      "path": "js/artsrc-tools-symmetry.js",
+      "bytes": 539,
+      "sha256": "82de13205e1e8e8ccbeb6b10b1643fac063e12d0c6c8de5301d2dc2e3561fbe5"
+    },
+    {
+      "path": "js/artsrc-tools-text.js",
+      "bytes": 487,
+      "sha256": "9a7c336f74643f346bfdb53bc7c48b1f03dbace9ef169979ee2f6cec61a2020b"
+    },
+    {
+      "path": "js/artsrc-tools-texture.js",
+      "bytes": 266,
+      "sha256": "618ad513a2576545b309982583ca4df1da2658b0ef3c9f0535af3001dc0e9860"
+    },
+    {
+      "path": "js/artsrc-tools-transform.js",
+      "bytes": 508,
+      "sha256": "b39e5268f2b272cee6e76f7da0199cd6167149b41cb31a247776b49514011bc7"
+    },
+    {
+      "path": "js/artsrc-tools-watercolor.js",
+      "bytes": 618,
+      "sha256": "acaf60be237ddcc2b8602b10487158f0225695bb529eb5b8120eda4c435d1dff"
+    },
+    {
+      "path": "js/backend-api.js",
+      "bytes": 7152,
+      "sha256": "4ede1faec2c264638748972d27eed555917aebe8f3c78a0f422ed8ecae2fbe43"
+    },
+    {
+      "path": "js/backend-config.js",
+      "bytes": 309,
+      "sha256": "e3fe6c332a4ce37dd5ae093c07fb24199896ef4beccca965aa817785235bd2d7"
+    },
+    {
+      "path": "js/basis_transcoder.js",
+      "bytes": 57529,
+      "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+    },
+    {
+      "path": "js/canvas-engine.js",
+      "bytes": 26481,
+      "sha256": "e78495c42066dd275f1fa4fda254cbd38e24a6fb1ff4d2d6cc9c02c4982d3b21"
+    },
+    {
+      "path": "js/canvas-engine.source-v2.js",
+      "bytes": 11286,
+      "sha256": "e2d71c32e3166be6866743c6cc97b68f67a2fad2fefba0f610b9ae4248a42bea"
+    },
+    {
+      "path": "js/canvas-size-registry.js",
+      "bytes": 535,
+      "sha256": "4986484e89a9a5e2907f36504dc4fd32bb29814b9fee580474c5c080c0d5b683"
+    },
+    {
+      "path": "js/collage.js",
+      "bytes": 3218,
+      "sha256": "92eced347bfd4eea93280506837463b267c73103f140cd500d50bb0ecb5d1c2f"
+    },
+    {
+      "path": "js/core.js",
+      "bytes": 5669,
+      "sha256": "1077f2ba698065700a947fc964635a4b11a37e9c6bfc735c9b4d83ff548258ea"
+    },
+    {
+      "path": "js/draco_decoder.js",
+      "bytes": 512465,
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f"
+    },
+    {
+      "path": "js/draco_wasm_wrapper.js",
+      "bytes": 58456,
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+    },
+    {
+      "path": "js/export.js",
+      "bytes": 1622,
+      "sha256": "b1b0409d1b03cd848bcabab7d845160e638b87506977dc80b8a79e1818418e3e"
+    },
+    {
+      "path": "js/filters.js",
+      "bytes": 3991,
+      "sha256": "e52126bbe556e08d0b2c762a044f744ef4c3926a461f66ab9f5f0abf7721fbe8"
+    },
+    {
+      "path": "js/history.js",
+      "bytes": 1779,
+      "sha256": "9925b753254f7ef522452d5ef2387b317f40dbb7928ee943e6ff7817c8935b39"
+    },
+    {
+      "path": "js/image-tools.js",
+      "bytes": 8615,
+      "sha256": "ed4303ebef0d02988be695ee0d698c5b7c53509eac7da19fa30ea302aeaf842c"
+    },
+    {
+      "path": "js/library.js",
+      "bytes": 2723,
+      "sha256": "34a9016442467bece20e2b19e646f7d420faac8a379612d8bafe07137c3b228a"
+    },
+    {
+      "path": "js/map-tools.js",
+      "bytes": 2630,
+      "sha256": "442ca3df8ee18425e452b9e987d4ff379d195b0571f7af0eee673ac32f4250be"
+    },
+    {
+      "path": "js/ourspace-game-bridge.js",
+      "bytes": 2290,
+      "sha256": "39c398c2239e7dbf5aa7f39b541b6c031ee67cca76e43ea3bf1b3e92e3a5b178"
+    },
+    {
+      "path": "js/preset-catalog.js",
+      "bytes": 4420,
+      "sha256": "2fa150855e848b9a1467b165a7fdb41c803748e998a3957d8e80218ff2a4c192"
+    },
+    {
+      "path": "js/preset-data.js",
+      "bytes": 1758,
+      "sha256": "0d25252d68ec576a337332b616be899fbdb3813a8ad164ebde1810827e4efff4"
+    },
+    {
+      "path": "js/professional-wasm-bridge.js",
+      "bytes": 5139,
+      "sha256": "29b0b523b11b6fc8c5218ae67150e1429ac38444fd214c700c4624198f0100a0"
+    },
+    {
+      "path": "js/project-library.js",
+      "bytes": 11425,
+      "sha256": "6d2b96c7c50883c7914e035adf5c9169a7d754b26726f65d0962f6be8619d275"
+    },
+    {
+      "path": "js/settings.js",
+      "bytes": 27210,
+      "sha256": "be228305d583a35571a54b54afcf697299a7d9c5e65d42f51839b48ba67a2106"
+    },
+    {
+      "path": "js/single-shell.js",
+      "bytes": 690,
+      "sha256": "b109f01cdf099a100e55ae6d180d56174d038bcd590b110947c6988089f25cfa"
+    },
+    {
+      "path": "js/size-canvas-landscape-10x8.js",
+      "bytes": 226,
+      "sha256": "46107576c686949f6385bdaf4abb8df80cfc4bda141e367e33299f461644b725"
+    },
+    {
+      "path": "js/size-canvas-portrait-4_25x6_87.js",
+      "bytes": 244,
+      "sha256": "fa9d0baf4d59c37da4ebf3c878526b457d6a125df664c4182e6e491cf60fc399"
+    },
+    {
+      "path": "js/size-canvas-portrait-5_5x8_5-alt.js",
+      "bytes": 240,
+      "sha256": "32f351277fa5a0f965c033039d0658beece39df8c23cfc152b2fc697f03a7aa9"
+    },
+    {
+      "path": "js/size-canvas-portrait-5_5x8_5.js",
+      "bytes": 236,
+      "sha256": "e4e4b265c40c57d0eecb7062497888412071e2ae9a4c40d62c273efc8085c439"
+    },
+    {
+      "path": "js/size-canvas-portrait-5x8.js",
+      "bytes": 220,
+      "sha256": "c5e2ccf2f536fc10d735d88e4f9cae2ebb33a4f2629f10b8b927710bb84f4e4e"
+    },
+    {
+      "path": "js/size-canvas-portrait-6_14x9_21.js",
+      "bytes": 244,
+      "sha256": "bb38bd14b0584c21c34609a84398d762dcd8cce6880b532b4d23b816cb84d20e"
+    },
+    {
+      "path": "js/size-canvas-portrait-6x9-alt.js",
+      "bytes": 224,
+      "sha256": "3eae53eb29184d8c520225e253d8da0ed62548bc6199c278af929b4e58930e50"
+    },
+    {
+      "path": "js/size-canvas-portrait-6x9.js",
+      "bytes": 220,
+      "sha256": "35960890789007f64c8550936355582347b7bb1c350e64534c0773c0efb3ce4d"
+    },
+    {
+      "path": "js/size-canvas-portrait-7x10.js",
+      "bytes": 224,
+      "sha256": "ce783f31bff54c9e714334f9ae6b097910b16de3ce2314b4eaf24931bebdec1f"
+    },
+    {
+      "path": "js/size-canvas-portrait-8_5x11.js",
+      "bytes": 232,
+      "sha256": "1164d246b789135a51d72a98fa864833da070352125c7bc453769337e442fac4"
+    },
+    {
+      "path": "js/size-canvas-portrait-8x10.js",
+      "bytes": 224,
+      "sha256": "16a50846f010c14cc4d292b871c2acbefa711558c6eee5aef94662cadc63a27c"
+    },
+    {
+      "path": "js/size-canvas-square-10x10.js",
+      "bytes": 224,
+      "sha256": "5a99deda0eff705a0469463df6b1a1652970eab913da4763e707e1e6d4bbf279"
+    },
+    {
+      "path": "js/size-canvas-square-12x12.js",
+      "bytes": 224,
+      "sha256": "4dbf67a3e071e6859f80811da61d01dcd8f88568554c01e8f9882f18e1279fcf"
+    },
+    {
+      "path": "js/storage.js",
+      "bytes": 3451,
+      "sha256": "62053bb020a63606d690ee7b736197f8fbe5fd034a19fe7bb63fc352ad5b938e"
+    },
+    {
+      "path": "js/studio-ui.js",
+      "bytes": 23813,
+      "sha256": "ccb2eb50fa3250792627d704d76b393c2824f2167ebd0ee44cf3620af053fee7"
+    },
+    {
+      "path": "js/text-engine.js",
+      "bytes": 7323,
+      "sha256": "b293be93c753f71d9f46d6be120ecd6dca096ea205078f4204a3c88ab91a0263"
+    },
+    {
+      "path": "js/three.addons.global.js",
+      "bytes": 1206892,
+      "sha256": "432105c52185c9ddf016ed3149e7ab0436b6bf16bc2f0d3a02b00f8216cf3e3e"
+    },
+    {
+      "path": "js/three.global.js",
+      "bytes": 2108729,
+      "sha256": "09ebe8958f74ead9e21d966543b157390b0bf053decfb9d5bfd12ebe7b7a04ed"
+    },
+    {
+      "path": "js/tool-registry.js",
+      "bytes": 19903,
+      "sha256": "d170a62546368fbc277e4af44aef75c89a6ad3ee02525c3e95d9fa9a785b3eeb"
+    },
+    {
+      "path": "js/toolbar_engine_bridge.js",
+      "bytes": 32715,
+      "sha256": "6090e7c104fc4969401a04787ae03523e69787b5081a9c244154c5da752fe8a6"
+    },
+    {
+      "path": "js/toolbar_menu.js",
+      "bytes": 38059,
+      "sha256": "0f533207f8b894e018e6fa60c1150e2303edddb7aca9d66d0770d7fe4bc8af23"
+    },
+    {
+      "path": "js/tools.js",
+      "bytes": 18073,
+      "sha256": "22c173cd72a91b862491746c1b9c72dad28f65ceb94c417d41d69b906af25dbe"
+    },
+    {
+      "path": "js/ui.js",
+      "bytes": 17891,
+      "sha256": "2fca9e3f091bd6eb8114ca6e0f605e14617ef3959c574d36fe73afefaa8fe184"
+    },
+    {
+      "path": "js/uniform3d-app.js",
+      "bytes": 7019,
+      "sha256": "a6ae5f1baaeb1339831dc9125da10ef672c1fbd2135976c576f4fdf22e2bb43d"
+    },
+    {
+      "path": "js/uniform3d-avatar-tools.js",
+      "bytes": 7145,
+      "sha256": "71e6fca65c29641bdb2993ff4df4af8c60c67c959e7de9bcb2dffd0a238a840d"
+    },
+    {
+      "path": "js/uniform3d-capture-tools.js",
+      "bytes": 6686,
+      "sha256": "7f2cfdacc957a47f9a6ac0312773d5ec7769dd8241b0554d490cfe6e99b9a0fa"
+    },
+    {
+      "path": "js/uniform3d-io-tools.js",
+      "bytes": 8919,
+      "sha256": "2712f8cdf49997766a72bd19803aaa70822f5d510f076b4c412fd8baffdd9d2e"
+    },
+    {
+      "path": "js/uniform3d-paint-tools.js",
+      "bytes": 6724,
+      "sha256": "f06eaee319753192ee5c5152384e2704fae22224c93c2e4596d73051fc08becb"
+    },
+    {
+      "path": "js/uniform3d-professional-pass2.js",
+      "bytes": 35161,
+      "sha256": "4d8ba1e4f519d3ba54603a1d6f580ffbc4bbe1887013fb5691a2472901897b8c"
+    },
+    {
+      "path": "js/uniform3d-professional-tools.js",
+      "bytes": 22815,
+      "sha256": "343c5101fc8edad9f5bcf5cdbe96c0d3eec0c8a46aa96a9a439122d2acc0ed7f"
+    },
+    {
+      "path": "js/uniform3d-scene-editor.js",
+      "bytes": 11136,
+      "sha256": "5f0627be947fdcaad4e9642d74120e2dfb3a3a9c5999b37b92c22c7d8964356d"
+    },
+    {
+      "path": "js/uniform3d-sculpt-tools.js",
+      "bytes": 13331,
+      "sha256": "88ef3dea35fe60ef5bf84972acc92ed96475e29bb7566c0cefc82ef8b4bebaf2"
+    },
+    {
+      "path": "js/uniform3d-studio-core.js",
+      "bytes": 9349,
+      "sha256": "c8d2f9d96eb716c411530f2c753e86b8f3a747f120c3af0214f82af28e638443"
+    },
+    {
+      "path": "js/uniform3d-swatch-library.js",
+      "bytes": 5280,
+      "sha256": "a9493ae6187cff199dda19a8b20b466424921aaa8785ab32ac15625dab598d93"
+    },
+    {
+      "path": "js/uniform3d-three.addons.global.js",
+      "bytes": 1206892,
+      "sha256": "432105c52185c9ddf016ed3149e7ab0436b6bf16bc2f0d3a02b00f8216cf3e3e"
+    },
+    {
+      "path": "js/uniform3d-wasm-bridge.js",
+      "bytes": 4001,
+      "sha256": "b0cf8ed0299c712d13824e13b0178cf8acb1c09636dbf49569aa69aa149b4d32"
+    },
+    {
+      "path": "json/artsrc-backend-config.json",
+      "bytes": 531,
+      "sha256": "6098dfaeee5c04f891c20df6032cfc93708fcb032a052bc1ae04c7e3bc471ef8"
+    },
+    {
+      "path": "json/artsrc-brush-presets.json",
+      "bytes": 1460,
+      "sha256": "aacae37d3afaf7d57ee7d156957192fb016efd29491e982f3a859506abd1468f"
+    },
+    {
+      "path": "json/artsrc-canvas-sizes.json",
+      "bytes": 3457,
+      "sha256": "dc5a8b37bb04f95f0b963ca753f10f2b71bfd84c5cf432387d6152ebe2787f17"
+    },
+    {
+      "path": "json/artsrc-material-palette.json",
+      "bytes": 386,
+      "sha256": "34ac54aa344976c0cb8d1aec7583fb015f18465d978b8073a9fcdf5db140d7ab"
+    },
+    {
+      "path": "json/artsrc-project-schema.json",
+      "bytes": 471,
+      "sha256": "606ba8fbf8fc1b15e363bfb460ff803c7046c5a8d1b6fd1bd5bdbcb7c1b0f328"
+    },
+    {
+      "path": "json/artsrc-shortcuts.json",
+      "bytes": 256,
+      "sha256": "8b6833cc089f43f2f8f5eaeea1eee59fe321152104ea86d83f2757b22c28f4e6"
+    },
+    {
+      "path": "json/artsrc-texture-presets.json",
+      "bytes": 853,
+      "sha256": "b3f5d1b990ce9f65b3bab1b4be69dda524e9d401b8e5133ec89c8890df36d08b"
+    },
+    {
+      "path": "json/artsrc-tool-manifest.json",
+      "bytes": 552,
+      "sha256": "1696a77f0a6a9772eb12a53fa9fdfe6411fb86ffd71e159f64a1fd62573fb53a"
+    },
+    {
+      "path": "json/brush-dynamics-catalog.json",
+      "bytes": 4477811,
+      "sha256": "15a31554da912404bc5a31393387801e9238cbe18c920e6ea7fa746336a8c7ae"
+    },
+    {
+      "path": "json/brushes.json",
+      "bytes": 1132,
+      "sha256": "f79b65f05b1245fc1e7a7497c28d281ddc87261ab8a466cb1e2794f56658ece4"
+    },
+    {
+      "path": "json/canvas-size-presets.json",
+      "bytes": 3274,
+      "sha256": "8f839c79fe6cf954bb959898e874e558c56cb0f1181bb5a8d5ae4738cfaccd6f"
+    },
+    {
+      "path": "json/config.json",
+      "bytes": 834,
+      "sha256": "3c8bbb7721631dd1fbc8f8b12ef7b9ba54b60d0ab19025c4d8069385e93cbe46"
+    },
+    {
+      "path": "json/editable-scene-schema.json",
+      "bytes": 1657,
+      "sha256": "58a3365e4cbb145325df8b9d68da7356472deaa6fc8958a4bb284dd9ab89dcc8"
+    },
+    {
+      "path": "json/filters.json",
+      "bytes": 528,
+      "sha256": "d6b7e3ea7a526f3d073b6c7aa16b9edbbbcee6d4ffac6c6db146f36cd0fcb043"
+    },
+    {
+      "path": "json/map-presets.json",
+      "bytes": 387,
+      "sha256": "2fa3465435f6b9ef8b206d92c27cb9897a4856dad4107aaaca36c0c9fe5ce8ee"
+    },
+    {
+      "path": "json/palettes.json",
+      "bytes": 775,
+      "sha256": "db4afc6b1534fcdf1d788009a5804271aea341fe9a20bcf477d9cb0f33bf924a"
+    },
+    {
+      "path": "json/procedural-shape-catalog.json",
+      "bytes": 69161226,
+      "sha256": "4ebf06c0cb0ff56905524c66f2f6d6f3f58665824a8ea9573366e4bb6308e27b"
+    },
+    {
+      "path": "json/project-schema.json",
+      "bytes": 965,
+      "sha256": "f1d81fdce1246b6b57aae9c1f0e91bd0087bf484416ce88f3f92c65c28823126"
+    },
+    {
+      "path": "json/scene3d-schema.json",
+      "bytes": 1097,
+      "sha256": "70b9670d4a972c591cd2762efb74826285342bd8bf3a1a4b547063d5e696be89"
+    },
+    {
+      "path": "json/tool-registry.json",
+      "bytes": 24935,
+      "sha256": "8349abd48ecda1a96f6a27bb87c369bcd9526472f5666f1553a5f8c33121be3a"
+    },
+    {
+      "path": "assets/wasm/basis_transcoder.wasm",
+      "bytes": 527333,
+      "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a"
+    },
+    {
+      "path": "assets/wasm/draco_decoder.wasm",
+      "bytes": 192420,
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
+    },
+    {
+      "path": "assets/wasm/savanski-professional-kernel.wasm",
+      "bytes": 1752,
+      "sha256": "51676cd8c1d2550f6f165fb77941231ceb2bc3beb8ef5b3f5a0ce07874c065fe"
+    },
+    {
+      "path": "assets/wasm/uniform3d-mesh-kernel-cpp.wasm",
+      "bytes": 1063,
+      "sha256": "4ce09aed9f7a1e6e8fe60f5f73640282dec26f256104c71e6289f24bf34cb78e"
+    },
+    {
+      "path": "assets/wasm/uniform3d-sculpt-port-python.wasm",
+      "bytes": 675,
+      "sha256": "a88f4f41399b6e224db5be744639f552dd3f4c418edd7310f8d896cf5aca8517"
+    },
+    {
+      "path": "studio.html",
+      "bytes": 125800,
+      "sha256": "d27fff292a6b6337cdde8e6076fd699807547882f25611d24c8b3e745218d91c"
+    }
+  ],
+  "canvasTerminologyPass": true,
+  "publicStaticHosting": true,
+  "accountRequiredToLaunch": false,
+  "updatedAt": "2026-09-23T22:20:00-04:00",
+  "hosting": {
+    "repositoryPath": "Savanski",
+    "publicStatic": true,
+    "accountRequiredToLaunch": false,
+    "backendOptional": true,
+    "browserInstallManifest": "assets/app/manifest.webmanifest"
+  },
+  "singleHtmlPass": {
+    "htmlFileCount": 1,
+    "tabs": [
+      "Studio",
+      "3D Editor"
+    ],
+    "desktopWidthPx": 1915,
+    "titleHeightPx": 58,
+    "toolbarHeightPx": 80,
+    "workspaceHeightPx": 647,
+    "secondary3dHtmlRemoved": true,
+    "iframe3dRemoved": true,
+    "lightweight3dWorkspaceRemoved": true
+  }
+}
