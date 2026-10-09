@@ -6,9 +6,144 @@
   <meta name="theme-color" content="#001e24">
   <title>LifeHelpers Arcade</title>
   <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* The two permanent sections share the existing arcade design system. */
+    .experience-tabs {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(8px, 2vw, 20px);
+      width: 100%;
+      height: 64px;
+      padding: 7px 12px;
+      background: #00141b;
+      border-bottom: 2px solid #008b8b;
+      box-shadow: 0 4px 22px rgba(0, 0, 0, .55);
+    }
+    .experience-tabs .experience-tab {
+      flex: 1 1 0;
+      max-width: 300px;
+      height: 48px;
+      min-height: 48px;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      background: #08242d;
+      color: #e9ffff;
+      font: 700 clamp(13px, 2.2vw, 16px)/1.15 Verdana, Arial, sans-serif;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: none;
+      white-space: normal;
+    }
+    .experience-tabs .experience-tab[aria-selected="true"] {
+      border-color: #f7b36b;
+      background: linear-gradient(180deg, #f7b36b, #ca6309);
+      color: #001e24;
+      box-shadow: 0 0 0 1px rgba(255, 213, 110, .35);
+    }
+    .experience-tabs .experience-tab:hover:not([aria-selected="true"]) {
+      background: #10444d;
+    }
+    .experience-tabs .experience-tab:focus-visible,
+    #savanskiTabPanel .studio-controls button:focus-visible {
+      outline: 3px solid #ffd56e;
+      outline-offset: 3px;
+    }
+    #arcadeTabPanel[hidden],
+    #savanskiTabPanel[hidden] { display: none !important; }
+    #savanskiTabPanel {
+      width: 100%;
+      height: calc(100dvh - 64px);
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      background: #000b10;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    #savanskiTabPanel .studio-controls {
+      height: 50px;
+      flex: 0 0 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 5px max(1%, 10px);
+      background: #001e24;
+      border-bottom: 1px solid #008b8b;
+    }
+    #savanskiTabPanel .studio-controls button {
+      width: auto;
+      min-height: 38px;
+      max-width: 50%;
+      border-radius: 9px;
+      border: 2px solid #00ffff;
+      background: #062b32;
+      color: #f1ffff;
+      padding: 6px 14px;
+      box-shadow: none;
+      cursor: pointer;
+      font: 700 13px/1.25 Verdana, Arial, sans-serif;
+    }
+    #savanskiTabPanel .studio-controls button:hover {
+      background: #125563;
+    }
+    #savanskiTabPanel .studio-stage {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 0;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    #savanskiTabPanel #savanskiFrame {
+      display: block;
+      width: 98%;
+      height: 98%;
+      min-width: 0;
+      min-height: 0;
+      border: 1px solid rgba(0, 255, 255, .48);
+      border-radius: 8px;
+      background: #07141a;
+      color-scheme: light;
+    }
+    #savanskiTabPanel:fullscreen,
+    #savanskiTabPanel:-webkit-full-screen,
+    #savanskiTabPanel.is-expanded {
+      width: 100vw;
+      height: 100dvh;
+      min-height: 0;
+      max-height: none;
+      margin: 0;
+      border: 0;
+      background: #000b10;
+    }
+    #savanskiTabPanel.is-expanded {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+    }
+    body.savanski-pseudo-fullscreen { overflow: hidden; }
+    @media (max-width: 440px) {
+      #savanskiTabPanel .studio-controls { gap: 6px; }
+      #savanskiTabPanel .studio-controls button { padding: 6px 9px; font-size: 12px; }
+      .experience-tabs .experience-tab { font-size: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .experience-tabs, #savanskiTabPanel { scroll-behavior: auto; }
+    }
+  </style>
 </head>
 <body>
-<div class="arcade-shell">
+<nav class="experience-tabs" role="tablist" aria-label="LifeHelpers sections">
+  <button id="arcadeTab" class="experience-tab" type="button" role="tab" aria-controls="arcadeTabPanel" aria-selected="true" tabindex="0">Arcade</button>
+  <button id="savanskiTab" class="experience-tab" type="button" role="tab" aria-controls="savanskiTabPanel" aria-selected="false" tabindex="-1">Savanski Art Studio</button>
+</nav>
+<div class="arcade-shell" id="arcadeTabPanel" role="tabpanel" aria-labelledby="arcadeTab" tabindex="0">
   <header class="main-header">
     <div class="masthead">
       <div class="brand-row">
@@ -147,73 +282,125 @@
 
   <footer class="footer"><strong>LifeHelpers Arcade</strong><span>Desktop + mobile HTML game launcher</span></footer>
 </div>
+
+<section id="savanskiTabPanel" role="tabpanel" aria-labelledby="savanskiTab" tabindex="0" hidden>
+  <div class="studio-controls" aria-label="Savanski Art Studio navigation">
+    <button id="savanskiHomeButton" type="button">Home (Arcade)</button>
+    <button id="savanskiFullscreenButton" type="button" aria-pressed="false">Fullscreen</button>
+  </div>
+  <div class="studio-stage">
+    <iframe id="savanskiFrame"
+            title="Savanski Art Studio"
+            data-src="Savanski_Art_Studio/studio.html"
+            loading="lazy"
+            allow="fullscreen; clipboard-read; clipboard-write; camera; microphone"
+            allowfullscreen></iframe>
+  </div>
+</section>
+
 <script src="GameBots/js/gamebots.js"></script>
 <script src="js/main.js"></script>
 
+
+
 <script>
-/* =========================================================
-   SAVANSKI ART STUDIO — LifeHelpers/Games integration
-   Expected structure:
-   /Games
-     /Savanski_Art_Studio
-       studio.html
-   ========================================================= */
-(function () {
-  const SAVANSKI_STUDIO = {
-    title: "Savanski Art Studio",
-    path: "Savanski_Art_Studio/studio.html",
-    value: "__savanski_art_studio__"
-  };
+/* Permanent Arcade / Savanski tabs. The existing Arcade game loader is untouched. */
+(() => {
+  'use strict';
+  const arcadeTab = document.getElementById('arcadeTab');
+  const studioTab = document.getElementById('savanskiTab');
+  const arcade = document.getElementById('arcadeTabPanel');
+  const studio = document.getElementById('savanskiTabPanel');
+  const studioFrame = document.getElementById('savanskiFrame');
+  const home = document.getElementById('savanskiHomeButton');
+  const fullscreen = document.getElementById('savanskiFullscreenButton');
+  const tabs = [arcadeTab, studioTab];
+  let studioInitialized = false;
 
-  function installSavanskiStudio() {
-    const select = document.getElementById("bothGameSelect");
-    const loadButton = document.getElementById("loadBothButton");
-    const frame = document.getElementById("gameFrame");
-    const empty = document.getElementById("viewerEmpty");
-    const title = document.getElementById("viewerTitle");
-    const status = document.getElementById("viewerStatus");
-    const viewer = document.getElementById("arcade-viewer");
+  const studioRoute = () => ['#savanski-art-studio', '#savanski', '#studio'].includes(location.hash.toLowerCase());
 
-    if (!select || !loadButton || !frame) return;
+  function updateFullscreenButton() {
+    const expanded = document.fullscreenElement === studio || studio.classList.contains('is-expanded');
+    fullscreen.textContent = expanded ? 'Exit Fullscreen' : 'Fullscreen';
+    fullscreen.setAttribute('aria-pressed', String(expanded));
+  }
 
-    if (!select.querySelector('option[value="' + SAVANSKI_STUDIO.value + '"]')) {
-      const option = document.createElement("option");
-      option.value = SAVANSKI_STUDIO.value;
-      option.textContent = SAVANSKI_STUDIO.title;
-      select.appendChild(option);
+  async function exitStudioFullscreen() {
+    if (document.fullscreenElement === studio && document.exitFullscreen) {
+      try { await document.exitFullscreen(); } catch (error) { console.warn('Could not exit fullscreen:', error); }
     }
-
-    loadButton.addEventListener("click", function (event) {
-      if (select.value !== SAVANSKI_STUDIO.value) return;
-
-      event.preventDefault();
-      event.stopImmediatePropagation();
-
-      frame.src = SAVANSKI_STUDIO.path;
-
-      if (empty) {
-        empty.hidden = true;
-        empty.style.display = "none";
-      }
-
-      if (title) title.textContent = SAVANSKI_STUDIO.title;
-      if (status) {
-        status.innerHTML = 'Loaded Savanski Art Studio. <span class="mobile-safe-note">Mobile fullscreen.</span>';
-      }
-
-      if (viewer) {
-        viewer.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }, true);
+    studio.classList.remove('is-expanded');
+    document.body.classList.remove('savanski-pseudo-fullscreen');
+    updateFullscreenButton();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", installSavanskiStudio);
-  } else {
-    installSavanskiStudio();
+  function showSection(section, changeUrl = false) {
+    const showStudio = section === 'studio';
+    arcade.hidden = showStudio;
+    studio.hidden = !showStudio;
+    arcadeTab.setAttribute('aria-selected', String(!showStudio));
+    studioTab.setAttribute('aria-selected', String(showStudio));
+    arcadeTab.tabIndex = showStudio ? -1 : 0;
+    studioTab.tabIndex = showStudio ? 0 : -1;
+    document.title = showStudio ? 'Savanski Art Studio | LifeHelpers Arcade' : 'LifeHelpers Arcade';
+    if (showStudio && !studioInitialized) {
+      studioInitialized = true;
+      studioFrame.src = studioFrame.dataset.src;
+    }
+    if (!showStudio && (document.fullscreenElement === studio || studio.classList.contains('is-expanded'))) {
+      void exitStudioFullscreen();
+    }
+    if (changeUrl) {
+      const targetHash = showStudio ? '#savanski-art-studio' : '#arcade';
+      if (location.hash !== targetHash) history.pushState({lifehelpersSection: section}, '', targetHash);
+    }
+    window.scrollTo(0, 0);
   }
+
+  function selectSection(section) { showSection(section, true); }
+  arcadeTab.addEventListener('click', () => selectSection('arcade'));
+  studioTab.addEventListener('click', () => selectSection('studio'));
+  home.addEventListener('click', () => selectSection('arcade'));
+
+  // The iframe retains its own state when switching tabs: no forced reload.
+  fullscreen.addEventListener('click', async () => {
+    if (document.fullscreenElement === studio || studio.classList.contains('is-expanded')) {
+      await exitStudioFullscreen();
+      return;
+    }
+    if (studio.requestFullscreen) {
+      try {
+        await studio.requestFullscreen();
+        updateFullscreenButton();
+        return;
+      } catch (error) {
+        console.warn('Native fullscreen unavailable; using expanded view.', error);
+      }
+    }
+    studio.classList.add('is-expanded');
+    document.body.classList.add('savanski-pseudo-fullscreen');
+    updateFullscreenButton();
+  });
+
+  document.addEventListener('fullscreenchange', updateFullscreenButton);
+  document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && studio.classList.contains('is-expanded')) {
+      void exitStudioFullscreen();
+      return;
+    }
+    if (!tabs.includes(document.activeElement)) return;
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const next = event.key === 'Home' ? 0 : event.key === 'End' ? 1 :
+      (tabs.indexOf(document.activeElement) + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+    tabs[next].focus();
+    selectSection(next === 1 ? 'studio' : 'arcade');
+  });
+  window.addEventListener('popstate', () => showSection(studioRoute() ? 'studio' : 'arcade'));
+  window.addEventListener('hashchange', () => showSection(studioRoute() ? 'studio' : 'arcade'));
+  showSection(studioRoute() ? 'studio' : 'arcade');
 })();
 </script>
-
 </body>
 </html>
