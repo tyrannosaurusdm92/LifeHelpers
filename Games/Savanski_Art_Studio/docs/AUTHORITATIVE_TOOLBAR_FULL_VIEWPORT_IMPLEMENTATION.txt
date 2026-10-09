@@ -1,0 +1,24 @@
+SAVANSKI AUTHORITATIVE TOOLBAR / FULL-VIEWPORT IMPLEMENTATION AUDIT
+
+Desktop geometry
+- Header/shell: 1915px × 58px
+- Toolbar: 1915px × 80px
+- Art Studio editing workspace: 1915px × 647px
+- 3D Editor editing workspace: 1915px × 647px
+- Active editor stack: 785px tall
+
+Authority
+- css/toolbar_menus.css is copied from Savanski_Studio_Authoritative_Foldered(1).zip.
+- js/toolbar_menu.js is copied from Savanski_Studio_Authoritative_Foldered(1).zip.
+- No top-level toolbar_menus.css or toolbar_menu.js duplicate remains.
+- js/toolbar_engine_bridge.js only routes authoritative toolbar events to existing editor engines; it does not define toolbar/menu UI or menu geometry.
+
+3D workspace
+- Visible left/right static side panels were converted to hidden engine compatibility controls.
+- Their IDs remain for existing 3D engine bindings.
+- The visible 3D workspace contains the viewport as the sole editing surface and fills the same 1915×647 rectangle as Studio.
+- 3D status information overlays the bottom edge rather than shrinking the viewport.
+
+Home
+- Existing Home / Projects launcher content is retained from the merged application.
+- Header Home button opens that existing launcher.

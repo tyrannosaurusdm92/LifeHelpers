@@ -1,0 +1,70 @@
+SAVANSKI — ONYX IMAGE-TOOL GAP PASS
+======================================
+
+Purpose
+-------
+Compared Onyx Art Studio/Generator Bridge v11 against Savanski Art Studio Toolbars Configured Pass.
+Only image creation/editing capabilities that were actually implemented in Onyx and missing from Savanski were ported.
+Savanski identity, palette, layout, geometry, navigation, project system, toolbar design, and naming remain authoritative.
+
+Added to Savanski
+-----------------
+SELECTION
+- Magic Color Select: contiguous pixel selection from a clicked color region.
+- Contiguous Background Erase: click a contiguous background region to erase it.
+- Pixel Selection Invert.
+- Fill Pixel Selection with current Primary color.
+- Erase Pixel Selection to transparency.
+- Keep Only Selection (mask artwork outside selected pixels to transparency).
+- Clear Pixel Selection.
+- Selection tolerance control.
+
+COLOR
+- Replace Primary -> Fill: tolerance-based color replacement on the active raster layer.
+- Swap Primary / Fill colors.
+- Reset Primary / Fill to black / white.
+- Extract Artwork Palette: samples dominant colors from active raster artwork.
+- Generate Color Harmony: creates related colors from the current Primary color.
+- Clickable generated/extracted palette swatches.
+
+IMAGE / IMPORT CLEANUP
+- Trim Transparent Edges and recenter artwork.
+- Remove Near-White.
+- Remove Near-Black.
+- Color-Key Primary to transparency.
+- Alpha Threshold.
+- Posterize.
+- Reduce Palette.
+- Silhouette using Primary color.
+- Despeckle isolated opaque pixels.
+- Edge Defringe low-alpha edge pixels.
+- Paste Image from Clipboard as a new layer.
+- Clear Active Layer.
+
+Deliberately NOT duplicated
+---------------------------
+Savanski already had equivalents or stronger implementations for:
+- Rectangular select and free-form select.
+- Crop and shape crops.
+- Horizontal/vertical flip and mirror-related transforms.
+- Brush, pencil, marker, airbrush/spray, calligraphy, crayon, watercolor, oil, pixel brush.
+- Eraser and background removal.
+- Fill and eyedropper.
+- Clone stamp and smudge.
+- Blur/sharpen/dodge/burn retouching.
+- Symmetry painting.
+- Shapes and large shape catalog.
+- Text and advanced typography.
+- Image filters/adjustments.
+- Layer management, masking, blend modes, opacity, scaling, guides, snapping, collage.
+- Undo/redo and image exports.
+
+Not ported because Onyx did not actually implement them
+-------------------------------------------------------
+These Onyx controls were placeholders rather than working image tools:
+- Ellipse selection mode.
+- Polygon lasso selection.
+- Grow selection.
+- Shrink selection.
+
+No Onyx generator, sprite, animation, behavior, bridge, branding, UI styling, palette, layout, geometry, or personality systems were copied.

@@ -1,0 +1,793 @@
+SAVANSKI ART STUDIO — COMPLETE TOOL INVENTORY
+Generated from the LifeHelpers deployment-ready build supplied in this chat.
+Organization: Art Studio first, then 3D Editor; each is grouped by its active toolbar/toolkit category.
+
+ART STUDIO TOOLS
+================
+Toolbar categories: 16
+Toolbar actions/buttons: 224
+Toolbar controls/settings: 47
+
+CATEGORY — SELECTION
+--------------------
+  Selection
+    - Rectangular Select
+    - Free-form Select
+    - Select All
+    - Deselect
+
+  Pixel / Color Selection
+    - Magic Color Select
+    - Contiguous Background Erase
+    - Invert Pixel Selection
+    - Fill Pixel Selection
+    - Erase Pixel Selection
+    - Keep Only Selection
+    - Clear Pixel Selection
+    - Tolerance — Range 0–100; step 1; default 24
+
+CATEGORY — DRAW
+---------------
+  Brushes
+    - Brush
+    - Pencil
+    - Marker
+    - Airbrush
+    - Calligraphy
+    - Crayon
+    - Watercolor
+    - Oil Paint
+    - Pixel Brush
+    - Spray Paint
+    - Eraser
+
+  Stroke
+    - Size — Range 1–300; step 1; default 18
+    - Opacity — Range 1–100; step 1; default 100
+    - Hardness — Range 0–100; step 1; default 85
+
+CATEGORY — BRUSH LAB
+--------------------
+  Symmetry
+    - Vertical
+    - Horizontal
+    - Four-way
+
+  Nib Shape
+    - Circle
+    - Square
+    - Diamond
+    - Heart
+    - Star
+    - Triangle
+    - Captured Custom Shape
+
+  Dynamics Catalog
+    - Airbrush
+    - Brush
+    - Calligraphy
+    - Crayon
+    - Marker
+    - Oil
+    - Pencil
+    - Pixel
+    - Spray
+    - Texture
+    - Watercolor
+
+CATEGORY — RETOUCH
+------------------
+  Retouch
+    - Blur Brush
+    - Sharpen Brush
+    - Dodge
+    - Burn
+    - Clone Stamp
+    - Smudge
+
+  Brush
+    - Size — Range 1–300; step 1; default 32
+    - Strength — Range 1–100; step 1; default 50
+
+CATEGORY — COLOR
+----------------
+  Tools
+    - Eyedropper
+    - Paint Bucket
+
+  Colors
+    - Primary / Stroke — default #000000
+    - Fill — default #FFFFFF
+    - Outline — default #000000
+    - Outline Width — default 0; step 1
+
+  Savanski Identity
+    - #1E90FF
+    - #00FFFF
+    - #32CD32
+    - #FFF600
+    - #EC5800
+    - #001010
+    - #F2FFFF
+
+  Quick Swatches
+    - #000000
+    - #FFFFFF
+    - #787878
+    - #B00020
+    - #E51D37
+    - #FF7A2E
+    - #FFE500
+    - #27A844
+    - #1199D2
+    - #3768BF
+    - #8D43A3
+    - #F3F3F3
+    - #D0D0D0
+    - #9B6951
+    - #F28AA2
+    - #FFC52E
+    - #EFE2A5
+    - #A9E26A
+    - #69CBD7
+    - #739FD1
+    - #B7A7D5
+
+  Border
+    - Enabled — toggle
+    - Color — default #000000
+    - Width — default 0; min 0
+    - Style — Choices: Solid; Dashed; Dotted
+
+  Color Utilities
+    - Replace Primary → Fill
+    - Swap Primary / Fill
+    - Default Black / White
+    - Extract Artwork Palette
+    - Generate Color Harmony
+    - Extracted / generated palette swatches (click a swatch to set the primary color)
+
+CATEGORY — GRADIENT
+-------------------
+  Object Gradient
+    - Enabled — toggle
+    - From — default #1E90FF
+    - To — default #00FFFF
+    - Angle — default 45; step 1
+
+  Savanski Gradient Presets
+    - Dodger Blue → Cyan
+    - Cyan → Lime
+    - Lime → Cadmium Yellow
+    - Cadmium Yellow → Persimmon Orange
+    - Full Spectrum
+    - White → Black
+
+CATEGORY — SHAPES
+-----------------
+  Shapes
+    - Line
+    - Rectangle
+    - Rounded Rectangle
+    - Ellipse
+    - Triangle
+    - Star
+    - Arrow
+    - Heart
+    - Speech Bubble
+
+  Preset Catalog
+    - Abstract
+    - Badge
+    - Burst
+    - Cloud
+    - Crest
+    - Frame
+    - Gem
+    - Leaf
+    - Organic
+    - Petal
+    - Seal
+    - Shield
+
+  Shape Capture
+    - Capture Selected Shape
+    - Use as Crop
+    - Use as Brush Nib
+
+  Shape & Brush Preset Loader
+    - Shape & Brush Preset Loader
+
+  Preset Loader Libraries
+    - Procedural Shape Catalog: Abstract, Badge, Burst, Cloud, Crest, Frame, Gem, Leaf, Organic, Petal, Seal, Shield
+    - Brush Dynamics Catalog: Airbrush, Brush, Calligraphy, Crayon, Marker, Oil, Pencil, Pixel, Spray, Texture, Watercolor
+    - Brush Nib Families: Circle, Custom, Diamond, Heart, Square, Star, Triangle
+
+CATEGORY — TEXT
+---------------
+  Text
+    - Content — default Text
+    - Font Size — default 64; step 1
+    - Dimension — Choices: 1D; 2D
+    - Alignment — Choices: Left; Center; Right
+    - Letter Spacing — default 0; step 1
+    - Line Height — default 1.08; step 0.01
+
+  Style
+    - Bold
+    - Italic
+    - Custom Font
+    - Selected Letters
+    - Stroke / Outline
+    - Highlight
+    - Emoji / Sticker
+
+  Effects
+    - Bend on Curve
+    - Shadow
+    - Text Gradient
+    - Text Texture
+    - Behind Image
+    - Typography Inspector
+
+CATEGORY — IMAGE
+----------------
+  Image
+    - Import Image
+    - Image Overlay
+    - Local Background Remover
+    - Texture Fill
+    - Clear Texture
+
+  Imported Image Cleanup
+    - Apply Cleanup
+    - Paste Image from Clipboard
+    - Clear Active Layer
+    - Cleanup — Choices: Trim Transparent Edges; Remove Near-White; Remove Near-Black; Color-Key Primary; Alpha Threshold; Posterize; Reduce Palette; Silhouette with Primary; Despeckle; Edge Defringe
+
+CATEGORY — CROP
+---------------
+  Crop Layer
+    - Crop Layer
+
+  Crop Shape
+    - Free / Rectangle
+    - Square
+    - Rectangle
+    - Circle
+    - Ellipse
+    - Diamond
+    - Heart
+    - Star
+    - Triangle
+    - Hexagon
+    - Octagon
+    - Captured Custom Shape
+
+CATEGORY — TRANSFORM
+--------------------
+  Transform Tools
+    - Move / Position
+    - Rotate Left 90°
+    - Rotate Right 90°
+    - Flip Horizontal
+    - Flip Vertical
+    - Center Layer
+    - Scale / Resize Layer
+    - Fit Layer to Canvas
+    - Fill Canvas with Layer
+
+  Transform Values
+    - X — default 0; step 1
+    - Y — default 0; step 1
+    - Scale X — default 1; step 0.01
+    - Scale Y — default 1; step 0.01
+    - Rotation — default 0; step 1
+    - Skew X — default 0; step 1
+    - Skew Y — default 0; step 1
+
+  Four-corner Perspective
+    - TL X — default 0; step 1
+    - TL Y — default 0; step 1
+    - TR X — default 0; step 1
+    - TR Y — default 0; step 1
+    - BR X — default 0; step 1
+    - BR Y — default 0; step 1
+    - BL X — default 0; step 1
+    - BL Y — default 0; step 1
+
+CATEGORY — LAYERS
+-----------------
+  Layers
+    - New Layer
+    - Duplicate Layer
+    - Delete Layer
+    - Move Layer Up
+    - Move Layer Down
+    - Merge Down
+    - Add Layer Mask
+    - Remove Layer Mask
+    - Lock / Unlock
+
+  Compositing
+    - Blend Mode — Choices: Normal; Multiply; Screen; Overlay; Darken; Lighten
+    - Opacity — Range 0–100; step 1; default 100
+
+  Live Layer Stack
+    - Live Layer Stack
+
+CATEGORY — ADJUSTMENTS
+----------------------
+  Tone / Color
+    - Brightness — Range -100–100; step 1; default 0
+    - Contrast — Range -100–100; step 1; default 0
+    - Saturation — Range -100–100; step 1; default 0
+    - Hue — Range -180–180; step 1; default 0
+    - Grain — Range 0–100; step 1; default 0
+
+  Adjustments
+    - Auto Enhance
+    - Black & White
+    - Sepia
+    - Invert
+    - Gaussian Blur
+    - Sharpen
+    - Unblur / Detail
+    - Clarity
+    - Dehaze
+    - Auto Levels
+    - Vignette
+    - Pixelate
+    - Duotone
+    - Vintage
+    - Cool
+    - Warm
+    - Noir
+    - Fade
+
+CATEGORY — LAYOUT
+-----------------
+  Layout
+    - Positioning Grid / Snap
+    - Pin Background
+    - Collage Layout
+    - Bleed & Safe Guides
+    - Canvas Layout Preset
+
+CATEGORY — CANVAS
+-----------------
+  Canvas Set
+    - Add Canvas
+    - Duplicate Canvas
+    - Delete Canvas
+    - Previous Canvas
+    - Next Canvas
+    - Export Canvas Set
+
+  Canvas Size
+    - Portrait 5.5 × 8.5
+    - Portrait 6 × 9
+    - Portrait 5 × 8
+    - Portrait 4.25 × 6.87
+    - Portrait 6.14 × 9.21
+    - Portrait 7 × 10
+    - Portrait 8.5 × 11
+    - Portrait 8 × 10
+    - Landscape 10 × 8
+    - Square 10 × 10
+    - Square 12 × 12
+
+  Canvas Base
+    - Transparent
+    - White
+    - Black
+    - Red
+    - Pink
+    - Purple
+    - Blue
+    - Dodger Blue → Cyan
+    - Cyan → Lime
+    - Lime → Cadmium Yellow
+    - Cadmium Yellow → Persimmon Orange
+    - Full Spectrum
+    - White → Black
+
+CATEGORY — FILE
+---------------
+  Project / Export
+    - Save Project
+    - Export .lfstudio Project
+    - Export PNG
+    - Export JPG
+    - Export WebP
+
+
+3D EDITOR TOOLS
+===============
+Toolbar categories: 15
+Toolbar actions/buttons: 112
+Toolbar controls/settings: 62
+
+CATEGORY — PROJECT
+------------------
+  Project
+    - Home / Projects
+    - New 3D Project
+    - Import 3D
+    - Save
+    - Editable Export .sas3d.json
+    - GLB Export
+    - OBJ Export
+    - STL Export
+    - PLY Export
+    - Help
+    - Project Name — default Untitled 3D Project
+
+CATEGORY — HISTORY
+------------------
+  History
+    - Undo
+    - Redo
+
+CATEGORY — TRANSFORM
+--------------------
+  Transform
+    - Move (W)
+    - Rotate (E)
+    - Scale (R)
+    - Duplicate Selected
+    - Delete Selected
+
+  Position / Rotation / Scale
+    - Position X — default 0; step 1
+    - Position Y — default 0; step 1
+    - Position Z — default 0; step 1
+    - Rotation X — default 0; step 1
+    - Rotation Y — default 0; step 1
+    - Rotation Z — default 0; step 1
+    - Scale X — default 1; step 0.01
+    - Scale Y — default 1; step 0.01
+    - Scale Z — default 1; step 0.01
+
+CATEGORY — VIEW
+---------------
+  View
+    - Frame Selection (F)
+    - Grid Toggle
+    - Wireframe Preview
+    - Toon Preview
+    - Reset View
+
+CATEGORY — PRIMITIVE CREATION
+-----------------------------
+  Primitives
+    - Box
+    - Sphere
+    - Capsule
+    - Cylinder
+    - Cone
+    - Torus
+    - Plane
+    - Disc / Circle
+    - Torus Knot
+
+CATEGORY — GEOMETRY
+-------------------
+  Operations
+    - Simplify Selected
+    - Tessellate Selected
+    - Weld Vertices
+    - Recompute Normals
+    - Mirror X Copy
+    - Center Pivot
+    - Merge Visible Meshes
+    - Apply Transform to Geometry
+
+  Parameters
+    - Simplify Amount — Range 0–100; step 1; default 50
+    - Tessellate Edge Threshold — Range 0–100; step 1; default 25
+
+CATEGORY — SCULPT
+-----------------
+  Brush
+    - Inflate
+    - Deflate
+    - Smooth
+    - Flatten
+    - Pinch
+    - Relax
+
+  Settings
+    - X Symmetry
+    - Continuous Mode
+    - Enable / Disable Sculpt
+    - Radius — Range 1–200; step 1; default 40
+    - Strength — Range 1–100; step 1; default 50
+    - Hardness — Range 0–100; step 1; default 70
+
+CATEGORY — PAINT / TEXTURE
+--------------------------
+  Live Paint Canvas
+    - Live Paint Canvas
+
+  Texture Canvas
+    - Clear Texture Canvas
+    - Fill Texture Canvas
+    - Text Stamp
+    - Download Texture PNG
+    - Enable / Disable Direct 3D Paint
+    - Apply Paint Canvas to Selected Mesh
+    - Remove Base Texture
+    - Canvas Size — Choices: 1024 × 1024
+    - Paint Color — default #00FFFF
+    - Brush Size — default 32; step 1
+    - Opacity — Range 0–100; default 100
+    - Text Stamp — default SAVANSKI
+
+CATEGORY — MATERIAL
+-------------------
+  PBR
+    - Double-sided
+    - Material Wireframe
+    - Base Color — default #00FFFF
+    - Shading — Choices: Standard PBR; Toon; Unlit / Basic; Normal Diagnostic
+    - Metalness — Range 0–1; step 0.01; default 0
+    - Roughness — Range 0–1; step 0.01; default 0.5
+    - Opacity — Range 0–1; step 0.01; default 1
+
+  Savanski Material Colors
+    - Dodger Blue
+    - Pure Cyan
+    - Signal Lime
+    - Cyan Void
+    - Frost White
+
+  Material / Texture Swatches
+    - Rubber · Matte Black
+    - Rubber · Speckled Gray
+    - Rubber · Soft Cyan
+    - Fabric · Cotton Canvas
+    - Fabric · Denim Blue
+    - Fabric · Knit Cream
+    - Skin · Warm Light
+    - Skin · Neutral Medium
+    - Skin · Deep Warm
+    - Paint · Matte White
+    - Paint · Brushed Cyan
+    - Paint · Orange Stipple
+    - Brush · Grunge Dark
+    - Brush · Dry White
+    - Brush · Ink Spatter
+    - Leather · Brown Grain
+    - Wood · Light Oak
+    - Metal · Brushed Steel
+    - Plastic · Matte Graphite
+    - Ceramic · Cream
+    - Stone · Slate
+    - Paper · Fiber
+    - Clay · Terracotta
+    - Hair · Dark Brown Flow
+    - Search
+
+CATEGORY — 3D TYPE
+------------------
+  3D Text
+    - Create 3D Text
+    - Apply Text Perspective
+    - Text — default Savanski
+    - Font Size — default 64; step 1
+    - Extrusion Depth — default 12; step 1
+    - Depth Color — default #005B7A
+    - Perspective / Rotation X — default 0; step 1
+    - Perspective / Rotation Y — default 0; step 1
+    - Perspective / Rotation Z — default 0; step 1
+
+CATEGORY — AVATAR BLOCKOUT
+--------------------------
+  Preset
+    - Balanced
+    - Compact
+    - Tall
+    - Broad
+    - Slender
+    - Create Avatar
+    - Reset Sliders
+    - Merge Skin Parts
+
+  Proportions
+    - Stature — Range 0–100; step 1; default 50
+    - Head Width — Range 0–100; step 1; default 50
+    - Head Height — Range 0–100; step 1; default 50
+    - Head Depth — Range 0–100; step 1; default 50
+    - Shoulders — Range 0–100; step 1; default 50
+    - Torso — Range 0–100; step 1; default 50
+    - Waist — Range 0–100; step 1; default 50
+    - Hips — Range 0–100; step 1; default 50
+    - Arms — Range 0–100; step 1; default 50
+    - Legs — Range 0–100; step 1; default 50
+    - Limb Thickness — Range 0–100; step 1; default 50
+    - Hands — Range 0–100; step 1; default 50
+    - Feet — Range 0–100; step 1; default 50
+
+CATEGORY — 2D / 2.5D CAPTURE
+----------------------------
+  Output
+    - Front
+    - 3/4
+    - Side
+    - Back
+    - Current PNG
+    - Portrait PNG
+    - Export 4-View Sprite Sheet
+    - Export 8-Direction 2.5D Sheet
+    - Export Sprite Metadata JSON
+    - Capture-only Toon Shading
+    - Ground Shadow
+    - Background — Choices: Transparent; Savanski Cyan; White; Black
+    - Cell Size — Choices: 256; 384; 512; 768; 1024
+
+CATEGORY — SCENE
+----------------
+  Scene
+    - Scene Object List
+    - Drag-and-drop 3D Import
+    - Search / Filter
+    - Background Color — default #001010
+    - Key Light Intensity — default 1; step 0.1
+    - Environment Light Intensity — default 1; step 0.1
+
+  Scene Objects
+    - Live Scene Object List
+
+CATEGORY — OBJECT INSPECTOR
+---------------------------
+  Object
+    - Visible
+    - Cast Shadow
+    - Apply Transform to Geometry
+    - Object Name — default Selected Object
+    - Position X — default 0; step 1
+    - Position Y — default 0; step 1
+    - Position Z — default 0; step 1
+    - Rotation X — default 0; step 1
+    - Rotation Y — default 0; step 1
+    - Rotation Z — default 0; step 1
+    - Scale X — default 1; step 0.01
+    - Scale Y — default 1; step 0.01
+    - Scale Z — default 1; step 0.01
+
+CATEGORY — MESH INFORMATION
+---------------------------
+  Live Mesh Information
+    - Live Mesh Information
+
+  Mesh Readouts
+    - Object Type
+    - Vertex Count
+    - Triangle Count
+    - UV Availability
+    - Material Type
+    - Project / Runtime Information
+
+
+NOTES
+=====
+- This inventory lists the active user-facing toolbars, pop-out toolkits, controls, loaders, and live editor panels in the supplied build.
+- Preset catalogs are identified by family/category rather than printing thousands of individual generated presets as separate tools.
+- Home / Projects is app-level project management and is not counted as an Art Studio or 3D editing tool category except where the 3D Project toolkit exposes Home / Projects.
+
+
+
+THIRD PROFESSIONAL PASS — ADDITIONS INSIDE EXISTING WINDOWS
+===========================================================
+No new toolbar or menu category is introduced by this section.
+
+ART STUDIO
+----------
+IMAGE
+  - Border-connected perceptual background matte
+  - Background color
+  - ΔE tolerance
+  - Edge feather
+
+RETOUCH
+  - Heal / Fill Selection
+  - Sampling radius
+  - Blend strength
+
+ADJUSTMENTS
+  - HDR / Structure tone
+  - Exposure stops
+  - HDR strength
+  - Structure
+  - Adjustable Glamour Glow
+  - Glow radius
+  - Glow amount
+  - Glow saturation
+  - Glow warmth
+
+GRADIENT
+  - Luminance Gradient Map
+  - Shadow color
+  - Highlight color
+  - Amount
+
+LAYERS
+  - Clip active layer to layer-below alpha
+
+LAYOUT
+  - Contact Sheet collage
+  - Masonry collage
+  - Loose Prints collage
+
+3D EDITOR
+---------
+GEOMETRY
+  - Decimate Mesh / retained vertex percentage
+  - Adaptive Tessellate / max edge length / iterations
+  - Taubin volume-preserving smooth / iterations / lambda / mu
+
+AVATAR
+  - Create Manual Armature
+  - Add Child Bone
+  - Auto Weight Current Armature
+  - Bone selection
+  - Bone name
+  - Parent selection
+  - Local position X/Y/Z
+  - Local rotation X/Y/Z
+  - Apply bone / parent changes
+
+PAINT
+  - Generate normal map from paint canvas
+  - Normal-map strength
+  - Generate roughness map from paint canvas
+  - Invert roughness
+
+SCENE / ANIMATION
+  - Animation interpolation: Linear
+  - Animation interpolation: Stepped / Hold
+  - Animation interpolation: Smooth / Cubic Position
+
+
+PASS 7 ADDITIONS
+================
+Art Studio — existing Layout window
+- 2-Point Perspective Assistant
+- 1-Point Perspective Assistant
+- Parallel / Ruler Assistant
+- Place VP1 / VP2
+- Guide spacing / opacity
+- Snap brush and shape strokes to active assistant
+- Non-exporting Reference Image overlay
+- Reference X / Y / scale / opacity
+
+Art Studio — existing Retouch window
+- Smart Inpaint Selection
+- Inpaint neighborhood radius
+- Frequency Separation
+- Separation radius
+- Low Frequency layer
+- High Frequency overlay-detail layer
+
+3D Editor — existing Sculpt window
+- Sculpt Regions / Face Sets
+- Initialize by normal regions
+- Initialize by loose parts
+- Initialize by material groups
+- Pick Active Set
+- Grow / Shrink
+- Mask Outside Set
+- Mask Active Set
+- Extract Set as Mesh
+- Curvature → Sculpt Mask
+- UV Stencil → Sculpt Mask
+- Stencil threshold / invert
+
+3D Editor — existing Paint window
+- Object-Space Normal Bake
+- Curvature / Cavity Bake
+- Height / Displacement Bake
+- Height axis X / Y / Z
+- Bake to Paint Canvas
+- Download Baked PNG

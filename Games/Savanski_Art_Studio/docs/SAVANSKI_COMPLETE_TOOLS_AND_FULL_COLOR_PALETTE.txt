@@ -1,0 +1,708 @@
+SAVANSKI ART STUDIO — COMPLETE STUDIO + 3D EDITOR TOOL & COLOR PALETTE REFERENCE
+========================================================================================
+
+Build architecture: one studio.html containing Home / Projects, Studio, and 3D Editor.
+Project library: Studio and 3D Editor projects share one local Savanski project library.
+Hosting: public static GitHub-compatible build; an account is not required to launch or edit locally.
+OurSpace: optional session-aware backup is used when Savanski is embedded in an authenticated OurSpace host.
+
+APP HOME / PROJECT LIBRARY
+----------------------------------------------------------------------------------------
+- Home / Projects — open the shared project library from either Studio or 3D Editor.
+- Studio tab — configure and create a new Studio canvas project.
+- 3D Editor tab — create a new 3D scene or import supported 3D project/model files.
+- Open / Edit — open a saved project in the editor that created it.
+- Rename — rename a saved project without changing its project identity.
+- Duplicate — make an independent copy with a new project ID so original and copy can be edited separately.
+- Delete — remove a project from the local Savanski project library.
+- Back to Editor — close Home and return to the currently active project.
+- Studio Save — update the current Studio project in the shared library.
+- 3D Save — update the current 3D project in the shared library.
+- OurSpace backup — when a valid OurSpace session exists, project saves can also be backed up through the host bridge.
+
+SECTION 1 — STUDIO TOOLS
+========================================================================================
+Registered Studio tool count: 106
+The list below is generated from json/tool-registry.json in this build.
+
+[SELECTION] — 4 tools
+- Rectangular Select (select): Drag a rectangular selection.
+- Free-form Select (free-select): Free-form selection shell; uses selection overlay.
+- Select All (select-all): Select the full canvas.
+- Deselect (deselect): Clear the active selection.
+
+[IMAGE] — 2 tools
+- Crop Layer (crop): Crop the active layer non-destructively to the chosen canvas region.
+- Local Background Remover (background-remove-local): Remove a mostly solid background by sampling corner colors.
+
+[TRANSFORM] — 9 tools
+- Move / Position (move): Move the active layer.
+- Rotate Left 90° (rotate-left): Rotate active layer left.
+- Rotate Right 90° (rotate-right): Rotate active layer right.
+- Flip Horizontal (flip-horizontal): Mirror active layer horizontally.
+- Flip Vertical (flip-vertical): Mirror active layer vertically.
+- Center Layer (center-layer): Center the active layer.
+- Scale / Resize Layer (scale-layer): Resize the active layer independently on X and Y while keeping the print canvas fixed.
+- Fit Layer to Canvas (fit-layer): Fit all visible pixels of the active layer within the fixed canvas bounds.
+- Fill Canvas with Layer (fill-layer): Scale the active layer to cover the fixed canvas bounds edge to edge.
+
+[DRAW] — 9 tools
+- Brush (brush): General round brush.
+- Pencil (pencil): Hard-edge pencil.
+- Marker (marker): Semi-transparent marker.
+- Airbrush (airbrush): Soft spray brush.
+- Calligraphy (calligraphy): Flat calligraphy brush.
+- Crayon (crayon): Textured crayon-style brush.
+- Watercolor (watercolor): Layerable transparent watercolor brush.
+- Eraser (eraser): Erase to true transparency.
+- Paint Bucket (fill): Flood fill an enclosed color area.
+
+[COLOR] — 1 tool
+- Eyedropper (eyedropper): Sample a color from the canvas.
+
+[RETOUCH] — 6 tools
+- Blur Brush (blur-brush): Locally soften details.
+- Sharpen Brush (sharpen-brush): Locally sharpen edges.
+- Dodge (dodge): Locally lighten areas.
+- Burn (burn): Locally darken areas.
+- Clone Stamp (clone-stamp): Clone pixels from a sampled source.
+- Smudge (smudge): Blend nearby pixels.
+
+[SHAPES] — 9 tools
+- Line (line): Draw a line with current fill and stroke.
+- Rectangle (rectangle): Draw a rectangle with current fill and stroke.
+- Rounded Rectangle (roundrect): Draw a rounded rectangle with current fill and stroke.
+- Ellipse (ellipse): Draw a ellipse with current fill and stroke.
+- Triangle (triangle): Draw a triangle with current fill and stroke.
+- Star (star): Draw a star with current fill and stroke.
+- Arrow (arrow): Draw a arrow with current fill and stroke.
+- Heart (heart): Draw a heart with current fill and stroke.
+- Speech Bubble (speech): Draw a speech bubble with current fill and stroke.
+
+[TEXT] — 14 tools
+- Add / Edit Text (text): Insert an editable text layer.
+- Typography Inspector (text-inspector): Open the complete text inspector.
+- Load Custom Font (custom-font): Load a font from the user device without bundling it.
+- Style Selected Letters (text-segment-style): Apply color, opacity, or highlight to selected characters.
+- Text Stroke / Outline (text-stroke): Configure text outline color and width.
+- Text Highlight (text-highlight): Highlight full or partial text.
+- Letter & Line Spacing (text-spacing): Control tracking and line height.
+- Bend Text on Curve (text-bend): Curve text along an arc.
+- Text Shadow (text-shadow): Configure shadow color, blur, and offset.
+- Text Gradient (text-gradient): Create a two-color angle-controlled text gradient.
+- Text Texture (text-texture): Use a user-selected image as a text texture source.
+- 3D Text Depth (text-3d): Simulate depth and dimensional extrusion.
+- Text Perspective / 3D Rotation (text-perspective): Skew and rotate text in perspective.
+- Text Behind Image (text-behind): Use layer order and erasing/background removal to place type behind a subject.
+
+[ELEMENTS] — 3 tools
+- Emoji / Sticker (emoji-sticker): Insert an emoji as an editable text element.
+- Shape Library (shape-library): Open the internal vector shape set; no image assets required.
+- Image Overlay (overlay-image): Import an image as a new editable layer.
+
+[LAYOUT] — 5 tools
+- Positioning Grid / Snap (snap-grid): Toggle non-exporting alignment guides and snapping.
+- Pin Background (pin-background): Lock the Canvas Base layer.
+- Collage Layout (collage): Arrange visible art layers into a balanced grid.
+- Bleed & Safe Guides (guides): Toggle non-exporting bleed/safe-area guides.
+- Canvas Layout Preset (canvas-layout): Create editable title, subtitle, and supporting text layers.
+
+[ADJUSTMENTS] — 23 tools
+- Auto Enhance (auto-enhance): Improve color, lighting, and contrast.
+- Brightness (brightness): Lighten or darken the active layer.
+- Contrast (contrast): Increase or reduce tonal contrast.
+- Saturation (saturation): Adjust color intensity.
+- Hue Rotate (hue): Rotate hues.
+- Black & White (grayscale): Convert to grayscale.
+- Sepia (sepia): Apply sepia toning.
+- Invert (invert): Invert image colors.
+- Gaussian Blur (blur): Blur the layer.
+- Sharpen (sharpen): Sharpen detail.
+- Unblur / Detail (unblur): Apply local high-pass-style sharpening.
+- Clarity (clarity): Increase local edge clarity.
+- Dehaze (dehaze): Increase contrast and atmospheric clarity.
+- Auto Levels (auto-levels): Stretch tonal range.
+- Vignette (vignette): Darken the outer edges.
+- Grain (grain): Add film-like grain.
+- Pixelate (pixelate): Create a pixel-art mosaic effect.
+- Duotone (duotone): Map luminance between two colors.
+- Vintage Filter (vintage): Apply a warm faded vintage look.
+- Cool Filter (cool): Apply a cooler color treatment.
+- Warm Filter (warm): Apply a warmer color treatment.
+- Noir Filter (noir): High-contrast monochrome filter.
+- Fade Filter (fade): Lower contrast and saturation.
+
+[LAYERS] — 10 tools
+- New Layer (add-layer): Create a transparent paint layer.
+- Duplicate Layer (duplicate-layer): Duplicate active layer.
+- Delete Layer (delete-layer): Delete active layer.
+- Move Layer Up (layer-up): Move active layer forward.
+- Move Layer Down (layer-down): Move active layer backward.
+- Merge Down (merge-down): Merge active layer into the one below.
+- Add Layer Mask (layer-mask): Add a white editable layer mask.
+- Remove Layer Mask (remove-mask): Remove the active mask.
+- Blend Modes (blend-mode): Choose a canvas blend/compositing mode.
+- Layer Opacity (opacity): Set layer transparency.
+
+[FILE] — 5 tools
+- Save Project (save): Save editable project to IndexedDB.
+- Export .lfstudio Project (export-project): Download an editable project JSON.
+- Export PNG (export-png): Export print-resolution PNG with transparency.
+- Export JPG (export-jpg): Export print-resolution JPEG on white.
+- Export WebP (export-webp): Export WebP.
+
+[CANVAS SET] — 6 tools
+- Add Canvas (canvas-add): Add a canvas at the selected canvas size.
+- Duplicate Canvas (canvas-duplicate): Duplicate the current canvas.
+- Delete Canvas (canvas-delete): Delete the current canvas.
+- Previous Canvas (canvas-prev): Go to the previous canvas.
+- Next Canvas (canvas-next): Go to the next canvas.
+- Export Canvas Set (export-canvases): Export all canvases as individual PNGs.
+
+[STUDIO BRUSH / DRAW ENGINES BEYOND THE 106-ENTRY REGISTRY]
+- Oil Paint — pressure-aware, textured oil-style painting engine.
+- Pixel Brush — hard square pixel-art brush engine.
+- Symmetry — vertical, horizontal, and four-way mirrored brush-point handling.
+- Texture Engine — procedural / selected texture processing for canvas marks and surfaces.
+- Image Import Engine — imports images as editable canvas content.
+- Selection Engine — rectangular selection state and overlay handling.
+- Transform Engine — position, scale, rotation, flip, and opacity transform support.
+- Clone Engine — sampled-pixel clone stamping used by Clone Stamp.
+
+[CROP SHAPES]
+- Free / Rectangle
+- Square
+- Rectangle
+- Circle
+- Ellipse
+- Diamond
+- Heart
+- Star
+- Triangle
+- Hexagon
+- Octagon
+- Captured Custom Shape
+
+[BRUSH / NIB SHAPES]
+- Circle
+- Square
+- Diamond
+- Heart
+- Star
+- Triangle
+- Captured Custom Shape
+
+[ADVANCED EDITABLE OBJECT CONTROLS]
+- Object management — Duplicate; Bring to Front; Send to Back; Lock / Unlock; Delete.
+- Appearance — Primary/stroke color; Fill color; Outline color; Outline width; Opacity; Blend mode.
+- Texture fill — Apply image/texture fill; Clear texture.
+- Gradient — Enable; From; To; Angle.
+- Border — Enable; Color; Width; Solid / Dashed / Dotted.
+- Transform — X/Y position; X/Y scale; Rotation; Skew X; Skew Y.
+- Four-corner perspective — independent X/Y offsets for top-left, top-right, bottom-right, bottom-left.
+- Effects — Brightness; Contrast; Saturation; Hue; Transparency; Sepia; Grayscale; Invert; Blur; Sharpness; Grain; Temperature.
+- Shape capture — Capture selected shape; use as crop; use as brush nib; open preset catalog.
+- Editable text — text content; font family; alignment; bold; italic; upload custom font.
+- Text dimensions — 1D / 2D / 3D mode; extrusion depth; depth color; font size.
+
+[SHAPE PRESET CATALOG]
+- Total procedural shape presets: 24,000
+- Abstract: 2,000 presets
+- Badge: 2,000 presets
+- Burst: 2,000 presets
+- Cloud: 2,000 presets
+- Crest: 2,000 presets
+- Frame: 2,000 presets
+- Gem: 2,000 presets
+- Leaf: 2,000 presets
+- Organic: 2,000 presets
+- Petal: 2,000 presets
+- Seal: 2,000 presets
+- Shield: 2,000 presets
+
+[BRUSH DYNAMICS PRESET CATALOG]
+- Total brush-dynamics presets: 10,000
+- Brush kinds:
+  - Airbrush: 909
+  - Brush: 910
+  - Calligraphy: 909
+  - Crayon: 909
+  - Marker: 909
+  - Oil: 909
+  - Pencil: 909
+  - Pixel: 909
+  - Spray: 909
+  - Texture: 909
+  - Watercolor: 909
+- Nib families:
+  - Circle: 1,429
+  - Custom: 1,428
+  - Diamond: 1,429
+  - Heart: 1,429
+  - Square: 1,429
+  - Star: 1,428
+  - Triangle: 1,428
+
+[CANVAS SIZES]
+- Portrait 5.5 × 8.5: 5.5 × 8.5 in [canvas-portrait-5_5x8_5]
+- Portrait 6 × 9: 6 × 9 in [canvas-portrait-6x9]
+- Portrait 5 × 8: 5 × 8 in [canvas-portrait-5x8]
+- Portrait 4.25 × 6.87: 4.25 × 6.87 in [canvas-portrait-4_25x6_87]
+- Portrait 6 × 9: 6 × 9 in [canvas-portrait-6x9-alt]
+- Portrait 6.14 × 9.21: 6.14 × 9.21 in [canvas-portrait-6_14x9_21]
+- Portrait 5.5 × 8.5: 5.5 × 8.5 in [canvas-portrait-5_5x8_5-alt]
+- Portrait 7 × 10: 7 × 10 in [canvas-portrait-7x10]
+- Portrait 8.5 × 11: 8.5 × 11 in [canvas-portrait-8_5x11]
+- Portrait 8 × 10: 8 × 10 in [canvas-portrait-8x10]
+- Landscape 10 × 8: 10 × 8 in [canvas-landscape-10x8]
+- Square 10 × 10: 10 × 10 in [canvas-square-10x10]
+- Square 12 × 12: 12 × 12 in [canvas-square-12x12]
+
+SECTION 2 — 3D EDITOR TOOLS
+========================================================================================
+[PROJECT / HOME / FILE]
+- Home / Projects — open the shared Savanski project library.
+- Project Name — editable current 3D project name.
+- New 3D Project — clear the current scene and begin a new project identity.
+- Import — GLB, glTF, OBJ (+MTL/sidecars), STL, FBX, DAE, 3MF, AMF, and Savanski .sas3d.json project import.
+- Save — save/update the editable 3D project in the shared Savanski library; optional OurSpace backup when connected.
+- Editable Export — download .sas3d.json editable project file.
+- GLB Export — export visible scene as binary glTF.
+- OBJ Export — export scene geometry as OBJ.
+- STL Export — export scene geometry as STL.
+- PLY Export — export scene geometry as PLY.
+- Help — open integrated 3D workflow and shortcut help.
+
+[HISTORY]
+- Undo
+- Redo
+
+[TRANSFORM / VIEW]
+- Move (W)
+- Rotate (E)
+- Scale (R)
+- Frame selection/project (F)
+- Grid toggle
+- Wireframe preview
+- Toon preview
+- Duplicate selected object
+- Delete selected object
+
+[PRIMITIVE CREATION]
+- Box
+- Sphere
+- Capsule
+- Cylinder
+- Cone
+- Torus
+- Plane
+- Disc / Circle
+- Torus Knot
+
+[GEOMETRY OPERATIONS]
+- Simplify Selected
+- Simplify amount
+- Tessellate Selected
+- Tessellate edge threshold
+- Weld Vertices
+- Recompute Normals
+- Mirror X Copy
+- Center Pivot
+- Merge Visible Meshes
+- Apply Transform to Geometry
+
+[SCULPT BRUSHES]
+- Inflate
+- Deflate
+- Smooth
+- Flatten
+- Pinch
+- Relax
+
+[SCULPT SETTINGS]
+- Radius
+- Strength
+- Hardness
+- X symmetry
+- Continuous mode
+- Enable / Disable Sculpt Mode
+
+[PAINT / TEXTURE]
+- 1024 × 1024 texture canvas
+- Paint color
+- Brush size
+- Opacity
+- Clear texture canvas
+- Fill texture canvas
+- Text Stamp
+- Text stamp content
+- Download Texture PNG
+- Enable / Disable Direct 3D Paint
+- Apply Paint Canvas to selected mesh
+- Remove Base Texture
+- Search material swatches
+
+[MATERIAL INSPECTOR]
+- Base color
+- Metalness
+- Roughness
+- Opacity
+- Standard PBR shading
+- Toon shading
+- Unlit / Basic shading
+- Normal diagnostic shading
+- Double-sided rendering
+- Material wireframe
+
+[AVATAR BLOCKOUT]
+- Balanced preset
+- Compact preset
+- Tall preset
+- Broad preset
+- Slender preset
+- Create Avatar
+- Stature
+- Head width
+- Head height
+- Head depth
+- Shoulders
+- Torso
+- Waist
+- Hips
+- Arms
+- Legs
+- Limb thickness
+- Hands
+- Feet
+- Reset Sliders
+- Merge Skin Parts
+
+[2D / 2.5D CAPTURE]
+- Output background: Transparent
+- Output background: Studio cyan
+- Output background: White
+- Output background: Black
+- Cell size: 256
+- Cell size: 384
+- Cell size: 512
+- Cell size: 768
+- Cell size: 1024
+- View: Front
+- View: 3/4
+- View: Side
+- View: Back
+- Current PNG
+- Portrait PNG
+- Export 4-View Sprite Sheet
+- Export 8-Direction 2.5D Sheet
+- Export Sprite Metadata JSON
+- Capture-only Toon shading
+- Ground shadow
+
+[SCENE]
+- Scene object list
+- Scene search/filter
+- Background color
+- Key light intensity
+- Environment light intensity
+- Reset View
+- Drag-and-drop 3D file import
+
+[OBJECT INSPECTOR]
+- Object name
+- Visible toggle
+- Cast shadow toggle
+- Position X/Y/Z
+- Rotation X/Y/Z
+- Scale X/Y/Z
+- Apply Transform to Geometry
+
+[MESH INFORMATION]
+- Object type
+- Vertex count
+- Triangle count
+- UV availability
+- Material type
+- Project scope / runtime information
+
+[3D MATERIAL / TEXTURE SWATCH LIBRARY]
+- Total bundled original swatches: 24
+- Rubber:
+  - Rubber · Matte Black (rubber_matte_black.jpg)
+  - Rubber · Speckled Gray (rubber_speckled_gray.jpg)
+  - Rubber · Soft Cyan (rubber_soft_cyan.jpg)
+- Fabric:
+  - Fabric · Cotton Canvas (fabric_cotton_canvas.jpg)
+  - Fabric · Denim Blue (fabric_denim_blue.jpg)
+  - Fabric · Knit Cream (fabric_knit_cream.jpg)
+- Skin:
+  - Skin · Warm Light (skin_warm_light.jpg)
+  - Skin · Neutral Medium (skin_neutral_medium.jpg)
+  - Skin · Deep Warm (skin_deep_warm.jpg)
+- Paint:
+  - Paint · Matte White (paint_matte_white.jpg)
+  - Paint · Brushed Cyan (paint_brushed_cyan.jpg)
+  - Paint · Orange Stipple (paint_orange_stipple.jpg)
+- Brush:
+  - Brush · Grunge Dark (brush_grunge_dark.jpg)
+  - Brush · Dry White (brush_dry_white.jpg)
+  - Brush · Ink Spatter (brush_ink_spatter.jpg)
+- Leather:
+  - Leather · Brown Grain (leather_brown.jpg)
+- Wood:
+  - Wood · Light Oak (wood_oak.jpg)
+- Metal:
+  - Metal · Brushed Steel (metal_brushed_steel.jpg)
+- Plastic:
+  - Plastic · Matte Graphite (plastic_matte.jpg)
+- Ceramic:
+  - Ceramic · Cream (ceramic_cream.jpg)
+- Stone:
+  - Stone · Slate (stone_slate.jpg)
+- Paper:
+  - Paper · Fiber (paper_fiber.jpg)
+- Clay:
+  - Clay · Terracotta (clay_terracotta.jpg)
+- Hair:
+  - Hair · Dark Brown Flow (hair_dark_brown.jpg)
+
+SECTION 3 — FULL APP COLOR PALETTE
+========================================================================================
+
+[CANONICAL SAVANSKI IDENTITY PALETTE]
+- Cadmium Yellow 25L: #FFF840
+- Cadmium Yellow 12.5L: #FFF720
+- Cadmium Yellow main: #FFF600
+- Cadmium Yellow midDark: #999400
+- Cadmium Yellow deepDark: #666200
+- Cadmium Yellow darkest: #333100
+- Ice Cyan 25L: #40FFFF
+- Frost Cyan 12.5L: #20F5FF
+- Pure Cyan main: #00FFFF
+- Cyan midDark: #008FB8
+- Cyan deepDark: #005B7A
+- Cyan darkest: #002B3D
+- Persimmon Orange 25L: #F18240
+- Persimmon Orange 12.5L: #EE6D20
+- Persimmon Orange main: #EC5800
+- Persimmon Orange midDark: #8E3500
+- Persimmon Orange deepDark: #5E2300
+- Persimmon Orange darkest: #2F1200
+- Frost White: #F2FFFF
+- Cyan Porcelain: #E6FFFF
+- Cyan Mist: #D9FFFF
+- Pale Aqua: #BFFFFF
+- Cyan Ink: #001A1A
+- Cyan Void: #001010
+
+[STUDIO QUICK SWATCH PALETTE]
+- #000000
+- #FFFFFF
+- #787878
+- #B00020
+- #E51D37
+- #FF7A2E
+- #FFE500
+- #27A844
+- #1199D2
+- #3768BF
+- #8D43A3
+- #F3F3F3
+- #D0D0D0
+- #9B6951
+- #F28AA2
+- #FFC52E
+- #EFE2A5
+- #A9E26A
+- #69CBD7
+- #739FD1
+- #B7A7D5
+
+[CANVAS BASE PRESETS]
+- Transparent
+- White #FFFFFF
+- Black #000000
+- Red #FF3434
+- Pink #EC0B5B
+- Purple #9B26B6
+- Blue #168BE8
+- Gray gradient #FFFFFF → #000000
+- Red/Blue gradient #D51F3E → #1269B5
+- Teal/Orange gradient #64B6A2 → #EE6A1A
+- Rose/Green gradient #E24C62 → #87D693
+- Purple/Teal gradient #7244B6 → #25BE83
+- Indigo/Gold gradient #302870 → #FFD55D
+- Purple/Pink gradient #7752A7 → #F3A9BF
+- Green/Blue gradient #00DF7D → #178AE8
+
+[3D MATERIAL PALETTE JSON]
+- Pure Cyan: #00FFFF
+- Signal Lime: #32CD32
+- Dodger Blue: #1E90FF
+- Cyan Void: #001010
+- Frost White: #F2FFFF
+
+[EXHAUSTIVE FIRST-PARTY LITERAL HEX COLORS]
+Total unique literal hex colors in active first-party HTML/CSS/JS/JSON: 137
+Bundled third-party Three.js/decoder source is excluded from this count; colors used by Savanski UI, tools, defaults, presets, and project surfaces are included.
+- #000 — css/palette.css, css/studio.css, js/advanced-renderer.js, js/artsrc-core-namespace.js, js/canvas-engine.js, js/preset-catalog.js (+3 more)
+- #000000 — js/advanced-object-model.js, js/advanced-renderer.js, js/advanced-tool-bridge.js, js/artsrc-tools-eraser.js, js/canvas-engine.js, js/studio-ui.js (+3 more)
+- #0006 — css/three-editor-retro.css
+- #0007 — css/advanced-objects.css
+- #0008 — css/three-editor-retro.css
+- #001010 — css/palette.css, js/artsrc-art-tools-bundle.js, js/artsrc-materials-brush-engine.js, js/artsrc-materials-texture-engine.js, js/artsrc-tools-calligraphy.js, js/artsrc-tools-ellipse.js (+10 more)
+- #001A1A — css/palette.css, js/preset-data.js, json/palettes.json
+- #001B1B — css/advanced-objects.css
+- #002B3D — css/palette.css, js/preset-data.js, json/palettes.json
+- #005B7A — css/palette.css, js/preset-data.js, json/palettes.json
+- #008FB8 — css/palette.css, js/preset-data.js, json/palettes.json
+- #00AAFF — js/advanced-renderer.js
+- #00CFD1 — css/studio.css, js/text-engine.js, studio.html
+- #00DF7D — studio.html
+- #00FFFF — css/palette.css, js/artsrc-tools-fill.js, js/preset-data.js, json/artsrc-material-palette.json, json/palettes.json, studio.html
+- #073B4D — css/palette.css
+- #087BE8 — css/studio.css, css/three-editor-retro.css
+- #0A7 — css/advanced-objects.css
+- #0F1618 — css/three-editor-retro.css
+- #102228 — studio.html
+- #111 — css/studio.css, css/three-editor-retro.css
+- #111111 — js/text-engine.js, studio.html
+- #113B3D — css/palette.css
+- #1199D2 — js/studio-ui.js
+- #1269B5 — studio.html
+- #151515 — css/studio.css
+- #161616 — css/studio.css
+- #1687FF — js/canvas-engine.js
+- #168BE8 — studio.html
+- #171717 — css/studio.css
+- #178AE8 — studio.html
+- #1A1D1F — css/three-editor-retro.css
+- #1C1C6B — js/image-tools.js, js/studio-ui.js
+- #1E90FF — json/artsrc-material-palette.json
+- #20F5FF — css/palette.css, js/preset-data.js, json/palettes.json
+- #222 — css/studio.css, js/advanced-renderer.js, js/text-engine.js
+- #222222 — js/advanced-controller.js, js/text-engine.js, studio.html
+- #25292C — css/three-editor-retro.css
+- #25BE83 — studio.html
+- #27A844 — js/studio-ui.js
+- #292929 — css/studio.css
+- #2F1200 — css/palette.css, js/preset-data.js, json/palettes.json
+- #302870 — studio.html
+- #314153 — css/three-editor-retro.css
+- #31545A — css/palette.css
+- #32CD32 — json/artsrc-material-palette.json
+- #333100 — css/palette.css, js/preset-data.js, json/palettes.json
+- #3768BF — js/studio-ui.js
+- #3A3A3A — css/studio.css
+- #40FFFF — css/palette.css, js/preset-data.js, json/palettes.json
+- #422727 — css/three-editor-retro.css
+- #555 — css/studio.css, css/three-editor-retro.css
+- #5A9DED — css/studio.css, css/three-editor-retro.css
+- #5E2300 — css/palette.css, js/preset-data.js, json/palettes.json
+- #64B6A2 — studio.html
+- #666200 — css/palette.css, js/preset-data.js, json/palettes.json
+- #69AEF7 — css/studio.css, css/three-editor-retro.css
+- #69CBD7 — js/studio-ui.js
+- #6D2BD0 — js/text-engine.js, studio.html
+- #6D6D6D — css/studio.css
+- #6EA6DB — css/three-editor-retro.css
+- #7244B6 — studio.html
+- #739FD1 — js/studio-ui.js
+- #744 — css/three-editor-retro.css
+- #7752A7 — studio.html
+- #777 — css/three-editor-retro.css
+- #787878 — js/studio-ui.js
+- #7AAEF0 — css/studio.css
+- #7FF — css/advanced-objects.css
+- #87D693 — studio.html
+- #888 — css/studio.css
+- #8AA — css/palette.css
+- #8D43A3 — js/studio-ui.js
+- #8E3500 — css/palette.css, js/preset-data.js, json/palettes.json
+- #999 — css/studio.css
+- #999400 — css/palette.css, js/preset-data.js, json/palettes.json
+- #9B1C1C — css/three-editor-retro.css
+- #9B26B6 — studio.html
+- #9B6951 — js/studio-ui.js
+- #A11 — css/advanced-objects.css
+- #A52727 — css/studio.css, css/three-editor-retro.css
+- #A9E26A — js/studio-ui.js
+- #AAA — css/studio.css
+- #ADD — js/ui.js
+- #B00020 — js/studio-ui.js
+- #B7A7D5 — js/studio-ui.js
+- #B7DADA — css/palette.css
+- #BAC4CF — css/advanced-objects.css
+- #BBB — css/preset-catalog.css
+- #BEC3C6 — css/three-editor-retro.css
+- #BFFFFF — css/palette.css, js/preset-data.js, json/palettes.json, studio.html
+- #C33 — css/advanced-objects.css
+- #C8C8C8 — css/studio.css
+- #CCD3DA — css/advanced-objects.css
+- #CFD3D5 — css/three-editor-retro.css
+- #D0D0D0 — css/studio.css, js/studio-ui.js
+- #D1D1D1 — css/studio.css
+- #D51F3E — studio.html
+- #D8F8F8 — css/palette.css
+- #D9FFFF — css/palette.css, js/preset-data.js, json/palettes.json
+- #DDD — css/studio.css, css/three-editor-retro.css
+- #DDDDDD — css/studio.css
+- #E24C62 — studio.html
+- #E51D37 — js/studio-ui.js
+- #E6FFFF — css/palette.css, js/preset-data.js, json/palettes.json
+- #E8BABA — css/three-editor-retro.css
+- #E8F2FF — css/studio.css, css/three-editor-retro.css
+- #E8FFFF — js/uniform3d-paint-tools.js
+- #EAFEFE — css/palette.css
+- #EC0B5B — studio.html
+- #EC5800 — css/palette.css, js/preset-data.js, json/palettes.json
+- #EE6A1A — studio.html
+- #EE6D20 — css/palette.css, js/preset-data.js, json/palettes.json
+- #EFE2A5 — js/studio-ui.js
+- #F18240 — css/palette.css, js/core.js, js/preset-data.js, json/palettes.json
+- #F28AA2 — js/studio-ui.js
+- #F2FFFF — css/palette.css, js/canvas-engine.source-v2.js, js/core.js, js/preset-data.js, js/tools.js, json/artsrc-material-palette.json (+1 more)
+- #F3A9BF — studio.html
+- #F3F3F3 — js/studio-ui.js
+- #F4F4F4 — css/studio.css
+- #F4FFFF — css/palette.css
+- #F5F5F5 — css/studio.css
+- #FF3434 — studio.html
+- #FF5B2E — css/three-editor-retro.css
+- #FF7A2E — js/studio-ui.js
+- #FFBD59 — js/image-tools.js, js/studio-ui.js
+- #FFC52E — js/studio-ui.js
+- #FFD55D — studio.html
+- #FFD6D6 — css/three-editor-retro.css
+- #FFE500 — css/three-editor-retro.css, js/studio-ui.js
+- #FFF — css/preset-catalog.css, css/studio.css, css/three-editor-retro.css, js/advanced-renderer.js, js/canvas-engine.js, js/export.js (+5 more)
+- #FFF0F0 — css/three-editor-retro.css
+- #FFF17A — studio.html
+- #FFF600 — css/palette.css, js/core.js, js/preset-data.js, js/tools.js, json/palettes.json
+- #FFF720 — css/palette.css, js/preset-data.js, json/palettes.json
+- #FFF840 — css/palette.css, js/preset-data.js, json/palettes.json
+- #FFFFFF — css/palette.css, js/advanced-controller.js, js/advanced-renderer.js, js/canvas-engine.js, js/studio-ui.js, js/text-engine.js (+1 more)
+
+SECTION 4 — KEYBOARD SHORTCUTS
+========================================================================================
+- Studio: V — Move
+- Studio: B — Brush
+- Studio: P — Pencil
+- Studio: E — Eraser
+- Studio: T — Text
+- Studio: G — Fill
+- Studio: I — Eyedropper
+- Studio: M — Select
+- Studio: L — Line
+- Studio: Ctrl/Cmd + S — Save
+- Studio: Ctrl/Cmd + O — Import
+- Both editors: Ctrl/Cmd + Z — Undo
+- Both editors: Ctrl/Cmd + Shift + Z or Ctrl/Cmd + Y — Redo
+- 3D Editor: W — Move
+- 3D Editor: E — Rotate
+- 3D Editor: R — Scale
+- 3D Editor: F — Frame selection
+- 3D Editor: Delete / Backspace — Delete selected object
+- 3D Editor: Escape — exit sculpt/direct-paint mode or close help
+
+END OF REFERENCE

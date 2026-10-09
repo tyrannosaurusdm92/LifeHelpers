@@ -1,0 +1,631 @@
+SAVANSKI ART STUDIO — COMPLETE TOOL & COLOR PALETTE INVENTORY
+========================================================================
+
+Hosting target: https://github.com/tyrannosaurusdm92/LifeHelpers/tree/main/Games
+Hosting model: public static GitHub content; no account is required to launch Savanski.
+OurSpace integration: optional host/session bridge and backend backup; local editing/saving remains available without account authentication.
+Terminology: the studio uses CANVAS / CANVAS SET language. Legacy publication-format terminology has been removed from first-party studio code and documentation; canvas terminology is used throughout.
+Architecture: one HTML entrypoint only (`studio.html`) with exactly two workspace tabs: Studio and 3D Editor.
+Desktop target: 1915 × 58 px title strip + 1915 × 80 px active toolbar + 1915 × 647 px active editing workspace.
+
+SECTION 1 — CORE 2D STUDIO TOOLS
+------------------------------------------------------------------------
+
+[SELECTION]
+- Rectangular Select (select): Drag a rectangular selection.
+- Free-form Select (free-select): Free-form selection shell; uses selection overlay.
+- Select All (select-all): Select the full canvas.
+- Deselect (deselect): Clear the active selection.
+
+[IMAGE]
+- Crop Layer (crop): Crop the active layer non-destructively to the chosen canvas region.
+- Local Background Remover (background-remove-local): Remove a mostly solid background by sampling corner colors.
+
+[TRANSFORM]
+- Move / Position (move): Move the active layer.
+- Rotate Left 90° (rotate-left): Rotate active layer left.
+- Rotate Right 90° (rotate-right): Rotate active layer right.
+- Flip Horizontal (flip-horizontal): Mirror active layer horizontally.
+- Flip Vertical (flip-vertical): Mirror active layer vertically.
+- Center Layer (center-layer): Center the active layer.
+- Scale / Resize Layer (scale-layer): Resize the active layer independently on X and Y while keeping the print canvas fixed.
+- Fit Layer to Canvas (fit-layer): Fit all visible pixels of the active layer within the fixed canvas bounds.
+- Fill Canvas with Layer (fill-layer): Scale the active layer to cover the fixed canvas bounds edge to edge.
+
+[DRAW]
+- Brush (brush): General round brush.
+- Pencil (pencil): Hard-edge pencil.
+- Marker (marker): Semi-transparent marker.
+- Airbrush (airbrush): Soft spray brush.
+- Calligraphy (calligraphy): Flat calligraphy brush.
+- Crayon (crayon): Textured crayon-style brush.
+- Watercolor (watercolor): Layerable transparent watercolor brush.
+- Eraser (eraser): Erase to true transparency.
+- Paint Bucket (fill): Flood fill an enclosed color area.
+
+[COLOR]
+- Eyedropper (eyedropper): Sample a color from the canvas.
+
+[RETOUCH]
+- Blur Brush (blur-brush): Locally soften details.
+- Sharpen Brush (sharpen-brush): Locally sharpen edges.
+- Dodge (dodge): Locally lighten areas.
+- Burn (burn): Locally darken areas.
+- Clone Stamp (clone-stamp): Clone pixels from a sampled source.
+- Smudge (smudge): Blend nearby pixels.
+
+[SHAPES]
+- Line (line): Draw a line with current fill and stroke.
+- Rectangle (rectangle): Draw a rectangle with current fill and stroke.
+- Rounded Rectangle (roundrect): Draw a rounded rectangle with current fill and stroke.
+- Ellipse (ellipse): Draw a ellipse with current fill and stroke.
+- Triangle (triangle): Draw a triangle with current fill and stroke.
+- Star (star): Draw a star with current fill and stroke.
+- Arrow (arrow): Draw a arrow with current fill and stroke.
+- Heart (heart): Draw a heart with current fill and stroke.
+- Speech Bubble (speech): Draw a speech bubble with current fill and stroke.
+
+[TEXT]
+- Add / Edit Text (text): Insert an editable text layer.
+- Typography Inspector (text-inspector): Open the complete text inspector.
+- Load Custom Font (custom-font): Load a font from the user device without bundling it.
+- Style Selected Letters (text-segment-style): Apply color, opacity, or highlight to selected characters.
+- Text Stroke / Outline (text-stroke): Configure text outline color and width.
+- Text Highlight (text-highlight): Highlight full or partial text.
+- Letter & Line Spacing (text-spacing): Control tracking and line height.
+- Bend Text on Curve (text-bend): Curve text along an arc.
+- Text Shadow (text-shadow): Configure shadow color, blur, and offset.
+- Text Gradient (text-gradient): Create a two-color angle-controlled text gradient.
+- Text Texture (text-texture): Use a user-selected image as a text texture source.
+- 3D Text Depth (text-3d): Simulate depth and dimensional extrusion.
+- Text Perspective / 3D Rotation (text-perspective): Skew and rotate text in perspective.
+- Text Behind Image (text-behind): Use layer order and erasing/background removal to place type behind a subject.
+
+[ADJUSTMENTS]
+- Auto Enhance (auto-enhance): Improve color, lighting, and contrast.
+- Brightness (brightness): Lighten or darken the active layer.
+- Contrast (contrast): Increase or reduce tonal contrast.
+- Saturation (saturation): Adjust color intensity.
+- Hue Rotate (hue): Rotate hues.
+- Black & White (grayscale): Convert to grayscale.
+- Sepia (sepia): Apply sepia toning.
+- Invert (invert): Invert image colors.
+- Gaussian Blur (blur): Blur the layer.
+- Sharpen (sharpen): Sharpen detail.
+- Unblur / Detail (unblur): Apply local high-pass-style sharpening.
+- Clarity (clarity): Increase local edge clarity.
+- Dehaze (dehaze): Increase contrast and atmospheric clarity.
+- Auto Levels (auto-levels): Stretch tonal range.
+- Vignette (vignette): Darken the outer edges.
+- Grain (grain): Add film-like grain.
+- Pixelate (pixelate): Create a pixel-art mosaic effect.
+- Duotone (duotone): Map luminance between two colors.
+- Vintage Filter (vintage): Apply a warm faded vintage look.
+- Cool Filter (cool): Apply a cooler color treatment.
+- Warm Filter (warm): Apply a warmer color treatment.
+- Noir Filter (noir): High-contrast monochrome filter.
+- Fade Filter (fade): Lower contrast and saturation.
+
+[LAYERS]
+- New Layer (add-layer): Create a transparent paint layer.
+- Duplicate Layer (duplicate-layer): Duplicate active layer.
+- Delete Layer (delete-layer): Delete active layer.
+- Move Layer Up (layer-up): Move active layer forward.
+- Move Layer Down (layer-down): Move active layer backward.
+- Merge Down (merge-down): Merge active layer into the one below.
+- Add Layer Mask (layer-mask): Add a white editable layer mask.
+- Remove Layer Mask (remove-mask): Remove the active mask.
+- Blend Modes (blend-mode): Choose a canvas blend/compositing mode.
+- Layer Opacity (opacity): Set layer transparency.
+
+[LAYOUT]
+- Positioning Grid / Snap (snap-grid): Toggle non-exporting alignment guides and snapping.
+- Pin Background (pin-background): Lock the Cover Base layer.
+- Collage Layout (collage): Arrange visible art layers into a balanced grid.
+- Bleed & Safe Guides (guides): Toggle non-exporting bleed/safe-area guides.
+- Canvas Layout Preset (canvas-layout): Create editable title, subtitle, and supporting text layers.
+
+[ELEMENTS]
+- Emoji / Sticker (emoji-sticker): Insert an emoji as an editable text element.
+- Shape Library (shape-library): Open the internal vector shape set; no image assets required.
+- Image Overlay (overlay-image): Import an image as a new editable layer.
+
+[CANVAS SET]
+- Add Canvas (canvas-add): Add a canvas at the selected canvas size.
+- Duplicate Canvas (canvas-duplicate): Duplicate the current canvas.
+- Delete Canvas (canvas-delete): Delete the current canvas.
+- Previous Canvas (canvas-prev): Go to the previous canvas.
+- Next Canvas (canvas-next): Go to the next canvas.
+- Export Canvas Set (export-canvases): Export all canvases as individual PNGs.
+
+[FILE]
+- Save Project (save): Save editable project to IndexedDB.
+- Export .lfstudio Project (export-project): Download an editable project JSON.
+- Export PNG (export-png): Export print-resolution PNG with transparency.
+- Export JPG (export-jpg): Export print-resolution JPEG on white.
+- Export WebP (export-webp): Export WebP.
+
+
+SECTION 2 — SUPPLEMENTAL 2D ENGINES
+------------------------------------------------------------------------
+- Oil Paint — textured, pressure-aware oil-style brush engine. [module: artsrc-tools-oil.js]
+- Pixel Brush — square hard-edged pixel brush for pixel-art marks. [module: artsrc-tools-pixel.js]
+- Symmetry — mirrors brush points vertically, horizontally, or in four-way mode. [module: artsrc-tools-symmetry.js]
+- Texture — applies procedural or selected texture processing to a canvas. [module: artsrc-tools-texture.js]
+- Image Import Engine — draws imported images into an editable canvas context. [module: artsrc-tools-image.js]
+- Selection Engine — rectangular selection state and preview support. [module: artsrc-tools-selection.js]
+- Transform Engine — draw-time position, size, rotation, flip, and opacity transforms. [module: artsrc-tools-transform.js]
+- Clone Engine — sampled-pixel clone stamping used by Clone Stamp. [module: artsrc-tools-clone.js]
+
+
+SECTION 3 — ADVANCED EDITABLE OBJECT CONTROLS
+------------------------------------------------------------------------
+- Object management: Duplicate; Bring to Front; Send to Back; Lock / Unlock; Delete.
+- Appearance: Primary/stroke color; Fill color; Outline color; Outline width; Opacity; Blend mode.
+- Texture fill: Apply image/texture fill; Clear texture.
+- Gradient: Enable gradient; From color; To color; Gradient angle.
+- Border: Enable border; Border color; Width; Solid / dashed / dotted style.
+- Position & transform: X/Y offset; X/Y scale; Rotation; Skew X; Skew Y.
+- Four-corner perspective: Independent X/Y offsets for top-left, top-right, bottom-right, and bottom-left corners.
+- Editable effects: Brightness; Contrast; Saturation; Hue; Transparency; Sepia; Grayscale; Invert; Blur; Sharpness; Grain; Temperature.
+- Shape capture: Capture selected shape; Use captured shape as crop; Use captured shape as brush nib; Open preset catalog.
+- Editable text: Text content; Font family; Alignment; Bold; Italic; Upload custom font.
+- Text dimensions: 1D / 2D / 3D mode; Extrusion depth; Depth color; Font size.
+
+[CROP SHAPES]
+- Free / Rectangle
+- Square
+- Rectangle
+- Circle
+- Ellipse
+- Diamond
+- Heart
+- Star
+- Triangle
+- Hexagon
+- Octagon
+- Captured Custom Shape
+
+[BRUSH / NIB SHAPES]
+- Circle
+- Square
+- Diamond
+- Heart
+- Star
+- Triangle
+- Captured Custom Shape
+
+
+
+SECTION 4 — 3D EDITOR TOOLS
+------------------------------------------------------------------------
+
+[PROJECT / HISTORY]
+- New project
+- Import 3D files
+- Undo
+- Redo
+- Save local project
+- Theme toggle
+- Help
+
+[TRANSFORM / VIEWPORT]
+- Move (W)
+- Rotate (E)
+- Scale (R)
+- Frame selection/project (F)
+- Grid toggle
+- Wireframe preview
+- Toon preview
+- Duplicate
+- Delete
+
+[EXPORT]
+- Save Copy / Project JSON
+- GLB
+- OBJ
+- STL
+- PLY
+
+[PRIMITIVE CREATION]
+- Box
+- Sphere
+- Capsule
+- Cylinder
+- Cone
+- Torus
+- Plane
+- Disc
+- Torus Knot
+
+[GEOMETRY OPERATIONS]
+- Simplify selected
+- Tessellate selected
+- Weld vertices
+- Recompute normals
+- Mirror X copy
+- Center pivot
+- Merge visible meshes
+- Apply transform to geometry
+
+[SCULPT BRUSHES]
+- Inflate
+- Deflate
+- Smooth
+- Flatten
+- Pinch
+- Relax
+
+[SCULPT SETTINGS]
+- Radius
+- Strength
+- Hardness
+- X symmetry
+- Continuous mode
+- Enable/disable Sculpt Mode
+
+[PAINT / TEXTURE]
+- 1024×1024 texture canvas
+- Brush size
+- Opacity
+- Clear
+- Fill
+- Text Stamp
+- Download Texture PNG
+- Enable Direct 3D Paint
+- Material swatches
+- Apply Paint Canvas
+- Remove Base Texture
+
+[MATERIAL INSPECTOR]
+- Base color
+- Metalness
+- Roughness
+- Opacity
+- Standard PBR shading
+- Toon shading
+- Unlit shading
+- Normal diagnostic shading
+- Double-sided rendering
+- Wireframe
+
+[AVATAR BLOCKOUT]
+- Balanced preset
+- Compact preset
+- Tall preset
+- Broad preset
+- Slender preset
+- Create avatar
+- Stature
+- Head width
+- Head height
+- Head depth
+- Shoulders
+- Torso
+- Waist
+- Hips
+- Arms
+- Legs
+- Limb thickness
+- Hands
+- Feet
+- Reset sliders
+- Merge skin parts
+
+[2D / 2.5D CAPTURE]
+- Transparent background
+- Studio cyan background
+- White background
+- Black background
+- Cell sizes 256/384/512/768/1024
+- Front view
+- 3/4 view
+- Side view
+- Back view
+- Current PNG
+- Portrait PNG
+- 4-view sprite sheet
+- 8-direction 2.5D sheet
+- Sprite metadata JSON
+- Capture-only toon shading
+- Ground shadow
+
+[SCENE / LIGHTING]
+- Scene object list
+- Background color
+- Key light intensity
+- Environment intensity
+- Reset view
+
+[SELECTION INSPECTOR]
+- Name
+- Visible
+- Cast shadow
+- Mesh statistics
+- Project scope
+
+
+SECTION 5 — CANVAS SIZES
+------------------------------------------------------------------------
+- Landscape 10 × 8: 10 × 8 in [canvas-landscape-10x8]
+- Portrait 4.25 × 6.87: 4.25 × 6.87 in [canvas-portrait-4_25x6_87]
+- Portrait 5.5 × 8.5: 5.5 × 8.5 in [canvas-portrait-5_5x8_5-alt]
+- Portrait 5.5 × 8.5: 5.5 × 8.5 in [canvas-portrait-5_5x8_5]
+- Portrait 5 × 8: 5 × 8 in [canvas-portrait-5x8]
+- Portrait 6.14 × 9.21: 6.14 × 9.21 in [canvas-portrait-6_14x9_21]
+- Portrait 6 × 9: 6 × 9 in [canvas-portrait-6x9-alt]
+- Portrait 6 × 9: 6 × 9 in [canvas-portrait-6x9]
+- Portrait 7 × 10: 7 × 10 in [canvas-portrait-7x10]
+- Portrait 8.5 × 11: 8.5 × 11 in [canvas-portrait-8_5x11]
+- Portrait 8 × 10: 8 × 10 in [canvas-portrait-8x10]
+- Square 10 × 10: 10 × 10 in [canvas-square-10x10]
+- Square 12 × 12: 12 × 12 in [canvas-square-12x12]
+
+
+SECTION 6 — CANONICAL SAVANSKI IDENTITY PALETTE
+------------------------------------------------------------------------
+
+[Cadmium Yellow family]
+- 25L: #FFF840
+- 12.5L: #FFF720
+- main: #FFF600
+- midDark: #999400
+- deepDark: #666200
+- darkest: #333100
+
+[Ice Cyan / Turquoise / Teal family]
+- 25L: #40FFFF
+- 12.5L: #20F5FF
+- main: #00FFFF
+- midDark: #008FB8
+- deepDark: #005B7A
+- darkest: #002B3D
+
+[Persimmon Orange family]
+- 25L: #F18240
+- 12.5L: #EE6D20
+- main: #EC5800
+- midDark: #8E3500
+- deepDark: #5E2300
+- darkest: #2F1200
+
+[NEUTRALS]
+- frostWhite: #F2FFFF
+- cyanPorcelain: #E6FFFF
+- cyanMist: #D9FFFF
+- paleAqua: #BFFFFF
+- cyanInk: #001A1A
+- cyanVoid: #001010
+
+Contrast rule: Use #001010 text on the three bright identity colors; use #F2FFFF text on the darkest family surfaces.
+
+
+SECTION 7 — SHARED UI COLOR TOKENS
+------------------------------------------------------------------------
+- --cyan-white: #F2FFFF
+- --cyan-porcelain: #E6FFFF
+- --cyan-mist: #D9FFFF
+- --pale-aqua: #BFFFFF
+- --cyan-ink: #001A1A
+- --cyan-void: #001010
+- --yellow-125: #FFF840
+- --yellow-112: #FFF720
+- --yellow-100: #FFF600
+- --yellow-60: #999400
+- --yellow-40: #666200
+- --yellow-20: #333100
+- --cyan-125: #40FFFF
+- --cyan-112: #20F5FF
+- --cyan-100: #00FFFF
+- --cyan-60: #008FB8
+- --cyan-40: #005B7A
+- --cyan-20: #002B3D
+- --orange-125: #F18240
+- --orange-112: #EE6D20
+- --orange-100: #EC5800
+- --orange-60: #8E3500
+- --orange-40: #5E2300
+- --orange-20: #2F1200
+- --ui-bg: #D8F8F8
+- --ui-surface: #F4FFFF
+- --ui-raised: #EAFEFE
+- --ui-recess: #B7DADA
+- --ui-ink: #001010
+- --ui-muted: #31545A
+- --ui-border-light: #FFFFFF
+- --ui-border-mid: #8AA
+- --ui-border-dark: #113B3D
+- --focus: #00FFFF
+- --shadow: #001010
+- --yellow: #FFF600
+- --cyan: #00FFFF
+- --orange: #EC5800
+- --border-light: #FFF
+- --border-mid: #78999D
+- --border-dark: #113B3D
+
+
+SECTION 8 — CANVAS BASE PRESET COLORS
+------------------------------------------------------------------------
+- White: #FFFFFF
+- Black: #000000
+- Red: #FF3434
+- Pink: #EC0B5B
+- Purple: #9B26B6
+- Blue: #168BE8
+- Gray gradient: #FFFFFF → #000000
+- Red blue gradient: #D51F3E → #1269B5
+- Teal orange gradient: #64B6A2 → #EE6A1A
+- Rose green gradient: #E24C62 → #87D693
+- Purple teal gradient: #7244B6 → #25BE83
+- Indigo gold gradient: #302870 → #FFD55D
+- Purple pink gradient: #7752A7 → #F3A9BF
+- Green blue gradient: #00DF7D → #178AE8
+- Transparent: no color / alpha canvas base.
+
+
+SECTION 9 — COMPLETE FIRST-PARTY LITERAL COLOR PALETTE
+------------------------------------------------------------------------
+Total unique literal hex colors: 147
+This exhaustive list is regenerated from the current first-party studio HTML/CSS/JS/JSON and includes identity colors, UI surfaces, editor defaults, guide/selection colors, 3D editor colors, preset swatches, and canvas-base colors. Third-party rendering/transcoder bundles are excluded.
+- #000 — css/palette.css, css/studio.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, css/uniform3d-studio.css, js/advanced-renderer.js (+6 more files)
+- #0A7 — css/advanced-objects.css
+- #111 — css/single-shell.css, css/studio.css, css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #222 — css/studio.css, js/advanced-renderer.js, js/text-engine.js
+- #345 — css/single-shell.css
+- #476 — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #555 — css/studio.css
+- #688 — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #777 — css/studio.css
+- #7FF — css/advanced-objects.css
+- #888 — css/studio.css
+- #8AA — css/palette.css
+- #999 — css/studio.css
+- #A11 — css/advanced-objects.css
+- #AAA — css/studio.css
+- #ADD — js/ui.js
+- #BBB — css/preset-catalog.css
+- #C33 — css/advanced-objects.css
+- #DDD — css/studio.css, css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #FFF — css/preset-catalog.css, css/single-shell.css, css/studio.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, css/uniform3d-studio.css (+7 more files)
+- #0007 — css/advanced-objects.css
+- #0008 — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #000000 — js/advanced-object-model.js, js/advanced-renderer.js, js/advanced-tool-bridge.js, js/artsrc-tools-eraser.js, js/canvas-engine.js, js/single-shell.js (+4 more files)
+- #001010 — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, css/uniform3d-studio.css, js/artsrc-art-tools-bundle.js (+15 more files)
+- #001A1A — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, css/uniform3d-studio.css, js/preset-data.js (+1 more files)
+- #001B1B — css/advanced-objects.css
+- #002B3D — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/preset-data.js, json/palettes.json
+- #005B7A — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, css/uniform3d-studio.css, js/preset-data.js (+1 more files)
+- #008FB8 — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/preset-data.js, json/palettes.json
+- #00AAFF — js/advanced-renderer.js
+- #00CFD1 — css/studio.css, js/text-engine.js, studio.html
+- #00DF7D — studio.html
+- #00FFFF — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/artsrc-tools-fill.js, js/preset-data.js (+4 more files)
+- #073B4D — css/palette.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, css/uniform3d-studio.css
+- #087BE8 — css/studio.css
+- #0A1113 — css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #102228 — studio.html
+- #111111 — js/text-engine.js, studio.html
+- #113B3D — css/palette.css, css/uniform3d-embedded.css, css/uniform3d-palette.css
+- #1199D2 — js/studio-ui.js
+- #1269B5 — studio.html
+- #147285 — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #151515 — css/studio.css
+- #161616 — css/studio.css
+- #1687FF — js/canvas-engine.js
+- #168BE8 — studio.html
+- #171717 — css/studio.css
+- #178AE8 — studio.html
+- #1C1C6B — js/image-tools.js, js/studio-ui.js
+- #1E90FF — css/single-shell.css, js/single-shell.js, json/artsrc-material-palette.json
+- #202428 — css/studio.css
+- #20F5FF — css/palette.css, js/preset-data.js, json/palettes.json
+- #222222 — js/advanced-controller.js, js/text-engine.js, studio.html
+- #25BE83 — studio.html
+- #27A844 — js/single-shell.js, js/studio-ui.js
+- #292929 — css/studio.css
+- #2F1200 — css/palette.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/preset-data.js, json/palettes.json
+- #302870 — studio.html
+- #311B11 — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #31545A — css/palette.css, css/uniform3d-embedded.css, css/uniform3d-palette.css
+- #32CD32 — css/single-shell.css, js/single-shell.js, json/artsrc-material-palette.json
+- #333100 — css/palette.css, js/preset-data.js, json/palettes.json
+- #3768BF — js/single-shell.js, js/studio-ui.js
+- #381000 — css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #3A3A3A — css/studio.css
+- #40FFFF — css/palette.css, js/preset-data.js, json/palettes.json
+- #4B6B70 — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #5A9DED — css/studio.css
+- #5E2300 — css/palette.css, js/preset-data.js, json/palettes.json
+- #64B6A2 — studio.html
+- #666200 — css/palette.css, js/preset-data.js, json/palettes.json
+- #69AEF7 — css/studio.css
+- #69CBD7 — js/studio-ui.js
+- #6D2BD0 — js/text-engine.js, studio.html
+- #6D6D6D — css/studio.css
+- #7244B6 — studio.html
+- #739FD1 — js/studio-ui.js
+- #7752A7 — studio.html
+- #787878 — js/single-shell.js, js/studio-ui.js
+- #78999D — css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css
+- #7AAEF0 — css/studio.css
+- #7B8D90 — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #7FFFFF — css/single-shell.css
+- #87D693 — studio.html
+- #8D43A3 — js/single-shell.js, js/studio-ui.js
+- #8E3500 — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/preset-data.js, json/palettes.json
+- #999400 — css/palette.css, js/preset-data.js, json/palettes.json
+- #9B26B6 — studio.html
+- #9B6951 — js/studio-ui.js
+- #A9E26A — js/studio-ui.js
+- #B00020 — js/studio-ui.js
+- #B7A7D5 — js/studio-ui.js
+- #B7DADA — css/palette.css, css/uniform3d-embedded.css, css/uniform3d-palette.css
+- #BAC4CF — css/advanced-objects.css
+- #BFFFFF — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/preset-data.js, json/palettes.json (+1 more files)
+- #C8C8C8 — css/studio.css
+- #CAFFFF — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #CCD3DA — css/advanced-objects.css
+- #CFEEEE — css/single-shell.css
+- #D0D0D0 — css/studio.css, js/studio-ui.js
+- #D1D1D1 — css/studio.css
+- #D51F3E — studio.html
+- #D8F8F8 — css/palette.css, css/uniform3d-embedded.css, css/uniform3d-palette.css
+- #D9FFFF — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/preset-data.js, json/palettes.json
+- #DDDDDD — css/studio.css
+- #DFF8F8 — css/single-shell.css
+- #E24C62 — studio.html
+- #E51D37 — js/single-shell.js, js/studio-ui.js
+- #E6FFFF — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/preset-data.js, json/palettes.json
+- #E8F2FF — css/studio.css
+- #E8FFFF — js/uniform3d-paint-tools.js
+- #E9FFFF — css/single-shell.css
+- #EAFEFE — css/palette.css, css/uniform3d-embedded.css, css/uniform3d-palette.css
+- #EAFFFF — css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #EC0B5B — studio.html
+- #EC5800 — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/preset-data.js, js/single-shell.js (+1 more files)
+- #EE6A1A — studio.html
+- #EE6D20 — css/palette.css, js/preset-data.js, json/palettes.json
+- #EFE2A5 — js/studio-ui.js
+- #EFFFFF — css/single-shell.css
+- #F18240 — css/palette.css, js/core.js, js/preset-data.js, json/palettes.json
+- #F28AA2 — js/single-shell.js, js/studio-ui.js
+- #F2FFFF — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, js/canvas-engine.source-v2.js, js/core.js (+5 more files)
+- #F3A9BF — studio.html
+- #F3F3F3 — js/studio-ui.js
+- #F4F4F4 — css/studio.css
+- #F4FFFF — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css
+- #F5F5F5 — css/studio.css
+- #F8FFFF — css/single-shell.css
+- #FAFFFF — css/single-shell.css
+- #FF3434 — studio.html
+- #FF5B2E — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #FF7A2E — js/single-shell.js, js/studio-ui.js
+- #FFBD59 — js/image-tools.js, js/studio-ui.js
+- #FFC52E — js/studio-ui.js
+- #FFC5A6 — css/single-shell.css
+- #FFD55D — studio.html
+- #FFD8C4 — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #FFE500 — js/studio-ui.js
+- #FFF0E8 — css/single-shell.css
+- #FFF17A — studio.html
+- #FFF3EB — css/uniform3d-embedded.css, css/uniform3d-studio.css
+- #FFF600 — css/palette.css, css/single-shell.css, css/uniform3d-embedded.css, css/uniform3d-palette.css, css/uniform3d-studio.css, js/core.js (+4 more files)
+- #FFF720 — css/palette.css, js/preset-data.js, json/palettes.json
+- #FFF840 — css/palette.css, js/preset-data.js, json/palettes.json
+- #FFFAB5 — css/single-shell.css
+- #FFFFFF — css/palette.css, js/advanced-controller.js, js/advanced-renderer.js, js/canvas-engine.js, js/single-shell.js, js/studio-ui.js (+2 more files)
+
+
+SECTION 10 — KEYBOARD SHORTCUTS
+------------------------------------------------------------------------
+- W — Move (3D Editor)
+- E — Rotate (3D Editor)
+- R — Scale (3D Editor)
+- F — Frame selection/project (3D Editor)
+- Delete — Delete selection (3D Editor)
+- Ctrl/Cmd + Z — Undo
+- Ctrl/Cmd + Shift + Z — Redo
+
+
+END OF INVENTORY
