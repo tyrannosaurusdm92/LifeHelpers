@@ -15,7 +15,7 @@ A.exportProject=async function(){
  let backedUp=false;
  try{
   const host=window.parent&&window.parent!==window?window.parent:window,backend=host.SavanskiOurSpaceBackend;
-  if(backend?.hasSession?.()){
+  if(backend?.canSync?.()){
    const safeId='uniform3d-'+projectName.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60);
    await backend.saveProject({...data,id:safeId||('uniform3d-'+Date.now()),name:projectName,projectType:'uniform-3d',updatedAt:Date.now()});
    host.SavanskiOurSpaceGame?.post?.('ourspace:game-saved',{projectId:safeId,projectName,projectType:'uniform-3d'});
