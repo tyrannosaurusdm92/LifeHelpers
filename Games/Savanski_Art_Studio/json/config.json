@@ -1,5 +1,5 @@
 {
-  "app": "Savanski Studio",
+  "app": "Savanski Art Studio",
   "host": "OurSpace",
   "gameId": "savanski-art-studio",
   "frontend": {
@@ -10,10 +10,14 @@
     "localResilience": true
   },
   "backend": {
-    "service": "OurSpace Backend",
+    "service": "Savanski Art Studio Apps Script",
+    "backendVersion": "2026.10.09-v3-routed-sas-pwa",
     "webAppEndpoint": "https://script.google.com/macros/s/AKfycbyuKFvcQGFjmhnIIcgoZUmPtDPDZYMjsO64Wf0-lDjQCnvUwoHSoHLNppN-cSy7IETs/exec",
-    "sessionScoped": true,
-    "maxUploadMb": 25
+    "sessionScoped": false,
+    "sharedClientKey": true,
+    "personalConnectorOptional": true,
+    "maxInlineBytes": 8388608,
+    "aiBrainProxy": true
   },
   "projectFlow": {
     "types": [
