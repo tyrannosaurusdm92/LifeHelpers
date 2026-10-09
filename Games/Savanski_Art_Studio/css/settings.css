@@ -76,3 +76,18 @@ html[data-theme="dark"] .sav-settings-window .sav-settings-price{background:#001
   .sav-settings-window{left:6px!important;right:6px!important;top:66px!important;width:auto!important;min-width:0;height:min(78vh,720px);max-width:none;resize:none}
   .sav-settings-window .sav-settings-two,.sav-settings-window .sav-settings-inline-actions,.sav-settings-window .sav-settings-storage-readout{grid-template-columns:1fr}
 }
+/* Routed backend settings extensions, retaining the existing resize/drag shell. */
+.sav-settings-window .sav-section{border:1px solid var(--sv-cyan-mid,#008fb8);background:var(--sv-porcelain,#e6ffff);padding:10px;border-radius:8px;margin-bottom:10px;display:grid;gap:9px;min-width:0}
+.sav-settings-window .sav-section h3{font:900 13px/1.25 system-ui;margin:0;color:var(--sv-cyan-deep,#005b7a)}
+.sav-settings-window .sav-field{display:grid;gap:5px;min-width:0;font:800 11px/1.3 system-ui}
+.sav-settings-window .sav-field input,.sav-settings-window .sav-field select,.sav-settings-window .sav-field textarea,.sav-settings-window input[type="password"]{min-width:0;width:100%;box-sizing:border-box;font:600 12px/1.4 system-ui;background:#fff;color:#001010;border:1px solid #008fb8;border-radius:7px;padding:7px;resize:vertical}
+.sav-settings-window .sav-btn{display:inline-flex;align-items:center;justify-content:center;min-height:34px;min-width:0;padding:6px 10px;text-align:center;white-space:normal;overflow-wrap:anywhere;text-decoration:none;border:1px solid #005b7a;border-radius:7px;background:#e6ffff;color:#001010;cursor:pointer;font:800 11px/1.3 system-ui}
+.sav-settings-window .sav-cloud-list{display:grid;gap:6px;max-height:270px;overflow:auto;min-width:0}
+.sav-settings-window .sav-cloud-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;background:#fff;border:1px solid #8bd4db;border-radius:7px;padding:7px}
+.sav-settings-window .sav-cloud-details{min-width:100px;flex:1;overflow-wrap:anywhere;display:grid;gap:4px;color:#001010}
+.sav-settings-window .sav-cloud-details strong{font-size:11px}
+.sav-settings-window .sav-cloud-details small{font-size:10px}
+.sav-settings-window [hidden]{display:none!important}
+html[data-theme="dark"] .sav-settings-window .sav-cloud-row,html[data-theme="dark"] .sav-settings-window .sav-cloud-details{background:#001a1a;color:#f2ffff}
+html[data-theme="dark"] .sav-settings-window .sav-section h3{color:#8bd4db}
+.studio-header-actions #installAppBtn{width:auto;min-width:48px;padding:0 8px;font-size:12px}
