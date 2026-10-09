@@ -1,6 +1,6 @@
 /* Savanski Studio PWA service worker. Keep at repository root so its default scope covers studio.html and all runtime folders. */
 'use strict';
-const VERSION='savanski-studio-v10-2026-10-09';
+const VERSION='savanski-studio-v11-2026-10-09-routed';
 const SHELL_CACHE=`${VERSION}-shell`;
 const RUNTIME_CACHE=`${VERSION}-runtime`;
 const SHELL=[

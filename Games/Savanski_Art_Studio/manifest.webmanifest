@@ -1,7 +1,7 @@
 {
-  "name": "Savanski Studio",
-  "short_name": "Savanski",
-  "description": "Browser-native art studio and 3D editor with local project storage and optional Savanski backend sync.",
+  "name": "Savanski Art Studio",
+  "short_name": "Savanski Studio",
+  "description": "Create, draw, edit, composite, crop, layer, and manage visual projects with Savanski Art Studio.",
   "id": "./studio.html",
   "start_url": "./studio.html",
   "scope": "./",
@@ -11,7 +11,7 @@
     "minimal-ui"
   ],
   "orientation": "any",
-  "background_color": "#F2FFFF",
+  "background_color": "#001010",
   "theme_color": "#00FFFF",
   "prefer_related_applications": false,
   "categories": [
