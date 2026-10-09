@@ -1,0 +1,1 @@
+(function(global){'use strict';const LF=global.SavanskiArtTools;LF.tools=LF.tools||{};LF.tools.texture={id:'texture',label:'Texture',apply(ctx,settings={}){LF.TextureEngine.apply(ctx.context,ctx.canvas,settings);}};})(typeof window!=='undefined'?window:globalThis);
