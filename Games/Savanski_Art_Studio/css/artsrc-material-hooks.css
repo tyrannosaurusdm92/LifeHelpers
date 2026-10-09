@@ -1,0 +1,7 @@
+/* Integration hooks only. This is intentionally not a Studio design. */
+.lf-art-canvas { image-rendering:auto; touch-action:none; user-select:none; }
+.lf-art-canvas.is-pixel-mode { image-rendering:pixelated; }
+.lf-art-tool-cursor-crosshair { cursor:crosshair; }
+.lf-art-tool-cursor-text { cursor:text; }
+.lf-art-tool-cursor-move { cursor:move; }
+.lf-art-selection-outline { outline:1px dashed currentColor; outline-offset:-1px; pointer-events:none; }

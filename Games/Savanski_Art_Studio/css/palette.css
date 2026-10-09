@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+:root{
+  --cyan-white:#F2FFFF;--cyan-porcelain:#E6FFFF;--cyan-mist:#D9FFFF;--pale-aqua:#BFFFFF;--cyan-ink:#001A1A;--cyan-void:#001010;
+  --yellow-125:#FFF840;--yellow-112:#FFF720;--yellow-100:#FFF600;--yellow-60:#999400;--yellow-40:#666200;--yellow-20:#333100;
+  --cyan-125:#40FFFF;--cyan-112:#20F5FF;--cyan-100:#00FFFF;--cyan-60:#008FB8;--cyan-40:#005B7A;--cyan-20:#002B3D;
+  --orange-125:#F18240;--orange-112:#EE6D20;--orange-100:#EC5800;--orange-60:#8E3500;--orange-40:#5E2300;--orange-20:#2F1200;
+  --background-light:var(--cyan-white);--surface-light:var(--cyan-mist);--text-on-light:var(--cyan-void);
+  --background-dark:var(--cyan-void);--surface-dark:var(--cyan-20);--text-on-dark:var(--cyan-white);
+  --primary:var(--cyan-100);--success:var(--yellow-100);--secondary:var(--orange-100);--text-on-bright:var(--cyan-void);
+  --ui-bg:#d8f8f8;--ui-surface:#f4ffff;--ui-raised:#eafefe;--ui-recess:#b7dada;--ui-ink:#001010;--ui-muted:#31545a;
+  --ui-border-light:#ffffff;--ui-border-mid:#8aa;--ui-border-dark:#113b3d;--focus:#00ffff;--shadow:#001010;
+}
+.savanski-art-studio-brand{font-family:"Rubik Dirt",system-ui,sans-serif!important;font-weight:400!important;letter-spacing:.015em}
+html[data-theme="dark"]{--ui-bg:#001a1a;--ui-surface:#002b3d;--ui-raised:#073b4d;--ui-recess:#001010;--ui-ink:#f2ffff;--ui-muted:#bfffff;--ui-border-light:#008fb8;--ui-border-mid:#005b7a;--ui-border-dark:#000;--shadow:#000}

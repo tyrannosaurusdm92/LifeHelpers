@@ -1,0 +1,3 @@
+/* Canvas preset: 10 × 10 in. The checkerboard is UI-only transparency; it is never painted into the canvas. */
+[data-canvas-size="canvas-square-10x10"] { --canvas-width-in:10; --canvas-height-in:10; --canvas-ratio:10/10; }
+[data-canvas-size="canvas-square-10x10"] #canvasShell { aspect-ratio:10 / 10; }

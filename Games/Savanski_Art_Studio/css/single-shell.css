@@ -1,0 +1,9 @@
+/* Savanski single-document editor shell.
+   Authoritative header/toolbar/menu geometry lives in toolbar_menus.css and authoritative-toolbar-integration.css. */
+html,body{min-width:0;background:var(--bg);overflow:auto}
+body{display:flex;justify-content:center;align-items:flex-start}
+#app{width:min(100%,var(--sav-desktop-width));height:auto;min-height:785px;flex:none;background:var(--bg);position:relative;overflow:visible}
+#statusBar{width:100%;height:34px;flex:none}
+#u3dRoot .toast-root{z-index:210}
+#u3dRoot .modal{z-index:220}
+@media(max-width:760px){body{display:block}#app{width:100%;min-height:0}}

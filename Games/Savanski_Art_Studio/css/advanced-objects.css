@@ -1,0 +1,17 @@
+
+/* Advanced editable-object layer, additive to the original Studio shell. */
+.advanced-object-inspector{width:min(520px,94vw);max-height:min(86vh,900px);right:18px;top:116px}
+.inspector-scroll{overflow:auto;max-height:calc(min(86vh,900px) - 46px)}
+.object-action-row{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0}
+.object-action-row .danger{border-color:#c33;color:#a11}
+.advanced-object-inspector fieldset{border:1px solid var(--line,#bac4cf);border-radius:8px;margin:9px 0;padding:8px}
+.advanced-object-inspector legend{padding:0 5px;font-weight:700}
+.object-layer-divider{list-style:none;padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;opacity:.65;border-top:1px solid var(--line,#ccd3da);border-bottom:1px solid var(--line,#ccd3da)}
+.object-layer .layer-name{font-weight:650}
+.perspective-grid input{min-width:0}
+#canvasShell{position:relative}
+#surfaceCanvas,#overlayCanvas{position:absolute;inset:0}
+#surfaceCanvas{z-index:1}#overlayCanvas{z-index:3}
+body.canvas-art-edit .canvas-return-art{display:block;position:fixed;left:50%;transform:translateX(-50%);bottom:42px;z-index:70;border:1px solid #0a7;background:#001b1b;color:#7ff;padding:10px 16px;border-radius:999px;font-weight:800;box-shadow:0 4px 24px #0007}
+body.canvas-art-edit #layersPanel.open{display:block}
+@media(max-width:700px){.advanced-object-inspector{right:3vw;top:92px;width:94vw}.advanced-object-inspector .compact-grid{grid-template-columns:1fr 1fr}}

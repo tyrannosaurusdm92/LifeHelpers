@@ -1,0 +1,9 @@
+:root{
+  --cyan-white:#F2FFFF;--cyan-porcelain:#E6FFFF;--cyan-mist:#D9FFFF;--pale-aqua:#BFFFFF;--cyan-ink:#001A1A;--cyan-void:#001010;
+  --yellow:#FFF600;--cyan:#00FFFF;--cyan-60:#008FB8;--cyan-40:#005B7A;--cyan-20:#002B3D;
+  --orange:#EC5800;--orange-60:#8E3500;--orange-20:#2F1200;
+  --ui-bg:#d8f8f8;--ui-surface:#f4ffff;--ui-raised:#eafefe;--ui-recess:#b7dada;--ui-ink:#001010;--ui-muted:#31545a;
+  --border-light:#fff;--border-mid:#78999d;--border-dark:#113b3d;--focus:#00ffff;--shadow:#001010;
+}
+html[data-theme="dark"]{--ui-bg:#001a1a;--ui-surface:#002b3d;--ui-raised:#073b4d;--ui-recess:#001010;--ui-ink:#f2ffff;--ui-muted:#bfffff;--border-light:#008fb8;--border-mid:#005b7a;--border-dark:#000;--shadow:#000}
+.savanski-art-studio-brand{font-family:Impact,"Arial Black",system-ui,sans-serif;letter-spacing:.035em;text-transform:uppercase}
