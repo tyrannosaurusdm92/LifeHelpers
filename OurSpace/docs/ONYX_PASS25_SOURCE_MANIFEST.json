@@ -1,0 +1,56 @@
+{
+  "version": "25.0",
+  "location": "OurSpace/",
+  "branch": "main",
+  "backendModified": false,
+  "movementDirections": [
+    "north",
+    "north_east",
+    "east",
+    "south_east",
+    "south",
+    "south_west",
+    "west",
+    "north_west"
+  ],
+  "actionModules": [
+    "jump_up",
+    "jump_down",
+    "jump_across",
+    "stretch",
+    "loaf",
+    "lounge",
+    "curl_ball",
+    "eat_drink",
+    "sleep",
+    "play_hunt"
+  ],
+  "nativeHost": "OnyxImperialExpedition",
+  "spatialHosts": [
+    "OnyxRoomSpatial",
+    "HappyHomeOnyxSpatial"
+  ],
+  "authoredViews": [
+    "right",
+    "down-right",
+    "down-left",
+    "left",
+    "up-left",
+    "up-right"
+  ],
+  "originalAtlasFrames": 660,
+  "preservedExistingAssets": true,
+  "pass15SvgAssetsUploadedInThisCommit": false,
+  "originalSourceReferences": [
+    "Fox_Walk.rar",
+    "CatnDog.zip",
+    "catai-main.zip",
+    "PixelPet-main.zip",
+    "hatpet-main.zip",
+    "Fox_Idle.rar",
+    "onyx-animation-research.json",
+    "onyx-base-frame-library.json",
+    "Onyx_Base_Movement_Pass15_Eating_Drinking_Scaled(1).zip",
+    "Onyx_Base_Movement_Pass23_All_Sources_Refined(1).zip"
+  ]
+}

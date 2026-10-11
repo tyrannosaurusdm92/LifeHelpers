@@ -1,0 +1,7 @@
+/* Onyx Pass 25; native renderer keeps the original visual design. */
+[data-onyx-motion-active] {touch-action:pan-x pan-y;}
+[data-onyx-motion-canvas] {image-rendering:pixelated; image-rendering:crisp-edges;}
+@media (prefers-reduced-motion:reduce) {
+ [data-onyx-motion-active] *,[data-onyx-motion-active] *::before,
+ [data-onyx-motion-active] *::after {animation-duration:.001ms!important;transition-duration:.001ms!important;}
+}
