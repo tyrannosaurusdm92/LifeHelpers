@@ -46,7 +46,7 @@
   if(Number.isFinite(options.seed))auto.seed=options.seed>>>0;
   if(options.pace)auto.pace=options.pace==='run'?'run':'walk';auto.timeMs=0;auto.mode='idle';if(!auto.enabled&&!state.job&&!nav&&!state.command&&!state.inputX&&!state.inputY)state.moving=false;return getWander();}
  function getWander(){return {...auto};}
- function weightedPhase(elapsed,duration,weights){const ws=Array.isArray(weights)&&weights.length===5?weights:[1,1,1,1,1],total=ws.reduce((a,b)=>a+Math.max(0,b),0)||5;
+ function weightedPhase(elapsed,duration,weights){if(root.OnyxBaseFlipbook?.loop)return root.OnyxBaseFlipbook.loop(elapsed,duration,weights);const ws=Array.isArray(weights)&&weights.length===5?weights:[1,1,1,1,1],total=ws.reduce((a,b)=>a+Math.max(0,b),0)||5;
   const pct=((elapsed%duration)+duration)%duration/duration;let sum=0;
   for(let i=0;i<5;i++){sum+=Math.max(0,ws[i])/total;if(pct<sum)return i;}return 4;}
  function autonomousStep(dt){if(!auto.enabled)return false;
