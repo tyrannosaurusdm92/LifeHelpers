@@ -6,6 +6,10 @@ if(root.__onyxPass25Loader)return;
 const activeScript=document.currentScript;
 const prefix=new URL("onyx/games/virtual/",activeScript?.src||new URL("js/",document.baseURI));
 const names=[
+// Preserve the six original Pass 23 support modules. They register their own
+// APIs and do not overwrite the active Pass 25 movement runtime.
+"onyx-base-physics.js","onyx-base-gait.js","onyx-base-navigation.js",
+"onyx-base-profiles.js","onyx-base-sequences.js","onyx-base-sprites.js",
 "onyx-base-runtime.js",
 "onyx-base-move_north.js","onyx-base-move_north_east.js",
 "onyx-base-move_east.js","onyx-base-move_south_east.js",
