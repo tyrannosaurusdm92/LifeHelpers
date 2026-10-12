@@ -1,139 +1,142 @@
-/* OurSpace Happy Home <> Onyx movement adapter, Pass 25.
-   Existing Professor Onyx runtime owns the cat art, behavior, chat and persistence.
-   This bridge ONLY controls voluntary Happy Home movement and collision. */
-(function(root){
-"use strict";
-if(root.OnyxHappyHomeMotion?.version==="26.0")return;
-const movement=()=>root.OnyxBaseMotion;
-/* Original Happy Home renderer is inside a personalized widget's srcdoc iframe.
-   Resolve same-origin frames recursively; never assume it is in this window. */
-let nativeWindow=null;
-function findNativeWindow(){
- try{
-  if(nativeWindow&&!nativeWindow.closed&&nativeWindow.OnyxImperialExpedition&&
-      (nativeWindow.OnyxRoomSpatial||nativeWindow.HappyHomeOnyxSpatial))return nativeWindow;
- }catch(_){}
- nativeWindow=null;
- const seen=new Set();
- function scan(win,depth){
-  if(!win||seen.has(win)||depth>4)return null;seen.add(win);
-  try{
-   if(win.OnyxImperialExpedition&&(win.OnyxRoomSpatial||win.HappyHomeOnyxSpatial)){
-    nativeWindow=win;return win;
-   }
-   for(const el of win.document.querySelectorAll("iframe")){
-    let child=null;try{child=el.contentWindow;}catch(_){}
-    const found=scan(child,depth+1);if(found)return found;
-   }
-  }catch(_){}
-  return null;
+/* OurSpace Pass 31 — Onyx Pass 23 movement ↔ Happy Home native actor.
+ * Movement source: original Pass23 engine. Art, personality, game state, backend:
+ * pre-existing OurSpace runtime. Nothing here creates a second actor or backend.
+ */
+(function(root){'use strict';
+ const VERSION='31.0';
+ if(root.OnyxHappyHomeMotion?.version===VERSION)return;
+ const motion=()=>root.OnyxBaseMotion?.version==='23.0'?root.OnyxBaseMotion:null;
+ let nativeFrame=null,running=false,raf=0,lastTime=0,lastSync=0,lastAction='',activeDeadline=0;
+ let roomSignature='',roomIdentity=null,listening=null;
+ function findHost(){
+  try{if(nativeFrame&&!nativeFrame.closed&&nativeFrame.OnyxImperialExpedition &&
+   (nativeFrame.OnyxRoomSpatial||nativeFrame.HappyHomeOnyxSpatial))return nativeFrame;}catch(_){}
+  nativeFrame=null;
+  const seen=new Set();
+  function search(win,depth){
+   if(!win||depth>6||seen.has(win))return null;seen.add(win);
+   try{
+    if(win.OnyxImperialExpedition&&(win.OnyxRoomSpatial||win.HappyHomeOnyxSpatial)){
+     nativeFrame=win;return win;
+    }
+    const iframes=win.document?.querySelectorAll('iframe')||[];
+    for(const f of iframes){let sub;try{sub=f.contentWindow;}catch(_){}const found=search(sub,depth+1);if(found)return found;}
+   }catch(_){}
+   return null;
+  }
+  return search(root,0);
  }
- return scan(root,0);
-}
-const room=()=>{const w=findNativeWindow();return w&&(w.OnyxRoomSpatial||w.HappyHomeOnyxSpatial);};
-const native=()=>findNativeWindow()?.OnyxImperialExpedition;
-const WIDTH=1916,HEIGHT=821;
-let running=false,requested=0,raf=0,lastTime=0,lastSync=0,lastAction="",listening=null,worldSignature="",lastRoomReference=null;
-function cat(){return native()?.getState?.()?.cat||null;}
-function bounds(feature){
- const pts=feature?.geometry?.type==="Polygon"?feature.geometry.coordinates?.[0]:null;
- if(!Array.isArray(pts)||pts.length<3)return null;
- const valid=pts.filter(p=>Array.isArray(p)&&Number.isFinite(p[0])&&Number.isFinite(p[1]));
- if(valid.length<3)return null;
- const xs=valid.map(p=>p[0]),ys=valid.map(p=>p[1]);
- const x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
- return w>0&&h>0?{x,y,w,h}:null;
-}
-function syncRoom(){
- const motion=movement();if(!motion)return {ok:false,error:"Onyx movement runtime unavailable"};
- const features=room()?.allFeatures?.()||[];
- const obstacles=[];
- for(const f of features){
-  const p=f?.properties||{},role=String(p.role||"").toLowerCase();
-  if(role!=="placed-furniture"&&!(p.dynamic===true&&role.includes("furniture")))continue;
-  const box=bounds(f);if(box)obstacles.push({...box,id:p.id||"",height:Number.isFinite(+p.collisionHeight)?+p.collisionHeight:96});
+ const native=()=>findHost()?.OnyxImperialExpedition;
+ const room=()=>{const f=findHost();return f&&(f.OnyxRoomSpatial||f.HappyHomeOnyxSpatial);};
+ function rectOf(f){
+  const poly=f?.geometry?.type==='Polygon'?f.geometry.coordinates?.[0]:null;
+  if(!Array.isArray(poly)||poly.length<3)return null;
+  const xs=[],ys=[];for(const p of poly){if(Array.isArray(p)&&Number.isFinite(+p[0])&&Number.isFinite(+p[1])){xs.push(+p[0]);ys.push(+p[1]);}}
+  if(xs.length<3)return null;
+  const x=Math.min(...xs),y=Math.min(...ys),w=Math.max(...xs)-x,h=Math.max(...ys)-y;
+  return w>0&&h>0?{x,y,w,h}:null;
  }
- // Use the existing spatial room boundary if it is defined.
- const spatial=room();
- const sig=JSON.stringify(obstacles);
- if(sig===worldSignature&&spatial===lastRoomReference){lastSync=performance.now();return {ok:true,unchanged:true};}
- worldSignature=sig;lastRoomReference=spatial;
- const canOccupy=(x,y,z)=>(
-   typeof spatial?.canWalkPoint!=="function"||z>0||spatial.canWalkPoint(x,y)
- );
- lastSync=performance.now();
- return motion.setWorld({width:spatial?.W||WIDTH,height:spatial?.H||HEIGHT,obstacles,canOccupy});
-}
-function syncPosition(){
- const p=cat(),motion=movement();
- if(!motion||!p||!Number.isFinite(p.x)||!Number.isFinite(p.y))return false;
- const state=motion.getState();
- if(state.job||state.command||state.nav)return false;
- return motion.setPosition(p.x*(room()?.W||WIDTH),p.y*(room()?.H||HEIGHT)).ok;
-}
-function syncMood(){
- const mood=native()?.getState?.()?.behavior;
- if(mood&&movement()?.profiles[mood])movement().setMood(mood);
-}
-function syncNative(){
- const m=movement(),a=native();if(!m||!a)return;
- const s=m.getState();
- a.setCatPosition?.(s.x/(room()?.W||WIDTH),s.y/(room()?.H||HEIGHT));
- let action=s.job?.name||s.job?.kind||(s.nav||s.command?s.pace:s.action);
- const table={jump_up:"jump",jump_down:"jump",jump_across:"jump",stretch:"stretchBow",
-   loaf:"loaf",lounge:"sit",curl_ball:"curlBall",eat_drink:"interact",sleep:"sleep",play_hunt:"primary"};
- if(action===lastAction||action==="idle")return;
- lastAction=action;
- a.performCatAction?.(table[action]||action,{
-  duration:s.job?.durationMs||450,hold:!!s.job?.hold});
-}
-function tick(now){
- if(!running)return;
- const dt=lastTime?Math.min(.1,Math.max(0,(now-lastTime)/1000)):0;lastTime=now;
- if(now-lastSync>500)syncRoom();
- syncMood();
- const m=movement(),s=m?.getState();
- const active=!!(s?.job||s?.nav||s?.command);
- if(!native()){stop();return;}
- if(m&&active){m.step(dt);syncNative();}
- else if(now>requested){syncPosition();lastAction="";}
- raf=requestAnimationFrame(tick);
-}
-function request(){
- requested=performance.now()+500;
- if(!running)start();
-}
-function start(){
- if(running)return {ok:true,alreadyRunning:true};
- if(!movement())return {ok:false,error:"Onyx movement runtime unavailable"};
- if(!native())return {ok:false,error:"Happy Home cat renderer unavailable"};
- syncRoom();syncPosition();syncMood();
- listening=movement().on("action-complete",()=>{lastAction="";});
- running=true;lastTime=0;raf=requestAnimationFrame(tick);return {ok:true};
-}
-function stop(){
- running=false;cancelAnimationFrame(raf);raf=0;lastTime=0;listening?.();listening=null;
- movement()?.stop();return {ok:true};
-}
-const api={
- version:"26.0",start,stop,refreshRoom:syncRoom,refreshPosition:syncPosition,
- getStatus(){return {active:running,rendererFound:!!native(),engineLoaded:!!movement(),backendModified:false,roomFound:!!room()};},
- getState:()=>movement()?.getState(),getWorld:()=>movement()?.getWorld(),
- move(direction,pace="walk"){request();return movement()?.walk(direction,pace)||{ok:false};},
- steer(x,y,pace="walk"){request();return movement()?.steer(x,y,pace)||{ok:false};},
- navigate(x,y,pace="walk"){request();return movement()?.navigateTo(x,y,pace)||{ok:false};},
- jump(kind,target={}){request();return movement()?.jump(kind,target)||{ok:false};},
- action(name,options={}){request();return movement()?.perform(name,options)||{ok:false};},
- interact(kind,target,options={}){request();return movement()?.interact(kind,target,options)||{ok:false};},
- setSmooth:v=>movement()?.setSmooth(v),
- cancel:()=>{requested=0;return movement()?.stop();}
-};
-root.OnyxHappyHomeMotion=api;
-root.addEventListener?.("onyx-room-updated",syncRoom);
-root.addEventListener?.("onyx-happy-home-room-updated",syncRoom);
-root.addEventListener?.("onyx-happy-home-opened",start);
-root.addEventListener?.("onyx-happy-home-closed",stop);
-// Lazy activation: do not start an extra rAF if the native Happy Home has not loaded.
-if(native()&&room())start();
-root.dispatchEvent?.(new CustomEvent("onyx-base-motion-ready",{detail:{version:api.version,adapter:api}}));
-})(typeof window!=="undefined"?window:globalThis);
+ function refreshRoom(){
+  const m=motion(),s=room();if(!m||!s)return {ok:false,reason:'room-or-motion-unavailable'};
+  const obstacles=[];
+  for(const feature of s.allFeatures?.()||[]){
+   const p=feature?.properties||{},role=String(p.role||'').toLowerCase();
+   if(role!=='placed-furniture'&&!(p.dynamic===true&&role.includes('furniture')))continue;
+   const rectangle=rectOf(feature);if(rectangle)obstacles.push({...rectangle,id:p.id||'',height:Number(p.collisionHeight)||96,platform:!!p.platform});
+  }
+  const signature=JSON.stringify(obstacles);
+  if(signature===roomSignature&&roomIdentity===s){lastSync=performance.now();return {ok:true,unchanged:true};}
+  roomSignature=signature;roomIdentity=s;
+  const world=m.setWorld({width:s.W||1916,height:s.H||821,obstacles,
+   canOccupy:(x,y,z)=>z>0||typeof s.canWalkPoint!=='function'||s.canWalkPoint(x,y)});
+  lastSync=performance.now();
+  return world?.ok===false?world:{ok:true,obstacles:obstacles.length};
+ }
+ function syncNativePosition(){
+  const m=motion(),p=native()?.getState?.()?.cat,s=room();
+  if(!m||!s||!p||!Number.isFinite(p.x)||!Number.isFinite(p.y))return false;
+  const state=m.getState();if(state.job||state.command||state.navigation)return false;
+  return m.setPosition(p.x*(s.W||1916),p.y*(s.H||821)).ok===true;
+ }
+ function syncMood(){
+  const m=motion(),ns=native()?.getState?.();const current=ns?.currentMood||ns?.behavior;
+  if(typeof current==='string')m?.setMood(current);
+ }
+ function applyNativePose(){
+  const m=motion(),n=native(),spatial=room();if(!m||!n||!spatial)return;
+  const s=m.getState();
+  n.setCatPosition?.(s.x/(spatial.W||1916),s.y/(spatial.H||821));
+  const name=s.job?.id||s.action;
+  if(!name||name===lastAction)return;
+  lastAction=name;
+  const translation={jump_up:'jump',jump_down:'jump',jump_across:'jump',stretch:'stretchBow',
+   curl_ball:'curlBall',lounge:'sit',loaf:'loaf',eat_drink:'interact',play_hunt:'primary'};
+  const actionName=name.replace(/^onyx-base-/, '');
+  if(actionName==='idle')return;
+  n.performCatAction?.(translation[actionName]||actionName,{duration:s.job?.durationMs||480});
+ }
+ function frame(now){
+  if(!running)return;
+  const dt=lastTime?Math.min(.1,Math.max(0,(now-lastTime)/1000)):0;lastTime=now;
+  if(now-lastSync>400)refreshRoom();
+  const m=motion();if(!native()||!m){stop();return;}
+  syncMood();const s=m.getState(),active=!!(s.job||s.command||s.navigation||s.moving);
+  if(active){m.step(dt);applyNativePose();}
+  else if(now>activeDeadline){syncNativePosition();lastAction='';}
+  raf=root.requestAnimationFrame(frame);
+ }
+ function start(){
+  if(running)return {ok:true,alreadyRunning:true};
+  if(!motion())return {ok:false,reason:'pass23-not-loaded'};
+  if(!native()||!room())return {ok:false,reason:'native-happy-home-not-ready'};
+  refreshRoom();syncNativePosition();syncMood();
+  listening=motion().on('action-end',()=>{lastAction='';});
+  running=true;lastTime=0;raf=root.requestAnimationFrame(frame);return {ok:true};
+ }
+ function stop(){
+  running=false;if(raf)root.cancelAnimationFrame(raf);raf=0;lastTime=0;
+  listening?.();listening=null;
+  motion()?.stop('happy-home-stopped');return {ok:true};
+ }
+ function begin(){activeDeadline=performance.now()+400;return start();}
+ function jump(name,opts={}){
+  const m=motion();if(!m)return {ok:false,reason:'motion-unavailable'};
+  const kind=String(name||'jump_across').replace(/-/g,'_');const state=m.getState();
+  const target=opts.to||((Number.isFinite(opts.x)&&Number.isFinite(opts.y))?{x:opts.x,y:opts.y,z:opts.z}:null);
+  const normalized={...opts};if(target)normalized.to=target;
+  if(!target&&(Number.isFinite(opts.dx)||Number.isFinite(opts.dy)))normalized.to={
+   x:state.x+(Number(opts.dx)||0),y:state.y+(Number(opts.dy)||0),
+   ...(Number.isFinite(opts.z)?{z:opts.z}:{})};
+  if(kind==='jump_up')return m.jumpUp(normalized);
+  if(kind==='jump_down')return m.jumpDown(normalized);
+  return m.jumpAcross(normalized);
+ }
+ function interact(kind,target,opts={}){
+  const m=motion(),seq=root.OnyxBaseSequences;if(!m)return {ok:false,reason:'motion-unavailable'};
+  const k=String(kind||'').toLowerCase();
+  if(k==='eat')return seq?.eatAt?.(target,opts)||m.eat({...opts,bowl:target});
+  if(k==='drink')return seq?.drinkAt?.(target,opts)||m.drink({...opts,bowl:target});
+  if(k==='toy')return seq?.playAt?.(target,opts)||m.playWithToy({...opts,target});
+  if(k==='fish')return seq?.fishAt?.(target,opts)||m.huntFish({...opts,target});
+  return {ok:false,reason:'unknown-interaction'};
+ }
+ const api={version:VERSION,start,stop,refreshRoom,refreshPosition:syncNativePosition,
+  getState:()=>motion()?.getState(),getWorld:()=>motion()?.getWorld(),
+  getStatus:()=>({active:running,rendererFound:!!native(),engineLoaded:!!motion(),roomFound:!!room(),backendModified:false}),
+  move(direction,pace='walk',opts={}){begin();const m=motion();return pace==='run'?m?.run(direction,opts):m?.walk(direction,opts);},
+  steer(x,y,pace='walk'){begin();return motion()?.setInput(x,y,{pace})||{ok:false,reason:'motion-unavailable'};},
+  navigate(x,y,pace='walk'){begin();return motion()?.navigateTo(x,y,{pace})||{ok:false,reason:'motion-unavailable'};},
+  jump(name,opts={}){begin();return jump(name,opts);},
+  action(name,opts={}){begin();return motion()?.perform(name,opts)||{ok:false,reason:'motion-unavailable'};},
+  interact(kind,target,opts={}){begin();return interact(kind,target,opts);},
+  setSmooth(value){return motion()?.setSteering({enabled:!!value})||{ok:false};},
+  cancel(){activeDeadline=0;return motion()?.stop('cancelled');}};
+ root.OnyxHappyHomeMotion=api;
+ root.addEventListener?.('onyx-room-updated',refreshRoom);
+ root.addEventListener?.('onyx-happy-home-room-updated',refreshRoom);
+ root.addEventListener?.('onyx-happy-home-opened',start);
+ root.addEventListener?.('onyx-happy-home-closed',stop);
+ root.document?.addEventListener?.('load',ev=>{if(ev.target?.tagName==='IFRAME')start();},true);
+ if(native()&&room())start();
+ root.dispatchEvent?.(new CustomEvent('onyx-base-motion-ready',{detail:{version:VERSION,adapter:api}}));
+})(typeof window!=='undefined'?window:globalThis);

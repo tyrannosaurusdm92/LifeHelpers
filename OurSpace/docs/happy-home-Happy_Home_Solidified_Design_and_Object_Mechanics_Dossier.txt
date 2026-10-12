@@ -1,0 +1,4981 @@
+HAPPY HOME
+SOLIDIFIED DESIGN AND OBJECT MECHANICS DOSSIER
+
+Merged design specification derived from:
+1. EverQuest II Standard-Housing Wall Pattern Targeting: Qeynos and Freeport Non-Prestige Homes.
+2. Interior Design Customization Mechanics: bubbles, materials, patterns, object manipulation, housing permissions, inventory, and installed-object swapping.
+3. The Sims 3 Build/Buy + Create-A-Style Research Dossier: swatches, material slots, pattern channels, color editing, transfer, cataloging, and three-wall room behavior.
+
+STATUS: SOLIDIFIED HAPPY HOME DESIGN CONTRACT
+PRIMARY PURPOSE: Define how Happy Home lets a player furnish, rearrange, recolor, re-material, coordinate, and redesign a residence without turning the system into free-form architectural construction.
+FRONT/FOURTH WALL: Not part of the editable visible-room wall system.
+VISIBLE WALLS: BACK, LEFT, RIGHT.
+MANDATORY WALL APPLICATION SCOPES: ENTIRE ROOM, BACK WALL, LEFT WALL, RIGHT WALL.
+
+================================================================================
+0. EXECUTIVE DESIGN CONTRACT
+================================================================================
+
+Happy Home should feel like the player is decorating a real, persistent room rather than
+operating a generic mesh editor. The system combines three particularly strong ideas.
+
+First, permanent architecture is directly targetable. The player can point at the wall,
+floor, trim, ceiling, or another authored architectural region and edit the surface that
+already belongs to the house. Applying wallpaper does not create a paper-thin wall object
+in front of the real wall. Replacing wood paneling does not place a decorative divider.
+The material assignment of the house shell itself changes.
+
+Second, appearance is composable. A wall is not merely "blue" and a sofa is not merely
+"red." A designable thing has named regions. Each region can use a material or pattern.
+A material or pattern can expose one or more editable color channels. The player can
+therefore change upholstery without changing wooden legs, recolor a motif without
+changing its background, or change upper wallpaper without touching lower paneling.
+
+Third, speed and precision coexist. Happy Home must support a fast whole-room workflow,
+but it must never force every visible wall to remain identical. The user can choose the
+scope before or during wall styling:
+
+ENTIRE ROOM
+    Applies the active compatible wall edit to BACK + LEFT + RIGHT as one transaction.
+
+BACK WALL
+    Applies the active compatible wall edit only to the back wall.
+
+LEFT WALL
+    Applies the active compatible wall edit only to the left wall.
+
+RIGHT WALL
+    Applies the active compatible wall edit only to the right wall.
+
+This scope is a first-class state value, not an incidental modifier key. A keyboard
+shortcut may accelerate it, but the functionality must remain visible and fully usable
+with mouse, touch, controller, and keyboard.
+
+The crucial consequence is that Happy Home stores all three walls independently even
+when they currently match. "Entire Room" means "perform the same edit on all three wall
+instances," not "collapse the room into one irreversible shared material object."
+Independent storage preserves future freedom. A player might begin by applying one
+coordinated wallpaper to the entire room and later choose only the back wall to create an
+accent wall. That change must not require unlinking or reconstructing previous history.
+
+Happy Home is not primarily a building-shell editor. It does not need the user to draw
+walls, create floor plans, sculpt terrain, or build a fourth wall. The residence supplies
+its architectural shell and authored installation points. The player's creative work is
+interior design: surfaces, objects, materials, colors, placement, replacement, storage,
+coordination, and room identity.
+
+The default mental model is:
+
+SELECT OR TARGET THE THING
+    ->
+CHOOSE THE SCOPE OR EDITABLE REGION
+    ->
+CHOOSE MATERIAL/PATTERN
+    ->
+EDIT THE MATERIAL'S COLOR CHANNELS
+    ->
+SEE THE RESULT LIVE
+    ->
+COPY, LINK, SAVE, FAVORITE, OR CONTINUE
+
+For movable objects, a parallel model applies:
+
+SELECT OBJECT
+    ->
+MOVE / ROTATE / NUDGE / STORE / DESIGN
+    ->
+SELECT OBJECT REGION
+    ->
+CHOOSE MATERIAL/PATTERN
+    ->
+EDIT CHANNEL COLORS
+    ->
+OPTIONALLY TRANSFER STYLE TO ANOTHER COMPATIBLE OBJECT
+
+For installed objects:
+
+SELECT INSTALLED OBJECT
+    ->
+DESIGN COSMETIC REGIONS IF ALLOWED
+    OR
+SWAP IN PLACE IF THE RESIDENCE IS OWNED AND A COMPATIBLE REPLACEMENT IS AVAILABLE
+
+Every major operation is reversible through undo/redo. Live experimentation is a design
+goal, not a dangerous side effect.
+
+================================================================================
+1. WHAT HAPPY HOME IS AND IS NOT
+================================================================================
+
+Happy Home is a residence furnishing and interior-customization system. It treats the
+existing room shell as an editable environment while preserving the distinction between
+architecture, installed fixtures, and ordinary movable belongings.
+
+Happy Home IS:
+- a direct surface editor;
+- a furniture and decor placement system;
+- a multi-region material editor;
+- a multi-channel color editor;
+- a room/function catalog browser;
+- a persistent inventory-aware furnishing system;
+- an installed-fixture replacement system for owned homes;
+- a reusable style and preset system;
+- a live-preview design environment;
+- a three-wall room editor with whole-room and per-wall scope;
+- a context-aware interaction system that filters impossible actions.
+
+Happy Home IS NOT:
+- a system where wallpaper is faked with placeable wall panels;
+- a system where every recolor is a separate duplicated catalog object;
+- a system where installed plumbing can be picked up like a chair;
+- a system where the player must edit texture files externally;
+- a system where all walls are permanently linked;
+- a generic 3D modeler;
+- a requirement to draw the floor plan before decorating;
+- a system that exposes irrelevant or impossible actions simply because a universal
+  context menu was easy to code.
+
+The goal is to make the room itself feel authored and physical while retaining the
+creative flexibility of a powerful digital material system.
+
+The underlying design can be summarized as:
+
+ARCHITECTURAL SHELL
+    Permanent walls, floor, ceiling, trim, openings, and authored structural elements.
+
+INSTALLATION LAYER
+    Plumbing, hard-wired lights, major installed appliances, built-in fixtures, counters
+    or cabinetry when marked installed, and other property-bound components.
+
+FURNISHING LAYER
+    Beds, sofas, tables, chairs, rugs, portable lights, decor, freestanding storage,
+    wall decor, countertop appliances, plants, and other non-installed items.
+
+STYLE LAYER
+    Presets, material regions, patterns, color channels, finish settings, alignment,
+    scale, saved materials, favorites, and style transfer.
+
+INTERACTION LAYER
+    Selection, target scope, context menu, placement, nudge, rotation, inventory,
+    copy/apply, swap in place, undo/redo, and accessibility behavior.
+
+These layers cooperate, but they must remain logically distinct. The wall's material
+should never be confused with a painting hanging on the wall. The painting can be moved
+or stored. The wall finish cannot. A ceiling lamp may be visually redesigned and perhaps
+swapped, but it is not free-moving floor decor. A rug is portable even if it visually
+covers a large floor area. A floor material is part of the architectural shell.
+
+================================================================================
+2. THREE-WALL ROOM GEOMETRY AND THE MANDATORY SCOPE MODEL
+================================================================================
+
+Happy Home's visible design room has three interactive walls:
+
+BACK
+LEFT
+RIGHT
+
+There is no fourth/front wall in the styling state. The open camera side is not represented
+as an invisible wall, does not receive a hidden wallpaper state, and is not included in
+room-wide wall operations.
+
+Every wall is a persistent entity with its own identifier and its own wall-style state.
+Conceptually:
+
+room.walls.back
+room.walls.left
+room.walls.right
+
+The wall application scope is independently stored:
+
+room.designScope =
+    "entireRoom"
+    "backWall"
+    "leftWall"
+    "rightWall"
+
+ENTIRE ROOM is defined, for wall operations, as the set:
+
+{ BACK, LEFT, RIGHT }
+
+This definition must be stable across the UI. "Entire Room" must never sometimes mean
+three walls and sometimes mean "whatever wall the camera can currently see." It is a
+deterministic group.
+
+The scope selector should remain visible while wall design is active. It can appear as
+four buttons, segmented tabs, large bubbles, or a radial selector, but the labels must be
+clear:
+
+[ Entire Room ] [ Back Wall ] [ Left Wall ] [ Right Wall ]
+
+A compact version may use:
+
+[ Room ] [ Back ] [ Left ] [ Right ]
+
+but accessible names must preserve the full meaning.
+
+When Entire Room is selected, the UI should visually indicate all three walls. Depending
+on the renderer, this can use a subtle outline, translucent highlight, border glow, or
+small wall labels. When Back Wall is selected, only the back wall should highlight. The
+same applies to Left and Right.
+
+The scope controls WHICH WALL INSTANCES receive an operation. It does not replace the
+wall-region selection. Scope and region are orthogonal.
+
+Example:
+- Scope = Entire Room.
+- Region = Upper Wall.
+- Operation = choose a blue damask pattern.
+Result: upper-wall region on Back + Left + Right changes. Lower paneling, baseboards,
+crown molding, floor, ceiling, windows, doors, and furniture remain unchanged.
+
+Another example:
+- Scope = Back Wall.
+- Region = Upper Wall.
+- Operation = choose a botanical wallpaper.
+Result: only the back wall's upper region changes. The left and right walls retain their
+existing upper-wall materials.
+
+Another:
+- Scope = Left Wall.
+- Region = Baseboard.
+- Operation = change paint color.
+Result: only the left baseboard changes.
+
+This explicit two-axis model prevents the most common ambiguity in a room editor:
+
+AXIS 1: WHERE?
+Entire Room / Back / Left / Right
+
+AXIS 2: WHAT PART OF THAT WALL?
+Whole Wall Preset / Upper / Lower / Panel / Chair Rail / Crown / Baseboard / authored
+region
+
+A third axis then controls appearance:
+
+AXIS 3: HOW DOES THAT PART LOOK?
+Material/pattern + channel colors + material properties
+
+These dimensions should never be collapsed into one vague "wall color" control.
+
+================================================================================
+3. ENTIRE ROOM VERSUS INDIVIDUAL WALL OPERATIONS
+================================================================================
+
+The whole-room scope is an application convenience, not a permanent topology rule.
+
+Happy Home should always preserve the independent wall states:
+
+backStyle
+leftStyle
+rightStyle
+
+When the player edits Entire Room, the system performs a grouped transaction that writes
+the same requested change to each compatible target wall. The transaction is atomic for
+undo/redo, but the resulting states remain independent values.
+
+This distinction matters because it supports a natural decorator workflow:
+
+1. Apply one neutral wall preset to Entire Room.
+2. Change the upper-wall color for Entire Room.
+3. Switch scope to Back Wall.
+4. Replace only the back upper-wall pattern to make an accent wall.
+5. Switch scope to Right Wall.
+6. Change only the right baseboard to coordinate with an adjacent doorway.
+7. Undo the right baseboard change without undoing the earlier back-wall accent.
+
+Whole-room operations therefore do not establish a permanent "shared reference" unless
+the user intentionally uses a separate Link function.
+
+Happy Home should support optional LINKING as a distinct feature. A player may select
+matching wall regions and choose Link if they want future changes synchronized. This is
+different from Entire Room scope:
+
+ENTIRE ROOM
+- selection scope for a transaction;
+- applies now;
+- walls remain independent afterward.
+
+LINK
+- persistent relationship;
+- future compatible edits propagate while the link remains active;
+- can be unlinked later without erasing current appearance.
+
+This separation gives the user control without hidden behavior.
+
+WHOLE WALL PRESET behavior also follows the scope.
+
+If scope is Entire Room and the player selects a complete wall preset, the preset is
+applied to Back + Left + Right. If the walls support the same region schema, all relevant
+regions change together.
+
+If scope is Back Wall and the player selects the same preset, only the back wall receives
+it.
+
+If a preset contains regions unsupported by one target wall, the system uses compatibility
+rules instead of silently corrupting the design. For example, a special back wall might
+contain a fireplace surround or structural recess. The application should either:
+- map compatible regions and preserve unsupported ones; or
+- present a clear "partial compatibility" preview before commit.
+
+The preferred behavior is non-destructive preservation. A room-wide preset should never
+delete an architectural feature merely because the other walls do not have it.
+
+When an Entire Room operation includes walls with different schemas, Happy Home should
+map by semantic region key, not raw numeric slot.
+
+Correct:
+upperWall -> upperWall
+baseboard -> baseboard
+crown -> crown
+
+Incorrect:
+slot 1 -> slot 1 regardless of meaning
+
+This semantic mapping principle is also used for object-to-object material transfer.
+
+================================================================================
+4. DIRECT ARCHITECTURAL TARGETING
+================================================================================
+
+The strongest environmental interaction inherited from the EQ2-style system is that the
+player can target the architecture itself.
+
+A wall is not only selectable from a list. It exists in the scene as an interactive
+surface. The renderer or interaction engine casts a pointer ray into the room. When that
+ray intersects a designable architectural region, Happy Home resolves metadata attached
+to the target.
+
+A conceptual target contains:
+
+surfaceEntityId
+roomId
+wallId or surfaceId
+surfaceClass
+regionKey
+styleGroup
+allowedMaterialCategories
+currentMaterialInstance
+permissionFlags
+interactionPriority
+
+A hit on a wall could resolve to:
+
+roomId = bedroom_01
+wallId = back
+surfaceClass = wall
+regionKey = upperWall
+
+A hit lower on the same wall might resolve to:
+
+roomId = bedroom_01
+wallId = back
+surfaceClass = wall
+regionKey = paneling
+
+A hit on the narrow strip at the floor might resolve to:
+
+regionKey = baseboard
+
+The player is therefore not painting arbitrary pixels. They are selecting a pre-authored
+architectural region.
+
+This is important for usability. Arbitrary pixel painting would create messy seams,
+require masking around windows and doors, and turn Happy Home into a texture-painting
+application. Pre-authored regions make the surface predictable, reusable, and compatible
+with saved styles.
+
+The target highlight should expose what will actually change. If the pointer is over the
+upper wall, highlight the upper-wall region. If the current scope is Entire Room, the
+same semantic upper-wall region should highlight on all three walls, because the current
+operation will affect all three. If the current scope is Back Wall, highlight only the
+back upper wall.
+
+A surface that is not editable should not pretend to be editable. No design cursor,
+highlight, or active material panel should appear unless there is a valid target.
+
+On touchscreens, where hover does not exist, the first tap can select and highlight the
+surface; the second interaction occurs through the design panel. Long press may open the
+surface context menu, but basic selection must not require long press.
+
+On keyboard/controller input, focus navigation should allow the player to cycle:
+Back Wall -> Left Wall -> Right Wall -> Floor -> Ceiling -> installed fixtures -> movable
+objects, with nested cycling among wall regions when needed.
+
+The architecture may also provide an explicit surface list for accessibility:
+- Back Wall
+  - Upper Wall
+  - Lower Wall
+  - Crown
+  - Baseboard
+- Left Wall
+  - Upper Wall
+  - Lower Wall
+  - Crown
+  - Baseboard
+- Right Wall
+  - Upper Wall
+  - Lower Wall
+  - Crown
+  - Baseboard
+- Floor
+- Ceiling
+
+Direct targeting remains the primary spatial interaction, but the list ensures no design
+feature is inaccessible because a small strip is hard to click.
+
+================================================================================
+5. WALLS ARE COMPOSED SURFACES
+================================================================================
+
+A Happy Home wall must never be modeled as one unavoidable flat material unless that
+specific wall style truly has only one region.
+
+A wall style is an authored composition of structural/style regions. Common regions are:
+
+upperWall
+lowerWall
+paneling
+dado
+chairRail
+crown
+baseboard
+border
+accentBand
+columnTrim
+recess
+fireplaceSurround
+windowTrim
+doorTrim
+
+Not every wall uses every region.
+
+A simple modern wall might be:
+- upperWall
+- baseboard
+
+A paneled wall might be:
+- upperWall
+- chairRail
+- lowerPanel
+- baseboard
+- crown
+
+A tiled bathroom wall might be:
+- lowerTile
+- upperPaint
+- transitionTrim
+- baseboard
+
+A dramatic masonry wall might use:
+- mainField
+- accentInset
+- baseboard
+
+Each authored region owns a material instance. A material instance contains a pattern
+identity and its editable properties.
+
+A region can also share or link a material with another region. For example, crown and
+baseboard may begin with the same painted wood material. They can still be independently
+addressable, and the user can unlink them if the preset permits it.
+
+The Happy Home UI uses LARGE BUBBLES or equivalent primary controls for wall regions.
+Example:
+
+[ Baseboard ] [ Lower Wall ] [ Upper Wall ] [ Crown ]
+
+Selecting Upper Wall opens its material/pattern library and reveals that material's small
+color-channel bubbles.
+
+The user must be able to understand the hierarchy at a glance:
+
+WALL SCOPE
+    Entire Room / Back / Left / Right
+
+WALL REGION
+    Upper / Lower / Crown / Baseboard / etc.
+
+MATERIAL
+    Wallpaper / paint / wood / stone / tile / etc.
+
+PATTERN CHANNELS
+    Background / motif / accent / grout / grain tone / etc.
+
+COLOR VALUES
+    presets / color wheel / numeric RGB / Hex
+
+A wall region's boundaries come from the wall style or house architecture. The player can
+switch wall styles to get a different authored structural composition where permitted,
+but adding an arbitrary horizontal split by drawing a line is outside the core system.
+
+The earlier dynamic-bubble concept can still be supported for specifically authored
+styles that allow optional bands. For example, a flexible decorator wall could support:
+
+minimumSections = 2
+maximumSections = 4
+
+with optional accentBand and crown. However, "+" does not mean "create any arbitrary mesh
+band anywhere." It activates an authored optional region with known geometry, masks,
+material compatibility, and collision-free boundaries.
+
+This preserves creative flexibility without producing unstable wall topology.
+
+================================================================================
+6. WALL MATERIAL COMPATIBILITY
+================================================================================
+
+Every wall region declares which material categories it accepts.
+
+Happy Home should retain a broad material library:
+- Fabrics
+- Leathers & Furs
+- Carpeting & Rugs
+- Abstract
+- Geometric
+- Themed
+- Woods
+- Metals
+- Weave & Wicker
+- Paint
+- Wallpaper
+- Tiles & Mosaic
+- Plastics & Rubber
+- Rock & Stone
+- Masonry
+- Miscellaneous
+
+Wall-specific libraries may additionally distinguish:
+- plaster;
+- stucco;
+- paneling;
+- decorative wall sets;
+- borders;
+- murals;
+- specialty finishes.
+
+The material library can be broad, but compatibility must be data-driven.
+
+Example:
+
+upperWall.allowedCategories =
+[
+  Paint,
+  Wallpaper,
+  Abstract,
+  Geometric,
+  Themed,
+  TilesAndMosaic,
+  RockAndStone,
+  Masonry,
+  Plaster,
+  Stucco
+]
+
+lowerPanel.allowedCategories =
+[
+  Woods
+]
+
+crown.allowedCategories =
+[
+  Woods,
+  Paint
+]
+
+baseboard.allowedCategories =
+[
+  Woods,
+  Paint,
+  TilesAndMosaic,
+  Masonry,
+  RockAndStone
+]
+
+A residence or specific style may narrow these further.
+
+Compatibility is not only aesthetic. Certain shader families may be incompatible with
+particular geometry or require data that the target does not provide. Happy Home should
+filter them before the user commits rather than allowing a broken result.
+
+When the user transfers a material from another object or wall region, Happy Home checks
+the destination's allowed categories. If the transferred material is invalid, the target
+shows a blocked state and explains why.
+
+The library should not globally ban whimsical combinations simply because they are
+unrealistic. If a sofa region allows Metals, let the player make a metallic sofa. If the
+project specifically defines paneling as wood-only, enforce that locally. Flexibility and
+coherence are achieved through per-region compatibility metadata, not through one blunt
+global realism rule.
+
+================================================================================
+7. FLOOR, CEILING, TRIM, AND OTHER ARCHITECTURAL SURFACES
+================================================================================
+
+The same architecture-targeting philosophy extends beyond walls.
+
+FLOOR
+The floor is part of the room shell and has its own design state. Depending on the
+residence, it can expose:
+- main field;
+- border;
+- inset;
+- decorative center;
+- threshold;
+- room-edge trim;
+- transition strip.
+
+Floor materials can include:
+- carpet;
+- rugs as a material category when used as fixed carpet patterns;
+- wood;
+- tile;
+- mosaic;
+- stone;
+- masonry;
+- geometric;
+- abstract;
+- themed;
+- appropriate synthetic surfaces;
+- miscellaneous compatible materials.
+
+A placeable rug remains a movable object and is not the same as a floor material.
+
+Pattern scale, rotation, alignment, and origin are particularly important for floors.
+Tile lines should not randomly jump when a color channel changes. Wood plank direction
+should remain stable unless the user edits rotation/alignment. Borders should maintain
+their relationship to room edges.
+
+CEILING
+A ceiling is a separate architectural target when the property supports ceiling design.
+It can expose:
+- main field;
+- beams;
+- molding;
+- medallion region;
+- inset;
+- border.
+
+Ceiling material categories should be appropriate to the authored surface. A plain
+ceiling may allow Paint, Plaster, Wood, or decorative patterns. A beamed ceiling can
+expose beams separately from the main field.
+
+TRIM
+Trim can be part of a wall style, part of the room shell, or a separately targetable
+architectural group. The key is consistent semantics. Baseboard, crown, chair rail, and
+door/window trim should each have stable region keys.
+
+DOORS AND WINDOWS
+Doors and windows are objects embedded in walls. Changing a wall finish must not recolor
+them unless a wall preset explicitly includes coordinated trim mappings and the player
+previews/accepts that broader operation. By default, they retain separate object style
+slots:
+- frame;
+- panel;
+- hardware;
+- glass tint or detail where supported;
+- secondary trim.
+
+STAIRS, RAILINGS, BUILT-INS
+These can be authored as installed architectural objects. They may expose cosmetic style
+regions but cannot be freely moved unless the residence specifically treats them as
+movable components.
+
+The unifying rule is:
+ARCHITECTURE IS EDITED IN PLACE.
+PORTABLE OBJECTS ARE PLACED/MOVED.
+INSTALLED OBJECTS ARE DESIGNED OR SWAPPED, NOT FREELY DRAGGED.
+
+================================================================================
+8. MATERIALS, PATTERNS, AND COLOR CHANNELS
+================================================================================
+
+Happy Home separates object identity from appearance.
+
+A sofa is a sofa object with a mesh, function, placement rules, price, and design regions.
+Its upholstery is not permanently baked to "blue floral." The upholstery region contains
+a material instance.
+
+The hierarchy is:
+
+DESIGNABLE ENTITY
+    ->
+DESIGN REGION
+    ->
+MATERIAL/PATTERN INSTANCE
+    ->
+COLOR CHANNELS
+    ->
+EXACT COLOR VALUES
+
+An object may expose one to four main material regions as a common design target, though
+the architecture can exceed four when needed. A material or pattern typically exposes
+one to four recolorable channels.
+
+Examples:
+
+SOFA
+- upholstery
+- frame
+- piping
+- accent cushion
+
+BED
+- frame
+- bedding
+- blanket
+- trim
+
+LAMP
+- shade
+- base
+- hardware
+- light tint, if supported
+
+RUG
+- field
+- border
+- motif
+- accent
+
+REFRIGERATOR
+- body
+- door/front
+- handles
+- trim
+
+WALL SET
+- upper field
+- lower field
+- crown or rail
+- baseboard
+
+A pattern is more than an image plus a global hue. It can provide multiple semantic or
+mask-based color channels.
+
+Example damask wallpaper:
+channel 1 = background
+channel 2 = damask motif
+channel 3 = fine accent
+
+Example tile:
+channel 1 = tile body
+channel 2 = secondary tile
+channel 3 = grout
+channel 4 = accent
+
+Example wood:
+channel 1 = base stain
+channel 2 = grain contrast
+channel 3 = optional highlight
+
+Example woven fabric:
+channel 1 = warp
+channel 2 = weft
+channel 3 = accent thread
+
+The renderer may implement these channels through masks, shaders, procedural parameters,
+or pre-authored layers. The user-facing contract is what matters: changing one bubble
+changes only the associated visible component.
+
+A MaterialInstance should support at least:
+
+patternId
+colors[]
+scale
+rotation
+offsetX
+offsetY
+finishParameters
+optional roughness/shine/intensity settings
+sourcePresetId
+customName
+
+Scale, rotation, and offsets appear only where the pattern supports them. The UI should
+not expose meaningless controls.
+
+================================================================================
+9. BUBBLES AS THE PRIMARY DIRECT-MANIPULATION LANGUAGE
+================================================================================
+
+Happy Home uses a consistent bubble language across objects and surfaces.
+
+A LARGE BUBBLE represents an editable material region.
+
+Examples:
+[ Upholstery ]
+[ Frame ]
+[ Upper Wall ]
+[ Paneling ]
+[ Baseboard ]
+[ Rug Border ]
+
+A SMALL COLOR BUBBLE represents one color channel inside the selected material.
+
+Examples:
+[ Background ]
+[ Motif ]
+[ Accent ]
+
+ACTION BUBBLES can represent:
+- copy;
+- apply to;
+- link;
+- unlink;
+- duplicate;
+- randomize;
+- reset;
+- add optional region;
+- remove optional region.
+
+Filled/value bubbles represent data. Plain/action bubbles represent commands. Icons may
+be used, but accessible text labels are mandatory.
+
+Recommended size:
+- standard primary bubble: approximately 48 x 48 px or larger;
+- minimum compressed touch target: approximately 44 x 44 px;
+- labels remain outside the circle so the visual content is not obscured;
+- flex wrapping prevents horizontal overflow.
+
+A value bubble is simultaneously:
+- a current-value preview;
+- a property identifier;
+- an edit button;
+- an anchor for the floating editor.
+
+Selecting a region bubble updates the pattern library to that region. Selecting a color
+bubble opens the color editor for that one channel.
+
+The UI must never confuse these levels. A region bubble might visually preview the whole
+upholstery pattern. Its child color bubble previews only one channel color. A complete
+object preset swatch is a third, broader concept and should be visually distinct.
+
+================================================================================
+10. COLOR EDITING
+================================================================================
+
+Every editable color channel supports three primary input routes.
+
+A. PRESET PALETTE
+Fast common colors. Useful for quick experimentation and accessibility.
+
+B. COLOR WHEEL
+A continuous hue/saturation control with a brightness/value or lightness control.
+
+C. NUMERIC ENTRY
+Exact RGB and Hex values.
+
+All three routes edit the same underlying color value. Switching tabs does not create
+multiple competing values.
+
+When the user selects a color bubble:
+- the bubble becomes visibly active;
+- the wheel pointer updates to that color;
+- the brightness/value control updates;
+- RGB fields update;
+- Hex updates;
+- the live scene uses the current value.
+
+Color changes preview continuously. The player should not have to press Apply after every
+tiny wheel movement.
+
+Pointer mechanics should use pointer capture. If a finger moves beyond the color wheel's
+visual boundary while dragging, the input remains active and clamps mathematically to the
+wheel edge rather than dropping the interaction.
+
+Exact values matter because Happy Home is a coordination system. A player may choose a
+specific cyan in a wall motif, then apply that exact color to:
+- a lamp shade;
+- curtain accent;
+- rug border;
+- cushion piping.
+
+The user should also be able to copy a single color bubble and Apply To another compatible
+color channel.
+
+Color editing creates one practical undo action per continuous manipulation, not hundreds
+of undo steps for every pointer movement.
+
+The history model is:
+OPEN/START MANIPULATION
+    -> checkpoint
+    -> continuous preview updates
+    -> pointer release or field commit
+    -> final state
+
+Undo returns to the checkpoint.
+
+================================================================================
+11. LIVE PREVIEW, COMMIT, CANCEL, AND HISTORY
+================================================================================
+
+Live preview is mandatory throughout Happy Home.
+
+Pattern thumbnails should preview on the selected target before permanent commitment.
+Color wheel changes should appear in real time. Pattern scale and rotation should update
+as the user drags controls. Moving an object should show its actual footprint and
+collision state before placement.
+
+There are two useful history levels:
+
+LOCAL EDIT SESSION HISTORY
+Undo/redo within the current material/object editor.
+
+ROOM/SCENE HISTORY
+Undo/redo after accepted operations.
+
+A wall operation scoped to Entire Room should be one grouped room-history transaction.
+Undo must return all three affected walls together to their previous state.
+
+An edit scoped to Back Wall should produce one transaction affecting only the back wall.
+
+A whole object style change should be one grouped transaction, even though multiple
+material regions change internally.
+
+Accept commits the current design session into room history.
+Cancel restores the target to the state it had when the current editor session began.
+
+The system should not make Cancel dangerous by silently discarding unrelated room work.
+It only cancels the active edit session.
+
+Undo/redo labels should be descriptive where practical:
+Undo: Back Wall Wallpaper
+Undo: Move Sofa
+Undo: Entire Room Upper Wall Color
+Undo: Swap Stove
+Redo: Rug Rotation
+
+This makes the history understandable rather than opaque.
+
+================================================================================
+12. PRESETS, FAVORITES, SAVED MATERIALS, AND RANDOMIZATION
+================================================================================
+
+Happy Home distinguishes several reusable appearance concepts.
+
+FAVORITE PATTERN
+A bookmark to a pattern identity. It does not necessarily store custom colors.
+
+SAVED MATERIAL
+A reusable configured material instance:
+- pattern identity;
+- channel colors;
+- pattern scale;
+- pattern rotation;
+- offsets;
+- supported finish parameters.
+
+OBJECT PRESET
+A complete appearance configuration for one object identity:
+- all design regions;
+- material assignments;
+- channel colors;
+- compatible object-specific settings.
+
+WALL PRESET
+A complete authored wall-style configuration:
+- wall structure/preset identity;
+- region materials;
+- channel colors;
+- applicable trim/band configuration.
+
+ROOM STYLE PRESET
+An optional higher-level Happy Home feature that stores coordinated architectural styles
+for the room. It may contain:
+- back-wall style;
+- left-wall style;
+- right-wall style;
+- floor style;
+- ceiling style;
+- optional trim coordination.
+
+A room style preset must not automatically recolor furniture unless it explicitly
+includes an object-theme layer and the user chooses to apply that broader style.
+
+SAVED COLOR
+Optional convenience value containing an exact reusable color.
+
+Favorites and saved configurations should be lightweight references and data payloads,
+not duplicated meshes or textures whenever avoidable.
+
+RANDOMIZE can operate at controlled scopes:
+- active color channel;
+- active material;
+- active region;
+- whole object appearance;
+- selected wall region;
+- selected wall preset.
+
+Randomization respects:
+- allowed material categories;
+- locked regions;
+- linked regions;
+- application scope;
+- housing permissions.
+
+A random result is normal editable state. It can be saved, copied, refined, or undone.
+
+================================================================================
+13. STYLE COPY, TRANSFER, LINK, AND APPLY-TO
+================================================================================
+
+Transfer is one of Happy Home's core coordination tools.
+
+There are three principal transfer scales.
+
+COLOR LEVEL
+Copy one channel's exact color to another compatible channel.
+
+MATERIAL LEVEL
+Copy one configured material, including pattern, colors, scale, rotation, and supported
+finish values, to another compatible region.
+
+STYLE LEVEL
+Copy a complete set of regions from one object or surface preset to another compatible
+target.
+
+Transfers should map semantically.
+
+Example:
+Sofa.Frame -> CoffeeTable.Frame
+is preferable to:
+Sofa.Slot2 -> CoffeeTable.Slot2
+
+If the destination has multiple plausible targets, Happy Home asks.
+
+Example:
+The user drags a walnut material from a sofa frame onto a table.
+The table exposes:
+- Top
+- Frame
+
+The UI asks:
+Apply walnut to Top or Frame?
+
+On touch:
+1. select source bubble;
+2. choose Copy or Apply To;
+3. tap destination object;
+4. select compatible destination region if ambiguous;
+5. preview;
+6. commit.
+
+Drag-and-drop is optional acceleration, not the only path.
+
+Wall transfer respects current scope.
+
+Example:
+Current scope = Right Wall.
+The player copies a saved material from the back wall's upper region and applies it to
+Upper Wall.
+Only the right upper wall changes.
+
+Current scope = Entire Room.
+The same Apply To operation changes upper regions on Back + Left + Right.
+
+LINKING is different from copying.
+Copy duplicates current style data.
+Link creates an ongoing relationship.
+
+Useful link cases:
+- crown + baseboard;
+- repeated cabinet fronts;
+- matching chair frames;
+- the same trim region across all three walls.
+
+Unlinking keeps the current appearance but stops future propagation.
+
+
+================================================================================
+14. THE HAPPY HOME CATALOG: ROOM SORT AND FUNCTION SORT
+================================================================================
+
+Happy Home should allow the player to find furnishings through two complementary mental
+models.
+
+SORT BY ROOM answers:
+"What belongs in the room I am currently designing?"
+
+Recommended top-level room families:
+- Kitchen
+- Bathroom
+- Bedroom
+- Living Room
+- Dining Room
+- Study / Office
+- Kids' Room
+- Entry / Hall
+- Utility / Laundry
+- Outdoors, when the residence has a valid exterior design area
+- All / Miscellaneous where needed
+
+SORT BY FUNCTION answers:
+"What kind of object am I trying to find?"
+
+Recommended function families:
+- Plumbing
+- Appliances
+- Surfaces
+- Comfort
+- Electronics
+- Entertainment
+- Lighting
+- Decor
+- Storage
+- Kids
+- Household Utility
+- Architectural Accessories
+- Miscellaneous
+
+Possible subcategories:
+
+PLUMBING
+- sinks;
+- toilets;
+- tubs;
+- showers;
+- compatible plumbing accessories.
+
+APPLIANCES
+- refrigerators;
+- stoves/ranges;
+- dishwashers;
+- microwaves;
+- small appliances;
+- laundry appliances;
+- miscellaneous appliances.
+
+SURFACES
+- counters;
+- cabinets where treated as catalog objects;
+- dining tables;
+- desks;
+- coffee tables;
+- end tables;
+- console tables;
+- miscellaneous surfaces.
+
+COMFORT
+- beds;
+- dining chairs;
+- living chairs;
+- sofas and loveseats;
+- benches;
+- lounge chairs;
+- miscellaneous seating.
+
+ELECTRONICS
+- televisions;
+- computers;
+- audio;
+- communication devices;
+- miscellaneous electronics.
+
+ENTERTAINMENT
+- games;
+- hobbies;
+- skill objects;
+- party objects;
+- miscellaneous recreation.
+
+LIGHTING
+- table lamps;
+- floor lamps;
+- wall lights;
+- ceiling lights;
+- task lighting;
+- decorative lighting.
+
+DECOR
+- plants;
+- wall decorations;
+- mirrors;
+- curtains and blinds;
+- rugs;
+- sculptures;
+- tabletop decor;
+- miscellaneous decor.
+
+STORAGE
+- bookshelves;
+- dressers;
+- wardrobes;
+- freestanding cabinets;
+- shelving;
+- containers.
+
+The same item may carry several ROOM TAGS while retaining one primary FUNCTION CATEGORY.
+A table lamp may be discoverable in Bedroom, Living Room, Study, and Function -> Lighting
+-> Table Lamps.
+
+This is not duplication of the object. It is multiple catalog routes pointing to the same
+catalog item identity.
+
+Catalog context should survive style editing. If the player:
+1. opens Bedroom;
+2. opens Lighting;
+3. chooses a table lamp;
+4. customizes its shade;
+5. closes the style editor;
+
+they should return to the same Bedroom/Lighting context, not the catalog root.
+
+Search and filters are layers on top of the hierarchy. They should not destroy navigation
+state.
+
+Useful filters:
+- owned;
+- purchasable;
+- currently in inventory;
+- favorites;
+- recently used;
+- compatible with selected installation point;
+- room appropriate;
+- color family;
+- material family;
+- price;
+- size;
+- style/theme;
+- installed/non-installed;
+- source/store;
+- custom/imported content if supported.
+
+A player who knows exactly what they need should be fast. A player who is browsing for
+inspiration should also be comfortable.
+
+================================================================================
+15. OBJECT IDENTITY VERSUS OBJECT APPEARANCE
+================================================================================
+
+Happy Home never creates a separate catalog identity for every colorway.
+
+A sofa object has:
+- objectId;
+- geometry;
+- gameplay/function metadata;
+- footprint;
+- placement rules;
+- price;
+- design regions;
+- built-in presets.
+
+A custom blue-and-gold version of that sofa is a STYLE PRESET referencing the same
+objectId.
+
+This distinction prevents catalog explosion.
+
+Incorrect model:
+sofa_blue
+sofa_red
+sofa_green
+sofa_floral
+sofa_black
+sofa_white
+
+Preferred model:
+objectId = sofa_modern_01
+
+builtInPresets = [...]
+userPresets = [...]
+
+Each preset supplies style data for the same physical object.
+
+This also allows an existing object to be restyled without replacing it.
+
+The player can therefore own one sofa and redesign it repeatedly. If gameplay wants
+reupholstery costs or material costs, those costs can be layered on later without changing
+the style architecture.
+
+Object identity controls:
+- what the item is;
+- where it can be placed;
+- what functions it provides;
+- what installation rules apply;
+- which design regions exist.
+
+Style controls:
+- how those regions look.
+
+A visual preset cannot turn a table lamp into a floor lamp. A metal pattern on a sofa
+does not change its gameplay category. Appearance freedom does not erase object identity.
+
+================================================================================
+16. RESIDENCE STARTING CONTENT
+================================================================================
+
+A Happy Home residence should begin as a usable home rather than an empty technical
+sandbox unless a specific property is authored as vacant.
+
+Starting contents can include:
+- beds;
+- sofas;
+- tables;
+- chairs;
+- counters;
+- sinks;
+- toilets;
+- tubs/showers;
+- refrigerator;
+- stove/range;
+- dishwasher;
+- lighting;
+- installed wall or ceiling fixtures;
+- storage;
+- other property-appropriate functional objects.
+
+The quality, age, condition, and aesthetic of starting contents can vary with:
+- property class;
+- neighborhood/settlement;
+- residence price;
+- building age;
+- rental status;
+- furnished/unfurnished status;
+- story or gameplay context.
+
+Starting contents are mechanically classified rather than treated as one undifferentiated
+set.
+
+The two most important object classes are:
+
+INSTALLED OBJECTS
+and
+NON-INSTALLED OBJECTS
+
+A third useful classification is:
+ARCHITECTURAL SURFACES
+
+This yields:
+
+ARCHITECTURE
+Cannot be picked up. Styled in place.
+
+INSTALLED OBJECT
+Cannot be freely moved. Can be cosmetically styled when permitted. In owned housing, may
+be eligible for Swap in Place.
+
+NON-INSTALLED OBJECT
+Can generally be moved, rotated, nudged, stored, redesigned, and replaced subject to
+placement and ownership rules.
+
+The classification must be explicit data. Do not infer it only from visual appearance.
+
+A freestanding refrigerator might still be classified as installed for gameplay because
+Happy Home wants appliance replacement to use installation points. A heavy wardrobe can
+remain non-installed if the game allows ordinary furniture movement.
+
+================================================================================
+17. INSTALLED OBJECT MECHANICS
+================================================================================
+
+Installed objects are attached to the property or an authored installation point.
+
+Examples:
+- sinks;
+- toilets;
+- tubs;
+- showers;
+- built-in dishwashers;
+- installed ranges;
+- installed refrigerators when the design treats them as fixed appliances;
+- hard-wired ceiling lights;
+- wall sconces;
+- built-in cabinetry;
+- fixed counters;
+- hard-connected laundry appliances;
+- other authored fixtures.
+
+Installed objects do not expose ordinary free-move commands.
+
+They cannot normally:
+- be dragged across the room;
+- be nudged away from their connection;
+- rotate freely;
+- be put into ordinary inventory by the Move tool;
+- overlap or abandon their installation point.
+
+They may expose DESIGN when cosmetic customization is allowed.
+
+Example installed stove regions:
+- body/enamel;
+- control panel;
+- knobs;
+- metal trim.
+
+The user can recolor or re-material these regions while the stove remains installed.
+
+If the home is owned, an installed object may additionally expose:
+SWAP IN PLACE
+
+If the home is rented, Swap in Place is unavailable unless a special property rule
+explicitly overrides the standard rental restriction.
+
+An installed object's world transform is primarily owned by the installation point:
+- position;
+- orientation;
+- mount surface;
+- connection type;
+- maximum footprint;
+- required clearance.
+
+This keeps replacement predictable.
+
+Installed objects may still have small authored adjustments. For example, a ceiling
+fixture could allow an extension length or a shower head could allow a style variant. Such
+properties are not general relocation.
+
+================================================================================
+18. NON-INSTALLED OBJECT MECHANICS
+================================================================================
+
+Non-installed objects provide the main furnishing freedom.
+
+Examples:
+- sofas;
+- chairs;
+- beds;
+- tables;
+- freestanding shelves;
+- rugs;
+- plants;
+- sculptures;
+- wall art;
+- curtains where implemented as movable decor;
+- floor lamps;
+- table lamps;
+- countertop appliances;
+- portable electronics;
+- decorative storage;
+- movable dressers;
+- many freestanding cabinets.
+
+A selected non-installed object can expose:
+
+DESIGN
+Open material/style controls.
+
+MOVE
+Pick up and position the object.
+
+NUDGE
+Make small controlled positional adjustments.
+
+ROTATE
+Rotate within placement constraints.
+
+ADD TO INVENTORY
+Store the item when ownership and object rules permit.
+
+COPY STYLE
+Copy all or part of the object's current style.
+
+APPLY STYLE
+Apply compatible copied style data.
+
+DUPLICATE
+Available when gameplay/economy rules permit creating another owned instance.
+
+RESET DESIGN
+Restore built-in/default appearance or the last saved baseline, depending on the
+chosen command.
+
+OBJECT INFO
+Show function, dimensions, ownership, price/source, placement requirements, and other
+useful metadata.
+
+SELL / ROUTE TO RESALE
+Only when the economy rules allow direct or store-based resale.
+
+The menu is contextual. It does not show plumbing replacement commands on a pillow or
+free-move commands on a toilet.
+
+================================================================================
+19. OBJECT PLACEMENT
+================================================================================
+
+Placement is constrained enough to keep rooms readable and functional, but not so strict
+that decorating becomes frustrating.
+
+Each placeable object declares a footprint and placement metadata.
+
+Possible requirements:
+- floor required;
+- wall required;
+- ceiling required;
+- tabletop required;
+- counter required;
+- shelf surface required;
+- indoor only;
+- outdoor only;
+- exterior-rated;
+- room type restriction;
+- electrical point;
+- plumbing point;
+- gas point;
+- adjacency;
+- minimum clearance;
+- doorway clearance;
+- path clearance;
+- rotational limits;
+- installation orientation;
+- no overlap with another installed fixture;
+- cannot block a door;
+- cannot intersect fixed architecture.
+
+A wall painting uses wall-required placement.
+A rug uses floor-required placement.
+A table lamp requires a compatible support surface.
+A floor lamp requires floor placement.
+A ceiling fixture requires a ceiling installation point.
+
+Placement validation should run continuously during preview.
+
+VALID:
+The preview appears normal and the confirmation action is enabled.
+
+INVALID:
+The preview visibly indicates invalidity using more than color alone, such as an icon,
+outline pattern, or message:
+"Needs wall"
+"Blocked by doorway"
+"Requires counter"
+"Too close to installed fixture"
+
+Happy Home should prefer informative invalid states over simply refusing input.
+
+SNAPPING
+Objects can support optional snapping:
+- room grid;
+- wall grid;
+- surface anchors;
+- center/edge alignment;
+- other objects;
+- installation points.
+
+FREE PLACEMENT
+Where permitted, the player can disable or soften snapping for more precise placement.
+
+NUDGE
+Nudge allows fine movement after normal placement. Keyboard arrows, controller D-pad,
+or touch controls can move an object in small increments.
+
+ROTATION
+Rotation should support predictable steps by default, with fine rotation where the
+content allows it. Wall objects generally remain aligned to their wall unless specially
+authored.
+
+COLLISION
+Collision should prevent impossible hard intersections but can have content-aware
+exceptions:
+- rugs may sit beneath furniture;
+- table decor can occupy support surfaces;
+- pillows may have soft placement rules;
+- wall decor can overlap wall material because it is attached on top of it.
+
+The collision system needs category-aware layers, not one universal "bounding boxes may
+never overlap" rule.
+
+================================================================================
+20. OBJECT MANIPULATION AND CAMERA RELATIONSHIP
+================================================================================
+
+Object manipulation should operate in room space rather than screen-space guesswork.
+
+When the player selects an object, Happy Home can provide:
+- direct drag;
+- move handles;
+- rotation handle;
+- nudge controls;
+- height control for wall-mounted objects where permitted;
+- snap toggle;
+- grid toggle;
+- align/distribute tools for multi-selection if supported.
+
+The camera should not steal the same gesture without clear mode separation.
+
+Recommended pointer model:
+- tap/click object = select;
+- drag selected object = move when Move is active;
+- drag empty scene = camera pan/orbit according to camera mode;
+- wheel/pinch = zoom;
+- explicit rotation handle = object rotation.
+
+On touch, where precise handles can be difficult, a bottom or side control strip can
+provide:
+Move | Rotate | Nudge | Design | Store
+
+Wall selection and object selection should remain visually distinct. The player should
+know whether they have selected the wallpaper surface or the picture hanging on it.
+
+A useful selection priority is:
+1. explicit currently active tool target;
+2. foreground movable object;
+3. installed object;
+4. architectural region.
+
+When ambiguity remains, repeated tap/click or a small "Select..." chooser can cycle
+through stacked targets.
+
+================================================================================
+21. INVENTORY AS PART OF DESIGN MODE
+================================================================================
+
+Inventory is integrated into Happy Home rather than treated as an unrelated character
+bag.
+
+An inventory object retains:
+- objectId;
+- unique instanceId;
+- ownership;
+- condition/durability if used;
+- current style/preset data;
+- price or acquisition data where relevant;
+- source store;
+- compatibility metadata;
+- installation class;
+- custom name if supported.
+
+For a non-installed object:
+- an eligible owned inventory item can be placed into the residence;
+- a placed owned item can return to inventory;
+- current customization remains attached to the instance;
+- the object can be redesigned before or after placement if supported.
+
+For an installed replacement item:
+- inventory ownership does not make it freely placeable;
+- it can appear as a compatible Swap in Place candidate;
+- the installation system validates the target point.
+
+Inventory browsing inside Happy Home should allow filters:
+- furniture;
+- decor;
+- lighting;
+- appliance;
+- plumbing;
+- installed replacements;
+- room tag;
+- function;
+- favorites;
+- recently acquired.
+
+The player should not have to leave Design Mode merely to place something already owned.
+
+A placed item and an inventory item are two states of the same instance, not duplicate
+copies.
+
+PLACE FROM INVENTORY:
+inventory -> preview ghost -> valid placement -> room
+
+STORE:
+room -> remove world instance -> inventory
+
+CANCEL PLACE:
+preview -> inventory remains unchanged
+
+The transaction must be safe against duplication. The inventory record should only move
+to placed state after valid placement commits.
+
+================================================================================
+22. PURCHASING AND ACQUISITION
+================================================================================
+
+The source mechanics assume the player can obtain home goods through settlement stores.
+Happy Home should preserve the distinction between owning an item and merely previewing
+it.
+
+A catalog may present:
+- owned items;
+- purchasable items;
+- preview-only unavailable items;
+- compatible installed replacements.
+
+When the player purchases a non-installed furnishing:
+- currency/economy validation occurs;
+- an owned item instance is created;
+- it can be placed immediately or sent to inventory/storage.
+
+When purchasing an installed replacement:
+- the item becomes owned inventory or a pending-delivery/installation asset according to
+  game rules;
+- it does not magically replace the current fixture unless Swap in Place is invoked;
+- compatibility can be previewed before purchase, but final installation validation
+  still occurs at the residence.
+
+Store sourcing can matter for flavor and gameplay:
+- furniture outlet;
+- home improvement store;
+- appliance store;
+- plumbing supplier;
+- lighting shop;
+- mall retailer;
+- used-goods store;
+- specialty decor store.
+
+Happy Home itself should not need a unique code path for every retailer. Items carry
+source metadata and object class; the design system consumes owned instances.
+
+================================================================================
+23. USED-GOODS RESALE AND DISPOSITION
+================================================================================
+
+Unwanted owned items can leave the home through controlled resale/disposition mechanics.
+
+A basic used-goods flow:
+1. Store an eligible owned non-installed object in inventory.
+2. Visit or access an appropriate used-goods store.
+3. Choose the item.
+4. Review resale value.
+5. Confirm sale.
+6. Remove the instance from ownership and grant payment.
+
+Installed objects replaced in an owned residence need explicit outcome rules. A removed
+fixture may:
+- enter inventory;
+- enter household storage;
+- receive automatic sell-back credit;
+- be disposed;
+- be collected by a store;
+- be retained as a recoverable item;
+- follow another authored outcome.
+
+Do not assume every installed fixture becomes a pocket inventory object after removal.
+
+Rental-property fixtures are never the renter's sellable property.
+
+Style customization can affect resale value only if the broader economy intentionally
+models it. The style system itself should not assume that a custom pattern makes an item
+more or less valuable.
+
+================================================================================
+24. SWAP IN PLACE
+================================================================================
+
+Swap in Place is Happy Home's replacement mechanic for fixed/installed objects in owned
+housing.
+
+Requirements:
+1. The residence is owned, or a special rule grants replacement rights.
+2. The current object is marked swappable.
+3. The player owns a replacement candidate.
+4. The replacement belongs to a compatible object class.
+5. The installation point supports the replacement's mount type.
+6. Required utilities are available.
+7. The footprint fits.
+8. Clearance rules pass.
+9. Any authored property infrastructure requirement passes.
+
+The interaction:
+- enter Happy Home Design Mode;
+- select or press-and-hold the installed object;
+- choose Swap in Place;
+- see only compatible owned replacements;
+- preview replacement at the exact installation point;
+- view any compatibility warnings;
+- confirm;
+- old installed object follows its configured disposition;
+- new object becomes installed;
+- one undo/history transaction is created if gameplay allows reversal.
+
+Examples:
+
+STOVE
+A current electric range can be swapped for another compatible electric range. A gas
+range appears only if the residence has a compatible gas point and other requirements.
+
+SINK
+A sink replacement must match installation/mount constraints and plumbing.
+
+TOILET
+A toilet can only use toilet-compatible installation data.
+
+CEILING LIGHT
+A ceiling fixture can be replaced by a compatible ceiling fixture, not by a floor lamp.
+
+DISHWASHER
+A dishwasher replacement must fit the cabinet/utility space.
+
+The user should not see obviously invalid candidates in the primary replacement list.
+A secondary "Why can't I use this?" view may show incompatible owned items with reasons,
+which can be useful for learning.
+
+Swap in Place does not grant arbitrary relocation. The new object inherits the valid
+installation transform rather than becoming a free-moving selected object.
+
+================================================================================
+25. RENTED VERSUS OWNED RESIDENCES
+================================================================================
+
+Housing permissions are data-driven.
+
+OWNED RESIDENCE default:
+- full compatible wall redesign;
+- whole-room or per-wall scope;
+- floor redesign;
+- ceiling redesign where supported;
+- exact color editing;
+- saved material/preset application;
+- free manipulation of owned non-installed items;
+- store owned non-installed items;
+- place compatible owned inventory;
+- style compatible installed objects;
+- Swap in Place for compatible installed objects.
+
+RENTAL default:
+- user-owned non-installed furnishings can be placed, moved, rotated, styled, and stored;
+- rental-installed plumbing/electrical/appliances cannot be moved;
+- Swap in Place is disabled;
+- rental fixtures cannot be put into user inventory;
+- permanent wall/floor/ceiling edits may be disabled or restricted;
+- reversible personalization may be allowed.
+
+Useful permission flags:
+rentalVisualEdit
+rentalWallEdit
+rentalFloorEdit
+rentalCeilingEdit
+rentalMoveOwned
+rentalStoreOwned
+rentalSwapInstalled
+ownedVisualEdit
+ownedWallEdit
+ownedFloorEdit
+ownedCeilingEdit
+ownedMove
+ownedStore
+ownedSwap
+
+A property can override defaults.
+
+Example rental A:
+Allows temporary paint and wallpaper but not flooring changes.
+
+Example rental B:
+Allows no architectural surface customization, but allows all user-owned furnishings.
+
+Example rental C:
+Allows wall presets only from a landlord-approved library.
+
+The editor should filter controls based on permissions rather than showing a full editor
+that fails after selection.
+
+If a surface is locked, it can show:
+"Rental surface: permanent wall design is not allowed here."
+
+The user should never accidentally gain ownership rights by occupying a rental.
+
+================================================================================
+26. PROPERTY-BOUND VERSUS PLAYER-OWNED NON-INSTALLED CONTENTS
+================================================================================
+
+Some furnished rentals or furnished homes may contain non-installed objects that belong
+to the property rather than the player.
+
+This introduces an ownership distinction independent of installation class.
+
+An object can be:
+installed + property-owned
+non-installed + property-owned
+non-installed + player-owned
+installed + player/household-owned in an owned residence
+
+A furnished-rental sofa might be physically movable but not sellable or storable into
+personal inventory. The property can allow limited repositioning while protecting
+ownership.
+
+Example property rules:
+propertyObjectMove = true
+propertyObjectStore = false
+propertyObjectSell = false
+propertyObjectRedesign = true
+
+This allows a furnished apartment where the player can rearrange the landlord's couch and
+recolor slipcover-like regions if permitted, but cannot take the couch when moving out.
+
+Ownership class must therefore be checked separately from placement class.
+
+================================================================================
+27. CONTEXT MENUS
+================================================================================
+
+Press-and-hold, right-click, or the platform-equivalent context action opens a contextual
+menu for the selected entity.
+
+NON-INSTALLED PLAYER-OWNED OBJECT:
+- Design
+- Move
+- Nudge
+- Rotate
+- Add to Inventory
+- Copy Style
+- Apply Style
+- Duplicate, if allowed
+- Reset Design
+- Object Info
+- resale-related action where appropriate
+
+INSTALLED OBJECT IN OWNED HOME:
+- Design, if styleable
+- Swap in Place, if swappable
+- Copy Style, when meaningful
+- Apply Style, when compatible
+- Object Info
+
+INSTALLED OBJECT IN RENTAL:
+- Design only if rental rules allow
+- Object Info
+- no move
+- no inventory
+- no ordinary swap
+
+ARCHITECTURAL WALL REGION:
+- Design
+- Copy Material
+- Apply Material
+- Link/Unlink where supported
+- Reset Region
+- Surface Info
+
+WHOLE WALL:
+- Design Wall
+- Apply Wall Preset
+- Copy Wall Style
+- Reset Wall
+
+FLOOR/CEILING:
+- Design
+- Copy Material/Style
+- Apply
+- Reset
+- Surface Info
+
+Impossible actions should be hidden or clearly disabled with explanation. A compact
+context menu is more understandable than a universal list containing twenty invalid
+entries.
+
+================================================================================
+28. MULTI-SELECTION AND GROUP OPERATIONS
+================================================================================
+
+Multi-selection is optional for the first implementation but fits Happy Home naturally.
+
+The player can select several compatible movable objects and:
+- move as a group;
+- rotate around group center;
+- store when all are eligible;
+- align;
+- distribute;
+- apply a shared material to compatible regions;
+- copy selected style characteristics.
+
+Multi-selection must not bypass object rules.
+
+If one selected object is property-owned and cannot be stored, "Add Group to Inventory"
+is disabled or offers to store only eligible items after explicit confirmation.
+
+Architectural multi-selection is already represented by the wall scope system. Entire Room
+is a semantic multi-selection of Back + Left + Right for wall operations.
+
+Do not force the player to Ctrl-click all three walls to achieve the common room-wide
+operation. That is exactly why Entire Room exists.
+
+================================================================================
+29. ROOM-LEVEL DESIGN PRESETS
+================================================================================
+
+Happy Home can go beyond simple wall presets with optional Room Style Presets.
+
+A Room Style Preset is a coordinated architectural appearance package. At minimum it can
+store:
+- back wall style;
+- left wall style;
+- right wall style;
+- floor style;
+- ceiling style if supported;
+- architectural trim.
+
+The preset should support both symmetrical and accent-wall designs.
+
+Example:
+ROOM STYLE: "Warm Library"
+Back Wall = dark botanical wallpaper
+Left Wall = warm plaster
+Right Wall = warm plaster
+Floor = walnut boards
+Ceiling = cream paint
+Crown = walnut
+Baseboard = walnut
+
+Another:
+ROOM STYLE: "Three-Wall Coastal"
+Back = blue geometric wall set
+Left = same blue geometric wall set
+Right = same blue geometric wall set
+Floor = pale wood
+Ceiling = white
+
+When applying a Room Style Preset, the system previews the whole architectural room and
+lists any unsupported components.
+
+Room Style Presets do not implicitly:
+- move furniture;
+- replace appliances;
+- recolor every object;
+- remove player belongings.
+
+A separate "coordinated furnishing style" system may exist later, but it must be explicit.
+
+The user can save the current room's architecture as a new Room Style Preset. Because the
+three walls are stored independently, the preset faithfully preserves accent walls.
+
+================================================================================
+30. ENTIRE ROOM DESIGN: EXACT SEMANTICS
+================================================================================
+
+The phrase "Entire Room" must be precise because Happy Home has both a wall scope and
+potential room-level style actions.
+
+WALL EDITOR -> ENTIRE ROOM
+Means:
+Back Wall + Left Wall + Right Wall only, for the active wall operation.
+
+ROOM STYLE PRESET -> ENTIRE ROOM
+Means:
+all architectural categories included by that preset, potentially Back + Left + Right +
+Floor + Ceiling + Trim.
+
+OBJECT DESIGN -> ENTIRE ROOM
+There is no automatic "recolor every object" meaning. Object styling remains targeted
+unless a separate explicit room-coordination operation is invoked.
+
+This prevents dangerous ambiguity.
+
+The wall scope selector appears only in wall-related design contexts. Room-level presets
+use a separate explicit command such as:
+Apply Room Style
+
+A user who says "make all walls this wallpaper" uses Entire Room scope.
+
+A user who says "make only the back wall this wallpaper" uses Back Wall.
+
+A user who says "apply this full saved room look" uses Apply Room Style.
+
+These are different operations.
+
+================================================================================
+31. WALL-SCOPE USER INTERFACE
+================================================================================
+
+The scope selector should remain persistent while editing a wall.
+
+Desktop example:
+
+TARGET
+[ Entire Room ] [ Back Wall ] [ Left Wall ] [ Right Wall ]
+
+REGION
+[ Upper ] [ Lower ] [ Crown ] [ Baseboard ]
+
+MATERIAL
+[ thumbnail library ... ]
+
+CHANNELS
+[ Background ] [ Motif ] [ Accent ]
+
+Mobile example:
+
+Scope: [ Room v ]
+where opening the selector gives:
+- Entire Room
+- Back Wall
+- Left Wall
+- Right Wall
+
+The selected scope should also appear directly in the scene.
+
+Entire Room:
+small labels or outline on all three walls.
+
+Back Wall:
+BACK label and outline.
+
+Left Wall:
+LEFT label and outline.
+
+Right Wall:
+RIGHT label and outline.
+
+The UI should not rely only on camera perspective. A side wall may be foreshortened, so a
+textual scope indicator is valuable.
+
+Changing scope during an active uncommitted edit requires clear behavior.
+
+Recommended rule:
+- current preview is associated with the current edit session;
+- if the player changes scope before committing, the preview is recalculated from the
+  session's starting state onto the new target scope;
+- no hidden edits remain on the old scope;
+- once committed, the transaction records the scope used at commit.
+
+Alternatively, each individual pattern/color change can commit immediately while scope
+changes only affect future edits. This is simpler technically, but the UI must clearly
+communicate that previewed changes are already committed.
+
+Happy Home should choose one consistent model. The preferred model in this dossier is:
+LIVE PREVIEW WITH SESSION COMMIT for broad style editing, plus grouped undo checkpoints
+for continuous controls.
+
+================================================================================
+32. SURFACE HIGHLIGHT AND TARGET PREVIEW
+================================================================================
+
+A player must know exactly what an operation will affect before clicking.
+
+Highlight behavior:
+
+ENTIRE ROOM + UPPER WALL
+Highlight upper-wall region on Back + Left + Right.
+
+BACK WALL + LOWER PANEL
+Highlight only back lower panel.
+
+RIGHT WALL + CROWN
+Highlight only right crown.
+
+FLOOR + BORDER
+Highlight floor border.
+
+OBJECT + UPHOLSTERY
+Highlight upholstery region only.
+
+The highlight must not obscure the pattern. A thin outline, edge glow, pulsing border, or
+brief semi-transparent overlay is preferable to an opaque mask.
+
+Reduced-motion mode disables pulses and uses static indicators.
+
+When hovering over a pattern thumbnail, temporary PREVIEW may replace the selected
+material visually while leaving state uncommitted. Moving away returns to the current
+material unless the user selects it.
+
+When hovering/tapping a color bubble, optionally outline the pixels/mesh areas controlled
+by that channel. This makes multi-channel patterns more learnable.
+
+================================================================================
+33. PATTERN LIBRARY
+================================================================================
+
+The material/pattern library is visual.
+
+Each entry should have:
+- thumbnail;
+- name;
+- category;
+- favorite state;
+- source;
+- channel count;
+- compatible-target metadata;
+- optional custom/imported indicator;
+- tags.
+
+Selecting a pattern:
+1. assigns it to the active region in preview state;
+2. loads its default or saved channel colors;
+3. creates only the active channel bubbles it actually uses;
+4. preserves unrelated object/wall regions;
+5. updates the scene live;
+6. becomes undoable/committable.
+
+A one-channel material shows one color bubble.
+A two-channel material shows two.
+A four-channel pattern shows four.
+Do not show meaningless blank bubbles.
+
+The library can offer:
+- All Compatible
+- Favorites
+- Recently Used
+- Saved Materials
+- Built-In
+- Custom/Imported
+- material category tabs
+
+For performance, the grid must be virtualized/lazy loaded. The player may accumulate a
+very large library over time.
+
+Thumbnail recoloring can be cached by:
+patternId + channel color hash + scale/rotation preview variant
+
+The live scene should use material parameters/shader uniforms where possible rather than
+rebuilding geometry.
+
+================================================================================
+34. SAVING AND NAMING CUSTOM STYLES
+================================================================================
+
+When the player saves a reusable appearance, Happy Home should ask what level they are
+saving.
+
+SAVE COLOR
+Example: "Deep Ocean Cyan"
+
+SAVE MATERIAL
+Example: "Navy/Cyan Damask"
+
+SAVE OBJECT PRESET
+Example: "Blue Walnut Sofa"
+
+SAVE WALL PRESET
+Example: "Walnut Dado + Damask"
+
+SAVE ROOM STYLE
+Example: "Midnight Library"
+
+This avoids the common confusion where one generic Save button leaves the player unsure
+whether they saved the color, the wallpaper, or the entire sofa.
+
+The save interface can infer the current context but should label the action explicitly.
+
+Names can default from:
+object/pattern name + timestamp or descriptive auto-name
+
+but the user can rename.
+
+Deleting a user preset deletes only that saved style definition, not:
+- the base object;
+- placed object instances already using copied material data;
+- the original pattern asset.
+
+If placed instances reference the user preset dynamically, deletion needs a safe detach
+step that bakes the current material values into those instances. Simpler implementations
+should copy material data into placed instances at application time.
+
+================================================================================
+35. ACCESSIBILITY CONTRACT
+================================================================================
+
+Happy Home's complexity must not depend on tiny mouse-only controls.
+
+Minimum requirements:
+- touch targets roughly 44 px or larger;
+- keyboard focus on all actionable controls;
+- controller navigation where applicable;
+- visible focus state;
+- semantic buttons, not unlabeled clickable divs;
+- accessible names for wall scope, wall region, material, and channel;
+- no hover-only required action;
+- no color-only valid/invalid signal;
+- numeric color entry;
+- high-contrast selection indicators;
+- reduced-motion support;
+- text labels for material slots;
+- clear undo/redo descriptions;
+- pattern thumbnails large enough to judge;
+- screen-reader-readable target descriptions.
+
+Examples of accessible labels:
+"Scope: Entire Room, applies to back, left, and right walls"
+"Wall region: Upper Wall"
+"Pattern color: Damask Motif, current Hex 56D9FF"
+"Selected object: Modern Sofa"
+"Placement invalid: blocks doorway"
+
+A keyboard wall workflow can be:
+- Tab to scope selector;
+- arrow keys choose Entire/Back/Left/Right;
+- Tab to region;
+- arrow keys choose Upper/Lower/Crown/Baseboard;
+- Tab to material library;
+- arrow keys navigate patterns;
+- Enter selects;
+- Tab to channel bubbles;
+- Enter opens color editor;
+- numeric Hex field permits exact entry.
+
+No pointer precision is required.
+
+================================================================================
+36. MOBILE AND TOUCH BEHAVIOR
+================================================================================
+
+On touchscreens, screen space is limited and hover is unavailable.
+
+Recommended layout:
+- scene remains primary;
+- bottom sheet or side drawer contains Design controls;
+- scope selector stays near the top of the sheet;
+- region bubbles wrap;
+- material grid virtualizes;
+- color editor opens as a temporary sheet/popover;
+- long press opens context menu;
+- tap selects;
+- drag is only interpreted as object movement while Move is active.
+
+Do not make ordinary scene scrolling or camera gestures accidentally move furniture.
+
+The floating editor should clamp to the viewport. On very small screens it can become a
+bottom sheet instead of trying to fit beside the bubble.
+
+Touch drag-copy can be difficult. Always provide:
+Copy
+Apply To
+buttons as an alternative.
+
+Color wheel interaction should capture the pointer so the finger can slide outside the
+visible wheel without canceling the adjustment.
+
+Scope selection must never be hidden behind a keyboard Shift requirement. Shift-like
+whole-room semantics are represented explicitly by Entire Room.
+
+
+================================================================================
+37. CORE DATA MODEL
+================================================================================
+
+Happy Home should be data-driven. The design system becomes brittle if every sofa,
+wall, fixture, and pattern requires custom UI code. A generalized data model lets one
+editor render the correct controls from content metadata.
+
+A conceptual model:
+
+Residence
+|
+|-- id
+|-- ownershipType
+|-- propertyPermissions
+|-- rooms[]
+|-- installedObjects[]
+|-- placedObjects[]
+|-- householdInventoryRef
+|-- roomHistory
+|
+Room
+|
+|-- id
+|-- roomType
+|-- walls
+|   |-- back: WallSurface
+|   |-- left: WallSurface
+|   |-- right: WallSurface
+|-- floor: Surface
+|-- ceiling: Surface | null
+|-- architecturalObjects[]
+|-- designScope
+|-- roomStyleMetadata
+|
+WallSurface
+|
+|-- id
+|-- orientation: back | left | right
+|-- wallStylePresetId
+|-- regionSchemaId
+|-- regions[]
+|-- openings[]
+|-- surfacePermissions
+|-- links[]
+|
+DesignRegion
+|
+|-- key
+|-- label
+|-- semantic
+|-- maskOrMeshBinding
+|-- allowedMaterialCategories[]
+|-- currentMaterial: MaterialInstance
+|-- copyCompatibilityTags[]
+|-- linkGroupId | null
+|-- editable
+|
+MaterialInstance
+|
+|-- patternId
+|-- colors[]
+|-- scale
+|-- rotation
+|-- offsetX
+|-- offsetY
+|-- finishParameters
+|-- source
+|
+Pattern
+|
+|-- id
+|-- name
+|-- category
+|-- source
+|-- tags[]
+|-- previewImage
+|-- channelCount
+|-- channels[]
+|-- defaultColors[]
+|-- compatibilityTags[]
+|-- shaderMetadata
+|
+PatternChannel
+|
+|-- key
+|-- label
+|-- mask
+|-- defaultColor
+|-- editable
+|
+DesignableObject
+|
+|-- instanceId
+|-- objectId
+|-- ownershipClass
+|-- installed
+|-- installationPointId | null
+|-- transform
+|-- placementRules
+|-- designRegions[]
+|-- objectActions[]
+|-- currentResidence
+|-- inventoryState
+|-- priceMetadata
+|-- sourceStore
+|-- condition
+|
+CatalogItem
+|
+|-- objectId
+|-- functionCategory
+|-- functionSubcategory
+|-- roomTags[]
+|-- builtInPresets[]
+|-- geometryAsset
+|-- price
+|-- placementMetadata
+|-- installationMetadata
+|
+ObjectPreset
+|
+|-- id
+|-- objectId
+|-- name
+|-- regions
+|-- source
+|-- createdAt
+|
+WallPreset
+|
+|-- id
+|-- regionSchemaId
+|-- compatibleWallTags[]
+|-- regionMaterials
+|-- source
+|
+RoomStylePreset
+|
+|-- id
+|-- name
+|-- wallStates
+|-- floorState
+|-- ceilingState
+|-- trimState
+|-- compatibilityRules
+
+This structure supports all major Happy Home requirements without requiring a separate
+style engine for walls and furniture. Both ultimately expose DesignRegions containing
+MaterialInstances.
+
+The distinction lies in entity behavior:
+- walls have wall scope and cannot move;
+- floors/ceilings are fixed;
+- installed objects use installation points and replacement logic;
+- non-installed objects use transforms and inventory;
+- patterns are reusable appearance resources.
+
+================================================================================
+38. WALL STATE MUST REMAIN INDEPENDENT
+================================================================================
+
+The three walls must have separate persistent states even when they visually match.
+
+A tempting implementation is:
+
+room.wallStyle = oneSharedStyle
+
+and render it on all three walls.
+
+That implementation fails the required individual-wall behavior.
+
+Instead:
+
+room.walls.back.style
+room.walls.left.style
+room.walls.right.style
+
+When the player chooses Entire Room, the application service computes:
+
+targets = [back, left, right]
+
+and applies the operation to each target inside one transaction.
+
+Example transaction:
+
+{
+  type: "wallMaterialChange",
+  scope: "entireRoom",
+  regionKey: "upperWall",
+  before: {
+    back: {...},
+    left: {...},
+    right: {...}
+  },
+  after: {
+    back: {...},
+    left: {...},
+    right: {...}
+  }
+}
+
+When the player chooses Back Wall:
+
+targets = [back]
+
+The data model does not need to change. Only target resolution changes.
+
+This is preferable to permanently linked state because:
+- accent walls are simple;
+- future scope changes are simple;
+- undo has exact before/after state;
+- saved Room Style Presets preserve asymmetry;
+- wall-specific structural exceptions can survive;
+- one wall can use a different wall preset from the others.
+
+Persistent Link remains optional metadata rather than the default storage model.
+
+================================================================================
+39. TARGET RESOLUTION SERVICE
+================================================================================
+
+A centralized target-resolution service should determine what a design operation affects.
+
+Input:
+- selected entity or hit result;
+- current scope;
+- selected semantic region;
+- active operation;
+- property permissions.
+
+Output:
+- exact target region instances;
+- compatibility status;
+- partial compatibility warnings;
+- preview geometry/highlight list.
+
+Example:
+
+resolveTargets(
+    room,
+    scope="entireRoom",
+    semantic="upperWall",
+    operation="applyMaterial"
+)
+
+returns:
+[
+  room.walls.back.regions.upperWall,
+  room.walls.left.regions.upperWall,
+  room.walls.right.regions.upperWall
+]
+
+If Right Wall lacks upperWall because a special architectural preset uses mainField
+instead, target resolution should not blindly substitute slot index 0. It can:
+1. look for an explicit semantic mapping;
+2. look for a compatible alias;
+3. mark Right Wall unsupported.
+
+The preview can then say:
+"Applies to Back + Left. Right Wall uses an incompatible wall structure."
+
+The user may:
+- proceed with partial application;
+- cancel;
+- first change the right wall structure to a compatible preset.
+
+For a broad Whole Wall Preset, target resolution compares wall schema compatibility.
+
+This service also benefits object transfer:
+resolveCompatibleDestination(sourceMaterial, targetObject)
+
+The same design philosophy applies:
+semantic meaning first, slot number second.
+
+================================================================================
+40. DESIGN OPERATION MODEL
+================================================================================
+
+Happy Home benefits from representing edits as explicit operations.
+
+Examples:
+SetMaterial
+SetPatternChannelColor
+SetPatternScale
+SetPatternRotation
+ApplyObjectPreset
+ApplyWallPreset
+ApplyRoomStylePreset
+CopyMaterial
+LinkRegions
+UnlinkRegions
+MoveObject
+RotateObject
+StoreObject
+PlaceInventoryObject
+SwapInstalledObject
+ResetRegion
+ResetObjectStyle
+ResetWall
+RandomizeMaterial
+
+Each operation knows:
+- target entity IDs;
+- target region keys;
+- before state;
+- after state;
+- permissions;
+- validation result;
+- human-readable history label.
+
+This supports reliable undo/redo.
+
+A command does not mutate random UI state directly. The UI requests an operation; the
+model validates and applies it; the renderer observes the resulting state.
+
+Live preview can use a temporary transaction layer:
+
+committedState
++
+previewPatch
+=
+renderedState
+
+Accept merges previewPatch into committedState and history.
+Cancel discards previewPatch.
+
+This architecture is particularly useful for Entire Room because a preview patch can
+contain three wall edits while still remaining one conceptual operation.
+
+================================================================================
+41. STATE BINDING
+================================================================================
+
+The UI must treat application state as authoritative.
+
+A bubble does not "remember" its color only because its CSS background is blue. It reads
+the material/channel state and renders that value.
+
+Flow:
+
+STATE
+    ->
+UI COMPONENT
+    ->
+USER INPUT
+    ->
+VALIDATED SETTER/OPERATION
+    ->
+STATE
+    ->
+RENDERER + UI REFRESH
+
+Examples:
+
+scopeButton.value
+    -> room.designScope
+
+regionBubble.key
+    -> selectedRegionKey
+
+channelBubble.index
+    -> activeMaterial.colors[index]
+
+patternThumbnail.id
+    -> activeMaterial.patternId
+
+This prevents desynchronization when:
+- undo occurs;
+- a linked region updates;
+- an Entire Room operation changes multiple walls;
+- a saved preset is applied;
+- a material is copied from another object;
+- a rental permission changes;
+- an object is swapped.
+
+The interface should be generated from state and metadata whenever practical rather than
+hard-coded per object.
+
+================================================================================
+42. PATTERN RENDERING MODEL
+================================================================================
+
+A pattern can be represented by one to four recolorable masks or another equivalent
+multi-channel system.
+
+Conceptually:
+
+finalColor =
+    channelMask1 * color1
+  + channelMask2 * color2
+  + channelMask3 * color3
+  + channelMask4 * color4
+
+Actual rendering may include:
+- normal maps;
+- roughness;
+- metallic response;
+- detail maps;
+- displacement/parallax;
+- fabric weave;
+- wood grain;
+- tile grout depth;
+- edge wear;
+- lighting response.
+
+These visual details do not change the UI contract.
+
+The user edits semantic channel colors, not raw shader internals.
+
+Pattern metadata should specify:
+- number of channels;
+- channel labels;
+- defaults;
+- whether scale is editable;
+- whether rotation is editable;
+- whether offset is editable;
+- supported finish controls;
+- compatible categories/surfaces.
+
+If a pattern does not support rotation, do not show a disabled rotation slider by
+default. Omit irrelevant controls to keep the editor readable.
+
+================================================================================
+43. MATERIAL PREVIEW AND THUMBNAIL CACHING
+================================================================================
+
+Happy Home should avoid recreating the performance problems associated with enormous
+style libraries.
+
+Recommended:
+- lazy load pattern grids;
+- virtualize thumbnail rows;
+- cache base thumbnails;
+- cache common recolored previews;
+- render the active scene with shader parameters;
+- avoid baking full textures for every slider movement;
+- debounce expensive preview regeneration;
+- keep the current category warm in memory;
+- release inactive editor resources;
+- load saved presets on demand;
+- index search by tags and category.
+
+A material thumbnail needs enough visual information to judge the pattern. Tiny color
+squares are insufficient for detailed wallpaper, tile, or fabric.
+
+When the user changes channel colors, the active material bubble should update promptly.
+The entire library does not need to regenerate.
+
+Favorites can store pattern IDs and saved-material IDs separately from large image data.
+
+================================================================================
+44. DESIGN MODE STATE MACHINE
+================================================================================
+
+A clear state machine prevents ambiguous interactions.
+
+ROOM_VIEW
+    ->
+ENTER_DESIGN_MODE
+
+DESIGN_IDLE
+    -> select architecture -> SURFACE_SELECTED
+    -> select non-installed object -> OBJECT_SELECTED
+    -> select installed object -> INSTALLED_SELECTED
+    -> open catalog -> CATALOG
+
+SURFACE_SELECTED
+    -> choose scope if wall
+    -> choose region
+    -> open material editor -> SURFACE_STYLE_EDITOR
+    -> copy/apply
+    -> reset
+    -> back -> DESIGN_IDLE
+
+SURFACE_STYLE_EDITOR
+    -> choose preset
+    -> choose material category
+    -> choose pattern
+    -> choose channel
+    -> edit color
+    -> edit scale/rotation/offset
+    -> save/favorite
+    -> copy
+    -> Accept -> commit -> SURFACE_SELECTED
+    -> Cancel -> restore -> SURFACE_SELECTED
+
+OBJECT_SELECTED
+    -> Design -> OBJECT_STYLE_EDITOR
+    -> Move -> OBJECT_MOVE
+    -> Rotate -> OBJECT_ROTATE
+    -> Nudge -> OBJECT_NUDGE
+    -> Store -> inventory transaction
+    -> Copy/Apply Style
+    -> Object Info
+    -> back -> DESIGN_IDLE
+
+OBJECT_STYLE_EDITOR
+    -> choose object preset
+    -> choose region
+    -> choose pattern
+    -> choose channel
+    -> edit
+    -> save/favorite/copy
+    -> Accept/Cancel
+
+INSTALLED_SELECTED
+    -> Design if allowed -> OBJECT_STYLE_EDITOR
+    -> Swap in Place if allowed -> SWAP_EDITOR
+    -> Object Info
+    -> back
+
+SWAP_EDITOR
+    -> list compatible owned replacements
+    -> preview candidate
+    -> validate installation
+    -> confirm swap
+    -> commit history/economy/state
+
+CATALOG
+    -> room/function browse
+    -> choose object
+    -> purchase or select owned
+    -> PLACE_PREVIEW
+    -> back -> DESIGN_IDLE
+
+PLACE_PREVIEW
+    -> move preview
+    -> rotate
+    -> snap
+    -> validate
+    -> confirm -> placed object -> CATALOG or DESIGN_IDLE
+    -> cancel -> inventory/catalog state restored
+
+This state machine can support mouse, touch, keyboard, and controller because it describes
+intent rather than one input device.
+
+================================================================================
+45. CAMERA AND WALL VISIBILITY
+================================================================================
+
+The three-wall presentation should help the player understand spatial relationships.
+
+The camera can support:
+- slight orbit;
+- pan;
+- zoom;
+- wall-focused framing;
+- room overview;
+- selected-object focus.
+
+However, camera movement must not create or destroy wall scope.
+
+If the camera is focused closely on the right wall and scope remains Entire Room, a change
+still affects all three walls. The scope indicator must remain visible to prevent
+surprise.
+
+Useful camera shortcuts:
+- Focus Back Wall
+- Focus Left Wall
+- Focus Right Wall
+- Room Overview
+- Focus Selected Object
+
+Selecting Back Wall can optionally frame it, but should not force a camera jump if the
+user disables auto-focus.
+
+For accessibility or motion sensitivity, automatic camera movement can be reduced or
+disabled.
+
+================================================================================
+46. DOORS, WINDOWS, AND WALL OPENINGS
+================================================================================
+
+A wall finish extends across the authored wall surface around openings without modifying
+the embedded objects.
+
+Openings should be represented in wall masks/geometry so the wall material naturally
+stops at the door/window boundary.
+
+Door and window objects maintain independent appearance.
+
+A wall preset may include a coordinated suggestion:
+"Match window trim to crown"
+
+but this is an optional explicit style transfer, not an automatic consequence of changing
+wallpaper.
+
+When Entire Room is active:
+- back wallpaper changes;
+- left wallpaper changes;
+- right wallpaper changes;
+- doors/windows remain unchanged.
+
+If a wall has unique trim regions associated with an opening, those can be separately
+targetable:
+Back Wall -> Window Trim
+Left Wall -> Door Trim
+
+Compatibility mapping must not assume every wall has the same openings.
+
+================================================================================
+47. WALL-SPECIFIC STRUCTURAL PRESETS
+================================================================================
+
+Happy Home can allow wall styles to alter authored decorative segmentation without
+becoming a free wall-building tool.
+
+Examples:
+PLAIN
+- main field
+- baseboard
+
+DADO
+- upper field
+- chair rail
+- lower field
+- baseboard
+
+PANELED
+- upper field
+- paneling
+- panel trim
+- baseboard
+- crown
+
+TILED WAINSCOT
+- upper paint
+- tile lower
+- transition strip
+- baseboard
+
+FULL PANEL
+- main panel
+- crown
+- baseboard
+
+A structural wall preset changes which design regions are exposed. It does not change the
+room's actual dimensions or create a fourth wall.
+
+Applying one to Entire Room attempts to install that region schema on Back + Left + Right.
+Applying to Back Wall makes it an accent structure while Left/Right retain their schemas.
+
+This makes per-wall design much more powerful than only changing wallpaper color.
+
+Any geometric trim introduced by a wall style must be authored so it does not collide
+with doors, windows, fixed appliances, or architectural openings. Presets can contain
+variant meshes/masks for common opening conditions.
+
+================================================================================
+48. FLOOR-SCOPE RULES
+================================================================================
+
+Floor editing does not use the wall orientation scope selector because there is one room
+floor surface unless the room explicitly defines multiple floor zones.
+
+The floor can instead have:
+- Entire Floor;
+- Main Field;
+- Border;
+- Inset;
+- Threshold;
+- Decorative Center;
+- other authored region.
+
+If a room contains true authored floor zones, a separate zone selector can appear.
+
+The user should never have to choose Back Wall before changing a floor.
+
+Wall scope state can persist in memory for when the player returns to a wall, but it is
+visually inactive while editing the floor.
+
+Floor changes are one transaction per operation.
+
+Placeable rugs are not floor regions. Selecting a rug opens object style and placement
+controls.
+
+================================================================================
+49. CEILING-SCOPE RULES
+================================================================================
+
+A ceiling is similarly independent of wall scope.
+
+Ceiling region examples:
+- main;
+- beam;
+- border;
+- medallion;
+- inset.
+
+If a room has no editable ceiling, the ceiling should not appear as a fake disabled target
+unless the UI needs to explain that it is fixed.
+
+Installed ceiling lights remain separate objects.
+
+Changing ceiling paint does not recolor the lamp.
+
+================================================================================
+50. DESIGN COSTS AND ECONOMY HOOKS
+================================================================================
+
+The core design architecture should work whether style changes are free or cost currency.
+
+Therefore the editor exposes economy hooks rather than baking prices into every material
+operation.
+
+Possible cost models:
+- all cosmetic restyling free;
+- first unlock costs money, reuse is cheap/free;
+- material square-foot cost;
+- service fee;
+- ownership-only upgrades;
+- premium material cost;
+- no cost in creative mode.
+
+The source systems distinguish unlocking/purchasing a treatment from applying an already
+owned treatment. Happy Home can preserve that separation if desired.
+
+Material library entry can carry:
+ownershipState:
+- owned;
+- purchasable;
+- locked;
+- rental-approved.
+
+The UI can preview unowned materials, then offer purchase before commit.
+
+Exact behavior belongs to Happy Home's economy layer, not the material renderer.
+
+================================================================================
+51. OBJECT CONDITION, DURABILITY, AND STYLE
+================================================================================
+
+If Happy Home includes condition/durability, appearance customization should not erase
+condition unless gameplay intentionally models restoration.
+
+An old sofa can be:
+object = sofa_modern_01
+condition = worn
+style = custom blue fabric
+
+The style system changes material appearance. Condition can contribute a separate wear
+overlay.
+
+This enables:
+- used furniture;
+- resale;
+- repair;
+- aging;
+- inherited objects;
+- visual wear independent of chosen pattern.
+
+A player recoloring a scratched table should not necessarily remove scratches.
+
+The renderer can combine:
+base style material
++
+condition overlay
++
+lighting
+
+Condition is not a color channel.
+
+================================================================================
+52. SELECTION OF ARCHITECTURE VERSUS DECOR ON THE SAME WALL
+================================================================================
+
+A common interaction problem occurs when a painting hangs over wallpaper.
+
+The pointer ray hits the painting first. How does the user select the wall?
+
+Happy Home should provide multiple paths:
+- a Surface/Architecture selection tool;
+- repeated click/tap cycling;
+- context option "Select Wall Behind";
+- keyboard surface list;
+- temporary hide-furnishings view.
+
+When Surface Design tool is active, architecture can receive higher selection priority
+than decor. When Move/Object tool is active, movable objects receive priority.
+
+This makes intent explicit.
+
+The same applies to a rug covering the floor. Floor Design tool can target the floor
+through the rug without requiring the user to move it.
+
+================================================================================
+53. RESET BEHAVIOR
+================================================================================
+
+Reset commands must define their scope.
+
+RESET COLOR CHANNEL
+Restore the selected pattern channel's default color.
+
+RESET MATERIAL
+Restore the active region's material to the object's/wall preset baseline.
+
+RESET REGION
+Restore one design region.
+
+RESET WALL
+Restore the selected wall to property default or chosen baseline.
+
+RESET ENTIRE ROOM WALLS
+Restore Back + Left + Right wall styles as one transaction.
+
+RESET OBJECT DESIGN
+Restore all style regions of the object without moving it.
+
+RESET ROOM STYLE
+Restore architectural surfaces included in the room baseline, not furniture.
+
+Reset never means "delete all furniture" unless a completely separate room-reset command
+explicitly says so.
+
+Before destructive broad resets, Happy Home should show a preview or confirmation.
+
+================================================================================
+54. COPY/PASTE BEHAVIOR ACROSS DIFFERENT WALL SCOPES
+================================================================================
+
+Wall scope changes how pasted style data is applied.
+
+Case A:
+Source = Back Wall Upper Wall
+Copied payload = material only
+Destination scope = Entire Room
+Destination region = Upper Wall
+Result = same material configuration copied to upper region on Back + Left + Right.
+
+Case B:
+Source = Entire Back Wall style
+Destination scope = Right Wall
+Result = compatible full wall preset/style applied only to right.
+
+Case C:
+Source = Right Wall Baseboard color
+Destination = Sofa frame color channel
+If color transfer is allowed, only the color value transfers. Material family does not.
+
+Case D:
+Source = Sofa wood frame material
+Destination scope = Left Wall
+Destination region = Paneling
+If Woods is allowed, transfer succeeds.
+If paneling only accepts a specialized fixed material family incompatible with the source,
+transfer is blocked.
+
+The copied payload should carry an explicit transfer type:
+color
+material
+regionStyle
+objectStyle
+wallStyle
+roomStyle
+
+This avoids ambiguity.
+
+================================================================================
+55. LINKING ACROSS WALLS
+================================================================================
+
+Because the user can edit individual walls, persistent links can become valuable.
+
+Example:
+The user wants all baseboards to remain identical while using three different wallpapers.
+
+They can:
+1. scope Entire Room;
+2. select Baseboard;
+3. choose Link Across Walls.
+
+The system records:
+linkGroup = room01_baseboard_link
+
+Later:
+- scope Back Wall;
+- change back wallpaper;
+baseboards remain linked but unaffected.
+
+Later:
+- select Right Wall Baseboard;
+- change its color.
+Because it is linked, Back + Left + Right baseboards update.
+
+The UI must warn or indicate the link before the change.
+
+A chain/link badge can appear on linked region bubbles.
+
+Unlink:
+- duplicates current material state into independent wall region instances;
+- removes relationship;
+- appearance does not change immediately.
+
+This gives advanced coordination without making linking the default.
+
+================================================================================
+56. LINKING IDENTICAL OBJECT REGIONS
+================================================================================
+
+The same idea applies to objects.
+
+A dining set might have six chairs with identical wood frames. The player can:
+- multi-select;
+- Link Frame Materials;
+- edit one frame;
+- all linked frames update.
+
+Within one object, two regions using the same material can be linked:
+cabinet doors + trim
+bed frame + posts
+
+Linking is reversible and stateful.
+
+A saved object preset can choose whether link relationships are part of the preset. For a
+simple implementation, preset application can copy appearance without persistent links;
+advanced presets can include link metadata.
+
+================================================================================
+57. FAVORITES AND RECENTLY USED
+================================================================================
+
+A large design library needs personal organization.
+
+FAVORITES can include:
+- patterns;
+- saved materials;
+- object presets;
+- wall presets;
+- room presets;
+- colors if supported.
+
+RECENTLY USED can track:
+- patterns;
+- materials;
+- colors;
+- objects;
+- wall presets.
+
+Recent lists should be capped and cheap to load.
+
+Favorite state belongs to the library item, not to one current object instance.
+
+A player favoriting a walnut pattern while editing a bed should see the same favorite when
+editing a table.
+
+================================================================================
+58. SEARCH
+================================================================================
+
+Search should operate across meaningful metadata.
+
+For patterns:
+- name;
+- category;
+- tags;
+- creator/source;
+- material family;
+- theme;
+- favorite state.
+
+For objects:
+- name;
+- function;
+- room tags;
+- material capability;
+- size;
+- installed/non-installed;
+- owned;
+- price;
+- store/source.
+
+Search results still preserve compatibility. If the active region only accepts Woods,
+searching "marble" should either return no compatible result or place incompatible matches
+in a clearly separated informational group.
+
+Do not allow search to bypass target restrictions.
+
+================================================================================
+59. OBJECT STYLE EXAMPLES
+================================================================================
+
+SOFA
+Regions:
+- upholstery;
+- frame;
+- piping;
+- accent cushion.
+
+Possible workflow:
+1. Select sofa.
+2. Design.
+3. Choose Upholstery.
+4. Choose Fabrics.
+5. Select woven pattern.
+6. Set channel 1 to muted navy.
+7. Set channel 2 to gray.
+8. Choose Frame.
+9. Choose Woods.
+10. Select walnut.
+11. Save complete object preset "Navy Walnut Sofa."
+12. Copy walnut material.
+13. Apply to coffee-table frame.
+
+BED
+Regions:
+- frame;
+- bedding;
+- blanket;
+- trim.
+
+The player can make bedding geometric while leaving the blanket solid, or use the same
+fabric across both via material copy.
+
+LAMP
+Regions:
+- shade;
+- base;
+- hardware;
+- optional light tint.
+
+Changing shade color does not automatically change emitted light unless light tint is a
+separate supported region/property.
+
+RUG
+Regions:
+- field;
+- border;
+- motif;
+- accent.
+
+The rug remains a movable object. Pattern orientation can rotate independently of object
+rotation if the material supports it.
+
+================================================================================
+60. WALL DESIGN EXAMPLES
+================================================================================
+
+EXAMPLE 1: ENTIRE ROOM UNIFIED WALLPAPER
+
+Initial:
+Back = cream paint
+Left = cream paint
+Right = cream paint
+
+Steps:
+1. Enter Wall Design.
+2. Scope = Entire Room.
+3. Region = Upper Wall/Main Field.
+4. Choose Wallpaper.
+5. Choose botanical pattern.
+6. Edit background green-gray.
+7. Edit motif cream.
+8. Accept.
+
+Result:
+Back, Left, Right all receive the same configured wallpaper in the selected region.
+Other wall regions remain unchanged.
+Undo reverses all three together.
+
+EXAMPLE 2: BACK-WALL ACCENT
+
+Starting from Example 1:
+1. Scope = Back Wall.
+2. Region = Upper Wall.
+3. Choose Geometric.
+4. Select large-scale pattern.
+5. Set dark navy + cyan accent.
+6. Accept.
+
+Result:
+Back = geometric accent.
+Left = botanical.
+Right = botanical.
+
+No unlink operation was needed because the walls were always stored independently.
+
+EXAMPLE 3: RIGHT WALL ONLY PANELING
+
+1. Scope = Right Wall.
+2. Select a wall structure that includes lower paneling.
+3. Region = Lower Panel.
+4. Woods -> walnut.
+5. Region = Upper.
+6. Paint -> muted cream.
+7. Accept.
+
+Result:
+Right wall has a structurally different style.
+Back and Left are unchanged.
+
+EXAMPLE 4: ENTIRE ROOM BASEBOARD MATCH
+
+Walls now differ.
+1. Scope = Entire Room.
+2. Region = Baseboard.
+3. Choose Paint.
+4. Enter Hex #23272A.
+5. Accept.
+
+Result:
+Only baseboards synchronize across all three walls.
+Their upper/lower designs remain different.
+
+EXAMPLE 5: LEFT WALL STONE
+
+1. Scope = Left Wall.
+2. Whole Wall Preset = masonry style.
+3. Preview.
+4. Apply.
+
+Only Left changes.
+
+These examples prove why Happy Home must combine whole-room speed with individual-wall
+state.
+
+================================================================================
+61. ENTIRE ROOM WALL DESIGN WORKFLOW
+================================================================================
+
+A full detailed workflow:
+
+1. The player enters Happy Home Design Mode.
+2. They click the back wall.
+3. The wall highlights.
+4. The surface panel identifies "Back Wall - Upper Wall."
+5. The scope selector shows the current scope. Suppose it defaults to Entire Room.
+6. All matching upper-wall regions on Back, Left, and Right receive a subtle highlight.
+7. The player chooses a wall preset containing:
+   - upper wallpaper;
+   - lower painted field;
+   - crown;
+   - baseboard.
+8. Happy Home previews the preset on all three walls.
+9. The player chooses Upper.
+10. Pattern categories show compatible options.
+11. They choose Wallpaper.
+12. Pattern thumbnails appear.
+13. They choose damask.
+14. Three channel bubbles appear:
+    - Background
+    - Motif
+    - Accent
+15. Background is selected.
+16. The player drags the color wheel to deep navy.
+17. All three walls preview deep navy backgrounds.
+18. Motif is selected.
+19. The player enters an exact cyan Hex value.
+20. Accent is selected.
+21. The player chooses a neutral gray.
+22. They choose Lower Wall.
+23. Paint material remains active.
+24. They set warm gray.
+25. They choose Crown.
+26. Woods is available.
+27. They select dark walnut.
+28. They copy the crown material.
+29. They choose Baseboard.
+30. Apply copied walnut.
+31. They save the configured wood as a Saved Material.
+32. They favorite the damask pattern.
+33. They save the complete wall preset.
+34. They Accept.
+35. The room history receives one "Entire Room Wall Design" transaction or a coherent
+    grouped set according to the selected history policy.
+
+At this moment the room is coordinated. Yet Back/Left/Right remain independent states.
+
+If the player immediately changes scope to Back Wall and changes only the wallpaper,
+nothing about the previous whole-room operation needs restructuring.
+
+================================================================================
+62. INDIVIDUAL WALL WORKFLOW
+================================================================================
+
+1. Enter wall design.
+2. Choose scope = Left Wall.
+3. The left wall receives the scope highlight.
+4. Click its upper region.
+5. The region highlight stays only on Left.
+6. Choose a new pattern.
+7. Change colors live.
+8. Accept.
+9. History label: "Left Wall Upper Pattern."
+
+Next:
+1. scope = Right Wall;
+2. choose Crown;
+3. choose saved walnut material;
+4. Accept.
+
+The player can move rapidly among wall scopes without opening separate screens.
+
+The UI should remember the last selected region where sensible, but must update if the
+new wall lacks that region.
+
+================================================================================
+63. FLOOR WORKFLOW
+================================================================================
+
+1. Select Surface Design.
+2. Tap the floor.
+3. Floor regions appear:
+   - Main
+   - Border
+4. Choose Main.
+5. Category = Woods.
+6. Choose herringbone.
+7. Edit wood stain.
+8. Rotate pattern 90 degrees if desired.
+9. Adjust scale.
+10. Choose Border.
+11. Select a darker compatible wood.
+12. Accept.
+
+Furniture stays in place during preview.
+
+For visual inspection, Happy Home can temporarily fade or ghost large furniture while the
+floor editor is active, but this must be a view aid only. The objects are not removed.
+
+================================================================================
+64. MOVABLE FURNITURE WORKFLOW
+================================================================================
+
+1. Open Catalog -> Sort by Room -> Living Room.
+2. Choose sofa.
+3. Purchase or select owned instance.
+4. Placement preview appears.
+5. Move against desired wall.
+6. Rotate if needed.
+7. Confirm placement.
+8. Select sofa -> Design.
+9. Choose Upholstery.
+10. Choose fabric pattern.
+11. Set colors.
+12. Choose Frame.
+13. Choose walnut.
+14. Accept.
+15. Place coffee table.
+16. Copy sofa walnut.
+17. Apply to coffee table -> Frame.
+18. Place curtains.
+19. Copy one upholstery accent color.
+20. Apply to curtain pattern Accent channel.
+
+The player coordinates a room through reusable style data rather than hunting for factory
+sets.
+
+================================================================================
+65. INSTALLED APPLIANCE WORKFLOW
+================================================================================
+
+Owned home:
+1. Player buys compatible upgraded range.
+2. It enters eligible installed-object inventory/storage.
+3. Return to home.
+4. Enter Design Mode.
+5. Select current stove.
+6. Context menu -> Swap in Place.
+7. Compatible owned ranges appear.
+8. Select new range.
+9. Preview shows it at current installation point.
+10. Utility validation passes.
+11. Confirm.
+12. Old range follows configured removal rule.
+13. New range becomes installed.
+14. Player opens Design.
+15. Recolor enamel and knobs if permitted.
+16. Save appliance preset if desired.
+
+Rental:
+1. Select stove.
+2. No Swap in Place.
+3. Design may be available only if rental allows cosmetic changes.
+4. Object Info identifies it as property-owned installed fixture.
+
+================================================================================
+66. RENTAL DECORATING WORKFLOW
+================================================================================
+
+The player rents a furnished apartment.
+
+Property rules:
+- walls allow temporary paint/wallpaper;
+- floor replacement forbidden;
+- installed fixtures locked;
+- user furniture allowed;
+- landlord sofa can move but cannot be stored/sold.
+
+Workflow:
+1. Wall Design.
+2. Scope = Entire Room.
+3. Apply approved removable wallpaper.
+4. Back Wall scope.
+5. Create an accent wall.
+6. Attempt Floor Design.
+7. UI states: "Floor finish cannot be permanently changed in this rental."
+8. Place owned rug instead.
+9. Move landlord sofa to another valid position.
+10. Context menu does not show Add to Inventory or Sell.
+11. Place personal lamp.
+12. Style personal lamp freely.
+13. Attempt to Swap sink.
+14. Swap is absent/disabled with ownership explanation.
+
+The user retains creative freedom without property-right confusion.
+
+================================================================================
+67. WALL COMPATIBILITY EDGE CASES
+================================================================================
+
+CASE: ONE WALL HAS A FIREPLACE
+Back wall has:
+- upper field;
+- fireplace surround;
+- baseboard split around fireplace.
+
+Left/Right have:
+- upper;
+- lower;
+- baseboard.
+
+Entire Room + Upper:
+All three upper regions update.
+
+Entire Room + Fireplace Surround:
+Only Back supports it. Because the semantic region is wall-specific, the scope UI can
+automatically narrow target availability or show:
+"Back Wall only."
+
+Whole Wall Preset:
+Preview shows compatible mapping; unsupported special fireplace region is preserved unless
+the preset explicitly supports it.
+
+CASE: ONE WALL HAS A DOOR
+Wall material wraps around opening.
+Door style remains independent.
+
+CASE: ONE WALL USES DIFFERENT STRUCTURE
+Back = paneled
+Left/Right = plain
+
+Entire Room + Baseboard works if all have baseboard.
+Entire Room + Lower Panel only targets walls with lowerPanel. UI should reveal partial
+scope before commit.
+
+The system should never silently map Lower Panel to Upper Wall just because both happen to
+be slot index 2.
+
+================================================================================
+68. OBJECT PLACEMENT EDGE CASES
+================================================================================
+
+CASE: RUG UNDER SOFA
+Allowed because rug uses a floor-covering collision layer.
+
+CASE: TABLE LAMP WITHOUT TABLE
+Invalid. Message: "Requires table, desk, counter, or compatible support surface."
+
+CASE: WALL ART OVER WINDOW
+Blocked or constrained according to wall placement mask.
+
+CASE: FLOOR LAMP IN DOOR SWING
+Invalid if doorway clearance is modeled.
+
+CASE: DECOR ON BUILT-IN SHELF
+Allowed when shelf exposes support anchors.
+
+CASE: OBJECT PARTLY OUTSIDE ROOM
+Invalid unless object is exterior-compatible and target zone allows it.
+
+CASE: MULTIPLE SMALL DECOR ITEMS
+Surface anchors can allow several items with collision spacing rather than one object per
+table.
+
+================================================================================
+69. STYLE TRANSFER EDGE CASES
+================================================================================
+
+CASE: FOUR-CHANNEL MATERIAL TO TWO-CHANNEL DESTINATION
+Do not silently discard without preview.
+Options:
+- map first two semantic channels when labels match;
+- ask user;
+- block complete material transfer but permit individual color transfer.
+
+CASE: WOOD MATERIAL TO METAL-ONLY REGION
+Blocked.
+
+CASE: COLOR FROM ANY MATERIAL TO ANOTHER CHANNEL
+Usually permitted because a color value is material-agnostic, unless a channel explicitly
+uses non-color data.
+
+CASE: OBJECT STYLE TO DIFFERENT OBJECT TYPE
+Map semantically.
+If too ambiguous, offer region-by-region transfer rather than guessing.
+
+CASE: WALL STYLE TO WALL WITH SPECIAL STRUCTURE
+Use semantic mapping and preserve unsupported regions.
+
+================================================================================
+70. UNDO/REDO EDGE CASES
+================================================================================
+
+ENTIRE ROOM PATTERN CHANGE
+One undo restores Back + Left + Right.
+
+BACK WALL COLOR CHANGE
+One undo restores only Back.
+
+SWAP IN PLACE
+If the game allows undo, one undo restores old installed object and its previous state.
+Economy consequences must also reverse safely. If economy rules make swaps non-undoable,
+confirmation must clearly say so before commit.
+
+PLACE OBJECT
+Undo removes placed instance and restores inventory state.
+
+STORE OBJECT
+Undo replaces object at previous transform and removes it from inventory.
+
+MOVE OBJECT
+Undo returns previous transform.
+
+LINK REGIONS
+Undo restores independent states and previous link metadata.
+
+UNLINK
+Undo re-establishes link.
+
+RESET ROOM WALLS
+One broad transaction; confirmation recommended.
+
+================================================================================
+71. FAILURE AND RECOVERY RULES
+================================================================================
+
+Happy Home must protect persistent residence data.
+
+A design operation should be transactional:
+- validate;
+- prepare state patch;
+- commit;
+- persist;
+- render confirmed state.
+
+If persistence fails:
+- do not show the change as permanently saved;
+- retain recoverable local state if possible;
+- notify user;
+- allow retry.
+
+Inventory operations require special care because duplication or loss is worse than a
+cosmetic glitch.
+
+Place from inventory:
+- reserve instance;
+- preview;
+- commit world placement;
+- mark inventory instance placed;
+- persist atomically.
+
+Store:
+- validate ownership;
+- capture world transform/state;
+- create inventory state;
+- remove world placement within same transaction.
+
+Swap:
+- reserve replacement instance;
+- validate install;
+- store/dispose old according to rule;
+- install new;
+- commit all linked inventory/property changes atomically.
+
+Do not partially complete a swap.
+
+================================================================================
+72. SAVE DATA
+================================================================================
+
+Persistent save data should store state, not giant rendered texture copies whenever
+possible.
+
+Store:
+- object IDs;
+- instance IDs;
+- transforms;
+- style region material IDs;
+- color values;
+- scale/rotation/offset;
+- links;
+- wall preset IDs;
+- per-wall states;
+- floor/ceiling state;
+- inventory;
+- ownership;
+- installed replacement state;
+- user preset references;
+- room style presets or their payloads;
+- history only if persistent undo is desired.
+
+A saved room must reload exactly:
+- same Back wall;
+- same Left wall;
+- same Right wall;
+- same differences among them;
+- same furniture positions;
+- same custom colors;
+- same installed replacements.
+
+If a content asset later disappears, load should use a missing-content fallback without
+destroying the stored reference so it can recover if content returns.
+
+================================================================================
+73. AUTHORING REQUIREMENTS FOR OBJECT CREATORS
+================================================================================
+
+Every designable object asset should ship with metadata.
+
+Required:
+- objectId;
+- category;
+- installed flag;
+- ownership behavior defaults;
+- footprint;
+- placement rules;
+- design regions;
+- material masks/mesh bindings;
+- allowed material categories;
+- built-in presets;
+- collision data;
+- interaction bounds.
+
+Installed objects additionally need:
+- installation class;
+- installation point type;
+- utility requirements;
+- compatible footprint range;
+- swap eligibility;
+- removed-object disposition.
+
+Movable objects need:
+- allowed supports;
+- rotation rules;
+- snap anchors;
+- inventory eligibility.
+
+The editor should validate authoring data and flag:
+- region without mask;
+- missing label;
+- invalid pattern category;
+- impossible placement metadata;
+- duplicate semantic keys;
+- missing default material;
+- inaccessible action.
+
+Content quality determines editor quality.
+
+================================================================================
+74. AUTHORING REQUIREMENTS FOR WALLS
+================================================================================
+
+Every editable wall should declare:
+- wall orientation;
+- wall surface entity;
+- wall style schema;
+- targetable region meshes/masks;
+- semantic region labels;
+- allowed materials per region;
+- opening masks;
+- default materials;
+- wall-preset compatibility;
+- whether optional structural bands exist;
+- permissions;
+- highlight geometry.
+
+Back, Left, and Right do not have to share identical region schemas, but compatible
+semantic keys should be reused.
+
+Recommended common keys:
+upperWall
+lowerWall
+paneling
+chairRail
+crown
+baseboard
+border
+accentBand
+mainField
+
+Specialized walls can add:
+fireplaceSurround
+recess
+column
+builtInTrim
+
+The scope engine depends on semantic consistency.
+
+================================================================================
+75. AUTHORING REQUIREMENTS FOR PATTERNS
+================================================================================
+
+Each pattern should declare:
+- patternId;
+- name;
+- category;
+- source;
+- channel count;
+- channel labels;
+- channel masks;
+- default colors;
+- scale defaults;
+- allowed scale range;
+- rotation support;
+- offset support;
+- finish parameters;
+- surface compatibility;
+- preview asset;
+- tags.
+
+Channel labels should be semantic where possible:
+Background
+Motif
+Grout
+Grain
+Accent
+Stripe
+Border
+
+Fallback:
+Color 1
+Color 2
+Color 3
+Color 4
+
+Meaningful labels make style transfer and accessibility better.
+
+================================================================================
+76. VISUAL DESIGN OF THE EDITOR
+================================================================================
+
+The interface should communicate hierarchy.
+
+Suggested desktop organization:
+
+SECONDARY PANEL
+- selected entity name;
+- object/wall preset swatches;
+- saved presets;
+- Save Preset;
+- Reset options.
+
+PRIMARY DESIGN PANEL
+A. Scope, for walls only
+   Entire Room | Back | Left | Right
+
+B. Region bubbles
+   Upper | Lower | Crown | Baseboard
+
+C. Material category
+   category tabs/dropdown
+
+D. Pattern grid
+   thumbnails, favorite markers, search/filter
+
+E. Channel bubbles
+   only active channels
+
+F. Color/material editor
+   Palette | Wheel | RGB/Hex
+   plus scale/rotation/offset/finish as supported
+
+G. Utilities
+   Copy
+   Apply To
+   Link
+   Randomize
+   Undo
+   Redo
+   Accept
+   Cancel
+
+The scene remains visible behind/beside the UI.
+
+The user should never navigate six full-screen menus just to recolor one motif.
+
+================================================================================
+77. INFORMATION HIERARCHY AND TERMINOLOGY
+================================================================================
+
+Use clear terms consistently.
+
+ENTITY
+The wall, object, floor, ceiling, or fixture being edited.
+
+SCOPE
+Which wall instances receive a wall operation:
+Entire Room / Back / Left / Right.
+
+REGION
+A separately styleable portion:
+Upper Wall, Upholstery, Frame, Baseboard.
+
+MATERIAL/PATTERN
+The selected surface appearance.
+
+CHANNEL
+One recolorable component inside that material.
+
+PRESET
+A saved multi-property appearance.
+
+INSTALLATION POINT
+A fixed place that accepts compatible installed objects.
+
+INVENTORY
+Owned object instances not currently placed/installed.
+
+LINK
+Persistent synchronized editing relationship.
+
+COPY/APPLY
+One-time transfer of data.
+
+These distinctions reduce confusion.
+
+================================================================================
+78. PERFORMANCE TARGETS
+================================================================================
+
+Happy Home should remain responsive with:
+- many owned objects;
+- large pattern libraries;
+- many saved presets;
+- three independently styled walls;
+- real-time color changes.
+
+Recommended technical practices:
+- asset streaming;
+- thumbnail virtualization;
+- shader uniform updates for active colors;
+- caching material instances by hash when safe;
+- batched scope updates;
+- deferred expensive texture baking;
+- efficient raycast layers for selection;
+- spatial indexing for placement;
+- incremental save patches;
+- object pooling for preview ghosts;
+- lazy loading of user preset metadata;
+- offscreen culling.
+
+An Entire Room preview should not independently rebuild three high-resolution textures
+every frame. The same material parameters can be shared for preview rendering while final
+wall states remain separate logical instances.
+
+Logical independence does not forbid render-resource reuse.
+
+================================================================================
+79. INPUT SUPPORT
+================================================================================
+
+MOUSE
+- click select;
+- right-click context;
+- drag move when active;
+- wheel zoom;
+- drag color controls;
+- keyboard modifiers optional accelerators.
+
+TOUCH
+- tap select;
+- long press context;
+- explicit Move mode before dragging object;
+- pinch zoom;
+- touch-friendly sheets;
+- no hover dependency.
+
+KEYBOARD
+- Tab/arrow navigation;
+- Enter activation;
+- Escape cancel/back;
+- shortcuts for Undo/Redo;
+- optional shortcuts for wall scopes;
+- exact numeric fields.
+
+CONTROLLER
+- focus navigation;
+- stick camera;
+- explicit object move mode;
+- bumpers/triggers can change wall scope;
+- accessible labels.
+
+No critical capability should exist only behind Shift+Click. The historic whole-room
+gesture is translated into the visible Entire Room state.
+
+================================================================================
+80. HAPPY HOME DESIGN RULES: NON-NEGOTIABLE
+================================================================================
+
+1. BACK, LEFT, and RIGHT are separate persistent wall states.
+
+2. ENTIRE ROOM is always available for wall styling and means Back + Left + Right.
+
+3. BACK WALL, LEFT WALL, and RIGHT WALL are always available individual scopes.
+
+4. There is no hidden fourth/front wall state.
+
+5. Applying to Entire Room is one grouped transaction but does not permanently link walls.
+
+6. Directly targeting architecture selects the house's own surface, not a placeable fake
+   wall object.
+
+7. Wall regions are independently editable where authored.
+
+8. A material can contain multiple recolorable channels.
+
+9. Color editing includes presets, continuous wheel, and exact RGB/Hex.
+
+10. Preview is live.
+
+11. Undo/redo is pervasive.
+
+12. Object identity and appearance are separate.
+
+13. Saved presets reference style data rather than duplicating object meshes.
+
+14. Catalog browsing supports room and function routes.
+
+15. Non-installed objects can be moved/stored according to placement and ownership rules.
+
+16. Installed objects do not become freely movable.
+
+17. Owned homes can use compatible Swap in Place.
+
+18. Rentals do not receive owner replacement rights by default.
+
+19. Placement compatibility is validated from data.
+
+20. Copying and linking are different operations.
+
+21. Wall scope and wall region are different axes.
+
+22. Floor and ceiling are separate architectural targets, not wall orientations.
+
+23. Doors/windows remain separate objects when walls are restyled.
+
+24. Context menus show meaningful valid actions.
+
+25. Accessibility does not depend on hover or tiny targets.
+
+================================================================================
+81. IMPLEMENTATION PHASES
+================================================================================
+
+PHASE 1: ROOM SHELL AND TARGETING
+- Back, Left, Right wall entities;
+- floor;
+- optional ceiling;
+- architectural ray targeting;
+- region highlight;
+- scope selector;
+- independent wall state.
+
+Acceptance:
+The user can select Entire Room, Back, Left, or Right and the correct surfaces highlight.
+
+PHASE 2: BASIC WALL MATERIALS
+- region schema;
+- wall presets;
+- material categories;
+- pattern thumbnails;
+- one channel color;
+- live preview;
+- Accept/Cancel;
+- undo.
+
+Acceptance:
+A player can make all three walls blue, then make only Back green, undo Back, and preserve
+the three-wall state correctly.
+
+PHASE 3: FULL CREATE-A-STYLE MATERIAL SYSTEM
+- one-to-four channel patterns;
+- bubbles;
+- color wheel;
+- RGB/Hex;
+- pattern scale;
+- rotation/offset;
+- favorites;
+- saved materials.
+
+Acceptance:
+A multi-color wallpaper can have independent background/motif/accent editing.
+
+PHASE 4: OBJECT CATALOG AND PLACEMENT
+- room/function catalog;
+- purchase/owned filters;
+- movable objects;
+- placement validation;
+- move/rotate/nudge;
+- object regions;
+- object style presets.
+
+Acceptance:
+A sofa can be placed, restyled, moved, stored, and returned without losing style.
+
+PHASE 5: INVENTORY
+- persistent instances;
+- store/place;
+- source metadata;
+- duplicate prevention.
+
+PHASE 6: STYLE TRANSFER
+- copy color;
+- copy material;
+- copy object style;
+- Apply To;
+- semantic destination mapping;
+- touch alternative to drag.
+
+PHASE 7: INSTALLED OBJECTS
+- installation points;
+- installed classification;
+- cosmetic design;
+- owned/rental permissions;
+- Swap in Place.
+
+PHASE 8: FLOOR/CEILING ADVANCED STYLE
+- multiple regions;
+- alignment;
+- borders/insets;
+- ceiling regions.
+
+PHASE 9: LINKING AND ROOM PRESETS
+- persistent links;
+- wall presets;
+- room style presets;
+- asymmetrical accent-wall saves.
+
+PHASE 10: POLISH
+- search;
+- favorites;
+- recents;
+- randomize;
+- advanced accessibility;
+- performance caching;
+- multi-select;
+- robust history labels.
+
+================================================================================
+82. ACCEPTANCE TESTS
+================================================================================
+
+TEST 1: ENTIRE ROOM BASIC
+Given all walls differ,
+When scope = Entire Room and Upper Wall gets Pattern X,
+Then Back/Left/Right Upper become Pattern X,
+And all unrelated regions remain unchanged.
+
+TEST 2: BACK ONLY
+Given scope = Back,
+When Upper gets Pattern Y,
+Then only Back Upper changes.
+
+TEST 3: LEFT ONLY
+Given scope = Left,
+When Baseboard color changes,
+Then only Left Baseboard changes.
+
+TEST 4: RIGHT ONLY
+Given scope = Right,
+When wall preset changes,
+Then only Right wall receives compatible preset changes.
+
+TEST 5: WHOLE ROOM THEN ACCENT
+Apply Pattern A to Entire Room.
+Apply Pattern B to Back.
+Expected:
+Back=B, Left=A, Right=A.
+
+TEST 6: UNDO ENTIRE ROOM
+One Entire Room operation affects all three.
+One Undo restores all three.
+
+TEST 7: UNDO INDIVIDUAL
+Back-only operation.
+Undo restores Back only.
+
+TEST 8: NO FOURTH WALL
+Save room.
+Inspect state.
+No front-wall style exists.
+
+TEST 9: REGION PRESERVATION
+Entire Room + Lower Panel edit.
+Upper/Crown/Baseboard unchanged on all walls.
+
+TEST 10: DOOR/WINDOW PRESERVATION
+Change wall wallpaper.
+Door/window object styles unchanged.
+
+TEST 11: COLOR CHANNEL
+Change Motif channel.
+Background channel unchanged.
+
+TEST 12: EXACT COLOR
+Enter Hex.
+Wheel and RGB synchronize.
+Scene displays same value.
+
+TEST 13: OBJECT STYLE
+Change sofa upholstery.
+Frame unchanged.
+
+TEST 14: MATERIAL TRANSFER
+Copy sofa wood to table frame.
+Table top unchanged.
+
+TEST 15: INSTALLED MOVE BLOCK
+Select toilet.
+Move unavailable.
+
+TEST 16: OWNED SWAP
+Owned compatible toilet replacement appears.
+Valid swap succeeds.
+
+TEST 17: RENTAL SWAP
+Rental toilet.
+Swap unavailable.
+
+TEST 18: INVENTORY ROUND TRIP
+Place styled lamp from inventory.
+Store it.
+Place again.
+Style preserved.
+
+TEST 19: INVALID PLACEMENT
+Try table lamp on floor.
+Placement blocked with explanation.
+
+TEST 20: LINK
+Link all baseboards.
+Edit one.
+All linked baseboards update.
+Unlink.
+Edit one.
+Others remain unchanged.
+
+TEST 21: ROOM PRESET WITH ACCENT WALL
+Save room with unique Back wall.
+Reload/apply preset.
+Accent arrangement preserved.
+
+TEST 22: PARTIAL WALL COMPATIBILITY
+One wall lacks selected region.
+Entire Room preview shows partial compatibility rather than silently mapping wrong region.
+
+TEST 23: TOUCH
+All critical actions usable without hover or modifier key.
+
+TEST 24: KEYBOARD
+Wall scope and material editing fully navigable by keyboard.
+
+TEST 25: PERFORMANCE
+Large pattern library does not eagerly render every asset.
+
+================================================================================
+83. QUALITY BAR FOR HAPPY HOME
+================================================================================
+
+Happy Home succeeds when a player can think in interior-design terms rather than software
+terms.
+
+The player should be able to say:
+"I want this wallpaper on all the walls."
+"I want only the back wall different."
+"I want the left wall paneled."
+"I want the right wall stone."
+"I want all baseboards to match."
+"I want this exact blue from the rug on the curtains."
+"I want the sofa's wood to match the table."
+"I want a different stove, but I don't want to drag plumbing and appliances around like
+chairs."
+"I want to put this lamp away and use it later."
+
+The interface should translate those intentions directly.
+
+If the user has to understand mesh indices, texture masks, shader uniforms, or entity IDs,
+the UI has failed. Those mechanisms belong behind the design language.
+
+If the user has to place fake divider objects over a wall to change its appearance, the
+architecture system has failed.
+
+If the user cannot make an accent wall because all walls share one state object, the
+scope model has failed.
+
+If the user has to buy a separate catalog sofa for every recolor, the material system has
+failed.
+
+If the user can put the landlord's toilet in their pocket, ownership/installation rules
+have failed.
+
+If the user loses a room because experimenting with a color cannot be undone, history has
+failed.
+
+The ideal experience is expressive but legible.
+
+================================================================================
+84. SOURCE-SYNTHESIS RATIONALE
+================================================================================
+
+The final Happy Home design intentionally combines different strengths rather than copying
+any one source literally.
+
+From the EQ2-style housing model, Happy Home takes:
+- direct targeting of permanent architectural surfaces;
+- the distinction between architecture and placed decorative objects;
+- pre-authored surface groups;
+- different material families for different surface classes;
+- separately targetable wall bands/trim;
+- the concept that one clicked architectural region can represent a larger authored
+  surface group.
+
+Happy Home modernizes this with:
+- obvious highlights;
+- live previews;
+- explicit surface labels;
+- no need to hunt for a tiny hidden clickable patch;
+- independent Back/Left/Right targets;
+- visible scope selection.
+
+From the Sims 3-style model, Happy Home takes:
+- object identity separate from style;
+- multiple material regions per object;
+- material/pattern libraries;
+- one-to-four recolorable pattern channels;
+- continuous color wheel;
+- exact numeric color entry;
+- reusable presets;
+- favorites;
+- style transfer;
+- room/function catalog routes;
+- live preview;
+- undo/redo;
+- multi-part wall coverings.
+
+Happy Home modifies the earlier three-wall assumption by making whole-room application a
+choice rather than a permanent default. Entire Room retains the speed of Shift-style
+application, but Back/Left/Right can diverge at any time.
+
+From the combined interior mechanics, Happy Home takes:
+- large region bubbles and small channel bubbles;
+- direct state binding;
+- floating editors;
+- pointer-safe interaction;
+- installed versus non-installed objects;
+- owned versus rented permissions;
+- inventory integration;
+- used-goods resale hooks;
+- Swap in Place;
+- placement compatibility;
+- contextual menus;
+- a shared region -> material -> channel model for surfaces and objects.
+
+The result is one coherent system rather than three overlapping ones.
+
+================================================================================
+85. FINAL SOLIDIFIED WALL CONTRACT
+================================================================================
+
+The following is the canonical wall specification for Happy Home.
+
+GEOMETRY
+- exactly three visible editable wall orientations: Back, Left, Right;
+- no editable fourth/front wall;
+- each wall is a separate persistent entity.
+
+SCOPE
+The user can always choose:
+- Entire Room;
+- Back Wall;
+- Left Wall;
+- Right Wall.
+
+ENTIRE ROOM means:
+- Back + Left + Right for wall operations;
+- one grouped undo/redo transaction;
+- not permanent linking.
+
+TARGETING
+- architecture is directly selectable;
+- selected region highlights;
+- target metadata determines semantic region.
+
+REGIONS
+- walls may contain upper/lower/panel/crown/baseboard/etc.;
+- regions remain separately editable;
+- wall structures can differ by wall.
+
+MATERIALS
+- each region has allowed categories;
+- materials/patterns are selectable from a visual library;
+- one material can expose one-to-four recolorable channels;
+- exact color editing available.
+
+PREVIEW
+- changes appear in scene live;
+- current scope determines preview targets.
+
+PRESETS
+- wall presets store full wall style;
+- room presets can preserve three different walls;
+- favorites and saved materials are separate concepts.
+
+TRANSFER
+- color, material, and wall-style copy are distinct payloads;
+- semantic mapping is preferred;
+- compatibility checked before commit.
+
+HISTORY
+- Entire Room edit undoes all three together;
+- individual-wall edit undoes only that wall;
+- Reset respects scope.
+
+DOORS/WINDOWS
+- remain independent objects;
+- wall changes do not automatically recolor them.
+
+ACCESSIBILITY
+- scope is a visible control;
+- not dependent on Shift key;
+- no hover-only targeting;
+- alternative surface list available.
+
+This contract overrides any earlier assumption that all three walls must remain linked.
+
+================================================================================
+86. FINAL SOLIDIFIED OBJECT CONTRACT
+================================================================================
+
+Every object has identity, placement class, ownership class, and style regions.
+
+NON-INSTALLED
+Can generally:
+- move;
+- rotate;
+- nudge;
+- store;
+- place;
+- redesign;
+- copy/apply style.
+
+INSTALLED
+Cannot generally:
+- freely move;
+- rotate away from installation;
+- go to ordinary inventory through Move.
+
+Installed may:
+- be cosmetically redesigned;
+- use Swap in Place in owned housing.
+
+OBJECT STYLE
+- one or more regions;
+- each region has material/pattern;
+- each pattern has color channels;
+- presets are reusable data, not duplicate meshes.
+
+PLACEMENT
+- validated by metadata;
+- informative invalid state;
+- snap/free-placement options;
+- context-aware collision.
+
+INVENTORY
+- stores unique owned instances;
+- preserves style;
+- prevents duplication;
+- feeds placement and Swap in Place.
+
+OWNERSHIP
+- property ownership and object ownership checked separately;
+- rentals do not grant owner replacement rights.
+
+This contract is shared across all furnishing categories.
+
+================================================================================
+87. FINAL DESIGN PRINCIPLE
+================================================================================
+
+Happy Home should make the room feel simultaneously physical and editable.
+
+Physical means:
+- walls are real room surfaces;
+- sinks are connected fixtures;
+- lamps need surfaces or floors;
+- furniture occupies space;
+- property ownership matters;
+- the user designs the home that exists.
+
+Editable means:
+- surfaces are directly targetable;
+- every meaningful appearance region can be styled;
+- patterns can be recolored internally;
+- exact colors can be reused;
+- styles can be copied;
+- the whole room can be coordinated quickly;
+- any individual wall can break away into its own design;
+- experimentation is reversible.
+
+The central Happy Home hierarchy is therefore:
+
+RESIDENCE
+    ->
+ROOM
+    ->
+TARGET
+    ->
+SCOPE
+    ->
+REGION
+    ->
+MATERIAL/PATTERN
+    ->
+COLOR CHANNEL
+    ->
+EXACT VALUE
+
+For movable objects:
+
+RESIDENCE
+    ->
+ROOM
+    ->
+OBJECT
+    ->
+PLACEMENT / INVENTORY
+    ->
+DESIGN REGION
+    ->
+MATERIAL/PATTERN
+    ->
+COLOR CHANNEL
+    ->
+EXACT VALUE
+
+For installed objects:
+
+RESIDENCE
+    ->
+INSTALLATION POINT
+    ->
+INSTALLED OBJECT
+    ->
+COSMETIC DESIGN
+    OR
+COMPATIBLE SWAP IN PLACE
+
+This is the solidified foundation for Happy Home.
+
+The key signature interaction is simple enough to state in one sentence:
+
+A player can style all three visible walls together when they want a coordinated room,
+then switch instantly to Back Wall, Left Wall, or Right Wall whenever they want that wall
+to become unique, while every wall, object, fixture, material region, and color channel
+remains part of the same consistent design system.
+
+
+
+================================================================================
+APPENDIX A. CANONICAL INTERACTION MATRICES
+================================================================================
+
+A.1 WALL APPLICATION MATRIX
+
+The following matrix is normative. It exists to eliminate ambiguity when implementation
+teams interpret the word "room."
+
+Current Scope: ENTIRE ROOM
+Target Region: Upper Wall
+Pattern/material change:
+- Back Upper: changes
+- Left Upper: changes
+- Right Upper: changes
+- Back Lower: unchanged
+- Left Lower: unchanged
+- Right Lower: unchanged
+- Floor: unchanged
+- Ceiling: unchanged
+- Furniture: unchanged
+- Door/window objects: unchanged
+
+Current Scope: BACK WALL
+Target Region: Upper Wall
+Pattern/material change:
+- Back Upper: changes
+- every other architectural/object region: unchanged
+
+Current Scope: LEFT WALL
+Target Region: Baseboard
+Color change:
+- Left Baseboard: changes
+- every other region: unchanged
+
+Current Scope: RIGHT WALL
+Target: Whole Wall Preset
+Preset change:
+- compatible right-wall regions: change
+- left/back wall states: unchanged
+- unique right-wall regions are preserved or mapped according to preset compatibility
+  rules.
+
+The same rule applies to Copy/Apply, randomize, reset, and material changes. Scope selects
+wall instances. Region selects the subpart. Operation determines what property changes.
+
+A.2 OBJECT ACTION MATRIX
+
+Non-installed, player-owned:
+Design = yes
+Move = yes
+Nudge = yes
+Rotate = yes
+Store = yes
+Swap in Place = no
+Sell = according to economy
+Copy/Apply Style = yes when compatible
+
+Installed, owned residence:
+Design = if styleable
+Move = no
+Nudge = no ordinary relocation
+Rotate = no ordinary relocation
+Store = no ordinary inventory action
+Swap in Place = yes when compatible and owned replacement exists
+Sell = only through configured replacement/disposition logic
+Copy/Apply Style = yes when compatible
+
+Installed, rental:
+Design = only when rental permission allows
+Move = no
+Nudge = no
+Rotate = no
+Store = no
+Swap in Place = no by default
+Sell = no
+Copy/Apply Style = only where visual permission allows
+
+Non-installed, property-owned furnished-rental object:
+Design = property rule
+Move = property rule
+Nudge = property rule
+Rotate = property rule
+Store = normally no
+Sell = no
+Copy Style = can be allowed without granting ownership
+Apply Style = property rule
+
+A.3 STYLE PAYLOAD MATRIX
+
+COLOR payload contains:
+- exact color value;
+- optional color-space metadata.
+
+It does not contain:
+- pattern;
+- scale;
+- object identity.
+
+MATERIAL payload contains:
+- pattern;
+- channel colors;
+- scale;
+- rotation;
+- offset;
+- compatible finish properties.
+
+It does not contain:
+- object mesh;
+- object placement;
+- unrelated design regions.
+
+OBJECT STYLE payload contains:
+- complete region/material configuration for one object identity or a semantically
+  transferable style.
+
+WALL STYLE payload contains:
+- wall structural/preset identity where applicable;
+- compatible wall-region materials;
+- configured colors.
+
+ROOM STYLE payload contains:
+- per-wall states for Back, Left, Right;
+- floor;
+- ceiling where supported;
+- architectural trim and other explicitly included room surfaces.
+
+This distinction is mandatory so dragging/copying one blue channel cannot accidentally
+replace an entire sofa or wall preset.
+
+================================================================================
+APPENDIX B. UI MICRO-BEHAVIOR
+================================================================================
+
+The following small behaviors are strongly recommended because they make a complex design
+system feel predictable.
+
+1. Whenever scope changes, announce the new scope visually and accessibly.
+
+2. When Entire Room is active, do not hide which individual walls are included. Show
+"Back + Left + Right" beneath or beside the scope label.
+
+3. If an operation will affect only a subset of Entire Room because of compatibility,
+replace the normal scope summary with a warning such as:
+"Applies to Back + Left; Right has no Lower Panel region."
+
+4. If the player selects a wall directly while Entire Room is active, do not silently
+switch scope to that wall. Direct clicking identifies the semantic region; the existing
+scope remains authoritative unless the user explicitly changes it. This prevents an
+innocent camera click from turning a planned room-wide operation into a one-wall change.
+
+5. Conversely, when an individual wall scope is active and the player clicks a different
+wall, Happy Home may offer a lightweight behavior:
+"Switch scope to Right Wall?"
+The exact product choice can be configurable, but silent scope changes should be avoided.
+
+6. A material thumbnail hover/preview never commits merely because the pointer passed
+over it.
+
+7. Color wheel movement should be smooth and immediate. Numeric fields commit on Enter,
+focus loss, or an explicit accessible action.
+
+8. Pattern scale and rotation controls should show a numeric readout so exact repetition
+is possible.
+
+9. Saved-material and favorite icons should be distinguishable. A star can mean Favorite;
+a save/bookmark symbol can mean Saved Material.
+
+10. Reset commands should display their scope in their label:
+"Reset Back Wall Upper"
+rather than merely "Reset."
+
+11. The current selected object/surface should remain visible in a breadcrumb:
+Bedroom > Back Wall > Upper Wall > Damask > Motif
+or
+Living Room > Modern Sofa > Upholstery > Woven Fabric > Accent.
+
+12. Closing a floating color editor does not close the entire Design Mode.
+
+13. Returning from material editing should preserve catalog/design scroll positions.
+
+14. Search text should persist while switching compatible targets when practical.
+
+15. Incompatible material categories can either be hidden or shown disabled. If shown,
+provide the reason rather than a mysterious gray button.
+
+================================================================================
+APPENDIX C. CONTENT AND ENGINE VALIDATION CHECKLIST
+================================================================================
+
+Before a Happy Home content package is considered valid, automated checks should verify:
+
+ROOM
+- Back wall exists.
+- Left wall exists.
+- Right wall exists.
+- No required design code expects a front wall.
+- Room IDs are unique.
+- Floor target is valid.
+- Ceiling target is correctly optional.
+
+WALL
+- orientation is one of back/left/right;
+- all region keys are unique within the wall;
+- every editable region has a mask/mesh binding;
+- every region has at least one allowed material category;
+- default material is compatible;
+- highlight geometry exists or can be derived;
+- openings do not accidentally receive wall material;
+- whole-wall presets declare compatibility;
+- semantic keys are reused consistently across comparable walls.
+
+PATTERN
+- channel count matches channel definitions;
+- each channel has label and default color;
+- masks exist;
+- thumbnail exists;
+- default scale is within range;
+- supported transforms are declared;
+- material category exists.
+
+OBJECT
+- objectId is unique;
+- placement class exists;
+- installed flag is explicit;
+- placement rules are internally valid;
+- design regions have masks/bindings;
+- built-in preset references valid patterns;
+- inventory eligibility is explicit;
+- object actions are consistent with installation class.
+
+INSTALLATION
+- point type defined;
+- supported object classes defined;
+- required utilities defined;
+- transform valid;
+- clearance metadata valid;
+- removed-object disposition defined.
+
+PRESET
+- referenced object/wall schema exists;
+- region keys map semantically;
+- missing optional regions handled;
+- no preset assumes an undefined front wall.
+
+SAVE/LOAD
+- serialized wall states include Back, Left, Right independently;
+- no whole-room operation collapses them irreversibly;
+- linked regions serialize link IDs;
+- custom colors round-trip exactly;
+- inventory instance IDs remain unique.
+
+These checks should run in development and content-import pipelines so malformed content
+does not become a runtime mystery.
+
+================================================================================
+APPENDIX D. FINAL PLAYER-FACING DESIGN PROMISE
+================================================================================
+
+Happy Home's player-facing promise can be summarized without technical vocabulary:
+
+The player can click the room itself and redesign it. They can make all three visible
+walls match, or choose only the back, left, or right wall. They can change just the upper
+wall, paneling, trim, crown, or baseboard when the wall style provides those parts. They
+can choose materials and patterns, recolor individual parts of those patterns, save their
+favorite combinations, and reuse exact colors elsewhere.
+
+Furniture behaves like furniture. It can be moved, rotated, styled, stored, and brought
+back. Built-in fixtures behave like fixtures. They stay attached to valid installation
+points and, when the player owns the home, can be replaced through a compatible Swap in
+Place workflow instead of being dragged around like chairs. Rentals respect property
+ownership while still allowing whatever reversible personalization the residence permits.
+
+The system should reward experimentation. Every important visual change previews in the
+room, and undo/redo makes it safe to try something else. A coordinated room can be created
+quickly with Entire Room operations and copied styles, but the player is never trapped
+inside that coordination. One wall can become an accent wall at any time. One chair can
+be different from the set. One trim band can be linked while the wallpapers differ.
+
+That balance is the defining Happy Home mechanic: coordinated when the player wants
+speed, independent when the player wants authorship.
+
+END OF APPENDICES
+
+END OF DOSSIER

@@ -1,0 +1,49 @@
+{
+  "format": "PerspectivePolygonScannerAssetManifest",
+  "version": 1,
+  "embeddedImage": {
+    "name": "embedded_room.png",
+    "path": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/embedded_room.png",
+    "width": 1916,
+    "height": 821
+  },
+  "weatherPlaylist": [
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/video/games/virtual/room/sunset.mp4",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/video/games/virtual/room/storm_clouds.mp4",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/video/games/virtual/room/rain_shower.mp4",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/video/games/virtual/room/snowfall.mp4",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/video/games/virtual/room/16944486_3840_2160_25fps.mp4",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/video/games/virtual/room/12557184-hd_1080_1920_30fps.mp4",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/video/games/virtual/room/14707967_2160_3840_25fps.mp4"
+  ],
+  "roomSvgAssets": [
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/Interactive_Ceiling_Fan_GeoJSON_Embedded.svg",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/Interactive_Floor_Lamp_Black_Post_GeoJSON_Embedded_CORRECTED.svg",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/perspective_rug.svg",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/potted_plant.svg",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/sectional_couch.svg",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/white_curtain.svg"
+  ],
+  "fishSvgAssets": [
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/amber_tetra.svg",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/goldfish.svg",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/mixed_fish_school.svg",
+    "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/neon_tetra.svg"
+  ],
+  "audio": {
+    "sourceToggleRecording": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/audio/games/virtual/room/ac-toggle.mp3",
+    "onClip": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/audio/games/virtual/room/ac-on.mp3",
+    "offClip": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/audio/games/virtual/room/ac-off.mp3",
+    "runningLoop": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/audio/games/virtual/room/ac-running.mp3"
+  },
+  "lockedScene": "json/happy-home-locked_scene.json",
+  "editingPolicy": {
+    "fixedScene": "locked",
+    "editableGeometry": "scanner-created GeoJSON surfaces only",
+    "interactiveExceptions": [
+      "interactive SVG iframe contents",
+      "CSS AC switch",
+      "click-to-fill picture frames"
+    ]
+  }
+}

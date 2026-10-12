@@ -1,6 +1,6 @@
-/* Happy Home finished living-room integration */
+/* Botanical Garden finished living-room integration */
 .viewer-screen{aspect-ratio:1916/821!important;min-height:280px!important}
-#happyHomeRoomFrame{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:10;background:#000;display:block;overflow:hidden}
+#happyHomeRoomFrame{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:10;background:#071014;display:block;overflow:hidden}
 .viewer-backdrop{z-index:0!important}
 #catActor{z-index:30}
 .game-hud{z-index:700!important}.control-layer{z-index:850!important}
@@ -27,13 +27,13 @@
 .hh-scope-row button.active{background:var(--deep);color:var(--white)}
 .hh-grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.hh-grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
 .hh-field{display:grid;gap:3px;font:800 9px/1 var(--font);color:var(--dark)}
-.hh-field input,.hh-field select{width:100%;min-height:32px;padding:5px 6px;border:1px solid var(--deep);border-radius:6px;background:#fff;color:#000;font:700 12px/1 var(--font)}
+.hh-field input,.hh-field select{width:100%;min-height:32px;padding:5px 6px;border:1px solid var(--deep);border-radius:6px;background:#F4FBFB;color:#102A30;font:700 12px/1 var(--font)}
 .hh-color-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px;align-items:start}
 .hh-wheel-wrap{display:grid;justify-items:center;gap:5px}
 .hh-color-wheel{width:180px;height:180px;border:2px solid var(--black);border-radius:50%;touch-action:none;cursor:crosshair;background:#fff;box-shadow:0 0 0 2px var(--bright)}
 .hh-brightness{width:180px}
 .hh-color-swatch{width:34px;height:34px;min-width:34px;border-width:1px;padding:0}
-.hh-texture-grid{display:grid;grid-template-columns:repeat(6,minmax(42px,1fr));gap:5px;max-height:190px;overflow:auto;padding:3px;border:1px solid var(--anchor);background:#fff}
+.hh-texture-grid{display:grid;grid-template-columns:repeat(6,minmax(42px,1fr));gap:5px;max-height:190px;overflow:auto;padding:3px;border:1px solid var(--anchor);background:#F4FBFB}
 .hh-texture{aspect-ratio:1;border:2px solid transparent;border-radius:6px;background-size:cover;background-position:center;min-width:0;padding:0}
 .hh-texture.active{border-color:var(--cyan);outline:1px solid var(--black)}
 .hh-muted{font-size:10px;color:var(--dark);line-height:1.35}
@@ -41,3 +41,16 @@
 .hh-pattern-block[hidden]{display:none!important}
 #furnitureObjectSelect{width:100%;min-height:35px}
 @media(max-width:620px){.decor-panel{width:calc(100vw - 12px)!important;height:min(74vh,690px)}.hh-color-layout{grid-template-columns:1fr}.hh-texture-grid{grid-template-columns:repeat(4,minmax(42px,1fr))}.decor-tabs{grid-template-columns:1fr}.decor-panel.decor-collapsed{width:50px!important;height:50px!important}}
+
+/* Pass 4: coherent Lightning Storm geometry for Botanical Garden editor controls. */
+.decor-tabs{background:var(--white,#F4FBFB);border-bottom:2px solid #397078;padding:6px;border-radius:11px 11px 0 0}
+.decor-tab,.hh-scope-row button,.hh-actions button{min-height:38px;border:2px solid #006C78;border-radius:9px;background:linear-gradient(180deg,#F4FBFB,#97FBFF 50%,#00DFE8);color:#102A30;box-shadow:inset 1px 1px 0 #FFFFFFBB,2px 2px 0 #00121744}
+.decor-tab.active,.hh-scope-row button.active{background:linear-gradient(105deg,#071014,#006C78);border-color:#00DFE8;color:#F4FFFF}
+.hh-design-section,.decor-empty,.hh-status{border:2px solid #397078;border-radius:11px;background:linear-gradient(165deg,#F4FBFB,#E6F1F0);color:#102A30}
+.hh-field input,.hh-field select,.hh-texture-grid{background:#F4FBFB;color:#102A30;border:1px solid #397078;border-radius:9px}
+.hh-color-wheel{border-color:#006C78;box-shadow:0 0 0 3px #97FBFF}
+.hh-target-bubble,.hh-channel-bubble{border:2px solid #006C78;box-shadow:inset 0 1px 0 #FFFFFFBB,0 3px 0 #00121755}
+.hh-target-bubble.active,.hh-channel-bubble.active{border-color:#D97820;outline-color:#00DFE8}
+.hh-texture.active{border-color:#D97820;outline:2px solid #00DFE8}
+:where(.decor-panel button,.decor-panel input,.decor-panel select):focus-visible{outline:3px solid #00DFE8;outline-offset:2px}
+@media(max-width:620px){.decor-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.decor-tab{min-width:0;overflow-wrap:anywhere}}

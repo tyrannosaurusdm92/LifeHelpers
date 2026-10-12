@@ -1,0 +1,43 @@
+/* Existing Onyx palette inheritance and independent Happy Home entry point. */
+#onyxDbtWidget[hidden], #onyxDbtHomePanel[hidden], #onyxDbtHomeToggle[hidden] {display:none!important}
+.onyx-dbt-widget { box-sizing:border-box; margin:5px 10px 10px; padding:7px 10px; max-height:38vh; overflow:auto; border:1px solid var(--panel-border,#5eb5d4);border-radius:12px;background:var(--surface-1,rgba(9,17,28,.84));color:var(--panel-text,#f6faff);font:inherit; }
+.onyx-dbt-widget:not([open]) {overflow:visible}
+.onyx-dbt-widget>summary {font:600 13px/1.45 inherit;cursor:pointer;padding:4px;user-select:none;}
+.onyx-dbt-count{font-size:.85em;margin-left:3px}
+.onyx-dbt-content{max-width:100%;overflow-wrap:anywhere;padding:8px 2px;color:inherit;font-size:13px;line-height:1.45}
+.onyx-dbt-content :is(p,h3){margin:6px 0;color:inherit}
+.onyx-dbt-content .onyx-dbt-subhead{margin-top:12px;font-size:1.05em}
+.onyx-dbt-intro,.onyx-dbt-privacy,.onyx-dbt-reason,.onyx-dbt-handout{opacity:.95}
+.onyx-dbt-privacy{font-size:11px;margin-top:12px!important}
+.onyx-dbt-controls{display:flex;align-items:center;gap:8px;margin:8px 0 12px}
+.onyx-dbt-opt{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.onyx-dbt-opt input{width:16px;height:16px;accent-color:#1daac5}
+.onyx-dbt-card{background:var(--surface-2,rgba(13,40,55,.88));border:1px solid var(--panel-border,#5098b7);padding:10px;border-radius:10px;margin:10px 0;max-width:100%}
+.onyx-dbt-card :is(strong,span){display:block}
+.onyx-dbt-module{font-size:11px;opacity:.8;margin-bottom:3px}
+.onyx-dbt-title{font-size:14px}
+.onyx-dbt-handout{font-size:11px}
+.onyx-dbt-actions,.onyx-dbt-done,.onyx-dbt-choose{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.onyx-dbt-done{border-top:1px solid currentColor;padding:7px 0}
+.onyx-dbt-done>span{flex:1 1 130px}
+.onyx-dbt-content :is(button,.onyx-dbt-link){font:600 12px/1.4 inherit;padding:6px 9px!important;border-radius:7px!important;border:1px solid var(--panel-border,#68c5da)!important;background:var(--button-bg,#14576b)!important;color:var(--button-text,#fff)!important;cursor:pointer;text-decoration:none;display:inline-block;width:auto;min-width:0;min-height:30px}
+.onyx-dbt-content :is(button,.onyx-dbt-link):focus-visible,.onyx-dbt-home-toggle:focus-visible{outline:3px solid #ffde89;outline-offset:2px}
+.onyx-dbt-content :is(button,.onyx-dbt-link):hover{filter:brightness(1.16)}
+.onyx-dbt-choose{margin:14px 0 10px}
+.onyx-dbt-choose>label{flex:1 0 100%}
+.onyx-dbt-choose select{min-width:0;flex:1 1 140px;width:100%;max-width:100%;padding:7px 5px;border-radius:7px;background:var(--input-bg,#fff);color:var(--input-text,#111);border:1px solid var(--panel-border,#66b5d6)}
+.onyx-dbt-home-toggle{position:fixed;bottom:24px;right:24px;z-index:2147480000;min-height:44px;padding:10px 15px;background:#073e55!important;color:white!important;border:2px solid #73d5e2!important;border-radius:15px!important;box-shadow:0 6px 18px #000a;cursor:pointer;font-weight:700}
+.onyx-dbt-home-panel{position:fixed;bottom:82px;right:20px;width:min(430px,calc(100vw - 30px));max-height:min(70vh,680px);z-index:2147480001;background:#0b2536!important;color:#f2faff!important;border:2px solid #73d5e2;border-radius:15px;box-shadow:0 10px 35px #000b;overflow:auto;overscroll-behavior:contain}
+.onyx-dbt-home-panel>header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;position:sticky;top:0;background:#10465a;color:white;z-index:1}
+.onyx-dbt-home-panel>header button{font:700 25px/1 inherit;min-width:35px;min-height:35px;background:#184e61;color:white;border:1px solid #8ee6f2;border-radius:8px;cursor:pointer}
+.onyx-dbt-home-panel .onyx-dbt-content{padding:12px 16px}
+.onyx-dbt-chat-card{margin:8px 0 0;padding:10px;border-left:3px solid #8ee6f2;background:rgba(8,64,83,.65);border-radius:8px;color:inherit;font-size:12px}
+.onyx-dbt-chat-card strong{display:block;margin-bottom:6px}.onyx-dbt-chat-card p{margin:5px 0}.onyx-dbt-chat-card a{display:inline-block;margin:4px 7px 4px 0;padding:5px 8px;border:1px solid currentColor;border-radius:6px;color:inherit}
+@media(max-width:520px){.onyx-dbt-home-toggle{right:9px;bottom:12px;padding:8px 11px}.onyx-dbt-home-panel{right:7px;bottom:64px;max-height:72vh;width:calc(100vw - 14px)}.onyx-dbt-widget{margin:5px 6px 9px}}
+@media(prefers-reduced-motion:reduce){.onyx-dbt-home-panel,.onyx-dbt-widget{scroll-behavior:auto}}
+/* Overlay instead of a fifth grid row: preserve Onyx's four-row widget layout. */
+#onyxPopout .onyx-dbt-widget {position:absolute;bottom:76px;right:8px;z-index:110;width:min(350px,calc(100% - 16px));max-height:min(62%,530px);margin:0;box-shadow:0 6px 22px #0008}
+#onyxPopout .onyx-dbt-widget:not([open]) {width:max-content;max-width:calc(100% - 16px);padding:5px 9px}
+#onyxPopout .onyx-dbt-widget:not([open]) summary {white-space:normal}
+#onyxPopout .onyx-dbt-widget[open] {overflow:auto}
+@media(max-width:500px){#onyxPopout .onyx-dbt-widget{bottom:67px;right:6px;width:calc(100% - 12px)}}

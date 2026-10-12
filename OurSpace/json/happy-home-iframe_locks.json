@@ -1,0 +1,142 @@
+{
+  "schema": "happy-home.iframe-locks.v2",
+  "stage": {
+    "width": 1916,
+    "height": 821,
+    "coordinateSpace": "pixel-space-1916x821"
+  },
+  "sourceGeoJSON": "json/happy-home-living_room_perspective_merged_clean_media.geojson",
+  "policy": {
+    "geometryLocked": true,
+    "pictureFramesAreUploadIframes": true,
+    "weatherIsBehindRoomImage": true,
+    "windowAndDoorWhiteIsTransparentPortal": true,
+    "calibration": "Source GeoJSON supplies semantic parent/child hierarchy. Calibrated polygons below lock iframe presentation to the accurate 1916x821 finished-room artwork."
+  },
+  "weather": {
+    "sourceFeatureId": "weather-scene-iframe",
+    "layer": "behind-room-image",
+    "portalSourceFeatureIds": [
+      "left-window-pane-1",
+      "left-window-pane-2",
+      "left-window-pane-3",
+      "left-window-pane-4",
+      "right-window-pane-1",
+      "right-window-pane-2",
+      "right-window-pane-3",
+      "right-window-pane-4",
+      "french-door-left-pane-1",
+      "french-door-left-pane-2",
+      "french-door-left-pane-3",
+      "french-door-left-pane-4",
+      "french-door-right-pane-1",
+      "french-door-right-pane-2",
+      "french-door-right-pane-3",
+      "french-door-right-pane-4"
+    ],
+    "renderPortalCutsFromLockedScene": true,
+    "accurateArtworkPortalNote": "The finished artwork contains three vertical rows of French-door glass. The source GeoJSON supplies eight named door-pane children; the locked-scene portal mask preserves all twelve visible artwork panes while retaining those source parent/child references."
+  },
+  "pictureFrames": [
+    {
+      "sourceFeatureId": "picture-iframe-left-wave",
+      "parentFeatureId": "picture-frame-left-wave",
+      "points": [
+        [
+          85,
+          91
+        ],
+        [
+          218,
+          151
+        ],
+        [
+          218,
+          290
+        ],
+        [
+          84,
+          262
+        ]
+      ],
+      "layer": "front",
+      "clickAction": "device-image-upload",
+      "locked": true
+    },
+    {
+      "sourceFeatureId": "picture-iframe-back-left-moon",
+      "parentFeatureId": "picture-frame-back-left-moon",
+      "points": [
+        [
+          424,
+          222
+        ],
+        [
+          484,
+          222
+        ],
+        [
+          483,
+          324
+        ],
+        [
+          424,
+          324
+        ]
+      ],
+      "layer": "front",
+      "clickAction": "device-image-upload",
+      "locked": true
+    },
+    {
+      "sourceFeatureId": "picture-iframe-back-right-cat",
+      "parentFeatureId": "picture-frame-back-right-cat",
+      "points": [
+        [
+          1439,
+          223
+        ],
+        [
+          1498,
+          223
+        ],
+        [
+          1498,
+          324
+        ],
+        [
+          1439,
+          324
+        ]
+      ],
+      "layer": "front",
+      "clickAction": "device-image-upload",
+      "locked": true
+    },
+    {
+      "sourceFeatureId": "picture-iframe-right-quote",
+      "parentFeatureId": "picture-frame-right-quote",
+      "points": [
+        [
+          1702,
+          151
+        ],
+        [
+          1837,
+          95
+        ],
+        [
+          1837,
+          264
+        ],
+        [
+          1702,
+          291
+        ]
+      ],
+      "layer": "front",
+      "clickAction": "device-image-upload",
+      "locked": true
+    }
+  ]
+}

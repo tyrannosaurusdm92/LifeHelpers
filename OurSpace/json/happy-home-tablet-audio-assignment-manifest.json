@@ -1,0 +1,341 @@
+{
+  "summary": {
+    "tablet_count": 33,
+    "modified_silent_tablets": 20,
+    "existing_audio_tablets_preserved": 13,
+    "playback_rule": "Tablets with newly added audio loop their video for 60 seconds. Added audio shorter than 60 seconds loops without a programmed pause; longer audio plays continuously until the 60-second OFF transition."
+  },
+  "tablets": [
+    {
+      "tablet": 1,
+      "svg": "tablet_01_10771021-hd_3840_2160_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "10771021-hd_3840_2160_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 2,
+      "svg": "tablet_02_12093459_1920_1080_25fps.svg",
+      "status": "added-audio",
+      "source_video": "12093459_1920_1080_25fps.mp4",
+      "scene": "Farm chicks around feeder/waterer",
+      "audio": "bird_chirp_ambience_02.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 59.928,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 3,
+      "svg": "tablet_03_12413226_1920_1080_50fps.svg",
+      "status": "added-audio",
+      "source_video": "12413226_1920_1080_50fps.mp4",
+      "scene": "Flock of pigeons feeding/resting",
+      "audio": "dany_photo-birds-339196.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 110.04,
+      "audio_loops_if_shorter_than_60s": false,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 4,
+      "svg": "tablet_04_12708736-hd_1920_1080_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "12708736-hd_1920_1080_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 5,
+      "svg": "tablet_05_12809962_1920_1080_25fps.svg",
+      "status": "added-audio",
+      "source_video": "12809962_1920_1080_25fps.mp4",
+      "scene": "Two chicks on grass",
+      "audio": "bird_chirp_short_01.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 22.44,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 6,
+      "svg": "tablet_06_12809970_1920_1080_25fps.svg",
+      "status": "added-audio",
+      "source_video": "12809970_1920_1080_25fps.mp4",
+      "scene": "Chicks cuddling/preening on grass",
+      "audio": "freesound_community-birds-chirping-75156.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 22.44,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 7,
+      "svg": "tablet_07_12969877_3840_2160_24fps.svg",
+      "status": "added-audio",
+      "source_video": "12969877_3840_2160_24fps.mp4",
+      "scene": "Small nectar-feeding bird at hummingbird feeder",
+      "audio": "freesound_community-birds-chirping-ambiance-26052.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 19.152,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 8,
+      "svg": "tablet_08_12969891_3840_2160_24fps.svg",
+      "status": "added-audio",
+      "source_video": "12969891_3840_2160_24fps.mp4",
+      "scene": "Colorful nectar-feeding bird at hummingbird feeder",
+      "audio": "bird_ambience_close_01.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 59.928,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 9,
+      "svg": "tablet_09_13801105_3840_2160_30fps.svg",
+      "status": "added-audio",
+      "source_video": "13801105_3840_2160_30fps.mp4",
+      "scene": "Small feeder bird on tray",
+      "audio": "bird_chirp_ambience_02.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 59.928,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 10,
+      "svg": "tablet_10_13806425_1920_1080_25fps.svg",
+      "status": "added-audio",
+      "source_video": "13806425_1920_1080_25fps.mp4",
+      "scene": "Black birds/crows in leafy tree",
+      "audio": "bird_ambience_forest_01.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 59.928,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 11,
+      "svg": "tablet_11_13941507_1920_1080_60fps.svg",
+      "status": "added-audio",
+      "source_video": "13941507_1920_1080_60fps.mp4",
+      "scene": "Small perched bird/hummingbird close-up",
+      "audio": "bird_chirp_short_01.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 22.44,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 12,
+      "svg": "tablet_12_14148274_3840_2160_30fps.svg",
+      "status": "added-audio",
+      "source_video": "14148274_3840_2160_30fps.mp4",
+      "scene": "Cockatoo close-up",
+      "audio": "dany_photo-birds-339196.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 110.04,
+      "audio_loops_if_shorter_than_60s": false,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 13,
+      "svg": "tablet_13_14330901_1920_1080_24fps.svg",
+      "status": "added-audio",
+      "source_video": "14330901_1920_1080_24fps.mp4",
+      "scene": "Shore/wetland bird on tidal flat",
+      "audio": "bird_ambience_spring_01.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 59.952,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 14,
+      "svg": "tablet_14_15029008_1920_1080_60fps.svg",
+      "status": "added-audio",
+      "source_video": "15029008_1920_1080_60fps.mp4",
+      "scene": "Multiple small birds at tube feeders",
+      "audio": "oxidvideos-chirping-birds-ambience-217410.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 97.944,
+      "audio_loops_if_shorter_than_60s": false,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 15,
+      "svg": "tablet_15_15166449_1920_1080_50fps.svg",
+      "status": "added-audio",
+      "source_video": "15166449_1920_1080_50fps.mp4",
+      "scene": "Ducks swimming on pond",
+      "audio": "freesound_community-birds-in-spring-north-carolina-61396.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 381.72,
+      "audio_loops_if_shorter_than_60s": false,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 16,
+      "svg": "tablet_16_15371973-hd_1920_1080_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "15371973-hd_1920_1080_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 17,
+      "svg": "tablet_17_15740806_3840_2160_25fps.svg",
+      "status": "added-audio",
+      "source_video": "15740806_3840_2160_25fps.mp4",
+      "scene": "Black panther resting on log",
+      "audio": "dffdv-leopard-roar-deep-pitched-195922.mp3",
+      "audio_source_type": "panther.zip",
+      "audio_duration_seconds": 1.2,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 18,
+      "svg": "tablet_18_15977837_1920_1080_50fps.svg",
+      "status": "added-audio",
+      "source_video": "15977837_1920_1080_50fps.mp4",
+      "scene": "Woodpecker on tree trunk",
+      "audio": "dany_photo-forestbirds-319791.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 61.656,
+      "audio_loops_if_shorter_than_60s": false,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 19,
+      "svg": "tablet_19_16589502_4096_2160_30fps.svg",
+      "status": "added-audio",
+      "source_video": "16589502_4096_2160_30fps.mp4",
+      "scene": "Green parrot close-up",
+      "audio": "bird_ambience_close_01.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 59.928,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 20,
+      "svg": "tablet_20_16696618_3840_2160_30fps.svg",
+      "status": "added-audio",
+      "source_video": "16696618_3840_2160_30fps.mp4",
+      "scene": "Small bird perched at feeder",
+      "audio": "freesound_community-birds-chirping-75156.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 22.44,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 21,
+      "svg": "tablet_21_16700781-hd_1920_1080_24fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "16700781-hd_1920_1080_24fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 22,
+      "svg": "tablet_22_16944149-hd_1920_1080_25fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "16944149-hd_1920_1080_25fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 23,
+      "svg": "tablet_23_17459489-hd_1920_1080_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "17459489-hd_1920_1080_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 24,
+      "svg": "tablet_24_19657554-hd_1920_1080_60fps_1.svg",
+      "status": "kept-existing-audio",
+      "source_video": "19657554-hd_1920_1080_60fps_1.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 25,
+      "svg": "tablet_25_20494747-hd_1920_1080_25fps.svg",
+      "status": "added-audio",
+      "source_video": "20494747-hd_1920_1080_25fps.mp4",
+      "scene": "Mallard ducks on water",
+      "audio": "freesound_community-birds-in-spring-north-carolina-61396.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 381.72,
+      "audio_loops_if_shorter_than_60s": false,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 26,
+      "svg": "tablet_26_2077836-hd_1920_1080_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "2077836-hd_1920_1080_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 27,
+      "svg": "tablet_27_3117818-hd_1920_1080_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "3117818-hd_1920_1080_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 28,
+      "svg": "tablet_28_5605813-hd_1280_720_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "5605813-hd_1280_720_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 29,
+      "svg": "tablet_29_5758941-hd_1920_1080_25fps.svg",
+      "status": "added-audio",
+      "source_video": "5758941-hd_1920_1080_25fps.mp4",
+      "scene": "Group of chicks",
+      "audio": "bird_chirp_ambience_02.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 59.928,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    },
+    {
+      "tablet": 30,
+      "svg": "tablet_30_8030862-hd_1920_1080_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "8030862-hd_1920_1080_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 31,
+      "svg": "tablet_31_854298-hd_1920_1080_30fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "854298-hd_1920_1080_30fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 32,
+      "svg": "tablet_32_855082-hd_1920_1080_25fps.svg",
+      "status": "kept-existing-audio",
+      "source_video": "855082-hd_1920_1080_25fps.mp4",
+      "playback_mode": "loop-av-to-60s"
+    },
+    {
+      "tablet": 33,
+      "svg": "tablet_33_9116446-hd_1280_720_30fps.svg",
+      "status": "added-audio",
+      "source_video": "9116446-hd_1280_720_30fps.mp4",
+      "scene": "Distant wetland bird in marsh habitat",
+      "audio": "bird_ambience_spring_01.mp3",
+      "audio_source_type": "google-drive",
+      "audio_duration_seconds": 59.952,
+      "audio_loops_if_shorter_than_60s": true,
+      "playback_seconds": 60
+    }
+  ]
+}

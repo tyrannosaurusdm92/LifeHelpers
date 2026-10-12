@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    "sauce",
+    "seasoning",
+    "herb"
+  ],
+  "rules": {
+    "correct": "positive",
+    "wrong": "contamination",
+    "overuse": "possible penalty",
+    "junk": "large penalty"
+  }
+}

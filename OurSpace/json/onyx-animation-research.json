@@ -1,0 +1,666 @@
+{
+  "schema": "onyx-frame-by-frame-animation-research/v1",
+  "atlas": {
+    "cellSize": [
+      64,
+      64
+    ],
+    "dimensions": [
+      1919,
+      1408
+    ],
+    "columns": 30,
+    "rows": 22,
+    "frames": 660,
+    "authoredFacingViews": [
+      "right",
+      "down-right",
+      "down-left",
+      "left",
+      "up-left",
+      "up-right"
+    ],
+    "phasesPerView": 5,
+    "eightWayMapping": "Movement and actor facing quantize to eight direction sectors. The source art contains six authored views; due-south chooses the nearest down diagonal and due-north chooses the nearest up diagonal, retaining the previous left/right side to avoid flicker. A true front/back drawing requires new source frames."
+  },
+  "frameMethod": {
+    "kind": "weighted-exposure flipbook",
+    "update": "requestAnimationFrame drives idle and one-shot elapsed-time timing; walk/run phases use measured screen distance with the active mood cycle duration.",
+    "movingHold": "Hold strong contact/rest/acting poses longer and reserve brief exposures for passing/accent poses.",
+    "locomotion": "Walk and run phases advance by measured screen distance at the active mood’s researched cycle duration; Professor walking uses its profile’s travel lock and exposure duration. The actor holds its last gait phase while moving is still reported but travel stops; elapsed timing is used when screen-distance data is unavailable.",
+    "oneShots": "One-shot actions spread the same key poses over their authored duration with short anticipation/accent exposures.",
+    "reducedMotion": "prefers-reduced-motion freezes atlas animation on its first stable pose.",
+    "quadrupedIdle": "All five authored idle poses are now exposed in the idle sequence, with per-mood weighted holds and five-frame pixel differences retained from the supplied atlases.",
+    "microMovement": "The full-body atlas frames carry the authored paw, face, and tail changes together. Five-frame idle exposure now shows those details at rest; gait phase follows travel to avoid advancing the feet while the actor is stationary."
+  },
+  "profiles": {
+    "base_cat": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_meow_sprite_atlas.png",
+      "idle": 2500,
+      "walk": 520,
+      "run": 390,
+      "weights": {
+        "idle": [
+          7,
+          1,
+          8,
+          1,
+          9
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      "intent": "neutral moving hold; quiet breath; full contact and recovery",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "caring": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_caring_sprite_atlas.png",
+      "idle": 2500,
+      "walk": 520,
+      "run": 390,
+      "weights": {
+        "idle": [
+          7,
+          1,
+          8,
+          1,
+          9
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      "intent": "soft attention with held readable poses and small response accents",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "hungry": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_hungry_sprite_atlas.png",
+      "idle": 1650,
+      "walk": 440,
+      "run": 340,
+      "weights": {
+        "idle": [
+          4,
+          1,
+          4,
+          1,
+          4
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      "intent": "alert sniffing rhythm; brief anticipation accents before food actions",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "judgmental": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_judgmental_sprite_atlas.png",
+      "idle": 2850,
+      "walk": 560,
+      "run": 410,
+      "weights": {
+        "idle": [
+          9,
+          1,
+          7,
+          1,
+          9
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          3,
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      "intent": "long dry holds with short, precise eye and head accents",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "listening": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_listening_sprite_atlas.png",
+      "idle": 2350,
+      "walk": 500,
+      "run": 370,
+      "weights": {
+        "idle": [
+          7,
+          1,
+          8,
+          1,
+          7
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      "intent": "listening hold; head and ear response follows the cue",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "purring": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_purring_sprite_atlas.png",
+      "idle": 3100,
+      "walk": 590,
+      "run": 430,
+      "weights": {
+        "idle": [
+          9,
+          1,
+          10,
+          1,
+          10
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          3,
+          1,
+          2,
+          1,
+          3
+        ]
+      },
+      "intent": "slow rocking/purr cycle with a long settle",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "sleepy": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_sleepy_sprite_atlas.png",
+      "idle": 3900,
+      "walk": 690,
+      "run": 520,
+      "weights": {
+        "idle": [
+          12,
+          1,
+          13,
+          1,
+          14
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          4,
+          1,
+          2,
+          1,
+          5
+        ]
+      },
+      "intent": "slow drooping holds; rare short blink or ear twitch",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "snuggly": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_snuggly_sprite_atlas.png",
+      "idle": 3450,
+      "walk": 630,
+      "run": 470,
+      "weights": {
+        "idle": [
+          10,
+          1,
+          11,
+          1,
+          12
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          3,
+          1,
+          3,
+          1,
+          4
+        ]
+      },
+      "intent": "weighted sink and settle; tail follows the body pose",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "thinking": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_thinking_sprite_atlas.png",
+      "idle": 3000,
+      "walk": 560,
+      "run": 420,
+      "weights": {
+        "idle": [
+          8,
+          1,
+          10,
+          1,
+          11
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          3,
+          1,
+          2,
+          1,
+          4
+        ]
+      },
+      "intent": "hold the thought pose; let gaze/head accents land separately",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "thoughtful": {
+      "form": "quadruped",
+      "asset": "assets/images/games/virtual/atlases/onyx_thoughtful_sprite_atlas.png",
+      "idle": 2800,
+      "walk": 540,
+      "run": 400,
+      "weights": {
+        "idle": [
+          8,
+          1,
+          9,
+          1,
+          10
+        ],
+        "walk": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "run": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "action": [
+          2,
+          1,
+          2,
+          1,
+          3
+        ]
+      },
+      "intent": "gentle head tilt, pause, and return with visible settling",
+      "idleSequence": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    },
+    "advising_professor": {
+      "form": "biped",
+      "asset": "assets/images/games/virtual/atlases/onyx_professor_sprite_atlas.png",
+      "clipTimingsMs": {
+        "idle_stand": [
+          680,
+          100,
+          760,
+          100,
+          940
+        ],
+        "walk_quadruped": 170,
+        "walk_biped": 150,
+        "professor_enter_rise": [
+          100,
+          120,
+          150,
+          150,
+          210
+        ],
+        "professor_exit_rise": [
+          210,
+          150,
+          150,
+          120,
+          100
+        ],
+        "professor_enter_spin": [
+          90,
+          85,
+          105,
+          125,
+          165
+        ],
+        "professor_exit_spin": [
+          165,
+          125,
+          105,
+          85,
+          90
+        ],
+        "professor_sit_settle": [
+          100,
+          135,
+          160,
+          180,
+          185
+        ],
+        "professor_sit_prepare": [
+          210,
+          185,
+          165,
+          140,
+          120
+        ],
+        "professor_sit_lean": [
+          340,
+          140,
+          520,
+          140,
+          360
+        ],
+        "professor_sit_listen": [
+          380,
+          130,
+          500,
+          130,
+          360
+        ],
+        "professor_sit_notes": [
+          300,
+          160,
+          500,
+          160,
+          380
+        ],
+        "professor_sit_crossed": [
+          400,
+          140,
+          500,
+          140,
+          360
+        ]
+      },
+      "intent": "clear key poses, weighted holds, anticipatory rise, settle, and restrained seated moving holds",
+      "gaitPhaseSource": "screen-distance",
+      "researchPass": 6
+    }
+  },
+  "sourceInspection": {
+    "atlasComparison": "All 10 canonical mood atlases plus the meow/base atlas share a 30×22 layout. The mood atlases vary in rows 0–5; rows 6–21 are shared across the eight non-Professor moods and base. Professor remains the biped contact sheet and is not treated as a quadruped mood file.",
+    "atlasDifference": "The supplied mood atlas art contains mood-specific drawing variation for the initial idle/movement rows; other action rows remain shared source art. This pass applies independent timing profiles to every mood and routes the matching mood atlas into the virtual quadruped."
+  },
+  "references": [
+    {
+      "title": "Walt Disney Animation Studios — Animation",
+      "url": "https://www.disneyanimation.com/process/animation/",
+      "use": "Timing, staging, anticipation, follow-through, and secondary action inform phase holds and layered movement."
+    },
+    {
+      "title": "Walt Disney Animation Studios — Hand-Drawn Animation",
+      "url": "https://www.disneyanimation.com/process/hand-drawn-animation/",
+      "use": "Strong poses, expression, weight, and overlapping action guide the frame review."
+    },
+    {
+      "title": "Interactive Quadruped Animation (CAT), UC Davis",
+      "url": "https://web.cs.ucdavis.edu/~neff/papers/CAT_MiG.pdf",
+      "use": "Supports separating locomotion, head aim, paw IK, and tail motion into layers."
+    },
+    {
+      "title": "Generating Believable Gait Patterns for Quadruped Locomotion using Fourier Analysis",
+      "url": "https://sujo.usindh.edu.pk/index.php/USJICT/article/view/644",
+      "use": "Uses sampled animal reference and per-joint gait curves; applied here as consistent footfall and body rhythm, not copied motion."
+    },
+    {
+      "title": "Naoki Yoshibe interview — CLIP STUDIO TIPS",
+      "url": "https://tips.clip-studio.com/en-us/articles/1292",
+      "use": "Discusses timing, key poses, and held drawings; informs uneven exposure timing for the 5-pose loops."
+    },
+    {
+      "title": "E-SAKUGA — About Sakuga",
+      "url": "https://www.esakuga.net/about-sakuga/",
+      "use": "Explains key poses and time-sheet instructions for keyframe timing and inbetweens."
+    },
+    {
+      "title": "The Walt Disney Family Museum — The Seeds of a Legacy: Walt Disney and The Aristocats",
+      "url": "https://www.waltdisney.org/blog/seeds-legacy-walt-disney-and-aristocats",
+      "use": "Film-reference anchor for feline acting and the production team’s cat research; used as broad observation, not traced frames."
+    },
+    {
+      "title": "D23 — Oliver & Company (film)",
+      "url": "https://d23.com/a-to-z/oliver-company-film/",
+      "use": "Film-reference anchor for kitten and canine acting; used as broad observation, not traced frames."
+    },
+    {
+      "title": "D23 — Inside the Animation Research Library: Lady and the Tramp",
+      "url": "https://d23.com/d23-video/d23-fanniversary-inside-the-animation-research-library/",
+      "use": "Film-reference anchor for animal acting and pose continuity; used as broad observation, not traced frames."
+    },
+    {
+      "title": "Disney Movies — Lady and the Tramp (1955)",
+      "url": "https://movies.disney.com/lady-and-the-tramp",
+      "use": "Official film reference for animal pose continuity and paw-led movement; broad observation only, no frames or character designs copied."
+    }
+  ],
+  "applicationCaveat": "The atlas has six authored facings, not eight; straight north/south still use a stable nearest diagonal. Face, paws, and tail are bundled in the supplied full-body frames, so this pass animates their authored pixel changes as a unified sprite and does not invent split-part artwork.",
+  "pass6": {
+    "idleSequence": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "quadrupedGaitClock": "screen-distance plus measured screen speed and the mood-specific walk/run cycle duration",
+    "professorGaitClock": "screen-distance plus measured screen speed and the Professor walk exposure duration",
+    "correction": "The previous runtime exposed only idle phase 0 despite having weighted five-phase profiles; all five authored idle phases are now selected.",
+    "preservesSourceArtwork": true
+  }
+}

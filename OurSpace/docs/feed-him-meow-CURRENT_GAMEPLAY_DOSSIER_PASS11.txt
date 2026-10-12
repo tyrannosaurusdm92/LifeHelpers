@@ -1,0 +1,2766 @@
+FEED HIM MEOW
+CURRENT THREE-BOARD / THREE-PHASE GAMEPLAY DOSSIER
+MARKET MADNESS + INGREDIENT GARDEN + BON APPÉTIT REVISION
+Authoritative gameplay revision date: 2026-10-07
+Pass: 3
+
+================================================================================
+0. PURPOSE / PRECEDENCE
+================================================================================
+
+This file is the current gameplay dossier for Feed him MEOW.
+
+LATEST USER INSTRUCTIONS IN THIS DOSSIER OVERRIDE older Feed him MEOW material
+where the two conflict.
+
+This revision specifically replaces:
+
+- the old Pinball Fishing identity;
+- the old idea that Board 1 is still a pinball/fishing phase;
+- the previous mixed interpretation where both early boards shared equal amounts
+  of Candy Crush and Pudding Pop behavior;
+- the previous simplified Board 3 that ended after YUM/YUCK sorting and a mostly
+  passive oven transition;
+- the former Bon Apatite / Bon Appétit testing path built around a conventional
+  counter -> stove -> plating sequence.
+
+The current named gameplay sequence is:
+
+LEVEL SELECT
+-> RECIPE
+-> MARKET MADNESS
+-> INGREDIENT GARDEN
+-> BON APPÉTIT
+-> ONYX VERDICT
+-> REWARD / NEXT LEVEL
+
+The player should experience these as three connected stages of ONE recipe.
+
+The active recipe remains the authority for:
+- required ingredients;
+- wrong-recipe ingredients;
+- allowed substitutions;
+- seasoning/sauce targets;
+- cookware routing;
+- final scoring;
+- final Onyx judgment.
+
+================================================================================
+1. AUTHORITATIVE PHASE NAMES
+================================================================================
+
+PHASE 1 / BOARD 1
+MARKET MADNESS
+
+This is the replacement name and identity for the former Pinball Fishing phase.
+
+MARKET MADNESS is now primarily inspired by PUDDING POP-style connection play.
+
+It gathers:
+- meat;
+- poultry;
+- fish/seafood when the active recipe needs it;
+- vegetables;
+- fruit when relevant;
+- fresh produce;
+- fresh herbs when categorized with produce.
+
+The old name "Pinball Fishing" is retired from normal player-facing gameplay.
+
+Legacy Pinball Fishing code/assets may remain in source/reference/archive areas if
+they are useful, but the user-facing gameplay phase is MARKET MADNESS.
+
+PHASE 2 / BOARD 2
+INGREDIENT GARDEN
+
+The name Ingredient Garden stays exactly as Ingredient Garden.
+
+INGREDIENT GARDEN is now primarily inspired by CANDY CRUSH-style swap/match-3
+play.
+
+It gathers the recipe ingredients Market Madness does not handle, especially:
+- broth;
+- stock;
+- water;
+- milk;
+- cream;
+- flour;
+- sugar;
+- starches;
+- sauces;
+- oils;
+- butter;
+- spices;
+- seasonings;
+- dried herbs;
+- condiments;
+- baking ingredients;
+- other pantry/dry/liquid recipe components.
+
+PHASE 3 / BOARD 3
+BON APPÉTIT
+
+The name is solidified as:
+
+BON APPÉTIT
+
+Use the accent in the player-facing name.
+
+The old conventional Bon Appétit counter/stove/plating test path is retired.
+
+BON APPÉTIT is now a continuous Wreck-It-Ralph-candy-kart-creation-inspired
+assembly/cooking finale:
+
+SORT
+-> ROUTE
+-> COOKWARE
+-> STOVE HEAT
+-> OVEN BLOW
+-> SAUCE / SEASONING SHOOT
+-> FINISHED DISH
+-> ONYX VERDICT
+
+The clip is interaction/pacing inspiration only.
+Do not copy Disney characters, dialogue, art, audio, branding, or exact scenery.
+
+================================================================================
+2. CURRENT HIGH-LEVEL FANTASY
+================================================================================
+
+A recipe appears.
+
+The player first goes through MARKET MADNESS to collect the fresh/raw foundation
+of the recipe.
+
+The player then goes through INGREDIENT GARDEN to collect the pantry/liquid/dry
+components.
+
+Everything collected, plus recipe-plausible decoys and humorous trash, reaches
+BON APPÉTIT.
+
+BON APPÉTIT turns the final stage into a fast, physical-feeling assembly line:
+
+1. Rotate the joystick to guide falling ingredients through the sorter.
+2. Send correct recipe ingredients to YUM.
+3. Send wrong-recipe ingredients and trash to YUCK.
+4. Route accepted ingredients into the correct cooking vessel:
+   - frying pan;
+   - mixing bowl;
+   - pot.
+5. Send the vessels/components onward to the stove.
+6. Keep the stove hot by continuously rotating/twirling the joystick.
+7. DO NOT use a flipping mechanic.
+8. When the recipe enters the oven step, blow to drive/maintain the oven action.
+9. Use the shooter to hit the correct sauces and seasonings.
+10. Avoid shooting ingredients/flavors the recipe does not call for.
+11. The finished dish is revealed.
+12. Onyx judges the whole level.
+
+Onyx arrives/appears HUNGRY during Bon Appétit anticipation.
+
+Final Onyx mood is determined by the final star result:
+
+3, 4, or 5 stars
+-> PURRING
+
+0, 1, or 2 stars
+-> JUDGMENTAL
+
+This threshold is authoritative.
+
+================================================================================
+3. CURRENT COMPLETE FLOW
+================================================================================
+
+FEED_HIM_MEOW_HOME
+-> LEVEL_SELECT
+-> RECIPE_GENERATOR
+-> RECIPE_BRIEF
+-> MARKET_MADNESS_INTRO
+-> MARKET_MADNESS_PLAY
+-> MARKET_MADNESS_RESULT
+-> INGREDIENT_GARDEN_INTRO
+-> INGREDIENT_GARDEN_PLAY
+-> INGREDIENT_GARDEN_RESULT
+-> BON_APPETIT_INTRO
+-> ONYX_HUNGRY
+-> BON_APPETIT_SORT
+-> BON_APPETIT_COOKWARE_ROUTE
+-> BON_APPETIT_STOVE_HEAT
+-> BON_APPETIT_OVEN_BLOW where recipe requires oven processing
+-> BON_APPETIT_FLAVOR_SHOOT
+-> BON_APPETIT_DISH_REVEAL
+-> STAR_RATING
+-> IF stars >= 3:
+      ONYX_PURRING
+   ELSE:
+      ONYX_JUDGMENTAL
+-> REWARD
+-> NEXT_LEVEL_OR_REPLAY
+
+There is no separate old-style:
+COUNTER
+-> STOVE
+-> PLATING
+workflow anymore.
+
+The stove still exists as part of Bon Appétit, but it is now part of the
+Wreck-It-Ralph-style assembly sequence rather than a conventional freeform kitchen
+station simulator.
+
+================================================================================
+4. LEVEL SELECT / RECIPE
+================================================================================
+
+The existing Ingredient Garden level-select work remains the preferred Level
+Select foundation.
+
+Level Select chooses:
+- level;
+- seed;
+- difficulty;
+- Solo or Household Duo;
+- accessibility options.
+
+Recipe Generator remains the central authority.
+
+The recipe must be selected/generated BEFORE Market Madness.
+
+The recipe should expose at minimum:
+
+recipeId
+recipeName
+difficulty
+ingredients[]
+freshIngredients[]
+marketIngredients[]
+gardenIngredients[]
+seasonings[]
+sauces[]
+allowedSubstitutions[]
+cookwareRoute[]
+stoveHeatTarget
+ovenRequired
+ovenBlowTarget
+flavorTargets[]
+judgmentCriteria
+tags[]
+
+Every ingredient references one canonical ingredient ID.
+
+Do not create:
+- a Market Madness chicken;
+- a separate Ingredient Garden chicken;
+- a third Bon Appétit chicken.
+
+It is one canonical chicken object moving through context-specific states.
+
+================================================================================
+5. THREE-STAGE INGREDIENT RESPONSIBILITY
+================================================================================
+
+MARKET MADNESS owns the FRESH / RAW MARKET categories.
+
+Typical Market Madness targets:
+- beef;
+- chicken;
+- pork;
+- turkey;
+- fish;
+- shellfish;
+- carrots;
+- onions;
+- peppers;
+- potatoes;
+- tomatoes;
+- leafy greens;
+- fruit;
+- fresh herbs where appropriate.
+
+INGREDIENT GARDEN owns PANTRY / DRY / LIQUID / FLAVOR-BASE categories.
+
+Typical Ingredient Garden targets:
+- water;
+- broth;
+- stock;
+- milk;
+- cream;
+- flour;
+- cornstarch;
+- rice;
+- pasta when categorized as dry pantry;
+- oil;
+- butter;
+- sugar;
+- salt;
+- pepper;
+- paprika;
+- garlic powder;
+- dried herbs;
+- barbecue sauce;
+- soy sauce;
+- vinegar;
+- condiments;
+- baking ingredients.
+
+BON APPÉTIT does not replace the gathering stages.
+
+Instead it receives:
+- what was collected;
+- what the recipe expects;
+- deliberately generated wrong-recipe food decoys;
+- humorous trash/junk;
+- sauce and seasoning targets;
+- cookware-routing requirements.
+
+================================================================================
+6. MARKET MADNESS — IDENTITY
+================================================================================
+
+MARKET MADNESS should read as a fast ingredient-connection puzzle.
+
+If someone watches ten seconds of Market Madness, the first comparison should be:
+
+"Pudding Pop-style line connecting with meat and produce."
+
+Not:
+"Pinball Fishing."
+
+Not:
+"Candy Crush with a market skin."
+
+The PRIMARY PLAYER VERB is tracing/connecting.
+
+Core loop:
+
+1. Identify a connected path of matching ingredient tokens.
+2. Press/touch/select the first token.
+3. Drag through matching adjacent tokens.
+4. Allow orthogonal connections.
+5. Allow diagonal connections when enabled by the layout.
+6. Do not reuse one token twice inside the same trace.
+7. Release to resolve the chain.
+8. Connected ingredients clear/collect.
+9. Board refills/repositions.
+10. Longer chains create stronger rewards/specials.
+11. Continue until the market ingredient goals are satisfied or the move/resource
+    budget is exhausted.
+
+The interaction should feel deliberate and "snaky."
+
+A player should frequently choose between:
+- taking a short legal chain now;
+- tracing a longer route to create a stronger special;
+- routing through a special ingredient token;
+- preserving a cluster for a larger later connection.
+
+================================================================================
+7. MARKET MADNESS — PUDDING POP RESEARCH APPLICATION
+================================================================================
+
+Apply the Pudding Pop research as the DOMINANT inspiration:
+
+- press -> drag -> release;
+- same-type/same-family connected chains;
+- path can bend repeatedly;
+- diagonal adjacency may be valid;
+- longer chains are worth more;
+- special generation should depend heavily on chain length;
+- specials may be incorporated inside the traced path;
+- objectives matter more than raw score.
+
+Recommended thresholds can be tuned, but the design principle is:
+
+3+ connection:
+basic legal collect.
+
+5+ connection:
+special generation candidate.
+
+8+ connection:
+stronger special / bonus candidate.
+
+12+ connection:
+high-value chain reward / dual special / large objective bonus candidate.
+
+Exact values can be data-driven by difficulty.
+
+Do not blindly reproduce Pudding Pop branding or assets.
+
+================================================================================
+8. MARKET MADNESS — MARKET PRESENTATION
+================================================================================
+
+The board should visually feel like a chaotic market / butcher / produce stand
+without becoming visually cluttered.
+
+Possible visual zones:
+- butcher counter;
+- produce baskets;
+- market crates;
+- fish counter;
+- hanging market signs;
+- chilled case;
+- farmstand bins;
+- carts;
+- bags;
+- baskets.
+
+Tokens should remain readable.
+
+Background decoration must never obscure:
+- trace path;
+- ingredient identity;
+- objectives;
+- blockers;
+- special pieces.
+
+The name "Market Madness" should support the sense that the player is rapidly
+gathering the fresh things needed before moving on.
+
+================================================================================
+9. MARKET MADNESS — OBJECTIVE RULES
+================================================================================
+
+The active recipe determines Market Madness targets.
+
+BARBECUE CHICKEN example:
+YUM/required Market Madness targets may include:
+- chicken;
+- onion;
+- pepper, if recipe requires it.
+
+Market Madness should NOT require:
+- barbecue sauce;
+- flour;
+- stock;
+- paprika;
+- salt;
+because those belong to Ingredient Garden.
+
+A seafood recipe can require fish.
+
+A non-seafood recipe must not force fish as a required Market Madness objective.
+
+Non-objective market food may appear as filler/decoys when useful, but it should
+not drown out required recipe targets.
+
+================================================================================
+10. MARKET MADNESS — SPECIAL PIECES
+================================================================================
+
+Feed him MEOW's paw-special identity can remain.
+
+Suggested authoritative visual/effect mapping:
+
+CYAN PAW
+- horizontal row/line clear.
+
+ORANGE PAW
+- vertical column/line clear.
+
+LIME GREEN PAW
+- 3x3 / nine-cell local clear.
+
+YELLOW PAW
+- approximately 65% random playable-tile zap/clear.
+
+In Market Madness these are primarily EARNED BY LONG CONNECTIONS.
+
+Special overlays sit above ingredient art and remain transparent enough for the
+underlying ingredient to be readable.
+
+Do not communicate function by color alone.
+Use icons/orientation/shape.
+
+================================================================================
+11. INGREDIENT GARDEN — IDENTITY
+================================================================================
+
+Ingredient Garden keeps its existing name.
+
+Ingredient Garden should now read more clearly as a CANDY CRUSH-style
+swap/match-3 board.
+
+If someone watches ten seconds of Ingredient Garden, the first comparison should
+be:
+
+"Candy Crush-style ingredient matching."
+
+Not:
+"Pudding Pop line tracing."
+
+The PRIMARY PLAYER VERB is swapping adjacent pieces to form matches.
+
+Core loop:
+
+1. Select one ingredient token.
+2. Swap with an eligible adjacent token.
+3. The swap must create a legal match or special interaction.
+4. Matched ingredients clear/collect.
+5. Blockers/objectives react.
+6. Gravity/refill resolves.
+7. Cascades can occur automatically.
+8. Special pieces may be created from geometric patterns.
+9. Continue until the pantry/liquid/dry objectives are met.
+
+================================================================================
+12. INGREDIENT GARDEN — CANDY CRUSH RESEARCH APPLICATION
+================================================================================
+
+Apply Candy Crush-style mechanics as the dominant inspiration:
+
+- adjacent swap;
+- row/column matches;
+- cascade resolution;
+- gravity;
+- refill;
+- objective-first level design;
+- board topology;
+- blockers;
+- drop routes;
+- dispensers/generators where appropriate;
+- portals;
+- conveyors where useful;
+- specials based on geometric patterns;
+- limited move budgets where appropriate.
+
+The same move can be good or bad depending on whether it advances the recipe
+objective.
+
+Do not reduce Ingredient Garden to "make the biggest match."
+
+Recipe objectives remain central.
+
+================================================================================
+13. INGREDIENT GARDEN — SPECIAL CREATION
+================================================================================
+
+Suggested pattern mapping:
+
+MATCH 4 IN A LINE
+-> directional paw special.
+
+T / L / COMPACT 5
+-> local blast / lime-green-paw family.
+
+STRAIGHT 5
+-> high-power yellow-paw / recipe-targeting special candidate.
+
+SPECIAL + SPECIAL
+-> combined effects through shared board logic.
+
+Exact creation thresholds can be tuned per difficulty.
+
+Keep the existing Feed him MEOW special-paw presentation rather than copying
+Candy Crush candy art.
+
+================================================================================
+14. INGREDIENT GARDEN — PANTRY PRESENTATION
+================================================================================
+
+The board can visually use:
+- pantry shelves;
+- jars;
+- bottles;
+- flour bags;
+- spice racks;
+- milk/cream containers;
+- sauce bottles;
+- dry-goods bins;
+- broth/stock containers;
+- mixing-prep iconography.
+
+Useful blocker families:
+- jar seals;
+- bottle locks;
+- sticky spills;
+- flour clouds;
+- stacked containers;
+- cupboard gates;
+- syrup/honey pinned cells;
+- layered packaging;
+- liquid channels.
+
+Every blocker should alter a decision.
+
+Do not add durability merely for padding.
+
+================================================================================
+15. HANDOFF FROM MARKET MADNESS TO INGREDIENT GARDEN
+================================================================================
+
+The run state is shared.
+
+Market Madness output:
+- collected fresh/raw ingredient IDs;
+- quantities;
+- quality/bonus state;
+- mistakes;
+- specials/bonuses earned;
+- phase score.
+
+Ingredient Garden receives the same recipe and knows what is already secured.
+
+Do not recollect the same required quantity simply because another board contains
+the same ingredient art.
+
+Ingredient Garden should primarily fill categories Market Madness does not own.
+
+================================================================================
+16. BON APPÉTIT — CURRENT IDENTITY
+================================================================================
+
+BON APPÉTIT is the final active gameplay phase.
+
+The name is no longer a placeholder or typo variant.
+
+Player-facing name:
+BON APPÉTIT
+
+The previous Bon Appétit design used conventional kitchen testing:
+- counter preparation;
+- stove station;
+- plating station;
+- Onyx test/judgment.
+
+That workflow is RETIRED.
+
+The current Bon Appétit identity is based on the FEEL of the candy-kart creation
+sequence in the supplied Wreck-It-Ralph clip:
+
+- material comes through a machine;
+- the player must direct/manipulate it quickly;
+- different physical actions happen in sequence;
+- the machine transforms the chosen material;
+- mistakes can contaminate the result;
+- the finished object is revealed as the payoff.
+
+Feed him MEOW transforms that idea into a food-assembly machine.
+
+================================================================================
+17. BON APPÉTIT — OVERALL SEQUENCE
+================================================================================
+
+BON APPÉTIT starts with Onyx appearing HUNGRY.
+
+Then:
+
+STAGE A
+YUM / YUCK SORT
+
+STAGE B
+COOKWARE ROUTING
+
+STAGE C
+STOVE HEAT / TWIRL
+
+STAGE D
+OVEN BLOW, when applicable
+
+STAGE E
+SAUCE / SEASONING SHOOT
+
+STAGE F
+FINISHED DISH REVEAL
+
+STAGE G
+STAR RATING + ONYX VERDICT
+
+These stages should flow without loading unrelated mini-games.
+
+The camera/UI may change emphasis, but the player should feel like they are
+operating one ridiculous cooking machine.
+
+================================================================================
+18. BON APPÉTIT — ONYX HUNGRY ENTRANCE
+================================================================================
+
+When Bon Appétit begins:
+
+- show the existing HUNGRY Onyx mood/image;
+- Onyx is clearly waiting for the food;
+- this establishes anticipation before the player begins sorting.
+
+Hungry is the PRE-VERDICT mood.
+
+Hungry does not itself mean the player is failing.
+
+Hungry remains active through the cooking-machine sequence unless a brief
+reaction overlay is used.
+
+At the final verdict:
+- Hungry resolves to Purring at 3+ stars;
+- Hungry resolves to Judgmental below 3 stars.
+
+================================================================================
+19. BON APPÉTIT STAGE A — YUM / YUCK SORT
+================================================================================
+
+This is the first Bon Appétit interaction.
+
+Objects entering the sorter include:
+
+A. CORRECT RECIPE INGREDIENTS
+- required ingredients gathered in Market Madness;
+- required ingredients gathered in Ingredient Garden;
+- allowed substitutions where the recipe permits them;
+- allowed optional ingredients where the recipe permits them.
+
+B. WRONG-RECIPE FOOD
+Edible things that are wrong for THIS recipe.
+
+Examples:
+- fish in barbecue chicken;
+- egg in barbecue chicken when the recipe does not use egg;
+- milk in a broth-only recipe;
+- strawberries in a savory dish;
+- wrong sauce;
+- wrong vegetable;
+- unnecessary spice.
+
+C. TRASH / JUNK
+Keep the humorous junk family from the former Pinball Fishing work.
+
+Examples:
+- Old Boot;
+- Rusty Can;
+- Soggy Newspaper;
+- Mysterious Sock;
+- Bent Spoon;
+- Seaweed Wig;
+- other clearly junk objects already present in the project.
+
+The player must classify each item as:
+
+YUM
+belongs in the current recipe
+
+or
+
+YUCK
+does not belong in the current recipe
+
+YUCK does NOT mean "inedible."
+
+YUCK means:
+"Do not put this in THIS recipe."
+
+================================================================================
+20. BON APPÉTIT SORT CONTROL — ROTATING JOYSTICK
+================================================================================
+
+The defining input is ROTATION.
+
+The player rotates/twirls the joystick to turn the sorter and line up falling
+objects with their destination.
+
+This should feel mechanical and physical, not like clicking a text menu.
+
+Conceptual control:
+
+LEFT STICK / PRIMARY VIRTUAL JOYSTICK
+- rotate clockwise;
+- rotate counterclockwise;
+- continue rotating to move the active chute/carousel/track.
+
+The exact visual machine can be:
+- rotating chute ring;
+- rotating basket carousel;
+- rotating funnel;
+- rotating track;
+- rotating selector wheel;
+- rotating ingredient rail.
+
+The important requirement is:
+THE PLAYER STEERS FALLING INGREDIENTS BY ROTATING THE JOYSTICK.
+
+The sorter should provide:
+- readable destination icons;
+- recipe reminder;
+- ingredient labels on focus;
+- visible YUM target;
+- visible YUCK target;
+- generous collision funnels;
+- recovery time before an item crosses the final gate.
+
+================================================================================
+21. BON APPÉTIT — YUM / YUCK RESULTS
+================================================================================
+
+CORRECT RECIPE INGREDIENT -> YUM
+Strong positive score.
+
+ALLOWED OPTIONAL -> YUM
+Positive score.
+
+WRONG-RECIPE FOOD -> YUCK
+Positive score because the player correctly rejected it.
+
+TRASH -> YUCK
+Positive score plus humorous feedback.
+
+WRONG-RECIPE FOOD -> YUM
+Penalty and contamination marker.
+
+TRASH -> YUM
+Large penalty and strong Judgmental-risk marker.
+
+REQUIRED INGREDIENT -> YUCK
+Penalty and missing-ingredient marker.
+
+One wrong sort should not instantly fail the entire run.
+
+The player can recover through later performance unless required ingredients have
+become impossible to complete.
+
+================================================================================
+22. BON APPÉTIT STAGE B — COOKWARE ROUTING
+================================================================================
+
+After an ingredient passes the YUM gate, it does not immediately disappear into
+an oven.
+
+It must be routed into the correct recipe vessel.
+
+Primary vessel families:
+
+FRYING PAN
+For ingredients/components requiring pan/frying/sauté-style cooking.
+
+MIXING BOWL
+For ingredients/components that should be combined/mixed before heat or final
+transfer.
+
+POT
+For ingredients/components requiring boiling, simmering, broth, pasta, rice,
+soup, gravy, or similar pot-based handling.
+
+The recipe specifies cookware routing.
+
+Example:
+
+BARBECUE CHICKEN
+- chicken -> frying pan or recipe-defined roasting path;
+- sauce components -> mixing bowl / flavor stage;
+- broth component, if present -> pot only if recipe actually calls for it.
+
+PASTA
+- pasta + water -> pot;
+- sauce ingredients -> pan/pot or bowl according to recipe definition.
+
+BATTER
+- flour + liquid + eggs -> mixing bowl;
+- later moves onward to the recipe's heat path.
+
+Do not route every YUM ingredient to the same vessel.
+
+================================================================================
+23. BON APPÉTIT — COOKWARE SORT INPUT
+================================================================================
+
+Use the SAME rotating-joystick language from YUM/YUCK sorting.
+
+The player should not suddenly have to learn a different control scheme.
+
+The sorter changes destinations from:
+
+YUM / YUCK
+
+to:
+
+PAN / BOWL / POT
+
+The rotating machine can visually reconfigure its destination ring.
+
+Correct vessel routing:
+- increases preparation accuracy;
+- improves final dish;
+- may create combo/streak bonus.
+
+Wrong vessel:
+- creates a recoverable mistake where possible;
+- reduces preparation accuracy;
+- may alter the final dish if not corrected.
+
+================================================================================
+24. BON APPÉTIT STAGE C — STOVE HEAT
+================================================================================
+
+After cookware receives its ingredients, the vessels travel to the stove.
+
+The stove interaction is NOT a flipping game.
+
+NO FLIPPING.
+
+The defining interaction is:
+KEEP IT HOT BY ROTATING / TWIRLING THE JOYSTICK.
+
+The player continuously rotates the joystick in circular motions.
+
+This is intentionally inspired by the physical pumping/spinning energy of the
+candy-kart assembly sequence.
+
+The system tracks:
+
+heatInput
+heatMomentum
+heatTarget
+heatLowThreshold
+heatHighThreshold
+timeInTargetZone
+timeTooCold
+timeTooHot
+
+The goal is not maximum heat.
+
+The goal is to keep the recipe inside its target heat band.
+
+Too little rotation:
+- heat drops;
+- cooking slows;
+- texture/doneness score drops.
+
+Correct sustained rotation:
+- heat remains in the recipe's good band;
+- cooking progress rises.
+
+Wild/excessive sustained rotation:
+- can push heat too high;
+- burn/scorch risk rises.
+
+================================================================================
+25. STOVE FEEDBACK
+================================================================================
+
+The player needs clear non-audio-only feedback.
+
+Show:
+- heat meter;
+- target band;
+- cookware glow/steam/sizzle state;
+- progress meter;
+- Too Cold / Good Heat / Too Hot iconography;
+- reduced-motion alternative.
+
+Do not depend only on:
+- color;
+- sound;
+- vibration.
+
+Do not make completion require frame-perfect joystick circles.
+
+Loose, readable circular movement should count.
+
+Accessibility can accept:
+- repeated directional sweeps;
+- hold-to-maintain-heat mode;
+- simplified circular gesture mode.
+
+Accessibility does not reduce base rewards.
+
+================================================================================
+26. BON APPÉTIT STAGE D — OVEN BLOW
+================================================================================
+
+When the active recipe has an oven/bake/roast step, the machine transfers the
+relevant vessel/component into the oven.
+
+The primary fantasy is:
+THE PLAYER BLOWS TO DRIVE / MAINTAIN THE OVEN.
+
+Preferred implementation:
+- microphone-supported breath/blow detection when permission and hardware permit.
+
+The player blows toward the microphone.
+
+The system should detect sustained breath energy rather than speech content.
+
+Track:
+blowStrength
+blowDuration
+ovenHeat
+ovenTarget
+ovenProgress
+
+The action should evoke feeding air/energy into the oven.
+
+Do not require spoken words.
+
+================================================================================
+27. OVEN BLOW — ACCESSIBILITY / FALLBACK
+================================================================================
+
+Blowing cannot be the only possible input because:
+- microphones may be unavailable;
+- microphone permission may be denied;
+- some players cannot safely/comfortably blow;
+- noisy rooms can interfere with detection.
+
+Therefore the same action must have an equivalent accessible fallback such as:
+
+R / MAIN ACTION HOLD
+- hold to blow;
+
+or
+
+RIGHT TRIGGER / LARGE TOUCH BUTTON
+- hold/pulse to blow.
+
+The game may visually show the same air/oven effect.
+
+Using the fallback does not reduce rewards.
+
+No information may be audio-only.
+
+================================================================================
+28. BON APPÉTIT STAGE E — SAUCE / SEASONING SHOOT
+================================================================================
+
+After the core cooking step, flavoring becomes a shooting/aiming sequence.
+
+The player uses an aim-and-shoot mechanic to hit the sauces and seasonings the
+recipe actually needs.
+
+Possible targets:
+- barbecue sauce;
+- soy sauce;
+- gravy;
+- hot sauce where recipe allows it;
+- salt;
+- pepper;
+- paprika;
+- garlic powder;
+- herbs;
+- sugar;
+- garnish/finishing flavor items;
+- recipe-specific sauce/seasoning targets.
+
+The shooter should feel like the fast final-material selection in the
+candy-kart-creation sequence.
+
+The player must NOT blindly shoot every visible target.
+
+Wrong sauces/seasonings can make the dish worse.
+
+================================================================================
+29. SAUCE / SEASONING SHOOT — RULES
+================================================================================
+
+CORRECT FLAVOR TARGET HIT
+- add required flavor;
+- positive score;
+- seasoningAccuracy rises.
+
+OPTIONAL ALLOWED FLAVOR HIT
+- small bonus or neutral-positive result.
+
+WRONG FLAVOR TARGET HIT
+- contamination/wrong-flavor penalty;
+- seasoningAccuracy drops.
+
+TOO MUCH OF CORRECT FLAVOR
+- possible over-season penalty when the recipe defines quantity limits.
+
+MISSED REQUIRED FLAVOR
+- missing seasoning/sauce penalty.
+
+JUNK TARGET
+- should normally be avoided;
+- can produce a humorous large penalty if shot into the dish.
+
+The recipe reminder must remain available.
+
+================================================================================
+30. SAUCE / SEASONING SHOOT — CONTROLS
+================================================================================
+
+RIGHT STICK / MOUSE / TOUCH AIM
+- move reticle/launcher.
+
+R / LEFT CLICK / LARGE MAIN BUTTON
+- shoot/apply.
+
+Z / SHIFT / ACCESSIBLE PRECISION
+- slow/fine aim.
+
+A / ESC
+- cancel/back when legal.
+
+X / RIGHT CLICK
+- inspect highlighted target / display ingredient name and recipe relevance.
+
+The player should be able to finish normal gameplay without modifier-button
+combos.
+
+================================================================================
+31. BON APPÉTIT — WHAT HAPPENED TO THE OLD COUNTER
+================================================================================
+
+The old freeform counter preparation station is no longer part of the required
+core gameplay.
+
+Its useful concepts may survive as DATA, not as a mandatory first-person station.
+
+Examples:
+- ingredient preparation state;
+- required cookware;
+- recipe order;
+- sauce/seasoning requirements;
+- amount/quality variables.
+
+But the player does not need to:
+- walk around a counter;
+- pick up every tool manually;
+- chop every ingredient in a separate station;
+- measure every item through the old Bon Appétit test interface.
+
+The new machine sequence represents those preparation decisions through sorting,
+routing and timing.
+
+================================================================================
+32. BON APPÉTIT — WHAT HAPPENED TO THE OLD PLATING PHASE
+================================================================================
+
+The old manual plating station is no longer a separate gameplay phase.
+
+After:
+- correct sorting;
+- correct cookware routing;
+- heat control;
+- oven step where needed;
+- sauce/seasoning shooting;
+
+the machine assembles the finished plate.
+
+The dish reveal is the payoff.
+
+The plate should visually reflect performance:
+- correct ingredients;
+- missing ingredients;
+- wrong additions;
+- over/under-cooking;
+- sauce/seasoning accuracy;
+- overall assembly quality.
+
+A bad run can create a visibly questionable plate.
+
+A strong run can create the ideal plate.
+
+================================================================================
+33. BON APPÉTIT — MACHINE FLOW
+================================================================================
+
+Recommended visual flow:
+
+INGREDIENT INPUT HOPPER
+      |
+      v
+ROTATING YUM / YUCK SORTER
+      |
+      +----> YUCK CHUTE / TRASH BIN
+      |
+      v
+ROTATING COOKWARE SORTER
+      |
+      +----> FRYING PAN
+      +----> MIXING BOWL
+      +----> POT
+      |
+      v
+STOVE / HEAT MACHINE
+      |
+      +----> OVEN MODULE when required
+      |
+      v
+SAUCE / SEASONING SHOOTING GALLERY
+      |
+      v
+ASSEMBLY / PLATE REVEAL
+      |
+      v
+ONYX VERDICT
+
+The machine can be colorful, over-engineered and comedic.
+
+Do not copy the exact Wreck-It-Ralph candy-car machine.
+
+================================================================================
+34. BON APPÉTIT — CONTINUITY / COMBOS
+================================================================================
+
+The finale should reward good consecutive actions.
+
+Examples:
+
+SORT STREAK
+Several correct YUM/YUCK routes in a row.
+
+VESSEL STREAK
+Several ingredients routed to the correct pan/bowl/pot.
+
+HEAT STREAK
+Remain in the target heat band.
+
+FLAVOR STREAK
+Hit required sauces/seasonings without hitting a wrong target.
+
+COMBO can increase:
+- score;
+- visual flair;
+- currency bonus;
+- star progress;
+- Onyx anticipation reactions.
+
+Mistakes should break/reduce combo, not permanently ruin the relationship.
+
+================================================================================
+35. BON APPÉTIT — TRASH
+================================================================================
+
+The junk from the former Pinball Fishing concept remains valuable.
+
+It is no longer a "bad fishing catch."
+
+It is now a sorting hazard in Bon Appétit.
+
+Core trash examples:
+- Old Boot;
+- Rusty Can;
+- Soggy Newspaper;
+- Mysterious Sock;
+- Bent Spoon;
+- Seaweed Wig.
+
+These should be:
+- visually obvious enough to identify;
+- funny;
+- mechanically undesirable;
+- routed to YUCK.
+
+Trash reaching YUM is one of the strongest penalties.
+
+Trash should never be mistaken for a required ingredient solely because of color.
+
+================================================================================
+36. RECIPE-CONTEXT YUCK
+================================================================================
+
+YUCK remains contextual.
+
+YUCK does not mean:
+"not food."
+
+It means:
+"does not belong in this dish."
+
+Examples:
+
+BARBECUE CHICKEN
+YUM:
+- chicken;
+- recipe vegetables;
+- barbecue sauce;
+- called-for seasonings.
+
+YUCK:
+- old boot;
+- rusty can;
+- fish;
+- egg if not in recipe;
+- milk if not in recipe;
+- wrong sauce;
+- wrong spice.
+
+FISH CHOWDER
+Fish may be YUM.
+
+VEGETABLE SOUP
+Fish may be YUCK.
+
+PANCAKES
+Egg/milk/flour may be YUM.
+
+The same canonical ingredient can change between YUM and YUCK depending on the
+active recipe.
+
+================================================================================
+37. SHARED INGREDIENT DATA MODEL
+================================================================================
+
+Suggested fields:
+
+ingredientId
+displayName
+category
+subCategory
+asset
+requiredForRecipe
+optionalForRecipe
+allowedSubstitution
+quantityRequired
+quantityCollected
+marketEligible
+gardenEligible
+bonAppetitEligible
+belongsToRecipe
+sortClass
+cookwareTarget
+heatTarget
+ovenRequired
+sauceTargets[]
+seasoningTargets[]
+isJunk
+scoreValue
+wrongRoutePenalty
+finalPlateContribution
+
+Recommended sortClass values:
+
+yum_required
+yum_optional
+yuck_wrong_recipe
+yuck_junk
+
+Recommended cookwareTarget values:
+
+pan
+bowl
+pot
+direct
+none
+
+Junk objects use the same routing interface but do not pretend to be ingredients.
+
+================================================================================
+38. SHARED ASSET CONSOLIDATION
+================================================================================
+
+Continue using one canonical shared ingredient pool.
+
+If older Pinball Fishing and Ingredient Garden packages both contain the same
+fish/ingredient:
+- confirm identity;
+- keep one canonical ingredient ID;
+- keep one canonical shared art source where appropriate;
+- do not preserve duplicate identities merely because the old games were separate.
+
+Former Pinball Fishing junk remains in the shared junk catalog.
+
+Conceptual structure:
+
+assets/
+  images/
+    games/
+      shared/
+        ingredients/
+        fish/
+        junk/
+        onyx/
+      feed-him-meow/
+        market-madness/
+        ingredient-garden/
+        bon-appetit/
+
+Data:
+- ingredientCatalog
+- recipeCatalog
+- junkCatalog
+- cookwareCatalog
+- sauceSeasoningCatalog
+
+================================================================================
+39. RECIPE GENERATION — UPDATED ORDER
+================================================================================
+
+Generation order:
+
+1. Select level seed/difficulty.
+2. Select/generate recipe.
+3. Validate canonical ingredient IDs.
+4. Split recipe ingredients into Market Madness categories.
+5. Split remaining ingredients into Ingredient Garden categories.
+6. Generate Market Madness objective layout.
+7. Validate required market ingredients are collectable.
+8. Generate Ingredient Garden objective layout.
+9. Validate required pantry/liquid/dry ingredients are collectable.
+10. Build Bon Appétit input pool from run inventory.
+11. Add wrong-recipe food decoys.
+12. Add trash.
+13. Generate YUM/YUCK sequence.
+14. Generate cookware routes.
+15. Generate heat targets.
+16. Generate oven/blow step where recipe requires it.
+17. Generate correct/incorrect sauce and seasoning targets.
+18. Validate accessible input path.
+19. Lock seed.
+20. Run level.
+21. Calculate final stars.
+22. Resolve Onyx mood.
+23. Award rewards.
+24. Save progression.
+
+================================================================================
+40. DIFFICULTY
+================================================================================
+
+MARKET MADNESS difficulty can grow through:
+- longer required chains;
+- irregular market layouts;
+- more blockers;
+- more objective types;
+- more path choices;
+- more decoy/filler types;
+- tighter move budgets without becoming punitive.
+
+INGREDIENT GARDEN difficulty can grow through:
+- board geometry;
+- blocker layering;
+- ingredient quotas;
+- portals;
+- conveyors;
+- drop routes;
+- cascading dependencies;
+- special-combination planning.
+
+BON APPÉTIT difficulty can grow through:
+- faster but still readable falling ingredients;
+- more edible wrong-recipe decoys;
+- more cookware routing distinctions;
+- narrower but fair heat bands;
+- longer heat sequences;
+- more sauce/seasoning targets;
+- more tempting wrong flavor targets;
+- multi-component recipes.
+
+Difficulty must NOT become:
+- tiny unreadable targets;
+- frame-perfect timing;
+- mandatory microphone;
+- mandatory multitouch;
+- color-only identification;
+- physically exhausting continuous input.
+
+================================================================================
+41. ACCESSIBILITY — GLOBAL
+================================================================================
+
+All three phases must support:
+- mouse;
+- touch;
+- keyboard;
+- controller;
+- one-handed options.
+
+Global options:
+- reduced motion;
+- no screen shake;
+- larger controls;
+- high-contrast outlines;
+- labels with icons;
+- no color-only information;
+- remappable controls;
+- generous hit areas;
+- pause/help without penalty;
+- recipe reminder always available.
+
+MARKET MADNESS:
+- simplified trace;
+- generous path radius;
+- keyboard/controller cell navigation;
+- optional auto-connect preview.
+
+INGREDIENT GARDEN:
+- accessible swap selection;
+- legal-move highlighting;
+- reduced cascade animation speed;
+- non-timed alternatives where needed.
+
+BON APPÉTIT:
+- slower sorter speed;
+- larger chute funnels;
+- snap-to-destination assist;
+- simplified joystick rotation;
+- heat hold-mode alternative;
+- microphone-free oven blow alternative;
+- aim assist for sauces/seasonings;
+- larger flavor targets.
+
+Accessibility settings never reduce base rewards.
+
+================================================================================
+42. INPUT LANGUAGE
+================================================================================
+
+Keep the simple control philosophy:
+
+LEFT / PRIMARY JOYSTICK
+- phase-specific movement/rotation.
+- In Bon Appétit sorting: rotate sorter.
+- At stove: twirl/rotate to maintain heat.
+
+RIGHT STICK / MOUSE
+- aim where needed.
+- In flavor stage: aim shooter.
+
+R / LEFT CLICK / MAIN TOUCH BUTTON
+- do the main action.
+- shoot during flavor stage.
+- accessible oven-blow hold fallback.
+
+A / ESC
+- back/cancel.
+
+X / RIGHT CLICK
+- inspect/secondary information.
+
+Z / SHIFT
+- precision/assist where appropriate.
+
+1
+- power-ups.
+
+2
+- contextual assist.
+
+3
+- status.
+
+4
+- recipe / goal / help.
+
+Normal gameplay must not require modifier combinations.
+
+================================================================================
+43. SOLO / HOUSEHOLD DUO
+================================================================================
+
+Valid modes remain:
+
+SOLO
+William alone OR Jasper alone.
+
+HOUSEHOLD DUO
+William + Jasper together.
+
+No public multiplayer is required.
+
+No phase may require two simultaneous humans for basic completion.
+
+Possible Duo roles:
+
+MARKET MADNESS
+- one controls trace;
+- other handles assist/boosters/objective focus;
+- role swap available.
+
+INGREDIENT GARDEN
+- alternating swaps;
+- one handles board;
+- other handles boosters/goal tracking;
+- role swap available.
+
+BON APPÉTIT
+- Player A rotates sorter / maintains heat;
+- Player B can manage aim/recipe cues/flavor shooting;
+- roles can swap;
+- Solo can perform all actions sequentially.
+
+No Duo-only recipe requirement.
+
+================================================================================
+44. EVENT BUS — UPDATED
+================================================================================
+
+Recommended semantic events:
+
+level:selected
+recipe:generated
+recipe:shown
+
+market-madness:started
+market-madness:trace-started
+market-madness:trace-resolved
+market-madness:ingredient-collected
+market-madness:special-created
+market-madness:completed
+
+ingredient-garden:started
+ingredient-garden:swap
+ingredient-garden:match
+ingredient-garden:cascade
+ingredient-garden:ingredient-collected
+ingredient-garden:special-created
+ingredient-garden:completed
+
+bon-appetit:started
+onyx:hungry
+
+bon-appetit:sort-started
+bon-appetit:yum-correct
+bon-appetit:yum-wrong
+bon-appetit:yuck-correct
+bon-appetit:yuck-wrong
+bon-appetit:junk-to-yum
+
+bon-appetit:cookware-started
+bon-appetit:pan-correct
+bon-appetit:bowl-correct
+bon-appetit:pot-correct
+bon-appetit:cookware-wrong
+
+bon-appetit:heat-started
+bon-appetit:heat-good
+bon-appetit:heat-low
+bon-appetit:heat-high
+bon-appetit:heat-completed
+
+bon-appetit:oven-started
+bon-appetit:oven-blow
+bon-appetit:oven-completed
+
+bon-appetit:flavor-started
+bon-appetit:flavor-correct
+bon-appetit:flavor-wrong
+bon-appetit:flavor-completed
+
+bon-appetit:dish-revealed
+stars:calculated
+
+onyx:purring
+onyx:judgmental
+
+reward:granted
+level:completed
+next-level:unlocked
+
+================================================================================
+45. ONYX MOOD ROUTING
+================================================================================
+
+Bon Appétit entry:
+
+ONYX_HUNGRY
+
+During the machine:
+- Hungry remains the base anticipation mood.
+- brief reaction overlays may occur for mistakes/successes if desired.
+- do not replace the final star threshold with a random mood.
+
+Final mood:
+
+IF finalStars >= 3:
+    ONYX_PURRING
+
+IF finalStars < 3:
+    ONYX_JUDGMENTAL
+
+This rule overrides looser earlier language such as:
+"Onyx can Purr for a 3-5 star result depending on thresholds."
+
+The threshold is now fixed at 3 stars.
+
+0 stars -> Judgmental
+1 star  -> Judgmental
+2 stars -> Judgmental
+3 stars -> Purring
+4 stars -> Purring
+5 stars -> Purring
+
+Game failure/mistakes do not reduce permanent affection/bond.
+
+================================================================================
+46. STAR RATING — ENTIRE LEVEL
+================================================================================
+
+The final rating remains 0 to 5 stars.
+
+All three phases contribute.
+
+Recommended weighting:
+
+MARKET MADNESS .......................... 25%
+INGREDIENT GARDEN ....................... 25%
+BON APPÉTIT SORT + COOKWARE ............ 20%
+BON APPÉTIT HEAT / OVEN ................ 15%
+BON APPÉTIT SAUCE / SEASONING .......... 15%
+
+Equivalent grouped view:
+
+Market Madness ............. 25%
+Ingredient Garden .......... 25%
+Bon Appétit total .......... 50%
+
+This emphasizes the final assembly/cooking phase without making the first two
+boards irrelevant.
+
+Suggested performance bands:
+
+0 stars
+- catastrophic/incomplete recipe result.
+
+1 star
+- minimum poor completion.
+
+2 stars
+- completed but badly flawed.
+
+3 stars
+- solid successful dish.
+
+4 stars
+- excellent dish.
+
+5 stars
+- near-perfect full run.
+
+Mood threshold:
+- 0-2 stars -> Judgmental.
+- 3-5 stars -> Purring.
+
+================================================================================
+47. BON APPÉTIT SCORING INPUTS
+================================================================================
+
+Track:
+
+sortAccuracy
+correctYum
+correctYuck
+wrongYum
+wrongYuck
+junkToYum
+requiredToYuck
+
+cookwareAccuracy
+panAccuracy
+bowlAccuracy
+potAccuracy
+
+heatAccuracy
+timeInHeatBand
+timeTooCold
+timeTooHot
+
+ovenAccuracy
+blowStrengthAccuracy
+blowDurationAccuracy
+
+flavorAccuracy
+correctSauceHits
+correctSeasoningHits
+wrongFlavorHits
+overSeasonCount
+missingFlavorCount
+
+mistakeRecovery
+comboPerformance
+
+These become objective score inputs.
+
+Onyx mood presents the result.
+It does not randomly invent it.
+
+================================================================================
+48. FINAL DISH REVEAL
+================================================================================
+
+The final reveal should feel like the machine has MADE something from the player's
+actions.
+
+The final plate can reflect:
+- correct ingredient set;
+- missing ingredients;
+- wrong ingredients;
+- trash contamination;
+- vessel mistakes;
+- under/overheating;
+- oven quality;
+- missing sauce;
+- wrong sauce;
+- missing seasoning;
+- over-seasoning;
+- final quality tier.
+
+Possible visual result classes:
+
+IDEAL
+ACCEPTABLE
+MESSY
+UNDERCOOKED
+OVERCOOKED
+WRONG-FLAVOR
+CONTAMINATED
+COMICALLY QUESTIONABLE
+
+Do not require a separate manual plating mini-game.
+
+The reveal itself is the plate payoff.
+
+================================================================================
+49. FINAL SCREEN
+================================================================================
+
+Recommended layout:
+
+TOP
+- level number;
+- recipe name.
+
+CENTER
+- finished dish/plate.
+
+SIDE / CORNER
+- Onyx mood.
+
+Immediately before verdict:
+- Hungry.
+
+Final:
+- Purring at 3+ stars.
+- Judgmental below 3 stars.
+
+BOTTOM
+- 0-5 stars;
+- reward/currency;
+- Next Level;
+- Replay;
+- Level Select.
+
+Expandable detail:
+- Market Madness result;
+- Ingredient Garden result;
+- Bon Appétit sorting;
+- cookware accuracy;
+- heat/oven accuracy;
+- sauce/seasoning accuracy;
+- major mistakes;
+- bonuses.
+
+================================================================================
+50. SAVE DATA — UPDATED
+================================================================================
+
+Suggested per-run fields:
+
+runId
+levelId
+recipeId
+difficulty
+seed
+mode
+players
+
+marketMadnessSeed
+marketMadnessLayout
+marketMadnessScore
+marketMadnessCollected
+marketMadnessLongChains
+marketMadnessMistakes
+
+ingredientGardenSeed
+ingredientGardenLayout
+ingredientGardenScore
+ingredientGardenCollected
+ingredientGardenCascades
+ingredientGardenMistakes
+
+bonAppetitSeed
+bonAppetitCorrectYum
+bonAppetitCorrectYuck
+bonAppetitWrongYum
+bonAppetitWrongYuck
+bonAppetitJunkToYum
+
+bonAppetitPanAccuracy
+bonAppetitBowlAccuracy
+bonAppetitPotAccuracy
+
+bonAppetitHeatAccuracy
+bonAppetitOvenAccuracy
+
+bonAppetitCorrectFlavorHits
+bonAppetitWrongFlavorHits
+
+finalDishState
+finalStars
+onyxEntryMood
+onyxFinalMood
+currencyEarned
+completed
+bestStars
+bestScore
+
+Do not duplicate the full ingredient catalog in each save.
+
+Store IDs/state references.
+
+================================================================================
+51. MODULE MAP — UPDATED
+================================================================================
+
+CORE
+- gameStateRouter
+- levelSelect
+- recipeGenerator
+- recipeState
+- runSeed
+- saveState
+- eventBus
+- scoring
+- rewards
+
+SHARED DATA
+- ingredientCatalog
+- recipeCatalog
+- junkCatalog
+- cookwareCatalog
+- flavorCatalog
+- assetRegistry
+
+MARKET MADNESS
+- marketBoard
+- traceInput
+- chainValidator
+- diagonalPathRules
+- chainRewards
+- marketObjectives
+- marketBlockers
+- pawSpecials
+
+INGREDIENT GARDEN
+- gardenBoard
+- swapInput
+- matchResolver
+- cascadeResolver
+- gravity
+- refill
+- gardenObjectives
+- gardenBlockers
+- pawSpecials
+
+BON APPÉTIT
+- bonAppetitController
+- hungryOnyxPresenter
+- rotatingSorter
+- yumYuckClassifier
+- cookwareRouter
+- panReceiver
+- bowlReceiver
+- potReceiver
+- stoveHeatController
+- circularInputRecognizer
+- ovenBlowController
+- microphoneBreathDetector
+- ovenBlowFallback
+- flavorShooter
+- sauceSeasoningValidator
+- dishBuilder
+- starRating
+- onyxVerdict
+
+ACCESSIBILITY
+- reducedMotion
+- largerTargets
+- simplifiedTrace
+- legalSwapAssist
+- sortSnapAssist
+- simplifiedRotation
+- heatHoldMode
+- microphoneFreeBlow
+- aimAssist
+
+================================================================================
+52. STATE MACHINE — UPDATED
+================================================================================
+
+BOOT
+TITLE
+LEVEL_SELECT
+PLAYER_MODE_SELECT
+RECIPE_BRIEF
+
+MARKET_MADNESS_INTRO
+MARKET_MADNESS_PLAY
+MARKET_MADNESS_RESULT
+
+INGREDIENT_GARDEN_INTRO
+INGREDIENT_GARDEN_PLAY
+INGREDIENT_GARDEN_RESULT
+
+BON_APPETIT_INTRO
+ONYX_HUNGRY
+
+BON_APPETIT_SORT
+BON_APPETIT_COOKWARE
+BON_APPETIT_HEAT
+BON_APPETIT_OVEN
+BON_APPETIT_FLAVOR
+
+BON_APPETIT_DISH_REVEAL
+STAR_RATING
+
+ONYX_PURRING
+or
+ONYX_JUDGMENTAL
+
+REWARD
+NEXT_LEVEL
+PAUSE
+
+RETIRED CORE STATES:
+PINBALL_FISHING
+BON_APATITE_COUNTER
+BON_APATITE_STOVE as a standalone station
+BON_APATITE_PLATING as a standalone station
+KITCHEN_FREE_MOVE
+KITCHEN_STATION_FOCUS
+KITCHEN_MEASURE
+KITCHEN_CUT
+KITCHEN_FLIP
+
+There is explicitly NO FLIP state in the current Bon Appétit design.
+
+================================================================================
+53. FORMER PINBALL FISHING — WHAT IS PRESERVED
+================================================================================
+
+The former Pinball Fishing phase is no longer player-facing gameplay.
+
+Preserve only assets/code that remain useful.
+
+Potentially useful:
+- humorous trash assets;
+- fish ingredient assets;
+- generic collision helpers if reused elsewhere;
+- sound/feedback components if licensed/owned and still appropriate;
+- score/reward utilities;
+- common UI;
+- shared recipe integration.
+
+Do NOT force the new Market Madness to use:
+- flippers;
+- ramps;
+- bumpers;
+- plunger;
+- pinball ball;
+- CAST -> BITE -> REEL -> LAND;
+- fishing-only routing;
+- 97% pinball language.
+
+Market Madness is a Pudding Pop-style connection board now.
+
+================================================================================
+54. INGREDIENT GARDEN — WHAT IS PRESERVED
+================================================================================
+
+Preserve:
+- Ingredient Garden name;
+- level-layout library;
+- responsive board sizing;
+- linked-board support;
+- recipe integration;
+- ingredient catalog;
+- objective system;
+- hazards/blockers where still appropriate;
+- boosters;
+- currency hooks;
+- touch/mouse/keyboard/controller support;
+- accessibility work;
+- deterministic seeds;
+- special paw visuals.
+
+Refocus the primary interaction toward Candy Crush-style SWAP/MATCH.
+
+Trace code may remain in shared/reference infrastructure if other phases use it,
+but normal Ingredient Garden identity is swap/match-3.
+
+================================================================================
+55. BON APPÉTIT — WHAT IS PRESERVED FROM OLD TESTING
+================================================================================
+
+Preserve:
+- Bon Appétit name;
+- active recipe state;
+- Onyx judgment integration;
+- ingredient state tracking;
+- scoring;
+- cooking-quality variables where still useful;
+- stove/oven visual assets where they fit;
+- final dish/plate assets;
+- Hungry/Purring/Judgmental Onyx mood assets;
+- shared controls/accessibility framework.
+
+Replace:
+- freeform counter station;
+- manual station-by-station kitchen wandering;
+- flip mechanic;
+- separate manual plating phase;
+- conventional cooking-sim sequencing.
+
+New identity:
+ROTATE -> SORT -> ROUTE -> TWIRL HEAT -> BLOW OVEN -> SHOOT FLAVOR -> REVEAL.
+
+================================================================================
+56. WRECK-IT-RALPH CLIP — USE / DO NOT USE
+================================================================================
+
+USE AS REFERENCE FOR:
+- kinetic factory rhythm;
+- exaggerated physical controls;
+- rapid material routing;
+- sequential machine actions;
+- visible transformation;
+- escalating assembly;
+- reveal payoff;
+- playful mechanical absurdity.
+
+DO NOT COPY:
+- characters;
+- names;
+- candy-kart art;
+- branded visual language;
+- dialogue;
+- audio;
+- exact props;
+- exact stage layout;
+- exact animation;
+- exact choreography.
+
+Feed him MEOW should feel inspired by the interaction ENERGY, not like a replica
+of the scene.
+
+================================================================================
+57. CANDY CRUSH / PUDDING POP RESEARCH SPLIT
+================================================================================
+
+The research is no longer treated as one equal hybrid applied everywhere.
+
+CURRENT SPLIT:
+
+MARKET MADNESS
+PRIMARY:
+Pudding Pop line-connect logic.
+
+SECONDARY:
+Feed him MEOW objectives/specials/layouts.
+
+INGREDIENT GARDEN
+PRIMARY:
+Candy Crush swap/match/cascade logic.
+
+SECONDARY:
+Feed him MEOW ingredient objectives, Garden hazards, paw specials.
+
+BON APPÉTIT
+PRIMARY:
+Wreck-It-Ralph candy-kart-creation-style physical factory/assembly rhythm.
+
+SECONDARY:
+Feed him MEOW recipe logic, sorting, cookware, heat, oven, shooter, Onyx.
+
+This separation gives each phase a distinct identity.
+
+================================================================================
+58. POWER-UPS
+================================================================================
+
+Power-ups should remain phase-aware.
+
+MARKET MADNESS examples:
+- chain extender;
+- ingredient highlight;
+- objective magnet;
+- trace wildcard;
+- extra moves;
+- reshuffle.
+
+INGREDIENT GARDEN examples:
+- targeted clear;
+- row/column paw;
+- 3x3 paw;
+- 65% zap paw;
+- swap assist;
+- extra moves;
+- objective injection.
+
+BON APPÉTIT examples:
+- sorter slow-down;
+- YUM highlight;
+- YUCK highlight;
+- destination snap;
+- cookware preview;
+- heat stabilizer;
+- oven assist;
+- flavor-target highlight;
+- wrong-flavor shield.
+
+Power-ups do not replace recipe knowledge.
+
+================================================================================
+59. FAILURE / RECOVERY
+================================================================================
+
+Do not instantly fail on one mistake.
+
+MARKET MADNESS:
+- invalid/short traces should generally not consume a move;
+- allow board shuffle if no legal action exists.
+
+INGREDIENT GARDEN:
+- invalid swaps do not consume a move;
+- dead board reshuffles;
+- required objectives remain mathematically possible.
+
+BON APPÉTIT:
+- wrong sort creates penalty;
+- wrong cookware can be recoverable where practical;
+- heat can recover from brief low/high periods;
+- oven can recover from inconsistent blowing;
+- wrong seasoning hurts quality but does not automatically end the run.
+
+Hard fail only when minimum recipe completion is impossible or an explicit
+resource limit is exhausted.
+
+Retry remains available.
+
+================================================================================
+60. PROCEDURAL FAIRNESS
+================================================================================
+
+MARKET MADNESS validation:
+- every required fresh ingredient has a reachable connection path;
+- objective quotas can be fulfilled;
+- refills cannot permanently starve objectives;
+- no blocker makes a required ingredient impossible.
+
+INGREDIENT GARDEN validation:
+- legal opening moves exist;
+- required pantry ingredients can spawn/collect;
+- special interactions resolve;
+- dead boards can reshuffle;
+- blockers do not hard-lock required ingredients.
+
+BON APPÉTIT validation:
+- every required ingredient can be routed to YUM;
+- every required YUM can reach its cookware target;
+- heat target is physically achievable;
+- oven target is achievable with microphone OR fallback;
+- required sauce/seasoning targets appear;
+- wrong targets do not obscure correct targets;
+- Solo completion is possible;
+- accessibility settings preserve solvability.
+
+If validation fails:
+rebuild the seed before the player sees it.
+
+================================================================================
+61. LEGAL / SOURCE NOTES
+================================================================================
+
+Candy Crush / Pudding Pop:
+- mechanics research only;
+- do not copy proprietary art, branding, text, music, or characters.
+
+Wreck-It-Ralph:
+- reference-only interaction/pacing source;
+- do not redistribute the supplied clip as a game asset;
+- do not copy Disney characters, art, audio, names, dialogue, or exact scene
+  design.
+
+Existing Feed him MEOW assets/code:
+- continue to follow the project's own ownership/license rules.
+
+Any third-party code actually reused:
+- preserve required license notices.
+
+================================================================================
+62. ACCEPTANCE CHECKLIST
+================================================================================
+
+FLOW
+[ ] Level Select comes before Recipe.
+[ ] Recipe is authoritative for the entire run.
+[ ] Phase 1 is named Market Madness.
+[ ] Phase 2 remains named Ingredient Garden.
+[ ] Phase 3 is named Bon Appétit.
+[ ] Bon Appétit uses the accent in player-facing UI.
+[ ] Final verdict follows Bon Appétit.
+
+MARKET MADNESS
+[ ] Former Pinball Fishing name is not used in normal gameplay.
+[ ] Market Madness gathers meat + vegetables/fresh ingredients.
+[ ] Market Madness is Pudding Pop-led.
+[ ] Primary input is trace/connect.
+[ ] Long chains matter.
+[ ] Diagonal connection support exists where enabled.
+[ ] Recipe objectives remain central.
+[ ] Pinball flippers/plunger/ramp gameplay does not return as the phase identity.
+
+INGREDIENT GARDEN
+[ ] Name stays Ingredient Garden.
+[ ] Ingredient Garden gathers broth/water/milk/flour/sauces/seasonings/etc.
+[ ] Ingredient Garden is Candy Crush-led.
+[ ] Primary input is adjacent swap.
+[ ] Match-3, gravity and cascades work.
+[ ] Geometric matches create specials.
+[ ] Recipe objectives remain central.
+
+BON APPÉTIT
+[ ] Old Counter -> Stove -> Plating path is retired.
+[ ] Onyx appears Hungry at Bon Appétit start.
+[ ] Player rotates joystick to sort falling ingredients.
+[ ] Correct recipe ingredients go YUM.
+[ ] Wrong-recipe food goes YUCK.
+[ ] Old boots/trash go YUCK.
+[ ] YUM does not mean "all food."
+[ ] YUCK is recipe-contextual.
+[ ] Accepted ingredients route into frying pans, mixing bowls and pots.
+[ ] Same rotating control language is reused for cookware routing.
+[ ] Vessels/components move to the stove.
+[ ] Stove heat is maintained by rotating/twirling joystick.
+[ ] There is NO flipping mechanic.
+[ ] Oven recipes use a blow interaction.
+[ ] Microphone-free blow fallback exists.
+[ ] Final flavor stage uses aim/shoot.
+[ ] Correct sauces/seasonings improve result.
+[ ] Wrong sauces/seasonings can make result worse.
+[ ] Finished dish is visibly revealed.
+[ ] No separate manual plating mini-game is required.
+
+ONYX
+[ ] Bon Appétit entry mood is Hungry.
+[ ] 3 stars = Purring.
+[ ] 4 stars = Purring.
+[ ] 5 stars = Purring.
+[ ] 0 stars = Judgmental.
+[ ] 1 star = Judgmental.
+[ ] 2 stars = Judgmental.
+[ ] Mood is based on stars, not random.
+[ ] Game mistakes do not reduce permanent affection/bond.
+
+ACCESSIBILITY
+[ ] No phase requires color-only identification.
+[ ] Trace has generous hit areas.
+[ ] Swap has keyboard/controller support.
+[ ] Sorter can slow/snap.
+[ ] Heat has simplified/hold alternative.
+[ ] Oven blow has non-microphone alternative.
+[ ] Flavor shooter has aim assist.
+[ ] Accessibility does not reduce base rewards.
+
+================================================================================
+63. AUTHORITATIVE SHORT SUMMARY
+================================================================================
+
+Feed him MEOW now uses three clearly differentiated recipe phases. MARKET MADNESS
+replaces the former Pinball Fishing identity and uses Pudding Pop-style
+press-drag-release connection play to collect the recipe's meat, vegetables and
+other fresh/raw ingredients. INGREDIENT GARDEN keeps its name and becomes the
+Candy Crush-style swap/match-3 phase for broth, water, milk, flour, sauces,
+seasonings and the other pantry/liquid/dry ingredients Market Madness does not
+handle. BON APPÉTIT keeps and solidifies its name but completely changes its
+gameplay: Onyx appears Hungry, then the player operates a colorful
+Wreck-It-Ralph-candy-kart-creation-inspired cooking machine. The player rotates
+the joystick to sort falling objects into YUM or YUCK, sending old boots, trash
+and recipe-inappropriate ingredients to YUCK; routes accepted ingredients into
+the correct frying pan, mixing bowl or pot; sends them to the stove; keeps the
+heat up by twirling the joystick with NO flipping mechanic; blows to power the
+oven when required; then aims and shoots the correct sauces and seasonings while
+avoiding wrong flavors. The machine reveals the finished dish and the whole run
+receives 0-5 stars. Onyx's final mood is fixed by that rating: 3 or more stars
+means Purring, while fewer than 3 stars means Judgmental.
+
+
+================================================================================
+64. PASS 3 PURPOSE / PRECEDENCE
+================================================================================
+
+Pass 3 keeps the three-phase gameplay authority from Pass 2 intact and adds a
+shipping-quality GAME-SHELL, CROSS-PLATFORM INPUT, ONYX BOOSTER, and ONYX AUDIO
+contract.
+
+Pass 3 does NOT change the authoritative gameplay order:
+
+LEVEL SELECT
+-> RECIPE
+-> MARKET MADNESS
+-> INGREDIENT GARDEN
+-> BON APPÉTIT
+-> ONYX VERDICT
+-> REWARD / NEXT LEVEL
+
+The new requirement is that the whole experience must PRESENT and CONTROL like a
+cohesive game application rather than like a collection of web pages or forms.
+
+Where Pass 3 conflicts with older presentation, input-shell, booster-menu, audio,
+or result-screen implementation details, Pass 3 wins.
+
+================================================================================
+65. FULL-GAME PRESENTATION CONTRACT
+================================================================================
+
+Feed him MEOW is browser technology used AS A GAME.
+
+The player should not feel like they are navigating a normal website.
+
+SHIPPING PRESENTATION MUST FAVOR:
+- a fixed full-viewport game shell;
+- a persistent compact HUD;
+- a central game stage;
+- phase transitions inside the same run;
+- a visible recipe-run progress rail;
+- direct-action buttons rather than form-like navigation;
+- modal game overlays for pause, recipe, boosters, and accessibility;
+- game-result presentation rather than a document/report page;
+- responsive scaling without ordinary page-layout breakage;
+- controller/touch/mouse/keyboard parity;
+- immediate visual and audio response to meaningful actions;
+- saved run checkpoints and Continue Run behavior.
+
+AVOID AS PRIMARY PRESENTATION:
+- long scrolling web-page sections;
+- browser-form-looking menus;
+- disconnected pages that appear to be separate websites;
+- tiny text links as core controls;
+- hover-only actions;
+- page refresh as normal progression;
+- gameplay that depends on browser chrome.
+
+The implementation may remain HTML/CSS/JavaScript internally.
+The PLAYER-FACING EXPERIENCE should read as a cross-platform game.
+
+================================================================================
+66. GAMES/BOTH CROSS-PLATFORM REFERENCE
+================================================================================
+
+User-supplied reference collection:
+https://github.com/tyrannosaurusdm92/LifeHelpers/tree/main/Games/Both
+
+The collection README identifies the folder as a curated set of 82 unique
+offline HTML games selected for desktop + mobile/touch use.
+
+Feed him MEOW may use the COLLECTION'S DELIVERY PHILOSOPHY as reference:
+- game fills its play surface;
+- desktop and mobile/touch are both first-class;
+- controls are immediate;
+- a HUD/status area stays close to play;
+- sound can be toggled;
+- completion/result states appear as game overlays/screens;
+- canvas and puzzle areas use touch-safe interaction behavior;
+- controls scale to smaller screens;
+- a standalone game can work without navigating a normal website.
+
+Useful patterns observed in the lighter reference games include:
+- fixed/inset application shells;
+- touch-action control on playfields;
+- responsive HUD controls;
+- clear win/result dialogs;
+- direct game-state buttons;
+- in-game sound toggles.
+
+IMPORTANT LEGAL/REUSE RULE:
+The Games/Both collection is a REFERENCE set for interaction and cross-platform
+presentation. Do not import third-party art, music, proprietary game content, or
+uncleared source code merely because a file is present there. Feed him MEOW keeps
+its own art, recipe systems, phase identities, Onyx presentation, and mechanics.
+
+================================================================================
+67. CROSS-PLATFORM INPUT CONTRACT
+================================================================================
+
+Every normal gameplay path must remain completable with the supported input
+families from the existing dossier.
+
+POINTER / TOUCH:
+- use Pointer Events where practical;
+- puzzle playfields must prevent accidental page gestures while actively playing;
+- targets remain large enough to hit without precision tapping;
+- no action is hover-only.
+
+MOUSE:
+- click / drag / pointer movement mirrors touch intent;
+- mouse aiming remains supported for Bon Appétit flavor shooting.
+
+KEYBOARD:
+- directional navigation is supported on puzzle boards;
+- Enter / Space / R can perform the current primary action where appropriate;
+- P pauses;
+- 1 opens Onyx Boosters;
+- 4 opens Recipe / Goal;
+- M toggles sound;
+- F toggles fullscreen where the browser permits it;
+- Escape remains back/cancel/pause according to context.
+
+CONTROLLER / GAMEPAD API:
+Use the standard mapping where available.
+- Left stick / D-pad: phase movement, board navigation, or Bon Appétit rotation;
+- Right stick: aiming where applicable, especially Flavor Shoot;
+- A / primary face button: main action;
+- B: back/cancel;
+- X: recipe/inspect according to context;
+- Y: Onyx Boosters;
+- Start: pause.
+
+Controller support must not remove mouse/touch/keyboard support.
+
+================================================================================
+68. GAME SHELL / PAUSE / FULLSCREEN
+================================================================================
+
+The game shell is persistent across the recipe run.
+
+Recommended HUD:
+- Feed him MEOW identity;
+- Market Madness -> Ingredient Garden -> Bon Appétit progress rail;
+- Onyx Boosters;
+- Recipe;
+- Sound;
+- Fullscreen;
+- Pause;
+- Accessibility.
+
+PAUSE REQUIREMENT:
+Pause must suspend active gameplay simulation rather than merely placing a visual
+box over moving gameplay.
+
+This especially applies to:
+- falling Bon Appétit sorter objects;
+- cookware routing objects;
+- heat progression;
+- oven progression;
+- game timers or timed effects.
+
+When the document/app loses visibility during active play, auto-pause is
+recommended so the player does not lose a run because another app or browser tab
+was opened.
+
+FULLSCREEN:
+Fullscreen is optional and browser-permission dependent.
+The game must remain completely playable without fullscreen.
+
+SAFE AREAS:
+Respect mobile safe-area insets where available.
+
+================================================================================
+69. ONYX BOOSTER MENU — SHIPPING CONTRACT
+================================================================================
+
+The existing Onyx booster definitions are not merely data/reference content.
+The shipping game must expose them through an actual in-game booster overlay.
+
+BOOSTER OVERLAY REQUIREMENTS:
+- opens without leaving the current phase;
+- pauses active simulation while open;
+- shows only boosters relevant to the current phase;
+- shows remaining quantity;
+- communicates when a booster cannot be used at the current moment;
+- uses Onyx's appropriate static mood art;
+- returns directly to the same gameplay state;
+- consumes inventory only after a real booster effect successfully activates.
+
+Market Madness boosters should affect tracing, moves, visible ingredients, or
+safe filler handling.
+
+Ingredient Garden boosters should affect swaps, moves, clearing, reshuffling,
+cascades, objectives, or applicable Garden hazards.
+
+Bon Appétit boosters should affect the sorter, destination snap, heat, oven, or
+flavor stages without replacing recipe knowledge.
+
+The booster menu must feel like a game power-up screen, not a settings form.
+
+================================================================================
+70. ONYX CAT SOUND CONTRACT
+================================================================================
+
+Use relevant CAT VOCALIZATION clips as short Onyx feedback in the booster and
+verdict presentation.
+
+The current pass includes user-supplied cat recordings selected for these event
+roles:
+- booster menu open;
+- booster confirmation;
+- booster activation;
+- verdict/vote prompt;
+- positive verdict;
+- negative verdict.
+
+These clips are flavor/UI feedback.
+They must NEVER be the only information channel.
+
+A player with sound muted still receives:
+- visible Onyx mood;
+- text labels;
+- booster state;
+- star result;
+- verdict state.
+
+AUDIO BEHAVIOR:
+- do not fire a cat vocalization merely because focus moves across every button;
+- avoid stacking several Onyx vocal clips over one another;
+- use a dedicated cat/Onyx playback channel where practical;
+- meaningful activation/reveal moments may replace the previous Onyx clip;
+- ordinary phase SFX can continue on a separate SFX channel;
+- global sound toggle disables both gameplay SFX and Onyx cat feedback.
+
+The cat-sound manifest must retain the original source filenames from the
+user-supplied pack.
+
+Do not describe a generic supplied cat recording as a verified recording of Onyx
+unless that provenance is independently established by the project owner.
+
+================================================================================
+71. ONYX VOTING / VERDICT PRESENTATION BEAT
+================================================================================
+
+"Voting screen" in this pass means the short presentation beat immediately
+before the authoritative ONYX'S VERDICT result is revealed.
+
+It does NOT create a new scoring authority or a random vote.
+
+Sequence:
+
+DISH REVEAL
+-> HUNGRY ONYX CONSIDERS THE DISH
+-> SHORT CAT VOCAL / DECISION BEAT
+-> STAR RESULT IS REVEALED
+-> 3+ STARS = PURRING
+-> 0-2 STARS = JUDGMENTAL
+
+The player-facing result remains ONYX'S VERDICT unless a later user instruction
+renames it.
+
+The voting/decision beat should be brief and skippable in effect through Reduced
+Motion timing.
+
+Onyx still does not randomly override the objective score.
+
+================================================================================
+72. AUDIO / ACCESSIBILITY MIX
+================================================================================
+
+Audio is supplemental.
+
+Provide:
+- global sound toggle;
+- visible muted/unmuted state;
+- no audio-only instructions;
+- no reward penalty for muting sound;
+- no reward penalty for Reduced Motion;
+- no reward penalty for controller/touch/keyboard accessibility options.
+
+Cat vocalizations should be short enough that booster selection and the final
+verdict do not become sluggish.
+
+The result screen may layer a short verdict vocal with the existing result SFX,
+but avoid overwhelming simultaneous sounds.
+
+================================================================================
+73. SAVE / RESUME CHECKPOINTS
+================================================================================
+
+A full-game presentation should survive ordinary interruption.
+
+At minimum write a checkpoint at:
+- Recipe Brief;
+- Market Madness start;
+- Ingredient Garden start;
+- Bon Appétit start.
+
+The title/level-select surface may show Continue Run when a checkpoint exists.
+
+Resume may restart the CURRENT PHASE from its deterministic seed rather than
+serializing every animation frame, provided:
+- the active level and recipe remain the same;
+- already-completed phase results are retained;
+- the player does not lose completed-phase credit;
+- the restart does not create a different recipe unexpectedly.
+
+Completing the final result clears the active run checkpoint.
+
+================================================================================
+74. PASS 3 ACCEPTANCE CHECKLIST
+================================================================================
+
+FULL-GAME FEEL
+[ ] Feed him MEOW opens into a fixed game shell rather than a normal scrolling site.
+[ ] One persistent HUD serves the entire recipe run.
+[ ] Phase progress is visible as Market -> Garden -> Bon Appétit.
+[ ] Primary navigation uses game controls/buttons, not ordinary page links.
+[ ] Result presentation feels like a game result/reward screen.
+[ ] Mobile safe areas are respected.
+
+CROSS PLATFORM
+[ ] Mouse gameplay works.
+[ ] Touch gameplay works.
+[ ] Keyboard gameplay works.
+[ ] Standard controller/gamepad input is recognized where the browser exposes it.
+[ ] Market Madness can be navigated/operated without hover.
+[ ] Ingredient Garden can be navigated/operated without hover.
+[ ] Bon Appétit left-stick rotation works.
+[ ] Bon Appétit right-stick flavor aim works.
+[ ] No normal gameplay action requires modifier-key combinations.
+
+PAUSE / STATE
+[ ] Pause freezes active Bon Appétit simulation.
+[ ] Visibility loss during active gameplay auto-pauses.
+[ ] Continue Run appears when an active checkpoint exists.
+[ ] Completed phase results survive a phase-start resume.
+[ ] Completing the run clears the active checkpoint.
+
+ONYX BOOSTERS
+[ ] Booster data is exposed through a real in-game overlay.
+[ ] Booster overlay pauses the underlying phase.
+[ ] Menu is phase-aware.
+[ ] A booster is consumed only after successful activation.
+[ ] Onyx mood art changes with booster context.
+[ ] Market Madness boosters produce real board effects.
+[ ] Ingredient Garden boosters produce real board effects.
+[ ] Bon Appétit boosters produce real machine effects.
+
+ONYX AUDIO
+[ ] Booster-menu opening can trigger a short cat sound.
+[ ] Booster confirmation/activation can trigger short cat sounds.
+[ ] Verdict/voting beat has a short cat prompt.
+[ ] Purring-side result has a positive cat vocal.
+[ ] Judgmental-side result has a negative cat vocal.
+[ ] Cat clips do not stack uncontrollably.
+[ ] Mute disables cat clips and normal SFX.
+[ ] No critical information is audio-only.
+[ ] Original supplied cat-sound filenames are retained in a manifest.
+
+VERDICT
+[ ] Hungry Onyx appears during the pre-verdict decision beat.
+[ ] 0-2 stars remains Judgmental.
+[ ] 3-5 stars remains Purring.
+[ ] Voting presentation never randomizes the authoritative score.
+
+REGRESSION / CONTENT
+[ ] All canonical ingredient IDs from the consolidated ingredient catalog remain.
+[ ] Ingredient asset references resolve.
+[ ] No duplicate canonical ingredient identities are reintroduced.
+[ ] Disassembled flipbook frame assets remain individual SVG files.
+[ ] Exact duplicate files are removed where they serve no distinct purpose.
+[ ] Only one root gameplay HTML file remains: meow.html.
+
+================================================================================
+75. PASS 3 AUTHORITATIVE SHORT SUMMARY
+================================================================================
+
+Feed him MEOW keeps the Pass-2 three-phase recipe structure and now must ship as a
+cohesive cross-platform GAME experience rather than a website-shaped prototype.
+The persistent game shell carries the player from Market Madness through
+Ingredient Garden and Bon Appétit with phase progress, pause, recipe, boosters,
+sound, fullscreen, accessibility, and standard controller support. The
+LifeHelpers Games/Both desktop+mobile collection is used as presentation/input
+reference only. Onyx's booster data becomes a real phase-aware in-game power-up
+menu with real gameplay effects and short user-supplied cat vocalizations. The
+final Onyx screen gains a short Hungry "decision/voting" beat with cat feedback,
+then reveals the objective star-based verdict: 3-5 stars Purring, 0-2 stars
+Judgmental. Audio remains optional and never replaces visual information.
+
+================================================================================
+END OF CURRENT FEED HIM MEOW DOSSIER — PASS 3
+================================================================================
+

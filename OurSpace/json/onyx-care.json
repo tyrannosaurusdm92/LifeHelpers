@@ -1,0 +1,37 @@
+{
+  "schema": "onyx.care.v10",
+  "direct": [
+    "feed",
+    "water",
+    "treat",
+    "pet",
+    "scratch",
+    "play",
+    "brush",
+    "rest",
+    "blanket",
+    "fan",
+    "bowtie",
+    "pillow",
+    "tuck",
+    "check",
+    "settle",
+    "nuzzle",
+    "slowblink"
+  ],
+  "selfCare": [
+    "drink",
+    "eat",
+    "hygiene",
+    "comfort",
+    "outside",
+    "task",
+    "skill",
+    "reflect",
+    "medication",
+    "appointment",
+    "rest",
+    "custom"
+  ],
+  "nonPunitive": true
+}

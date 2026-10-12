@@ -1,0 +1,2836 @@
+{
+  "schema": "onyx.frontend-manifest.canonical-no-duplicate-routing",
+  "version": "2026.10.10-internal-template-shared-js-iframes",
+  "backendIncluded": false,
+  "backendEndpoint": "https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec",
+  "avatarPolicy": {
+    "moduleWidgetPrimary": "js/onyx/onyx-core/onyx-mood-renderers.js",
+    "moduleWidgetTarget": "#onyxCanvas",
+    "sourceLineage": "Onyx Art Studio portal-era chest-up renderer",
+    "completedCodedStates": [
+      "advising_professor",
+      "caring",
+      "hungry",
+      "judgmental",
+      "listening",
+      "purring",
+      "sleepy",
+      "snuggly",
+      "thinking",
+      "thoughtful"
+    ],
+    "pngFallbacks": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/shared/legacy-static/onyx_<mood>.png; used only if procedural rendering fails",
+    "gameIsolation": {
+      "leisure": "js/onyx/games/leisure + css/onyx/games/leisure; existing quadruped/Kitchen biped placeholder code remains; rendered Hungry/Judgmental/Purring biped add-ons removed",
+      "virtual": "Botanical Garden uses the genuine full-body Onyx quadruped atlas plus one Professor contact-sheet biped actor; the chest-up module canvas remains separate.",
+      "quadrupedProfessor": "existing quadruped placeholder/game files are unchanged; Professor transition atlas has its own isolated base quadruped frames"
+    },
+    "perMoodCompatibility": {
+      "advising_professor": {
+        "js": "js/onyx/onyx-core/onyx_advising_professor.js",
+        "css": "css/onyx/onyx-core/onyx_advising_professor.css"
+      },
+      "caring": {
+        "js": "js/onyx/onyx-core/onyx_caring.js",
+        "css": "css/onyx/onyx-core/onyx_caring.css"
+      },
+      "hungry": {
+        "js": "js/onyx/onyx-core/onyx_hungry.js",
+        "css": "css/onyx/onyx-core/onyx_hungry.css"
+      },
+      "judgmental": {
+        "js": "js/onyx/onyx-core/onyx_judgmental.js",
+        "css": "css/onyx/onyx-core/onyx_judgmental.css"
+      },
+      "listening": {
+        "js": "js/onyx/onyx-core/onyx_listening.js",
+        "css": "css/onyx/onyx-core/onyx_listening.css"
+      },
+      "purring": {
+        "js": "js/onyx/onyx-core/onyx_purring.js",
+        "css": "css/onyx/onyx-core/onyx_purring.css"
+      },
+      "sleepy": {
+        "js": "js/onyx/onyx-core/onyx_sleepy.js",
+        "css": "css/onyx/onyx-core/onyx_sleepy.css"
+      },
+      "snuggly": {
+        "js": "js/onyx/onyx-core/onyx_snuggly.js",
+        "css": "css/onyx/onyx-core/onyx_snuggly.css"
+      },
+      "thinking": {
+        "js": "js/onyx/onyx-core/onyx_thinking.js",
+        "css": "css/onyx/onyx-core/onyx_thinking.css"
+      },
+      "thoughtful": {
+        "js": "js/onyx/onyx-core/onyx_thoughtful.js",
+        "css": "css/onyx/onyx-core/onyx_thoughtful.css"
+      }
+    },
+    "gameFolders": {
+      "leisure": "js/onyx/games/leisure/ + css/onyx/games/leisure/",
+      "virtual": "js/onyx/games/virtual/ + css/onyx/games/virtual/",
+      "sharedInfrastructure": "js/onyx/onyx-core/ + css/onyx/onyx-core/"
+    },
+    "professorContactSheet": {
+      "image": "assets/images/games/virtual/atlases/onyx_professor_sprite_atlas.png",
+      "metadata": "json/prof.json",
+      "renderer": "js/onyx/onyx-core/shared-prof.js",
+      "chatSequence": "Health user message -> caring widget + caring quadruped -> thoughtful quadruped Professor cue -> Professor atlas rise -> biped walk/turn/sit -> 10-minute activity timeout -> walk away/reverse rise/caring -> Good boy unlocks purring and autonomous non-Professor moods."
+    }
+  },
+  "counts": {
+    "javascript": 97,
+    "json": 51,
+    "docs": 78,
+    "css": 58,
+    "profileHtml": 2,
+    "dbtHtml": 103
+  },
+  "validation": {
+    "templateReusesSharedJS": true,
+    "portalCSSSeparated": true,
+    "profileIframeSrcdoc": true,
+    "skillsPageLinked": true,
+    "gamesPageURL": "https://tyrannosaurusdm92.github.io/LifeHelpers/Games/index.html",
+    "backendModified": false,
+    "browserSmokeTest": "unavailable: browser blocked by administrator"
+  },
+  "files": [
+    {
+      "path": "assets/audio/shared/call-end.wav",
+      "bytes": 7982
+    },
+    {
+      "path": "assets/audio/shared/call-start.wav",
+      "bytes": 7100
+    },
+    {
+      "path": "assets/audio/shared/incoming-call.wav",
+      "bytes": 12392
+    },
+    {
+      "path": "assets/audio/shared/message-received.wav",
+      "bytes": 14156
+    },
+    {
+      "path": "assets/audio/shared/message-sent.wav",
+      "bytes": 10628
+    },
+    {
+      "path": "assets/code/dbt/001_general_worksheet_1_pros_and_cons_of_using_skills.html",
+      "bytes": 15632
+    },
+    {
+      "path": "assets/code/dbt/002_general_worksheet_2_chain_analysis_of_problem_behavior.html",
+      "bytes": 44872
+    },
+    {
+      "path": "assets/code/dbt/003_general_worksheet_2a_example_chain_analysis_of_problem_behavior.html",
+      "bytes": 27771
+    },
+    {
+      "path": "assets/code/dbt/004_general_worksheet_3_missing_links_analysis.html",
+      "bytes": 17384
+    },
+    {
+      "path": "assets/code/dbt/005_mindfulness_worksheet_1_pros_and_cons_of_practicing_mindfulness.html",
+      "bytes": 19741
+    },
+    {
+      "path": "assets/code/dbt/006_mindfulness_worksheet_2_mindfulness_core_skills_practice.html",
+      "bytes": 96590
+    },
+    {
+      "path": "assets/code/dbt/007_mindfulness_worksheet_2a_mindfulness_core_skills_practice.html",
+      "bytes": 107908
+    },
+    {
+      "path": "assets/code/dbt/008_mindfulness_worksheet_2b_mindfulness_core_skills_practice.html",
+      "bytes": 119538
+    },
+    {
+      "path": "assets/code/dbt/009_mindfulness_worksheet_2c_mindfulness_core_skills_calendar.html",
+      "bytes": 99704
+    },
+    {
+      "path": "assets/code/dbt/010_mindfulness_worksheet_3_wise_mind_practice.html",
+      "bytes": 28162
+    },
+    {
+      "path": "assets/code/dbt/011_mindfulness_worksheet_4_mindfulness_what_skills_observing_describing_partici.html",
+      "bytes": 62817
+    },
+    {
+      "path": "assets/code/dbt/012_mindfulness_worksheet_4a_observing_describing_participating_checklist.html",
+      "bytes": 92445
+    },
+    {
+      "path": "assets/code/dbt/013_mindfulness_worksheet_4b_observing_describing_participating_calendar.html",
+      "bytes": 66735
+    },
+    {
+      "path": "assets/code/dbt/014_mindfulness_worksheet_5_mindfulness_how_skills_nonjudgmentalness_one_mindful.html",
+      "bytes": 36166
+    },
+    {
+      "path": "assets/code/dbt/015_mindfulness_worksheet_5a_nonjudgmentalness_one_mindfulness_effectiveness_chec.html",
+      "bytes": 35912
+    },
+    {
+      "path": "assets/code/dbt/016_mindfulness_worksheet_5b_nonjudgmentalness_one_mindfulness_effectiveness_cale.html",
+      "bytes": 40121
+    },
+    {
+      "path": "assets/code/dbt/017_mindfulness_worksheet_5c_nonjudgmentalness_calendar.html",
+      "bytes": 43753
+    },
+    {
+      "path": "assets/code/dbt/018_mindfulness_worksheet_6_loving_kindness.html",
+      "bytes": 21700
+    },
+    {
+      "path": "assets/code/dbt/019_mindfulness_worksheet_7_balancing_being_mind_with_doing_mind.html",
+      "bytes": 29893
+    },
+    {
+      "path": "assets/code/dbt/020_mindfulness_worksheet_7a_mindfulness_of_being_and_doing_calendar.html",
+      "bytes": 31934
+    },
+    {
+      "path": "assets/code/dbt/021_mindfulness_worksheet_8_mindfulness_of_pleasant_events_calendar.html",
+      "bytes": 32157
+    },
+    {
+      "path": "assets/code/dbt/022_mindfulness_worksheet_9_mindfulness_of_unpleasant_events_calendar.html",
+      "bytes": 32002
+    },
+    {
+      "path": "assets/code/dbt/023_mindfulness_worksheet_10_walking_the_middle_path_to_wise_mind.html",
+      "bytes": 25720
+    },
+    {
+      "path": "assets/code/dbt/024_mindfulness_worksheet_10a_analyzing_yourself_on_the_middle_path.html",
+      "bytes": 21835
+    },
+    {
+      "path": "assets/code/dbt/025_mindfulness_worksheet_10b_walking_the_middle_path_calendar.html",
+      "bytes": 24330
+    },
+    {
+      "path": "assets/code/dbt/026_interpersonal_effectiveness_worksheet_1_pros_and_cons_of_using_interpersonal_effectiveness_s.html",
+      "bytes": 17266
+    },
+    {
+      "path": "assets/code/dbt/027_interpersonal_effectiveness_worksheet_2_challenging_myths_in_the_way_of_obtaining_objectives.html",
+      "bytes": 28588
+    },
+    {
+      "path": "assets/code/dbt/028_interpersonal_effectiveness_worksheet_3_clarifying_priorities_in_interpersonal_situations.html",
+      "bytes": 15511
+    },
+    {
+      "path": "assets/code/dbt/029_interpersonal_effectiveness_worksheet_4_writing_out_interpersonal_effectiveness_scripts.html",
+      "bytes": 23303
+    },
+    {
+      "path": "assets/code/dbt/030_interpersonal_effectiveness_worksheet_5_tracking_interpersonal_effectiveness_skills_use.html",
+      "bytes": 28418
+    },
+    {
+      "path": "assets/code/dbt/031_interpersonal_effectiveness_worksheet_6_the_dime_game_figuring_out_how_strongly_to_ask_or_sa.html",
+      "bytes": 29772
+    },
+    {
+      "path": "assets/code/dbt/032_interpersonal_effectiveness_worksheet_7_troubleshooting_interpersonal_effectiveness_skills.html",
+      "bytes": 28068
+    },
+    {
+      "path": "assets/code/dbt/033_interpersonal_effectiveness_worksheet_8_finding_and_getting_people_to_like_you.html",
+      "bytes": 22766
+    },
+    {
+      "path": "assets/code/dbt/034_interpersonal_effectiveness_worksheet_9_mindfulness_of_others.html",
+      "bytes": 20600
+    },
+    {
+      "path": "assets/code/dbt/035_interpersonal_effectiveness_worksheet_10_ending_relationships.html",
+      "bytes": 17793
+    },
+    {
+      "path": "assets/code/dbt/036_interpersonal_effectiveness_worksheet_11_practicing_dialectics.html",
+      "bytes": 28455
+    },
+    {
+      "path": "assets/code/dbt/037_interpersonal_effectiveness_worksheet_11a_dialectics_checklist.html",
+      "bytes": 33106
+    },
+    {
+      "path": "assets/code/dbt/038_interpersonal_effectiveness_worksheet_11b_noticing_when_youre_not_dialectical.html",
+      "bytes": 28310
+    },
+    {
+      "path": "assets/code/dbt/039_interpersonal_effectiveness_worksheet_12_validating_others.html",
+      "bytes": 21498
+    },
+    {
+      "path": "assets/code/dbt/040_interpersonal_effectiveness_worksheet_13_self_validation_and_self_respect.html",
+      "bytes": 21383
+    },
+    {
+      "path": "assets/code/dbt/041_interpersonal_effectiveness_worksheet_14_changing_behavior_with_reinforcement.html",
+      "bytes": 18251
+    },
+    {
+      "path": "assets/code/dbt/042_interpersonal_effectiveness_worksheet_15_changing_behavior_by_extinguishing_or_punishing_it.html",
+      "bytes": 19949
+    },
+    {
+      "path": "assets/code/dbt/043_emotion_regulation_worksheet_1_pros_and_cons_of_changing_emotions.html",
+      "bytes": 17035
+    },
+    {
+      "path": "assets/code/dbt/044_emotion_regulation_worksheet_2_figuring_out_what_my_emotions_are_doing_for_me.html",
+      "bytes": 15887
+    },
+    {
+      "path": "assets/code/dbt/045_emotion_regulation_worksheet_2a_example_figuring_out_what_my_emotions_are_doing_for.html",
+      "bytes": 15666
+    },
+    {
+      "path": "assets/code/dbt/046_emotion_regulation_worksheet_2b_emotion_diary.html",
+      "bytes": 17734
+    },
+    {
+      "path": "assets/code/dbt/047_emotion_regulation_worksheet_2c_example_emotion_diary.html",
+      "bytes": 15189
+    },
+    {
+      "path": "assets/code/dbt/048_emotion_regulation_worksheet_3_myths_about_emotions.html",
+      "bytes": 22969
+    },
+    {
+      "path": "assets/code/dbt/049_emotion_regulation_worksheet_4_observing_and_describing_emotions.html",
+      "bytes": 66233
+    },
+    {
+      "path": "assets/code/dbt/050_emotion_regulation_worksheet_4a_observing_and_describing_emotions.html",
+      "bytes": 64543
+    },
+    {
+      "path": "assets/code/dbt/051_emotion_regulation_worksheet_5_check_the_facts.html",
+      "bytes": 24398
+    },
+    {
+      "path": "assets/code/dbt/052_emotion_regulation_worksheet_6_figuring_out_how_to_change_unwanted_emotions.html",
+      "bytes": 16454
+    },
+    {
+      "path": "assets/code/dbt/053_emotion_regulation_worksheet_7_opposite_action_to_change_emotions.html",
+      "bytes": 40156
+    },
+    {
+      "path": "assets/code/dbt/054_emotion_regulation_worksheet_8_problem_solving_to_change_emotions.html",
+      "bytes": 21453
+    },
+    {
+      "path": "assets/code/dbt/055_emotion_regulation_worksheet_9_steps_for_reducing_vulnerability_to_emotion_mind.html",
+      "bytes": 104010
+    },
+    {
+      "path": "assets/code/dbt/056_emotion_regulation_worksheet_10_pleasant_events_diary.html",
+      "bytes": 75215
+    },
+    {
+      "path": "assets/code/dbt/057_emotion_regulation_worksheet_11_getting_from_values_to_specific_action_steps.html",
+      "bytes": 47997
+    },
+    {
+      "path": "assets/code/dbt/058_emotion_regulation_worksheet_11a_getting_from_values_to_specific_action_steps.html",
+      "bytes": 37883
+    },
+    {
+      "path": "assets/code/dbt/059_emotion_regulation_worksheet_11b_diary_of_daily_actions_on_values_and_priorities.html",
+      "bytes": 43852
+    },
+    {
+      "path": "assets/code/dbt/060_emotion_regulation_worksheet_12_build_mastery_and_cope_ahead.html",
+      "bytes": 18192
+    },
+    {
+      "path": "assets/code/dbt/061_emotion_regulation_worksheet_13_putting_abc_skills_together_day_by_day.html",
+      "bytes": 22392
+    },
+    {
+      "path": "assets/code/dbt/062_emotion_regulation_worksheet_14_practicing_please_skills.html",
+      "bytes": 22477
+    },
+    {
+      "path": "assets/code/dbt/063_emotion_regulation_worksheet_14a_target_nightmare_experience_form.html",
+      "bytes": 31970
+    },
+    {
+      "path": "assets/code/dbt/064_emotion_regulation_worksheet_14b_sleep_hygiene_practice_sheet.html",
+      "bytes": 29684
+    },
+    {
+      "path": "assets/code/dbt/065_emotion_regulation_worksheet_15_mindfulness_of_current_emotions.html",
+      "bytes": 18238
+    },
+    {
+      "path": "assets/code/dbt/066_emotion_regulation_worksheet_16_troubleshooting_emotion_regulation_skills.html",
+      "bytes": 22094
+    },
+    {
+      "path": "assets/code/dbt/067_distress_tolerance_worksheet_1_crisis_survival_skills.html",
+      "bytes": 99665
+    },
+    {
+      "path": "assets/code/dbt/068_distress_tolerance_worksheet_1a_crisis_survival_skills.html",
+      "bytes": 119064
+    },
+    {
+      "path": "assets/code/dbt/069_distress_tolerance_worksheet_1b_crisis_survival_skills.html",
+      "bytes": 107100
+    },
+    {
+      "path": "assets/code/dbt/070_distress_tolerance_worksheet_2_practicing_the_stop_skill.html",
+      "bytes": 19218
+    },
+    {
+      "path": "assets/code/dbt/071_distress_tolerance_worksheet_2a_practicing_the_stop_skill.html",
+      "bytes": 29331
+    },
+    {
+      "path": "assets/code/dbt/072_distress_tolerance_worksheet_3_pros_and_cons_of_acting_on_crisis_urges.html",
+      "bytes": 21076
+    },
+    {
+      "path": "assets/code/dbt/073_distress_tolerance_worksheet_3a_pros_and_cons_of_acting_on_crisis_urges.html",
+      "bytes": 21161
+    },
+    {
+      "path": "assets/code/dbt/074_distress_tolerance_worksheet_4_changing_body_chemistry_with_tip_skills.html",
+      "bytes": 26987
+    },
+    {
+      "path": "assets/code/dbt/075_distress_tolerance_worksheet_4a_paired_muscle_relaxation.html",
+      "bytes": 31391
+    },
+    {
+      "path": "assets/code/dbt/076_distress_tolerance_worksheet_4b_effective_rethinking_and_paired_relaxation.html",
+      "bytes": 26783
+    },
+    {
+      "path": "assets/code/dbt/077_distress_tolerance_worksheet_5_distracting_with_wise_mind_accepts.html",
+      "bytes": 33792
+    },
+    {
+      "path": "assets/code/dbt/078_distress_tolerance_worksheet_5a_distracting_with_wise_mind_accepts.html",
+      "bytes": 57824
+    },
+    {
+      "path": "assets/code/dbt/079_distress_tolerance_worksheet_5b_distracting_with_wise_mind_accepts.html",
+      "bytes": 43546
+    },
+    {
+      "path": "assets/code/dbt/080_distress_tolerance_worksheet_6_self_soothing.html",
+      "bytes": 34636
+    },
+    {
+      "path": "assets/code/dbt/081_distress_tolerance_worksheet_6a_self_soothing.html",
+      "bytes": 50164
+    },
+    {
+      "path": "assets/code/dbt/082_distress_tolerance_worksheet_6b_self_soothing.html",
+      "bytes": 43361
+    },
+    {
+      "path": "assets/code/dbt/083_distress_tolerance_worksheet_6c_body_scan_meditation_step_by_step.html",
+      "bytes": 24211
+    },
+    {
+      "path": "assets/code/dbt/084_distress_tolerance_worksheet_7_improve_the_moment.html",
+      "bytes": 33141
+    },
+    {
+      "path": "assets/code/dbt/085_distress_tolerance_worksheet_7a_improve_the_moment.html",
+      "bytes": 57250
+    },
+    {
+      "path": "assets/code/dbt/086_distress_tolerance_worksheet_7b_improve_the_moment.html",
+      "bytes": 42984
+    },
+    {
+      "path": "assets/code/dbt/087_distress_tolerance_worksheet_8_reality_acceptance_skills.html",
+      "bytes": 56385
+    },
+    {
+      "path": "assets/code/dbt/088_distress_tolerance_worksheet_8a_reality_acceptance_skills.html",
+      "bytes": 79005
+    },
+    {
+      "path": "assets/code/dbt/089_distress_tolerance_worksheet_8b_reality_acceptance_skills.html",
+      "bytes": 70771
+    },
+    {
+      "path": "assets/code/dbt/090_distress_tolerance_worksheet_9_radical_acceptance.html",
+      "bytes": 26695
+    },
+    {
+      "path": "assets/code/dbt/091_distress_tolerance_worksheet_9a_practicing_radical_acceptance.html",
+      "bytes": 58430
+    },
+    {
+      "path": "assets/code/dbt/092_distress_tolerance_worksheet_10_turning_the_mind_willingness_willfulness.html",
+      "bytes": 18637
+    },
+    {
+      "path": "assets/code/dbt/093_distress_tolerance_worksheet_11_half_smiling_and_willing_hands.html",
+      "bytes": 32486
+    },
+    {
+      "path": "assets/code/dbt/094_distress_tolerance_worksheet_11a_practicing_half_smiling_and_willing_hands.html",
+      "bytes": 50612
+    },
+    {
+      "path": "assets/code/dbt/095_distress_tolerance_worksheet_12_mindfulness_of_current_thoughts.html",
+      "bytes": 35559
+    },
+    {
+      "path": "assets/code/dbt/096_distress_tolerance_worksheet_12a_practicing_mindfulness_of_thoughts.html",
+      "bytes": 56116
+    },
+    {
+      "path": "assets/code/dbt/097_distress_tolerance_worksheet_13_skills_when_the_crisis_is_addiction.html",
+      "bytes": 75777
+    },
+    {
+      "path": "assets/code/dbt/098_distress_tolerance_worksheet_14_planning_for_dialectical_abstinence.html",
+      "bytes": 31458
+    },
+    {
+      "path": "assets/code/dbt/099_distress_tolerance_worksheet_15_from_clean_mind_to_clear_mind.html",
+      "bytes": 34658
+    },
+    {
+      "path": "assets/code/dbt/100_distress_tolerance_worksheet_16_reinforcing_nonaddictive_behaviors.html",
+      "bytes": 17929
+    },
+    {
+      "path": "assets/code/dbt/101_distress_tolerance_worksheet_17_burning_bridges_and_building_new_ones.html",
+      "bytes": 19402
+    },
+    {
+      "path": "assets/code/dbt/102_distress_tolerance_worksheet_18_practicing_alternate_rebellion_and_adaptive_denial.html",
+      "bytes": 28498
+    },
+    {
+      "path": "assets/code/dbt/book-cover.html",
+      "bytes": 1102
+    },
+    {
+      "path": "assets/code/jasper.html",
+      "bytes": 59137
+    },
+    {
+      "path": "assets/code/skills.html",
+      "bytes": 314014
+    },
+    {
+      "path": "assets/code/william.html",
+      "bytes": 59142
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/approaching_front_head_tilt.svg",
+      "bytes": 120024
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/approaching_front_head_tilt_close.svg",
+      "bytes": 127598
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/approaching_front_head_tilt_tail_up.svg",
+      "bytes": 125447
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/biped_spin_finishing_blur.svg",
+      "bytes": 255325
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/bounding_land_profile_right.svg",
+      "bytes": 132831
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/bounding_profile_right_forelegs_down.svg",
+      "bytes": 127735
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/crouch_turn_profile_right_tail_high.svg",
+      "bytes": 126179
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/crouched_close_head_tilt.svg",
+      "bytes": 123615
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/crouched_run_profile_right.svg",
+      "bytes": 111423
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/crouching_profile_right_tail_low.svg",
+      "bytes": 121497
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/crouching_ready_profile_right.svg",
+      "bytes": 95603
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/curled_loaf_relaxed.svg",
+      "bytes": 112829
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/curled_lying_head_down.svg",
+      "bytes": 123821
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/curled_lying_head_raised.svg",
+      "bytes": 125915
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/jumping_profile_right_forelegs_reaching.svg",
+      "bytes": 121303
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/jumping_up_profile_right_forepaws_bent.svg",
+      "bytes": 95419
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/jumping_up_profile_right_forepaws_forward.svg",
+      "bytes": 120035
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/landing_crouch_profile_right_rear_high.svg",
+      "bytes": 116627
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/leap_running_profile_right_body_extended.svg",
+      "bytes": 91405
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/leaping_down_profile_right_forelegs_extended.svg",
+      "bytes": 121131
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/leaping_profile_right_body_extended_low.svg",
+      "bytes": 128161
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/leaping_profile_right_fully_extended.svg",
+      "bytes": 88867
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/leaping_up_profile_right_forelegs_extended.svg",
+      "bytes": 117327
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/loafing_front_head_up.svg",
+      "bytes": 109568
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/low_crouch_profile_right_forelegs_forward.svg",
+      "bytes": 112847
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/low_jump_profile_right_body_extended.svg",
+      "bytes": 135943
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/lying_sphinx_front_head_up.svg",
+      "bytes": 126167
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/lying_sphinx_three_quarter_front.svg",
+      "bytes": 119079
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_caring_sprite_atlas.png",
+      "bytes": 1897846
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_hungry_sprite_atlas.png",
+      "bytes": 1916435
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_judgmental_sprite_atlas.png",
+      "bytes": 1874799
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_listening_sprite_atlas.png",
+      "bytes": 1908560
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_meow_sprite_atlas.png",
+      "bytes": 2151686
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_professor_sprite_atlas.png",
+      "bytes": 1563775
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_purring_sprite_atlas.png",
+      "bytes": 1919265
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_sleepy_sprite_atlas.png",
+      "bytes": 1843350
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_snuggly_sprite_atlas.png",
+      "bytes": 1842450
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_thinking_sprite_atlas.png",
+      "bytes": 1908794
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/onyx_thoughtful_sprite_atlas.png",
+      "bytes": 1891416
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_crouching_to_sit.svg",
+      "bytes": 307883
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_half_standing_with_clipboard.svg",
+      "bytes": 280533
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_rising_from_seat_with_clipboard.svg",
+      "bytes": 284117
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_seated_cross_legged_reading_clipboard.svg",
+      "bytes": 309615
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_seated_cross_legged_writing_clipboard.svg",
+      "bytes": 311683
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_seated_front_hands_on_knees.svg",
+      "bytes": 254019
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_seated_front_holding_clipboard.svg",
+      "bytes": 258963
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_standing_front.svg",
+      "bytes": 232858
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_standing_front_clipboard_at_side.svg",
+      "bytes": 256397
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_standing_front_neutral.svg",
+      "bytes": 133321
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_turning_side_step.svg",
+      "bytes": 123032
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_walking_away_head_turn_left.svg",
+      "bytes": 123271
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_walking_away_head_turn_right.svg",
+      "bytes": 122881
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_walking_away_left_step.svg",
+      "bytes": 122318
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_walking_away_right_step.svg",
+      "bytes": 124044
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_walking_toward_left_step_with_clipboard.svg",
+      "bytes": 249517
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/professor_walking_toward_right_step_with_clipboard.svg",
+      "bytes": 253177
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/prowling_crouch_profile_right_head_low.svg",
+      "bytes": 120688
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/prowling_crouched_profile_right.svg",
+      "bytes": 136443
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/quadruped_spin_low_blur.svg",
+      "bytes": 195121
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/quadruped_spin_rising_blur.svg",
+      "bytes": 210714
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/quadruped_standing_mid_transition.svg",
+      "bytes": 168542
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/rearing_up_reaching_front_paws.svg",
+      "bytes": 122767
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/reclining_side_front_tail_curled.svg",
+      "bytes": 141511
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/reclining_side_front_tail_looped.svg",
+      "bytes": 138175
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_compressed.svg",
+      "bytes": 78985
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_compressed_low.svg",
+      "bytes": 67845
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_forelegs_extended.svg",
+      "bytes": 85065
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_forelegs_reaching.svg",
+      "bytes": 90969
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_forepaw_forward.svg",
+      "bytes": 89745
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_long_stride.svg",
+      "bytes": 80221
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_low_crouch.svg",
+      "bytes": 82073
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_low_stride.svg",
+      "bytes": 95105
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_mid_stride.svg",
+      "bytes": 90425
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_mid_stride_long.svg",
+      "bytes": 96541
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_mid_stride_low.svg",
+      "bytes": 76533
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_rear_push.svg",
+      "bytes": 92945
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_rear_push_high.svg",
+      "bytes": 96821
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_rear_tucked.svg",
+      "bytes": 84501
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_rear_tucked_compact.svg",
+      "bytes": 65489
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_rear_tucked_high.svg",
+      "bytes": 83441
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/running_profile_right_rear_tucked_low.svg",
+      "bytes": 82809
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/short_leap_profile_right_forelegs_tucked.svg",
+      "bytes": 114159
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_back_tail_curled_left.svg",
+      "bytes": 90593
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_back_three_quarter_tail_left.svg",
+      "bytes": 95655
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_curled_tail_around_paws.svg",
+      "bytes": 127616
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_eyes_closed_head_raised.svg",
+      "bytes": 126981
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_eyes_closed_head_raised_tail_curled.svg",
+      "bytes": 132235
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_eyes_closed_tail_curled.svg",
+      "bytes": 125678
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_alert_waiting.svg",
+      "bytes": 130506
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_ears_forward.svg",
+      "bytes": 125369
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_eyes_closed.svg",
+      "bytes": 107799
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_gazing_up.svg",
+      "bytes": 132208
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_head_drooped_asleep.svg",
+      "bytes": 112669
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_head_drooped_eyes_closed.svg",
+      "bytes": 108077
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_head_tilt_side.svg",
+      "bytes": 119784
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_head_tilt_skeptical_left.svg",
+      "bytes": 112812
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_head_tilt_skeptical_right.svg",
+      "bytes": 111289
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_head_tilt_soft_gaze.svg",
+      "bytes": 146439
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_head_tilt_thinking.svg",
+      "bytes": 93218
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_head_tilt_up.svg",
+      "bytes": 122972
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_mouth_open_begging.svg",
+      "bytes": 131272
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_neutral.svg",
+      "bytes": 146289
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_paw_raised_considering.svg",
+      "bytes": 89804
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_paw_raised_high.svg",
+      "bytes": 150977
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_paw_reaching_forward.svg",
+      "bytes": 145745
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_paw_reaching_gently.svg",
+      "bytes": 140869
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_paw_to_chest_head_tilt.svg",
+      "bytes": 93055
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_relaxed_tail_curled.svg",
+      "bytes": 117996
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_side_eye_head_left.svg",
+      "bytes": 107661
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_side_eye_head_right.svg",
+      "bytes": 104600
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_tail_curled_right.svg",
+      "bytes": 106789
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_tail_extended_right.svg",
+      "bytes": 142899
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_tail_right_neutral.svg",
+      "bytes": 104827
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_tail_to_left.svg",
+      "bytes": 122359
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_tail_wrapped_right.svg",
+      "bytes": 128655
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_tongue_out.svg",
+      "bytes": 130407
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_front_tongue_out_tail_right.svg",
+      "bytes": 124296
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_grooming_front_paw.svg",
+      "bytes": 130383
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_paw_raised_head_tilt.svg",
+      "bytes": 158595
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_paw_reaching_head_tilt.svg",
+      "bytes": 154107
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_paw_to_chest_head_tilt.svg",
+      "bytes": 128141
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_paw_to_chin.svg",
+      "bytes": 124038
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_paw_to_chin_head_tilt.svg",
+      "bytes": 123402
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_side_head_tilt_thinking.svg",
+      "bytes": 102663
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_side_neutral_head_up.svg",
+      "bytes": 166137
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_side_paw_raised_high.svg",
+      "bytes": 153501
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_side_paw_reaching_forward.svg",
+      "bytes": 158309
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_dozy_head_turned.svg",
+      "bytes": 110335
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_eyes_closed.svg",
+      "bytes": 130194
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_head_tilt.svg",
+      "bytes": 139341
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_head_tilt_attentive.svg",
+      "bytes": 141783
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_head_tilt_tail_extended.svg",
+      "bytes": 144126
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_head_up_attentive.svg",
+      "bytes": 121202
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_looking_up.svg",
+      "bytes": 114010
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_relaxed_tail_curled.svg",
+      "bytes": 121571
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sitting_three_quarter_side_eye.svg",
+      "bytes": 134262
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sleeping_curled_side.svg",
+      "bytes": 160806
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sleeping_curled_tight_back_visible.svg",
+      "bytes": 144386
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sleeping_loaf_front_eyes_closed.svg",
+      "bytes": 140790
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sleeping_on_back_paws_up.svg",
+      "bytes": 203958
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sleeping_side_curled_loose.svg",
+      "bytes": 166450
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sleeping_stretched_side.svg",
+      "bytes": 144118
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sprinting_profile_right_airborne.svg",
+      "bytes": 84313
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sprinting_profile_right_extended_high.svg",
+      "bytes": 73445
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sprinting_profile_right_extended_low.svg",
+      "bytes": 96325
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sprinting_profile_right_fully_extended.svg",
+      "bytes": 87689
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sprinting_profile_right_long_stride.svg",
+      "bytes": 74049
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/sprinting_profile_right_low_flight.svg",
+      "bytes": 71153
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_back_three_quarter_tail_down.svg",
+      "bytes": 99363
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_front_head_tilt_tail_low.svg",
+      "bytes": 136816
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_front_relaxed_tail_high.svg",
+      "bytes": 137380
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_front_tail_high.svg",
+      "bytes": 174239
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_front_three_quarter_looking_up.svg",
+      "bytes": 117751
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_front_three_quarter_stern_tail_low.svg",
+      "bytes": 135131
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_front_three_quarter_tail_high.svg",
+      "bytes": 165175
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_front_tongue_out_tail_low.svg",
+      "bytes": 138584
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_front_tongue_out_tail_up.svg",
+      "bytes": 130074
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_profile_drowsy_head_low.svg",
+      "bytes": 125794
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_profile_left_looking_back_tail_high.svg",
+      "bytes": 96748
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_profile_left_tail_curled_high.svg",
+      "bytes": 181596
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_profile_left_tail_high.svg",
+      "bytes": 190353
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_profile_right_head_up.svg",
+      "bytes": 121575
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_drowsy.svg",
+      "bytes": 126788
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_ears_forward.svg",
+      "bytes": 142970
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_eyes_closed.svg",
+      "bytes": 129617
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_front_tail_high.svg",
+      "bytes": 185791
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_gazing_up.svg",
+      "bytes": 103149
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_gazing_up_tail_low.svg",
+      "bytes": 148437
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_head_lowered_attentive.svg",
+      "bytes": 124897
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_head_tilt_listening.svg",
+      "bytes": 146888
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_head_tilt_tail_high.svg",
+      "bytes": 164384
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_head_tilt_tail_up.svg",
+      "bytes": 147480
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_head_up_tail_high.svg",
+      "bytes": 136252
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_looking_up_tail_curved.svg",
+      "bytes": 128524
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_relaxed_tail_curled.svg",
+      "bytes": 120974
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_side_eye_tail_low.svg",
+      "bytes": 134134
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_stern_tail_low.svg",
+      "bytes": 118117
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/standing_three_quarter_tongue_out_tail_curled.svg",
+      "bytes": 133738
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/transformation_mid_biped_clothed.svg",
+      "bytes": 290212
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_idle_down_left_01.svg",
+      "bytes": 14005
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_idle_down_right_01.svg",
+      "bytes": 13568
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_idle_left_01.svg",
+      "bytes": 13282
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_idle_right_01.svg",
+      "bytes": 13109
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_idle_up_left_01.svg",
+      "bytes": 13291
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_idle_up_right_01.svg",
+      "bytes": 13118
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_left_airborne_fall.svg",
+      "bytes": 13371
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_left_airborne_rise.svg",
+      "bytes": 13727
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_left_crouched_start.svg",
+      "bytes": 13727
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_left_landing_crouch.svg",
+      "bytes": 13371
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_left_launch.svg",
+      "bytes": 13727
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_right_airborne_fall.svg",
+      "bytes": 13226
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_right_airborne_rise.svg",
+      "bytes": 13802
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_right_crouched_start.svg",
+      "bytes": 13802
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_right_landing_crouch.svg",
+      "bytes": 13226
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_down_right_launch.svg",
+      "bytes": 13802
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_left_airborne_fall.svg",
+      "bytes": 12528
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_left_airborne_rise.svg",
+      "bytes": 12528
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_left_crouched_start.svg",
+      "bytes": 12344
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_left_landing_crouch.svg",
+      "bytes": 12808
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_left_launch.svg",
+      "bytes": 12884
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_right_airborne_fall.svg",
+      "bytes": 12967
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_right_airborne_rise.svg",
+      "bytes": 12591
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_right_crouched_start.svg",
+      "bytes": 12579
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_right_landing_crouch.svg",
+      "bytes": 12963
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_right_launch.svg",
+      "bytes": 12747
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_left_airborne_fall.svg",
+      "bytes": 13409
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_left_airborne_rise.svg",
+      "bytes": 12985
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_left_crouched_start.svg",
+      "bytes": 13733
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_left_landing_crouch.svg",
+      "bytes": 13305
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_left_launch.svg",
+      "bytes": 13801
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_right_airborne_fall.svg",
+      "bytes": 13480
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_right_airborne_rise.svg",
+      "bytes": 12936
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_right_crouched_start.svg",
+      "bytes": 13556
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_right_landing_crouch.svg",
+      "bytes": 13300
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_jump_up_right_launch.svg",
+      "bytes": 14024
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_loaf_loaf_front_head_level.svg",
+      "bytes": 12497
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_loaf_loaf_front_head_up.svg",
+      "bytes": 12657
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_loaf_loaf_three_quarter_head_level.svg",
+      "bytes": 12901
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_loaf_loaf_three_quarter_head_up.svg",
+      "bytes": 12829
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_loaf_standing_three_quarter_tail_low_a.svg",
+      "bytes": 14109
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_loaf_standing_three_quarter_tail_low_b.svg",
+      "bytes": 14109
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_down_left_airborne_extended.svg",
+      "bytes": 12617
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_down_left_front_reach.svg",
+      "bytes": 12617
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_down_left_gathered_stride.svg",
+      "bytes": 13061
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_down_left_rear_push.svg",
+      "bytes": 12617
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_down_right_airborne_extended.svg",
+      "bytes": 12776
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_down_right_front_reach.svg",
+      "bytes": 12776
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_down_right_gathered_stride.svg",
+      "bytes": 13032
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_down_right_rear_push.svg",
+      "bytes": 12776
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_left_airborne_extended.svg",
+      "bytes": 12334
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_left_front_reach.svg",
+      "bytes": 12498
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_left_gathered_stride.svg",
+      "bytes": 12430
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_left_rear_push.svg",
+      "bytes": 12334
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_right_airborne_extended.svg",
+      "bytes": 12653
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_right_front_reach.svg",
+      "bytes": 12653
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_right_gathered_stride.svg",
+      "bytes": 12461
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_right_rear_push.svg",
+      "bytes": 12653
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_up_left_airborne_extended.svg",
+      "bytes": 12699
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_up_left_front_reach.svg",
+      "bytes": 12699
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_up_left_gathered_stride.svg",
+      "bytes": 13363
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_up_left_rear_push.svg",
+      "bytes": 12699
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_up_right_airborne_extended.svg",
+      "bytes": 12742
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_up_right_front_reach.svg",
+      "bytes": 13130
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_up_right_gathered_stride.svg",
+      "bytes": 13234
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_run_up_right_rear_push.svg",
+      "bytes": 12742
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_sleep_loaf_front_awake.svg",
+      "bytes": 13155
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_sleep_loaf_front_drowsy.svg",
+      "bytes": 12603
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_sleep_loaf_front_relaxed.svg",
+      "bytes": 13063
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_sleep_reclining_side_head_up.svg",
+      "bytes": 13783
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_sleep_sleep_curled_side.svg",
+      "bytes": 12299
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_sleep_sleep_curled_tight.svg",
+      "bytes": 12135
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_stretch_deep_forward_stretch_tail_curved.svg",
+      "bytes": 12835
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_stretch_deep_forward_stretch_tail_hooked.svg",
+      "bytes": 13179
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_stretch_deep_forward_stretch_tail_up.svg",
+      "bytes": 12931
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_stretch_forward_stretch_tail_up.svg",
+      "bytes": 13187
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_stretch_standing_profile_left.svg",
+      "bytes": 13303
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/turn_transition_stretch_standing_profile_right.svg",
+      "bytes": 13143
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_away_rear_center_left_step.svg",
+      "bytes": 80643
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_away_rear_center_right_step.svg",
+      "bytes": 77379
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_away_rear_left_paw_lifted.svg",
+      "bytes": 123627
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_away_rear_right_paw_lifted.svg",
+      "bytes": 137015
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_away_rear_three_quarter_left.svg",
+      "bytes": 118583
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_away_rear_three_quarter_right.svg",
+      "bytes": 140659
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_profile_right_tail_curled_high.svg",
+      "bytes": 128256
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_profile_right_tail_gently_raised.svg",
+      "bytes": 124451
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_profile_right_tail_high_front_step.svg",
+      "bytes": 162907
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_profile_right_tail_high_long_step.svg",
+      "bytes": 163265
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_profile_right_tail_high_rear_step.svg",
+      "bytes": 150875
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_profile_right_tail_level.svg",
+      "bytes": 149879
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_front_centered_short_stride.svg",
+      "bytes": 80799
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_front_left_paw_crossing.svg",
+      "bytes": 115607
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_front_left_paw_forward.svg",
+      "bytes": 159907
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_front_long_stride.svg",
+      "bytes": 80591
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_front_right_paw_crossing.svg",
+      "bytes": 105943
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_front_right_paw_forward.svg",
+      "bytes": 113863
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_paw_lifted_expectant.svg",
+      "bytes": 130132
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_tail_up_soft_gaze.svg",
+      "bytes": 125479
+    },
+    {
+      "path": "assets/images/games/virtual/atlases/walking_toward_tongue_out_tail_up.svg",
+      "bytes": 123131
+    },
+    {
+      "path": "assets/images/shared/frame-black.svg",
+      "bytes": 256611
+    },
+    {
+      "path": "assets/images/shared/onyx-alert-virtual-pet.svg",
+      "bytes": 80596
+    },
+    {
+      "path": "assets/images/widget/alerts/frame-black.svg",
+      "bytes": 256611
+    },
+    {
+      "path": "assets/images/widget/alerts/onyx-alert-virtual-pet.png",
+      "bytes": 10938
+    },
+    {
+      "path": "assets/images/widget/alerts/onyx-alert-virtual-pet.svg",
+      "bytes": 80596
+    },
+    {
+      "path": "assets/images/widget/alerts/onyx-widget-fallback.png",
+      "bytes": 22233
+    },
+    {
+      "path": "css/dbt/app.css",
+      "bytes": 12000
+    },
+    {
+      "path": "css/dbt/forms.css",
+      "bytes": 10711
+    },
+    {
+      "path": "css/dbt/onyx-assignments.css",
+      "bytes": 4987
+    },
+    {
+      "path": "css/dbt/skills.css",
+      "bytes": 12746
+    },
+    {
+      "path": "css/onyx/games/leisure/feed_him_meow.css",
+      "bytes": 13548
+    },
+    {
+      "path": "css/onyx/games/leisure/game.css",
+      "bytes": 21163
+    },
+    {
+      "path": "css/onyx/games/leisure/ingredient_garden.css",
+      "bytes": 30476
+    },
+    {
+      "path": "css/onyx/games/leisure/meow-repair-pass11.css",
+      "bytes": 2552
+    },
+    {
+      "path": "css/onyx/games/leisure/meow.css",
+      "bytes": 16319
+    },
+    {
+      "path": "css/onyx/games/virtual/biped_professor.css",
+      "bytes": 776
+    },
+    {
+      "path": "css/onyx/games/virtual/env.css",
+      "bytes": 688
+    },
+    {
+      "path": "css/onyx/games/virtual/happy-home-editor.css",
+      "bytes": 15115
+    },
+    {
+      "path": "css/onyx/games/virtual/happy-home-inventory-placement.css",
+      "bytes": 4651
+    },
+    {
+      "path": "css/onyx/games/virtual/happy-home-shell_happy_home.css",
+      "bytes": 6625
+    },
+    {
+      "path": "css/onyx/games/virtual/happy-home-store.css",
+      "bytes": 6425
+    },
+    {
+      "path": "css/onyx/games/virtual/prof.css",
+      "bytes": 1045
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_base-cat.css",
+      "bytes": 844
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_caring.css",
+      "bytes": 597
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_hungry.css",
+      "bytes": 597
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_judgmental.css",
+      "bytes": 609
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_listening.css",
+      "bytes": 606
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_purring.css",
+      "bytes": 602
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_sleepy.css",
+      "bytes": 600
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_snuggly.css",
+      "bytes": 603
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_thinking.css",
+      "bytes": 605
+    },
+    {
+      "path": "css/onyx/games/virtual/quadruped_thoughtful.css",
+      "bytes": 610
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-abstract.css",
+      "bytes": 1045195
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-carpet_rug.css",
+      "bytes": 10043130
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-fabric.css",
+      "bytes": 1039645
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-geometric.css",
+      "bytes": 689956
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-leather_fur.css",
+      "bytes": 10707805
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-masonry.css",
+      "bytes": 660028
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-metal.css",
+      "bytes": 735969
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-miscellaneous.css",
+      "bytes": 254279
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-paint.css",
+      "bytes": 2012492
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-plastic_rubber.css",
+      "bytes": 942218
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-rock_stone.css",
+      "bytes": 215545
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-theme.css",
+      "bytes": 2105769
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-tile_mosaic.css",
+      "bytes": 983445
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-weave_wicker.css",
+      "bytes": 2806032
+    },
+    {
+      "path": "css/onyx/games/virtual/texture-wood.css",
+      "bytes": 1167881
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx-module.css",
+      "bytes": 151111
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx.css",
+      "bytes": 5953
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_advising_professor.css",
+      "bytes": 4259
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_caring.css",
+      "bytes": 4356
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_hungry.css",
+      "bytes": 316
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_judgmental.css",
+      "bytes": 328
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_listening.css",
+      "bytes": 325
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_purring.css",
+      "bytes": 319
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_sleepy.css",
+      "bytes": 316
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_snuggly.css",
+      "bytes": 319
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_thinking.css",
+      "bytes": 322
+    },
+    {
+      "path": "css/onyx/onyx-core/onyx_thoughtful.css",
+      "bytes": 328
+    },
+    {
+      "path": "css/onyx/onyx-core/shared-runtime.css",
+      "bytes": 3471
+    },
+    {
+      "path": "css/onyx/onyx-core/work-tab.css",
+      "bytes": 42045
+    },
+    {
+      "path": "css/ourspace-core/jasper.css",
+      "bytes": 151290
+    },
+    {
+      "path": "css/ourspace-core/ourspace.css",
+      "bytes": 68210
+    },
+    {
+      "path": "css/ourspace-core/william.css",
+      "bytes": 151289
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 2445
+    },
+    {
+      "path": "docs/ASSET_SPLIT_PASS10.md",
+      "bytes": 1825
+    },
+    {
+      "path": "docs/AUDIT.txt",
+      "bytes": 1127
+    },
+    {
+      "path": "docs/BACKEND-CONTRACT.md",
+      "bytes": 1549
+    },
+    {
+      "path": "docs/BEHAVIOR_CONTRACT.md",
+      "bytes": 2040
+    },
+    {
+      "path": "docs/BRAIN_LINK_PASS3.md",
+      "bytes": 2770
+    },
+    {
+      "path": "docs/CANONICAL_SPRITE_ROUTING.md",
+      "bytes": 1240
+    },
+    {
+      "path": "docs/CHANGELOG.md",
+      "bytes": 12549
+    },
+    {
+      "path": "docs/CHANGES.md",
+      "bytes": 2644
+    },
+    {
+      "path": "docs/CHEST_UP_MODULE_RENDERER.md",
+      "bytes": 848
+    },
+    {
+      "path": "docs/DISCORD_LAYOUT_REFERENCE.md",
+      "bytes": 4799
+    },
+    {
+      "path": "docs/FALLBACK_FIT_AND_TRANSPARENT_BUBBLE.md",
+      "bytes": 1187
+    },
+    {
+      "path": "docs/FILE-MAP.txt",
+      "bytes": 426
+    },
+    {
+      "path": "docs/FULLSCREEN_SHELL_SYNC_REVISION_2026-10-03.md",
+      "bytes": 999
+    },
+    {
+      "path": "docs/HAPPY_HOME_ANIMATION_FLOW_PASS4.md",
+      "bytes": 2768
+    },
+    {
+      "path": "docs/HAPPY_HOME_ROOM_PERCEPTION_PASS8.md",
+      "bytes": 2598
+    },
+    {
+      "path": "docs/INTEGRATION.md",
+      "bytes": 1213
+    },
+    {
+      "path": "docs/LEISURE_REPAIR_PASS11.md",
+      "bytes": 2675
+    },
+    {
+      "path": "docs/LIGHTNING_STORM_BOTANICAL_GARDEN_PASS.md",
+      "bytes": 1026
+    },
+    {
+      "path": "docs/LIGHTNING_STORM_BOTANICAL_GARDEN_PASS3.md",
+      "bytes": 1339
+    },
+    {
+      "path": "docs/LIGHTNING_STORM_BOTANICAL_GARDEN_PASS4.md",
+      "bytes": 1505
+    },
+    {
+      "path": "docs/LIGHTNING_STORM_PASS2_REFINEMENT.md",
+      "bytes": 1255
+    },
+    {
+      "path": "docs/LIGHTNING_STORM_WIDGET_TRANSPARENT_ORANGE_YELLOW_PASS5.md",
+      "bytes": 2213
+    },
+    {
+      "path": "docs/MERGE_PASS9.md",
+      "bytes": 1934
+    },
+    {
+      "path": "docs/ONYX_DBT_ASSIGNMENTS.md",
+      "bytes": 1852
+    },
+    {
+      "path": "docs/ONYX_DBT_VALIDATION.md",
+      "bytes": 559
+    },
+    {
+      "path": "docs/ONYX_EXPORT_SPLIT.md",
+      "bytes": 579
+    },
+    {
+      "path": "docs/ONYX_FRAME_BY_FRAME_ANIMATION_RESEARCH_PASS5.md",
+      "bytes": 4743
+    },
+    {
+      "path": "docs/ONYX_FRAME_BY_FRAME_ANIMATION_RESEARCH_PASS6.md",
+      "bytes": 4002
+    },
+    {
+      "path": "docs/ONYX_WORK_FULLSCREEN_INTEGRATION_PASS7.md",
+      "bytes": 1933
+    },
+    {
+      "path": "docs/PACKAGE_LAYOUT.md",
+      "bytes": 860
+    },
+    {
+      "path": "docs/PATH_REPAIR_README.md",
+      "bytes": 1605
+    },
+    {
+      "path": "docs/PERFORMANCE.md",
+      "bytes": 505
+    },
+    {
+      "path": "docs/PROFESSOR_CONTACT_SHEET_BIPED_CHAT_PASS_2026-10-04.md",
+      "bytes": 1429
+    },
+    {
+      "path": "docs/PROFILE_ROUTING.md",
+      "bytes": 2047
+    },
+    {
+      "path": "docs/PROFILE_TEMPLATE_IFRAME_INTEGRATION.md",
+      "bytes": 1720
+    },
+    {
+      "path": "docs/PROJECT-CATALOG-MERGE.md",
+      "bytes": 836
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 3771
+    },
+    {
+      "path": "docs/README_PACKAGE.txt",
+      "bytes": 613
+    },
+    {
+      "path": "docs/RESIZING.md",
+      "bytes": 2470
+    },
+    {
+      "path": "docs/SAFETY_PRIVACY.md",
+      "bytes": 579
+    },
+    {
+      "path": "docs/SOURCES-LICENSES.md",
+      "bytes": 1590
+    },
+    {
+      "path": "docs/SOURCE_AUDIT_PASS10.md",
+      "bytes": 2165
+    },
+    {
+      "path": "docs/STILL_WEAK_AREAS.md",
+      "bytes": 956
+    },
+    {
+      "path": "docs/TEST-CHECKLIST.md",
+      "bytes": 3559
+    },
+    {
+      "path": "docs/TEST.md",
+      "bytes": 1710
+    },
+    {
+      "path": "docs/UPDATED_ALERTS_AND_DESIGN_INTEGRATION.md",
+      "bytes": 2747
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2932
+    },
+    {
+      "path": "docs/VALIDATION_PASS10.txt",
+      "bytes": 2168
+    },
+    {
+      "path": "docs/VALIDATION_PASS9.txt",
+      "bytes": 2002
+    },
+    {
+      "path": "docs/VALIDATION_PATHS_20261010.json",
+      "bytes": 996
+    },
+    {
+      "path": "docs/VIEWPORT_FULLSCREEN_LAYOUT_PASS.md",
+      "bytes": 1162
+    },
+    {
+      "path": "docs/WORK_TAB_README.md",
+      "bytes": 3459
+    },
+    {
+      "path": "docs/WORK_TAB_SOURCE.txt",
+      "bytes": 10205
+    },
+    {
+      "path": "docs/feed-him-meow-CONSOLIDATION_REPORT.md",
+      "bytes": 4488
+    },
+    {
+      "path": "docs/feed-him-meow-CROSS_PLATFORM_GAME_SHELL_PASS3.md",
+      "bytes": 1992
+    },
+    {
+      "path": "docs/feed-him-meow-CURRENT_GAMEPLAY_DOSSIER_PASS11.txt",
+      "bytes": 76285
+    },
+    {
+      "path": "docs/feed-him-meow-CURRENT_GAMEPLAY_DOSSIER_PASS4.txt",
+      "bytes": 78929
+    },
+    {
+      "path": "docs/feed-him-meow-FEED_HIM_MEOW_SOURCE.txt",
+      "bytes": 10982
+    },
+    {
+      "path": "docs/feed-him-meow-FLOW_AND_EXPORT_PASS4.md",
+      "bytes": 1139
+    },
+    {
+      "path": "docs/feed-him-meow-INGREDIENT_AUDIT.json",
+      "bytes": 1601
+    },
+    {
+      "path": "docs/feed-him-meow-PACKAGE_MANIFEST.json",
+      "bytes": 173835
+    },
+    {
+      "path": "docs/feed-him-meow-QA_CHECKLIST.md",
+      "bytes": 2770
+    },
+    {
+      "path": "docs/happy-home-BASELINE_ACCURATE_ROOM_README.md",
+      "bytes": 1980
+    },
+    {
+      "path": "docs/happy-home-BASELINE_ACCURATE_ROOM_TEST_REPORT.md",
+      "bytes": 2664
+    },
+    {
+      "path": "docs/happy-home-CLICK_FIRST_MERGE.md",
+      "bytes": 618
+    },
+    {
+      "path": "docs/happy-home-EMBEDDED_ROOM_PASS.md",
+      "bytes": 2593
+    },
+    {
+      "path": "docs/happy-home-FINAL_SHELL_PASS.md",
+      "bytes": 1050
+    },
+    {
+      "path": "docs/happy-home-Happy_Home_Solidified_Design_and_Object_Mechanics_Dossier.txt",
+      "bytes": 143357
+    },
+    {
+      "path": "docs/happy-home-INTEGRATION_AUDIT_PASS2.md",
+      "bytes": 750
+    },
+    {
+      "path": "docs/happy-home-README.md",
+      "bytes": 899
+    },
+    {
+      "path": "docs/happy-home-SCANNER_ALGORITHM.md",
+      "bytes": 3083
+    },
+    {
+      "path": "docs/happy-home-TEST_REPORT.md",
+      "bytes": 1291
+    },
+    {
+      "path": "docs/happy-home-THIRD_PARTY_NOTICES.md",
+      "bytes": 1416
+    },
+    {
+      "path": "docs/happy-home-third_party_IMAGE2SCAN_LICENSE.txt",
+      "bytes": 11357
+    },
+    {
+      "path": "docs/happy-home-third_party_XYZALIGN_LICENSE.txt",
+      "bytes": 1526
+    },
+    {
+      "path": "docs/happy-home-wasm-README.md",
+      "bytes": 275
+    },
+    {
+      "path": "js/dbt/app.js",
+      "bytes": 13428
+    },
+    {
+      "path": "js/dbt/dbt-worksheet-entry.js",
+      "bytes": 21468
+    },
+    {
+      "path": "js/dbt/onyx-assignments.js",
+      "bytes": 60094
+    },
+    {
+      "path": "js/dbt/print-export.js",
+      "bytes": 17101
+    },
+    {
+      "path": "js/dbt/resizing-responsive.js",
+      "bytes": 25146
+    },
+    {
+      "path": "js/dbt/skills.js",
+      "bytes": 15352
+    },
+    {
+      "path": "js/onyx/games/leisure/chat-sync.js",
+      "bytes": 6551
+    },
+    {
+      "path": "js/onyx/games/leisure/core-app.js",
+      "bytes": 16743
+    },
+    {
+      "path": "js/onyx/games/leisure/core-audio.js",
+      "bytes": 4801
+    },
+    {
+      "path": "js/onyx/games/leisure/core-boosters.js",
+      "bytes": 3834
+    },
+    {
+      "path": "js/onyx/games/leisure/core-game_shell.js",
+      "bytes": 8026
+    },
+    {
+      "path": "js/onyx/games/leisure/game.js",
+      "bytes": 126803
+    },
+    {
+      "path": "js/onyx/games/leisure/phase-bon_appetit.js",
+      "bytes": 19390
+    },
+    {
+      "path": "js/onyx/games/leisure/phase-ingredient_garden.js",
+      "bytes": 10947
+    },
+    {
+      "path": "js/onyx/games/leisure/phase-market_madness.js",
+      "bytes": 9993
+    },
+    {
+      "path": "js/onyx/games/leisure/vendor-aurora_wasm_loader.js",
+      "bytes": 15533
+    },
+    {
+      "path": "js/onyx/games/leisure/vendor-garden_randomizer_core.js",
+      "bytes": 4125
+    },
+    {
+      "path": "js/onyx/games/leisure/vendor-ingredient_garden_board.js",
+      "bytes": 16553
+    },
+    {
+      "path": "js/onyx/games/leisure/vendor-ingredient_garden_currency.js",
+      "bytes": 4367
+    },
+    {
+      "path": "js/onyx/games/leisure/vendor-ingredient_garden_interactions.js",
+      "bytes": 7139
+    },
+    {
+      "path": "js/onyx/games/leisure/vendor-ingredient_garden_level_randomizer.js",
+      "bytes": 65158
+    },
+    {
+      "path": "js/onyx/games/leisure/vendor-ingredient_garden_recipe_bridge.js",
+      "bytes": 9707
+    },
+    {
+      "path": "js/onyx/games/virtual/biped_professor.js",
+      "bytes": 993
+    },
+    {
+      "path": "js/onyx/games/virtual/env.js",
+      "bytes": 41905
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-editor.js",
+      "bytes": 4015248
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-final_architecture.js",
+      "bytes": 13180
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-inventory-placement.js",
+      "bytes": 17158
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-inventory-room-bridge.js",
+      "bytes": 11342
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-onyx-spatial-runtime.js",
+      "bytes": 6975
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-shell_happy_home.js",
+      "bytes": 17928
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-store-catalog.js",
+      "bytes": 78742
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-store.js",
+      "bytes": 8292
+    },
+    {
+      "path": "js/onyx/games/virtual/happy-home-texture_manifest.js",
+      "bytes": 100962
+    },
+    {
+      "path": "js/onyx/games/virtual/prof.js",
+      "bytes": 568
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_base-cat.js",
+      "bytes": 585
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_caring.js",
+      "bytes": 589
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_hungry.js",
+      "bytes": 592
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_judgmental.js",
+      "bytes": 590
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_listening.js",
+      "bytes": 585
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_purring.js",
+      "bytes": 570
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_sleepy.js",
+      "bytes": 577
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_snuggly.js",
+      "bytes": 581
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_thinking.js",
+      "bytes": 591
+    },
+    {
+      "path": "js/onyx/games/virtual/quadruped_thoughtful.js",
+      "bytes": 593
+    },
+    {
+      "path": "js/onyx/games/virtual/texture-bubble-system.js",
+      "bytes": 6407
+    },
+    {
+      "path": "js/onyx/games/virtual/texture-catalog.js",
+      "bytes": 4315
+    },
+    {
+      "path": "js/onyx/onyx-core/brain-link.js",
+      "bytes": 121404
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-alerts.js",
+      "bytes": 34017
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-atlas.js",
+      "bytes": 0
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-behavior.js",
+      "bytes": 803
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-config.js",
+      "bytes": 643
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-core.js",
+      "bytes": 100001
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-media.js",
+      "bytes": 480
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-mood-renderers.js",
+      "bytes": 37243
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-mood.js",
+      "bytes": 2304
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-responsive-resize.js",
+      "bytes": 17558
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-runtime.js",
+      "bytes": 4476
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-scanner.js",
+      "bytes": 44093
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-signature-parts.js",
+      "bytes": 6270
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-ui.js",
+      "bytes": 105230
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx-voice.js",
+      "bytes": 432
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_advising_professor.js",
+      "bytes": 39632
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_caring.js",
+      "bytes": 36688
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_hungry.js",
+      "bytes": 902
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_judgmental.js",
+      "bytes": 926
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_listening.js",
+      "bytes": 920
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_purring.js",
+      "bytes": 908
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_sleepy.js",
+      "bytes": 902
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_snuggly.js",
+      "bytes": 908
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_thinking.js",
+      "bytes": 914
+    },
+    {
+      "path": "js/onyx/onyx-core/onyx_thoughtful.js",
+      "bytes": 926
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-bootstrap.js",
+      "bytes": 107
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-onyx-audio-votes.js",
+      "bytes": 7750
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-onyx-currency.js",
+      "bytes": 5264
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-onyx-frame-animation.js",
+      "bytes": 10120
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-onyx-income.js",
+      "bytes": 3602
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-onyx-work-income.js",
+      "bytes": 4314
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-prof.js",
+      "bytes": 21856
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-runtime.js",
+      "bytes": 6999
+    },
+    {
+      "path": "js/onyx/onyx-core/shared-shells.js",
+      "bytes": 496423
+    },
+    {
+      "path": "js/onyx/onyx-core/work-tab.js",
+      "bytes": 50958
+    },
+    {
+      "path": "js/ourspace-core/backend-client.js",
+      "bytes": 3868
+    },
+    {
+      "path": "js/ourspace-core/communication-media.js",
+      "bytes": 28868
+    },
+    {
+      "path": "js/ourspace-core/dbt-diary.js",
+      "bytes": 6914
+    },
+    {
+      "path": "js/ourspace-core/fluid-card-resize.js",
+      "bytes": 6106
+    },
+    {
+      "path": "js/ourspace-core/journal-data.js",
+      "bytes": 190555
+    },
+    {
+      "path": "js/ourspace-core/messenger.js",
+      "bytes": 56979
+    },
+    {
+      "path": "js/ourspace-core/modules-data.js",
+      "bytes": 1580065
+    },
+    {
+      "path": "js/ourspace-core/native-runtime.js",
+      "bytes": 58430
+    },
+    {
+      "path": "js/ourspace-core/page-design.js",
+      "bytes": 44761
+    },
+    {
+      "path": "js/ourspace-core/portal.js",
+      "bytes": 8140
+    },
+    {
+      "path": "js/ourspace-core/profile-access.js",
+      "bytes": 20129
+    },
+    {
+      "path": "js/ourspace-core/profile-routing.js",
+      "bytes": 1729
+    },
+    {
+      "path": "js/ourspace-core/resize.js",
+      "bytes": 4604
+    },
+    {
+      "path": "js/ourspace-core/site-navigation.js",
+      "bytes": 52956
+    },
+    {
+      "path": "js/ourspace-core/social-features.js",
+      "bytes": 13706
+    },
+    {
+      "path": "json/board_layouts.json",
+      "bytes": 153147
+    },
+    {
+      "path": "json/boosters.json",
+      "bytes": 7036
+    },
+    {
+      "path": "json/cooking_state_assets.json",
+      "bytes": 756
+    },
+    {
+      "path": "json/cookware_catalog.json",
+      "bytes": 399
+    },
+    {
+      "path": "json/currency.json",
+      "bytes": 1840
+    },
+    {
+      "path": "json/dbt/fields.json",
+      "bytes": 1058956
+    },
+    {
+      "path": "json/dbt/pairings.json",
+      "bytes": 142169
+    },
+    {
+      "path": "json/discord-patterns.json",
+      "bytes": 1005
+    },
+    {
+      "path": "json/flavor_catalog.json",
+      "bytes": 226
+    },
+    {
+      "path": "json/flipbook_frame_manifest.json",
+      "bytes": 37293
+    },
+    {
+      "path": "json/happy-home-aquarium-config.json",
+      "bytes": 1440
+    },
+    {
+      "path": "json/happy-home-assets.json",
+      "bytes": 3693
+    },
+    {
+      "path": "json/happy-home-catalog.json",
+      "bytes": 104076
+    },
+    {
+      "path": "json/happy-home-currency-rules.json",
+      "bytes": 2180
+    },
+    {
+      "path": "json/happy-home-defaults.json",
+      "bytes": 1198
+    },
+    {
+      "path": "json/happy-home-final_architecture.geojson",
+      "bytes": 13153
+    },
+    {
+      "path": "json/happy-home-iframe_locks.json",
+      "bytes": 3349
+    },
+    {
+      "path": "json/happy-home-living_room_perspective_merged_clean_media.geojson",
+      "bytes": 179879
+    },
+    {
+      "path": "json/happy-home-locked_scene.json",
+      "bytes": 36185
+    },
+    {
+      "path": "json/happy-home-object-manifest.json",
+      "bytes": 50926
+    },
+    {
+      "path": "json/happy-home-onyx-cat-physical-reference.json",
+      "bytes": 1173
+    },
+    {
+      "path": "json/happy-home-onyx-store-ownership-contract.json",
+      "bytes": 623
+    },
+    {
+      "path": "json/happy-home-onyx_interactions.geojson",
+      "bytes": 29112
+    },
+    {
+      "path": "json/happy-home-store-catalog.json",
+      "bytes": 104128
+    },
+    {
+      "path": "json/happy-home-tablet-audio-assignment-manifest.json",
+      "bytes": 11990
+    },
+    {
+      "path": "json/happy-home-texture-manifest.json",
+      "bytes": 240523
+    },
+    {
+      "path": "json/income.json",
+      "bytes": 1441
+    },
+    {
+      "path": "json/ingredient_aliases.json",
+      "bytes": 2361
+    },
+    {
+      "path": "json/ingredient_catalog.json",
+      "bytes": 237072
+    },
+    {
+      "path": "json/ingredient_garden_asset_aliases.json",
+      "bytes": 1104
+    },
+    {
+      "path": "json/junk_catalog.json",
+      "bytes": 2421
+    },
+    {
+      "path": "json/level_path.json",
+      "bytes": 11244
+    },
+    {
+      "path": "json/onyx-animation-research.json",
+      "bytes": 16312
+    },
+    {
+      "path": "json/onyx-base-frame-library.json",
+      "bytes": 228951
+    },
+    {
+      "path": "json/onyx-care.json",
+      "bytes": 490
+    },
+    {
+      "path": "json/onyx-health.json",
+      "bytes": 271
+    },
+    {
+      "path": "json/onyx-manifest.json",
+      "bytes": 6331
+    },
+    {
+      "path": "json/onyx-runtime.json",
+      "bytes": 393
+    },
+    {
+      "path": "json/onyx-shared.json",
+      "bytes": 1131
+    },
+    {
+      "path": "json/package-manifest.json",
+      "bytes": 13664
+    },
+    {
+      "path": "json/pass24_ui_asset_aliases.json",
+      "bytes": 1326
+    },
+    {
+      "path": "json/prof.json",
+      "bytes": 566910
+    },
+    {
+      "path": "json/project-catalog-schema.json",
+      "bytes": 489
+    },
+    {
+      "path": "json/randomizer_config.json",
+      "bytes": 16338
+    },
+    {
+      "path": "json/recipe_difficulty_rules.json",
+      "bytes": 3784
+    },
+    {
+      "path": "json/recipes.json",
+      "bytes": 4214
+    },
+    {
+      "path": "json/work-moods.json",
+      "bytes": 1879
+    },
+    {
+      "path": "json/work-schema.json",
+      "bytes": 963
+    },
+    {
+      "path": "json/work-tabs.json",
+      "bytes": 5433
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 772
+    },
+    {
+      "path": "ourspace.html",
+      "bytes": 7883
+    },
+    {
+      "path": "script/onyx-health-core.wasm",
+      "bytes": 6688
+    },
+    {
+      "path": "script/wasm/aurora_kernel.wasm",
+      "bytes": 7813
+    },
+    {
+      "path": "service-worker.js",
+      "bytes": 6569
+    }
+  ],
+  "jsCount": 97,
+  "jsonCount": 51,
+  "docsCount": 78,
+  "packageBytes": 100345386,
+  "profilePages": {
+    "william": "assets/code/william.html",
+    "jasper": "assets/code/jasper.html"
+  },
+  "portal": "ourspace.html",
+  "standaloneOnyxHtml": false,
+  "stylesheetPaths": {
+    "portal": "css/ourspace-core/ourspace.css",
+    "william": "css/ourspace-core/william.css",
+    "jasper": "css/ourspace-core/jasper.css"
+  }
+}

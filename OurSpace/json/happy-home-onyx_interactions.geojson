@@ -1,0 +1,1256 @@
+{
+  "type": "FeatureCollection",
+  "name": "Onyx Living Room Parent Child Interaction Map",
+  "metadata": {
+    "stageWidth": 1916,
+    "stageHeight": 821,
+    "spriteScale": {
+      "farY": 522,
+      "farPx": 64,
+      "nearY": 821,
+      "nearPx": 130
+    },
+    "sourceRoomGeoJSON": "living_room_perspective_merged_clean_media.geojson"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.interactions",
+        "label": "Onyx Living Room Interaction Root",
+        "role": "interaction-root",
+        "children": [
+          "onyx.floor",
+          "onyx.basking",
+          "onyx.couch",
+          "onyx.aquarium",
+          "onyx.dynamic-furniture",
+          "onyx.appliances"
+        ],
+        "actor": "onyx",
+        "runtimeLocked": true,
+        "editable": false,
+        "childFeatureIds": [
+          "onyx.floor",
+          "onyx.basking",
+          "onyx.couch",
+          "onyx.aquarium",
+          "onyx.dynamic-furniture",
+          "onyx.appliances"
+        ],
+        "hierarchyDepth": 0,
+        "descendantFeatureIds": [
+          "onyx.floor",
+          "onyx.floor.front-cross",
+          "onyx.floor.to-couch",
+          "onyx.floor.to-aquarium",
+          "onyx.floor.to-right",
+          "onyx.basking",
+          "onyx.basking.ac-floor",
+          "onyx.basking.aquarium-top",
+          "onyx.basking.window-sun",
+          "onyx.couch",
+          "onyx.couch.quadruped",
+          "onyx.couch.loaf-left",
+          "onyx.couch.lounge-center",
+          "onyx.couch.lay-right",
+          "onyx.couch.chaise-lounge",
+          "onyx.couch.biped",
+          "onyx.couch.professor-seat",
+          "onyx.aquarium",
+          "onyx.aquarium.top",
+          "onyx.aquarium.jump-landing",
+          "onyx.aquarium.top-watch",
+          "onyx.aquarium.fish",
+          "onyx.aquarium.grab-left",
+          "onyx.aquarium.grab-center",
+          "onyx.aquarium.grab-right",
+          "onyx.dynamic-furniture",
+          "onyx.appliances",
+          "onyx.appliance.air-conditioner",
+          "onyx.appliance.ceiling-fan"
+        ],
+        "grandchildFeatureIds": [
+          "onyx.floor.front-cross",
+          "onyx.floor.to-couch",
+          "onyx.floor.to-aquarium",
+          "onyx.floor.to-right",
+          "onyx.basking.ac-floor",
+          "onyx.basking.aquarium-top",
+          "onyx.basking.window-sun",
+          "onyx.couch.quadruped",
+          "onyx.couch.biped",
+          "onyx.aquarium.top",
+          "onyx.aquarium.fish",
+          "onyx.appliance.air-conditioner",
+          "onyx.appliance.ceiling-fan"
+        ]
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.floor",
+        "label": "Onyx Walkable Floor",
+        "role": "walkable-floor",
+        "parentId": "onyx.interactions",
+        "children": [
+          "onyx.floor.front-cross",
+          "onyx.floor.to-couch",
+          "onyx.floor.to-aquarium",
+          "onyx.floor.to-right",
+          "onyx.floor.ac-to-aquarium",
+          "onyx.floor.ac-to-couch"
+        ],
+        "walkable": true,
+        "blocksMovement": false,
+        "actor": "onyx",
+        "childFeatureIds": [
+          "onyx.floor.front-cross",
+          "onyx.floor.to-couch",
+          "onyx.floor.to-aquarium",
+          "onyx.floor.to-right",
+          "onyx.floor.ac-to-aquarium",
+          "onyx.floor.ac-to-couch"
+        ],
+        "hierarchyDepth": 1,
+        "descendantFeatureIds": [
+          "onyx.floor.front-cross",
+          "onyx.floor.to-couch",
+          "onyx.floor.to-aquarium",
+          "onyx.floor.to-right",
+          "onyx.floor.ac-to-aquarium",
+          "onyx.floor.ac-to-couch"
+        ],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              553
+            ],
+            [
+              366,
+              522
+            ],
+            [
+              1554,
+              522
+            ],
+            [
+              1916,
+              553
+            ],
+            [
+              1916,
+              821
+            ],
+            [
+              0,
+              821
+            ],
+            [
+              0,
+              553
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.floor.front-cross",
+        "label": "Front Cross Route",
+        "role": "walk-path",
+        "parentId": "onyx.floor",
+        "children": [],
+        "actor": "onyx",
+        "walkable": true,
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            300,
+            760
+          ],
+          [
+            720,
+            720
+          ],
+          [
+            1250,
+            720
+          ],
+          [
+            1650,
+            760
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.floor.to-couch",
+        "label": "Couch Approach",
+        "role": "walk-path",
+        "parentId": "onyx.floor",
+        "children": [],
+        "actor": "onyx",
+        "walkable": true,
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1050,
+            760
+          ],
+          [
+            1000,
+            690
+          ],
+          [
+            970,
+            640
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.floor.to-aquarium",
+        "label": "Aquarium Approach",
+        "role": "walk-path",
+        "parentId": "onyx.floor",
+        "children": [],
+        "actor": "onyx",
+        "walkable": true,
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            640,
+            740
+          ],
+          [
+            470,
+            680
+          ],
+          [
+            330,
+            630
+          ],
+          [
+            285,
+            585
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.floor.to-right",
+        "label": "Right Side Approach",
+        "role": "walk-path",
+        "parentId": "onyx.floor",
+        "children": [],
+        "actor": "onyx",
+        "walkable": true,
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1200,
+            700
+          ],
+          [
+            1450,
+            650
+          ],
+          [
+            1600,
+            610
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.basking",
+        "label": "Basking Spots",
+        "role": "interaction-parent",
+        "parentId": "onyx.interactions",
+        "children": [
+          "onyx.basking.ac-floor",
+          "onyx.basking.aquarium-top",
+          "onyx.basking.window-sun",
+          "onyx.basking.ac-rest"
+        ],
+        "actor": "onyx",
+        "childFeatureIds": [
+          "onyx.basking.ac-floor",
+          "onyx.basking.aquarium-top",
+          "onyx.basking.window-sun",
+          "onyx.basking.ac-rest"
+        ],
+        "hierarchyDepth": 1,
+        "descendantFeatureIds": [
+          "onyx.basking.ac-floor",
+          "onyx.basking.aquarium-top",
+          "onyx.basking.window-sun",
+          "onyx.basking.ac-rest"
+        ],
+        "grandchildFeatureIds": []
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.basking.ac-floor",
+        "label": "A/C Floor Bask",
+        "role": "comfort-zone",
+        "parentId": "onyx.basking",
+        "children": [],
+        "actor": "onyx",
+        "interactions": [
+          "Bask",
+          "Lay",
+          "Cool Down"
+        ],
+        "walkable": true,
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1210,
+              555
+            ],
+            [
+              1510,
+              555
+            ],
+            [
+              1610,
+              690
+            ],
+            [
+              1280,
+              690
+            ],
+            [
+              1210,
+              555
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.basking.aquarium-top",
+        "label": "Aquarium Top Bask",
+        "role": "perch-spot",
+        "parentId": "onyx.basking",
+        "children": [],
+        "actor": "onyx",
+        "interactions": [
+          "Jump Onto",
+          "Bask",
+          "Watch Fish"
+        ],
+        "surfaceRef": "aquarium-built-in",
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          205,
+          377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.basking.window-sun",
+        "label": "Window Sun Patch",
+        "role": "comfort-zone",
+        "parentId": "onyx.basking",
+        "children": [],
+        "actor": "onyx",
+        "interactions": [
+          "Bask",
+          "Loaf",
+          "Nap"
+        ],
+        "walkable": true,
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1040,
+              548
+            ],
+            [
+              1370,
+              548
+            ],
+            [
+              1435,
+              630
+            ],
+            [
+              1060,
+              630
+            ],
+            [
+              1040,
+              548
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.couch",
+        "label": "Sectional Couch Interaction Parent",
+        "role": "furniture-interaction-parent",
+        "parentId": "onyx.interactions",
+        "children": [
+          "onyx.couch.quadruped",
+          "onyx.couch.biped"
+        ],
+        "actor": "onyx",
+        "frameName": "Sectional Couch",
+        "transformInheritance": "follow-parent-frame",
+        "childFeatureIds": [
+          "onyx.couch.quadruped",
+          "onyx.couch.biped"
+        ],
+        "hierarchyDepth": 1,
+        "descendantFeatureIds": [
+          "onyx.couch.quadruped",
+          "onyx.couch.loaf-left",
+          "onyx.couch.lounge-center",
+          "onyx.couch.lay-right",
+          "onyx.couch.chaise-lounge",
+          "onyx.couch.biped",
+          "onyx.couch.professor-seat"
+        ],
+        "grandchildFeatureIds": [
+          "onyx.couch.loaf-left",
+          "onyx.couch.lounge-center",
+          "onyx.couch.lay-right",
+          "onyx.couch.chaise-lounge",
+          "onyx.couch.professor-seat"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              568,
+              360
+            ],
+            [
+              1358,
+              360
+            ],
+            [
+              1353,
+              820
+            ],
+            [
+              568,
+              812
+            ],
+            [
+              568,
+              360
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.couch.quadruped",
+        "label": "Quadruped Couch Spots",
+        "role": "interaction-group",
+        "parentId": "onyx.couch",
+        "children": [
+          "onyx.couch.loaf-left",
+          "onyx.couch.lounge-center",
+          "onyx.couch.lay-right",
+          "onyx.couch.chaise-lounge"
+        ],
+        "actor": "onyx",
+        "childFeatureIds": [
+          "onyx.couch.loaf-left",
+          "onyx.couch.lounge-center",
+          "onyx.couch.lay-right",
+          "onyx.couch.chaise-lounge"
+        ],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [
+          "onyx.couch.loaf-left",
+          "onyx.couch.lounge-center",
+          "onyx.couch.lay-right",
+          "onyx.couch.chaise-lounge"
+        ],
+        "grandchildFeatureIds": []
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.couch.loaf-left",
+        "label": "Loaf Left Cushion",
+        "role": "rest-spot",
+        "parentId": "onyx.couch.quadruped",
+        "children": [],
+        "actor": "onyx",
+        "pose": "loaf",
+        "interactions": [
+          "Jump Onto",
+          "Loaf",
+          "Nap"
+        ],
+        "localNormalized": [
+          0.22,
+          0.35
+        ],
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": [],
+        "targetSpriteSize": 130
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          742,
+          520
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.couch.lounge-center",
+        "label": "Lounge Center Cushion",
+        "role": "rest-spot",
+        "parentId": "onyx.couch.quadruped",
+        "children": [],
+        "actor": "onyx",
+        "pose": "lounge",
+        "interactions": [
+          "Jump Onto",
+          "Lay",
+          "Nap",
+          "Watch Fish"
+        ],
+        "localNormalized": [
+          0.45,
+          0.32
+        ],
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": [],
+        "targetSpriteSize": 130
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          925,
+          505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.couch.lay-right",
+        "label": "Lay Right Cushion",
+        "role": "rest-spot",
+        "parentId": "onyx.couch.quadruped",
+        "children": [],
+        "actor": "onyx",
+        "pose": "lay",
+        "interactions": [
+          "Jump Onto",
+          "Lay",
+          "Sleep"
+        ],
+        "localNormalized": [
+          0.68,
+          0.35
+        ],
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": [],
+        "targetSpriteSize": 130
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1105,
+          520
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.couch.chaise-lounge",
+        "label": "Chaise Lounge",
+        "role": "rest-spot",
+        "parentId": "onyx.couch.quadruped",
+        "children": [],
+        "actor": "onyx",
+        "pose": "sprawl",
+        "interactions": [
+          "Jump Onto",
+          "Lay",
+          "Sleep"
+        ],
+        "localNormalized": [
+          0.15,
+          0.58
+        ],
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": [],
+        "targetSpriteSize": 130
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          690,
+          625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.couch.biped",
+        "label": "Biped Couch Spots",
+        "role": "interaction-group",
+        "parentId": "onyx.couch",
+        "children": [
+          "onyx.couch.professor-seat"
+        ],
+        "actor": "onyx",
+        "childFeatureIds": [
+          "onyx.couch.professor-seat"
+        ],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [
+          "onyx.couch.professor-seat"
+        ],
+        "grandchildFeatureIds": []
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.couch.professor-seat",
+        "label": "Professor Edge Seat",
+        "role": "biped-seat",
+        "parentId": "onyx.couch.biped",
+        "children": [],
+        "actor": "onyx",
+        "pose": "professor-sit",
+        "interactions": [
+          "Sit",
+          "Professor"
+        ],
+        "localNormalized": [
+          0.585,
+          0.445
+        ],
+        "notes": "Non-chaise couch edge seat; intended for biped professor form with feet toward the floor.",
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": [],
+        "targetSpriteSize": 450
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1030,
+          565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.aquarium",
+        "label": "Aquarium Interaction Parent",
+        "role": "fixture-interaction-parent",
+        "parentId": "onyx.interactions",
+        "children": [
+          "onyx.aquarium.top",
+          "onyx.aquarium.fish"
+        ],
+        "actor": "onyx",
+        "sourceFeatureId": "aquarium-built-in",
+        "transformInheritance": "fixed-architecture",
+        "childFeatureIds": [
+          "onyx.aquarium.top",
+          "onyx.aquarium.fish"
+        ],
+        "hierarchyDepth": 1,
+        "descendantFeatureIds": [
+          "onyx.aquarium.top",
+          "onyx.aquarium.jump-landing",
+          "onyx.aquarium.top-watch",
+          "onyx.aquarium.fish",
+          "onyx.aquarium.grab-left",
+          "onyx.aquarium.grab-center",
+          "onyx.aquarium.grab-right"
+        ],
+        "grandchildFeatureIds": [
+          "onyx.aquarium.jump-landing",
+          "onyx.aquarium.top-watch",
+          "onyx.aquarium.grab-left",
+          "onyx.aquarium.grab-center",
+          "onyx.aquarium.grab-right"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42,
+              335
+            ],
+            [
+              355,
+              335
+            ],
+            [
+              355,
+              560
+            ],
+            [
+              42,
+              560
+            ],
+            [
+              42,
+              335
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.aquarium.top",
+        "label": "Aquarium Top Surface",
+        "role": "jumpable-surface",
+        "parentId": "onyx.aquarium",
+        "children": [
+          "onyx.aquarium.jump-landing",
+          "onyx.aquarium.top-watch"
+        ],
+        "actor": "onyx",
+        "interactions": [
+          "Jump Onto",
+          "Stand",
+          "Bask",
+          "Watch Fish"
+        ],
+        "childFeatureIds": [
+          "onyx.aquarium.jump-landing",
+          "onyx.aquarium.top-watch"
+        ],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [
+          "onyx.aquarium.jump-landing",
+          "onyx.aquarium.top-watch"
+        ],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43,
+              335
+            ],
+            [
+              355,
+              335
+            ],
+            [
+              355,
+              385
+            ],
+            [
+              43,
+              385
+            ],
+            [
+              43,
+              335
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.aquarium.jump-landing",
+        "label": "Aquarium Jump Landing",
+        "role": "landing-spot",
+        "parentId": "onyx.aquarium.top",
+        "children": [],
+        "actor": "onyx",
+        "interactions": [
+          "Jump Onto"
+        ],
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": [],
+        "targetSpriteSize": 64
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          215,
+          372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.aquarium.top-watch",
+        "label": "Aquarium Top Watch Spot",
+        "role": "perch-spot",
+        "parentId": "onyx.aquarium.top",
+        "children": [],
+        "actor": "onyx",
+        "interactions": [
+          "Bask",
+          "Watch Fish"
+        ],
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          265,
+          378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.aquarium.fish",
+        "label": "Aquarium Fish Interaction Zone",
+        "role": "interaction-zone",
+        "parentId": "onyx.aquarium",
+        "children": [
+          "onyx.aquarium.grab-left",
+          "onyx.aquarium.grab-center",
+          "onyx.aquarium.grab-right"
+        ],
+        "actor": "onyx",
+        "interactions": [
+          "Watch Fish",
+          "Paw Glass",
+          "Grab Fish"
+        ],
+        "childFeatureIds": [
+          "onyx.aquarium.grab-left",
+          "onyx.aquarium.grab-center",
+          "onyx.aquarium.grab-right"
+        ],
+        "hierarchyDepth": 2,
+        "descendantFeatureIds": [
+          "onyx.aquarium.grab-left",
+          "onyx.aquarium.grab-center",
+          "onyx.aquarium.grab-right"
+        ],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55,
+              393
+            ],
+            [
+              355,
+              393
+            ],
+            [
+              352,
+              555
+            ],
+            [
+              55,
+              556
+            ],
+            [
+              55,
+              393
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.aquarium.grab-left",
+        "label": "Fish Grab Left",
+        "role": "fish-grab-spot",
+        "parentId": "onyx.aquarium.fish",
+        "children": [],
+        "actor": "onyx",
+        "interaction": "Grab Fish",
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105,
+          430
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.aquarium.grab-center",
+        "label": "Fish Grab Center",
+        "role": "fish-grab-spot",
+        "parentId": "onyx.aquarium.fish",
+        "children": [],
+        "actor": "onyx",
+        "interaction": "Grab Fish",
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          205,
+          445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.aquarium.grab-right",
+        "label": "Fish Grab Right",
+        "role": "fish-grab-spot",
+        "parentId": "onyx.aquarium.fish",
+        "children": [],
+        "actor": "onyx",
+        "interaction": "Grab Fish",
+        "childFeatureIds": [],
+        "hierarchyDepth": 3,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          310,
+          430
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.dynamic-furniture",
+        "label": "Dynamic Inventory Furniture",
+        "role": "dynamic-parent",
+        "parentId": "onyx.interactions",
+        "children": [],
+        "actor": "onyx",
+        "dynamicChildren": "Placed cat beds and compatible store objects register runtime child interaction zones here.",
+        "catBedAffordances": [
+          "Inspect",
+          "Enter",
+          "Lie",
+          "Nap",
+          "Knead"
+        ],
+        "childFeatureIds": [],
+        "hierarchyDepth": 1,
+        "descendantFeatureIds": [],
+        "grandchildFeatureIds": []
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.basking.ac-rest",
+        "label": "Air Conditioner Lounge Spot",
+        "role": "rest-spot",
+        "parentId": "onyx.basking",
+        "children": [],
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "pose": "lounge",
+        "targetSpriteSize": 64,
+        "interactions": [
+          "Lounge",
+          "Cool Down",
+          "Demand AC and Ceiling Fan"
+        ],
+        "walkable": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1390,
+          535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.appliances",
+        "label": "Room Appliances",
+        "role": "interaction-parent",
+        "parentId": "onyx.interactions",
+        "children": [
+          "onyx.appliance.air-conditioner",
+          "onyx.appliance.ceiling-fan"
+        ],
+        "childFeatureIds": [
+          "onyx.appliance.air-conditioner",
+          "onyx.appliance.ceiling-fan"
+        ],
+        "hierarchyDepth": 1
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.appliance.air-conditioner",
+        "label": "Wall Air Conditioner",
+        "role": "appliance",
+        "parentId": "onyx.appliances",
+        "children": [],
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "appliance": "air-conditioner",
+        "stateKey": "airConditionerOn",
+        "interactions": [
+          "Turn On",
+          "Turn Off"
+        ],
+        "visualRef": "built-in-air-conditioner"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1280,
+          458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.appliance.ceiling-fan",
+        "label": "Ceiling Fan",
+        "role": "appliance",
+        "parentId": "onyx.appliances",
+        "children": [],
+        "childFeatureIds": [],
+        "hierarchyDepth": 2,
+        "appliance": "ceiling-fan",
+        "stateKey": "ceilingFanOn",
+        "interactions": [
+          "Turn On",
+          "Turn Off"
+        ],
+        "visualRef": "ceiling-fan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          979,
+          96
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.floor.ac-to-aquarium",
+        "label": "AC to Aquarium Route",
+        "role": "walk-path",
+        "parentId": "onyx.floor",
+        "children": [],
+        "actor": "onyx",
+        "walkable": true,
+        "childFeatureIds": [],
+        "hierarchyDepth": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1390,
+            535
+          ],
+          [
+            1380,
+            620
+          ],
+          [
+            1250,
+            720
+          ],
+          [
+            640,
+            740
+          ],
+          [
+            470,
+            680
+          ],
+          [
+            330,
+            630
+          ],
+          [
+            285,
+            585
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "onyx.floor.ac-to-couch",
+        "label": "AC to Couch Route",
+        "role": "walk-path",
+        "parentId": "onyx.floor",
+        "children": [],
+        "actor": "onyx",
+        "walkable": true,
+        "childFeatureIds": [],
+        "hierarchyDepth": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1390,
+            535
+          ],
+          [
+            1380,
+            620
+          ],
+          [
+            1250,
+            720
+          ],
+          [
+            1050,
+            760
+          ],
+          [
+            1000,
+            690
+          ],
+          [
+            970,
+            640
+          ]
+        ]
+      }
+    }
+  ]
+}

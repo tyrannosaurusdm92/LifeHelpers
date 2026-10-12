@@ -1,0 +1,7887 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "schema": "living-room-perspective-hierarchical-map-merged",
+    "schemaVersion": 6,
+    "sceneId": "living-room-15x20x10",
+    "calibrationVersion": "living-room-2026-10-01-clean-lines-merged-bubble-wainscot-media",
+    "sourceImage": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/embedded_room.png",
+    "placedImageCount": 4,
+    "stage": {
+      "width": 1958,
+      "height": 803,
+      "coordinateSystem": "pixel-space-1958x803",
+      "origin": "top-left",
+      "xDirection": "right",
+      "yDirection": "down"
+    },
+    "physicalRoomDimensionsFt": {
+      "width": 15,
+      "depth": 20,
+      "height": 10
+    },
+    "worldCoordinateSystem": {
+      "unit": "ft",
+      "origin": "back-left-floor-corner",
+      "x": "left-to-right / room width",
+      "y": "back-to-front / room depth",
+      "z": "floor-to-ceiling / room height",
+      "calibratedPlanes": [
+        "floor",
+        "ceiling",
+        "back-wall",
+        "left-wall",
+        "right-wall"
+      ],
+      "note": "Physical XYZ is calculated from each feature surface plane by projective homography. Screen GeoJSON geometry is retained for pixel-perfect SVG editing."
+    },
+    "perspective": {
+      "horizonY": 569,
+      "vanishingPointX": 979,
+      "farScale": 0.34,
+      "depthCurve": 1.08,
+      "scaleFormula": "farScale + (1 - farScale) * ((y - horizonY)/(height - horizonY))^depthCurve"
+    },
+    "depthSpecification": {
+      "axis": "legacy-perception-depth",
+      "meaning": "screen-perspective compatibility depth",
+      "unit": "px",
+      "nearDepthPx": 0,
+      "farDepthPx": 120,
+      "depthMarkersPx": [
+        0,
+        60,
+        120
+      ],
+      "note": "This is not physical room Z. Physical X/Y/Z feet are stored in feature properties.worldCoordinatesFt."
+    },
+    "shellGeometry": {
+      "primitive": "freeform-polygon",
+      "rectanglePrimitives": false,
+      "editableVertices": true,
+      "roomSurfaceFeatureIds": [
+        "room-ceiling",
+        "left-wall",
+        "back-wall",
+        "right-wall",
+        "room-floor"
+      ],
+      "edgePolicy": "adjacent room surfaces share identical anchor coordinates at every seam"
+    },
+    "mappingExclusions": [
+      "sofa / furniture",
+      "coffee table / furniture",
+      "rug",
+      "floor lamp",
+      "cat food dish",
+      "cat water fountain/dish",
+      "plant",
+      "curtains",
+      "fishing poles"
+    ],
+    "semanticOverrides": {
+      "door": "Double French door assembly: 2 door leaves, 8 total glass panes, 2 handles mounted on the inner meeting frame rather than on glass.",
+      "aquarium": "Built-in left-wall aquarium with a matching room-extension face, bottom face, and four exact corner-to-corner five-point editable connector LineStrings.",
+      "weather": "A full-stage iframe sits behind all room geometry for weather videos/scenes.",
+      "pictures": "Four picture iframes sit inside their frames; clicking requests an image from the device."
+    },
+    "hierarchy": {
+      "parentProperty": "parentId",
+      "movementGroupProperty": "movementGroupId",
+      "childTransformPolicy": "inherit-parent-delta",
+      "movesChildrenProperty": "movesChildren",
+      "assemblies": [
+        "left-window\u21924 panes",
+        "right-window\u21924 panes",
+        "double French door\u21922 door leaves + inner frame\u21928 glass panes + 2 handles",
+        "each picture frame\u21921 click-to-load image iframe",
+        "aquarium-built-in\u2192room extension + bottom face + 4 five-point corner connectors",
+        "each wall\u2192its finish bands and attached fixtures"
+      ]
+    },
+    "sourceMerge": {
+      "primaryPerspectiveGeometry": "living_room_perspective_map (1).geojson",
+      "physicalDesignAndRuntimeBindings": "living_room_geometry_xyz_15x20_bubble_wainscot(9).geojson",
+      "mergeStrategy": {
+        "shellWindowsDoorAquariumPicturesAC": "perspective map geometry retained and cleaned",
+        "wallFinishBands": "physical bubble/wainscot geometry projected onto perspective wall planes",
+        "colors": "new defaults matched to the supplied living-room reference image",
+        "duplicates": "perspective-map versions preferred over duplicate physical-map fixtures"
+      }
+    },
+    "defaultMaterialPalette": {
+      "floor-warm-wood": {
+        "fill": "#B56325",
+        "stroke": "#6A3214",
+        "opacity": 1.0
+      },
+      "ceiling-deep-wood": {
+        "fill": "#6F3515",
+        "stroke": "#47210D",
+        "opacity": 1.0
+      },
+      "wall-shell": {
+        "fill": "#0B526B",
+        "stroke": "#4B250F",
+        "opacity": 1.0
+      },
+      "baseboard-dark-wood": {
+        "fill": "#663014",
+        "stroke": "#3E1B09",
+        "opacity": 1.0
+      },
+      "paneling-warm-wood": {
+        "fill": "#8F4A1D",
+        "stroke": "#5C2A10",
+        "opacity": 1.0
+      },
+      "trim-dark-wood": {
+        "fill": "#6B3214",
+        "stroke": "#401B08",
+        "opacity": 1.0
+      },
+      "crown-dark-wood": {
+        "fill": "#5A2910",
+        "stroke": "#351607",
+        "opacity": 1.0
+      },
+      "geometric-wallpaper": {
+        "fill": "#0B526B",
+        "stroke": "#4B250F",
+        "opacity": 1.0,
+        "pattern": "mid-century-geometric",
+        "patternPalette": [
+          "#063E58",
+          "#18B8C8",
+          "#FFD22E",
+          "#FF7817",
+          "#F7E4A4"
+        ]
+      },
+      "window-frame": {
+        "fill": "#6B3214",
+        "stroke": "#351607",
+        "opacity": 1.0
+      },
+      "window-glass": {
+        "fill": "#0A4D7A",
+        "stroke": "#7ADAE9",
+        "opacity": 0.32
+      },
+      "door-wood": {
+        "fill": "#8B451B",
+        "stroke": "#4E230D",
+        "opacity": 1.0
+      },
+      "door-inner-frame": {
+        "fill": "#5E2A10",
+        "stroke": "#351607",
+        "opacity": 1.0
+      },
+      "door-handle": {
+        "fill": "#E8B92A",
+        "stroke": "#6E4A00",
+        "opacity": 1.0
+      },
+      "ac-cream": {
+        "fill": "#D9D7CE",
+        "stroke": "#333333",
+        "opacity": 1.0
+      },
+      "picture-frame": {
+        "fill": "#673014",
+        "stroke": "#2C1206",
+        "opacity": 1.0
+      },
+      "picture-image": {
+        "fill": "#00000000",
+        "stroke": "#F0D8B0",
+        "opacity": 1.0
+      },
+      "aquarium-glass-frame": {
+        "fill": "#19CBE0",
+        "stroke": "#26343B",
+        "opacity": 0.24
+      },
+      "aquarium-inner-floor": {
+        "fill": "#D2B57A",
+        "stroke": "#26343B",
+        "opacity": 0.45
+      },
+      "aquarium-connector": {
+        "fill": "none",
+        "stroke": "#79EEFF",
+        "opacity": 0.95,
+        "strokeWidth": 3
+      },
+      "weather-scene": {
+        "fill": "#00000000",
+        "stroke": "#00CFE8",
+        "opacity": 0.0
+      }
+    },
+    "wallFinishLayoutFt": {
+      "floorboards": [
+        0.0,
+        0.5
+      ],
+      "paneling": [
+        0.5,
+        7.375
+      ],
+      "trim": [
+        7.375,
+        7.625
+      ],
+      "trim_center": 7.5,
+      "paint": [
+        7.625,
+        9.75
+      ],
+      "crown_moulding": [
+        9.75,
+        10.0
+      ]
+    },
+    "designSystem": {
+      "walls": {
+        "label": "Walls",
+        "subgroups": [
+          "floorboards",
+          "paneling",
+          "trim",
+          "paint",
+          "crown_moulding"
+        ],
+        "bubble_behavior": "large group bubble -> subgroup bubbles",
+        "linked_by_default": true,
+        "height_layout_ft": {
+          "floorboards": [
+            0.0,
+            0.5
+          ],
+          "paneling": [
+            0.5,
+            7.375
+          ],
+          "trim": [
+            7.375,
+            7.625
+          ],
+          "trim_center": 7.5,
+          "paint": [
+            7.625,
+            9.75
+          ],
+          "crown_moulding": [
+            9.75,
+            10.0
+          ]
+        }
+      },
+      "accents": {
+        "label": "Accents",
+        "single_linked_group": true,
+        "members": [
+          "door_hinges",
+          "door_handles",
+          "back_wall_ac_unit_outer",
+          "curtain_rods"
+        ],
+        "bubble_key": "accents.all"
+      },
+      "floor": {
+        "label": "Floor",
+        "subgroups": [
+          "full_floor"
+        ],
+        "bubble_key": "floor.full"
+      },
+      "ceiling": {
+        "label": "Ceiling",
+        "subgroups": [
+          "full_ceiling"
+        ],
+        "bubble_key": "ceiling.full"
+      },
+      "curtains": {
+        "label": "Curtains",
+        "subgroups": [
+          "top",
+          "middle",
+          "bottom"
+        ],
+        "gradient_order": [
+          "bottom",
+          "middle",
+          "top"
+        ],
+        "linked_by_subgroup_across_all_curtains": true,
+        "bubble_keys": [
+          "curtains.top",
+          "curtains.middle",
+          "curtains.bottom"
+        ]
+      }
+    },
+    "runtimeWiring": {
+      "coordinate_collision_contract": {
+        "floor_plane": "y=0",
+        "ceiling_plane": "y=10.0",
+        "back_wall_plane": "z=0",
+        "left_wall_plane": "x=0",
+        "right_wall_plane": "x=15.0",
+        "room_interior_ft": {
+          "x": [
+            0,
+            15.0
+          ],
+          "y": [
+            0,
+            10.0
+          ],
+          "z": [
+            0,
+            20.0
+          ]
+        },
+        "object_placement": "use world-foot bounds first; editor projection is display only"
+      },
+      "outside_weather": {
+        "visual_target": "weather-scene-iframe",
+        "audio_channel": "outside_weather",
+        "render_order": "behind entire living room",
+        "visibility": "through mapped window and French-door glass openings",
+        "accepted_media": [
+          "video/*",
+          "image/*",
+          ".html",
+          ".htm"
+        ]
+      },
+      "interactive_audio": {
+        "back_wall_french_doors_frame": [
+          "door.open",
+          "door.close",
+          "door.latch"
+        ],
+        "french_door_handle_*": [
+          "door.handle_click"
+        ],
+        "left_window_curtain_* / right_window_curtain_*": [
+          "curtain.rustle"
+        ],
+        "back_wall_ac_unit_outer": [
+          "ac.power_on",
+          "ac.hum_loop",
+          "ac.power_off"
+        ]
+      },
+      "bed_onyx_state_swap": {
+        "applies_to": "purchased bed objects only",
+        "purchase_source_required": true,
+        "empty_state_key": "bed.empty",
+        "occupied_state_key": "bed.onyx_sleeping",
+        "trigger": "onyx.sleep_on_bed",
+        "exit_trigger": "onyx.leave_bed_or_wake",
+        "swap_behavior": "replace visual child/state in-place; preserve purchased bed identity, transform, customization, price/source metadata, and collision footprint",
+        "onyx_anchor": "bed.sleep_anchor",
+        "asset_resolution": "runtime_inventory_and_asset_registry"
+      },
+      "picture_iframes": {
+        "feature_ids": [
+          "picture-iframe-left-wave",
+          "picture-iframe-back-left-moon",
+          "picture-iframe-back-right-cat",
+          "picture-iframe-right-quote"
+        ],
+        "on_click": "open-device-image-picker",
+        "accept": [
+          "image/*"
+        ],
+        "replace_existing": true,
+        "inherit_parent_transform": true
+      }
+    },
+    "movementGraph": {
+      "groups": {
+        "left-window": {
+          "root": "left-window",
+          "members": [
+            "left-window",
+            "left-window-pane-1",
+            "left-window-pane-2",
+            "left-window-pane-3",
+            "left-window-pane-4"
+          ]
+        },
+        "right-window": {
+          "root": "right-window",
+          "members": [
+            "right-window",
+            "right-window-pane-1",
+            "right-window-pane-2",
+            "right-window-pane-3",
+            "right-window-pane-4"
+          ]
+        },
+        "french-door-assembly": {
+          "root": "double-french-door",
+          "members": [
+            "double-french-door",
+            "french-door-left",
+            "french-door-right",
+            "french-door-inner-frame",
+            "french-door-left-pane-1",
+            "french-door-left-pane-2",
+            "french-door-left-pane-3",
+            "french-door-left-pane-4",
+            "french-door-right-pane-1",
+            "french-door-right-pane-2",
+            "french-door-right-pane-3",
+            "french-door-right-pane-4",
+            "french-door-left-handle",
+            "french-door-right-handle"
+          ]
+        },
+        "picture-frame-left-wave": {
+          "root": "picture-frame-left-wave",
+          "members": [
+            "picture-frame-left-wave",
+            "picture-iframe-left-wave"
+          ]
+        },
+        "picture-frame-back-left-moon": {
+          "root": "picture-frame-back-left-moon",
+          "members": [
+            "picture-frame-back-left-moon",
+            "picture-iframe-back-left-moon"
+          ]
+        },
+        "picture-frame-back-right-cat": {
+          "root": "picture-frame-back-right-cat",
+          "members": [
+            "picture-frame-back-right-cat",
+            "picture-iframe-back-right-cat"
+          ]
+        },
+        "picture-frame-right-quote": {
+          "root": "picture-frame-right-quote",
+          "members": [
+            "picture-frame-right-quote",
+            "picture-iframe-right-quote"
+          ]
+        },
+        "aquarium-assembly": {
+          "root": "aquarium-built-in",
+          "members": [
+            "aquarium-built-in",
+            "aquarium-room-extension",
+            "aquarium-inner-floor",
+            "aquarium-connector-top-left",
+            "aquarium-connector-top-right",
+            "aquarium-connector-bottom-right",
+            "aquarium-connector-bottom-left"
+          ]
+        }
+      },
+      "rules": {
+        "translate": "apply identical dx/dy/dz to every member of the selected movement group",
+        "rotateScale": "apply around root transform origin unless child explicitly overrides",
+        "vertexEdit": "only edited feature vertex changes, except hard endpoint anchors and shared shell anchors"
+      }
+    },
+    "sharedAnchors": [
+      {
+        "id": "front-top-left",
+        "screen": [
+          0,
+          0
+        ],
+        "bindings": [
+          [
+            "room-ceiling",
+            0
+          ],
+          [
+            "left-wall",
+            0
+          ]
+        ]
+      },
+      {
+        "id": "front-top-right",
+        "screen": [
+          1958,
+          0
+        ],
+        "bindings": [
+          [
+            "room-ceiling",
+            2
+          ],
+          [
+            "right-wall",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "back-top-left",
+        "screen": [
+          322,
+          145
+        ],
+        "bindings": [
+          [
+            "room-ceiling",
+            6
+          ],
+          [
+            "left-wall",
+            2
+          ],
+          [
+            "back-wall",
+            0
+          ]
+        ]
+      },
+      {
+        "id": "back-top-right",
+        "screen": [
+          1608,
+          145
+        ],
+        "bindings": [
+          [
+            "room-ceiling",
+            4
+          ],
+          [
+            "right-wall",
+            0
+          ],
+          [
+            "back-wall",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "back-floor-left",
+        "screen": [
+          321,
+          569
+        ],
+        "bindings": [
+          [
+            "left-wall",
+            4
+          ],
+          [
+            "back-wall",
+            6
+          ],
+          [
+            "room-floor",
+            0
+          ]
+        ]
+      },
+      {
+        "id": "back-floor-right",
+        "screen": [
+          1608,
+          569
+        ],
+        "bindings": [
+          [
+            "right-wall",
+            6
+          ],
+          [
+            "back-wall",
+            4
+          ],
+          [
+            "room-floor",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "left-floor-mid",
+        "screen": [
+          160,
+          654
+        ],
+        "bindings": [
+          [
+            "left-wall",
+            5
+          ],
+          [
+            "room-floor",
+            11
+          ]
+        ]
+      },
+      {
+        "id": "left-floor-front",
+        "screen": [
+          0,
+          739
+        ],
+        "bindings": [
+          [
+            "left-wall",
+            6
+          ],
+          [
+            "room-floor",
+            10
+          ]
+        ]
+      },
+      {
+        "id": "right-floor-mid",
+        "screen": [
+          1783,
+          654
+        ],
+        "bindings": [
+          [
+            "right-wall",
+            5
+          ],
+          [
+            "room-floor",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "right-floor-front",
+        "screen": [
+          1958,
+          739
+        ],
+        "bindings": [
+          [
+            "right-wall",
+            4
+          ],
+          [
+            "room-floor",
+            4
+          ]
+        ]
+      }
+    ],
+    "bestDefaultColors": {
+      "floor": "#B56325",
+      "ceiling": "#6F3515",
+      "paneling": "#8F4A1D",
+      "baseboardsTrim": "#663014",
+      "crownMoulding": "#5A2910",
+      "wallpaperBase": "#0B526B",
+      "wallpaperAccents": [
+        "#063E58",
+        "#18B8C8",
+        "#FFD22E",
+        "#FF7817",
+        "#F7E4A4"
+      ],
+      "doorWood": "#8B451B",
+      "windowFrameWood": "#6B3214",
+      "aquariumGlass": "#19CBE0",
+      "ac": "#D9D7CE"
+    },
+    "childTransformBindings": [
+      {
+        "parentId": "aquarium-built-in",
+        "childIds": [
+          "aquarium-room-extension",
+          "aquarium-connector-top-left",
+          "aquarium-connector-top-right",
+          "aquarium-connector-bottom-right",
+          "aquarium-connector-bottom-left",
+          "aquarium-inner-floor"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "back-wall",
+        "childIds": [
+          "left-window",
+          "right-window",
+          "double-french-door",
+          "built-in-ac",
+          "picture-frame-back-left-moon",
+          "picture-frame-back-right-cat",
+          "back-wall-baseboard-part-1",
+          "back-wall-baseboard-part-2",
+          "back-wall-paneling-part-1",
+          "back-wall-paneling-part-2",
+          "back-wall-halfway-trim-part-1",
+          "back-wall-halfway-trim-part-2",
+          "back-wall-halfway-trim-part-3",
+          "back-wall-halfway-trim-part-4",
+          "back-wall-paint",
+          "back-wall-crown-moulding",
+          "back-wall-left-corner-trim",
+          "back-wall-right-corner-trim"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "double-french-door",
+        "childIds": [
+          "french-door-left",
+          "french-door-right",
+          "french-door-inner-frame"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "french-door-inner-frame",
+        "childIds": [
+          "french-door-left-handle",
+          "french-door-right-handle"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "french-door-left",
+        "childIds": [
+          "french-door-left-pane-1",
+          "french-door-left-pane-2",
+          "french-door-left-pane-3",
+          "french-door-left-pane-4"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "french-door-right",
+        "childIds": [
+          "french-door-right-pane-1",
+          "french-door-right-pane-2",
+          "french-door-right-pane-3",
+          "french-door-right-pane-4"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "left-wall",
+        "childIds": [
+          "picture-frame-left-wave",
+          "aquarium-built-in",
+          "left-wall-baseboard",
+          "left-wall-paneling",
+          "left-wall-halfway-trim",
+          "left-wall-paint",
+          "left-wall-crown-moulding",
+          "left-wall-back-corner-trim"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "left-window",
+        "childIds": [
+          "left-window-pane-1",
+          "left-window-pane-2",
+          "left-window-pane-3",
+          "left-window-pane-4"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "picture-frame-back-left-moon",
+        "childIds": [
+          "picture-iframe-back-left-moon"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "picture-frame-back-right-cat",
+        "childIds": [
+          "picture-iframe-back-right-cat"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "picture-frame-left-wave",
+        "childIds": [
+          "picture-iframe-left-wave"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "picture-frame-right-quote",
+        "childIds": [
+          "picture-iframe-right-quote"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "right-wall",
+        "childIds": [
+          "picture-frame-right-quote",
+          "right-wall-baseboard",
+          "right-wall-paneling",
+          "right-wall-halfway-trim",
+          "right-wall-paint",
+          "right-wall-crown-moulding",
+          "right-wall-back-corner-trim"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      },
+      {
+        "parentId": "right-window",
+        "childIds": [
+          "right-window-pane-1",
+          "right-window-pane-2",
+          "right-window-pane-3",
+          "right-window-pane-4"
+        ],
+        "mode": "inherit-parent-delta",
+        "recursive": true
+      }
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "room-ceiling",
+      "properties": {
+        "id": "room-ceiling",
+        "label": "Living Room Ceiling",
+        "role": "ceiling",
+        "surfacePlane": "ceiling",
+        "purpose": "room-boundary",
+        "semanticTag": "15x20x10-shell",
+        "priority": 0,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "far",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            20.0,
+            10.0
+          ],
+          [
+            7.5,
+            20.0,
+            10.0
+          ],
+          [
+            15.0,
+            20.0,
+            10.0
+          ],
+          [
+            15.1017,
+            12.0715,
+            10.0
+          ],
+          [
+            15.0,
+            0.0,
+            10.0
+          ],
+          [
+            7.5,
+            0.0,
+            10.0
+          ],
+          [
+            0.0,
+            0.0,
+            10.0
+          ],
+          [
+            0.1295,
+            12.0715,
+            10.0
+          ]
+        ],
+        "geometryPrimitive": "freeform-polygon",
+        "rectanglePrimitive": false,
+        "visibleInEditor": true,
+        "designBinding": {
+          "group": "ceiling",
+          "subgroup": "full_ceiling",
+          "bubble_key": "ceiling.full",
+          "linked_edit_group": "ceiling.full",
+          "editable": true
+        },
+        "styleBinding": "ceiling-deep-wood",
+        "defaultStyle": {
+          "fill": "#6F3515",
+          "stroke": "#47210D",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              0,
+              120
+            ],
+            [
+              979,
+              0,
+              120
+            ],
+            [
+              1958,
+              0,
+              120
+            ],
+            [
+              1794,
+              72.5,
+              120
+            ],
+            [
+              1608,
+              145,
+              120
+            ],
+            [
+              965,
+              145,
+              120
+            ],
+            [
+              322,
+              145,
+              120
+            ],
+            [
+              175,
+              72.5,
+              120
+            ],
+            [
+              0,
+              0,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-wall",
+      "properties": {
+        "id": "left-wall",
+        "label": "Left Wall",
+        "role": "wall",
+        "surfacePlane": "left-wall",
+        "purpose": "room-boundary",
+        "semanticTag": "15x20x10-shell",
+        "priority": 1,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "full",
+        "depthMinPx": 35.021,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            20.0,
+            10.0
+          ],
+          [
+            0.0,
+            11.8898,
+            10.1105
+          ],
+          [
+            0.0,
+            0.0,
+            10.0
+          ],
+          [
+            0.0,
+            0.0,
+            5.0078
+          ],
+          [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          [
+            0.0,
+            12.7325,
+            0.0046
+          ],
+          [
+            0.0,
+            20.0,
+            -0.0
+          ],
+          [
+            0.0,
+            20.0,
+            5.0136
+          ]
+        ],
+        "geometryPrimitive": "freeform-polygon",
+        "rectanglePrimitive": false,
+        "visibleInEditor": true,
+        "styleBinding": "wall-shell",
+        "defaultStyle": {
+          "fill": "#0B526B",
+          "stroke": "#4B250F",
+          "opacity": 1.0
+        },
+        "movesChildren": true,
+        "childFeatureIds": [
+          "picture-frame-left-wave",
+          "aquarium-built-in",
+          "left-wall-baseboard",
+          "left-wall-paneling",
+          "left-wall-halfway-trim",
+          "left-wall-paint",
+          "left-wall-crown-moulding",
+          "left-wall-back-corner-trim"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              0,
+              120
+            ],
+            [
+              175,
+              72.5,
+              120
+            ],
+            [
+              322,
+              145,
+              120
+            ],
+            [
+              321.5,
+              357,
+              120
+            ],
+            [
+              321,
+              569,
+              120
+            ],
+            [
+              160,
+              654,
+              79.802
+            ],
+            [
+              0,
+              739,
+              35.021
+            ],
+            [
+              0,
+              369.5,
+              120
+            ],
+            [
+              0,
+              0,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall",
+      "properties": {
+        "id": "back-wall",
+        "label": "Back Wall",
+        "role": "wall",
+        "surfacePlane": "back-wall",
+        "purpose": "room-boundary",
+        "semanticTag": "15x20x10-shell",
+        "priority": 1,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "far",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            -0.0,
+            0.0,
+            10.0
+          ],
+          [
+            7.5,
+            0.0,
+            10.0
+          ],
+          [
+            15.0,
+            0.0,
+            10.0
+          ],
+          [
+            15.0,
+            0.0,
+            4.9981
+          ],
+          [
+            15.0,
+            0.0,
+            -0.0
+          ],
+          [
+            7.5,
+            0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            0.0,
+            4.9981
+          ]
+        ],
+        "geometryPrimitive": "freeform-polygon",
+        "rectanglePrimitive": false,
+        "visibleInEditor": true,
+        "styleBinding": "wall-shell",
+        "defaultStyle": {
+          "fill": "#0B526B",
+          "stroke": "#4B250F",
+          "opacity": 1.0
+        },
+        "movesChildren": true,
+        "childFeatureIds": [
+          "left-window",
+          "right-window",
+          "double-french-door",
+          "built-in-ac",
+          "picture-frame-back-left-moon",
+          "picture-frame-back-right-cat",
+          "back-wall-baseboard-part-1",
+          "back-wall-baseboard-part-2",
+          "back-wall-paneling-part-1",
+          "back-wall-paneling-part-2",
+          "back-wall-halfway-trim-part-1",
+          "back-wall-halfway-trim-part-2",
+          "back-wall-halfway-trim-part-3",
+          "back-wall-halfway-trim-part-4",
+          "back-wall-paint",
+          "back-wall-crown-moulding",
+          "back-wall-left-corner-trim",
+          "back-wall-right-corner-trim"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              322,
+              145,
+              120
+            ],
+            [
+              965,
+              145,
+              120
+            ],
+            [
+              1608,
+              145,
+              120
+            ],
+            [
+              1608,
+              357,
+              120
+            ],
+            [
+              1608,
+              569,
+              120
+            ],
+            [
+              964.5,
+              569,
+              120
+            ],
+            [
+              321,
+              569,
+              120
+            ],
+            [
+              321.5,
+              357,
+              120
+            ],
+            [
+              322,
+              145,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-wall",
+      "properties": {
+        "id": "right-wall",
+        "label": "Right Wall",
+        "role": "wall",
+        "surfacePlane": "right-wall",
+        "purpose": "room-boundary",
+        "semanticTag": "15x20x10-shell",
+        "priority": 1,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "full",
+        "depthMinPx": 35.021,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            -0.0,
+            10.0
+          ],
+          [
+            15.0,
+            13.2812,
+            9.9229
+          ],
+          [
+            15.0,
+            20.0,
+            10.0
+          ],
+          [
+            15.0,
+            20.0,
+            5.0
+          ],
+          [
+            15.0,
+            20.0,
+            0.0
+          ],
+          [
+            15.0,
+            12.7085,
+            0.0
+          ],
+          [
+            15.0,
+            -0.0,
+            0.0
+          ],
+          [
+            15.0,
+            -0.0,
+            5.0
+          ]
+        ],
+        "geometryPrimitive": "freeform-polygon",
+        "rectanglePrimitive": false,
+        "visibleInEditor": true,
+        "styleBinding": "wall-shell",
+        "defaultStyle": {
+          "fill": "#0B526B",
+          "stroke": "#4B250F",
+          "opacity": 1.0
+        },
+        "movesChildren": true,
+        "childFeatureIds": [
+          "picture-frame-right-quote",
+          "right-wall-baseboard",
+          "right-wall-paneling",
+          "right-wall-halfway-trim",
+          "right-wall-paint",
+          "right-wall-crown-moulding",
+          "right-wall-back-corner-trim"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1608,
+              145,
+              120
+            ],
+            [
+              1794,
+              72.5,
+              120
+            ],
+            [
+              1958,
+              0,
+              120
+            ],
+            [
+              1958,
+              369.5,
+              120
+            ],
+            [
+              1958,
+              739,
+              35.021
+            ],
+            [
+              1783,
+              654,
+              79.802
+            ],
+            [
+              1608,
+              569,
+              120
+            ],
+            [
+              1608,
+              357,
+              120
+            ],
+            [
+              1608,
+              145,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "room-floor",
+      "properties": {
+        "id": "room-floor",
+        "label": "Living Room Floor",
+        "role": "floor",
+        "surfacePlane": "floor",
+        "purpose": "walkable-room-surface",
+        "semanticTag": "15x20x10-shell",
+        "priority": 2,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "full",
+        "depthMinPx": 0.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            -0.0,
+            -0.0,
+            0.0
+          ],
+          [
+            7.5,
+            -0.0,
+            0.0
+          ],
+          [
+            15.0,
+            -0.0,
+            0.0
+          ],
+          [
+            15.469,
+            9.2928,
+            0.0
+          ],
+          [
+            15.8092,
+            16.0326,
+            0.0
+          ],
+          [
+            15.3847,
+            18.1139,
+            0.0
+          ],
+          [
+            15.0,
+            20.0,
+            0.0
+          ],
+          [
+            7.5,
+            20.0,
+            0.0
+          ],
+          [
+            -0.0,
+            20.0,
+            0.0
+          ],
+          [
+            -0.3528,
+            18.1139,
+            0.0
+          ],
+          [
+            -0.7421,
+            16.0326,
+            0.0
+          ],
+          [
+            -0.4351,
+            9.2928,
+            0.0
+          ]
+        ],
+        "geometryPrimitive": "freeform-polygon",
+        "rectanglePrimitive": false,
+        "visibleInEditor": true,
+        "designBinding": {
+          "group": "floor",
+          "subgroup": "full_floor",
+          "bubble_key": "floor.full",
+          "linked_edit_group": "floor.full",
+          "editable": true
+        },
+        "styleBinding": "floor-warm-wood",
+        "defaultStyle": {
+          "fill": "#B56325",
+          "stroke": "#6A3214",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              321,
+              569,
+              120
+            ],
+            [
+              964.5,
+              569,
+              120
+            ],
+            [
+              1608,
+              569,
+              120
+            ],
+            [
+              1783,
+              654,
+              79.802
+            ],
+            [
+              1958,
+              739,
+              35.021
+            ],
+            [
+              1958,
+              771,
+              17.622
+            ],
+            [
+              1958,
+              803,
+              0
+            ],
+            [
+              979,
+              803,
+              0
+            ],
+            [
+              0,
+              803,
+              0
+            ],
+            [
+              0,
+              771,
+              17.622
+            ],
+            [
+              0,
+              739,
+              35.021
+            ],
+            [
+              160,
+              654,
+              79.802
+            ],
+            [
+              321,
+              569,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-window",
+      "properties": {
+        "id": "left-window",
+        "label": "Left Window",
+        "role": "window",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "fixed-window-opening",
+        "semanticTag": "no-curtain-map",
+        "priority": 10,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            2.5787,
+            0.0,
+            9.0559
+          ],
+          [
+            5.0629,
+            0.0,
+            9.0559
+          ],
+          [
+            5.0784,
+            0.0,
+            4.1491
+          ],
+          [
+            2.6067,
+            0.0,
+            4.1726
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "left-window",
+        "inheritParentTransform": true,
+        "movesChildren": true,
+        "styleBinding": "window-frame",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#351607",
+          "opacity": 1.0
+        },
+        "childFeatureIds": [
+          "left-window-pane-1",
+          "left-window-pane-2",
+          "left-window-pane-3",
+          "left-window-pane-4"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              543,
+              185,
+              120
+            ],
+            [
+              756,
+              185,
+              120
+            ],
+            [
+              757,
+              393,
+              120
+            ],
+            [
+              545,
+              392,
+              120
+            ],
+            [
+              543,
+              185,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-window-pane-1",
+      "properties": {
+        "id": "left-window-pane-1",
+        "label": "Left Window Pane 1",
+        "role": "window-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "left-window",
+        "purpose": "glass-pane",
+        "semanticTag": "fixed",
+        "priority": 11,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            2.6376,
+            0.0,
+            8.3716
+          ],
+          [
+            3.7339,
+            0.0,
+            8.3716
+          ],
+          [
+            3.7353,
+            0.0,
+            6.7672
+          ],
+          [
+            2.6392,
+            0.0,
+            6.7672
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "left-window",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              548,
+              214,
+              120
+            ],
+            [
+              642,
+              214,
+              120
+            ],
+            [
+              642,
+              282,
+              120
+            ],
+            [
+              548,
+              282,
+              120
+            ],
+            [
+              548,
+              214,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-window-pane-2",
+      "properties": {
+        "id": "left-window-pane-2",
+        "label": "Left Window Pane 2",
+        "role": "window-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "left-window",
+        "purpose": "glass-pane",
+        "semanticTag": "fixed",
+        "priority": 11,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            3.8039,
+            0.0,
+            8.3716
+          ],
+          [
+            4.9119,
+            0.0,
+            8.3716
+          ],
+          [
+            4.9131,
+            0.0,
+            6.7672
+          ],
+          [
+            3.8053,
+            0.0,
+            6.7672
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "left-window",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              648,
+              214,
+              120
+            ],
+            [
+              743,
+              214,
+              120
+            ],
+            [
+              743,
+              282,
+              120
+            ],
+            [
+              648,
+              282,
+              120
+            ],
+            [
+              648,
+              214,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-window-pane-3",
+      "properties": {
+        "id": "left-window-pane-3",
+        "label": "Left Window Pane 3",
+        "role": "window-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "left-window",
+        "purpose": "glass-pane",
+        "semanticTag": "fixed",
+        "priority": 11,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            2.6394,
+            0.0,
+            6.5784
+          ],
+          [
+            3.7355,
+            0.0,
+            6.5784
+          ],
+          [
+            3.7369,
+            0.0,
+            4.9981
+          ],
+          [
+            2.6409,
+            0.0,
+            4.9981
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "left-window",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              548,
+              290,
+              120
+            ],
+            [
+              642,
+              290,
+              120
+            ],
+            [
+              642,
+              357,
+              120
+            ],
+            [
+              548,
+              357,
+              120
+            ],
+            [
+              548,
+              290,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-window-pane-4",
+      "properties": {
+        "id": "left-window-pane-4",
+        "label": "Left Window Pane 4",
+        "role": "window-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "left-window",
+        "purpose": "glass-pane",
+        "semanticTag": "fixed",
+        "priority": 11,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            3.8055,
+            0.0,
+            6.5784
+          ],
+          [
+            4.9133,
+            0.0,
+            6.5784
+          ],
+          [
+            4.9145,
+            0.0,
+            4.9981
+          ],
+          [
+            3.8068,
+            0.0,
+            4.9981
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "left-window",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              648,
+              290,
+              120
+            ],
+            [
+              743,
+              290,
+              120
+            ],
+            [
+              743,
+              357,
+              120
+            ],
+            [
+              648,
+              357,
+              120
+            ],
+            [
+              648,
+              290,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-window",
+      "properties": {
+        "id": "right-window",
+        "label": "Right Window",
+        "role": "window",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "fixed-window-opening",
+        "semanticTag": "no-curtain-map",
+        "priority": 10,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            10.0665,
+            0.0,
+            9.0087
+          ],
+          [
+            12.5507,
+            0.0,
+            9.0087
+          ],
+          [
+            12.5283,
+            0.0,
+            4.2434
+          ],
+          [
+            10.0916,
+            0.0,
+            4.2434
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "right-window",
+        "inheritParentTransform": true,
+        "movesChildren": true,
+        "styleBinding": "window-frame",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#351607",
+          "opacity": 1.0
+        },
+        "childFeatureIds": [
+          "right-window-pane-1",
+          "right-window-pane-2",
+          "right-window-pane-3",
+          "right-window-pane-4"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1185,
+              187,
+              120
+            ],
+            [
+              1398,
+              187,
+              120
+            ],
+            [
+              1396,
+              389,
+              120
+            ],
+            [
+              1187,
+              389,
+              120
+            ],
+            [
+              1185,
+              187,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-window-pane-1",
+      "properties": {
+        "id": "right-window-pane-1",
+        "label": "Right Window Pane 1",
+        "role": "window-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "right-window",
+        "purpose": "glass-pane",
+        "semanticTag": "fixed",
+        "priority": 11,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            10.1833,
+            0.0,
+            8.3716
+          ],
+          [
+            11.268,
+            0.0,
+            8.3716
+          ],
+          [
+            11.2684,
+            0.0,
+            6.7672
+          ],
+          [
+            10.1839,
+            0.0,
+            6.7672
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "right-window",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1195,
+              214,
+              120
+            ],
+            [
+              1288,
+              214,
+              120
+            ],
+            [
+              1288,
+              282,
+              120
+            ],
+            [
+              1195,
+              282,
+              120
+            ],
+            [
+              1195,
+              214,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-window-pane-2",
+      "properties": {
+        "id": "right-window-pane-2",
+        "label": "Right Window Pane 2",
+        "role": "window-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "right-window",
+        "purpose": "glass-pane",
+        "semanticTag": "fixed",
+        "priority": 11,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            11.3379,
+            0.0,
+            8.3716
+          ],
+          [
+            12.4342,
+            0.0,
+            8.3716
+          ],
+          [
+            12.4345,
+            0.0,
+            6.7672
+          ],
+          [
+            11.3384,
+            0.0,
+            6.7672
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "right-window",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1294,
+              214,
+              120
+            ],
+            [
+              1388,
+              214,
+              120
+            ],
+            [
+              1388,
+              282,
+              120
+            ],
+            [
+              1294,
+              282,
+              120
+            ],
+            [
+              1294,
+              214,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-window-pane-3",
+      "properties": {
+        "id": "right-window-pane-3",
+        "label": "Right Window Pane 3",
+        "role": "window-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "right-window",
+        "purpose": "glass-pane",
+        "semanticTag": "fixed",
+        "priority": 11,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            10.184,
+            0.0,
+            6.5784
+          ],
+          [
+            11.2685,
+            0.0,
+            6.5784
+          ],
+          [
+            11.269,
+            0.0,
+            4.9745
+          ],
+          [
+            10.1846,
+            0.0,
+            4.9745
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "right-window",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1195,
+              290,
+              120
+            ],
+            [
+              1288,
+              290,
+              120
+            ],
+            [
+              1288,
+              358,
+              120
+            ],
+            [
+              1195,
+              358,
+              120
+            ],
+            [
+              1195,
+              290,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-window-pane-4",
+      "properties": {
+        "id": "right-window-pane-4",
+        "label": "Right Window Pane 4",
+        "role": "window-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "right-window",
+        "purpose": "glass-pane",
+        "semanticTag": "fixed",
+        "priority": 11,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            11.3385,
+            0.0,
+            6.5784
+          ],
+          [
+            12.4346,
+            0.0,
+            6.5784
+          ],
+          [
+            12.4349,
+            0.0,
+            4.9745
+          ],
+          [
+            11.3389,
+            0.0,
+            4.9745
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "right-window",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1294,
+              290,
+              120
+            ],
+            [
+              1388,
+              290,
+              120
+            ],
+            [
+              1388,
+              358,
+              120
+            ],
+            [
+              1294,
+              358,
+              120
+            ],
+            [
+              1294,
+              290,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "double-french-door",
+      "properties": {
+        "id": "double-french-door",
+        "label": "Double French Door \u2014 2 Doors / 8 Glass Panes",
+        "role": "door",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "double-french-door-assembly",
+        "semanticTag": "2-doors-8-panes",
+        "priority": 20,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            6.1594,
+            0.0,
+            8.9379
+          ],
+          [
+            8.7719,
+            0.0,
+            8.9379
+          ],
+          [
+            8.7762,
+            0.0,
+            -0.0
+          ],
+          [
+            6.1655,
+            0.0,
+            -0.0
+          ]
+        ],
+        "visibleInEditor": true,
+        "audioBinding": {
+          "events": {
+            "open": "door.open",
+            "close": "door.close",
+            "latch": "door.latch"
+          },
+          "spatial": true,
+          "anchor": "double-french-door"
+        },
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "movesChildren": true,
+        "styleBinding": "door-wood",
+        "defaultStyle": {
+          "fill": "#8B451B",
+          "stroke": "#4E230D",
+          "opacity": 1.0
+        },
+        "childFeatureIds": [
+          "french-door-left",
+          "french-door-right",
+          "french-door-inner-frame"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              850,
+              190,
+              120
+            ],
+            [
+              1074,
+              190,
+              120
+            ],
+            [
+              1074,
+              569,
+              120
+            ],
+            [
+              850,
+              569,
+              120
+            ],
+            [
+              850,
+              190,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-left",
+      "properties": {
+        "id": "french-door-left",
+        "label": "French Door \u2014 Left Leaf",
+        "role": "door-leaf",
+        "surfacePlane": "back-wall",
+        "parentId": "double-french-door",
+        "purpose": "door-leaf-1-of-2",
+        "semanticTag": "4-glass-panes",
+        "priority": 21,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            6.2762,
+            0.0,
+            8.6784
+          ],
+          [
+            7.3025,
+            0.0,
+            8.6784
+          ],
+          [
+            7.3075,
+            0.0,
+            0.4006
+          ],
+          [
+            6.2818,
+            0.0,
+            0.4006
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "door-wood",
+        "defaultStyle": {
+          "fill": "#8B451B",
+          "stroke": "#4E230D",
+          "opacity": 1.0
+        },
+        "movesChildren": true,
+        "childFeatureIds": [
+          "french-door-left-pane-1",
+          "french-door-left-pane-2",
+          "french-door-left-pane-3",
+          "french-door-left-pane-4"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              860,
+              201,
+              120
+            ],
+            [
+              948,
+              201,
+              120
+            ],
+            [
+              948,
+              552,
+              120
+            ],
+            [
+              860,
+              552,
+              120
+            ],
+            [
+              860,
+              201,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-right",
+      "properties": {
+        "id": "french-door-right",
+        "label": "French Door \u2014 Right Leaf",
+        "role": "door-leaf",
+        "surfacePlane": "back-wall",
+        "parentId": "double-french-door",
+        "purpose": "door-leaf-2-of-2",
+        "semanticTag": "4-glass-panes",
+        "priority": 21,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            7.6291,
+            0.0,
+            8.6784
+          ],
+          [
+            8.6554,
+            0.0,
+            8.6784
+          ],
+          [
+            8.6595,
+            0.0,
+            0.4006
+          ],
+          [
+            7.6338,
+            0.0,
+            0.4006
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "door-wood",
+        "defaultStyle": {
+          "fill": "#8B451B",
+          "stroke": "#4E230D",
+          "opacity": 1.0
+        },
+        "movesChildren": true,
+        "childFeatureIds": [
+          "french-door-right-pane-1",
+          "french-door-right-pane-2",
+          "french-door-right-pane-3",
+          "french-door-right-pane-4"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              976,
+              201,
+              120
+            ],
+            [
+              1064,
+              201,
+              120
+            ],
+            [
+              1064,
+              552,
+              120
+            ],
+            [
+              976,
+              552,
+              120
+            ],
+            [
+              976,
+              201,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-inner-frame",
+      "properties": {
+        "id": "french-door-inner-frame",
+        "label": "French Door Inner Meeting Frame",
+        "role": "door-frame",
+        "surfacePlane": "back-wall",
+        "parentId": "double-french-door",
+        "purpose": "inner-frame-between-door-leaves",
+        "semanticTag": "handles-mount-here-not-on-glass",
+        "priority": 22,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            7.3025,
+            0.0,
+            8.6784
+          ],
+          [
+            7.6291,
+            0.0,
+            8.6784
+          ],
+          [
+            7.6338,
+            0.0,
+            0.4006
+          ],
+          [
+            7.3075,
+            0.0,
+            0.4006
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "door-inner-frame",
+        "defaultStyle": {
+          "fill": "#5E2A10",
+          "stroke": "#351607",
+          "opacity": 1.0
+        },
+        "movesChildren": true,
+        "childFeatureIds": [
+          "french-door-left-handle",
+          "french-door-right-handle"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              948,
+              201,
+              120
+            ],
+            [
+              976,
+              201,
+              120
+            ],
+            [
+              976,
+              552,
+              120
+            ],
+            [
+              948,
+              552,
+              120
+            ],
+            [
+              948,
+              201,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-left-pane-1",
+      "properties": {
+        "id": "french-door-left-pane-1",
+        "label": "French Door Left Glass Pane 1",
+        "role": "glass-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-left",
+        "purpose": "glass-pane-1-of-4",
+        "semanticTag": "glass",
+        "priority": 23,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            6.3465,
+            0.0,
+            8.2064
+          ],
+          [
+            6.7896,
+            0.0,
+            8.2064
+          ],
+          [
+            6.7917,
+            0.0,
+            4.9273
+          ],
+          [
+            6.3487,
+            0.0,
+            4.9273
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              866,
+              221,
+              120
+            ],
+            [
+              904,
+              221,
+              120
+            ],
+            [
+              904,
+              360,
+              120
+            ],
+            [
+              866,
+              360,
+              120
+            ],
+            [
+              866,
+              221,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-left-pane-2",
+      "properties": {
+        "id": "french-door-left-pane-2",
+        "label": "French Door Left Glass Pane 2",
+        "role": "glass-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-left",
+        "purpose": "glass-pane-2-of-4",
+        "semanticTag": "glass",
+        "priority": 23,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            6.8596,
+            0.0,
+            8.2064
+          ],
+          [
+            7.2445,
+            0.0,
+            8.2064
+          ],
+          [
+            7.2464,
+            0.0,
+            4.9273
+          ],
+          [
+            6.8617,
+            0.0,
+            4.9273
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              910,
+              221,
+              120
+            ],
+            [
+              943,
+              221,
+              120
+            ],
+            [
+              943,
+              360,
+              120
+            ],
+            [
+              910,
+              360,
+              120
+            ],
+            [
+              910,
+              221,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-left-pane-3",
+      "properties": {
+        "id": "french-door-left-pane-3",
+        "label": "French Door Left Glass Pane 3",
+        "role": "glass-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-left",
+        "purpose": "glass-pane-3-of-4",
+        "semanticTag": "glass",
+        "priority": 23,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            6.3488,
+            0.0,
+            4.7386
+          ],
+          [
+            6.7918,
+            0.0,
+            4.7386
+          ],
+          [
+            6.7939,
+            0.0,
+            1.4849
+          ],
+          [
+            6.351,
+            0.0,
+            1.4849
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              866,
+              368,
+              120
+            ],
+            [
+              904,
+              368,
+              120
+            ],
+            [
+              904,
+              506,
+              120
+            ],
+            [
+              866,
+              506,
+              120
+            ],
+            [
+              866,
+              368,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-left-pane-4",
+      "properties": {
+        "id": "french-door-left-pane-4",
+        "label": "French Door Left Glass Pane 4",
+        "role": "glass-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-left",
+        "purpose": "glass-pane-4-of-4",
+        "semanticTag": "glass",
+        "priority": 23,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            6.8618,
+            0.0,
+            4.7386
+          ],
+          [
+            7.2466,
+            0.0,
+            4.7386
+          ],
+          [
+            7.2485,
+            0.0,
+            1.4849
+          ],
+          [
+            6.8639,
+            0.0,
+            1.4849
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              910,
+              368,
+              120
+            ],
+            [
+              943,
+              368,
+              120
+            ],
+            [
+              943,
+              506,
+              120
+            ],
+            [
+              910,
+              506,
+              120
+            ],
+            [
+              910,
+              368,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-right-pane-1",
+      "properties": {
+        "id": "french-door-right-pane-1",
+        "label": "French Door Right Glass Pane 1",
+        "role": "glass-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-right",
+        "purpose": "glass-pane-1-of-4",
+        "semanticTag": "glass",
+        "priority": 23,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            7.6876,
+            0.0,
+            8.2064
+          ],
+          [
+            8.1308,
+            0.0,
+            8.2064
+          ],
+          [
+            8.1326,
+            0.0,
+            4.9273
+          ],
+          [
+            7.6895,
+            0.0,
+            4.9273
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              981,
+              221,
+              120
+            ],
+            [
+              1019,
+              221,
+              120
+            ],
+            [
+              1019,
+              360,
+              120
+            ],
+            [
+              981,
+              360,
+              120
+            ],
+            [
+              981,
+              221,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-right-pane-2",
+      "properties": {
+        "id": "french-door-right-pane-2",
+        "label": "French Door Right Glass Pane 2",
+        "role": "glass-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-right",
+        "purpose": "glass-pane-2-of-4",
+        "semanticTag": "glass",
+        "priority": 23,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            8.2008,
+            0.0,
+            8.2064
+          ],
+          [
+            8.5857,
+            0.0,
+            8.2064
+          ],
+          [
+            8.5873,
+            0.0,
+            4.9273
+          ],
+          [
+            8.2025,
+            0.0,
+            4.9273
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1025,
+              221,
+              120
+            ],
+            [
+              1058,
+              221,
+              120
+            ],
+            [
+              1058,
+              360,
+              120
+            ],
+            [
+              1025,
+              360,
+              120
+            ],
+            [
+              1025,
+              221,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-right-pane-3",
+      "properties": {
+        "id": "french-door-right-pane-3",
+        "label": "French Door Right Glass Pane 3",
+        "role": "glass-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-right",
+        "purpose": "glass-pane-3-of-4",
+        "semanticTag": "glass",
+        "priority": 23,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            7.6896,
+            0.0,
+            4.7386
+          ],
+          [
+            8.1327,
+            0.0,
+            4.7386
+          ],
+          [
+            8.1344,
+            0.0,
+            1.4849
+          ],
+          [
+            7.6915,
+            0.0,
+            1.4849
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              981,
+              368,
+              120
+            ],
+            [
+              1019,
+              368,
+              120
+            ],
+            [
+              1019,
+              506,
+              120
+            ],
+            [
+              981,
+              506,
+              120
+            ],
+            [
+              981,
+              368,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-right-pane-4",
+      "properties": {
+        "id": "french-door-right-pane-4",
+        "label": "French Door Right Glass Pane 4",
+        "role": "glass-pane",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-right",
+        "purpose": "glass-pane-4-of-4",
+        "semanticTag": "glass",
+        "priority": 23,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            8.2026,
+            0.0,
+            4.7386
+          ],
+          [
+            8.5874,
+            0.0,
+            4.7386
+          ],
+          [
+            8.589,
+            0.0,
+            1.4849
+          ],
+          [
+            8.2043,
+            0.0,
+            1.4849
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "window-glass",
+        "defaultStyle": {
+          "fill": "#0A4D7A",
+          "stroke": "#7ADAE9",
+          "opacity": 0.32
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1025,
+              368,
+              120
+            ],
+            [
+              1058,
+              368,
+              120
+            ],
+            [
+              1058,
+              506,
+              120
+            ],
+            [
+              1025,
+              506,
+              120
+            ],
+            [
+              1025,
+              368,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-left-handle",
+      "properties": {
+        "id": "french-door-left-handle",
+        "label": "French Door Left Handle",
+        "role": "handle",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-inner-frame",
+        "purpose": "door-handle-left",
+        "semanticTag": "mounted-on-inner-frame-not-glass",
+        "priority": 24,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            7.3282,
+            0.0,
+            4.6207
+          ],
+          [
+            7.4332,
+            0.0,
+            4.6207
+          ],
+          [
+            7.4335,
+            0.0,
+            4.0547
+          ],
+          [
+            7.3286,
+            0.0,
+            4.0547
+          ]
+        ],
+        "visibleInEditor": true,
+        "audioBinding": {
+          "events": {
+            "click": "door.handle_click"
+          },
+          "spatial": true,
+          "anchor": "french-door-left-handle"
+        },
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "door-handle",
+        "defaultStyle": {
+          "fill": "#E8B92A",
+          "stroke": "#6E4A00",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              950,
+              373,
+              120
+            ],
+            [
+              959,
+              373,
+              120
+            ],
+            [
+              959,
+              397,
+              120
+            ],
+            [
+              950,
+              397,
+              120
+            ],
+            [
+              950,
+              373,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "french-door-right-handle",
+      "properties": {
+        "id": "french-door-right-handle",
+        "label": "French Door Right Handle",
+        "role": "handle",
+        "surfacePlane": "back-wall",
+        "parentId": "french-door-inner-frame",
+        "purpose": "door-handle-right",
+        "semanticTag": "mounted-on-inner-frame-not-glass",
+        "priority": 24,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            7.5031,
+            0.0,
+            4.6207
+          ],
+          [
+            7.6081,
+            0.0,
+            4.6207
+          ],
+          [
+            7.6084,
+            0.0,
+            4.0547
+          ],
+          [
+            7.5035,
+            0.0,
+            4.0547
+          ]
+        ],
+        "visibleInEditor": true,
+        "audioBinding": {
+          "events": {
+            "click": "door.handle_click"
+          },
+          "spatial": true,
+          "anchor": "french-door-right-handle"
+        },
+        "movementGroupId": "french-door-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "door-handle",
+        "defaultStyle": {
+          "fill": "#E8B92A",
+          "stroke": "#6E4A00",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              965,
+              373,
+              120
+            ],
+            [
+              974,
+              373,
+              120
+            ],
+            [
+              974,
+              397,
+              120
+            ],
+            [
+              965,
+              397,
+              120
+            ],
+            [
+              965,
+              373,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "built-in-ac",
+      "properties": {
+        "id": "built-in-ac",
+        "label": "Built-in Retro AC Unit",
+        "role": "ac",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "built-in-wall-ac",
+        "semanticTag": "fixed-fixture",
+        "priority": 30,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            10.185,
+            0.0,
+            3.8897
+          ],
+          [
+            12.4351,
+            0.0,
+            3.8897
+          ],
+          [
+            12.4355,
+            0.0,
+            1.7913
+          ],
+          [
+            10.1858,
+            0.0,
+            1.7913
+          ]
+        ],
+        "visibleInEditor": true,
+        "designBinding": {
+          "group": "accents",
+          "subgroup": "ac_unit",
+          "bubble_key": "accents.all",
+          "linked_edit_group": "accents.all",
+          "editable": true,
+          "sync_scope": "all_accents"
+        },
+        "audioBinding": {
+          "events": {
+            "power_on": "ac.power_on",
+            "loop": "ac.hum_loop",
+            "power_off": "ac.power_off"
+          },
+          "spatial": true,
+          "anchor": "back_wall_ac_unit_outer",
+          "asset_resolution": "runtime_registry",
+          "loop_while_state": "on"
+        },
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "styleBinding": "ac-cream",
+        "defaultStyle": {
+          "fill": "#D9D7CE",
+          "stroke": "#333333",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1195,
+              404,
+              120
+            ],
+            [
+              1388,
+              404,
+              120
+            ],
+            [
+              1388,
+              493,
+              120
+            ],
+            [
+              1195,
+              493,
+              120
+            ],
+            [
+              1195,
+              404,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "picture-frame-left-wave",
+      "properties": {
+        "id": "picture-frame-left-wave",
+        "label": "Picture Frame \u2014 Left Wall Wave",
+        "role": "picture-frame",
+        "surfacePlane": "left-wall",
+        "parentId": "left-wall",
+        "purpose": "wall-mounted-picture-frame",
+        "semanticTag": "fixed-wall-item",
+        "priority": 31,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            18.0523,
+            9.1764
+          ],
+          [
+            0.0,
+            9.4969,
+            8.7723
+          ],
+          [
+            0.0,
+            9.6165,
+            5.6168
+          ],
+          [
+            0.0,
+            18.0078,
+            6.0077
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "picture-frame-left-wave",
+        "inheritParentTransform": true,
+        "movesChildren": true,
+        "styleBinding": "picture-frame",
+        "defaultStyle": {
+          "fill": "#673014",
+          "stroke": "#2C1206",
+          "opacity": 1.0
+        },
+        "childFeatureIds": [
+          "picture-iframe-left-wave"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              51,
+              80,
+              120
+            ],
+            [
+              212,
+              161,
+              120
+            ],
+            [
+              210,
+              329,
+              120
+            ],
+            [
+              52,
+              299,
+              120
+            ],
+            [
+              51,
+              80,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "picture-frame-back-left-moon",
+      "properties": {
+        "id": "picture-frame-back-left-moon",
+        "label": "Picture Frame \u2014 Back Wall Moon",
+        "role": "picture-frame",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-mounted-picture-frame",
+        "semanticTag": "fixed-wall-item",
+        "priority": 31,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.3283,
+            0.0,
+            8.466
+          ],
+          [
+            1.5996,
+            0.0,
+            8.466
+          ],
+          [
+            1.603,
+            0.0,
+            5.1867
+          ],
+          [
+            0.3321,
+            0.0,
+            5.1867
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "picture-frame-back-left-moon",
+        "inheritParentTransform": true,
+        "movesChildren": true,
+        "styleBinding": "picture-frame",
+        "defaultStyle": {
+          "fill": "#673014",
+          "stroke": "#2C1206",
+          "opacity": 1.0
+        },
+        "childFeatureIds": [
+          "picture-iframe-back-left-moon"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              350,
+              210,
+              120
+            ],
+            [
+              459,
+              210,
+              120
+            ],
+            [
+              459,
+              349,
+              120
+            ],
+            [
+              350,
+              349,
+              120
+            ],
+            [
+              350,
+              210,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "picture-frame-back-right-cat",
+      "properties": {
+        "id": "picture-frame-back-right-cat",
+        "label": "Picture Frame \u2014 Back Wall Cat",
+        "role": "picture-frame",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-mounted-picture-frame",
+        "semanticTag": "fixed-wall-item",
+        "priority": 31,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            13.2273,
+            0.0,
+            8.4188
+          ],
+          [
+            14.6618,
+            0.0,
+            8.466
+          ],
+          [
+            14.6619,
+            0.0,
+            5.0924
+          ],
+          [
+            13.2161,
+            0.0,
+            5.0452
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "picture-frame-back-right-cat",
+        "inheritParentTransform": true,
+        "movesChildren": true,
+        "styleBinding": "picture-frame",
+        "defaultStyle": {
+          "fill": "#673014",
+          "stroke": "#2C1206",
+          "opacity": 1.0
+        },
+        "childFeatureIds": [
+          "picture-iframe-back-right-cat"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1456,
+              212,
+              120
+            ],
+            [
+              1579,
+              210,
+              120
+            ],
+            [
+              1579,
+              353,
+              120
+            ],
+            [
+              1455,
+              355,
+              120
+            ],
+            [
+              1456,
+              212,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "picture-frame-right-quote",
+      "properties": {
+        "id": "picture-frame-right-quote",
+        "label": "Picture Frame \u2014 Right Wall Quote",
+        "role": "picture-frame",
+        "surfacePlane": "right-wall",
+        "parentId": "right-wall",
+        "purpose": "wall-mounted-picture-frame",
+        "semanticTag": "fixed-wall-item",
+        "priority": 31,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            9.3983,
+            8.7008
+          ],
+          [
+            15.0,
+            17.8396,
+            8.8492
+          ],
+          [
+            15.0,
+            17.7243,
+            5.6489
+          ],
+          [
+            15.0,
+            9.3345,
+            5.249
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "picture-frame-right-quote",
+        "inheritParentTransform": true,
+        "movesChildren": true,
+        "styleBinding": "picture-frame",
+        "defaultStyle": {
+          "fill": "#673014",
+          "stroke": "#2C1206",
+          "opacity": 1.0
+        },
+        "childFeatureIds": [
+          "picture-iframe-right-quote"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1726,
+              165,
+              120
+            ],
+            [
+              1897,
+              104,
+              120
+            ],
+            [
+              1894,
+              323,
+              120
+            ],
+            [
+              1725,
+              348,
+              120
+            ],
+            [
+              1726,
+              165,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aquarium-built-in",
+      "properties": {
+        "id": "aquarium-built-in",
+        "label": "Built-in Aquarium \u2014 Wall-Attached Section",
+        "role": "aquarium",
+        "surfacePlane": "left-wall",
+        "parentId": "left-wall",
+        "purpose": "built-into-left-wall",
+        "semanticTag": "rear-section-attached-to-wall",
+        "priority": 40,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 107.416,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            19.4164,
+            4.5
+          ],
+          [
+            0.0,
+            8.9839,
+            4.7049
+          ],
+          [
+            0.0,
+            9.1796,
+            2.0113
+          ],
+          [
+            0.0,
+            19.5641,
+            1.8596
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "aquarium-assembly",
+        "movesChildren": true,
+        "inheritParentTransform": true,
+        "styleBinding": "aquarium-glass-frame",
+        "defaultStyle": {
+          "fill": "#19CBE0",
+          "stroke": "#26343B",
+          "opacity": 0.24
+        },
+        "childFeatureIds": [
+          "aquarium-room-extension",
+          "aquarium-connector-top-left",
+          "aquarium-connector-top-right",
+          "aquarium-connector-bottom-right",
+          "aquarium-connector-bottom-left",
+          "aquarium-inner-floor"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              16,
+              406,
+              120
+            ],
+            [
+              219,
+              377,
+              120
+            ],
+            [
+              216,
+              519,
+              120
+            ],
+            [
+              12,
+              598,
+              107.416
+            ],
+            [
+              16,
+              406,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aquarium-room-extension",
+      "properties": {
+        "id": "aquarium-room-extension",
+        "label": "Built-in Aquarium \u2014 Room Extension",
+        "role": "aquarium-extension",
+        "surfacePlane": "custom-3d",
+        "parentId": "aquarium-built-in",
+        "purpose": "extends-outward-from-left-wall",
+        "semanticTag": "projection-into-room",
+        "priority": 41,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 38.255,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            2.25,
+            19.4164,
+            4.5
+          ],
+          [
+            2.25,
+            8.9839,
+            4.7049
+          ],
+          [
+            2.25,
+            9.1796,
+            2.0113
+          ],
+          [
+            2.25,
+            19.5641,
+            1.8596
+          ]
+        ],
+        "visibleInEditor": true,
+        "movementGroupId": "aquarium-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "aquarium-glass-frame",
+        "custom3DPlane": {
+          "plane": "parallel-to-left-wall",
+          "xOffsetFromLeftWallFt": 2.25,
+          "cornerCorrespondence": "same vertex order as aquarium-built-in"
+        },
+        "defaultStyle": {
+          "fill": "#19CBE0",
+          "stroke": "#26343B",
+          "opacity": 0.24
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              120,
+              427,
+              120
+            ],
+            [
+              316,
+              385,
+              120
+            ],
+            [
+              321,
+              602,
+              105.532
+            ],
+            [
+              127,
+              733,
+              38.255
+            ],
+            [
+              120,
+              427,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aquarium-connector-top-left",
+      "properties": {
+        "id": "aquarium-connector-top-left",
+        "label": "Aquarium Connector \u2014 Top Left Corner",
+        "role": "aquarium-connector",
+        "surfacePlane": "custom-3d",
+        "parentId": "aquarium-built-in",
+        "purpose": "connect-built-in-corner-to-room-extension-corner",
+        "semanticTag": "top-left-perspective-edge-with-editable-control-points",
+        "priority": 42,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "visibleInEditor": true,
+        "connector": {
+          "fromFeatureId": "aquarium-built-in",
+          "fromVertexIndex": 0,
+          "toFeatureId": "aquarium-room-extension",
+          "toVertexIndex": 0,
+          "corner": "top-left",
+          "editableControlPointCount": 5,
+          "endpointHandlesEditable": true,
+          "intermediateHandlesEditable": true,
+          "endpointAnchorMode": "hard",
+          "intermediatePointMode": "free",
+          "anchors": [
+            {
+              "pointIndex": 0,
+              "featureId": "aquarium-built-in",
+              "vertexIndex": 0
+            },
+            {
+              "pointIndex": 4,
+              "featureId": "aquarium-room-extension",
+              "vertexIndex": 0
+            }
+          ]
+        },
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            19.4164,
+            4.5
+          ],
+          [
+            0.5625,
+            19.4164,
+            4.5
+          ],
+          [
+            1.125,
+            19.4164,
+            4.5
+          ],
+          [
+            1.6875,
+            19.4164,
+            4.5
+          ],
+          [
+            2.25,
+            19.4164,
+            4.5
+          ]
+        ],
+        "movementGroupId": "aquarium-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "aquarium-connector",
+        "defaultStyle": {
+          "fill": "none",
+          "stroke": "#79EEFF",
+          "opacity": 0.95,
+          "strokeWidth": 3
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            16.0,
+            406.0,
+            120.0
+          ],
+          [
+            42.0,
+            411.25,
+            120.0
+          ],
+          [
+            68.0,
+            416.5,
+            120.0
+          ],
+          [
+            94.0,
+            421.75,
+            120.0
+          ],
+          [
+            120.0,
+            427.0,
+            120.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aquarium-connector-top-right",
+      "properties": {
+        "id": "aquarium-connector-top-right",
+        "label": "Aquarium Connector \u2014 Top Right Corner",
+        "role": "aquarium-connector",
+        "surfacePlane": "custom-3d",
+        "parentId": "aquarium-built-in",
+        "purpose": "connect-built-in-corner-to-room-extension-corner",
+        "semanticTag": "top-right-perspective-edge-with-editable-control-points",
+        "priority": 43,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "visibleInEditor": true,
+        "connector": {
+          "fromFeatureId": "aquarium-built-in",
+          "fromVertexIndex": 1,
+          "toFeatureId": "aquarium-room-extension",
+          "toVertexIndex": 1,
+          "corner": "top-right",
+          "editableControlPointCount": 5,
+          "endpointHandlesEditable": true,
+          "intermediateHandlesEditable": true,
+          "endpointAnchorMode": "hard",
+          "intermediatePointMode": "free",
+          "anchors": [
+            {
+              "pointIndex": 0,
+              "featureId": "aquarium-built-in",
+              "vertexIndex": 1
+            },
+            {
+              "pointIndex": 4,
+              "featureId": "aquarium-room-extension",
+              "vertexIndex": 1
+            }
+          ]
+        },
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            8.9839,
+            4.7049
+          ],
+          [
+            0.5625,
+            8.9839,
+            4.7049
+          ],
+          [
+            1.125,
+            8.9839,
+            4.7049
+          ],
+          [
+            1.6875,
+            8.9839,
+            4.7049
+          ],
+          [
+            2.25,
+            8.9839,
+            4.7049
+          ]
+        ],
+        "movementGroupId": "aquarium-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "aquarium-connector",
+        "defaultStyle": {
+          "fill": "none",
+          "stroke": "#79EEFF",
+          "opacity": 0.95,
+          "strokeWidth": 3
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            219.0,
+            377.0,
+            120.0
+          ],
+          [
+            243.25,
+            379.0,
+            120.0
+          ],
+          [
+            267.5,
+            381.0,
+            120.0
+          ],
+          [
+            291.75,
+            383.0,
+            120.0
+          ],
+          [
+            316.0,
+            385.0,
+            120.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aquarium-connector-bottom-right",
+      "properties": {
+        "id": "aquarium-connector-bottom-right",
+        "label": "Aquarium Connector \u2014 Bottom Right Corner",
+        "role": "aquarium-connector",
+        "surfacePlane": "custom-3d",
+        "parentId": "aquarium-built-in",
+        "purpose": "connect-built-in-corner-to-room-extension-corner",
+        "semanticTag": "bottom-right-perspective-edge-with-editable-control-points",
+        "priority": 44,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 103.077,
+        "depthMaxPx": 120.0,
+        "visibleInEditor": true,
+        "connector": {
+          "fromFeatureId": "aquarium-built-in",
+          "fromVertexIndex": 2,
+          "toFeatureId": "aquarium-room-extension",
+          "toVertexIndex": 2,
+          "corner": "bottom-right",
+          "editableControlPointCount": 5,
+          "endpointHandlesEditable": true,
+          "intermediateHandlesEditable": true,
+          "endpointAnchorMode": "hard",
+          "intermediatePointMode": "free",
+          "anchors": [
+            {
+              "pointIndex": 0,
+              "featureId": "aquarium-built-in",
+              "vertexIndex": 2
+            },
+            {
+              "pointIndex": 4,
+              "featureId": "aquarium-room-extension",
+              "vertexIndex": 2
+            }
+          ]
+        },
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            9.1796,
+            2.0113
+          ],
+          [
+            0.5625,
+            9.1796,
+            2.0113
+          ],
+          [
+            1.125,
+            9.1796,
+            2.0113
+          ],
+          [
+            1.6875,
+            9.1796,
+            2.0113
+          ],
+          [
+            2.25,
+            9.1796,
+            2.0113
+          ]
+        ],
+        "movementGroupId": "aquarium-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "aquarium-connector",
+        "defaultStyle": {
+          "fill": "none",
+          "stroke": "#79EEFF",
+          "opacity": 0.95,
+          "strokeWidth": 3
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            216.0,
+            519.0,
+            120.0
+          ],
+          [
+            242.25,
+            539.75,
+            120.0
+          ],
+          [
+            268.5,
+            560.5,
+            120.0
+          ],
+          [
+            294.75,
+            581.25,
+            113.718
+          ],
+          [
+            321.0,
+            602.0,
+            103.077
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aquarium-connector-bottom-left",
+      "properties": {
+        "id": "aquarium-connector-bottom-left",
+        "label": "Aquarium Connector \u2014 Bottom Left Corner",
+        "role": "aquarium-connector",
+        "surfacePlane": "custom-3d",
+        "parentId": "aquarium-built-in",
+        "purpose": "connect-built-in-corner-to-room-extension-corner",
+        "semanticTag": "bottom-left-perspective-edge-with-editable-control-points",
+        "priority": 45,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 35.897,
+        "depthMaxPx": 105.128,
+        "visibleInEditor": true,
+        "connector": {
+          "fromFeatureId": "aquarium-built-in",
+          "fromVertexIndex": 3,
+          "toFeatureId": "aquarium-room-extension",
+          "toVertexIndex": 3,
+          "corner": "bottom-left",
+          "editableControlPointCount": 5,
+          "endpointHandlesEditable": true,
+          "intermediateHandlesEditable": true,
+          "endpointAnchorMode": "hard",
+          "intermediatePointMode": "free",
+          "anchors": [
+            {
+              "pointIndex": 0,
+              "featureId": "aquarium-built-in",
+              "vertexIndex": 3
+            },
+            {
+              "pointIndex": 4,
+              "featureId": "aquarium-room-extension",
+              "vertexIndex": 3
+            }
+          ]
+        },
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            19.5641,
+            1.8596
+          ],
+          [
+            0.5625,
+            19.5641,
+            1.8596
+          ],
+          [
+            1.125,
+            19.5641,
+            1.8596
+          ],
+          [
+            1.6875,
+            19.5641,
+            1.8596
+          ],
+          [
+            2.25,
+            19.5641,
+            1.8596
+          ]
+        ],
+        "movementGroupId": "aquarium-assembly",
+        "inheritParentTransform": true,
+        "styleBinding": "aquarium-connector",
+        "defaultStyle": {
+          "fill": "none",
+          "stroke": "#79EEFF",
+          "opacity": 0.95,
+          "strokeWidth": 3
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            12.0,
+            598.0,
+            105.128
+          ],
+          [
+            40.75,
+            631.75,
+            87.821
+          ],
+          [
+            69.5,
+            665.5,
+            70.513
+          ],
+          [
+            98.25,
+            699.25,
+            53.205
+          ],
+          [
+            127.0,
+            733.0,
+            35.897
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "picture-iframe-left-wave",
+      "properties": {
+        "id": "picture-iframe-left-wave",
+        "label": "Picture Image Iframe \u2014 Left Wall",
+        "role": "picture-iframe",
+        "surfacePlane": "left-wall",
+        "parentId": "picture-frame-left-wave",
+        "priority": 60,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            17.2302,
+            8.8077
+          ],
+          [
+            0.0,
+            10.4359,
+            8.4687
+          ],
+          [
+            0.0,
+            10.4227,
+            5.9242
+          ],
+          [
+            0.0,
+            17.2046,
+            6.218
+          ]
+        ],
+        "visibleInEditor": true,
+        "purpose": "click-to-load-device-image-into-picture-frame",
+        "semanticTag": "device-image-iframe",
+        "interactionBinding": {
+          "trigger": "click",
+          "action": "open-device-file-picker",
+          "accept": [
+            "image/*"
+          ],
+          "loadMode": "local-object-url",
+          "replaceExisting": true,
+          "fit": "contain",
+          "preserveAspectRatio": true
+        },
+        "mediaBinding": {
+          "element": "iframe",
+          "contentKind": "device-image",
+          "sourceMode": [
+            "device-file",
+            "data-url",
+            "blob-url"
+          ],
+          "sandbox": "allow-same-origin",
+          "pointerEvents": "enabled"
+        },
+        "movementGroupId": "picture-frame-left-wave",
+        "inheritParentTransform": true,
+        "styleBinding": "picture-image",
+        "defaultStyle": {
+          "fill": "#00000000",
+          "stroke": "#F0D8B0",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.5,
+              112,
+              120
+            ],
+            [
+              198,
+              173,
+              120
+            ],
+            [
+              198,
+              312,
+              120
+            ],
+            [
+              71,
+              286,
+              120
+            ],
+            [
+              70.5,
+              112,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "picture-iframe-back-left-moon",
+      "properties": {
+        "id": "picture-iframe-back-left-moon",
+        "label": "Picture Image Iframe \u2014 Back Left",
+        "role": "picture-iframe",
+        "surfacePlane": "back-wall",
+        "parentId": "picture-frame-back-left-moon",
+        "priority": 60,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "visibleInEditor": true,
+        "purpose": "click-to-load-device-image-into-picture-frame",
+        "semanticTag": "device-image-iframe",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.4568,
+            0.0,
+            8.3008
+          ],
+          [
+            1.4715,
+            0.0,
+            8.3008
+          ],
+          [
+            1.4743,
+            0.0,
+            5.5641
+          ],
+          [
+            0.4366,
+            0.0,
+            5.5641
+          ]
+        ],
+        "interactionBinding": {
+          "trigger": "click",
+          "action": "open-device-file-picker",
+          "accept": [
+            "image/*"
+          ],
+          "loadMode": "local-object-url",
+          "replaceExisting": true,
+          "fit": "contain",
+          "preserveAspectRatio": true
+        },
+        "mediaBinding": {
+          "element": "iframe",
+          "contentKind": "device-image",
+          "sourceMode": [
+            "device-file",
+            "data-url",
+            "blob-url"
+          ],
+          "sandbox": "allow-same-origin",
+          "pointerEvents": "enabled"
+        },
+        "movementGroupId": "picture-frame-back-left-moon",
+        "inheritParentTransform": true,
+        "styleBinding": "picture-image",
+        "defaultStyle": {
+          "fill": "#00000000",
+          "stroke": "#F0D8B0",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              361,
+              217,
+              120
+            ],
+            [
+              448,
+              217,
+              120
+            ],
+            [
+              448,
+              333,
+              120
+            ],
+            [
+              359,
+              333,
+              120
+            ],
+            [
+              361,
+              217,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "picture-iframe-back-right-cat",
+      "properties": {
+        "id": "picture-iframe-back-right-cat",
+        "label": "Picture Image Iframe \u2014 Back Right",
+        "role": "picture-iframe",
+        "surfacePlane": "back-wall",
+        "parentId": "picture-frame-back-right-cat",
+        "priority": 60,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            13.4139,
+            0.0,
+            8.23
+          ],
+          [
+            14.5685,
+            0.0,
+            8.23
+          ],
+          [
+            14.5802,
+            0.0,
+            5.3518
+          ],
+          [
+            13.4259,
+            0.0,
+            5.4462
+          ]
+        ],
+        "visibleInEditor": true,
+        "purpose": "click-to-load-device-image-into-picture-frame",
+        "semanticTag": "device-image-iframe",
+        "interactionBinding": {
+          "trigger": "click",
+          "action": "open-device-file-picker",
+          "accept": [
+            "image/*"
+          ],
+          "loadMode": "local-object-url",
+          "replaceExisting": true,
+          "fit": "contain",
+          "preserveAspectRatio": true
+        },
+        "mediaBinding": {
+          "element": "iframe",
+          "contentKind": "device-image",
+          "sourceMode": [
+            "device-file",
+            "data-url",
+            "blob-url"
+          ],
+          "sandbox": "allow-same-origin",
+          "pointerEvents": "enabled"
+        },
+        "movementGroupId": "picture-frame-back-right-cat",
+        "inheritParentTransform": true,
+        "styleBinding": "picture-image",
+        "defaultStyle": {
+          "fill": "#00000000",
+          "stroke": "#F0D8B0",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1472,
+              220,
+              120
+            ],
+            [
+              1571,
+              220,
+              120
+            ],
+            [
+              1572,
+              342,
+              120
+            ],
+            [
+              1473,
+              338,
+              120
+            ],
+            [
+              1472,
+              220,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "picture-iframe-right-quote",
+      "properties": {
+        "id": "picture-iframe-right-quote",
+        "label": "Picture Image Iframe \u2014 Right Wall",
+        "role": "picture-iframe",
+        "surfacePlane": "right-wall",
+        "parentId": "picture-frame-right-quote",
+        "priority": 60,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0,
+        "visibleInEditor": true,
+        "purpose": "click-to-load-device-image-into-picture-frame",
+        "semanticTag": "device-image-iframe",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            10.2084,
+            8.3711
+          ],
+          [
+            15.0,
+            16.9322,
+            8.6253
+          ],
+          [
+            15.0,
+            16.8914,
+            5.973
+          ],
+          [
+            15.0,
+            10.0861,
+            5.6408
+          ]
+        ],
+        "interactionBinding": {
+          "trigger": "click",
+          "action": "open-device-file-picker",
+          "accept": [
+            "image/*"
+          ],
+          "loadMode": "local-object-url",
+          "replaceExisting": true,
+          "fit": "contain",
+          "preserveAspectRatio": true
+        },
+        "mediaBinding": {
+          "element": "iframe",
+          "contentKind": "device-image",
+          "sourceMode": [
+            "device-file",
+            "data-url",
+            "blob-url"
+          ],
+          "sandbox": "allow-same-origin",
+          "pointerEvents": "enabled"
+        },
+        "movementGroupId": "picture-frame-right-quote",
+        "inheritParentTransform": true,
+        "styleBinding": "picture-image",
+        "defaultStyle": {
+          "fill": "#00000000",
+          "stroke": "#F0D8B0",
+          "opacity": 1.0
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1739,
+              179,
+              120
+            ],
+            [
+              1874,
+              126,
+              120
+            ],
+            [
+              1873,
+              302,
+              120
+            ],
+            [
+              1737,
+              327,
+              120
+            ],
+            [
+              1739,
+              179,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aquarium-inner-floor",
+      "properties": {
+        "id": "aquarium-inner-floor",
+        "label": "Aquarium Inner Floor / Bottom Face",
+        "role": "aquarium-interior-floor",
+        "surfacePlane": "custom-3d",
+        "parentId": "aquarium-built-in",
+        "purpose": "bottom-face-joining-wall-section-to-room-extension",
+        "semanticTag": "built-in-aquarium-bottom-face",
+        "priority": 46,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            19.5641,
+            1.8596
+          ],
+          [
+            0.0,
+            9.1796,
+            2.0113
+          ],
+          [
+            2.25,
+            9.1796,
+            2.0113
+          ],
+          [
+            2.25,
+            19.5641,
+            1.8596
+          ]
+        ],
+        "movementGroupId": "aquarium-assembly",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "aquarium-inner-floor",
+        "cornerBindings": [
+          {
+            "vertexIndex": 0,
+            "featureId": "aquarium-built-in",
+            "vertexIndexTarget": 3
+          },
+          {
+            "vertexIndex": 1,
+            "featureId": "aquarium-built-in",
+            "vertexIndexTarget": 2
+          },
+          {
+            "vertexIndex": 2,
+            "featureId": "aquarium-room-extension",
+            "vertexIndexTarget": 2
+          },
+          {
+            "vertexIndex": 3,
+            "featureId": "aquarium-room-extension",
+            "vertexIndexTarget": 3
+          }
+        ],
+        "defaultStyle": {
+          "fill": "#D2B57A",
+          "stroke": "#26343B",
+          "opacity": 0.45
+        },
+        "depthMinPx": 38.255,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12,
+              598,
+              107.416
+            ],
+            [
+              216,
+              519,
+              120
+            ],
+            [
+              321,
+              602,
+              105.532
+            ],
+            [
+              127,
+              733,
+              38.255
+            ],
+            [
+              12,
+              598,
+              107.416
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "weather-scene-iframe",
+      "properties": {
+        "id": "weather-scene-iframe",
+        "label": "Weather Scene Iframe \u2014 Behind Entire Living Room",
+        "role": "weather-iframe",
+        "surfacePlane": "screen-background",
+        "priority": -1000,
+        "purpose": "full-room-background-iframe-for-weather-video-scenes",
+        "semanticTag": "outside-weather-scene-background",
+        "coordinateSpace": "pixel-space-1958x803",
+        "visibleInEditor": true,
+        "movementGroupId": "room-environment",
+        "lockedToViewport": true,
+        "renderOrder": "behind-all-room-geometry",
+        "styleBinding": "weather-scene",
+        "mediaBinding": {
+          "element": "iframe",
+          "contentKind": "weather-scene",
+          "sourceMode": [
+            "device-file",
+            "url",
+            "blob-url",
+            "data-url"
+          ],
+          "accept": [
+            "video/*",
+            "image/*",
+            ".html",
+            ".htm"
+          ],
+          "videoDefaults": {
+            "autoplay": true,
+            "loop": true,
+            "muted": false,
+            "playsInline": true
+          },
+          "fit": "cover",
+          "pointerEvents": "disabled-in-scene-enabled-in-editor-controls"
+        },
+        "visibilityThrough": {
+          "mode": "behind-room-visible-through-glass-openings",
+          "openingFeatureIds": [
+            "left-window-pane-1",
+            "left-window-pane-2",
+            "left-window-pane-3",
+            "left-window-pane-4",
+            "right-window-pane-1",
+            "right-window-pane-2",
+            "right-window-pane-3",
+            "right-window-pane-4",
+            "french-door-left-pane-1",
+            "french-door-left-pane-2",
+            "french-door-left-pane-3",
+            "french-door-left-pane-4",
+            "french-door-right-pane-1",
+            "french-door-right-pane-2",
+            "french-door-right-pane-3",
+            "french-door-right-pane-4"
+          ]
+        },
+        "audioBinding": {
+          "channel": "outside_weather",
+          "spatial": true,
+          "anchor": "weather-scene-iframe"
+        },
+        "defaultStyle": {
+          "fill": "#00000000",
+          "stroke": "#00CFE8",
+          "opacity": 0.0
+        },
+        "depthMinPx": 0.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              0,
+              120
+            ],
+            [
+              1958,
+              0,
+              120
+            ],
+            [
+              1958,
+              803,
+              0
+            ],
+            [
+              0,
+              803,
+              0
+            ],
+            [
+              0,
+              0,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-wall-baseboard",
+      "properties": {
+        "id": "left-wall-baseboard",
+        "label": "Left Wall Baseboard",
+        "role": "baseboard",
+        "surfacePlane": "left-wall",
+        "parentId": "left-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "floorboards",
+        "priority": 5,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            20.0,
+            0.0
+          ],
+          [
+            0.0,
+            20.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "movementGroupId": "left-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "baseboard-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "floorboards",
+          "bubble_key": "walls.floorboards",
+          "linked_edit_group": "walls.floorboards",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "left_wall_baseboard",
+        "defaultStyle": {
+          "fill": "#663014",
+          "stroke": "#3E1B09",
+          "opacity": 1.0
+        },
+        "depthMinPx": 32.821,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.0,
+              739.0,
+              32.821
+            ],
+            [
+              0.0,
+              702.24,
+              51.672
+            ],
+            [
+              321.05,
+              547.863,
+              120.0
+            ],
+            [
+              321.0,
+              569.0,
+              120.0
+            ],
+            [
+              0.0,
+              739.0,
+              32.821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-wall-paneling",
+      "properties": {
+        "id": "left-wall-paneling",
+        "label": "Left Wall Paneling",
+        "role": "paneling",
+        "surfacePlane": "left-wall",
+        "parentId": "left-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "paneling",
+        "priority": 6,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            20.0,
+            0.5
+          ],
+          [
+            0.0,
+            20.0,
+            7.375
+          ],
+          [
+            0.0,
+            0.0,
+            7.375
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ]
+        ],
+        "movementGroupId": "left-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "paneling-warm-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "paneling",
+          "bubble_key": "walls.paneling",
+          "linked_edit_group": "walls.paneling",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "left_wall_paneling",
+        "defaultStyle": {
+          "fill": "#8F4A1D",
+          "stroke": "#5C2A10",
+          "opacity": 1.0
+        },
+        "depthMinPx": 51.672,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.0,
+              702.24,
+              51.672
+            ],
+            [
+              0.0,
+              194.764,
+              120.0
+            ],
+            [
+              321.737,
+              256.556,
+              120.0
+            ],
+            [
+              321.05,
+              547.863,
+              120.0
+            ],
+            [
+              0.0,
+              702.24,
+              51.672
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-wall-halfway-trim",
+      "properties": {
+        "id": "left-wall-halfway-trim",
+        "label": "Left Wall Halfway Trim",
+        "role": "trim",
+        "surfacePlane": "left-wall",
+        "parentId": "left-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            20.0,
+            7.375
+          ],
+          [
+            0.0,
+            20.0,
+            7.625
+          ],
+          [
+            0.0,
+            0.0,
+            7.625
+          ],
+          [
+            0.0,
+            0.0,
+            7.375
+          ]
+        ],
+        "movementGroupId": "left-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "left_wall_halfway_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.0,
+              194.764,
+              120.0
+            ],
+            [
+              0.0,
+              176.239,
+              120.0
+            ],
+            [
+              321.762,
+              245.939,
+              120.0
+            ],
+            [
+              321.737,
+              256.556,
+              120.0
+            ],
+            [
+              0.0,
+              194.764,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-wall-paint",
+      "properties": {
+        "id": "left-wall-paint",
+        "label": "Left Wall Paint",
+        "role": "wall-paint",
+        "surfacePlane": "left-wall",
+        "parentId": "left-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "paint",
+        "priority": 8,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            20.0,
+            7.625
+          ],
+          [
+            0.0,
+            20.0,
+            9.75
+          ],
+          [
+            0.0,
+            0.0,
+            9.75
+          ],
+          [
+            0.0,
+            0.0,
+            7.625
+          ]
+        ],
+        "movementGroupId": "left-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "geometric-wallpaper",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "paint",
+          "bubble_key": "walls.paint",
+          "linked_edit_group": "walls.paint",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "left_wall_paint",
+        "defaultStyle": {
+          "fill": "#0B526B",
+          "stroke": "#4B250F",
+          "opacity": 1.0,
+          "pattern": "mid-century-geometric",
+          "patternPalette": [
+            "#063E58",
+            "#18B8C8",
+            "#FFD22E",
+            "#FF7817",
+            "#F7E4A4"
+          ]
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.0,
+              176.239,
+              120.0
+            ],
+            [
+              0.0,
+              18.573,
+              120.0
+            ],
+            [
+              321.975,
+              155.632,
+              120.0
+            ],
+            [
+              321.762,
+              245.939,
+              120.0
+            ],
+            [
+              0.0,
+              176.239,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-wall-crown-moulding",
+      "properties": {
+        "id": "left-wall-crown-moulding",
+        "label": "Left Wall Crown Moulding",
+        "role": "crown-moulding",
+        "surfacePlane": "left-wall",
+        "parentId": "left-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "crown_moulding",
+        "priority": 9,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            20.0,
+            9.75
+          ],
+          [
+            0.0,
+            20.0,
+            10.0
+          ],
+          [
+            0.0,
+            0.0,
+            10.0
+          ],
+          [
+            0.0,
+            0.0,
+            9.75
+          ]
+        ],
+        "movementGroupId": "left-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "crown-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "crown_moulding",
+          "bubble_key": "walls.crown_moulding",
+          "linked_edit_group": "walls.crown_moulding",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "left_wall_crown_moulding",
+        "defaultStyle": {
+          "fill": "#5A2910",
+          "stroke": "#351607",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.0,
+              18.573,
+              120.0
+            ],
+            [
+              0.0,
+              0.0,
+              120.0
+            ],
+            [
+              322.0,
+              145.0,
+              120.0
+            ],
+            [
+              321.975,
+              155.632,
+              120.0
+            ],
+            [
+              0.0,
+              18.573,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-wall-baseboard",
+      "properties": {
+        "id": "right-wall-baseboard",
+        "label": "Right Wall Baseboard",
+        "role": "baseboard",
+        "surfacePlane": "right-wall",
+        "parentId": "right-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "floorboards",
+        "priority": 5,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            20.0,
+            0.0
+          ],
+          [
+            15.0,
+            20.0,
+            0.5
+          ],
+          [
+            15.0,
+            0.0,
+            0.5
+          ],
+          [
+            15.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "movementGroupId": "right-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "baseboard-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "floorboards",
+          "bubble_key": "walls.floorboards",
+          "linked_edit_group": "walls.floorboards",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "right_wall_baseboard",
+        "defaultStyle": {
+          "fill": "#663014",
+          "stroke": "#3E1B09",
+          "opacity": 1.0
+        },
+        "depthMinPx": 32.821,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1958.0,
+              739.0,
+              32.821
+            ],
+            [
+              1958.0,
+              702.05,
+              51.769
+            ],
+            [
+              1608.0,
+              547.8,
+              120.0
+            ],
+            [
+              1608.0,
+              569.0,
+              120.0
+            ],
+            [
+              1958.0,
+              739.0,
+              32.821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-wall-paneling",
+      "properties": {
+        "id": "right-wall-paneling",
+        "label": "Right Wall Paneling",
+        "role": "paneling",
+        "surfacePlane": "right-wall",
+        "parentId": "right-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "paneling",
+        "priority": 6,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            20.0,
+            0.5
+          ],
+          [
+            15.0,
+            20.0,
+            7.375
+          ],
+          [
+            15.0,
+            0.0,
+            7.375
+          ],
+          [
+            15.0,
+            0.0,
+            0.5
+          ]
+        ],
+        "movementGroupId": "right-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "paneling-warm-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "paneling",
+          "bubble_key": "walls.paneling",
+          "linked_edit_group": "walls.paneling",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "right_wall_paneling",
+        "defaultStyle": {
+          "fill": "#8F4A1D",
+          "stroke": "#5C2A10",
+          "opacity": 1.0
+        },
+        "depthMinPx": 51.769,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1958.0,
+              702.05,
+              51.769
+            ],
+            [
+              1958.0,
+              193.988,
+              120.0
+            ],
+            [
+              1608.0,
+              256.3,
+              120.0
+            ],
+            [
+              1608.0,
+              547.8,
+              120.0
+            ],
+            [
+              1958.0,
+              702.05,
+              51.769
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-wall-halfway-trim",
+      "properties": {
+        "id": "right-wall-halfway-trim",
+        "label": "Right Wall Halfway Trim",
+        "role": "trim",
+        "surfacePlane": "right-wall",
+        "parentId": "right-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            20.0,
+            7.375
+          ],
+          [
+            15.0,
+            20.0,
+            7.625
+          ],
+          [
+            15.0,
+            0.0,
+            7.625
+          ],
+          [
+            15.0,
+            0.0,
+            7.375
+          ]
+        ],
+        "movementGroupId": "right-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "right_wall_halfway_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1958.0,
+              193.988,
+              120.0
+            ],
+            [
+              1958.0,
+              175.512,
+              120.0
+            ],
+            [
+              1608.0,
+              245.7,
+              120.0
+            ],
+            [
+              1608.0,
+              256.3,
+              120.0
+            ],
+            [
+              1958.0,
+              193.988,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-wall-paint",
+      "properties": {
+        "id": "right-wall-paint",
+        "label": "Right Wall Paint",
+        "role": "wall-paint",
+        "surfacePlane": "right-wall",
+        "parentId": "right-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "paint",
+        "priority": 8,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            20.0,
+            7.625
+          ],
+          [
+            15.0,
+            20.0,
+            9.75
+          ],
+          [
+            15.0,
+            0.0,
+            9.75
+          ],
+          [
+            15.0,
+            0.0,
+            7.625
+          ]
+        ],
+        "movementGroupId": "right-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "geometric-wallpaper",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "paint",
+          "bubble_key": "walls.paint",
+          "linked_edit_group": "walls.paint",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "right_wall_paint",
+        "defaultStyle": {
+          "fill": "#0B526B",
+          "stroke": "#4B250F",
+          "opacity": 1.0,
+          "pattern": "mid-century-geometric",
+          "patternPalette": [
+            "#063E58",
+            "#18B8C8",
+            "#FFD22E",
+            "#FF7817",
+            "#F7E4A4"
+          ]
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1958.0,
+              175.512,
+              120.0
+            ],
+            [
+              1958.0,
+              18.475,
+              120.0
+            ],
+            [
+              1608.0,
+              155.6,
+              120.0
+            ],
+            [
+              1608.0,
+              245.7,
+              120.0
+            ],
+            [
+              1958.0,
+              175.512,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-wall-crown-moulding",
+      "properties": {
+        "id": "right-wall-crown-moulding",
+        "label": "Right Wall Crown Moulding",
+        "role": "crown-moulding",
+        "surfacePlane": "right-wall",
+        "parentId": "right-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "crown_moulding",
+        "priority": 9,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            20.0,
+            9.75
+          ],
+          [
+            15.0,
+            20.0,
+            10.0
+          ],
+          [
+            15.0,
+            0.0,
+            10.0
+          ],
+          [
+            15.0,
+            0.0,
+            9.75
+          ]
+        ],
+        "movementGroupId": "right-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "crown-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "crown_moulding",
+          "bubble_key": "walls.crown_moulding",
+          "linked_edit_group": "walls.crown_moulding",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "right_wall_crown_moulding",
+        "defaultStyle": {
+          "fill": "#5A2910",
+          "stroke": "#351607",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1958.0,
+              18.475,
+              120.0
+            ],
+            [
+              1958.0,
+              0.0,
+              120.0
+            ],
+            [
+              1608.0,
+              145.0,
+              120.0
+            ],
+            [
+              1608.0,
+              155.6,
+              120.0
+            ],
+            [
+              1958.0,
+              18.475,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-baseboard-part-1",
+      "properties": {
+        "id": "back-wall-baseboard-part-1",
+        "label": "Back Wall Baseboard Part 1",
+        "role": "baseboard",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "floorboards",
+        "priority": 5,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            0.0,
+            0.5
+          ],
+          [
+            15.0,
+            0.0,
+            0.0
+          ],
+          [
+            9.0395,
+            0.0,
+            0.0
+          ],
+          [
+            9.0395,
+            0.0,
+            0.5
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "baseboard-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "floorboards",
+          "bubble_key": "walls.floorboards",
+          "linked_edit_group": "walls.floorboards",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_baseboard",
+        "defaultStyle": {
+          "fill": "#663014",
+          "stroke": "#3E1B09",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1608.0,
+              547.784,
+              120.0
+            ],
+            [
+              1608.0,
+              569.0,
+              120.0
+            ],
+            [
+              1096.589,
+              569.0,
+              120.0
+            ],
+            [
+              1096.609,
+              547.784,
+              120.0
+            ],
+            [
+              1608.0,
+              547.784,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-baseboard-part-2",
+      "properties": {
+        "id": "back-wall-baseboard-part-2",
+        "label": "Back Wall Baseboard Part 2",
+        "role": "baseboard",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "floorboards",
+        "priority": 5,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            5.8675,
+            0.0,
+            0.5
+          ],
+          [
+            5.8675,
+            0.0,
+            0.0
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "baseboard-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "floorboards",
+          "bubble_key": "walls.floorboards",
+          "linked_edit_group": "walls.floorboards",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_baseboard",
+        "defaultStyle": {
+          "fill": "#663014",
+          "stroke": "#3E1B09",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              321.0,
+              569.0,
+              120.0
+            ],
+            [
+              321.05,
+              547.784,
+              120.0
+            ],
+            [
+              824.466,
+              547.784,
+              120.0
+            ],
+            [
+              824.435,
+              569.0,
+              120.0
+            ],
+            [
+              321.0,
+              569.0,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-paneling-part-1",
+      "properties": {
+        "id": "back-wall-paneling-part-1",
+        "label": "Back Wall Paneling Part 1",
+        "role": "paneling",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "paneling",
+        "priority": 6,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            [
+              15.0,
+              0.0,
+              7.375
+            ],
+            [
+              15.0,
+              0.0,
+              0.5
+            ],
+            [
+              9.0395,
+              0.0,
+              0.5
+            ],
+            [
+              9.0395,
+              0.0,
+              7.375
+            ],
+            [
+              9.5043,
+              0.0,
+              7.375
+            ],
+            [
+              9.5043,
+              0.0,
+              4.4493
+            ],
+            [
+              12.1418,
+              0.0,
+              4.4493
+            ],
+            [
+              12.1418,
+              0.0,
+              7.375
+            ]
+          ],
+          [
+            [
+              10.0852,
+              0.0,
+              1.652
+            ],
+            [
+              12.3393,
+              0.0,
+              1.652
+            ],
+            [
+              12.3393,
+              0.0,
+              3.6123
+            ],
+            [
+              10.0852,
+              0.0,
+              3.6123
+            ]
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "paneling-warm-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "paneling",
+          "bubble_key": "walls.paneling",
+          "linked_edit_group": "walls.paneling",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_paneling",
+        "defaultStyle": {
+          "fill": "#8F4A1D",
+          "stroke": "#5C2A10",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1608.0,
+              256.236,
+              120.0
+            ],
+            [
+              1608.0,
+              547.784,
+              120.0
+            ],
+            [
+              1096.609,
+              547.784,
+              120.0
+            ],
+            [
+              1096.883,
+              256.236,
+              120.0
+            ],
+            [
+              1136.736,
+              256.236,
+              120.0
+            ],
+            [
+              1136.629,
+              380.267,
+              120.0
+            ],
+            [
+              1362.847,
+              380.267,
+              120.0
+            ],
+            [
+              1362.903,
+              256.236,
+              120.0
+            ],
+            [
+              1608.0,
+              256.236,
+              120.0
+            ]
+          ],
+          [
+            [
+              1186.365,
+              498.911,
+              120.0
+            ],
+            [
+              1379.739,
+              498.911,
+              120.0
+            ],
+            [
+              1379.774,
+              415.761,
+              120.0
+            ],
+            [
+              1186.429,
+              415.761,
+              120.0
+            ],
+            [
+              1186.365,
+              498.911,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-paneling-part-2",
+      "properties": {
+        "id": "back-wall-paneling-part-2",
+        "label": "Back Wall Paneling Part 2",
+        "role": "paneling",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "paneling",
+        "priority": 6,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            5.8675,
+            0.0,
+            7.375
+          ],
+          [
+            5.8675,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            7.375
+          ],
+          [
+            2.591,
+            0.0,
+            7.375
+          ],
+          [
+            2.591,
+            0.0,
+            4.4493
+          ],
+          [
+            4.8335,
+            0.0,
+            4.4493
+          ],
+          [
+            4.8335,
+            0.0,
+            7.375
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "paneling-warm-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "paneling",
+          "bubble_key": "walls.paneling",
+          "linked_edit_group": "walls.paneling",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_paneling",
+        "defaultStyle": {
+          "fill": "#8F4A1D",
+          "stroke": "#5C2A10",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              824.884,
+              256.236,
+              120.0
+            ],
+            [
+              824.466,
+              547.784,
+              120.0
+            ],
+            [
+              321.05,
+              547.784,
+              120.0
+            ],
+            [
+              321.738,
+              256.236,
+              120.0
+            ],
+            [
+              543.919,
+              256.236,
+              120.0
+            ],
+            [
+              543.677,
+              380.267,
+              120.0
+            ],
+            [
+              736.013,
+              380.267,
+              120.0
+            ],
+            [
+              736.211,
+              256.236,
+              120.0
+            ],
+            [
+              824.884,
+              256.236,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-halfway-trim-part-1",
+      "properties": {
+        "id": "back-wall-halfway-trim-part-1",
+        "label": "Back Wall Halfway Trim Part 1",
+        "role": "trim",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            0.0,
+            7.625
+          ],
+          [
+            15.0,
+            0.0,
+            7.375
+          ],
+          [
+            12.9818,
+            0.0,
+            7.375
+          ],
+          [
+            12.9818,
+            0.0,
+            7.625
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_halfway_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1608.0,
+              245.64,
+              120.0
+            ],
+            [
+              1608.0,
+              256.236,
+              120.0
+            ],
+            [
+              1434.941,
+              256.236,
+              120.0
+            ],
+            [
+              1434.944,
+              245.64,
+              120.0
+            ],
+            [
+              1608.0,
+              245.64,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-halfway-trim-part-2",
+      "properties": {
+        "id": "back-wall-halfway-trim-part-2",
+        "label": "Back Wall Halfway Trim Part 2",
+        "role": "trim",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            9.3381,
+            0.0,
+            7.625
+          ],
+          [
+            9.3381,
+            0.0,
+            7.375
+          ],
+          [
+            9.0895,
+            0.0,
+            7.375
+          ],
+          [
+            9.0895,
+            0.0,
+            7.625
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_halfway_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1122.494,
+              245.64,
+              120.0
+            ],
+            [
+              1122.485,
+              256.236,
+              120.0
+            ],
+            [
+              1101.17,
+              256.236,
+              120.0
+            ],
+            [
+              1101.18,
+              245.64,
+              120.0
+            ],
+            [
+              1122.494,
+              245.64,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-halfway-trim-part-3",
+      "properties": {
+        "id": "back-wall-halfway-trim-part-3",
+        "label": "Back Wall Halfway Trim Part 3",
+        "role": "trim",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            5.8175,
+            0.0,
+            7.625
+          ],
+          [
+            5.8175,
+            0.0,
+            7.375
+          ],
+          [
+            5.4993,
+            0.0,
+            7.375
+          ],
+          [
+            5.4993,
+            0.0,
+            7.625
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_halfway_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              820.612,
+              245.64,
+              120.0
+            ],
+            [
+              820.597,
+              256.236,
+              120.0
+            ],
+            [
+              793.304,
+              256.236,
+              120.0
+            ],
+            [
+              793.32,
+              245.64,
+              120.0
+            ],
+            [
+              820.612,
+              245.64,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-halfway-trim-part-4",
+      "properties": {
+        "id": "back-wall-halfway-trim-part-4",
+        "label": "Back Wall Halfway Trim Part 4",
+        "role": "trim",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            0.0,
+            7.375
+          ],
+          [
+            0.0,
+            0.0,
+            7.625
+          ],
+          [
+            1.8206,
+            0.0,
+            7.625
+          ],
+          [
+            1.8206,
+            0.0,
+            7.375
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_halfway_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              321.738,
+              256.236,
+              120.0
+            ],
+            [
+              321.763,
+              245.64,
+              120.0
+            ],
+            [
+              477.881,
+              245.64,
+              120.0
+            ],
+            [
+              477.859,
+              256.236,
+              120.0
+            ],
+            [
+              321.738,
+              256.236,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-paint",
+      "properties": {
+        "id": "back-wall-paint",
+        "label": "Back Wall Paint",
+        "role": "wall-paint",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "paint",
+        "priority": 8,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            0.0,
+            7.625
+          ],
+          [
+            0.0,
+            0.0,
+            9.75
+          ],
+          [
+            15.0,
+            0.0,
+            9.75
+          ],
+          [
+            15.0,
+            0.0,
+            7.625
+          ],
+          [
+            12.1418,
+            0.0,
+            7.625
+          ],
+          [
+            12.1418,
+            0.0,
+            7.9956
+          ],
+          [
+            9.5043,
+            0.0,
+            7.9956
+          ],
+          [
+            9.5043,
+            0.0,
+            7.625
+          ],
+          [
+            9.0395,
+            0.0,
+            7.625
+          ],
+          [
+            9.0395,
+            0.0,
+            8.4802
+          ],
+          [
+            5.8675,
+            0.0,
+            8.4802
+          ],
+          [
+            5.8675,
+            0.0,
+            7.625
+          ],
+          [
+            4.8335,
+            0.0,
+            7.625
+          ],
+          [
+            4.8335,
+            0.0,
+            7.9956
+          ],
+          [
+            2.591,
+            0.0,
+            7.9956
+          ],
+          [
+            2.591,
+            0.0,
+            7.625
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "geometric-wallpaper",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "paint",
+          "bubble_key": "walls.paint",
+          "linked_edit_group": "walls.paint",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_paint",
+        "defaultStyle": {
+          "fill": "#0B526B",
+          "stroke": "#4B250F",
+          "opacity": 1.0,
+          "pattern": "mid-century-geometric",
+          "patternPalette": [
+            "#063E58",
+            "#18B8C8",
+            "#FFD22E",
+            "#FF7817",
+            "#F7E4A4"
+          ]
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              321.763,
+              245.64,
+              120.0
+            ],
+            [
+              321.975,
+              155.592,
+              120.0
+            ],
+            [
+              1608.0,
+              155.592,
+              120.0
+            ],
+            [
+              1608.0,
+              245.64,
+              120.0
+            ],
+            [
+              1362.908,
+              245.64,
+              120.0
+            ],
+            [
+              1362.915,
+              229.934,
+              120.0
+            ],
+            [
+              1136.758,
+              229.934,
+              120.0
+            ],
+            [
+              1136.745,
+              245.64,
+              120.0
+            ],
+            [
+              1096.892,
+              245.64,
+              120.0
+            ],
+            [
+              1096.926,
+              209.398,
+              120.0
+            ],
+            [
+              824.952,
+              209.398,
+              120.0
+            ],
+            [
+              824.9,
+              245.64,
+              120.0
+            ],
+            [
+              736.228,
+              245.64,
+              120.0
+            ],
+            [
+              736.253,
+              229.934,
+              120.0
+            ],
+            [
+              543.971,
+              229.934,
+              120.0
+            ],
+            [
+              543.94,
+              245.64,
+              120.0
+            ],
+            [
+              321.763,
+              245.64,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-crown-moulding",
+      "properties": {
+        "id": "back-wall-crown-moulding",
+        "label": "Back Wall Crown Moulding",
+        "role": "crown-moulding",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "crown_moulding",
+        "priority": 9,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            0.0,
+            9.75
+          ],
+          [
+            15.0,
+            0.0,
+            10.0
+          ],
+          [
+            0.0,
+            0.0,
+            10.0
+          ],
+          [
+            0.0,
+            0.0,
+            9.75
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "crown-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "crown_moulding",
+          "bubble_key": "walls.crown_moulding",
+          "linked_edit_group": "walls.crown_moulding",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_crown_moulding",
+        "defaultStyle": {
+          "fill": "#5A2910",
+          "stroke": "#351607",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1608.0,
+              155.592,
+              120.0
+            ],
+            [
+              1608.0,
+              145.0,
+              120.0
+            ],
+            [
+              322.0,
+              145.0,
+              120.0
+            ],
+            [
+              321.975,
+              155.592,
+              120.0
+            ],
+            [
+              1608.0,
+              155.592,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-left-corner-trim",
+      "properties": {
+        "id": "back-wall-left-corner-trim",
+        "label": "Back Wall Left Corner Trim",
+        "role": "trim",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0,
+            0.0,
+            0.5
+          ],
+          [
+            0.1,
+            0.0,
+            0.5
+          ],
+          [
+            0.1,
+            0.0,
+            7.375
+          ],
+          [
+            0,
+            0.0,
+            7.375
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_left_corner_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              321.05,
+              547.784,
+              120.0
+            ],
+            [
+              329.63,
+              547.784,
+              120.0
+            ],
+            [
+              330.313,
+              256.236,
+              120.0
+            ],
+            [
+              321.738,
+              256.236,
+              120.0
+            ],
+            [
+              321.05,
+              547.784,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "back-wall-right-corner-trim",
+      "properties": {
+        "id": "back-wall-right-corner-trim",
+        "label": "Back Wall Right Corner Trim",
+        "role": "trim",
+        "surfacePlane": "back-wall",
+        "parentId": "back-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            14.9,
+            0.0,
+            0.5
+          ],
+          [
+            15.0,
+            0.0,
+            0.5
+          ],
+          [
+            15.0,
+            0.0,
+            7.375
+          ],
+          [
+            14.9,
+            0.0,
+            7.375
+          ]
+        ],
+        "movementGroupId": "back-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "back_wall_right_corner_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1599.42,
+              547.784,
+              120.0
+            ],
+            [
+              1608.0,
+              547.784,
+              120.0
+            ],
+            [
+              1608.0,
+              256.236,
+              120.0
+            ],
+            [
+              1599.425,
+              256.236,
+              120.0
+            ],
+            [
+              1599.42,
+              547.784,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "left-wall-back-corner-trim",
+      "properties": {
+        "id": "left-wall-back-corner-trim",
+        "label": "Left Wall Back Corner Trim",
+        "role": "trim",
+        "surfacePlane": "left-wall",
+        "parentId": "left-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            0.0,
+            0,
+            0.5
+          ],
+          [
+            0.0,
+            0.1,
+            0.5
+          ],
+          [
+            0.0,
+            0.1,
+            7.375
+          ],
+          [
+            0.0,
+            0,
+            7.375
+          ]
+        ],
+        "movementGroupId": "left-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "left_wall_back_corner_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              321.05,
+              547.863,
+              120.0
+            ],
+            [
+              320.126,
+              548.307,
+              120.0
+            ],
+            [
+              320.813,
+              256.378,
+              120.0
+            ],
+            [
+              321.737,
+              256.556,
+              120.0
+            ],
+            [
+              321.05,
+              547.863,
+              120.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "right-wall-back-corner-trim",
+      "properties": {
+        "id": "right-wall-back-corner-trim",
+        "label": "Right Wall Back Corner Trim",
+        "role": "trim",
+        "surfacePlane": "right-wall",
+        "parentId": "right-wall",
+        "purpose": "wall-finish-layer",
+        "semanticTag": "trim",
+        "priority": 7,
+        "coordinateSpace": "pixel-space-1958x803",
+        "depthMode": "from-y",
+        "depthExtentPx": 0,
+        "depthBand": "auto",
+        "worldCoordinateUnit": "ft",
+        "worldCoordinatesFt": [
+          [
+            15.0,
+            0,
+            0.5
+          ],
+          [
+            15.0,
+            0,
+            7.375
+          ],
+          [
+            15.0,
+            0.1,
+            7.375
+          ],
+          [
+            15.0,
+            0.1,
+            0.5
+          ]
+        ],
+        "movementGroupId": "right-wall",
+        "inheritParentTransform": true,
+        "visibleInEditor": true,
+        "styleBinding": "trim-dark-wood",
+        "designBinding": {
+          "group": "walls",
+          "subgroup": "trim",
+          "bubble_key": "walls.trim",
+          "linked_edit_group": "walls.trim",
+          "editable": true,
+          "sync_scope": "all_three_walls"
+        },
+        "legacySourceId": "right_wall_back_corner_trim",
+        "defaultStyle": {
+          "fill": "#6B3214",
+          "stroke": "#401B08",
+          "opacity": 1.0
+        },
+        "depthMinPx": 120.0,
+        "depthMaxPx": 120.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1608.0,
+              547.8,
+              120.0
+            ],
+            [
+              1608.0,
+              256.3,
+              120.0
+            ],
+            [
+              1609.006,
+              256.121,
+              120.0
+            ],
+            [
+              1609.006,
+              548.243,
+              120.0
+            ],
+            [
+              1608.0,
+              547.8,
+              120.0
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

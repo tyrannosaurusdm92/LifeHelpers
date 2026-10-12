@@ -1,0 +1,35 @@
+{
+  "format": "PerspectivePolygonScannerDefaults",
+  "version": 4,
+  "scanner": {
+    "colorTolerance": 24,
+    "edgeThreshold": 58,
+    "minRegion": 1500,
+    "simplifyTolerance": 0.5,
+    "maxScanDimension": 1916,
+    "maxPolygons": 500,
+    "ignoreTransparent": true,
+    "mergeTiny": true,
+    "autoDepth": true,
+    "preventOverlap": true,
+    "iframeInteract": true,
+    "scanMode": "hybrid",
+    "paletteTolerance": 64,
+    "perspectiveEdgeBoost": true,
+    "refineMasks": true,
+    "includeAuxiliary": false
+  },
+  "perspective": {
+    "worldDepth": 1000,
+    "farScale": 0.3,
+    "depthCurve": 1.0
+  },
+  "notes": "Living-room-specific click-first scanner v4. Multi-pass Gaussian/Canny geometry, perspective-aligned edge reinforcement, trainable room material palette, fragment refinement, exact contour holes, adaptive topology repair, and one-polygon GeoJSON groups.",
+  "embeddedRoom": {
+    "enabled": true,
+    "image": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/embedded_room.png",
+    "weatherFrame": "Back Wall Weather Playlist",
+    "weatherLocked": true
+  },
+  "assetsManifest": "json/happy-home-assets.json"
+}

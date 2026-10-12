@@ -1,0 +1,72 @@
+{
+  "schema": "onyx-base-motion/modules/v2",
+  "source": "trapthecat.html movement cycles and path search, adapted for eight-way quadruped movement; OurSpace existing Onyx render API for poses",
+  "runtime": "onyx-base-runtime.js",
+  "directions": [
+    "east",
+    "south_east",
+    "south",
+    "south_west",
+    "west",
+    "north_west",
+    "north",
+    "north_east"
+  ],
+  "modules": [
+    "onyx-base-move_east.js",
+    "onyx-base-move_south_east.js",
+    "onyx-base-move_south.js",
+    "onyx-base-move_south_west.js",
+    "onyx-base-move_west.js",
+    "onyx-base-move_north_west.js",
+    "onyx-base-move_north.js",
+    "onyx-base-move_north_east.js",
+    "onyx-base-jump_up.js",
+    "onyx-base-jump_down.js",
+    "onyx-base-jump_across.js",
+    "onyx-base-stretch.js",
+    "onyx-base-loaf.js",
+    "onyx-base-lounge.js",
+    "onyx-base-curl_ball.js",
+    "onyx-base-eat_drink.js",
+    "onyx-base-sleep.js",
+    "onyx-base-play_hunt.js"
+  ],
+  "count": 18,
+  "runtimeCount": 1,
+  "noDedicatedArtFor": [
+    "east->south",
+    "west->north",
+    "play_hunt",
+    "lounge",
+    "sleep",
+    "three jump variants"
+  ],
+  "nativeSupport": "legacy game.js atlas: six facings; atlas actions: walk,run,jump,drop,stretchBow,loaf,snuggle,curlBall,primary; native eat/drink SVG overlay to sprite canvas during explicit OnyxBaseMotion feeding actions",
+  "coordinateSystem": "Normalized x/y screen, y increases downward; floor bounds protected; 8-way diagonal normalized vectors.",
+  "feedingFrames": {
+    "normalized": true,
+    "count": 12,
+    "frameSize": [
+      640,
+      640
+    ],
+    "logicalSpriteSize": [
+      64,
+      64
+    ],
+    "bodyWidthPx": 51,
+    "pawBaselinePx": 61,
+    "modes": [
+      "eat",
+      "drink"
+    ],
+    "sides": [
+      "left",
+      "right"
+    ],
+    "framesPerModeAndSide": 3,
+    "path": "assets/images/games/virtual/atlases/",
+    "source": "Onyx_Eating_Drinking_12_SVG_Frames(1).zip"
+  }
+}

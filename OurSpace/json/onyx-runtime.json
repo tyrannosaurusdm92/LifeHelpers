@@ -1,0 +1,12 @@
+{
+  "schema": "onyx.runtime-policy.v10",
+  "backendEndpoint": "https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec",
+  "privacy": {
+    "privateProfileKnowledge": "backend-only",
+    "clientScopeIsSecurityBoundary": false
+  },
+  "retrieval": {
+    "drive": "explicit-or-bound-context-only",
+    "attachments": "per-message"
+  }
+}

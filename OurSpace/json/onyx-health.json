@@ -1,0 +1,15 @@
+{
+  "schema": "onyx.health-public.v10",
+  "containsProfileHealthData": false,
+  "modes": [
+    "auto",
+    "listen",
+    "checkin",
+    "ground",
+    "dbt",
+    "journal",
+    "appointment"
+  ],
+  "durableMemoryDefault": "off",
+  "privateHealthContext": "backend-only"
+}
