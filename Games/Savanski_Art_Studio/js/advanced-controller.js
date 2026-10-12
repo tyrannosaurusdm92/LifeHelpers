@@ -23,7 +23,7 @@ class AdvancedController{
  }
  patchEngine(){
    const e=this.engine,self=this,origRender=e.render.bind(e),origOverlay=e.renderOverlay.bind(e),origNew=e.newProject.bind(e),origSer=e.serialize.bind(e),origDes=e.deserialize.bind(e),origImport=e.importImage.bind(e),origImportData=e.importImageDataUrl.bind(e);
-   e.render=function(){origRender();self.syncCanvas();self.renderer.resize(e.width,e.height);self.renderer.render(e.sctx,{clear:false});self.renderSelectionOnly();};
+   e.render=function(){origRender();self.syncCanvas();self.renderer.resize(e.width,e.height);self.renderer.render(e.sctx,{clear:false});/* Selection is drawn only on the overlay, never into the artwork. */};
    e.renderOverlay=function(){origOverlay();self.renderSelectionOnly();};
    e.newProject=async function(opts){await origNew(opts);self.store.clear();self.store.setCanvas(self.canvasId());self.renderer.resize(e.width,e.height);self.render();return e.project};
    e.serialize=async function(){const data=await origSer();data.advancedScene=self.store.serialize();data.schemaVersion='3.0.0';return data};
