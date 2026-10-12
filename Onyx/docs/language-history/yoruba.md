@@ -5,4 +5,14 @@ Standard writing uses adapted Latin letters, with 19th-century missionary standa
 
 Yoruba has high/mid/low tones, seven oral vowels plus nasal vowels in standard analyses, ATR vowel harmony and /kp, gb/. Canonical roots often V/CV, complicated by loans/contact. Basic order is SVO; preverbal particles mark tense/aspect/mood; serial verbs and focus matter. Tone distinguishes lexical and grammatical readings.
 
-Sources: [Ogundiran, Indiana UP](https://iupress.org/9780253051486/the-yoruba/); [Cambridge history](https://www.cambridge.org/core/books/yoruba-from-prehistory-to-the-present/geography-and-society/CC682B3D24A7A9648C018BABC1E2EDEA); [UGA Yoruba](https://africa.uga.edu/Yoruba/yorubaabout.html); [writing standards](https://www.theartsjournal.org/index.php/site/article/view/50); [Unicode Latin Extended](https://www.unicode.org/charts/PDF/U1E00.pdf).
+Sources: [Ogundiran, Indiana UP](https://iupress.org/9780253051486/the-yoruba/); [Cambridge history](https://www.cambridge.org/core/books/yoruba-from-prehistory-to-the-present/geography-and-society/CC682B3D24A7A9648C018BABC1E2EDEA); [UGA Yoruba](https://africa.uga.edu/Yoruba/yorubaabout.html); [writing standards](https://www.theartsjournal.org/index.php/site/article/view/50); [Unicode Latin Extended](https://www.unicode.org/charts/PDF/U1E00.pdf).\n
+
+## Expanded research pass (2026-10-12)
+
+The source-linked expansion is organized into five focused notes and six JavaScript modules.
+
+- [Lineage and root-age evidence](research/yoruba/01-lineage.md)
+- [Chronology and evidence](research/yoruba/02-chronology.md)
+- [Sound changes](research/yoruba/03-sound-change.md)
+- [Syllable structure and sentence patterns](research/yoruba/04-syllables-and-syntax.md)
+- [Script, glyphs and Unicode](research/yoruba/05-script-and-unicode.md)

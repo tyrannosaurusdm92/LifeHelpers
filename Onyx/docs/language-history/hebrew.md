@@ -5,4 +5,14 @@ Early Hebrew used Phoenician-derived Paleo-Hebrew. An Aramaic-derived square scr
 
 Modern syllables often (C)(C)V(C). Many Israeli speakers merge historical emphatics/pharyngeals; /ħ/ may merge with /x/, /ʔ/ may be lost, and gemination is commonly absent. Biblical clauses often verb-initial; Modern Hebrew commonly SVO with fronting. Root-pattern binyanim and construct state are central.
 
-Sources: [Cambridge Hebrew](https://www.cambridge.org/core/books/abs/ancient-languages-of-syriapalestine-and-arabia/hebrew/512F0FC4796BF3DB1137C1A9BA228DB1); [UT Austin Canaanite](https://sites.utexas.edu/scripts/files/2020/10/2019-AWW-The-Canaanite-Languages.pdf); [Modern Hebrew phonology](https://cris.biu.ac.il/en/publications/notes-on-modern-hebrew-phonology-and-orthography/); [Unicode Hebrew](https://www.unicode.org/charts/PDF/U0590.pdf).
+Sources: [Cambridge Hebrew](https://www.cambridge.org/core/books/abs/ancient-languages-of-syriapalestine-and-arabia/hebrew/512F0FC4796BF3DB1137C1A9BA228DB1); [UT Austin Canaanite](https://sites.utexas.edu/scripts/files/2020/10/2019-AWW-The-Canaanite-Languages.pdf); [Modern Hebrew phonology](https://cris.biu.ac.il/en/publications/notes-on-modern-hebrew-phonology-and-orthography/); [Unicode Hebrew](https://www.unicode.org/charts/PDF/U0590.pdf).\n
+
+## Expanded research pass (2026-10-12)
+
+The source-linked expansion is organized into five focused notes and six JavaScript modules.
+
+- [Lineage and root-age evidence](research/hebrew/01-lineage.md)
+- [Chronology and evidence](research/hebrew/02-chronology.md)
+- [Sound changes](research/hebrew/03-sound-change.md)
+- [Syllable structure and sentence patterns](research/hebrew/04-syllables-and-syntax.md)
+- [Script, glyphs and Unicode](research/hebrew/05-script-and-unicode.md)

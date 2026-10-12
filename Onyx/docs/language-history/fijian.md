@@ -5,4 +5,14 @@ Proto-Oceanic is calibrated around 3,000–3,300 BP; Proto-Central Pacific is la
 
 Fijian favors open CV/V syllables and commonly penultimate stress. Basic transitive clauses are often VOS/verb-initial. Comparative examples: Proto-Oceanic *p > /v/ in Bauan *patu ‘stone’ > vatu; *s > /t/ in cited Lau examples such as *pose ‘paddle’. The latter is Lau-specific.
 
-Sources: [ANU Press](https://press-files.anu.edu.au/downloads/press/p69411/html/ch03.html); [dating study](https://academic.oup.com/jole/article/5/1/17/5688948); [Schütz, The Fijian Language](https://manifold.uhpress.hawaii.edu/projects/the-fijian-language); [Cambridge Fiji missionaries](https://maa.cam.ac.uk/Fiji-missionaries).
+Sources: [ANU Press](https://press-files.anu.edu.au/downloads/press/p69411/html/ch03.html); [dating study](https://academic.oup.com/jole/article/5/1/17/5688948); [Schütz, The Fijian Language](https://manifold.uhpress.hawaii.edu/projects/the-fijian-language); [Cambridge Fiji missionaries](https://maa.cam.ac.uk/Fiji-missionaries).\n
+
+## Expanded research pass (2026-10-12)
+
+The source-linked expansion is organized into five focused notes and six JavaScript modules.
+
+- [Lineage and root-age evidence](research/fijian/01-lineage.md)
+- [Chronology and evidence](research/fijian/02-chronology.md)
+- [Sound changes](research/fijian/03-sound-change.md)
+- [Syllable structure and sentence patterns](research/fijian/04-syllables-and-syntax.md)
+- [Script, glyphs and Unicode](research/fijian/05-script-and-unicode.md)

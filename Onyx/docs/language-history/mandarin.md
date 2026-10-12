@@ -5,4 +5,14 @@ Chinese script history includes oracle bone, bronze, seal, clerical, regular, ru
 
 Modern syllable template roughly (C)(G)V(X), with nasal codas and four lexical tones plus neutral tone. Mandarin lost Middle Chinese final /p t k/, redistributing entering-tone items. Earlier onset voicing conditioned tone splits across Sinitic. Modern Mandarin is broadly SVO/topic-comment; particles, aspect, classifiers and coverbs are key.
 
-Sources: [Oxford writing origins](https://academic.oup.com/book/58672/chapter/485387630); [Smithsonian oracle bone](https://asia.si.edu/education/educator-resources/teaching-china-with-the-smithsonian/explore-by-object/inscribed-tortoise-shell-oracle-bone/); [Cambridge historical phonology](https://www.cambridge.org/core/books/abs/phonological-history-of-chinese/an-introduction-to-chinese-historical-phonology/7A1DECBDCB0C27F0486F3409A697D592); [MOE Pinyin](https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/195802/t19580201_186000.html); [Unicode CJK](https://www.unicode.org/charts/PDF/U4E00.pdf).
+Sources: [Oxford writing origins](https://academic.oup.com/book/58672/chapter/485387630); [Smithsonian oracle bone](https://asia.si.edu/education/educator-resources/teaching-china-with-the-smithsonian/explore-by-object/inscribed-tortoise-shell-oracle-bone/); [Cambridge historical phonology](https://www.cambridge.org/core/books/abs/phonological-history-of-chinese/an-introduction-to-chinese-historical-phonology/7A1DECBDCB0C27F0486F3409A697D592); [MOE Pinyin](https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/195802/t19580201_186000.html); [Unicode CJK](https://www.unicode.org/charts/PDF/U4E00.pdf).\n
+
+## Expanded research pass (2026-10-12)
+
+The source-linked expansion is organized into five focused notes and six JavaScript modules.
+
+- [Lineage and root-age evidence](research/mandarin/01-lineage.md)
+- [Chronology and evidence](research/mandarin/02-chronology.md)
+- [Sound changes](research/mandarin/03-sound-change.md)
+- [Syllable structure and sentence patterns](research/mandarin/04-syllables-and-syntax.md)
+- [Script, glyphs and Unicode](research/mandarin/05-script-and-unicode.md)

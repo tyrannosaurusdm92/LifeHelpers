@@ -1,0 +1,29 @@
+# Mandarin Chinese (Standard Mandarin focus): Chronology and evidence
+
+**Selection:** Asian / Sinitic language.  
+**Lineage:** Sino-Tibetan → Sinitic → Mandarin → Standard Mandarin.
+
+The family-level root date and the writing timeline use different evidence. Bayesian models put the first Sino-Tibetan divergence at 5,871 BP, 7,184 BP and a 2020 mean of 7,983 BP (95% highest posterior density interval 4,778–11,285 BP), depending on dataset and method. These estimates are not inscriptions and do not directly date either Sinitic or Mandarin. The earliest known systematic Chinese writing appears in Late Shang oracle-bone inscriptions, with major corpora from roughly the thirteenth century BCE; these artifacts are a firm written anchor for Old Chinese, not a family split date. Middle Chinese is reconstructed from the Qieyun rhyme tradition beginning in 601 CE; the 1324 Zhongyuan Yinyun documents a system called Old Mandarin. The Cambridge historical phonology account stresses that the rhyme book’s system was composite and represents a prestigious northern standard rather than one village dialect.
+
+Script history and speech history overlap but are not identical. Oracle-bone, bronze, seal, clerical, cursive, running and regular scripts are visual and material traditions; regional character forms and writing styles continued to coexist. On 28 January 1956, the PRC State Council approved a scheme for simplifying Chinese characters; the resolution records preceding public review and implementation. Pinyin was adopted by the PRC in 1958 as a Romanization scheme. Simplified character reform and standard-language policy are modern social/orthographic developments, not sound changes that produced Mandarin. Every time line in the data marks whether a date applies to a family model, an artifact, a rhyme tradition, a state policy or a reconstructed speech stage.
+
+## Dated milestones and evidence
+
+| Date or period | Milestone | Evidence type | Confidence / limit | Sources |
+|---|---|---|---|---|
+| Published models: 5,871–7,983 BP (with wider credible intervals) | Bayesian lexical phylogenies estimate the initial Sino-Tibetan divergence; one 2020 study reports a 95% HPD interval of 4,778–11,285 BP | time-calibrated phylogenetic models using cognate datasets and historical calibrations | high that published studies report these estimates; moderate/low for a single exact root date because datasets and methods differ | [M11](https://www.nature.com/articles/s41598-020-77404-4), [M12](https://www.nature.com/articles/s41586-019-1153-z), [M13](https://pmc.ncbi.nlm.nih.gov/articles/PMC6534992/) |
+| 13th–11th c. BCE | Late Shang oracle-bone inscriptions attest early written Chinese | dated archaeological artifacts and inscriptional study | high for attestation; not a speech-origin date | [M1](https://asia.si.edu/education/educator-resources/teaching-china-with-the-smithsonian/explore-by-object/inscribed-tortoise-shell-oracle-bone/), [M8](https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/lesson-plans/understanding-chinese-characters/) |
+| Pre-Qin period | Old Chinese is reconstructed from rhyme, character phonetics and later evidence | comparative historical phonology | moderate; reconstructions are competing models | [M3](https://www.cambridge.org/core/books/abs/phonological-history-of-chinese/an-introduction-to-chinese-historical-phonology/7A1DECBDCB0C27F0486F3409A697D592) |
+| 601 CE | Qieyun rhyme tradition supplies a major Middle Chinese reference point | dated rhyme dictionary tradition | high as a textual anchor | [M3](https://www.cambridge.org/core/books/abs/phonological-history-of-chinese/an-introduction-to-chinese-historical-phonology/7A1DECBDCB0C27F0486F3409A697D592), [M4](https://www.cambridge.org/core/books/abs/phonological-history-of-chinese/old-mandarin-the-zhongyuan-yinyun/25E3AB35BFBE15663813AA730A0F09EC) |
+| 1324 CE | Zhongyuan Yinyun documents a system termed Old Mandarin | dated rhyme book | high as text date; system is not a single dialect recording | [M4](https://www.cambridge.org/core/books/abs/phonological-history-of-chinese/old-mandarin-the-zhongyuan-yinyun/25E3AB35BFBE15663813AA730A0F09EC) |
+| 28 January 1956 | State Council approves the Scheme for Simplifying Chinese Characters | official resolution and policy history | high for resolution date and policy adoption; subsequent use and revisions are separate milestones | [M14](https://www.moe.gov.cn/jyb_xwfb/xw_fbh/moe_2128/moe_2326/moe_1144/tnull_14350.html) |
+| 1958 CE | PRC adopts Hanyu Pinyin as a Romanization scheme | government policy document | high | [M6](https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/195802/t19580201_186000.html) |
+
+## Sources
+- [M1] [Smithsonian National Museum of Asian Art, oracle-bone object](https://asia.si.edu/education/educator-resources/teaching-china-with-the-smithsonian/explore-by-object/inscribed-tortoise-shell-oracle-bone/)
+- [M4] [Cambridge, Old Mandarin and Zhongyuan Yinyun](https://www.cambridge.org/core/books/abs/phonological-history-of-chinese/old-mandarin-the-zhongyuan-yinyun/25E3AB35BFBE15663813AA730A0F09EC)
+- [M6] [Ministry of Education of the PRC, 1958 Pinyin scheme](https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/195802/t19580201_186000.html)
+- [M11] [Zhang et al., Dated phylogeny suggests early Neolithic origin of Sino-Tibetan languages (2020)](https://www.nature.com/articles/s41598-020-77404-4)
+- [M12] [Zhang et al., Phylogenetic evidence for Sino-Tibetan origin in northern China in the Late Neolithic (2019)](https://www.nature.com/articles/s41586-019-1153-z)
+- [M13] [Sagart et al., Dated language phylogenies shed light on the ancestry of Sino-Tibetan (2019; PMC full text)](https://pmc.ncbi.nlm.nih.gov/articles/PMC6534992/)
+- [M14] [PRC Ministry of Education, State Council 1956 resolution on the Chinese Character Simplification Scheme](https://www.moe.gov.cn/jyb_xwfb/xw_fbh/moe_2128/moe_2326/moe_1144/tnull_14350.html)
