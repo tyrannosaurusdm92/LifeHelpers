@@ -7,7 +7,7 @@
  const base=new URL('onyx/games/virtual/',source?.src||new URL('js/',document.baseURI));
  const modules=[
   'onyx-base-physics.js','onyx-base-gait.js','onyx-base-navigation.js',
-  'onyx-base-profiles.js','onyx-base-sprites.js','onyx-base-flipbook.js','onyx-base-runtime.js',
+  'onyx-base-profiles.js','onyx-base-sprites.js','onyx-base-flipbook.js','onyx-animation-controller.js','onyx-base-runtime.js',
   'onyx-base-move_north.js','onyx-base-move_north_east.js',
   'onyx-base-move_east.js','onyx-base-move_south_east.js',
   'onyx-base-move_south.js','onyx-base-move_south_west.js',
