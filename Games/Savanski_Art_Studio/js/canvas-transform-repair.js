@@ -147,6 +147,49 @@
       store.select(obj.id);ctl.openInspector(false);
       ctl.studio.toast?.('Paint lifted to an editable layer. Drag, resize, rotate, reorder or duplicate it.');
     }
+    function removeCyanMotes(){
+      const e=engine,l=e.activeLayer();
+      if(!e.project||!l||l.type!=='raster')return ctl.studio.toast?.('Select a raster paint layer first.','error');
+      if(l.locked)return ctl.studio.toast?.('The canvas base is locked. Use Reset Canvas Base instead.','error');
+      const x=l.canvas.getContext('2d',{willReadFrequently:true});
+      const frame=x.getImageData(0,0,l.canvas.width,l.canvas.height),d=frame.data;
+      let count=0;
+      for(let i=0;i<d.length;i+=4){
+        const r=d[i],g=d[i+1],b=d[i+2],a=d[i+3];
+        // Only very faint blue-green antialiasing/specks, not opaque cyan artwork.
+        if(a>0&&a<=142&&g>=115&&b>=115&&g>r+42&&b>r+42&&Math.abs(g-b)<=65){
+          d[i]=d[i+1]=d[i+2]=d[i+3]=0;count++;
+        }
+      }
+      if(!count)return ctl.studio.toast?.('No low-opacity cyan motes found in the selected layer.');
+      const before=e.history.capture('Remove faint cyan specks');
+      x.putImageData(frame,0,0);e.history.push(before);e.render();
+      ctl.studio.toast?.('Removed '+count.toLocaleString()+' faint cyan artifact pixels. Undo is available.');
+    }
+    function resetCanvasBase(){
+      const e=engine;
+      if(e.project?.projectType!=='canvas-design')return ctl.studio.toast?.('Canvas Base reset applies to a single-canvas artwork.','error');
+      e.applyCanvasBase(e.project.canvasBase||{kind:'transparent'},true);
+      ctl.studio.toast?.('Canvas base restored cleanly without changing artwork on other layers.');
+    }
+    ctl.removeCyanMotes=removeCyanMotes;
+    ctl.resetCanvasBase=resetCanvasBase;
+    function installCanvasRepair(){
+      const target=$('#savanski-art-toolbar [data-panel="canvas"] .sav-panel-body');
+      if(!target)return false;
+      if(target.querySelector('[data-canvas-repair]'))return true;
+      const section=document.createElement('section');
+      section.className='sav-section sav-expansion';
+      section.dataset.canvasRepair='true';
+      section.innerHTML='<h3>Clean Canvas Background</h3><div class="sav-grid cols-2"><button class="sav-btn" type="button" data-clean-cyan>Remove Faint Cyan Motes</button><button class="sav-btn" type="button" data-reset-base>Reset Canvas Base</button></div><p class="sav-pro-note">Use Remove Faint Cyan Motes on a selected raster layer to remove only low-opacity blue-green specks. Reset Canvas Base reconstructs the clean transparent, solid or gradient base without affecting other layers. Selection guides stay out of exported artwork.</p>';
+      target.appendChild(section);
+      section.querySelector('[data-clean-cyan]').addEventListener('click',removeCyanMotes);
+      section.querySelector('[data-reset-base]').addEventListener('click',resetCanvasBase);
+      return true;
+    }
+    if(!installCanvasRepair()){
+      let n=0;const retry=setInterval(()=>{if(installCanvasRepair()||++n>120)clearInterval(retry)},250);
+    }
     ctl.liftRasterPixels=liftPixels;
     function installButtons(){
       const target=$('#savanski-art-toolbar [data-panel="layers"] .sav-panel-body');
