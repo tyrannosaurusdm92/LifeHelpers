@@ -37,6 +37,7 @@
       if(tool==='select'||tool==='move'){
         const selected=store.selected(),h=selected&&!selected.locked?handleAt(selected,p):null;
         if(h){
+          try{this.engine.overlay.setPointerCapture?.(ev.pointerId)}catch(_){}
           store.snapshot(h.pt.type==='rotate'?'Rotate object':'Resize object');
           this.drag={kind:'transform-handle',id:selected.id,action:h.pt.type,corner:h.pt.corner,
             hx:h.pt.hx||0,hy:h.pt.hy||0,center:{x:h.cx,y:h.cy},bounds:h.b,
