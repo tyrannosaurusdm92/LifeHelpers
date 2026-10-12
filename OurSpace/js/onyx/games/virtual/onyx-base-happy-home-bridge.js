@@ -3,12 +3,37 @@
    This bridge ONLY controls voluntary Happy Home movement and collision. */
 (function(root){
 "use strict";
-if(root.OnyxHappyHomeMotion?.version==="25.0")return;
+if(root.OnyxHappyHomeMotion?.version==="26.0")return;
 const movement=()=>root.OnyxBaseMotion;
-const room=()=>root.OnyxRoomSpatial||root.HappyHomeOnyxSpatial;
-const native=()=>root.OnyxImperialExpedition;
+/* Original Happy Home renderer is inside a personalized widget's srcdoc iframe.
+   Resolve same-origin frames recursively; never assume it is in this window. */
+let nativeWindow=null;
+function findNativeWindow(){
+ try{
+  if(nativeWindow&&!nativeWindow.closed&&nativeWindow.OnyxImperialExpedition&&
+      (nativeWindow.OnyxRoomSpatial||nativeWindow.HappyHomeOnyxSpatial))return nativeWindow;
+ }catch(_){}
+ nativeWindow=null;
+ const seen=new Set();
+ function scan(win,depth){
+  if(!win||seen.has(win)||depth>4)return null;seen.add(win);
+  try{
+   if(win.OnyxImperialExpedition&&(win.OnyxRoomSpatial||win.HappyHomeOnyxSpatial)){
+    nativeWindow=win;return win;
+   }
+   for(const el of win.document.querySelectorAll("iframe")){
+    let child=null;try{child=el.contentWindow;}catch(_){}
+    const found=scan(child,depth+1);if(found)return found;
+   }
+  }catch(_){}
+  return null;
+ }
+ return scan(root,0);
+}
+const room=()=>{const w=findNativeWindow();return w&&(w.OnyxRoomSpatial||w.HappyHomeOnyxSpatial);};
+const native=()=>findNativeWindow()?.OnyxImperialExpedition;
 const WIDTH=1916,HEIGHT=821;
-let running=false,requested=0,raf=0,lastTime=0,lastSync=0,lastAction="",listening=null,worldSignature="";
+let running=false,requested=0,raf=0,lastTime=0,lastSync=0,lastAction="",listening=null,worldSignature="",lastRoomReference=null;
 function cat(){return native()?.getState?.()?.cat||null;}
 function bounds(feature){
  const pts=feature?.geometry?.type==="Polygon"?feature.geometry.coordinates?.[0]:null;
@@ -31,20 +56,20 @@ function syncRoom(){
  // Use the existing spatial room boundary if it is defined.
  const spatial=room();
  const sig=JSON.stringify(obstacles);
- if(sig===worldSignature){lastSync=performance.now();return {ok:true,unchanged:true};}
- worldSignature=sig;
+ if(sig===worldSignature&&spatial===lastRoomReference){lastSync=performance.now();return {ok:true,unchanged:true};}
+ worldSignature=sig;lastRoomReference=spatial;
  const canOccupy=(x,y,z)=>(
    typeof spatial?.canWalkPoint!=="function"||z>0||spatial.canWalkPoint(x,y)
  );
  lastSync=performance.now();
- return motion.setWorld({width:WIDTH,height:HEIGHT,obstacles,canOccupy});
+ return motion.setWorld({width:spatial?.W||WIDTH,height:spatial?.H||HEIGHT,obstacles,canOccupy});
 }
 function syncPosition(){
  const p=cat(),motion=movement();
  if(!motion||!p||!Number.isFinite(p.x)||!Number.isFinite(p.y))return false;
  const state=motion.getState();
  if(state.job||state.command||state.nav)return false;
- return motion.setPosition(p.x*WIDTH,p.y*HEIGHT).ok;
+ return motion.setPosition(p.x*(room()?.W||WIDTH),p.y*(room()?.H||HEIGHT)).ok;
 }
 function syncMood(){
  const mood=native()?.getState?.()?.behavior;
@@ -53,7 +78,7 @@ function syncMood(){
 function syncNative(){
  const m=movement(),a=native();if(!m||!a)return;
  const s=m.getState();
- a.setCatPosition?.(s.x/WIDTH,s.y/HEIGHT);
+ a.setCatPosition?.(s.x/(room()?.W||WIDTH),s.y/(room()?.H||HEIGHT));
  let action=s.job?.name||s.job?.kind||(s.nav||s.command?s.pace:s.action);
  const table={jump_up:"jump",jump_down:"jump",jump_across:"jump",stretch:"stretchBow",
    loaf:"loaf",lounge:"sit",curl_ball:"curlBall",eat_drink:"interact",sleep:"sleep",play_hunt:"primary"};
@@ -69,6 +94,7 @@ function tick(now){
  syncMood();
  const m=movement(),s=m?.getState();
  const active=!!(s?.job||s?.nav||s?.command);
+ if(!native()){stop();return;}
  if(m&&active){m.step(dt);syncNative();}
  else if(now>requested){syncPosition();lastAction="";}
  raf=requestAnimationFrame(tick);
@@ -90,7 +116,8 @@ function stop(){
  movement()?.stop();return {ok:true};
 }
 const api={
- version:"25.0",start,stop,refreshRoom:syncRoom,refreshPosition:syncPosition,
+ version:"26.0",start,stop,refreshRoom:syncRoom,refreshPosition:syncPosition,
+ getStatus(){return {active:running,rendererFound:!!native(),engineLoaded:!!movement(),backendModified:false,roomFound:!!room()};},
  getState:()=>movement()?.getState(),getWorld:()=>movement()?.getWorld(),
  move(direction,pace="walk"){request();return movement()?.walk(direction,pace)||{ok:false};},
  steer(x,y,pace="walk"){request();return movement()?.steer(x,y,pace)||{ok:false};},
