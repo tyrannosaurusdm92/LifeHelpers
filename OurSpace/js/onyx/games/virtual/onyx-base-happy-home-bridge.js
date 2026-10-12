@@ -123,12 +123,14 @@
  const api={version:VERSION,start,stop,refreshRoom,refreshPosition:syncNativePosition,
   getState:()=>motion()?.getState(),getWorld:()=>motion()?.getWorld(),
   getStatus:()=>({active:running,rendererFound:!!native(),engineLoaded:!!motion(),roomFound:!!room(),backendModified:false}),
-  move(direction,pace='walk',opts={}){begin();const m=motion();return pace==='run'?m?.run(direction,opts):m?.walk(direction,opts);},
-  steer(x,y,pace='walk'){begin();return motion()?.setInput(x,y,{pace})||{ok:false,reason:'motion-unavailable'};},
-  navigate(x,y,pace='walk'){begin();return motion()?.navigateTo(x,y,{pace})||{ok:false,reason:'motion-unavailable'};},
-  jump(name,opts={}){begin();return jump(name,opts);},
-  action(name,opts={}){begin();return motion()?.perform(name,opts)||{ok:false,reason:'motion-unavailable'};},
-  interact(kind,target,opts={}){begin();return interact(kind,target,opts);},
+  // Never report a successful command when the source renderer/room is unavailable.
+  // The authoritative native actor owns its game state and its drawn position.
+  move(direction,pace='walk',opts={}){const ready=begin();if(!ready.ok)return ready;const m=motion();return pace==='run'?m?.run(direction,opts):m?.walk(direction,opts);},
+  steer(x,y,pace='walk'){const ready=begin();if(!ready.ok)return ready;return motion()?.setInput(x,y,{pace})||{ok:false,reason:'motion-unavailable'};},
+  navigate(x,y,pace='walk'){const ready=begin();if(!ready.ok)return ready;return motion()?.navigateTo(x,y,{pace})||{ok:false,reason:'motion-unavailable'};},
+  jump(name,opts={}){const ready=begin();if(!ready.ok)return ready;return jump(name,opts);},
+  action(name,opts={}){const ready=begin();if(!ready.ok)return ready;return motion()?.perform(name,opts)||{ok:false,reason:'motion-unavailable'};},
+  interact(kind,target,opts={}){const ready=begin();if(!ready.ok)return ready;return interact(kind,target,opts);},
   setSmooth(value){return motion()?.setSteering({enabled:!!value})||{ok:false};},
   cancel(){activeDeadline=0;return motion()?.stop('cancelled');}};
  root.OnyxHappyHomeMotion=api;

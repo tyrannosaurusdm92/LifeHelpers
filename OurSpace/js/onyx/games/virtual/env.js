@@ -67,7 +67,7 @@
  }
  function showFishNotice(species){
    const ui=ensureRoomVisuals();if(!ui)return;const id=String(species||'goldfish'),asset=id==='neon tetra'?'neon_tetra.svg':id==='amber tetra'?'amber_tetra.svg':'goldfish.svg';
-   ui.noticeImage.src='https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room'+asset;ui.noticeText.textContent='Caught '+id+' · collection '+Number(fishState.counts[id]||0);ui.notice.hidden=false;
+   ui.noticeImage.src='https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/'+asset;ui.noticeText.textContent='Caught '+id+' · collection '+Number(fishState.counts[id]||0);ui.notice.hidden=false;
  }
  function recordFishCatch(){
    const species=FISH_SPECIES[Math.min(FISH_SPECIES.length-1,Math.floor(Math.random()*FISH_SPECIES.length))];
@@ -423,12 +423,38 @@
    get applianceState(){return{...applianceState}},
    get fishCatchIntervalMs(){return FISH_CATCH_INTERVAL_MS},
    jumpOntoAquarium(){const p=pointForFeature('onyx.aquarium.jump-landing'),api=spatialApi();return p?moveQuadrupedToSpot({id:'onyx.aquarium.jump-landing',form:'quadruped',x:p.x/(api?.W||1916),y:p.y/(api?.H||821),actorSize:64,action:'loaf'},{autonomousCatch:false}):false},
-   get baseMotion(){return shellWindow()?.OnyxBaseMotion||null},
-   baseMove(direction,options={}){const motion=shellWindow()?.OnyxBaseMotion;return motion?.walk?.(String(direction),options)||{ok:false,reason:'motion-not-ready'}},
-   baseRun(direction,options={}){const motion=shellWindow()?.OnyxBaseMotion;return motion?.run?.(String(direction),options)||{ok:false,reason:'motion-not-ready'}},
-   baseAction(action,options={}){const motion=shellWindow()?.OnyxBaseMotion;return motion?.perform?.(String(action),options)||{ok:false,reason:'motion-not-ready'}},
-   feedOnyx(options={}){const motion=shellWindow()?.OnyxBaseMotion;return motion?.eat?.(options)||{ok:false,reason:'motion-not-ready'}},
-   waterOnyx(options={}){const motion=shellWindow()?.OnyxBaseMotion;return motion?.drink?.(options)||{ok:false,reason:'motion-not-ready'}},
+   // The profile owns the Pass 23 motion clock. The scene iframe still owns its
+   // original cat sprite, couch and aquarium animations, and game/need state.
+   get baseMotion(){return window.OnyxBaseMotion||shellWindow()?.OnyxBaseMotion||null},
+   baseMove(direction,options={}){
+     const bridge=window.OnyxHappyHomeMotion;
+     return bridge?.move?.(String(direction),'walk',options)
+       ||this.baseMotion?.walk?.(String(direction),options)
+       ||{ok:false,reason:'motion-not-ready'};
+   },
+   baseRun(direction,options={}){
+     const bridge=window.OnyxHappyHomeMotion;
+     return bridge?.move?.(String(direction),'run',options)
+       ||this.baseMotion?.run?.(String(direction),options)
+       ||{ok:false,reason:'motion-not-ready'};
+   },
+   baseAction(action,options={}){
+     return window.OnyxHappyHomeMotion?.action?.(String(action),options)
+       ||this.baseMotion?.perform?.(String(action),options)
+       ||{ok:false,reason:'motion-not-ready'};
+   },
+   feedOnyx(options={}){
+     const target=options.bowl||options.target;
+     return (target&&window.OnyxHappyHomeMotion?.interact?.('eat',target,options))
+       ||this.baseMotion?.eat?.(options)
+       ||{ok:false,reason:'motion-not-ready'};
+   },
+   waterOnyx(options={}){
+     const target=options.bowl||options.target;
+     return (target&&window.OnyxHappyHomeMotion?.interact?.('drink',target,options))
+       ||this.baseMotion?.drink?.(options)
+       ||{ok:false,reason:'motion-not-ready'};
+   },
    get controlled(){return isControlled()}
  });
 })();

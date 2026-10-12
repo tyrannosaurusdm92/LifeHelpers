@@ -792,5 +792,8 @@
 <script src="js/onyx/onyx-core/shared-onyx-audio-votes.js"></script>
 <script src="js/ourspace-core/backend-client.js"></script>
 <script src="js/ourspace-core/profile-access.js"></script>
+<!-- Load the original Pass 23 movement engine after the native profile and room code.
+     It is additive: no replacement of the existing Onyx actor or backend. -->
+<script defer src="js/ourspace-onyx-hooks.js"></script>
 </body>
 </html>
