@@ -134,7 +134,10 @@ function drawEffectStroke(target,o,b){
 }
 class SceneRenderer{
  constructor(canvas,store,onNeedRender){this.canvas=canvas;this.ctx=canvas.getContext('2d',{willReadFrequently:true});this.store=store;this.onNeedRender=onNeedRender;this.hitCanvas=makeCanvas(1,1)}
- resize(w,h){this.canvas.width=w;this.canvas.height=h;this.ctx=this.canvas.getContext('2d',{willReadFrequently:true})}
+ resize(w,h){/* Resizing a canvas always erases artwork, even if dimensions are unchanged. */
+  if(this.canvas.width!==w)this.canvas.width=w;
+  if(this.canvas.height!==h)this.canvas.height=h;
+  this.ctx=this.canvas.getContext('2d',{willReadFrequently:true});}
  render(targetCtx=this.ctx,{clear=false,objects=this.store.list()}={}){
   const ctx=targetCtx;if(clear)ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
   for(const o of objects)if(o.visible!==false)this.drawObject(ctx,o);
