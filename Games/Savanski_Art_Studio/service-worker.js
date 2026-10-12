@@ -1,6 +1,6 @@
 /* Savanski Studio PWA service worker. Keep at repository root so its default scope covers studio.html and all runtime folders. */
 'use strict';
-const VERSION='savanski-studio-v11-2026-10-09-routed';
+const VERSION='savanski-studio-v12-2026-10-11-canvas-transform';
 const SHELL_CACHE=`${VERSION}-shell`;
 const RUNTIME_CACHE=`${VERSION}-runtime`;
 const SHELL=[
@@ -19,6 +19,9 @@ const SHELL=[
   './css/settings.css',
   './css/authoritative-toolbar-integration.css',
   './js/backend-config.js',
+  './js/advanced-renderer.js',
+  './js/advanced-controller.js',
+  './js/canvas-transform-repair.js',
   './css/advanced-suite.css',
   './js/savanski-wasm-suite.js',
   './js/advanced-brushes.js',
