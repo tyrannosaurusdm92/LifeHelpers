@@ -1,0 +1,7 @@
+/* Portal-era chest-up Sleepy styling.
+ * Deliberately restricted to the widget/module avatar; never styles game canvases. */
+.onyx-round-widget[data-mood="sleepy"] #onyxCanvas{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-round-widget[data-mood="sleepy"] #onyxFallback{image-rendering:auto;}

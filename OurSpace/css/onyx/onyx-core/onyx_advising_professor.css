@@ -1,0 +1,128 @@
+/* Onyx Advising / Professor — Pass 5 of 5 — Final
+   Final identity lock, export wiring, and runtime integration. Character remains transparent and the
+   electric-blue environment stays on its independent runtime/composition surface. */
+:root{
+  --onyx-professor-ink:#090B0D;
+  --onyx-professor-fur:#212121;
+  --onyx-professor-fur-mid:#404040;
+  --onyx-professor-fur-highlight:#4F4F4F;
+  --onyx-professor-fur-cool:#343A42;
+  --onyx-professor-eye:#B8CE66;
+  --onyx-professor-bow:#4F8C58;
+  --onyx-professor-gold:#C8A65C;
+  --onyx-professor-clipboard:#68442F;
+}
+[data-onyx-professor-pass="5"] #generatorProcessedCanvas,
+[data-onyx-professor-pass="5"] .portal-runtime-canvas,
+canvas[data-onyx-professor-pass="5"]{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-professor-pass5-preview,
+.onyx-professor-pass4-preview,
+.onyx-professor-pass3-preview,
+.onyx-professor-pass2-preview,
+.onyx-professor-pass1-preview{
+  position:relative;
+  width:170px;
+  height:170px;
+  overflow:hidden;
+  background:transparent;
+  isolation:isolate;
+  contain:paint;
+}
+.onyx-professor-pass5-preview canvas,
+.onyx-professor-pass4-preview canvas,
+.onyx-professor-pass3-preview canvas,
+.onyx-professor-pass2-preview canvas,
+.onyx-professor-pass1-preview canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  background:transparent;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-professor-pass5-preview[data-portal-preview="true"],
+.onyx-professor-pass4-preview[data-portal-preview="true"],
+.onyx-professor-pass3-preview[data-portal-preview="true"],
+canvas[data-onyx-professor-portal="true"]{
+  width:160px;
+  height:160px;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+/* Pass 5 final composes on the 85-cell source grid first, then maps to an 80-cell Portal grid for exact 2× cells at 160px. */
+canvas[data-onyx-professor-portal-grid="80"]{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-professor-pass5-badge,
+.onyx-professor-pass4-badge,
+.onyx-professor-pass3-badge,
+.onyx-professor-pass2-badge,
+.onyx-professor-pass1-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.28rem .48rem;
+  border:1px solid currentColor;
+  border-radius:999px;
+  font-size:.72rem;
+  line-height:1;
+}
+.onyx-professor-pass5-badge::before,
+.onyx-professor-pass4-badge::before,
+.onyx-professor-pass3-badge::before,
+.onyx-professor-pass2-badge::before,
+.onyx-professor-pass1-badge::before{
+  content:"◉";
+  color:var(--onyx-professor-eye);
+}
+.onyx-professor-identity-anchor{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+.onyx-professor-character-surface{
+  background:transparent!important;
+  isolation:isolate;
+}
+.onyx-professor-environment-surface{pointer-events:none;}
+@media (prefers-reduced-motion:reduce){
+  .onyx-professor-pass5-preview,
+.onyx-professor-pass4-preview,
+.onyx-professor-pass3-preview,
+  .onyx-professor-pass2-preview,
+  .onyx-professor-pass1-preview{scroll-behavior:auto;}
+}
+
+/* Pass-5 final Portal stability: no browser smoothing or compositing effects may soften the canonical cells. */
+canvas[data-onyx-professor-internal-first="true"],
+canvas[data-onyx-professor-portal="true"]{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+  filter:none!important;
+  mix-blend-mode:normal;
+}
+
+
+/* Final exported Professor state: character canvas stays transparent and pixel-crisp.
+   The host Onyx runtime owns and animates the electric-blue environment independently. */
+.onyx-widget[data-mood="advising_professor"] #onyxCanvas[data-onyx-professor-export="final"],
+#onyxCanvas[data-onyx-professor-export="final"]{
+  background:transparent!important;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+  mix-blend-mode:normal;
+}
+.onyx-widget[data-mood="advising_professor"] #onyxFallback{image-rendering:auto;}
+html[data-onyx-professor-pass="5"] .onyx-widget[data-mood="advising_professor"] #onyxCanvas{
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+
+
+/* OurSpace scope lock: chest-up mood styling applies to the module/widget avatar only; game actor canvases are separate. */
+.onyx-round-widget[data-mood="advising_professor"] #onyxCanvas{image-rendering:pixelated;image-rendering:crisp-edges;}

@@ -1,0 +1,16 @@
+/* Timing tokens for the purring flipbook-style full-body loop. */
+/* Pass 6: idle uses all five authored poses; walk/run phase follows traveled distance. */
+#catActor[data-behavior="purring"] {
+  --onyx-idle-cycle-ms:3100ms;
+  --onyx-idle-phase-weights:9 1 10 1 10;
+  --onyx-walk-phase-source:screen-distance;
+  --onyx-run-phase-source:screen-distance;
+  --onyx-walk-cycle-ms:590ms;
+  --onyx-walk-phase-weights:1 1 1 1 1;
+  --onyx-run-cycle-ms:430ms;
+  --onyx-run-phase-weights:1 1 1 1 1;
+}
+#catActor[data-behavior="purring"] #catSprite {
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}

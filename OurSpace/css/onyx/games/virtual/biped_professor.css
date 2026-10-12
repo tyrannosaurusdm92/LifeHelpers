@@ -1,0 +1,11 @@
+/* Pass 6: Professor walk phases follow measured travel to keep foot contacts grounded. */
+/* Pixel-preserving Professor atlas and reduced-motion support. */
+#professorActor, #professorSprite, canvas[data-onyx-body="advising_professor_atlas"] {
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}
+#professorActor { --onyx-biped-walk-phase-source:screen-distance; --onyx-biped-entry-settle-ms:730ms; --onyx-biped-seat-settle-ms:760ms; --onyx-biped-stand-anticipation-ms:820ms; }
+@media (prefers-reduced-motion:reduce) {
+  canvas[data-onyx-body="advising_professor_atlas"][data-onyx-atlas-state="enter"],
+  canvas[data-onyx-body="advising_professor_atlas"][data-onyx-atlas-state="exit"] { animation:none!important; transform:none!important; filter:none!important; }
+}

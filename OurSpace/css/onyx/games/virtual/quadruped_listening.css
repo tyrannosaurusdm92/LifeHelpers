@@ -1,0 +1,16 @@
+/* Timing tokens for the listening flipbook-style full-body loop. */
+/* Pass 6: idle uses all five authored poses; walk/run phase follows traveled distance. */
+#catActor[data-behavior="listening"] {
+  --onyx-idle-cycle-ms:2350ms;
+  --onyx-idle-phase-weights:7 1 8 1 7;
+  --onyx-walk-phase-source:screen-distance;
+  --onyx-run-phase-source:screen-distance;
+  --onyx-walk-cycle-ms:500ms;
+  --onyx-walk-phase-weights:1 1 1 1 1;
+  --onyx-run-cycle-ms:370ms;
+  --onyx-run-phase-weights:1 1 1 1 1;
+}
+#catActor[data-behavior="listening"] #catSprite {
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}

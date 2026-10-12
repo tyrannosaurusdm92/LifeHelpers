@@ -1,0 +1,129 @@
+/* Pass 6 — self-sizing Trace Pod / satellite trays.
+   The tray follows the rendered board dimensions instead of forcing the board into a fixed card. */
+
+.secondary-column,
+.secondary-top{
+  min-width:0;
+  overflow:visible!important;
+}
+
+/* The board is the sizing authority. JS writes exact --sat-* values per pod. */
+.secondary-card[data-sat-cols]{
+  box-sizing:border-box!important;
+  inline-size:var(--sat-card-width,fit-content)!important;
+  width:var(--sat-card-width,fit-content)!important;
+  min-inline-size:var(--sat-card-width,0)!important;
+  min-width:var(--sat-card-width,0)!important;
+  max-inline-size:var(--sat-card-width,none)!important;
+  max-width:var(--sat-card-width,none)!important;
+  block-size:auto!important;
+  height:auto!important;
+  flex:0 0 auto!important;
+  justify-self:center;
+  align-self:start;
+  overflow:visible!important;
+}
+
+.secondary-card[data-sat-cols] > h3,
+.secondary-card[data-sat-cols] > small,
+.secondary-card[data-sat-cols] > .hybrid-helper,
+.secondary-card[data-sat-cols] > .secondary-meter{
+  box-sizing:border-box;
+  inline-size:100%!important;
+  max-inline-size:100%!important;
+  min-inline-size:0!important;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+
+.garden-grid.secondary-grid{
+  box-sizing:border-box!important;
+  --cell:var(--sat-cell,44px)!important;
+  inline-size:var(--sat-grid-width,max-content)!important;
+  width:var(--sat-grid-width,max-content)!important;
+  min-inline-size:var(--sat-grid-width,0)!important;
+  min-width:var(--sat-grid-width,0)!important;
+  max-inline-size:none!important;
+  max-width:none!important;
+  justify-self:center;
+  overflow:visible!important;
+}
+
+/* Side tracks now literally follow the widest tray on that side. */
+.board-play-area{
+  grid-template-columns:var(--left-pod-track,0px) minmax(0,1fr) var(--right-pod-track,0px)!important;
+}
+.secondary-left,.secondary-right{
+  width:auto!important;
+  min-width:0!important;
+  justify-self:center;
+  align-self:center;
+}
+
+/* Multiple pods on one side stack at their own natural widths. */
+.secondary-left,.secondary-right{
+  display:grid;
+  grid-auto-flow:row;
+  grid-auto-rows:max-content;
+  justify-items:center;
+  align-content:center;
+  gap:12px;
+}
+.secondary-left:empty,.secondary-right:empty{display:none!important}
+
+/* Top dock also shrink-wraps each pod instead of forcing a common width. */
+.secondary-top{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  gap:12px;
+}
+.secondary-top .secondary-card[data-sat-cols]{
+  width:var(--sat-card-width,fit-content)!important;
+  min-width:var(--sat-card-width,0)!important;
+  max-width:var(--sat-card-width,none)!important;
+  flex:0 0 var(--sat-card-width,auto)!important;
+}
+
+/* Dynamic dock mode is chosen by JS when the side trays + main board do not fit comfortably. */
+.game-shell[data-pod-layout="dock"] .board-play-area{
+  grid-template-areas:
+    "top top"
+    "main main"
+    "left right"!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  grid-template-rows:auto minmax(420px,1fr) auto!important;
+  align-items:start!important;
+}
+.game-shell[data-pod-layout="dock"] .main-board-wrap{width:100%;min-height:420px}
+.game-shell[data-pod-layout="dock"] .secondary-left,
+.game-shell[data-pod-layout="dock"] .secondary-right{
+  width:100%!important;
+  display:flex!important;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  gap:12px;
+}
+.game-shell[data-pod-layout="dock"][data-has-left-pods="true"][data-has-right-pods="false"] .board-play-area{
+  grid-template-areas:"top" "main" "left"!important;
+  grid-template-columns:minmax(0,1fr)!important;
+}
+.game-shell[data-pod-layout="dock"][data-has-left-pods="false"][data-has-right-pods="true"] .board-play-area{
+  grid-template-areas:"top" "main" "right"!important;
+  grid-template-columns:minmax(0,1fr)!important;
+}
+
+/* Mobile still stacks everything, but each tray continues to fit its own board. */
+@media(max-width:820px){
+  .secondary-card[data-sat-cols]{
+    max-width:calc(100vw - 24px)!important;
+  }
+  .secondary-left,.secondary-right,.secondary-top{
+    width:100%!important;
+    display:flex!important;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+}

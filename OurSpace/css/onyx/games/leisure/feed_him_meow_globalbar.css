@@ -1,0 +1,33 @@
+/* DRAFT Pass 21 — pass-20 controls on the current dossier-aligned shell. */
+.global-game-status{position:sticky;top:var(--toolbar-h);z-index:1050;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 9px;background:#000;color:#fff;border-bottom:3px solid #000;box-shadow:0 3px 0 #28d7c0;font-weight:1000}
+.global-game-status>strong{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;letter-spacing:.025em}
+.global-game-status-actions{display:flex;align-items:center;justify-content:flex-end;gap:6px;min-width:0}
+.global-game-status-actions button,.global-game-status-actions span{min-height:31px;display:inline-flex;align-items:center;justify-content:center;border:2px solid #fff;border-radius:8px;padding:4px 8px;background:#fff;color:#000;font:1000 11px/1 system-ui,sans-serif;white-space:nowrap;box-shadow:2px 2px 0 #28d7c0}
+.global-game-status-actions #globalCurrency{background:#000;color:#fff;box-shadow:none}
+.global-game-status-actions button[aria-pressed=true]{background:#ffe500;color:#000}
+body.feed-him-meow-paused .global-game-status-actions #globalPauseToggle{background:#ec5800;color:#fff}
+#kitchenEditorTool[aria-pressed=true]{background:#ffe500;color:#000}
+.kitchen-editor-overlay{position:fixed;inset:0;z-index:1400;width:100%;height:100%;pointer-events:auto}
+.kitchen-editor-overlay .editor-poly{fill:rgba(0,0,0,.14);stroke:#ffe500;stroke-width:.55;cursor:move}
+.kitchen-editor-overlay .editor-poly.child{stroke:#28d7c0}
+.kitchen-editor-overlay .editor-poly.selected{fill:rgba(255,229,0,.28);stroke:#ec5800;stroke-width:.9}
+.kitchen-editor-overlay .editor-handle{fill:#fff;stroke:#000;stroke-width:.55;cursor:crosshair}
+.kitchen-editor-overlay text{font:700 2.4px system-ui,sans-serif;fill:#fff;paint-order:stroke;stroke:#000;stroke-width:.6px;pointer-events:none}
+.kitchen-editor-panel{position:fixed;right:12px;top:112px;z-index:1450;width:min(760px,calc(100vw - 24px));max-height:calc(100vh - 128px);overflow:auto;background:#fff;color:#000;border:4px solid #000;border-radius:14px;box-shadow:0 6px 0 #28d7c0,0 10px 0 #000;padding:10px}
+.kitchen-editor-head{display:flex;justify-content:space-between;gap:12px;border-bottom:3px solid #000;padding-bottom:8px;margin-bottom:8px;font-weight:1000}
+.kitchen-editor-head span{font-size:10px}
+.kitchen-editor-stations,.kitchen-editor-actions{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.kitchen-editor-panel button{border:2px solid #000;border-radius:7px;background:#fff;padding:6px 8px;font-weight:900}
+.kitchen-editor-panel button:hover,.kitchen-editor-panel button:focus-visible{background:#ffe500}
+.kitchen-editor-grid{display:grid;grid-template-columns:minmax(190px,.8fr) minmax(240px,1.2fr);gap:10px}
+.kitchen-editor-tree{display:grid;gap:4px;max-height:42vh;overflow:auto;border:2px solid #000;padding:5px}
+.kitchen-editor-node{display:block!important;text-align:left}
+.kitchen-editor-node.child{margin-left:16px}
+.kitchen-editor-node.selected{background:#ec5800;color:#fff}
+.kitchen-editor-node small{display:block;font-size:9px;font-weight:600}
+.kitchen-editor-properties{display:grid;gap:6px}
+.kitchen-editor-properties label{display:grid;gap:3px;font-size:11px;font-weight:900}
+.kitchen-editor-properties input,.kitchen-editor-properties select,.kitchen-editor-properties textarea{width:100%;border:2px solid #000;border-radius:5px;padding:5px}
+.editor-export-actions{border-top:2px dashed #000;padding-top:7px}
+#kitchenEditorHelp{font-size:11px;margin:4px 0}
+@media(max-width:700px){.global-game-status{min-height:40px;padding:4px 6px}.global-game-status>strong{font-size:11px;max-width:28vw}.global-game-status-actions{gap:3px}.global-game-status-actions button,.global-game-status-actions span{padding:3px 5px;font-size:9px;min-height:29px}.kitchen-editor-grid{grid-template-columns:1fr}.kitchen-editor-panel{top:92px;right:6px;width:calc(100vw - 12px)}}

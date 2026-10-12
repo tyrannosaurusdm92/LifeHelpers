@@ -1,0 +1,16 @@
+/* Timing tokens for the judgmental flipbook-style full-body loop. */
+/* Pass 6: idle uses all five authored poses; walk/run phase follows traveled distance. */
+#catActor[data-behavior="judgmental"] {
+  --onyx-idle-cycle-ms:2850ms;
+  --onyx-idle-phase-weights:9 1 7 1 9;
+  --onyx-walk-phase-source:screen-distance;
+  --onyx-run-phase-source:screen-distance;
+  --onyx-walk-cycle-ms:560ms;
+  --onyx-walk-phase-weights:1 1 1 1 1;
+  --onyx-run-cycle-ms:410ms;
+  --onyx-run-phase-weights:1 1 1 1 1;
+}
+#catActor[data-behavior="judgmental"] #catSprite {
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+}

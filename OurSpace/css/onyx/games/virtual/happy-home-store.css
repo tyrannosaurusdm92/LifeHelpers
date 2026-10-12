@@ -1,0 +1,32 @@
+
+/* Happy Home Store — integrated Lightning Storm shell styling */
+.num-btn[data-system="5"]{background:linear-gradient(135deg,var(--cyan),var(--orange))!important}
+.hh-store[hidden]{display:none!important}.hh-store{position:fixed;inset:0;z-index:2600;background:rgba(0,0,0,.76);display:grid;place-items:center;padding:18px;pointer-events:auto}
+.hh-store-shell{width:min(1180px,96vw);height:min(760px,88vh);min-height:360px;background:linear-gradient(145deg,#0b1014,#151b20);border:2px solid var(--cyan);border-radius:12px;box-shadow:0 0 0 2px #000,0 14px 0 #000,0 0 28px rgba(0,255,255,.24);display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;overflow:hidden;color:#f2ffff}
+.hh-store-head{display:flex;align-items:center;gap:10px;padding:10px 12px;background:linear-gradient(90deg,#000,#183337,#000);border-bottom:2px solid var(--yellow)}.hh-store-head strong{font-size:17px;letter-spacing:.08em}.hh-store-head small{color:var(--yellow)}.hh-store-close{margin-left:auto;width:38px;height:38px;border:1px solid var(--cyan);border-radius:7px;background:#000;color:#fff;font-weight:1000;font-size:20px}
+.hh-store-tools{display:grid;grid-template-columns:minmax(180px,1fr) minmax(150px,220px) auto;gap:8px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.2);background:#111820}.hh-store-tools input,.hh-store-tools select,.hh-store-tools button{min-height:40px;border:1px solid var(--cyan);border-radius:7px;background:#000;color:#fff;padding:7px 9px;font-weight:800}.hh-store-tools button{background:linear-gradient(135deg,var(--teal),#151515)}
+.hh-store-body{overflow:auto;padding:12px}.hh-store-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}.hh-store-card{min-width:0;border:1px solid rgba(0,255,255,.55);border-radius:9px;background:linear-gradient(160deg,#171e24,#07090b);overflow:hidden;display:grid;grid-template-rows:138px auto}.hh-store-image{display:grid;place-items:center;background:linear-gradient(135deg,#ececec,#b6b6b6);border-bottom:2px solid #000;padding:10px;overflow:hidden}.hh-store-image img{width:100%;height:100%;object-fit:contain}.hh-store-card[data-group="Clothes"] .hh-store-image{background:#fff}.hh-store-info{padding:9px;display:grid;gap:6px}.hh-store-info h3{font-size:12px;line-height:1.2;margin:0;color:#fff}.hh-store-meta{display:flex;justify-content:space-between;gap:6px;font-size:9px;color:var(--yellow);font-weight:900}.hh-store-note{font-size:9px;color:#b6dce0;line-height:1.25;min-height:23px}.hh-store-buy{min-height:36px;border:1px solid #000;border-radius:6px;background:linear-gradient(135deg,var(--yellow),var(--orange));color:#001010;font-weight:1000}.hh-store-buy.is-owned{background:linear-gradient(135deg,var(--lime),var(--cyan))}.hh-store-foot{padding:8px 12px;display:flex;gap:8px;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.2);background:#080b0d;font-size:10px}.hh-store-owned{color:var(--lime);font-weight:900}.hh-store-source{color:#c9d0d3}
+.game-page.store-open .viewer-screen,.game-page.store-open .number-rail,.game-page.store-open .control-layer{pointer-events:none}
+@media(max-width:700px){.hh-store{padding:6px}.hh-store-shell{width:100%;height:92vh}.hh-store-tools{grid-template-columns:1fr 1fr}.hh-store-tools button{grid-column:1/-1}.hh-store-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hh-store-card{grid-template-rows:110px auto}}
+@media(max-width:420px){.hh-store-grid{grid-template-columns:1fr 1fr}.hh-store-tools{grid-template-columns:1fr}.hh-store-tools button{grid-column:auto}}
+
+
+/* Full illustrated inventory cards */
+.hh-store-image{height:182px;min-height:182px;padding:8px}
+.hh-store-image img{width:100%;height:100%;object-fit:contain;display:block}
+.hh-store-badges{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0;font-size:10px;text-transform:uppercase}
+.hh-store-badges span{border:1px solid currentColor;border-radius:999px;padding:2px 6px;opacity:.85}
+.hh-store-actions{display:flex;gap:7px;margin-top:auto}
+.hh-store-actions button{flex:1}
+.hh-store-use{font-weight:800}
+
+.hh-store-shell .hh-store-body{min-height:0;overscroll-behavior:contain}
+.hh-store-head .ui-scale-controls{margin-left:auto}
+.hh-store-close{margin-left:2px!important}
+.hh-store-balance{color:var(--yellow);font-weight:1000;white-space:nowrap}
+.hh-store-status{min-height:30px;padding:7px 12px;border-top:1px solid rgba(255,255,255,.2);background:#111820;color:#f2ffff;font-size:11px;font-weight:800}
+.hh-store-status[data-tone="success"]{color:var(--lime)}
+.hh-store-status[data-tone="insufficient"],.hh-store-status[data-tone="error"]{color:var(--orange)}
+.hh-store-buy.is-unaffordable:not(.is-owned){filter:saturate(.45);background:linear-gradient(135deg,#a9a9a9,#656565);color:#fff}
+.hh-design-cost-note{margin:0 0 9px;border-left:4px solid var(--black,#000);background:var(--lighter,#dbdbdb);color:var(--black,#000)}
+@media(max-width:500px){.hh-store-head{flex-wrap:wrap}.hh-store-head>div{min-width:0;flex:1}.hh-store-head .ui-scale-controls{margin-left:auto}.hh-store-head strong{font-size:14px}}

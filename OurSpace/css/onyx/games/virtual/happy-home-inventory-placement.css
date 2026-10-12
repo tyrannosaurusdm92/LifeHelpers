@@ -1,0 +1,40 @@
+
+/* Happy Home inventory placement + store integration */
+.hh-inventory-toolbar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.hh-inventory-toolbar .hh-field{flex:1 1 160px}
+.hh-inventory-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:8px;max-height:220px;overflow:auto;padding:2px}
+.hh-inventory-card{display:grid;grid-template-rows:92px auto auto;gap:6px;padding:7px;border:1px solid var(--anchor);border-radius:8px;background:var(--lighter);min-width:0}
+.hh-inventory-card img{width:100%;height:92px;object-fit:contain;background:rgba(255,255,255,.82);border:1px solid var(--pale);border-radius:6px}
+.hh-inventory-card strong{font-size:11px;line-height:1.15;overflow-wrap:anywhere}
+.hh-inventory-card small{font-size:9px;color:var(--deep)}
+.hh-inventory-card button{min-height:32px;font-size:10px}
+.hh-placement-editor{display:grid;gap:7px}
+.hh-placement-editor[hidden]{display:none!important}
+.hh-placement-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.hh-placement-grid .hh-field{margin:0}
+.hh-placement-actions{display:flex;flex-wrap:wrap;gap:5px}
+.hh-placement-actions button{flex:1 1 80px;min-height:33px}
+.hh-nudge-grid{display:grid;grid-template-columns:repeat(3,42px);grid-template-rows:repeat(2,34px);gap:4px;justify-content:center}
+.hh-nudge-grid button{min-height:34px;padding:3px}
+.hh-placement-note{font-size:10px;color:var(--deep);line-height:1.35}
+.hh-store{position:fixed;inset:0;z-index:2500;display:grid;place-items:center;padding:14px;background:rgba(0,0,0,.74)}
+.hh-store[hidden]{display:none!important}
+.hh-store-shell{width:min(1100px,96vw);height:min(760px,92vh);display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;border:2px solid #000;background:#fff;color:#000;box-shadow:0 14px 45px #000b;border-radius:10px;overflow:hidden}
+.hh-store-head,.hh-store-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 11px;background:#111;color:#fff}
+.hh-store-head button{width:38px;height:34px;padding:0;background:#fff;color:#000;border:1px solid #777}
+.hh-store-tools{display:grid;grid-template-columns:minmax(180px,1fr) minmax(170px,.6fr) auto;gap:7px;padding:9px;border-bottom:1px solid #888;background:#ddd}
+.hh-store-tools input,.hh-store-tools select{min-height:36px;background:#fff;color:#000;border:1px solid #555}
+.hh-store-tools button{min-height:36px}
+.hh-store-body{overflow:auto;padding:10px;background:#f3f3f3}
+.hh-store-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.hh-store-card{display:grid;grid-template-columns:92px minmax(0,1fr);gap:9px;padding:8px;border:1px solid #777;background:#fff;border-radius:8px}
+.hh-store-image{display:grid;place-items:center;height:100px;background:#eee;border:1px solid #aaa;border-radius:6px}
+.hh-store-image img{max-width:100%;max-height:100%;object-fit:contain}
+.hh-store-info{min-width:0;display:grid;gap:5px}
+.hh-store-info h3{font-size:12px;margin:0}
+.hh-store-meta,.hh-store-badges,.hh-store-actions{display:flex;gap:5px;flex-wrap:wrap}
+.hh-store-meta span,.hh-store-badges span{font-size:9px;padding:2px 5px;border:1px solid #999;border-radius:999px;background:#eee}
+.hh-store-note{font-size:9px;line-height:1.25;color:#333}
+.hh-store-actions button{min-height:30px;font-size:10px}
+.hh-store-buy.is-owned{background:#bbb}
+@media(max-width:700px){.hh-store-tools{grid-template-columns:1fr}.hh-store-card{grid-template-columns:72px minmax(0,1fr)}.hh-inventory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -1,0 +1,21 @@
+/* Ingredient Garden global shell / preview styles */
+:root{
+  --garden-bg:url("../assets/images/games/leisure/garden/bg.jpg");
+  --garden-underlay:url("../assets/images/games/leisure/garden/image-gen-7(10).png");
+  --paw1:url("../assets/images/games/leisure/garden/board-icon1.png");
+  --paw2:url("../assets/images/games/leisure/garden/board-icon2.png");
+  --paw3:url("../assets/images/games/leisure/garden/board-icon3.png");
+  --paw4:url("../assets/images/games/leisure/garden/board-icon4.png");
+  --ink:#061e27;--panel:rgba(7,33,45,.86);--line:rgba(255,255,255,.82);--cyan:#66fff3;--gold:#ffd85c;--pink:#f45f9e;
+  --ui-overlay-alpha:.35; /* 65% transparent = 35% opaque */
+}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{background:#56cee1 var(--garden-bg) center/cover fixed no-repeat;color:white}
+button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:4px solid #fff600;outline-offset:2px}
+[hidden]{display:none!important}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.preview-shell{width:min(1180px,calc(100% - 24px));margin:18px auto;display:grid;gap:12px}
+.preview-card{border:3px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:0 10px 28px rgba(0,0,0,.35);padding:14px}
+.preview-head{display:grid;grid-template-columns:86px 1fr auto;gap:14px;align-items:center}.preview-head img{width:86px;height:86px;object-fit:contain;filter:drop-shadow(0 4px 3px rgba(0,0,0,.35))}.preview-head h1{margin:0;font-size:clamp(1.35rem,3.5vw,2.4rem)}.preview-head p{margin:.3rem 0;color:#d8ffff}.board-count{padding:8px 12px;border-radius:999px;border:2px solid #fff;background:var(--gold);color:#17252b;font-weight:1000}
+.preview-picker{display:grid;grid-template-columns:auto minmax(220px,1fr) auto;gap:10px;align-items:center}.preview-picker label{font-weight:1000}.preview-picker select,.open-board{min-height:48px;border:3px solid #fff;border-radius:13px;background:#0b6e79;color:#fff;font-weight:900;padding:7px 12px}.open-board{background:#d72f7e}.preview-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.preview-notes article{border:2px solid rgba(255,255,255,.65);border-radius:14px;padding:10px;background:rgba(0,0,0,.18)}.preview-notes h2{font-size:1rem;margin:0 0 4px}.preview-notes p{font-size:.83rem;margin:0;color:#eaffff}
+.play-mode{overflow:hidden}.play-mode #previewLanding{display:none}.play-host{position:fixed;inset:0;overflow:auto}.play-host:empty{display:none}
+@media(max-width:720px){.preview-head{grid-template-columns:64px 1fr}.preview-head img{width:64px;height:64px}.board-count{display:none}.preview-picker{grid-template-columns:1fr}.preview-notes{grid-template-columns:1fr}}
