@@ -10,7 +10,7 @@ function hexToRgba(hex,a=1){const h=hex.replace('#','');const n=parseInt(h.lengt
 class CanvasEngine{
  constructor(surface,overlay,stage){
   this.surface=surface;this.overlay=overlay;this.stage=stage;this.sctx=surface.getContext('2d',{willReadFrequently:true});this.octx=overlay.getContext('2d');
-  this.project=null;this.canvasIndex=0;this.activeLayerId=null;this.tool='brush';this.primary='#000000';this.secondary='#ffffff';this.brushSize=18;this.opacity=1;this.brushKind='round';this.stabilization=0;this.brushSpacing=.12;this.brushScatter=0;this.brushFlow=1;this.brushPressure=true;this.brushTip='round';this.brushAngleJitter=0;this.pointerPressure=1;this.zoom=1;this.selection=null;this.drag=null;this.snap=false;this.guides=false;this.listeners={};this.clipboard=null;
+  this.project=null;this.canvasIndex=0;this.activeLayerId=null;this.tool='select';this.primary='#000000';this.secondary='#ffffff';this.brushSize=18;this.opacity=1;this.brushKind='round';this.stabilization=0;this.brushSpacing=.12;this.brushScatter=0;this.brushFlow=1;this.brushPressure=true;this.brushTip='round';this.brushAngleJitter=0;this.pointerPressure=1;this.zoom=1;this.selection=null;this.drag=null;this.snap=false;this.guides=false;this.listeners={};this.clipboard=null;
   this.history=new window.LFHistory(this);this.bindPointers();
  }
  on(name,fn){(this.listeners[name]||(this.listeners[name]=[])).push(fn)}
