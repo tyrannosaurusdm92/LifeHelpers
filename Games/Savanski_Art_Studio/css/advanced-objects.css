@@ -15,3 +15,8 @@
 body.canvas-art-edit .canvas-return-art{display:block;position:fixed;left:50%;transform:translateX(-50%);bottom:42px;z-index:70;border:1px solid #0a7;background:#001b1b;color:#7ff;padding:10px 16px;border-radius:999px;font-weight:800;box-shadow:0 4px 24px #0007}
 body.canvas-art-edit #layersPanel.open{display:block}
 @media(max-width:700px){.advanced-object-inspector{right:3vw;top:92px;width:94vw}.advanced-object-inspector .compact-grid{grid-template-columns:1fr 1fr}}
+
+/* The canvas editing mode must remain visually distinct from an opened menu. */
+#savanski-art-toolbar .sav-tool[data-tool="select"].tool-active{outline:3px solid #00a5bd;outline-offset:2px;box-shadow:0 0 0 2px #001b25,0 0 10px #00ffff65}
+#overlayCanvas{cursor:crosshair}
+body[data-savanski-canvas-tool="select"] #overlayCanvas{cursor:default}
