@@ -2,7 +2,7 @@
 
 The Rigvedic language is traditionally dated to the second millennium BCE and transmitted orally; later Sanskrit and Middle Indo-Aryan records document successive stages. Hindi as a named modern standard is much more recent than its Indo-Aryan ancestry. Nineteenth- and twentieth-century print, education, and state policy helped standardize Khari Boli-based Hindi in Devanagari, alongside Urdu standardization in Perso-Arabic script.
 
-**Dating statement:** Vedic Sanskrit is directly attested orally from the second millennium BCE; Proto-Indo-Aryan itself is reconstructed, not a written language.
+**Dating statement:** The Ṛgveda is conventionally placed around 1500 BCE within a wider c.1500–500 BCE composition horizon. It was transmitted orally, and surviving written records are much later. Proto-Indo-Aryan is reconstructed; the Vedic textual horizon is not a securely dated Proto-Indo-Aryan split.
 
 Keep three clocks separate: (1) reconstructed ancestor age, (2) earliest surviving written attestation, and (3) emergence of a standardized modern variety. They answer different questions. A lack of early writing is not evidence that a language did not exist.
 

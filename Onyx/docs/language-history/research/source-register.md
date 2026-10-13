@@ -1,6 +1,6 @@
 # Source register
 
-The language notes cite these references directly. Access checked 2026-10-12. This register is a navigation aid; see each chapter for the claims supported by a source.
+The language notes cite these references directly. Access checked 2026-10-13. This register is a navigation aid; see each chapter for the claims supported by a source.
 
 - **S1** [Cambridge, The Indo-European Language Family: Italic](https://www.cambridge.org/core/books/indoeuropean-language-family/italic/473A395FABB6E9FB91AE75076F390D29)
 - **S2** [Oxford, From Latin to Romance in Sound Charts](https://academic.oup.com/book/26021)
@@ -81,7 +81,7 @@ The language notes cite these references directly. Access checked 2026-10-12. Th
 - **K6** [Unicode 18, Khmer Symbols chart](https://www.unicode.org/Public/18.0.0/charts/PDF/U19E0.pdf)
 - **K7** [W3C, Khmer Script Resources and Layout Requirements](https://www.w3.org/TR/khmr-lreq/)
 - **K8** [Brill, Khmer onset voicing chronology and register history](https://brill.com/downloadpdf/journals/clao/51/2/article-p175_3.pdf)
-- **K9** [Unicode Standard, Chapter 16: Khmer script and coeng rendering](https://unicode.org/versions/Unicode18.0.0/core-spec/chapter-16/)
+- **K9** [Unicode 18 Standard, Chapter 16: Khmer COENG sequences and contextual rendering](https://unicode.org/versions/Unicode18.0.0/core-spec/chapter-16/)
 - **D1** [Cambridge, Vedic Sanskrit and the Indo-Aryan record](https://www.cambridge.org/core/books/abs/ancient-languages-of-asia-and-the-americas/sanskrit/CF7D5B91F9736880C0CECAC672754AEB)
 - **D2** [Cambridge, Hindi–Urdu–Hindustani](https://www.cambridge.org/core/books/abs/language-in-south-asia/hindiurduhindustani/5F6F26244AA8B951DEEA693790323B73)
 - **D3** [Cambridge, Middle Indic (Prakrit) languages and attestations](https://www.cambridge.org/core/books/abs/ancient-languages-of-asia-and-the-americas/middle-indic/C6C74CC896F96BD1EE8F6E898D35B456)
@@ -127,3 +127,4 @@ The language notes cite these references directly. Access checked 2026-10-12. Th
 - **L6** [Unicode 18, Linear B Ideograms](https://www.unicode.org/Public/18.0.0/charts/PDF/U10080.pdf)
 - **L7** [Unicode 18, Aegean Numbers](https://www.unicode.org/Public/18.0.0/charts/PDF/U10100.pdf)
 - **L8** [Cambridge, Linear B undeciphered sign values and limits](https://www.cambridge.org/core/books/undeciphered-signs-of-linear-b/83BE86635C83A49DDED8A14816E9FBC1)
+- **L9** [Unicode 18 Standard, Chapter 8: Linear B language/script distinction and encoded blocks](https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-8/)

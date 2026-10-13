@@ -32,9 +32,9 @@ const record = {
         "D2"
       ],
       "confidence": "moderate for Vedic attestation horizon; lower for exact proto-stage dating",
-      "basis": "Vedic Sanskrit is directly attested orally from the second millennium BCE; Proto-Indo-Aryan itself is reconstructed, not a written language.",
-      "date": "Vedic Sanskrit is directly attested orally from the second millennium BCE; Proto-Indo-Aryan itself is reconstructed, not a written language.",
-      "evidenceType": "Vedic Sanskrit is directly attested orally from the second millennium BCE; Proto-Indo-Aryan itself is reconstructed, not a written language.",
+      "basis": "The Ṛgveda is conventionally dated to around 1500 BCE within a broader c.1500–500 BCE composition horizon; the texts were transmitted orally and surviving written records are much later. Proto-Indo-Aryan itself is reconstructed.",
+      "date": "The Ṛgveda is conventionally dated to around 1500 BCE within a broader c.1500–500 BCE composition horizon; the texts were transmitted orally and surviving written records are much later. Proto-Indo-Aryan itself is reconstructed.",
+      "evidenceType": "The Ṛgveda is conventionally dated to around 1500 BCE within a broader c.1500–500 BCE composition horizon; the texts were transmitted orally and surviving written records are much later. Proto-Indo-Aryan itself is reconstructed.",
       "caution": "moderate for Vedic attestation horizon; lower for exact proto-stage dating",
       "ageAssessment": {
         "requestedMinimumBP": 2500,
@@ -44,8 +44,18 @@ const record = {
           3800
         ],
         "ancestorStage": "Proto-Indo-Aryan (with deeper Proto-Indo-Iranian comparison)",
-        "basis": "Vedic Sanskrit is directly attested orally from the second millennium BCE; Proto-Indo-Aryan itself is reconstructed, not a written language.",
+        "basis": "The Ṛgveda is conventionally dated to around 1500 BCE within a broader c.1500–500 BCE composition horizon; the texts were transmitted orally and surviving written records are much later. Proto-Indo-Aryan itself is reconstructed.",
         "qualification": "meets threshold with explicit uncertainty; see lineage note",
+        "datingMethod": "Comparative reconstruction for Proto-Indo-Aryan; Vedic composition chronology is inferred from linguistic and orally transmitted textual traditions.",
+        "rangeInterpretation": "A broad horizon bracket, not a statistical confidence interval; Vedic composition dates and the Proto-Indo-Aryan split date are distinct.",
+        "qualifyingAgeMeaning": "3,500 BP is a rough Vedic/Indo-Aryan horizon used for the threshold audit; it is not a securely dated Proto-Indo-Aryan split.",
+        "documentation": {
+          "status": "oral-tradition",
+          "stage": "Vedic Sanskrit",
+          "dateLabel": "The Ṛgveda is conventionally placed around 1500 BCE within a wider c.1500–500 BCE composition horizon; surviving written records are much later.",
+          "note": "This is an oral textual tradition, not a contemporary physical manuscript or inscription.",
+          "sourceKeys": ["D1"]
+        },
         "sourceKeys": [
           "D1",
           "D2"

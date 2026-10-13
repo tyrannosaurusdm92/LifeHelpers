@@ -28,6 +28,7 @@ const record = {
         8000,
         15000
       ],
+      "rangeUpperOpen": true,
       "sourceKeys": [
         "E9",
         "E10"
@@ -47,6 +48,17 @@ const record = {
         "ancestorStage": "Proto-Afroasiatic (deep reconstructed ancestor; Egyptian is one daughter branch)",
         "basis": "Published Proto-Afroasiatic chronology proposals vary widely: some place it around 8,000–10,000 years ago and others at 15,000 years or more. The 8,000 BP value is the younger edge of the cited proposals, not a consensus estimate; Egyptian hieroglyphic attestation is a separate datum.",
         "qualification": "meets threshold with explicit uncertainty; see lineage note",
+        "datingMethod": "Comparative reconstruction of Afroasiatic with competing chronology proposals; the proto-language has no direct written record.",
+        "rangeInterpretation": "A published-model envelope with an open upper end: some proposals exceed 15,000 BP; it is not a statistical confidence interval.",
+        "rangeUpperOpen": true,
+        "qualifyingAgeMeaning": "8,000 BP is the younger edge of cited Proto-Afroasiatic proposals, not the age of Egyptian texts or the Egyptian branch's first attestation.",
+        "documentation": {
+          "status": "epigraphic",
+          "stage": "Ancient Egyptian",
+          "dateLabel": "Egyptian writing is attested in the late fourth millennium BCE; the exact dating of early records is archaeological, not a Proto-Afroasiatic date.",
+          "note": "Egyptian is one later-attested daughter branch of Afroasiatic.",
+          "sourceKeys": ["E4"]
+        },
         "sourceKeys": [
           "E9",
           "E10"

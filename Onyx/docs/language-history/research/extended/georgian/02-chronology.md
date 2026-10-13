@@ -2,7 +2,7 @@
 
 Kartvelian prehistory is reconstructed, while Georgian becomes directly visible in inscriptions and manuscripts in Late Antiquity. The Georgian literary record is commonly dated from the fifth century CE; the earliest inscriptions and manuscript dates depend on the artifact and dating method. The centuries-long written tradition does not make modern Georgian unchanged from Proto-Kartvelian.
 
-**Dating statement:** Dating is disputed: proposals place Proto-Kartvelian in the fourth–third millennia BCE, while one 2023 Bayesian multidisciplinary model suggests over 12,500 BP. The 5,000 BP qualifying value represents the younger traditional proposal (roughly the fourth–third millennia BCE), not a consensus point estimate; neither date is direct attestation.
+**Dating statement:** The 2023 study summarizes older comparative estimates of 3,950–4,750 BP for the Svan vs. Proto-Georgian-Zan split and proposes a separate interdisciplinary model above 12,500 BP. The 3,950 BP audit value is the low end of those comparative estimates, not consensus or direct attestation; the model results are not a statistical confidence interval.
 
 Keep three clocks separate: (1) reconstructed ancestor age, (2) earliest surviving written attestation, and (3) emergence of a standardized modern variety. They answer different questions. A lack of early writing is not evidence that a language did not exist.
 

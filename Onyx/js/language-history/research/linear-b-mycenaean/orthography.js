@@ -119,6 +119,11 @@ const record = {
       "id": "L8",
       "label": "Cambridge, Linear B undeciphered sign values and limits",
       "url": "https://www.cambridge.org/core/books/undeciphered-signs-of-linear-b/83BE86635C83A49DDED8A14816E9FBC1"
+    },
+    {
+      "id": "L9",
+      "label": "Unicode 18 Standard, Chapter 8: Linear B language/script distinction and encoded blocks",
+      "url": "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-8/"
     }
   ]
 };

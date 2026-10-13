@@ -43,6 +43,16 @@ const record = {
         "ancestorStage": "Proto-Austroasiatic",
         "basis": "Interdisciplinary proposals combine comparative linguistics and archaeological evidence; dates are hypotheses, not direct attestations.",
         "qualification": "meets threshold with explicit uncertainty; see lineage note",
+        "datingMethod": "Comparative Austroasiatic subgrouping and proposed phylogenetic/archaeological models; absolute dates remain model dependent.",
+        "rangeInterpretation": "The 3,000–4,500 BP span summarizes proposals and is not a statistical confidence interval.",
+        "qualifyingAgeMeaning": "3,500 BP is a representative audit value for reconstructed Proto-Austroasiatic, not a direct date for Khmer or its earliest inscription.",
+        "documentation": {
+          "status": "epigraphic",
+          "stage": "Old Khmer",
+          "dateLabel": "Old Khmer inscriptional evidence is present by the early seventh century CE; dates depend on individual records.",
+          "note": "This daughter-language record is millennia later than proposed Proto-Austroasiatic chronology.",
+          "sourceKeys": ["K3", "K4"]
+        },
         "sourceKeys": [
           "K1",
           "K2"

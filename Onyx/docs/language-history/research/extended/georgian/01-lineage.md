@@ -2,7 +2,7 @@
 
 Georgian is Kartvelian (South Caucasian), not Indo-European. The secure family comparison is with Svan and the Zan languages Mingrelian and Laz. Proto-Kartvelian is reconstructed from systematic correspondences; its date, homeland, and proposed links to archaeological cultures are debated. Ancient ethnonyms cannot be equated one-to-one with a modern language.
 
-**Proposed root:** Proto-Kartvelian — 5000–14500 BP, using 1950 CE as the conventional BP origin. The qualifying point estimate is 5000 BP. Confidence: very low for exact dating; family relationship is secure. This date concerns the stated ancestor; it is not an age claim for the modern language. Published proposals diverge substantially: an older traditional scenario gives the fourth–third millennia BCE, whereas a 2023 Bayesian phylogenetic model proposes >12,500 BP; both depend on assumptions and the latter is not a consensus date. Here 5,000 BP is used as the younger published scenario for the threshold audit, not as a consensus estimate.
+**Proposed root:** Proto-Kartvelian. The 2023 study summarizes older comparative estimates of 3,950–4,750 BP for the Svan vs. Proto-Georgian-Zan split and proposes a separate interdisciplinary model above 12,500 BP. The 3,950 BP audit value is the low end of the comparative estimates summarized by that study, not a consensus or direct attestation. The composite span is not a statistical confidence interval; the study notes limitations in uncertainty measurement and external validation for earlier calculations. Georgian inscriptions are conventionally attested from the fifth century CE, far later than the reconstructed family ancestor.
 
 **Siblings and comparisons:**
 - Mingrelian (Zan; close Kartvelian relative)

@@ -5,6 +5,8 @@ const record = {
   "kind": "script",
   "data": {
     "script": {
+      "nativeScriptStatus": "none-known",
+      "exampleType": "scholarly-transcription",
       "history": "Proto-Oceanic has no known native writing system or contemporary primary manuscript corpus. Its forms are written in modern scholarly notation, conventionally with an asterisk for reconstructed forms and orthographic symbols that represent phonemes rather than ancient glyphs. Descendant languages later adopted different writing systems, including missionary-era Latin orthographies; those cannot be projected onto POc.",
       "subscripts": "Subscript numerals sometimes distinguish reconstructed phonemes or archival lexical sets in scholarship; they are editorial notation, not native POc letters. Unicode has subscript digits such as ₂ (U+2082), but the choice of convention must be documented.",
       "diacritics": "Macrons, acute accents, glottal symbols, and IPA characters depend on the source’s transcription system. Store source forms exactly and distinguish phonemic reconstruction from phonetic notation; NFC may normalize combining forms but should not erase analytical distinctions.",

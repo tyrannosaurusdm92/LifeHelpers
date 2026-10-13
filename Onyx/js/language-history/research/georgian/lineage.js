@@ -18,30 +18,42 @@ const record = {
     ],
     "root": {
       "node": "Proto-Kartvelian",
-      "qualifyingAgeBP": 5000,
+      "qualifyingAgeBP": 3950,
       "rangeBP": [
-        5000,
-        14500
+        3950,
+        12500
       ],
+      "rangeUpperOpen": true,
       "sourceKeys": [
         "G1",
         "G2"
       ],
       "confidence": "very low for exact dating; family relationship is secure",
-      "basis": "Dating is disputed: proposals place Proto-Kartvelian in the fourth–third millennia BCE, while one 2023 Bayesian multidisciplinary model suggests over 12,500 BP. The 5,000 BP qualifying value represents the younger traditional proposal (roughly the fourth–third millennia BCE), not a consensus point estimate; neither date is direct attestation.",
-      "date": "Dating is disputed: proposals place Proto-Kartvelian in the fourth–third millennia BCE, while one 2023 Bayesian multidisciplinary model suggests over 12,500 BP. The 5,000 BP qualifying value represents the younger traditional proposal (roughly the fourth–third millennia BCE), not a consensus point estimate; neither date is direct attestation.",
-      "evidenceType": "Dating is disputed: proposals place Proto-Kartvelian in the fourth–third millennia BCE, while one 2023 Bayesian multidisciplinary model suggests over 12,500 BP. The 5,000 BP qualifying value represents the younger traditional proposal (roughly the fourth–third millennia BCE), not a consensus point estimate; neither date is direct attestation.",
+      "basis": "Dating is disputed. The 2023 study reports older comparative estimates of 3,950–4,750 BP for the Svan versus Proto-Georgian-Zan split and proposes a separate interdisciplinary model above 12,500 BP. The 3,950 BP audit value is the low end of the comparative estimates it summarizes, not consensus or direct attestation; the article notes limitations in uncertainty measurement and external validation for earlier calculations.",
+      "date": "Dating is disputed. The 2023 study reports older comparative estimates of 3,950–4,750 BP for the Svan versus Proto-Georgian-Zan split and proposes a separate interdisciplinary model above 12,500 BP. The 3,950 BP audit value is the low end of the comparative estimates it summarizes, not consensus or direct attestation; the article notes limitations in uncertainty measurement and external validation for earlier calculations.",
+      "evidenceType": "Dating is disputed. The 2023 study reports older comparative estimates of 3,950–4,750 BP for the Svan versus Proto-Georgian-Zan split and proposes a separate interdisciplinary model above 12,500 BP. The 3,950 BP audit value is the low end of the comparative estimates it summarizes, not consensus or direct attestation; the article notes limitations in uncertainty measurement and external validation for earlier calculations.",
       "caution": "very low for exact dating; family relationship is secure",
       "ageAssessment": {
         "requestedMinimumBP": 2500,
-        "qualifyingAgeBP": 5000,
+        "qualifyingAgeBP": 3950,
         "rangeBP": [
-          5000,
-          14500
+          3950,
+          12500
         ],
         "ancestorStage": "Proto-Kartvelian",
-        "basis": "Dating is disputed: proposals place Proto-Kartvelian in the fourth–third millennia BCE, while one 2023 Bayesian multidisciplinary model suggests over 12,500 BP. The 5,000 BP qualifying value represents the younger traditional proposal (roughly the fourth–third millennia BCE), not a consensus point estimate; neither date is direct attestation.",
+        "basis": "Dating is disputed. The 2023 study reports older comparative estimates of 3,950–4,750 BP for the Svan versus Proto-Georgian-Zan split and proposes a separate interdisciplinary model above 12,500 BP. The 3,950 BP audit value is the low end of the comparative estimates it summarizes, not consensus or direct attestation; the article notes limitations in uncertainty measurement and external validation for earlier calculations.",
         "qualification": "meets threshold with explicit uncertainty; see lineage note",
+        "datingMethod": "Competing comparative split-date estimates and a 2023 interdisciplinary Bayesian model combining linguistic, ecological, archaeological, and population-genetic evidence.",
+        "rangeInterpretation": "Composite envelope across unlike models, not a confidence interval; includes reported 3,950–4,750 BP comparative estimates and a separate proposal above 12,500 BP.",
+        "rangeUpperOpen": true,
+        "qualifyingAgeMeaning": "3,950 BP is the low end of the comparative split estimates summarized by the cited study, not a consensus date or direct attestation.",
+        "documentation": {
+          "status": "epigraphic",
+          "stage": "Georgian",
+          "dateLabel": "Georgian inscriptions are conventionally attested from the fifth century CE; individual artifact chronologies vary.",
+          "note": "The written record is far later than the reconstructed Proto-Kartvelian stage.",
+          "sourceKeys": ["G9"]
+        },
         "sourceKeys": [
           "G1",
           "G2"

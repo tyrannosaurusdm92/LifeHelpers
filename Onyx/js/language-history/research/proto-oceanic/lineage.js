@@ -47,6 +47,16 @@ const record = {
         "ancestorStage": "Proto-Oceanic",
         "basis": "Comparative reconstruction combined with Lapita-related archaeological chronology; reconstructed speech community is usually placed in the Bismarck Archipelago in the late second millennium BCE.",
         "qualification": "meets threshold with explicit uncertainty; see lineage note",
+        "datingMethod": "Comparative lexical and phonological reconstruction calibrated against Lapita-related archaeological chronology; comparative subgrouping alone supplies relative order, not absolute dates.",
+        "rangeInterpretation": "An archaeology-informed estimate for the reconstructed speech community, not a confidence interval or a direct linguistic date.",
+        "qualifyingAgeMeaning": "3,200 BP is an estimate for the Proto-Oceanic speech-community horizon; no contemporary written attestation is known.",
+        "documentation": {
+          "status": "none-known",
+          "stage": "Proto-Oceanic",
+          "dateLabel": "No contemporary text or known native writing system; forms are reconstructed from descendant languages.",
+          "note": "Modern Latin and IPA forms are scholarly transcriptions, not ancient glyphs.",
+          "sourceKeys": ["P1", "P2"]
+        },
         "sourceKeys": [
           "P1",
           "P2"

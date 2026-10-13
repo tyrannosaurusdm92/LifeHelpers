@@ -9,7 +9,7 @@ Profiles: [Spanish](spanish.md), [Fijian](fijian.md), [Mandarin](mandarin.md), [
 | Mandarin | Sino-Tibetan root estimates c. 5,871–7,983 BP; Old Chinese written evidence in Late Shang | Sinitic branches including Wu, Yue, Min, Hakka, Gan, Xiang, Jin and others; wider Tibeto-Burman comparisons | Modeled family dates vary; neither Shang writing nor the family root dates Mandarin directly |
 | Yoruba | Niger-Congo expansion estimate near 12,000 BP; local Proto-Yoruboid model 2500–300 BCE | Itsekiri, Igala and Yoruba varieties | Macrofamily expansion is broad and classification-sensitive; local range is model-specific |
 | Hebrew | Canaanite evidence c. 1550–1200 BCE; Hebrew differentiates gradually near Late Bronze / Early Iron | Phoenician, Ammonite, Moabite, Edomite; Aramaic close but distinct | Gradual boundary, not a single founding date |
-| Georgian | Proto-Kartvelian; historical models diverge from the fourth–third millennia BCE to >12,500 BP | Svan, Mingrelian, Laz | The 5,000 BP audit value is the younger disputed scenario, not consensus |
+| Georgian | Proto-Kartvelian; comparative estimates include 3,950–4,750 BP, while a separate model proposes >12,500 BP | Svan, Mingrelian, Laz | The 3,950 BP audit value is the low end of cited comparative estimates, not consensus |
 | Khmer | Proto-Austroasiatic modeled at 3,000–4,500 BP | Mon, Vietnamese, Khasi and other Austroasiatic branches | Macrofamily chronology and subgrouping remain debated |
 | Hindi | Proto-Indo-Aryan; Vedic oral texts from c. 1500 BCE | Urdu/Hindustani, Punjabi, Gujarati, Bengali, Marathi | Not a direct Sanskrit-to-Hindi line |
 | Aramaic | Northwest Semitic; Old Aramaic inscriptions by 10th–9th c. BCE | Hebrew, Phoenician, Ugaritic; later Aramaic branches | Earliest inscription dates are debated |
@@ -21,4 +21,4 @@ Age refers to an ancestor or an attested historical stage, not an unchanged mode
 
 ## Extended atlas
 
-Seven additional source-linked dossiers are available in [the extended research atlas](research/extended/README.md), with a separate executable index and validator.
+Seven additional source-linked dossiers are available in [the extended research atlas](research/extended/README.md), with a separate executable index and validator. The atlas includes an [evidence and dating methodology](research/extended/evidence-methodology.md) separating reconstructed ancestor dates from written or oral attestation and script chronology.

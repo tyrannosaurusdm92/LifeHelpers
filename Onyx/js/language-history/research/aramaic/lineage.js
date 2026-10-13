@@ -46,6 +46,16 @@ const record = {
         "ancestorStage": "Proto-Northwest Semitic → Aramaic branch (Old Aramaic attested)",
         "basis": "Proto-Northwest Semitic is reconstructed from shared correspondences and branches including Aramaic and Canaanite; Old Aramaic inscriptions by the tenth–ninth centuries BCE provide a documentary floor. The 2,850 BP value dates the attested branch benchmark, not the exact proto-language split.",
         "qualification": "meets threshold with explicit uncertainty; see lineage note",
+        "datingMethod": "Comparative reconstruction of Proto-Northwest Semitic combined with inscriptional chronology for Old Aramaic.",
+        "rangeInterpretation": "An approximate branch/documentary envelope, not a statistical interval or an exact Proto-Northwest Semitic split date.",
+        "qualifyingAgeMeaning": "2,850 BP is a documentary benchmark for early Old Aramaic inscriptions around the tenth–ninth centuries BCE; it does not date the ancestor split.",
+        "documentation": {
+          "status": "epigraphic",
+          "stage": "Old Aramaic",
+          "dateLabel": "The Tell Fakhariya inscription is commonly assigned to the tenth–ninth centuries BCE, with the dating appropriately qualified.",
+          "note": "The inscription dates surviving evidence for the Aramaic branch, not Proto-Northwest Semitic itself.",
+          "sourceKeys": ["A1", "A2"]
+        },
         "sourceKeys": [
           "A1",
           "A2"

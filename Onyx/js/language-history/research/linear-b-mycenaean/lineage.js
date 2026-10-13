@@ -16,8 +16,19 @@ const record = {
       "Attic-Ionic Greek (later branch/dialect group)",
       "Aeolic Greek",
       "Doric and Northwest Greek",
-      "Arcado-Cypriot Greek (closest comparison group in many classifications)",
-      "Linear A (related Aegean script tradition; language undeciphered and not Greek)"
+      "Arcado-Cypriot Greek (closest comparison group in many classifications)"
+    ],
+    "relatedScripts": [
+      {
+        "name": "Linear A",
+        "relationship": "Earlier Aegean script tradition from which Linear B adapted signs",
+        "note": "Its language remains undeciphered and it is not a Greek language sibling."
+      },
+      {
+        "name": "Cypriot syllabary",
+        "relationship": "Later, distinct script used for a Greek dialect",
+        "note": "It is a script comparison, not a branch of Mycenaean Greek."
+      }
     ],
     "root": {
       "node": "Proto-Greek / early Greek dialect continuum",
@@ -45,6 +56,16 @@ const record = {
         "ancestorStage": "Proto-Greek / early Greek dialect continuum",
         "basis": "Linear B tablets from the second millennium BCE directly record Mycenaean Greek; comparative Greek dialect history reconstructs earlier Proto-Greek ancestry.",
         "qualification": "meets threshold with explicit uncertainty; see lineage note",
+        "datingMethod": "Comparative Greek dialect reconstruction paired with the epigraphic Mycenaean corpus in Linear B.",
+        "rangeInterpretation": "A modeled Proto-Greek/early Greek horizon, separate from the archaeological dates of surviving Linear B tablets.",
+        "qualifyingAgeMeaning": "3,600 BP is a model-based Greek ancestor horizon; Mycenaean Greek itself is written in tablets dated about 1450–1150 BCE.",
+        "documentation": {
+          "status": "epigraphic",
+          "stage": "Mycenaean Greek in Linear B",
+          "dateLabel": "Published Mycenaean documents date mainly to about 1450–1150 BCE; their administrative content and underspecified spelling limit linguistic inference.",
+          "note": "Linear B is the script; Mycenaean Greek is the language.",
+          "sourceKeys": ["L1"]
+        },
         "sourceKeys": [
           "L1",
           "L2"

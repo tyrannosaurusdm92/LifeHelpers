@@ -9,7 +9,7 @@ Linear B is a writing system; the language it records is Mycenaean Greek, the ea
 - Aeolic Greek
 - Doric and Northwest Greek
 - Arcado-Cypriot Greek (closest comparison group in many classifications)
-- Linear A (related Aegean script tradition; language undeciphered and not Greek)
+Linear A belongs in the related-script comparison, not in the Greek language sibling list.
 
 Do not flatten distant relatives and immediate sister groups into a single branching level.
 
