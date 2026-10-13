@@ -1,6 +1,27 @@
 (()=>{
 'use strict';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+// In private/sandboxed contexts, keep a session-only fallback rather than crashing.
+const onyxMemoryStore=new Map();
+const onyxStorage={
+ getItem(k){try{const v=localStorage.getItem(k);return v===null?(onyxMemoryStore.get(k)??null):v;}catch(_){return onyxMemoryStore.get(k)??null;}},
+ setItem(k,v){onyxMemoryStore.set(k,String(v));try{localStorage.setItem(k,String(v));return true;}catch(_){return false;}},
+ removeItem(k){onyxMemoryStore.delete(k);try{localStorage.removeItem(k);return true;}catch(_){return false;}}
+};
+const onyxStorageStatus={persistent:true};
+function onyxPersist(k,v){
+ if(onyxStorage.setItem(k,v))return;
+ if(!onyxStorageStatus.persistent)return;
+ onyxStorageStatus.persistent=false;
+ // Announce the temporary-saving limitation without interrupting other modules.
+ const root=document.querySelector('#feedHimMeowBase');
+ if(root&&!root.querySelector('#fhmStorageStatus')){
+  const notice=document.createElement('p');
+  notice.id='fhmStorageStatus';notice.setAttribute('role','status');
+  notice.textContent='Browser storage is unavailable. Game progress will last only until this tab closes.';
+  root.prepend(notice);
+ }
+}
 const S={level:1,layout:null,recipe:null,catalog:null,recipes:null,layouts:null,junk:null,boosters:null,randomizer:null,cookware:null,flavors:null,phase:'home',paused:false,market:{},garden:{},bon:{},settings:{reducedMotion:false,largeTargets:false,sortAssist:false,heatHold:false,aimAssist:false,soundEnabled:true},seed:1,runId:'',lastCompleted:null};
 const emit=(type,detail={})=>window.dispatchEvent(new CustomEvent(type,{detail}));
 const newRunId=()=>globalThis.crypto?.randomUUID?.()||`${Date.now()}:${Math.random().toString(36).slice(2)}`;
@@ -13,11 +34,16 @@ async function load(){
   Object.assign(S,{catalog,recipes,layouts:layouts.layouts,junk,boosters,randomizer,cookware,flavors});
   restoreSettings();bindUI();window.GameShell?.init();window.OnyxBoosters?.init();renderLevels();
 }
-function restoreSettings(){try{Object.assign(S.settings,JSON.parse(localStorage.getItem('fhm.settings.v3')||localStorage.getItem('fhm.settings')||'{}'))}catch{}applySettings()}
+function restoreSettings(){
+ const saved=onyxStorage.getItem('fhm.settings.v3')||onyxStorage.getItem('fhm.settings');
+ if(saved){try{Object.assign(S.settings,JSON.parse(saved))}catch{}}
+ else{try{S.settings.reducedMotion=!!window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches}catch(_){}}
+ applySettings();
+}
 function applySettings(){
   document.body.classList.toggle('reduced-motion',!!S.settings.reducedMotion);document.body.classList.toggle('large-targets',!!S.settings.largeTargets);
   for(const [id,key] of [['reducedMotion','reducedMotion'],['largeTargets','largeTargets'],['sortAssist','sortAssist'],['heatHold','heatHold'],['aimAssist','aimAssist'],['soundEnabled','soundEnabled']]){const el=$('#'+id);if(el)el.checked=!!S.settings[key]}
-  localStorage.setItem('fhm.settings.v3',JSON.stringify(S.settings));window.FHMAudio?.setEnabled(!!S.settings.soundEnabled);updateSoundButtons();
+  onyxPersist('fhm.settings.v3',JSON.stringify(S.settings));window.FHMAudio?.setEnabled(!!S.settings.soundEnabled);updateSoundButtons();
 }
 function updateSoundButtons(){const on=!!S.settings.soundEnabled;const main=$('#soundBtn');if(main){main.firstChild.textContent=on?'🔊 ':'🔇 ';const s=main.querySelector('span');if(s)s.textContent=on?'Sound':'Muted'}const pause=$('#pauseSoundBtn');if(pause)pause.textContent=on?'🔊 Sound: On':'🔇 Sound: Off'}
 function show(id){$$('.screen').forEach(x=>x.hidden=true);const el=$('#'+id);if(el){el.hidden=false;el.scrollTop=0}S.phase=id;window.GameShell?.onScreen(id);window.OnyxBoosters?.render()}
@@ -31,10 +57,10 @@ function renderLevels({focusLevel=null}={}){
   const cp=getCheckpoint();const cont=$('#continueRun');if(cont){cont.hidden=!cp;cont.textContent=cp?`▶ Continue Level ${cp.level}`:'▶ Continue Run'}show('home');
   if(focusLevel){requestAnimationFrame(()=>{const b=$(`#levelGrid .level-card[data-level="${focusLevel}"]`);b?.focus();b?.scrollIntoView({block:'center',inline:'center',behavior:S.settings.reducedMotion?'auto':'smooth'})})}
 }
-function getSave(level){try{return JSON.parse(localStorage.getItem(`fhm.level.${level}`)||'null')}catch{return null}}
-function getCheckpoint(){try{return JSON.parse(localStorage.getItem('fhm.run.v3')||'null')}catch{return null}}
-function saveCheckpoint(phase){if(!S.recipe)return;localStorage.setItem('fhm.run.v3',JSON.stringify({level:S.level,phase,recipeId:S.recipe.id,market:S.market,garden:S.garden,bon:S.bon,seed:S.seed,runId:S.runId,updatedAt:Date.now()}))}
-function clearCheckpoint(){localStorage.removeItem('fhm.run.v3')}
+function getSave(level){try{return JSON.parse(onyxStorage.getItem(`fhm.level.${level}`)||'null')}catch{return null}}
+function getCheckpoint(){try{return JSON.parse(onyxStorage.getItem('fhm.run.v3')||'null')}catch{return null}}
+function saveCheckpoint(phase){if(!S.recipe)return;onyxPersist('fhm.run.v3',JSON.stringify({level:S.level,phase,recipeId:S.recipe.id,market:S.market,garden:S.garden,bon:S.bon,seed:S.seed,runId:S.runId,updatedAt:Date.now()}))}
+function clearCheckpoint(){onyxStorage.removeItem('fhm.run.v3')}
 function chooseRecipe(level){const featured=S.recipes.featuredRecipes||[];return normalizeRecipe(featured[(level-1)%Math.max(1,featured.length)]||featured[0])}
 function beginRecipeGenerator(level){
   S.level=level;S.layout=S.layouts[(level-1)%S.layouts.length];S.seed=0xF00D0000+level*7919;S.runId=newRunId();S.market={};S.garden={};S.bon={};S.paused=false;S.recipe=null;
@@ -87,7 +113,7 @@ function saveLevelResult(stars,total,quality){
   const reward=rewardForLevel({stars,firstClear,newPersonalBest,perfectPerformance:stars===5&&quality==='IDEAL'});
   const payment=window.OnyxCurrency?.credit?.(reward.totalCopper,{id:`feed-him-meow:${S.runId||S.level+':'+completedAt}`,reason:`Feed Him MEOW · Level ${S.level}`,source:'feed-him-meow'});
   const save={stars:bestStars,bestStars,lastStars:stars,score:bestScore,bestScore,lastScore:total,quality,recipeId:S.recipe.id,completed:true,completedAt,rewardCopper:reward.totalCopper,rewardBreakdown:reward.breakdown};
-  localStorage.setItem(`fhm.level.${S.level}`,JSON.stringify(save));S.lastCompleted={level:S.level,...save};updateLevelCard(S.level);
+  onyxPersist(`fhm.level.${S.level}`,JSON.stringify(save));S.lastCompleted={level:S.level,...save};updateLevelCard(S.level);
   emit('currency:rewarded',{level:S.level,stars,totalCopper:reward.totalCopper,wallet:payment?.wallet||null,breakdown:reward.breakdown});
   return save;
 }
@@ -100,6 +126,18 @@ function renderFinal(){
   const total=(S.market.score||0)+(S.garden.score||0)+(b.score||0);const saved=saveLevelResult(stars,total,quality);$('#qualityText').textContent+=` · Reward: ${window.OnyxCurrency?.format?.(saved.rewardCopper)||saved.rewardCopper+' copper'}`;clearCheckpoint();emit('stars:calculated',{stars,pct,bestStars:saved.bestStars});emit('level:completed',{level:S.level,stars,total,bestStars:saved.bestStars,rewardCopper:saved.rewardCopper})
 }
 const pctText=v=>`${Math.round((v||0)*100)}%`;
-window.FHM={S,$,$$,emit,rng,record,resolveId,name,asset,cookwareFor,advance,show,renderLevels,renderRecipeDialog,applySettings,saveCheckpoint,getCheckpoint,startMarket,beginRecipeGenerator,generateRecipe};
-load().catch(err=>{document.body.innerHTML=`<main class="screen"><h1>Feed Him MEOW could not load</h1><pre>${String(err.stack||err)}</pre><p>Run this folder from a local/static web server so JSON assets can load.</p></main>`;console.error(err)});
+window.FHM={S,$,$$,emit,rng,record,resolveId,name,asset,cookwareFor,advance,show,renderLevels,renderRecipeDialog,applySettings,saveCheckpoint,getCheckpoint,startMarket,beginRecipeGenerator,generateRecipe,storageStatus:onyxStorageStatus};
+function reportLoadError(err){
+ console.error('[Feed Him MEOW] Failed to load game data',err);
+ const host=document.querySelector('#feedHimMeowBase')||document.body;
+ let status=host.querySelector('#fhmLoadStatus');
+ if(!status){status=document.createElement('section');status.id='fhmLoadStatus';status.setAttribute('role','alert');status.style.cssText='padding:1rem;border:2px solid currentColor;margin:1rem';host.prepend(status);}
+ status.replaceChildren();
+ const heading=document.createElement('h2');heading.textContent='Feed Him MEOW could not load';
+ const detail=document.createElement('p');detail.textContent='Game data is temporarily unavailable. Other OurSpace pages are unaffected.';
+ const retry=document.createElement('button');retry.type='button';retry.textContent='Try again';
+ retry.addEventListener('click',()=>{status.remove();load().catch(reportLoadError);});
+ status.append(heading,detail,retry);
+}
+load().catch(reportLoadError);
 })();

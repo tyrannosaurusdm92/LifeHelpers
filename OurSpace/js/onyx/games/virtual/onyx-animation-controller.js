@@ -27,17 +27,18 @@ function facing(dir,prior='east'){
 }
 function create(options={}){
  let p=profile(options.profile),action='idle',dir='south_east',side='south_east';
- let elapsed=0,distance=0,paused=false,reduced=!!options.reducedMotion;
+ let elapsed=0,distance=0,gaitCycles=0,paused=false,reduced=!!options.reducedMotion;
  const cycle={walk:finite(options.walkCyclePx)&&options.walkCyclePx>0?options.walkCyclePx:60,
               run:finite(options.runCyclePx)&&options.runCyclePx>0?options.runCyclePx:96};
  function frame(){
   const v=facing(dir,side),idx=views.indexOf(v);
   const isWalking=action==='walk'||action==='run';
-  const clock=isWalking?distance/cycle[action]*p.duration[action]:elapsed;
+  // A normalized gait clock preserves foot-contact phase when walk and run switch.
+  const clock=isWalking?gaitCycles*p.duration[action]:elapsed;
   const phase=reduced?0:sample(clock,p.duration[action],p.weights[action]);
   return {action,direction:dir,authoredFacing:v,approximatedFacing:dir==='north'||dir==='south',
    phase,col:idx*5+phase,row:{idle:0,walk:1,run:2,action:8}[action],
-   cellSize:64,elapsedMs:elapsed,travelPx:distance,reducedMotion:reduced};
+   cellSize:64,elapsedMs:elapsed,travelPx:distance,gaitCycles,reducedMotion:reduced};
  }
  return Object.freeze({
   setAction(next){const n=Object.hasOwn(defaults,next)?next:'idle';if(action!==n){action=n;elapsed=0;}return frame();},
@@ -46,10 +47,10 @@ function create(options={}){
   setReducedMotion(v){reduced=!!v;},setPaused(v){paused=!!v;},
   setCycleDistance(pace,px){if(Object.hasOwn(cycle,pace)&&finite(px)&&px>0)cycle[pace]=px;},
   tick(dtMs,displacementPx=0){if(!finite(dtMs)||dtMs<0)return frame();
-   if(!paused){elapsed+=Math.min(dtMs,250);if((action==='walk'||action==='run')&&finite(displacementPx)&&displacementPx>0)distance+=displacementPx;}
+   if(!paused){elapsed+=Math.min(dtMs,250);if((action==='walk'||action==='run')&&finite(displacementPx)&&displacementPx>0){distance+=displacementPx;gaitCycles=(gaitCycles+displacementPx/cycle[action])%1;}}
    return frame();},
-  reset(){elapsed=0;distance=0;action='idle';},getFrame:frame
+  reset(){elapsed=0;distance=0;gaitCycles=0;action='idle';},getFrame:frame
  });
 }
-root.OnyxAnimationController=Object.freeze({version:'35.0',create,facing,profile});
+root.OnyxAnimationController=Object.freeze({version:'36.0',create,facing,profile});
 })(typeof window!=='undefined'?window:globalThis);
