@@ -173,6 +173,22 @@
       e.applyCanvasBase(e.project.canvasBase||{kind:'transparent'},true);
       ctl.studio.toast?.('Canvas base restored cleanly without changing artwork on other layers.');
     }
+    // Older projects may already contain accidental cyan marks. Preserve
+    // those pixels in a hidden layer instead of destructively guessing which
+    // cyan colors were intentional artwork.
+    function hideAccidentalPaint(){
+      const e=engine,l=e.activeLayer();
+      if(!e.project||!l||l.type!=='raster'||l.name==='Canvas Base')
+        return ctl.studio.toast?.('Select the paint layer containing the unwanted marks in Layers first.');
+      if(!global.confirm?.('Hide "'+l.name+'" and add a fresh paint layer? All artwork on that layer will be hidden, not deleted. You can show it again from Layers.'))
+        return;
+      l.visible=false;
+      e.addLayer('raster','Clean Paint Layer');
+      e.render();
+      e.emit('layers');
+      ctl.studio.toast?.('Old paint hidden, clean layer created. The original layer is still recoverable.');
+    }
+    ctl.hideAccidentalPaint=hideAccidentalPaint;
     ctl.removeCyanMotes=removeCyanMotes;
     ctl.resetCanvasBase=resetCanvasBase;
     function installCanvasRepair(){
@@ -182,10 +198,11 @@
       const section=document.createElement('section');
       section.className='sav-section sav-expansion';
       section.dataset.canvasRepair='true';
-      section.innerHTML='<h3>Clean Canvas Background</h3><div class="sav-grid cols-2"><button class="sav-btn" type="button" data-clean-cyan>Remove Faint Cyan Motes</button><button class="sav-btn" type="button" data-reset-base>Reset Canvas Base</button></div><p class="sav-pro-note">Use Remove Faint Cyan Motes on a selected raster layer to remove only low-opacity blue-green specks. Reset Canvas Base reconstructs the clean transparent, solid or gradient base without affecting other layers. Selection guides stay out of exported artwork.</p>';
+      section.innerHTML='<h3>Clean Canvas Background</h3><div class="sav-grid cols-2"><button class="sav-btn" type="button" data-clean-cyan>Remove Faint Cyan Motes</button><button class="sav-btn" type="button" data-reset-base>Reset Canvas Base</button><button class="sav-btn" type="button" data-hide-old-paint>Hide Contaminated Paint Layer</button></div><p class="sav-pro-note">Use Remove Faint Cyan Motes on a selected raster layer to remove only low-opacity blue-green specks. Reset Canvas Base reconstructs the clean transparent, solid or gradient base without affecting other layers. If accidental paint is already saved in a layer, Hide Contaminated Paint Layer keeps its pixels safely hidden while giving you a new clean layer. Selection guides stay out of exported artwork.</p>';
       target.appendChild(section);
       section.querySelector('[data-clean-cyan]').addEventListener('click',removeCyanMotes);
       section.querySelector('[data-reset-base]').addEventListener('click',resetCanvasBase);
+      section.querySelector('[data-hide-old-paint]').addEventListener('click',hideAccidentalPaint);
       return true;
     }
     if(!installCanvasRepair()){
