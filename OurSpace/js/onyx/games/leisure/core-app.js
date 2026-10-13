@@ -4,9 +4,9 @@ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 // In private/sandboxed contexts, keep a session-only fallback rather than crashing.
 const onyxMemoryStore=new Map();
 const onyxStorage={
- getItem(k){try{const v=localStorage.getItem(k);return v===null?(onyxMemoryStore.get(k)??null):v;}catch(_){return onyxMemoryStore.get(k)??null;}},
- setItem(k,v){onyxMemoryStore.set(k,String(v));try{localStorage.setItem(k,String(v));return true;}catch(_){return false;}},
- removeItem(k){onyxMemoryStore.delete(k);try{localStorage.removeItem(k);return true;}catch(_){return false;}}
+ getItem(k){if(onyxMemoryStore.has(k))return onyxMemoryStore.get(k);try{const v=localStorage.getItem(k);return v===null?null:v;}catch(_){return null;}},
+ setItem(k,v){const value=String(v);onyxMemoryStore.set(k,value);try{localStorage.setItem(k,value);onyxMemoryStore.delete(k);return true;}catch(_){return false;}},
+ removeItem(k){onyxMemoryStore.set(k,null);try{localStorage.removeItem(k);onyxMemoryStore.delete(k);return true;}catch(_){return false;}}
 };
 const onyxStorageStatus={persistent:true};
 function onyxPersist(k,v){
