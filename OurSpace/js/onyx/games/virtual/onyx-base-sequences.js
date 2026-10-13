@@ -49,7 +49,7 @@
  const sequences={
   approach,
   eatAt(bowl,opts={}){return approach(bowl,()=>M.eat({...opts,bowl,reachPx:opts.reachPx||90}),opts);},
-  drinkAt(bowl,opts={}){return approach(bowl,()=>M.drink({...opts,bowl,reachPx:opts.reachPx||90}),opts);},
+  drinkAt(bowl,opts={}){return approach(bowl,()=>M.drink({...opts,mode:'drink',bowl,reachPx:opts.reachPx||90}),opts);},
   playAt(target,opts={}){return approach(target,()=>M.playWithToy({...opts,target}),{...opts,reachPx:opts.approachReachPx||155});},
   fishAt(target,opts={}){return approach(target,()=>M.huntFish({...opts,target}),{...opts,reachPx:opts.approachReachPx||155});}
  };
