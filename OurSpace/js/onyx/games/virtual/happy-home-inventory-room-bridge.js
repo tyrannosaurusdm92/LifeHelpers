@@ -61,7 +61,7 @@ function render(){
   layer.innerHTML="";
   for(const p0 of placements){
     const p=normalize(p0);Object.assign(p0,p);
-    const interactive=["bowl","fountain","bed"].includes(p.interactiveType);
+    const interactive=["bowl","fountain","bed","toy"].includes(p.interactiveType);
     const el=document.createElement("div");el.className="hh-runtime-placement";el.dataset.placementId=p.id;el.dataset.interactiveType=p.interactiveType||"object";el.dataset.interactive=String(interactive);el.title=interactive?(p.interactiveType==="fountain"?(p.name+(p.fountainOn===false?" · off":" · water rippling")):(p.name+" · click to use")):(p.name||"Placed item");
     el.setAttribute("role",interactive?"button":"img");el.setAttribute("aria-label",el.title);if(interactive)el.tabIndex=0;
     const s=placementScale(p);
