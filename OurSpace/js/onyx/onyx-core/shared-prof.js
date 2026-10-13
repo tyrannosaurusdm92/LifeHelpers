@@ -43,13 +43,23 @@ function timedFrame(seq,durations,elapsed,loop=false){
   for(let i=0;i<seq.length;i++){if(t<ds[i])return seq[i];t-=ds[i]}
   return seq[seq.length-1]
 }
-function travelTimedFrame(seq,durations,distancePx,speedPxPerSec){
-  if(!seq?.length||!Number.isFinite(Number(distancePx)))return null;
-  const speed=Math.abs(Number(speedPxPerSec));if(!Number.isFinite(speed)||speed<=0)return null;
-  const total=clipDurations(seq,durations).reduce((a,b)=>a+b,0)||1;
-  const stridePx=speed*total/1000;if(!Number.isFinite(stridePx)||stridePx<=0)return null;
-  const progress=(((Number(distancePx)%stridePx)+stridePx)%stridePx)/stridePx;
-  return timedFrame(seq,durations,progress*total,true)
+function travelTimedFrame(runtime,action,seq,durations,distancePx,speedPxPerSec){
+  if(!seq?.length||distancePx==null||!Number.isFinite(Number(distancePx)))return null;
+  const distance=Number(distancePx),speed=Math.abs(Number(speedPxPerSec));
+  const ds=clipDurations(seq,durations),total=ds.reduce((a,b)=>a+b,0)||1;
+  const stridePx=Number.isFinite(speed)&&speed>0?speed*total/1000:0;
+  const actionChanged=runtime.gaitAction!==action;
+  const rewound=Number.isFinite(runtime.gaitDistancePx)&&distance<runtime.gaitDistancePx;
+  if(actionChanged||!Number.isFinite(runtime.gaitDistancePx)||rewound){
+    runtime.gaitAction=action;
+    runtime.gaitPhase=stridePx>0?(((distance%stridePx)+stridePx)%stridePx)/stridePx:0;
+  }else{
+    const delta=Math.max(0,distance-runtime.gaitDistancePx);
+    if(delta>0&&stridePx>0)runtime.gaitPhase=((runtime.gaitPhase||0)+delta/stridePx)%1;
+  }
+  runtime.gaitDistancePx=distance;
+  runtime.gaitPhase=((Number(runtime.gaitPhase)||0)%1+1)%1;
+  return timedFrame(seq,ds,runtime.gaitPhase*total,true)
 }
 function seqFor(name,facing,block=0){const clip=CLIPS[name]||{};if(clip.equivalentFrontBlocks?.length)return clip.equivalentFrontBlocks[((block%clip.equivalentFrontBlocks.length)+clip.equivalentFrontBlocks.length)%clip.equivalentFrontBlocks.length];const d=dirKey(facing);return clip.directions?.[d]||clip.directions?.front||Object.values(clip.directions||{})[0]||["f000"]}
 function drawFrame(target,id,size){
@@ -78,12 +88,17 @@ function vectorAssetForProfessor(runtime,elapsed,options={}){
   else if(mode==="prepare"){interval=PREPARE_MS/PROFESSOR_VECTORS.prepare.length;frames=PROFESSOR_VECTORS.prepare}
   else if(mode==="seated"){interval=220;frames=PROFESSOR_VECTORS.seated}
   else return "";
+  if(mode==="standing"&&moving&&Number.isFinite(runtime.gaitPhase)){
+    const progress=((runtime.gaitPhase%1)+1)%1*frames.length,index=Math.floor(progress)%frames.length;
+    if(progress-Math.floor(progress)<.5)return "";
+    return VECTOR_ROOT+frames[index];
+  }
   const step=Math.max(0,elapsed/Math.max(16,interval)),fraction=step-Math.floor(step);
   if(fraction<.5)return "";
   return VECTOR_ROOT+frames[Math.floor(step)%frames.length];
 }
 function createProfessorActor(){
-  const runtime={mode:"quadruped",desired:"quadruped",stateSince:now(),poseIndex:0,poseBlock:0,nextPoseAt:0,lastRole:"",chatting:false,lastFrame:"f000",lastFacing:"forward",prepareTarget:"exit",enterTarget:"standing",turnPath:[]};
+  const runtime={mode:"quadruped",desired:"quadruped",stateSince:now(),poseIndex:0,poseBlock:0,nextPoseAt:0,lastRole:"",chatting:false,lastFrame:"f000",lastFacing:"forward",prepareTarget:"exit",enterTarget:"standing",turnPath:[],gaitAction:"",gaitDistancePx:null,gaitPhase:0};
   function setMode(mode,t=now()){runtime.mode=mode;runtime.stateSince=t}
   function beginQuadrupedProfessor(t=now()){
     runtime.desired="professor";runtime.chatting=true;runtime.enterTarget="standing";runtime.turnPath=[];
@@ -168,12 +183,12 @@ function createProfessorActor(){
     const facing=options.facing||runtime.lastFacing||"forward";runtime.lastFacing=facing;const elapsed=advance(t);
     if(runtime.mode==="quadruped"||runtime.mode==="quadruped-professor"){
       const moving=!!options.moving,name=moving?"walk_quadruped":"idle_stand",seq=seqFor(name,facing),fd=clipTiming(name,CLIPS[name].frameDurationMs||150);
-      if(moving&&FRAME_PROFILE?.gaitPhaseSource==="screen-distance"){const grounded=travelTimedFrame(seq,fd,options.gaitDistancePx,options.gaitSpeedPxPerSec);if(grounded)return grounded}
+      if(moving&&FRAME_PROFILE?.gaitPhaseSource==="screen-distance"){const grounded=travelTimedFrame(runtime,name,seq,fd,options.gaitDistancePx,options.gaitSpeedPxPerSec);if(grounded)return grounded}
       return timedFrame(seq,fd,elapsed,true);
     }
     if(runtime.mode==="enter")return timedFrame(seqFor("professor_enter_rise",facing),clipTiming("professor_enter_rise",CLIPS.professor_enter_rise.frameDurationsMs),elapsed,false);
     if(runtime.mode==="standing"){
-      if(options.moving){const seq=seqFor("walk_biped",facing),fd=clipTiming("walk_biped",CLIPS.walk_biped.frameDurationMs||135);if(FRAME_PROFILE?.gaitPhaseSource==="screen-distance"){const grounded=travelTimedFrame(seq,fd,options.gaitDistancePx,options.gaitSpeedPxPerSec);if(grounded)return grounded}return timedFrame(seq,fd,elapsed,true)}
+      if(options.moving){const seq=seqFor("walk_biped",facing),fd=clipTiming("walk_biped",CLIPS.walk_biped.frameDurationMs||135);if(FRAME_PROFILE?.gaitPhaseSource==="screen-distance"){const grounded=travelTimedFrame(runtime,"walk_biped",seq,fd,options.gaitDistancePx,options.gaitSpeedPxPerSec);if(grounded)return grounded}return timedFrame(seq,fd,elapsed,true)}
       return seqFor("professor_stand",facing)[0];
     }
     if(runtime.mode==="turn"){
@@ -197,7 +212,7 @@ function createProfessorActor(){
     return {frame:id,mode:runtime.mode,desired:runtime.desired,chatting:runtime.chatting,metadata:METADATA};
   }
   function reset(t=now()){
-    runtime.mode="quadruped";runtime.desired="quadruped";runtime.chatting=false;runtime.stateSince=t;runtime.poseIndex=0;runtime.poseBlock=0;runtime.nextPoseAt=0;runtime.lastRole="";runtime.prepareTarget="exit";runtime.enterTarget="standing";runtime.turnPath=[];
+    runtime.mode="quadruped";runtime.desired="quadruped";runtime.chatting=false;runtime.stateSince=t;runtime.poseIndex=0;runtime.poseBlock=0;runtime.nextPoseAt=0;runtime.lastRole="";runtime.prepareTarget="exit";runtime.enterTarget="standing";runtime.turnPath=[];runtime.gaitAction="";runtime.gaitDistancePx=null;runtime.gaitPhase=0;
   }
   const api={
     schema:"onyx-professor-contact-sheet-actor/v2",state:"advising_professor",variant:"advising_professor",label:"Professor Onyx — contact-sheet actor",
