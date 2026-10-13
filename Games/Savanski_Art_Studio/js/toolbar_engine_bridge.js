@@ -44,6 +44,16 @@ function switchWorkspace(name){
 }
 
 function bindStudioUI(Studio){
+  // Opening the main Select/Move toolkit must switch the actual canvas tool.
+  // Previously clicking the visible Select button ONLY opened its panel; the
+  // last brush stayed active, causing accidental cyan spray/paint strokes.
+  const selectTool = () => {
+    if (!Studio.engine?.project) return;
+    if (Studio.engine.tool !== 'select') Studio.activateTool('select');
+  };
+  const selectButton = document.querySelector('#savanski-art-toolbar .sav-tool[data-tool="select"]');
+  selectButton?.addEventListener('pointerdown', selectTool, true);
+  selectButton?.addEventListener('click', selectTool, true);
   // Workspace tabs belong to the editor shell, not Home.
   $$("[data-workspace-tab]").forEach(b=>b.addEventListener("click",()=>{const mode=b.dataset.workspaceTab==="3d"?"3d":"studio";if(window.SavanskiProjectLibrary)window.SavanskiProjectLibrary.openHome(mode);else switchWorkspace(mode)}));
 
