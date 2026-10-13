@@ -1,6 +1,6 @@
 /* Savanski Studio PWA service worker. Keep at repository root so its default scope covers studio.html and all runtime folders. */
 'use strict';
-const VERSION='savanski-studio-v12-2026-10-11-canvas-transform';
+const VERSION='savanski-studio-v13-2026-10-13-select-and-canvas';
 const SHELL_CACHE=`${VERSION}-shell`;
 const RUNTIME_CACHE=`${VERSION}-runtime`;
 const SHELL=[
@@ -21,6 +21,9 @@ const SHELL=[
   './js/backend-config.js',
   './js/advanced-renderer.js',
   './js/advanced-controller.js',
+  './js/studio-ui.js',
+  './js/canvas-engine.js',
+  './js/toolbar_engine_bridge.js',
   './js/canvas-transform-repair.js',
   './css/advanced-suite.css',
   './js/savanski-wasm-suite.js',
@@ -65,7 +68,7 @@ self.addEventListener('message',event=>{
 function sameOrigin(request){try{return new URL(request.url).origin===self.location.origin}catch{return false}}
 async function networkFirst(request){
   const cache=await caches.open(RUNTIME_CACHE);
-  try{const response=await fetch(request);if(response&&response.ok)cache.put(request,response.clone());return response}catch(err){return (await cache.match(request))||(await caches.match('./studio.html'))||Response.error()}
+  try{const response=await fetch(request);if(response&&response.ok)cache.put(request,response.clone());return response}catch(err){return (await cache.match(request,{ignoreSearch:true}))||(await caches.match(request,{ignoreSearch:true}))||(request.mode==='navigate'?await caches.match('./studio.html'):null)||Response.error()}
 }
 async function staleWhileRevalidate(request){
   const cache=await caches.open(RUNTIME_CACHE),cached=await cache.match(request);
@@ -76,5 +79,7 @@ self.addEventListener('fetch',event=>{
   const request=event.request;
   if(request.method!=='GET'||!sameOrigin(request)||request.headers.has('range'))return;
   if(request.mode==='navigate'){event.respondWith(networkFirst(request));return;}
+  // Avoid serving stale JS/CSS that leaves the old paint tool active after selecting.
+  if(request.destination==='script'||request.destination==='style'){event.respondWith(networkFirst(request));return;}
   event.respondWith(staleWhileRevalidate(request));
 });
