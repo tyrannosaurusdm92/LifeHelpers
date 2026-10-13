@@ -42,6 +42,8 @@
   for(const feature of s.allFeatures?.()||[]){
    const p=feature?.properties||{},role=String(p.role||'').toLowerCase();
    if(role!=='placed-furniture'&&!(p.dynamic===true&&role.includes('furniture')))continue;
+   // Small care objects remain walkable so a paw can reach their interaction point.
+   if(['bowl','fountain','toy'].includes(String(p.interactiveType||'').toLowerCase()))continue;
    const rectangle=rectOf(feature);if(rectangle)obstacles.push({...rectangle,id:p.id||'',height:Number(p.collisionHeight)||96,platform:!!p.platform});
   }
   const signature=JSON.stringify(obstacles);
