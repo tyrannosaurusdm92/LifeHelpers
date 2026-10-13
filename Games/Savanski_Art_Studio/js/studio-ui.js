@@ -33,7 +33,7 @@ const Studio={
   $('#fileInput').addEventListener('change',e=>{this.handleImport(e.target.files[0]);e.target.value=''});$('#fontInput').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const name=await LFTextEngine.loadCustomFont(f);const o=document.createElement('option');o.value=o.textContent=name;$('#textFont').appendChild(o);$('#textFont').value=name;this.updateTextFromInspector();this.toast('Custom font loaded for this session')}catch(err){this.toast('Font could not be loaded')}e.target.value=''});
   $$('[data-close]').forEach(b=>b.addEventListener('click',()=>this.togglePanel(b.dataset.close,false)));
  },
- activateTool(id){if(!this.engine.project){this.showLauncher();return}const map={'free-select':'select'};this.engine.setTool(map[id]||id);$$('.ribbon-button[data-tool]').forEach(b=>b.classList.toggle('is-active',b.dataset.tool===id));},
+ activateTool(id){if(!this.engine.project){this.showLauncher();return}const map={'free-select':'select'};this.engine.drag=null;window.LFAdvancedController&&(window.LFAdvancedController.drag=null);this.engine.setTool(map[id]||id);$('.ribbon-button[data-tool]').forEach(b=>b.classList.toggle('is-active',b.dataset.tool===id));document.querySelector('#savanski-art-toolbar .sav-tool[data-tool="select"]')?.classList.toggle('tool-active',this.engine.tool==='select');},
  changeZoom(delta){const z=Math.max(.25,Math.min(2,this.engine.zoom+delta));$('#zoomSlider').value=Math.round(z*100);this.engine.setZoom(z)},
  togglePanel(id,force){const el=$('#'+id),open=force??!el.classList.contains('open');el.classList.toggle('open',open)},
  toggleLayers(force){$('#workspace').classList.toggle('layers-open',force??!$('#workspace').classList.contains('layers-open'))},
