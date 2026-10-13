@@ -44,16 +44,16 @@ for (const file of allDocs) {
 }
 
 const register = await readFile(resolve(researchRoot, 'source-register.md'), 'utf8');
-const sourceIds = new Set([...register.matchAll(/\*\*([SFMHYU]\d+)\*\*/g)].map(match => match[1]));
+const sourceIds = new Set([...register.matchAll(/\*\*([A-Z]\d+)\*\*/g)].map(match => match[1]));
 for (const file of researchDocs) {
   const content = await readFile(file, 'utf8');
-  for (const match of content.matchAll(/\[([SFMHYU]\d+)\]/g)) if (!sourceIds.has(match[1])) errors.push(`${file}: source key ${match[1]} is missing from the register`);
+  for (const match of content.matchAll(/\[([A-Z]\d+)\]/g)) if (!sourceIds.has(match[1])) errors.push(`${file}: source key ${match[1]} is missing from the register`);
 }
 const profileCheck = validateResearchProfiles();
 if (!profileCheck.ok) errors.push(...profileCheck.errors);
 const researchFileCount = moduleFiles.length + moduleDocs.length + researchDocs.length;
 if (researchFileCount < 50) errors.push(`Only ${researchFileCount} research files found; at least 50 are required`);
-if (topicFiles.length !== 25) errors.push(`Expected 25 language topic notes, found ${topicFiles.length}`);
+if (topicFiles.length !== 60) errors.push(`Expected 60 language topic notes, found ${topicFiles.length}`);
 if (zipFiles.length) errors.push('A zipped artifact is present in the research tree');
 assert.equal(errors.length, 0, errors.join('\n'));
 console.log(JSON.stringify({ ok: true, researchFiles: researchFileCount, javascriptFiles: moduleFiles.length, markdownFiles: researchDocs.length + moduleDocs.length, languageTopicNotes: topicFiles.length, profiles: Object.keys(LANGUAGE_RESEARCH).length, localLinkAndSourceKeyErrors: 0 }, null, 2));
