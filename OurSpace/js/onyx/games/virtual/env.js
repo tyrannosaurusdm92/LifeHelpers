@@ -26,6 +26,7 @@
  function quadrupedApi(){return shellWindow()?.OnyxImperialExpedition||null}
  function personalityApi(){return shellWindow()?.OnyxPersonalityEngine||null}
  function spatialApi(){return shellWindow()?.OnyxRoomSpatial||null}
+ function motionBridge(){return window.OnyxHappyHomeMotion||shellWindow()?.OnyxHappyHomeMotion||null}
  function roomScale(){const api=spatialApi(),room=frame()?.contentDocument?.getElementById('viewerScreen');return Math.max(.01,(room?.clientHeight||api?.H||821)/(api?.H||821))}
  function pointForFeature(id){try{const f=spatialApi()?.getZone?.(id),g=f?.geometry,p=f?.properties||{};if(g?.type==='Point'&&Array.isArray(g.coordinates))return{x:Number(g.coordinates[0]),y:Number(g.coordinates[1]),properties:p};if(g?.type==='Polygon'){const ring=g.coordinates?.[0]||[];if(ring.length){const pts=ring.slice(0,-1);return{x:pts.reduce((a,v)=>a+v[0],0)/pts.length,y:pts.reduce((a,v)=>a+v[1],0)/pts.length,properties:p}}}}catch(_){}return null}
  function worldSizeAtY(worldY,explicit=0){const api=spatialApi(),base=Number(explicit)||Number(api?.spriteSizeAtY?.(worldY))||64;return base*roomScale()}
@@ -427,31 +428,31 @@
    // original cat sprite, couch and aquarium animations, and game/need state.
    get baseMotion(){return window.OnyxBaseMotion||shellWindow()?.OnyxBaseMotion||null},
    baseMove(direction,options={}){
-     const bridge=window.OnyxHappyHomeMotion;
+     const bridge=motionBridge();
      return bridge?.move?.(String(direction),'walk',options)
        ||this.baseMotion?.walk?.(String(direction),options)
        ||{ok:false,reason:'motion-not-ready'};
    },
    baseRun(direction,options={}){
-     const bridge=window.OnyxHappyHomeMotion;
+     const bridge=motionBridge();
      return bridge?.move?.(String(direction),'run',options)
        ||this.baseMotion?.run?.(String(direction),options)
        ||{ok:false,reason:'motion-not-ready'};
    },
    baseAction(action,options={}){
-     return window.OnyxHappyHomeMotion?.action?.(String(action),options)
+     return motionBridge()?.action?.(String(action),options)
        ||this.baseMotion?.perform?.(String(action),options)
        ||{ok:false,reason:'motion-not-ready'};
    },
    feedOnyx(options={}){
      const target=options.bowl||options.target;
-     return (target&&window.OnyxHappyHomeMotion?.interact?.('eat',target,options))
+     return (target&&motionBridge()?.interact?.('eat',target,options))
        ||this.baseMotion?.eat?.(options)
        ||{ok:false,reason:'motion-not-ready'};
    },
    waterOnyx(options={}){
      const target=options.bowl||options.target;
-     return (target&&window.OnyxHappyHomeMotion?.interact?.('drink',target,options))
+     return (target&&motionBridge()?.interact?.('drink',target,options))
        ||this.baseMotion?.drink?.(options)
        ||{ok:false,reason:'motion-not-ready'};
    },
