@@ -1,0 +1,44 @@
+{
+  "schema": "onyx-aquarium/v1",
+  "displayMapping": {
+    "orange": "goldfish",
+    "blue": "neon_tetra",
+    "white": "mixed_school",
+    "yellow": "amber_tetra"
+  },
+  "assets": {
+    "goldfish": "assets/images/games/virtual/room/goldfish.svg",
+    "neon_tetra": "assets/images/games/virtual/room/neon_tetra.svg",
+    "mixed_school": "assets/images/games/virtual/room/mixed_fish_school.svg",
+    "amber_tetra": "assets/images/games/virtual/room/amber_tetra.svg"
+  },
+  "catching": {
+    "enabled": true,
+    "singularFishOnly": true,
+    "gameHoursPerRealHour": 12,
+    "catchesPerRealHour": 2,
+    "onyxHoursPerCatch": 6,
+    "realMinutesPerCatch": 30,
+    "catchableSpecies": [
+      {
+        "id": "neon_tetra",
+        "chance": 0.3333333333333333
+      },
+      {
+        "id": "goldfish",
+        "chance": 0.3333333333333333
+      },
+      {
+        "id": "amber_tetra",
+        "chance": 0.3333333333333333
+      }
+    ],
+    "mixedSchoolCatchable": false,
+    "rollsIndependent": true,
+    "repeatSpeciesAllowed": true,
+    "events": [
+      "onyx:aquarium-fish-caught",
+      "home:aquarium-eat-fish"
+    ]
+  }
+}

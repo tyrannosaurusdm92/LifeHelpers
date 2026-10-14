@@ -91,12 +91,12 @@
       "childTransformPolicy": "inherit-parent-delta",
       "movesChildrenProperty": "movesChildren",
       "assemblies": [
-        "left-window\u21924 panes",
-        "right-window\u21924 panes",
-        "double French door\u21922 door leaves + inner frame\u21928 glass panes + 2 handles",
-        "each picture frame\u21921 click-to-load image iframe",
-        "aquarium-built-in\u2192room extension + bottom face + 4 five-point corner connectors",
-        "each wall\u2192its finish bands and attached fixtures"
+        "left-window→4 panes",
+        "right-window→4 panes",
+        "double French door→2 door leaves + inner frame→8 glass panes + 2 handles",
+        "each picture frame→1 click-to-load image iframe",
+        "aquarium-built-in→room extension + bottom face + 4 five-point corner connectors",
+        "each wall→its finish bands and attached fixtures"
       ]
     },
     "sourceMerge": {
@@ -348,7 +348,6 @@
         "object_placement": "use world-foot bounds first; editor projection is display only"
       },
       "outside_weather": {
-        "visual_target": "weather-scene-iframe",
         "audio_channel": "outside_weather",
         "render_order": "behind entire living room",
         "visibility": "through mapped window and French-door glass openings",
@@ -2434,7 +2433,7 @@
       "id": "double-french-door",
       "properties": {
         "id": "double-french-door",
-        "label": "Double French Door \u2014 2 Doors / 8 Glass Panes",
+        "label": "Double French Door — 2 Doors / 8 Glass Panes",
         "role": "door",
         "surfacePlane": "back-wall",
         "parentId": "back-wall",
@@ -2533,7 +2532,7 @@
       "id": "french-door-left",
       "properties": {
         "id": "french-door-left",
-        "label": "French Door \u2014 Left Leaf",
+        "label": "French Door — Left Leaf",
         "role": "door-leaf",
         "surfacePlane": "back-wall",
         "parentId": "double-french-door",
@@ -2624,7 +2623,7 @@
       "id": "french-door-right",
       "properties": {
         "id": "french-door-right",
-        "label": "French Door \u2014 Right Leaf",
+        "label": "French Door — Right Leaf",
         "role": "door-leaf",
         "surfacePlane": "back-wall",
         "parentId": "double-french-door",
@@ -3761,7 +3760,7 @@
       "id": "picture-frame-left-wave",
       "properties": {
         "id": "picture-frame-left-wave",
-        "label": "Picture Frame \u2014 Left Wall Wave",
+        "label": "Picture Frame — Left Wall Wave",
         "role": "picture-frame",
         "surfacePlane": "left-wall",
         "parentId": "left-wall",
@@ -3849,7 +3848,7 @@
       "id": "picture-frame-back-left-moon",
       "properties": {
         "id": "picture-frame-back-left-moon",
-        "label": "Picture Frame \u2014 Back Wall Moon",
+        "label": "Picture Frame — Back Wall Moon",
         "role": "picture-frame",
         "surfacePlane": "back-wall",
         "parentId": "back-wall",
@@ -3937,7 +3936,7 @@
       "id": "picture-frame-back-right-cat",
       "properties": {
         "id": "picture-frame-back-right-cat",
-        "label": "Picture Frame \u2014 Back Wall Cat",
+        "label": "Picture Frame — Back Wall Cat",
         "role": "picture-frame",
         "surfacePlane": "back-wall",
         "parentId": "back-wall",
@@ -4025,7 +4024,7 @@
       "id": "picture-frame-right-quote",
       "properties": {
         "id": "picture-frame-right-quote",
-        "label": "Picture Frame \u2014 Right Wall Quote",
+        "label": "Picture Frame — Right Wall Quote",
         "role": "picture-frame",
         "surfacePlane": "right-wall",
         "parentId": "right-wall",
@@ -4113,7 +4112,7 @@
       "id": "aquarium-built-in",
       "properties": {
         "id": "aquarium-built-in",
-        "label": "Built-in Aquarium \u2014 Wall-Attached Section",
+        "label": "Built-in Aquarium — Wall-Attached Section",
         "role": "aquarium",
         "surfacePlane": "left-wall",
         "parentId": "left-wall",
@@ -4206,7 +4205,7 @@
       "id": "aquarium-room-extension",
       "properties": {
         "id": "aquarium-room-extension",
-        "label": "Built-in Aquarium \u2014 Room Extension",
+        "label": "Built-in Aquarium — Room Extension",
         "role": "aquarium-extension",
         "surfacePlane": "custom-3d",
         "parentId": "aquarium-built-in",
@@ -4295,7 +4294,7 @@
       "id": "aquarium-connector-top-left",
       "properties": {
         "id": "aquarium-connector-top-left",
-        "label": "Aquarium Connector \u2014 Top Left Corner",
+        "label": "Aquarium Connector — Top Left Corner",
         "role": "aquarium-connector",
         "surfacePlane": "custom-3d",
         "parentId": "aquarium-built-in",
@@ -4407,7 +4406,7 @@
       "id": "aquarium-connector-top-right",
       "properties": {
         "id": "aquarium-connector-top-right",
-        "label": "Aquarium Connector \u2014 Top Right Corner",
+        "label": "Aquarium Connector — Top Right Corner",
         "role": "aquarium-connector",
         "surfacePlane": "custom-3d",
         "parentId": "aquarium-built-in",
@@ -4519,7 +4518,7 @@
       "id": "aquarium-connector-bottom-right",
       "properties": {
         "id": "aquarium-connector-bottom-right",
-        "label": "Aquarium Connector \u2014 Bottom Right Corner",
+        "label": "Aquarium Connector — Bottom Right Corner",
         "role": "aquarium-connector",
         "surfacePlane": "custom-3d",
         "parentId": "aquarium-built-in",
@@ -4631,7 +4630,7 @@
       "id": "aquarium-connector-bottom-left",
       "properties": {
         "id": "aquarium-connector-bottom-left",
-        "label": "Aquarium Connector \u2014 Bottom Left Corner",
+        "label": "Aquarium Connector — Bottom Left Corner",
         "role": "aquarium-connector",
         "surfacePlane": "custom-3d",
         "parentId": "aquarium-built-in",
@@ -4743,7 +4742,7 @@
       "id": "picture-iframe-left-wave",
       "properties": {
         "id": "picture-iframe-left-wave",
-        "label": "Picture Image Iframe \u2014 Left Wall",
+        "label": "Picture Image Iframe — Left Wall",
         "role": "picture-iframe",
         "surfacePlane": "left-wall",
         "parentId": "picture-frame-left-wave",
@@ -4849,7 +4848,7 @@
       "id": "picture-iframe-back-left-moon",
       "properties": {
         "id": "picture-iframe-back-left-moon",
-        "label": "Picture Image Iframe \u2014 Back Left",
+        "label": "Picture Image Iframe — Back Left",
         "role": "picture-iframe",
         "surfacePlane": "back-wall",
         "parentId": "picture-frame-back-left-moon",
@@ -4955,7 +4954,7 @@
       "id": "picture-iframe-back-right-cat",
       "properties": {
         "id": "picture-iframe-back-right-cat",
-        "label": "Picture Image Iframe \u2014 Back Right",
+        "label": "Picture Image Iframe — Back Right",
         "role": "picture-iframe",
         "surfacePlane": "back-wall",
         "parentId": "picture-frame-back-right-cat",
@@ -5061,7 +5060,7 @@
       "id": "picture-iframe-right-quote",
       "properties": {
         "id": "picture-iframe-right-quote",
-        "label": "Picture Image Iframe \u2014 Right Wall",
+        "label": "Picture Image Iframe — Right Wall",
         "role": "picture-iframe",
         "surfacePlane": "right-wall",
         "parentId": "picture-frame-right-quote",
@@ -5263,114 +5262,6 @@
               12,
               598,
               107.416
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "weather-scene-iframe",
-      "properties": {
-        "id": "weather-scene-iframe",
-        "label": "Weather Scene Iframe \u2014 Behind Entire Living Room",
-        "role": "weather-iframe",
-        "surfacePlane": "screen-background",
-        "priority": -1000,
-        "purpose": "full-room-background-iframe-for-weather-video-scenes",
-        "semanticTag": "outside-weather-scene-background",
-        "coordinateSpace": "pixel-space-1958x803",
-        "visibleInEditor": true,
-        "movementGroupId": "room-environment",
-        "lockedToViewport": true,
-        "renderOrder": "behind-all-room-geometry",
-        "styleBinding": "weather-scene",
-        "mediaBinding": {
-          "element": "iframe",
-          "contentKind": "weather-scene",
-          "sourceMode": [
-            "device-file",
-            "url",
-            "blob-url",
-            "data-url"
-          ],
-          "accept": [
-            "video/*",
-            "image/*",
-            ".html",
-            ".htm"
-          ],
-          "videoDefaults": {
-            "autoplay": true,
-            "loop": true,
-            "muted": false,
-            "playsInline": true
-          },
-          "fit": "cover",
-          "pointerEvents": "disabled-in-scene-enabled-in-editor-controls"
-        },
-        "visibilityThrough": {
-          "mode": "behind-room-visible-through-glass-openings",
-          "openingFeatureIds": [
-            "left-window-pane-1",
-            "left-window-pane-2",
-            "left-window-pane-3",
-            "left-window-pane-4",
-            "right-window-pane-1",
-            "right-window-pane-2",
-            "right-window-pane-3",
-            "right-window-pane-4",
-            "french-door-left-pane-1",
-            "french-door-left-pane-2",
-            "french-door-left-pane-3",
-            "french-door-left-pane-4",
-            "french-door-right-pane-1",
-            "french-door-right-pane-2",
-            "french-door-right-pane-3",
-            "french-door-right-pane-4"
-          ]
-        },
-        "audioBinding": {
-          "channel": "outside_weather",
-          "spatial": true,
-          "anchor": "weather-scene-iframe"
-        },
-        "defaultStyle": {
-          "fill": "#00000000",
-          "stroke": "#00CFE8",
-          "opacity": 0.0
-        },
-        "depthMinPx": 0.0,
-        "depthMaxPx": 120.0
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0,
-              0,
-              120
-            ],
-            [
-              1958,
-              0,
-              120
-            ],
-            [
-              1958,
-              803,
-              0
-            ],
-            [
-              0,
-              803,
-              0
-            ],
-            [
-              0,
-              0,
-              120
             ]
           ]
         ]

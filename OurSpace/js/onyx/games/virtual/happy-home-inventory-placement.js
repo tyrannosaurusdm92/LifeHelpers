@@ -47,10 +47,6 @@ function renderPlacementEditor(){
   q("inventoryPosX").value=Math.round(p.x);q("inventoryPosY").value=Math.round(p.y);q("inventorySizeW").value=Math.round(p.w);q("inventorySizeH").value=Math.round(p.h);
   q("inventoryRotation").value=Number(p.rotation||0);q("inventoryOpacity").value=Math.round((p.opacity??1)*100);q("inventoryPerspective").checked=p.autoPerspective!==false;
   q("inventoryPlacementName").textContent=p.name+(p.sleepingImage?" · Onyx sleeping sprite linked":"");
-  const use=ensureOnyxUseButton(),kind=p.interactiveType;
-  use.hidden=!["bowl","fountain","toy","bed"].includes(kind);
-  use.textContent=({bowl:"Onyx: eat from bowl",fountain:"Onyx: drink from fountain",toy:"Onyx: play with toy",bed:"Onyx: rest by bed"})[kind]||"Use with Onyx";
-  use.disabled=kind==="bowl"?!firstServing(p):kind==="fountain"&&p.fountainOn===false;
 }
 function updateFromFields(){
   const p=selected();if(!p)return;p.x=Number(q("inventoryPosX").value)||0;p.y=Number(q("inventoryPosY").value)||0;p.w=clamp(Number(q("inventorySizeW").value)||130,40,900);p.h=clamp(Number(q("inventorySizeH").value)||130,40,700);
@@ -119,76 +115,10 @@ function pourIntoBowl(itemId,bowlId,slotId){
   toast(item.name+" poured into "+(slot.label||"the bowl")+". The bowl is full.");
   return true;
 }
-function firstServing(p){return Object.entries(p?.contents||{}).find(([,portion])=>Number(portion?.servings)>0)||null}
-function ensureOnyxUseButton(){
-  let button=q("inventoryUseWithOnyx");if(button)return button;
-  const row=document.createElement("div");row.className="hh-actions";
-  button=document.createElement("button");button.type="button";button.id="inventoryUseWithOnyx";
-  button.addEventListener("click",()=>useWithOnyx(selectedId));row.append(button);q("inventoryPlacementEditor").append(row);
-  return button;
-}
-function liveTarget(id,valid=()=>true){
-  const coords=()=>{
-    const p=placements.find(item=>item.id===id);if(!p||!valid(p))return[NaN,NaN];
-    const spot=window.OnyxRoomSpatial?.getZone?.("onyx.dynamic."+id+".interact")?.geometry?.coordinates;
-    return Array.isArray(spot)?spot:[p.x+p.w/2,p.y+p.h*.58];
-  };
-  return {get x(){return Number(coords()[0])},get y(){return Number(coords()[1])}};
-}
-function bedReachPoint(p,bridge){
-  const world=bridge.getWorld?.(),state=bridge.getState?.(),physics=window.OnyxBasePhysics,motion=window.OnyxBaseMotion;
-  if(!world||!state||!physics)return null;
-  const cx=p.x+p.w/2,cy=p.y+p.h/2,margin=28;
-  return [{x:cx,y:p.y+p.h+margin},{x:cx,y:p.y-margin},
-    {x:p.x-margin,y:cy},{x:p.x+p.w+margin,y:cy}]
-    .filter(point=>!physics.occupied(world,point.x,point.y,0,16)&&(!motion?.planTo||motion.planTo(point.x,point.y,{cell:18}).length>0))
-    .sort((a,b)=>Math.hypot(a.x-state.x,a.y-state.y)-Math.hypot(b.x-state.x,b.y-state.y))[0]||null;
-}
-function useWithOnyx(id){
-  const p=placements.find(item=>item.id===id);if(!p)return {ok:false,reason:"object-missing"};
-  const bridge=window.OnyxHappyHomeMotion,kind=p.interactiveType;
-  const fail=reason=>toast("Onyx cannot reach "+p.name+": "+String(reason||"room not ready").replaceAll("-"," ")+".");
-  if(!bridge){fail("room not ready");return {ok:false,reason:"room-not-ready"}}
-  let waiting=false;
-  const onEnd=result=>{if(waiting&&result?.ok===false)fail(result.reason)};
-  let result;
-  if(kind==="bowl"){
-    const portion=firstServing(p);if(!portion){openPourFlow("",p.id);return {ok:false,reason:"bowl-empty"}}
-    const [slotId,food]=portion;let consumed=false;
-    result=bridge.interact("eat",liveTarget(id,current=>consumed||!!firstServing(current)),{
-      mode:"eat",onEnd,onBite(){
-        if(consumed)return;const current=placements.find(item=>item.id===id),now=current?.contents?.[slotId];
-        if(!now||now.itemId!==food.itemId||Number(now.servings)<=0)return;
-        consumed=true;now.servings=Number(now.servings)-1;if(now.servings<=0)delete current.contents[slotId];
-        save();send("upsert",{placement:current});renderPlacementEditor();
-      }
-    });
-  }else if(kind==="fountain"){
-    if(p.fountainOn===false){fail("fountain off");return {ok:false,reason:"fountain-off"}}
-    result=bridge.interact("drink",liveTarget(id,current=>current.fountainOn!==false),{mode:"drink",onEnd});
-  }else if(kind==="toy"){
-    result=bridge.interact("toy",liveTarget(id),{onEnd,onToyContact:()=>toast("Onyx caught "+p.name+".")});
-  }else if(kind==="bed"){
-    const ready=bridge.start?.();if(!ready?.ok){fail(ready?.reason);return ready||{ok:false,reason:"room-not-ready"}}
-    const point=bedReachPoint(p,bridge);
-    if(!point){fail("bed blocked");return {ok:false,reason:"bed-blocked"}}
-    const before=[p.x,p.y,p.w,p.h].join(",");
-    result=window.OnyxBaseSequences?.approach?.(point,()=>{
-      const current=placements.find(item=>item.id===id);
-      if(!current||[current.x,current.y,current.w,current.h].join(",")!==before)return {ok:false,reason:"bed moved"};
-      return bridge.action("sleep",{duration:2850,hold:true});
-    },{reachPx:50,onEnd})||{ok:false,reason:"motion-not-ready"};
-  }else return {ok:false,reason:"not-interactive"};
-  waiting=Boolean(result?.approaching);
-  if(!result?.ok)fail(result?.reason);
-  else toast("Onyx is heading toward "+p.name+".");
-  return result;
-}
 function activatePlacement(id){
   const p=placements.find(item=>item.id===id);if(!p)return;
   if(p.interactiveType==="bowl"){openPourFlow("",p.id);return}
-  if(p.interactiveType==="fountain"){p.fountainOn=p.fountainOn===false;save();send("upsert",{placement:p});renderPlacementEditor();toast(p.name+(p.fountainOn?" is running; water is rippling.":" is turned off."));return}
-  if(p.interactiveType==="toy"||p.interactiveType==="bed"){useWithOnyx(id);return}
+  if(p.interactiveType==="fountain"){p.fountainOn=p.fountainOn===false;save();send("upsert",{placement:p});toast(p.name+(p.fountainOn?" is running; water is rippling.":" is turned off."));return}
   toast(p.name+" is ready to use.");
 }
 function renderInventory(){
@@ -229,5 +159,5 @@ const storeButton=document.querySelector('.num-btn[data-system="5"]');
 storeButton?.addEventListener("click",e=>{e.preventDefault();e.stopImmediatePropagation();window.HappyHomeStore?.open?.()},true);
 frame.addEventListener("load",()=>setTimeout(sync,80));
 updateOnyxDynamic();renderInventory();renderPlacementList();
-window.HappyHomeInventoryPlacement=Object.freeze({getPlacements:()=>clone(placements),getBowlContents:id=>clone(placements.find(p=>p.id===id)?.contents||{}),sync,placeItem,storeSelected,setEditor,openPourFlow,pourIntoBowl,useWithOnyx});
+window.HappyHomeInventoryPlacement=Object.freeze({getPlacements:()=>clone(placements),getBowlContents:id=>clone(placements.find(p=>p.id===id)?.contents||{}),sync,placeItem,storeSelected,setEditor,openPourFlow,pourIntoBowl});
 })();

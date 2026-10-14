@@ -284,19 +284,3 @@ html[data-onyx-design-linked="true"] :is(.work-wallet,.work-income-toast){
 @keyframes work-wallet-earned{0%{transform:scale(1)}35%{transform:scale(1.07);background:var(--work-active);color:var(--work-active-text)}100%{transform:scale(1)}}
 @media (max-width:720px){.work-wallet{top:9px;right:58px;font-size:9px;padding:7px}.work-income-toast{top:45px;right:58px}}
 @media (prefers-reduced-motion:reduce){.work-wallet.earned{animation:none}.work-income-toast{transition:none}}
-
-/* Reserve the parent shell's top-right red close-button safe area. */
-.chat-header,.catalog-head,.settings-card>header{padding-right:74px}
-.chat-header{row-gap:8px;flex-wrap:wrap}
-.chat-header-main{flex:1 1 260px}
-.chat-actions{min-width:0;flex-wrap:wrap;justify-content:flex-end;max-width:100%}
-.chat-actions .icon-button{flex:0 0 34px}
-.catalog-head{gap:12px;flex-wrap:wrap}
-.work-wallet{top:78px;right:74px;pointer-events:none}
-.work-income-toast{top:120px;right:74px}
-@media(max-width:720px){
-  .chat-header{padding-right:74px}
-  .catalog-head{padding-right:74px}
-  .work-wallet{top:78px;right:74px}
-  .work-income-toast{top:120px;right:74px}
-}

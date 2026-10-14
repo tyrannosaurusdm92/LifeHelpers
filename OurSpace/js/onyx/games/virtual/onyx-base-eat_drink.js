@@ -3,11 +3,7 @@
    A feeding event does NOT automatically consume inventory: optional onBite callback. */
 (function(root){'use strict';
  const current=(typeof document!=='undefined'&&document.currentScript?.src)||'';
- // Original Pass15 SVGs now live in the canonical OurSpace atlas library.
- // Resolve relative to the script URL (profiles use <base href="../../">).
- const atlasDir='assets/images/games/virtual/atlases/';
- const rootPath=current?new URL('../../../../'+atlasDir,current).href:
-  (typeof document!=='undefined'?new URL(atlasDir,document.baseURI).href:atlasDir);
+ const rootPath=current?new URL('../../../../assets/images/games/virtual/atlases/onyx-base-frames/',current).href:'assets/frames/';
  const url=(mode,side,frame)=>rootPath+'onyx_'+mode+'_'+side+'_'+String(frame).padStart(2,'0')+'.svg';
  // The bowl is a live world object: food cannot be consumed once it moves,
  // falls out of reach, or becomes hidden by furniture during a held feeding.

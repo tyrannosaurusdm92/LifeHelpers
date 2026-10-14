@@ -46,7 +46,7 @@
   if(Number.isFinite(options.seed))auto.seed=options.seed>>>0;
   if(options.pace)auto.pace=options.pace==='run'?'run':'walk';auto.timeMs=0;auto.mode='idle';if(!auto.enabled&&!state.job&&!nav&&!state.command&&!state.inputX&&!state.inputY)state.moving=false;return getWander();}
  function getWander(){return {...auto};}
- function weightedPhase(elapsed,duration,weights){if(root.OnyxBaseFlipbook?.loop)return root.OnyxBaseFlipbook.loop(elapsed,duration,weights);const ws=Array.isArray(weights)&&weights.length===5?weights:[1,1,1,1,1],total=ws.reduce((a,b)=>a+Math.max(0,b),0)||5;
+ function weightedPhase(elapsed,duration,weights){const ws=Array.isArray(weights)&&weights.length===5?weights:[1,1,1,1,1],total=ws.reduce((a,b)=>a+Math.max(0,b),0)||5;
   const pct=((elapsed%duration)+duration)%duration/duration;let sum=0;
   for(let i=0;i<5;i++){sum+=Math.max(0,ws[i])/total;if(pct<sum)return i;}return 4;}
  function autonomousStep(dt){if(!auto.enabled)return false;
@@ -222,7 +222,7 @@
   return G?G.sample(state.gaitTravel,state.gaitStride||stride,state.pace):null;}
  function getState(){return {x:state.x,y:state.y,z:state.z,direction:state.direction,lastSide:state.lastSide,pace:state.pace,action:state.action,moving:state.moving,phase:state.phase,travelDistance:state.travel,mood,steering:getSteering(),gait:getGait(),navigation:nav?{target:{...nav.target},index:nav.index,total:nav.path.length,pace:nav.pace}:null,job:state.job?{id:state.job.def.id,elapsedMs:state.job.elapsedMs,durationMs:state.job.durationMs,hold:state.job.hold}:null,command:state.command?{...state.command}:null};}
  function attachCanvas(el,options={}){if(typeof el==='string'&&typeof document!=='undefined')el=document.querySelector(el);if(!el||typeof el.getContext!=='function')return {ok:false,reason:'canvas-not-found'};canvas=el;ctx=canvas.getContext('2d');if(!ctx)return {ok:false,reason:'no-2d-context'};
-  const assetBase=options.assetBase||(typeof document!=='undefined'?document.baseURI:'file:///');sprites=new S.Sprites({atlasUrl:options.atlasUrl||new URL('assets/images/games/virtual/atlases/onyx_meow_sprite_atlas.png',assetBase).href,cataiRoot:options.cataiRoot||new URL('assets/catai-black/',assetBase).href,referenceRoot:options.referenceRoot||new URL('assets/references/',assetBase).href,style:options.style||'onyx'});return {ok:true};}
+  const assetBase=options.assetBase||(typeof document!=='undefined'?document.baseURI:'file:///');sprites=new S.Sprites({atlasUrl:options.atlasUrl||new URL('assets/images/games/virtual/atlases/onyx_meow_sprite_atlas_grid64.png',assetBase).href,cataiRoot:options.cataiRoot||new URL('assets/catai-black/',assetBase).href,referenceRoot:options.referenceRoot||new URL('assets/references/',assetBase).href,style:options.style||'onyx'});return {ok:true};}
  function setSpriteStyle(style){return !!sprites&&sprites.setStyle(style);}
  function getSpriteStyle(){return sprites?.style||'onyx';}
  function render(options={}){if(!ctx||!canvas||!sprites)return false;

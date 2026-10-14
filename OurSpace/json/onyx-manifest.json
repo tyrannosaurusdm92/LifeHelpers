@@ -134,55 +134,5 @@
     "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/shared/legacy-static/onyx_purring.png",
     "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/shared/legacy-static/onyx_snuggly.png",
     "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/shared/legacy-static/onyx_sleepy.png"
-  ],
-  "onyxBaseMotionModules": {
-    "path": "js/games/virtual/",
-    "modules": [
-      "../js/games/virtual/onyx-base-runtime.js",
-      "../js/games/virtual/onyx-base-curl_ball.js",
-      "../js/games/virtual/onyx-base-eat_drink.js",
-      "../js/games/virtual/onyx-base-jump_across.js",
-      "../js/games/virtual/onyx-base-jump_down.js",
-      "../js/games/virtual/onyx-base-jump_up.js",
-      "../js/games/virtual/onyx-base-loaf.js",
-      "../js/games/virtual/onyx-base-lounge.js",
-      "../js/games/virtual/onyx-base-move_east.js",
-      "../js/games/virtual/onyx-base-move_north.js",
-      "../js/games/virtual/onyx-base-move_north_east.js",
-      "../js/games/virtual/onyx-base-move_north_west.js",
-      "../js/games/virtual/onyx-base-move_south.js",
-      "../js/games/virtual/onyx-base-move_south_east.js",
-      "../js/games/virtual/onyx-base-move_south_west.js",
-      "../js/games/virtual/onyx-base-move_west.js",
-      "../js/games/virtual/onyx-base-play_hunt.js",
-      "../js/games/virtual/onyx-base-sleep.js",
-      "../js/games/virtual/onyx-base-stretch.js"
-    ],
-    "actionModuleCount": 18,
-    "runtimeFileCount": 1,
-    "adoptedFrom": "Trap the Cat six-way directional cycles and shortest traversable route planning; OurSpace native renderer and poses",
-    "visualFallbacks": true
-  },
-  "onyxFeedingFrames": {
-    "frameCount": 12,
-    "location": "assets/images/games/virtual/atlases/",
-    "logicalSize": [
-      64,
-      64
-    ],
-    "normalizedAssets": [
-      "assets/images/games/virtual/atlases/onyx_drink_left_01.svg",
-      "assets/images/games/virtual/atlases/onyx_drink_left_02.svg",
-      "assets/images/games/virtual/atlases/onyx_drink_left_03.svg",
-      "assets/images/games/virtual/atlases/onyx_drink_right_01.svg",
-      "assets/images/games/virtual/atlases/onyx_drink_right_02.svg",
-      "assets/images/games/virtual/atlases/onyx_drink_right_03.svg",
-      "assets/images/games/virtual/atlases/onyx_eat_left_01.svg",
-      "assets/images/games/virtual/atlases/onyx_eat_left_02.svg",
-      "assets/images/games/virtual/atlases/onyx_eat_left_03.svg",
-      "assets/images/games/virtual/atlases/onyx_eat_right_01.svg",
-      "assets/images/games/virtual/atlases/onyx_eat_right_02.svg",
-      "assets/images/games/virtual/atlases/onyx_eat_right_03.svg"
-    ]
-  }
+  ]
 }

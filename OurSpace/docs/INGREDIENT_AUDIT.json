@@ -1,0 +1,60 @@
+{
+  "canonicalIngredientRecords": 230,
+  "uniqueCanonicalIds": 230,
+  "sourceCounts": {
+    "fusion": 230,
+    "pass23": 230,
+    "pass25": 230
+  },
+  "missingFromCanonical": {
+    "fusion": [],
+    "pass23": [],
+    "pass25": []
+  },
+  "pass26SeafoodIds": [
+    "anchovies",
+    "bass_whole",
+    "catfish_whole",
+    "clams",
+    "crab_whole",
+    "flounder_whole",
+    "herring_whole",
+    "lobster_whole",
+    "mackerel_whole",
+    "mussels",
+    "oysters",
+    "perch_whole",
+    "salmon",
+    "sardines",
+    "scallops_raw",
+    "shrimp",
+    "squid_whole",
+    "trout_whole",
+    "tuna_whole"
+  ],
+  "pass26OnlyIdentityHandledAsAlias": {
+    "tuna_whole": "tuna_counter_whole"
+  },
+  "canonicalArtworkFiles": 219,
+  "ingredientArtworkAliases": {
+    "bass_counter_whole": "bass_whole.svg",
+    "crab_legs_raw_counter": "crab_whole.svg",
+    "crab_whole_counter": "crab_whole.svg",
+    "extra_fancy_tuna": "tuna_counter_whole.svg",
+    "jumbo_shrimp": "shrimp_shell_on_counter.svg",
+    "lobster_medallions": "lobster_whole.svg",
+    "lobster_whole_counter": "lobster_whole.svg",
+    "perch_counter_whole": "perch_whole.svg",
+    "salmon_counter_whole": "salmon.svg",
+    "squid_counter_whole": "squid_whole.svg",
+    "trout_counter_whole": "trout_whole.svg"
+  },
+  "missingAssetRecords": [],
+  "pass3Validation": {
+    "canonicalIngredientRecords": 230,
+    "uniqueCanonicalIds": 230,
+    "missingAssetRecords": [],
+    "uniqueReferencedArtworkPayloads": 219,
+    "note": "Pass 3 game-shell, booster, controller, and cat-audio work did not remove or add canonical ingredient identities."
+  }
+}

@@ -10,7 +10,7 @@
  function at(dir,side,row,phase){const view=artView(dir,side),col=SIX.indexOf(view)*5+((Math.floor(phase)%5)+5)%5;return {sx:col*64,sy:row*64,sw:64,sh:64,col,row,authoredView:view,requestedDirection:dir,approximate:dir==='north'||dir==='south'};}
  class Sprites{
   constructor(options={}){
-   this.path=options.atlasUrl||'assets/images/games/virtual/atlases/onyx_meow_sprite_atlas.png';this.cataiRoot=options.cataiRoot||'assets/catai-black/';this.referenceRoot=options.referenceRoot||'assets/references/';
+   this.path=options.atlasUrl||'assets/onyx_meow_sprite_atlas_grid64.png';this.cataiRoot=options.cataiRoot||'assets/catai-black/';this.referenceRoot=options.referenceRoot||'assets/references/';
    this.style=ALLOWED.includes(options.style)?options.style:'onyx';this.cache=new Map();this.pending=new Map();this.atlas=null;
    this.atlasReady=this.load(this.path).then(im=>{this.atlas=im;return im});
   }
@@ -42,9 +42,9 @@
   draw(ctx,s,x,y,scale=2){if(!ctx)return false;ctx.imageSmoothingEnabled=false;
    // Default Onyx atlas and its 12 carefully normalized left/right feeding frames.
    if(this.style==='onyx'||s.kind==='feeding_svg'&&this.style==='onyx'){
-    if(s.kind==='feeding_svg'){const im=this.cached(s.url);if(im){ctx.drawImage(im,x-32*scale,y-58*scale,64*scale,64*scale);return true;}/* Never turn invisible while feeding SVG is loading. */const base=this.atlas;if(!base)return false;const a=at(s.direction,s.side,ROWS.feed,s.phase??0);ctx.drawImage(base,a.sx,a.sy,Math.min(64,base.width-a.sx),64,x-32*scale,y-58*scale,64*scale,64*scale);return true;}
+    if(s.kind==='feeding_svg'){const im=this.cached(s.url);if(im){ctx.drawImage(im,x-32*scale,y-58*scale,64*scale,64*scale);return true;}/* Never turn invisible while feeding SVG is loading. */const base=this.atlas;if(!base)return false;const a=at(s.direction,s.side,ROWS.feed,s.phase??0);ctx.drawImage(base,a.sx,a.sy,64,64,x-32*scale,y-58*scale,64*scale,64*scale);return true;}
     const im=this.atlas;if(!im)return false;const a=at(s.direction,s.side,s.row??0,s.phase??0);
-    ctx.drawImage(im,a.sx,a.sy,Math.min(64,im.width-a.sx),64,x-32*scale,y-58*scale,64*scale,64*scale);return true;
+    ctx.drawImage(im,a.sx,a.sy,64,64,x-32*scale,y-58*scale,64*scale,64*scale);return true;
    }
    if(this.style==='catai'){
     const sprite={...s};if(sprite.kind==='feeding_svg'){sprite.kind='feed';sprite.mode=s.mode;}

@@ -992,10 +992,6 @@ function renderCat(now=performance.now()){
   return;
  }
  const seq=currentSequence(now);let phaseIndex;
- const feedVisual=window.OnyxBaseFeedingVisual;
- // The new 640px SVGs are calibrated to the same 64x64 sprite slot.
- // Draw only for an explicitly requested eat/drink action; other 'primary' actions remain unchanged.
- if(feedVisual?.renderToCanvas?.({ctx:spriteCtx,canvas:spriteCanvas,now,action:cat.visualAction,dir:cat.dir}))return;
  if(cat.action!=="idle"&&cat.actionDuration>0&&cat.actionUntil!==Infinity){
   const p=clamp((now-cat.actionStart)/cat.actionDuration,0,.999999);phaseIndex=seq[Math.min(seq.length-1,Math.floor(p*seq.length))];
  }else if(cat.action!=="idle"&&cat.actionUntil===Infinity){

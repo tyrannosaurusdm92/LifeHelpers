@@ -1,0 +1,40 @@
+{
+  "format": "PerspectivePolygonScannerAssetManifest",
+  "version": 1,
+  "embeddedImage": {
+    "name": "embedded_room.png",
+    "path": "assets/images/games/virtual/room/embedded_room.png",
+    "width": 1916,
+    "height": 821
+  },
+  "roomSvgAssets": [
+    "assets/images/games/virtual/room/Interactive_Ceiling_Fan_GeoJSON_Embedded.svg",
+    "assets/images/games/virtual/room/Interactive_Floor_Lamp_Black_Post_GeoJSON_Embedded_CORRECTED.svg",
+    "assets/images/games/virtual/room/perspective_rug.svg",
+    "assets/images/games/virtual/room/potted_plant.svg",
+    "assets/images/games/virtual/room/sectional_couch.svg",
+    "assets/images/games/virtual/room/white_curtain.svg"
+  ],
+  "fishSvgAssets": [
+    "assets/images/games/virtual/room/amber_tetra.svg",
+    "assets/images/games/virtual/room/goldfish.svg",
+    "assets/images/games/virtual/room/mixed_fish_school.svg",
+    "assets/images/games/virtual/room/neon_tetra.svg"
+  ],
+  "audio": {
+    "sourceToggleRecording": "assets/audio/games/virtual/room/ac-toggle.mp3",
+    "onClip": "assets/audio/games/virtual/room/ac-on.mp3",
+    "offClip": "assets/audio/games/virtual/room/ac-off.mp3",
+    "runningLoop": "assets/audio/games/virtual/room/ac-running.mp3"
+  },
+  "lockedScene": "json/happy-home/locked_scene.json",
+  "editingPolicy": {
+    "fixedScene": "locked",
+    "editableGeometry": "scanner-created GeoJSON surfaces only",
+    "interactiveExceptions": [
+      "interactive SVG iframe contents",
+      "CSS AC switch",
+      "click-to-fill picture frames"
+    ]
+  }
+}

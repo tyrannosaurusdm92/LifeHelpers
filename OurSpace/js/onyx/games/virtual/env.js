@@ -11,6 +11,7 @@
  let active=false,raf=0,last=performance.now(),x=.52,y=.55,goalX=.52,goalY=.55,nextGoal=0,currentTone='pet',chatting=false;
  let moveTask='',forcedFacing='forward',manualUntil=0,visible=true,externalControlActive=false;
  let activeForm='quadruped',quadrupedMove=null,quadrupedCycle=0,currentCouchSpot='',bipedSize=96,roomUi=null;
+ let baseMotion=null,baseMotionReady=false,baseMotionWorldKey='',baseMotionWander=false,motionSteppedThisTick=false,quadrupedAutonomyEnabled=false,adminMovementInput=null,adminWanderOverride=null,lastQuadrupedMotion='';
  let bipedGaitDistancePx=0,bipedGaitSpeedPxPerSec=0,bipedGaitLastX=.52,bipedGaitLastY=.55,bipedGaitLastAt=0,bipedMoveStartDistance=1,bipedSeatTargetSize=450;
  let workflow='stopped',workflowAt=0,lastUserActivityAt=0,awaitingPraise=false,previousMood='caring';
  let fishState={counts:{goldfish:0,'neon tetra':0,'amber tetra':0},history:[],nextCatchAt:Date.now()+FISH_CATCH_INTERVAL_MS};
@@ -26,7 +27,6 @@
  function quadrupedApi(){return shellWindow()?.OnyxImperialExpedition||null}
  function personalityApi(){return shellWindow()?.OnyxPersonalityEngine||null}
  function spatialApi(){return shellWindow()?.OnyxRoomSpatial||null}
- function motionBridge(){return window.OnyxHappyHomeMotion||shellWindow()?.OnyxHappyHomeMotion||null}
  function roomScale(){const api=spatialApi(),room=frame()?.contentDocument?.getElementById('viewerScreen');return Math.max(.01,(room?.clientHeight||api?.H||821)/(api?.H||821))}
  function pointForFeature(id){try{const f=spatialApi()?.getZone?.(id),g=f?.geometry,p=f?.properties||{};if(g?.type==='Point'&&Array.isArray(g.coordinates))return{x:Number(g.coordinates[0]),y:Number(g.coordinates[1]),properties:p};if(g?.type==='Polygon'){const ring=g.coordinates?.[0]||[];if(ring.length){const pts=ring.slice(0,-1);return{x:pts.reduce((a,v)=>a+v[0],0)/pts.length,y:pts.reduce((a,v)=>a+v[1],0)/pts.length,properties:p}}}}catch(_){}return null}
  function worldSizeAtY(worldY,explicit=0){const api=spatialApi(),base=Number(explicit)||Number(api?.spriteSizeAtY?.(worldY))||64;return base*roomScale()}
@@ -68,7 +68,7 @@
  }
  function showFishNotice(species){
    const ui=ensureRoomVisuals();if(!ui)return;const id=String(species||'goldfish'),asset=id==='neon tetra'?'neon_tetra.svg':id==='amber tetra'?'amber_tetra.svg':'goldfish.svg';
-   ui.noticeImage.src='https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room/'+asset;ui.noticeText.textContent='Caught '+id+' · collection '+Number(fishState.counts[id]||0);ui.notice.hidden=false;
+   ui.noticeImage.src='https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/room'+asset;ui.noticeText.textContent='Caught '+id+' · collection '+Number(fishState.counts[id]||0);ui.notice.hidden=false;
  }
  function recordFishCatch(){
    const species=FISH_SPECIES[Math.min(FISH_SPECIES.length-1,Math.floor(Math.random()*FISH_SPECIES.length))];
@@ -81,7 +81,7 @@
    if(!active||activeForm!=='quadruped')return false;
    const spot=pointForFeature('onyx.basking.ac-rest'),api=quadrupedApi(),spatial=spatialApi();if(!spot||!api||!spatial)return false;
    if(currentCouchSpot&&currentCouchSpot!=='onyx.basking.ac-rest')return false;
-   x=goalX=spot.x/(spatial.W||1916);y=goalY=spot.y/(spatial.H||821);api.setSafePoint?.(true);api.setCatPosition?.(x,y);
+   x=goalX=spot.x/(spatial.W||1916);y=goalY=spot.y/(spatial.H||821);api.setSafePoint?.(true);api.setCatPosition?.(x,y);placeBaseMotionAtCurrentPosition(true);
    currentCouchSpot='onyx.basking.ac-rest';setQuadrupedSizeAtWorldY(spot.y,spot.properties?.targetSpriteSize||64);api.performCatAction?.('loaf',{duration:900,hold:true});updateRoomAppliances();return true;
  }
  function isHungryMode(){
@@ -133,17 +133,18 @@
    if(q){[q.actor,q.visual,q.canvas].forEach(el=>{if(!el)return;el.hidden=!showQuadruped;el.setAttribute('aria-hidden',String(!showQuadruped))});q.actor.style.display=showQuadruped?'block':'none';q.actor.dataset.catHookOnly=String(!showQuadruped);if(showQuadruped)q.actor.setAttribute('aria-label','Full-body quadruped Onyx')}
    return s.inside;
  }
- function setForm(form){activeForm=form==='quadruped'?'quadruped':'biped';refreshMount();return activeForm}
+ function setForm(form){const next=form==='quadruped'?'quadruped':'biped';if(next!==activeForm){activeForm=next;baseMotionWorldKey='';refreshMount();if(baseMotionReady){configureBaseMotionWorld(true);placeBaseMotionAtCurrentPosition(true)}}return activeForm}
  function setTone(next){if(next!=='work'&&next!=='pet')return;currentTone=next;if(tone){tone.dataset.tone=next;tone.textContent=next==='work'?'WORK / PROFESSOR TONE':'PET / COMPANION TONE'}slow?.setAttribute('data-conversation-tone',next)}
  function inferTone(text){const s=String(text||'');if(workRx.test(s))return'work';if(petRx.test(s))return'pet';return currentTone}
  function markControlled(ms=CONTROL_GRACE_MS){manualUntil=Math.max(manualUntil,performance.now()+Math.max(250,Number(ms)||CONTROL_GRACE_MS))}
  function isControlled(t=performance.now()){return chatting||externalControlActive||!!moveTask||!!quadrupedMove||t<manualUntil}
  function setControlActive(v){externalControlActive=!!v;noteUserActivity();markControlled(externalControlActive?2600:500);return externalControlActive}
- function setQuadAutonomy(on){try{personalityApi()?.setAutonomy?.(Boolean(on))}catch(_){}}
+ function setQuadAutonomy(on){quadrupedAutonomyEnabled=Boolean(on);try{personalityApi()?.setAutonomy?.(quadrupedAutonomyEnabled)}catch(_){}}
  function setQuadMood(mood,reason='Botanical Garden state'){
    const chosen=QUAD_MOODS.includes(mood)?mood:'caring';previousMood=chosen;
    try{quadrupedApi()?.setBehavior?.(chosen)}catch(_){ }
    try{personalityApi()?.setMood?.(chosen,reason)}catch(_){ }
+   try{const profiles=window.OnyxBaseProfiles||{};baseMotion?.setMood?.(Object.prototype.hasOwnProperty.call(profiles,chosen)?chosen:'base_cat')}catch(_){ }
    return chosen;
  }
  function setWidgetMood(mood){
@@ -168,6 +169,110 @@
     forcedFacing=views[octant]||forcedFacing;
     return forcedFacing;
   }
+ function baseMotionRoomSize(){const room=spatialApi();return{width:Math.max(320,Number(room?.W)||1916),height:Math.max(240,Number(room?.H)||821)}}
+ function baseMotionObstacles(){
+   if(activeForm!=='quadruped')return[];
+   const features=spatialApi()?.dynamicFeatures||[];
+   return features.filter(f=>f?.properties?.role==='placed-furniture'&&f.geometry?.type==='Polygon').map(f=>{
+     const ring=f.geometry.coordinates?.[0]||[],xs=ring.map(p=>Number(p?.[0])).filter(Number.isFinite),ys=ring.map(p=>Number(p?.[1])).filter(Number.isFinite);
+     if(!xs.length||!ys.length)return null;const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+     return{x:minX-14,y:minY-14,w:maxX-minX+28,h:maxY-minY+28,height:1,label:f.properties?.label||f.properties?.id||'placed furniture'};
+   }).filter(Boolean);
+ }
+ function configureBaseMotionWorld(force=false){
+   const motion=baseMotion||window.OnyxBaseMotion;if(!motion)return false;const size=baseMotionRoomSize(),obstacles=baseMotionObstacles();
+   const key=JSON.stringify([activeForm,size.width,size.height,obstacles]);if(!force&&key===baseMotionWorldKey)return true;
+   motion.setWorld({width:size.width,height:size.height,obstacles,canOccupy:(px,py)=>{
+     if(px<size.width*.045||px>size.width*.955||py<size.height*.11||py>size.height*.93)return false;
+     const spatial=spatialApi();return activeForm!=='quadruped'||!spatial?.canWalkPoint||spatial.canWalkPoint(px,py);
+   }});baseMotionWorldKey=key;return true;
+ }
+ function safeQuadrupedPosition(nx,ny){
+   const size=baseMotionRoomSize(),spatial=spatialApi(),valid=(x,y)=>x>=.045&&x<=.955&&y>=.11&&y<=.93&&(!spatial?.canWalkPoint||spatial.canWalkPoint(x*size.width,y*size.height));
+   if(valid(nx,ny))return{x:nx,y:ny};
+   const ac=pointForFeature('onyx.basking.ac-rest');if(ac&&valid(ac.x/size.width,ac.y/size.height))return{x:ac.x/size.width,y:ac.y/size.height};
+   for(let r=.025;r<=.5;r+=.025)for(let a=0;a<Math.PI*2;a+=Math.PI/8){const x=nx+Math.cos(a)*r,y=ny+Math.sin(a)*r;if(valid(x,y))return{x,y}}
+   return{x:.72,y:.70};
+ }
+ function ensureBaseMotion(){
+   const motion=window.OnyxBaseMotion;if(!motion)return null;baseMotion=motion;configureBaseMotionWorld();
+   if(!baseMotionReady){let px=x,py=y;if(activeForm==='quadruped'){const safe=safeQuadrupedPosition(x,y);x=goalX=safe.x;y=goalY=safe.y;px=x;py=y}
+     const size=baseMotionRoomSize();let result=motion.setPosition(px*size.width,py*size.height);
+     if(!result?.ok){const ac=pointForFeature('onyx.basking.ac-rest');const fallback=ac?{x:ac.x/size.width,y:ac.y/size.height}:{x:.72,y:.70};x=goalX=fallback.x;y=goalY=fallback.y;result=motion.setPosition(x*size.width,y*size.height)}
+     if(!result?.ok)return null;baseMotionReady=true;
+     const mood=personalityApi()?.getState?.().currentMood||previousMood||'base_cat',profiles=window.OnyxBaseProfiles||{};motion.setMood(Object.prototype.hasOwnProperty.call(profiles,mood)?mood:'base_cat');
+   }
+   return motion;
+ }
+ function placeBaseMotionAtCurrentPosition(force=false){
+   const motion=ensureBaseMotion();if(!motion)return false;configureBaseMotionWorld();const size=baseMotionRoomSize();
+   if(activeForm==='quadruped'){const safe=safeQuadrupedPosition(x,y);if(Math.hypot((safe.x-x)*size.width,(safe.y-y)*size.height)>1){x=goalX=safe.x;y=goalY=safe.y;quadrupedApi()?.setCatPosition?.(x,y)}}
+   const state=motion.getState?.();if(force||!state||Math.hypot(state.x-x*size.width,state.y-y*size.height)>40){const result=motion.setPosition(x*size.width,y*size.height);return result?.ok===true}return true;
+ }
+ function setBaseMotionWander(enabled){
+   const motion=ensureBaseMotion();if(!motion)return false;const next=Boolean(enabled),current=motion.getWander?.()?.enabled===true;
+   if(current!==next){motion.setWander({enabled:next,pace:'walk',minIdleMs:2600,maxIdleMs:6500,minWalkMs:1100,maxWalkMs:3600});baseMotionWander=next}
+   return next;
+ }
+ const BASE_MOTION_DIRECTIONS={east:[1,0],south_east:[1,1],south:[0,1],south_west:[-1,1],west:[-1,0],north_west:[-1,-1],north:[0,-1],north_east:[1,-1]};
+ function syncBaseMotionActor(){
+   const motion=ensureBaseMotion();if(!motion)return false;const state=motion.getState?.(),frame=motion.getFrame?.();if(!state)return false;
+   const size=baseMotionRoomSize(),nextX=clamp(state.x/size.width,.045,.955),nextY=clamp(state.y/size.height,.11,.93);
+   const travelled=Math.hypot((nextX-x)*size.width,(nextY-y)*size.height);x=nextX;y=nextY;
+   if(activeForm==='quadruped'){
+     const q=quadrupedApi();q?.setCatPosition?.(x,y);
+     const vector=BASE_MOTION_DIRECTIONS[state.direction];if(vector)q?.faceVector?.(vector[0],vector[1]);
+     if(state.moving||state.job){const cat=q?.getState?.()?.cat,dir=Number.isFinite(cat?.dir)?cat.dir:0,action=state.moving?state.pace:(frame?.action||state.action||'idle');q?.setSpriteFrame?.(dir,Math.max(0,Math.floor(Number(frame?.phase)||0)),action);lastQuadrupedMotion=state.moving?state.pace:''}
+     else if(lastQuadrupedMotion){const catAction=q?.getState?.()?.cat?.action;if(catAction==='idle'||catAction===lastQuadrupedMotion)q?.performCatAction?.('idle',{duration:400});lastQuadrupedMotion=''}
+   }
+   if(state.moving){const facingVector=BASE_MOTION_DIRECTIONS[state.direction];if(facingVector)forcedFacing=facingFromVector(facingVector[0],facingVector[1])}
+   return true;
+ }
+ function stepBaseMotionVector(dx,dy,dt,pace='walk'){
+   const motion=ensureBaseMotion();if(!motion)return false;configureBaseMotionWorld();setBaseMotionWander(false);const size=baseMotionRoomSize();
+   motion.setInput(Number(dx)*size.width,Number(dy)*size.height,{pace:pace==='run'?'run':'walk'});motion.step(Math.min(.25,Math.max(0,Number(dt)||0)));motionSteppedThisTick=true;syncBaseMotionActor();return true;
+ }
+ function stepBaseMotionToward(targetX,targetY,dt,pace='walk'){
+   const size=baseMotionRoomSize(),dx=Number(targetX)-x,dy=Number(targetY)-y;
+   if(Math.hypot(dx*size.width,dy*size.height)<4){const motion=ensureBaseMotion();if(motion){motion.setInput(0,0);motion.step(Math.max(0,Number(dt)||0));motionSteppedThisTick=true;syncBaseMotionActor()}return true}
+   return stepBaseMotionVector(dx,dy,dt,pace);
+ }
+ function baseMotionAutonomyWanted(now=performance.now()){
+   if(adminWanderOverride===false)return false;
+   if(chatting||externalControlActive||adminMovementInput||moveTask||quadrupedMove)return false;
+   if(adminWanderOverride===true)return true;
+   if(isControlled(now))return false;
+   if(activeForm==='biped'&&actorApi()?.getState?.().mode!=='quadruped')return false;
+   return workflow==='autonomous'&&(activeForm!=='quadruped'||quadrupedAutonomyEnabled);
+ }
+ function setAdminMovement(dx,dy,pace='walk'){
+   if(!active)start();const x=Number(dx),y=Number(dy);if(!Number.isFinite(x)||!Number.isFinite(y)||(!x&&!y))return false;
+   adminMovementInput={x,y,pace:pace==='run'?'run':'walk'};adminWanderOverride=false;moveTask='';quadrupedMove=null;externalControlActive=true;noteUserActivity();markControlled(1200);setBaseMotionWander(false);return true;
+ }
+ function stopAdminMovement(){adminMovementInput=null;externalControlActive=false;markControlled(500);const motion=ensureBaseMotion();motion?.setInput?.(0,0);if(activeForm==='quadruped'&&lastQuadrupedMotion){quadrupedApi()?.performCatAction?.('idle',{duration:400});lastQuadrupedMotion=''}return true}
+ function releaseAdminMovement(){adminMovementInput=null;adminWanderOverride=null;externalControlActive=false;const motion=ensureBaseMotion();motion?.setInput?.(0,0);markControlled(300);return true}
+ function setAdminAutonomy(enabled){
+   if(!active)start();adminWanderOverride=Boolean(enabled);adminMovementInput=null;externalControlActive=false;moveTask='';quadrupedMove=null;
+   if(enabled){workflow='autonomous';quadrupedAutonomyEnabled=true;try{personalityApi()?.setAutonomy?.(true)}catch(_){ }manualUntil=0;setBaseMotionWander(true)}
+   else{quadrupedAutonomyEnabled=false;try{personalityApi()?.setAutonomy?.(false)}catch(_){ }setBaseMotionWander(false);baseMotion?.setInput?.(0,0)}
+   return adminWanderOverride;
+ }
+ function setAdminMotionForm(form){
+   if(!active)start();if(form==='quadruped')return activateQuadruped();
+   if(activeForm==='quadruped')activateBiped();else setForm('biped');setBaseMotionWander(false);placeBaseMotionAtCurrentPosition(true);return true;
+ }
+ function performAdminMotionAction(name){
+   if(!active)start();const motion=ensureBaseMotion();if(!motion)return{ok:false,reason:'movement-runtime-unavailable'};
+   const id=String(name||'').trim();if(!id||id.startsWith('move_'))return{ok:false,reason:'unknown-action',name:id};
+   adminMovementInput=null;setBaseMotionWander(false);motion.setInput(0,0);const result=motion.perform(id,{durationMs:1100});
+   if(result?.ok&&activeForm==='quadruped'){
+     const aliases={jump_up:'jump',jump_down:'jump',jump_across:'jump',play_hunt:'play',eat_drink:'primary'};const action=aliases[id]||id,actions=quadrupedApi()?.getSpriteAtlasMeta?.()?.actions||[];
+     if(actions.includes(action))quadrupedApi()?.performCatAction?.(action,{duration:result.durationMs||900});
+   }
+   return result;
+ }
+ function getMovementState(){const motion=baseMotion||window.OnyxBaseMotion;return{available:Boolean(motion),version:motion?.version||null,form:activeForm,x,y,autonomous:motion?.getWander?.()?.enabled===true,state:motion?.getState?.()||null,actions:motion?.list?.().filter(id=>!id.startsWith('move_'))||[]}}
+ 
  function syncPositionFromQuadruped(){if(activeForm!=='quadruped')return;const p=quadrupedApi()?.getState?.()?.cat;if(p&&Number.isFinite(p.x)&&Number.isFinite(p.y)){x=p.x;y=p.y;goalX=x;goalY=y}}
  function activateBiped(){
    const fromQuadruped=activeForm==='quadruped';
@@ -196,7 +301,7 @@
    const state=api.getState?.()?.cat||{},fromX=Number.isFinite(state.x)?state.x:x,fromY=Number.isFinite(state.y)?state.y:y;
    const targetSize=Number(spot.actorSize)||worldSizeAtY(spot.y*(spatialApi()?.H||821));
    const points=makeRoomPath({...spot,actorSize:targetSize},fromX,fromY,options),length=points.reduce((sum,p,i)=>i?sum+Math.hypot((p.x-points[i-1].x)*(spatialApi()?.W||1916),(p.y-points[i-1].y)*(spatialApi()?.H||821)):sum,0);
-   quadrupedMove={spot:{...spot,actorSize:targetSize},points,index:1,stage:'walk',startedAt:performance.now(),startX:fromX,startY:fromY,startSize:worldSizeAtY(fromY*(spatialApi()?.H||821))/roomScale(),targetSize:targetSize/roomScale(),distance:0,totalDistance:Math.max(1,length),autonomousCatch:Boolean(options.autonomousCatch),isAquarium:options.autonomousCatch||String(spot.id||'').includes('aquarium'),jumpStart:0,landingUntil:0};
+   quadrupedMove={spot:{...spot,actorSize:targetSize},points,index:1,stage:'walk',startX:fromX,startY:fromY,startSize:worldSizeAtY(fromY*(spatialApi()?.H||821))/roomScale(),targetSize:targetSize/roomScale(),distance:0,totalDistance:Math.max(1,length),autonomousCatch:Boolean(options.autonomousCatch),isAquarium:options.autonomousCatch||String(spot.id||'').includes('aquarium'),jumpStart:0,landingUntil:0};
    currentCouchSpot=spot.id;moveTask=quadrupedMove.autonomousCatch?'aquarium-catch':'couch-rest';api.performCatAction?.('walk',{duration:900,hold:true});setQuadrupedSizeAtWorldY(fromY*(spatialApi()?.H||821));if(!quadrupedMove.autonomousCatch)markControlled(12000);return true;
  }
  function finishQuadrupedMove(now=performance.now()){
@@ -212,16 +317,9 @@
      const dest=m.points[Math.min(m.index,m.points.length-1)],dx=(dest.x-px)*(spatialApi()?.W||1916),dy=(dest.y-py)*(spatialApi()?.H||821),d=Math.hypot(dx,dy),step=220*dt;
      if(d<=Math.max(3,step)){api.setCatPosition?.(dest.x,dest.y);m.distance+=d;m.index++}
      else{const f=step/d,nx=px+(dest.x-px)*f,ny=py+(dest.y-py)*f;api.setCatPosition?.(nx,ny);m.distance+=step}
-     // Eight-way travel direction and five-frame walk, adapted from Trap the Cat's
-      // directional cycles; native renderer remains authoritative for the sprite.
-      const baseMotion=shellWindow()?.OnyxBaseMotion;
-      const heading=baseMotion?.heading(dx,dy,{mode:'walk',elapsedMs:now-m.startedAt});
-      if(heading&&typeof api.setSpriteFrame==='function')api.setSpriteFrame(heading.legacyDirection,heading.frame.index,'walk');
-      const progress=Math.min(1,m.distance/m.totalDistance),semanticSize=m.startSize+(m.targetSize-m.startSize)*progress;
+     const progress=Math.min(1,m.distance/m.totalDistance),semanticSize=m.startSize+(m.targetSize-m.startSize)*progress;
      x=px;y=py;setQuadrupedSize(Math.max(1,semanticSize*roomScale()));
-     if(m.index>=m.points.length){const p=api.getState?.()?.cat||{};m.jumpFrom={x:Number(p.x)||dest.x,y:Number(p.y)||dest.y};m.stage='jump';m.jumpStart=now;
-       const jumpName=m.spot.id==='onyx.basking.ac-rest'?'jump_down':(m.isAquarium||String(m.spot.id||'').includes('couch'))?'jump_up':'jump_across';
-       if(!shellWindow()?.OnyxBaseMotion?.perform?.(jumpName,{duration:520})?.ok)api.performCatAction?.('jump',{duration:520})}
+     if(m.index>=m.points.length){const p=api.getState?.()?.cat||{};m.jumpFrom={x:Number(p.x)||dest.x,y:Number(p.y)||dest.y};m.stage='jump';m.jumpStart=now;api.performCatAction?.('jump',{duration:520})}
    }else if(m.stage==='jump'){
      const p=Math.min(1,(now-m.jumpStart)/520),nx=m.jumpFrom.x+(m.spot.x-m.jumpFrom.x)*p,ny=m.jumpFrom.y+(m.spot.y-m.jumpFrom.y)*p;api.setCatPosition?.(nx,ny);
      const semanticSize=m.startSize+(m.targetSize-m.startSize)*p;setQuadrupedSize(Math.max(1,semanticSize*roomScale()));x=nx;y=ny;
@@ -338,7 +436,7 @@
  function render(now){
    const surface=shellSurface();if(activeForm==='quadruped'){refreshMount();return}
    const api=actorApi();if(!api?.render||!surface.canvas)return;
-   const moving=!!moveTask&&Math.hypot(goalX-x,goalY-y)>.008;const facing=moving?facingFromVector(goalX-x,goalY-y):forcedFacing;
+   const motionState=(baseMotion||window.OnyxBaseMotion)?.getState?.(),motionVector=BASE_MOTION_DIRECTIONS[motionState?.direction],moving=!!motionState?.moving||!!moveTask&&Math.hypot(goalX-x,goalY-y)>.008;const facing=motionState?.moving&&motionVector?facingFromVector(motionVector[0],motionVector[1]):moving?facingFromVector(goalX-x,goalY-y):forcedFacing;
    const room=frame()?.contentDocument?.getElementById('viewerScreen'),width=Math.max(1,room?.clientWidth||1915),height=Math.max(1,room?.clientHeight||647);
    const sampleSeconds=bipedGaitLastAt>0?Math.max(0,(now-bipedGaitLastAt)/1000):0;
    const traveledPx=Math.hypot((x-bipedGaitLastX)*width,(y-bipedGaitLastY)*height);
@@ -377,32 +475,34 @@
    if((workflow==='seated-professor'||workflow==='settling-on-couch'||workflow==='manual-sit-settling')&&lastUserActivityAt&&now-lastUserActivityAt>USER_IDLE_MS)startIdleExit(now);
    if(activeForm==='quadruped'&&!quadrupedMove){syncPositionFromQuadruped();const state=quadrupedApi()?.getState?.()?.cat;if(state&&Number.isFinite(state.y))setQuadrupedSizeAtWorldY(state.y*(spatialApi()?.H||821))}
    updateRoomAppliances();
+   motionSteppedThisTick=false;
+   if(adminMovementInput){setBaseMotionWander(false);stepBaseMotionVector(adminMovementInput.x,adminMovementInput.y,dt,adminMovementInput.pace);advanceWorkflow(now);render(now);raf=requestAnimationFrame(tick);return}
    if(quadrupedMove){advanceQuadrupedMove(now,dt);advanceWorkflow(now);render(now);raf=requestAnimationFrame(tick);return}
    let dx=goalX-x,dy=goalY-y,m=Math.hypot(dx,dy),actorMode=actorApi()?.getState?.().mode||'quadruped';
    if((moveTask==='walk-to'||moveTask==='walk-away'||moveTask==='sit-to-couch')&&actorMode==='standing'){
-     if(m>.008){const speed=.115;x+=dx/m*speed*dt;y+=dy/m*speed*dt;forcedFacing=facingFromVector(dx,dy);if(moveTask==='walk-to'||moveTask==='sit-to-couch'){const progress=Math.min(1,1-Math.hypot(goalX-x,goalY-y)/bipedMoveStartDistance);setBipedSize(96*roomScale()+(bipedSeatTargetSize-96*roomScale())*progress)}}
+     if(m>.008){if(!stepBaseMotionVector(dx,dy,dt,'walk')){const speed=.115;x+=dx/m*speed*dt;y+=dy/m*speed*dt}forcedFacing=facingFromVector(dx,dy);if(moveTask==='walk-to'||moveTask==='sit-to-couch'){const progress=Math.min(1,1-Math.hypot(goalX-x,goalY-y)/bipedMoveStartDistance);setBipedSize(96*roomScale()+(bipedSeatTargetSize-96*roomScale())*progress)}}
      else{
        x=goalX;y=goalY;const task=moveTask;moveTask='';manualUntil=Math.max(manualUntil,now+450);
        if(task==='walk-to'||task==='sit-to-couch'){setBipedSize(bipedSeatTargetSize);startSeatTurn(now)}
        else if(task==='walk-away')workflow='walking-away';
      }
    }
-   if(activeForm==='biped'&&workflow==='autonomous'&&!chatting&&actorMode==='quadruped'&&now>nextGoal){
-     nextGoal=now+6500+Math.random()*4000;goalX=.22+Math.random()*.55;goalY=.48+Math.random()*.27;moveTask='ambient';dx=goalX-x;dy=goalY-y;m=Math.hypot(dx,dy);
-   }
-   if(moveTask==='ambient'){dx=goalX-x;dy=goalY-y;m=Math.hypot(dx,dy);if(m>.008){const speed=.028;x+=dx/m*speed*dt;y+=dy/m*speed*dt;forcedFacing=facingFromVector(dx,dy)}else moveTask=''}
+   
+   if(moveTask==='ambient'){dx=goalX-x;dy=goalY-y;m=Math.hypot(dx,dy);if(m>.008){if(!stepBaseMotionVector(dx,dy,dt,'walk')){const speed=.028;x+=dx/m*speed*dt;y+=dy/m*speed*dt}forcedFacing=facingFromVector(dx,dy)}else moveTask=''}
    if(activeForm==='quadruped'&&!quadrupedMove)maybeScheduleFishCatch(now);
+   const wander=baseMotionAutonomyWanted(now);setBaseMotionWander(wander);
+   if(!motionSteppedThisTick){const motion=ensureBaseMotion();if(motion){motion.setInput(0,0);motion.step(dt);motionSteppedThisTick=true;syncBaseMotionActor()}}
    updateRoomAppliances();advanceWorkflow(now);render(now);raf=requestAnimationFrame(tick);
  }
  function start(){
-   active=true;last=performance.now();nextGoal=Infinity;x=.52;y=.55;goalX=x;goalY=y;moveTask='';quadrupedMove=null;currentCouchSpot='';activeForm='quadruped';forcedFacing='forward';manualUntil=0;chatting=false;workflow='autonomous';lastUserActivityAt=0;awaitingPraise=false;bipedGaitDistancePx=0;bipedGaitSpeedPxPerSec=0;bipedGaitLastX=x;bipedGaitLastY=y;bipedGaitLastAt=0;bipedSize=96*roomScale();
+   active=true;last=performance.now();nextGoal=Infinity;x=.52;y=.55;goalX=x;goalY=y;moveTask='';quadrupedMove=null;currentCouchSpot='';activeForm='quadruped';forcedFacing='forward';manualUntil=0;chatting=false;workflow='autonomous';lastUserActivityAt=0;awaitingPraise=false;bipedGaitDistancePx=0;bipedGaitSpeedPxPerSec=0;bipedGaitLastX=x;bipedGaitLastY=y;bipedGaitLastAt=0;bipedSize=96*roomScale();adminMovementInput=null;adminWanderOverride=null;motionSteppedThisTick=false;lastQuadrupedMotion='';baseMotionWorldKey='';
    actorApi()?.reset?.();setGoodBoyGate(false);setForm('quadruped');setQuadAutonomy(true);
    const current=personalityApi()?.getState?.().currentMood||quadrupedApi()?.getState?.().behavior||'caring';setQuadMood(QUAD_MOODS.includes(current)?current:'caring','Botanical Garden opened');
    positionQuadrupedAtAc();setTimeout(positionQuadrupedAtAc,180);setTimeout(positionQuadrupedAtAc,420);setBipedSize(96*roomScale());
    cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);if(slow)slow.hidden=false;setTimeout(refreshMount,80);setTimeout(refreshMount,350);return true;
  }
  function stop(){
-   active=false;chatting=false;moveTask='';quadrupedMove=null;currentCouchSpot='';externalControlActive=false;awaitingPraise=false;workflow='stopped';cancelAnimationFrame(raf);setGoodBoyGate(false);setQuadAutonomy(true);actorApi()?.reset?.();
+   active=false;chatting=false;moveTask='';quadrupedMove=null;currentCouchSpot='';externalControlActive=false;adminMovementInput=null;adminWanderOverride=null;awaitingPraise=false;workflow='stopped';cancelAnimationFrame(raf);setBaseMotionWander(false);baseMotion?.setInput?.(0,0);setQuadAutonomy(false);actorApi()?.reset?.();
    if(fallbackActor)fallbackActor.style.display='none';const q=quadrupedSurface();if(q?.actor){q.actor.style.display='none';q.actor.hidden=true}const s=shellSurface();if(s.actor)s.actor.style.display='none';
  }
  document.querySelectorAll('[data-slow-care]').forEach(b=>b.addEventListener('click',()=>{setTone('pet');window.OnyxVirtualPet?.act?.(b.dataset.slowCare)}));
@@ -417,6 +517,7 @@
  });
  window.OnyxVirtualHealthEnvironment=Object.freeze({
    start,stop,setTone,inferTone,beginChat,endChat,noteChat,noteUserActivity,goodBoy,control,markControlled,setControlActive,setVisible,refreshMount,
+   setMovementInput:setAdminMovement,stopMovement:stopAdminMovement,setAutonomousMovement:setAdminAutonomy,setMovementForm:setAdminMotionForm,performMovementAction:performAdminMotionAction,getMovementState,getMovementActions:()=>getMovementState().actions,releaseMovementControls:releaseAdminMovement,
    cycleCouchRest,goToCouchRestSpot,getCouchSpots:couchSpots,onShellReady,
    get couchSpot(){return currentCouchSpot},get form(){return activeForm},get tone(){return currentTone},get workflow(){return workflow},get active(){return active},get chatting(){return chatting},get awaitingPraise(){return awaitingPraise},
    get userIdleRemainingMs(){return lastUserActivityAt?Math.max(0,USER_IDLE_MS-(performance.now()-lastUserActivityAt)):USER_IDLE_MS},
@@ -424,38 +525,6 @@
    get applianceState(){return{...applianceState}},
    get fishCatchIntervalMs(){return FISH_CATCH_INTERVAL_MS},
    jumpOntoAquarium(){const p=pointForFeature('onyx.aquarium.jump-landing'),api=spatialApi();return p?moveQuadrupedToSpot({id:'onyx.aquarium.jump-landing',form:'quadruped',x:p.x/(api?.W||1916),y:p.y/(api?.H||821),actorSize:64,action:'loaf'},{autonomousCatch:false}):false},
-   // The profile owns the Pass 23 motion clock. The scene iframe still owns its
-   // original cat sprite, couch and aquarium animations, and game/need state.
-   get baseMotion(){return window.OnyxBaseMotion||shellWindow()?.OnyxBaseMotion||null},
-   baseMove(direction,options={}){
-     const bridge=motionBridge();
-     return bridge?.move?.(String(direction),'walk',options)
-       ||this.baseMotion?.walk?.(String(direction),options)
-       ||{ok:false,reason:'motion-not-ready'};
-   },
-   baseRun(direction,options={}){
-     const bridge=motionBridge();
-     return bridge?.move?.(String(direction),'run',options)
-       ||this.baseMotion?.run?.(String(direction),options)
-       ||{ok:false,reason:'motion-not-ready'};
-   },
-   baseAction(action,options={}){
-     return motionBridge()?.action?.(String(action),options)
-       ||this.baseMotion?.perform?.(String(action),options)
-       ||{ok:false,reason:'motion-not-ready'};
-   },
-   feedOnyx(options={}){
-     const target=options.bowl||options.target;
-     return (target&&motionBridge()?.interact?.('eat',target,options))
-       ||this.baseMotion?.eat?.(options)
-       ||{ok:false,reason:'motion-not-ready'};
-   },
-   waterOnyx(options={}){
-     const target=options.bowl||options.target;
-     return (target&&motionBridge()?.interact?.('drink',target,options))
-       ||this.baseMotion?.drink?.(options)
-       ||{ok:false,reason:'motion-not-ready'};
-   },
    get controlled(){return isControlled()}
  });
 })();

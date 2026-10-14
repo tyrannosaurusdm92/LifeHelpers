@@ -1,0 +1,17 @@
+{
+  "schema": "ourspace.onyx.store.ownership-contract.v1",
+  "backendUnchanged": true,
+  "recordBucket": "onyx-store-owned",
+  "writeAction": "record.save",
+  "readAction": "record.list",
+  "currencySpendAction": "currency.spend",
+  "automaticFulfillment": true,
+  "effectTypes": {
+    "inventory-item": "Attached 2.5D Onyx item becomes owned by the active profile.",
+    "house-area-unlock": "Permanent Onyx house area unlock; includes the area AC metadata from the dossier.",
+    "design-tier-unlock": "Permanent design ability tier unlock."
+  },
+  "noHumanSellerStep": true,
+  "realMoney": false,
+  "cashValue": false
+}
