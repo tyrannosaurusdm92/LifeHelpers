@@ -22,13 +22,15 @@
   "perspective": {
     "worldDepth": 1000,
     "farScale": 0.3,
-    "depthCurve": 1.0
+    "depthCurve": 1
   },
   "notes": "Living-room-specific click-first scanner v4. Multi-pass Gaussian/Canny geometry, perspective-aligned edge reinforcement, trainable room material palette, fragment refinement, exact contour holes, adaptive topology repair, and one-polygon GeoJSON groups.",
   "embeddedRoom": {
     "enabled": true,
     "image": "assets/images/games/virtual/room/embedded_room.png",
-    "backWallFramesAreImagesOnly": true
+    "weatherFrame": "Back Wall Weather Playlist",
+    "weatherLocked": true,
+    "pictureFrameSlotsAreImageOnly": true
   },
   "assetsManifest": "json/happy-home/assets.json"
 }

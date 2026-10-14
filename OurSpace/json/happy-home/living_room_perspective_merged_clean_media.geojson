@@ -113,42 +113,42 @@
       "floor-warm-wood": {
         "fill": "#B56325",
         "stroke": "#6A3214",
-        "opacity": 1.0
+        "opacity": 1
       },
       "ceiling-deep-wood": {
         "fill": "#6F3515",
         "stroke": "#47210D",
-        "opacity": 1.0
+        "opacity": 1
       },
       "wall-shell": {
         "fill": "#0B526B",
         "stroke": "#4B250F",
-        "opacity": 1.0
+        "opacity": 1
       },
       "baseboard-dark-wood": {
         "fill": "#663014",
         "stroke": "#3E1B09",
-        "opacity": 1.0
+        "opacity": 1
       },
       "paneling-warm-wood": {
         "fill": "#8F4A1D",
         "stroke": "#5C2A10",
-        "opacity": 1.0
+        "opacity": 1
       },
       "trim-dark-wood": {
         "fill": "#6B3214",
         "stroke": "#401B08",
-        "opacity": 1.0
+        "opacity": 1
       },
       "crown-dark-wood": {
         "fill": "#5A2910",
         "stroke": "#351607",
-        "opacity": 1.0
+        "opacity": 1
       },
       "geometric-wallpaper": {
         "fill": "#0B526B",
         "stroke": "#4B250F",
-        "opacity": 1.0,
+        "opacity": 1,
         "pattern": "mid-century-geometric",
         "patternPalette": [
           "#063E58",
@@ -161,7 +161,7 @@
       "window-frame": {
         "fill": "#6B3214",
         "stroke": "#351607",
-        "opacity": 1.0
+        "opacity": 1
       },
       "window-glass": {
         "fill": "#0A4D7A",
@@ -171,32 +171,32 @@
       "door-wood": {
         "fill": "#8B451B",
         "stroke": "#4E230D",
-        "opacity": 1.0
+        "opacity": 1
       },
       "door-inner-frame": {
         "fill": "#5E2A10",
         "stroke": "#351607",
-        "opacity": 1.0
+        "opacity": 1
       },
       "door-handle": {
         "fill": "#E8B92A",
         "stroke": "#6E4A00",
-        "opacity": 1.0
+        "opacity": 1
       },
       "ac-cream": {
         "fill": "#D9D7CE",
         "stroke": "#333333",
-        "opacity": 1.0
+        "opacity": 1
       },
       "picture-frame": {
         "fill": "#673014",
         "stroke": "#2C1206",
-        "opacity": 1.0
+        "opacity": 1
       },
       "picture-image": {
         "fill": "#00000000",
         "stroke": "#F0D8B0",
-        "opacity": 1.0
+        "opacity": 1
       },
       "aquarium-glass-frame": {
         "fill": "#19CBE0",
@@ -217,12 +217,12 @@
       "weather-scene": {
         "fill": "#00000000",
         "stroke": "#00CFE8",
-        "opacity": 0.0
+        "opacity": 0
       }
     },
     "wallFinishLayoutFt": {
       "floorboards": [
-        0.0,
+        0,
         0.5
       ],
       "paneling": [
@@ -240,7 +240,7 @@
       ],
       "crown_moulding": [
         9.75,
-        10.0
+        10
       ]
     },
     "designSystem": {
@@ -257,7 +257,7 @@
         "linked_by_default": true,
         "height_layout_ft": {
           "floorboards": [
-            0.0,
+            0,
             0.5
           ],
           "paneling": [
@@ -275,7 +275,7 @@
           ],
           "crown_moulding": [
             9.75,
-            10.0
+            10
           ]
         }
       },
@@ -334,15 +334,15 @@
         "room_interior_ft": {
           "x": [
             0,
-            15.0
+            15
           ],
           "y": [
             0,
-            10.0
+            10
           ],
           "z": [
             0,
-            20.0
+            20
           ]
         },
         "object_placement": "use world-foot bounds first; editor projection is display only"
@@ -356,7 +356,8 @@
           "image/*",
           ".html",
           ".htm"
-        ]
+        ],
+        "visual_target": "weather-scene-iframe"
       },
       "interactive_audio": {
         "back_wall_french_doors_frame": [
@@ -878,49 +879,49 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "far",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            20.0,
-            10.0
+            0,
+            20,
+            10
           ],
           [
             7.5,
-            20.0,
-            10.0
+            20,
+            10
           ],
           [
-            15.0,
-            20.0,
-            10.0
+            15,
+            20,
+            10
           ],
           [
             15.1017,
             12.0715,
-            10.0
+            10
           ],
           [
-            15.0,
-            0.0,
-            10.0
+            15,
+            0,
+            10
           ],
           [
             7.5,
-            0.0,
-            10.0
+            0,
+            10
           ],
           [
-            0.0,
-            0.0,
-            10.0
+            0,
+            0,
+            10
           ],
           [
             0.1295,
             12.0715,
-            10.0
+            10
           ]
         ],
         "geometryPrimitive": "freeform-polygon",
@@ -937,7 +938,7 @@
         "defaultStyle": {
           "fill": "#6F3515",
           "stroke": "#47210D",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -1009,47 +1010,47 @@
         "depthExtentPx": 0,
         "depthBand": "full",
         "depthMinPx": 35.021,
-        "depthMaxPx": 120.0,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            20.0,
-            10.0
+            0,
+            20,
+            10
           ],
           [
-            0.0,
+            0,
             11.8898,
             10.1105
           ],
           [
-            0.0,
-            0.0,
-            10.0
+            0,
+            0,
+            10
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             5.0078
           ],
           [
-            0.0,
-            0.0,
-            -0.0
+            0,
+            0,
+            0
           ],
           [
-            0.0,
+            0,
             12.7325,
             0.0046
           ],
           [
-            0.0,
-            20.0,
-            -0.0
+            0,
+            20,
+            0
           ],
           [
-            0.0,
-            20.0,
+            0,
+            20,
             5.0136
           ]
         ],
@@ -1060,7 +1061,7 @@
         "defaultStyle": {
           "fill": "#0B526B",
           "stroke": "#4B250F",
-          "opacity": 1.0
+          "opacity": 1
         },
         "movesChildren": true,
         "childFeatureIds": [
@@ -1142,48 +1143,48 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "far",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            -0.0,
-            0.0,
-            10.0
+            0,
+            0,
+            10
           ],
           [
             7.5,
-            0.0,
-            10.0
+            0,
+            10
           ],
           [
-            15.0,
-            0.0,
-            10.0
+            15,
+            0,
+            10
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             4.9981
           ],
           [
-            15.0,
-            0.0,
-            -0.0
+            15,
+            0,
+            0
           ],
           [
             7.5,
-            0.0,
-            -0.0
+            0,
+            0
           ],
           [
-            -0.0,
-            0.0,
-            -0.0
+            0,
+            0,
+            0
           ],
           [
-            -0.0,
-            0.0,
+            0,
+            0,
             4.9981
           ]
         ],
@@ -1194,7 +1195,7 @@
         "defaultStyle": {
           "fill": "#0B526B",
           "stroke": "#4B250F",
-          "opacity": 1.0
+          "opacity": 1
         },
         "movesChildren": true,
         "childFeatureIds": [
@@ -1287,48 +1288,48 @@
         "depthExtentPx": 0,
         "depthBand": "full",
         "depthMinPx": 35.021,
-        "depthMaxPx": 120.0,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            -0.0,
-            10.0
+            15,
+            0,
+            10
           ],
           [
-            15.0,
+            15,
             13.2812,
             9.9229
           ],
           [
-            15.0,
-            20.0,
-            10.0
+            15,
+            20,
+            10
           ],
           [
-            15.0,
-            20.0,
-            5.0
+            15,
+            20,
+            5
           ],
           [
-            15.0,
-            20.0,
-            0.0
+            15,
+            20,
+            0
           ],
           [
-            15.0,
+            15,
             12.7085,
-            0.0
+            0
           ],
           [
-            15.0,
-            -0.0,
-            0.0
+            15,
+            0,
+            0
           ],
           [
-            15.0,
-            -0.0,
-            5.0
+            15,
+            0,
+            5
           ]
         ],
         "geometryPrimitive": "freeform-polygon",
@@ -1338,7 +1339,7 @@
         "defaultStyle": {
           "fill": "#0B526B",
           "stroke": "#4B250F",
-          "opacity": 1.0
+          "opacity": 1
         },
         "movesChildren": true,
         "childFeatureIds": [
@@ -1419,69 +1420,69 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "full",
-        "depthMinPx": 0.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 0,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            -0.0,
-            -0.0,
-            0.0
+            0,
+            0,
+            0
           ],
           [
             7.5,
-            -0.0,
-            0.0
+            0,
+            0
           ],
           [
-            15.0,
-            -0.0,
-            0.0
+            15,
+            0,
+            0
           ],
           [
             15.469,
             9.2928,
-            0.0
+            0
           ],
           [
             15.8092,
             16.0326,
-            0.0
+            0
           ],
           [
             15.3847,
             18.1139,
-            0.0
+            0
           ],
           [
-            15.0,
-            20.0,
-            0.0
+            15,
+            20,
+            0
           ],
           [
             7.5,
-            20.0,
-            0.0
+            20,
+            0
           ],
           [
-            -0.0,
-            20.0,
-            0.0
+            0,
+            20,
+            0
           ],
           [
             -0.3528,
             18.1139,
-            0.0
+            0
           ],
           [
             -0.7421,
             16.0326,
-            0.0
+            0
           ],
           [
             -0.4351,
             9.2928,
-            0.0
+            0
           ]
         ],
         "geometryPrimitive": "freeform-polygon",
@@ -1498,7 +1499,7 @@
         "defaultStyle": {
           "fill": "#B56325",
           "stroke": "#6A3214",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -1590,28 +1591,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             2.5787,
-            0.0,
+            0,
             9.0559
           ],
           [
             5.0629,
-            0.0,
+            0,
             9.0559
           ],
           [
             5.0784,
-            0.0,
+            0,
             4.1491
           ],
           [
             2.6067,
-            0.0,
+            0,
             4.1726
           ]
         ],
@@ -1623,7 +1624,7 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#351607",
-          "opacity": 1.0
+          "opacity": 1
         },
         "childFeatureIds": [
           "left-window-pane-1",
@@ -1681,28 +1682,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             2.6376,
-            0.0,
+            0,
             8.3716
           ],
           [
             3.7339,
-            0.0,
+            0,
             8.3716
           ],
           [
             3.7353,
-            0.0,
+            0,
             6.7672
           ],
           [
             2.6392,
-            0.0,
+            0,
             6.7672
           ]
         ],
@@ -1765,28 +1766,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             3.8039,
-            0.0,
+            0,
             8.3716
           ],
           [
             4.9119,
-            0.0,
+            0,
             8.3716
           ],
           [
             4.9131,
-            0.0,
+            0,
             6.7672
           ],
           [
             3.8053,
-            0.0,
+            0,
             6.7672
           ]
         ],
@@ -1849,28 +1850,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             2.6394,
-            0.0,
+            0,
             6.5784
           ],
           [
             3.7355,
-            0.0,
+            0,
             6.5784
           ],
           [
             3.7369,
-            0.0,
+            0,
             4.9981
           ],
           [
             2.6409,
-            0.0,
+            0,
             4.9981
           ]
         ],
@@ -1933,28 +1934,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             3.8055,
-            0.0,
+            0,
             6.5784
           ],
           [
             4.9133,
-            0.0,
+            0,
             6.5784
           ],
           [
             4.9145,
-            0.0,
+            0,
             4.9981
           ],
           [
             3.8068,
-            0.0,
+            0,
             4.9981
           ]
         ],
@@ -2017,28 +2018,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             10.0665,
-            0.0,
+            0,
             9.0087
           ],
           [
             12.5507,
-            0.0,
+            0,
             9.0087
           ],
           [
             12.5283,
-            0.0,
+            0,
             4.2434
           ],
           [
             10.0916,
-            0.0,
+            0,
             4.2434
           ]
         ],
@@ -2050,7 +2051,7 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#351607",
-          "opacity": 1.0
+          "opacity": 1
         },
         "childFeatureIds": [
           "right-window-pane-1",
@@ -2108,28 +2109,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             10.1833,
-            0.0,
+            0,
             8.3716
           ],
           [
             11.268,
-            0.0,
+            0,
             8.3716
           ],
           [
             11.2684,
-            0.0,
+            0,
             6.7672
           ],
           [
             10.1839,
-            0.0,
+            0,
             6.7672
           ]
         ],
@@ -2192,28 +2193,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             11.3379,
-            0.0,
+            0,
             8.3716
           ],
           [
             12.4342,
-            0.0,
+            0,
             8.3716
           ],
           [
             12.4345,
-            0.0,
+            0,
             6.7672
           ],
           [
             11.3384,
-            0.0,
+            0,
             6.7672
           ]
         ],
@@ -2276,28 +2277,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             10.184,
-            0.0,
+            0,
             6.5784
           ],
           [
             11.2685,
-            0.0,
+            0,
             6.5784
           ],
           [
             11.269,
-            0.0,
+            0,
             4.9745
           ],
           [
             10.1846,
-            0.0,
+            0,
             4.9745
           ]
         ],
@@ -2360,28 +2361,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             11.3385,
-            0.0,
+            0,
             6.5784
           ],
           [
             12.4346,
-            0.0,
+            0,
             6.5784
           ],
           [
             12.4349,
-            0.0,
+            0,
             4.9745
           ],
           [
             11.3389,
-            0.0,
+            0,
             4.9745
           ]
         ],
@@ -2444,29 +2445,29 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             6.1594,
-            0.0,
+            0,
             8.9379
           ],
           [
             8.7719,
-            0.0,
+            0,
             8.9379
           ],
           [
             8.7762,
-            0.0,
-            -0.0
+            0,
+            0
           ],
           [
             6.1655,
-            0.0,
-            -0.0
+            0,
+            0
           ]
         ],
         "visibleInEditor": true,
@@ -2486,7 +2487,7 @@
         "defaultStyle": {
           "fill": "#8B451B",
           "stroke": "#4E230D",
-          "opacity": 1.0
+          "opacity": 1
         },
         "childFeatureIds": [
           "french-door-left",
@@ -2543,28 +2544,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             6.2762,
-            0.0,
+            0,
             8.6784
           ],
           [
             7.3025,
-            0.0,
+            0,
             8.6784
           ],
           [
             7.3075,
-            0.0,
+            0,
             0.4006
           ],
           [
             6.2818,
-            0.0,
+            0,
             0.4006
           ]
         ],
@@ -2575,7 +2576,7 @@
         "defaultStyle": {
           "fill": "#8B451B",
           "stroke": "#4E230D",
-          "opacity": 1.0
+          "opacity": 1
         },
         "movesChildren": true,
         "childFeatureIds": [
@@ -2634,28 +2635,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             7.6291,
-            0.0,
+            0,
             8.6784
           ],
           [
             8.6554,
-            0.0,
+            0,
             8.6784
           ],
           [
             8.6595,
-            0.0,
+            0,
             0.4006
           ],
           [
             7.6338,
-            0.0,
+            0,
             0.4006
           ]
         ],
@@ -2666,7 +2667,7 @@
         "defaultStyle": {
           "fill": "#8B451B",
           "stroke": "#4E230D",
-          "opacity": 1.0
+          "opacity": 1
         },
         "movesChildren": true,
         "childFeatureIds": [
@@ -2725,28 +2726,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             7.3025,
-            0.0,
+            0,
             8.6784
           ],
           [
             7.6291,
-            0.0,
+            0,
             8.6784
           ],
           [
             7.6338,
-            0.0,
+            0,
             0.4006
           ],
           [
             7.3075,
-            0.0,
+            0,
             0.4006
           ]
         ],
@@ -2757,7 +2758,7 @@
         "defaultStyle": {
           "fill": "#5E2A10",
           "stroke": "#351607",
-          "opacity": 1.0
+          "opacity": 1
         },
         "movesChildren": true,
         "childFeatureIds": [
@@ -2814,28 +2815,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             6.3465,
-            0.0,
+            0,
             8.2064
           ],
           [
             6.7896,
-            0.0,
+            0,
             8.2064
           ],
           [
             6.7917,
-            0.0,
+            0,
             4.9273
           ],
           [
             6.3487,
-            0.0,
+            0,
             4.9273
           ]
         ],
@@ -2898,28 +2899,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             6.8596,
-            0.0,
+            0,
             8.2064
           ],
           [
             7.2445,
-            0.0,
+            0,
             8.2064
           ],
           [
             7.2464,
-            0.0,
+            0,
             4.9273
           ],
           [
             6.8617,
-            0.0,
+            0,
             4.9273
           ]
         ],
@@ -2982,28 +2983,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             6.3488,
-            0.0,
+            0,
             4.7386
           ],
           [
             6.7918,
-            0.0,
+            0,
             4.7386
           ],
           [
             6.7939,
-            0.0,
+            0,
             1.4849
           ],
           [
             6.351,
-            0.0,
+            0,
             1.4849
           ]
         ],
@@ -3066,28 +3067,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             6.8618,
-            0.0,
+            0,
             4.7386
           ],
           [
             7.2466,
-            0.0,
+            0,
             4.7386
           ],
           [
             7.2485,
-            0.0,
+            0,
             1.4849
           ],
           [
             6.8639,
-            0.0,
+            0,
             1.4849
           ]
         ],
@@ -3150,28 +3151,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             7.6876,
-            0.0,
+            0,
             8.2064
           ],
           [
             8.1308,
-            0.0,
+            0,
             8.2064
           ],
           [
             8.1326,
-            0.0,
+            0,
             4.9273
           ],
           [
             7.6895,
-            0.0,
+            0,
             4.9273
           ]
         ],
@@ -3234,28 +3235,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             8.2008,
-            0.0,
+            0,
             8.2064
           ],
           [
             8.5857,
-            0.0,
+            0,
             8.2064
           ],
           [
             8.5873,
-            0.0,
+            0,
             4.9273
           ],
           [
             8.2025,
-            0.0,
+            0,
             4.9273
           ]
         ],
@@ -3318,28 +3319,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             7.6896,
-            0.0,
+            0,
             4.7386
           ],
           [
             8.1327,
-            0.0,
+            0,
             4.7386
           ],
           [
             8.1344,
-            0.0,
+            0,
             1.4849
           ],
           [
             7.6915,
-            0.0,
+            0,
             1.4849
           ]
         ],
@@ -3402,28 +3403,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             8.2026,
-            0.0,
+            0,
             4.7386
           ],
           [
             8.5874,
-            0.0,
+            0,
             4.7386
           ],
           [
             8.589,
-            0.0,
+            0,
             1.4849
           ],
           [
             8.2043,
-            0.0,
+            0,
             1.4849
           ]
         ],
@@ -3486,28 +3487,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             7.3282,
-            0.0,
+            0,
             4.6207
           ],
           [
             7.4332,
-            0.0,
+            0,
             4.6207
           ],
           [
             7.4335,
-            0.0,
+            0,
             4.0547
           ],
           [
             7.3286,
-            0.0,
+            0,
             4.0547
           ]
         ],
@@ -3525,7 +3526,7 @@
         "defaultStyle": {
           "fill": "#E8B92A",
           "stroke": "#6E4A00",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -3577,28 +3578,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             7.5031,
-            0.0,
+            0,
             4.6207
           ],
           [
             7.6081,
-            0.0,
+            0,
             4.6207
           ],
           [
             7.6084,
-            0.0,
+            0,
             4.0547
           ],
           [
             7.5035,
-            0.0,
+            0,
             4.0547
           ]
         ],
@@ -3616,7 +3617,7 @@
         "defaultStyle": {
           "fill": "#E8B92A",
           "stroke": "#6E4A00",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -3668,28 +3669,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             10.185,
-            0.0,
+            0,
             3.8897
           ],
           [
             12.4351,
-            0.0,
+            0,
             3.8897
           ],
           [
             12.4355,
-            0.0,
+            0,
             1.7913
           ],
           [
             10.1858,
-            0.0,
+            0,
             1.7913
           ]
         ],
@@ -3719,7 +3720,7 @@
         "defaultStyle": {
           "fill": "#D9D7CE",
           "stroke": "#333333",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -3771,27 +3772,27 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             18.0523,
             9.1764
           ],
           [
-            0.0,
+            0,
             9.4969,
             8.7723
           ],
           [
-            0.0,
+            0,
             9.6165,
             5.6168
           ],
           [
-            0.0,
+            0,
             18.0078,
             6.0077
           ]
@@ -3804,7 +3805,7 @@
         "defaultStyle": {
           "fill": "#673014",
           "stroke": "#2C1206",
-          "opacity": 1.0
+          "opacity": 1
         },
         "childFeatureIds": [
           "picture-iframe-left-wave"
@@ -3859,28 +3860,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             0.3283,
-            0.0,
+            0,
             8.466
           ],
           [
             1.5996,
-            0.0,
+            0,
             8.466
           ],
           [
             1.603,
-            0.0,
+            0,
             5.1867
           ],
           [
             0.3321,
-            0.0,
+            0,
             5.1867
           ]
         ],
@@ -3892,7 +3893,7 @@
         "defaultStyle": {
           "fill": "#673014",
           "stroke": "#2C1206",
-          "opacity": 1.0
+          "opacity": 1
         },
         "childFeatureIds": [
           "picture-iframe-back-left-moon"
@@ -3947,28 +3948,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             13.2273,
-            0.0,
+            0,
             8.4188
           ],
           [
             14.6618,
-            0.0,
+            0,
             8.466
           ],
           [
             14.6619,
-            0.0,
+            0,
             5.0924
           ],
           [
             13.2161,
-            0.0,
+            0,
             5.0452
           ]
         ],
@@ -3980,7 +3981,7 @@
         "defaultStyle": {
           "fill": "#673014",
           "stroke": "#2C1206",
-          "opacity": 1.0
+          "opacity": 1
         },
         "childFeatureIds": [
           "picture-iframe-back-right-cat"
@@ -4035,27 +4036,27 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
+            15,
             9.3983,
             8.7008
           ],
           [
-            15.0,
+            15,
             17.8396,
             8.8492
           ],
           [
-            15.0,
+            15,
             17.7243,
             5.6489
           ],
           [
-            15.0,
+            15,
             9.3345,
             5.249
           ]
@@ -4068,7 +4069,7 @@
         "defaultStyle": {
           "fill": "#673014",
           "stroke": "#2C1206",
-          "opacity": 1.0
+          "opacity": 1
         },
         "childFeatureIds": [
           "picture-iframe-right-quote"
@@ -4124,26 +4125,26 @@
         "depthExtentPx": 0,
         "depthBand": "auto",
         "depthMinPx": 107.416,
-        "depthMaxPx": 120.0,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             19.4164,
             4.5
           ],
           [
-            0.0,
+            0,
             8.9839,
             4.7049
           ],
           [
-            0.0,
+            0,
             9.1796,
             2.0113
           ],
           [
-            0.0,
+            0,
             19.5641,
             1.8596
           ]
@@ -4217,7 +4218,7 @@
         "depthExtentPx": 0,
         "depthBand": "auto",
         "depthMinPx": 38.255,
-        "depthMaxPx": 120.0,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
@@ -4305,8 +4306,8 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "visibleInEditor": true,
         "connector": {
           "fromFeatureId": "aquarium-built-in",
@@ -4335,7 +4336,7 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             19.4164,
             4.5
           ],
@@ -4374,29 +4375,29 @@
         "type": "LineString",
         "coordinates": [
           [
-            16.0,
-            406.0,
-            120.0
+            16,
+            406,
+            120
           ],
           [
-            42.0,
+            42,
             411.25,
-            120.0
+            120
           ],
           [
-            68.0,
+            68,
             416.5,
-            120.0
+            120
           ],
           [
-            94.0,
+            94,
             421.75,
-            120.0
+            120
           ],
           [
-            120.0,
-            427.0,
-            120.0
+            120,
+            427,
+            120
           ]
         ]
       }
@@ -4417,8 +4418,8 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "visibleInEditor": true,
         "connector": {
           "fromFeatureId": "aquarium-built-in",
@@ -4447,7 +4448,7 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             8.9839,
             4.7049
           ],
@@ -4486,29 +4487,29 @@
         "type": "LineString",
         "coordinates": [
           [
-            219.0,
-            377.0,
-            120.0
+            219,
+            377,
+            120
           ],
           [
             243.25,
-            379.0,
-            120.0
+            379,
+            120
           ],
           [
             267.5,
-            381.0,
-            120.0
+            381,
+            120
           ],
           [
             291.75,
-            383.0,
-            120.0
+            383,
+            120
           ],
           [
-            316.0,
-            385.0,
-            120.0
+            316,
+            385,
+            120
           ]
         ]
       }
@@ -4530,7 +4531,7 @@
         "depthExtentPx": 0,
         "depthBand": "auto",
         "depthMinPx": 103.077,
-        "depthMaxPx": 120.0,
+        "depthMaxPx": 120,
         "visibleInEditor": true,
         "connector": {
           "fromFeatureId": "aquarium-built-in",
@@ -4559,7 +4560,7 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             9.1796,
             2.0113
           ],
@@ -4598,19 +4599,19 @@
         "type": "LineString",
         "coordinates": [
           [
-            216.0,
-            519.0,
-            120.0
+            216,
+            519,
+            120
           ],
           [
             242.25,
             539.75,
-            120.0
+            120
           ],
           [
             268.5,
             560.5,
-            120.0
+            120
           ],
           [
             294.75,
@@ -4618,8 +4619,8 @@
             113.718
           ],
           [
-            321.0,
-            602.0,
+            321,
+            602,
             103.077
           ]
         ]
@@ -4671,7 +4672,7 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             19.5641,
             1.8596
           ],
@@ -4710,8 +4711,8 @@
         "type": "LineString",
         "coordinates": [
           [
-            12.0,
-            598.0,
+            12,
+            598,
             105.128
           ],
           [
@@ -4730,8 +4731,8 @@
             53.205
           ],
           [
-            127.0,
-            733.0,
+            127,
+            733,
             35.897
           ]
         ]
@@ -4751,27 +4752,27 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             17.2302,
             8.8077
           ],
           [
-            0.0,
+            0,
             10.4359,
             8.4687
           ],
           [
-            0.0,
+            0,
             10.4227,
             5.9242
           ],
           [
-            0.0,
+            0,
             17.2046,
             6.218
           ]
@@ -4807,7 +4808,7 @@
         "defaultStyle": {
           "fill": "#00000000",
           "stroke": "#F0D8B0",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -4857,8 +4858,8 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "visibleInEditor": true,
         "purpose": "click-to-load-device-image-into-picture-frame",
         "semanticTag": "device-image-iframe",
@@ -4866,22 +4867,22 @@
         "worldCoordinatesFt": [
           [
             0.4568,
-            0.0,
+            0,
             8.3008
           ],
           [
             1.4715,
-            0.0,
+            0,
             8.3008
           ],
           [
             1.4743,
-            0.0,
+            0,
             5.5641
           ],
           [
             0.4366,
-            0.0,
+            0,
             5.5641
           ]
         ],
@@ -4913,7 +4914,7 @@
         "defaultStyle": {
           "fill": "#00000000",
           "stroke": "#F0D8B0",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -4963,28 +4964,28 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
             13.4139,
-            0.0,
+            0,
             8.23
           ],
           [
             14.5685,
-            0.0,
+            0,
             8.23
           ],
           [
             14.5802,
-            0.0,
+            0,
             5.3518
           ],
           [
             13.4259,
-            0.0,
+            0,
             5.4462
           ]
         ],
@@ -5019,7 +5020,7 @@
         "defaultStyle": {
           "fill": "#00000000",
           "stroke": "#F0D8B0",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -5069,30 +5070,30 @@
         "depthMode": "from-y",
         "depthExtentPx": 0,
         "depthBand": "auto",
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0,
+        "depthMinPx": 120,
+        "depthMaxPx": 120,
         "visibleInEditor": true,
         "purpose": "click-to-load-device-image-into-picture-frame",
         "semanticTag": "device-image-iframe",
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
+            15,
             10.2084,
             8.3711
           ],
           [
-            15.0,
+            15,
             16.9322,
             8.6253
           ],
           [
-            15.0,
+            15,
             16.8914,
             5.973
           ],
           [
-            15.0,
+            15,
             10.0861,
             5.6408
           ]
@@ -5125,7 +5126,7 @@
         "defaultStyle": {
           "fill": "#00000000",
           "stroke": "#F0D8B0",
-          "opacity": 1.0
+          "opacity": 1
         }
       },
       "geometry": {
@@ -5180,12 +5181,12 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             19.5641,
             1.8596
           ],
           [
-            0.0,
+            0,
             9.1796,
             2.0113
           ],
@@ -5232,7 +5233,7 @@
           "opacity": 0.45
         },
         "depthMinPx": 38.255,
-        "depthMaxPx": 120.0
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -5269,6 +5270,114 @@
     },
     {
       "type": "Feature",
+      "id": "weather-scene-iframe",
+      "properties": {
+        "id": "weather-scene-iframe",
+        "label": "Weather Scene Iframe — Behind Entire Living Room",
+        "role": "weather-iframe",
+        "surfacePlane": "screen-background",
+        "priority": -1000,
+        "purpose": "full-room-background-iframe-for-weather-video-scenes",
+        "semanticTag": "outside-weather-scene-background",
+        "coordinateSpace": "pixel-space-1958x803",
+        "visibleInEditor": true,
+        "movementGroupId": "room-environment",
+        "lockedToViewport": true,
+        "renderOrder": "behind-all-room-geometry",
+        "styleBinding": "weather-scene",
+        "mediaBinding": {
+          "element": "iframe",
+          "contentKind": "weather-scene",
+          "sourceMode": [
+            "device-file",
+            "url",
+            "blob-url",
+            "data-url"
+          ],
+          "accept": [
+            "video/*",
+            "image/*",
+            ".html",
+            ".htm"
+          ],
+          "videoDefaults": {
+            "autoplay": true,
+            "loop": true,
+            "muted": false,
+            "playsInline": true
+          },
+          "fit": "cover",
+          "pointerEvents": "disabled-in-scene-enabled-in-editor-controls"
+        },
+        "visibilityThrough": {
+          "mode": "behind-room-visible-through-glass-openings",
+          "openingFeatureIds": [
+            "left-window-pane-1",
+            "left-window-pane-2",
+            "left-window-pane-3",
+            "left-window-pane-4",
+            "right-window-pane-1",
+            "right-window-pane-2",
+            "right-window-pane-3",
+            "right-window-pane-4",
+            "french-door-left-pane-1",
+            "french-door-left-pane-2",
+            "french-door-left-pane-3",
+            "french-door-left-pane-4",
+            "french-door-right-pane-1",
+            "french-door-right-pane-2",
+            "french-door-right-pane-3",
+            "french-door-right-pane-4"
+          ]
+        },
+        "audioBinding": {
+          "channel": "outside_weather",
+          "spatial": true,
+          "anchor": "weather-scene-iframe"
+        },
+        "defaultStyle": {
+          "fill": "#00000000",
+          "stroke": "#00CFE8",
+          "opacity": 0
+        },
+        "depthMinPx": 0,
+        "depthMaxPx": 120
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              0,
+              120
+            ],
+            [
+              1958,
+              0,
+              120
+            ],
+            [
+              1958,
+              803,
+              0
+            ],
+            [
+              0,
+              803,
+              0
+            ],
+            [
+              0,
+              0,
+              120
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "left-wall-baseboard",
       "properties": {
         "id": "left-wall-baseboard",
@@ -5286,24 +5395,24 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            20.0,
-            0.0
+            0,
+            20,
+            0
           ],
           [
-            0.0,
-            20.0,
+            0,
+            20,
             0.5
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             0.5
           ],
           [
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0
           ]
         ],
         "movementGroupId": "left-wall",
@@ -5322,38 +5431,38 @@
         "defaultStyle": {
           "fill": "#663014",
           "stroke": "#3E1B09",
-          "opacity": 1.0
+          "opacity": 1
         },
         "depthMinPx": 32.821,
-        "depthMaxPx": 120.0
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              0.0,
-              739.0,
+              0,
+              739,
               32.821
             ],
             [
-              0.0,
+              0,
               702.24,
               51.672
             ],
             [
               321.05,
               547.863,
-              120.0
+              120
             ],
             [
-              321.0,
-              569.0,
-              120.0
+              321,
+              569,
+              120
             ],
             [
-              0.0,
-              739.0,
+              0,
+              739,
               32.821
             ]
           ]
@@ -5379,23 +5488,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            20.0,
+            0,
+            20,
             0.5
           ],
           [
-            0.0,
-            20.0,
+            0,
+            20,
             7.375
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             7.375
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             0.5
           ]
         ],
@@ -5415,37 +5524,37 @@
         "defaultStyle": {
           "fill": "#8F4A1D",
           "stroke": "#5C2A10",
-          "opacity": 1.0
+          "opacity": 1
         },
         "depthMinPx": 51.672,
-        "depthMaxPx": 120.0
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              0.0,
+              0,
               702.24,
               51.672
             ],
             [
-              0.0,
+              0,
               194.764,
-              120.0
+              120
             ],
             [
               321.737,
               256.556,
-              120.0
+              120
             ],
             [
               321.05,
               547.863,
-              120.0
+              120
             ],
             [
-              0.0,
+              0,
               702.24,
               51.672
             ]
@@ -5472,23 +5581,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            20.0,
+            0,
+            20,
             7.375
           ],
           [
-            0.0,
-            20.0,
+            0,
+            20,
             7.625
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             7.625
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             7.375
           ]
         ],
@@ -5508,39 +5617,39 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              0.0,
+              0,
               194.764,
-              120.0
+              120
             ],
             [
-              0.0,
+              0,
               176.239,
-              120.0
+              120
             ],
             [
               321.762,
               245.939,
-              120.0
+              120
             ],
             [
               321.737,
               256.556,
-              120.0
+              120
             ],
             [
-              0.0,
+              0,
               194.764,
-              120.0
+              120
             ]
           ]
         ]
@@ -5565,23 +5674,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            20.0,
+            0,
+            20,
             7.625
           ],
           [
-            0.0,
-            20.0,
+            0,
+            20,
             9.75
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             9.75
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             7.625
           ]
         ],
@@ -5601,7 +5710,7 @@
         "defaultStyle": {
           "fill": "#0B526B",
           "stroke": "#4B250F",
-          "opacity": 1.0,
+          "opacity": 1,
           "pattern": "mid-century-geometric",
           "patternPalette": [
             "#063E58",
@@ -5611,37 +5720,37 @@
             "#F7E4A4"
           ]
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              0.0,
+              0,
               176.239,
-              120.0
+              120
             ],
             [
-              0.0,
+              0,
               18.573,
-              120.0
+              120
             ],
             [
               321.975,
               155.632,
-              120.0
+              120
             ],
             [
               321.762,
               245.939,
-              120.0
+              120
             ],
             [
-              0.0,
+              0,
               176.239,
-              120.0
+              120
             ]
           ]
         ]
@@ -5666,23 +5775,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            20.0,
+            0,
+            20,
             9.75
           ],
           [
-            0.0,
-            20.0,
-            10.0
+            0,
+            20,
+            10
           ],
           [
-            0.0,
-            0.0,
-            10.0
+            0,
+            0,
+            10
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             9.75
           ]
         ],
@@ -5702,39 +5811,39 @@
         "defaultStyle": {
           "fill": "#5A2910",
           "stroke": "#351607",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              0.0,
+              0,
               18.573,
-              120.0
+              120
             ],
             [
-              0.0,
-              0.0,
-              120.0
+              0,
+              0,
+              120
             ],
             [
-              322.0,
-              145.0,
-              120.0
+              322,
+              145,
+              120
             ],
             [
               321.975,
               155.632,
-              120.0
+              120
             ],
             [
-              0.0,
+              0,
               18.573,
-              120.0
+              120
             ]
           ]
         ]
@@ -5759,24 +5868,24 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            20.0,
-            0.0
+            15,
+            20,
+            0
           ],
           [
-            15.0,
-            20.0,
+            15,
+            20,
             0.5
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             0.5
           ],
           [
-            15.0,
-            0.0,
-            0.0
+            15,
+            0,
+            0
           ]
         ],
         "movementGroupId": "right-wall",
@@ -5795,38 +5904,38 @@
         "defaultStyle": {
           "fill": "#663014",
           "stroke": "#3E1B09",
-          "opacity": 1.0
+          "opacity": 1
         },
         "depthMinPx": 32.821,
-        "depthMaxPx": 120.0
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1958.0,
-              739.0,
+              1958,
+              739,
               32.821
             ],
             [
-              1958.0,
+              1958,
               702.05,
               51.769
             ],
             [
-              1608.0,
+              1608,
               547.8,
-              120.0
+              120
             ],
             [
-              1608.0,
-              569.0,
-              120.0
+              1608,
+              569,
+              120
             ],
             [
-              1958.0,
-              739.0,
+              1958,
+              739,
               32.821
             ]
           ]
@@ -5852,23 +5961,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            20.0,
+            15,
+            20,
             0.5
           ],
           [
-            15.0,
-            20.0,
+            15,
+            20,
             7.375
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             7.375
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             0.5
           ]
         ],
@@ -5888,37 +5997,37 @@
         "defaultStyle": {
           "fill": "#8F4A1D",
           "stroke": "#5C2A10",
-          "opacity": 1.0
+          "opacity": 1
         },
         "depthMinPx": 51.769,
-        "depthMaxPx": 120.0
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1958.0,
+              1958,
               702.05,
               51.769
             ],
             [
-              1958.0,
+              1958,
               193.988,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               256.3,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               547.8,
-              120.0
+              120
             ],
             [
-              1958.0,
+              1958,
               702.05,
               51.769
             ]
@@ -5945,23 +6054,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            20.0,
+            15,
+            20,
             7.375
           ],
           [
-            15.0,
-            20.0,
+            15,
+            20,
             7.625
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             7.625
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             7.375
           ]
         ],
@@ -5981,39 +6090,39 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1958.0,
+              1958,
               193.988,
-              120.0
+              120
             ],
             [
-              1958.0,
+              1958,
               175.512,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               245.7,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               256.3,
-              120.0
+              120
             ],
             [
-              1958.0,
+              1958,
               193.988,
-              120.0
+              120
             ]
           ]
         ]
@@ -6038,23 +6147,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            20.0,
+            15,
+            20,
             7.625
           ],
           [
-            15.0,
-            20.0,
+            15,
+            20,
             9.75
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             9.75
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             7.625
           ]
         ],
@@ -6074,7 +6183,7 @@
         "defaultStyle": {
           "fill": "#0B526B",
           "stroke": "#4B250F",
-          "opacity": 1.0,
+          "opacity": 1,
           "pattern": "mid-century-geometric",
           "patternPalette": [
             "#063E58",
@@ -6084,37 +6193,37 @@
             "#F7E4A4"
           ]
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1958.0,
+              1958,
               175.512,
-              120.0
+              120
             ],
             [
-              1958.0,
+              1958,
               18.475,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               155.6,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               245.7,
-              120.0
+              120
             ],
             [
-              1958.0,
+              1958,
               175.512,
-              120.0
+              120
             ]
           ]
         ]
@@ -6139,23 +6248,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            20.0,
+            15,
+            20,
             9.75
           ],
           [
-            15.0,
-            20.0,
-            10.0
+            15,
+            20,
+            10
           ],
           [
-            15.0,
-            0.0,
-            10.0
+            15,
+            0,
+            10
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             9.75
           ]
         ],
@@ -6175,39 +6284,39 @@
         "defaultStyle": {
           "fill": "#5A2910",
           "stroke": "#351607",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1958.0,
+              1958,
               18.475,
-              120.0
+              120
             ],
             [
-              1958.0,
-              0.0,
-              120.0
+              1958,
+              0,
+              120
             ],
             [
-              1608.0,
-              145.0,
-              120.0
+              1608,
+              145,
+              120
             ],
             [
-              1608.0,
+              1608,
               155.6,
-              120.0
+              120
             ],
             [
-              1958.0,
+              1958,
               18.475,
-              120.0
+              120
             ]
           ]
         ]
@@ -6232,23 +6341,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            0.0,
+            15,
+            0,
             0.5
           ],
           [
-            15.0,
-            0.0,
-            0.0
+            15,
+            0,
+            0
           ],
           [
             9.0395,
-            0.0,
-            0.0
+            0,
+            0
           ],
           [
             9.0395,
-            0.0,
+            0,
             0.5
           ]
         ],
@@ -6268,39 +6377,39 @@
         "defaultStyle": {
           "fill": "#663014",
           "stroke": "#3E1B09",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1608.0,
+              1608,
               547.784,
-              120.0
+              120
             ],
             [
-              1608.0,
-              569.0,
-              120.0
+              1608,
+              569,
+              120
             ],
             [
               1096.589,
-              569.0,
-              120.0
+              569,
+              120
             ],
             [
               1096.609,
               547.784,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               547.784,
-              120.0
+              120
             ]
           ]
         ]
@@ -6325,24 +6434,24 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             0.5
           ],
           [
             5.8675,
-            0.0,
+            0,
             0.5
           ],
           [
             5.8675,
-            0.0,
-            0.0
+            0,
+            0
           ]
         ],
         "movementGroupId": "back-wall",
@@ -6361,39 +6470,39 @@
         "defaultStyle": {
           "fill": "#663014",
           "stroke": "#3E1B09",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              321.0,
-              569.0,
-              120.0
+              321,
+              569,
+              120
             ],
             [
               321.05,
               547.784,
-              120.0
+              120
             ],
             [
               824.466,
               547.784,
-              120.0
+              120
             ],
             [
               824.435,
-              569.0,
-              120.0
+              569,
+              120
             ],
             [
-              321.0,
-              569.0,
-              120.0
+              321,
+              569,
+              120
             ]
           ]
         ]
@@ -6419,65 +6528,65 @@
         "worldCoordinatesFt": [
           [
             [
-              15.0,
-              0.0,
+              15,
+              0,
               7.375
             ],
             [
-              15.0,
-              0.0,
+              15,
+              0,
               0.5
             ],
             [
               9.0395,
-              0.0,
+              0,
               0.5
             ],
             [
               9.0395,
-              0.0,
+              0,
               7.375
             ],
             [
               9.5043,
-              0.0,
+              0,
               7.375
             ],
             [
               9.5043,
-              0.0,
+              0,
               4.4493
             ],
             [
               12.1418,
-              0.0,
+              0,
               4.4493
             ],
             [
               12.1418,
-              0.0,
+              0,
               7.375
             ]
           ],
           [
             [
               10.0852,
-              0.0,
+              0,
               1.652
             ],
             [
               12.3393,
-              0.0,
+              0,
               1.652
             ],
             [
               12.3393,
-              0.0,
+              0,
               3.6123
             ],
             [
               10.0852,
-              0.0,
+              0,
               3.6123
             ]
           ]
@@ -6498,86 +6607,86 @@
         "defaultStyle": {
           "fill": "#8F4A1D",
           "stroke": "#5C2A10",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1608.0,
+              1608,
               256.236,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               547.784,
-              120.0
+              120
             ],
             [
               1096.609,
               547.784,
-              120.0
+              120
             ],
             [
               1096.883,
               256.236,
-              120.0
+              120
             ],
             [
               1136.736,
               256.236,
-              120.0
+              120
             ],
             [
               1136.629,
               380.267,
-              120.0
+              120
             ],
             [
               1362.847,
               380.267,
-              120.0
+              120
             ],
             [
               1362.903,
               256.236,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               256.236,
-              120.0
+              120
             ]
           ],
           [
             [
               1186.365,
               498.911,
-              120.0
+              120
             ],
             [
               1379.739,
               498.911,
-              120.0
+              120
             ],
             [
               1379.774,
               415.761,
-              120.0
+              120
             ],
             [
               1186.429,
               415.761,
-              120.0
+              120
             ],
             [
               1186.365,
               498.911,
-              120.0
+              120
             ]
           ]
         ]
@@ -6603,42 +6712,42 @@
         "worldCoordinatesFt": [
           [
             5.8675,
-            0.0,
+            0,
             7.375
           ],
           [
             5.8675,
-            0.0,
+            0,
             0.5
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             0.5
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             7.375
           ],
           [
             2.591,
-            0.0,
+            0,
             7.375
           ],
           [
             2.591,
-            0.0,
+            0,
             4.4493
           ],
           [
             4.8335,
-            0.0,
+            0,
             4.4493
           ],
           [
             4.8335,
-            0.0,
+            0,
             7.375
           ]
         ],
@@ -6658,10 +6767,10 @@
         "defaultStyle": {
           "fill": "#8F4A1D",
           "stroke": "#5C2A10",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -6670,47 +6779,47 @@
             [
               824.884,
               256.236,
-              120.0
+              120
             ],
             [
               824.466,
               547.784,
-              120.0
+              120
             ],
             [
               321.05,
               547.784,
-              120.0
+              120
             ],
             [
               321.738,
               256.236,
-              120.0
+              120
             ],
             [
               543.919,
               256.236,
-              120.0
+              120
             ],
             [
               543.677,
               380.267,
-              120.0
+              120
             ],
             [
               736.013,
               380.267,
-              120.0
+              120
             ],
             [
               736.211,
               256.236,
-              120.0
+              120
             ],
             [
               824.884,
               256.236,
-              120.0
+              120
             ]
           ]
         ]
@@ -6735,23 +6844,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            0.0,
+            15,
+            0,
             7.625
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             7.375
           ],
           [
             12.9818,
-            0.0,
+            0,
             7.375
           ],
           [
             12.9818,
-            0.0,
+            0,
             7.625
           ]
         ],
@@ -6771,39 +6880,39 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1608.0,
+              1608,
               245.64,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               256.236,
-              120.0
+              120
             ],
             [
               1434.941,
               256.236,
-              120.0
+              120
             ],
             [
               1434.944,
               245.64,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               245.64,
-              120.0
+              120
             ]
           ]
         ]
@@ -6829,22 +6938,22 @@
         "worldCoordinatesFt": [
           [
             9.3381,
-            0.0,
+            0,
             7.625
           ],
           [
             9.3381,
-            0.0,
+            0,
             7.375
           ],
           [
             9.0895,
-            0.0,
+            0,
             7.375
           ],
           [
             9.0895,
-            0.0,
+            0,
             7.625
           ]
         ],
@@ -6864,10 +6973,10 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -6876,27 +6985,27 @@
             [
               1122.494,
               245.64,
-              120.0
+              120
             ],
             [
               1122.485,
               256.236,
-              120.0
+              120
             ],
             [
               1101.17,
               256.236,
-              120.0
+              120
             ],
             [
               1101.18,
               245.64,
-              120.0
+              120
             ],
             [
               1122.494,
               245.64,
-              120.0
+              120
             ]
           ]
         ]
@@ -6922,22 +7031,22 @@
         "worldCoordinatesFt": [
           [
             5.8175,
-            0.0,
+            0,
             7.625
           ],
           [
             5.8175,
-            0.0,
+            0,
             7.375
           ],
           [
             5.4993,
-            0.0,
+            0,
             7.375
           ],
           [
             5.4993,
-            0.0,
+            0,
             7.625
           ]
         ],
@@ -6957,10 +7066,10 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -6969,27 +7078,27 @@
             [
               820.612,
               245.64,
-              120.0
+              120
             ],
             [
               820.597,
               256.236,
-              120.0
+              120
             ],
             [
               793.304,
               256.236,
-              120.0
+              120
             ],
             [
               793.32,
               245.64,
-              120.0
+              120
             ],
             [
               820.612,
               245.64,
-              120.0
+              120
             ]
           ]
         ]
@@ -7014,23 +7123,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            0.0,
+            0,
+            0,
             7.375
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             7.625
           ],
           [
             1.8206,
-            0.0,
+            0,
             7.625
           ],
           [
             1.8206,
-            0.0,
+            0,
             7.375
           ]
         ],
@@ -7050,10 +7159,10 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -7062,27 +7171,27 @@
             [
               321.738,
               256.236,
-              120.0
+              120
             ],
             [
               321.763,
               245.64,
-              120.0
+              120
             ],
             [
               477.881,
               245.64,
-              120.0
+              120
             ],
             [
               477.859,
               256.236,
-              120.0
+              120
             ],
             [
               321.738,
               256.236,
-              120.0
+              120
             ]
           ]
         ]
@@ -7107,83 +7216,83 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
-            0.0,
+            0,
+            0,
             7.625
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             9.75
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             9.75
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             7.625
           ],
           [
             12.1418,
-            0.0,
+            0,
             7.625
           ],
           [
             12.1418,
-            0.0,
+            0,
             7.9956
           ],
           [
             9.5043,
-            0.0,
+            0,
             7.9956
           ],
           [
             9.5043,
-            0.0,
+            0,
             7.625
           ],
           [
             9.0395,
-            0.0,
+            0,
             7.625
           ],
           [
             9.0395,
-            0.0,
+            0,
             8.4802
           ],
           [
             5.8675,
-            0.0,
+            0,
             8.4802
           ],
           [
             5.8675,
-            0.0,
+            0,
             7.625
           ],
           [
             4.8335,
-            0.0,
+            0,
             7.625
           ],
           [
             4.8335,
-            0.0,
+            0,
             7.9956
           ],
           [
             2.591,
-            0.0,
+            0,
             7.9956
           ],
           [
             2.591,
-            0.0,
+            0,
             7.625
           ]
         ],
@@ -7203,7 +7312,7 @@
         "defaultStyle": {
           "fill": "#0B526B",
           "stroke": "#4B250F",
-          "opacity": 1.0,
+          "opacity": 1,
           "pattern": "mid-century-geometric",
           "patternPalette": [
             "#063E58",
@@ -7213,8 +7322,8 @@
             "#F7E4A4"
           ]
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -7223,87 +7332,87 @@
             [
               321.763,
               245.64,
-              120.0
+              120
             ],
             [
               321.975,
               155.592,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               155.592,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               245.64,
-              120.0
+              120
             ],
             [
               1362.908,
               245.64,
-              120.0
+              120
             ],
             [
               1362.915,
               229.934,
-              120.0
+              120
             ],
             [
               1136.758,
               229.934,
-              120.0
+              120
             ],
             [
               1136.745,
               245.64,
-              120.0
+              120
             ],
             [
               1096.892,
               245.64,
-              120.0
+              120
             ],
             [
               1096.926,
               209.398,
-              120.0
+              120
             ],
             [
               824.952,
               209.398,
-              120.0
+              120
             ],
             [
               824.9,
               245.64,
-              120.0
+              120
             ],
             [
               736.228,
               245.64,
-              120.0
+              120
             ],
             [
               736.253,
               229.934,
-              120.0
+              120
             ],
             [
               543.971,
               229.934,
-              120.0
+              120
             ],
             [
               543.94,
               245.64,
-              120.0
+              120
             ],
             [
               321.763,
               245.64,
-              120.0
+              120
             ]
           ]
         ]
@@ -7328,23 +7437,23 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
-            0.0,
+            15,
+            0,
             9.75
           ],
           [
-            15.0,
-            0.0,
-            10.0
+            15,
+            0,
+            10
           ],
           [
-            0.0,
-            0.0,
-            10.0
+            0,
+            0,
+            10
           ],
           [
-            0.0,
-            0.0,
+            0,
+            0,
             9.75
           ]
         ],
@@ -7364,39 +7473,39 @@
         "defaultStyle": {
           "fill": "#5A2910",
           "stroke": "#351607",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1608.0,
+              1608,
               155.592,
-              120.0
+              120
             ],
             [
-              1608.0,
-              145.0,
-              120.0
+              1608,
+              145,
+              120
             ],
             [
-              322.0,
-              145.0,
-              120.0
+              322,
+              145,
+              120
             ],
             [
               321.975,
               155.592,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               155.592,
-              120.0
+              120
             ]
           ]
         ]
@@ -7422,22 +7531,22 @@
         "worldCoordinatesFt": [
           [
             0,
-            0.0,
+            0,
             0.5
           ],
           [
             0.1,
-            0.0,
+            0,
             0.5
           ],
           [
             0.1,
-            0.0,
+            0,
             7.375
           ],
           [
             0,
-            0.0,
+            0,
             7.375
           ]
         ],
@@ -7457,10 +7566,10 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -7469,27 +7578,27 @@
             [
               321.05,
               547.784,
-              120.0
+              120
             ],
             [
               329.63,
               547.784,
-              120.0
+              120
             ],
             [
               330.313,
               256.236,
-              120.0
+              120
             ],
             [
               321.738,
               256.236,
-              120.0
+              120
             ],
             [
               321.05,
               547.784,
-              120.0
+              120
             ]
           ]
         ]
@@ -7515,22 +7624,22 @@
         "worldCoordinatesFt": [
           [
             14.9,
-            0.0,
+            0,
             0.5
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             0.5
           ],
           [
-            15.0,
-            0.0,
+            15,
+            0,
             7.375
           ],
           [
             14.9,
-            0.0,
+            0,
             7.375
           ]
         ],
@@ -7550,10 +7659,10 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -7562,27 +7671,27 @@
             [
               1599.42,
               547.784,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               547.784,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               256.236,
-              120.0
+              120
             ],
             [
               1599.425,
               256.236,
-              120.0
+              120
             ],
             [
               1599.42,
               547.784,
-              120.0
+              120
             ]
           ]
         ]
@@ -7607,22 +7716,22 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            0.0,
+            0,
             0,
             0.5
           ],
           [
-            0.0,
+            0,
             0.1,
             0.5
           ],
           [
-            0.0,
+            0,
             0.1,
             7.375
           ],
           [
-            0.0,
+            0,
             0,
             7.375
           ]
@@ -7643,10 +7752,10 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
@@ -7655,27 +7764,27 @@
             [
               321.05,
               547.863,
-              120.0
+              120
             ],
             [
               320.126,
               548.307,
-              120.0
+              120
             ],
             [
               320.813,
               256.378,
-              120.0
+              120
             ],
             [
               321.737,
               256.556,
-              120.0
+              120
             ],
             [
               321.05,
               547.863,
-              120.0
+              120
             ]
           ]
         ]
@@ -7700,22 +7809,22 @@
         "worldCoordinateUnit": "ft",
         "worldCoordinatesFt": [
           [
-            15.0,
+            15,
             0,
             0.5
           ],
           [
-            15.0,
+            15,
             0,
             7.375
           ],
           [
-            15.0,
+            15,
             0.1,
             7.375
           ],
           [
-            15.0,
+            15,
             0.1,
             0.5
           ]
@@ -7736,39 +7845,39 @@
         "defaultStyle": {
           "fill": "#6B3214",
           "stroke": "#401B08",
-          "opacity": 1.0
+          "opacity": 1
         },
-        "depthMinPx": 120.0,
-        "depthMaxPx": 120.0
+        "depthMinPx": 120,
+        "depthMaxPx": 120
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              1608.0,
+              1608,
               547.8,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               256.3,
-              120.0
+              120
             ],
             [
               1609.006,
               256.121,
-              120.0
+              120
             ],
             [
               1609.006,
               548.243,
-              120.0
+              120
             ],
             [
-              1608.0,
+              1608,
               547.8,
-              120.0
+              120
             ]
           ]
         ]
