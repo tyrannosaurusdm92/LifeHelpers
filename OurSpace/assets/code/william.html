@@ -755,32 +755,12 @@
 <script src="js/onyx/games/leisure/game.js"></script>
 <script>
 (() => {
-  const root = document.documentElement;
   const launch = document.getElementById("fullscreenButton");
-  const shell = document.getElementById("feedHimMeowFullscreenShell");
-  const frame = document.getElementById("feedHimMeowFullscreenFrame");
-  const exit = document.getElementById("feedHimMeowFullscreenExit");
-  if (!launch || !shell || !frame || !exit) return;
-  const openMeow = (event) => {
+  if (!launch) return;
+  launch.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopImmediatePropagation();
-    root.dataset.meowPreviousRuntimeMode = root.dataset.runtimeMode || "module";
-    frame.src = "assets/code/meow.html?build=3b9897b2";
-    shell.hidden = false;
-    root.dataset.runtimeMode = "fast-game";
-  };
-  const closeMeow = (event) => {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    shell.hidden = true;
-    frame.src = "about:blank";
-    root.dataset.runtimeMode = root.dataset.meowPreviousRuntimeMode || "module";
-    delete root.dataset.meowPreviousRuntimeMode;
-  };
-  launch.addEventListener("click", openMeow, true);
-  exit.addEventListener("click", closeMeow, true);
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && root.dataset.runtimeMode === "fast-game") closeMeow(event);
+    if (!window.ONYX_ADMIN_TEST) window.OnyxShell?.enterFastGame?.();
   }, true);
 })();
 </script>
@@ -819,7 +799,7 @@
 <script src="js/onyx/games/virtual/onyx-base-motion-bundle.js"></script>
   <script src="js/onyx/games/virtual/env.js"></script>
   <script src="js/onyx/games/virtual/onyx-motion-admin.js"></script>
-<script src="js/onyx/onyx-core/shared-shells.js"></script>
+<script src="js/onyx/onyx-core/shared-shells.js?v=69fbf92ba836"></script>
 <script src="js/onyx/onyx-core/shared-runtime.js"></script>
 <script src="js/onyx/onyx-core/shared-onyx-income.js"></script>
 <script src="js/onyx/onyx-core/shared-onyx-audio-votes.js"></script>
