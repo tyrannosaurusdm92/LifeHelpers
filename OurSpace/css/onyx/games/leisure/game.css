@@ -172,3 +172,12 @@ html[data-game-window="true"] #onyxGameChat{z-index:4000}
 .hud-btn,.hud-chip{background:#10252B;color:#F4FFFF;border-color:#397078}
 .number-rail{background:linear-gradient(100deg,#071014,#10252B);border-color:#397078}
 :where(button,input,textarea,select):focus-visible{outline:3px solid #00DFE8;outline-offset:2px}
+
+
+/* Feed Him MEOW embedded in Onyx's Leisure tab */
+.onyx-leisure-game-embed{display:grid;gap:.6rem;margin:0 0 1rem;min-width:0}
+.onyx-leisure-game-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem .8rem;border:1px solid rgba(20,20,20,.18);border-radius:12px}
+.onyx-leisure-game-head strong{font-size:1rem}
+.onyx-leisure-game-head span{font-size:.85rem;opacity:.78}
+.onyx-leisure-game-frame{display:block;width:100%;height:min(70vh,760px);min-height:480px;border:1px solid rgba(20,20,20,.22);border-radius:14px;background:#080b12}
+@media(max-width:680px){.onyx-leisure-game-frame{height:68vh;min-height:400px}}
