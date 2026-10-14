@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="../../"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<title>Feed Him MEOW</title>
+<link href="css/onyx/games/leisure/feed_him_meow.css" rel="stylesheet"/>
+<link href="css/onyx/games/leisure/ingredient_garden.css" rel="stylesheet"/>
+
+
+
+</head>
+<body>
+DESIGN BLOCK — Preserve the appearance of the top game navigation, Onyx booster menu and Level Select. Ingredient Garden is playable; removed stages are not present.
+<main class="game-page-shell" id="feedHimMeowBase">
+<!-- DESIGN-BLOCK: TOP GAME NAVIGATION APPEARANCE LOCKED -->
+<header class="game-toolbar">
+<div aria-label="Game menus" class="game-tools" role="toolbar">
+<button aria-pressed="false" class="game-tool" data-tool="controls"><span class="tool-icon">⌨</span><span class="tool-label">Controls</span></button>
+
+<button aria-pressed="false" class="game-tool" data-tool="accessibility"><span class="tool-icon">♿</span><span class="tool-label">Accessibility</span></button>
+<button aria-pressed="false" class="game-tool" data-tool="settings"><span class="tool-icon">⚙</span><span class="tool-label">Settings</span></button>
+<button aria-pressed="false" class="game-tool" data-tool="chat"><span class="tool-icon">▤</span><span class="tool-label">Chat</span></button>
+
+</div>
+</header>
+<div aria-label="Current game controls" class="global-game-status" id="globalGameStatus" role="toolbar">
+<strong id="globalPageName">Level Select</strong>
+<div class="global-game-status-actions">
+
+<button aria-pressed="true" id="globalSoundToggle" type="button">🔊 SOUND</button>
+<span aria-label="OurSpace currency" id="globalCurrency">🟤0⚪0🪙0🔘0</span>
+<button aria-label="Pause game" aria-pressed="false" id="globalPauseToggle" type="button">Ⅱ</button>
+</div>
+</div>
+<div aria-live="polite" class="panels">
+<section class="panel" data-panel="controls" style="--panel-w:720px">
+<div class="panel-head"><span class="panel-icon">⌨</span><strong>Feed Him MEOW Controls</strong><span class="panel-actions"><button aria-label="Pin" data-pin="controls">⌖</button><button aria-label="Close" data-close="controls">×</button></span></div>
+<div class="panel-body">
+<div class="section"><h3>Ingredient Garden</h3><p>Tap/click one ingredient and then an adjacent ingredient to swap, or trace matching ingredients in Connect mode. Match 3 or more. WASD/arrow keys move board focus; Enter/Space selects or extends the active move. R performs an assist move, X shows a hint, Y shuffles, A clears selection, and B confirms/continues when available.</p></div>
+
+<div class="section"><h3>Navigation</h3><p>Use the draggable paw navigation to move through Level Select → Generator → Ingredient Garden.</p></div>
+</div>
+</section>
+
+<section class="panel" data-panel="accessibility" style="--panel-w:560px">
+<div class="panel-head"><span class="panel-icon">♿</span><strong>Accessibility</strong><span class="panel-actions"><button aria-label="Pin" data-pin="accessibility">⌖</button><button aria-label="Close" data-close="accessibility">×</button></span></div>
+<div class="panel-body">
+<div class="section"><label class="check"><input id="reduceMotion" type="checkbox"/> Reduce motion</label><label class="check"><input id="largeGardenPieces" type="checkbox"/> Larger Ingredient Garden pieces</label></div>
+</div>
+</section>
+<section class="panel" data-panel="settings" style="--panel-w:520px">
+<div class="panel-head"><span class="panel-icon">⚙</span><strong>Settings</strong><span class="panel-actions"><button aria-label="Pin" data-pin="settings">⌖</button><button aria-label="Close" data-close="settings">×</button></span></div>
+<div class="panel-body">
+<div class="section"><label class="check"><input checked="" id="musicEnabled" type="checkbox"/> Music</label><label class="check"><input checked="" id="sfxEnabled" type="checkbox"/> Sound effects</label><label class="slider"><span>Volume</span><input id="masterVolume" max="1" min="0" step="0.05" type="range" value="0.65"/><output id="volumeOutput">65%</output></label></div>
+</div>
+</section>
+<section class="panel" data-panel="chat" style="--panel-w:780px">
+<div class="panel-head"><span class="panel-icon">▤</span><strong>Leisure Chat</strong><span class="panel-actions"><button aria-label="Pin" data-pin="chat">⌖</button><button aria-label="Close" data-close="chat">×</button></span></div>
+<div class="panel-body" id="leisureChatMount"></div>
+</section>
+</div>
+<!-- DESIGN-BLOCK: MASTER NAVIGATION APPEARANCE LOCKED -->
+<nav aria-label="Master navigation" class="master-nav" id="masterNav">
+<button aria-expanded="false" aria-label="Open navigation" class="paw-toggle" id="pawToggle" type="button">
+<span class="toe t1"></span><span class="toe t2"></span><span class="toe t3"></span><span class="toe t4"></span><span class="pad"></span>
+</button>
+<div class="master-panel" id="masterPanel">
+<button class="master-link is-current" data-page="page1" type="button">Level Select</button>
+<button class="master-link" data-page="page2" type="button">Generator</button>
+
+<button class="master-link" data-page="page4" type="button">Ingredient Garden</button>
+
+</div>
+</nav>
+<!-- DESIGN-BLOCK: ONYX BOOSTER MENU APPEARANCE LOCKED; CONTENT MAY CHANGE -->
+<div aria-label="Onyx booster controls" class="onyx-float" id="onyxFloat">
+<button aria-controls="boosterPanel" aria-expanded="false" aria-label="Onyx and boosters" class="onyx-bubble" id="onyxBubble" type="button">
+<img alt="Onyx" class="onyx-portrait" id="onyxPortrait" src="assets/images/shared/legacy-static/onyx_hungry.png"/>
+<img alt="" aria-hidden="true" class="onyx-frame" draggable="false" src="assets/images/shared/legacy-static/frame-black.svg"/>
+<span class="onyx-mood" id="onyxMood">HUNGRY</span>
+</button>
+<aside aria-label="Onyx Power-Ups" class="booster-panel" id="boosterPanel">
+<h2 id="boosterTitle">Onyx Power-Ups</h2>
+<div aria-label="OurSpace currency" class="booster-currency" id="sharedCurrency">🟤0⚪0🪙0🔘0</div>
+<div aria-label="Ingredient Garden status" class="onyx-garden-dashboard" hidden="" id="onyxGardenDashboard"><div class="onyx-garden-stat"><span>GOALS</span><b id="onyxGardenGoals">—</b></div><div class="onyx-garden-stat"><span>HAZARDS</span><b id="onyxGardenHazards">—</b></div><div class="onyx-garden-stat"><span>RELAY</span><b id="onyxGardenRelay">—</b></div><div class="onyx-garden-stat"><span>IDLE</span><b id="onyxGardenIdle">0s</b></div></div>
+<div class="booster-grid" id="boosterGrid"></div>
+<div class="onyx-garden-speech" hidden="" id="onyxGardenSpeech">Food remains uneaten. This concerns me personally.</div>
+<p class="booster-note" id="boosterNote">Onyx loads boosters for the active leisure game.</p>
+</aside>
+</div>
+<div class="app-shell">
+<!-- DESIGN-BLOCK: PAGE 1 / LEVEL SELECT APPEARANCE LOCKED -->
+<section class="app-page is-active" data-page-name="Level Select" id="page1">
+<div id="levelSelectRoot">
+<header class="level-hud">
+<img alt="Feed Him MEOW" class="level-logo" src="assets/images/games/leisure/Ingredient_Garden/BOOT-logo-mini.webp"/>
+<div><h1 class="level-title">Level Select</h1><b id="levelBatch">Levels 1–45</b></div>
+<div class="level-hud-stats"><div class="level-pill">ACCOUNT LEVEL <b id="accountLevel">1</b></div><div class="level-pill warm" id="levelWallet">🟤0⚪0🪙0🔘0</div></div>
+</header>
+<main class="level-map-shell"><div class="map-stage"><div aria-hidden="true" class="map-art"></div><div class="level-nodes" id="levelNodes"></div></div><div class="level-map-status" id="levelMapStatus">Choose an unlocked paw to begin a run.</div></main>
+<dialog class="level-dialog" id="levelModal">
+<div class="modal-head"><div class="modal-title">Level <span id="modalLevel">1</span></div><button aria-label="Close level options" class="modal-close" id="modalClose" type="button">×</button></div>
+<div class="modal-body"><div aria-label="0 of 5 stars" class="modal-stars-five" id="modalStars" role="img">☆☆☆☆☆</div><p class="mode-prompt">Choose Player Mode</p><div aria-label="Choose Solo or Duo" class="mode-choice-grid" role="group"><button class="mode-choice solo" id="modalSolo" type="button"><strong>Solo</strong><small>One player controls the selected run.</small></button><button class="mode-choice duo" id="modalDuo" type="button"><strong>Duo</strong><small>Jasper starts; William follows on alternating Garden turns.</small></button></div><p class="mode-prompt">Game Mode</p><div aria-label="Ingredient Garden game mode" class="run-choice-grid" role="group"><button class="run-choice full is-selected" id="modalFullRun" type="button"><strong>Ingredient Garden</strong><small>Collect recipe ingredients in the Garden. Your Garden performance earns up to five stars.</small></button></div><button class="modal-start" id="modalStart" type="button">START LEVEL</button><p class="level-star-rule">Earn at least 1★ in Ingredient Garden to unlock the next level. Better Garden performance earns more stars.</p></div>
+</dialog>
+</div>
+</section>
+<section class="app-page" data-page-name="Generator" id="page2">
+<div class="recipe-launcher" id="recipeLauncher">
+<h1>Feed Him MEOW Recipe Generator</h1>
+<p class="recipe-intro">Generate a recipe to gather its ingredients in the Ingredient Garden.</p>
+<div class="recipe-actions"><button class="recipe-action" id="generateRecipeBtn" type="button">🎲 Generate Recipe</button><button class="recipe-action continue" hidden="" id="continueRecipeBtn" type="button">Continue → Ingredient Garden</button></div>
+<article aria-live="polite" class="recipe-card" hidden="" id="recipeCard" tabindex="-1"></article>
+<p class="recipe-safety">Cooking states and timers are game abstractions, not real-world food-safety instructions.</p>
+</div>
+</section>
+
+<section class="app-page" data-page-name="Ingredient Garden" id="page4">
+<div id="ingredientGardenRoot">
+<div class="garden-shell">
+<header class="garden-top"><img alt="Feed Him MEOW" class="garden-logo" src="assets/images/games/leisure/Ingredient_Garden/BOOT-logo-mini.webp"/><div><h1 class="garden-title">Ingredients Garden</h1><b id="gardenRecipe">Generate a recipe first</b></div><div class="garden-meta"><div class="garden-pill">LEVEL <b id="gardenLevel">1</b></div><div class="garden-pill"><b id="gardenMode">MODE</b></div><div class="garden-pill" id="gardenPlayers">SOLO</div><div class="garden-pill warm" id="gardenLimit">MOVES</div><div class="garden-pill" id="gardenPacing" title="Each matched recipe tile contributes only part of an ingredient unit; the percentage drops as levels get harder.">YIELD 92% • PLAN —</div><div class="garden-pill" id="gardenTopology">CLASSIC BED</div><div class="garden-pill hazard" id="gardenHazardClock">VINES —</div><div class="garden-pill relay" hidden="" id="gardenRelayCharge">RELAY ⚡0</div><div class="garden-pill" id="gardenWallet">🟤0⚪0🪙0🔘0</div><div class="garden-pill">SCORE <b id="gardenScore">0</b></div><div class="garden-pill" id="gardenCombo">BEST ×0</div></div></header>
+<main class="garden-layout"><aside class="game-rail"><div class="rail-head"><h2 class="objective-title">Recipe Objectives</h2></div><div class="objective-list" id="objectiveList"></div></aside><section aria-label="Ingredient Garden boards" class="board-wrap"><div class="board-stage"><div class="garden-bed-label"><b id="gardenBedName">MAIN GARDEN</b><span id="gardenBehaviorLine">Grow, match, and keep the vines under control.</span></div><div class="garden-board-cluster"><div class="garden-board" id="gardenBoard"></div><aside class="garden-relay-panel" hidden="" id="gardenRelayPanel"><div class="relay-head"><b id="gardenRelayTitle">POLLINATOR PLOT</b><span id="gardenRelayHint">Clear 3+ clusters to affect the main garden.</span></div><div class="garden-relay-board" id="gardenRelayBoard"></div><div class="relay-meter"><span>CHARGE</span><b id="gardenRelayMeter">⚡0/0</b></div></aside></div></div></section><aside class="game-rail"><div class="rail-head"><h2 class="booster-title">Garden Boosters</h2></div><div class="booster-list" id="boosterList"></div></aside></main>
+<footer class="garden-bottom"><span id="gardenStatus">Select a level and generate a recipe to begin.</span><button id="gardenBack" type="button">Back to Level Select</button></footer>
+</div>
+<div class="garden-result" hidden="" id="gardenResult"><div class="garden-result-card"><h2 id="gardenResultTitle">Garden Complete</h2><p id="gardenResultText"></p><div class="garden-result-actions"><button id="gardenReplay" type="button">Replay</button><button id="gardenRescue" type="button">Retry Safety</button><button id="gardenContinue" type="button">Return to Level Select</button></div></div></div>
+</div>
+</section>
+<!-- DESIGN-BLOCK: PAGE 5 / KITCHEN APPEARANCE LOCKED -->
+
+</div>
+</main>
+<script src="js/onyx/games/leisure/recipe_catalog.js"></script>
+<script src="js/onyx/games/leisure/recipe_catalog_part_02.js"></script>
+<script src="js/onyx/games/leisure/recipe_catalog_part_03.js"></script>
+<script src="js/onyx/games/leisure/recipe_catalog_part_04.js"></script>
+<script src="js/onyx/games/leisure/recipe_catalog_part_05.js"></script>
+<script src="js/onyx/games/leisure/recipe_catalog_part_06.js"></script>
+<script src="js/onyx/games/leisure/leisure_json_bridge.js"></script>
+<script src="js/onyx/games/leisure/leisure_asset_runtime.js"></script>
+<script src="js/ourspace-core/account_progress.js"></script>
+<script src="js/onyx/games/leisure/feed_him_meow.js"></script>
+<script src="js/onyx/games/leisure/ui_resizer.js"></script>
+<script src="js/onyx/games/leisure/garden_randomizer_core.js"></script>
+<script src="js/onyx/games/leisure/ingredient_garden_recipe_bridge.js"></script>
+<script src="js/onyx/games/leisure/ingredient_garden_currency.js"></script>
+<script src="js/onyx/games/leisure/ingredient_garden_level_randomizer.js"></script>
+<script src="js/onyx/games/leisure/ingredient_garden_embedded_data.js"></script>
+<script src="js/onyx/games/leisure/game_progression.js"></script>
+<script src="js/onyx/games/leisure/level_select.js"></script>
+<script src="js/onyx/games/leisure/recipe_generator.js"></script>
+
+<script src="js/onyx/games/leisure/ingredient_garden_interactions.js"></script>
+<script src="js/onyx/games/leisure/ingredient_garden_board.js"></script>
+<script src="js/onyx/games/leisure/aurora_wasm_loader.js"></script>
+<script src="js/onyx/games/leisure/garden_aurora_effects.js"></script>
+<script src="js/onyx/games/leisure/ingredients_game.js"></script>
+
+
+
+
+
+
+<script src="js/onyx/games/leisure/global_controls.js"></script>
+</body>
+</html>

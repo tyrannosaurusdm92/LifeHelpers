@@ -1,0 +1,36 @@
+FEED HIM MEOW — PASS 22 BUILD SUMMARY
+=====================================
+
+PRIMARY CHANGE
+- Ingredient Garden collection is fractional by level instead of using an artificial 15/45 minimum-turn completion gate.
+- Yield anchors: L1 92%, L10 89%, L25 86%, L50 82%, L90 75%, L140+ 68% floor.
+- Values interpolate continuously between anchors.
+
+RECIPE REQUIREMENTS
+- Retains Pass 21 +35% Garden objective volume.
+- Adds requested +12% Ingredient Garden recipe requirement volume.
+- Formula: round2(baseGardenUnits * 1.35 * 1.12).
+- Culinary Kitchen measurement text is unchanged.
+
+MOVE/TIME RULES
+- No fixed minimum-turn gate remains.
+- Each required target tile is derived from outstanding units / current yield.
+- Planned turns are derived from required target tiles, board mode efficiency, difficulty safety margin, and ingredient diversity.
+- Move boards use the calculated plan directly.
+- Timed boards convert the plan to time and are never truncated below that objective-derived plan.
+- Garden finishes immediately when all ingredient objectives are complete.
+
+UI
+- Garden HUD shows YIELD % and PLAN.
+- Objective rows show decimal units remaining and estimated matching tiles left.
+- Status/result text explains the fractional-yield rule.
+
+QA RESULTS
+- Project validator: PASS
+- JavaScript syntax: 29 files PASS
+- Garden ecology stress test: 420 deterministic boards, 0 failures
+- Pass 22 yield/progression suite: PASS
+- Live recipes checked: 5,001
+- Garden ingredient objectives checked: 45,509
+- Yield floor verified through Level 250: 68%
+- Star progression regression: PASS

@@ -753,6 +753,37 @@
 </main>
 
 <script src="js/onyx/games/leisure/game.js"></script>
+<script>
+(() => {
+  const root = document.documentElement;
+  const launch = document.getElementById("fullscreenButton");
+  const shell = document.getElementById("feedHimMeowFullscreenShell");
+  const frame = document.getElementById("feedHimMeowFullscreenFrame");
+  const exit = document.getElementById("feedHimMeowFullscreenExit");
+  if (!launch || !shell || !frame || !exit) return;
+  const openMeow = (event) => {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    root.dataset.meowPreviousRuntimeMode = root.dataset.runtimeMode || "module";
+    frame.src = "assets/code/meow.html";
+    shell.hidden = false;
+    root.dataset.runtimeMode = "fast-game";
+  };
+  const closeMeow = (event) => {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    shell.hidden = true;
+    frame.src = "about:blank";
+    root.dataset.runtimeMode = root.dataset.meowPreviousRuntimeMode || "module";
+    delete root.dataset.meowPreviousRuntimeMode;
+  };
+  launch.addEventListener("click", openMeow, true);
+  exit.addEventListener("click", closeMeow, true);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && root.dataset.runtimeMode === "fast-game") closeMeow(event);
+  }, true);
+})();
+</script>
 
 
 <script src="js/onyx/games/leisure/chat-sync.js"></script>

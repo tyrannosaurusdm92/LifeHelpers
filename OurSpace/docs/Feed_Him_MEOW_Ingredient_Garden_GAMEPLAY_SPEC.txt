@@ -1,0 +1,960 @@
+FEED HIM MEOW — INGREDIENT GARDEN GAMEPLAY SPECIFICATION
+===========================================================
+Version: 2026-09-26
+Purpose: Convert the Candy Crush + Pudding Pop research into an implementation-ready Ingredient Garden design.
+
+PASS 18 CURRENT IMPLEMENTATION OVERRIDE (2026-09-29)
+----------------------------------------------------
+Latest user instructions override older image-inventory implementation notes below. Current Ingredient Garden uses SVG-only canonical ingredient tokens and code-rendered Aurora/WASM effects. The randomizer now authors seeded board topologies, level programs, hazards, and optional linked satellite boards. Vines can creep and lock ingredients, flowers protect ingredients under 2–4 petal layers, thorns are layered locks, and Onyx has an expanded Garden Command Center plus safe idle snack behavior. Any older instruction that requires ingredient_*.webp or bursteffects_* assets is retired.
+
+SOURCE/REFERENCE INPUTS USED
+----------------------------
+1. candy_crush_and_pudding_pop_exhaustive_research(2).txt
+   - Candy Crush swap-match, objectives, boosters, score/stars, map progression, replay/failure loops.
+   - Pudding Pop continuous line-drawing, diagonal adjacency, chain-length rewards, boosters, scoring, retry flow.
+2. candycrush.html
+   - Used only as a structural placement reference for the level map and in-level HUD/booster layout.
+   - Ingredient Garden must NOT copy Candy Crush branding, candy assets, or proprietary presentation.
+3. open-source_replacements_currency_replaced(2).zip
+   - Open-source/custom replacement UI art, paw level nodes, currency graphics, and ingredient images.
+4. audio_restructured(8).zip
+   - Garden-specific music/SFX inventory and event mapping.
+5. feed_him_meow_PAGE3_FISHING_BLANK_GARDEN(1).zip
+   - Current page order, recipe generator, account-level authority, Fishing placement, Garden handoff context.
+
+
+
+PAGE ORDER / CORE FLOW
+----------------------
+Page 1: Level Select
+Page 2: Recipe Generator
+Page 3: Fishing
+Page 4: Ingredient Garden
+Page 5: Kitchen
+
+The level is selected first, then the recipe is generated. The generated recipe is authoritative for both Fishing and Ingredient Garden.
+
+ROUTING RULES
+-------------
+1. Player selects an available level on Page 1.
+2. Page 1 opens Page 2 and stores the selected account level/run seed.
+3. Page 2 generates exactly one active recipe for that run.
+4. Inspect recipe. Ingredients for fish-type ingredients.
+   Initial fish IDs: salmon, shrimp. Keep the fish-ID list data-driven for future fish additions.
+5. If the recipe contains NO fish:
+   - Continue bypasses Page 3 entirely.
+   - Go directly from Page 2 to Page 4 Ingredient Garden.
+6. If the recipe DOES contain fish:
+   - Continue goes from Page 2 to Page 3 Fishing.
+   - Fishing receives the recipe's fish requirements.
+   - Fishing may be completed well, partially, or poorly; it must never hard-lock the run.
+   - On Fishing continue, go to Page 4.
+7. Page 4 receives:
+   - selected level;
+   - recipe ID and full ingredient set;
+   - fish inventory earned in Fishing;
+   - Fishing performance result;
+   - solo/duo state;
+   - account progression and best-score data.
+8. Completing Ingredient Garden unlocks/continues to Page 5 Kitchen.
+
+FISH INVENTORY → GARDEN HANDOFF
+-------------------------------
+Fishing catches are carried into Ingredient Garden as ingredient inventory.
+
+For each required fish ingredient:
+    gardenFishOutstanding = max(0, gardenFishQuota - fishInventoryCount)
+
+Examples:
+- Garden quota wants 6 Salmon tokens and Fishing inventory contains 6 Salmon: Salmon Garden target becomes 0.
+- Garden quota wants 6 Salmon and Fishing inventory contains 4 Salmon: Garden needs only 2 Salmon.
+- Fishing inventory exceeds the Garden quota: Garden target is 0; surplus can remain in run inventory but does not create a negative target.
+
+“Did badly at Fishing” rule:
+- A bad/partial Fishing result NEVER blocks Ingredient Garden.
+- If any required fish remains short after Fishing OR Fishing explicitly reports its low/fail performance state, apply exactly one +5% difficulty modifier to the Garden level.
+- Apply the +5% once to the level generator’s overall difficulty scalar: effectiveDifficulty = baseDifficulty × 1.05.
+- Do NOT separately add 5% to moves, targets, blockers, and timers, because that compounds into more than a 5% difficulty increase.
+- The generator uses effectiveDifficulty to choose slightly tighter targets/moves/time/blocker pressure.
+
+RECIPE → GARDEN OBJECTIVE MODEL
+-------------------------------
+Ingredient Garden collects the ingredients required by the active recipe, not arbitrary unrelated ingredients.
+
+The culinary amount string (for example “1 cup”) is display information. The puzzle should use a separate integer gardenUnits quota for each ingredient so the board never has to interpret cups, tablespoons, ounces, etc. If gardenUnits is absent, generate it deterministically from level number + recipe ingredient count + difficulty seed.
+
+Garden objective list = every recipe.ingredients entry with gardenUnits > 0, minus any carried Fishing inventory for fish ingredients.
+Recipe seasonings are NOT automatically board objectives unless they are also represented as normal recipe.ingredients with image assets.
+
+The Garden can add non-objective filler ingredients to make a playable board, but filler must come only from the supplied ingredient asset catalogue. It must never introduce an ingredient as a required objective unless the recipe calls for it.
+
+UNLIMITED LEVEL SYSTEM
+----------------------
+Ingredient Garden has no final level. Levels are generated continuously.
+- Account progress is authoritative.
+- Default to level 1 only when account progress does not exist.
+- Page 1 shows 45 numbered paw nodes at one time.
+- After the player progresses beyond a visible 45-level batch, generate/show the next 45-node batch using the same 45-node path geometry with new absolute level numbers.
+- Previous 45-level batches remain navigable for replay.
+- Completed levels retain best score, stars, best currency result, best combo/chain, and mode.
+- Future levels are locked until account progression reaches them.
+- Replaying an old level never lowers account progress.
+
+PAGE 1 — LEVEL SELECT, 1050×850
+--------------------------------
+Use Candy Crush only as a structural reference: a scrolling themed route with numbered nodes, completed/current/locked states, and star results. The supplied replacement art is the actual visual source.
+
+Recommended fixed coordinate regions inside 1050×850:
+- Top status/currency strip: y=0..90.
+- Scrollable map viewport: x=0..1050, y=90..850.
+- 45 paw nodes live inside the map viewport and use the existing 45-node coordinate path/geometry.
+- Current level should scroll toward center when Page 1 opens.
+- Each node shows absolute level number.
+- Completed node shows best 1–3 stars.
+- Current available node pulses subtly unless reduced-motion is enabled.
+- Locked nodes are disabled and do not accept click/touch.
+- Selecting an unlocked level opens Page 2 Recipe Generator, never Garden directly.
+
+CANDYCRUSH.HTML STRUCTURAL COMPARISON USED FOR PAGE 1
+------------------------------------------------------
+The reference HTML cycles Map_background_tileable_0..3 for the world-map background, uses separate available/completed/locked map-point states, overlays star state on the node, and visually distinguishes unavailable levels. Ingredient Garden should preserve that INFORMATION ARCHITECTURE while using the paw replacements and Feed Him MEOW palette/art.
+
+PAGE 4 — INGREDIENT GARDEN, 1050×850
+-------------------------------------
+The Garden game is a fixed 1050×850 canvas.
+
+Recommended landscape layout:
+- Top HUD: 1050×90.
+- Left objective/score rail: x=10..180, y=105..760.
+- Main board: approximately x=195..855, y=105..765 (square play region; default 8×8 grid).
+- Right booster/inventory rail: x=870..1040, y=105..765.
+- Bottom status/turn/result strip: y=775..850.
+
+The exact art can overlap those conceptual regions, but the board must remain fully visible and tappable at 1050×850.
+
+TWO GAMEPLAY FAMILIES
+---------------------
+Every generated Garden level chooses one primary interaction family. The choice is saved with the level seed so replaying the same level uses the same mode.
+
+A. TRACE / CONNECT MODE — PUDDING-POP-LIKE
+- Touch/click one ingredient and drag a continuous line through matching ingredient tokens.
+- Every next token must be within one board cell of the previous token.
+- Orthogonal AND diagonal neighbors are legal: row delta <=1 and column delta <=1, excluding the same cell.
+- A token cannot be used twice in the same trace.
+- Default minimum valid chain: 3 matching ingredient tokens.
+- Releasing a valid chain clears/collects it, refills the board, then resolves any secondary cascades.
+- Releasing an invalid chain (<3 or broken) cancels without consuming the player’s turn/move.
+- The active trace line/head are CODE-RENDERED with the Aurora/WASM effect engine. No bursteffects image sprite is required. The ribbon responds to ingredient identity, trace velocity, charge/field drift, and reduced-motion settings.
+- Longer chains increase score and can create special effects/free-booster chances.
+
+Recommended trace thresholds, stored in JSON so they can be rebalanced:
+- 3–4: normal clear.
+- 5–7: create one line/row/column special.
+- 8–11: stronger area/ingredient special.
+- 12+: premium chain event; guaranteed special and eligible for “particularly well” free-booster reward.
+
+B. SWAP / MATCH-3 MODE — CANDY-CRUSH-LIKE
+- Swap exactly two orthogonally adjacent board ingredients.
+- A normal swap is legal only if it creates at least one horizontal/vertical match of 3+ OR activates a legal special/booster interaction.
+- Invalid swaps animate back and do not consume a move/turn.
+- Matches clear, recipe targets increment, gravity refills, and automatic cascades resolve before the next player may act.
+- Match 4 in a straight line: line-clear special.
+- Match 5 in a straight line: ingredient-color clear special.
+- T/L match: local area-clear special.
+- Specials are Feed Him MEOW/Garden themed; do not import Candy Crush candy art.
+
+MODE DISTRIBUTION
+-----------------
+The generator must support both families indefinitely. Default balance may begin at 50% Trace / 50% Swap, seeded by the level number so a level’s mode is stable on replay. The percentage must be data-driven, not hard-coded into UI code.
+
+BOARD GENERATION
+----------------
+Default board: 8×8.
+- Never generate an immediately dead board.
+- Swap levels should not begin with unintended automatic matches unless the level template explicitly calls for them.
+- Trace levels must begin with at least one legal 3+ chain.
+- Recipe-required ingredients receive enough spawn weight that the goal is achievable.
+- Filler ingredients create variety but cannot make the recipe goal mathematically impossible.
+- If no legal action remains, auto-shuffle eligible ingredients without charging a move/turn.
+- Generated blockers may be introduced gradually, but they must never make a required ingredient unreachable without a defined solution.
+
+PASS 18 SEEDED BOARD TOPOLOGY / ECOLOGY
+----------------------------------------
+The 8×8 coordinate space is now a maximum envelope, not a requirement that all 64 cells be playable. The seeded randomizer may mask inactive holes to create classic, diamond, split-garden, ring-bed, terrace, flower-cross, or twin-island beds. Inactive cells never match, trace, accept blockers, or receive gravity/refill.
+
+Each generated level also receives a seeded level program: calm beds, petal release, vine watch, thorn maze, cascade orchard, relay greenhouse, or mixed ecology. The program biases topology, hazards, starting specials, and linked-board behavior while retaining deterministic replay.
+
+Eligible levels may include a smaller linked relay garden (4×4, 4×5, or 5×5). Main-board cascades charge it. Clearing a 3+ connected ingredient cluster on the relay maps that ingredient back to the main garden to trigger a free mapped clear/cascade. If the ingredient is unavailable on the main board, relay energy attacks flower petals, vines, or thorns instead. Relay actions do not consume the normal Garden move.
+
+HAZARD ECOLOGY
+----------------
+- VINES: occupy/lock an ingredient. On their scheduled creep turn they can spread to one adjacent eligible cell. Damaging a vine suppresses that creep cycle. New spread is rejected if it would leave the board unsolvable.
+- FLOWER PLOTS: cover a real ingredient with 2–4 petal layers. Adjacent clears/eligible specials strip petals. The protected ingredient cannot move or be collected until the final petal layer is removed.
+- THORNS: layered ingredient locks requiring repeated adjacent/special pressure.
+- INFECTION: retained only as a rare late-game legacy spreading hazard, also solvability checked.
+
+Hazards must favor non-objective filler when spreading and must never intentionally eliminate the only route to a required ingredient.
+
+LEVEL DIFFICULTY INPUTS
+-----------------------
+Base difficulty may scale using:
+- account level;
+- number of recipe ingredients;
+- total gardenUnits target;
+- active board ingredient variety;
+- blocker count/layers;
+- move budget or timer budget;
+- special-piece opportunities;
+- Fishing +5% modifier when applicable.
+
+Use one normalized difficulty score and derive parameters from it. Do not compound independent +5% penalties.
+
+MOVES / TIME
+------------
+Most levels should use a move budget because both researched puzzle families are strongly compatible with turn efficiency. Timed levels may also be generated so the user’s “add more time” boosters have a direct role.
+- Move-limited level: HUD shows moves remaining.
+- Timed level: HUD shows time remaining.
+- Mixed constraint levels are optional and should be introduced only at higher difficulty.
+- Accessibility option should be able to exclude timed levels from generation without blocking progression.
+
+SOLO PLAY
+---------
+One player owns every board action. Score, objective progress, boosters, and result all apply to that player’s account/run.
+
+DUO PLAY
+--------
+Duo uses one shared board and one shared recipe objective.
+- Jasper ALWAYS takes the first turn.
+- William ALWAYS takes the second turn.
+- Then alternate Jasper → William → Jasper → William until the round ends.
+- The inactive player’s board interaction layer is disabled: no selecting, dragging, swapping, or board-target booster use.
+- In Swap mode, a turn is one valid swap plus its full cascade resolution.
+- In Trace mode, a turn is one valid completed trace plus its full refill/cascade resolution.
+- Invalid swap/invalid trace does NOT hand over the turn.
+- While cascades/animations resolve, both users are temporarily locked out.
+- After resolution, enable only the next player.
+- The HUD must visibly say “Jasper’s turn” or “William’s turn.”
+- A board-changing booster counts as that player’s turn if it replaces the main board action. Pure meta boosters such as adding time/moves do not by themselves end the turn.
+- Score/objective progress is shared for the level. Keep per-player contribution stats for the result screen if desired, but never make contribution determine whose turn is next.
+
+SCORING / STARS / REPLAY
+------------------------
+Completion is objective-based; score measures quality.
+Recommended scoring components:
+- points per ingredient cleared;
+- larger bonus for recipe-target ingredients;
+- chain/match-length bonus;
+- cascade/combo multiplier;
+- special activation bonus;
+- remaining moves/time completion bonus;
+- no penalty for using carried Fishing inventory.
+
+Each generated level stores three score thresholds for 1/2/3 stars.
+- Meeting the recipe objective completes the level and gives at least 1 star.
+- 2/3 stars require stronger score performance.
+- Best score and best star result persist to the account.
+- Any completed level, including a low-score 1-star clear, can be replayed indefinitely.
+- A replay may improve best score/stars and can award additional currency.
+- Replays can also award free boosters when performance qualifies.
+- Never force a player to accept a low score as final.
+
+“PARTICULARLY WELL” FREE BOOSTER RULE
+-------------------------------------
+A level is eligible to grant a free booster when at least one of these data-driven performance conditions is met:
+- three-star result;
+- exceptional trace chain (default threshold 12+);
+- large cascade/combo threshold;
+- substantial moves/time remaining;
+- new personal best above the level’s high-performance threshold.
+
+The exact booster chosen may be deterministic or weighted random, but show the award before returning to Level Select/Kitchen.
+
+CURRENCY SYSTEM — EXACT REQUIRED FORMAT
+---------------------------------------
+🟤 = copper
+⚪ = silver
+🪙 = gold
+🔘 = platinum
+
+Display order everywhere:
+🟤0 ⚪0 🪙0 🔘0
+
+Caps and conversion:
+- copper: 0–9
+- silver: 0–9
+- gold: 0–9
+- platinum: unlimited
+- 10 copper = 1 silver
+- 10 silver = 1 gold
+- 10 gold = 1 platinum
+
+Normalize from low to high after EVERY earn/spend transaction:
+while copper >= 10: copper -= 10; silver += 1
+while silver >= 10: silver -= 10; gold += 1
+while gold >= 10: gold -= 10; platinum += 1
+
+This automatically enforces the 9 cap on copper/silver/gold while allowing platinum to grow without limit.
+Never display an old generic coin/gold-bar currency in Ingredient Garden.
+
+EARNING CURRENCY
+----------------
+Currency is earned from Garden play, not only from first-time clears.
+Reward calculation can use:
+- base level completion reward;
+- score/star bonus;
+- combo/chain bonus;
+- first-clear bonus;
+- replay improvement bonus;
+- perfect/near-perfect performance bonus.
+
+Low-score levels may be replayed specifically to earn a better score, free boosters, and more currency. Currency payout values must be data-driven in JSON so they can be balanced without editing board logic.
+
+SPENDING CURRENCY / BOOSTERS
+----------------------------
+Currency can buy in-level boosters. Prices belong in JSON and must use the four-currency wallet.
+Required supported effects include:
+- add time on timed levels;
+- add moves on move-limited levels;
+- remove a selected board ingredient/piece;
+- reduce an outstanding ingredient requirement (“take away ingredients” from the goal);
+- swap any two eligible ingredients so a better match/trace setup can be made;
+- shuffle the board;
+- inject/spawn more currently required recipe ingredients;
+- collect/remove all visible copies of a selected ingredient type;
+- optional reward multiplier/mystery booster.
+
+The nine board_ui_booster_N slots are presentation slots, not hard-coded logic. Booster ID/effect/cost/unlock level must come from data. Locked variants show until the booster’s unlock condition is met.
+
+RECOMMENDED BOOSTER SLOT SEMANTICS
+----------------------------------
+1. Scent Sweep — select an ingredient type; collect/remove all visible copies.
+2. Recipe Trim — reduce one outstanding recipe ingredient quota by a configured amount.
+3. Paw Hammer — remove one selected piece/blocker.
+4. Retry Heart / Safety — one configured continue/near-miss assist; do not create a general life system unless desired.
+5. Time/Move Paw — +time on timed levels or +moves on move-limited levels.
+6. Mystery Gift — grants one random eligible booster.
+7. Reward Charm — boosts currency/score reward for this run.
+8. Ingredient Crate — injects required recipe ingredients into legal cells.
+9. Imperial Swap — swap any two eligible ingredients without requiring the swap itself to form a match.
+
+Keep existing Onyx floating booster behavior compatible. If Onyx boosters and the board booster rail share an effect, they must call the same underlying effect handler rather than duplicate logic.
+
+FAILURE / NEAR-MISS
+-------------------
+A Garden level fails only when its active limit expires (moves or time) before all outstanding recipe ingredients are collected, or a special generated rule explicitly says so.
+- Show exactly what remains.
+- Allow Retry.
+- Allow eligible purchased/free extra time/moves/goal reduction.
+- Do not erase the player’s prior best score on failure.
+- A Fishing low result is not a Garden failure; it only adds the one +5% difficulty modifier described above.
+
+WIN / CONTINUE
+--------------
+When every recipe ingredient quota is satisfied:
+1. Lock board input.
+2. Resolve any current cascade/trace animation.
+3. Play completion audio.
+4. Calculate score, stars, currency, and free booster awards.
+5. Save best score/stars/rewards/account progress.
+6. Offer Replay for a better score OR Continue to Page 5 Kitchen.
+7. Continuing sends the active recipe and collected inventory/state to Kitchen.
+
+ACCESSIBILITY / INPUT
+---------------------
+- Mouse and touch must both work.
+- Trace mode must not require pixel-perfect paths; use cell hit areas and interpolate across adjacent entered cells.
+- Keyboard/gamepad assist can select cells and confirm swaps/traces.
+- Reduced motion disables/reduces pulsing, fireworks, lightning, and long particle chains but never removes gameplay information.
+- Timed-level exclusion is permitted as an accessibility generation preference.
+- Active/inactive duo turn state must be conveyed by text, not color alone.
+- Do not use pink as a required gameplay color.
+
+PALETTE
+-------
+Use the established Feed Him MEOW palette: black, white, persimmon orange, cadmium yellow, true #00FFFF cyan, dodger blue, lime green, gold, teal, and turquoise. User-provided logos/ingredient art retain their own intended color.
+
+IMPLEMENTATION STATE CONTRACT
+-----------------------------
+Recommended run-state object (conceptual; field names may change):
+{
+  level,
+  seed,
+  mode: "trace" | "swap",
+  recipeId,
+  recipeIngredients,
+  fishRequired,
+  fishInventory,
+  fishingPerformance,
+  fishingDifficultyModifier: 1.00 | 1.05,
+  gardenOutstanding,
+  limitType: "moves" | "time",
+  movesRemaining,
+  timeRemaining,
+  soloOrDuo,
+  activePlayer: "Jasper" | "William",
+  score,
+  stars,
+  wallet: { copper, silver, gold, platinum },
+  boosterInventory,
+  bestScore,
+  bestStars
+}
+
+Do not use browser-only progression as the authority. Account state remains authoritative for level progress/bests/wallet where account sync exists.
+
+AUDIO RULE
+----------
+Only the Garden-specific files listed in the audio appendix below should be wired as Garden gameplay audio. Fishing audio remains on Fishing; Kitchen audio remains on Kitchen. Shared/global shell audio can remain global, but Garden events should not accidentally play Fishing/Kitchen tracks.
+
+===============================================================================
+APPENDIX A — GARDEN AUDIO INVENTORY AND EXACT TRIGGERS
+===============================================================================
+actions/garden_board_popup.mp3  [0.504s]
+    USE: Play once when the 1050×850 Garden board/HUD finishes appearing or a board-result panel pops in.
+
+actions/garden_collect_points.mp3  [0.653s]
+    USE: Short score/currency tick when points or currency visibly fly into the HUD counter; throttle during large cascades.
+
+actions/garden_combo_clear.mp3  [1.044s]
+    USE: Play on combo/cascade clear or long trace clear; pitch/volume may scale modestly with combo if supported.
+
+actions/garden_piece_plop.mp3  [0.336s]
+    USE: Play when new ingredient pieces settle/refill into the board; throttle/batch so 64 simultaneous sounds do not stack.
+
+actions/garden_select_piece.mp3  [0.157s]
+    USE: Play on first valid piece selection or when entering the next valid cell in a trace; throttle in fast drag motion.
+
+failure/garden_failure_lose.mp3  [4.284s]
+    USE: Primary failure sting when moves/time expire and goals remain.
+
+failure/garden_failure_negative_beeps.mp3  [1.296s]
+    USE: Invalid swap/invalid trace/locked action/insufficient-currency feedback. Do not play for ordinary disabled inactive-duo hover.
+
+music/garden_music_8bit.mp3  [43.651s]
+    USE: One of the rotating/seeded Garden background music loops. Loop seamlessly; music setting controls it.
+
+music/garden_music_loop_03.mp3  [40.416s]
+    USE: One of the rotating/seeded Garden background music loops.
+
+music/garden_music_short_loop.mp3  [6.936s]
+    USE: Short Garden background loop; useful for early/tutorial levels or low-motion/minimal mode.
+
+powerups/garden_powerup_01.mp3  [2.116s]
+    USE: Play once when a Garden booster successfully activates, not merely when highlighted/purchased.
+
+success/garden_success_complete.mp3  [1.959s]
+    USE: Objective-set complete cue when the final outstanding recipe requirement reaches zero.
+
+success/garden_success_correct_match.mp3  [1.750s]
+    USE: Valid match/trace confirmation, especially when it contributes to a recipe target.
+
+success/garden_success_get_ingredient.mp3  [2.534s]
+    USE: Play when a recipe-required ingredient is credited to the objective/inventory counter. Batch repeated credits.
+
+success/garden_success_jingle.mp3  [1.896s]
+    USE: High-quality result/reward jingle for 3-star, personal best, or free-booster award.
+
+success/garden_success_level_up.mp3  [6.672s]
+    USE: Play when account progression actually advances to a newly unlocked level/batch.
+
+success/garden_success_level_win.mp3  [3.240s]
+    USE: Primary level-win sting after objective completion and before result panel settles.
+
+AUDIO MIXING / TIMING
+---------------------
+- Music loops at lower gain than SFX.
+- Starting a new music track stops/fades the previous Garden track; never run all three simultaneously.
+- Rapid piece/refill/collect sounds must be throttled or grouped to prevent audio clipping.
+- Failure sting stops/fades gameplay music.
+- Win sequence recommendation: final-objective cue → level-win sting → optional high-performance jingle/level-up.
+- Respect master music/SFX/volume controls.
+
+===============================================================================
+APPENDIX B — IMAGE ASSET INVENTORY / EXACT INGREDIENT GARDEN USE
+===============================================================================
+All 296 image files in open-source_replacements/assets/images are inventoried below.
+“Compatibility-only/optional” means the asset remains in the package but should NOT clutter the core Garden board unless the named feature is enabled.
+
+
+--- BOOT / LOADING ---
+BOOT-background_1.jpg  [1920×960]
+    USE: Loading/transition backdrop for Ingredient Garden and Level Select while their 1050×850 canvases initialize.
+BOOT-logo-ja.webp  [652×469]
+    USE: Compatibility alias of the full logo; do not show a second logo. Use only if legacy code asks for the -ja key.
+BOOT-logo-mini-ja.webp  [316×110]
+    USE: Compatibility alias of the mini logo; use only for legacy -ja key lookups.
+BOOT-logo-mini.webp  [316×110]
+    USE: Compact Feed Him MEOW logo for small loading/reward panels.
+BOOT-logo.webp  [652×469]
+    USE: Full Feed Him MEOW logo on full-size loading/intro panel.
+BOOT-preloader_loading_bar.webp  [340×26]
+    USE: Empty/loading-track graphic.
+BOOT-preloader_loading_bar_full.webp  [272×16]
+    USE: Filled loading bar clipped from 0–100%.
+BOOT-preloader_shine_title.webp  [520×520]
+    USE: Short shine pass over logo when load completes; respect reduced-motion.
+BOOT-preloader_whell_1.webp  [450×450]
+    USE: First rotating loading-wheel layer.
+BOOT-preloader_whell_2.webp  [600×600]
+    USE: Second counter-rotating loading-wheel layer; respect reduced-motion.
+
+--- GENERAL BACKGROUNDS ---
+bg.jpg  [960×480]
+    USE: Primary Ingredient Garden gameplay backdrop behind the board/HUD.
+bg_1.jpg  [960×480]
+    USE: Fallback/alternate Ingredient Garden backdrop for modal transitions or if bg.jpg fails; do not stack both.
+
+--- LEVEL SELECT / MAP ---
+Map_background_tileable_0.jpg  [1200×409]
+    USE: Level Select scrolling-map background segment 1; cycle vertically through map batches.
+Map_background_tileable_1.jpg  [1200×700]
+    USE: Level Select scrolling-map background segment 2; cycle vertically through map batches.
+Map_background_tileable_2.jpg  [1200×700]
+    USE: Level Select scrolling-map background segment 3; cycle vertically through map batches.
+Map_background_tileable_3.jpg  [1200×700]
+    USE: Level Select scrolling-map background segment 4; cycle vertically through map batches.
+map_margin.webp  [566×987]
+    USE: Decorative side edge for Level Select map.
+mapsheet_chest.webp  [132×120]
+    USE: Closed reward chest in popups or milestone rewards.
+mapsheet_chest_open.webp  [166×140]
+    USE: Open reward chest after claiming.
+mapsheet_chest_shadow.webp  [166×86]
+    USE: Shadow under chest artwork.
+mapsheet_cloud_1.webp  [492×408]
+    USE: Decorative Level Select cloud layer 1.
+mapsheet_cloud_2.webp  [480×402]
+    USE: Decorative Level Select cloud layer 2.
+mapsheet_cloud_3.webp  [424×238]
+    USE: Decorative Level Select cloud layer 3.
+mapsheet_map_chest.webp  [86×84]
+    USE: Milestone chest placed on the level path.
+mapsheet_map_chest_bottom.webp  [92×84]
+    USE: Bottom/body layer of milestone chest when animated/opened.
+mapsheet_map_chest_cover_0.webp  [92×68]
+    USE: Milestone chest lid animation frame/state 0.
+mapsheet_map_chest_cover_1.webp  [92×68]
+    USE: Milestone chest lid animation frame/state 1.
+mapsheet_map_chest_cover_2.webp  [92×68]
+    USE: Milestone chest lid animation frame/state 2.
+mapsheet_map_point.webp  [94×98]
+    USE: Current selected/current-level paw node base.
+mapsheet_map_point_1.webp  [120×120]
+    USE: Completed-level paw node.
+mapsheet_map_point_2.webp  [120×120]
+    USE: Available/uncompleted paw node.
+mapsheet_map_point_3.webp  [120×120]
+    USE: Locked future-level paw node.
+mapsheet_map_star_1.webp  [105×51]
+    USE: One-star/best-score star display on a level node.
+mapsheet_map_star_2.webp  [105×51]
+    USE: Two-star level-node result display.
+mapsheet_map_star_3.webp  [105×51]
+    USE: Three-star level-node result display.
+mapsheet_map_star_blank_1.webp  [105×51]
+    USE: Empty star placeholder for an unearned level star.
+
+--- IN-LEVEL BOARD / HUD / BOOSTERS ---
+board_bottom_ui_base.webp  [666×75]
+    USE: Bottom HUD/booster tray base inside the 1050×850 Garden canvas.
+board_bottom_ui_shadow.webp  [92×16]
+    USE: Shadow under bottom HUD buttons/boosters.
+board_combo_bg.webp  [154×95]
+    USE: Combo/chain counter panel shown during cascades or long trace chains.
+board_goal_rod.webp  [76×4]
+    USE: Goal-progress rod/track for recipe collection progress.
+board_left_ui_base.webp  [150×666]
+    USE: Left-side objective/status rail, modeled after the landscape in-game side panel in candycrush.html.
+board_score_bar1.webp  [141×76]
+    USE: Score bar background/low-progress layer.
+board_score_bar2.webp  [141×76]
+    USE: Score bar filled layer.
+board_score_bar2_alpha.webp  [146×132]
+    USE: Glow/alpha overlay for score bar when crossing a star threshold.
+board_score_bar_front.webp  [186×66]
+    USE: Foreground frame over the score fill.
+board_score_bar_star.webp  [33×33]
+    USE: Lit score-threshold star marker.
+board_score_bar_star_blank.webp  [33×33]
+    USE: Unlit score-threshold star marker.
+board_task_complete.webp  [56×50]
+    USE: Objective-complete badge beside a recipe ingredient goal.
+board_task_fail.webp  [42×42]
+    USE: Failed/unmet objective badge on result/failure presentation.
+board_tile_1.webp  [72×72]
+    USE: Cyan/teal clawed paw board-cell skin; rotate/tint variants only if needed, but do not replace ingredient art.
+board_tile_2.webp  [72×72]
+    USE: Persimmon/orange clawed paw board-cell skin; alternate board-cell skin.
+board_tile_border_inside_corner.webp  [72×72]
+    USE: Cyan clawed paw cell skin/state for a third paw color/state; use as a normal board skin, not literal border geometry.
+board_tile_border_outside_corner.webp  [72×72]
+    USE: Cadmium-yellow/gold clawed paw cell skin/state; use as a normal board skin, not literal border geometry.
+board_tile_border_straight.webp  [72×72]
+    USE: Lime-green clawed paw cell skin/state; use as a normal board skin, not literal border geometry.
+board_top_ui_horizontal.webp  [233×580]
+    USE: Landscape top HUD base for moves/time/level/turn label.
+board_ui_booster_1.webp  [90×90]
+    USE: Garden booster slot 1 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_1_locked.webp  [90×90]
+    USE: Garden booster slot 1 locked icon/state until its configured unlock level.
+board_ui_booster_2.webp  [90×90]
+    USE: Garden booster slot 2 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_2_locked.webp  [90×90]
+    USE: Garden booster slot 2 locked icon/state until its configured unlock level.
+board_ui_booster_3.webp  [90×90]
+    USE: Garden booster slot 3 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_3_locked.webp  [90×90]
+    USE: Garden booster slot 3 locked icon/state until its configured unlock level.
+board_ui_booster_4.webp  [90×90]
+    USE: Garden booster slot 4 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_4_locked.webp  [90×90]
+    USE: Garden booster slot 4 locked icon/state until its configured unlock level.
+board_ui_booster_5.webp  [90×90]
+    USE: Garden booster slot 5 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_5_locked.webp  [90×90]
+    USE: Garden booster slot 5 locked icon/state until its configured unlock level.
+board_ui_booster_6.webp  [90×90]
+    USE: Garden booster slot 6 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_6_locked.webp  [90×90]
+    USE: Garden booster slot 6 locked icon/state until its configured unlock level.
+board_ui_booster_7.webp  [90×90]
+    USE: Garden booster slot 7 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_7_locked.webp  [90×90]
+    USE: Garden booster slot 7 locked icon/state until its configured unlock level.
+board_ui_booster_8.webp  [90×90]
+    USE: Garden booster slot 8 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_8_locked.webp  [90×90]
+    USE: Garden booster slot 8 locked icon/state until its configured unlock level.
+board_ui_booster_9.webp  [90×90]
+    USE: Garden booster slot 9 unlocked icon. Slot behavior is data-driven in garden booster JSON; display in the booster rail/shop.
+board_ui_booster_9_locked.webp  [90×90]
+    USE: Garden booster slot 9 locked icon/state until its configured unlock level.
+board_ui_booster_lock.webp  [90×90]
+    USE: Generic lock overlay for any locked Garden booster slot.
+
+--- INGREDIENTS — CURRENT SVG-ONLY RULE ---
+All canonical Garden ingredient tokens come from:
+    assets/images/games/leisure/shared/ingredients/*.svg
+
+The ingredient catalogue is the authority for ID → SVG mapping. Garden may show only entries that are gardenCollectable and eligible for the active recipe difficulty. Non-SVG ingredient_*.webp/png/jpg assets are RETIRED and must not return. Recipe objectives, board pieces, goal thumbnails, relay-board pieces, and Garden inventory should all resolve the same canonical ingredient ID.
+
+--- MATCH / TRACE / BLOCKER EFFECTS — CURRENT CODE-RENDERED RULE ---
+The old bursteffects_* image family is RETIRED. Do not restore those files as gameplay effects. Current effects are rendered by CSS/Canvas + the Aurora WASM kernel. This includes:
+- trace ribbons and trace heads;
+- match/cascade bursts;
+- row/column/area special effects;
+- shuffle sweeps;
+- vine creep/cutting;
+- thorn impacts;
+- flower petal stripping and final release;
+- linked relay-board pulses;
+- timer urgency;
+- Onyx snack dash/bite feedback.
+
+Reduced motion shortens/suppresses decorative motion without removing state information. Blocker layers, hazard countdowns, recipe goals, and active-player state remain readable without animation.
+
+--- BUTTONS ---
+buttons_booster_plus.webp  [36×36]
+    USE: Small + button beside booster inventory to purchase/add a booster.
+buttons_btn_buy.webp  [75×75]
+    USE: Confirm purchase button in booster shop popup.
+buttons_btn_chest_gate.webp  [136×65]
+    USE: Locked reward-chest/gate button on Level Select only.
+buttons_btn_daily_challenge.webp  [61×62]
+    USE: Optional daily Garden challenge button; never required for core progression.
+buttons_btn_game_pause.webp  [75×75]
+    USE: Pause button inside Garden HUD.
+buttons_btn_green.webp  [198×112]
+    USE: Generic positive/confirm button skin.
+buttons_btn_home.webp  [170×168]
+    USE: Return to Level Select/page 1 from Garden pause/result UI.
+buttons_btn_moregames.webp  [170×168]
+    USE: Do not expose as “more games”; retain only as compatibility asset, or repurpose icon-only as mode-info if needed.
+buttons_btn_orange.webp  [198×112]
+    USE: Generic warning/secondary button skin.
+buttons_btn_play.webp  [196×194]
+    USE: Start/resume selected Garden level.
+buttons_btn_plus.webp  [60×61]
+    USE: Generic add/increment button.
+buttons_btn_present.webp  [75×75]
+    USE: Claim free booster/reward button.
+buttons_btn_red.webp  [198×112]
+    USE: Destructive/cancel/failure action button skin.
+buttons_btn_sound_off.webp  [150×148]
+    USE: Sound-muted button.
+buttons_btn_sound_on.webp  [150×148]
+    USE: Sound-on button.
+buttons_btn_start_goal.webp  [75×74]
+    USE: Start-goal/level-goals button before a Garden round.
+buttons_btn_task_blank.webp  [70×67]
+    USE: Blank task/objective button shell for generated recipe-goal rows.
+buttons_btn_task_info.webp  [70×67]
+    USE: Objective/help info button.
+buttons_btn_trash.webp  [74×75]
+    USE: Discard/cancel selected consumable or clear optional selection.
+buttons_btn_trash_buy.webp  [74×75]
+    USE: Confirm paid discard/reset only if such a flow is enabled; otherwise keep unused.
+buttons_btn_x.webp  [90×81]
+    USE: Close modal/popup.
+buttons_button_green.webp  [282×86]
+    USE: Wide confirm/continue button skin.
+buttons_button_play.webp  [400×108]
+    USE: Wide play/continue button skin.
+buttons_end_game_btn.webp  [198×112]
+    USE: End/retry/leave-level result button shell.
+buttons_Mission_Button_locked_yellow.webp  [61×62]
+    USE: Locked challenge/bonus-reward button state; optional post-level challenge UI only.
+buttons_Mission_Button_yellow.webp  [61×62]
+    USE: Unlocked challenge/bonus-reward button state; optional post-level challenge UI only.
+buttons_moves-ad-btn.webp  [191×106]
+    USE: Do not use for ads. If retained, repurpose only as an “extra moves/time” button with no ad behavior.
+buttons_send_heart_button.webp  [36×35]
+    USE: Not part of core Garden. Keep disabled unless a future duo gift/assist system explicitly uses it.
+
+--- SHARED HUD / MODAL / CURRENCY SUPPORT ---
+ssheet_booster_ammount.webp  [36×36]
+    USE: Numeric booster-count badge behind remaining booster quantity.
+ssheet_broken_heart.webp  [68×63]
+    USE: Not used as a life-loss system in core Garden; reserve for future retry/duo disconnect messaging only.
+ssheet_chest_full.webp  [166×140]
+    USE: Full reward chest icon for earned-but-unclaimed reward.
+ssheet_coin_1.webp  [42×42]
+    USE: Copper currency icon: 🟤. Display with copper amount 0–9.
+ssheet_coin_2.webp  [89×90]
+    USE: Silver currency icon: ⚪. Display with silver amount 0–9.
+ssheet_coin_3.webp  [111×117]
+    USE: Gold currency icon: 🪙. Display with gold amount 0–9.
+ssheet_coin_package_icon_0.webp  [42×44]
+    USE: Garden/map HUD or modal support asset; use according to its filename and keep out of the ingredient board unless it is a deliberate overlay.
+ssheet_coin_package_icon_1.webp  [58×42]
+    USE: Garden/map HUD or modal support asset; use according to its filename and keep out of the ingredient board unless it is a deliberate overlay.
+ssheet_coin_package_icon_2.webp  [78×42]
+    USE: Garden/map HUD or modal support asset; use according to its filename and keep out of the ingredient board unless it is a deliberate overlay.
+ssheet_coin_package_icon_3.webp  [93×42]
+    USE: Garden/map HUD or modal support asset; use according to its filename and keep out of the ingredient board unless it is a deliberate overlay.
+ssheet_coin_package_icon_4.webp  [93×69]
+    USE: Garden/map HUD or modal support asset; use according to its filename and keep out of the ingredient board unless it is a deliberate overlay.
+ssheet_coin_package_icon_5.webp  [93×93]
+    USE: Garden/map HUD or modal support asset; use according to its filename and keep out of the ingredient board unless it is a deliberate overlay.
+ssheet_coins_lable.webp  [103×47]
+    USE: Four-currency compact strip in the order copper, silver, gold, platinum.
+ssheet_currency.webp  [42×42]
+    USE: Platinum currency icon: 🔘. Platinum has no cap.
+ssheet_daily_icon.webp  [74×74]
+    USE: Optional daily reward/challenge icon; not required for ordinary level play.
+ssheet_daily_icon_dark.webp  [74×74]
+    USE: Disabled/claimed state for optional daily reward/challenge icon.
+ssheet_dark_screen.webp  [150×150]
+    USE: Dim overlay behind Garden modal/result/shop panels.
+ssheet_eraser.webp  [50×50]
+    USE: Precision remove-piece booster/tool icon.
+ssheet_failed_dimond.webp  [184×192]
+    USE: Failure warning/result badge (name retained for compatibility; not a diamond currency).
+ssheet_gate.webp  [160×166]
+    USE: Locked Level Select batch/gate panel if a milestone gate is enabled.
+ssheet_gift.webp  [162×188]
+    USE: Large free booster/reward gift icon.
+ssheet_gift_small.webp  [40×46]
+    USE: Small reward gift icon.
+ssheet_goal_bar_empty.webp  [378×90]
+    USE: Empty objective progress track.
+ssheet_goal_bar_full.webp  [366×24]
+    USE: Filled objective progress track clipped to progress percentage.
+ssheet_gold_wheel.webp  [388×388]
+    USE: Optional reward wheel using the four game currencies; never treat as gold-only currency.
+ssheet_gold_wheel_ribbon.webp  [440×62]
+    USE: Reward-wheel currency legend/ribbon.
+ssheet_heart.webp  [61×62]
+    USE: Do not use as ordinary lives in core Garden; available for future duo assist/retry shield UI.
+ssheet_icon_video_coins.webp  [377×175]
+    USE: No ad behavior. If shown, repurpose as a generic currency reward icon or keep hidden.
+ssheet_icon_video_gift.webp  [427×181]
+    USE: No ad behavior. If shown, repurpose as a generic free-gift icon or keep hidden.
+ssheet_icon_video_hearts.webp  [370×175]
+    USE: No ad behavior. Keep hidden unless a future non-ad reward flow explicitly needs it.
+ssheet_lock.webp  [73×86]
+    USE: Generic lock icon for unavailable levels/boosters.
+ssheet_minus_ico.webp  [25×25]
+    USE: Decrease quantity control in shop/settings.
+ssheet_move_extra_label.webp  [192×37]
+    USE: “+MOVE” label for an extra-moves booster on move-limited levels.
+ssheet_movie_icon.webp  [147×174]
+    USE: Do not use as an advertisement icon in core Garden; keep compatibility-only.
+ssheet_off_lable.webp  [115×66]
+    USE: OFF label for toggles such as sound/music.
+ssheet_plus_ico.webp  [25×25]
+    USE: Increase quantity control in shop/settings.
+ssheet_popup_background_2.webp  [660×659]
+    USE: Primary modal panel background.
+ssheet_popup_bigtext_backgr.webp  [471×58]
+    USE: Large title/text strip inside modal.
+ssheet_popup_lighht.webp  [193×194]
+    USE: Popup glow/highlight layer.
+ssheet_popup_text_backgr.webp  [210×54]
+    USE: Normal popup body text background.
+ssheet_popup_top.webp  [620×211]
+    USE: Popup header/top cap.
+ssheet_prize_wheel_2.webp  [388×388]
+    USE: Optional reward wheel using the project palette; not required for core progression.
+ssheet_prize_wheel_arrow.webp  [76×71]
+    USE: Pointer/arrow for optional reward wheel.
+ssheet_score_icon.webp  [80×75]
+    USE: Score/trophy icon beside current/best score.
+ssheet_star.webp  [119×116]
+    USE: Full-size earned star in results.
+ssheet_star_blank.webp  [107×104]
+    USE: Full-size empty result star.
+ssheet_star_small.webp  [49×48]
+    USE: Small star for compact HUD/map summaries.
+ssheet_starPart.webp  [76×74]
+    USE: Star burst/fragment effect during star award.
+ssheet_task_slider.webp  [700×245]
+    USE: Task/objective progress slider background.
+ssheet_text_shade_bg.webp  [274×119]
+    USE: Text-legibility backing behind overlaid HUD labels.
+ssheet_top-panel-bg.webp  [640×87]
+    USE: Top HUD background segment.
+ssheet_top-panel-coinsBg.webp  [161×52]
+    USE: Top HUD currency strip background. Show 🟤 ⚪ 🪙 🔘 in that order.
+ssheet_top-panel-heardsBg.webp  [161×50]
+    USE: Compatibility-only hearts panel background; keep hidden unless a future retry-heart system is enabled.
+ssheet_top-panel-heart.webp  [64×66]
+    USE: Compatibility-only heart icon; keep hidden in core Garden.
+ssheet_top-panel-horizontal-bg.webp  [1240×87]
+    USE: Landscape top-panel backing inside the 1050×850 Garden canvas.
+ssheet_top-panel-starsBg.webp  [140×50]
+    USE: Top-panel star/best-score backing.
+ssheet_top-panel-start.webp  [50×50]
+    USE: Start/level panel background.
+ssheet_tut_hand.webp  [80×94]
+    USE: Tutorial hand for first-time swap/trace instructions and booster targeting.
+
+--- OPTIONAL DAILY / STREAK REWARD UI ---
+dailyReward_arrow.webp  [50×42]
+    USE: Navigation/indicator arrow in optional daily/streak reward panel.
+dailyReward_bar.webp  [280×52]
+    USE: Track/background for optional daily/streak reward progress bar.
+dailyReward_bar_fill.webp  [260×32]
+    USE: Filled portion of optional daily/streak reward progress bar.
+dailyReward_big_pink_present.webp  [231×226]
+    USE: Present artwork for optional daily/streak reward claims; size/state follows filename.
+dailyReward_big_popup.webp  [510×714]
+    USE: Background/frame for optional daily/streak reward popup.
+dailyReward_current_day_box.webp  [117×117]
+    USE: Current-day cell in optional daily/streak reward panel.
+dailyReward_current_day_box_big.webp  [376×118]
+    USE: Current-day cell in optional daily/streak reward panel.
+dailyReward_daily_prize_panel_bg.webp  [320×118]
+    USE: Optional daily/streak reward presentation asset; do not place on core board.
+dailyReward_daily_rewards_ribbon.webp  [520×151]
+    USE: Optional daily/streak reward title ribbon.
+dailyReward_friend_frame.webp  [154×153]
+    USE: Compatibility-only social/avatar frame; keep hidden in core Garden duo UI unless explicitly reused.
+dailyReward_future_day_box.webp  [117×117]
+    USE: Future/locked day cell in optional daily/streak reward panel.
+dailyReward_future_day_box_big.webp  [376×118]
+    USE: Future/locked day cell in optional daily/streak reward panel.
+dailyReward_medium_green_present.webp  [72×68]
+    USE: Present artwork for optional daily/streak reward claims; size/state follows filename.
+dailyReward_medium_pink_present.webp  [84×82]
+    USE: Present artwork for optional daily/streak reward claims; size/state follows filename.
+dailyReward_medium_purple_present.webp  [69×71]
+    USE: Present artwork for optional daily/streak reward claims; size/state follows filename.
+dailyReward_passed_day_box.webp  [117×117]
+    USE: Completed/past day cell in optional daily/streak reward panel.
+dailyReward_reward_BG.webp  [380×379]
+    USE: Optional daily/streak reward card background.
+dailyReward_selected_day.webp  [99×47]
+    USE: Selected day highlight in optional daily/streak reward panel.
+dailyReward_seventh_day_box.webp  [375×84]
+    USE: Special seventh-day reward cell in optional daily/streak reward panel.
+dailyReward_small_green_present.webp  [52×48]
+    USE: Present artwork for optional daily/streak reward claims; size/state follows filename.
+dailyReward_small_pink_present.webp  [71×69]
+    USE: Present artwork for optional daily/streak reward claims; size/state follows filename.
+dailyReward_small_purple_present.webp  [42×44]
+    USE: Present artwork for optional daily/streak reward claims; size/state follows filename.
+dailyReward_thanks_bubble.webp  [200×78]
+    USE: Optional reward thank-you message bubble.
+dailyReward_unselected_day.webp  [99×47]
+    USE: Selected day highlight in optional daily/streak reward panel.
+
+===============================================================================
+APPENDIX C — INGREDIENT FILE → SEMANTIC INGREDIENT MAPPING
+===============================================================================
+ingredient_23.webp = Bacon
+ingredient_25.webp = Basil
+ingredient_28.webp = Broth
+ingredient_29.webp = Butter
+ingredient_30.webp = Cabbage
+ingredient_31.webp = Chicken
+ingredient_32.webp = Chives
+ingredient_33.webp = Egg
+ingredient_34.webp = Gravy
+ingredient_35.webp = Milk
+ingredient_36.webp = Mushrooms
+ingredient_37.webp = Noodles
+ingredient_38.webp = Onions
+ingredient_39.webp = Pork Chops
+ingredient_40.webp = Potatoes
+ingredient_41.webp = Rice
+ingredient_42.webp = Rosemary
+ingredient_43.webp = Salmon
+ingredient_44.webp = Shrimp
+ingredient_45.webp = Steak
+ingredient_46.webp = Tomatoes
+ingredient_47.webp = Water
+
+Do not use filenames as player-facing labels. The recipe ID/name is authoritative; the numbered filename is only an asset lookup key.
+
+===============================================================================
+APPENDIX D — CANDYCRUSH.HTML PLACEMENT RULES ADAPTED FOR INGREDIENT GARDEN
+===============================================================================
+Observed structural ideas from the reference HTML that are useful here:
+- World map uses tiled background segments and level buttons tied to map coordinates.
+- Map buttons distinguish completed, available/uncompleted, and locked states, and star art is overlaid separately.
+- Landscape in-level UI uses a top status area plus a side/bottom booster panel rather than putting controls over the center of the board.
+- Pause and booster controls live outside the primary match grid.
+- Score/progress and goal information are HUD elements, not board pieces.
+
+Ingredient Garden adaptation:
+- Keep the 8×8 board visually central and unobstructed.
+- Keep recipe goals/score in the left HUD rail.
+- Keep booster inventory/shop on the right/bottom HUD rail.
+- Keep move/time and duo active-turn label in the top HUD.
+- Keep currency in a compact top strip using 🟤 ⚪ 🪙 🔘 assets/ordering.
+- Use paw nodes instead of candy-map nodes.
+- Use ingredient artwork instead of candy artwork.
+- Use Feed Him MEOW palette and user/open-source replacements only.
+
+===============================================================================
+APPENDIX E — IMPLEMENTATION ACCEPTANCE CHECKLIST
+===============================================================================
+[ ] Page 1 Level Select internal canvas is exactly 1050×850.
+[ ] Page 4 Ingredient Garden internal canvas is exactly 1050×850.
+[ ] Responsive behavior scales/letterboxes the fixed canvas instead of changing geometry.
+[ ] Level Select shows 45 paw levels per batch and supports unlimited batches.
+[ ] Recipe is generated before Fishing/Garden routing.
+[ ] No-fish recipe bypasses Fishing and goes directly to Garden.
+[ ] Fish recipe routes to Fishing first.
+[ ] Fishing inventory reduces/removes matching fish quotas in Garden.
+[ ] Poor/partial Fishing never blocks progress; Garden gets one +5% difficulty scalar.
+[ ] Garden objective includes all active recipe ingredients, not one arbitrary target.
+[ ] Trace levels support orthogonal + diagonal one-cell adjacency.
+[ ] Swap levels use orthogonal adjacent swaps and 3+ matching.
+[ ] Same level seed reproduces same primary mode and baseline layout rules on replay.
+[ ] Duo disables inactive player input.
+[ ] Duo order is always Jasper first, William second, then alternating.
+[ ] Invalid action does not consume/hand over a turn.
+[ ] Currency displays exactly 🟤 copper, ⚪ silver, 🪙 gold, 🔘 platinum.
+[ ] Copper/silver/gold normalize to 0–9; platinum is unlimited.
+[ ] Currency can purchase Garden boosters.
+[ ] Low-score completed levels can be replayed for better score, boosters, and more money.
+[ ] Exceptional play can award free boosters.
+[ ] Best score/stars persist to account progression.
+[ ] Garden-specific audio is mapped exactly as Appendix A.
+[ ] Every replacement image asset is accounted for in Appendix B.
+[ ] No Candy Crush copyrighted candy art/branding is required by the implementation.
+[ ] No pink is required as a functional gameplay color.
+
+END OF SPECIFICATION

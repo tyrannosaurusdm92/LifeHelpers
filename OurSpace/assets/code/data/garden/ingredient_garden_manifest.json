@@ -1,0 +1,238 @@
+{
+  "id": "ingredient_garden",
+  "title": "Feed Him MEOW — Ingredient Garden",
+  "version": "2026-09-29-pass22-fractional-yield-dynamic-move-budget",
+  "page": 4,
+  "canvas": {
+    "width": 1050,
+    "height": 850,
+    "defaultRows": 8,
+    "defaultCols": 8
+  },
+  "entrypoint": "games/leisure/scripts/ingredients_game.js",
+  "stylesheet": "css/games/leisure/ingredient_garden.css",
+  "javascript": [
+    "games/leisure/scripts/leisure_asset_runtime.js",
+    "games/leisure/scripts/leisure_json_bridge.js",
+    "games/leisure/scripts/garden_randomizer_core.js",
+    "games/leisure/scripts/ingredient_garden_recipe_bridge.js",
+    "games/leisure/scripts/ingredient_garden_currency.js",
+    "games/leisure/scripts/ingredient_garden_level_randomizer.js",
+    "games/leisure/scripts/ingredient_garden_embedded_data.js",
+    "games/leisure/scripts/ingredient_garden_interactions.js",
+    "games/leisure/scripts/ingredient_garden_board.js",
+    "games/leisure/scripts/wasm/aurora_wasm_loader.js",
+    "games/leisure/scripts/garden_aurora_effects.js",
+    "games/leisure/scripts/ingredients_game.js"
+  ],
+  "data": [
+    "json/games/leisure/ingredient_catalog.json",
+    "json/games/leisure/ingredient_garden_boosters.json",
+    "json/games/leisure/ingredient_garden_currency.json",
+    "json/games/leisure/ingredient_garden_level_path.json",
+    "json/games/leisure/ingredient_garden_randomizer_config.json",
+    "json/games/leisure/recipes.json"
+  ],
+  "modes": [
+    "trace",
+    "swap"
+  ],
+  "flow": [
+    "level_select",
+    "recipe_generator",
+    "pinball",
+    "ingredient_garden",
+    "kitchen"
+  ],
+  "notes": [
+    "Ingredient Garden ingredient tokens are SVG-only. Runtime rejects non-SVG ingredient aliases.",
+    "Garden required objectives exclude catalog entries with gardenCollectable=false; kitchen-only recipe components remain in the recipe.",
+    "Garden objectives and filler candidates obey the active recipe difficulty authority; Super Easy/Easy cannot spawn fish.",
+    "Randomizer seeds non-rectangular topologies, ecology hazards, pre-seeded specials, and named level programs while preserving replay determinism.",
+    "Vines creep, mud oozes, quicksand periodically sinks filler ingredients, mobile bees relocate among neighboring cells, flowers shed layered petals, and thorns remain multi-hit locks.",
+    "Honey is a layered pinned overlay: the trapped ingredient cannot move, but it remains matchable so a match formed from outside the honey cracks the shell until the ingredient is freed.",
+    "Onyx physically moves his bubble to booster targets before Garden boosters resolve; booster-specific static moods and coded impact effects are selected by booster type.",
+    "Sunbeam shrivels vines/infection and dries wet hazards; Weed Spray damages a selected ecology patch; Bee Smoker scatters bees and cracks honey.",
+    "Every hazard spread/movement operation preserves a legal-play invariant or rolls back/shuffles rather than intentionally leaving the board unwinnable.",
+    "WASD/arrow navigation, touch/mouse trace and swap input, reduced motion, relay garden effects, and the idle Onyx snack behavior remain supported.",
+    "Level Select can launch a full three-mini-game run, Pinball Fishing only, or Ingredient Garden only from the same Solo/Duo dialog.",
+    "Overall level progression is 0-5 stars: 1 star unlocks the next level, while 5 stars is reserved for completing all three mini-games in a full run with 3-star Garden performance.",
+    "All primary game windows and menus use the shared eight-direction UI resizer; stretching a surface scales its controls, labels, and buttons with it.",
+    "Pass 22 keeps the Pass 21 +35% Garden objective volume and adds another +12% recipe ingredient requirement volume.",
+    "Every cleared recipe-ingredient tile now contributes only a fraction of one Garden ingredient unit: about 92% at Level 1, 89% at Level 10, 86% at Level 25, 82% at Level 50, 75% at Level 90, and never below 68% from Level 140 onward.",
+    "The old 15-turn Match-3 / 45-turn trace completion gates are removed. A level ends as soon as its ingredient objectives are actually complete.",
+    "Move and time budgets are calculated from the real remaining ingredient units, fractional yield, interaction-mode collection efficiency, difficulty safety margin, and ingredient diversity so difficulty comes from recipe work rather than filler turns."
+  ],
+  "effectEngine": {
+    "type": "code_rendered_canvas_css_wasm",
+    "version": "5.0.0-ecology-honey-bees-boosters",
+    "kernel": "games/leisure/scripts/wasm/aurora_kernel.wasm",
+    "rasterEffectSprites": false,
+    "features": [
+      "emission-weighted particles",
+      "channel-specific lifetimes",
+      "altitude density",
+      "energy decay",
+      "magnetic lateral drift",
+      "folded curtain ribbons",
+      "interaction probability",
+      "charge-density field",
+      "electric-field directional pull",
+      "velocity rescaling",
+      "deterministic particle respawn",
+      "periodic boundary wrapping",
+      "creeping-vine field",
+      "petal strip/release bursts",
+      "thorn impact spikes",
+      "relay-board aurora link pulses",
+      "Onyx snack dash/bite pulse",
+      "mud puddle ripples",
+      "quicksand sink spirals",
+      "honey comb crack bursts",
+      "bee swarm motion",
+      "Sunbeam rays",
+      "Weed Spray droplets",
+      "Bee Smoker rings",
+      "Onyx booster target dash/impact pulse"
+    ]
+  },
+  "difficultyAuthority": {
+    "recipeBands": {
+      "super_easy": [
+        2,
+        3
+      ],
+      "easy": [
+        3,
+        5
+      ],
+      "medium": [
+        5,
+        7
+      ],
+      "hard": [
+        8,
+        10
+      ],
+      "super_hard": [
+        11,
+        14
+      ],
+      "expert": [
+        15,
+        18
+      ]
+    },
+    "coreCountExcludes": [
+      "sauce",
+      "seasoning",
+      "herb"
+    ],
+    "fillerRule": "gardenMinimumDifficulty <= active recipe difficulty",
+    "fishMinimumDifficulty": "medium",
+    "nonCollectableRecipeItems": "remain Kitchen recipe components but never become Garden objectives or filler"
+  },
+  "boardGeneration": {
+    "topologies": [
+      "classic",
+      "diamond",
+      "split_garden",
+      "ring_bed",
+      "terraces",
+      "flower_cross",
+      "twin_islands"
+    ],
+    "levelPrograms": [
+      "calm_beds",
+      "petal_release",
+      "vine_watch",
+      "thorn_maze",
+      "cascade_orchard",
+      "relay_greenhouse",
+      "mixed_ecology",
+      "muddy_patch",
+      "honey_hive",
+      "quicksand_bog"
+    ],
+    "multiBoard": {
+      "enabled": true,
+      "unlockLevel": 18,
+      "layouts": [
+        "pollinator_plot",
+        "herb_patch",
+        "greenhouse_bench"
+      ]
+    },
+    "hazards": [
+      "vine",
+      "thorn",
+      "flower",
+      "mud",
+      "quicksand",
+      "honey",
+      "bee",
+      "infection"
+    ],
+    "seededReplayStable": true
+  },
+  "soundIntegration": {
+    "hazardEffects": true,
+    "relayEffects": true,
+    "OnyxSnack": true,
+    "timerUrgency": "procedural tick + existing Garden SFX",
+    "boosterEffects": true,
+    "ecologyHazards": [
+      "mud",
+      "quicksand",
+      "honey",
+      "bee"
+    ]
+  },
+  "playRoutes": [
+    "full_level",
+    "pinball_only",
+    "ingredient_garden_only"
+  ],
+  "starProgression": {
+    "range": [
+      0,
+      5
+    ],
+    "nextLevelUnlockStars": 1,
+    "fiveStarRequirement": "Complete Pinball Fishing, Ingredient Garden, and Kitchen in one full-level run; Garden performance must earn 3/3 internal stars.",
+    "fourStarRequirement": "Complete all three mini-games in one full-level run; Garden performance must earn at least 2/3 internal stars."
+  },
+  "gardenPacing": {
+    "objectiveMultiplier": 1.35,
+    "recipeRequirementMultiplier": 1.12,
+    "yieldCurve": [
+      {
+        "level": 1,
+        "percent": 92
+      },
+      {
+        "level": 10,
+        "percent": 89
+      },
+      {
+        "level": 25,
+        "percent": 86
+      },
+      {
+        "level": 50,
+        "percent": 82
+      },
+      {
+        "level": 90,
+        "percent": 75
+      },
+      {
+        "level": 140,
+        "percent": 68
+      }
+    ],
+    "minimumYieldPercent": 68,
+    "completionRule": "all recipe ingredient objectives complete",
+    "limitRule": "dynamic objective-derived move/time budget; no fixed 15/45 minimum-turn gate"
+  }
+}

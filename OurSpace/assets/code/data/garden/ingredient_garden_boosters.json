@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 3,
+  "slots": 9,
+  "boosters": [
+    {
+      "slot": 1,
+      "id": "scent_sweep",
+      "name": "Scent Sweep",
+      "effect": "collect_visible_ingredient_type",
+      "unlockLevel": 1,
+      "cost": {
+        "copper": 8
+      },
+      "boardChanging": true
+    },
+    {
+      "slot": 2,
+      "id": "recipe_trim",
+      "name": "Recipe Trim",
+      "effect": "reduce_outstanding_requirement",
+      "effectValue": 2,
+      "unlockLevel": 3,
+      "cost": {
+        "silver": 1,
+        "copper": 5
+      },
+      "boardChanging": false
+    },
+    {
+      "slot": 3,
+      "id": "paw_hammer",
+      "name": "Paw Hammer",
+      "effect": "remove_selected_piece_or_blocker",
+      "unlockLevel": 2,
+      "cost": {
+        "copper": 6
+      },
+      "boardChanging": true
+    },
+    {
+      "slot": 4,
+      "id": "retry_safety",
+      "name": "Retry Heart / Safety",
+      "effect": "near_miss_continue",
+      "effectValue": 1,
+      "unlockLevel": 8,
+      "cost": {
+        "silver": 2
+      },
+      "boardChanging": false
+    },
+    {
+      "slot": 5,
+      "id": "time_move_paw",
+      "name": "Time / Move Paw",
+      "effect": "add_active_limit",
+      "moves": 5,
+      "timeSeconds": 20,
+      "unlockLevel": 1,
+      "cost": {
+        "silver": 1
+      },
+      "boardChanging": false
+    },
+    {
+      "slot": 6,
+      "id": "mystery_gift",
+      "name": "Mystery Gift",
+      "effect": "grant_random_eligible_booster",
+      "unlockLevel": 15,
+      "cost": {
+        "gold": 1
+      },
+      "boardChanging": false
+    },
+    {
+      "slot": 7,
+      "id": "reward_charm",
+      "name": "Reward Charm",
+      "effect": "reward_multiplier",
+      "multiplier": 1.5,
+      "unlockLevel": 20,
+      "cost": {
+        "gold": 1,
+        "silver": 5
+      },
+      "boardChanging": false
+    },
+    {
+      "slot": 8,
+      "id": "ingredient_crate",
+      "name": "Ingredient Crate",
+      "effect": "inject_required_ingredients",
+      "effectValue": 6,
+      "unlockLevel": 10,
+      "cost": {
+        "silver": 2
+      },
+      "boardChanging": true
+    },
+    {
+      "slot": 9,
+      "id": "imperial_swap",
+      "name": "Imperial Swap",
+      "effect": "swap_any_two_eligible_pieces",
+      "unlockLevel": 5,
+      "cost": {
+        "silver": 1,
+        "copper": 8
+      },
+      "boardChanging": true
+    }
+  ],
+  "freeAwardWeights": {
+    "scent_sweep": 2,
+    "recipe_trim": 2,
+    "paw_hammer": 3,
+    "retry_safety": 1,
+    "time_move_paw": 3,
+    "mystery_gift": 1,
+    "reward_charm": 1,
+    "ingredient_crate": 2,
+    "imperial_swap": 2
+  },
+  "onyxMenuBoosters": [
+    {
+      "id": "paw_hammer",
+      "name": "\ud83d\udc3e Paw Hammer",
+      "desc": "Smack one ingredient or blocker.",
+      "start": 2,
+      "role": "target"
+    },
+    {
+      "id": "scent_bomb",
+      "name": "\ud83d\udc43 Scent Sweep",
+      "desc": "Collect every visible copy of one ingredient.",
+      "start": 1,
+      "role": "target"
+    },
+    {
+      "id": "void_shuffle",
+      "name": "\ud83c\udf00 Void Shuffle",
+      "desc": "Reshuffle every movable Garden ingredient.",
+      "start": 2,
+      "role": "instant"
+    },
+    {
+      "id": "nine_lives",
+      "name": "9\ufe0f\u20e3 Nine Lives",
+      "desc": "Add 5 moves or 20 seconds.",
+      "start": 1,
+      "role": "instant"
+    },
+    {
+      "id": "imperial_swap",
+      "name": "\ud83d\udc51 Imperial Swap",
+      "desc": "Swap any two eligible Garden ingredients.",
+      "start": 1,
+      "role": "target"
+    },
+    {
+      "id": "vine_shear",
+      "name": "\u2702\ufe0f Imperial Shears",
+      "desc": "Cut up to three vine/thorn layers or strip flower petals.",
+      "start": 2,
+      "role": "hazard"
+    },
+    {
+      "id": "pollinator_paw",
+      "name": "\ud83c\udf3c Pollinator Paw",
+      "desc": "Charge the linked mini-board and strip flower petals.",
+      "start": 1,
+      "role": "relay"
+    },
+    {
+      "id": "snack_attack",
+      "name": "\ud83c\udf7d\ufe0f Snack Attack",
+      "desc": "Onyx eats up to three safe filler ingredients and refills them.",
+      "start": 1,
+      "role": "onyx"
+    },
+    {
+      "id": "cascade_cat",
+      "name": "\u26a1 Cascade Cat",
+      "desc": "Prime a recipe-aware cascade on the main Garden.",
+      "start": 1,
+      "role": "cascade"
+    },
+    {
+      "id": "sunbeam",
+      "name": "\u2600\ufe0f Sunbeam",
+      "desc": "Onyx drops a sunlight burst that shrivels vines and dries wet hazards.",
+      "start": 2,
+      "role": "ecology"
+    },
+    {
+      "id": "weed_spray",
+      "name": "\ud83e\uddf4 Weed Spray",
+      "desc": "Spray a selected patch to cut vines, thorns, infection, and soften mud.",
+      "start": 2,
+      "role": "target"
+    },
+    {
+      "id": "bee_smoker",
+      "name": "\ud83d\udc1d Bee Smoker",
+      "desc": "Calm bee swarms and crack nearby honey layers without hurting flowers.",
+      "start": 1,
+      "role": "ecology"
+    }
+  ]
+}
