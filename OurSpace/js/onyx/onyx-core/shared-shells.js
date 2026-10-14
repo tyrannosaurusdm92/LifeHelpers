@@ -3,8 +3,7 @@ const DOCS=Object.freeze({leisure:"PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KP
 const decode=s=>{const bytes=Uint8Array.from(atob(s),c=>c.charCodeAt(0));return new TextDecoder("utf-8").decode(bytes)};
 const loaded=new WeakSet();
 function frameFor(tab){return document.getElementById(tab==="leisure"?"feedHimMeowFullscreenFrame":tab==="work"?"onyxWorkFullscreenFrame":"happyHomeFullscreenFrame")}
-function loadInto(f,tab){if(!f||!DOCS[tab]||loaded.has(f))return f;f.srcdoc=decode(DOCS[tab]);loaded.add(f);return f}
-function load(tab){return loadInto(frameFor(tab),tab)}
+function load(tab){const f=frameFor(tab);if(!f||!DOCS[tab]||loaded.has(f))return f;f.srcdoc=decode(DOCS[tab]);loaded.add(f);return f}
 function focus(tab){const f=load(tab);try{f?.focus?.();f?.contentWindow?.postMessage({source:"ourspace-onyx-parent",type:"focus"},"*")}catch(_){}return f}
-window.OnyxFullscreenShells=Object.freeze({load,loadInto,focus,frameFor});window.dispatchEvent(new Event('onyx-fullscreen-shells-ready'));
+window.OnyxFullscreenShells=Object.freeze({load,focus,frameFor});
 })();
