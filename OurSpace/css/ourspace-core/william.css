@@ -2133,9 +2133,14 @@ html[data-theme="lightning"] body{color:#F8F8F5}
 .site-page[data-page-design="true"] :is(p,li,dt,dd,blockquote,.small-note,.os-social-intro,.os-social-detail,.os-social-empty){text-shadow:none}
 .site-page[data-page-design="true"] a{color:var(--link-color,#712A00)}
 .site-page[data-page-design="true"] a:hover{color:var(--link-hover-color,#EC5800)}
-.site-page[data-page-design="true"] :is(button,.button,.file-button):not(.jump-orb):not(.jump-link){
+.site-page[data-page-design="true"] :is(button,.button,.file-button,input[type="submit"],input[type="button"],input[type="reset"]):not(.jump-orb):not(.jump-link):not(.danger){
+ background:color-mix(in srgb,var(--button-bg,#008484) 82%,#421900)!important;
+ color:var(--button-text,#F8F8F5)!important;
  border-color:color-mix(in srgb,var(--border-color,#712A00) 58%,transparent)!important;
  box-shadow:0 2px 5px rgba(11,12,15,.12)!important;
+}
+.site-page[data-page-design="true"] :is(button,.button,.file-button,input[type="submit"],input[type="button"],input[type="reset"]):not(.jump-orb):not(.jump-link):not(.danger):hover{
+ background:color-mix(in srgb,var(--button-hover-bg,#EC5800) 76%,#421900)!important;
 }
 .jump-nav .jump-orb{
  background:color-mix(in srgb,var(--jump-custom-bubble,#712A00) 82%,#421900)!important;
