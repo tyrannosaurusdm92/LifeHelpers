@@ -746,3 +746,77 @@ button,input,select,textarea{font-family:inherit;transition:box-shadow .16s ease
 .page-route,.nav-group-toggle{min-height:46px;border-radius:11px}
 .portal-auth-panel>header{padding-bottom:16px}
 @media(max-width:650px){.portal-auth-panel,.portal-workspace,.portal-welcome{padding:18px}}
+
+
+/* 2026-10-15 balance pass: retain palette accents and give sign-in a calmer frame. */
+:root{--os-paper:#F8F8F5}
+body{
+ background:
+  radial-gradient(circle at 12% 4%,rgba(0,132,132,.34),transparent 34rem),
+  radial-gradient(circle at 92% 16%,rgba(113,42,0,.38),transparent 32rem),
+  linear-gradient(135deg,#0B0C0F 0%,#421900 58%,#008484 100%) fixed!important;
+ color:#F8F8F5;
+}
+.shell{
+ border:1px solid rgba(199,255,255,.22)!important;
+ background:rgba(11,12,15,.36)!important;
+ box-shadow:0 18px 44px rgba(11,12,15,.28)!important;
+}
+.site-header,.footer{border-color:rgba(199,255,255,.25)!important}
+.site-header{background:rgba(11,12,15,.24)!important}
+.footer{background:#421900!important;color:#F8F8F5!important}
+.master-bar,.master-panel{
+ border-color:rgba(199,255,255,.25)!important;
+ box-shadow:0 8px 24px rgba(11,12,15,.3)!important;
+}
+.master-bar{background:linear-gradient(110deg,#0B0C0F,#421900 72%)!important}
+.master-panel{background:#421900!important;color:#F8F8F5!important}
+.page-route{
+ background:rgba(248,248,245,.08)!important;color:#F8F8F5!important;
+ border:1px solid rgba(199,255,255,.2)!important;box-shadow:none!important;
+}
+.page-route.is-current{background:#008484!important;color:#F8F8F5!important;outline:2px solid #F07D38!important}
+button,.button,.file-button{
+ border:1px solid #712A00!important;border-radius:11px!important;
+ background:#F8F8F5!important;color:#421900!important;
+ box-shadow:0 2px 5px rgba(11,12,15,.12)!important;
+}
+button.secondary,.button.secondary{background:#712A00!important;color:#F8F8F5!important}
+button.dark,.button.dark{background:#421900!important;color:#F8F8F5!important}
+button:hover,.button:hover,.file-button:hover{filter:brightness(1.04)}
+a{color:#712A00}
+#page-portal .portal-topbar{border-bottom:1px solid rgba(199,255,255,.32)!important}
+#page-portal .portal-logo-slot{
+ background:rgba(248,248,245,.9)!important;border:1px solid rgba(199,255,255,.5);
+ border-radius:18px;box-shadow:0 12px 28px rgba(11,12,15,.18)
+}
+#page-portal .portal-auth-panel{
+ background:#F8F8F5!important;color:#0B0C0F!important;
+ border:1px solid rgba(199,255,255,.42)!important;
+ box-shadow:0 12px 30px rgba(11,12,15,.22)!important;
+}
+#page-portal .portal-auth-panel :is(h1,h2,h3,p,label,small){color:#421900}
+#page-portal .portal-submit{
+ background:#008484!important;color:#F8F8F5!important;
+ border:1px solid #421900!important;box-shadow:0 3px 8px rgba(11,12,15,.16)!important
+}
+#page-portal .portal-top-actions button{
+ background:#712A00!important;color:#F8F8F5!important;border-color:#421900!important
+}
+#page-portal .portal-profile-choices button{
+ background:#008484!important;color:#F8F8F5!important;border-color:#421900!important
+}
+#page-portal .portal-welcome{
+ background:rgba(11,12,15,.28)!important;
+ border:1px solid rgba(199,255,255,.2);border-radius:20px
+}
+#page-portal .portal-welcome h3{color:#F8F8F5!important}
+#page-portal .portal-install-hint{color:#421900}
+.portal-recovery-dialog{
+ background:#F8F8F5!important;color:#0B0C0F!important;
+ border:2px solid #712A00!important;box-shadow:0 12px 30px rgba(11,12,15,.3)!important
+}
+.portal-recovery-dialog h2{color:#421900!important}
+:where(button,input,select,textarea,a,[tabindex]):focus-visible{
+ outline:3px solid #FFF600!important;outline-offset:3px
+}
