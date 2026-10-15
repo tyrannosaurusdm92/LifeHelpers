@@ -25,8 +25,7 @@
 <script src="js/onyx/games/virtual/biped_professor.js"></script>
 <script src="js/onyx/onyx-core/shared-prof.js"></script>
 
-<link rel="stylesheet" href="css/onyx/onyx-core/shared-runtime.css">
-<link rel="stylesheet" href="css/onyx/games/leisure/game.css?v=b626188e535c">
+<link rel="stylesheet" href="css/onyx/onyx-core/shared-runtime.css?v=feedhim-embedded-20261015-1">
 <link rel="stylesheet" href="css/onyx/games/virtual/env.css">
 <link rel="stylesheet" href="css/onyx/games/virtual/prof.css">
 
@@ -147,623 +146,243 @@
   <button id="slowGameExit" class="fullscreen-shell-exit" type="button" aria-label="Exit Virtual &amp; Health" title="Exit Virtual &amp; Health">×</button>
 </section>
 
-<section id="feedHimMeowFullscreenShell" class="onyx-fullscreen-shell-host feed-him-meow-shell-host" aria-label="Feed Him MEOW" hidden>
-  <iframe id="feedHimMeowFullscreenFrame" class="onyx-fullscreen-shell-frame" title="Feed Him MEOW" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-downloads"></iframe>
-  <button id="feedHimMeowFullscreenExit" class="fullscreen-shell-exit" type="button" aria-label="Exit Feed Him MEOW" title="Exit Feed Him MEOW">×</button>
+<section id="onyxLeisureFullscreen" class="onyx-leisure-game-host" aria-label="Feed Him MEOW fullscreen" hidden>
+  <iframe id="onyxLeisureGameFrame" class="onyx-leisure-game-frame" title="Feed Him MEOW" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-downloads" allow="autoplay"></iframe>
+  <button id="onyxLeisureGameExit" class="fullscreen-shell-exit" type="button" aria-label="Exit Feed Him MEOW" title="Exit Feed Him MEOW">×</button>
 </section>
+<template id="onyxLeisureGameDocument">&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;base href="../../"&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;meta content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" name="viewport"/&gt;
+&lt;meta content="#5A8580" name="theme-color"/&gt;
+&lt;meta content="dark" name="color-scheme"/&gt;
+&lt;title&gt;Feed Him MEOW | Retro Arcade&lt;/title&gt;
+
+&lt;link href="css/onyx/games/leisure/meow-effects.css" rel="stylesheet"/&gt;&lt;link href="css/onyx/games/leisure/shared/meow-shell.css" rel="stylesheet"/&gt;&lt;link href="css/onyx/games/leisure/shared/meow-onyx-boosters.css" rel="stylesheet"/&gt;&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-board-layouts.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-hud-interface.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-board-specific.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-reference-pass2.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-garden-hazards.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-global.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-reference-pass9.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-effects.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-reference-pass5.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-reference-pass3.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/garden-reference-pass4.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/meow-boards.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/meow-integration.css"&gt;
+&lt;link rel="stylesheet" href="css/onyx/games/leisure/bon-appetit.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;main aria-label="Feed Him MEOW arcade" class="game-shell" id="gameShell"&gt;
+&lt;header aria-label="Game shell interface" class="hud-header"&gt;
+&lt;nav aria-label="Game menus" class="hud-topbar"&gt;
+&lt;button aria-controls="hud-controls" aria-expanded="false" class="hud-tab" data-panel="controls" type="button"&gt;&lt;span aria-hidden="true" class="tab-symbol"&gt;⌨&lt;/span&gt;Controls&lt;/button&gt;
+&lt;button aria-controls="hud-accessibility" aria-expanded="false" class="hud-tab" data-panel="accessibility" type="button"&gt;&lt;span aria-hidden="true" class="tab-symbol"&gt;♿&lt;/span&gt;Accessibility&lt;/button&gt;
+&lt;button aria-controls="hud-settings" aria-expanded="false" class="hud-tab" data-panel="settings" type="button"&gt;&lt;span aria-hidden="true" class="tab-symbol"&gt;⚙&lt;/span&gt;Settings&lt;/button&gt;
+&lt;button aria-controls="hud-chat" aria-expanded="false" class="hud-tab" data-panel="chat" type="button"&gt;&lt;span aria-hidden="true" class="tab-symbol"&gt;▤&lt;/span&gt;Chat&lt;/button&gt;
+&lt;/nav&gt;
+&lt;div aria-label="Sound, numbered menus, on-screen controls, pause, resources" class="hud-subbar" role="toolbar"&gt;
+&lt;div aria-label="Sound levels" class="sound-controls" role="group"&gt;
+&lt;button aria-label="Mute sound" aria-pressed="false" class="hud-sound" data-volume="0" type="button"&gt;🔇&lt;/button&gt;
+&lt;button aria-label="Low sound" aria-pressed="false" class="hud-sound" data-volume="0.35" type="button"&gt;🔉&lt;/button&gt;
+&lt;button aria-label="Full sound" aria-pressed="true" class="hud-sound" data-volume="1" type="button"&gt;🔊&lt;/button&gt;
+&lt;/div&gt;
+&lt;div aria-label="Five quick slots" class="quickbar" role="group"&gt;
+&lt;button aria-label="1 Game" aria-pressed="false" class="game-slot" data-slot="1" title="Game" type="button"&gt;1&lt;/button&gt;
+&lt;button aria-label="2 Assist" aria-pressed="false" class="game-slot" data-slot="2" title="Assist" type="button"&gt;2&lt;/button&gt;
+&lt;button aria-label="3 Status" aria-pressed="false" class="game-slot" data-slot="3" title="Status" type="button"&gt;3&lt;/button&gt;
+&lt;button aria-label="4 Recipe" aria-pressed="false" class="game-slot" data-slot="4" title="Recipe" type="button"&gt;4&lt;/button&gt;
+&lt;button aria-controls="onyxBoosterDock" aria-label="5 Boosters: show or hide Onyx" aria-pressed="false" class="game-slot" data-slot="5" id="onyxBoostersUtility" title="Show / hide Onyx bubble" type="button"&gt;5&lt;/button&gt;
+&lt;/div&gt;
+&lt;div aria-label="Show and lock on-screen controls" class="display-controls" role="group"&gt;
+&lt;button aria-label="Hide on-screen joystick and action buttons" aria-pressed="true" class="hud-control-toggle" id="toggleGameControls" title="Show / hide on-screen controls" type="button"&gt;🕹️&lt;/button&gt;
+&lt;button aria-label="Lock the current on-screen control visibility" aria-pressed="false" class="hud-control-toggle" id="lockGameControls" title="Lock / unlock control visibility" type="button"&gt;🔐&lt;/button&gt;
+&lt;/div&gt;
+&lt;button aria-label="Pause game" aria-pressed="false" class="pause-button" id="gamePause" type="button"&gt;Ⅱ&lt;/button&gt;
+&lt;div aria-label="Resource counters" class="resource-counters" role="group"&gt;
+&lt;output aria-label="Brown resource balance" class="resource-counter" data-resource="brown"&gt;🟤&lt;span&gt;0&lt;/span&gt;&lt;/output&gt;
+&lt;output aria-label="White resource balance" class="resource-counter" data-resource="white"&gt;⚪&lt;span&gt;0&lt;/span&gt;&lt;/output&gt;
+&lt;output aria-label="Coin balance" class="resource-counter" data-resource="coin"&gt;🪙&lt;span&gt;0&lt;/span&gt;&lt;/output&gt;
+&lt;output aria-label="Blue resource balance" class="resource-counter" data-resource="blue"&gt;🔘&lt;span&gt;0&lt;/span&gt;&lt;/output&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;section aria-label="Game / Continue" class="hud-panel" data-panel="game" hidden="" id="hud-game" style="--panel-w:620px"&gt;
+&lt;div class="hud-panel-head" data-drag-handle="game"&gt;&lt;span aria-hidden="true" class="hud-panel-icon"&gt;1&lt;/span&gt;&lt;strong&gt;Game / Continue&lt;/strong&gt;
+&lt;span class="hud-panel-actions"&gt;&lt;button aria-label="Pin Game / Continue" aria-pressed="false" class="hud-panel-icon-btn" data-pin="game" title="Pin window" type="button"&gt;⌖&lt;/button&gt;&lt;button aria-label="Close Game / Continue" class="hud-panel-icon-btn" data-close="game" title="Close" type="button"&gt;×&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="hud-panel-body"&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Feed him MEOW&lt;/h3&gt;&lt;div class="readout" id="runtimeReadout"&gt;Loading Feed Him MEOW levels, recipes, and three boards.&lt;/div&gt;
+&lt;div aria-label="Level progress" class="phase-summary"&gt;&lt;span&gt;Level Select&lt;/span&gt;&lt;span&gt;Recipe Generator&lt;/span&gt;&lt;span&gt;Market Madness&lt;/span&gt;&lt;span&gt;Ingredient Garden&lt;/span&gt;&lt;span&gt;Bon Appétit&lt;/span&gt;&lt;/div&gt;&lt;div class="readout" id="gamePhaseReadout"&gt;Stage: Waiting for level select · Recipe: Not provided&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Run controls&lt;/h3&gt;&lt;div class="grid cols-2"&gt;
+&lt;button class="btn menu-item" data-game-command="level-select"&gt;Level Select&lt;/button&gt;&lt;button class="btn menu-item" data-game-command="continue" disabled="" id="continueRunButton"&gt;Continue Run&lt;/button&gt;
+&lt;button class="btn menu-item" data-game-command="recipe-brief"&gt;Recipe Brief&lt;/button&gt;&lt;button class="btn menu-item" data-game-command="restart-phase"&gt;Restart Current Phase&lt;/button&gt;
+&lt;/div&gt;&lt;div class="readout"&gt;Progress follows Level Select → Recipe Generator → Market Madness → Ingredient Garden → Bon Appétit → Onyx's Verdict → Reward. The connected game decides transitions.&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Quick access&lt;/h3&gt;&lt;div class="grid cols-3"&gt;&lt;button class="btn menu-item" data-open-panel="route"&gt;Recipe / Goals&lt;/button&gt;&lt;button aria-controls="onyxBoosterDock" class="btn menu-item" data-onyx-bubble-toggle="" title="Show / hide Onyx bubble"&gt;Onyx Boosters&lt;/button&gt;&lt;button class="btn menu-item" data-open-panel="controls"&gt;Controls&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Display&lt;/h3&gt;&lt;button class="btn menu-item" id="fullscreenButton"&gt;Toggle Fullscreen&lt;/button&gt;&lt;div class="readout" id="fullscreenReadout"&gt;Fullscreen is optional. The game works in windowed mode.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span aria-label="Drag to resize panel" class="panel-resize-handle" role="presentation"&gt;&lt;/span&gt;&lt;/section&gt;
+&lt;section aria-label="Controls / Input" class="hud-panel" data-panel="controls" hidden="" id="hud-controls" style="--panel-w:885px"&gt;
+&lt;div class="hud-panel-head" data-drag-handle="controls"&gt;&lt;span aria-hidden="true" class="hud-panel-icon"&gt;⌨&lt;/span&gt;&lt;strong&gt;Controls / Input&lt;/strong&gt;
+&lt;span class="hud-panel-actions"&gt;&lt;button aria-label="Pin Controls / Input" aria-pressed="false" class="hud-panel-icon-btn" data-pin="controls" title="Pin window" type="button"&gt;⌖&lt;/button&gt;&lt;button aria-label="Close Controls / Input" class="hud-panel-icon-btn" data-close="controls" title="Close" type="button"&gt;×&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="hud-panel-body"&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Control assignments&lt;/h3&gt;&lt;table class="control-table"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Control&lt;/th&gt;&lt;th&gt;Touch / mouse / keyboard&lt;/th&gt;&lt;th&gt;Standard gamepad&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;th&gt;Move / rotate&lt;/th&gt;&lt;td&gt;Left joystick, WASD or arrows. Rotate/twirl joystick for sorting and stove heat.&lt;/td&gt;&lt;td&gt;Left stick / D-pad&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Aim&lt;/th&gt;&lt;td&gt;Mouse / touch on playfield; directional precision for flavor shooter&lt;/td&gt;&lt;td&gt;Right stick&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;R · Primary&lt;/th&gt;&lt;td&gt;R or Left Click; trace / select / shoot; hold for oven-blow fallback&lt;/td&gt;&lt;td&gt;Face A&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;A · Back&lt;/th&gt;&lt;td&gt;Esc / C to back or cancel&lt;/td&gt;&lt;td&gt;Face B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;X · Inspect&lt;/th&gt;&lt;td&gt;X / Right Click&lt;/td&gt;&lt;td&gt;Face X&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Z · Precision&lt;/th&gt;&lt;td&gt;Z / Shift&lt;/td&gt;&lt;td&gt;Trigger / bumper where supported&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Y · Context&lt;/th&gt;&lt;td&gt;Y for context, gamepad Y opens boosters&lt;/td&gt;&lt;td&gt;Face Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Pause / audio&lt;/th&gt;&lt;td&gt;P pause · M mute/unmute · F fullscreen&lt;/td&gt;&lt;td&gt;Start pause&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Numbered menus&lt;/th&gt;&lt;td&gt;1 Game · 2 Assist · 3 Status · 4 Recipe · 5 Boosters&lt;/td&gt;&lt;td&gt;Use toolbar or game-specific shortcuts&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Phase-specific inputs&lt;/h3&gt;&lt;details&gt;&lt;summary&gt;Market Madness&lt;/summary&gt;&lt;p&gt;Press, drag through matching connected market ingredients, release to collect. Keyboard/gamepad can navigate cells and confirm traces when the board implements them.&lt;/p&gt;&lt;/details&gt;
+&lt;details&gt;&lt;summary&gt;Ingredient Garden&lt;/summary&gt;&lt;p&gt;Swap adjacent pantry/liquid ingredient pieces to form matches. Keyboard/gamepad navigate cells and select legal swaps; no mandatory precision gestures.&lt;/p&gt;&lt;/details&gt;
+&lt;details&gt;&lt;summary&gt;Bon Appétit&lt;/summary&gt;&lt;p&gt;Twirl joystick for sorting and stove heat (not flipping). Hold R to blow without microphone. Aim with right stick/mouse/touch, R shoots; Z precision; X inspect; A cancels.&lt;/p&gt;&lt;/details&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Remapping&lt;/h3&gt;&lt;label class="field"&gt;Remap a game action&lt;select id="remapAction"&gt;&lt;option value="primary"&gt;Primary (R)&lt;/option&gt;&lt;option value="back"&gt;Back (A)&lt;/option&gt;&lt;option value="inspect"&gt;Inspect (X)&lt;/option&gt;&lt;option value="precision"&gt;Precision (Z)&lt;/option&gt;&lt;option value="context"&gt;Context (Y)&lt;/option&gt;&lt;option value="pause"&gt;Pause&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+&lt;button class="btn" id="remapListen"&gt;Assign next key&lt;/button&gt;&lt;button class="btn" id="remapReset"&gt;Reset shortcuts&lt;/button&gt;&lt;div class="readout" id="remapReadout"&gt;Remapping updates shell key routing and informs the game adapter.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span aria-label="Drag to resize panel" class="panel-resize-handle" role="presentation"&gt;&lt;/span&gt;&lt;/section&gt;
+&lt;section aria-label="Accessibility" class="hud-panel" data-panel="accessibility" hidden="" id="hud-accessibility" style="--panel-w:620px"&gt;
+&lt;div class="hud-panel-head" data-drag-handle="accessibility"&gt;&lt;span aria-hidden="true" class="hud-panel-icon"&gt;♿&lt;/span&gt;&lt;strong&gt;Accessibility&lt;/strong&gt;
+&lt;span class="hud-panel-actions"&gt;&lt;button aria-label="Pin Accessibility" aria-pressed="false" class="hud-panel-icon-btn" data-pin="accessibility" title="Pin window" type="button"&gt;⌖&lt;/button&gt;&lt;button aria-label="Close Accessibility" class="hud-panel-icon-btn" data-close="accessibility" title="Close" type="button"&gt;×&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="hud-panel-body"&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Global accessibility&lt;/h3&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="large" type="checkbox"/&gt; Larger virtual controls&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="onehand" type="checkbox"/&gt; One-handed layout&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="reduced" type="checkbox"/&gt; Reduced motion&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="shake" type="checkbox"/&gt; No screen shake&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="contrast" type="checkbox"/&gt; High-contrast control outlines&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="labels" type="checkbox"/&gt; Always show icon/ingredient labels&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="nonTimed" type="checkbox"/&gt; Non-timed alternatives&lt;/label&gt;
+&lt;/div&gt;&lt;div class="section"&gt;&lt;h3&gt;Market Madness&lt;/h3&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="tracePreview" type="checkbox"/&gt; Show trace preview&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="traceRadius" type="checkbox"/&gt; Generous connection radius&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="keyboardCells" type="checkbox"/&gt; Keyboard/gamepad cell navigation&lt;/label&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Ingredient Garden&lt;/h3&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="swapSelect" type="checkbox"/&gt; Accessible swap selection&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="legalMoves" type="checkbox"/&gt; Legal-move highlighting&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="slowCascades" type="checkbox"/&gt; Slower / reduced cascades&lt;/label&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Bon Appétit&lt;/h3&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="slowSorter" type="checkbox"/&gt; Slower sorting &amp;amp; larger funnels&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="sortSnap" type="checkbox"/&gt; Snap-to-destination assist&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="simplifiedRotation" type="checkbox"/&gt; Simplified joystick rotation&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="heatHold" type="checkbox"/&gt; Hold-to-heat alternative&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input checked="" data-a11y="ovenHold" type="checkbox"/&gt; Hold R to blow instead of microphone&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="aimAssist" type="checkbox"/&gt; Sauce/seasoning aim assistance&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input data-a11y="largeTargets" type="checkbox"/&gt; Larger targets&lt;/label&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Feedback&lt;/h3&gt;&lt;label class="check"&gt;&lt;input checked="" id="onyxIdleSnacks" type="checkbox"/&gt; Onyx may playfully nibble a filler ingredient after 27 seconds of inactivity (no penalty)&lt;/label&gt;&lt;label class="check"&gt;&lt;input id="touchFeedback" type="checkbox"/&gt; Touch vibration when supported&lt;/label&gt;&lt;div class="readout"&gt;All assistance options are input equivalents and do not reduce base rewards. The attached game must honor the selected assists.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span aria-label="Drag to resize panel" class="panel-resize-handle" role="presentation"&gt;&lt;/span&gt;&lt;/section&gt;
+&lt;section aria-label="Settings" class="hud-panel" data-panel="settings" hidden="" id="hud-settings" style="--panel-w:540px"&gt;
+&lt;div class="hud-panel-head" data-drag-handle="settings"&gt;&lt;span aria-hidden="true" class="hud-panel-icon"&gt;⚙&lt;/span&gt;&lt;strong&gt;Settings&lt;/strong&gt;
+&lt;span class="hud-panel-actions"&gt;&lt;button aria-label="Pin Settings" aria-pressed="false" class="hud-panel-icon-btn" data-pin="settings" title="Pin window" type="button"&gt;⌖&lt;/button&gt;&lt;button aria-label="Close Settings" class="hud-panel-icon-btn" data-close="settings" title="Close" type="button"&gt;×&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="hud-panel-body"&gt;
+&lt;div class="section"&gt;&lt;h3&gt;HUD &amp;amp; controller&lt;/h3&gt;
+&lt;label class="check"&gt;&lt;input checked="" id="showHud" type="checkbox"/&gt; Show sub-bar&lt;/label&gt;
+&lt;label class="check"&gt;&lt;input checked="" id="showControls" type="checkbox"/&gt; Show virtual joystick &amp;amp; letter buttons&lt;/label&gt;
+&lt;div class="readout"&gt;🕹️ toggles the in-viewport controls, 🔐 locks their visibility. Number buttons 1–5 stay in the sub-bar.&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Joystick&lt;/h3&gt;
+&lt;label class="slider"&gt;&lt;span&gt;Size&lt;/span&gt;&lt;input id="leftJoySize" max="130" min="80" type="range" value="100"/&gt;&lt;output&gt;100%&lt;/output&gt;&lt;/label&gt;
+&lt;label class="slider"&gt;&lt;span&gt;Dead zone&lt;/span&gt;&lt;input id="leftJoyDead" max="35" min="5" type="range" value="13"/&gt;&lt;output&gt;13%&lt;/output&gt;&lt;/label&gt;
+&lt;label class="slider"&gt;&lt;span&gt;Opacity&lt;/span&gt;&lt;input id="joyOpacity" max="100" min="35" type="range" value="100"/&gt;&lt;output&gt;100%&lt;/output&gt;&lt;/label&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Audio &amp;amp; fullscreen&lt;/h3&gt;&lt;button class="btn" data-volume-cycle=""&gt;Cycle Mute / Low / Full&lt;/button&gt; &lt;button class="btn" id="fullscreenSettingsButton"&gt;Toggle Fullscreen&lt;/button&gt;&lt;div class="readout"&gt;Audio includes game SFX and Onyx cat feedback. Sound is optional and never replaces visual instructions.&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Run safety&lt;/h3&gt;&lt;div class="readout"&gt;Backgrounding the app auto-pauses gameplay. The connected game should save checkpoints at Recipe Brief and the start of each gameplay phase.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span aria-label="Drag to resize panel" class="panel-resize-handle" role="presentation"&gt;&lt;/span&gt;&lt;/section&gt;
+&lt;section aria-label="Leisure Chat" class="hud-panel hud-chat-window" data-panel="chat" hidden="" id="hud-chat" style="--panel-w:920px"&gt;&lt;div class="hud-panel-head" data-drag-handle="chat"&gt;&lt;span class="hud-panel-icon"&gt;▤&lt;/span&gt;&lt;strong&gt;Leisure Chat&lt;/strong&gt;&lt;span class="hud-panel-actions"&gt;&lt;button aria-label="Pin Leisure Chat" aria-pressed="false" class="hud-panel-icon-btn" data-pin="chat" title="Pin window" type="button"&gt;⌖&lt;/button&gt;&lt;button aria-label="Close Leisure Chat" class="hud-panel-icon-btn" data-close="chat" title="Close" type="button"&gt;×&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class="hud-panel-body chat-panel-body"&gt;&lt;iframe class="leisure-chat-frame" id="leisureChatFrame" loading="eager" title="Full Onyx Leisure Chat"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;span aria-label="Drag to resize panel" class="panel-resize-handle" role="presentation"&gt;&lt;/span&gt;&lt;/section&gt;
+&lt;section aria-label="Assist / Play Options" class="hud-panel" data-panel="patience" hidden="" id="hud-patience" style="--panel-w:550px"&gt;
+&lt;div class="hud-panel-head" data-drag-handle="patience"&gt;&lt;span aria-hidden="true" class="hud-panel-icon"&gt;2&lt;/span&gt;&lt;strong&gt;Assist / Play Options&lt;/strong&gt;
+&lt;span class="hud-panel-actions"&gt;&lt;button aria-label="Pin Assist / Play Options" aria-pressed="false" class="hud-panel-icon-btn" data-pin="patience" title="Pin window" type="button"&gt;⌖&lt;/button&gt;&lt;button aria-label="Close Assist / Play Options" class="hud-panel-icon-btn" data-close="patience" title="Close" type="button"&gt;×&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="hud-panel-body"&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Phase-aware assists&lt;/h3&gt;&lt;div class="readout" id="assistContext"&gt;Assists are requested from the game, not simulated in this shell. They never reduce base rewards.&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Puzzle assistance&lt;/h3&gt;&lt;div class="grid cols-2"&gt;&lt;button class="btn menu-item" data-assist="legal-moves"&gt;Show legal moves&lt;/button&gt;&lt;button class="btn menu-item" data-assist="objective-focus"&gt;Highlight recipe goals&lt;/button&gt;&lt;button class="btn menu-item" data-assist="trace-preview"&gt;Trace preview (Market)&lt;/button&gt;&lt;button class="btn menu-item" data-assist="swap-select"&gt;Accessible swap selection (Garden)&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Bon Appétit assistance&lt;/h3&gt;&lt;div class="grid cols-2"&gt;&lt;button class="btn menu-item" data-assist="sort-snap"&gt;Sorter destination snap&lt;/button&gt;&lt;button class="btn menu-item" data-assist="heat-hold"&gt;Hold-to-heat alternative&lt;/button&gt;&lt;button class="btn menu-item" data-assist="oven-hold"&gt;Hold-to-blow (no mic)&lt;/button&gt;&lt;button class="btn menu-item" data-assist="flavor-aim"&gt;Flavor aim help&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="readout" id="assistResponse" role="status"&gt;Choose an assist to request it from the connected game.&lt;/div&gt;&lt;/div&gt;&lt;span aria-label="Drag to resize panel" class="panel-resize-handle" role="presentation"&gt;&lt;/span&gt;&lt;/section&gt;
+&lt;section aria-label="Run / Onyx Status" class="hud-panel" data-panel="onyx" hidden="" id="hud-onyx" style="--panel-w:570px"&gt;
+&lt;div class="hud-panel-head" data-drag-handle="onyx"&gt;&lt;span aria-hidden="true" class="hud-panel-icon"&gt;3&lt;/span&gt;&lt;strong&gt;Run / Onyx Status&lt;/strong&gt;
+&lt;span class="hud-panel-actions"&gt;&lt;button aria-label="Pin Run / Onyx Status" aria-pressed="false" class="hud-panel-icon-btn" data-pin="onyx" title="Pin window" type="button"&gt;⌖&lt;/button&gt;&lt;button aria-label="Close Run / Onyx Status" class="hud-panel-icon-btn" data-close="onyx" title="Close" type="button"&gt;×&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="hud-panel-body"&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Run state&lt;/h3&gt;&lt;div class="stat-grid"&gt;&lt;div&gt;&lt;span&gt;Phase&lt;/span&gt;&lt;strong id="statusPhase"&gt;Not loaded&lt;/strong&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Level&lt;/span&gt;&lt;strong id="statusLevel"&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Progress&lt;/span&gt;&lt;strong id="statusProgress"&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Moves / Time&lt;/span&gt;&lt;strong id="statusMoves"&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Recipe objectives&lt;/h3&gt;&lt;div class="readout" id="statusObjectives"&gt;Awaiting active recipe and board state.&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Onyx&lt;/h3&gt;&lt;div class="readout" id="onyxMood"&gt;Mood: Awaiting Onyx state. Hungry before verdict; Purring at 3–5 stars; Judgmental at 0–2.&lt;/div&gt;&lt;img alt="" hidden="" id="onyxMoodArt" style="display:none;max-width:100%;max-height:155px;object-fit:contain"/&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Household mode&lt;/h3&gt;&lt;div class="readout" id="householdModeReadout"&gt;Solo and Household Duo are supported by the game adapter; no gameplay task requires two people.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span aria-label="Drag to resize panel" class="panel-resize-handle" role="presentation"&gt;&lt;/span&gt;&lt;/section&gt;
+&lt;section aria-label="Recipe / Objectives" class="hud-panel" data-panel="route" hidden="" id="hud-route" style="--panel-w:650px"&gt;
+&lt;div class="hud-panel-head" data-drag-handle="route"&gt;&lt;span aria-hidden="true" class="hud-panel-icon"&gt;4&lt;/span&gt;&lt;strong&gt;Recipe / Objectives&lt;/strong&gt;
+&lt;span class="hud-panel-actions"&gt;&lt;button aria-label="Pin Recipe / Objectives" aria-pressed="false" class="hud-panel-icon-btn" data-pin="route" title="Pin window" type="button"&gt;⌖&lt;/button&gt;&lt;button aria-label="Close Recipe / Objectives" class="hud-panel-icon-btn" data-close="route" title="Close" type="button"&gt;×&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="hud-panel-body"&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Active recipe&lt;/h3&gt;&lt;div class="readout" id="recipeName"&gt;No recipe generated yet. The game supplies the authoritative recipe.&lt;/div&gt;&lt;div class="stat-grid"&gt;&lt;div&gt;&lt;span&gt;Difficulty&lt;/span&gt;&lt;strong id="recipeDifficulty"&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Cookware&lt;/span&gt;&lt;strong id="recipeCookware"&gt;—&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Required ingredients&lt;/h3&gt;&lt;div class="readout" id="recipeIngredients"&gt;Market Madness: fresh/raw ingredients. Ingredient Garden: dry/pantry/liquids. Both use the same canonical IDs.&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Current goal&lt;/h3&gt;&lt;div class="readout" id="recipeGoal"&gt;No active objective supplied.&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Cook sequence&lt;/h3&gt;&lt;div class="readout"&gt;Bon Appétit: YUM/YUCK sort → pan/bowl/pot routing → joystick-twirled stove heat → oven blow when needed → correct sauce/seasoning shoot → finished dish → Onyx's Verdict. No flipping step.&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section"&gt;&lt;h3&gt;Recipe help&lt;/h3&gt;&lt;button class="btn menu-item" data-assist="objective-focus"&gt;Focus objective&lt;/button&gt; &lt;button class="btn menu-item" data-game-command="recipe-brief"&gt;Reopen recipe brief&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;span aria-label="Drag to resize panel" class="panel-resize-handle" role="presentation"&gt;&lt;/span&gt;&lt;/section&gt;
+
+&lt;div aria-hidden="true" class="chrome-top"&gt;&lt;/div&gt;
+&lt;div aria-hidden="true" class="chrome-bottom"&gt;&lt;/div&gt;
+&lt;!-- Recipe, board, and kitchen stages mount in this viewport. --&gt;
+&lt;section aria-label="Game display frame" class="viewport-frame"&gt;
+&lt;div aria-label="Feed Him MEOW game viewport" class="game-viewport" id="gameViewport" role="region" tabindex="0"&gt;&lt;/div&gt;
+&lt;div aria-hidden="true" aria-label="Recipe run progress" class="phase-rail" hidden="" id="gamePhaseRail"&gt;&lt;/div&gt;
+&lt;!-- Overlay controls live in the viewport frame without becoming game content.
+           Calling gameShell.mount() keeps these controls intact. --&gt;
+&lt;div aria-label="Analog movement joystick" class="joystick" id="gameJoystick" role="group" tabindex="0"&gt;
+&lt;div aria-hidden="true" class="joystick-thumb" id="gameJoystickThumb"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div aria-label="Six action buttons in an oval arrangement" class="actions-cluster" role="group"&gt;
+&lt;button aria-label="Y action" class="game-action" data-action="Y" type="button"&gt;Y&lt;/button&gt;
+&lt;button aria-label="R action" class="game-action" data-action="R" type="button"&gt;R&lt;/button&gt;
+&lt;button aria-label="B action" class="game-action" data-action="B" type="button"&gt;B&lt;/button&gt;
+&lt;button aria-label="X action" class="game-action" data-action="X" type="button"&gt;X&lt;/button&gt;
+&lt;button aria-label="Z action" class="game-action" data-action="Z" type="button"&gt;Z&lt;/button&gt;
+&lt;button aria-label="A action (Space or Enter on keyboard)" class="game-action" data-action="A" type="button"&gt;A&lt;/button&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;p aria-live="polite" class="sr-only" id="gameStatus" role="status"&gt;&lt;/p&gt;
+&lt;aside aria-label="Onyx booster companion" class="onyx-booster-dock" hidden="" id="onyxBoosterDock"&gt;
+&lt;div aria-live="polite" class="onyx-booster-status" hidden="" id="onyxBoosterStatus" role="status"&gt;&lt;/div&gt;
+&lt;div aria-labelledby="onyxMenuTitle" class="onyx-booster-menu" hidden="" id="onyxBoosterMenu" role="region"&gt;
+&lt;div class="onyx-menu-head"&gt;&lt;span aria-hidden="true"&gt;🐾&lt;/span&gt;&lt;div&gt;&lt;strong id="onyxMenuTitle"&gt;ONYX'S IMPERIAL BOOSTERS&lt;/strong&gt;&lt;small id="onyxMenuSubtitle"&gt;His Majesty grudgingly approves.&lt;/small&gt;&lt;/div&gt;&lt;button aria-label="Close booster menu" class="onyx-menu-close" id="onyxBoosterClose" type="button"&gt;×&lt;/button&gt;&lt;/div&gt;
+&lt;div class="onyx-menu-help" id="onyxMenuHelp"&gt;Choose a booster. Then tap its target on the game board.&lt;/div&gt;
+&lt;div aria-label="Onyx booster choices" class="onyx-boost-grid" id="onyxBoosterGrid" role="group"&gt;&lt;/div&gt;
+&lt;div class="onyx-booster-foot"&gt;&lt;button class="onyx-cancel-target" hidden="" id="onyxCancelTarget" type="button"&gt;CANCEL TARGETING&lt;/button&gt;&lt;span&gt;Booster effects and inventory are validated by the active game board.&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;button aria-controls="onyxBoosterMenu" aria-expanded="false" aria-label="Open Onyx's booster menu" class="onyx-bubble" id="onyxBoosterBubble" title="Tap Onyx to open boosters" type="button"&gt;
+&lt;img alt="Onyx, listening" class="onyx-cat-portrait" draggable="false" id="onyxBoosterPortrait" src="assets/images/shared/legacy-static/onyx_listening.png"/&gt;
+&lt;img alt="" class="onyx-black-frame" draggable="false" src="assets/images/shared/legacy-static/frame-black.svg"/&gt;
+&lt;span aria-hidden="true" class="onyx-bubble-marker"&gt;🐾&lt;/span&gt;
+&lt;/button&gt;
+&lt;/aside&gt;&lt;/main&gt;
+
+&lt;script src="js/onyx/games/leisure/shared/meow-shell.js"&gt;&lt;/script&gt;&lt;script src="js/onyx/games/leisure/shared/meow-shell-legacy-bridge.js"&gt;&lt;/script&gt;&lt;script src="js/onyx/games/leisure/shared/meow-onyx-boosters.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/garden-board-runtime.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/meow-board-data.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/meow-board-generator.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/garden-game-engine.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/garden-game-pass2.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/garden-game-pass3.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/garden-game-pass4.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/garden-game-pass5.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/garden-game-pass9.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/meow-garden-adapter.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/meow-market.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/runtime_data.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/recipe_catalog.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/recipe_catalog_part_02.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/recipe_catalog_part_03.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/recipe_catalog_part_04.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/recipe_catalog_part_05.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/meow-audio.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/meow-effects.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/bon-appetit-data.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/kitchen-adapters.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/bon-appetit-engine.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/bon-appetit-integrated.js"&gt;&lt;/script&gt;
+&lt;script src="js/onyx/games/leisure/meow-integrated.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</template>
 
 <section id="onyxWorkFullscreenShell" class="onyx-fullscreen-shell-host onyx-work-fullscreen-host" aria-label="Work fullscreen" hidden>
   <iframe id="onyxWorkFullscreenFrame" class="onyx-fullscreen-shell-frame" title="Onyx Work" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-downloads"></iframe>
   <button id="onyxWorkFullscreenExit" class="fullscreen-shell-exit" type="button" aria-label="Exit Work" title="Exit Work">×</button>
 </section>
 
-<main class="game-page" id="feedHimMeowBase" data-game-state="playing" hidden>
-<header class="game-toolbar">
-  <div class="game-tools" role="toolbar" aria-label="Game menus">
-    <button class="game-tool" data-tool="controls" aria-pressed="false"><span class="tool-icon">⌨</span><span class="tool-label">Controls</span></button>
-    <button class="game-tool" data-tool="accessibility" aria-pressed="false"><span class="tool-icon">♿</span><span class="tool-label">Accessibility</span></button>
-    <button class="game-tool" data-tool="settings" aria-pressed="false"><span class="tool-icon">⚙</span><span class="tool-label">Settings</span></button>
-    <button class="game-tool" data-tool="leisure" aria-pressed="false"><span class="tool-icon">☾</span><span class="tool-label">Leisure Chat</span></button>
-    <button class="game-tool" data-tool="store" aria-pressed="false"><span class="tool-icon">▣</span><span class="tool-label">Store</span></button>
-  </div>
-</header>
-
-<div class="panels">
-
-  <section class="panel" data-panel="game" style="--panel-w:620px">
-    <div class="panel-head"><span class="panel-icon">☰</span><strong>Control Context &amp; Menus</strong><span class="panel-actions"><button data-pin="game" aria-label="Pin">⌖</button><button data-close="game" aria-label="Close">×</button></span></div>
-    <div class="panel-body">
-      <div class="section"><h3>Control Context</h3>
-        <div class="grid cols-3">
-          <button class="btn active menu-item" data-phase="board">Hunt Board</button>
-          <button class="btn menu-item" data-phase="rush">Hunt Rush</button>
-          <button class="btn menu-item" data-phase="kitchen">Kitchen</button>
-        </div>
-        <div class="readout" id="controlContextSummary"><strong>HUNT MODE:</strong> direct control is the default; Button 3 can enable per-personality autonomy. <strong>KITCHEN MODE:</strong> controls transfer to the human first-person player and Onyx remains the supervisor.</div>
-      </div>
-      <div class="section"><h3>Menus</h3>
-        <div class="grid cols-3">
-          <button class="btn menu-item" data-open-panel="controls">Controls</button>
-          <button class="btn menu-item" data-open-panel="accessibility">Accessibility</button>
-          <button class="btn menu-item" data-open-panel="settings">Settings</button>
-        </div>
-      </div>
-      <div class="section"><h3>Rush Input</h3>
-        <label class="check"><input type="checkbox" id="autoForward"> Automatic-forward Rush profile</label>
-        <div class="readout">Automatic-forward Rush changes forward travel only. The player keeps direct lane, route, jump, duck, dash, grab, camera and Paw-Aim input.</div>
-      </div>
-      <div class="section"><h3>Context Buttons</h3>
-        <table class="control-table"><thead><tr><th>Button</th><th>Hunt</th><th>Kitchen</th></tr></thead><tbody>
-          <tr><th>1</th><td>Boosters</td><td>Ingredients / kitchen inventory</td></tr>
-          <tr><th>2</th><td>Imperial Patience</td><td>Tools / utensils</td></tr>
-          <tr><th>3</th><td>Hunt / Onyx status</td><td>Kitchen / Onyx supervisor status</td></tr>
-          <tr><th>4</th><td>Recipe / objectives</td><td>Recipe / objectives</td></tr>
-        </tbody></table>
-      </div>
-      <div class="section"><h3>Display</h3><button class="btn menu-item" id="fullscreenButton">Feed Him MEOW</button></div>
-    </div>
-  </section>
-
-
-  <section class="panel" data-panel="controls" style="--panel-w:920px">
-    <div class="panel-head"><span class="panel-icon">⌨</span><strong>Leisure Controls</strong><span class="panel-actions"><button data-pin="controls" aria-label="Pin">⌖</button><button data-close="controls" aria-label="Close">×</button></span></div>
-    <div class="panel-body">
-      <div class="section"><h3>Control States</h3>
-        <div class="readout"><strong>HUNT MODE:</strong> direct control is the default. Button 3 can enable autonomy independently for each Onyx mood/personality; manual input temporarily takes priority.<br><strong>KITCHEN MODE:</strong> the human player is controlled in first person. Onyx remains visible as supervisor and receives reaction/behavior events, not movement controls.</div>
-      </div>
-
-      <details open><summary>Universal Mobile Control Language</summary>
-        <table class="control-table"><thead><tr><th>Control</th><th>Hunt Mode</th><th>Kitchen Mode</th></tr></thead><tbody>
-          <tr><th>Left Joystick</th><td>Onyx movement / board focus</td><td>Human movement / station selection</td></tr>
-          <tr><th>Right Joystick</th><td>Camera / Paw-Aim</td><td>First-person camera / hand &amp; tool movement</td></tr>
-          <tr><th>A</th><td>Duck / cancel / drop</td><td>Cancel / back / set down</td></tr>
-          <tr><th>B</th><td>Jump / confirm</td><td>Confirm / place</td></tr>
-          <tr><th>X</th><td>Inspect / alternate action</td><td>Inspect / rotate / secondary action</td></tr>
-          <tr><th>Y</th><td>Interact / grab</td><td>Interact / pick up / grab</td></tr>
-          <tr><th>R</th><td>Primary action / Paw action</td><td>Use tool / perform cooking action</td></tr>
-          <tr><th>Z</th><td>Dash / Hunt modifier</td><td>Precision / fine-control modifier</td></tr>
-          <tr><th>1</th><td>Boosters</td><td>Ingredients / kitchen inventory</td></tr>
-          <tr><th>2</th><td>Imperial Patience</td><td>Tools / utensils</td></tr>
-          <tr><th>3</th><td>Hunt / Onyx status</td><td>Kitchen / Onyx supervisor status</td></tr>
-          <tr><th>4</th><td>Recipe / objectives</td><td>Recipe / objectives</td></tr>
-        </tbody></table>
-      </details>
-
-      <details open><summary>Desktop Core</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Movement</th><td>WASD · optional Arrow Keys · optional NumPad</td></tr>
-          <tr><th>Look / Paw-Aim / hand-tool movement</th><td>Mouse</td></tr>
-          <tr><th>Primary / physical action</th><td>Left Click = R</td></tr>
-          <tr><th>Inspect / secondary</th><td>Right Click = X</td></tr>
-          <tr><th>Interact / grab</th><td>F = Y</td></tr>
-          <tr><th>Confirm / place</th><td>Enter = B</td></tr>
-          <tr><th>Cancel / set down</th><td>Esc = A</td></tr>
-          <tr><th>Dash / precision</th><td>Shift = Z</td></tr>
-          <tr><th>1–4</th><td>Same context-sensitive utility menus as Mobile</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Hunt Board — Solo</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Move up / down / left / right</th><td>W/S/A/D · Arrows · NumPad 8/2/4/6 / Left Joystick</td></tr>
-          <tr><th>Diagonal movement</th><td>Combined keys / Left Joystick diagonal</td></tr>
-          <tr><th>Hold position</th><td>Release controls · NumPad 5 / release Left Joystick</td></tr>
-          <tr><th>Paw-Aim</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Fine aim</th><td>Small mouse movement / light Right Joystick movement</td></tr>
-          <tr><th>Launch scent / ingredient-route piece</th><td>Left Click / R</td></tr>
-          <tr><th>Cancel aim</th><td>Right Click or Esc / A</td></tr>
-          <tr><th>Inspect tile / scent / hazard / ingredient</th><td>Right Click / X</td></tr>
-          <tr><th>Interact / select / grab</th><td>F / Y</td></tr>
-          <tr><th>Mark intended ingredient route</th><td>Shift + Click / Z + Y</td></tr>
-          <tr><th>Utilities</th><td>1 Boosters · 2 Imperial Patience · 3 Hunt/Onyx status · 4 Recipe/objectives</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Hunt Paw-Aim</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Aim</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Launch</th><td>Left Click / R</td></tr>
-          <tr><th>Cancel</th><td>Right Click or Esc / A</td></tr>
-          <tr><th>Inspect landing area</th><td>Right Click / X</td></tr>
-          <tr><th>Select highlighted object</th><td>F / Y</td></tr>
-          <tr><th>Mark route</th><td>Shift + Click / Z + Y</td></tr>
-          <tr><th>Trajectory assist</th><td>Hold Shift / hold Z</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Hunt Rush</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Run / move</th><td>WASD / Left Joystick</td></tr>
-          <tr><th>Camera / facing</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Jump</th><td>Space / B</td></tr>
-          <tr><th>Duck / hold duck</th><td>C / hold C · A / hold A</td></tr>
-          <tr><th>Dash</th><td>Shift / Z</td></tr>
-          <tr><th>Jump + dash</th><td>Shift + Space / Z + B</td></tr>
-          <tr><th>Drop down</th><td>Ctrl + Space / Z + A</td></tr>
-          <tr><th>Grab ingredient / contextual interact</th><td>F / Y</td></tr>
-          <tr><th>Paw target / primary action</th><td>Left Click / R</td></tr>
-          <tr><th>Inspect</th><td>Right Click / X</td></tr>
-          <tr><th>Utilities</th><td>1 Boosters · 2 Imperial Patience · 3 Hunt status · 4 Recipe/objectives</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Automatic-Forward Rush</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Left Joystick / A-D</th><td>Lane movement · left/right routes · positioning · ingredient paths</td></tr>
-          <tr><th>Right Joystick / Mouse</th><td>Camera · looking · Paw-target aim</td></tr>
-          <tr><th>B / Space</th><td>Jump</td></tr>
-          <tr><th>A / C</th><td>Duck</td></tr>
-          <tr><th>Z / Shift</th><td>Dash</td></tr>
-          <tr><th>Y / F</th><td>Grab ingredient</td></tr>
-        </tbody></table>
-        <div class="readout">Automatic forward travel never removes responsive direct control because of Onyx’s behavior state.</div>
-      </details>
-
-      <details><summary>Hunt Climbing</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Grab climbable surface</th><td>Automatic or F / Automatic or Y</td></tr>
-          <tr><th>Climb up/down</th><td>W/S / Left Joystick Up/Down</td></tr>
-          <tr><th>Shimmy left/right</th><td>A/D / Left Joystick Left/Right</td></tr>
-          <tr><th>Climb diagonally</th><td>Combined movement / diagonal Left Joystick</td></tr>
-          <tr><th>Climb faster</th><td>Shift / Z</td></tr>
-          <tr><th>Jump toward ledge</th><td>Space / B</td></tr>
-          <tr><th>Pull onto ledge</th><td>W + Space / Left Joystick Up + B</td></tr>
-          <tr><th>Drop</th><td>Ctrl + Space / Z + A</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Hunt Mobile Buttons</summary>
-        <table class="control-table"><tbody>
-          <tr><th>A</th><td>Duck · Cancel · Drop · Back</td></tr>
-          <tr><th>B</th><td>Jump · Confirm · Pull up</td></tr>
-          <tr><th>X</th><td>Inspect · Examine scent · Inspect hazard · Alternate contextual action</td></tr>
-          <tr><th>Y</th><td>Grab ingredient · Interact · Select · Context action</td></tr>
-          <tr><th>R</th><td>Paw action · Launch board piece · Activate primary target</td></tr>
-          <tr><th>Z</th><td>Dash · Precision Hunt modifier · Route-mark modifier</td></tr>
-          <tr><th>1</th><td>Boosters</td></tr>
-          <tr><th>2</th><td>Imperial Patience</td></tr>
-          <tr><th>3</th><td>Hunt / Onyx information</td></tr>
-          <tr><th>4</th><td>Recipe / objectives</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Hunt Household Duo</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Onyx Handler</th><td>Onyx movement · running · jumping · ducking · climbing · dashing · ingredient grabbing</td></tr>
-          <tr><th>Route / Paw-Aim Partner</th><td>Board aiming · Paw-Aim · launching pieces · route marking · Paw targets · scent/ingredient pings · hazard highlighting · eligible booster targeting</td></tr>
-          <tr><th>Role swap</th><td>Only at safe points. The assisting player never overrides Onyx movement.</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — First-Person Movement</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Walk</th><td>WASD / Left Joystick</td></tr>
-          <tr><th>Look / aim hand-reticle</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Interact / pick up</th><td>F / Y</td></tr>
-          <tr><th>Use active object/tool</th><td>Left Click / R</td></tr>
-          <tr><th>Secondary action</th><td>Right Click / X</td></tr>
-          <tr><th>Confirm / place</th><td>Enter / B</td></tr>
-          <tr><th>Cancel / set down</th><td>Esc / A</td></tr>
-          <tr><th>Precision</th><td>Hold Shift / hold Z</td></tr>
-          <tr><th>Utilities</th><td>1 Ingredients · 2 Tools · 3 Kitchen/Onyx status · 4 Recipe/objectives</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Station Focus</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Enter Station Focus</th><td>F / Y</td></tr>
-          <tr><th>Desktop</th><td>Mouse = hand/tool movement · WASD/Arrows = coarse positioning/selection · Left Click = active technique · Right Click = secondary/inspect · Shift = precision</td></tr>
-          <tr><th>Mobile</th><td>Left Joystick = coarse object/station positioning · Right Joystick = hand/tool movement · R = active technique · X = secondary/rotate · Z = precision · B = confirm/place · A = cancel/leave</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Selecting Ingredients</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Aim</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Inspect</th><td>Right Click / X</td></tr>
-          <tr><th>Pick up</th><td>F / Y</td></tr>
-          <tr><th>Confirm</th><td>Enter / B</td></tr>
-          <tr><th>Put down</th><td>Esc or F / A or Y</td></tr>
-          <tr><th>Recovered ingredients</th><td>1</td></tr>
-          <tr><th>Compare recipe</th><td>4</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Measuring</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Pick up measuring tool</th><td>F / Y</td></tr>
-          <tr><th>Aim tool</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Begin / stop filling</th><td>Hold / release Left Click · Hold / release R</td></tr>
-          <tr><th>Fine measurement</th><td>Hold Shift / hold Z</td></tr>
-          <tr><th>Inspect amount</th><td>Right Click / X</td></tr>
-          <tr><th>Confirm</th><td>Enter / B</td></tr>
-          <tr><th>Cancel</th><td>Esc / A</td></tr>
-          <tr><th>Accessible increment mode</th><td>Desktop W/↑ increase · S/↓ decrease · Enter confirm. Mobile Left Joystick Up/Down · B confirm.</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Pouring &amp; Scooping</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Pick up container/scoop</th><td>F / Y</td></tr>
-          <tr><th>Aim / move</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Pour</th><td>Hold Left Click / hold R; mouse/Right Joystick changes tilt; release stops</td></tr>
-          <tr><th>Fine pour</th><td>Shift / Z</td></tr>
-          <tr><th>Scoop</th><td>Left Click / R</td></tr>
-          <tr><th>Level scoop</th><td>Shift + Left Click / Z + R</td></tr>
-          <tr><th>Place tool/container</th><td>Enter / B</td></tr>
-          <tr><th>Cancel</th><td>Esc / A</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Cutting / Chopping / Slicing</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Select ingredient / knife</th><td>F / Y</td></tr>
-          <tr><th>Position blade</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Cut / chop</th><td>Left Click + mouse motion / hold R + Right Joystick motion</td></tr>
-          <tr><th>Repeated chop</th><td>Repeated Left Click/drag / repeated R/stick strokes</td></tr>
-          <tr><th>Fine cut</th><td>Shift / Z</td></tr>
-          <tr><th>Inspect cut size</th><td>Right Click / X</td></tr>
-          <tr><th>Confirm prep</th><td>Enter / B</td></tr>
-          <tr><th>Cancel / set knife down</th><td>Esc / A</td></tr>
-          <tr><th>Accessible cutting</th><td>Highlighted target + Left Click / R performs each prompted cut.</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Mixing &amp; Stirring</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Pick up tool</th><td>F / Y</td></tr>
-          <tr><th>Mix / stir</th><td>Hold Left Click + circular mouse movement / hold R + circular Right Joystick movement</td></tr>
-          <tr><th>Change direction</th><td>Reverse mouse circle / reverse joystick rotation</td></tr>
-          <tr><th>Slow / precision</th><td>Shift + action / Z + R</td></tr>
-          <tr><th>Inspect</th><td>Right Click / X</td></tr>
-          <tr><th>Stop</th><td>Release action / release R</td></tr>
-          <tr><th>Confirm mix</th><td>Enter / B</td></tr>
-          <tr><th>Accessible Stir Toggle</th><td>Press Left Click / R once to begin; use Mouse/Right Joystick for direction, speed and position; press again to stop.</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Heat / Flip / Timers</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Heat focus</th><td>F / Y</td></tr>
-          <tr><th>Increase/decrease heat</th><td>Mouse Wheel Up/Down or ↑/↓ / Right Joystick Up/Down</td></tr>
-          <tr><th>Heat precision</th><td>Shift / Z</td></tr>
-          <tr><th>Inspect temperature</th><td>Right Click / X</td></tr>
-          <tr><th>Confirm/leave heat</th><td>Enter / B</td></tr>
-          <tr><th>Prepare flip</th><td>Hold Left Click / hold R</td></tr>
-          <tr><th>Flip / turn</th><td>Mouse upward gesture / Right Joystick Up</td></tr>
-          <tr><th>Controlled turn</th><td>Shift + gesture / Z + Right Joystick</td></tr>
-          <tr><th>Timer interact</th><td>F / Y</td></tr>
-          <tr><th>Timer increase/decrease</th><td>↑/↓ or Mouse Wheel / Left Joystick Up/Down</td></tr>
-          <tr><th>Start timer</th><td>Enter / B</td></tr>
-          <tr><th>Inspect remaining</th><td>Right Click / X</td></tr>
-          <tr><th>Cancel before start</th><td>Esc / A</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Seasoning / Assembly / Plating</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Pick up / grab component</th><td>F / Y</td></tr>
-          <tr><th>Aim / move component</th><td>Mouse / Right Joystick</td></tr>
-          <tr><th>Season small / continuous</th><td>Tap or hold Left Click / tap or hold R</td></tr>
-          <tr><th>Fine amount / placement</th><td>Shift / Z</td></tr>
-          <tr><th>Place</th><td>Left Click or Enter / B</td></tr>
-          <tr><th>Rotate</th><td>Right Click + Mouse / X + Right Joystick</td></tr>
-          <tr><th>Undo/cancel placement</th><td>Esc / A</td></tr>
-          <tr><th>Inspect</th><td>Right Click / X</td></tr>
-          <tr><th>Present finished plate</th><td>Hold Enter / hold B</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen — Correcting Mistakes</summary>
-        <table class="control-table"><tbody>
-          <tr><th>A / Esc</th><td>Cancel the current uncommitted action</td></tr>
-          <tr><th>X / Right Click</th><td>Inspect what has happened</td></tr>
-          <tr><th>Y / F</th><td>Re-grab something where correction is legal</td></tr>
-          <tr><th>Z / Shift</th><td>Make corrective movement more precise</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen Buttons 1–4</summary>
-        <table class="control-table"><tbody>
-          <tr><th>1 — Ingredients</th><td>Recovered ingredient inventory: required/optional ingredients, garnishes, substitutions, remaining quantities, already-used ingredients. Menu navigation uses Mouse/Left Joystick; X/Right Click inspect; B/Enter take; A/Esc cancel.</td></tr>
-          <tr><th>2 — Tools</th><td>Available utensils and kitchen tools, limited to currently valid/available items.</td></tr>
-          <tr><th>3 — Supervisor Status</th><td>Current Onyx behavior/complaint intensity, ingredient/measurement/heat status, active timers, prep stage, recent correctable mistake, teamwork state.</td></tr>
-          <tr><th>4 — Recipe</th><td>Dish, ingredients/substitutions, current step, prep requirement, target amount, cooking method, timing, heat, doneness/texture, assembly, plating, secondary objectives. Press 4 again or A to close.</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Kitchen Z Precision Modifier</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Z + Right Joystick</th><td>Fine hand/tool movement</td></tr>
-          <tr><th>Z + Left Joystick</th><td>Fine station/object positioning</td></tr>
-          <tr><th>Z + R</th><td>Slow/precise active technique</td></tr>
-          <tr><th>Z + B</th><td>Precision placement</td></tr>
-          <tr><th>Z + X</th><td>Detailed inspection</td></tr>
-          <tr><th>Z + Y</th><td>Carefully pick up/select</td></tr>
-          <tr><th>Z + 1</th><td>Ingredient details</td></tr>
-          <tr><th>Z + 2</th><td>Tool details</td></tr>
-          <tr><th>Z + 3</th><td>Expanded cooking status</td></tr>
-          <tr><th>Z + 4</th><td>Detailed recipe specification</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Context-Sensitive R / Y / X</summary>
-        <table class="control-table"><tbody>
-          <tr><th>R / Left Click</th><td>Primary physical action with the active context: Hunt launch/paw target; knife cut; spoon stir; scoop; pour; seasoning; flip; mix; plating adjustment; contextual primary action.</td></tr>
-          <tr><th>Y / F</th><td>Interact with or grab what the player is looking at: ingredient, tool, station, container, timer, Hunt ingredient or other contextual object.</td></tr>
-          <tr><th>X / Right Click</th><td>Inspect or perform secondary manipulation: inspect ingredients/hazards/measurement/doneness/heat/dish/Onyx reaction, or rotate eligible objects.</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Onyx in Kitchen Mode</summary>
-        <div class="readout">Onyx receives no movement controls. He may watch, sniff, turn his head, look toward the active cook/pan, narrow his eyes, tail flick, grumble, paw, enter Thinking/Thoughtful/Judgmental/Hungry/Purring, and settle back down. Kitchen mistakes affect his reactions—not who the player controls.</div>
-      </details>
-
-      <details><summary>Household Duo / Solo Kitchen</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Household Duo</th><td>Both players use the same first-person Kitchen language and may work at separate eligible stations. Tasks may be swapped freely. No recipe requires both players, and one inactive player must not automatically fail the other.</td></tr>
-          <tr><th>Solo</th><td>Uses the same mechanics. Recipe/control flow must allow measure → cut → add → stir → heat → assemble → plate without simultaneous inaccessible actions.</td></tr>
-        </tbody></table>
-      </details>
-
-      <details><summary>Accessibility Control Alternatives</summary>
-        <table class="control-table"><tbody>
-          <tr><th>Larger controls</th><td>Enlarges Mobile buttons and interaction zones</td></tr>
-          <tr><th>One-handed Mobile</th><td>Repositions controls for one-hand reach</td></tr>
-          <tr><th>Simplified cutting</th><td>Replaces dragging with prompted cuts</td></tr>
-          <tr><th>Measurement snapping</th><td>Snaps near-target amounts</td></tr>
-          <tr><th>Discrete measuring</th><td>Uses increase/decrease increments</td></tr>
-          <tr><th>Pour assist</th><td>Reduces accidental over-pouring</td></tr>
-          <tr><th>Stir toggle</th><td>Removes sustained-hold requirement</td></tr>
-          <tr><th>Larger timing windows</th><td>Expands valid timing ranges</td></tr>
-          <tr><th>Heat assist</th><td>Makes target band easier to maintain</td></tr>
-          <tr><th>Auto-center</th><td>Centers ingredient/tool targets</td></tr>
-          <tr><th>Reduced motion</th><td>Reduces first-person camera motion</td></tr>
-          <tr><th>No screen shake</th><td>Removes camera shake</td></tr>
-          <tr><th>Pause before kitchen step</th><td>Stops progression before next technique</td></tr>
-          <tr><th>Slower Hunt Rush</th><td>Expands Hunt reaction windows</td></tr>
-          <tr><th>Auto-aim</th><td>Helps Paw-Aim</td></tr>
-          <tr><th>Trajectory assist</th><td>Shows Hunt shot trajectory</td></tr>
-        </tbody></table>
-        <div class="readout">Accessibility options do not reduce base rewards.</div>
-      </details>
-
-      <details><summary>Control Philosophy</summary>
-        <div class="readout"><strong>HUNT:</strong> You are Onyx. WASD/Left Joystick moves him; Mouse/Right Joystick handles camera or Paw-Aim; Space/B jumps; C/A ducks; Shift/Z dashes; F/Y grabs.<br><strong>KITCHEN:</strong> You are the human cooking for Onyx. WASD/Left Joystick moves; Mouse/Right Joystick looks/aims/manipulates; F/Y grabs; Left Click/R performs the physical action; Shift/Z is precision; Enter/B confirms/places; Esc/A cancels/sets down.</div>
-      </details>
-    </div>
-  </section>
-
-
-  <section class="panel" data-panel="boosters" style="--panel-w:620px">
-    <div class="panel-head"><span class="panel-icon">1</span><strong id="system1Title">Boosters</strong><span class="panel-actions"><button data-pin="boosters" aria-label="Pin">⌖</button><button data-close="boosters" aria-label="Close">×</button></span></div>
-    <div class="panel-body">
-      <div class="section" data-menu-context="hunt"><h3>Hunt — Boosters</h3>
-        <div class="readout">Button 1 opens Boosters during Hunt. This quadruped base supplies the menu/control hook only; booster inventory/effects belong to the game runtime.</div>
-      </div>
-      <div class="section" data-menu-context="kitchen" hidden><h3>Kitchen — Ingredients</h3>
-        <div class="readout">Button 1 opens recovered ingredients / kitchen inventory. Intended contents: required ingredients, optional ingredients, garnishes, allowed substitutions, remaining quantities and already-used ingredients.</div>
-        <table class="control-table"><tbody><tr><th>Navigate</th><td>Mouse / Left Joystick</td></tr><tr><th>Inspect</th><td>Right Click / X</td></tr><tr><th>Take / confirm</th><td>Enter / B</td></tr><tr><th>Cancel</th><td>Esc / A</td></tr></tbody></table>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" data-panel="patience" style="--panel-w:620px">
-    <div class="panel-head"><span class="panel-icon">2</span><strong id="system2Title">Imperial Patience</strong><span class="panel-actions"><button data-pin="patience" aria-label="Pin">⌖</button><button data-close="patience" aria-label="Close">×</button></span></div>
-    <div class="panel-body">
-      <div class="section" data-menu-context="hunt"><h3>Hunt — Imperial Patience</h3>
-        <div class="readout">Button 2 opens Imperial Patience during Hunt. This base keeps only the control/menu hook; charge, abilities and gameplay effects are supplied by the game runtime.</div>
-      </div>
-      <div class="section" data-menu-context="kitchen" hidden><h3>Kitchen — Tools / Utensils</h3>
-        <div class="readout">Button 2 opens available kitchen tools. Typical contexts may include knife, spoon, measuring cup/spoon, mixing utensil, spatula, pan, pot, serving utensil and recipe-specific tools. Only valid/available tools should be supplied by the game runtime.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" data-panel="onyx" style="--panel-w:620px">
-    <div class="panel-head"><span class="panel-icon">3</span><strong id="system3Title">Hunt / Onyx Status</strong><span class="panel-actions"><button data-pin="onyx" aria-label="Pin">⌖</button><button data-close="onyx" aria-label="Close">×</button></span></div>
-    <div class="panel-body">
-      <div class="section"><h3>Control Ownership</h3><div class="readout" id="controlOwnership">Hunt: direct control · per-personality autonomy available</div></div>
-      <div class="section" data-menu-context="hunt"><h3>Hunt / Onyx Information</h3>
-        <div class="readout">Button 3 controls Onyx status and autonomy. Autonomy is saved independently for each mood/personality; any manual movement or action temporarily overrides autonomous decisions without turning that personality's toggle off.</div>
-      </div>
-      <div class="section" data-menu-context="kitchen" hidden><h3>Kitchen / Onyx Supervisor Status</h3>
-        <div class="readout">Button 3 is the Kitchen / Onyx supervisor status menu. The game runtime may supply current behavior, complaint intensity, ingredient/measurement/heat status, timers, preparation stage, recent correctable mistake and Household Duo teamwork state. It should not reveal hidden recipe answers unless a hint/accessibility feature permits it.</div>
-      </div>
-      <div class="section"><h3>Current Onyx Behavior</h3>
-        <!-- Judgmental, hungry, and purring resolve to Kitchen-only bipedal placeholders when the control context is Kitchen; their Hunt entries remain the existing quadruped sprites. -->
-        <label class="field"><span>Behavior</span><select id="behaviorSelect" class="menu-item">
-          <option value="caring" data-onyx-variant="onyx_caring">onyx_caring</option><option value="hungry" data-onyx-variant="onyx_hungry">onyx_hungry</option><option value="judgmental" data-onyx-variant="onyx_judgmental">onyx_judgmental</option><option value="listening" data-onyx-variant="onyx_listening">onyx_listening</option><option value="purring" data-onyx-variant="onyx_purring">onyx_purring</option><option value="sleepy" data-onyx-variant="onyx_sleepy">onyx_sleepy</option><option value="snuggly" data-onyx-variant="onyx_snuggly">onyx_snuggly</option><option value="thinking" data-onyx-variant="onyx_thinking">onyx_thinking</option><option value="thoughtful" data-onyx-variant="onyx_thoughtful">onyx_thoughtful</option>
-        </select></label>
-      </div>
-      <div class="section" data-menu-context="hunt"><h3>Autonomous Toggle — Per Mood / Personality</h3>
-        <div class="autonomy-grid" id="autonomyGrid">
-          
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="caring">Caring</label>
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="hungry">Hungry</label>
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="judgmental">Judgmental</label>
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="listening">Listening</label>
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="purring">Purring</label>
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="sleepy">Sleepy</label>
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="snuggly">Snuggly</label>
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="thinking">Thinking</label>
-          <label class="autonomy-row"><input type="checkbox" data-autonomy-behavior="thoughtful">Thoughtful</label>
-        </div>
-        <div class="readout" id="autonomyReadout">Selected personality autonomy: OFF</div>
-      </div>
-      <div class="section"><h3>Status</h3><div class="readout" id="onyxStatus"></div></div>
-    </div>
-  </section>
-
-  <section class="panel" data-panel="route" style="--panel-w:650px">
-    <div class="panel-head"><span class="panel-icon">4</span><strong id="system4Title">Recipe / Objectives</strong><span class="panel-actions"><button data-pin="route" aria-label="Pin">⌖</button><button data-close="route" aria-label="Close">×</button></span></div>
-    <div class="panel-body">
-      <div class="section"><h3>Recipe / Objectives</h3>
-        <div class="readout">Button 4 opens Recipe / Objectives in both Hunt and Kitchen. This quadruped base supplies the menu/control hook only.</div>
-      </div>
-      <div class="section" data-menu-context="hunt"><h3>Hunt Context</h3><div class="readout">Use this menu for the active recipe/objective reference while gathering ingredients.</div></div>
-      <div class="section" data-menu-context="kitchen" hidden><h3>Kitchen Context</h3>
-        <div class="readout">The game runtime may provide dish name, required/optional ingredients, substitutions, current step, preparation requirement, target amount, cooking method, timing, heat, doneness/texture, assembly order, plating requirements and secondary objectives. Press 4 again or A to close.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="panel" data-panel="accessibility" style="--panel-w:560px">
-    <div class="panel-head"><span class="panel-icon">♿</span><strong>Accessibility</strong><span class="panel-actions"><button data-pin="accessibility" aria-label="Pin">⌖</button><button data-close="accessibility" aria-label="Close">×</button></span></div>
-    <div class="panel-body">
-      <div class="section"><h3>Control Alternatives</h3>
-        <label class="check"><input type="checkbox" data-a11y="large"> Larger controls</label>
-        <label class="check"><input type="checkbox" data-a11y="onehand"> One-handed Mobile</label>
-        <label class="check"><input type="checkbox" data-a11y="simplifiedCutting"> Simplified cutting</label>
-        <label class="check"><input type="checkbox" data-a11y="measurementSnapping"> Measurement snapping</label>
-        <label class="check"><input type="checkbox" data-a11y="discreteMeasuring"> Discrete measuring</label>
-        <label class="check"><input type="checkbox" data-a11y="pourAssist"> Pour assist</label>
-        <label class="check"><input type="checkbox" data-a11y="stirToggle"> Stir toggle</label>
-        <label class="check"><input type="checkbox" data-a11y="timingWindows"> Larger timing windows</label>
-        <label class="check"><input type="checkbox" data-a11y="heatAssist"> Heat assist</label>
-        <label class="check"><input type="checkbox" data-a11y="autoCenter"> Auto-center</label>
-        <label class="check"><input type="checkbox" data-a11y="reduced"> Reduced motion</label>
-        <label class="check"><input type="checkbox" data-a11y="shake"> No screen shake</label>
-        <label class="check"><input type="checkbox" data-a11y="pauseKitchen"> Pause before kitchen step</label>
-        <label class="check"><input type="checkbox" data-a11y="slowRush"> Slower Hunt Rush</label>
-        <label class="check"><input type="checkbox" data-a11y="autoaim"> Auto-aim</label>
-        <label class="check"><input type="checkbox" data-a11y="trajectory"> Trajectory assist</label>
-      </div>
-      <div class="section"><div class="readout">Accessibility options are control translations/assists and do not reduce base rewards.</div></div>
-    </div>
-  </section>
-
-  <section class="panel" data-panel="leisure" style="--panel-w:460px">
-    <div class="panel-head"><span class="panel-icon">☾</span><strong>Onyx · Leisure</strong><span class="panel-actions"><button data-pin="leisure" aria-label="Pin">⌖</button><button data-close="leisure" aria-label="Close">×</button></span></div>
-    <div class="panel-body"><div class="onyx-chat-messages leisure-messages" id="leisureMessages" aria-live="polite"></div><form class="onyx-chat-form" id="leisureChatForm"><input id="leisureChatInput" type="text" maxlength="500" autocomplete="off" placeholder="Talk to Onyx…" aria-label="Message Onyx"><button type="submit">Send</button></form></div>
-  </section>
-  <section class="panel" data-panel="store" style="--panel-w:460px">
-    <div class="panel-head"><span class="panel-icon">▣</span><strong>Onyx Store</strong><span class="panel-actions"><button data-pin="store" aria-label="Pin Store">⌖</button><button data-close="store" aria-label="Close Store">×</button></span></div>
-    <div class="panel-body" aria-label="Store contents"></div>
-  </section>
-  <section class="panel" data-panel="settings" style="--panel-w:470px">
-    <div class="panel-head"><span class="panel-icon">⚙</span><strong>Settings</strong><span class="panel-actions"><button data-pin="settings" aria-label="Pin">⌖</button><button data-close="settings" aria-label="Close">×</button></span></div>
-    <div class="panel-body">
-      <div class="section"><h3>HUD</h3>
-        <label class="check"><input type="checkbox" id="showHud" checked> HUD</label>
-        <label class="check"><input type="checkbox" id="showControls" checked> On-screen controls</label>
-      </div>
-      <div class="section"><h3>Left Joystick</h3>
-        <label class="slider"><span>Size</span><input id="leftJoySize" type="range" min="82" max="190" value="142"><output>142 px</output></label>
-        <label class="slider"><span>Dead zone</span><input id="leftJoyDead" type="range" min="5" max="60" value="18"><output>18%</output></label>
-      </div>
-      <div class="section"><h3>Right Joystick</h3>
-        <label class="slider"><span>Size</span><input id="rightJoySize" type="range" min="70" max="170" value="112"><output>112 px</output></label>
-        <label class="slider"><span>Dead zone</span><input id="rightJoyDead" type="range" min="5" max="60" value="14"><output>14%</output></label>
-      </div>
-      <div class="section"><h3>Controls</h3>
-        <label class="slider"><span>Opacity</span><input id="joyOpacity" type="range" min="35" max="100" value="82"><output>82%</output></label>
-      </div>
-    </div>
-  </section>
-</div>
-
-<section class="stage-wrap">
-  <div class="viewer-screen" id="viewerScreen" tabindex="0" aria-label="Leisure control preview">
-    <div class="viewer-backdrop" id="viewerBackdrop"></div>
-    <div class="focus-reticle" id="focusReticle" hidden></div>
-    <div class="aim-reticle" id="aimReticle"></div>
-
-    <div id="catActor" aria-label="Onyx">
-      <div id="catVisual">
-        <!-- Onyx pixel sprite: 48x48 canvas, embedded 30-column directional atlas, black-cat coat palette matched from the body-code color reference only. -->
-        <canvas id="catSprite" width="64" height="64" aria-hidden="true"></canvas>
-        <div id="onyxBipedalPlaceholder" role="img" aria-label="Bipedal Onyx rig placeholder"><span id="onyxBipedalPlaceholderLabel">PROFESSOR<br>RIG<br>PLACEHOLDER</span></div>
-        <!-- Stable semantic anatomy hooks for sprite fine-tuning. These do not alter the current raster-atlas render. -->
-        <div id="onyxAnatomyMap" aria-hidden="true" hidden>
-          <span id="onyx-right-ear" data-onyx-part="right-ear"></span>
-          <span id="onyx-left-ear" data-onyx-part="left-ear"></span>
-          <span id="onyx-right-eye" data-onyx-part="right-eye"></span>
-          <span id="onyx-left-eye" data-onyx-part="left-eye"></span>
-          <span id="onyx-right-whiskers" data-onyx-part="right-whiskers"></span>
-          <span id="onyx-left-whiskers" data-onyx-part="left-whiskers"></span>
-          <span id="onyx-nose" data-onyx-part="nose"></span>
-          <span id="onyx-mouth" data-onyx-part="mouth"></span>
-          <span id="onyx-neck" data-onyx-part="neck"></span>
-          <span id="onyx-chest" data-onyx-part="chest"></span>
-          <span id="onyx-shoulders" data-onyx-part="shoulders"></span>
-          <span id="onyx-right-front-paw" data-onyx-part="right-front-paw"></span>
-          <span id="onyx-left-front-paw" data-onyx-part="left-front-paw"></span>
-          <span id="onyx-torso" data-onyx-part="torso"></span>
-          <span id="onyx-stomach" data-onyx-part="stomach"></span>
-          <span id="onyx-left-back-leg" data-onyx-part="left-back-leg"></span>
-          <span id="onyx-right-back-leg" data-onyx-part="right-back-leg"></span>
-          <span id="onyx-rear" data-onyx-part="rear"></span>
-          <span id="onyx-tail" data-onyx-part="tail"></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="game-hud" id="gameHud">
-      <button class="hud-btn" id="menuButton">MENU</button>
-      <button class="hud-btn" id="openLeisureChat" type="button" aria-label="Chat with Onyx">CHAT</button>
-      <button class="hud-btn" id="openStoreWindow" type="button" data-open-panel="store" aria-label="Open Store">STORE</button>
-      <div class="hud-title"><strong id="phaseTitle">HUNT BOARD</strong><small id="behaviorHud">ONYX CONTROLLED · THOUGHTFUL</small></div>
-      <div class="hud-chip currency"><span>🟤0</span><span>⚪0</span><span>🪙0</span><span>🔘0</span></div>
-      <button class="hud-btn" id="pauseButton">Ⅱ</button>
-      <button class="hud-btn" id="exitGameWindow" type="button" aria-label="Exit Game" title="Exit Game" hidden><span class="exit-game-x" aria-hidden="true">×</span><span class="exit-game-label">EXIT GAME</span></button>
-    </div>
-
-    <div class="control-layer" id="controlLayer">
-      <div class="joystick left" id="leftJoystick" role="application" aria-label="Left joystick">
-        <div class="joy-base"></div><div class="joy-handle" id="leftJoyHandle"></div><div class="joy-label" id="leftJoyLabel">ONYX / BOARD</div>
-      </div>
-      <div class="joystick right" id="rightJoystick" role="application" aria-label="Right joystick">
-        <div class="joy-base"></div><div class="joy-handle" id="rightJoyHandle"></div><div class="joy-label" id="rightJoyLabel">PAW-AIM</div>
-      </div>
-      <div class="actions" aria-label="Action controls">
-        <button class="action" data-key="Y" aria-label="Y — Interact / grab"><span>Y</span><small>GRAB</small></button>
-        <button class="action" data-key="R" aria-label="R — Primary / Paw action"><span>R</span><small>PAW</small></button>
-        <button class="action" data-key="B" aria-label="B — Confirm"><span>B</span><small>CONFIRM</small></button>
-        <button class="action" data-key="X" aria-label="X — Inspect"><span>X</span><small>INSPECT</small></button>
-        <button class="action" data-key="Z" aria-label="Z — Hunt modifier"><span>Z</span><small>MOD</small></button>
-        <button class="action" data-key="A" aria-label="A — Cancel"><span>A</span><small>CANCEL</small></button>
-      </div>
-      <div id="onyxSpeechBubble" class="onyx-speech" role="status" aria-live="polite" hidden></div>
-    </div>
-    <section id="onyxGameChat" class="onyx-chat-window" aria-label="Onyx game chat" hidden>
-      <header><strong>Talk to Onyx</strong><button type="button" id="closeOnyxGameChat" aria-label="Close chat">×</button></header>
-      <p class="chat-note">Onyx replies in a speech bubble while you play. Your messages are kept with Leisure. <button type="button" id="gameChatToLeisure">Open Leisure</button></p>
-      <div id="gameChatMessages" class="onyx-chat-messages" aria-live="polite"></div>
-      <form id="gameChatForm"><input id="gameChatInput" type="text" maxlength="500" autocomplete="off" placeholder="Say something to Onyx…" aria-label="Message Onyx"><button type="submit">Send</button></form>
-    </section>
-  </div>
-  <div class="number-rail" aria-label="Context utilities">
-    <button class="num-btn" data-system="1">1<small id="systemLabel1">BOOSTERS</small></button>
-    <button class="num-btn" data-system="2">2<small id="systemLabel2">PATIENCE</small></button>
-    <button class="num-btn" data-system="3">3<small id="systemLabel3">HUNT / ONYX</small></button>
-    <button class="num-btn" data-system="4">4<small id="systemLabel4">RECIPE</small></button>
-  </div>
-</section>
-
-<div aria-labelledby="pauseTitle" aria-modal="true" aria-hidden="true" class="game-state-overlay" id="gamePauseOverlay" role="dialog">
-  <div class="game-state-card">
-    <h2 id="pauseTitle">Paused</h2>
-    <div class="game-state-actions">
-      <button id="resumeButton" type="button">Resume</button>
-      <button class="secondary" id="pauseSettingsButton" type="button">Settings</button>
-    </div>
-  </div>
-</div>
-</main>
-
-<script src="js/onyx/games/leisure/game.js"></script>
-<script>
-(() => {
-  const launch = document.getElementById("fullscreenButton");
-  if (!launch) return;
-  launch.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    if (!window.ONYX_ADMIN_TEST) window.OnyxShell?.enterFastGame?.();
-  }, true);
-})();
-</script>
 
 
 <script src="js/onyx/games/leisure/chat-sync.js"></script>
@@ -799,8 +418,8 @@
 <script src="js/onyx/games/virtual/onyx-base-motion-bundle.js"></script>
   <script src="js/onyx/games/virtual/env.js"></script>
   <script src="js/onyx/games/virtual/onyx-motion-admin.js"></script>
-<script src="js/onyx/onyx-core/shared-shells.js?v=20261015-layer-order-1"></script>
-<script src="js/onyx/onyx-core/shared-runtime.js"></script>
+<script src="js/onyx/onyx-core/shared-shells.js?v=feedhim-embedded-20261015-1"></script>
+<script src="js/onyx/onyx-core/shared-runtime.js?v=feedhim-embedded-20261015-1"></script>
 <script src="js/onyx/onyx-core/shared-onyx-income.js"></script>
 <script src="js/onyx/onyx-core/shared-onyx-audio-votes.js"></script>
 <script src="js/ourspace-core/backend-client.js"></script>

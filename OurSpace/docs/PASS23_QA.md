@@ -1,3 +1,5 @@
+> Historical Pass 23 notes. Superseded by the 2026-10-15 fullscreen integration documented in `Feed_Him_MEOW_Integration.md`; the game now opens only from the Onyx Leisure widget and does not use `assets/code/meow.html`.
+
 # Pass 23 QA — Ingredient Garden / Level Select edition
 
 ## Checked

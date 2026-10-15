@@ -1,0 +1,2350 @@
+{
+  "alfredo_sauce_jar": {
+    "id": "alfredo_sauce_jar",
+    "name": "Alfredo Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/alfredo_sauce_jar.svg"
+  },
+  "american_cheese_slices": {
+    "id": "american_cheese_slices",
+    "name": "American Cheese Slices",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/american_cheese_slices.svg"
+  },
+  "anchovies": {
+    "id": "anchovies",
+    "name": "Anchovies",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/anchovies.svg"
+  },
+  "applesauce_jar": {
+    "id": "applesauce_jar",
+    "name": "Applesauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/applesauce_jar.svg"
+  },
+  "bacon": {
+    "id": "bacon",
+    "name": "Bacon",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/bacon.svg"
+  },
+  "barbecue_sauce": {
+    "id": "barbecue_sauce",
+    "name": "Barbecue Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/barbecue_sauce.svg"
+  },
+  "basil": {
+    "id": "basil",
+    "name": "Basil",
+    "category": "herb",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/basil.svg"
+  },
+  "bass_counter_whole": {
+    "id": "bass_counter_whole",
+    "name": "Bass Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/bass_whole.svg"
+  },
+  "bass_whole": {
+    "id": "bass_whole",
+    "name": "Bass Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/bass_whole.svg"
+  },
+  "bay_leaves": {
+    "id": "bay_leaves",
+    "name": "Bay Leaves",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/bay_leaves.svg"
+  },
+  "beef_broth_carton": {
+    "id": "beef_broth_carton",
+    "name": "Beef Broth",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/beef_broth_carton.svg"
+  },
+  "beef_roast_raw": {
+    "id": "beef_roast_raw",
+    "name": "Beef Roast Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/beef_roast_raw.svg"
+  },
+  "beef_tenderloin_raw": {
+    "id": "beef_tenderloin_raw",
+    "name": "Beef Tenderloin Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/beef_tenderloin_raw.svg"
+  },
+  "bell_pepper_whole": {
+    "id": "bell_pepper_whole",
+    "name": "Bell Pepper Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/bell_pepper_whole.svg"
+  },
+  "bell_pepper_whole_stage": {
+    "id": "bell_pepper_whole_stage",
+    "name": "Bell Pepper Whole",
+    "category": "pantry",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/bell_pepper_whole_stage.svg"
+  },
+  "black_pepper_grinder": {
+    "id": "black_pepper_grinder",
+    "name": "Black Pepper",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/black_pepper_grinder.svg"
+  },
+  "bread_loaf": {
+    "id": "bread_loaf",
+    "name": "Bread Loaf",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/bread_loaf.svg"
+  },
+  "breadcrumbs": {
+    "id": "breadcrumbs",
+    "name": "Breadcrumbs",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/breadcrumbs.svg"
+  },
+  "breakfast_sausage": {
+    "id": "breakfast_sausage",
+    "name": "Breakfast Sausage",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/breakfast_sausage.svg"
+  },
+  "broccoli": {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/broccoli.svg"
+  },
+  "broccoli_florets": {
+    "id": "broccoli_florets",
+    "name": "Broccoli Florets",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/broccoli_florets.svg"
+  },
+  "broccoli_whole": {
+    "id": "broccoli_whole",
+    "name": "Broccoli Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/broccoli_whole.svg"
+  },
+  "broth": {
+    "id": "broth",
+    "name": "Broth",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/broth.svg"
+  },
+  "brown_sugar_bowl": {
+    "id": "brown_sugar_bowl",
+    "name": "Brown Sugar",
+    "category": "pantry",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/brown_sugar_bowl.svg"
+  },
+  "browning_sauce_bottle": {
+    "id": "browning_sauce_bottle",
+    "name": "Browning Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 3,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/browning_sauce_bottle.svg"
+  },
+  "butter": {
+    "id": "butter",
+    "name": "Butter",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/butter.svg"
+  },
+  "butter_pats": {
+    "id": "butter_pats",
+    "name": "Butter Pats",
+    "category": "pantry",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/butter_pats.svg"
+  },
+  "cabbage": {
+    "id": "cabbage",
+    "name": "Cabe",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/cabbage.svg"
+  },
+  "cabbage_whole": {
+    "id": "cabbage_whole",
+    "name": "Cabe Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/cabbage_whole.svg"
+  },
+  "calamari_rings": {
+    "id": "calamari_rings",
+    "name": "Calamari Rings",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/calamari_rings.svg"
+  },
+  "carrot_whole": {
+    "id": "carrot_whole",
+    "name": "Carrot Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/carrot_whole.svg"
+  },
+  "carrots_bunch": {
+    "id": "carrots_bunch",
+    "name": "Carrots Bunch",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/carrots_bunch.svg"
+  },
+  "catfish_whole": {
+    "id": "catfish_whole",
+    "name": "Catfish Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/catfish_whole.svg"
+  },
+  "cauliflower": {
+    "id": "cauliflower",
+    "name": "Cauliflower",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/cauliflower.svg"
+  },
+  "celery_bunch": {
+    "id": "celery_bunch",
+    "name": "Celery Bunch",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/celery_bunch.svg"
+  },
+  "celery_whole": {
+    "id": "celery_whole",
+    "name": "Celery Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/celery_whole.svg"
+  },
+  "cheddar_cheese": {
+    "id": "cheddar_cheese",
+    "name": "Cheddar Cheese",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/cheddar_cheese.svg"
+  },
+  "cheese_block": {
+    "id": "cheese_block",
+    "name": "Cheese Block",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/cheese_block.svg"
+  },
+  "cheese_sauce": {
+    "id": "cheese_sauce",
+    "name": "Cheese Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/cheese_sauce.svg"
+  },
+  "chicken": {
+    "id": "chicken",
+    "name": "Chicken",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/chicken.svg"
+  },
+  "chicken_breast_counter_whole": {
+    "id": "chicken_breast_counter_whole",
+    "name": "Chicken Breast Whole",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/chicken_breast_counter_whole.svg"
+  },
+  "chicken_breast_raw": {
+    "id": "chicken_breast_raw",
+    "name": "Chicken Breast Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/chicken_breast_raw.svg"
+  },
+  "chicken_broth_carton": {
+    "id": "chicken_broth_carton",
+    "name": "Chicken Broth",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/chicken_broth_carton.svg"
+  },
+  "chicken_nuggets": {
+    "id": "chicken_nuggets",
+    "name": "Chicken Nuggets",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/chicken_nuggets.svg"
+  },
+  "chicken_thighs_raw": {
+    "id": "chicken_thighs_raw",
+    "name": "Chicken Thighs Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/chicken_thighs_raw.svg"
+  },
+  "chicken_wings_raw": {
+    "id": "chicken_wings_raw",
+    "name": "Chicken Wings Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/chicken_wings_raw.svg"
+  },
+  "chili_flakes": {
+    "id": "chili_flakes",
+    "name": "Chili Flakes",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/chili_flakes.svg"
+  },
+  "chives": {
+    "id": "chives",
+    "name": "Chives",
+    "category": "herb",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/chives.svg"
+  },
+  "clams": {
+    "id": "clams",
+    "name": "Clams",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/clams.svg"
+  },
+  "cod_fillet": {
+    "id": "cod_fillet",
+    "name": "Cod Fillet",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/cod_fillet.svg"
+  },
+  "cooking_oil_bottle": {
+    "id": "cooking_oil_bottle",
+    "name": "Cooking Oil",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/cooking_oil_bottle.svg"
+  },
+  "corn_cob": {
+    "id": "corn_cob",
+    "name": "Corn Cob",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/corn_cob.svg"
+  },
+  "cornmeal_bowl": {
+    "id": "cornmeal_bowl",
+    "name": "Cornmeal",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/cornmeal_bowl.svg"
+  },
+  "cornstarch_jar": {
+    "id": "cornstarch_jar",
+    "name": "Cornstarch",
+    "category": "pantry",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/cornstarch_jar.svg"
+  },
+  "crab_legs": {
+    "id": "crab_legs",
+    "name": "Crab Legs",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/crab_legs.svg"
+  },
+  "crab_legs_raw_counter": {
+    "id": "crab_legs_raw_counter",
+    "name": "Crab Legs Raw",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/crab_whole.svg"
+  },
+  "crab_meat": {
+    "id": "crab_meat",
+    "name": "Crab Meat",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/crab_meat.svg"
+  },
+  "crab_whole": {
+    "id": "crab_whole",
+    "name": "Crab Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/crab_whole.svg"
+  },
+  "crab_whole_counter": {
+    "id": "crab_whole_counter",
+    "name": "Crab Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/crab_whole.svg"
+  },
+  "crackers": {
+    "id": "crackers",
+    "name": "Crackers",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/crackers.svg"
+  },
+  "cream_cheese": {
+    "id": "cream_cheese",
+    "name": "Cream Cheese",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/cream_cheese.svg"
+  },
+  "cream_sauce": {
+    "id": "cream_sauce",
+    "name": "Cream Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 3,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/cream_sauce.svg"
+  },
+  "crispy_bacon_garnish": {
+    "id": "crispy_bacon_garnish",
+    "name": "Crispy Bacon Garnish",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/crispy_bacon_garnish.svg"
+  },
+  "cucumbers": {
+    "id": "cucumbers",
+    "name": "Cucumbers",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/cucumbers.svg"
+  },
+  "dill": {
+    "id": "dill",
+    "name": "Dill",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/dill.svg"
+  },
+  "dill_pickles_whole": {
+    "id": "dill_pickles_whole",
+    "name": "Dill Pickles Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/dill_pickles_whole.svg"
+  },
+  "egg": {
+    "id": "egg",
+    "name": "Egg",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/egg.svg"
+  },
+  "egg_beaten": {
+    "id": "egg_beaten",
+    "name": "Egg Beaten",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/egg_beaten.svg"
+  },
+  "egg_cracked": {
+    "id": "egg_cracked",
+    "name": "Egg Cracked",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/egg_cracked.svg"
+  },
+  "eggs_carton": {
+    "id": "eggs_carton",
+    "name": "Eggs",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/eggs_carton.svg"
+  },
+  "elbow_noodles_box": {
+    "id": "elbow_noodles_box",
+    "name": "Elbow Noodles",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/elbow_noodles_box.svg"
+  },
+  "elbow_noodles_loose": {
+    "id": "elbow_noodles_loose",
+    "name": "Elbow Noodles Loose",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/elbow_noodles_loose.svg"
+  },
+  "extra_fancy_tuna": {
+    "id": "extra_fancy_tuna",
+    "name": "Extra Fancy Tuna",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tuna_counter_whole.svg"
+  },
+  "fettuccine_dry": {
+    "id": "fettuccine_dry",
+    "name": "Fettuccine Dry",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/fettuccine_dry.svg"
+  },
+  "fish_broth_fancy": {
+    "id": "fish_broth_fancy",
+    "name": "Fish Broth Fancy",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 4,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/fish_broth_fancy.svg"
+  },
+  "flounder_whole": {
+    "id": "flounder_whole",
+    "name": "Flounder Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/flounder_whole.svg"
+  },
+  "flour_bag": {
+    "id": "flour_bag",
+    "name": "Flour",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/flour_bag.svg"
+  },
+  "garlic_bulb": {
+    "id": "garlic_bulb",
+    "name": "Garlic Bulb",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/garlic_bulb.svg"
+  },
+  "garlic_bulb_with_clove": {
+    "id": "garlic_bulb_with_clove",
+    "name": "Garlic Bulb With Clove",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/garlic_bulb_with_clove.svg"
+  },
+  "garlic_clove": {
+    "id": "garlic_clove",
+    "name": "Garlic Clove",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/garlic_clove.svg"
+  },
+  "garlic_powder": {
+    "id": "garlic_powder",
+    "name": "Garlic Powder",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/garlic_powder.svg"
+  },
+  "gravy": {
+    "id": "gravy",
+    "name": "Gravy",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 3,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/gravy.svg"
+  },
+  "gravy_boat": {
+    "id": "gravy_boat",
+    "name": "Gravy Boat",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 3,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/gravy_boat.svg"
+  },
+  "green_beans": {
+    "id": "green_beans",
+    "name": "Green Beans",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/green_beans.svg"
+  },
+  "green_onions": {
+    "id": "green_onions",
+    "name": "Green Onions",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/green_onions.svg"
+  },
+  "ground_beef_patty_counter": {
+    "id": "ground_beef_patty_counter",
+    "name": "Ground Beef Patty Counter",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/ground_beef_patty_counter.svg"
+  },
+  "ground_beef_raw": {
+    "id": "ground_beef_raw",
+    "name": "Ground Beef Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/ground_beef_raw.svg"
+  },
+  "ground_chicken_raw": {
+    "id": "ground_chicken_raw",
+    "name": "Ground Chicken Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/ground_chicken_raw.svg"
+  },
+  "ground_turkey_raw": {
+    "id": "ground_turkey_raw",
+    "name": "Ground Turkey Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/ground_turkey_raw.svg"
+  },
+  "haddock_fillet": {
+    "id": "haddock_fillet",
+    "name": "Haddock Fillet",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/haddock_fillet.svg"
+  },
+  "half_and_half_carton": {
+    "id": "half_and_half_carton",
+    "name": "Half And Half",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/half_and_half_carton.svg"
+  },
+  "halibut_fillet": {
+    "id": "halibut_fillet",
+    "name": "Halibut Fillet",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/halibut_fillet.svg"
+  },
+  "ham_counter_whole": {
+    "id": "ham_counter_whole",
+    "name": "Ham Whole",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/ham_counter_whole.svg"
+  },
+  "ham_roast": {
+    "id": "ham_roast",
+    "name": "Ham Roast",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/ham_roast.svg"
+  },
+  "hamburger_buns_bag": {
+    "id": "hamburger_buns_bag",
+    "name": "Hamburger Buns",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/hamburger_buns_bag.svg"
+  },
+  "hamburger_patty_cheeseburger": {
+    "id": "hamburger_patty_cheeseburger",
+    "name": "Hamburger Patty Cheeseburger",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/hamburger_patty_cheeseburger.svg"
+  },
+  "hamburger_patty_raw": {
+    "id": "hamburger_patty_raw",
+    "name": "Hamburger Patty Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/hamburger_patty_raw.svg"
+  },
+  "heavy_cream_carton": {
+    "id": "heavy_cream_carton",
+    "name": "Heavy Cream",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/heavy_cream_carton.svg"
+  },
+  "herring_whole": {
+    "id": "herring_whole",
+    "name": "Herring Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/herring_whole.svg"
+  },
+  "honey_jar": {
+    "id": "honey_jar",
+    "name": "Honey",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/honey_jar.svg"
+  },
+  "hot_dogs": {
+    "id": "hot_dogs",
+    "name": "Hot Dogs",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/hot_dogs.svg"
+  },
+  "hot_sauce": {
+    "id": "hot_sauce",
+    "name": "Hot Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/hot_sauce.svg"
+  },
+  "italian_sausage": {
+    "id": "italian_sausage",
+    "name": "Italian Sausage",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/italian_sausage.svg"
+  },
+  "jalapenos": {
+    "id": "jalapenos",
+    "name": "Jalapenos",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/jalapenos.svg"
+  },
+  "jumbo_shrimp": {
+    "id": "jumbo_shrimp",
+    "name": "Jumbo Shrimp",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/shrimp_shell_on_counter.svg"
+  },
+  "ketchup_bottle": {
+    "id": "ketchup_bottle",
+    "name": "Ketchup",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/ketchup_bottle.svg"
+  },
+  "king_crab_gourmet": {
+    "id": "king_crab_gourmet",
+    "name": "King Crab Gourmet",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/king_crab_gourmet.svg"
+  },
+  "king_crab_legs": {
+    "id": "king_crab_legs",
+    "name": "King Crab Legs",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/king_crab_legs.svg"
+  },
+  "lasagna_noodles": {
+    "id": "lasagna_noodles",
+    "name": "Lasagna Noodles",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/lasagna_noodles.svg"
+  },
+  "lemon_juice": {
+    "id": "lemon_juice",
+    "name": "Lemon Juice",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/lemon_juice.svg"
+  },
+  "lemon_pepper": {
+    "id": "lemon_pepper",
+    "name": "Lemon Pepper",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/lemon_pepper.svg"
+  },
+  "lettuce": {
+    "id": "lettuce",
+    "name": "Lettuce",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/lettuce.svg"
+  },
+  "lime_juice": {
+    "id": "lime_juice",
+    "name": "Lime Juice",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/lime_juice.svg"
+  },
+  "linguine_dry": {
+    "id": "linguine_dry",
+    "name": "Linguine Dry",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/linguine_dry.svg"
+  },
+  "liquid_smoke_bottle": {
+    "id": "liquid_smoke_bottle",
+    "name": "Liquid Smoke",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/liquid_smoke_bottle.svg"
+  },
+  "lobster_medallions": {
+    "id": "lobster_medallions",
+    "name": "Lobster Medallions",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/lobster_whole.svg"
+  },
+  "lobster_tail_gourmet": {
+    "id": "lobster_tail_gourmet",
+    "name": "Lobster Tail Gourmet",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/lobster_tail_gourmet.svg"
+  },
+  "lobster_tail_raw": {
+    "id": "lobster_tail_raw",
+    "name": "Lobster Tail Raw",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/lobster_tail_raw.svg"
+  },
+  "lobster_whole": {
+    "id": "lobster_whole",
+    "name": "Lobster Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/lobster_whole.svg"
+  },
+  "lobster_whole_counter": {
+    "id": "lobster_whole_counter",
+    "name": "Lobster Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/lobster_whole.svg"
+  },
+  "macaroni_cheese": {
+    "id": "macaroni_cheese",
+    "name": "Macaroni Cheese",
+    "category": "pantry",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/macaroni_cheese.svg"
+  },
+  "mackerel_whole": {
+    "id": "mackerel_whole",
+    "name": "Mackerel Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/mackerel_whole.svg"
+  },
+  "maple_syrup": {
+    "id": "maple_syrup",
+    "name": "Maple Syrup",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/maple_syrup.svg"
+  },
+  "marinara_sauce": {
+    "id": "marinara_sauce",
+    "name": "Marinara Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/marinara_sauce.svg"
+  },
+  "mayonnaise_jar": {
+    "id": "mayonnaise_jar",
+    "name": "Mayonnaise",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/mayonnaise_jar.svg"
+  },
+  "meatballs_raw": {
+    "id": "meatballs_raw",
+    "name": "Meatballs Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/meatballs_raw.svg"
+  },
+  "milk": {
+    "id": "milk",
+    "name": "Milk",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/milk.svg"
+  },
+  "mozzarella": {
+    "id": "mozzarella",
+    "name": "Mozzarella",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/mozzarella.svg"
+  },
+  "mushrooms": {
+    "id": "mushrooms",
+    "name": "Mushrooms",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/mushrooms.svg"
+  },
+  "mushrooms_container": {
+    "id": "mushrooms_container",
+    "name": "Mushrooms",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/mushrooms_container.svg"
+  },
+  "mushrooms_whole": {
+    "id": "mushrooms_whole",
+    "name": "Mushrooms Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/mushrooms_whole.svg"
+  },
+  "mussels": {
+    "id": "mussels",
+    "name": "Mussels",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/mussels.svg"
+  },
+  "mustard_bottle": {
+    "id": "mustard_bottle",
+    "name": "Mustard",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/mustard_bottle.svg"
+  },
+  "noodles": {
+    "id": "noodles",
+    "name": "Noodles",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/noodles.svg"
+  },
+  "oats_bowl": {
+    "id": "oats_bowl",
+    "name": "Oats",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/oats_bowl.svg"
+  },
+  "olive_oil_bottle": {
+    "id": "olive_oil_bottle",
+    "name": "Olive Oil",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/olive_oil_bottle.svg"
+  },
+  "onion_powder": {
+    "id": "onion_powder",
+    "name": "Onion Powder",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/onion_powder.svg"
+  },
+  "onion_whole": {
+    "id": "onion_whole",
+    "name": "Onion Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/onion_whole.svg"
+  },
+  "onions": {
+    "id": "onions",
+    "name": "Onions",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/onions.svg"
+  },
+  "oregano": {
+    "id": "oregano",
+    "name": "Oregano",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/oregano.svg"
+  },
+  "oysters": {
+    "id": "oysters",
+    "name": "Oysters",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/oysters.svg"
+  },
+  "paprika": {
+    "id": "paprika",
+    "name": "Paprika",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/paprika.svg"
+  },
+  "parmesan_snow": {
+    "id": "parmesan_snow",
+    "name": "Parmesan Snow",
+    "category": "pantry",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/parmesan_snow.svg"
+  },
+  "parmesan_wedge": {
+    "id": "parmesan_wedge",
+    "name": "Parmesan Wedge",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/parmesan_wedge.svg"
+  },
+  "parsley": {
+    "id": "parsley",
+    "name": "Parsley",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/parsley.svg"
+  },
+  "pasta_shells": {
+    "id": "pasta_shells",
+    "name": "Pasta Shells",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/pasta_shells.svg"
+  },
+  "peas_pods": {
+    "id": "peas_pods",
+    "name": "Peas Pods",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/peas_pods.svg"
+  },
+  "penne_pasta": {
+    "id": "penne_pasta",
+    "name": "Penne Pasta",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/penne_pasta.svg"
+  },
+  "perch_counter_whole": {
+    "id": "perch_counter_whole",
+    "name": "Perch Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/perch_whole.svg"
+  },
+  "perch_whole": {
+    "id": "perch_whole",
+    "name": "Perch Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/perch_whole.svg"
+  },
+  "pickle_whole": {
+    "id": "pickle_whole",
+    "name": "Pickle Whole",
+    "category": "pantry",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/pickle_whole.svg"
+  },
+  "pickles_bowl": {
+    "id": "pickles_bowl",
+    "name": "Pickles",
+    "category": "pantry",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/pickles_bowl.svg"
+  },
+  "pork-chops": {
+    "id": "pork-chops",
+    "name": "Pork Chops",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/pork-chops.svg"
+  },
+  "pork_chop_counter_whole": {
+    "id": "pork_chop_counter_whole",
+    "name": "Pork Chop Whole",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/pork_chop_counter_whole.svg"
+  },
+  "pork_sausage": {
+    "id": "pork_sausage",
+    "name": "Pork Sausage",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/pork_sausage.svg"
+  },
+  "pork_tenderloin_counter_whole": {
+    "id": "pork_tenderloin_counter_whole",
+    "name": "Pork Tenderloin Whole",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/pork_tenderloin_counter_whole.svg"
+  },
+  "pork_tenderloin_raw": {
+    "id": "pork_tenderloin_raw",
+    "name": "Pork Tenderloin Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/pork_tenderloin_raw.svg"
+  },
+  "potato_whole": {
+    "id": "potato_whole",
+    "name": "Potato Whole",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/potato_whole.svg"
+  },
+  "potatoes": {
+    "id": "potatoes",
+    "name": "Potatoes",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/potatoes.svg"
+  },
+  "premium_salmon": {
+    "id": "premium_salmon",
+    "name": "Premium Salmon",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/premium_salmon.svg"
+  },
+  "premium_salmon_fillet": {
+    "id": "premium_salmon_fillet",
+    "name": "Premium Salmon Fillet",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/premium_salmon_fillet.svg"
+  },
+  "red_onion": {
+    "id": "red_onion",
+    "name": "Red Onion",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/red_onion.svg"
+  },
+  "ribs": {
+    "id": "ribs",
+    "name": "Ribs",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/ribs.svg"
+  },
+  "rice": {
+    "id": "rice",
+    "name": "Rice",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/rice.svg"
+  },
+  "rice_bag": {
+    "id": "rice_bag",
+    "name": "Rice",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/rice_bag.svg"
+  },
+  "roast_beef": {
+    "id": "roast_beef",
+    "name": "Roast Beef",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/roast_beef.svg"
+  },
+  "rosemary": {
+    "id": "rosemary",
+    "name": "Rosemary",
+    "category": "herb",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/rosemary.svg"
+  },
+  "salmon": {
+    "id": "salmon",
+    "name": "Salmon",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/salmon.svg"
+  },
+  "salmon_counter_whole": {
+    "id": "salmon_counter_whole",
+    "name": "Salmon Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/salmon.svg"
+  },
+  "salt_shaker": {
+    "id": "salt_shaker",
+    "name": "Salt",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/salt_shaker.svg"
+  },
+  "sardines": {
+    "id": "sardines",
+    "name": "Sardines",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/sardines.svg"
+  },
+  "sausage_links": {
+    "id": "sausage_links",
+    "name": "Sausage Links",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/sausage_links.svg"
+  },
+  "scallops_raw": {
+    "id": "scallops_raw",
+    "name": "Scallops Raw",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/scallops_raw.svg"
+  },
+  "scallops_raw_counter": {
+    "id": "scallops_raw_counter",
+    "name": "Scallops Raw",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/scallops_raw_counter.svg"
+  },
+  "seafood_medley": {
+    "id": "seafood_medley",
+    "name": "Seafood Medley",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/seafood_medley.svg"
+  },
+  "seafood_sauce_creamy": {
+    "id": "seafood_sauce_creamy",
+    "name": "Seafood Sauce Creamy",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 3,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/seafood_sauce_creamy.svg"
+  },
+  "seafood_seasoning": {
+    "id": "seafood_seasoning",
+    "name": "Seafood Seasoning",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/seafood_seasoning.svg"
+  },
+  "sesame_oil_bottle": {
+    "id": "sesame_oil_bottle",
+    "name": "Sesame Oil",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/sesame_oil_bottle.svg"
+  },
+  "shallots": {
+    "id": "shallots",
+    "name": "Shallots",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/shallots.svg"
+  },
+  "shrimp": {
+    "id": "shrimp",
+    "name": "Shrimp",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/shrimp.svg"
+  },
+  "shrimp_jumbo_gourmet": {
+    "id": "shrimp_jumbo_gourmet",
+    "name": "Shrimp Jumbo Gourmet",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/shrimp_jumbo_gourmet.svg"
+  },
+  "shrimp_shell_on_counter": {
+    "id": "shrimp_shell_on_counter",
+    "name": "Shrimp Shell On Counter",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/shrimp_shell_on_counter.svg"
+  },
+  "smoked_paprika": {
+    "id": "smoked_paprika",
+    "name": "Smoked Paprika",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/smoked_paprika.svg"
+  },
+  "smoked_salmon": {
+    "id": "smoked_salmon",
+    "name": "Smoked Salmon",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/smoked_salmon.svg"
+  },
+  "smoked_trout": {
+    "id": "smoked_trout",
+    "name": "Smoked Trout",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/smoked_trout.svg"
+  },
+  "sour_cream": {
+    "id": "sour_cream",
+    "name": "Sour Cream",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/sour_cream.svg"
+  },
+  "soy_sauce_bottle": {
+    "id": "soy_sauce_bottle",
+    "name": "Soy Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/soy_sauce_bottle.svg"
+  },
+  "spaghetti_box": {
+    "id": "spaghetti_box",
+    "name": "Spaghetti",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/spaghetti_box.svg"
+  },
+  "spaghetti_dry": {
+    "id": "spaghetti_dry",
+    "name": "Spaghetti Dry",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/spaghetti_dry.svg"
+  },
+  "spaghetti_sauce_jar": {
+    "id": "spaghetti_sauce_jar",
+    "name": "Spaghetti Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/spaghetti_sauce_jar.svg"
+  },
+  "spinach": {
+    "id": "spinach",
+    "name": "Spinach",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/spinach.svg"
+  },
+  "squid_counter_whole": {
+    "id": "squid_counter_whole",
+    "name": "Squid Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/squid_whole.svg"
+  },
+  "squid_whole": {
+    "id": "squid_whole",
+    "name": "Squid Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 5,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/squid_whole.svg"
+  },
+  "steak": {
+    "id": "steak",
+    "name": "Steak",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/steak.svg"
+  },
+  "steak_counter_whole": {
+    "id": "steak_counter_whole",
+    "name": "Steak Whole",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/steak_counter_whole.svg"
+  },
+  "steak_sauce_bottle": {
+    "id": "steak_sauce_bottle",
+    "name": "Steak Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/steak_sauce_bottle.svg"
+  },
+  "sweet_potatoes": {
+    "id": "sweet_potatoes",
+    "name": "Sweet Potatoes",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/sweet_potatoes.svg"
+  },
+  "swiss_cheese": {
+    "id": "swiss_cheese",
+    "name": "Swiss Cheese",
+    "category": "dairy",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/swiss_cheese.svg"
+  },
+  "swordfish_steak": {
+    "id": "swordfish_steak",
+    "name": "Swordfish Steak",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 4,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/swordfish_steak.svg"
+  },
+  "teriyaki_sauce": {
+    "id": "teriyaki_sauce",
+    "name": "Teriyaki Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/teriyaki_sauce.svg"
+  },
+  "thyme": {
+    "id": "thyme",
+    "name": "Thyme",
+    "category": "seasoning",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/thyme.svg"
+  },
+  "tilapia_fillet": {
+    "id": "tilapia_fillet",
+    "name": "Tilapia Fillet",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tilapia_fillet.svg"
+  },
+  "toast_points_tiny": {
+    "id": "toast_points_tiny",
+    "name": "Toast Points Tiny",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/toast_points_tiny.svg"
+  },
+  "tomato_paste": {
+    "id": "tomato_paste",
+    "name": "Tomato Paste",
+    "category": "sauce",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/tomato_paste.svg"
+  },
+  "tomato_sauce": {
+    "id": "tomato_sauce",
+    "name": "Tomato Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/tomato_sauce.svg"
+  },
+  "tomato_whole": {
+    "id": "tomato_whole",
+    "name": "Tomato Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tomato_whole.svg"
+  },
+  "tomatoes": {
+    "id": "tomatoes",
+    "name": "Tomatoes",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tomatoes.svg"
+  },
+  "tomatoes_whole": {
+    "id": "tomatoes_whole",
+    "name": "Tomatoes Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tomatoes_whole.svg"
+  },
+  "tortillas": {
+    "id": "tortillas",
+    "name": "Tortillas",
+    "category": "starch",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/tortillas.svg"
+  },
+  "trout_counter_whole": {
+    "id": "trout_counter_whole",
+    "name": "Trout Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/trout_whole.svg"
+  },
+  "trout_smoked": {
+    "id": "trout_smoked",
+    "name": "Trout Smoked",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/trout_smoked.svg"
+  },
+  "trout_whole": {
+    "id": "trout_whole",
+    "name": "Trout Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/trout_whole.svg"
+  },
+  "tuna_canned": {
+    "id": "tuna_canned",
+    "name": "Tuna Canned",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tuna_canned.svg"
+  },
+  "tuna_counter_whole": {
+    "id": "tuna_counter_whole",
+    "name": "Tuna Whole",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tuna_counter_whole.svg"
+  },
+  "tuna_extra_fancy_tin": {
+    "id": "tuna_extra_fancy_tin",
+    "name": "Tuna Extra Fancy Tin",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tuna_extra_fancy_tin.svg"
+  },
+  "tuna_steak": {
+    "id": "tuna_steak",
+    "name": "Tuna Steak",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tuna_steak.svg"
+  },
+  "tuna_suspiciously_cheap": {
+    "id": "tuna_suspiciously_cheap",
+    "name": "Tuna Suspiciously Cheap",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tuna_suspiciously_cheap.svg"
+  },
+  "tuna_the_good": {
+    "id": "tuna_the_good",
+    "name": "Tuna The Good",
+    "category": "fish",
+    "fish": true,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/tuna_the_good.svg"
+  },
+  "turkey_breast_counter_whole": {
+    "id": "turkey_breast_counter_whole",
+    "name": "Turkey Breast Whole",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/turkey_breast_counter_whole.svg"
+  },
+  "turkey_breast_raw": {
+    "id": "turkey_breast_raw",
+    "name": "Turkey Breast Raw",
+    "category": "protein",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 2,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/turkey_breast_raw.svg"
+  },
+  "vegetable_broth_carton": {
+    "id": "vegetable_broth_carton",
+    "name": "Vegetable Broth",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/vegetable_broth_carton.svg"
+  },
+  "vegetable_oil_bottle": {
+    "id": "vegetable_oil_bottle",
+    "name": "Vegetable Oil",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/vegetable_oil_bottle.svg"
+  },
+  "vinegar_bottle": {
+    "id": "vinegar_bottle",
+    "name": "Vinegar",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/vinegar_bottle.svg"
+  },
+  "water": {
+    "id": "water",
+    "name": "Water",
+    "category": "liquid",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 1,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/water.svg"
+  },
+  "whitefish_fillet": {
+    "id": "whitefish_fillet",
+    "name": "Whitefish Fillet",
+    "category": "fish",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 3,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/whitefish_fillet.svg"
+  },
+  "worcestershire_sauce_bottle": {
+    "id": "worcestershire_sauce_bottle",
+    "name": "Worcestershire Sauce",
+    "category": "sauce",
+    "fish": false,
+    "liquid": true,
+    "minimumDifficulty": 2,
+    "marketEligible": false,
+    "asset": "assets/images/games/leisure/shared/worcestershire_sauce_bottle.svg"
+  },
+  "yellow_onions": {
+    "id": "yellow_onions",
+    "name": "Yellow Onions",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/yellow_onions.svg"
+  },
+  "yellow_squash": {
+    "id": "yellow_squash",
+    "name": "Yellow Squash",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/yellow_squash.svg"
+  },
+  "zucchini": {
+    "id": "zucchini",
+    "name": "Zucchini",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/zucchini.svg"
+  },
+  "zucchini_whole": {
+    "id": "zucchini_whole",
+    "name": "Zucchini Whole",
+    "category": "vegetable",
+    "fish": false,
+    "liquid": false,
+    "minimumDifficulty": 1,
+    "marketEligible": true,
+    "asset": "assets/images/games/leisure/shared/zucchini_whole.svg"
+  },
+  "old_boot": {
+    "id": "old_boot",
+    "name": "Old Boot",
+    "category": "junk",
+    "isJunk": true,
+    "asset": "assets/images/games/leisure/shared/junk/old_boot.svg",
+    "quip": "A boot. Magnificent. Wrong species."
+  },
+  "rusty_can": {
+    "id": "rusty_can",
+    "name": "Rusty Can",
+    "category": "junk",
+    "isJunk": true,
+    "asset": "assets/images/games/leisure/shared/junk/rusty_can.svg",
+    "quip": "Rusty can acquired. The ocean would like a refund."
+  },
+  "soggy_newspaper": {
+    "id": "soggy_newspaper",
+    "name": "Soggy Newspaper",
+    "category": "junk",
+    "isJunk": true,
+    "asset": "assets/images/games/leisure/shared/junk/soggy_newspaper.svg",
+    "quip": "Breaking news: this is not dinner."
+  },
+  "mystery_sock": {
+    "id": "mystery_sock",
+    "name": "Mysterious Sock",
+    "category": "junk",
+    "isJunk": true,
+    "asset": "assets/images/games/leisure/shared/junk/mystery_sock.svg",
+    "quip": "One sock. Its partner remains at large."
+  },
+  "bent_spoon": {
+    "id": "bent_spoon",
+    "name": "Bent Spoon",
+    "category": "junk",
+    "isJunk": true,
+    "asset": "assets/images/games/leisure/shared/junk/bent_spoon.svg",
+    "quip": "A spoon caught by a pinball. Nature is healing incorrectly."
+  },
+  "seaweed_wig": {
+    "id": "seaweed_wig",
+    "name": "Seaweed Wig",
+    "category": "junk",
+    "isJunk": true,
+    "asset": "assets/images/games/leisure/shared/junk/seaweed_wig.svg",
+    "quip": "A fashionable seaweed wig. Onyx remains unimpressed."
+  }
+}
