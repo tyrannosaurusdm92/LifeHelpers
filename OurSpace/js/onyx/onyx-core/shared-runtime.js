@@ -1,5 +1,5 @@
 (()=>{'use strict';
- const root=document.documentElement,$=s=>document.querySelector(s),slow=$('#slowPetGame'),fast=$('#feedHimMeowFullscreenShell'),work=$('#onyxWorkFullscreenShell');
+ const root=document.documentElement,$=s=>document.querySelector(s),slow=$('#slowPetGame'),fast=$('#onyxLeisureFullscreen'),work=$('#onyxWorkFullscreenShell');
  const slowEnv=()=>window.OnyxVirtualHealthEnvironment;
  const frameFor=tab=>window.OnyxFullscreenShells?.frameFor?.(tab);
  function closeRuntimeChat(){const was=root.dataset.gameChat;root.dataset.gameChat='';window.OnyxVirtualPet?.close?.();if(was==='health')slowEnv()?.endChat?.()}
@@ -18,7 +18,7 @@
  document.addEventListener('input',event=>{if(event.target?.matches?.('[data-chat-input="health"]'))slowEnv()?.noteUserActivity?.()},true);
  window.addEventListener('message',handleShellMessage);
  window.OnyxShell=Object.freeze({enterFastGame,enterSlowGame,enterWorkFullscreen,exitWorkFullscreen,exitToModule,openRuntimeChat,closeRuntimeChat,getMode:()=>root.dataset.runtimeMode||'module'});
- $('#slowGameExit')?.addEventListener('click',exitToModule);$('#feedHimMeowFullscreenExit')?.addEventListener('click',exitToModule);$('#onyxWorkFullscreenExit')?.addEventListener('click',exitWorkFullscreen);$('#onyxOpenWorkFullscreen')?.addEventListener('click',enterWorkFullscreen);
+ $('#slowGameExit')?.addEventListener('click',exitToModule);$('#onyxLeisureGameExit')?.addEventListener('click',exitToModule);$('#onyxWorkFullscreenExit')?.addEventListener('click',exitWorkFullscreen);$('#onyxOpenWorkFullscreen')?.addEventListener('click',enterWorkFullscreen);
  const workFrame=frameFor('work');workFrame?.addEventListener('load',syncWorkDesign);
  const widget=$('#onyxWidget');widget?.addEventListener('onyx-module-design-change',event=>{lastDesign=event.detail||readModuleDesign();syncWorkDesign()});
  if(widget&&typeof MutationObserver!=='undefined'){new MutationObserver(()=>{if(widget.classList.contains('open'))return;const tab=root.dataset.gameChat;if(tab==='health')slowEnv()?.endChat?.();if(tab==='health'||tab==='leisure')root.dataset.gameChat=''}).observe(widget,{attributes:true,attributeFilter:['class']})}

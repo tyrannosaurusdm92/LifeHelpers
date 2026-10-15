@@ -1,10 +1,10 @@
 # Feed Him MEOW fullscreen integration
 
-Feed Him MEOW opens from the **Leisure** tab in the Onyx widget. The tab remains Onyx chat; its existing game button opens the game fullscreen. Both `assets/code/william.html` and `assets/code/jasper.html` retain the same fullscreen host iframe and personalized Onyx chat, while their shared runtime loads the same game.
+Feed Him MEOW opens from the **Leisure** tab in the Onyx widget. The tab remains Onyx chat; its existing game button opens the game fullscreen. Both `assets/code/william.html` and `assets/code/jasper.html` now contain a complete copy of the game document inside `#onyxLeisureGameDocument`. The former URL-based Leisure fullscreen section and frame are removed.
 
-The canonical fullscreen game document lives at `assets/code/meow.html`. `js/onyx/onyx-core/shared-shells.js` loads it into the existing fullscreen iframe only when the Leisure launcher is used. The document base resolves game assets from the OurSpace root. Both profile pages cache-bust the shared loader; there is no top-level game navigation entry or duplicated hidden game DOM.
+The canonical source is `assets/code/meow.html`. The Jasper page embeds that source, and the William page embeds an identical copy. On opening fullscreen, `js/onyx/onyx-core/shared-shells.js` reads the profile's embedded template and loads it into that profile's new game frame with the OurSpace root as its base URL. The game does not load `meow.html` by URL. The template is inert until fullscreen opens, so the recipe catalog and game scripts are not loaded while Onyx is only chatting. Keep both copies synchronized when changing `meow.html`.
 
-The game runtime now replaces the previous leisure game runtime in `css/onyx/games/leisure/` and `js/onyx/games/leisure/`. The original Feed Him MEOW personality, visual shell, Onyx widget chat, keyboard/touch/gamepad support, and profile navigation remain owned by the existing Onyx systems.
+The game runtime replaces the previous leisure game runtime in `css/onyx/games/leisure/` and `js/onyx/games/leisure/`. The Feed Him MEOW personality, arcade controls, Onyx widget chat, keyboard/touch/gamepad support, and profile navigation remain available.
 
 ## Run flow
 

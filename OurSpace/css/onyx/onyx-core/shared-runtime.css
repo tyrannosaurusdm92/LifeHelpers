@@ -1,15 +1,16 @@
-html[data-runtime-mode="module"] #feedHimMeowBase,
 html[data-runtime-mode="module"] #slowPetGame,
-html[data-runtime-mode="module"] #feedHimMeowFullscreenShell{display:none!important}
+html[data-runtime-mode="module"] #onyxLeisureFullscreen{display:none!important}
 html[data-runtime-mode="module"] #onyxWidget{display:block!important}
-html[data-runtime-mode="fast-game"] #feedHimMeowBase,html[data-runtime-mode="fast-game"] #slowPetGame{display:none!important}
-html[data-runtime-mode="fast-game"] #feedHimMeowFullscreenShell{display:block!important}
-html[data-runtime-mode="slow-game"] #feedHimMeowBase,html[data-runtime-mode="slow-game"] #feedHimMeowFullscreenShell{display:none!important}
+html[data-runtime-mode="fast-game"] #slowPetGame{display:none!important}
+html[data-runtime-mode="fast-game"] #onyxLeisureFullscreen{display:block!important}
+html[data-runtime-mode="slow-game"] #onyxLeisureFullscreen{display:none!important}
 html[data-runtime-mode="slow-game"] #slowPetGame{display:block!important}
-#feedHimMeowBase,#slowPetGame,#feedHimMeowFullscreenShell{display:none}
+#slowPetGame,#onyxLeisureFullscreen{display:none}
 #onyxWidget{z-index:10000}
 .onyx-fullscreen-shell-host{position:fixed;inset:0;z-index:20000;background:#000;overflow:hidden}
 .onyx-fullscreen-shell-frame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+.onyx-leisure-game-host{position:fixed;inset:0;z-index:20000;background:#000;overflow:hidden}
+.onyx-leisure-game-frame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#080b12}
 .fullscreen-shell-exit{position:fixed;z-index:22500;top:max(12px,calc(env(safe-area-inset-top) + 10px));bottom:auto;min-height:44px;border:2px solid #071014;border-radius:9px;font:900 28px/1 system-ui;box-shadow:0 0 0 2px #fff,0 4px 12px #0008}
 .fullscreen-shell-exit{right:12px;width:46px;background:#d40000;color:#fff}
 /* Fullscreen chat is the exact live module conversation surface; no duplicate iframe chat history exists. */

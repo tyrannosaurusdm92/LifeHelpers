@@ -7,7 +7,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" name="viewport"/>
 <meta content="#5A8580" name="theme-color"/>
 <meta content="dark" name="color-scheme"/>
-<title>Feed him MEOW | Retro Arcade Shared Shell</title>
+<title>Feed Him MEOW | Retro Arcade</title>
 
 <link href="css/onyx/games/leisure/meow-effects.css" rel="stylesheet"/><link href="css/onyx/games/leisure/shared/meow-shell.css" rel="stylesheet"/><link href="css/onyx/games/leisure/shared/meow-onyx-boosters.css" rel="stylesheet"/><link rel="stylesheet" href="css/onyx/games/leisure/garden-board-layouts.css">
 <link rel="stylesheet" href="css/onyx/games/leisure/garden-hud-interface.css">
@@ -25,25 +25,7 @@
 <link rel="stylesheet" href="css/onyx/games/leisure/bon-appetit.css">
 </head>
 <body>
-<!--
-FEED HIM MEOW: GAME ENGINE HOOKS (no game installed in this shell)
-const shell = window.gameShell;
-shell.mount(yourBoardCanvasOrElement);
-shell.registerGame({
-  onInput(event) { /* event.type: move, rotate, aim, action, pointer, board-gesture, menu, etc. */ },
-  setPaused(paused, reasons) { /* actually freeze/resume simulation + timers here */ },
-  setVolume(level) { /* apply to SFX and Onyx-cat channels */ },
-  setAccessibility(options) { /* implement equivalent assists without score loss */ },
-  getCheckpoint(reason) { /* return recipe ID/seed, phase, completed stage results */ },
-  activateBooster(request) { /* Promise.resolve({success:true}) ONLY after real effect */ }
-});
-shell.setPhase('market-madness'); // or ingredient-garden / bon-appetit
-shell.setRecipe(recipeObject);shell.setRunStatus({level:1,objectives:'...'});
-shell.setBoosters([{id:'unique',name:'Onyx Paw',phases:['market-madness'],quantity:1}]);
-shell.showVerdict(4); // 3-5 Purring, 0-2 Judgmental
-This shell does not create game boards, original Onyx art, or cat-sound files.
--->
-<main aria-label="Neutral game shell" class="game-shell" id="gameShell">
+<main aria-label="Feed Him MEOW arcade" class="game-shell" id="gameShell">
 <header aria-label="Game shell interface" class="hud-header">
 <nav aria-label="Game menus" class="hud-topbar">
 <button aria-controls="hud-controls" aria-expanded="false" class="hud-tab" data-panel="controls" type="button"><span aria-hidden="true" class="tab-symbol">⌨</span>Controls</button>
@@ -181,7 +163,7 @@ This shell does not create game boards, original Onyx art, or cat-sound files.
 
 <div aria-hidden="true" class="chrome-top"></div>
 <div aria-hidden="true" class="chrome-bottom"></div>
-<!-- Intentionally EMPTY: mount your game inside this viewport. -->
+<!-- Recipe, board, and kitchen stages mount in this viewport. -->
 <section aria-label="Game display frame" class="viewport-frame">
 <div aria-label="Feed Him MEOW game viewport" class="game-viewport" id="gameViewport" role="region" tabindex="0"></div>
 <div aria-hidden="true" aria-label="Recipe run progress" class="phase-rail" hidden="" id="gamePhaseRail"></div>

@@ -5,10 +5,10 @@
   "entryMode": "Onyx widget > Leisure chat > Feed Him MEOW fullscreen",
   "runtimeDocument": {
     "path": "assets/code/meow.html",
-    "field": "fullscreen iframe source",
-    "encoding": "HTML document",
-    "base": "../../ (resolves assets from OurSpace root)",
-    "bytes": 28754
+    "field": "canonical source for William and Jasper embedded Leisure fullscreen documents",
+    "encoding": "HTML-escaped in each profile template; hydrated into srcdoc on launch",
+    "base": "document.baseURI injected at launch (OurSpace root)",
+    "bytes": 27964
   },
   "profileEntrypoints": [
     "assets/code/william.html",
@@ -342,8 +342,8 @@
     },
     {
       "path": "assets/code/meow.html",
-      "bytes": 29042,
-      "sha256": "13e61d8c4b1cfd25119f47fae2de0d2d7ec5997513739f7f85c16e7151923f40"
+      "bytes": 27964,
+      "sha256": "aa1aad2de5be5b22238e172879453da5d6f2ba80eed2d52dad1731749afff378"
     },
     {
       "path": "assets/images/games/leisure/Bon-Appetit/cooked_kozlenmis_domates.png",
@@ -4785,5 +4785,9 @@
       "bytes": 117469,
       "sha256": "6493ff9ad1083268e5caca841c640d53679d72aa3d32c219ab4ba734d6c6843d"
     }
-  ]
+  ],
+  "embeddedCopies": {
+    "assets/code/william.html": "#onyxLeisureGameDocument",
+    "assets/code/jasper.html": "#onyxLeisureGameDocument"
+  }
 }

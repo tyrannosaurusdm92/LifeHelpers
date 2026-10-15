@@ -94,3 +94,9 @@ body[data-onyx-standalone-viewport="ourspace-main-page"]{width:100%;min-height:1
 body[data-onyx-standalone-viewport="ourspace-main-page"]>.ourspace-profile-iframe{display:block;position:fixed;inset:0;width:100vw;height:100dvh;margin:0;padding:0;border:0;z-index:0;background:transparent;}
 body[data-onyx-standalone-viewport="ourspace-main-page"]>#onyxWidget{z-index:2147482000;}
 #feedHimMeowBase[hidden]{display:none!important;}
+
+/* Scale the complete profile/widget host once; embedded pages inherit this visual scale. */
+html{zoom:1.15}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.onyx-widget{filter:drop-shadow(0 8px 18px rgba(0,0,0,.26))}
+.onyx-state-label{font-size:11px;line-height:1.25;padding:5px 10px}
