@@ -2059,3 +2059,43 @@ html[data-public-only=true] body #osPublicProfileRoot{display:block!important;po
 .os-public-card h3{margin:0 0 10px;font-size:1rem}
 .os-public-card :is(audio,video,img){max-width:100%;width:100%;max-height:290px;object-fit:contain}
 .os-public-links{display:grid;gap:7px}.os-public-disclaimer{margin-top:30px;color:#b5d6dc}
+
+/* Friendly, readable social-style surfaces. Existing Lightning Storm colors are unchanged. */
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+button,input,select,textarea{font-family:inherit;transition:box-shadow .16s ease,filter .16s ease,transform .16s ease}
+:where(button,input,select,textarea,a,[tabindex]):focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+:where(.site-header,.page-title,.master-bar,.master-panel,.jump-panel,.module,.module-hd,.portal-auth-panel,.card,.post,.event,.resource,.notice-card,.os-social-section,.os-social-card,.os-social-profile-card,.os-social-feed-item){border-radius:16px}
+:is(.module,.card,.post,.event,.resource,.notice-card,.os-social-section,.os-social-card,.os-social-profile-card,.os-social-feed-item){box-shadow:0 5px 20px rgba(0,0,0,.12)}
+.master-bar,.master-panel,.jump-panel{border-radius:18px}
+.page-route,.jump-link,.os-social-action,.os-social-link{min-height:46px;border-radius:12px}
+input,select,textarea{min-height:44px;border-radius:11px;padding:.65em .8em}
+.os-social-section{padding:16px}
+.os-social-grid,.os-social-gallery{gap:14px}
+.os-social-card,.os-social-profile-card,.os-social-feed-item{padding:14px}
+.os-social-actions{gap:10px}
+.os-social-action,.os-social-link{padding:9px 13px}
+.site-page[data-page-design="true"]{gap:var(--os-design-section-spacing,12px)}
+.site-page[data-page-design="true"]>:not(.jump-nav){zoom:var(--os-design-content-scale,1)}
+.site-page[data-page-design="true"]>:not(.jump-nav) :is(p,li,label,blockquote,.small-note,.os-social-intro,.os-social-detail,.os-social-empty){line-height:var(--os-design-line-spacing,1.5)}
+.site-page[data-page-design="true"]>:not(.jump-nav):is(.card,.post,.event,.resource,.notice-card,.os-social-section,.os-social-card,.os-social-profile-card,.os-social-feed-item){border-radius:var(--os-design-card-radius,16px)}
+.site-page[data-page-design="true"]>:not(.jump-nav) :is(.card,.post,.event,.resource,.notice-card,.os-social-section,.os-social-card,.os-social-profile-card,.os-social-feed-item,button,input,select,textarea){border-radius:var(--os-design-card-radius,16px)}
+.site-page[data-page-design="true"]>:not(.jump-nav) :is(.grid,.grid-2,.grid-3,.grid-4,.os-social-grid,.os-social-gallery,.os-social-actions){gap:var(--os-design-section-spacing,12px)}
+.jump-design-search,.jump-design-settings{display:grid;gap:10px;min-width:0;border:1px solid var(--os-page-border,#AA3F00);border-radius:14px;padding:12px;background:var(--module-bg,#C7FFFF);color:var(--text-primary,#0B0C0F)}
+.jump-design-search>span,.jump-design-settings>summary{font-weight:800}
+.jump-design-search input{min-width:0;width:100%;min-height:42px;padding:9px 11px;border-radius:10px}
+.jump-design-search small{line-height:1.35}
+.jump-design-settings>summary{cursor:pointer;padding:3px}
+.jump-design-settings>p{margin:0;line-height:1.45}
+.jump-design-settings-grid{display:grid;gap:8px}
+.jump-design-attribute{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:10px;border:1px solid var(--os-page-border,#AA3F00);border-radius:11px;background:var(--card-bg,#7AFFFF)}
+.jump-design-attribute-copy{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:baseline}
+.jump-design-attribute-copy label{font-weight:800}
+.jump-design-attribute-copy small{grid-column:1/-1;line-height:1.4}
+.jump-design-attribute-copy output{font-weight:800;white-space:nowrap}
+.jump-design-attribute-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
+.jump-design-attribute-controls input[type="range"]{min-width:0;width:100%;accent-color:var(--primary-accent,#EC5800)}
+.jump-design-attribute-controls select{min-width:0;width:100%;padding:8px;color:#000;background:#fff}
+.jump-design-attribute-controls button,.jump-design-reset-attribute{min-height:36px;padding:6px 10px;border-radius:9px;font-size:12px}
+.jump-design-controls{grid-template-columns:minmax(0,1fr) 42px minmax(72px,.7fr) auto}
+.jump-design-controls .jump-design-reset-attribute{min-width:48px}
+.jump-design-group[hidden],.jump-design-settings[hidden],[data-page-design-searchable][hidden]{display:none!important}
