@@ -1,0 +1,22 @@
+/* Game-native arcade effect layer; never blocks the map, board or HUD. */
+.meow-effects-layer{position:fixed;inset:0;z-index:1650;pointer-events:none;overflow:hidden;isolation:isolate}
+.meow-word-pop{position:absolute;z-index:1;width:max-content;max-width:min(88vw,640px);text-align:center;white-space:normal;color:#fff600;-webkit-text-stroke:1.5px #000;text-shadow:2px 3px 0 #000,0 0 8px #00ffff,4px 5px 0 #1e90ff;font:1000 clamp(22px,4vw,52px)/1.08 system-ui,Arial,sans-serif;letter-spacing:.015em}
+.meow-word-pop[data-context="garden"]{color:#35db35;text-shadow:2px 3px #000,0 0 8px #fff600,3px 4px #008080}
+.meow-word-pop[data-context="booster"]{color:#00ffff;text-shadow:2px 3px #000,0 0 9px #fff600,4px 5px #1e90ff}
+.meow-word-pop[data-context="bon"]{color:#ff8a3d}
+.meow-onyx-flying-bubble{position:absolute;z-index:2;border:5px solid #000;border-radius:50%;background:#000;box-shadow:0 0 0 3px #00ffff,0 0 0 6px #000,0 6px 15px #000b;overflow:hidden;transform-origin:center;display:grid;place-items:center;will-change:transform}
+.meow-onyx-flying-bubble img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.meow-onyx-bite img{animation:meow-nom .16s steps(2,end) 3}
+@keyframes meow-nom{50%{transform:scale(1.15) rotate(-8deg)}}
+#levelSelectRoot .level-map-status{display:none!important}
+#gameMount #gardenRecipeGoals{align-items:center}
+#gameMount #gardenFinishButton{margin-left:auto;min-height:33px;padding:5px 10px;font-size:10px;background:#fff600;flex:0 0 auto;position:relative;z-index:20}
+@media(max-width:750px){#gameMount #gardenFinishButton{width:100%;margin-left:0;font-size:10px}.meow-onyx-flying-bubble{border-width:3px}}
+@media(prefers-reduced-motion:reduce){.meow-onyx-bite img{animation:none}}
+
+/* Recipe goals are the authoritative Pantry finish condition, distinct from Pass9 terrain bonus goals. */
+#gameMount #gardenRecipeGoals .meow-goal{font-weight:900}
+#gameMount #gardenRecipeGoals .meow-goal b{color:#113d16}
+#gameMount .meow-board-result{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.55);z-index:150;pointer-events:auto}
+#gameMount .meow-board-result .meow-result-card{display:grid;gap:12px;min-width:min(340px,90%);max-height:92%;overflow:auto}
+#gameMount .meow-board-result .meow-result-card button{min-height:44px;font-size:14px}

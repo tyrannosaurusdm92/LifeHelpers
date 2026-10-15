@@ -1,0 +1,111 @@
+
+/* Page 4 runtime overlays only. Page 1 visual rules in this file are DESIGN-BLOCKED. */
+.garden-board{position:relative;isolation:isolate}
+.garden-effect-canvas{position:absolute;inset:0;z-index:12;pointer-events:none;width:100%;height:100%}
+.special-badge{position:absolute;right:3px;bottom:3px;z-index:6;display:grid;place-items:center;min-width:22px;height:22px;padding:0 3px;border:2px solid #000;border-radius:999px;background:rgba(255,255,255,.88);color:#000;font-size:14px;font-weight:1000;box-shadow:0 0 0 2px var(--aurora-glow,rgba(0,255,255,.4))}
+
+/* Blockers are code/CSS drawn. No blocker image sprite is required. */
+.blocker{position:absolute;inset:2px;z-index:7;pointer-events:none;border:3px solid #000;border-radius:7px;display:grid;place-items:center;overflow:hidden}
+.blocker b{position:relative;z-index:4;min-width:20px;min-height:20px;display:grid;place-items:center;border:2px solid #000;border-radius:999px;background:#fff;color:#000;font:1000 10px/1 system-ui}
+.blocker-chain{background:linear-gradient(45deg,transparent 40%,rgba(235,245,255,.9) 41% 48%,#172a34 49% 54%,rgba(235,245,255,.9) 55% 62%,transparent 63%),linear-gradient(-45deg,transparent 40%,rgba(235,245,255,.9) 41% 48%,#172a34 49% 54%,rgba(235,245,255,.9) 55% 62%,transparent 63%);background-color:rgba(40,70,90,.22)}
+.blocker-dirt{border-color:#40210e;background:radial-gradient(circle at 23% 28%,#9b5c2e 0 10%,transparent 11%),radial-gradient(circle at 72% 63%,#6f3d1c 0 16%,transparent 17%),radial-gradient(circle at 49% 83%,#b8773d 0 11%,transparent 12%),linear-gradient(135deg,rgba(135,76,36,.86),rgba(71,39,18,.88))}
+.blocker-concrete{border-color:#30363b;background:linear-gradient(23deg,transparent 46%,rgba(15,20,25,.45) 47% 50%,transparent 51%),linear-gradient(151deg,transparent 44%,rgba(255,255,255,.35) 45% 48%,transparent 49%),linear-gradient(135deg,#9aa3aa,#5d666d)}
+.blocker-infection{border-color:#102019;background:radial-gradient(circle at 50% 50%,rgba(0,255,255,.28),transparent 36%),conic-gradient(from 30deg,#0a492f,#60ff53,#00ffff,#0a492f);animation:gardenInfectionPulse 1.35s ease-in-out infinite alternate}
+.blocker-infection::after{content:"";position:absolute;inset:12%;border:3px dotted rgba(0,0,0,.68);border-radius:50%;animation:gardenInfectionSpin 2.6s linear infinite}
+
+@keyframes gardenAuroraVeil{from{transform:translate3d(-2%,2%,0) scaleY(.96);filter:saturate(.9)}to{transform:translate3d(3%,-2%,0) scaleY(1.04);filter:saturate(1.18)}}
+@keyframes gardenAuroraTile{0%{transform:translate3d(-12%,0,0) skewX(-9deg)}50%{transform:translate3d(10%,3%,0) skewX(-5deg)}100%{transform:translate3d(-12%,0,0) skewX(-9deg)}}
+@keyframes gardenInfectionPulse{from{filter:saturate(.8) brightness(.85)}to{filter:saturate(1.35) brightness(1.15)}}
+@keyframes gardenInfectionSpin{to{transform:rotate(360deg)}}
+
+/* State motion stays coded and does not depend on image frames. */
+.garden-cell.garden-clearing{animation:gardenCodeClear .20s ease-out both}
+.garden-cell.garden-fall{animation:gardenCodeFall .20s ease-out both}
+.garden-cell.garden-refill{animation:gardenCodeRefill .24s cubic-bezier(.2,.9,.2,1) both}
+.garden-cell.garden-special-created{animation:gardenCodeSpecial .55s ease-out both}
+.garden-cell.garden-shuffle{animation:gardenCodeShuffle .32s ease-in-out both}
+.garden-cell.gesture-valid{animation:gardenCodeValid .28s ease-out}
+.garden-cell.gesture-invalid{animation:gardenCodeInvalid .28s ease-out}
+.garden-cell.hint{box-shadow:inset 0 0 0 4px rgba(255,255,255,.82),0 0 16px var(--aurora-glow,#00ffff)}
+.garden-cell.keyboard-focus{outline:3px dashed #000;outline-offset:-7px}
+@keyframes gardenCodeClear{0%{transform:scale(1);filter:brightness(1)}45%{transform:scale(1.08);filter:brightness(1.5)}100%{transform:scale(.76);filter:brightness(.9)}}
+@keyframes gardenCodeFall{from{transform:translateY(calc(-5px * var(--fall-cells,1)));opacity:.75}to{transform:none;opacity:1}}
+@keyframes gardenCodeRefill{from{transform:translateY(-35%);opacity:.25}to{transform:none;opacity:1}}
+@keyframes gardenCodeSpecial{0%{transform:scale(.75)}55%{transform:scale(1.16)}100%{transform:scale(1)}}
+@keyframes gardenCodeShuffle{0%,100%{transform:none}50%{transform:rotate(2deg) scale(.94)}}
+@keyframes gardenCodeValid{50%{filter:brightness(1.4);transform:scale(1.05)}}
+@keyframes gardenCodeInvalid{25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+.reduce-motion .garden-cell::before,.reduce-motion .garden-cell::after,.reduce-motion .blocker-infection,.reduce-motion .blocker-infection::after,.reduce-motion .garden-cell.garden-clearing,.reduce-motion .garden-cell.garden-fall,.reduce-motion .garden-cell.garden-refill,.reduce-motion .garden-cell.garden-special-created,.reduce-motion .garden-cell.garden-shuffle,.reduce-motion .garden-cell.gesture-valid,.reduce-motion .garden-cell.gesture-invalid{animation:none}
+
+
+/* PASS 18 — topology, linked gardens, hazards, and richer coded personality. */
+#ingredientGardenRoot .garden-pill.hazard{background:linear-gradient(135deg,#d9ffd7,#60ff53,#00ffff)}
+#ingredientGardenRoot .garden-pill.relay{background:linear-gradient(135deg,#fff,#00ffff,#1e90ff)}
+#ingredientGardenRoot .board-stage{position:relative;display:grid;gap:8px;min-width:0}
+#ingredientGardenRoot .garden-bed-label{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 10px;border:3px solid #000;border-radius:12px;background:rgba(255,255,255,.92);box-shadow:3px 3px 0 #008080;font-size:10px;font-weight:900}
+#ingredientGardenRoot .garden-bed-label b{font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+#ingredientGardenRoot .garden-board-cluster{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,190px);gap:9px;align-items:start}
+#ingredientGardenRoot .garden-board-cluster.no-relay{grid-template-columns:1fr}
+#ingredientGardenRoot .garden-hole{position:relative;min-width:0;border:0;border-radius:14px;background:radial-gradient(circle at 50% 40%,rgba(22,75,40,.65),rgba(7,22,14,.95) 65%);box-shadow:inset 0 0 18px rgba(0,0,0,.9);pointer-events:none}
+#ingredientGardenRoot .garden-hole::after{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,#3c2a12 0 35%,transparent 38%),repeating-radial-gradient(circle,#1d5c32 0 3px,#153f25 4px 7px);opacity:.55}
+#ingredientGardenRoot .garden-relay-panel{display:grid;gap:7px;padding:8px;border:4px solid #000;border-radius:16px;background:linear-gradient(165deg,#f7ffff,#d6fff7 52%,#fff4b0);box-shadow:4px 4px 0 #1e90ff;min-width:0}
+#ingredientGardenRoot .relay-head{display:grid;gap:2px;padding:5px 7px;border:2px solid #000;border-radius:9px;background:linear-gradient(135deg,#00ffff,#32cd32)}
+#ingredientGardenRoot .relay-head b{font-size:10px}.relay-head span{font-size:8px;font-weight:900;line-height:1.2}
+#ingredientGardenRoot .garden-relay-board{--relay-cols:4;display:grid;grid-template-columns:repeat(var(--relay-cols),1fr);gap:2px;aspect-ratio:1;border:3px solid #000;border-radius:12px;padding:4px;background:#102019}
+#ingredientGardenRoot .relay-cell{position:relative;border:2px solid #000;border-radius:6px;padding:0;overflow:hidden;background:linear-gradient(145deg,#00ffff,#008080 55%,#1e90ff);cursor:pointer;min-width:0}
+#ingredientGardenRoot .relay-cell img{position:absolute;inset:8%;width:84%;height:84%;object-fit:contain;filter:drop-shadow(1px 2px 0 rgba(0,0,0,.35));pointer-events:none}
+#ingredientGardenRoot .relay-cell.relay-hot{animation:relayHot .6s ease-in-out infinite alternate;box-shadow:0 0 12px #fff600}
+#ingredientGardenRoot .relay-cell.relay-fire{animation:relayFire .46s ease-out}
+#ingredientGardenRoot .relay-meter{display:flex;align-items:center;justify-content:space-between;border:2px solid #000;border-radius:8px;padding:5px 7px;background:#fff;font-size:9px;font-weight:1000}
+@keyframes relayHot{to{filter:brightness(1.28);transform:scale(1.04)}}
+@keyframes relayFire{50%{transform:scale(.75) rotate(-4deg);filter:brightness(1.6)}}
+
+/* Coded garden hazards. No hazard art assets are required. */
+.blocker-vine{border-color:#123d1f;background:repeating-linear-gradient(30deg,transparent 0 11%,rgba(25,120,48,.72) 12% 18%,transparent 19% 31%),repeating-linear-gradient(-34deg,transparent 0 16%,rgba(76,190,69,.68) 17% 23%,transparent 24% 37%);background-color:rgba(10,65,30,.18)}
+.blocker-vine::before,.blocker-vine::after{content:"";position:absolute;width:72%;height:22%;border:5px solid #175f2c;border-left-color:transparent;border-bottom-color:transparent;border-radius:60%;transform:rotate(25deg);filter:drop-shadow(0 0 2px #32cd32)}
+.blocker-vine::after{transform:rotate(205deg);border-color:#1d7a37;border-left-color:transparent;border-bottom-color:transparent}
+.blocker-thorn{border-color:#351612;background:repeating-conic-gradient(from 18deg at 50% 50%,#5b2d18 0 8deg,#1b3c1d 9deg 18deg,transparent 19deg 34deg),radial-gradient(circle,#773b20 0 22%,rgba(25,70,30,.8) 24% 60%,transparent 62%)}
+.blocker-thorn::after{content:"✦ ✦ ✦";position:absolute;inset:0;display:grid;place-items:center;color:#1e1108;font-size:17px;letter-spacing:-2px;transform:rotate(-12deg);text-shadow:1px 1px #b98343}
+.blocker-flower{border-color:#285b2e;background:radial-gradient(circle at 50% 50%,#fff600 0 13%,#5b3510 14% 18%,transparent 19%),conic-gradient(from 0deg,#fff 0 10%,#ffd700 11% 20%,#fff 21% 30%,#ec5800 31% 40%,#fff 41% 50%,#ffd700 51% 60%,#fff 61% 70%,#ec5800 71% 80%,#fff 81% 90%,#ffd700 91% 100%);filter:saturate(1.12)}
+.blocker-flower::after{content:"PETALS";position:absolute;bottom:3px;left:50%;transform:translateX(-50%);padding:1px 3px;border:1px solid #000;border-radius:5px;background:rgba(255,255,255,.86);font:1000 7px/1 system-ui;color:#000}
+.blocker-flower[data-layer="1"]{clip-path:polygon(50% 8%,63% 33%,92% 50%,63% 67%,50% 92%,37% 67%,8% 50%,37% 33%)}
+.blocker-flower[data-layer="2"]{clip-path:polygon(50% 2%,61% 27%,84% 16%,73% 39%,98% 50%,73% 61%,84% 84%,61% 73%,50% 98%,39% 73%,16% 84%,27% 61%,2% 50%,27% 39%,16% 16%,39% 27%)}
+.blocker-flower[data-layer="3"],.blocker-flower[data-layer="4"]{clip-path:circle(48% at 50% 50%)}
+.blocker-mud{border-color:#513822;background:radial-gradient(circle at 28% 30%,rgba(91,67,42,.92) 0 17%,transparent 18%),radial-gradient(circle at 72% 65%,rgba(58,42,29,.88) 0 20%,transparent 21%),repeating-radial-gradient(ellipse at 50% 55%,#78573a 0 9%,#5c412d 10% 18%,#8b6848 19% 26%);box-shadow:inset 0 0 12px rgba(20,12,5,.72)}
+.blocker-mud::after{content:"MUD";position:absolute;right:3px;bottom:3px;padding:1px 3px;border:1px solid #000;border-radius:5px;background:rgba(255,244,219,.84);font:1000 7px/1 system-ui;color:#2d1c10}
+.blocker-quicksand{border-color:#755325;background:repeating-radial-gradient(ellipse at 50% 50%,#d7b66d 0 8%,#b68b46 9% 14%,#ebd38f 15% 20%);box-shadow:inset 0 0 16px rgba(84,52,19,.72);animation:quicksandBreath 1.7s ease-in-out infinite}
+.blocker-quicksand::after{content:"SINK";position:absolute;inset:18% 13%;display:grid;place-items:center;border:2px dashed rgba(65,42,14,.78);border-radius:50%;font:1000 7px/1 system-ui;color:#3b260e;transform:rotate(-7deg)}
+.blocker-honey{border-color:#7a4c05;background:linear-gradient(30deg,rgba(255,188,0,.40) 12%,transparent 12.5%,transparent 87%,rgba(255,188,0,.40) 87.5%),linear-gradient(150deg,rgba(255,188,0,.40) 12%,transparent 12.5%,transparent 87%,rgba(255,188,0,.40) 87.5%),linear-gradient(30deg,rgba(255,188,0,.40) 12%,transparent 12.5%,transparent 87%,rgba(255,188,0,.40) 87.5%),linear-gradient(150deg,rgba(255,188,0,.40) 12%,transparent 12.5%,transparent 87%,rgba(255,188,0,.40) 87.5%),linear-gradient(60deg,rgba(255,224,91,.48) 25%,transparent 25.5%,transparent 75%,rgba(255,224,91,.48) 75%);background-size:22px 38px;background-position:0 0,0 0,11px 19px,11px 19px,0 0;background-color:rgba(255,174,0,.30);box-shadow:inset 0 0 14px rgba(255,153,0,.9),0 0 5px rgba(255,196,0,.7)}
+.blocker-honey::before{content:"";position:absolute;inset:8%;border:3px solid rgba(255,218,66,.88);border-radius:24% 45% 30% 50%;filter:drop-shadow(0 2px 1px rgba(102,54,0,.7));animation:honeyWobble 1.45s ease-in-out infinite}
+.blocker-honey::after{content:"×" attr(data-layer);position:absolute;right:2px;top:2px;min-width:16px;padding:2px;border:1px solid #000;border-radius:8px;background:#fff2a6;color:#5d3900;font:1000 8px/1 system-ui;text-align:center}
+.blocker-bee{border-color:#111;background:radial-gradient(circle at 35% 36%,#ffe45c 0 7%,#111 8% 11%,#ffe45c 12% 17%,#111 18% 22%,transparent 23%),radial-gradient(ellipse at 58% 37%,rgba(222,249,255,.88) 0 13%,transparent 14%),radial-gradient(ellipse at 45% 65%,rgba(222,249,255,.78) 0 11%,transparent 12%);background-color:rgba(255,214,10,.16);animation:beeHover .82s ease-in-out infinite alternate}
+.blocker-bee::after{content:"🐝";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(18px,3.3vw,30px);filter:drop-shadow(0 2px 1px #000);animation:beeBuzz .18s linear infinite alternate}
+@keyframes quicksandBreath{50%{background-size:112% 112%;filter:saturate(1.08)}}
+@keyframes honeyWobble{50%{transform:scale(.93) rotate(2deg)}}
+@keyframes beeHover{to{transform:translateY(-2px)}}
+@keyframes beeBuzz{to{transform:translateX(2px) rotate(3deg)}}
+.blocker-vine.garden-hazard-pulse,.blocker-thorn.garden-hazard-pulse,.blocker-flower.garden-hazard-pulse,.blocker-mud.garden-hazard-pulse,.blocker-quicksand.garden-hazard-pulse,.blocker-honey.garden-hazard-pulse,.blocker-bee.garden-hazard-pulse{animation:hazardPulse .48s ease-out}
+@keyframes hazardPulse{50%{filter:brightness(1.55) saturate(1.5);transform:scale(1.06)}}
+
+.garden-cell.topology-edge{box-shadow:inset 0 0 0 2px rgba(255,255,255,.28),0 0 9px rgba(50,205,50,.35)}
+.garden-cell.vine-warning{animation:vineWarning .8s ease-in-out infinite alternate}
+@keyframes vineWarning{to{box-shadow:inset 0 0 0 4px #32cd32,0 0 17px #32cd32}}
+.garden-hazard-banner{position:absolute;left:50%;top:7px;z-index:18;transform:translateX(-50%);padding:6px 12px;border:3px solid #000;border-radius:999px;background:linear-gradient(90deg,#fff600,#32cd32,#00ffff);font:1000 10px/1 system-ui;box-shadow:3px 3px 0 #000;pointer-events:none;animation:hazardBanner .75s ease-out both}
+@keyframes hazardBanner{from{opacity:0;transform:translate(-50%,-14px) scale(.85)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+
+/* Pass 7 compatibility aliases: the supplied hazard CSS is also applied to preview/host cell names. */
+.cell .blocker,.garden-board-cell .blocker{inset:2px}
+.cell .blocker.blocker-vine,.garden-board-cell .blocker.blocker-vine,
+.cell .blocker.blocker-thorn,.garden-board-cell .blocker.blocker-thorn,
+.cell .blocker.blocker-flower,.garden-board-cell .blocker.blocker-flower,
+.cell .blocker.blocker-mud,.garden-board-cell .blocker.blocker-mud,
+.cell .blocker.blocker-quicksand,.garden-board-cell .blocker.blocker-quicksand,
+.cell .blocker.blocker-honey,.garden-board-cell .blocker.blocker-honey,
+.cell .blocker.blocker-bee,.garden-board-cell .blocker.blocker-bee{z-index:8}
+.garden-effect-canvas{overflow:hidden;border-radius:inherit}
+.garden-code-particle{position:absolute;z-index:30;left:var(--x,50%);top:52%;width:10px;height:10px;border:2px solid #000;background:radial-gradient(circle,#fff 0 30%,#fff600 31% 55%,#00ffff 56%);border-radius:50%;pointer-events:none;animation:gardenSpark .9s ease-out var(--delay,0s) both}
+.garden-code-burst{animation-name:gardenBurst}.garden-code-rain{top:-8%;animation-name:gardenRain}
+@keyframes gardenSpark{0%{transform:translate(-50%,-50%) scale(.2);opacity:0}25%{opacity:1}100%{transform:translate(calc(-50% + (var(--i)*2px - 12px)),calc(-120px + (var(--i)%4)*24px)) scale(.1);opacity:0}}
+@keyframes gardenBurst{0%{transform:translate(-50%,-50%) scale(.2);opacity:0}20%{opacity:1}100%{transform:translate(calc(-50% + ((var(--i) - 9)*13px)),calc(-50% + ((var(--i)%5)-2)*26px)) scale(.05);opacity:0}}
+@keyframes gardenRain{0%{transform:translateY(-20px) rotate(0);opacity:0}15%{opacity:1}100%{transform:translateY(360px) rotate(240deg);opacity:0}}
+.reduce-motion .garden-code-particle{animation:none;display:none}

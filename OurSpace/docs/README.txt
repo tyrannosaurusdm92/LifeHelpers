@@ -1,23 +1,7 @@
-Feed Him MEOW — Ingredient Garden / Level Select edition
-=================================================
-Entry: assets/code/meow.html (the only HTML file).
-Because the page is nested two folders deep, it contains <base href="../../">.
-Serve or deploy the entire directory; links are scoped to the project root.
+OurSpace
 
-Screens:
-- Level Select (45 paws per map page; account progression and Solo/Duo)
-- Recipe Generator
-- Ingredient Garden
+Entry: ourspace.html. Personalized profile pages are assets/code/william.html and assets/code/jasper.html.
 
-Removed: Pinball Fishing; kitchen counter, stove, plating and dining, associated code, audio and images.
+Onyx Leisure is chat in widget mode. Feed Him MEOW is the nested assets/code/meow.html document, opened inside the fullscreen shell only from the Leisure tab. The shared loader is js/onyx/onyx-core/shared-shells.js; there is no top-level game navigation entry.
 
-Code: js/onyx/games/leisure, shared account progress: js/ourspace-core
-Styles: css/onyx/games/leisure
-WASM binary: script/aurora_kernel.wasm (loader JS is in js/)
-Original garden and recipe JSON source data: assets/code/data/
-
-Level Select art/sfx: assets/images/games/leisure/level_select and assets/audio/games/leisure/level_select
-Garden art/sfx: assets/images/games/leisure/Ingredient_Garden and assets/audio/games/leisure/Ingredient_Garden
-Onyx legacy static portraits: assets/images/shared/legacy-static
-
-Existing account progress keys and five-star map were retained. Garden performance now determines up to five map stars and unlocks following levels.
+See Feed_Him_MEOW_Integration.md for game flow, file locations, and nested-document fullscreen wiring.

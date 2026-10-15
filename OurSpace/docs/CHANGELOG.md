@@ -1,3 +1,10 @@
+## 2026-10-15 · Feed Him MEOW fullscreen replacement
+
+- Added the generated board and cook/assemble/serve runtime as `assets/code/meow.html`, loaded fullscreen through the shared Onyx Leisure launcher used by William and Jasper.
+- Kept the Leisure widget tab as chat, removed the duplicated hidden game markup, and retained the game document as a nested fullscreen source rather than a top-level navigation entry.
+- Replaced leisure game assets with the generated package, mapped image/audio folders to OurSpace naming, and retained the Bon Appétit result recordings.
+- Added current board-generation, recipe, asset, and integration manifests.
+
 # Changelog — Happy Home room, Work fullscreen, and sound vote pass 8
 
 ## Room and inventory
