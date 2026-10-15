@@ -3,7 +3,7 @@
  * Background pushes require the existing backend web-push gateway to be configured. */
 'use strict';
 const ROOT = new URL('./',self.location.href);
-const ICON = 'https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/ourspace-icon-192.png';
+const ICON = new URL('assets/images/ourspace-icon-192.png', ROOT).href;
 const DB = 'ourspace-device-alert-settings-v1', STORE='settings';
 self.addEventListener('install', event=>event.waitUntil(self.skipWaiting()));
 self.addEventListener('activate', event=>event.waitUntil(self.clients.claim()));

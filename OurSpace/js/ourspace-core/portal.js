@@ -41,7 +41,7 @@ $('#portalRecoveryShowPassword')?.addEventListener('click',e=>{const f=$('#porta
 const appButton=$('#portalDownloadAppButton');let installEvent=null;
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installEvent=event;});
 appButton?.addEventListener('click',async()=>{if(installEvent){const e=installEvent;installEvent=null;e.prompt();try{await e.userChoice;}catch(_){}return;}
- const a=document.createElement('a');a.href='assets/images/ourspace-core/ourspace-icon-512.png';a.download='OurSpace-icon.png';a.click();
+ const a=document.createElement('a');a.href='assets/images/ourspace-icon-512.png';a.download='OurSpace-icon.png';a.click();
  const help=$('#portalInstallHint');if(help)help.textContent='To add OurSpace to your home screen, use your browser’s Install App or Add to Home Screen option.';
 });
 function updateNav(){const master=$('#masterNav'),panel=master?.querySelector('.master-panel');$('#masterToggle')?.addEventListener('click',()=>master?.classList.toggle('collapsed'));$('#resetMasterNav')?.addEventListener('click',()=>{master.style.left='12px';master.style.top='12px';});
