@@ -12,7 +12,7 @@ const OVERLAY_ALPHA=.82;
 const PAGE_LABELS={about:'Profile',household:'Household',journal:'Journal',diary:'Diary',feed:'Feed',skills:'Skills',communication:'Communication',music:'Audio',visual:'Visual',games:'Games',store:'Store'};
 // Lightning Storm values are taken from website_template_lightning(2).html.
 // These are initial defaults, not restrictions on user color choices.
-const THEME_VERSION='high-contrast-light-dark-2026-10-16';
+const THEME_VERSION='high-contrast-light-dark-2026-10-16-pass2';
 const DESIGN_DEFAULTS={contentScale:1,lineSpacing:1.5,cardRoundness:16,sectionSpacing:12,surfaceTint:22,wallpaperFit:'cover',wallpaperX:50,wallpaperY:50};
 const STORM_COLORS={
   custom:'Custom',white:'#FFFFFF',black:'#000000',dodgerBlue:'#1E90FF',lightningCyan:'#00FFFF',lightningYellow:'#FFF600',persimmon:'#EC5800',
@@ -21,15 +21,15 @@ const STORM_COLORS={
 };
 const COMMON_DEFAULTS={
   pageBackground:'#FFFFFF',overlayColor:'#FFFFFF',moduleBackground:'#FFFFFF',moduleHeader:'#FFFFFF',cardBackground:'#FFFFFF',secondaryBackground:'#FFFFFF',formBackground:'#FFFFFF',inputBackground:'#FFFFFF',
-  buttonBackground:'#1E90FF',buttonText:'#FFFFFF',buttonHover:'#1E90FF',linkText:'#1E90FF',linkHover:'#EC5800',primaryAccent:'#EC5800',secondaryAccent:'#00FFFF',
+  buttonBackground:'#1E90FF',buttonText:'#000000',buttonHover:'#1E90FF',linkText:'#000000',linkHover:'#EC5800',primaryAccent:'#EC5800',secondaryAccent:'#00FFFF',
   primaryText:'#000000',secondaryText:'#000000',headerText:'#000000',inverseText:'#FFFFFF',borderColor:'#00FFFF',outlineSoft:'#00FFFF',outlineDark:'#000000',outlineLight:'#FFF600',
-  jumpBubble:'#1E90FF',jumpBubbleText:'#FFFFFF',jumpPanel:'#FFFFFF',jumpPanelText:'#000000',jumpActive:'#1E90FF',jumpActiveText:'#FFFFFF',backgroundImage:''
+  jumpBubble:'#1E90FF',jumpBubbleText:'#000000',jumpPanel:'#FFFFFF',jumpPanelText:'#000000',jumpActive:'#1E90FF',jumpActiveText:'#000000',backgroundImage:''
 };
 const DARK_MODE_DEFAULTS={
   pageBackground:'#000000',overlayColor:'#000000',moduleBackground:'#000000',moduleHeader:'#000000',cardBackground:'#000000',secondaryBackground:'#000000',formBackground:'#000000',inputBackground:'#000000',
-  buttonBackground:'#1E90FF',buttonText:'#FFFFFF',buttonHover:'#1E90FF',linkText:'#1E90FF',linkHover:'#EC5800',primaryAccent:'#EC5800',secondaryAccent:'#00FFFF',
+  buttonBackground:'#1E90FF',buttonText:'#000000',buttonHover:'#1E90FF',linkText:'#FFFFFF',linkHover:'#EC5800',primaryAccent:'#EC5800',secondaryAccent:'#00FFFF',
   primaryText:'#FFFFFF',secondaryText:'#FFFFFF',headerText:'#FFFFFF',inverseText:'#FFFFFF',borderColor:'#00FFFF',outlineSoft:'#00FFFF',outlineDark:'#000000',outlineLight:'#FFF600',
-  jumpBubble:'#1E90FF',jumpBubbleText:'#FFFFFF',jumpPanel:'#000000',jumpPanelText:'#FFFFFF',jumpActive:'#1E90FF',jumpActiveText:'#FFFFFF'
+  jumpBubble:'#1E90FF',jumpBubbleText:'#000000',jumpPanel:'#000000',jumpPanelText:'#FFFFFF',jumpActive:'#1E90FF',jumpActiveText:'#000000'
 };
 const PREVIOUS_FACTORY_DEFAULTS={
   pageBackground:'#421900',overlayColor:'#421900',moduleBackground:'#F8F8F5',moduleHeader:'#712A00',cardBackground:'#F8F8F5',secondaryBackground:'#C7FFFF',formBackground:'#F8F8F5',inputBackground:'#F8F8F5',
@@ -98,7 +98,7 @@ function normalize(nav,input){
  const userColorKeys=new Set(Array.isArray(src.userColorKeys)?src.userColorKeys.filter(key=>typeof key==='string') : []);
  for(const key of colorKeys){
   const candidate=out[key],oldDefault=LEGACY_LIGHTNING_DEFAULTS[key];
-  const colorValue=String(candidate||'').toUpperCase();const previousDefault=PREVIOUS_FACTORY_DEFAULTS[key];const isLegacyDefault=src.themeVersion!==THEME_VERSION&&((oldDefault&&colorValue===oldDefault)||(previousDefault&&colorValue===previousDefault));
+  const colorValue=String(candidate||'').toUpperCase();const previousDefault=PREVIOUS_FACTORY_DEFAULTS[key];const previousBlueTextDefault=['buttonText','jumpBubbleText','jumpActiveText'].includes(key)&&colorValue==='#FFFFFF'&&!userColorKeys.has(key);const isLegacyDefault=src.themeVersion!==THEME_VERSION&&((oldDefault&&colorValue===oldDefault)||(previousDefault&&colorValue===previousDefault)||previousBlueTextDefault);
   const followsMode=src.themeMode&&previousMode!==mode&&!userColorKeys.has(key)&&String(candidate||'').toUpperCase()===String(previousBase[key]||'').toUpperCase();
   out[key]=safeColor(isLegacyDefault||followsMode?base[key]:candidate,base[key]);
  }

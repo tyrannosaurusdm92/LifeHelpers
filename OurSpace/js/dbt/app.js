@@ -58,19 +58,22 @@
   });
 
   const modeSelect = $("#modeSelect");
-  const savedMode = STORAGE.get("dbtPair.ui.mode", "light");
+  const savedMode = STORAGE.get("ourspace.colorMode.v1", STORAGE.get("dbtPair.ui.mode", "light"));
   document.documentElement.dataset.mode = savedMode === "dark" ? "dark" : "light";
+  document.documentElement.dataset.colorMode = document.documentElement.dataset.mode;
   if (modeSelect) modeSelect.value = document.documentElement.dataset.mode;
   function applyMode(mode, tellBook = false) {
     mode = mode === "dark" ? "dark" : "light";
     document.documentElement.dataset.mode = mode;
+    document.documentElement.dataset.colorMode = mode;
     if (modeSelect) modeSelect.value = mode;
     STORAGE.set("dbtPair.ui.mode", mode);
+    STORAGE.set("ourspace.colorMode.v1", mode);
     if (tellBook) notifyBook({type: "dbt:mode", mode});
   }
   modeSelect?.addEventListener("change", () => applyMode(modeSelect.value, true));
   window.addEventListener("storage", event => {
-    if (event.key === "dbtPair.ui.mode") applyMode(event.newValue);
+    if ((event.key === "dbtPair.ui.mode" || event.key === "ourspace.colorMode.v1") && ["light", "dark"].includes(event.newValue) && event.newValue !== document.documentElement.dataset.mode) applyMode(event.newValue, true);
   });
   window.addEventListener("message", event => {
     if (!embedded || event.source !== window.parent || (location.protocol !== "file:" && event.origin !== location.origin)) return;
@@ -196,12 +199,19 @@
     }
   }));
   function width(value) {
-    const size = Math.max(580, Math.min(1120, Number(value) || 850));
+    const size = Math.max(667, Math.min(1288, Number(value) || 977.5));
     document.documentElement.style.setProperty('--page-width', size + 'px');
     $$('[data-zoom]').forEach(el => { el.value = size; });
     STORAGE.set('dbtPair.ui.pageWidth', String(size));
   }
-  width(STORAGE.get('dbtPair.ui.pageWidth', '850'));
+  const widthVersion = 'centered-theme-visual-pass-2';
+  $('[data-zoom]').forEach(el => { el.min = '667'; el.max = '1288'; });
+  const savedWidth = Number(STORAGE.get('dbtPair.ui.pageWidth', '850')) || 850;
+  const storedWidthVersion = STORAGE.get('dbtPair.ui.pageWidth.scale', '');
+  if (storedWidthVersion !== widthVersion) {
+    width(savedWidth * 1.15);
+    STORAGE.set('dbtPair.ui.pageWidth.scale', widthVersion);
+  } else width(savedWidth);
   $$('[data-zoom]').forEach(el => el.addEventListener('input', () => width(el.value)));
 
   const forms = $$('form[data-dbt-worksheet]');

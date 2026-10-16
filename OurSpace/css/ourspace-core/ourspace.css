@@ -874,3 +874,20 @@ body{min-width:320px;overflow-x:clip!important;color:var(--os-mode-text)!importa
 #page-portal .portal-auth-panel .portal-auth-body{color:var(--os-mode-text)!important}
 
 @media(min-width:1000px){body:has(.master-nav:not(.collapsed)) .shell{width:min(100%,1720px)!important;max-width:1720px!important;margin-left:auto!important;margin-right:auto!important}}
+
+
+/* Visual pass 2: one more 15% step for non-game content. */
+:root{--os-mode-link:#000000}
+html[data-color-mode="light"]{--os-mode-link:#000000}
+html[data-color-mode="dark"]{--os-mode-link:#FFFFFF}
+html,body{width:100%;max-width:100%;overflow-x:clip!important}
+#page-portal{width:65.751623243%!important;max-width:none!important;min-width:0!important;min-height:65.751623243dvh!important;margin:0!important;zoom:1.520875!important;transform-origin:top left;overflow-x:clip!important}
+.site-header,.shell>.footer{zoom:1.520875!important;width:65.751623243%!important;max-width:none!important;margin:0!important;box-sizing:border-box}
+.master-nav{zoom:1.520875!important;transform-origin:top left;width:min(360px,calc((100vw - 24px)/1.520875))!important}
+#page-portal .portal-recovery-dialog{width:min(540px,calc((100vw - 24px)/1.520875))!important;max-width:calc((100vw - 24px)/1.520875)!important;max-height:calc((100dvh - 24px)/1.520875)!important;overflow:auto}
+#page-portal :is(button,.button,.file-button,input[type="submit"],input[type="button"],input[type="reset"]):not(.ghost):not(.danger){color:#000000!important}
+#page-portal .portal-auth-panel .ghost{color:var(--os-mode-text)!important}
+#page-portal a{color:var(--os-mode-text)!important;text-decoration:underline;text-decoration-color:var(--os-mode-link)!important;text-decoration-thickness:2px;text-underline-offset:2px}
+.color-mode-toggle,.master-nav :is(.master-handle,.master-toggle,.master-actions button){color:#000000!important}
+@media(max-width:790px){#page-portal{width:65.751623243%!important}}
+@media(max-width:560px){.master-nav{width:min(360px,calc((100vw - 24px)/1.520875))!important}}

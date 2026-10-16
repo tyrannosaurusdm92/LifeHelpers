@@ -2294,3 +2294,29 @@ body{min-width:320px;overflow-x:clip!important;color:var(--os-mode-text)!importa
 .site-page:not(#page-games) .jump-nav .jump-orb{color:var(--jump-custom-bubble-text,#FFFFFF)!important;background:var(--jump-custom-bubble,#1E90FF)!important;border-color:var(--border-color,var(--os-mode-cyan))!important}
 .site-page:nth-of-type(even):not(#page-games) .jump-nav .jump-orb{border-color:var(--outline-light,var(--os-mode-yellow))!important}
 .master-nav :is(.master-handle,.master-toggle){color:var(--master-custom-bubble-text,#FFFFFF)!important;background:var(--master-custom-bubble,var(--os-mode-primary))!important}
+
+
+/* Visual pass 2: center the enlarged viewport and clip stray module overflow. */
+html,body{width:100%!important;max-width:100%!important;zoom:1!important;overflow-x:clip!important}
+body{overflow-x:clip!important}
+.site-header,.shell>.footer{zoom:.9720375!important;width:102.876689426%!important;max-width:none!important;margin:0!important;margin-inline:0!important;box-sizing:border-box}
+.site-page:not(#page-games):not(#page-skills){zoom:.9720375!important;width:102.876689426%!important;max-width:none!important;min-width:0!important;margin:0!important;margin-inline:0!important;min-height:102.876689426dvh!important;overflow-x:clip!important;box-sizing:border-box}
+#page-skills{overflow-x:clip!important}
+#page-skills>:not(.skills-frame-shell):not(iframe):not(.jump-nav){zoom:.9720375!important;width:102.876689426%!important;max-width:none!important;margin:0!important;margin-inline:0!important;box-sizing:border-box}
+#page-skills .skills-frame-shell,#page-skills #skillsBookFrame{zoom:1!important;width:100%!important;max-width:100%!important}
+.master-nav,.jump-nav{zoom:.9720375!important;transform-origin:top left}
+.site-page:not(#page-games):not(#page-skills){overflow-x:clip!important}
+.site-page:not(#page-games):not(#page-skills) :is(.embedded-module-shell,.embed-resize,.fusion-profile-frame-shell,.os-native-module){width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box}
+.site-page:not(#page-games) a{color:var(--link-color,var(--os-mode-text))!important;text-decoration:underline;text-decoration-color:var(--os-mode-link)!important;text-decoration-thickness:2px;text-underline-offset:2px}
+.master-nav :is(.master-handle,.master-toggle,.master-actions button),.master-nav .color-mode-toggle{color:#000000!important}
+.site-page:not(#page-games) :is(button,.button,.file-button,input[type="submit"],input[type="button"],input[type="reset"]):not(.jump-orb):not(.danger){color:var(--button-text,#000000)!important}
+.site-page:not(#page-games) :is(button,.button,.file-button,input[type="submit"],input[type="button"],input[type="reset"]).danger{color:#000000!important;background:var(--os-mode-persimmon)!important;border:1.75px solid var(--os-mode-yellow)!important}
+.site-page:not(#page-games) .jump-nav .jump-orb{color:var(--jump-custom-bubble-text,#000000)!important}
+@media(max-width:680px){
+ .shell{width:100%!important;margin-inline:auto!important}
+ .page-frame{padding:12px!important}
+ .site-page:not(#page-games):not(#page-skills){width:102.876689426%!important}
+ .master-nav{left:6px!important;top:6px!important;width:min(340px,calc((100vw - 12px)/.9720375))!important}
+ .jump-nav{right:8px!important}
+ #page-skills>:not(.skills-frame-shell):not(iframe):not(.jump-nav){width:102.876689426%!important}
+}

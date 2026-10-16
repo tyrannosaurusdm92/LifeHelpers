@@ -14,3 +14,16 @@ body{width:100%;max-width:100%;overflow-x:hidden}
 #onyxWidget .onyx-popout hr{border:0;border-top:1.75px solid var(--os-mode-persimmon)!important}
 #onyxWidget .onyx-popout :is(button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid var(--os-mode-yellow)!important;outline-offset:3px}
 @media(max-width:520px){#onyxWidget .onyx-popout{max-width:calc((100vw - 20px)/1.3225)!important;max-height:calc((100dvh - 20px)/1.3225)!important}}
+
+
+/* Keep the second size step scoped to Onyx's non-game widget. */
+:root{--os-mode-link:#000000}
+html[data-color-mode="light"]{--os-mode-link:#000000}
+html[data-color-mode="dark"]{--os-mode-link:#FFFFFF}
+#onyxWidget{zoom:1.520875!important;transform-origin:top right}
+#onyxWidget.is-fullscreen,#onyxWidget.tab-fullscreen{zoom:1!important}
+#onyxWidget .onyx-popout{max-width:calc((100vw - 28px)/1.520875)!important;max-height:calc((100dvh - 28px)/1.520875)!important;overflow:auto}
+#onyxWidget .onyx-popout :is(button,.button,input[type=button],input[type=submit]){color:#000000!important;background:#1E90FF!important;border:1.75px solid var(--os-mode-cyan)!important}
+#onyxWidget .onyx-popout :is(button,.button,input[type=button],input[type=submit]):nth-of-type(even){border-color:var(--os-mode-yellow)!important}
+#onyxWidget .onyx-popout a{color:var(--os-mode-text)!important;text-decoration:underline;text-decoration-color:var(--os-mode-link)!important;text-underline-offset:2px}
+@media(max-width:520px){#onyxWidget .onyx-popout{max-width:calc((100vw - 20px)/1.520875)!important;max-height:calc((100dvh - 20px)/1.520875)!important}}

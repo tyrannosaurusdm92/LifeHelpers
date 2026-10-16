@@ -132,3 +132,44 @@ html[data-mode=dark] .paper-choice:has(input:checked) {color:var(--yellow);}
   .pdf-sheet .paper-table :is(td,th) {min-width:0!important;overflow-wrap:break-word}
   .pdf-sheet .table-wrap {overflow:visible!important}
 }
+
+/* Center and enlarge the non-game worksheet documents for screen use. */
+:root{--page-width:977.5px;--surface:var(--paper);--accent:var(--teal);--accent2:var(--orange)}
+.pdf-sheet{
+ width:min(100%,var(--page-width))!important;max-width:100%!important;min-width:0!important;min-height:1214.4px!important;
+ margin:0 auto 18px!important;padding:48px 53px 35px!important;box-sizing:border-box;
+ color:var(--ink)!important;background:var(--paper)!important;border:1.75px solid var(--teal)!important;border-top:1.75px solid var(--orange)!important;
+ box-shadow:0 10px 28px rgba(0,0,0,.12)!important;font-size:17.25px!important;line-height:1.5!important
+}
+.document-stack>.pdf-sheet:nth-of-type(even){border-color:var(--yellow)!important;border-top-color:var(--orange)!important}
+.form-toolbar{
+ width:min(1288px,calc(100% - 32px))!important;max-width:1288px!important;margin:24px auto 32px!important;
+ border:1.75px solid var(--teal)!important;background:var(--paper)!important;color:var(--ink)!important
+}
+.form-toolbar :is(label,span,p,strong){color:var(--ink)!important}
+.pdf-sheet :is(input:not([type=checkbox]):not([type=radio]),textarea,select){
+ min-height:42px!important;color:var(--ink)!important;background:var(--paper)!important;border:1.75px solid var(--teal)!important;font-size:17.25px!important
+}
+.pdf-sheet :is(input,textarea,select):nth-of-type(even){border-color:var(--yellow)!important}
+.pdf-sheet :is(input[type=checkbox],input[type=radio]){width:21px!important;height:21px!important;min-width:21px!important;min-height:21px!important}
+.paper-header{border-bottom:1.75px solid var(--orange)!important}
+.paper-header h2,.paper-subhead,.paper-field label,.paper-reference,.paper-choice{color:var(--ink)!important}
+.paper-header h2{font-size:29.9px!important}
+.paper-subhead{font-size:19.55px!important;border-bottom-color:var(--orange)!important}
+.paper-choice{font-size:16.1px!important}
+.paper-table{font-size:14.95px!important}
+.paper-table :is(th,td){border:1.75px solid var(--teal)!important;color:var(--ink)!important;background:var(--paper)!important;padding:11.5px!important}
+.paper-table :is(th,td):nth-child(even){border-color:var(--yellow)!important}
+.rating-field,.framed-question,.decision-branch,.decision-result{border-color:var(--teal)!important;color:var(--ink)!important;background:var(--paper)!important}
+.pdf-sheet hr,.pdf-sheet .paper-footer{border-color:var(--orange)!important}
+.pdf-sheet a{color:var(--ink)!important;text-decoration:underline;text-decoration-color:var(--blue)!important;text-underline-offset:2px}
+.pdf-sheet :is(input,textarea,select,button,a,[tabindex]):focus-visible{outline:3px solid var(--yellow)!important;outline-offset:3px}
+@media(max-width:760px){
+ .pdf-sheet{width:calc(100% - 24px)!important;min-height:0!important;padding:30px 22px!important}
+ .form-toolbar{width:calc(100% - 24px)!important;padding:14px!important}
+ .identity-fields{grid-template-columns:minmax(0,1fr)!important}
+}
+@media print{
+ .pdf-sheet{font-size:15px!important;min-height:0!important;padding:0!important;border:0!important;border-top:0!important;box-shadow:none!important}
+ .pdf-sheet :is(input,textarea,select){font-size:15px!important}
+}

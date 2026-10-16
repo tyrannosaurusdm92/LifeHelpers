@@ -25,14 +25,18 @@
   function applyMode(mode, notifyFrame = true) {
     mode = mode === "dark" ? "dark" : "light";
     document.documentElement.dataset.mode = mode;
+    document.documentElement.dataset.colorMode = mode;
     $("#modeSelect").value = mode;
     storage.set("dbtPair.ui.mode", mode);
+    storage.set("ourspace.colorMode.v1", mode);
     if (notifyFrame && frameReady) frame.contentWindow.postMessage({type: "dbt:mode", mode}, location.protocol === "file:" ? "*" : location.origin);
   }
-  applyMode(storage.get("dbtPair.ui.mode", "light"));
+  let parentMode = null;
+  try { parentMode = window.parent !== window ? window.parent.document.documentElement.dataset.colorMode : null; } catch (_) {}
+  applyMode(storage.get("ourspace.colorMode.v1", parentMode || storage.get("dbtPair.ui.mode", "light")));
   $("#modeSelect").addEventListener("change", event => applyMode(event.target.value));
   window.addEventListener("storage", event => {
-    if (event.key === "dbtPair.ui.mode") applyMode(event.newValue);
+    if ((event.key === "dbtPair.ui.mode" || event.key === "ourspace.colorMode.v1") && ["light", "dark"].includes(event.newValue) && event.newValue !== document.documentElement.dataset.mode) applyMode(event.newValue);
     if (event.key === "dbtBook.lastRead") refreshBookmark();
   });
 
