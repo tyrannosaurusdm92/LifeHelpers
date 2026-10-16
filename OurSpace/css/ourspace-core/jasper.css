@@ -2294,3 +2294,8 @@ body{min-width:320px;overflow-x:clip!important;color:var(--os-mode-text)!importa
 .site-page:not(#page-games) .jump-nav .jump-orb{color:var(--jump-custom-bubble-text,#FFFFFF)!important;background:var(--jump-custom-bubble,#1E90FF)!important;border-color:var(--border-color,var(--os-mode-cyan))!important}
 .site-page:nth-of-type(even):not(#page-games) .jump-nav .jump-orb{border-color:var(--outline-light,var(--os-mode-yellow))!important}
 .master-nav :is(.master-handle,.master-toggle){color:var(--master-custom-bubble-text,#FFFFFF)!important;background:var(--master-custom-bubble,var(--os-mode-primary))!important}
+
+/* Retain the existing fullscreen Games scale, independent from non-game scaling. */
+#page-games.is-active{zoom:1.15!important;width:86.95652174%!important;max-width:none!important;height:86.95652174dvh!important;min-height:86.95652174dvh!important;margin:0!important;transform-origin:top left}
+#page-games .blank-frame-shell{width:100%!important;height:100%!important;min-height:0!important}
+#page-games .blank-frame-shell iframe{width:98%!important;height:98%!important}
