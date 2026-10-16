@@ -172,3 +172,10 @@
   #gameMount .meow-garden-host .board-play-area{padding:10px 12px}
   #gameMount .meow-garden-host .main-board-wrap{justify-self:start}
 }
+
+/* Visual pass 3: only Market Madness and Ingredient Garden receive the extra scale. */
+#gameMount .meow-market-host>.meow-market:not(.is-satellite),
+#gameMount .meow-garden-host>.game-shell{
+ width:86.956521739%!important;max-width:none!important;
+ margin:0 auto!important;zoom:1.15!important;transform-origin:top center
+}
