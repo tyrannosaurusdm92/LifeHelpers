@@ -1,8 +1,16 @@
-undefined
-/* Preserve the fullscreen game scale while keeping each outer shell viewport-sized. */
-.onyx-fullscreen-shell-host,.onyx-leisure-game-host{
- position:fixed!important;top:0!important;left:0!important;right:auto!important;bottom:auto!important;
- width:86.95652174vw!important;height:86.95652174dvh!important;
- zoom:1.15!important;transform-origin:top left!important;
-}
-.onyx-fullscreen-shell-frame,.onyx-leisure-game-frame{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+:root{--os-mode-bg:#000000;--os-mode-surface:#000000;--os-mode-text:#FFFFFF;--os-mode-cyan:#00FFFF;--os-mode-yellow:#FFF600;--os-mode-persimmon:#EC5800;--os-mode-primary:#1E90FF}
+html[data-color-mode="light"]{color-scheme:light;--os-mode-bg:#FFFFFF;--os-mode-surface:#FFFFFF;--os-mode-text:#000000}
+html[data-color-mode="dark"]{color-scheme:dark;--os-mode-bg:#000000;--os-mode-surface:#000000;--os-mode-text:#FFFFFF}
+html{zoom:1!important;width:100%;max-width:100%;overflow-x:hidden}
+body{width:100%;max-width:100%;overflow-x:hidden}
+#onyxWidget{zoom:1.3225;transform-origin:top right}
+#onyxWidget .onyx-popout{max-width:calc((100vw - 28px)/1.3225)!important;max-height:calc((100dvh - 28px)/1.3225)!important;overflow:auto}
+#onyxWidget .onyx-popout{color:var(--os-mode-text)!important;background:var(--os-mode-surface)!important;border:1.75px solid var(--os-mode-cyan)!important}
+#onyxWidget .onyx-popout :is(.onyx-panel-header,.onyx-speech,.module-body,.module-card,.tab-panel,.onyx-tab-panel){color:var(--os-mode-text)!important;background:var(--os-mode-surface)!important;border-color:var(--os-mode-yellow)!important}
+#onyxWidget .onyx-popout :is(h1,h2,h3,h4,p,label,small,span){color:var(--os-mode-text)}
+#onyxWidget .onyx-popout :is(button,.button,input[type=button],input[type=submit]){color:#FFFFFF!important;background:var(--os-mode-primary)!important;border:1.75px solid var(--os-mode-cyan)!important}
+#onyxWidget .onyx-popout :is(button,.button):nth-of-type(even){border-color:var(--os-mode-yellow)!important}
+#onyxWidget .onyx-popout :is(input,textarea,select){color:var(--os-mode-text)!important;background:var(--os-mode-surface)!important;border:1.75px solid var(--os-mode-cyan)!important}
+#onyxWidget .onyx-popout hr{border:0;border-top:1.75px solid var(--os-mode-persimmon)!important}
+#onyxWidget .onyx-popout :is(button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid var(--os-mode-yellow)!important;outline-offset:3px}
+@media(max-width:520px){#onyxWidget .onyx-popout{max-width:calc((100vw - 20px)/1.3225)!important;max-height:calc((100dvh - 20px)/1.3225)!important}}
