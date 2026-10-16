@@ -159,3 +159,17 @@ html:is([data-mode="dark"],[data-color-mode="dark"]) .skills-hub :is(.book-conte
  .skills-hub .book-cover-host{width:100%;height:clamp(437px,78.2svh,736px)}
  .skills-hub .book-contents{width:100%}
 }
+
+/* Visual pass 4: keep the DBT cover and hub inside the light/dark contrast system. */
+.skills-hub .book-cover-host{background-color:var(--paper)!important;background-image:radial-gradient(circle at 12% 16%,rgba(0,255,255,.04),transparent 18rem),radial-gradient(circle at 88% 82%,rgba(255,246,0,.03),transparent 16rem)!important;border:1.75px solid #00FFFF!important;border-bottom-color:#EC5800!important;box-shadow:none!important}
+.skills-hub .book-cover{color:var(--ink)!important;background:var(--paper)!important;border:1.75px solid #00FFFF!important;border-left-color:#EC5800!important;box-shadow:none!important}
+.skills-hub .book-cover :is(.cover-kicker,.cover-title,.cover-subtitle,.cover-bottom){color:var(--ink)!important}
+.skills-hub .book-cover .cover-title em{color:var(--ink)!important;text-decoration:underline;text-decoration-color:#FFF600;text-decoration-thickness:3px}
+.skills-hub .chapter-entry,.skills-hub .pair-reader{color:var(--ink)!important;background:var(--paper)!important;border:1.75px solid #00FFFF!important}
+.skills-hub .chapter-entry:nth-child(even),.skills-hub .pair-reader:nth-of-type(even){border-color:#FFF600!important}
+.skills-hub .chapter-number{color:#000000!important;background:#1E90FF!important;border:1.75px solid #00FFFF!important}
+.skills-hub .reader-heading,.skills-hub .reader-controls{color:var(--ink)!important;border-color:#EC5800!important}
+.skills-hub .book-contents,.skills-hub .contents-heading{color:var(--ink)!important}
+html:is([data-mode="dark"],[data-color-mode="dark"]) .skills-hub :is(.book-cover-host,.book-cover,.book-contents,.chapter-entry,.pair-reader,.reader-heading,.reader-controls){color:#FFFFFF!important;background-color:#000000!important}
+html:is([data-mode="dark"],[data-color-mode="dark"]) .skills-hub .chapter-number{color:#000000!important;background:#1E90FF!important}
+

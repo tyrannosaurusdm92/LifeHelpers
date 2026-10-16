@@ -51,6 +51,11 @@ const WORK_DESIGN_KEYS = Object.freeze({
 });
 function applyLinkedDesign(detail) {
   const palette = detail && typeof detail === "object" ? detail : {};
+  const colorMode = palette.colorMode === "light" ? "light" : "dark";
+  document.documentElement.dataset.theme = colorMode;
+  document.documentElement.style.colorScheme = colorMode;
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.setAttribute("content", colorMode === "light" ? "#FFFFFF" : "#000000");
   let applied = false;
   for (const [key, variable] of Object.entries(WORK_DESIGN_KEYS)) {
     const value = String(palette[key] || "").trim();

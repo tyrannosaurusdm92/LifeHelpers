@@ -935,3 +935,21 @@ html[data-color-mode="dark"]{color-scheme:dark;--os-mode-bg:#000000;--os-mode-su
 
 /* Use readable black labels for the blue active navigation control. */
 .master-nav .page-route.is-current,.master-nav .nav-group-toggle[aria-expanded="true"]{color:#000000!important;background:#1E90FF!important}
+
+/* Visual pass 4: centered portal, another 15% scale step, and quiet geometric accents. */
+:root{--os-mode-bg:#000000;--os-mode-surface:#000000;--os-mode-text:#FFFFFF;--os-mode-cyan:#00FFFF;--os-mode-yellow:#FFF600;--os-mode-persimmon:#EC5800;--os-mode-primary:#1E90FF}
+html[data-color-mode="light"]{--os-mode-bg:#FFFFFF;--os-mode-surface:#FFFFFF;--os-mode-text:#000000}
+html[data-color-mode="dark"]{--os-mode-bg:#000000;--os-mode-surface:#000000;--os-mode-text:#FFFFFF}
+body{background-color:var(--os-mode-bg)!important;background-image:radial-gradient(circle at 8% 12%,rgba(0,255,255,.045),transparent 34rem),radial-gradient(circle at 93% 82%,rgba(255,246,0,.035),transparent 32rem),radial-gradient(circle at 55% 48%,rgba(236,88,0,.025),transparent 38rem)!important}
+#page-portal{width:49.71767353%!important;max-width:none!important;min-width:0!important;min-height:65.751623243dvh!important;margin:0 auto!important;zoom:2.0113571875!important;transform-origin:top center;overflow-x:clip!important}
+.site-header,.shell>.footer{zoom:2.0113571875!important;width:49.71767353%!important;max-width:none!important;margin:0 auto!important;box-sizing:border-box}
+.master-nav{zoom:2.0113571875!important;transform-origin:top left;width:min(360px,calc((100vw - 24px)/2.0113571875))!important}
+#page-portal .portal-recovery-dialog{width:min(540px,calc((100vw - 24px)/2.0113571875))!important;max-width:calc((100vw - 24px)/2.0113571875)!important;max-height:calc((100dvh - 24px)/2.0113571875)!important;overflow:auto}
+#page-portal :is(button,.button,.file-button,input[type="submit"],input[type="button"],input[type="reset"]):not(.ghost):not(.danger){color:#000000!important;background:#1E90FF!important;border:1.75px solid #00FFFF!important}
+#page-portal :is(button,.button,.file-button,input[type="submit"],input[type="button"],input[type="reset"]):not(.ghost):not(.danger):nth-of-type(even){border-color:#FFF600!important}
+#page-portal :is(.portal-topbar,.portal-auth-panel>header,.portal-workspace>header){border-bottom:1.75px solid #EC5800!important}
+.color-mode-toggle,.master-nav :is(.master-handle,.master-toggle,.master-actions button){color:#000000!important}
+.master-nav .page-route.is-current,.master-nav .nav-group-toggle[aria-expanded="true"]{color:#000000!important;background:#1E90FF!important}
+@media(max-width:790px){#page-portal{width:49.71767353%!important;margin-inline:auto!important}#page-portal .portal-landing-grid{grid-template-columns:minmax(0,1fr)!important}}
+@media(max-width:560px){.master-nav{width:min(360px,calc((100vw - 24px)/2.0113571875))!important}}
+

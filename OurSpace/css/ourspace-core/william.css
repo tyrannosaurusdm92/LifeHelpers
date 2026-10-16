@@ -2373,3 +2373,20 @@ body{overflow-x:clip!important}
 
 /* Skills is non-game content; give the enlarged page its matching scroll length. */
 #page-skills{min-height:115dvh!important}
+
+/* Visual pass 4: center all non-game content and add another 15% scale step. */
+:root{--os-mode-bg:#000000;--os-mode-surface:#000000;--os-mode-text:#FFFFFF;--os-mode-cyan:#00FFFF;--os-mode-yellow:#FFF600;--os-mode-persimmon:#EC5800;--os-mode-primary:#1E90FF}
+html[data-color-mode="light"]{--os-mode-bg:#FFFFFF;--os-mode-surface:#FFFFFF;--os-mode-text:#000000}
+html[data-color-mode="dark"]{--os-mode-bg:#000000;--os-mode-surface:#000000;--os-mode-text:#FFFFFF}
+body{background-color:var(--os-mode-bg)!important;background-image:radial-gradient(circle at 7% 12%,rgba(0,255,255,.04),transparent 34rem),radial-gradient(circle at 92% 84%,rgba(255,246,0,.03),transparent 32rem),radial-gradient(circle at 57% 50%,rgba(236,88,0,.025),transparent 38rem)!important}
+html,body{width:100%!important;max-width:100%!important;overflow-x:clip!important}
+.site-header,.shell>.footer{zoom:1.28551959375!important;width:77.78955722%!important;max-width:none!important;margin:0 auto!important;box-sizing:border-box}
+.site-page:not(#page-games):not(#page-skills){zoom:1.28551959375!important;width:77.78955722%!important;max-width:none!important;min-width:0!important;margin:0 auto 24px!important;min-height:102.876689426dvh!important;overflow-x:clip!important;box-sizing:border-box}
+#page-skills{width:100%!important;max-width:100%!important;margin-inline:auto!important;overflow-x:clip!important;min-height:132.25dvh!important}
+#page-skills>:not(.skills-frame-shell):not(iframe):not(.jump-nav){zoom:1.28551959375!important;width:77.78955722%!important;max-width:none!important;margin:0 auto!important;box-sizing:border-box}
+#page-skills .skills-frame-shell,#page-skills #skillsBookFrame{zoom:1!important;width:100%!important;max-width:100%!important;margin-inline:auto!important}
+.master-nav,.jump-nav{zoom:1.28551959375!important;transform-origin:top left}
+.site-page:not(#page-games):not(#page-skills),.site-page:not(#page-games):not(#page-skills) :is(.embedded-module-shell,.embed-resize,.fusion-profile-frame-shell,.os-native-module){overflow-x:clip!important}
+.site-page:not(#page-games):not(#page-skills) :is(.embedded-module-shell,.embed-resize,.fusion-profile-frame-shell,.os-native-module){width:100%!important;max-width:100%!important;min-width:0!important;margin-inline:auto!important;box-sizing:border-box}
+@media(max-width:680px){.shell{width:100%!important;margin-inline:auto!important}.page-frame{padding:12px!important}.site-page:not(#page-games):not(#page-skills){width:77.78955722%!important;margin-inline:auto!important}.master-nav{left:6px!important;top:6px!important;width:min(340px,calc((100vw - 12px)/1.28551959375))!important}.jump-nav{right:8px!important}#page-skills>:not(.skills-frame-shell):not(iframe):not(.jump-nav){width:77.78955722%!important;margin-inline:auto!important}}
+
