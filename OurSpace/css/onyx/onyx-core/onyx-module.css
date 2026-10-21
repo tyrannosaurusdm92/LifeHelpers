@@ -38,7 +38,9 @@
   position:fixed;
   left:18px;
   right:auto;
-  top:clamp(8px,calc(50vh - 95px),calc(100vh - var(--onyx-bubble-size) - 8px));
+  /* Dock the 190px bubble just below the fixed master navigation. */
+  top:max(8px,min(calc(env(safe-area-inset-top,0px) + 72px),calc(100vh - var(--onyx-bubble-size) - 8px)));
+  top:max(8px,min(calc(env(safe-area-inset-top,0px) + 72px),calc(100dvh - var(--onyx-bubble-size) - 8px)));
   z-index:4500;
   display:block;
   user-select:none;
