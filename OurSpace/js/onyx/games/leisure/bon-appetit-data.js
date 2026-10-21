@@ -51,9 +51,9 @@
     return {rules:{tastingSeconds:1.8,scoreWeights:{sort:15,measuring:15,route:15,cooking:30,flavor:15,completeness:10}},version:rawLibrary.schemaVersion||'bundled',catalog,recipes,recipeCount:rawLibrary.liveCount||rawLibrary.count||recipes.length,bands:rawLibrary.categoryCounts||{}};
   };
   window.MeowBonDataReady=Promise.all([
-    readJson('../../../../assets/json/shared/ingredient_catalog.json'),
-    readJson('../../../../assets/json/bon_appetit/recipes.json'),
-    readJson('../../../../assets/json/bon_appetit/kitchen_rules.json')
+    readJson('../../../../json/shared/ingredient_catalog.json'),
+    readJson('../../../../json/bon_appetit/recipes.json'),
+    readJson('../../../../json/bon_appetit/kitchen_rules.json')
   ]).then(([rawCatalog,library,rules])=>{
     const list=Array.isArray(rawCatalog)?rawCatalog:(Array.isArray(rawCatalog?.ingredients)?rawCatalog.ingredients:Object.values(rawCatalog||{}));
     const catalog=Object.fromEntries(list.map(item=>[item.id,{...item,asset:normalizeAsset(item.asset||item.runtimeAssetAlias||item.sourceAsset)}]));

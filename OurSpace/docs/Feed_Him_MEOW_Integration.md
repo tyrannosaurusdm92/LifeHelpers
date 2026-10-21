@@ -16,7 +16,7 @@ The game runtime replaces the previous leisure game runtime in `css/onyx/games/l
 
 ## Board and recipe data
 
-`assets/json/bon_appetit/recipes.json` contains 5,001 recipe records. The 50 authored board definitions are board types; `meow-board-generator.js` creates new recipe-specific board instances and advances a persisted decimal sequence shared by Market and Garden. The documented distinct-opening space is finite but exceeds 2.5 quintillion board instances per recipe across all 50 types while storage is retained (at least `3^35`, about 50 quadrillion, openings on each individual type). The generator routes large orders through batches so each recipe ingredient reaches the kitchen ledger.
+`json/bon_appetit/recipes.json` contains 5,001 recipe records. The 50 authored board definitions are board types; `meow-board-generator.js` creates new recipe-specific board instances and advances a persisted decimal sequence shared by Market and Garden. The documented distinct-opening space is finite but exceeds 2.5 quintillion board instances per recipe across all 50 types while storage is retained (at least `3^35`, about 50 quadrillion, openings on each individual type). The generator routes large orders through batches so each recipe ingredient reaches the kitchen ledger.
 
 ## Audio and visual assets
 
