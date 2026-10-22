@@ -1,0 +1,39 @@
+{
+  "schema": "onyx.unified-capability-manifest.v1",
+  "version": "1.0.0",
+  "surfaces": {
+    "onyx-core": ["regular-chat", "work", "writing", "coding", "ideas", "research", "files", "projects"],
+    "games/virtual": ["happy-home", "virtual-pet", "room-context", "game-context"]
+  },
+  "sharedRuntime": "Onyx/script/js/onyx/onyx-core/index.js",
+  "virtualBridge": "Onyx/script/js/onyx/games/virtual/virtual-brain-bridge.js",
+  "backend": {
+    "authority": "existing OurSpace Apps Script deployment",
+    "modified": false,
+    "credentialsInFrontend": false,
+    "actions": [
+      "onyx.health",
+      "onyx.chat",
+      "onyx.chat.history",
+      "onyx.ai.capabilities",
+      "onyx.ai.web.search",
+      "onyx.ai.url.fetch",
+      "onyx.ai.file.parse",
+      "onyx.ai.file.upload",
+      "onyx.ai.file.archive",
+      "onyx.ai.image.generate",
+      "onyx.pet.state.get",
+      "onyx.pet.state.save"
+    ]
+  },
+  "providers": {
+    "ourspace-ai-brain": { "default": true, "continuity": "profile-scoped", "privateContext": "backend-only" },
+    "ollama": { "default": false, "mode": "explicit opt-in", "network": "loopback-only unless explicitly allowed", "privateBackendContextShared": false }
+  },
+  "agent": {
+    "pattern": "bounded plan-execute-verify",
+    "maximumSteps": 6,
+    "repeatedStepGuard": true,
+    "writesRequireExplicitUserIntent": true
+  }
+}

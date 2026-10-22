@@ -1,0 +1,95 @@
+# Onyx unified AI brain integration
+
+## Result
+
+Onyx now has one frontend brain runtime for ordinary conversation and Work tasks—writing, coding, research, files, projects, and ideas—and one narrow adapter that lets Happy Home / Virtual use that same brain. The existing OurSpace Apps Script deployment remains the only remote backend. No replacement backend was created or copied into a frontend directory.
+
+## File placement
+
+| Responsibility | Location |
+|---|---|
+| Shared chat + Work runtime | `Onyx/script/js/onyx/onyx-core/` |
+| Happy Home / Virtual adapter | `Onyx/script/js/onyx/games/virtual/` |
+| Shared routing manifests | `Onyx/json/shared/onyx-core/` |
+| Browser integration harness | `Onyx/assets/code/happy-home.html` |
+| Shared styles | `Onyx/style/css/onyx/onyx-core/` |
+| Virtual-only styles | `Onyx/style/css/onyx/games/virtual/` |
+
+There is deliberately no backend source under `script`, `style`, `assets`, or any other frontend folder.
+
+## How the pieces connect
+
+```mermaid
+flowchart TD
+    A["Regular chat + Work"] --> C["Onyx Core runtime"]
+    B["Happy Home / Virtual"] --> D["Virtual brain bridge"]
+    D --> C
+    C --> E["Domain router"]
+    E --> F["Existing Onyx/js corpus"]
+    C --> G["Existing OurSpace backend"]
+    G --> H["AI Brain + private profile context"]
+    C -. "explicit local opt-in" .-> I["Ollama endpoint"]
+```
+
+The domain registry exposes the existing Onyx corpus to the runtime by subject. A generated file index covers all 8,430 files (2,788,004,826 bytes) currently under `Onyx/js/`. For each turn the router selects relevant domain guides and a small set of matching source files, loads only bounded text excerpts, and supplies them to the AI Brain as references. This gives Onyx on-demand access to every indexed part without trying to load 2.8 GB into every page. Existing files stay where they are, so their current imports and live pages are not broken.
+
+## Main API
+
+```js
+import OnyxCore from "./script/js/onyx/onyx-core/index.js";
+
+const result = await OnyxCore.chat({
+  message: "Help me revise this chapter",
+  surface: "core",
+  history: []
+});
+
+console.log(result.response);
+```
+
+Virtual uses the same singleton runtime:
+
+```js
+import OnyxVirtualBrain from "./script/js/onyx/games/virtual/virtual-brain-bridge.js";
+
+OnyxVirtualBrain.observe("virtual.room.enter", { room: "base-room" });
+const result = await OnyxVirtualBrain.talk("What should we do next?", {
+  room: "base-room",
+  petState: { mood: "curious" }
+});
+```
+
+## Authentication and privacy
+
+- When embedded in OurSpace, the runtime reuses the existing in-memory `OurSpaceBackend` bridge.
+- A standalone page may receive an already-issued session token through `setAuthContext`; the runtime keeps it only in memory.
+- It never searches local storage, logs a token, embeds a client secret, or asks the user to type backend credentials into the Happy Home harness.
+- The complete personality dossier and profile-specific address rules stay private and backend-authoritative. The public repository contains only a safe continuity contract and the dossier fingerprint used to detect version drift.
+- The optional Ollama adapter receives only the message, selected public guide material, and references the user deliberately supplies to that local turn. It does not receive private backend profile context.
+
+## Capability routing
+
+`createCapabilityPlan()` identifies chat, writing, coding, ideas, research, file, image, project, and game intents. It then chooses relevant brain domains and sends one bounded request to the existing backend with the backend's supported controls:
+
+- web search and URL reading for current or explicit research;
+- Drive/file context when the request needs it;
+- image generation and file/archive tools only for an explicit creation request;
+- no coaching tools when the user says to just listen;
+- safe auto-memory disabled for sensitive turns;
+- a shared profile-scoped conversation thread across Core and Virtual.
+
+## Ollama and AutoGPT merge boundaries
+
+The Ollama contribution is an optional provider adapter, disabled by default and restricted to loopback unless the caller deliberately permits a remote host. The browser does not embed or pretend to compile Ollama's native server.
+
+The AutoGPT contribution is architectural: a bounded plan → execute → verify loop, step limit, repeated-step guard, and explicit write guard. The restricted AutoGPT Platform was not vendored. No third-party source file was copied into this frontend.
+
+## Validation
+
+From the repository root:
+
+```sh
+node Onyx/script/js/onyx/onyx-core/self-test.mjs
+```
+
+The test validates all-file corpus coverage, domain coverage, Core versus Virtual routing, listen-only behavior, backend chat wiring, shared thread continuity, write guards, and the Ollama loopback restriction.
