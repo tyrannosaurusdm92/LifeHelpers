@@ -17,7 +17,7 @@ export const ONYX_ACTIONS = Object.freeze({
 
 export const ONYX_CORE_CONFIG = Object.freeze({
   schema: "onyx.unified-core.v1",
-  version: "1.0.0",
+  version: "1.1.0",
   backendUrl: ONYX_BACKEND_URL,
   application: "OurSpace",
   module: "Onyx",
@@ -46,7 +46,13 @@ export const ONYX_CORE_CONFIG = Object.freeze({
     ollama: "optional-explicit-local-model-adapter",
     autoGpt: "bounded-plan-execute-verify-orchestration",
     onyxCorpus: "domain-routed-local-index-plus-backend-retrieval"
+  }),
+  assurance: Object.freeze({
+    successfulRepliesRequireModelProof: true,
+    retrievalOnlyOutputIsNeverAChatReply: true,
+    scriptedFallbackMayReportErrorsOnly: true
   })
 });
 
 export default ONYX_CORE_CONFIG;
+

@@ -7,6 +7,20 @@ const input = $("#onyx-message");
 const send = $("#onyx-send");
 const statusText = $("#onyx-status-text");
 const statusDot = $("#onyx-status-dot");
+let transportStatus = { online: false, authenticated: false, lastError: "" };
+let llmStatus = { verified: false };
+
+function renderStatus() {
+  const ready = transportStatus.online && transportStatus.authenticated && llmStatus.verified;
+  statusDot.dataset.state = ready ? "ready" : transportStatus.online ? "public" : "offline";
+  statusText.textContent = ready
+    ? "Onyx LLM connected"
+    : transportStatus.online && transportStatus.authenticated
+      ? "Backend online — LLM verification pending"
+      : transportStatus.online
+        ? "Backend online — sign in through OurSpace to chat"
+        : transportStatus.lastError || "Checking Onyx LLM…";
+}
 
 function addMessage(role, text) {
   const row = document.createElement("article");
@@ -27,13 +41,8 @@ function setBusy(busy) {
 }
 
 OnyxVirtualBrain.subscribe(status => {
-  const ready = status.online && status.authenticated;
-  statusDot.dataset.state = ready ? "ready" : status.online ? "public" : "offline";
-  statusText.textContent = ready
-    ? "Onyx Core connected"
-    : status.online
-      ? "Backend online — sign in through OurSpace to chat"
-      : status.lastError || "Checking Onyx Core…";
+  transportStatus = status;
+  renderStatus();
 });
 
 OnyxVirtualBrain.observe("virtual.room.enter", { room: "base-room", source: "happy-home-runtime-harness" });
@@ -50,7 +59,8 @@ form?.addEventListener("submit", async event => {
       room: "base-room",
       gameState: { mode: "chat", shell: "happy-home" }
     });
-    addMessage("onyx", result.response || "I’m here, but I did not receive a text response.");
+    if (result.llmVerified !== true) throw new Error("Onyx response did not include LLM proof.");
+    addMessage("onyx", result.response);
   } catch (error) {
     addMessage("onyx", /session|sign.?in|auth/i.test(String(error?.message || error))
       ? "I can see the house, but I need your existing OurSpace sign-in before I can use my full brain."
@@ -61,4 +71,7 @@ form?.addEventListener("submit", async event => {
   }
 });
 
-OnyxVirtualBrain.connect({ includeCapabilities: true }).catch(() => {});
+OnyxVirtualBrain.connect({ includeCapabilities: true, requireLLM: true })
+  .then(result => { llmStatus = result.llm; renderStatus(); })
+  .catch(() => {});
+

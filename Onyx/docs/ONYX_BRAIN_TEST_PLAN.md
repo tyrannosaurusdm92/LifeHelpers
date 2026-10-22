@@ -2,7 +2,7 @@
 
 ## Automated checks
 
-Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new files at the repository root. Expected result: JSON with `"ok": true`, at least 40 registered domains, 8,430 indexed corpus files, and zero backend files modified.
+Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new files at the repository root. Expected result: JSON with `"ok": true`, 31 passing checks, at least 40 registered domains, 8,430 indexed corpus files, and zero backend files modified.
 
 ## Browser checks
 
@@ -16,6 +16,8 @@ Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new 
 8. Request image creation and confirm generation is allowed only when the wording explicitly asks to create an image.
 9. Enable Ollama with a loopback endpoint and an installed model. Confirm local chat works and reports `local-session-only` continuity.
 10. Try enabling a non-loopback Ollama URL without `allowRemote`; confirm the adapter rejects it.
+11. Replace a mocked `onyx.chat` result with plain text that omits `aiBrain: true`; confirm `LLMVerificationError` rejects it instead of displaying it as Onyx.
+12. After a real reply, confirm `llmVerified === true` and `llmVerification.verificationLevel === "model-completion"`.
 
 ## Regression boundaries
 
@@ -23,3 +25,4 @@ Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new 
 - Existing `Onyx/js/` imports and paths are unchanged.
 - No backend code exists inside the new CSS, JavaScript, JSON, docs, or assets folders.
 - No complete private personality dossier, session token, API key, or client secret is present in the public frontend.
+

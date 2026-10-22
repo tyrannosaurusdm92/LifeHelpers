@@ -4,6 +4,8 @@
 
 Onyx now has one frontend brain runtime for ordinary conversation and Work tasks—writing, coding, research, files, projects, and ideas—and one narrow adapter that lets Happy Home / Virtual use that same brain. The existing OurSpace Apps Script deployment remains the only remote backend. No replacement backend was created or copied into a frontend directory.
 
+Onyx is an LLM-powered agent/persona, not a new set of model weights embedded in JavaScript. The language model runs through the existing configured AI Brain (or an explicitly enabled Ollama model); the frontend supplies Onyx's identity, retrieval, memory context, tools, and mode routing.
+
 ## File placement
 
 | Responsibility | Location |
@@ -16,6 +18,19 @@ Onyx now has one frontend brain runtime for ordinary conversation and Work tasks
 | Virtual-only styles | `Onyx/style/css/onyx/games/virtual/` |
 
 There is deliberately no backend source under `script`, `style`, `assets`, or any other frontend folder.
+
+## LLM proof and fail-closed behavior
+
+The runtime does not trust a successful HTTP response by itself:
+
+- connection readiness requires the live `onyx.health` response to report `aiBrain.configured === true`;
+- every AI Brain completion must contain `aiBrain === true` and non-empty model output;
+- every Ollama connection must prove that the configured model appears in `/api/tags`;
+- every Ollama completion must come from `/api/chat` with a named model and non-empty output;
+- missing proof throws `LLMVerificationError`; the text is not displayed as an Onyx answer;
+- retrieval, routing, templates, and canned strings can provide context or report an error, but cannot impersonate a successful model completion.
+
+The older `Onyx/js/chatbot.js` is a dormant read-only corpus inspection helper. It is not imported by the unified runtime and is not accepted as an Onyx response provider.
 
 ## How the pieces connect
 
@@ -45,6 +60,7 @@ const result = await OnyxCore.chat({
 });
 
 console.log(result.response);
+console.log(result.llmVerified); // true, or chat() throws
 ```
 
 Virtual uses the same singleton runtime:
@@ -92,4 +108,5 @@ From the repository root:
 node Onyx/script/js/onyx/onyx-core/self-test.mjs
 ```
 
-The test validates all-file corpus coverage, domain coverage, Core versus Virtual routing, listen-only behavior, backend chat wiring, shared thread continuity, write guards, and the Ollama loopback restriction.
+The test validates all-file corpus coverage, domain coverage, Core versus Virtual routing, listen-only behavior, backend chat wiring, shared thread continuity, model-proof enforcement, rejection of canned/unverified output, write guards, and the Ollama loopback restriction.
+
