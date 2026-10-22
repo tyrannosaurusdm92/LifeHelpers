@@ -25,9 +25,11 @@ The runtime does not trust a successful HTTP response by itself:
 
 - connection readiness requires the live `onyx.health` response to report `aiBrain.configured === true`;
 - every AI Brain completion must contain `aiBrain === true` and non-empty model output;
+- every backend completion must name the same authenticated profile expected by the client and report `personalityFiltered === true`;
 - every Ollama connection must prove that the configured model appears in `/api/tags`;
 - every Ollama completion must come from `/api/chat` with a named model and non-empty output;
 - missing proof throws `LLMVerificationError`; the text is not displayed as an Onyx answer;
+- missing or conflicting profile proof throws `ProfileVerificationError`; the text is not displayed as an Onyx answer;
 - retrieval, routing, templates, and canned strings can provide context or report an error, but cannot impersonate a successful model completion.
 
 The older `Onyx/js/chatbot.js` is a dormant read-only corpus inspection helper. It is not imported by the unified runtime and is not accepted as an Onyx response provider.
@@ -81,7 +83,11 @@ const result = await OnyxVirtualBrain.talk("What should we do next?", {
 - A standalone page may receive an already-issued session token through `setAuthContext`; the runtime keeps it only in memory.
 - It never searches local storage, logs a token, embeds a client secret, or asks the user to type backend credentials into the Happy Home harness.
 - The complete personality dossier and profile-specific address rules stay private and backend-authoritative. The public repository contains only a safe continuity contract and the dossier fingerprint used to detect version drift.
+- The master dossier fingerprint is `c19441d70441e3c5273b2a8a3750df6c563582a80378c67e4a8017eda35260ac`; the Finch addendum fingerprint is `74a54188ce1676da9c263825fcba095f3787ad4a24c22bd60dfb61e0f265ff1a`.
+- The runtime pins relationship handling to the authenticated profile. A message cannot switch profiles by naming a person or requesting the other relationship style.
+- The backend remains responsible for selecting the profile-specific relationship model, injecting only that profile's private dossier context, and sanitizing relationship language. The frontend rejects the reply unless the backend confirms that filtering occurred.
 - The optional Ollama adapter receives only the message, selected public guide material, and references the user deliberately supplies to that local turn. It does not receive private backend profile context.
+- Because Ollama does not receive either private profile dossier, its replies are explicitly marked `profileVerified: false` and remain relationship-neutral.
 
 ## Capability routing
 
@@ -108,5 +114,5 @@ From the repository root:
 node Onyx/script/js/onyx/onyx-core/self-test.mjs
 ```
 
-The test validates all-file corpus coverage, domain coverage, Core versus Virtual routing, listen-only behavior, backend chat wiring, shared thread continuity, model-proof enforcement, rejection of canned/unverified output, write guards, and the Ollama loopback restriction.
+The test validates all-file corpus coverage, domain coverage, Core versus Virtual routing, listen-only behavior, backend chat wiring, separate William/Jasper profile binding, caller-override resistance, profile-mismatch rejection, personality-filter proof, shared thread continuity, model-proof enforcement, rejection of canned/unverified output, write guards, and the Ollama loopback restriction.
 

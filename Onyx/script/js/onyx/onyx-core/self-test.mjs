@@ -9,6 +9,7 @@ import { OllamaProvider } from "./ollama-provider.js";
 import { OnyxTransport } from "./transport.js";
 import { ONYX_ACTIONS } from "./config.js";
 import { inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaCompletion } from "./llm-verifier.js";
+import { ONYX_DOSSIER_SOURCES, profileContinuityContext, verifyProfileCompletion, ProfileVerificationError } from "./profile-verifier.js";
 
 const nativeFetch = globalThis.fetch;
 let transportRequest = null;
@@ -20,7 +21,7 @@ globalThis.fetch = async (input, init) => {
   }
   if (url.hostname === "backend.example.test") {
     transportRequest = { url: url.href, init };
-    return new Response(JSON.stringify({ ok: true, response: "transport ok" }), { status: 200, headers: { "Content-Type": "application/json" } });
+    return new Response(JSON.stringify({ ok: true, response: "transport ok", profileKey: "william" }), { status: 200, headers: { "Content-Type": "application/json" } });
   }
   return nativeFetch(input, init);
 };
@@ -29,11 +30,17 @@ const registryPath = fileURLToPath(new URL("../../../../json/shared/onyx-core/br
 const registry = JSON.parse(await readFile(registryPath, "utf8"));
 const fileIndexPath = fileURLToPath(new URL("../../../../json/shared/onyx-core/brain-file-index.json", import.meta.url));
 const fileIndex = JSON.parse(await readFile(fileIndexPath, "utf8"));
+const profileContractPath = fileURLToPath(new URL("../../../../json/shared/onyx-core/profile-runtime-contract.json", import.meta.url));
+const profileContract = JSON.parse(await readFile(profileContractPath, "utf8"));
 assert.equal(registry.schema, "onyx.brain-domain-registry.v1");
 assert.ok(registry.domains.length >= 40, "The complete Onyx domain surface should be registered.");
 assert.equal(fileIndex.fileCount, 8430, "Every existing Onyx/js corpus file should be indexed.");
 assert.equal(fileIndex.files.length, fileIndex.fileCount);
 assert.ok(fileIndex.totalBytes > 2_700_000_000, "The index should cover the complete multi-gigabyte corpus.");
+assert.equal(profileContract.schema, "onyx.profile-runtime-contract.v1");
+assert.equal(profileContract.dossierFingerprints.masterSha256, ONYX_DOSSIER_SOURCES.masterSha256);
+assert.equal(profileContract.dossierFingerprints.finchAddendumSha256, ONYX_DOSSIER_SOURCES.finchAddendumSha256);
+assert.equal(profileContract.localProvider.profileVerified, false);
 
 const indexedMatches = await searchBrainFiles("ADHD cleaning and decluttering", { domains: [{ id: "adhd" }], limit: 5 });
 assert.ok(indexedMatches.length > 0);
@@ -65,7 +72,7 @@ const mockTransport = {
   capabilities: async () => ({ ok: true, actions: ["onyx.chat"] }),
   async request(action, data) {
     calls.push({ action, data });
-    return { ok: true, aiBrain: true, response: "Unified brain response", responseId: "test-response" };
+    return { ok: true, aiBrain: true, response: "Unified brain response", responseId: "test-response", profileKey: this.profileKey, personalityFiltered: true };
   }
 };
 
@@ -73,14 +80,86 @@ const runtime = new OnyxRuntime({ transport: mockTransport });
 const connection = await runtime.connect();
 assert.equal(connection.llm.verified, true);
 assert.equal(connection.llm.proof, "onyx.health.aiBrain.configured");
-const reply = await runtime.chat({ message: "Help me brainstorm a story", autoRemember: false });
+const reply = await runtime.chat({
+  message: "Help me brainstorm a story",
+  autoRemember: false,
+  context: { profileContinuity: { expectedProfileKey: "jasper", authority: "caller" } }
+});
 assert.equal(reply.response, "Unified brain response");
 assert.equal(reply.provider, "ourspace-ai-brain");
 assert.equal(reply.llmVerified, true);
 assert.equal(reply.llmVerification.verificationLevel, "model-completion");
+assert.equal(reply.profileVerified, true);
+assert.equal(reply.profileVerification.profileKey, "william");
+assert.equal(reply.profileVerification.personalityFiltered, true);
 assert.equal(calls.at(-1).action, "onyx.chat");
 assert.equal(calls.at(-1).data.useBrain, true);
 assert.equal(calls.at(-1).data.threadId, "ourspace-onyx-william");
+assert.equal(calls.at(-1).data.context.profileContinuity.expectedProfileKey, "william");
+assert.equal(calls.at(-1).data.context.profileContinuity.authority, "authenticated-backend-session");
+assert.equal(calls.at(-1).data.context.profileContinuity.dossier.masterSha256, ONYX_DOSSIER_SOURCES.masterSha256);
+
+const jasperCalls = [];
+const jasperTransport = {
+  ...mockTransport,
+  profileKey: "jasper",
+  snapshot: () => ({ online: true, authenticated: true, profileKey: "jasper" }),
+  async request(action, data) {
+    jasperCalls.push({ action, data });
+    return { ok: true, aiBrain: true, response: "Jasper-profile brain response", responseId: "jasper-response", profileKey: "jasper", personalityFiltered: true };
+  }
+};
+const jasperRuntime = new OnyxRuntime({ transport: jasperTransport });
+const jasperReply = await jasperRuntime.chat({ message: "Stay with me while I think this through", autoRemember: false });
+assert.equal(jasperReply.profileVerified, true);
+assert.equal(jasperReply.profileVerification.profileKey, "jasper");
+assert.equal(jasperCalls.at(-1).data.context.profileContinuity.expectedProfileKey, "jasper");
+
+const mismatchedProfileRuntime = new OnyxRuntime({
+  transport: {
+    ...mockTransport,
+    async request() {
+      return { ok: true, aiBrain: true, response: "Wrong-profile response", profileKey: "jasper", personalityFiltered: true };
+    }
+  }
+});
+await assert.rejects(
+  () => mismatchedProfileRuntime.chat({ message: "Hello" }),
+  error => error instanceof ProfileVerificationError && /different authenticated profile/i.test(error.message)
+);
+
+const unfilteredProfileRuntime = new OnyxRuntime({
+  transport: {
+    ...mockTransport,
+    async request() {
+      return { ok: true, aiBrain: true, response: "Unfiltered response", profileKey: "william" };
+    }
+  }
+});
+await assert.rejects(
+  () => unfilteredProfileRuntime.chat({ message: "Hello" }),
+  error => error instanceof ProfileVerificationError && /personality filter/i.test(error.message)
+);
+
+const missingProfileRuntime = new OnyxRuntime({
+  transport: {
+    ...mockTransport,
+    async request() {
+      return { ok: true, aiBrain: true, response: "Unbound response", personalityFiltered: true };
+    }
+  }
+});
+await assert.rejects(
+  () => missingProfileRuntime.chat({ message: "Hello" }),
+  error => error instanceof ProfileVerificationError && /did not prove which authenticated profile/i.test(error.message)
+);
+
+const serverEstablishedProfile = verifyProfileCompletion({ profileKey: "jasper", personalityFiltered: true }, "shared");
+assert.equal(serverEstablishedProfile.verified, true);
+assert.equal(serverEstablishedProfile.profileKey, "jasper");
+const neutralProfileContext = profileContinuityContext("unknown");
+assert.equal(neutralProfileContext.expectedProfileKey, "shared");
+assert.equal(Object.hasOwn(neutralProfileContext.dossier, "privateText"), false);
 
 assert.equal(inspectBackendLLMHealth({ ok: true, aiBrain: { configured: false } }).verified, false);
 assert.throws(() => verifyBackendCompletion({ ok: true, response: "scripted text" }), /did not prove/i);
@@ -112,7 +191,7 @@ assert.equal(transportRequest.init.headers["Content-Type"], "text/plain;charset=
 
 console.log(JSON.stringify({
   ok: true,
-  tests: 31,
+  tests: 51,
   registeredDomains: registry.domains.length,
   indexedCorpusFiles: fileIndex.fileCount,
   backendFilesModified: 0

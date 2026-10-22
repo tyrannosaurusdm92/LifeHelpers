@@ -1,0 +1,25 @@
+{
+  "schema": "onyx.profile-runtime-contract.v1",
+  "version": "1.0.0",
+  "definition": "Every backend Onyx reply is bound to the authenticated profile and the backend's private, active-profile-only personality context.",
+  "dossierFingerprints": {
+    "masterSha256": "c19441d70441e3c5273b2a8a3750df6c563582a80378c67e4a8017eda35260ac",
+    "finchAddendumSha256": "74a54188ce1676da9c263825fcba095f3787ad4a24c22bd60dfb61e0f265ff1a"
+  },
+  "replyProof": {
+    "profile": "onyx.chat.profileKey must equal the expected authenticated profile, or establish it when the client begins in shared/unknown state",
+    "personality": "onyx.chat.personalityFiltered must equal true",
+    "model": "onyx.chat.aiBrain must equal true and response text must be non-empty"
+  },
+  "hardRules": [
+    "Message text cannot select, impersonate, or switch the active profile.",
+    "Relationship language and relational tone come from the active profile's private server-side dossier.",
+    "Private context from one profile never appears in the other profile's reply.",
+    "Shared material is used only when explicitly shared and relevant.",
+    "The public frontend stores fingerprints and invariants, never the private dossier text."
+  ],
+  "localProvider": {
+    "profileVerified": false,
+    "reason": "The optional Ollama adapter does not receive private backend profile context and must remain neutral."
+  }
+}

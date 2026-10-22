@@ -2,6 +2,7 @@ import { ONYX_ACTIONS, ONYX_BACKEND_URL, ONYX_CORE_CONFIG } from "./config.js";
 
 const ALLOWED_ACTIONS = new Set(Object.values(ONYX_ACTIONS));
 const PUBLIC_ACTIONS = new Set([ONYX_ACTIONS.health]);
+const AUTHENTICATED_PROFILES = new Set(["william", "jasper"]);
 
 function abortError() {
   try { return new DOMException("Request cancelled.", "AbortError"); }
@@ -116,6 +117,7 @@ export class OnyxTransport {
     if (!ALLOWED_ACTIONS.has(requestedAction)) throw new Error(`Unsupported Onyx action: ${requestedAction}`);
     if (!PUBLIC_ACTIONS.has(requestedAction) && !this.authenticated) throw new Error("OurSpace session is not available.");
 
+    const expectedProfile = this.profileKey;
     this.#status.lastAction = requestedAction;
     this.#status.lastError = "";
     this.#emit();
@@ -143,9 +145,15 @@ export class OnyxTransport {
         result = await response.json();
       }
       if (!result || result.ok === false) throw new Error(String(result?.error?.message || result?.error || result?.message || "Backend rejected request."));
+      const returnedProfile = String(result.profileKey || "").trim().toLowerCase();
+      if (returnedProfile) {
+        if (!AUTHENTICATED_PROFILES.has(returnedProfile)) throw new Error("The backend returned an invalid authenticated profile.");
+        if (expectedProfile !== "shared" && returnedProfile !== expectedProfile) throw new Error("The backend returned data for a different authenticated profile.");
+        this.#profileKey = returnedProfile;
+      }
       this.#status.online = true;
       this.#status.checkedAt = new Date().toISOString();
-      this.#status.profileKey = String(result.profileKey || this.profileKey);
+      this.#status.profileKey = this.profileKey;
       this.#emit();
       return result;
     } catch (error) {
@@ -171,3 +179,4 @@ export class OnyxTransport {
 
 export { abortError, clean, publicError };
 export default OnyxTransport;
+
