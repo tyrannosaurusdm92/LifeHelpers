@@ -8,6 +8,7 @@ import { OllamaProvider } from "./ollama-provider.js";
 import { BoundedAgent } from "./bounded-agent.js";
 import { OnyxRuntime } from "./runtime.js";
 import { inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion, LLMVerificationError } from "./llm-verifier.js";
+import { ONYX_DOSSIER_SOURCES, normalizeProfileKey, profileContinuityContext, verifyProfileCompletion, ProfileVerificationError } from "./profile-verifier.js";
 
 export const onyx = new OnyxRuntime();
 
@@ -33,7 +34,8 @@ export const OnyxCore = Object.freeze({
   loadDomainGuides,
   loadBrainSources,
   verification: Object.freeze({ inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion }),
-  classes: Object.freeze({ OnyxRuntime, OnyxTransport, OnyxToolRegistry, OllamaProvider, BoundedAgent, LLMVerificationError })
+  profile: Object.freeze({ ONYX_DOSSIER_SOURCES, normalizeProfileKey, profileContinuityContext, verifyProfileCompletion }),
+  classes: Object.freeze({ OnyxRuntime, OnyxTransport, OnyxToolRegistry, OllamaProvider, BoundedAgent, LLMVerificationError, ProfileVerificationError })
 });
 
 if (typeof globalThis !== "undefined") globalThis.OnyxCore = OnyxCore;
@@ -59,7 +61,12 @@ export {
   verifyBackendCompletion,
   verifyOllamaHealth,
   verifyOllamaCompletion,
-  LLMVerificationError
+  LLMVerificationError,
+  ONYX_DOSSIER_SOURCES,
+  normalizeProfileKey,
+  profileContinuityContext,
+  verifyProfileCompletion,
+  ProfileVerificationError
 };
 
 export default OnyxCore;

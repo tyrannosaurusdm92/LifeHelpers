@@ -1,6 +1,6 @@
 {
   "schema": "onyx.unified-capability-manifest.v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "surfaces": {
     "onyx-core": ["regular-chat", "work", "writing", "coding", "ideas", "research", "files", "projects"],
     "games/virtual": ["happy-home", "virtual-pet", "room-context", "game-context"]
@@ -27,7 +27,7 @@
     ]
   },
   "providers": {
-    "ourspace-ai-brain": { "default": true, "continuity": "profile-scoped", "privateContext": "backend-only", "completionProofRequired": true },
+    "ourspace-ai-brain": { "default": true, "continuity": "profile-scoped", "privateContext": "backend-only", "completionProofRequired": true, "matchingProfileProofRequired": true, "personalityFilterProofRequired": true },
     "ollama": { "default": false, "mode": "explicit opt-in", "network": "loopback-only unless explicitly allowed", "privateBackendContextShared": false, "completionProofRequired": true }
   },
   "agent": {

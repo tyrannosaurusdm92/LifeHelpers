@@ -7,6 +7,7 @@ import { OnyxToolRegistry, extractArtifacts } from "./tool-registry.js";
 import { OllamaProvider } from "./ollama-provider.js";
 import { BoundedAgent } from "./bounded-agent.js";
 import { inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion, LLMVerificationError } from "./llm-verifier.js";
+import { profileContinuityContext, verifyProfileCompletion } from "./profile-verifier.js";
 
 const MAX_GUIDE_TEXT = 6000;
 const MAX_REFERENCE_TEXT = 24000;
@@ -85,6 +86,13 @@ export class OnyxRuntime {
     proof: "not-checked",
     checkedAt: ""
   });
+  #profileStatus = Object.freeze({
+    schema: "onyx.profile-verification.v1",
+    verified: false,
+    profileKey: "shared",
+    proof: "not-checked",
+    checkedAt: ""
+  });
 
   constructor(options = {}) {
     this.config = ONYX_CORE_CONFIG;
@@ -97,7 +105,7 @@ export class OnyxRuntime {
   setAuthContext(context) { return this.transport.setAuthContext(context); }
   clearAuthContext() { return this.transport.clearAuthContext(); }
   subscribe(listener) { return this.transport.subscribe(listener); }
-  status() { return { ...this.transport.snapshot(), ollama: this.ollama.snapshot(), llm: this.#llmStatus }; }
+  status() { return { ...this.transport.snapshot(), ollama: this.ollama.snapshot(), llm: this.#llmStatus, profile: this.#profileStatus }; }
   configureOllama(options) { return this.ollama.configure(options); }
 
   async connect({ includeCapabilities = true, requireLLM = true, signal } = {}) {
@@ -238,16 +246,29 @@ export class OnyxRuntime {
       }, { signal: input.signal });
       const llmVerification = verifyOllamaCompletion(local);
       this.#llmStatus = llmVerification;
+      const profileVerification = Object.freeze({
+        schema: "onyx.profile-verification.v1",
+        verified: false,
+        profileKey: "shared",
+        proof: "local-provider-does-not-receive-private-profile-context",
+        checkedAt: new Date().toISOString()
+      });
+      this.#profileStatus = profileVerification;
       return normalizedResult(local, {
         provider: "ollama",
         llmVerified: true,
         llmVerification,
+        profileVerified: false,
+        profileVerification,
         plan,
         continuity: "local-session-only",
         artifacts: prepared.artifacts,
         privacy: { backendProfileContextShared: false }
       });
     }
+
+    const expectedProfileKey = this.transport.profileKey;
+    const profileContext = profileContinuityContext(expectedProfileKey);
 
     const result = await this.transport.request(ONYX_ACTIONS.chat, {
       message: plan.message,
@@ -262,6 +283,7 @@ export class OnyxRuntime {
         intents: plan.intents,
         domains: plan.domains.map(domain => domain.id),
         personalityContract: ONYX_PUBLIC_PERSONALITY.schema,
+        profileContinuity: profileContext,
         unifiedBrainRuntime: ONYX_CORE_CONFIG.schema
       },
       webSearch: plan.permissions.webSearch,
@@ -280,12 +302,28 @@ export class OnyxRuntime {
     }, { signal: input.signal, timeoutMs: input.timeoutMs });
 
     const llmVerification = verifyBackendCompletion(result);
+    let profileVerification;
+    try {
+      profileVerification = verifyProfileCompletion(result, expectedProfileKey);
+    } catch (error) {
+      this.#profileStatus = Object.freeze({
+        schema: "onyx.profile-verification.v1",
+        verified: false,
+        profileKey: "blocked",
+        proof: error?.code || "profile-verification-failed",
+        checkedAt: new Date().toISOString()
+      });
+      throw error;
+    }
     this.#llmStatus = llmVerification;
+    this.#profileStatus = profileVerification;
 
     return normalizedResult(result, {
       provider: "ourspace-ai-brain",
       llmVerified: true,
       llmVerification,
+      profileVerified: true,
+      profileVerification,
       plan,
       artifacts: [...prepared.artifacts, ...extractArtifacts(result)],
       continuity: "backend-profile-scoped"

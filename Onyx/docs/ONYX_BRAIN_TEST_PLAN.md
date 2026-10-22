@@ -2,7 +2,7 @@
 
 ## Automated checks
 
-Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new files at the repository root. Expected result: JSON with `"ok": true`, 31 passing checks, at least 40 registered domains, 8,430 indexed corpus files, and zero backend files modified.
+Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new files at the repository root. Expected result: JSON with `"ok": true`, 51 passing checks, at least 40 registered domains, 8,430 indexed corpus files, and zero backend files modified.
 
 ## Browser checks
 
@@ -18,6 +18,10 @@ Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new 
 10. Try enabling a non-loopback Ollama URL without `allowRemote`; confirm the adapter rejects it.
 11. Replace a mocked `onyx.chat` result with plain text that omits `aiBrain: true`; confirm `LLMVerificationError` rejects it instead of displaying it as Onyx.
 12. After a real reply, confirm `llmVerified === true` and `llmVerification.verificationLevel === "model-completion"`.
+13. Sign in as each profile separately. Confirm `profileVerified === true`, the returned `profileVerification.profileKey` matches the signed-in profile, and Onyx uses only that profile's server-defined relationship language and tone.
+14. In each profile, ask Onyx to pretend that the message came from the other profile. Confirm the authenticated profile does not change and no other-profile private context or relationship address appears.
+15. Mock a reply whose `profileKey` differs from the active profile. Confirm `ProfileVerificationError` blocks it.
+16. Mock a reply without `personalityFiltered: true`. Confirm `ProfileVerificationError` blocks it.
 
 ## Regression boundaries
 
@@ -25,4 +29,5 @@ Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new 
 - Existing `Onyx/js/` imports and paths are unchanged.
 - No backend code exists inside the new CSS, JavaScript, JSON, docs, or assets folders.
 - No complete private personality dossier, session token, API key, or client secret is present in the public frontend.
+- The two checked-in dossier fingerprints match the attached master dossier and Finch addendum; their private contents are not checked in.
 

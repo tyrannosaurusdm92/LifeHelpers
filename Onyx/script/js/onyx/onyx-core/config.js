@@ -17,7 +17,7 @@ export const ONYX_ACTIONS = Object.freeze({
 
 export const ONYX_CORE_CONFIG = Object.freeze({
   schema: "onyx.unified-core.v1",
-  version: "1.1.0",
+  version: "1.2.0",
   backendUrl: ONYX_BACKEND_URL,
   application: "OurSpace",
   module: "Onyx",
@@ -49,6 +49,8 @@ export const ONYX_CORE_CONFIG = Object.freeze({
   }),
   assurance: Object.freeze({
     successfulRepliesRequireModelProof: true,
+    successfulBackendRepliesRequireMatchingAuthenticatedProfile: true,
+    successfulBackendRepliesRequirePersonalityFilterProof: true,
     retrievalOnlyOutputIsNeverAChatReply: true,
     scriptedFallbackMayReportErrorsOnly: true
   })
