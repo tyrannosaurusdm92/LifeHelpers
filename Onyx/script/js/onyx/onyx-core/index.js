@@ -7,6 +7,7 @@ import { OnyxToolRegistry } from "./tool-registry.js";
 import { OllamaProvider } from "./ollama-provider.js";
 import { BoundedAgent } from "./bounded-agent.js";
 import { OnyxRuntime } from "./runtime.js";
+import { inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion, LLMVerificationError } from "./llm-verifier.js";
 
 export const onyx = new OnyxRuntime();
 
@@ -23,6 +24,7 @@ export const OnyxCore = Object.freeze({
   setAuthContext: context => onyx.setAuthContext(context),
   clearAuthContext: () => onyx.clearAuthContext(),
   configureOllama: options => onyx.configureOllama(options),
+  verifyLLM: options => onyx.verifyLLM(options),
   createCapabilityPlan,
   loadBrainRegistry,
   loadBrainFileIndex,
@@ -30,7 +32,8 @@ export const OnyxCore = Object.freeze({
   searchBrainFiles,
   loadDomainGuides,
   loadBrainSources,
-  classes: Object.freeze({ OnyxRuntime, OnyxTransport, OnyxToolRegistry, OllamaProvider, BoundedAgent })
+  verification: Object.freeze({ inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion }),
+  classes: Object.freeze({ OnyxRuntime, OnyxTransport, OnyxToolRegistry, OllamaProvider, BoundedAgent, LLMVerificationError })
 });
 
 if (typeof globalThis !== "undefined") globalThis.OnyxCore = OnyxCore;
@@ -51,7 +54,13 @@ export {
   OnyxTransport,
   OnyxToolRegistry,
   OllamaProvider,
-  BoundedAgent
+  BoundedAgent,
+  inspectBackendLLMHealth,
+  verifyBackendCompletion,
+  verifyOllamaHealth,
+  verifyOllamaCompletion,
+  LLMVerificationError
 };
 
 export default OnyxCore;
+

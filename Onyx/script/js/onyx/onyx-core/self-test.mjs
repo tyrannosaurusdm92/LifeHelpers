@@ -8,6 +8,7 @@ import { OnyxToolRegistry } from "./tool-registry.js";
 import { OllamaProvider } from "./ollama-provider.js";
 import { OnyxTransport } from "./transport.js";
 import { ONYX_ACTIONS } from "./config.js";
+import { inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaCompletion } from "./llm-verifier.js";
 
 const nativeFetch = globalThis.fetch;
 let transportRequest = null;
@@ -60,21 +61,38 @@ const mockTransport = {
   subscribe(listener) { listener(this.snapshot()); return () => {}; },
   setAuthContext: context => context,
   clearAuthContext() {},
-  health: async () => ({ ok: true }),
+  health: async () => ({ ok: true, aiBrain: { ok: true, configured: true, version: "test" } }),
   capabilities: async () => ({ ok: true, actions: ["onyx.chat"] }),
   async request(action, data) {
     calls.push({ action, data });
-    return { ok: true, response: "Unified brain response", responseId: "test-response" };
+    return { ok: true, aiBrain: true, response: "Unified brain response", responseId: "test-response" };
   }
 };
 
 const runtime = new OnyxRuntime({ transport: mockTransport });
+const connection = await runtime.connect();
+assert.equal(connection.llm.verified, true);
+assert.equal(connection.llm.proof, "onyx.health.aiBrain.configured");
 const reply = await runtime.chat({ message: "Help me brainstorm a story", autoRemember: false });
 assert.equal(reply.response, "Unified brain response");
 assert.equal(reply.provider, "ourspace-ai-brain");
+assert.equal(reply.llmVerified, true);
+assert.equal(reply.llmVerification.verificationLevel, "model-completion");
 assert.equal(calls.at(-1).action, "onyx.chat");
 assert.equal(calls.at(-1).data.useBrain, true);
 assert.equal(calls.at(-1).data.threadId, "ourspace-onyx-william");
+
+assert.equal(inspectBackendLLMHealth({ ok: true, aiBrain: { configured: false } }).verified, false);
+assert.throws(() => verifyBackendCompletion({ ok: true, response: "scripted text" }), /did not prove/i);
+assert.throws(() => verifyOllamaCompletion({ ok: true, provider: "ollama", model: "test", response: "" }), /verifiable model completion/i);
+
+const unverifiedRuntime = new OnyxRuntime({
+  transport: {
+    ...mockTransport,
+    async request() { return { ok: true, response: "A canned fallback must not pass." }; }
+  }
+});
+await assert.rejects(() => unverifiedRuntime.chat({ message: "Say hello" }), /did not prove/i);
 
 const guardedTools = new OnyxToolRegistry(mockTransport);
 await assert.rejects(() => guardedTools.imageGenerate("a black cat"), /explicit user write request/i);
@@ -94,8 +112,9 @@ assert.equal(transportRequest.init.headers["Content-Type"], "text/plain;charset=
 
 console.log(JSON.stringify({
   ok: true,
-  tests: 23,
+  tests: 31,
   registeredDomains: registry.domains.length,
   indexedCorpusFiles: fileIndex.fileCount,
   backendFilesModified: 0
 }, null, 2));
+

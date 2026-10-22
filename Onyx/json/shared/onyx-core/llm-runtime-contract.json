@@ -1,0 +1,26 @@
+{
+  "schema": "onyx.llm-runtime-contract.v1",
+  "version": "1.0.0",
+  "definition": "Onyx is an agent and persona powered by a real language model. Routing, retrieval, personality, memory, and tools augment the model; they do not impersonate model inference.",
+  "providers": {
+    "ourspace-ai-brain": {
+      "default": true,
+      "configurationProof": "onyx.health.aiBrain.configured === true",
+      "completionProof": "onyx.chat.aiBrain === true and a non-empty response"
+    },
+    "ollama": {
+      "default": false,
+      "configurationProof": "configured model appears in GET /api/tags",
+      "completionProof": "POST /api/chat returns a named model and non-empty response"
+    }
+  },
+  "hardRules": [
+    "A retrieval result is context, never an Onyx chat completion.",
+    "A template or canned string may describe an error, never impersonate a successful Onyx answer.",
+    "A response without provider-specific model proof is rejected.",
+    "The frontend never labels an unverified connection as an LLM connection."
+  ],
+  "legacy": {
+    "Onyx/js/chatbot.js": "Dormant read-only corpus inspection utility; not imported by the unified runtime and not an Onyx response provider."
+  }
+}

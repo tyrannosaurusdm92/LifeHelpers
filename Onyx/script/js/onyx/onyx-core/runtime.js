@@ -6,6 +6,7 @@ import { OnyxTransport, publicError } from "./transport.js";
 import { OnyxToolRegistry, extractArtifacts } from "./tool-registry.js";
 import { OllamaProvider } from "./ollama-provider.js";
 import { BoundedAgent } from "./bounded-agent.js";
+import { inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion, LLMVerificationError } from "./llm-verifier.js";
 
 const MAX_GUIDE_TEXT = 6000;
 const MAX_REFERENCE_TEXT = 24000;
@@ -75,6 +76,16 @@ function uniqueReferences(references) {
 }
 
 export class OnyxRuntime {
+  #llmStatus = Object.freeze({
+    schema: "onyx.llm-verification.v1",
+    provider: "ourspace-ai-brain",
+    configured: false,
+    verified: false,
+    verificationLevel: "none",
+    proof: "not-checked",
+    checkedAt: ""
+  });
+
   constructor(options = {}) {
     this.config = ONYX_CORE_CONFIG;
     this.transport = options.transport || new OnyxTransport(options.transportOptions);
@@ -86,14 +97,49 @@ export class OnyxRuntime {
   setAuthContext(context) { return this.transport.setAuthContext(context); }
   clearAuthContext() { return this.transport.clearAuthContext(); }
   subscribe(listener) { return this.transport.subscribe(listener); }
-  status() { return { ...this.transport.snapshot(), ollama: this.ollama.snapshot() }; }
+  status() { return { ...this.transport.snapshot(), ollama: this.ollama.snapshot(), llm: this.#llmStatus }; }
   configureOllama(options) { return this.ollama.configure(options); }
 
-  async connect({ includeCapabilities = true, signal } = {}) {
+  async connect({ includeCapabilities = true, requireLLM = true, signal } = {}) {
     const health = await this.transport.health({ signal });
+    const llm = inspectBackendLLMHealth(health);
+    this.#llmStatus = llm;
+    if (requireLLM && !llm.verified) throw new LLMVerificationError("The existing OurSpace backend is online, but its AI Brain is not configured.", llm);
     let capabilities = null;
     if (includeCapabilities && this.transport.authenticated) capabilities = await this.transport.capabilities({ signal });
-    return { ok: true, health, capabilities, status: this.status() };
+    return { ok: true, health, capabilities, llm, status: this.status() };
+  }
+
+  async verifyLLM({ provider = "ourspace-ai-brain", runProbe = false, signal } = {}) {
+    if (provider === "ollama") {
+      const health = await this.ollama.health({ signal });
+      const proof = verifyOllamaHealth(health, this.ollama.snapshot().model);
+      this.#llmStatus = proof;
+      if (!runProbe) return proof;
+      const completion = await this.chat({
+        message: "Reply exactly: Onyx LLM verified.",
+        provider: "ollama",
+        autoRemember: false,
+        webSearch: false,
+        maxOutputTokens: 40,
+        signal
+      });
+      return completion.llmVerification;
+    }
+    const connection = await this.connect({ includeCapabilities: true, requireLLM: true, signal });
+    if (!runProbe) return connection.llm;
+    if (!this.transport.authenticated) throw new LLMVerificationError("An authenticated OurSpace session is required for a completion probe.", connection.llm);
+    const completion = await this.chat({
+      message: "Reply exactly: Onyx LLM verified.",
+      autoRemember: false,
+      webSearch: false,
+      useDrive: false,
+      allowWrites: false,
+      allowExternalTools: false,
+      maxOutputTokens: 40,
+      signal
+    });
+    return completion.llmVerification;
   }
 
   async #domainReferences(plan) {
@@ -190,8 +236,12 @@ export class OnyxRuntime {
         ],
         options: input.modelOptions || {}
       }, { signal: input.signal });
+      const llmVerification = verifyOllamaCompletion(local);
+      this.#llmStatus = llmVerification;
       return normalizedResult(local, {
         provider: "ollama",
+        llmVerified: true,
+        llmVerification,
         plan,
         continuity: "local-session-only",
         artifacts: prepared.artifacts,
@@ -229,8 +279,13 @@ export class OnyxRuntime {
       ai: true
     }, { signal: input.signal, timeoutMs: input.timeoutMs });
 
+    const llmVerification = verifyBackendCompletion(result);
+    this.#llmStatus = llmVerification;
+
     return normalizedResult(result, {
       provider: "ourspace-ai-brain",
+      llmVerified: true,
+      llmVerification,
       plan,
       artifacts: [...prepared.artifacts, ...extractArtifacts(result)],
       continuity: "backend-profile-scoped"
@@ -265,3 +320,4 @@ export class OnyxRuntime {
 
 export { normalizeHistory, responseText };
 export default OnyxRuntime;
+
