@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Onyx Core × Happy Home</title>
+  <link rel="stylesheet" href="../../style/css/onyx/onyx-core/brain-shell.css">
+  <link rel="stylesheet" href="../../style/css/onyx/games/virtual/happy-home-brain.css">
+</head>
+<body>
+  <main class="onyx-brain-shell" aria-labelledby="page-title">
+    <header class="onyx-brain-shell__header">
+      <div>
+        <p class="onyx-eyebrow">Virtual / Happy Home</p>
+        <h1 id="page-title">Onyx’s unified brain link</h1>
+      </div>
+      <div class="onyx-status" role="status" aria-live="polite">
+        <span id="onyx-status-dot" class="onyx-status__dot" data-state="offline" aria-hidden="true"></span>
+        <span id="onyx-status-text">Checking Onyx Core…</span>
+      </div>
+    </header>
+
+    <section class="happy-home-stage" aria-label="Happy Home integration surface">
+      <div class="happy-home-stage__room" aria-hidden="true">
+        <span>Happy Home room renderer mounts here</span>
+      </div>
+      <aside class="onyx-chat" aria-label="Chat with Onyx">
+        <div id="onyx-transcript" class="onyx-chat__transcript" aria-live="polite">
+          <article class="onyx-message onyx-message--onyx">
+            <strong>Onyx</strong>
+            <p>One cat, one brain. I can move between regular chat, Work, and Virtual without becoming three unrelated assistants.</p>
+          </article>
+        </div>
+        <form id="onyx-chat-form" class="onyx-chat__form">
+          <label for="onyx-message" class="sr-only">Message Onyx</label>
+          <textarea id="onyx-message" rows="2" maxlength="12000" placeholder="Talk to Onyx…" required></textarea>
+          <button id="onyx-send" type="submit">Send</button>
+        </form>
+      </aside>
+    </section>
+
+    <p class="onyx-security-note">This page reuses the current OurSpace session. It never asks for, stores, or exposes a backend credential.</p>
+  </main>
+  <script type="module" src="../../script/js/onyx/games/virtual/happy-home-app.js"></script>
+</body>
+</html>
