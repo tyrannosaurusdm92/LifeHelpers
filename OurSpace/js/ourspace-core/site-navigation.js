@@ -10,7 +10,7 @@ function activatePage(id,push=true){
  if(document.documentElement.dataset.publicView==='true' && id!=='retrobuilder') id='retrobuilder';
  const target=$(`.site-page[data-page-id="${CSS.escape(id)}"]`); if(!target)return;
  pages.forEach(p=>p.classList.toggle('is-active',p===target)); routes.forEach(r=>r.classList.toggle('is-current',r.dataset.page===id));
- const idx=pageMeta.findIndex(x=>x[0]===id), label=idx>=0?pageMeta[idx][1]:id; current.textContent=`${({portal:'01',retrobuilder:'02',household:'03',journal:'04-A',diary:'04-B',feed:'05',skills:'06',communication:'07',audio:'08',visual:'09',store:'10'}[id]||'01')} · ${label}`;
+ const idx=pageMeta.findIndex(x=>x[0]===id), label=idx>=0?pageMeta[idx][1]:id; current.textContent=`${({portal:'01',retrobuilder:'01',household:'02',journal:'03-A',diary:'03-B',feed:'04',skills:'05',communication:'06',audio:'07',visual:'08',store:'09'}[id]||'01')} · ${label}`;
  STORE.set('retroUniversal.activePage',id); if(push){try{history.replaceState(null,'',`#${id}`)}catch(_){};if(window.parent!==window){try{window.parent.history.replaceState(null,'',window.parent.location.pathname+window.parent.location.search+`#${id}`)}catch(_){}}} window.scrollTo({top:0,behavior:'instant'});
  $$('.jump-nav').forEach(j=>j.classList.remove('open'));
  window.dispatchEvent(new CustomEvent('ourspace:page-active',{detail:{page:id}}));
