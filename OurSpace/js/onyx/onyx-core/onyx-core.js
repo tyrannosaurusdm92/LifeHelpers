@@ -319,7 +319,7 @@ function adminTestConversation(text,mode,tab){
   const byTab={
     virtual:`Mrrp. I heard you${quoted?`: “${quoted}”`:""}. #admin is running the local Onyx test path, so the conversation controls, state changes, history, and UI can be tested without an OurSpace login.`,
     health:`I heard you${quoted?`: “${quoted}”`:""}. #admin is local test mode. I can exercise the Health conversation UI and safety fallbacks here, but account-backed AI, records, and tools stay disconnected.`,
-    leisure:`Mrrp. #admin heard${quoted?` “${quoted}”`:" your message"}. This local test path keeps the Feed Him MEOW chat flow usable without signing in; live research and account tools remain off.`,
+    leisure:`Mrrp. #admin heard${quoted?` “${quoted}”`:" your message"}. This local test path keeps the Leisure conversation usable without signing in; live research and account tools remain off.`,
     work:`Clipboard deployed. #admin received${quoted?` “${quoted}”`:" your message"}. This is the local Work-chat test path, so you can test Onyx’s conversation UI without signing in; backend research, files, and generation remain gated.`
   };
   return{state:local?.state||preStateFor(tab,mode,text),text:byTab[tab]||byTab.virtual,artifacts:[],citations:[],adminTest:true,localOnly:true};
