@@ -1195,7 +1195,13 @@ root.OnyxConversationEngine=Object.freeze({reply,inferMode,isListenOnly,stateFor
   async function chat(payload={},options={}){
     const backend=root.OnyxBackendClient;
     if(!backend||typeof backend.chat!=='function')throw new Error('Onyx brain bridge is not ready.');
-    return backend.chat({...payload,useBrain:true,ai:true},options);
+    let augmented=payload;
+    try {
+      if(root.OnyxRepositoryBridge?.enrich) augmented=await root.OnyxRepositoryBridge.enrich(payload,options);
+    } catch(error) {
+      try{root.dispatchEvent(new CustomEvent('onyx:brain-index-unavailable',{detail:{reason:String(error?.message||'Index unavailable').slice(0,180)}}))}catch(_){}
+    }
+    return backend.chat({...augmented,useBrain:true,ai:true},options);
   }
   function snapshot(){
     const backend=root.OnyxBackendClient;
