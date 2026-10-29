@@ -3,14 +3,14 @@
 'use strict';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const STORE={get(k,d=null){if(k.startsWith('retroUniversal.'))k='retroUniversal.'+(document.documentElement.dataset.profile||'william')+'.'+k.slice(15);try{const v=localStorage.getItem(k);return v===null?d:v}catch(_){return d}},set(k,v){if(k.startsWith('retroUniversal.'))k='retroUniversal.'+(document.documentElement.dataset.profile||'william')+'.'+k.slice(15);try{localStorage.setItem(k,v)}catch(_){}}};
-const pageMeta=[["portal","Portal / Sign In"],["retrobuilder","About / Profile"],["household","Household"],["journal","Journal"],["diary","Diary"],["feed","Feed"],["skills","Skills"],["communication","Communication"],["audio","Audio"],["visual","Visual"],["games","Games"],["store","Store"]];
+const pageMeta=[["portal","Portal / Sign In"],["retrobuilder","About / Profile"],["household","Household"],["journal","Journal"],["diary","Diary"],["feed","Feed"],["skills","Skills"],["communication","Communication"],["audio","Audio"],["visual","Visual"],["store","Store"]];
 const pages=$$('.site-page'), routes=$$('.page-route'), master=$('#masterNav'), current=$('#masterCurrent');
 function activatePage(id,push=true){
  if(document.documentElement.dataset.publicView==='true' && id!=='retrobuilder') id='retrobuilder';
  if(document.documentElement.dataset.publicView==='true' && id!=='retrobuilder') id='retrobuilder';
  const target=$(`.site-page[data-page-id="${CSS.escape(id)}"]`); if(!target)return;
  pages.forEach(p=>p.classList.toggle('is-active',p===target)); routes.forEach(r=>r.classList.toggle('is-current',r.dataset.page===id));
- const idx=pageMeta.findIndex(x=>x[0]===id), label=idx>=0?pageMeta[idx][1]:id; current.textContent=`${({portal:'01',retrobuilder:'02',household:'03',journal:'04-A',diary:'04-B',feed:'05',skills:'06',communication:'07',audio:'08',visual:'09',games:'10',store:'11'}[id]||'01')} · ${label}`;
+ const idx=pageMeta.findIndex(x=>x[0]===id), label=idx>=0?pageMeta[idx][1]:id; current.textContent=`${({portal:'01',retrobuilder:'02',household:'03',journal:'04-A',diary:'04-B',feed:'05',skills:'06',communication:'07',audio:'08',visual:'09',store:'10'}[id]||'01')} · ${label}`;
  STORE.set('retroUniversal.activePage',id); if(push){try{history.replaceState(null,'',`#${id}`)}catch(_){};if(window.parent!==window){try{window.parent.history.replaceState(null,'',window.parent.location.pathname+window.parent.location.search+`#${id}`)}catch(_){}}} window.scrollTo({top:0,behavior:'instant'});
  $$('.jump-nav').forEach(j=>j.classList.remove('open'));
  window.dispatchEvent(new CustomEvent('ourspace:page-active',{detail:{page:id}}));
