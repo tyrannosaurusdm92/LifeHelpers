@@ -126,45 +126,6 @@
     <p>Timerless, low-pressure company while you rest or do something. No streak, report, or productivity judgment required.</p>
     <div class="onyx-quiet-company-status" data-onyx-quiet-status aria-live="polite"></div>
   </section>`}
-  function virtualPetPanel(){return `<details class="module-design-section chat-utility-section virtual-pet-section">
-    <summary>Virtual Pet Care &amp; Companion</summary>
-    <div class="chat-utility-body">
-      <section class="onyx-pet-dashboard" aria-label="Virtual pet care">
-        <div class="onyx-care-grid">
-          <button data-onyx-action="feed" type="button">Feed</button><button data-onyx-action="water" type="button">Water</button>
-          <button data-onyx-action="treat" type="button">Treat</button><button data-onyx-action="pet" type="button">Pet</button>
-          <button data-onyx-action="scratch" type="button">Scratchies</button><button data-onyx-action="play" type="button">Play</button>
-          <button data-onyx-action="brush" type="button">Brush</button><button data-onyx-action="blanket" type="button">Blanket</button>
-          <button data-onyx-action="fan" type="button">Fan</button><button data-onyx-action="bowtie" type="button">Bow Tie</button>
-          <button data-onyx-action="pillow" type="button">Pillow</button><button data-onyx-action="tuck" type="button">Tuck In</button>
-          <button data-onyx-action="nuzzle" type="button">Nuzzle</button><button data-onyx-action="slowblink" type="button">Slow Blink</button>
-          <button data-onyx-action="check" type="button">Check Onyx</button><button data-onyx-action="settle" type="button">Settle</button>
-        </div>
-        <div class="onyx-meter-stack" aria-label="Onyx needs">
-          <div class="onyx-meter-row"><span>Energy</span><div class="onyx-meter" id="onyxEnergyMeter" role="progressbar" aria-label="Energy" aria-valuemin="0" aria-valuemax="100"><i id="onyxEnergyFill"></i></div><b id="onyxEnergyValue"></b></div>
-          <div class="onyx-meter-row"><span>Fullness</span><div class="onyx-meter" id="onyxHungerMeter" role="progressbar" aria-label="Fullness" aria-valuemin="0" aria-valuemax="100"><i id="onyxHungerFill"></i></div><b id="onyxHungerValue"></b></div>
-          <div class="onyx-meter-row"><span>Joy</span><div class="onyx-meter" id="onyxJoyMeter" role="progressbar" aria-label="Joy" aria-valuemin="0" aria-valuemax="100"><i id="onyxJoyFill"></i></div><b id="onyxJoyValue"></b></div>
-          <div class="onyx-meter-row"><span>Connection</span><div class="onyx-meter" id="onyxAffectionMeter" role="progressbar" aria-label="Recent connection" aria-valuemin="0" aria-valuemax="100"><i id="onyxAffectionFill"></i></div><b id="onyxAffectionValue"></b></div>
-          <div class="onyx-meter-row"><span>Comfort</span><div class="onyx-meter" id="onyxComfortMeter" role="progressbar" aria-label="Comfort" aria-valuemin="0" aria-valuemax="100"><i id="onyxComfortFill"></i></div><b id="onyxComfortValue"></b></div>
-        </div>
-      </section>
-      <section class="onyx-self-care" aria-label="Care for yourself">
-        <div class="onyx-self-care-head"><strong>Care for You</strong><button class="onyx-pause-button" data-onyx-pause-toggle type="button" aria-pressed="false">Pause</button></div>
-        <div class="onyx-self-care-controls">
-          <select data-onyx-self-care-select aria-label="Self-care action">
-            <option value="drink">Drink</option><option value="eat">Eat</option><option value="hygiene">Hygiene</option><option value="comfort">Comfort</option>
-            <option value="outside">Window / Air</option><option value="task">Tiny Task</option><option value="skill">Coping Skill</option><option value="reflect">Reflect</option>
-            <option value="medication">Existing Plan</option><option value="appointment">Appointment Prep</option><option value="rest">Rest</option><option value="custom">Custom</option>
-          </select>
-          <input data-onyx-self-care-custom class="onyx-self-care-custom" maxlength="80" aria-label="Custom care action" hidden>
-          <button data-onyx-self-care-smaller type="button" aria-pressed="false">Smaller</button>
-          <button data-onyx-self-care-done type="button">Done</button>
-          <button data-onyx-self-care-skip type="button">Skip</button>
-        </div>
-        <div class="onyx-self-care-status" data-onyx-self-care-status aria-live="polite"></div>
-      </section>${quietCompanyPanel()}
-    </div>
-  </details>`}
   function healthScope(){return `<details class="onyx-health-scope module-design-section chat-utility-section">
     <summary>Health scope & privacy</summary>
     <div class="onyx-health-scope-body">
@@ -199,7 +160,7 @@
     leisure:'Use this space for games, hobbies, media, special interests, recommendations, walkthroughs, research, and relaxed conversation.',
     work:'Use this space for projects, coding, TTRPG work, writing, worldbuilding, research, files, planning, and longer collaborative sessions.'
   })[server]||''}
-  function paneTemplate(server){const label=SERVERS[server];const extras=server==='health'?virtualPetPanel()+healthScope()+supportPreferencesPanel()+healthModes():'';const tabAction=server==='leisure'?'<button class="fullscreen-button" data-launch-game type="button">Feed Him MEOW</button>':server==='health'?'<button class="fullscreen-button" data-launch-slow-game type="button">Virtual &amp; Health</button>':server==='work'?'<button class="fullscreen-button" data-launch-work type="button">Open Work fullscreen</button>':'';return `<div class="pane-toolbar server-pane-toolbar"><div class="server-pane-title"><span class="server-pane-kicker">Server</span><h2 class="pane-title">${escapeHtml(label)}</h2></div>${tabAction}</div>
+  function paneTemplate(server){const label=SERVERS[server];const extras=server==='health'?healthScope()+supportPreferencesPanel()+healthModes():'';const tabAction=server==='leisure'?'<button class="fullscreen-button" data-launch-game type="button">Open Games fullscreen</button>':server==='health'?'<button class="fullscreen-button" data-launch-slow-game type="button">Virtual &amp; Health</button>':server==='work'?'<button class="fullscreen-button" data-launch-work type="button">Open Work fullscreen</button>':'';return `<div class="pane-toolbar server-pane-toolbar"><div class="server-pane-title"><span class="server-pane-kicker">Server</span><h2 class="pane-title">${escapeHtml(label)}</h2></div>${tabAction}</div>
     <div class="conversation-page-shell" data-chat-page="${server}">
       <p class="module-design-intro chat-page-intro">${escapeHtml(chatTabIntro(server))}</p>
       ${extras}
