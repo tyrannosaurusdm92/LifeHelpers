@@ -1,6 +1,6 @@
 {
   "name": "OurSpace William / Jasper Profiles with Onyx",
-  "version": "2026.10.10-profile-iframe-pass",
+  "version": "2026-10-29-onyx-leisure-migration",
   "created": "2026-10-09",
   "archiveName": "OurSpace_Onyx_Profile_IFT_20261010.zip",
   "entrypoint": "ourspace.html",
@@ -15,16 +15,13 @@
   },
   "runtimeModes": {
     "module": "Onyx widget with Lightning Storm design controls, color wheel, hex inputs and shared wallet",
-    "fast-game": "Feed Him MEOW complete fullscreen game embedded in both profile HTML pages",
-    "slow-game": "Botanical Garden Virtual & Health room and pet runtime with Lightning Storm shell",
+    "fast-game": "Onyx Leisure fullscreen iframe loads sibling Games/index.html",
+    "slow-game": "Virtual & Health intentionally blank fullscreen with red close X",
     "work": "Work fullscreen workspace, Storm palette synchronization, and currency in the Projects & Catalog header"
   },
   "professorOnyx": {
     "module": "chest-up only: caring is shown as a user begins a Health message; the module renderer remains separate.",
-    "virtual": "single full-body Professor contact-sheet actor in Virtual Health; chest-up widget canvas is never mounted as the room actor.",
     "transition": "quadruped caring -> thoughtful quadruped Professor cue -> dedicated atlas rise -> biped walk -> turn at standard couch seat -> settle/sit -> remain seated Professor; after 10 minutes of user inactivity stand/walk away/reverse rise -> quadruped caring -> Good boy click -> purring/autonomous cat routine.",
-    "quadrupedProfessor": "The prelude uses Onyx’s existing full-body quadruped atlas with the thoughtful mood. Biped clothes and transition/seated poses come from the dedicated Professor contact sheet. The chest-up widget is separate.",
-    "leisureProfessor": false,
     "testWindow": "Ten-minute timeout is measured from the last user message or Health composer/Virtual Health pointer, keyboard, or input activity. Assistant replies do not reset it. Good boy is disabled until Onyx has returned to caring.",
     "testKeys": {
       "0": "walk away",
@@ -34,8 +31,7 @@
       "X": "Sit at the standard seat edge with feet aligned to the floor",
       "U": "get up",
       "C": "Cycle quadruped couch rest spots"
-    },
-    "quadrupedCouchRest": "Four named quadruped lounge, curl, and loaf spots; C cycles the spots."
+    }
   },
   "folderPolicy": {
     "rootLooseFiles": [
@@ -46,31 +42,22 @@
       "js",
       "css",
       "json",
-      "script",
       "assets",
       "docs"
     ],
     "nestedFoldersOutsideAssets": true,
     "javascript": {
       "bubbleModule": "js/onyx/onyx-core/",
-      "leisureGame": "js/onyx/games/leisure/",
-      "sharedGame": "js/onyx/onyx-core/",
-      "virtualGame": "js/onyx/games/virtual/",
       "work": "js/onyx/onyx-core/work-tab.js"
     },
     "styles": {
       "bubbleModule": "css/onyx/onyx-core/",
-      "leisureGame": "css/onyx/games/leisure/",
-      "sharedGame": "css/onyx/onyx-core/",
-      "virtualGame": "css/onyx/games/virtual/",
       "work": "css/onyx/onyx-core/work-tab.css"
     },
-    "script": "WASM only",
     "assetsChildren": [
       "audio",
       "code",
-      "images",
-      "video"
+      "images"
     ],
     "packageRoot": "Onyx_export/"
   },
@@ -78,7 +65,6 @@
     "moduleWidget": "portal-era procedural chest-up renderer for all ten canonical moods",
     "moduleCanvas": "#onyxCanvas",
     "fallbackPolicy": "static mood PNGs only on code-render failure",
-    "gameScope": "The module keeps its ten chest-up coded moods. Virtual Health uses the matching full-body atlas for each of nine quadruped moods plus the neutral base-cat atlas; Professor Onyx uses the dedicated biped contact-sheet actor. Feed Him MEOW routing remains unchanged.",
     "canonicalMoodFiles": [
       "js/onyx/onyx-core/onyx_advising_professor.js",
       "js/onyx/onyx-core/onyx_caring.js",
@@ -93,40 +79,15 @@
     ]
   },
   "gameRouting": {
-    "moduleBubble": "js/bubble-module + css/bubble-module; ten chest-up coded moods; https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/shared/legacy-static/onyx_<mood>.png are fallback-only",
-    "leisure": "Complete Feed Him MEOW source formerly in meow.html is embedded through js/onyx/onyx-core/shared-shells.js and loads the merged leisure runtime.",
-    "virtual": "Virtual Health loads the Botanical Garden room, free editor, priced store, spatial perception, quadruped mood atlases/SVGs, and Professor atlas/SVGs.",
-    "shared": "js/onyx/games/shared + css/onyx/games/shared; renderer/runtime infrastructure only, not a third game"
-  },
-  "quadrupedBaseFrames": {
-    "schema": "onyx-svg-atlas-inbetweens/v1",
-    "source": "neutral base-cat SVG frames plus canonical mood atlases",
-    "path": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/base_cat",
-    "baseCatLockedByDefault": false,
-    "partObjects": [
-      "onyx-sweater",
-      "onyx-bowtie"
-    ]
+    "leisure": "../Games/index.html (sibling repository folder; loaded by Onyx Leisure fullscreen)",
+    "virtual": "blank fullscreen; only close X",
+    "work": "existing Onyx Work fullscreen",
+    "brain": "Onyx/script/js/onyx/onyx-core/ (read-only source retrieval, original authenticated backend unchanged)"
   },
   "fullscreenSync": {
-    "Feed Him MEOW": "The complete game uses the Feed Him MEOW name in its button and fullscreen source; the outer red X returns to the module.",
-    "Virtual Health": "Virtual & Health opens the Botanical Garden fullscreen room runtime, store, and editor",
-    "Work": "Work fullscreen uses Lightning Storm design sync and currency in the Projects & Catalog header left of its title",
-    "fakeLivingRoomRemoved": true,
-    "professorForwardSeat": "The contact-sheet seated Professor uses the standard couch seat edge; its visible foot anchor is aligned to the couch floor line.",
-    "layerOrder": [
-      "HUD",
-      "menus",
-      "controls",
-      "Onyx",
-      "background layer 5",
-      "background layer 6",
-      "background layer 7",
-      "background layer 8",
-      "background layer 9",
-      "background layer 10",
-      "viewport back/deepest"
-    ]
+    "Leisure": "Games/index.html fills Onyx Leisure fullscreen. Red X returns to module.",
+    "VirtualHealth": "Blank viewport; only red X remains.",
+    "Work": "Work fullscreen preserved, including design synchronization."
   },
   "brainLink": {
     "file": "js/onyx/onyx-core/brain-link.js",
@@ -148,14 +109,6 @@
     "fullBackendRuntimeVerified": false
   },
   "passNumber": 11,
-  "frameByFrameAnimation": {
-    "researchDocument": "docs/ONYX_FRAME_BY_FRAME_ANIMATION_RESEARCH_PASS6.md",
-    "profiles": "json/onyx-animation-research.json",
-    "quadruped": "Nine mood atlases plus the neutral base-cat atlas preserve weighted key timing; SVG source drawings render through the second half of frame segments as in-betweens.",
-    "biped": "Professor atlas sequences preserve weighted key timing and use Professor SVG source drawings as in-between poses for entry, walking, sitting, and preparation.",
-    "directionCoverage": "Eight movement inputs map to six authored atlas facings and six directional SVG run, jump, and idle families.",
-    "reducedMotion": "prefers-reduced-motion freezes quadruped atlas playback on a stable frame."
-  },
   "workFullscreen": {
     "entry": "Work tab launcher generated by js/onyx/onyx-core/onyx-ui.js",
     "shell": "#onyxWorkFullscreenShell in assets/code/william.html and assets/code/jasper.html",
@@ -166,10 +119,10 @@
     "income": "Meaningful Work conversations, attachments, subtabs, exports, projects, catalog actions, and settings award the shared wallet."
   },
   "leisureFullscreen": {
-    "name": "Feed Him MEOW",
-    "documentTitle": "Feed Him MEOW",
-    "body": "complete merged Feed Him MEOW game",
-    "source": "docs/feed-him-meow/FEED_HIM_MEOW_SOURCE.txt",
+    "name": "LifeHelpers Games",
+    "documentTitle": "LifeHelpers Games",
+    "body": "sibling repo-root Games/index.html in full-viewport iframe",
+    "source": "../Games/index.html",
     "exit": "outer top-right red X"
   },
   "currency": {
@@ -201,75 +154,12 @@
       "Toys",
       "Tablets"
     ],
-    "roomDesignIsFree": true,
-    "purchasesSpendSharedCurrency": true,
-    "embeddedVideoTabletPrice": {
-      "platinum": 666,
-      "gold": 6,
-      "silver": 6,
-      "copper": 6,
-      "totalCopper": 666666
-    }
-  },
-  "assetSplit": {
-    "schema": "ourspace.onyx.asset-split.v2",
-    "testing": {
-      "purpose": "runtime code and Onyx source visuals only",
-      "allowedAssetRoots": [
-        "assets/images/shared/frame-black.svg",
-        "assets/images/shared/onyx-alert-virtual-pet.svg",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/base_cat",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/caring",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/hungry",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/judgmental",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/listening",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/professor",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/purring",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/sleepy",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/snuggly",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/thinking",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/thoughtful",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/atlases",
-        "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/contact_sheets"
-      ],
-      "nonOnyxAssetsIncluded": false
-    },
-    "github": {
-      "purpose": "assets-only payload",
-      "contains": [
-        "images",
-        "audio",
-        "video"
-      ],
-      "onyxLegacyCopies": [
-        "images/legacy/frames/",
-        "images/legacy/atlases/",
-        "images/legacy/contact-sheets/"
-      ],
-      "notificationBorderIncluded": false
-    },
-    "overlay": "Combine the testing and GitHub Onyx_export trees to resolve runtime asset references."
-  },
-  "sourceAudit": {
-    "inputs": [
-      "Onyx_export-github-assets-pass8(1).zip",
-      "Onyx_export-testing8_RoomPerception_WorkGrayscale(1).zip",
-      "Happy_Home_Virtual_Health_Perception_Pass3(1).zip",
-      "Feed_Him_MEOW_Testing_Pass4(1).zip",
-      "Feed_Him_MEOW_GitHub_Assets_Only_Pass4(1).zip"
-    ],
-    "baseline": "Onyx_export-testing9_Merged_FHM_SVGIncome",
-    "overrides": [
-      "Enhanced merged fan messaging/runtime is retained over the older room-svg fan source.",
-      "Merged result manifest paths point to the consolidated static fallback location.",
-      "Texture CSS/JS and texture-manifest data are retained in the merged testing code tree."
-    ]
+    "purchasesSpendSharedCurrency": true
   },
   "dbtAssignments": {
     "index": "json/dbt/pairings.json",
     "pairingCount": 102,
     "widget": "#onyxDbtWidget",
-    "happyHome": "#onyxDbtHomePanel",
     "module": "js/dbt/onyx-assignments.js",
     "styles": "css/dbt/onyx-assignments.css",
     "userProfiles": [
