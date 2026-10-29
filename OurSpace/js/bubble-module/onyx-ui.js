@@ -7,7 +7,7 @@
 (() => {
   'use strict';
 
-  const SERVERS=Object.freeze({health:'Virtual Health',leisure:'Feed Him MEOW',work:'Work'});
+  const SERVERS=Object.freeze({health:'Virtual Health',leisure:'Leisure',work:'Work'});
   const TABS=Object.freeze({...SERVERS,design:'Design'});
   const REACTIONS=Object.freeze([
     {id:'praise',glyph:'👍',label:'Praise'},
@@ -199,7 +199,7 @@
     leisure:'Use this space for games, hobbies, media, special interests, recommendations, walkthroughs, research, and relaxed conversation.',
     work:'Use this space for projects, coding, TTRPG work, writing, worldbuilding, research, files, planning, and longer collaborative sessions.'
   })[server]||''}
-  function paneTemplate(server){const label=SERVERS[server];const extras=server==='health'?virtualPetPanel()+healthScope()+supportPreferencesPanel()+healthModes():'';const tabAction=server==='leisure'?'<button class="fullscreen-button" data-launch-game type="button">Feed Him MEOW</button>':server==='health'?'<button class="fullscreen-button" data-launch-slow-game type="button">Virtual Health</button>':server==='work'?'<button class="fullscreen-button" data-launch-work type="button">Open Work fullscreen</button>':'';return `<div class="pane-toolbar server-pane-toolbar"><div class="server-pane-title"><span class="server-pane-kicker">Server</span><h2 class="pane-title">${escapeHtml(label)}</h2></div>${tabAction}</div>
+  function paneTemplate(server){const label=SERVERS[server];const extras=server==='health'?virtualPetPanel()+healthScope()+supportPreferencesPanel()+healthModes():'';const tabAction=server==='leisure'?'<button class="fullscreen-button" data-launch-game type="button">Open Games fullscreen</button>':server==='health'?'<button class="fullscreen-button" data-launch-slow-game type="button">Virtual Health</button>':server==='work'?'<button class="fullscreen-button" data-launch-work type="button">Open Work fullscreen</button>':'';return `<div class="pane-toolbar server-pane-toolbar"><div class="server-pane-title"><span class="server-pane-kicker">Server</span><h2 class="pane-title">${escapeHtml(label)}</h2></div>${tabAction}</div>
     <div class="conversation-page-shell" data-chat-page="${server}">
       <p class="module-design-intro chat-page-intro">${escapeHtml(chatTabIntro(server))}</p>
       ${extras}
@@ -434,7 +434,7 @@
       open:true,
       fields:[
         ['railBg','Channel rail','Channel lists, history rails and related side surfaces.'],
-        ['chatBg','Conversation canvas','Large message/output area used by Virtual Health, Feed Him MEOW and Work.'],
+        ['chatBg','Conversation canvas','Large message/output area used by Virtual Health, Leisure and Work.'],
         ['userMessageBg','Your message surface','Background used for user-authored chat messages.'],
         ['onyxMessageBg','Onyx response surface','Background used for Onyx responses and generated-output cards.'],
         ['surface1','Quiet surface','Secondary rails, utility rows and low-emphasis containers.'],
