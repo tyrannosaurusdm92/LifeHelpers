@@ -1,3 +1,11 @@
+# Current OurSpace layout (October 29, 2026)
+
+The **Games** page is no longer part of either profile navigation. The same repository-root `Games/index.html` is now opened by Onyx's **Leisure** fullscreen. **Virtual & Health** fullscreen is intentionally empty apart from the top-right red X. The retired Feed Him MEOW and Happy Home code, assets, and exclusive data were removed from `OurSpace`.
+
+The Onyx chat backend is unchanged. The new `js/onyx/onyx-core/onyx-repository-bridge.js` adds bounded retrieval from the existing `Onyx/` brain source tree before the normal authenticated chat call. See [the cleanup and integration notes](ONYX_LEISURE_VIRTUAL_CLEANUP_2026-10-29.md). Historical material below describes retired layouts and should not be treated as current.
+
+---
+
 # CURRENT PROFILE ROUTING (2026-10-10)
 
 See [PROFILE_ROUTING.md](PROFILE_ROUTING.md). The current hosts are `assets/code/william.html` and `assets/code/jasper.html`, loaded after sign-in from existing root `ourspace.html`. There is no standalone `onyx.html`; the backdrop is a blank iframe. Historical Onyx notes below describe earlier packages.
