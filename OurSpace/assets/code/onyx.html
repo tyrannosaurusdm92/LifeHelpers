@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-profile="william" data-ourspace-profile="william" data-onyx-legacy-static="true">
+<head>
+<base href="../../">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<!-- Select the signed-in OurSpace profile BEFORE the shared Onyx scripts read it.
+     This page unifies the two existing profile hosts without merging private data. -->
+<script id="onyx-unified-profile-select">
+(function () {
+  'use strict';
+  const profiles = ['william', 'jasper'];
+  const read = store => { try { return store.getItem('ourspace.auth.profile') || ''; } catch (_) { return ''; } };
+  const saved = read(window.sessionStorage) || read(window.localStorage);
+  const requested = new URLSearchParams(location.search).get('profile');
+  const active = profiles.includes(saved) ? saved : profiles.includes(requested) ? requested : 'william';
+  document.documentElement.dataset.profile = active;
+  document.documentElement.dataset.ourspaceProfile = active;
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.dataset.profile = active;
+    const frame = document.getElementById('ourspaceProfileFrame');
+    if (frame) frame.title = (active === 'jasper' ? 'Jasper' : 'William') + ' profile content';
+  }, { once: true });
+})();
+</script>
+<script src="js/ourspace-core/color-mode.js"></script>
+<title>Onyx | OurSpace</title>
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx.css?v=20261016-visual-pass-2">
+<link rel="stylesheet" href="css/dbt/onyx-assignments.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx-module.css?v=20261021-onyx-widget-below-nav-1">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_advising_professor.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_caring.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_hungry.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_judgmental.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_listening.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_purring.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_sleepy.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_snuggly.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_thinking.css">
+<link rel="stylesheet" href="css/onyx/onyx-core/onyx_thoughtful.css">
+<script src="js/onyx/onyx-core/shared-onyx-currency.js"></script>
+
+<link rel="stylesheet" href="css/onyx/onyx-core/shared-runtime.css?v=feedhim-embedded-20261015-1">
+<!-- Only the mood art is changed. Existing frame, bubble sizing, layout,
+     menus, popout, module, interaction layers and canvas element are preserved. -->
+<style id="onyx-unified-legacy-mood-style">
+html[data-onyx-legacy-static="true"] #onyxWidget #onyxCanvas {
+  display: none !important;
+}
+html[data-onyx-legacy-static="true"] #onyxWidget #onyxFallback,
+html[data-onyx-legacy-static="true"] #onyxWidget #onyxFallback[hidden] {
+  display: block !important;
+  visibility: visible !important;
+}
+html[data-onyx-legacy-static="true"] body[data-onyx-standalone-viewport="ourspace-main-page"] > #ourspaceProfileFrame {
+  display: block !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 0 !important;
+}
+</style>
+</head>
+<body data-onyx-standalone-viewport="ourspace-main-page" data-profile="william">
+<iframe id="ourspaceProfileFrame" class="ourspace-profile-iframe" title="OurSpace profile content" src="about:blank" loading="eager"></iframe>
+<script src="js/onyx/onyx-core/shared-bootstrap.js"></script>
+
+
+<div id="onyxWidget" class="onyx-widget jump-nav profile-jump onyx-round-widget onyx-bubble-widget movable discord-layout-shell" data-jump-nav="onyx-widget" data-movable="true" data-layout="discord-inspired" data-size-state="hyper-reduced" data-state="sleepy" data-mood="sleepy" data-onyx-tab="health">
+  <button id="onyxBubble" class="onyx-bubble jump-orb" data-design-protected="bubble-interior" type="button" aria-label="Open Onyx" aria-expanded="false" aria-controls="onyxPopout">
+    <img data-design-protected="frame" class="jump-orb-frame" src="assets/images/shared/frame-black.svg" alt="" aria-hidden="true" draggable="false">
+    <span data-design-protected="alerts" class="onyx-alert-status" data-onyx-alert-status aria-hidden="true">
+      <span class="onyx-alert-reaction" data-onyx-alert-reaction></span>
+      <span class="onyx-alert-count" data-onyx-alert-count hidden></span>
+    </span>
+    <canvas data-design-protected="avatar" id="onyxCanvas" class="onyx-canvas" width="216" height="216" aria-label="Onyx"></canvas>
+    <img data-design-protected="avatar" id="onyxFallback" class="onyx-static-fallback" hidden alt="">
+    <span data-design-protected="bubble-status" id="onyxBubbleState" class="onyx-state-label">Sleepy</span>
+  </button>
+  <span class="onyx-sr-only" data-onyx-alert-live role="status" aria-live="polite" aria-atomic="true"></span>
+
+  <div id="onyxPopout" class="onyx-popout jump-panel bottom-drag-surface" data-bottom-drag-surface="widget" role="region" aria-label="Onyx" aria-hidden="true" tabindex="-1">
+    <header class="onyx-panel-header module-topbar">
+      <div class="onyx-panel-title"><strong>Onyx</strong><span id="onyxMoodText">Sleepy</span><span id="onyxMomentText">Sleepy</span><small id="onyxBackendStatus" class="onyx-backend-status" aria-live="polite">Connecting…</small></div>
+      <output class="onyx-wallet-badge" data-onyx-currency-balance aria-label="Shared Onyx wallet" title="Shared wallet · earn from games, widget tools, and Work">🟤0 ⚪0 🪙0 🔘0</output>
+      <button id="onyxClose" class="onyx-close" type="button" aria-label="Close">×</button>
+    </header>
+    <div id="onyxSpeech" class="onyx-speech module-speech" aria-live="polite">Zzz.</div>
+
+    <div class="jump-tabs" role="tablist" aria-label="Onyx tabs">
+      <button class="jump-tab is-active" id="onyx-tab-health" data-tab="health" data-onyx-tab-button="health" role="tab" aria-selected="true" aria-controls="onyx-pane-health" type="button">Virtual &amp; Health</button>
+      <button class="jump-tab" id="onyx-tab-leisure" data-tab="leisure" data-onyx-tab-button="leisure" role="tab" aria-selected="false" aria-controls="onyx-pane-leisure" type="button">Leisure</button>
+      <button class="jump-tab" id="onyx-tab-work" data-tab="work" data-onyx-tab-button="work" role="tab" aria-selected="false" aria-controls="onyx-pane-work" type="button">Work</button>
+      <button class="jump-tab" id="onyx-tab-design" data-tab="design" role="tab" aria-selected="false" aria-controls="onyx-pane-design" type="button">Design</button>
+    </div>
+
+    <div class="jump-content">
+      <section class="jump-pane is-active" id="onyx-pane-health" data-pane="health" data-onyx-tab-panel="health" role="tabpanel" aria-labelledby="onyx-tab-health"></section>
+      <section class="jump-pane" id="onyx-pane-leisure" data-pane="leisure" data-onyx-tab-panel="leisure" role="tabpanel" aria-labelledby="onyx-tab-leisure" hidden></section>
+      <section class="jump-pane" id="onyx-pane-work" data-pane="work" data-onyx-tab-panel="work" role="tabpanel" aria-labelledby="onyx-tab-work" hidden>
+        <div class="pane-toolbar"><h2 class="pane-title">Work</h2></div>
+        <div class="work-fullscreen-launch-card module-design-section">
+          <strong>Onyx Work</strong>
+          <p>Open the full Work workspace with subtabs, chat, attachments, image creation, and the project catalog.</p>
+          <button id="onyxOpenWorkFullscreen" class="module-design-button" type="button">Open Work fullscreen</button>
+        </div>
+      </section>
+      <section class="jump-pane" id="onyx-pane-design" data-pane="design" role="tabpanel" aria-labelledby="onyx-tab-design" hidden>
+        <div class="pane-toolbar"><h2 class="pane-title">Design</h2></div>
+        <div class="module-design-shell" data-module-design-shell>
+          <p class="module-design-intro">Style the Onyx tabs and the outer bubble border. Onyx, everything inside his frame, alerts, reactions, icons, and emoji are protected from Design.</p>
+          <section class="module-design-accessibility" aria-labelledby="onyx-design-theme-title">
+            <div class="module-design-accessibility-row">
+              <label id="onyx-design-theme-title" for="onyxDesignTheme">Theme</label>
+              <select id="onyxDesignTheme" data-module-theme-mode aria-describedby="onyxDesignContrastStatus">
+                <option value="auto">Auto (system)</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="custom">Custom</option>
+              </select>
+              <button class="module-design-button" data-module-design-contrast-repair type="button">Repair contrast</button>
+            </div>
+            <div id="onyxDesignContrastStatus" class="module-design-contrast-status" data-module-design-contrast-status role="status" aria-live="polite"></div>
+          </section>
+          <details class="module-design-section" open>
+            <summary>Module Layout</summary>
+            <div class="module-design-layout-grid">
+              <label><span>Text size</span><select data-module-text-size><option value="small">Small</option><option value="standard">Standard</option><option value="large">Large</option><option value="xlarge">Extra large</option></select></label>
+              <label><span>Chat density</span><select data-module-density><option value="compact">Compact</option><option value="comfortable">Comfortable</option><option value="spacious">Spacious</option></select></label>
+              <label><span>Corner style</span><select data-module-rounding><option value="square">Square</option><option value="slight">Slight</option><option value="rounded">Rounded</option></select></label>
+            </div>
+          </details>
+          <details class="module-design-section" open>
+            <summary>Saved Looks</summary>
+            <div class="module-design-presets" data-module-design-presets></div>
+            <div class="module-design-preset-editor">
+              <input class="module-design-preset-name" data-module-design-preset-name maxlength="40" aria-label="Preset name">
+              <div class="module-design-preset-actions">
+                <button class="module-design-button" data-module-design-preset-apply type="button">Apply</button>
+                <button class="module-design-button" data-module-design-preset-save type="button">Save Current</button>
+                <button class="module-design-button" data-module-design-preset-rename type="button">Rename</button>
+                <button class="module-design-button" data-module-design-preset-clear type="button">Clear</button>
+                <button class="module-design-button" data-module-design-export type="button">Export looks</button>
+                <button class="module-design-button" data-module-design-import type="button">Import looks</button>
+                <input data-module-design-import-file type="file" accept="application/json,.json" hidden>
+              </div>
+            </div>
+          </details>
+          <div data-module-design-groups></div>
+          <div class="module-design-actions"><button class="module-design-button" data-module-design-reset type="button">Reset</button></div>
+          <div class="module-design-status" data-module-design-status aria-live="polite"></div>
+        </div>
+      </section>
+    </div>
+  <details id="onyxDbtWidget" class="onyx-dbt-widget" aria-label="Professor Onyx DBT practice">
+    <summary>📚 Professor Onyx · DBT practice <span id="onyxDbtCount" class="onyx-dbt-count"></span></summary>
+    <div id="onyxDbtWidgetContent" class="onyx-dbt-content"></div>
+  </details>
+
+  </div>
+
+  <button id="onyxFullscreenExit" class="fullscreen-exit" data-global-fullscreen-exit type="button" aria-label="Exit Game" title="Exit Game">×</button>
+  <div class="widget-toast" role="status" aria-live="polite"></div>
+</div>
+
+
+<section id="slowPetGame" class="onyx-fullscreen-shell-host onyx-empty-fullscreen" aria-label="Virtual &amp; Health fullscreen" hidden>
+  <button id="slowGameExit" class="fullscreen-shell-exit" type="button" aria-label="Exit Virtual &amp; Health" title="Exit Virtual &amp; Health">×</button>
+</section>
+<section id="onyxLeisureFullscreen" class="onyx-leisure-game-host" aria-label="LifeHelpers Games fullscreen" hidden>
+  <iframe id="onyxLeisureGameFrame" class="onyx-leisure-game-frame" title="LifeHelpers Games" src="about:blank" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-downloads allow-pointer-lock" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write" allowfullscreen></iframe>
+  <button id="onyxLeisureGameExit" class="fullscreen-shell-exit" type="button" aria-label="Exit Games" title="Exit Games">×</button>
+</section>
+
+<section id="onyxWorkFullscreenShell" class="onyx-fullscreen-shell-host onyx-work-fullscreen-host" aria-label="Work fullscreen" hidden>
+  <iframe id="onyxWorkFullscreenFrame" class="onyx-fullscreen-shell-frame" title="Onyx Work" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-downloads"></iframe>
+  <button id="onyxWorkFullscreenExit" class="fullscreen-shell-exit" type="button" aria-label="Exit Work" title="Exit Work">×</button>
+</section>
+
+
+
+
+
+<script src="js/onyx/onyx-core/onyx-config.js"></script>
+<script src="js/onyx/onyx-core/onyx-atlas.js"></script>
+<script src="js/onyx/onyx-core/onyx-mood.js"></script>
+<script src="js/onyx/onyx-core/onyx-scanner.js"></script>
+<script type="module" src="js/onyx/onyx-core/onyx-repository-bridge.js"></script>
+<script src="js/onyx/onyx-core/brain-link.js"></script>
+<script src="js/onyx/onyx-core/onyx-behavior.js"></script>
+<script src="js/onyx/onyx-core/onyx-voice.js"></script>
+<script src="js/onyx/onyx-core/onyx-alerts.js"></script>
+<script src="js/onyx/onyx-core/onyx-media.js"></script>
+<script src="js/onyx/onyx-core/onyx-ui.js?v=9af239327b64"></script>
+<script src="js/onyx/onyx-core/onyx-responsive-resize.js"></script>
+<script src="js/onyx/onyx-core/onyx-signature-parts.js"></script>
+<script src="js/onyx/onyx-core/onyx_advising_professor.js"></script>
+<script src="js/onyx/onyx-core/onyx_caring.js"></script>
+<script src="js/onyx/onyx-core/onyx-mood-renderers.js"></script>
+<script src="js/onyx/onyx-core/onyx_hungry.js"></script>
+<script src="js/onyx/onyx-core/onyx_judgmental.js"></script>
+<script src="js/onyx/onyx-core/onyx_listening.js"></script>
+<script src="js/onyx/onyx-core/onyx_purring.js"></script>
+<script src="js/onyx/onyx-core/onyx_sleepy.js"></script>
+<script src="js/onyx/onyx-core/onyx_snuggly.js"></script>
+<script src="js/onyx/onyx-core/onyx_thinking.js"></script>
+<script src="js/onyx/onyx-core/onyx_thoughtful.js"></script>
+<script src="js/onyx/onyx-core/onyx-core.js"></script>
+<script src="js/dbt/onyx-assignments.js" defer></script>
+<script src="js/onyx/onyx-core/onyx-runtime.js"></script>
+<script src="js/onyx/onyx-core/shared-shells.js?v=20261016-visual-pass-4"></script>
+<script src="js/onyx/onyx-core/shared-runtime.js?v=20261016-visual-pass-4"></script>
+<script src="js/onyx/onyx-core/shared-onyx-income.js"></script>
+<script src="js/onyx/onyx-core/shared-onyx-audio-votes.js"></script>
+<script src="js/ourspace-core/backend-client.js"></script>
+<script src="js/ourspace-core/profile-access.js?v=20261021-retrobuilder-layout-repair-1"></script>
+<!-- Keep all ten original mood states and behavior transitions; use only
+     their legacy static PNGs in the visible Onyx widget portrait. -->
+<script id="onyx-unified-legacy-mood-controller">
+(function () {
+  'use strict';
+  const widget = document.getElementById('onyxWidget');
+  const portrait = document.getElementById('onyxFallback');
+  if (!widget || !portrait) return;
+  const moods = Object.freeze({
+    advising_professor: 'onyx_advising_professor.png',
+    caring: 'onyx_caring.png',
+    hungry: 'onyx_hungry.png',
+    judgmental: 'onyx_judgmental.png',
+    listening: 'onyx_listening.png',
+    purring: 'onyx_purring.png',
+    sleepy: 'onyx_sleepy.png',
+    snuggly: 'onyx_snuggly.png',
+    thinking: 'onyx_thinking.png',
+    thoughtful: 'onyx_thoughtful.png'
+  });
+  const folder = new URL('assets/images/shared/legacy-static/', document.baseURI);
+  const normalize = value => {
+    const original = String(value || '').trim().toLowerCase();
+    const candidate = window.OnyxMoodContract?.normalizeOrNull?.(original)
+      || original.replace(/^onyx_/, '').replace(/[\\s-]+/g, '_');
+    return Object.hasOwn(moods, candidate) ? candidate : 'sleepy';
+  };
+  let currentMood = '';
+  let currentUrl = '';
+  function sync() {
+    const mood = normalize(widget.dataset.mood || widget.dataset.state);
+    const url = new URL(moods[mood], folder).href;
+    if (mood !== currentMood) {
+      currentMood = mood;
+      currentUrl = url;
+      portrait.alt = 'Onyx, ' + mood.replaceAll('_', ' ');
+    }
+    // The unchanged core may try its older fallback path if procedural drawing fails.
+    // Correct the src without interfering with any other widget functionality.
+    if (portrait.getAttribute('src') !== currentUrl) portrait.setAttribute('src', currentUrl);
+  }
+  portrait.decoding = 'async';
+  portrait.draggable = false;
+  sync();
+  const watch = new MutationObserver(sync);
+  watch.observe(widget, { attributes: true, attributeFilter: ['data-mood', 'data-state'] });
+  watch.observe(portrait, { attributes: true, attributeFilter: ['src'] });
+  window.addEventListener('onyx:core-ready', sync);
+  window.addEventListener('onyx:mood-change', sync);
+})();
+</script>
+</body>
+</html>
