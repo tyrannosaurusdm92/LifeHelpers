@@ -243,7 +243,7 @@ html[data-onyx-legacy-static="true"] body[data-onyx-standalone-viewport="ourspac
   const normalize = value => {
     const original = String(value || '').trim().toLowerCase();
     const candidate = window.OnyxMoodContract?.normalizeOrNull?.(original)
-      || original.replace(/^onyx_/, '').replace(/[\\s-]+/g, '_');
+      || original.replace(/^onyx_/, '').replace(/[\s-]+/g, '_');
     return Object.hasOwn(moods, candidate) ? candidate : 'sleepy';
   };
   let currentMood = '';
