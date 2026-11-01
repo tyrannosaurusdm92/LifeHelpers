@@ -1,0 +1,3 @@
+# Replacement modules source
+
+All twelve modules were taken from the supplied profile-modules.zip. Each original functional controller is retained with its single DOM-root lookup scoped to its own module ID. The twelve canonical CSS files contained identical bytes, so the single shared stylesheet was scope-rewritten to prevent body/html and generic selectors from restyling unrelated sections. Original independent design widgets were replaced with nine module-specific part controls for each replacement in the existing OurSpace designer; no second floating design widget was added. No standalone replacement HTML files are included.

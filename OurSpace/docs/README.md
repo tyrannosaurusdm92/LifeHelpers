@@ -1,59 +1,86 @@
-# Current OurSpace layout (October 29, 2026)
+**Current Communication integration:** See [COMMUNICATION-MODULE-INTEGRATION.md](COMMUNICATION-MODULE-INTEGRATION.md). The blank Communication page is replaced by a native working Communication module in both William and Jasper HTML files. The existing Sidebar Messenger / scroll-wheel and page share one messaging instance, with no iframe or second messenger. William `#admin` now edits Communication and exports `communication.json`; Store placement has been retired, with the supplied `stores.json` installed as read-only geometry.
 
-The **Games** page is no longer part of either profile navigation. The same repository-root `Games/index.html` is now opened by Onyx's **Leisure** fullscreen. **Virtual & Health** fullscreen is intentionally empty apart from the top-right red X. The retired Feed Him MEOW and Happy Home code, assets, and exclusive data were removed from `OurSpace`.
+**Current Store integration:** See [STORE-INTEGRATION.md](STORE-INTEGRATION.md). Store is now a native page in both profiles: William sees Dino Store, Jasper sees Squishy Store. The supplied Store geometry is now locked; `communication.json` replaces the Store layout export. The attached Journal/Diary `bulletin.json` layout is preserved, and the former Journal & Diary placement editor is retired.
 
-The Onyx chat backend is unchanged. The new `js/onyx/onyx-core/onyx-repository-bridge.js` adds bounded retrieval from the existing `Onyx/` brain source tree before the normal authenticated chat call. See [the cleanup and integration notes](ONYX_LEISURE_VIRTUAL_CLEANUP_2026-10-29.md). Historical material below describes retired layouts and should not be treated as current.
+**Latest module integration:** See [JOURNAL-DIARY-INTEGRATION.md](JOURNAL-DIARY-INTEGRATION.md). Journal & Diary Cards are now implemented in the original profile HTML files with William-only admin layout editing. Visual/Audio/Feed remain functional but their previous layout editor was removed.
 
----
+# OurSpace · MySpace-style rebuild
 
-# CURRENT PROFILE ROUTING (2026-10-10)
+Start the site at `ourspace.html` when hosted over HTTPS (or localhost for testing). The supplied PNG is used as the large login illustration and as the PWA icon source. The attached OurSpace cottage emblem is also the 100×100 movable design bubble. No external JS/CSS frameworks or vendor build steps are needed.
 
-See [PROFILE_ROUTING.md](PROFILE_ROUTING.md). The current hosts are `assets/code/william.html` and `assets/code/jasper.html`, loaded after sign-in from existing root `ourspace.html`. There is no standalone `onyx.html`; the backdrop is a blank iframe. Historical Onyx notes below describe earlier packages.
+## Exactly four HTML files
 
----
+- `ourspace.html`: landing/sign-in and code recovery dialog. No profile identity choices are exposed in normal login.
+- `assets/code/william.html`: William's classic profile, read-only public profile and the nine intentionally blank destinations.
+- `assets/code/jasper.html`: Jasper's equivalent profile, read-only public profile and the nine blank destinations.
+- `assets/code/design-widget.html` was previously an independent standalone copy; this absorbed shell has been removed. The integrated Quill widget remains in `script/design-widget.js` and `style/design-widget.css`, without an iframe or Shadow DOM.
 
-# Onyx Module — Frame-by-Frame Research and Work Fullscreen Pass 7
+## Navigation
 
-Drop-in frontend for the tested OurSpace Onyx backend. The backend is not included or replaced.
+When signed in, a person's profile is `assets/code/<profile>.html?page=profile`. Each other destination uses `?page=household`, `journal`, `diary`, `feed`, `skills`, `communication`, `audio`, `visual`, or `store`. Journal and Diary are now fused in the implemented Journal & Diary Cards page; the old Diary URL redirects to the Diary tab. Household and Skills remain deliberately white/empty; the floating design bubble and compact master navigation remain accessible. **The Journal/Diary components and a catalog-based fake-currency Store are included; a connected checkout backend is not guaranteed in the static package.** The profile alone includes MySpace-style identity, interests, details, contact, tags, music, bulletins, posts, photos, links, projects and guestbook.
 
-## Runtime
-- `assets/code/onyx.html`
-- exactly 20 JavaScript files in `js/`
-- one WASM core in `script/`
-- shared-safe JSON only in `json/`
-- existing CSS and assets preserved
+The master nav can move and collapse. Its export saves a snapshot, not a complete account backup. The page modules can collapse and are vertically resizable. The design widget can be dragged, opened, and closed with its red X.
 
-## Privacy architecture
-Profile-private knowledge is not shipped as frontend data bundles. The browser sends authenticated profile context to the existing backend, which remains authoritative for private/profile-scoped retrieval. Frontend profile keys are routing metadata, not authorization.
+## Design scope
 
-## This pass
-- removed dormant private/profile knowledge bundles from the deployable client
-- made local data runtime shared-safe/backend-first
-- narrowed Drive retrieval to explicit/bound personal context
-- made attachments per-message after successful send
-- parses up to 12 attachments with bounded concurrency (3) and URL fetches with bounded concurrency (2)
-- compressed/lazy-loaded behavior and mood atlases instead of eagerly parsing raw atlas files
-- consolidated JS to the requested 20 filenames, JSON to 5 files, docs to 8 files
-- merged the complete Work workspace into the single-page package while preserving its CSS, JavaScript, JSON, mood images, and relative paths
-- added a Work fullscreen shell with the large red exit X and synchronized module Design palette
-- renamed the user-facing Health tab and fullscreen to Virtual Health
-- kept the Feed Him MEOW button/fullscreen name and made that fullscreen view blank
+Each person and page has a separate design state key (`ourspace.design.v2.<profile>.<page>`). The designer scans the current DOM for `data-design-target` + `data-design-label`, so adding a future module automatically creates an editable target, not a code-injection box. Users select type-specific targets, edit color via color wheel or hex code, font, spacing, images, borders, scrollbars, save looks, export CSS/JSON, and copy matching targets to another page or common styles sitewide. A copied style only applies when the target ID and target kind match; profile-only modules never transfer to unrelated pages. The designer runs in the normal DOM and does not permit arbitrary code pasted into About Me.
 
-Authoritative master SHA-256: `c19441d70441e3c5273b2a8a3750df6c563582a80378c67e4a8017eda35260ac`
+## State, privacy, and sync caveat
 
-## Current Onyx sprite sources
+`#admin` in **both** login fields opens a local preview chooser. Preview state remains device-local and must never be interpreted as a backend administrator account. Ordinary sign-in calls the server-side authentication gateway; no special client-side name/password bypass exists.
 
-The module bubble uses the code-first chest-up mood renderer in `js/onyx/onyx-core/onyx-mood-renderers.js`. The ten `https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/shared/legacy-static/onyx_*.png` files are fallback images. The Virtual Health actors use the current Studio quadruped and Professor atlases under `https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/images/games/virtual/atlases`; the legacy standalone atlas is not included. `js/onyx/onyx-core/onyx-atlas.js` is a zero-byte compatibility placeholder, not the module's visual renderer.
+Private profile data are stored locally only in preview, and are sent through the account backend in normal mode (`profile.get`/`profile.save`). The current design storage is browser-local with a portable JSON export, and supports **optional** server sync actions. The supplied backend's acceptance of these actions has not been verified. **Cross-device profile design sync is not guaranteed until the existing backend and hosting gateway implement/test the compatible design get/save contract.** Do not put a private Apps Script URL or access token in frontend files.
 
+## Installation
 
-## Standalone OurSpace page-size viewport
+`ourspace.webmanifest`, `service-worker.js`, and the 180/192/256/512 PNG icons are present. On a supported HTTPS browser, the Download button requests installation when available; iOS users follow Add to Home Screen. Installed PWAs share the site origin's account authentication rather than a device-specific profile. Cached content is only the static app shell; API responses and user data are never cached by the service worker.
 
-The standalone `assets/code/onyx.html` preview now uses a blank white host canvas sized from the lightweight RetroSite/OurSpace page reference: `960px` desktop width, `max-width: calc(100% - 20px)`, and `min-height: 100vh`. At `850px` and below it expands to the available width. The RetroSite template itself is not included, and none of its visual design or content has been copied into this package. This sizing applies only to the standalone preview body marked `data-onyx-standalone-viewport="ourspace-main-page"`; it does not alter the 190×190 hyper-reduced Onyx bubble contract.
+The folders are exactly `js`, `css`, `json`, `docs`, and `assets` containing `images`, `audio`, `code`. There are no scripts for Windows, native app bundles, additional HTML pages, or nested subdirectories elsewhere.
 
+## Latest design-widget improvement
 
-## Current fullscreen controls
-- Virtual Health exposes a **Virtual Health** action that opens its fullscreen view.
-- Feed Him MEOW exposes **Feed Him MEOW** to launch the intentionally blank fullscreen shell in this pass.
-- Work exposes **Open Work fullscreen**, with its complete workspace and the large red X.
-- The large red X returns to the widget/module.
-- `#admin` remains only as the module chat-testing marker; the game sprite editor was removed.
+See `docs/DESIGN-PRESET-CATEGORY-LIVE-PREVIEW.md` for six required categories, eight-at-a-time loading, immediate on-profile previews, and the Keep/Undo confirmation workflow.
+
+## Updated Images tab (121 reference images)
+
+See `docs/BACKGROUND-IMAGE-LIBRARY.md` for filtering, lazy previews, Keep/Undo, and licensing notes. The image links and file/license sources are preserved in `json/background-image-library.json`; the original user-provided text reference is also in `docs/background-image-links-source.txt`. Six categories and 58 interests are available. Each profile and blank page can browse this collection without loading all images, and the standalone `assets/code/design-widget.html` includes the same image library.
+
+## Safe presets and admin removals
+
+The design widget now applies geometry-safe styles only. The previous layout/image deletion interface has been removed. The existing `json/deleted.json` denylist remains so removed catalog entries cannot return. See `docs/DELETIONS-AND-SAFE-PRESETS.md` for the merge-only deletion policy.
+
+## Current catalog migration
+
+See `docs/REMOVALS_AND_DRIVE_MIGRATION.md`, `json/deleted.json`, and `json/drive-image-library.json`. Deletion requests from `choices.json` have been implemented into both designer catalogs. Drive originals are not in this package.
+
+## Integrated replacement record player (this revision)
+
+The original profile record-player markup, CSS, and playback listeners have been deleted and replaced by the turntable and waveform supplied in `01_Record_Player.zip`. Hardware HTML is embedded directly in `assets/code/william.html` and `assets/code/jasper.html`, with no separate `record_player.html`, iframe or Shadow DOM. The profile designer now includes 19 precise record-player hardware targets. **Only `william.html?page=profile` in `#admin` preview has in-flow drag/reorder and all eight resize handles**. The exported `record-player.json` stores William’s chosen position and dimensions; send it back with the package so it can become the shipped default. Jasper has the same player but no placement editor. See `docs/RECORD-PLAYER-REPLACEMENT.md`.
+
+## Record player: whole-artwork proportional resizing (new)
+
+On `william.html` in `#admin` mode, drag any side/corner of the player. The record, tonearm, metadata text, waveform, transport buttons, and playlist/details shrink or grow **together**; the section itself grows or shrinks to fit without hiding its contents. The music player stays in the regular column flow and pushes the sections below it down/up. The admin editing toolbar remains legible at small sizes. Drag the Move handle to change section order or column. **Save & export record-player.json** records the rendered dimensions and precise artwork scale, then send it with this ZIP to install that default. Jasper retains the functioning player without admin handles. The backend and design widget are unchanged. See `docs/RECORD-PLAYER-REPLACEMENT.md`.
+
+## Current module phase: Bulletin Board
+
+The old profile bulletin post form was replaced by the complete native Bulletin Board in both profile HTML files. The record-player editor was retired and the user-supplied `record-player.json` is now the packaged default. William has a new #admin-only move/resize editor for the complete Bulletin Board which exports `bulletin.json`; Jasper has the bulletin but not the editor. See `docs/BULLETIN-BOARD-INTEGRATION.md`.
+
+## Links Module pass
+
+See `docs/LINKS-MODULE-REPLACEMENT.md` for the new Links Module, packaged bulletin placement, nine design parts, and William-only admin proportional resize/move editor.
+
+## Twelve profile-module replacements
+
+See `docs/PROFILE-MODULES-REPLACEMENT.md` for William-only 12-module admin editing, independent whole-content resizing, placement exports, and the finalized Links Module position.
+
+## October 31: Profile picture, jump navigation, fixed footer Messenger
+
+The user-exported 12 `profile-modules.json` placements are adopted as the default. The 12-module editor is gone. The new portrait picture uploader/cropper and independent page-specific jump navigation are on profile pages; see `docs/PROFILE-PICTURE-JUMP-NAV-FOOTER.md`. The footer Messenger is mounted in William and Jasper HTML and remains visible across blank destinations, with the original messenger runtime and browser-local message storage. The 40px bar stays fixed at the viewport bottom; in William #admin its chat window is resizable and exports the same `profile-modules.json` name with 12 frozen modules plus a footer record. Account/device sync depends on compatible backend actions and is not certified.
+
+## Sidebar Messenger rail (current pass)
+
+`docs/SIDEBAR-MESSENGER-INTEGRATION.md` explains the replacement of the previous footer, the 47 design controls and William-only `sidebar-messenger.json` editor. The right rail has the integrated vertical scrollbar and six left-opening menus, with no separate module HTML. The native page scrollbar is visually hidden while the rail is mounted.
+
+## Page Fill-Ins (Visual, Feed, Audio)
+
+The three real page implementations are now embedded in William/Jasper profile HTML routes (no additional HTML). See `docs/PAGE-FILLS-INTEGRATION.md` for placement editor behavior and the three links to existing profile modules. The approved sidebar width is frozen and no longer shows admin resize handles.

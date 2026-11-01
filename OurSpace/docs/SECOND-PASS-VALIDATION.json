@@ -1,0 +1,35 @@
+{
+  "schema": "ourspace.lossless-replacement-pass2.v1",
+  "basePackage": "OurSpace_Lossless_Integration_Pass.zip",
+  "crossCheckedOriginal": "OurSpace_Final_Modules_Admin_Integrated(2).zip",
+  "originalFiles": 547,
+  "originalByteIdentical": 427,
+  "originalModifiedOrRelocated": 119,
+  "originalMissingUnaccounted": [],
+  "intentionalAbsorbedHtmlRemovals": [
+    "assets/code/design-widget.html"
+  ],
+  "releaseFileCount": 721,
+  "releaseHtmlCount": 107,
+  "releaseDBTHtmlCount": 102,
+  "javascriptFilesSyntaxPassed": 178,
+  "jsonFilesParsed": 71,
+  "localHtmlReferencesChecked": 1142,
+  "serviceWorkerCachePathsVerified": 152,
+  "browserTestsFile": "docs/SECOND-PASS-BROWSER-TESTS.json",
+  "browserTestScope": "Isolated DOM with original HTML and CSS, shared Quill JS injected. Not production backend calls.",
+  "githubRepositoryReplaced": false,
+  "gitHubOnlyOurSpaceTarget": true,
+  "siblingFoldersModified": false,
+  "backendFileIncluded": false,
+  "backendDeployedOrTested": false,
+  "installedAppOSBadgeGuarantee": false,
+  "targetCompressedKB": [
+    100000,
+    150000
+  ],
+  "errors": [],
+  "browserPagesTested": 18,
+  "browserErrorsReported": 0,
+  "browserGeometryRegressions": 0
+}

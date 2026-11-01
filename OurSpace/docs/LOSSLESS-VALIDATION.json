@@ -1,0 +1,50 @@
+{
+  "schema": "ourspace.lossless-integration-validation.v1",
+  "generatedAt": "2026-11-01T18:56:04.760984+00:00",
+  "inputArchive": "OurSpace_Final_Modules_Admin_Integrated(1).zip",
+  "inputCompressedBytes": 54715966,
+  "inputFiles": 547,
+  "inputByteForByteUnchanged": 433,
+  "inputModifiedOrRelocated": 114,
+  "inputMissing": [],
+  "outputFiles": 719,
+  "htmlFileCount": 108,
+  "htmlFilePolicy": "No additional absorbed module HTML; allowed originals and 102 DBT worksheet/handout files retained.",
+  "jsCheckPassed": 178,
+  "jsCheckFailed": [],
+  "dirPolicy": [
+    "script",
+    "style",
+    "assets",
+    "json",
+    "docs"
+  ],
+  "notIncluded": [
+    "backend source file",
+    "archive padding",
+    "MySpace duplicate zip packages"
+  ],
+  "isolateBrowserChecks": {
+    "profilesPages": [
+      "william journal",
+      "william communication",
+      "william skills",
+      "jasper household"
+    ],
+    "designWidget": "initialized, page-specific target counts > 0",
+    "jumpNav": "single instance",
+    "javascriptErrors": 0,
+    "journalPresetGeometry": "unchanged at 1440x900 in a CSS/DOM isolated preview"
+  },
+  "hostedBackendVerified": false,
+  "gitHubRepositoryModified": false,
+  "installedAppIconEmojiGuarantee": false,
+  "sizeTargetCompressedKB": [
+    100000,
+    150000
+  ],
+  "sizeTargetMet": false,
+  "note": "Only original, nonduplicated modules and media are shipped. We have not added filler or archived absorbed HTML merely to force archive size.",
+  "outputCompressedKBApprox": 58170,
+  "outputCompressedKBStatus": "The actual size is shown alongside the ZIP in OurSpace_Integration_Validation.json."
+}
