@@ -90,6 +90,7 @@ window.addEventListener('storage',e=>{if(e.key?.startsWith('ourspace.onyx.profes
 window.addEventListener('focus',()=>ingestProfessorTasks());
 window.addEventListener('ourspace:onyx-task-saved',ingestProfessorTasks);
 setTimeout(ingestProfessorTasks,0);
+setTimeout(()=>{void window.OurSpaceModuleBridge?.syncFromBackend?.({force:true});},3300);
 
 function member(id=state.currentMemberId){return state.household.members.find(m=>m.id===id)||state.household.members[0];}
 function logActivity(text,kind='info'){state.activity.unshift({id:uid('activity'),text,kind,at:nowIso(),memberId:state.currentMemberId});state.activity=state.activity.slice(0,250);}

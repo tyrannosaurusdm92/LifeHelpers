@@ -6,8 +6,6 @@
   const TZ = 'America/New_York';
   const SECTIONS = Object.freeze([
     {id:'session', name:'Support Session', short:'☏', topic:'Empathetic listening, emotional check-ins, and planning a practical next step.', prompts:[['Start check-in','I need a therapy session'],['Talk it through','Could you listen without trying to fix everything right away?'],['Reflect','Can you help me name what I am feeling and what I need?']]},
-    {id:'dbt', name:'DBT Skills', short:'DBT', topic:'Dialectical behavior therapy skills: distress tolerance, emotion regulation, mindfulness, interpersonal effectiveness.', prompts:[['Choose a skill','Help me choose a DBT skill for what I am facing.'],['STOP','Walk me through the STOP skill step by step.'],['DEAR MAN','Help me practice DEAR MAN with an example.']]},
-    {id:'worksheet', name:'DBT Worksheets', short:'✎', topic:'Practice a worksheet together with concrete prompts and a summary you can export.', prompts:[['Chain analysis','Help me complete a DBT behavior chain analysis, one question at a time.'],['Check the facts','Guide me through a Check the Facts worksheet.'],['Pros and cons','Work through a DBT pros-and-cons worksheet with me.']]},
     {id:'psychoeducation', name:'Psychology & Preparation', short:'Ψ', topic:'Psychoeducation, coping strategies, and questions for a qualified clinician.', prompts:[['Appointment preparation','Help me organize questions for my mental-health clinician.'],['Understanding patterns','Explain emotional regulation in plain language without diagnosing me.'],['Weekly reflection','Guide a gentle weekly reflection on coping skills and things to discuss with my provider.']]}
   ]);
   const $ = id => document.getElementById(id);

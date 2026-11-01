@@ -18,8 +18,41 @@
   try{const rows=list(profile).filter(item=>item.pairId!==record.pairId);rows.unshift(record);localStorage.setItem(PREFIX+profile,JSON.stringify(rows.slice(0,180)));window.dispatchEvent(new CustomEvent('ourspace:onyx-task-saved',{detail:{profile,pairId:record.pairId}}));return {ok:true,record};}
   catch(_){return {ok:false,error:'Local storage is unavailable. Try opening Household from its own page.'}}
  }
+
+ const TASK_BUCKET='onyx.homework';
+ async function syncRecordToBackend(record){
+  const backend=window.OurSpaceBackend;
+  if(window.OnyxTester?.active?.()||!backend?.request||!backend?.isAuthenticated?.()||backend.profile?.()!==record.profile)return false;
+  const result=await backend.request('record.save',{profileKey:record.profile,bucket:TASK_BUCKET,key:record.pairId,
+   recordId:'onyx_hw_'+record.profile+'_'+record.pairId+'_'+Date.now().toString(36),
+   value:{pairId:record.pairId,title:record.title,module:record.module,reason:record.reason,createdAt:record.createdAt}});
+  return result?.ok!==false;
+ }
+ let lastSync=0,syncPending=null;
+ async function syncFromBackend({force=false}={}){
+  const profile=activeProfile(),backend=window.OurSpaceBackend;
+  if(!isProfile(profile)||window.OnyxTester?.active?.()||!backend?.request||!backend?.isAuthenticated?.()||backend.profile?.()!==profile)return false;
+  if(syncPending)return syncPending;
+  if(!force&&Date.now()-lastSync<180000)return false;
+  syncPending=(async()=>{
+   const result=await backend.request('record.list',{bucket:TASK_BUCKET});
+   if(result?.ok===false||!Array.isArray(result.records))return false;
+   const pairs=new Map((window.OnyxDBTAssignments?.pairings?.()||[]).map(p=>[p.id,p]));
+   const known=new Set(list(profile).map(p=>p.pairId));let saved=0;
+   for(const row of result.records){
+    let data=row.json??row.Json??row.value??row.Value;
+    if(typeof data==='string'){try{data=JSON.parse(data)}catch(_){continue}}
+    if(!data||typeof data!=='object')continue;
+    const pair=pairs.get(data.pairId);if(!safePair(pair)||known.has(pair.id))continue;
+    const r=saveAssignment(pair,{profile,reason:data.reason||'Professor Onyx homework'});
+    if(r.ok){known.add(pair.id);saved++}
+   }
+   lastSync=Date.now();return saved>0;
+  })().catch(()=>false).finally(()=>{syncPending=null});
+  return syncPending;
+ }
  function attachSaveButton(card,pair,profile=activeProfile(),reason='DBT practice'){
-  if(!safePair(pair))return null;const b=document.createElement('button');b.type='button';b.className='onyx-save-to-tasks';b.textContent='Save to Tasks';b.addEventListener('click',()=>{const r=saveAssignment(pair,{profile,reason});b.textContent=r.ok?'Saved to Household Tasks':r.error;b.disabled=!!r.ok;});card.append(b);return b;
+  if(!safePair(pair))return null;const b=document.createElement('button');b.type='button';b.className='onyx-save-to-tasks';b.textContent='Add to tasks';b.addEventListener('click',async()=>{if(window.OnyxTester?.active?.()){b.textContent='Unavailable in read-only tester mode';return;}b.disabled=true;b.textContent='Saving…';const r=saveAssignment(pair,{profile,reason});if(!r.ok){b.textContent=r.error;b.disabled=false;return;}try{const synced=await syncRecordToBackend(r.record);b.textContent=synced?'Added to Household tasks':'Added locally · account sync pending';}catch(_){b.textContent='Added locally · account sync pending';}});card.append(b);return b;
  }
  function createAssignmentCard(pair,profile=activeProfile(),reason='DBT practice'){
   if(!safePair(pair))return null;const card=document.createElement('aside');card.className='onyx-dbt-chat-card onyx-professor-resource';
@@ -28,5 +61,9 @@
   for(const [label,view] of [['Read handout','handouts'],['Open editable worksheet','worksheets']]){const a=document.createElement('a');a.href=resourceUrl(pair,view,profile);a.target='_blank';a.rel='noopener noreferrer';a.textContent=label;card.append(a);}
   attachSaveButton(card,pair,profile,reason);return card;
  }
- window.OurSpaceModuleBridge=Object.freeze({list,saveAssignment,resourceUrl,createAssignmentCard,attachSaveButton,activeProfile});
+ window.OurSpaceModuleBridge=Object.freeze({list,saveAssignment,syncFromBackend,resourceUrl,createAssignmentCard,attachSaveButton,activeProfile});
+ function refresh(){void syncFromBackend();}
+ window.addEventListener('focus',refresh);window.addEventListener('onyx:profile-change',()=>{lastSync=0;refresh()});
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});
+ setTimeout(refresh,2800);
 })();
