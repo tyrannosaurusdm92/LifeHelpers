@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html data-ourspace-profile="william" data-profile="william" lang="en">
+<head>
+<base href="./"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>William | OurSpace</title>
+<link href="../../style/onyx_widget_style.css" rel="stylesheet"/><link href="../../style/onyx-professor.css" rel="stylesheet"/>
+<script src="../../script/onyx_widget_shared-onyx-currency.js"></script>
+<style id="generatedDesignCSS"></style><script id="bootDesignState" type="application/json">null</script><link href="../../style/onyx-design-studio.css" rel="stylesheet"/><link rel="stylesheet" href="../../style/shell.css">
+<link rel="stylesheet" href="../../style/adventures-hud.css">
+<link rel="stylesheet" href="../../style/adventures-world.css">
+<link rel="stylesheet" href="../../style/adventures-gameplay.css">
+<link rel="stylesheet" href="../../style/onyx-chat-and-ui-integration.css">
+<link rel="stylesheet" href="../../style/onyx-adventures-integration.css">
+<link rel="stylesheet" href="../../style/onyx-integrated-alerts.css">
+</head>
+<body data-onyx-standalone-viewport="ourspace-main-page" data-profile="william">
+<div class="ms-native-profile-slot" hidden="" id="ourspaceProfileFrame"></div>
+<script src="../../script/onyx_widget_shared-bootstrap.js"></script>
+<div class="onyx-widget jump-nav profile-jump onyx-round-widget onyx-bubble-widget movable discord-layout-shell" data-jump-nav="onyx-widget" data-layout="discord-inspired" data-mood="sleepy" data-movable="true" data-onyx-tab="health" data-os-design-scope="onyx_widget" data-size-state="hyper-reduced" data-state="sleepy" id="onyxWidget">
+<button aria-controls="onyxPopout" aria-expanded="false" aria-label="Open Onyx" class="onyx-bubble jump-orb" data-design-protected="bubble-interior" id="onyxBubble" type="button">
+<img alt="Onyx, thinking" draggable="false" id="onyxLegacyStatic" src="../../assets/onyx_widget_onyx_thinking.png"/><img alt="" aria-hidden="true" class="jump-orb-frame" data-design-protected="frame" draggable="false" src="../../assets/onyx_widget_frame-black.svg"/>
+<span aria-hidden="true" class="onyx-alert-status" data-design-protected="alerts" data-onyx-alert-status="">
+<span class="onyx-alert-reaction" data-onyx-alert-reaction=""></span>
+<span class="onyx-alert-count" data-onyx-alert-count="" hidden=""></span>
+<span class="onyx-alert-inline-text" data-onyx-alert-inline-text="" aria-hidden="true"></span>
+</span>
+<img alt="" aria-hidden="true" hidden="" id="onyxFallback" src="../../assets/onyx_widget_onyx_snuggly.png" style="display:none!important"/>
+<canvas aria-hidden="true" aria-label="Onyx" class="onyx-canvas" data-design-protected="avatar" height="216" id="onyxCanvas" style="display:none!important" width="216"></canvas>
+<span class="onyx-state-label" data-design-protected="bubble-status" id="onyxBubbleState">Sleepy</span>
+</button>
+<span aria-atomic="true" aria-live="polite" class="onyx-sr-only" data-onyx-alert-live="" role="status"></span>
+<div aria-hidden="true" aria-label="Onyx" class="onyx-popout jump-panel bottom-drag-surface" data-bottom-drag-surface="widget" id="onyxPopout" role="region" tabindex="-1">
+<header class="onyx-panel-header module-topbar">
+<div class="onyx-panel-title"><strong>Onyx</strong><span id="onyxMoodText">Sleepy</span><span id="onyxMomentText">Sleepy</span><small aria-live="polite" class="onyx-backend-status" id="onyxBackendStatus">Connecting…</small></div>
+<output aria-label="Shared Onyx wallet" class="onyx-wallet-badge" data-onyx-currency-balance="" title="Shared wallet · earn from games, widget tools, and Work">🟤0 ⚪0 🪙0 🔘0</output>
+<button aria-label="Close" class="onyx-close" id="onyxClose" type="button">×</button>
+</header>
+<div aria-live="polite" class="onyx-speech module-speech" id="onyxSpeech">Zzz.</div>
+<div aria-label="Onyx tabs" class="jump-tabs" role="tablist">
+<button aria-controls="onyx-pane-health" aria-selected="true" class="jump-tab is-active" data-onyx-tab-button="health" data-tab="health" id="onyx-tab-health" role="tab" type="button">Virtual &amp; Health</button>
+<button aria-controls="onyx-pane-leisure" aria-selected="false" class="jump-tab" data-onyx-tab-button="leisure" data-tab="leisure" id="onyx-tab-leisure" role="tab" type="button">Leisure</button>
+<button aria-controls="onyx-pane-work" aria-selected="false" class="jump-tab" data-onyx-tab-button="work" data-tab="work" id="onyx-tab-work" role="tab" type="button">Work</button>
+</div>
+<div class="jump-content">
+<section aria-labelledby="onyx-tab-health" class="jump-pane is-active" data-onyx-tab-panel="health" data-pane="health" id="onyx-pane-health" role="tabpanel"></section>
+<section aria-labelledby="onyx-tab-leisure" class="jump-pane" data-onyx-tab-panel="leisure" data-pane="leisure" hidden="" id="onyx-pane-leisure" role="tabpanel"></section>
+<section aria-labelledby="onyx-tab-work" class="jump-pane" data-onyx-tab-panel="work" data-pane="work" hidden="" id="onyx-pane-work" role="tabpanel">
+<div class="pane-toolbar"><h2 class="pane-title">Work</h2></div>
+<div class="work-fullscreen-launch-card module-design-section">
+<strong>Onyx Work</strong>
+<p>Open the full Work workspace with subtabs, chat, attachments, image creation, and the project catalog.</p>
+<button class="module-design-button" id="onyxOpenWorkFullscreen" type="button">Open Work fullscreen</button>
+</div>
+</section>
+</div>
+</div>
+<button aria-label="Exit fullscreen" class="fullscreen-exit" data-global-fullscreen-exit="" id="onyxFullscreenExit" title="Exit fullscreen" type="button">×</button>
+<div aria-live="polite" class="widget-toast" role="status"></div>
+</div>
+<section aria-label="Onyx's Adventures fullscreen" class="onyx-fullscreen-shell-host onyx-adventures-fullscreen" hidden="" id="slowPetGame" tabindex="-1">
+<button aria-label="Exit Onyx's Adventures" class="fullscreen-shell-exit" id="slowGameExit" title="Exit Onyx's Adventures" type="button">×</button>
+<main aria-label="Onyx’s Adventures shell and heads-up display" class="game-shell" data-embedded="onyx-widget" id="gameShell">
+<header class="hud-header">
+<nav aria-label="Onyx’s Adventures settings and chat" class="hud-topbar">
+<button aria-controls="hud-controls" aria-expanded="false" class="hud-tab" data-panel="controls" type="button"><span aria-hidden="true" class="tab-symbol">⌨</span> Controls</button>
+<button aria-controls="hud-accessibility" aria-expanded="false" class="hud-tab" data-panel="accessibility" type="button"><span aria-hidden="true" class="tab-symbol">♿</span> Accessibility</button>
+<button aria-controls="hud-settings" aria-expanded="false" class="hud-tab" data-panel="settings" type="button"><span aria-hidden="true" class="tab-symbol">⚙</span> Settings</button>
+<button aria-controls="hud-chat" aria-expanded="false" class="hud-tab" data-panel="chat" type="button"><span aria-hidden="true" class="tab-symbol">▤</span> Virtual &amp; Health Chat</button>
+</nav>
+<div aria-label="Audio, five Onyx’s Adventures menus, display, pause and wallet" class="hud-subbar" role="toolbar">
+<div aria-label="Audio levels" class="sound-controls" role="group">
+<button aria-label="Mute" aria-pressed="false" class="hud-sound" data-volume="0" type="button">🔇</button>
+<button aria-label="Low volume" aria-pressed="false" class="hud-sound" data-volume="0.35" type="button">🔉</button>
+<button aria-label="Full volume" aria-pressed="true" class="hud-sound" data-volume="1" type="button">🔊</button>
+</div>
+<div aria-label="Five Onyx’s Adventures shortcuts" class="quickbar" role="group">
+<button aria-label="1: Onyx’s Adventures" aria-pressed="false" class="game-slot" data-slot="1" title="Onyx’s Adventures" type="button">1</button>
+<button aria-label="2: Care for Onyx" aria-pressed="false" class="game-slot" data-slot="2" title="Care for Onyx" type="button">2</button>
+<button aria-label="3: Onyx status and cat careers" aria-pressed="false" class="game-slot" data-slot="3" title="Onyx status and cat careers" type="button">3</button>
+<button aria-label="4: Self-care and goals" aria-pressed="false" class="game-slot" data-slot="4" title="Self-care and goals" type="button">4</button>
+<button aria-label="5: Journal and Field Guide" aria-pressed="false" class="game-slot" data-slot="5" title="Journal and Field Guide" type="button">5</button>
+</div>
+<div aria-label="Panel display options" class="display-controls" role="group">
+<button aria-label="Focus display: close unpinned panels" aria-pressed="false" class="hud-control-toggle" id="focusPanels" title="Focus display" type="button">▣</button>
+<button aria-label="Lock or unlock panel positions" aria-pressed="false" class="hud-control-toggle" id="lockPanels" title="Lock panels" type="button">🔐</button>
+</div>
+<button aria-label="Pause nonessential Onyx’s Adventures activities" aria-pressed="false" class="pause-button" id="gamePause" title="Pause / rest" type="button">Ⅱ</button>
+<div aria-label="Existing wallet balances (supplied by connected game)" class="resource-counters" role="group">
+<output aria-label="Copper" class="resource-counter" data-resource="copper">🟤<span>0</span></output>
+<output aria-label="Silver" class="resource-counter" data-resource="silver">⚪<span>0</span></output>
+<output aria-label="Gold" class="resource-counter" data-resource="gold">🟡<span>0</span></output>
+<output aria-label="Platinum" class="resource-counter" data-resource="platinum">🔵<span>0</span></output>
+</div>
+</div>
+</header>
+<section aria-label="Onyx’s Adventures" class="hud-panel" data-panel="home" hidden="" id="hud-home" style="--panel-w:620px">
+<div class="hud-panel-head" data-drag-handle="home"><span aria-hidden="true" class="hud-panel-icon">1</span><strong>Onyx’s Adventures</strong><span class="hud-panel-actions"><button aria-label="Pin Onyx’s Adventures" aria-pressed="false" class="hud-panel-icon-btn" data-pin="home" type="button">⌖</button><button aria-label="Close Onyx’s Adventures" class="hud-panel-icon-btn" data-close="home" type="button">×</button></span></div>
+<div class="hud-panel-body">
+<div class="section"><h3>Outdoor world</h3><div class="readout" id="connectionReadout">Loading the outdoor landscape…</div><p>The living landscape and seven bird species are mounted in the viewport. Onyx, Callie, and Harvey now inhabit the outdoor meadow as autonomous WASM cats. Onyx's gentle walking guides the scenery; use the arrows to look around manually. Their separate green, purple, and pink tents unfold only when they choose to rest.</p><div class="grid cols-2"><button class="btn" data-open-panel="care" type="button">Care for Onyx</button><button class="btn" data-open-panel="chat" type="button">Virtual &amp; Health Chat</button><button class="btn" data-open-panel="status" type="button">Onyx Status</button><button class="btn" data-embedded-fullscreen="true" disabled="" type="button">Already fullscreen in Onyx widget</button></div></div>
+<div class="section"><h3>Look around the meadow</h3><div class="grid cols-2"><button class="btn" id="worldViewLeft" type="button">← View left</button><button class="btn" id="worldViewRight" type="button">View right →</button></div><div aria-live="polite" class="readout" id="worldOverview">Greenwood · resting outdoor camera</div></div><div aria-label="On-screen pet careers and eight-biome Field Guide" class="section" id="gameplayHome"></div><div class="section"><h3>Optional meadow moments</h3><p>Small discoveries happen here in the visible landscape, not through off-screen travel. Nothing is required and there are no daily streaks.</p><div class="grid cols-2"><button class="btn" id="observeMeadow" type="button">Notice this scene</button><button class="btn" id="saveMeadowMoment" type="button">Save a meadow note</button></div><div class="readout" id="meadowMomentReadout" role="status">Observations are optional. Onyx, Callie, and Harvey are present as three independent animated companions.</div></div>
+<div class="section"><h3>The royal camping companions</h3>
+<div aria-live="polite" class="readout" id="companionsOverview">Onyx (green tent) · Callie (purple tent) · Harvey (pink tent). Tents appear only when the corresponding cat chooses sleep.</div>
+</div><div class="section"><h3>Meadow overview</h3><p>The existing terrain, flying birds, and independent feather effects are active. The outdoor family has separate autonomous behaviors and three need-triggered sleeping tents. Food, water and other scene props still require their own real implementation.</p><div class="readout" id="lastActionReadout" role="status">No care actions yet.</div></div>
+</div><span aria-label="Resize panel" class="panel-resize-handle" title="Resize panel"></span></section>
+<section aria-label="Care for Onyx" class="hud-panel" data-panel="care" hidden="" id="hud-care" style="--panel-w:540px">
+<div class="hud-panel-head" data-drag-handle="care"><span class="hud-panel-icon">2</span><strong>Care for Onyx</strong><span class="hud-panel-actions"><button aria-label="Pin Care" aria-pressed="false" class="hud-panel-icon-btn" data-pin="care" type="button">⌖</button><button aria-label="Close Care" class="hud-panel-icon-btn" data-close="care" type="button">×</button></span></div>
+<div class="hud-panel-body">
+<div class="section"><h3>Care integration status</h3><div class="integration-note" role="status"><strong>Three independent cat sprites and WebAssembly brains connected.</strong> Petting, playing and rest requests work when accepted by the cats; food, water, and other unbuilt props remain clearly labeled as future behavior.</div></div><div class="section"><h3>Food and attention</h3><div class="grid cols-4" id="careActionsPrimary">
+<button class="btn" data-care="feed">🍲 Feed</button><button class="btn" data-care="water">💧 Water</button><button class="btn" data-care="treat">🐟 Treat</button><button class="btn" data-care="pet">🐾 Pet</button><button class="btn" data-care="scratch">🐈 Scratch</button><button class="btn" data-care="brush">🪮 Brush</button><button class="btn" data-care="play">🧶 Play</button><button class="btn" data-care="blink">💚 Slow blink</button>
+</div></div>
+<div class="section"><h3>Senior gentleman comforts</h3><div class="grid cols-3"><button class="btn" data-care="blanket">🛏️ Blanket</button><button class="btn" data-care="fan">🌬️ Fan</button><button class="btn" data-care="pillow">☁️ Pillow</button><button class="btn" data-care="tuck">🌙 Tuck in</button></div></div>
+<div class="section"><h3>Need-activated scenery contract</h3><div class="care-condition-list"><div><strong>Pop-up tent castle</strong><span>Onyx uses green, Callie purple, and Harvey pink; each folds away after that cat wakes and exits.</span></div><div><strong>Imperial picnic</strong><span>Only for measured hunger; a real meal interaction is required.</span></div><div><strong>Fresh-water station</strong><span>Only for independent hydration need, not fullness; separate drinking animation.</span></div><div><strong>Comfort &amp; play</strong><span>Temporary shade, mat, toy or brush station only for appropriate needs.</span></div></div><p>Each cat has an independent sleep need and an individual temporary tent, with space reserved so tents do not overlap. Other reactive care props are still future work.</p></div><div class="readout" id="careResponse" role="status">Select a care button. Supported Onyx attention and rest actions now use his WASM sprite; food, water and other missing props are clearly identified.</div>
+</div><span class="panel-resize-handle" title="Resize panel"></span></section>
+<section aria-label="Onyx status" class="hud-panel" data-panel="status" hidden="" id="hud-status" style="--panel-w:560px">
+<div class="hud-panel-head" data-drag-handle="status"><span class="hud-panel-icon">3</span><strong>Onyx Status</strong><span class="hud-panel-actions"><button aria-label="Pin Status" aria-pressed="false" class="hud-panel-icon-btn" data-pin="status" type="button">⌖</button><button aria-label="Close Status" class="hud-panel-icon-btn" data-close="status" type="button">×</button></span></div>
+<div class="hud-panel-body">
+<div class="section"><h3>Conversation posture (not a pet sensor)</h3><div class="readout" id="onyxMood" role="status">Game conversation posture · independent from WASM cat behavior</div><p>Conversation labels come from local chat or a future authorized adapter, not from a real animal or a pet simulation. The three cats are now physically present; chat labels are not biomedical sensors.</p></div>
+<div class="section"><h3>Comfort, not compliance</h3><div class="stat-grid"><div><span>Fullness</span><strong id="statusFullness">—</strong></div><div><span>Comfort</span><strong id="statusComfort">—</strong></div><div><span>Energy</span><strong id="statusEnergy">—</strong></div><div><span>Affection</span><strong id="statusAffection">—</strong></div><div><span>Hydration</span><strong id="statusHydration">—</strong></div><div><span>Activity</span><strong id="statusActivity">Not connected</strong></div><div><span>Visitors</span><strong id="statusVisitors">Not installed</strong></div><div><span>Quiet meadow</span><strong id="statusQuiet">Off</strong></div></div><p>Energy and fullness are read from Onyx's WASM brain. Hydration, comfort and affection remain unavailable until genuinely modeled. Watching scenery never costs affection or currency.</p></div>
+<div class="section"><h3>Cat instincts and what comes later</h3><p>Onyx’s ten canonical postures remain distinct from hunger, thirst, walking and hunting animations. Harvey and Callie are present as independent local WASM companions. The game does not claim medical sensing, or an AI backend.</p><div class="readout" id="readinessReadout">Available now: outdoor world, all three transparent cats, WASM-driven habits, three pop-up tents, bird-catching periods, local goals and notes.</div></div><div class="section"><h3>System</h3><div class="readout" id="hostReadout">Connecting the outdoor renderer…</div><div class="readout" id="profileReadout">Profile: local guest shell</div></div>
+</div><span class="panel-resize-handle" title="Resize panel"></span></section>
+<section aria-label="Self-care and goals" class="hud-panel" data-panel="goals" hidden="" id="hud-goals" style="--panel-w:615px">
+<div class="hud-panel-head" data-drag-handle="goals"><span class="hud-panel-icon">4</span><strong>Self-care · Tiny Goals</strong><span class="hud-panel-actions"><button aria-label="Pin Goals" aria-pressed="false" class="hud-panel-icon-btn" data-pin="goals" type="button">⌖</button><button aria-label="Close Goals" class="hud-panel-icon-btn" data-close="goals" type="button">×</button></span></div>
+<div class="hud-panel-body">
+<div class="section"><h3>How are you feeling?</h3><p>Optional, self-reported and non-diagnostic. Every answer, including skip, is welcome.</p><div class="grid mood-grid" id="moodButtons"><button class="btn" data-mood="okay" type="button">🙂 Okay</button><button class="btn" data-mood="sad" type="button">🌧 Sad</button><button class="btn" data-mood="angry" type="button">🔥 Angry</button><button class="btn" data-mood="exhausted" type="button">🛌 Exhausted</button><button class="btn" data-mood="mixed" type="button">🌀 Mixed</button><button class="btn" data-mood="unsure" type="button">❔ Unsure</button><button class="btn" data-mood="nothing" type="button">☁ Nothing</button><button class="btn" data-mood="skip" type="button">⏭ Skip</button></div><div class="readout" id="moodReadout" role="status">No check-in required.</div></div>
+<div class="section"><h3>One small thing counts</h3><form class="goal-form enhanced-goal-form" id="goalForm"><label class="field">Tiny goal<input autocomplete="off" id="goalInput" maxlength="180" name="goal" placeholder="One sip of water, or a moment of rest" required=""/></label><label class="field">Self-care area<select id="goalArea"><option value="Basic care">Basic care</option><option value="Physical comfort">Physical comfort</option><option value="Emotional care">Emotional care</option><option value="Environment">Environment</option><option value="Connection">Connection</option><option value="Enjoyment">Enjoyment</option></select></label><label class="field">Smallest possible version (optional)<input id="goalSmallest" maxlength="180" placeholder="For example: look at the water glass"/></label><label class="field">Plan<select id="goalCadence"><option value="anytime">Anytime, no deadline</option><option value="today">Just for today</option><option value="weekly">Gentle weekly intention</option></select></label><button class="btn" type="submit">Add gentle goal</button></form><p>Mark a goal done, partly done, attempted or intentionally paused. None is a failure.</p><ul aria-label="Saved tiny goals" class="goal-list" id="goalList"></ul><div class="grid cols-2"><button class="btn" id="addRestGoal" type="button">Add intentional rest</button><button class="btn" id="clearCompletedGoals" type="button">Clear finished goals</button></div><div class="readout" id="goalFeedback" role="status">No goal is required. Progress is saved locally.</div></div>
+<div class="section" id="meadowMomentsSection"><h3>Optional Meadow Moments</h3><p>Suggestions, never quests you must finish. Onyx’s care is not earned through task completion.</p><div class="grid cols-2"><button class="btn" data-meadow-goal="Observe a bird in the meadow" type="button">Observe a bird</button><button class="btn" data-meadow-goal="Take one sip of water, if comfortable" type="button">One sip of water</button><button class="btn" data-meadow-goal="Notice one soothing detail in the scene" type="button">Notice a detail</button><button class="btn" data-meadow-goal="Take an intentional rest break" type="button">Rest moment</button></div></div>
+<div class="section"><h3>Gentle focus / rest timer</h3><p>Timer runs only by choice, may be paused or cleared, and never changes pet needs or currency.</p><div class="focus-controls"><label class="field">Minutes<input id="focusMinutes" max="180" min="1" type="number" value="2"/></label><button class="btn" id="focusStart" type="button">Start</button><button class="btn" id="focusPause" type="button">Pause</button><button class="btn" id="focusStop" type="button">Clear</button></div><div class="readout" id="focusReadout" role="timer">No timer running.</div></div>
+<div class="section"><h3>Optional grounding</h3><p>A gentle alternative is to notice something nearby or feel a comfortable point of support. No breath holding, closing eyes or physical movement is required.</p><button class="btn" data-chat-prompt="Can you guide me through an optional, gentle grounding exercise?" type="button">Discuss grounding in chat</button></div>
+</div><span class="panel-resize-handle" title="Resize panel"></span></section>
+<section aria-label="Journal" class="hud-panel" data-panel="journal" hidden="" id="hud-journal" style="--panel-w:570px">
+<div class="hud-panel-head" data-drag-handle="journal"><span class="hud-panel-icon">5</span><strong>Journal / Reflection</strong><span class="hud-panel-actions"><button aria-label="Pin Journal" aria-pressed="false" class="hud-panel-icon-btn" data-pin="journal" type="button">⌖</button><button aria-label="Close Journal" class="hud-panel-icon-btn" data-close="journal" type="button">×</button></span></div>
+<div class="hud-panel-body"><div class="section"><h3>Unpressured reflection</h3><p>One word, a sentence, an emoji, or a longer thought are equally welcome.</p><form id="journalForm"><label class="field" for="journalInput">Your private local note<textarea id="journalInput" maxlength="12000" placeholder="What do you want to put into words?" rows="5"></textarea></label><div class="grid cols-2"><button class="btn" type="submit">Save note</button><button class="btn" id="exportJournal" type="button">Export notes (.json)</button></div></form><div class="readout" id="journalStatus" role="status">Notes are stored locally on this device, not sent to a clinician.</div></div><div class="section"><h3>Today in the meadow</h3><p>Save an actual currently visible scene description to your private journal if you wish. This does not invent an Onyx discovery or record a health event.</p><button class="btn" id="journalCaptureScene" type="button">Add current scenery observation</button><div class="readout" id="journalMeadowReadout">No scenery observation saved.</div></div><div class="section"><h3>Saved notes</h3><div class="journal-list" id="journalList"></div></div></div><span class="panel-resize-handle" title="Resize panel"></span></section>
+<section aria-label="Controls and shortcuts" class="hud-panel" data-panel="controls" hidden="" id="hud-controls" style="--panel-w:700px">
+<div class="hud-panel-head" data-drag-handle="controls"><span class="hud-panel-icon">⌨</span><strong>Controls / Input</strong><span class="hud-panel-actions"><button aria-label="Pin Controls" aria-pressed="false" class="hud-panel-icon-btn" data-pin="controls" type="button">⌖</button><button aria-label="Close Controls" class="hud-panel-icon-btn" data-close="controls" type="button">×</button></span></div>
+<div class="hud-panel-body"><div class="section"><h3>Onyx’s Adventures controls</h3><table class="control-table"><thead><tr><th>Action</th><th>Mouse / touch</th><th>Keyboard</th></tr></thead><tbody><tr><th>Menus</th><td>Choose shortcuts 1–5, or top controls</td><td>1–5</td></tr><tr><th>Chat</th><td>Virtual &amp; Health Chat tab</td><td>Enter to send; Shift + Enter for a new line</td></tr><tr><th>Close active panel</th><td>× on panel</td><td>Escape</td></tr><tr><th>Pause / rest</th><td>Ⅱ / ▶</td><td>P outside text inputs</td></tr><tr><th>Explore meadow</th><td>Onyx leads the camera; drag horizontally to inspect, or choose the view buttons. Tap a cat to interact.</td><td>← / → while the viewport is focused</td></tr><tr><th>Fullscreen</th><td>Onyx’s Adventures panel</td><td>F outside text inputs</td></tr><tr><th>Move / resize panels</th><td>Drag header / bottom corner</td><td>Use visible menu controls without dragging</td></tr><tr><th>Professor Onyx</th><td>Type a supported request into Virtual &amp; Health Chat</td><td>e.g. “Professor Onyx, help me with DBT”</td></tr></tbody></table><div class="readout">No joystick or face-button controls. Drag the scene sideways or use its left/right buttons to inspect the meadow. Onyx now chooses his own horizontal walks. Manual viewing temporarily overrides follow-camera movement; no vertical walking.</div></div></div><span class="panel-resize-handle" title="Resize panel"></span></section>
+<section aria-label="Accessibility" class="hud-panel" data-panel="accessibility" hidden="" id="hud-accessibility" style="--panel-w:570px">
+<div class="hud-panel-head" data-drag-handle="accessibility"><span class="hud-panel-icon">♿</span><strong>Accessibility</strong><span class="hud-panel-actions"><button aria-label="Pin Accessibility" aria-pressed="false" class="hud-panel-icon-btn" data-pin="accessibility" type="button">⌖</button><button aria-label="Close Accessibility" class="hud-panel-icon-btn" data-close="accessibility" type="button">×</button></span></div>
+<div class="hud-panel-body"><div class="section"><h3>Presentation</h3><label class="check"><input data-preference="largeTargets" type="checkbox"/> Larger controls &amp; text</label><label class="check"><input data-preference="contrast" type="checkbox"/> High contrast</label><label class="check"><input data-preference="reducedMotion" type="checkbox"/> Reduced motion</label><label class="check"><input data-preference="oneHanded" type="checkbox"/> One-handed, wider panel actions</label><label class="check"><input checked="" data-preference="labels" type="checkbox"/> Show labels and descriptions</label></div><div class="section"><h3>Support and pacing</h3><label class="check"><input checked="" data-preference="noTimers" type="checkbox"/> No timed tasks / prompts</label><label class="check"><input checked="" data-preference="noShake" type="checkbox"/> No camera shake</label><label class="check"><input checked="" data-preference="quietNudges" type="checkbox"/> Quiet, non-punitive nudges</label><label class="check"><input data-preference="lowStimulation" type="checkbox"/> Low-stimulation scenery (less bird and particle activity)</label><div class="readout">Accessibility settings apply to the actual HUD and scene. Low stimulation reduces wildlife density, while reduced motion minimizes atmospheric movement.</div></div></div><span class="panel-resize-handle" title="Resize panel"></span></section>
+<section aria-label="Settings" class="hud-panel" data-panel="settings" hidden="" id="hud-settings" style="--panel-w:600px">
+<div class="hud-panel-head" data-drag-handle="settings"><span class="hud-panel-icon">⚙</span><strong>Settings</strong><span class="hud-panel-actions"><button aria-label="Pin Settings" aria-pressed="false" class="hud-panel-icon-btn" data-pin="settings" type="button">⌖</button><button aria-label="Close Settings" class="hud-panel-icon-btn" data-close="settings" type="button">×</button></span></div>
+<div class="hud-panel-body"><div class="section"><h3>HUD &amp; sound</h3><label class="check"><input checked="" data-preference="subbar" type="checkbox"/> Show the second HUD bar</label><label class="check"><input data-preference="persistChat" type="checkbox"/> Save chat transcript on this device (OFF by default)</label><div class="grid cols-2"><button class="btn" id="cycleVolume" type="button">Cycle audio</button><button class="btn" data-embedded-fullscreen="true" disabled="" type="button">Already fullscreen in Onyx widget</button></div><div class="readout" id="fullscreenReadout">Fullscreen is optional.</div></div><div class="section" id="adventureWorldSettings"><h3>Outdoor scenery</h3>
+<label class="field">Bird activity <span id="birdDensityValue">100%</span><input id="worldBirdDensity" max="2.5" min="0" step="0.1" type="range" value="1"/></label>
+<label class="field">Grass, leaves and atmospheric particles <span id="particleDensityValue">100%</span><input id="worldParticleDensity" max="2" min="0" step="0.1" type="range" value="1"/></label>
+<label class="field">Weather <select id="worldWeather"><option value="clear">Sunny meadow (default)</option><option value="auto">Follow landscape</option><option value="breeze">Extra breeze</option><option value="mist">Soft mist</option><option value="rain">Gentle rain</option></select></label>
+<label class="check"><input id="worldAutoTime" type="checkbox"/> Optional day/night transition (sunny by default)</label>
+<label class="field">Fixed daylight hour <output id="worldHourValue">10:00 AM</output><input id="worldHour" max="23.5" min="0" step="0.5" type="range" value="10"/></label>
+<label class="check"><input checked="" id="worldAllowPan" type="checkbox"/> Allow manual horizontal viewing</label>
+<div class="grid cols-2"><button class="btn" id="worldReset" type="button">Reset scenery settings</button><button class="btn" id="worldCenter" type="button">Return to Greenwood</button></div>
+<div class="readout">Onyx leads the camera when he strolls. Three original sprite cats and their care props stay in the live world. The Professor portrait is a chat-only image.</div>
+</div><div class="section"><h3>Quiet Meadow &amp; muted suggestions</h3><div class="grid cols-2"><button aria-pressed="false" class="btn" id="quietMeadowToggle" type="button">Enable Quiet Meadow</button><button class="btn" id="quietMeadowResume" type="button">Resume ordinary scenery</button></div><label class="check"><input data-preference="muteMeadowMoments" type="checkbox"/> Hide optional Meadow Moment suggestions</label><label class="check"><input data-preference="muteGrounding" type="checkbox"/> Hide grounding prompts</label><label class="check"><input data-preference="muteMood" type="checkbox"/> Hide optional mood check-in buttons</label><label class="check"><input data-preference="muteWeatherEffects" type="checkbox"/> Prefer clear weather / fewer weather effects</label><label class="check"><input data-preference="muteDiscoveryCaptions" type="checkbox"/> Hide optional scenery descriptions</label><div class="readout">Quiet Meadow pauses nonessential animation, leaves all chat and support controls reachable, and never penalizes rest.</div></div><div class="section"><h3>Companion preferences and future care scenery</h3><label class="field">Harvey &amp; Callie visiting preference<select disabled="" id="futureVisitors"><option value="off">Off</option><option selected="" value="occasional">Occasionally</option><option value="often">Often</option></select></label><label class="check"><input disabled="" id="futureHuntEffects" type="checkbox"/> Future Onyx hunting and feather effects</label><label class="check"><input disabled="" id="futureSeasonal" type="checkbox"/> Optional seasonal meadow accents</label><div class="integration-note">Onyx, Callie, and Harvey are now real sprite companions with independent engines and sleeping tents. Other unbuilt features remain disabled. Birds remain active.</div></div><div class="section"><h3>Local profile and privacy</h3><div class="readout">Without a connected signed-in host, this standalone shell uses a local guest profile. Local storage is not encrypted. Do not rely on it for confidential clinical records.</div><div class="grid cols-2"><button class="btn" id="exportShellData" type="button">Export my shell data</button><button class="btn" id="clearShellData" type="button">Clear local shell data</button></div><div class="readout" id="adventureSettingsStatus" role="status">Changes save automatically when possible.</div></div></div><span class="panel-resize-handle" title="Resize panel"></span></section>
+<section aria-label="Virtual and Health chat" class="hud-panel hud-chat-window" data-panel="chat" hidden="" id="hud-chat" style="--panel-w:600px">
+<div class="hud-panel-head" data-drag-handle="chat"><span class="hud-panel-icon">▤</span><strong id="chatTitle">Virtual &amp; Health · Onyx</strong><span class="hud-panel-actions"><button aria-label="Pin Chat" aria-pressed="false" class="hud-panel-icon-btn" data-pin="chat" type="button">⌖</button><button aria-label="Close Chat" class="hud-panel-icon-btn" data-close="chat" type="button">×</button></span></div>
+<div class="hud-panel-body chat-body"><div class="chat-intro">Normal check-ins and self-care by default. Ask for <strong>“Professor Onyx”</strong> or a <strong>“DBT worksheet”</strong> in chat to activate the Professor-only floating bubble. <span id="chatModeLabel">Normal chat</span></div>
+<div aria-label="Virtual and Health chat suggestions" class="chat-chips" id="gameChatChips" role="group"><button class="chip" data-chat-prompt="Check in with me" type="button">Check in</button><button class="chip" data-chat-prompt="I need one tiny goal" type="button">Tiny goal</button><button class="chip" data-chat-prompt="I want to rest" type="button">Rest</button><button class="chip" data-chat-prompt="Just listen" type="button">Just listen</button><button class="chip" data-chat-prompt="I would like to journal" type="button">Journal</button><button class="chip" data-chat-prompt="Professor Onyx, teach me a coping skill" type="button">Professor</button></div><div aria-label="Chat messages" aria-live="polite" aria-relevant="additions" class="chat-log" id="chatLog" role="log"></div>
+<div hidden="" id="worksheetArea"></div>
+<form class="chat-form" id="chatForm"><label class="sr-only" for="chatInput">Send a message</label><textarea aria-label="Talk to Onyx" id="chatInput" maxlength="8000" placeholder="Talk to Onyx…" required="" rows="2"></textarea><button class="btn" id="chatSend" type="submit">Send</button></form>
+<div class="chat-footer"><span id="chatRuntimeLabel">Local guided chat · AI backend not connected</span><button class="chip" id="clearChat" type="button">Clear chat</button><button class="chip" id="exportChat" type="button">Export</button></div>
+</div><span class="panel-resize-handle" title="Resize panel"></span></section>
+<div aria-hidden="true" class="chrome-top"></div><div aria-hidden="true" class="chrome-bottom"></div>
+<section aria-label="Onyx’s Adventures outdoor display frame" class="viewport-frame"><div aria-label="Onyx’s Adventures outdoor scene with pixel-art woods, meadow, and flying birds. Three active cat sprites." class="game-viewport" id="gameViewport" role="region" tabindex="0">
+<div aria-label="Living pixel-art outdoor world" class="adventure-scene" id="outdoorScene">
+<canvas aria-label="Sunny outdoor world with trees, flowers, landscape and seven bird species; Onyx, Callie and Harvey walking together" id="outdoorCanvas" role="img" tabindex="0"></canvas>
+<div aria-live="polite" class="scene-location"><span class="scene-location-kicker">ONYX’S ADVENTURES</span><strong id="locationName">Greenwood</strong><small id="locationCaption">A quiet place to watch the birds</small><span class="scene-weather"><span id="timeLabel">Morning · 10:00 AM</span> · <span id="weatherLabel">Soft breeze</span></span></div>
+<div aria-live="polite" class="scene-loading" id="loading" role="status"><strong>Onyx’s Adventures</strong><p id="loadingText">Loading the outdoor world…</p><div class="scene-progress-track"><div class="scene-progress" id="loadProgress"></div></div></div>
+
+<div aria-live="polite" class="scene-toast" id="adventuresToast" role="status"></div><span aria-live="polite" class="sr-only" id="status" role="status"></span>
+</div>
+</div></section>
+<p aria-live="polite" class="sr-only" id="gameStatus" role="status"></p>
+<aside aria-label="Professor Onyx bubble, activated by chat phrases" class="onyx-booster-dock professor-dock" hidden="" id="onyxBoosterDock">
+<div aria-label="Professor Onyx tools" class="onyx-booster-menu professor-menu" hidden="" id="onyxBoosterMenu" role="region">
+<div class="onyx-menu-head"><span aria-hidden="true">🎓</span><div><strong>PROFESSOR ONYX</strong><small>Tiny Bowtie Professor · DBT-informed support</small></div><button aria-label="Close Professor menu" class="onyx-menu-close" id="onyxBoosterClose" type="button">×</button></div>
+<div class="onyx-menu-help">Available in Virtual &amp; Health chat. Educational support, not a licensed clinician, diagnosis or emergency monitor.</div>
+<div class="professor-tools"><button class="btn" data-professor-action="worksheet" type="button">DBT worksheet</button><button class="btn" data-professor-action="handout" type="button">Skill handout</button><button class="btn" data-professor-action="talk" type="button">Continue in chat</button><button class="btn" data-professor-action="exit" type="button">Return to normal chat</button></div>
+</div>
+<button aria-controls="onyxBoosterMenu" aria-expanded="false" aria-label="Professor Onyx: drag to move, click to open tools, or use arrow keys to reposition" class="onyx-bubble" id="onyxBoosterBubble" title="Drag Professor Onyx anywhere · Click for tools · Arrow keys to move" type="button"><img alt="" class="onyx-cat-portrait" draggable="false" id="onyxBoosterPortrait" src="../../assets/onyx_widget_onyx_advising_professor.png"/><span aria-hidden="true" class="onyx-bubble-marker">🎓</span></button>
+</aside>
+</main>
+<div id="adventuresLoadingMessage" aria-live="polite" role="status" hidden>Loading Onyx’s Adventures…</div>
+</section>
+<section aria-label="LifeHelpers Games fullscreen" class="onyx-leisure-game-host" hidden="" id="onyxLeisureFullscreen">
+<div class="ms-native-fullscreen" id="onyxLeisureGameFrame" tabindex="-1"><h2>Games</h2><p>Open the LifeHelpers Games collection in its own page.</p><a href="https://tyrannosaurusdm92.github.io/LifeHelpers/Games/" rel="noopener noreferrer" target="_blank">Open games</a></div>
+<button aria-label="Exit Games" class="fullscreen-shell-exit" id="onyxLeisureGameExit" title="Exit Games" type="button">×</button>
+</section>
+<section aria-label="Work fullscreen" class="onyx-fullscreen-shell-host onyx-work-fullscreen-host" data-os-design-scope="onyx_widget" hidden="" id="onyxWorkFullscreenShell">
+<div class="ms-native-fullscreen" id="onyxWorkFullscreenFrame" tabindex="-1">
+<div aria-label="Onyx Work chat workspace" class="work-app" id="workApp">
+<aside aria-label="Work tabs" class="server-rail">
+<div aria-label="Onyx Work" class="brand-orb" title="Onyx Work"><span>O</span></div>
+<div aria-orientation="vertical" class="server-list" id="serverList" role="tablist"></div>
+<button aria-label="Project catalog" class="rail-button" id="catalogButton" title="Project catalog" type="button">▦</button>
+<button aria-label="Work settings" class="rail-button" id="settingsButton" title="Work settings" type="button">⚙</button>
+</aside>
+<aside aria-label="Subtabs" class="channel-sidebar" id="channelSidebar">
+<header class="channel-header">
+<div class="channel-title-wrap">
+<span class="eyebrow">WORK TAB</span>
+<h1 id="serverTitle">Coding</h1>
+</div>
+<button aria-label="Close subtabs" class="icon-button mobile-only" id="closeChannelsButton" type="button">×</button>
+</header>
+<div class="server-description" id="serverDescription"></div>
+<section aria-label="Onyx current Work mood" class="onyx-idle-window" id="onyxIdleWindow">
+<div class="onyx-idle-stage">
+<img alt="Onyx is sleepy" draggable="false" id="onyxMoodImage" src="../../assets/onyx_widget_onyx_snuggly.png"/>
+</div>
+<div class="onyx-idle-meta">
+<span class="onyx-idle-name">ONYX</span>
+<span class="onyx-mood-label" id="onyxMoodLabel">Sleepy</span>
+</div>
+</section>
+<div class="channel-toolbar">
+<span>SUBTABS</span>
+<button aria-label="Add subtab" class="icon-button" id="addChannelButton" title="Add subtab" type="button">＋</button>
+</div>
+<nav aria-label="Subtabs" class="channel-list" id="channelList"></nav>
+<div class="channel-footer">
+<div class="brain-status"><span class="status-dot" id="brainStatusDot"></span><span id="brainStatusText">Onyx Brain</span></div>
+<button class="small-button" id="newChannelButton" type="button">＋ New subtab</button>
+</div>
+</aside>
+<main class="chat-shell">
+<header class="chat-header">
+<div class="chat-header-main">
+<button aria-label="Open subtabs" class="icon-button mobile-only" id="openChannelsButton" type="button">☰</button>
+<div aria-hidden="true" class="channel-hash">#</div>
+<div class="chat-heading">
+<strong id="channelTitle">general</strong>
+<span id="channelTopic">General help in this Work tab.</span>
+</div>
+</div>
+<div class="chat-actions">
+<button aria-label="Rename subtab" class="icon-button" id="renameChannelButton" title="Rename subtab" type="button">✎</button>
+<button aria-label="Export this subtab" class="icon-button" id="exportChannelButton" title="Export this subtab" type="button">⇩</button>
+<button aria-label="Clear this subtab" class="icon-button" id="clearChannelButton" title="Clear this subtab" type="button">⌫</button>
+<button aria-label="Delete this subtab" class="icon-button" id="deleteChannelButton" title="Delete this subtab" type="button">🗑</button>
+</div>
+</header>
+<section aria-label="Conversation" aria-live="polite" class="message-viewport" id="messageViewport">
+<div class="messages" id="messages"></div>
+</section>
+<section aria-label="Message composer" class="composer-shell">
+<div class="attachment-tray" hidden="" id="attachmentTray"></div>
+<div class="composer-options">
+<label class="option-chip"><input checked="" id="webSearchToggle" type="checkbox"/><span>Web search</span></label>
+<label class="option-chip"><input checked="" id="driveToggle" type="checkbox"/><span>My OurSpace files</span></label>
+<label class="option-chip image-mode-chip" hidden="" id="imageModeChip"><input checked="" id="imageModeToggle" type="checkbox"/><span>Generate image</span></label>
+<label class="reasoning-control">Reasoning
+            <select aria-label="Reasoning effort" id="reasoningSelect">
+<option value="minimal">Minimal</option>
+<option selected="" value="medium">Medium</option>
+<option value="high">High</option>
+</select>
+</label>
+</div>
+<form class="composer" id="composerForm">
+<button aria-label="Attach files" class="composer-icon" id="attachButton" title="Attach files" type="button">＋</button>
+<textarea aria-label="Message Onyx" id="messageInput" maxlength="16000" placeholder="Message Onyx…" rows="1"></textarea>
+<button aria-label="Send message" class="send-button" id="sendButton" title="Send" type="submit">➤</button>
+<input hidden="" id="fileInput" multiple="" type="file"/>
+</form>
+<div class="composer-note">Enter to send · Shift+Enter for a new line · each subtab keeps its own local thread context.</div>
+</section>
+</main>
+</div>
+<aside aria-hidden="true" aria-label="Projects &amp; Catalog" class="catalog-drawer" id="catalogDrawer" inert="">
+<header class="catalog-head"><output aria-label="Shared Onyx wallet" class="work-wallet" data-onyx-currency-balance="" title="Shared wallet · Work activity earns copper">🟤0 ⚪0 🪙0 🔘0</output><div><span class="eyebrow">WORK BRAIN</span><h2>Projects &amp; Catalog</h2></div><button aria-label="Close Projects &amp; Catalog" class="icon-button catalog-close-button" id="closeCatalogButton" title="Close Projects &amp; Catalog" type="button"><span aria-hidden="true">×</span><span>Close</span></button></header>
+<div class="catalog-tools">
+<input aria-label="Search project catalog" id="catalogSearch" placeholder="Search projects, categories, tags…" type="search"/>
+<select aria-label="Sort projects" id="catalogSort"><option value="updated">Recently updated</option><option value="name">Name A–Z</option><option value="category">Category</option><option value="priority">Priority</option></select>
+<button class="primary-button" id="newProjectButton" type="button">＋ Project</button>
+</div>
+<div class="category-strip" id="categoryStrip"></div>
+<div class="project-dropzone" id="projectDropzone">Drop files here to catalog them in the selected project</div>
+<div class="project-list" id="projectList"></div>
+<section class="catalog-files" id="catalogFiles"><div class="catalog-section-title">CATALOGED FILES</div><div id="catalogFileList"></div></section>
+</aside>
+<dialog class="project-dialog" id="projectDialog">
+<form class="settings-card" id="projectForm" method="dialog">
+<header><div><span class="eyebrow">PROJECT</span><h2 id="projectDialogTitle">New project</h2></div><button aria-label="Close" class="icon-button" value="cancel">×</button></header>
+<div class="settings-body project-grid">
+<label class="field"><span>Name</span><input id="projectName" maxlength="100" required=""/></label>
+<label class="field"><span>Category</span><input id="projectCategory" list="projectCategories" placeholder="Coding, Writing, Household…"/><datalist id="projectCategories"></datalist></label>
+<label class="field"><span>Status</span><select id="projectStatus"><option>Planning</option><option>Active</option><option>Paused</option><option>Complete</option><option>Archived</option></select></label>
+<label class="field"><span>Priority</span><select id="projectPriority"><option>Low</option><option selected="">Normal</option><option>High</option><option>Urgent</option></select></label>
+<label class="field span-2"><span>Tags</span><input id="projectTags" placeholder="comma, separated, tags"/></label>
+<label class="field span-2"><span>Summary</span><textarea id="projectSummary" rows="3"></textarea></label>
+</div>
+<footer><button class="secondary-button" id="deleteProjectButton" type="button">Delete</button><button class="primary-button" id="saveProjectButton" type="button">Save project</button></footer>
+</form>
+</dialog>
+<dialog class="settings-dialog" id="settingsDialog">
+<form class="settings-card" id="settingsForm" method="dialog">
+<header>
+<div><span class="eyebrow">ONYX WORK</span><h2>Connection &amp; workspace</h2></div>
+<button aria-label="Close settings" class="icon-button" value="cancel">×</button>
+</header>
+<div class="settings-body">
+<label class="field"><span>OurSpace session token</span><input autocomplete="off" id="sessionTokenInput" placeholder="Usually detected from OurSpace login" type="password"/></label>
+<p class="field-help">The Work tab reuses the signed-in OurSpace session. The token is stored only in this browser when you choose Save.</p>
+<label class="field"><span>Backend</span><input id="backendUrlInput" readonly="" type="url"/></label>
+<div class="settings-status" id="settingsStatus">Not checked yet.</div>
+</div>
+<footer>
+<button class="secondary-button" id="testConnectionButton" type="button">Test connection</button>
+<button class="primary-button" id="saveSettingsButton" type="button">Save</button>
+</footer>
+</form>
+</dialog>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+ Existing GitHub-hosted Onyx brain assets: no duplicate brain files in this package. 
+
+
+
+
+
+</div>
+<button aria-label="Exit Work" class="fullscreen-shell-exit" id="onyxWorkFullscreenExit" title="Exit Work" type="button">×</button>
+</section>
+<section aria-label="Professor Onyx therapy and DBT workspace" aria-labelledby="onyxProfessorTitle" aria-modal="true" class="onyx-fullscreen-shell-host onyx-professor-fullscreen-host" hidden="" id="onyxProfessorFullscreenShell" role="dialog">
+<div class="ms-native-fullscreen onyx-professor-workspace" id="onyxProfessorFullscreenFrame" tabindex="-1">
+<div class="work-app professor-work-app" id="onyxProfessorApp">
+<aside aria-label="Professor therapy sections" class="server-rail professor-server-rail">
+<div class="brand-orb" title="Professor Onyx"><span>O</span></div>
+<nav aria-label="Therapy sections" class="server-list" id="onyxProfessorSections"></nav>
+</aside>
+<aside aria-label="Session navigation" class="channel-sidebar professor-channel-sidebar" id="onyxProfessorSidebar">
+<header class="channel-header"><div class="channel-title-wrap"><span class="eyebrow">PROFESSOR ONYX</span><h1 id="onyxProfessorTitle">Support Session</h1></div></header>
+<div class="server-description">Supportive listening, psychology education, DBT skills and worksheets. Onyx is not a licensed psychiatrist or a substitute for professional care.</div>
+<section class="professor-portrait"><img alt="Professor Onyx" src="../../assets/onyx_widget_onyx_advising_professor.png"/><strong>Professor Onyx</strong><span id="onyxProfessorSessionTimer">Session ready</span></section>
+<div class="channel-toolbar"><span>SESSION SUBTABS</span><button aria-label="Add therapy subtab" class="icon-button" id="onyxProfessorAddThread" title="Add subtab" type="button">＋</button></div>
+<nav aria-label="Therapy conversations" class="channel-list" id="onyxProfessorThreads"></nav>
+<div class="channel-footer"><div class="brain-status"><span class="status-dot" id="onyxProfessorStatusDot"></span><span id="onyxProfessorStatus">Support session ready</span></div><button class="small-button" id="onyxProfessorNewThread" type="button">＋ New subtab</button></div>
+</aside>
+<main class="chat-shell professor-chat-shell">
+<header class="chat-header"><div class="chat-header-main"><button aria-label="Open session navigation" class="icon-button mobile-only" id="onyxProfessorMobileNav" type="button">☰</button><span class="channel-hash">#</span><div class="chat-heading"><strong id="onyxProfessorChatTitle">session</strong><span id="onyxProfessorChatTopic">A private support conversation with Professor Onyx</span></div></div>
+<div class="chat-actions"><button aria-label="Rename subtab" class="icon-button" id="onyxProfessorRenameThread" title="Rename subtab" type="button">✎</button><button aria-label="Export subtab" class="icon-button" id="onyxProfessorExportThread" title="Export subtab" type="button">⇩</button><button aria-label="Clear messages" class="icon-button" id="onyxProfessorClearThread" title="Clear messages" type="button">⌫</button><button aria-label="Delete subtab" class="icon-button" id="onyxProfessorDeleteThread" title="Delete subtab" type="button">🗑</button></div>
+</header>
+<div class="professor-schedule-banner" id="onyxProfessorSchedule" role="status">Every Saturday · 3:00–4:00 PM Eastern · William and Jasper each have their own session</div>
+<section aria-label="Professor conversation" class="message-viewport"><div aria-live="polite" class="messages" id="onyxProfessorMessages"></div></section>
+<section aria-label="Professor composer" class="composer-shell professor-composer-shell">
+<div class="professor-prompt-row" id="onyxProfessorQuickPrompts"></div>
+<div aria-live="polite" class="professor-attachment-tray" hidden="" id="onyxProfessorAttachmentTray"></div>
+<input accept=".txt,.md,.csv,.json,.pdf,.docx,.png,.jpg,.jpeg,.webp" aria-label="Attach worksheet or supporting document" hidden="" id="onyxProfessorFileInput" multiple="" type="file"/>
+<form class="composer" id="onyxProfessorComposer"><button aria-label="Attach worksheet or document" class="professor-attach-button" id="onyxProfessorAttach" title="Attach worksheet or document" type="button">＋</button><textarea aria-label="Message Professor Onyx" id="onyxProfessorInput" maxlength="12000" placeholder="Tell Onyx what you’d like support with…" required="" rows="2"></textarea><button class="primary-button" id="onyxProfessorSend" type="submit">Send</button></form>
+<p class="professor-footnote">This is AI-guided mental-health support, not clinical treatment. Your session stays separate from Work and is not stored in this browser after you leave the page.</p>
+</section>
+</main>
+</div>
+</div>
+<button aria-label="Exit Professor mode" class="fullscreen-shell-exit" id="onyxProfessorFullscreenExit" title="Exit Professor mode" type="button">×</button>
+</section>
+<script src="../../script/ourspace-profile.js"></script>
+<script src="../../script/ourspace-module-bridge.js"></script>
+<script src="../../script/onyx-alert-audio.js"></script>
+<script src="../../script/onyx_widget_onyx-config.js"></script>
+<script src="../../script/onyx_widget_onyx-atlas.js"></script>
+<script src="../../script/onyx_widget_onyx-mood.js"></script>
+<script src="../../script/onyx_widget_onyx-scanner.js"></script>
+<script src="../../script/onyx_widget_onyx-repository-bridge.js" type="module"></script>
+<script src="../../script/onyx_widget_brain-link.js"></script>
+<script src="../../script/onyx_widget_onyx-behavior.js"></script>
+<script src="../../script/onyx_widget_onyx-voice.js"></script>
+<script src="../../script/onyx_widget_onyx-alerts.js"></script>
+<script src="../../script/onyx_widget_onyx-media.js"></script>
+<script src="../../script/onyx_widget_onyx-ui.js?v=9af239327b64"></script>
+<script src="../../script/onyx_widget_onyx-responsive-resize.js"></script>
+<script src="../../script/onyx_widget_onyx-signature-parts.js"></script>
+<script src="../../script/onyx_widget_onyx_advising_professor.js"></script>
+<script src="../../script/onyx_widget_onyx_caring.js"></script>
+<script src="../../script/onyx_widget_onyx-mood-renderers.js"></script>
+<script src="../../script/onyx_widget_onyx_hungry.js"></script>
+<script src="../../script/onyx_widget_onyx_judgmental.js"></script>
+<script src="../../script/onyx_widget_onyx_listening.js"></script>
+<script src="../../script/onyx_widget_onyx_purring.js"></script>
+<script src="../../script/onyx_widget_onyx_sleepy.js"></script>
+<script src="../../script/onyx_widget_onyx_snuggly.js"></script>
+<script src="../../script/onyx_widget_onyx_thinking.js"></script>
+<script src="../../script/onyx_widget_onyx_thoughtful.js"></script>
+<script src="../../script/onyx_widget_onyx-core.js"></script>
+<script defer="" src="../../script/onyx_widget_onyx-assignments.js"></script>
+<script src="../../script/onyx_widget_onyx-runtime.js"></script>
+<script src="../../script/onyx_widget_shared-shells.js?v=20261016-visual-pass-4"></script>
+<script src="../../script/onyx_widget_shared-runtime.js?v=20261016-visual-pass-4"></script>
+<script src="../../script/onyx_widget_shared-onyx-income.js"></script>
+
+<script src="../../script/onyx_widget_backend-client.js"></script>
+<script src="../../script/onyx-tester.js"></script>
+<script src="../../script/onyx-professor.js"></script>
+<script src="../../script/onyx_widget_work-tab.js"></script><script src="../../script/onyx_widget_legacy-static-moods.js"></script><script src="../../script/onyx_widget_theme.js"></script><script defer="" src="../../script/ourspace_design_widget.js"></script><script defer="" src="../../script/onyx_widget_design_widget.js?catalog=removals-v1"></script><main aria-label="Optional page preview" id="designStage"></main><div aria-label="Floating Design Widget" id="designWidget">
+<button aria-label="Open design widget. Drag to reposition." id="designerBubble" title="Click to open; drag to move" type="button"><img alt="" draggable="false" src="../../assets/onyx_design_widget_quill.webp"/></button>
+<section aria-label="OurSpace design editor" aria-modal="false" hidden="" id="designerPanel" role="dialog">
+<div id="designerBar"><img alt="" draggable="false" src="../../assets/onyx_design_widget_quill.webp"/><div class="header-copy"><strong>OurSpace Design Studio</strong><small>Portable · single-file · live CSS</small></div><button aria-label="Close designer" id="designerClose" title="Close designer" type="button">×</button></div>
+<nav aria-label="Designer sections" id="designerTabs" role="tablist">
+<button aria-selected="true" data-view="targets" role="tab" type="button">Targets</button>
+<button aria-selected="false" data-view="style" role="tab" type="button">Design</button>
+<button aria-selected="false" data-view="images" role="tab" type="button">Images</button>
+<button aria-selected="false" data-view="looks" role="tab" type="button">Looks</button>
+<button aria-selected="false" data-view="export" role="tab" type="button">Export</button>
+<button aria-selected="false" data-view="onyx-studio" role="tab" type="button">Onyx Studio</button></nav>
+<div id="designerBody">
+<section class="view active" id="view-targets" role="tabpanel"></section>
+<section class="view" id="view-style" role="tabpanel"></section>
+<section class="view" id="view-images" role="tabpanel"></section>
+<section class="view" id="view-looks" role="tabpanel"></section>
+<section class="view" id="view-export" role="tabpanel"></section>
+<section aria-label="Original Onyx widget design controls" class="view" id="view-onyx-studio" role="tabpanel"></section></div>
+<div id="designerFooter"><span aria-live="polite" id="designerStatus" role="status">Ready · white canvas</span><button class="ui small" id="undoBtn" title="Undo last change" type="button">Undo</button><button class="ui small" id="redoBtn" title="Redo last change" type="button">Redo</button></div>
+</section>
+</div>
+<script src="../../script/onyx-widget-adventures-loader.js" defer></script>
+</body>
+</html>
