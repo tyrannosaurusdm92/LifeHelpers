@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "title": "Onyx's Adventures — three companions",
+  "background": "transparent alpha compositing, no white plate",
+  "cats": [
+    "onyx",
+    "callie",
+    "harvey"
+  ],
+  "spriteAssets": {
+    "onyx": "assets/onyx.png",
+    "callie": "assets/callie.png",
+    "harvey": "assets/harvey.png"
+  },
+  "engines": {
+    "onyx": "script/onyx-engine.wasm",
+    "callie": "script/callie-engine.wasm",
+    "harvey": "script/harvey-engine.wasm"
+  },
+  "sizeRatios": {
+    "birdReferenceVisibleHeightPixels": 34,
+    "catVisibleHeightFactor": 1.25,
+    "commonFootOffsetBelowTreeBasePixels": 25,
+    "catRenderBoxHeights": {
+      "onyx": 88,
+      "callie": 76,
+      "harvey": 66
+    },
+    "treeVisibleScaleRelativePrevious": 1.75,
+    "treeVisualScaleFromOriginal": 3.0625
+  },
+  "tentColors": {
+    "onyx": "green",
+    "callie": "purple",
+    "harvey": "pink"
+  },
+  "tents": {
+    "appearOnlyForRestIntent": true,
+    "stayUntilCatExits": true,
+    "nonePersistent": true
+  },
+  "separateWasmPerCat": true,
+  "preserveOutdoorBirdCycle": true,
+  "careAnimationFrames": {
+    "allCats": {
+      "eat": [
+        24,
+        25,
+        26
+      ],
+      "drink": [
+        28,
+        29,
+        30
+      ],
+      "settle": [
+        20,
+        21
+      ]
+    },
+    "blankCells": [
+      22,
+      23,
+      27,
+      31
+    ]
+  },
+  "birdCatching": {
+    "intervalSeconds": 300,
+    "periodSeconds": 90,
+    "chancePerEligibleCat": 0.03,
+    "independentRollPerEligibleCat": true,
+    "allEligibleAwakeAttempt": true,
+    "contactRequired": true
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "schema": "ourspace.page-visual-presets.v2",
+  "version": 2,
+  "geometryPolicy": "immutable",
+  "apply": "colors borders surface backgrounds wallpaper only",
+  "blockedCSSProperties": [
+    "position",
+    "display",
+    "grid-template-*",
+    "grid-area",
+    "order",
+    "float",
+    "width",
+    "min-width",
+    "max-width",
+    "height",
+    "min-height",
+    "max-height",
+    "transform",
+    "margin",
+    "padding",
+    "gap",
+    "flex",
+    "overflow",
+    "z-index"
+  ],
+  "pages": {
+    "profile": {
+      "sections": [
+        "Profile identity",
+        "Contact links",
+        "Interests",
+        "Links",
+        "Record Player",
+        "Bulletin Board",
+        "Posts",
+        "Gallery",
+        "Projects",
+        "Guestbook",
+        "Pins",
+        "News"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    },
+    "household": {
+      "sections": [
+        "Household topbar",
+        "Daily organizer",
+        "Household tasks",
+        "Shared schedule",
+        "Rooms"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    },
+    "journal": {
+      "sections": [
+        "Journal",
+        "Diary Cards",
+        "Folders",
+        "DBT records"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    },
+    "feed": {
+      "sections": [
+        "Feed stream",
+        "Filters",
+        "News screens",
+        "Notes"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    },
+    "skills": {
+      "sections": [
+        "Skills book",
+        "Chapter navigation",
+        "DBT worksheets",
+        "Assigned handouts"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    },
+    "communication": {
+      "sections": [
+        "Conversations",
+        "Message thread",
+        "Composer",
+        "Media",
+        "Pinned messages"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    },
+    "audio": {
+      "sections": [
+        "Audio library",
+        "Music folders",
+        "Playlist",
+        "Mini player"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    },
+    "visual": {
+      "sections": [
+        "Visual library",
+        "Folders",
+        "Gallery",
+        "Player"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    },
+    "store": {
+      "sections": [
+        "Catalog",
+        "Search",
+        "Cart",
+        "Checkout"
+      ],
+      "navigation": "shared jump bubble",
+      "designer": "shared quill",
+      "scrollbar": "shared messenger right rail",
+      "presets": "visual-only; original module geometry unchanged"
+    }
+  },
+  "archiveMyspaceLayouts": "reference only; never inject archived CSS or HTML",
+  "sourcePreservation": "original user module content remains present in native profile HTML"
+}

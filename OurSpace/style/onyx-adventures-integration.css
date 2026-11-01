@@ -1,0 +1,13 @@
+
+/* The widget fullscreen shell remains the one and only Adventures display. */
+#slowPetGame.onyx-adventures-fullscreen { background:#5a8580; width:100vw; height:100dvh; overflow:hidden; }
+#slowPetGame[hidden] {display:none!important;}
+#slowPetGame .game-shell {width:100%;height:100%;height:100dvh;}
+#slowPetGame #gameViewport {contain:layout paint;}
+#slowPetGame #adventuresLoadingMessage {position:absolute;z-index:18000;inset:0;display:grid;place-items:center;background:#1b3035;color:#fff;font:bold clamp(18px,3vw,36px) system-ui;pointer-events:none;text-align:center;padding:24px;}
+#slowPetGame #adventuresLoadingMessage[hidden]{display:none!important;}
+#slowPetGame > #slowGameExit {position:fixed!important;z-index:24000!important;top:12px;right:12px;background:#c62836!important;color:#fff!important;border:2px solid #ff6b78!important;}
+/* Keep the host's red close button clickable even when game HUD/dialogs are elevated. */
+html[data-runtime-mode="slow-game"] #onyxWidget:not(.open) {pointer-events:none!important;}
+/* Avoid widget's generic bubble treatment bleeding into the GAME Professor bubble. */
+#slowPetGame #onyxBoosterBubble.onyx-bubble {position:relative;inset:auto;}

@@ -1,0 +1,45 @@
+/* One Onyx widget design bubble, no second chrome ring. The game hides the editor entirely. */
+html[data-runtime-mode="slow-game"] #designWidget,
+html[data-runtime-mode="slow-game"] #designStage,
+html[data-runtime-mode="slow-game"] #designerBubble,
+html[data-runtime-mode="slow-game"] #designerPanel {display:none!important;visibility:hidden!important;pointer-events:none!important;}
+#designWidget #designerBubble {border:0!important;outline:none!important;box-shadow:none!important;background:transparent!important;padding:0!important;border-radius:50%!important;}
+#designWidget #designerBubble::before,#designWidget #designerBubble::after{border:0!important;box-shadow:none!important;background:none!important;}
+#designWidget #designerBubble:focus-visible{outline:none!important;filter:drop-shadow(0 0 4px #005da8) drop-shadow(0 0 3px white)!important;}
+#slowPetGame #meadowMiniStatus{display:none!important;}
+#slowPetGame #gameplayCareers .meadow-grid{margin:10px 0;}
+#slowPetGame #gameplayCareers .check{margin:12px 0;}
+#slowPetGame #gameplayGuide .meadow-guide{border-top:0;}
+#slowPetGame #gameplayWallet .meadow-wallet{border-top:0;}
+/* The three channel selectors live inside the original game chat HUD. */
+#slowPetGame .cat-chat-channels{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:7px 0 10px;}
+#slowPetGame .cat-channel-button{background:#253d48;border:1px solid #9bb8bb;border-radius:11px;padding:9px 13px;color:#fff;font-weight:750;cursor:pointer;}
+#slowPetGame .cat-channel-button[data-cat="onyx"]{border-color:#8dc59e;}
+#slowPetGame .cat-channel-button[data-cat="callie"]{border-color:#b59ad8;}
+#slowPetGame .cat-channel-button[data-cat="harvey"]{border-color:#efadd0;}
+#slowPetGame .cat-channel-button[aria-selected="true"]{background:#e9f6f5;color:#173238;box-shadow:inset 0 -3px #428f86;}
+#slowPetGame #chatLog[data-three-cat-hidden]{display:none!important;}
+#slowPetGame .cat-channel-log{min-height:130px;max-height:min(340px,36dvh);overflow:auto;display:flex;flex-direction:column;gap:8px;padding:10px;border-radius:10px;background:#1a343abf;}
+#slowPetGame .cat-channel-log[hidden]{display:none!important;}
+#slowPetGame .cat-chat-line{padding:9px 11px;border-radius:12px;background:#30525d;max-width:96%;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.5;}
+#slowPetGame .cat-chat-line.user{align-self:flex-end;background:#365d56;}
+#slowPetGame .cat-chat-line.system{background:#39454c;color:#d9e6e5;font-style:italic;}
+#slowPetGame .cat-chat-line strong{display:block;margin-bottom:3px;color:#ecfbeb;font-size:12px;}
+#slowPetGame .cat-chat-sync-note{font-size:12px;opacity:.86;line-height:1.4;margin:4px 0 8px;}
+/* This layer contains text only, never a replacement cat sprite or off-screen proxy. */
+#slowPetGame .adventure-scene .cat-voice-layer{position:absolute;inset:0;z-index:7;pointer-events:none;overflow:hidden;}
+#slowPetGame .cat-voice-anchor{position:absolute;width:0;height:0;pointer-events:none;}
+#slowPetGame .cat-voice-message{position:absolute;bottom:13px;left:-17px;box-sizing:border-box;width:max-content;max-width:var(--voice-max,220px);min-width:31px;padding:8px 11px;background:var(--voice-background,#fbfff3);border:2px solid var(--voice-edge,#213a34);color:#152d31;border-radius:18px 18px 18px 5px;box-shadow:0 2px 0 #0003,0 4px 12px #0003;font:700 clamp(11px,1.25vw,15px)/1.28 system-ui,sans-serif;overflow-wrap:anywhere;white-space:pre-wrap;text-align:left;}
+#slowPetGame .cat-voice-anchor::after{content:"";position:absolute;left:-4px;bottom:0;width:12px;height:16px;background:var(--voice-background,#fbfff3);clip-path:polygon(12% 0,98% 0,53% 100%);filter:drop-shadow(0 1px 0 var(--voice-edge));transform:rotate(-8deg);}
+#slowPetGame .cat-voice-anchor[data-length="tiny"] .cat-voice-message{border-radius:50% 50% 45% 35%;text-align:center;padding:10px 12px;}
+#slowPetGame .cat-voice-anchor[data-length="short"] .cat-voice-message{border-radius:20px 20px 20px 7px;}
+#slowPetGame .cat-voice-anchor[data-length="long"] .cat-voice-message{border-radius:14px 18px 14px 5px;}
+#slowPetGame .cat-voice-anchor[data-side="left"] .cat-voice-message{left:auto;right:-17px;border-radius:18px 18px 5px 18px;}
+#slowPetGame .cat-voice-anchor[data-side="left"]::after{transform:scaleX(-1) rotate(-8deg);}
+#slowPetGame .cat-voice-anchor[data-cat="callie"]{--voice-background:#f6e6ff;--voice-edge:#654383;}
+#slowPetGame .cat-voice-anchor[data-cat="harvey"]{--voice-background:#ffe6f0;--voice-edge:#8d4665;}
+#slowPetGame .cat-voice-anchor[data-cat="onyx"]{--voice-background:#e6ffe9;--voice-edge:#2c6650;}
+#slowPetGame .cat-voice-anchor[hidden]{display:none!important;}
+@media (prefers-reduced-motion:reduce){#slowPetGame .cat-voice-message{animation:none!important;transition:none!important;}}
+#slowPetGame .cat-voice-anchor[data-placement="below"] .cat-voice-message{bottom:auto;top:14px;border-radius:8px 18px 18px 18px;}
+#slowPetGame .cat-voice-anchor[data-placement="below"]::after{bottom:auto;top:0;transform:rotate(172deg);}

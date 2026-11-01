@@ -1,0 +1,72 @@
+/* Classic MySpace geometry adapted from Tom's MySpace profile and AnySpace clones. */
+.profile-frame{max-width:1000px;margin:0 auto 72px;background:white;min-height:100vh;border-left:1px solid #d2d2d2;border-right:1px solid #d2d2d2;font:12px/1.42 Verdana,Arial,Helvetica,sans-serif}
+.profile-mast{height:auto;min-height:110px;background:#003399;color:white;display:flex;align-items:center;justify-content:space-between;padding:18px 20px 14px 90px;gap:14px;flex-wrap:wrap}
+.profile-mast .wordmark{font-weight:950;letter-spacing:-2px;font-size:clamp(24px,3vw,39px);line-height:1;text-shadow:1px 2px #001d58}
+.profile-mast .greeting{font-size:12px;color:#e2ecff}
+.profile-mast .mast-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.profile-mast button{border:1px solid #a9c9ea;background:#d8eafb;color:#003399;font-weight:750;padding:6px 10px}
+.profile-nav{background:#6699cc;min-height:30px;display:flex;align-items:center;gap:0;justify-content:center;flex-wrap:wrap;border-top:1px solid #a3c9ee;border-bottom:1px solid #5988bc}
+.profile-nav a{color:#fff;padding:6px 12px;font-weight:700;border-right:1px solid #e8f1ff;text-shadow:0 1px #31517f}.profile-nav a:hover{background:#4782bd}
+.profile-searchbar{display:flex;justify-content:flex-end;padding:8px 12px;gap:8px;align-items:center;background:#fff}
+.profile-searchbar input{font:12px Verdana;min-width:100px;max-width:260px;width:100%;padding:5px;border:1px solid #94b2d3}
+.profile-content{display:grid;grid-template-columns:minmax(260px,34%) minmax(0,1fr);gap:18px;padding:0 18px 24px}
+.profile-column{min-width:0;display:flex;flex-direction:column;gap:14px}
+.profile-column h1{font-size:19px;color:#202b42;margin:12px 0 0}
+.profile-box{border:2px solid #6699cc;background:#fff;min-width:0;overflow:auto;resize:vertical;max-width:100%;min-height:38px;scrollbar-color:#6699cc #eef4fc}
+.profile-box .box-head{margin:0;background:#6699cc;color:#fff;min-height:24px;padding:3px 8px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:750}
+.profile-box .box-head>*{margin:0;font-size:12px}.profile-box .box-head .label{flex:1;min-width:0}
+.profile-box .box-head button{padding:0 7px;min-height:20px;border:1px solid #cce1fa;background:#d8edff;color:#003399;font-size:14px;font-weight:900}
+.profile-box.is-collapsed .box-body{display:none}
+.profile-box .box-body{padding:9px;min-width:0}
+.profile-box .box-body:empty{min-height:26px}
+.profile-box .box-body p{margin:0 0 8px;white-space:pre-wrap;overflow-wrap:anywhere}
+.profile-box .box-body p:last-child{margin-bottom:0}
+.profile-identity{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:8px 0 3px}
+.profile-avatar{border:1px solid #a2bdd8;width:150px;height:170px;display:flex;align-items:center;justify-content:center;background:#e9f3fd;color:#476485;font-size:36px;font-weight:900;overflow:hidden}
+.profile-avatar img{width:100%;height:100%;object-fit:cover}
+.profile-intro{display:grid;align-content:start;gap:6px;min-width:0}
+.profile-intro .display-name{font-size:16px;font-weight:800;overflow-wrap:anywhere}
+.profile-intro .minor{font-size:11px;color:#56647b}
+.profile-contact{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.profile-contact button{padding:6px;border:0;background:#eaf3fd;color:#003399;text-align:left;overflow-wrap:anywhere;font-size:11px;min-height:32px}
+.profile-contact button:hover{background:#cde6ff}
+.info-table{width:100%;border-collapse:separate;border-spacing:2px;font-size:11px}
+.info-table th,.info-table td{padding:5px;vertical-align:top;text-align:left;overflow-wrap:anywhere}
+.info-table th{width:32%;background:#b1d0f0;color:#336699;font-weight:750}
+.info-table td{background:#d5e8fb;color:#18294e}
+.info-table a{word-break:break-word}
+.profile-main .profile-box{border-color:#ffcc99}
+.profile-main .profile-box .box-head{background:#ffcc99;color:#eb6418;font-size:13px}
+.profile-main .profile-box .box-head button{background:#fff2dd;border-color:#eaa966;color:#a94f0f}
+.profile-notice{border:2px solid #003399;text-align:center;font-size:16px;font-weight:750;padding:20px 12px;margin:12px 0 3px}
+.profile-status{color:#425d74;font-size:11px;min-height:18px;margin:0;padding:5px 18px}
+.profile-field{display:grid;gap:3px;margin:0 0 8px}
+.profile-field label{font-size:11px;font-weight:750;color:#355477}
+.profile-field input,.profile-field textarea,.profile-field select{width:100%;border:1px solid #98b5d3;background:#fff;padding:6px;min-height:28px;border-radius:0}
+.profile-field textarea{resize:vertical;min-height:60px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.profile-controls{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}
+.profile-list{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+.profile-list li{padding:6px;border-bottom:1px dashed #9cbadc;overflow-wrap:anywhere}
+.profile-list li:last-child{border-bottom:0}
+.profile-list .item-meta{font-size:10px;color:#6a7585;margin:0 0 3px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:7px}
+.gallery-tile{background:#f2f7fd;border:1px solid #b1cee8;padding:4px;min-width:0;overflow:hidden;overflow-wrap:anywhere}
+.gallery-tile img{width:100%;height:115px;object-fit:cover;display:block}
+.gallery-tile figcaption{padding:3px 0;font-size:11px}
+.gallery-tile button{width:100%}
+.pair{display:flex;justify-content:space-between;gap:8px}.pair span{overflow-wrap:anywhere}
+.profile-footer{background:#f3f3f3;border-top:1px solid #e5e5e5;padding:16px;text-align:center;font-size:11px;color:#627186}
+.tag-bucket{display:flex;flex-wrap:wrap;gap:5px}.tag-bucket span{border:1px solid #aac6e7;color:#003399;background:#e9f2fc;padding:3px 6px}
+.profile-edit-dialog{border:2px solid #6699cc;width:min(750px,calc(100vw - 18px));max-height:90dvh;padding:0;background:white;box-shadow:0 20px 90px #1118}
+.profile-edit-dialog::backdrop{background:#0c2c50a8}
+.profile-edit-dialog .edit-content{overflow:auto;max-height:calc(90dvh - 50px);padding:12px 15px}
+.profile-edit-dialog .dialog-head{min-height:43px}
+.profile-public{max-width:840px;padding:80px 30px 30px;margin:auto}
+.profile-public h1{font-size:24px}
+.profile-public .public-card{padding:20px;border:2px solid #6699cc;background:white}
+@media(max-width:760px){.profile-frame{border:0}.profile-mast{padding:17px 12px 11px 74px}.profile-content{grid-template-columns:1fr;padding:0 10px 20px;gap:12px}.profile-identity{grid-template-columns:120px 1fr}.profile-avatar{width:120px;height:144px}.profile-main .profile-box{width:100%}.profile-nav a{padding:5px 7px}}
+
+.profile-edit-dialog .profile-field input[type="checkbox"]{width:16px;height:16px;min-height:0;vertical-align:middle;margin:0 7px 0 0}
+.profile-edit-dialog .profile-field label:has(input[type="checkbox"]){display:flex;align-items:center;gap:5px;padding:4px 0;font-weight:550}
+

@@ -1,0 +1,34 @@
+/* Isolated within widget Onyx Adventures fullscreen. */
+/* Restrained, movable HUD compatible gameplay modules; no replacement canvas or cats. */
+#slowPetGame .gameplay-container{display:grid;gap:14px;padding:4px 0 12px;color:inherit}
+#slowPetGame .meadow-title{font-weight:850;letter-spacing:.02em;margin:0}
+#slowPetGame .meadow-caption{font-size:.85rem;line-height:1.4;opacity:.87;margin:.25rem 0}
+#slowPetGame .meadow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(154px,1fr));gap:10px}
+#slowPetGame .cat-job-card{border:1px solid rgba(130,203,189,.43);border-radius:12px;background:rgba(18,54,57,.43);padding:12px;min-width:0}
+#slowPetGame .cat-job-card.callie{border-color:rgba(187,133,216,.55)}
+#slowPetGame .cat-job-card.harvey{border-color:rgba(236,143,178,.55)}
+#slowPetGame .cat-job-card h4{margin:0 0 5px;font-size:1.02rem}
+#slowPetGame .cat-job-description{min-height:2.5em;font-size:.82rem;opacity:.9}
+#slowPetGame .cat-career-meter{font-size:.82rem;line-height:1.45;padding:5px 0}
+#slowPetGame .meadow-button-row{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:7px 0}
+#slowPetGame .meadow-button-row .btn{flex:1 1 auto;min-width:110px;white-space:normal}
+#slowPetGame .meadow-button-row label{display:flex;gap:7px;align-items:center;cursor:pointer;font-size:.9rem}
+#slowPetGame .meadow-status{border-left:3px solid #a8dbaa;padding:8px 10px;line-height:1.45;font-size:.88rem;background:rgba(28,90,66,.28)}
+#slowPetGame .meadow-map,
+#slowPetGame .meadow-guide,
+#slowPetGame .meadow-wallet{border-top:1px solid rgba(192,225,220,.25);padding-top:12px}
+#slowPetGame .meadow-map h4,
+#slowPetGame .meadow-guide h4,
+#slowPetGame .meadow-wallet h4{margin:0 0 5px}
+#slowPetGame .biome-coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(166px,1fr));gap:7px;margin-top:8px}
+#slowPetGame .biome-tile{border-radius:8px;background:rgba(28,61,64,.6);border:1px solid rgba(169,205,211,.25);padding:8px;font-size:.77rem;line-height:1.5}
+#slowPetGame .biome-tile strong{display:block;font-size:.89rem;margin-bottom:4px}
+#slowPetGame .biome-tile-cat{opacity:.92}
+#slowPetGame .meadow-guide-chips{display:flex;gap:5px;flex-wrap:wrap}
+#slowPetGame .meadow-chip{border:1px solid rgba(151,214,197,.4);border-radius:14px;padding:3px 8px;font-size:.8rem;background:rgba(33,72,61,.4)}
+#slowPetGame .meadow-wallet{background:rgba(33,61,63,.22);border-radius:9px;padding:12px}
+#slowPetGame .meadow-balance{font-weight:750}
+#slowPetGame .meadow-pending{opacity:.85;font-size:.85rem}
+#slowPetGame .meadow-important{font-size:.82rem;opacity:.9;margin:0}
+@media (max-width:720px){#slowPetGame .meadow-grid{grid-template-columns:1fr}#slowPetGame .biome-coverage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){#slowPetGame .meadow-container *{animation:none!important;transition:none!important}}

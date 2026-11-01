@@ -1,0 +1,160 @@
+/* Isolated within widget Onyx Adventures fullscreen. */
+/* Onyx’s Adventures HUD styling. Original Feed Him MEOW chrome retained; no gamepad UI. */
+#slowPetGame{--onyx-bubble-size:clamp(86px,11vw,136px);--topbar-height:clamp(37px,5.4vh,54px);--subbar-height:clamp(37px,5vh,51px)}
+#slowPetGame .hud-header{z-index:16}
+#slowPetGame .hud-tab{min-width:0;flex:1 1 0;max-width:210px}
+#slowPetGame .game-shell{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+#slowPetGame .hud-panel{z-index:45;resize:none;max-height:calc(100dvh - var(--hud-height) - 12px)}
+#slowPetGame .hud-panel[hidden]{display:none!important}
+#slowPetGame .hud-panel.is-open{display:grid}
+#slowPetGame .hud-panel-head{touch-action:none}
+#slowPetGame .hud-panel .hud-panel-body{min-height:100px;overflow:auto;color:#121819;background:#fff}
+#slowPetGame .hud-panel button:not(.hud-panel-icon-btn){touch-action:manipulation}
+#slowPetGame .hud-panel button:disabled{cursor:not-allowed;opacity:.6}
+#slowPetGame .hud-subbar{position:relative;z-index:1}
+#slowPetGame .hud-subbar > .quickbar{display:flex!important;position:static!important;transform:none!important;gap:clamp(3px,.6vw,9px)!important;width:auto!important}
+#slowPetGame .hud-subbar .game-slot{flex:none!important;height:clamp(27px,3.8vh,39px);width:clamp(28px,3.8vw,40px);font-size:clamp(15px,1.6vw,20px)}
+#slowPetGame .hud-control-toggle{display:inline-grid;place-items:center;min-width:30px;height:32px;font-size:17px;border:1px solid #00ffff;border-radius:7px;color:#d1fdff;background:linear-gradient(#3a5663,#121819)}
+#slowPetGame .display-controls{display:flex;gap:5px;align-items:center}
+#slowPetGame .game-shell.hud-hidden .hud-subbar{visibility:hidden}
+#slowPetGame .game-shell.accessible-large .hud-panel-body,
+#slowPetGame .game-shell.accessible-large .hud-panel-body .btn{font-size:15px}
+#slowPetGame .game-shell.accessible-large .hud-panel-body .btn,
+#slowPetGame .game-shell.accessible-large .chip{min-height:44px}
+#slowPetGame .game-shell.accessible-large .hud-tab{font-size:15px}
+#slowPetGame .game-shell.accessible-contrast .hud-panel{border-width:3px;border-color:#111}
+#slowPetGame .game-shell.accessible-contrast .hud-panel-body,
+#slowPetGame .game-shell.accessible-contrast .section{color:#000;background:#fff}
+#slowPetGame .game-shell.accessible-contrast .btn{border-width:2px}
+#slowPetGame .game-shell.accessible-motionless *,
+#slowPetGame .game-shell.accessible-motionless *::before,
+#slowPetGame .game-shell.accessible-motionless *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+#slowPetGame .game-shell.onehand .hud-panel-body .grid{grid-template-columns:1fr 1fr}
+#slowPetGame .game-shell.labels-hidden .chat-intro,
+#slowPetGame .game-shell.labels-hidden .hud-panel-body p{display:none}
+#slowPetGame .game-shell.panels-locked .hud-panel-head{cursor:default}
+#slowPetGame .game-shell.panels-locked .panel-resize-handle{cursor:not-allowed;opacity:.5}
+#slowPetGame .viewport-frame{bottom:max(7px,env(safe-area-inset-bottom,0px))!important;left:1.25%;width:97.5%;top:calc(var(--hud-height) + clamp(5px,1vh,12px));height:auto;z-index:2}
+#slowPetGame .game-viewport{touch-action:auto!important;isolation:isolate}
+#slowPetGame .game-viewport > *{max-width:100%}
+#slowPetGame .game-viewport.is-paused::after{display:none!important;content:none!important}
+#slowPetGame .game-viewport::before,
+#slowPetGame .game-viewport::after{content:none!important}
+#slowPetGame .hud-panel-body .field{display:grid;gap:5px;align-content:start}
+#slowPetGame .hud-panel-body textarea{display:block;width:100%;min-height:72px;padding:9px;border:1px solid #5a8580;border-radius:7px;background:white;color:#121819;font:500 13px/1.55 system-ui;resize:vertical}
+#slowPetGame .hud-panel-body .stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#slowPetGame .stat-grid>div{display:grid;gap:6px;padding:9px;border:1px solid #5a8580;border-radius:7px;background:white}
+#slowPetGame .stat-grid span{font-size:11px;color:#3a5663}
+#slowPetGame .stat-grid strong{font-size:17px}
+#slowPetGame .goal-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end}
+#slowPetGame .goal-form input{width:100%;min-height:37px}
+#slowPetGame .goal-list{list-style:none;display:grid;gap:6px;margin:4px 0;padding:0}
+#slowPetGame .goal-list li{display:flex;align-items:center;gap:6px;padding:7px;background:#fff;border:1px solid #5a8580;border-radius:7px}
+#slowPetGame .goal-list li span{flex:1;overflow-wrap:anywhere;font-weight:600}
+#slowPetGame .goal-list li.done span{text-decoration:line-through;opacity:.58}
+#slowPetGame .goal-list button,
+#slowPetGame .journal-item button{padding:4px 7px;border:1px solid #5a8580;background:#d1fdff;border-radius:5px;color:#121819;font-size:12px}
+#slowPetGame .journal-list{display:grid;gap:8px}
+#slowPetGame .journal-item{padding:9px;background:#fff;border:1px solid #5a8580;border-radius:7px}
+#slowPetGame .journal-item small{display:block;color:#3a5663;margin-bottom:6px}
+#slowPetGame .journal-item p{white-space:pre-wrap;overflow-wrap:anywhere;margin:5px 0 8px}
+#slowPetGame .chat-body{display:flex!important;flex-direction:column;overflow:hidden!important;gap:9px;background:#fff!important;padding:12px!important;min-height:280px!important}
+#slowPetGame .hud-chat-window{height:min(76dvh,710px);min-height:360px}
+#slowPetGame .chat-intro{font-weight:500;font-size:12px;line-height:1.5;padding:9px;border-radius:7px;background:#d1fdff;color:#121819}
+#slowPetGame #chatModeLabel{display:inline-block;font-weight:800;background:#35db35;color:#121819;border-radius:5px;padding:2px 6px;margin-left:6px}
+#slowPetGame #chatModeLabel.professor-mode{background:#fff600}
+#slowPetGame .chat-chips{display:flex;flex-wrap:wrap;gap:6px}
+#slowPetGame .hud-panel-body .chip{border:1px solid #3a5663;border-radius:12px;background:#d1fdff;color:#121819;font:700 11px/1.35 system-ui;padding:6px 9px}
+#slowPetGame .hud-panel-body .chip:hover{background:#35db35}
+#slowPetGame #chatLog{flex:1 1 auto;max-height:none;min-height:85px;display:flex;flex-direction:column;gap:8px;overflow:auto;padding:9px;background:#f1f8fa;border:1px solid #5a8580}
+#slowPetGame .chat-line{max-width:95%;padding:8px 9px;background:#fff;border:1px solid #a9b7b8;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:500 12px/1.5 system-ui;user-select:text}
+#slowPetGame .chat-line.user{align-self:flex-end;background:#d1fdff;border-color:#1e90ff}
+#slowPetGame .chat-line.assistant{align-self:flex-start}
+#slowPetGame .chat-line strong{display:block;font-size:10px;letter-spacing:.04em;margin-bottom:3px}
+#slowPetGame .chat-form{margin:0;display:flex;align-items:stretch;gap:7px}
+#slowPetGame .chat-form textarea{min-height:58px;max-height:140px;flex:1;resize:vertical;font-size:13px}
+#slowPetGame .chat-form .btn{min-width:64px}
+#slowPetGame .chat-footer{display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:7px;color:#52626b;font:600 10px/1.3 system-ui}
+#slowPetGame #worksheetArea:not([hidden]){display:block;flex:none;overflow:auto;max-height:240px;padding:9px;background:#fffde3;border:2px solid #d0ac3c;border-radius:8px;color:#121819;font:500 12px/1.4 system-ui}
+#slowPetGame .worksheet-fields{display:grid;gap:5px}
+#slowPetGame .worksheet-fields label{display:grid!important;gap:3px;padding:2px 0!important}
+#slowPetGame .worksheet-fields textarea{min-height:42px;font:500 12px/1.4 system-ui}
+#slowPetGame .worksheet-actions{display:flex;gap:7px;margin-top:8px}
+#slowPetGame .professor-dock{position:fixed;z-index:1300;top:0;left:0;right:auto;bottom:auto;width:var(--onyx-bubble-size);height:var(--onyx-bubble-size);pointer-events:none;isolation:isolate}
+#slowPetGame .professor-dock[hidden],
+#slowPetGame .professor-menu[hidden]{display:none!important}
+#slowPetGame .onyx-bubble{position:absolute;inset:0;width:100%;height:100%;display:block;padding:0;border:0;background:transparent;border-radius:50%;cursor:grab;pointer-events:auto;touch-action:none;user-select:none;-webkit-user-select:none;filter:drop-shadow(0 4px 2px #000) drop-shadow(0 0 7px #00ffff);transition:transform .15s}
+#slowPetGame .onyx-bubble:hover{transform:scale(1.045)}
+#slowPetGame .professor-dock.is-dragging .onyx-bubble{cursor:grabbing;transform:none!important;filter:drop-shadow(0 0 8px #fff600)}
+#slowPetGame .onyx-cat-portrait{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;object-fit:contain}
+#slowPetGame .onyx-cat-portrait{z-index:1;border-radius:50%;border:3px solid #121819;background:#213b3b;box-shadow:inset 0 0 0 2px #00ffff}
+#slowPetGame .onyx-bubble-marker{position:absolute;right:-4px;bottom:0;z-index:3;width:33px;height:33px;display:grid;place-items:center;border:3px solid #000;border-radius:50%;font-size:18px;background:#fff600;pointer-events:none}
+#slowPetGame .professor-menu{position:fixed;z-index:5;top:0;left:0;right:auto;bottom:auto;width:min(350px,calc(100vw - 18px));max-height:min(75dvh,540px);overflow:auto;border:3px solid #121819;border-radius:12px;box-shadow:0 0 0 2px #00ffff,6px 7px 0 #000;color:#d1fdff;background:#001924;pointer-events:auto}
+#slowPetGame .onyx-menu-head{display:flex;align-items:center;gap:9px;padding:10px;background:linear-gradient(115deg,#027aa5,#00ffff 45%,#35db35 75%,#fff600);color:#001925}
+#slowPetGame .onyx-menu-head>span{font-size:25px}
+#slowPetGame .onyx-menu-head>div{flex:1}
+#slowPetGame .onyx-menu-head strong,
+#slowPetGame .onyx-menu-head small{display:block}
+#slowPetGame .onyx-menu-head strong{font-size:13px}
+#slowPetGame .onyx-menu-head small{font-size:10px}
+#slowPetGame .onyx-menu-close{padding:2px 7px;border:2px solid #000;border-radius:5px;background:#fff600;font-size:22px;color:#000}
+#slowPetGame .onyx-menu-help{padding:10px;font:600 11px/1.45 system-ui}
+#slowPetGame .professor-tools{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:8px}
+#slowPetGame .professor-tools .btn{padding:8px;border:1px solid #000;border-radius:6px;background:#d1fdff;color:#121819;font:800 11px/1.3 system-ui;cursor:pointer}
+#slowPetGame .professor-tools .btn:hover{background:#fff600}
+@media (max-width:600px){#slowPetGame .hud-chat-window{width:min(98vw,580px)!important}
+#slowPetGame .chat-body{padding:8px!important}
+#slowPetGame .hud-tab{font-size:clamp(9px,2.5vw,12px)}
+#slowPetGame .hud-panel .cols-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px) and (max-aspect-ratio:11/10){#slowPetGame{--subbar-height:76px}
+#slowPetGame .hud-subbar{grid-template-columns:max-content minmax(0,1fr) max-content!important;grid-template-rows:31px 31px!important;column-gap:4px!important;row-gap:6px!important;padding:4px!important}
+#slowPetGame .hud-subbar>.sound-controls{grid-column:1;grid-row:1}
+#slowPetGame .hud-subbar>.quickbar{grid-column:2;grid-row:1;justify-self:center}
+#slowPetGame .hud-subbar>.display-controls{grid-column:3;grid-row:1;justify-self:end}
+#slowPetGame .hud-subbar>.pause-button{grid-column:1;grid-row:2}
+#slowPetGame .hud-subbar>.resource-counters{grid-column:2 / 4;grid-row:2;justify-self:end}
+#slowPetGame .hud-panel{top:calc(var(--hud-height) + 6px)}
+#slowPetGame .professor-menu{width:min(350px,calc(100vw - 18px))}}
+@media (prefers-reduced-motion:reduce){#slowPetGame *,
+#slowPetGame *::before,
+#slowPetGame *::after{animation:none!important;transition:none!important}}
+/* The bubble uses only the Professor portrait asset; CSS paints the ring and controls. */
+#slowPetGame .professor-dock,
+#slowPetGame .professor-dock .onyx-bubble{-webkit-tap-highlight-color:transparent}
+#slowPetGame .professor-dock .onyx-bubble:focus-visible{outline:3px solid #fff600;outline-offset:4px}
+/* Dossier pass 2: accessible controls and real optional self-care state. */
+#slowPetGame .hud-panel-body .integration-note{background:#fff9dd;border:1px solid #aa8d46;border-left:4px solid #927325;padding:10px;border-radius:7px;font:600 12px/1.5 system-ui;color:#302915}
+#slowPetGame .care-condition-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#slowPetGame .care-condition-list>div{padding:9px;border:1px solid #a7beb8;background:#f0f9f7;border-radius:7px;display:grid;gap:5px}
+#slowPetGame .care-condition-list strong{font-size:12px}
+#slowPetGame .care-condition-list span{font:500 11px/1.45 system-ui}
+#slowPetGame .hud-panel .mood-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+#slowPetGame .mood-grid .btn[aria-pressed="true"]{border:2px solid #017688;background:#d8f7e0}
+#slowPetGame .enhanced-goal-form{grid-template-columns:repeat(2,minmax(0,1fr))}
+#slowPetGame .enhanced-goal-form>.btn{grid-column:1/-1;min-height:38px}
+#slowPetGame .enhanced-goal-form input,
+#slowPetGame .enhanced-goal-form select{width:100%;min-height:36px}
+#slowPetGame .goal-list li.enhanced-goal{flex-wrap:wrap;align-items:flex-start}
+#slowPetGame .goal-description{flex:1 1 190px;display:grid;gap:4px;overflow-wrap:anywhere}
+#slowPetGame .goal-description strong{font-size:13px}
+#slowPetGame .goal-description small{color:#52626b;font:500 11px/1.3 system-ui}
+#slowPetGame .goal-actions{display:flex;gap:5px;flex:1 1 210px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+#slowPetGame .goal-actions select{flex:1;min-width:112px;max-width:170px;padding:5px;border:1px solid #5a8580;border-radius:6px;background:#fff;color:#121819;font:600 12px system-ui}
+#slowPetGame .focus-controls{display:flex;gap:6px;align-items:end;flex-wrap:wrap}
+#slowPetGame .focus-controls .field{width:90px}
+#slowPetGame .focus-controls input{width:100%;min-height:36px}
+#slowPetGame .focus-controls .btn{min-height:36px}
+#slowPetGame .scene-location.caption-minimal small,
+#slowPetGame .scene-location.caption-minimal .scene-location-kicker{display:none}
+#slowPetGame .chat-chips[hidden]{display:none!important}
+#slowPetGame .hud-panel-body button:disabled,
+#slowPetGame .hud-panel-body select:disabled{opacity:.65;cursor:not-allowed}
+#slowPetGame .hud-panel-body .goal-list select,
+#slowPetGame .hud-panel-body .goal-list button{touch-action:manipulation}
+@media (max-width:560px){#slowPetGame .hud-panel .mood-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#slowPetGame .enhanced-goal-form{grid-template-columns:1fr}
+#slowPetGame .care-condition-list{grid-template-columns:1fr}}
+/* Controls belong to Adventures, not to the external widget. */
+#slowPetGame .hud-panel-body .section[hidden],
+#slowPetGame #meadowMomentsSection[hidden]{display:none!important}
+#slowPetGame #focusReadout{font-variant-numeric:tabular-nums}

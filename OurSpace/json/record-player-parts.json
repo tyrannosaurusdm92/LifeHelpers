@@ -1,0 +1,254 @@
+{
+  "id": "record_player",
+  "parts": [
+    {
+      "id": "base",
+      "label": "Wood cabinet",
+      "selectors": [
+        ":scope"
+      ],
+      "fields": [
+        "color"
+      ],
+      "kind": "wood",
+      "colorLabel": "Cabinet wood tone"
+    },
+    {
+      "id": "deck-metal",
+      "label": "Turntable deck accents",
+      "selectors": [
+        ".platter-rim"
+      ],
+      "fields": [
+        "border"
+      ],
+      "kind": "surface"
+    },
+    {
+      "id": "vinyl",
+      "label": "Vinyl record and grooves",
+      "selectors": [
+        ".vinyl"
+      ],
+      "fields": [
+        "color"
+      ],
+      "kind": "vinyl",
+      "colorLabel": "Grooved vinyl color"
+    },
+    {
+      "id": "record-label",
+      "label": "Inner record circle",
+      "selectors": [
+        ".record-label"
+      ],
+      "fields": [
+        "color",
+        "border"
+      ],
+      "kind": "label",
+      "colorLabel": "Center label color"
+    },
+    {
+      "id": "metal",
+      "label": "Metal tonearm",
+      "selectors": [
+        ".tonearm-tube"
+      ],
+      "fields": [
+        "color"
+      ],
+      "kind": "metal",
+      "colorLabel": "Metal finish"
+    },
+    {
+      "id": "needle",
+      "label": "Cartridge needle tip",
+      "selectors": [
+        ".tonearm-head::after"
+      ],
+      "fields": [
+        "color"
+      ],
+      "kind": "needle",
+      "colorLabel": "Needle color"
+    },
+    {
+      "id": "upload",
+      "label": "Upload / load knob",
+      "selectors": [
+        "#loadButton"
+      ],
+      "fields": [
+        "color",
+        "border"
+      ],
+      "kind": "brass",
+      "colorLabel": "Knob finish"
+    },
+    {
+      "id": "artist",
+      "label": "Artist lettering",
+      "selectors": [
+        ".metadata-row:first-of-type .metadata-label",
+        ".metadata-row:first-of-type .metadata-value"
+      ],
+      "fields": [
+        "text",
+        "font",
+        "size"
+      ],
+      "kind": ""
+    },
+    {
+      "id": "song",
+      "label": "Song title lettering",
+      "selectors": [
+        ".metadata-row:nth-of-type(2) .metadata-label",
+        ".metadata-row:nth-of-type(2) .metadata-value"
+      ],
+      "fields": [
+        "text",
+        "font",
+        "size"
+      ],
+      "kind": ""
+    },
+    {
+      "id": "time",
+      "label": "Playback time readouts",
+      "selectors": [
+        ".time-readout"
+      ],
+      "fields": [
+        "text",
+        "font",
+        "size"
+      ],
+      "kind": ""
+    },
+    {
+      "id": "controls",
+      "label": "Playback controls (all)",
+      "selectors": [
+        ".transport-button"
+      ],
+      "fields": [
+        "fill",
+        "text",
+        "border",
+        "font",
+        "size"
+      ],
+      "kind": "transport"
+    },
+    {
+      "id": "play",
+      "label": "Play / pause",
+      "selectors": [
+        "#playButton"
+      ],
+      "fields": [
+        "fill",
+        "text",
+        "border",
+        "font",
+        "size"
+      ],
+      "kind": ""
+    },
+    {
+      "id": "rewind",
+      "label": "Rewind",
+      "selectors": [
+        "#rewindButton"
+      ],
+      "fields": [
+        "fill",
+        "text",
+        "border",
+        "font",
+        "size"
+      ],
+      "kind": ""
+    },
+    {
+      "id": "forward",
+      "label": "Fast forward",
+      "selectors": [
+        "#forwardButton"
+      ],
+      "fields": [
+        "fill",
+        "text",
+        "border",
+        "font",
+        "size"
+      ],
+      "kind": ""
+    },
+    {
+      "id": "previous",
+      "label": "Previous track",
+      "selectors": [
+        "#previousButton"
+      ],
+      "fields": [
+        "fill",
+        "text",
+        "border",
+        "font",
+        "size"
+      ],
+      "kind": ""
+    },
+    {
+      "id": "next",
+      "label": "Next track",
+      "selectors": [
+        "#nextButton"
+      ],
+      "fields": [
+        "fill",
+        "text",
+        "border",
+        "font",
+        "size"
+      ],
+      "kind": ""
+    },
+    {
+      "id": "wave-a",
+      "label": "Waveform bars \u00b7 primary",
+      "selectors": [],
+      "fields": [
+        "color"
+      ],
+      "kind": "wave",
+      "wave": "--osd-wave-a",
+      "colorLabel": "Primary waveform bars"
+    },
+    {
+      "id": "wave-b",
+      "label": "Waveform bars \u00b7 secondary",
+      "selectors": [],
+      "fields": [
+        "color"
+      ],
+      "kind": "wave",
+      "wave": "--osd-wave-b",
+      "colorLabel": "Secondary waveform bars"
+    },
+    {
+      "id": "wave-axis",
+      "label": "Waveform centerline & progress",
+      "selectors": [],
+      "fields": [
+        "color"
+      ],
+      "kind": "wave",
+      "wave": "--osd-wave-axis",
+      "colorLabel": "Waveform axis / progress"
+    }
+  ]
+}

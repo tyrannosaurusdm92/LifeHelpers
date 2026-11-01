@@ -1,0 +1,296 @@
+{
+  "project": "Onyx’s Adventures — Three WASM Cats in Meadow",
+  "worldVersion": 1,
+  "seed": 604203,
+  "worldLength": 46080,
+  "chapterWidth": 2880,
+  "transitionWidth": 660,
+  "cameraSpeed": 0,
+  "defaultBirds": 26,
+  "maxPixelRatio": 1,
+  "presentation": {
+    "startPaused": false,
+    "autoTime": false,
+    "dayMinutes": 24,
+    "showInterface": true,
+    "weather": "clear",
+    "particleDensity": 1,
+    "soundEnabled": false,
+    "allowManualPan": true,
+    "reducedMotion": false
+  },
+  "birdAudio": {
+    "greenwood": {
+      "environment": "Greenwood",
+      "file": "assets/bird-greenwood.mp3",
+      "selectedDriveFile": "dany_photo-forestbirds-319791.mp3"
+    },
+    "sunmeadow": {
+      "environment": "Sunmeadow",
+      "file": "assets/bird-sunmeadow.mp3",
+      "selectedDriveFile": "bird_ambience_spring_01.mp3"
+    },
+    "snowcrown": {
+      "environment": "Snowcrown Highlands",
+      "file": "assets/bird-snowcrown.mp3",
+      "selectedDriveFile": "bird_chirp_short_01.mp3"
+    },
+    "mosswood": {
+      "environment": "Mosswood",
+      "file": "assets/bird-starlit.mp3",
+      "selectedDriveFile": "freesound_community-birds-chirping-ambiance-26052.mp3"
+    },
+    "bluegrass": {
+      "environment": "Bluegrass Fields",
+      "file": "assets/bird-snowcrown.mp3",
+      "selectedDriveFile": "freesound_community-birds-chirping-75156.mp3"
+    },
+    "starlit": {
+      "environment": "Starlit Pass",
+      "file": "assets/bird-starlit.mp3",
+      "selectedDriveFile": "bird_chirp_ambience_01.mp3"
+    },
+    "standingstones": {
+      "environment": "Standing Stones",
+      "file": "assets/bird-standingstones.mp3",
+      "selectedDriveFile": "bird_chirp_ambience_02.mp3"
+    },
+    "seabright": {
+      "environment": "Seabright Coast",
+      "file": "assets/bird-seabright.mp3",
+      "selectedDriveFile": "dany_photo-birds-339196.mp3"
+    }
+  },
+  "biomes": [
+    {
+      "id": "greenwood",
+      "label": "Greenwood",
+      "caption": "Leaves drift over an old woodland path",
+      "nature": 1,
+      "sky": "#43add2",
+      "horizon": "#9bd6b9",
+      "ground": "#5b9f60",
+      "grass": "#92cf63",
+      "treeDensity": 0.95,
+      "flowers": 0.65,
+      "water": 0.15,
+      "mist": 0.09,
+      "birdSpecies": [
+        "bluejay",
+        "sparrow",
+        "robin",
+        "dove",
+        "cardinal"
+      ]
+    },
+    {
+      "id": "sunmeadow",
+      "label": "Sunmeadow",
+      "caption": "Tall grasses bend beneath a wide open sky",
+      "nature": 2,
+      "sky": "#69bae3",
+      "horizon": "#bbdcc7",
+      "ground": "#73b268",
+      "grass": "#c5de64",
+      "treeDensity": 0.35,
+      "flowers": 0.98,
+      "water": 0.24,
+      "mist": 0.04,
+      "birdSpecies": [
+        "finch",
+        "sparrow",
+        "robin",
+        "cardinal",
+        "hummingbird"
+      ]
+    },
+    {
+      "id": "snowcrown",
+      "label": "Snowcrown Highlands",
+      "caption": "Distant mountains rise above the treeline",
+      "nature": 3,
+      "sky": "#73b8df",
+      "horizon": "#9cc0c9",
+      "ground": "#476c50",
+      "grass": "#7b9c69",
+      "treeDensity": 0.62,
+      "flowers": 0.28,
+      "water": 0.22,
+      "mist": 0.16,
+      "birdSpecies": [
+        "bluejay",
+        "finch",
+        "dove",
+        "robin"
+      ]
+    },
+    {
+      "id": "mosswood",
+      "label": "Mosswood",
+      "caption": "A quieter valley where the old trees gather",
+      "nature": 4,
+      "sky": "#9ebec6",
+      "horizon": "#a4bcb0",
+      "ground": "#496e4d",
+      "grass": "#7da168",
+      "treeDensity": 1.18,
+      "flowers": 0.35,
+      "water": 0.1,
+      "mist": 0.24,
+      "birdSpecies": [
+        "bluejay",
+        "sparrow",
+        "cardinal",
+        "robin",
+        "hummingbird"
+      ]
+    },
+    {
+      "id": "bluegrass",
+      "label": "Bluegrass Fields",
+      "caption": "An open breeze carries birds across the prairie",
+      "nature": 5,
+      "sky": "#238db6",
+      "horizon": "#8fc5b5",
+      "ground": "#369b69",
+      "grass": "#8dc887",
+      "treeDensity": 0.4,
+      "flowers": 0.78,
+      "water": 0.32,
+      "mist": 0.03,
+      "birdSpecies": [
+        "robin",
+        "finch",
+        "sparrow",
+        "hummingbird",
+        "dove"
+      ]
+    },
+    {
+      "id": "starlit",
+      "label": "Starlit Pass",
+      "caption": "The hills grow still beneath an aurora sky",
+      "nature": 6,
+      "sky": "#073762",
+      "horizon": "#245b6a",
+      "ground": "#254756",
+      "grass": "#377479",
+      "treeDensity": 0.42,
+      "flowers": 0.12,
+      "water": 0.18,
+      "mist": 0.27,
+      "birdSpecies": [
+        "dove",
+        "bluejay",
+        "robin"
+      ]
+    },
+    {
+      "id": "standingstones",
+      "label": "Standing Stones",
+      "caption": "Weathered monoliths mark an ancient ridge",
+      "nature": 7,
+      "sky": "#b5d0e8",
+      "horizon": "#c3d1ba",
+      "ground": "#648348",
+      "grass": "#b4c47a",
+      "treeDensity": 0.19,
+      "flowers": 0.46,
+      "water": 0.13,
+      "mist": 0.07,
+      "birdSpecies": [
+        "dove",
+        "cardinal",
+        "bluejay",
+        "finch"
+      ]
+    },
+    {
+      "id": "seabright",
+      "label": "Seabright Coast",
+      "caption": "Sea birds trace the cliffs above the moving tide",
+      "nature": 8,
+      "sky": "#b0dfe6",
+      "horizon": "#8fbdce",
+      "ground": "#6e9066",
+      "grass": "#b7ca8a",
+      "treeDensity": 0.08,
+      "flowers": 0.38,
+      "water": 0.95,
+      "mist": 0.15,
+      "birdSpecies": [
+        "dove",
+        "sparrow",
+        "hummingbird",
+        "robin"
+      ]
+    }
+  ],
+  "route": [
+    "greenwood",
+    "sunmeadow",
+    "bluegrass",
+    "mosswood",
+    "snowcrown",
+    "standingstones",
+    "sunmeadow",
+    "seabright",
+    "bluegrass",
+    "greenwood",
+    "mosswood",
+    "starlit",
+    "snowcrown",
+    "standingstones",
+    "sunmeadow",
+    "greenwood"
+  ],
+  "birds": {
+    "flapFps": [
+      7,
+      11
+    ],
+    "flightSpeed": [
+      18,
+      55
+    ],
+    "size": [
+      0.7,
+      1.6
+    ],
+    "perchChance": 0.18,
+    "minAltitude": 0.16,
+    "maxAltitude": 0.7,
+    "flockSpacing": [
+      28,
+      100
+    ],
+    "species": [
+      "bluejay",
+      "cardinal",
+      "sparrow",
+      "finch",
+      "dove",
+      "robin",
+      "hummingbird"
+    ]
+  },
+  "effects": {
+    "cloudBands": 4,
+    "windLeaffall": 0.63,
+    "grassSway": 0.7,
+    "firefliesAtNight": true,
+    "rainProbability": 0.2,
+    "weatherChangeSeconds": 180,
+    "birdAudio": true
+  },
+  "birdCatching": {
+    "startAfterActiveSeconds": 300,
+    "repeatEveryActiveSeconds": 300,
+    "lowFlightWindowSeconds": 90,
+    "lowFlyingFraction": 0.6666666666666666,
+    "requireRealCatActor": true,
+    "noCatchWhilePausedOrHidden": true,
+    "participation": "Every awake, available cat gets ONE independent 3% roll and one visible attempt per 300 active seconds; direct mouth/paw contact required",
+    "chancePerEligibleCat": 0.03
+  }
+}

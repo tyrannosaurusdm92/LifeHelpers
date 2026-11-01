@@ -1,0 +1,12 @@
+/* Bulletin Board: one native in-flow profile section, with proportional whole-app scaling.
+   No iframe, viewport wrapper, Shadow DOM, fixed overlay or independent resize of the art. */
+#profile-bulletins.bulletin-board-flow{box-sizing:border-box;position:relative;flex:0 0 auto;align-self:flex-start;width:100%;max-width:100%;min-width:0;min-height:0!important;height:auto!important;overflow:visible!important;resize:none!important;background:#fff}
+#profile-bulletins .bb-body{box-sizing:border-box;display:block;position:relative;width:100%;min-width:0;padding:0!important;margin:0!important;max-width:none!important;min-height:0!important;overflow:visible!important;resize:none!important}
+#profile-bulletins #bulletinBoardModule{position:relative;display:block;min-width:0;width:100%;height:auto;box-sizing:border-box;overflow:visible;contain:style}
+#profile-bulletins #bulletinBoardFlow{position:absolute;top:0;left:0;display:block;width:1180px!important;min-width:1180px!important;height:790px!important;min-height:790px!important;max-width:none!important;transform-origin:top left;transform:scale(var(--bb-visual-scale,1));overflow:visible!important;isolation:isolate}
+#profile-bulletins #bulletinBoardFlow .app-shell{width:1180px!important;min-width:1180px!important;height:790px!important;min-height:790px!important}
+#profile-bulletins.bulletin-board-flow.is-collapsed .bb-body,#profile-bulletins.bulletin-board-flow.is-collapsed #bulletinBoardModule{display:none!important;height:0!important}
+/* Dialogs remain native browser dialogs and stay outside the scaled art in normal DOM. */
+#profile-bulletins #bulletinBoardModule dialog.dialog-card{z-index:20001;max-width:min(720px,calc(100vw - 20px));max-height:calc(100dvh - 26px);overflow:auto}
+#profile-bulletins #bulletinBoardModule .toast-region{z-index:20002}
+@media(max-width:760px){#profile-bulletins.bulletin-board-flow{max-width:100%}#profile-bulletins .bb-admin-tools .bb-size-label{flex-basis:100%}}

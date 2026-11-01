@@ -1,0 +1,115 @@
+{
+  "product": "Onyx’s Adventures shell/HUD",
+  "version": "2.0",
+  "primaryChat": "Virtual & Health",
+  "professorTriggerPhrases": [
+    "professor onyx",
+    "hello professor",
+    "hey professor",
+    "enter professor mode",
+    "dbt worksheet",
+    "dbt handout",
+    "dbt skills",
+    "distress tolerance skill",
+    "emotion regulation skill",
+    "interpersonal effectiveness skill",
+    "mindfulness worksheet",
+    "help me with dbt",
+    "teach me a coping skill",
+    "help me make a safety plan"
+  ],
+  "professorExitPhrases": [
+    "exit professor",
+    "leave professor mode",
+    "back to normal",
+    "regular onyx",
+    "normal chat",
+    "stop professor mode"
+  ],
+  "visibleStates": [
+    "onyx_sleepy",
+    "onyx_snuggly",
+    "onyx_advising_professor",
+    "onyx_judgmental",
+    "onyx_listening",
+    "onyx_caring",
+    "onyx_hungry",
+    "onyx_purring",
+    "onyx_thinking",
+    "onyx_thoughtful"
+  ],
+  "careActions": [
+    "pet",
+    "scratch",
+    "brush",
+    "feed",
+    "water",
+    "treat",
+    "blanket",
+    "fan",
+    "pillow",
+    "tuck",
+    "play",
+    "blink"
+  ],
+  "coinExchange": {
+    "copperPerSilver": 10,
+    "silverPerGold": 10,
+    "goldPerPlatinum": 10
+  },
+  "currencyAuthority": "host game/backend, not the shell",
+  "shellMenus": [
+    "home",
+    "care",
+    "status",
+    "goals",
+    "journal",
+    "controls",
+    "accessibility",
+    "settings",
+    "chat"
+  ],
+  "privacy": {
+    "default": "local profile scoped",
+    "transcriptPersistence": "off by default",
+    "medicalClaims": "not a licensed clinician or monitoring sensor"
+  },
+  "HUDShortcuts": {
+    "1": "Adventures",
+    "2": "Care",
+    "3": "Status",
+    "4": "Self-care & Tiny Goals",
+    "5": "Journal"
+  },
+  "careRuntimeInstalled": false,
+  "onyxOutdoorSpriteInstalled": false,
+  "companionSpritesInstalled": false,
+  "statusFields": [
+    "fullness",
+    "hydration",
+    "comfort",
+    "energy",
+    "affection",
+    "primaryBehavior",
+    "visitors",
+    "paused"
+  ],
+  "goalOutcomes": [
+    "open",
+    "done",
+    "partly",
+    "attempted",
+    "paused"
+  ],
+  "goalCategories": [
+    "Basic care",
+    "Physical comfort",
+    "Emotional care",
+    "Environment",
+    "Connection",
+    "Enjoyment"
+  ],
+  "controlNotes": "Pet-only controls display accurate integration requirements until actual sprite, hydration, need scheduler and props are installed.",
+  "scope": "Onyx Adventures game HUD only; external Onyx widget tabs unchanged",
+  "gameChat": "single existing in-game Virtual & Health chat with deliberate Professor activation"
+}

@@ -1,0 +1,430 @@
+{
+  "onyx": {
+    "name": "Onyx",
+    "species": "cat",
+    "coat": "black",
+    "sheet": "assets/onyx.png",
+    "cellWidth": 210,
+    "cellHeight": 210,
+    "columns": 4,
+    "rows": 8,
+    "framesTotal": 32,
+    "animations": {
+      "idle": {
+        "frames": [
+          0,
+          1
+        ],
+        "fps": 1.7,
+        "loop": true
+      },
+      "walk": {
+        "frames": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "fps": 7,
+        "loop": true
+      },
+      "play": {
+        "frames": [
+          6,
+          7
+        ],
+        "fps": 4,
+        "loop": true
+      },
+      "crouch": {
+        "frames": [
+          8,
+          9
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "pounce": {
+        "frames": [
+          10,
+          11
+        ],
+        "fps": 7,
+        "loop": false
+      },
+      "stretch": {
+        "frames": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "fps": 2,
+        "loop": false
+      },
+      "groom": {
+        "frames": [
+          16,
+          17
+        ],
+        "fps": 2,
+        "loop": true
+      },
+      "yawn": {
+        "frames": [
+          18,
+          19
+        ],
+        "fps": 2,
+        "loop": false
+      },
+      "talk": {
+        "frames": [
+          19
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "eat": {
+        "frames": [
+          24,
+          25,
+          26
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "drink": {
+        "frames": [
+          28,
+          29,
+          30
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "sleep": {
+        "frames": [
+          8
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "proud": {
+        "frames": [
+          0
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "fall": {
+        "frames": [
+          15
+        ],
+        "fps": 1,
+        "loop": false
+      },
+      "settle": {
+        "frames": [
+          20,
+          21
+        ],
+        "fps": 1.3,
+        "loop": true
+      }
+    },
+    "id": "onyx",
+    "scale": 1.12
+  },
+  "harvey": {
+    "id": "harvey",
+    "name": "Harvey",
+    "originalSprite": "Janet (PixelPaws)",
+    "sheet": "assets/harvey.png",
+    "cellWidth": 210,
+    "cellHeight": 210,
+    "columns": 4,
+    "scale": 0.96,
+    "personality": {
+      "movement": "quick and curious",
+      "play": "brief zoomies, investigation, and play",
+      "temperament": "affectionate and expressive"
+    },
+    "animations": {
+      "idle": {
+        "frames": [
+          0,
+          1
+        ],
+        "fps": 2,
+        "loop": true
+      },
+      "walk": {
+        "frames": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "fps": 11,
+        "loop": true
+      },
+      "zoomies": {
+        "frames": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "fps": 14,
+        "loop": true
+      },
+      "play": {
+        "frames": [
+          6,
+          7
+        ],
+        "fps": 5,
+        "loop": true
+      },
+      "pounce": {
+        "frames": [
+          9,
+          10
+        ],
+        "fps": 9,
+        "loop": false
+      },
+      "sleep": {
+        "frames": [
+          8,
+          11
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "sniff": {
+        "frames": [
+          12,
+          13
+        ],
+        "fps": 2,
+        "loop": false
+      },
+      "stretch": {
+        "frames": [
+          14,
+          15
+        ],
+        "fps": 2,
+        "loop": false
+      },
+      "groom": {
+        "frames": [
+          16,
+          17
+        ],
+        "fps": 2,
+        "loop": true
+      },
+      "yawn": {
+        "frames": [
+          18,
+          19
+        ],
+        "fps": 2,
+        "loop": false
+      },
+      "talk": {
+        "frames": [
+          19
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "eat": {
+        "frames": [
+          24,
+          25,
+          26
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "drink": {
+        "frames": [
+          28,
+          29,
+          30
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "look": {
+        "frames": [
+          0,
+          1
+        ],
+        "fps": 2,
+        "loop": true
+      },
+      "settle": {
+        "frames": [
+          20,
+          21
+        ],
+        "fps": 1.3,
+        "loop": true
+      },
+      "crouch": {
+        "frames": [
+          11,
+          12
+        ],
+        "fps": 2,
+        "loop": true
+      }
+    },
+    "rows": 8,
+    "framesTotal": 32
+  },
+  "callie": {
+    "name": "Callie",
+    "identity": "Callie Round",
+    "sourceCoat": "Chocolate (PixelPaws original artwork)",
+    "sheet": "assets/callie.png",
+    "cellWidth": 210,
+    "cellHeight": 210,
+    "columns": 4,
+    "scale": 0.99,
+    "animations": {
+      "idle": {
+        "frames": [
+          0,
+          1
+        ],
+        "fps": 1.6,
+        "loop": true
+      },
+      "walk": {
+        "frames": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "fps": 7,
+        "loop": true
+      },
+      "play": {
+        "frames": [
+          6,
+          7
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "crouch": {
+        "frames": [
+          11,
+          12
+        ],
+        "fps": 2,
+        "loop": true
+      },
+      "pounce": {
+        "frames": [
+          9,
+          10
+        ],
+        "fps": 6,
+        "loop": false
+      },
+      "sleep": {
+        "frames": [
+          8,
+          11,
+          8
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "loaf": {
+        "frames": [
+          8
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "stretch": {
+        "frames": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "fps": 2,
+        "loop": false
+      },
+      "groom": {
+        "frames": [
+          16,
+          17
+        ],
+        "fps": 2,
+        "loop": true
+      },
+      "yawn": {
+        "frames": [
+          18,
+          19
+        ],
+        "fps": 2,
+        "loop": false
+      },
+      "talk": {
+        "frames": [
+          19
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "eat": {
+        "frames": [
+          24,
+          25,
+          26
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "drink": {
+        "frames": [
+          28,
+          29,
+          30
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "proud": {
+        "frames": [
+          0
+        ],
+        "fps": 1,
+        "loop": true
+      },
+      "settle": {
+        "frames": [
+          20,
+          21
+        ],
+        "fps": 1.3,
+        "loop": true
+      }
+    },
+    "id": "callie",
+    "rows": 8,
+    "framesTotal": 32
+  }
+}

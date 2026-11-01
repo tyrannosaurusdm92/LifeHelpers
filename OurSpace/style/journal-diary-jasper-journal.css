@@ -1,0 +1,3245 @@
+/* Namespaced native module CSS; original declarations and responsive rules retained. */
+/* Canonical OurSpace component stylesheet. One active CSS file for this module. */
+
+
+#jdJournalModule{
+  --os-cyan-white: #f3f7fc;
+  --os-cyan-porcelain: #eef4fb;
+  --os-cyan-mist: #e9f2fb;
+  --os-pale-aqua: #b1d0f0;
+  --os-cyan-ink: #001A1A;
+  --os-cyan-void: #001010;
+  --william-green-125: #6699cc;
+  --william-green-112: #6699cc;
+  --william-green-100: #336699;
+  --william-green-60: #003399;
+  --william-green-40: #243950;
+  --william-green-20: #0A290A;
+  --william-blue-125: #56ACFF;
+  --william-blue-112: #3A9EFF;
+  --william-blue-100: #1E90FF;
+  --william-blue-60: #125699;
+  --william-blue-40: #0C3A66;
+  --william-blue-20: #061D33;
+  --shared-cyan-125: #40FFFF;
+  --shared-cyan-112: #20FFFF;
+  --shared-cyan-100: #b1d0f0;
+  --shared-cyan-60: #009999;
+  --shared-cyan-40: #006666;
+  --shared-cyan-20: #003333;
+  --jasper-yellow-125: #FFF840;
+  --jasper-yellow-112: #FFF720;
+  --jasper-yellow-100: #b1d0f0;
+  --jasper-yellow-60: #999400;
+  --jasper-yellow-40: #666200;
+  --jasper-yellow-20: #333100;
+  --jasper-orange-125: #F18240;
+  --jasper-orange-112: #EE6D20;
+  --jasper-orange-100: #6699cc;
+  --jasper-orange-60: #8E3500;
+  --jasper-orange-40: #5E2300;
+  --jasper-orange-20: #2F1200;
+  --background: var(--os-cyan-void);
+  --surface: #002323;
+  --surface-2: #003333;
+  --surface-3: #004848;
+  --text: var(--os-cyan-white);
+  --muted: var(--os-pale-aqua);
+  --line: var(--shared-cyan-40);
+  --line-strong: var(--shared-cyan-60);
+  --primary: var(--shared-cyan-100);
+  --primary-hover: var(--shared-cyan-112);
+  --primary-dark: var(--shared-cyan-20);
+  --on-bright: var(--os-cyan-void);
+  --danger: #ff8f8f;
+  --warning: #ffe184;
+  --success: var(--shared-cyan-125);
+  --profile-primary: var(--shared-cyan-100);
+  --profile-secondary: var(--shared-cyan-60);
+  --profile-dark: var(--shared-cyan-20);
+  --profile-soft: rgba(0,255,255,.08);
+  --font-scale: 1;
+  --reading-line-height: 1.65;
+  --paragraph-spacing: 1em;
+  --reading-width: 78ch;
+  --topbar: 68px;
+  --sidebar: 228px;
+  --inspector: 340px;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --shadow: 0 18px 50px rgba(0,0,0,.28);
+  font-size: calc(16px * var(--font-scale));
+}
+
+
+#jdJournalModule[data-theme="light"]{
+  --background: var(--os-cyan-white);
+  --surface: #fff;
+  --surface-2: var(--os-cyan-porcelain);
+  --surface-3: var(--os-cyan-mist);
+  --text: var(--os-cyan-void);
+  --muted: #315d5d;
+  --line: #8ccaca;
+  --line-strong: var(--shared-cyan-60);
+  --shadow: 0 16px 40px rgba(0,70,70,.12);
+  color-scheme: light;
+}
+
+
+#jdJournalModule[data-profile="william"]{
+  --profile-primary: var(--william-blue-100);
+  --profile-secondary: var(--william-green-100);
+  --profile-dark: var(--william-blue-20);
+  --profile-soft: rgba(30,144,255,.10);
+}
+
+
+#jdJournalModule[data-profile="jasper"]{
+  --profile-primary: var(--jasper-orange-100);
+  --profile-secondary: var(--jasper-yellow-100);
+  --profile-dark: var(--jasper-orange-20);
+  --profile-soft: rgba(102,153,204,.10);
+}
+
+
+#jdJournalModule[data-profile="shared"]{
+  --profile-primary: var(--shared-cyan-100);
+  --profile-secondary: var(--shared-cyan-60);
+  --profile-dark: var(--shared-cyan-20);
+  --profile-soft: rgba(0,255,255,.08);
+}
+
+
+#jdJournalModule *{
+  box-sizing: border-box;
+}
+
+
+#jdJournalModule, #jdJournalModule{
+  margin: 0;
+  min-height: 100%;
+  background: var(--background);
+  color: var(--text);
+}
+
+
+#jdJournalModule{
+  font-family: Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow: hidden;
+}
+
+
+#jdJournalModule button, #jdJournalModule input, #jdJournalModule select, #jdJournalModule textarea{
+  font: inherit;
+  color: inherit;
+}
+
+
+#jdJournalModule button{
+  cursor: pointer;
+}
+
+
+#jdJournalModule button:disabled{
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+
+#jdJournalModule a{
+  color: var(--primary);
+}
+
+
+#jdJournalModule hr{
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 1rem 0;
+}
+
+
+#jdJournalModule .sr-only{
+  position: absolute!important;
+  width: 1px!important;
+  height: 1px!important;
+  padding: 0!important;
+  margin: -1px!important;
+  overflow: hidden!important;
+  clip: rect(0,0,0,0)!important;
+  white-space: nowrap!important;
+  border: 0!important;
+}
+
+
+#jdJournalModule .skip-link{
+  position: fixed;
+  z-index: 5000;
+  left: .6rem;
+  top: .6rem;
+  transform: translateY(-160%);
+  background: var(--shared-cyan-100);
+  color: var(--on-bright);
+  padding: .65rem .9rem;
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+
+#jdJournalModule .skip-link:focus{
+  transform: none;
+}
+
+
+#jdJournalModule .ourspace-brand{
+  font-family: "Gluten",cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+
+#jdJournalModule .muted{
+  color: var(--muted);
+}
+
+
+#jdJournalModule .small{
+  font-size: .82rem;
+}
+
+
+#jdJournalModule .app-shell{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0,1fr);
+  grid-template-rows: var(--topbar) minmax(0,1fr);
+  grid-template-areas: "top top" "side main";
+}
+
+
+#jdJournalModule .topbar{
+  grid-area: top;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .45rem .7rem;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb,var(--surface) 94%,transparent);
+  backdrop-filter: blur(16px);
+  z-index: 90;
+}
+
+
+#jdJournalModule .topbar__menu{
+  display: none;
+}
+
+
+#jdJournalModule .brand-lockup{
+  display: grid;
+  line-height: 1;
+  min-width: 185px;
+}
+
+
+#jdJournalModule .brand-lockup .ourspace-brand{
+  font-size: 1.6rem;
+  letter-spacing: -.03em;
+}
+
+
+#jdJournalModule .brand-product{
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  margin-top: .2rem;
+  font-weight: 800;
+}
+
+
+#jdJournalModule .global-search{
+  flex: 1;
+  max-width: 650px;
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  padding: .2rem .35rem .2rem .7rem;
+}
+
+
+#jdJournalModule .global-search:focus-within{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb,var(--primary) 20%,transparent);
+}
+
+
+#jdJournalModule .global-search input{
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  padding: .45rem;
+  outline: 0;
+}
+
+
+#jdJournalModule .global-search kbd{
+  font-size: .7rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: .2rem .35rem;
+  background: var(--surface);
+}
+
+
+#jdJournalModule .topbar__actions{
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+
+#jdJournalModule .profile-switch{
+  display: flex;
+  align-items: center;
+  gap: .18rem;
+  padding: .2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+
+#jdJournalModule .profile-switch button{
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  padding: .32rem .48rem;
+  display: flex;
+  align-items: center;
+  gap: .28rem;
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+
+#jdJournalModule .profile-switch button.is-active{
+  background: var(--profile-primary);
+  color: var(--on-bright);
+  font-weight: 900;
+}
+
+
+#jdJournalModule .profile-initial{
+  display: grid;
+  place-items: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  font-size: .72rem;
+}
+
+
+#jdJournalModule .icon-button, #jdJournalModule .button, #jdJournalModule .editor-toolbar button, #jdJournalModule .text-button{
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text);
+  border-radius: 9px;
+  min-height: 38px;
+  padding: .48rem .68rem;
+  font-weight: 800;
+}
+
+
+#jdJournalModule .icon-button{
+  min-width: 38px;
+  padding: .35rem;
+  display: inline-grid;
+  place-items: center;
+}
+
+
+#jdJournalModule .button:hover, #jdJournalModule .icon-button:hover, #jdJournalModule .editor-toolbar button:hover{
+  border-color: var(--primary);
+  background: var(--surface-3);
+}
+
+
+#jdJournalModule .button--primary{
+  background: var(--profile-primary);
+  border-color: var(--profile-primary);
+  color: var(--on-bright);
+}
+
+
+#jdJournalModule .button--primary:hover{
+  background: color-mix(in srgb,var(--profile-primary) 84%,#000);
+  border-color: var(--profile-primary);
+}
+
+
+#jdJournalModule .button--secondary{
+  background: var(--shared-cyan-100);
+  border-color: var(--shared-cyan-100);
+  color: var(--on-bright);
+}
+
+
+#jdJournalModule .button--secondary:hover{
+  background: var(--shared-cyan-112);
+}
+
+
+#jdJournalModule .button--ghost{
+  background: transparent;
+}
+
+
+#jdJournalModule .button--danger{
+  background: #7b1e1e;
+  border-color: #c65e5e;
+  color: #fff;
+}
+
+
+#jdJournalModule .text-button{
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  padding: .25rem .35rem;
+  min-height: 32px;
+}
+
+
+#jdJournalModule .button-row, #jdJournalModule .header-actions{
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+#jdJournalModule .sidebar{
+  grid-area: side;
+  border-right: 1px solid var(--line);
+  padding: .65rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  overflow: auto;
+  z-index: 80;
+}
+
+
+#jdJournalModule .primary-nav{
+  display: grid;
+  gap: .28rem;
+}
+
+
+#jdJournalModule .nav-item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  padding: .65rem .7rem;
+  text-align: left;
+  font-weight: 800;
+}
+
+
+#jdJournalModule .nav-item span:first-child{
+  width: 1.3rem;
+  text-align: center;
+}
+
+
+#jdJournalModule .nav-item:hover{
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+
+#jdJournalModule .nav-item.is-active{
+  background: var(--profile-soft);
+  border-color: color-mix(in srgb,var(--profile-primary) 60%,var(--line));
+  color: var(--text);
+}
+
+
+#jdJournalModule .sidebar__bottom{
+  margin-top: auto;
+  display: grid;
+  gap: .3rem;
+}
+
+
+#jdJournalModule .connection-badge{
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--muted);
+  font-size: .72rem;
+  padding: .5rem;
+}
+
+
+#jdJournalModule .status-dot{
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: var(--shared-cyan-100);
+  box-shadow: 0 0 0 3px rgba(0,255,255,.10);
+}
+
+
+#jdJournalModule .workspace{
+  grid-area: main;
+  overflow: auto;
+  background: radial-gradient(circle at 15% 0%,var(--profile-soft),transparent 26rem),var(--background);
+}
+
+
+#jdJournalModule .view-root{
+  min-height: 100%;
+  padding: clamp(1rem,2.4vw,2.4rem);
+}
+
+
+#jdJournalModule .view-page{
+  width: min(1380px,100%);
+  margin: auto;
+}
+
+
+#jdJournalModule .view-header{
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+
+#jdJournalModule .view-header h1{
+  font-size: clamp(2rem,4vw,3.4rem);
+  line-height: 1;
+  margin: .1rem 0 .45rem;
+  letter-spacing: -.04em;
+}
+
+
+#jdJournalModule .view-header p{
+  max-width: 760px;
+  margin: .25rem 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+
+#jdJournalModule .hero-header{
+  padding: 1.1rem;
+  border: 1px solid color-mix(in srgb,var(--profile-primary) 22%,var(--line));
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg,color-mix(in srgb,var(--profile-primary) 9%,var(--surface)) 0%,var(--surface) 55%,color-mix(in srgb,var(--profile-secondary) 8%,var(--surface)) 100%);
+}
+
+
+#jdJournalModule .eyebrow{
+  text-transform: uppercase;
+  letter-spacing: .13em!important;
+  font-size: .72rem!important;
+  font-weight: 900;
+  color: var(--profile-primary)!important;
+}
+
+
+#jdJournalModule .section-heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: .8rem;
+}
+
+
+#jdJournalModule .section-heading h2, #jdJournalModule .panel h2{
+  margin: .1rem 0;
+  font-size: 1.1rem;
+}
+
+
+#jdJournalModule .panel, #jdJournalModule .dashboard-card, #jdJournalModule .note-card, #jdJournalModule .checklist-card, #jdJournalModule .journal-entry, #jdJournalModule .trash-row{
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+
+#jdJournalModule .panel{
+  padding: 1rem;
+}
+
+
+#jdJournalModule .dashboard-grid{
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: .8rem;
+  margin-bottom: .9rem;
+}
+
+
+#jdJournalModule .dashboard-card{
+  padding: 1rem;
+  display: grid;
+  gap: .2rem;
+}
+
+
+#jdJournalModule .dashboard-card strong{
+  font-size: 2rem;
+  color: var(--profile-primary);
+}
+
+
+#jdJournalModule .metric-label{
+  font-weight: 900;
+}
+
+
+#jdJournalModule .dashboard-card small{
+  color: var(--muted);
+}
+
+
+#jdJournalModule .home-columns{
+  display: grid;
+  grid-template-columns: 1.3fr .9fr;
+  gap: .9rem;
+  margin-bottom: .9rem;
+}
+
+
+#jdJournalModule .today-journal{
+  border-color: color-mix(in srgb,var(--profile-primary) 45%,var(--line));
+}
+
+
+#jdJournalModule .note-card-grid{
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: .75rem;
+}
+
+
+#jdJournalModule .mini-note-list{
+  display: grid;
+  gap: .55rem;
+}
+
+
+#jdJournalModule .mini-note-list .note-card{
+  box-shadow: none;
+}
+
+
+#jdJournalModule .note-card{
+  overflow: hidden;
+  min-width: 0;
+}
+
+
+#jdJournalModule .note-card[data-owner="william"], #jdJournalModule .journal-entry[data-owner="william"], #jdJournalModule .checklist-card[data-owner="william"]{
+  border-left: 3px solid var(--william-blue-100);
+}
+
+
+#jdJournalModule .note-card[data-owner="jasper"], #jdJournalModule .journal-entry[data-owner="jasper"], #jdJournalModule .checklist-card[data-owner="jasper"]{
+  border-left: 3px solid var(--jasper-orange-100);
+}
+
+
+#jdJournalModule .note-card[data-owner="shared"], #jdJournalModule .journal-entry[data-owner="shared"], #jdJournalModule .checklist-card[data-owner="shared"]{
+  border-left: 3px solid var(--shared-cyan-100);
+}
+
+
+#jdJournalModule .note-card__open{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: .55rem;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  padding: .9rem;
+}
+
+
+#jdJournalModule .note-card__open:hover{
+  background: var(--profile-soft);
+}
+
+
+#jdJournalModule .note-card__top{
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  min-height: 24px;
+}
+
+
+#jdJournalModule .note-kind-icon{
+  font-size: 1.1rem;
+  color: var(--profile-primary);
+}
+
+
+#jdJournalModule .pin-mark{
+  margin-left: auto;
+  color: var(--shared-cyan-125);
+}
+
+
+#jdJournalModule .lock-mark{
+  font-size: .8rem;
+}
+
+
+#jdJournalModule .note-card__title{
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+
+#jdJournalModule .note-card__preview{
+  color: var(--muted);
+  font-size: .83rem;
+  line-height: 1.45;
+  min-height: 2.4em;
+}
+
+
+#jdJournalModule .note-card__footer{
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: flex-end;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .note-card__footer>span{
+  display: flex;
+  gap: .25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+
+#jdJournalModule .tag{
+  display: inline-flex;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: .13rem .38rem;
+  font-size: .66rem;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .profile-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .12rem .38rem;
+  font-size: .66rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+
+#jdJournalModule .profile-badge>span{
+  font-weight: 1000;
+}
+
+
+#jdJournalModule .profile-badge--william{
+  border-color: var(--william-blue-60);
+  background: color-mix(in srgb,var(--william-blue-100) 14%,transparent);
+}
+
+
+#jdJournalModule .profile-badge--jasper{
+  border-color: var(--jasper-orange-60);
+  background: color-mix(in srgb,var(--jasper-orange-100) 14%,transparent);
+}
+
+
+#jdJournalModule .profile-badge--shared{
+  border-color: var(--shared-cyan-60);
+  background: rgba(0,255,255,.09);
+}
+
+
+#jdJournalModule .check-progress{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: .5rem;
+}
+
+
+#jdJournalModule .check-progress:before{
+  content: "";
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,var(--profile-primary) 0 var(--progress),var(--surface-3) var(--progress) 100%);
+}
+
+
+#jdJournalModule .check-progress>span{
+  display: none;
+}
+
+
+#jdJournalModule .check-progress small{
+  color: var(--muted);
+}
+
+
+#jdJournalModule .notes-layout{
+  display: grid;
+  grid-template-columns: 260px minmax(0,1fr);
+  gap: .9rem;
+}
+
+
+#jdJournalModule .notes-folders{
+  align-self: start;
+  position: sticky;
+  top: 0;
+}
+
+
+#jdJournalModule .folder-row-wrap{
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: .2rem;
+}
+
+
+#jdJournalModule .folder-row, #jdJournalModule .folder-more{
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 8px;
+  min-height: 38px;
+}
+
+
+#jdJournalModule .folder-row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  text-align: left;
+  padding: .45rem .55rem;
+}
+
+
+#jdJournalModule .folder-more{
+  width: 34px;
+}
+
+
+#jdJournalModule .folder-row:hover, #jdJournalModule .folder-more:hover{
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+
+#jdJournalModule .folder-row.is-active{
+  background: var(--profile-soft);
+  border-color: color-mix(in srgb,var(--profile-primary) 50%,var(--line));
+  color: var(--text);
+}
+
+
+#jdJournalModule .notes-main{
+  min-width: 0;
+}
+
+
+#jdJournalModule .notes-toolbar{
+  display: flex;
+  justify-content: space-between;
+  gap: .8rem;
+  align-items: center;
+  margin-bottom: .7rem;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .notes-toolbar label{
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+
+#jdJournalModule .notes-toolbar select{
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: .45rem;
+}
+
+
+#jdJournalModule .journal-list{
+  display: grid;
+  gap: .55rem;
+}
+
+
+#jdJournalModule .journal-entry{
+  overflow: hidden;
+}
+
+
+#jdJournalModule .journal-entry>button{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 88px minmax(0,1fr);
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  padding: 0;
+  text-align: left;
+}
+
+
+#jdJournalModule .journal-entry>button:hover{
+  background: var(--profile-soft);
+}
+
+
+#jdJournalModule .journal-entry time{
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: .9rem;
+  border-right: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--muted);
+}
+
+
+#jdJournalModule .journal-entry time strong{
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+
+#jdJournalModule .journal-entry__body{
+  padding: .9rem;
+  display: grid;
+  gap: .3rem;
+}
+
+
+#jdJournalModule .journal-entry__body>small{
+  color: var(--muted);
+}
+
+
+#jdJournalModule .checklist-board{
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: .8rem;
+}
+
+
+#jdJournalModule .checklist-card{
+  padding: .9rem;
+}
+
+
+#jdJournalModule .checklist-title{
+  width: 100%;
+  display: grid;
+  gap: .25rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  padding: 0;
+}
+
+
+#jdJournalModule .checklist-title small{
+  color: var(--muted);
+}
+
+
+#jdJournalModule .checklist-card ul{
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0;
+  display: grid;
+  gap: .35rem;
+}
+
+
+#jdJournalModule .checklist-card li{
+  border-top: 1px solid var(--line);
+  padding: .55rem 0;
+}
+
+
+#jdJournalModule .checklist-card label{
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr);
+  gap: .6rem;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+
+#jdJournalModule .checklist-card input{
+  margin-top: .15rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--profile-primary);
+}
+
+
+#jdJournalModule .checklist-card li.is-complete span{
+  text-decoration: line-through;
+  opacity: .58;
+}
+
+
+#jdJournalModule .trash-list{
+  display: grid;
+  gap: .5rem;
+}
+
+
+#jdJournalModule .trash-row{
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  gap: .8rem;
+  align-items: center;
+  padding: .75rem;
+}
+
+
+#jdJournalModule .trash-row>span:nth-child(2){
+  display: grid;
+}
+
+
+#jdJournalModule .trash-row small{
+  color: var(--muted);
+}
+
+
+#jdJournalModule .record-icon{
+  font-size: 1.3rem;
+  color: var(--profile-primary);
+}
+
+
+#jdJournalModule .form-grid{
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: .75rem;
+}
+
+
+#jdJournalModule .field{
+  display: grid;
+  gap: .35rem;
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .field--wide{
+  grid-column: 1/-1;
+}
+
+
+#jdJournalModule .field input, #jdJournalModule .field textarea, #jdJournalModule .field select{
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: .58rem;
+  color: var(--text);
+  outline: 0;
+}
+
+
+#jdJournalModule .field textarea{
+  resize: vertical;
+  line-height: 1.5;
+}
+
+
+#jdJournalModule .field input:focus, #jdJournalModule .field textarea:focus, #jdJournalModule .field select:focus{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb,var(--primary) 18%,transparent);
+}
+
+
+#jdJournalModule .setting-toggle{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding: .7rem 0;
+  color: var(--text);
+}
+
+
+#jdJournalModule .setting-toggle span{
+  display: grid;
+  gap: .2rem;
+}
+
+
+#jdJournalModule .setting-toggle small{
+  color: var(--muted);
+  font-weight: 400;
+}
+
+
+#jdJournalModule .setting-toggle input{
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+
+#jdJournalModule .check-grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: .5rem;
+}
+
+
+#jdJournalModule .action-list{
+  display: grid;
+  gap: .45rem;
+}
+
+
+#jdJournalModule .action-list button{
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: .65rem;
+}
+
+
+#jdJournalModule .settings-grid{
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: .85rem;
+}
+
+
+#jdJournalModule .settings-grid .panel{
+  display: grid;
+  gap: .55rem;
+  align-content: start;
+}
+
+
+#jdJournalModule .profile-key{
+  display: grid;
+  gap: .55rem;
+}
+
+
+#jdJournalModule .editor-shell{
+  height: calc(100vh - var(--topbar) - clamp(2rem,4.8vw,4.8rem));
+  display: grid;
+  grid-template-rows: auto auto minmax(0,1fr) auto;
+  width: min(1260px,100%);
+  margin: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+
+#jdJournalModule .editor-shell[data-note-owner="william"]{
+  border-color: color-mix(in srgb,var(--william-blue-100) 45%,var(--line));
+}
+
+
+#jdJournalModule .editor-shell[data-note-owner="jasper"]{
+  border-color: color-mix(in srgb,var(--jasper-orange-100) 45%,var(--line));
+}
+
+
+#jdJournalModule .editor-shell[data-note-owner="shared"]{
+  border-color: color-mix(in srgb,var(--shared-cyan-100) 45%,var(--line));
+}
+
+
+#jdJournalModule .editor-header{
+  padding: .65rem .7rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+
+#jdJournalModule .editor-title-row, #jdJournalModule .editor-meta-row{
+  display: flex;
+  gap: .55rem;
+  align-items: center;
+}
+
+
+#jdJournalModule .editor-title{
+  font-size: 1.22rem;
+  font-weight: 900;
+  border: 0;
+  background: transparent;
+  padding: .3rem;
+  flex: 1;
+  min-width: 0;
+  outline: 0;
+}
+
+
+#jdJournalModule .editor-title:focus{
+  box-shadow: inset 0 -2px var(--primary);
+}
+
+
+#jdJournalModule .editor-status{
+  font-size: .72rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+
+#jdJournalModule .editor-status[data-tone="success"]{
+  color: var(--success);
+}
+
+
+#jdJournalModule .editor-status[data-tone="warning"]{
+  color: var(--warning);
+}
+
+
+#jdJournalModule .editor-meta-row{
+  margin-top: .4rem;
+  flex-wrap: wrap;
+}
+
+
+#jdJournalModule .editor-meta-row>label{
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .72rem;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .editor-meta-row input, #jdJournalModule .editor-meta-row select{
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 7px;
+  padding: .32rem .45rem;
+  min-height: 31px;
+}
+
+
+#jdJournalModule .editor-tags-label{
+  flex: 1;
+  min-width: 190px;
+}
+
+
+#jdJournalModule .editor-tags-label input{
+  width: 100%;
+}
+
+
+#jdJournalModule .editor-toolbar{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .32rem;
+  padding: .42rem .55rem;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb,var(--surface-3) 62%,var(--surface));
+}
+
+
+#jdJournalModule .toolbar-group{
+  display: flex;
+  gap: .2rem;
+  padding-right: .3rem;
+  border-right: 1px solid var(--line);
+}
+
+
+#jdJournalModule .toolbar-group:last-child{
+  border-right: 0;
+}
+
+
+#jdJournalModule .editor-toolbar button{
+  min-height: 32px;
+  padding: .28rem .45rem;
+}
+
+
+#jdJournalModule .writing-surface-wrap{
+  overflow: auto;
+  background: linear-gradient(90deg,transparent 0,transparent calc(50% - var(--reading-width)/2 - 1px),var(--profile-soft) calc(50% - var(--reading-width)/2),var(--profile-soft) calc(50% + var(--reading-width)/2),transparent calc(50% + var(--reading-width)/2 + 1px));
+  padding: 2rem 1rem 5rem;
+}
+
+
+#jdJournalModule .rich-editor{
+  width: min(var(--reading-width),100%);
+  min-height: 100%;
+  margin: auto;
+  outline: 0;
+  font: 400 1.02rem/var(--reading-line-height) ui-serif,Georgia,"Times New Roman",serif;
+  letter-spacing: .006em;
+}
+
+
+#jdJournalModule .rich-editor:empty:before{
+  content: attr(data-placeholder);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+
+#jdJournalModule .rich-editor p{
+  margin: 0 0 var(--paragraph-spacing);
+}
+
+
+#jdJournalModule .rich-editor h1, #jdJournalModule .rich-editor h2, #jdJournalModule .rich-editor h3{
+  font-family: ui-sans-serif,system-ui,sans-serif;
+  line-height: 1.2;
+}
+
+
+#jdJournalModule .rich-editor blockquote{
+  margin: 1rem 0;
+  border-left: 4px solid var(--profile-primary);
+  padding: .6rem 1rem;
+  background: var(--profile-soft);
+  color: var(--muted);
+}
+
+
+#jdJournalModule .rich-editor hr{
+  margin: 1.4rem 0;
+}
+
+
+#jdJournalModule .rich-editor ul.checklist{
+  list-style: none;
+  padding-left: .1rem;
+  display: grid;
+  gap: .35rem;
+}
+
+
+#jdJournalModule .rich-editor ul.checklist li{
+  border-radius: 6px;
+  padding: .14rem .25rem;
+}
+
+
+#jdJournalModule .rich-editor ul.checklist label{
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr);
+  gap: .55rem;
+  align-items: flex-start;
+}
+
+
+#jdJournalModule .rich-editor ul.checklist input{
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: .15rem;
+  accent-color: var(--profile-primary);
+}
+
+
+#jdJournalModule .rich-editor ul.checklist li.is-complete span, #jdJournalModule .rich-editor ul.checklist input:checked+span{
+  text-decoration: line-through;
+  opacity: .55;
+}
+
+
+#jdJournalModule .rich-editor .timestamp{
+  font-family: ui-sans-serif,system-ui,sans-serif;
+  font-size: .82rem;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .15rem .45rem;
+}
+
+
+#jdJournalModule .rich-editor figure{
+  margin: 1rem 0;
+  text-align: center;
+}
+
+
+#jdJournalModule .rich-editor figure img{
+  max-width: 100%;
+  max-height: 520px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+
+#jdJournalModule .rich-editor figcaption{
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+
+#jdJournalModule .attachment-chip{
+  display: inline-flex;
+  gap: .5rem;
+  padding: .5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-2);
+}
+
+
+#jdJournalModule .locked-placeholder{
+  text-align: center;
+  padding: 3rem;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+}
+
+
+#jdJournalModule .editor-footer{
+  display: flex;
+  justify-content: space-between;
+  gap: .7rem;
+  align-items: center;
+  padding: .5rem .65rem;
+  border-top: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+
+#jdJournalModule .editor-stats, #jdJournalModule .editor-footer__actions{
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  flex-wrap: wrap;
+}
+
+
+#jdJournalModule .editor-stats{
+  font-size: .72rem;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .inspector{
+  position: fixed;
+  z-index: 120;
+  right: 0;
+  top: var(--topbar);
+  bottom: 0;
+  width: min(var(--inspector),92vw);
+  background: var(--surface);
+  border-left: 2px solid var(--line);
+  box-shadow: -18px 0 40px rgba(0,0,0,.25);
+  overflow: auto;
+}
+
+
+#jdJournalModule .inspector__header{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .7rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+
+#jdJournalModule .inspector__header h2{
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+
+#jdJournalModule .inspector__body{
+  padding: .8rem;
+}
+
+
+#jdJournalModule .inspector-section{
+  border-bottom: 1px solid var(--line);
+  padding: .45rem 0 1rem;
+}
+
+
+#jdJournalModule .inspector-section h3{
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .detail-list{
+  display: grid;
+  gap: .4rem;
+}
+
+
+#jdJournalModule .detail-list>div{
+  display: flex;
+  justify-content: space-between;
+  gap: .7rem;
+}
+
+
+#jdJournalModule .detail-list dt{
+  color: var(--muted);
+}
+
+
+#jdJournalModule .detail-list dd{
+  margin: 0;
+  text-align: right;
+}
+
+
+#jdJournalModule .attachment-row, #jdJournalModule .version-row, #jdJournalModule .compact-row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: .6rem;
+  align-items: center;
+  margin: .3rem 0;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border-radius: 7px;
+  color: var(--text);
+  padding: .55rem;
+  text-align: left;
+}
+
+
+#jdJournalModule .compact-row{
+  justify-content: flex-start;
+}
+
+
+#jdJournalModule .modal-backdrop{
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0,8,8,.72);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+
+#jdJournalModule .modal{
+  width: min(560px,100%);
+  max-height: min(88vh,900px);
+  display: grid;
+  grid-template-rows: auto minmax(0,1fr) auto;
+  border: 2px solid var(--shared-cyan-60);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 25px 90px rgba(0,0,0,.55);
+  overflow: hidden;
+}
+
+
+#jdJournalModule .modal--wide{
+  width: min(900px,100%);
+}
+
+
+#jdJournalModule .modal__header, #jdJournalModule .modal__footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .7rem;
+  padding: .7rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+
+#jdJournalModule .modal__footer{
+  border-bottom: 0;
+  border-top: 1px solid var(--line);
+  justify-content: flex-end;
+}
+
+
+#jdJournalModule .modal__header h2{
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+
+#jdJournalModule .modal__body{
+  overflow: auto;
+  padding: 1rem;
+  display: grid;
+  gap: .8rem;
+}
+
+
+#jdJournalModule .modal__body p{
+  margin: .2rem 0;
+  line-height: 1.55;
+}
+
+
+#jdJournalModule .sketch-tools{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+#jdJournalModule .sketch-tools label{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+
+#jdJournalModule .sketch-tools input{
+  width: 180px;
+}
+
+
+#jdJournalModule .sketch-tools+canvas{
+  width: 100%;
+  max-height: 60vh;
+  border: 2px solid var(--line);
+  background: #fff;
+  touch-action: none;
+}
+
+
+#jdJournalModule .toast-region{
+  position: fixed;
+  z-index: 2000;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  gap: .5rem;
+  max-width: min(420px,calc(100vw - 2rem));
+}
+
+
+#jdJournalModule .toast{
+  transform: translateY(12px);
+  opacity: 0;
+  transition: .2s ease;
+  padding: .7rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-weight: 800;
+}
+
+
+#jdJournalModule .toast.is-visible{
+  transform: none;
+  opacity: 1;
+}
+
+
+#jdJournalModule .toast--success{
+  border-color: var(--shared-cyan-100);
+}
+
+
+#jdJournalModule .toast--warning{
+  border-color: var(--warning);
+}
+
+
+#jdJournalModule .toast--danger{
+  border-color: var(--danger);
+}
+
+
+#jdJournalModule .empty-state{
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .empty-state__icon{
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+
+#jdJournalModule .empty-state h2{
+  color: var(--text);
+}
+
+
+#jdJournalModule .fatal-error{
+  max-width: 700px;
+  margin: 5rem auto;
+  padding: 2rem;
+  border: 2px solid var(--danger);
+  background: var(--surface);
+  border-radius: 12px;
+}
+
+
+@media (max-width:1180px){
+  
+#jdJournalModule .profile-switch__label{
+    display: none;
+  }
+
+  
+#jdJournalModule .note-card-grid{
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  
+#jdJournalModule .checklist-board{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width:900px){
+  
+#jdJournalModule{
+    overflow: auto;
+  }
+
+  
+#jdJournalModule .app-shell{
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--topbar) minmax(calc(100vh - var(--topbar)),auto);
+    grid-template-areas: "top" "main";
+  }
+
+  
+#jdJournalModule .sidebar{
+    position: fixed;
+    left: 0;
+    top: var(--topbar);
+    bottom: 0;
+    width: min(var(--sidebar),86vw);
+    transform: translateX(-103%);
+    transition: transform .18s ease;
+    box-shadow: 20px 0 50px rgba(0,0,0,.35);
+  }
+
+  
+#jdJournalModule .sidebar.is-open{
+    transform: none;
+  }
+
+  
+#jdJournalModule .topbar__menu{
+    display: inline-grid;
+  }
+
+  
+#jdJournalModule .brand-lockup{
+    min-width: auto;
+  }
+
+  
+#jdJournalModule .brand-product{
+    display: none;
+  }
+
+  
+#jdJournalModule .global-search kbd{
+    display: none;
+  }
+
+  
+#jdJournalModule .workspace{
+    min-height: calc(100vh - var(--topbar));
+    overflow: visible;
+  }
+
+  
+#jdJournalModule .view-root{
+    padding: 1rem;
+  }
+
+  
+#jdJournalModule .dashboard-grid{
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  
+#jdJournalModule .home-columns, #jdJournalModule .notes-layout{
+    grid-template-columns: 1fr;
+  }
+
+  
+#jdJournalModule .notes-folders{
+    position: static;
+    order: 2;
+  }
+
+  
+#jdJournalModule .notes-main{
+    order: 1;
+  }
+
+  
+#jdJournalModule .settings-grid{
+    grid-template-columns: 1fr;
+  }
+
+  
+#jdJournalModule .editor-shell{
+    height: calc(100vh - var(--topbar) - 2rem);
+  }
+
+  
+#jdJournalModule .editor-toolbar{
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  
+#jdJournalModule .toolbar-group{
+    flex: none;
+  }
+
+  
+#jdJournalModule .writing-surface-wrap{
+    padding: 1.2rem .8rem 4rem;
+  }
+
+}
+
+
+@media (max-width:680px){
+  
+#jdJournalModule .brand-lockup{
+    display: none;
+  }
+
+  
+#jdJournalModule .profile-switch{
+    order: 3;
+  }
+
+  
+#jdJournalModule .profile-switch button{
+    padding: .28rem;
+  }
+
+  
+#jdJournalModule .topbar__actions .button{
+    font-size: 0;
+    width: 40px;
+    padding: .4rem;
+  }
+
+  
+#jdJournalModule .topbar__actions .button:before{
+    content: "＋";
+    font-size: 1rem;
+  }
+
+  
+#jdJournalModule .view-header{
+    display: grid;
+    gap: .8rem;
+  }
+
+  
+#jdJournalModule .dashboard-grid{
+    grid-template-columns: 1fr;
+  }
+
+  
+#jdJournalModule .note-card-grid{
+    grid-template-columns: 1fr;
+  }
+
+  
+#jdJournalModule .form-grid{
+    grid-template-columns: 1fr;
+  }
+
+  
+#jdJournalModule .field--wide{
+    grid-column: auto;
+  }
+
+  
+#jdJournalModule .editor-meta-row>label{
+    flex: 1 1 45%;
+  }
+
+  
+#jdJournalModule .editor-tags-label{
+    flex-basis: 100%!important;
+  }
+
+  
+#jdJournalModule .editor-footer{
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  
+#jdJournalModule .journal-entry>button{
+    grid-template-columns: 72px minmax(0,1fr);
+  }
+
+  
+#jdJournalModule .trash-row{
+    grid-template-columns: auto minmax(0,1fr);
+  }
+
+  
+#jdJournalModule .trash-row>div{
+    grid-column: 2;
+  }
+
+  
+#jdJournalModule .profile-switch{
+    position: fixed;
+    left: 50%;
+    bottom: .65rem;
+    transform: translateX(-50%);
+    z-index: 300;
+    box-shadow: var(--shadow);
+    background: var(--surface);
+    padding: .28rem;
+  }
+
+  
+#jdJournalModule .toast-region{
+    bottom: 4rem;
+  }
+
+}
+
+
+#jdJournalModule .library-layout{
+  display: grid;
+  grid-template-columns: minmax(250px,330px) minmax(0,1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+
+#jdJournalModule .library-tree{
+  position: sticky;
+  top: .2rem;
+  max-height: calc(100vh - var(--topbar) - 5rem);
+  overflow: auto;
+}
+
+
+#jdJournalModule .folder-tree{
+  display: grid;
+  gap: .22rem;
+}
+
+
+#jdJournalModule .folder-tree-row{
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: .25rem;
+  align-items: center;
+  margin-left: calc(var(--folder-depth,0) * .72rem);
+  border-radius: 8px;
+}
+
+
+#jdJournalModule .folder-tree-row.is-drop-target{
+  outline: 3px solid var(--shared-focus);
+  outline-offset: 2px;
+}
+
+
+#jdJournalModule .folder-tree-main, #jdJournalModule .folder-tree-all{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  text-align: left;
+  padding: .52rem .6rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+
+#jdJournalModule .folder-tree-all{
+  justify-content: space-between;
+  margin-bottom: .25rem;
+}
+
+
+#jdJournalModule .folder-tree-main span:nth-child(2){
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+#jdJournalModule .folder-tree-main small{
+  margin-left: auto;
+  color: var(--muted);
+}
+
+
+#jdJournalModule .folder-tree-main.is-current, #jdJournalModule .folder-tree-all.is-current, #jdJournalModule .folder-tree-row.is-current>.folder-tree-main{
+  background: color-mix(in srgb,var(--profile-primary) 18%,var(--surface));
+  border-color: var(--profile-primary);
+}
+
+
+#jdJournalModule .profile-mini{
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 .25rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+
+#jdJournalModule .folder-tree-actions{
+  display: flex;
+  gap: .15rem;
+}
+
+
+#jdJournalModule .folder-tree-actions button, #jdJournalModule .library-note-actions button{
+  min-width: 2rem;
+  padding: .35rem;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+
+#jdJournalModule .library-note-list{
+  display: grid;
+  gap: .4rem;
+}
+
+
+#jdJournalModule .library-note-row{
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  align-items: center;
+  gap: .5rem;
+  padding: .42rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+
+#jdJournalModule .library-note-select{
+  display: grid;
+  place-items: center;
+  padding: .4rem;
+}
+
+
+#jdJournalModule .library-note-open{
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr);
+  gap: .6rem;
+  align-items: center;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  padding: .35rem;
+  min-width: 0;
+}
+
+
+#jdJournalModule .library-note-open span:last-child{
+  display: grid;
+  min-width: 0;
+}
+
+
+#jdJournalModule .library-note-open strong, #jdJournalModule .library-note-open small{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+#jdJournalModule .library-note-open small{
+  color: var(--muted);
+  margin-top: .15rem;
+}
+
+
+#jdJournalModule .library-note-actions{
+  display: flex;
+  gap: .25rem;
+}
+
+
+#jdJournalModule .library-bulk{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem;
+  padding: .6rem;
+  margin: .5rem 0 .8rem;
+  border: 2px solid var(--profile-primary);
+  border-radius: 10px;
+  background: color-mix(in srgb,var(--profile-primary) 10%,var(--surface));
+}
+
+
+#jdJournalModule .library-bulk label{
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+}
+
+
+#jdJournalModule .library-bulk select{
+  max-width: 260px;
+}
+
+
+#jdJournalModule .tool-status{
+  padding: .65rem .8rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--shared-cyan-100);
+  border-radius: 8px;
+  background: var(--surface-2);
+  margin-bottom: .55rem;
+}
+
+
+#jdJournalModule .tool-status[data-tone="success"]{
+  border-left-color: var(--profile-secondary);
+}
+
+
+#jdJournalModule .tool-status[data-tone="warning"]{
+  border-left-color: var(--jasper-yellow-100);
+}
+
+
+#jdJournalModule .tool-status[data-tone="danger"]{
+  border-left-color: var(--jasper-orange-100);
+}
+
+
+#jdJournalModule .scan-progress{
+  width: 100%;
+  height: .65rem;
+  margin-bottom: 1rem;
+}
+
+
+#jdJournalModule .scan-grid, #jdJournalModule .reader-grid{
+  display: grid;
+  grid-template-columns: minmax(0,1.05fr) minmax(320px,.95fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+
+#jdJournalModule .scan-canvas{
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  max-height: 62vh;
+  object-fit: contain;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+
+#jdJournalModule .scan-textarea{
+  width: 100%;
+  min-height: 340px;
+  resize: vertical;
+  font: inherit;
+  line-height: var(--reading-line-height,1.65);
+}
+
+
+#jdJournalModule .button-row.wrap{
+  flex-wrap: wrap;
+}
+
+
+#jdJournalModule .reader-preview{
+  min-height: 280px;
+  max-height: 60vh;
+  overflow: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  white-space: pre-wrap;
+  line-height: var(--reading-line-height,1.65);
+  font-size: calc(1rem * var(--font-scale,1));
+}
+
+
+#jdJournalModule .reader-preview mark{
+  background: var(--shared-cyan-100);
+  color: var(--on-bright);
+  padding: .05em .12em;
+  border-radius: .2em;
+}
+
+
+#jdJournalModule .reader-view progress{
+  width: 100%;
+}
+
+
+#jdJournalModule .reader-view hr, #jdJournalModule .scan-view hr{
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 1rem 0;
+}
+
+
+#jdJournalModule .danger-text{
+  color: var(--danger,#ff8b82)!important;
+}
+
+
+@media (max-width:1000px){
+  
+#jdJournalModule .library-layout, #jdJournalModule .scan-grid, #jdJournalModule .reader-grid{
+    grid-template-columns: 1fr;
+  }
+
+  
+#jdJournalModule .library-tree{
+    position: static;
+    max-height: none;
+  }
+
+}
+
+
+@media (max-width:680px){
+  
+#jdJournalModule .library-note-row{
+    grid-template-columns: auto minmax(0,1fr);
+  }
+
+  
+#jdJournalModule .library-note-actions{
+    grid-column: 2;
+    justify-content: flex-end;
+  }
+
+  
+#jdJournalModule .library-bulk{
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  
+#jdJournalModule .library-bulk label{
+    display: grid;
+  }
+
+  
+#jdJournalModule .library-bulk select{
+    max-width: none;
+    width: 100%;
+  }
+
+  
+#jdJournalModule .scan-textarea{
+    min-height: 260px;
+  }
+
+}
+
+
+#jdJournalModule :focus-visible{
+  outline: 3px solid var(--shared-cyan-125)!important;
+  outline-offset: 3px!important;
+}
+
+
+#jdJournalModule .high-contrast{
+  --line: #64ffff;
+  --line-strong: #aaffff;
+}
+
+
+#jdJournalModule .high-contrast[data-theme="light"]{
+  --line: #003399;
+  --line-strong: #003333;
+}
+
+
+#jdJournalModule .high-contrast .panel, #jdJournalModule .high-contrast .dashboard-card, #jdJournalModule .high-contrast .note-card, #jdJournalModule .high-contrast .checklist-card, #jdJournalModule .high-contrast .journal-entry{
+  border-width: 2px;
+  box-shadow: none;
+}
+
+
+#jdJournalModule .large-targets button, #jdJournalModule .large-targets input, #jdJournalModule .large-targets select{
+  min-height: 44px;
+}
+
+
+#jdJournalModule .dyslexia-friendly #jdJournalModule, #jdJournalModule .dyslexia-friendly .rich-editor{
+  font-family: Verdana,"Trebuchet MS",Arial,sans-serif!important;
+  letter-spacing: .035em;
+  word-spacing: .06em;
+}
+
+
+#jdJournalModule .dyslexia-friendly .rich-editor p{
+  margin-bottom: 1.15em;
+}
+
+
+#jdJournalModule .reduce-motion *, #jdJournalModule .reduce-motion *:before, #jdJournalModule .reduce-motion *:after{
+  scroll-behavior: auto!important;
+  animation-duration: .001ms!important;
+  animation-iteration-count: 1!important;
+  transition-duration: .001ms!important;
+}
+
+
+#jdJournalModule .focus-mode .topbar, #jdJournalModule .focus-mode .sidebar, #jdJournalModule .focus-mode .inspector{
+  display: none!important;
+}
+
+
+#jdJournalModule .focus-mode .app-shell{
+  display: block;
+  height: 100vh;
+}
+
+
+#jdJournalModule .focus-mode .workspace{
+  height: 100vh;
+}
+
+
+#jdJournalModule .focus-mode .view-root{
+  padding: .5rem;
+}
+
+
+#jdJournalModule .focus-mode .editor-shell{
+  height: calc(100vh - 1rem);
+  max-width: 1100px;
+}
+
+
+#jdJournalModule .focus-mode .editor-header{
+  opacity: .6;
+}
+
+
+#jdJournalModule .focus-mode .editor-header:hover, #jdJournalModule .focus-mode .editor-header:focus-within{
+  opacity: 1;
+}
+
+
+@media (prefers-reduced-motion:reduce){
+  
+#jdJournalModule *, #jdJournalModule :before, #jdJournalModule :after{
+    animation-duration: .001ms!important;
+    animation-iteration-count: 1!important;
+    scroll-behavior: auto!important;
+    transition-duration: .001ms!important;
+  }
+
+}
+
+
+@media print{
+  
+@page {
+    margin: .75in
+  }
+
+  
+#jdJournalModule{
+    background: #fff!important;
+    color: #000!important;
+    overflow: visible!important;
+  }
+
+  
+#jdJournalModule .topbar, #jdJournalModule .sidebar, #jdJournalModule .inspector, #jdJournalModule .editor-header, #jdJournalModule .editor-toolbar, #jdJournalModule .editor-footer, #jdJournalModule .toast-region, #jdJournalModule .skip-link{
+    display: none!important;
+  }
+
+  
+#jdJournalModule .app-shell, #jdJournalModule .workspace, #jdJournalModule .view-root, #jdJournalModule .editor-shell, #jdJournalModule .writing-surface-wrap{
+    display: block!important;
+    height: auto!important;
+    overflow: visible!important;
+    background: #fff!important;
+    border: 0!important;
+    box-shadow: none!important;
+    padding: 0!important;
+  }
+
+  
+#jdJournalModule .rich-editor{
+    width: 100%!important;
+    max-width: none!important;
+    color: #000!important;
+    font: 11pt/1.5 Georgia,"Times New Roman",serif!important;
+  }
+
+  
+#jdJournalModule .rich-editor a{
+    color: #000;
+    text-decoration: underline;
+  }
+
+  
+#jdJournalModule .rich-editor img{
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  
+#jdJournalModule .rich-editor ul.checklist input{
+    appearance: none;
+    width: .85em;
+    height: .85em;
+    border: 1px solid #000;
+    margin-right: .35em;
+  }
+
+  
+#jdJournalModule .rich-editor ul.checklist input:checked:after{
+    content: "✓";
+    font-size: .9em;
+    position: relative;
+    top: -.35em;
+  }
+
+  
+#jdJournalModule .view-page{
+    color: #000!important;
+  }
+
+  
+#jdJournalModule .panel, #jdJournalModule .dashboard-card, #jdJournalModule .note-card, #jdJournalModule .checklist-card, #jdJournalModule .journal-entry{
+    background: #fff!important;
+    color: #000!important;
+    border: 1px solid #777!important;
+    box-shadow: none!important;
+  }
+
+  
+#jdJournalModule .muted{
+    color: #333!important;
+  }
+
+}
+
+
+#jdJournalModule{
+  --ms-navy: #003399;
+  --ms-blue: #336699;
+  --ms-sky: #6699cc;
+  --ms-light: #d5e8fb;
+  --ms-paper: #fff;
+  --ms-ink: #243950;
+  color-scheme: light;
+}
+
+
+#jdJournalModule :where(#jdJournalModule,#jdJournalModule){
+  max-width: 100%;
+}
+
+
+#jdJournalModule :where(button,input,select,textarea):focus-visible{
+  outline: 2px solid #003399;
+  outline-offset: 2px;
+}
+
+
+#jdJournalModule :where(img,video,canvas){
+  max-width: 100%;
+}
+
+
+#jdJournalModule [hidden]{
+  display: none!important;
+}
+
+
+#jdJournalModule .primary-nav .nav-item.is-active{
+  color: #17334e!important;
+  background: #d5e8fb!important;
+  border: 2px solid #336699!important;
+}
+
+
+#jdJournalModule .primary-nav .nav-item.is-active span{
+  color: #17334e!important;
+}
+
+
+#jdJournalModule .primary-nav .nav-item{
+  color: #213b57!important;
+}
+
+
+#jdJournalModule .sidebar{
+  background: #f0f5fb!important;
+  color: #17334e!important;
+}
+
+
+#jdJournalModule .brand-lockup, #jdJournalModule .global-search{
+  color: #17334e!important;
+}
+
+
+@media print{
+  
+#jdJournalModule .sidebar{
+    display: none!important;
+  }
+
+}
+
+
+#jdJournalModule .sidebar .nav-item:not(.is-active), #jdJournalModule .sidebar .connection-badge{
+  color: #1c3855!important;
+}
+
+
+#jdJournalModule .global-search, #jdJournalModule .global-search label{
+  color: #1b3856!important;
+  background: #fff!important;
+  border-color: #9eb7d0!important;
+}
+
+
+#jdJournalModule .global-search input{
+  background: #fff!important;
+  color: #1b3856!important;
+}
+
+
+#jdJournalModule:not(.high-contrast):not([data-theme="dark"]){
+  --background: #e7eef6!important;
+  --surface: #fff!important;
+  --surface-2: #eff4fa!important;
+  --surface-3: #d5e8fb!important;
+  --text: #1a334e!important;
+  --muted: #415973!important;
+  --line: #9cb8d4!important;
+  --line-strong: #336699!important;
+  --primary: #003399!important;
+  --primary-hover: #336699!important;
+  --primary-dark: #0b2852!important;
+  --on-bright: #fff!important;
+  --profile-primary: #336699!important;
+  --profile-secondary: #003399!important;
+  --profile-dark: #d5e8fb!important;
+  --profile-soft: rgba(51,102,153,.12)!important;
+  color-scheme: light!important;
+}
+
+
+#jdJournalModule[data-theme="dark"]:not(.high-contrast){
+  --background: #142a46!important;
+  --surface: #1c3555!important;
+  --surface-2: #274765!important;
+  --surface-3: #315779!important;
+  --text: #f7fbff!important;
+  --muted: #d5e8fb!important;
+  --line: #7397bc!important;
+  --line-strong: #b1d0f0!important;
+  --primary: #d5e8fb!important;
+  --primary-hover: #fff!important;
+  --primary-dark: #003399!important;
+  --on-bright: #183553!important;
+  --profile-primary: #d5e8fb!important;
+  --profile-secondary: #6699cc!important;
+  --profile-dark: #10243d!important;
+  --profile-soft: rgba(177,208,240,.15)!important;
+  color-scheme: dark!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .sidebar{
+  background: #f0f5fb!important;
+  color: #1a334f!important;
+}
+
+
+#jdJournalModule[data-theme="dark"] .sidebar{
+  background: #1c3555!important;
+  color: #f7fbff!important;
+}
+
+
+#jdJournalModule[data-theme="dark"] .sidebar .nav-item:not(.is-active), #jdJournalModule[data-theme="dark"] .sidebar .connection-badge{
+  color: #e2edf9!important;
+}
+
+
+#jdJournalModule[data-theme="dark"] .sidebar .nav-item.is-active{
+  background: #d5e8fb!important;
+  color: #142a46!important;
+}
+
+
+#jdJournalModule[data-theme="dark"] .sidebar .nav-item.is-active span{
+  color: #142a46!important;
+}
+
+
+#jdJournalModule[data-theme="dark"] .global-search{
+  background: #fff!important;
+  color: #183553!important;
+}
+
+
+#jdJournalModule[data-theme="dark"] .global-search input{
+  background: #fff!important;
+  color: #183553!important;
+}
+
+
+#jdJournalModule[data-theme="dark"] .global-search kbd{
+  color: #183553!important;
+  background: #edf3fa!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .button--secondary{
+  background: #d5e8fb!important;
+  color: #183553!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .topbar{
+  background: #003399!important;
+  color: #fff!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .topbar .brand-lockup{
+  color: #fff!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .topbar .icon-button{
+  background: #edf3fa!important;
+  color: #183553!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .topbar .brand-product{
+  color: #e6f1ff!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .topbar .profile-switch{
+  background: #edf3fa!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .topbar .profile-switch button{
+  color: #183553!important;
+}
+
+
+#jdJournalModule:not([data-theme="dark"]) .topbar .profile-switch button.is-active{
+  background: #336699!important;
+  color: #fff!important;
+}
+
+
+#jdJournalModule[data-ui-theme="light"]{
+  --ui-canvas: #e8edf4;
+  --ui-surface: #ffffff;
+  --ui-surface-raised: #f4f8fc;
+  --ui-header: #003399;
+  --ui-header-light: #336699;
+  --ui-ink: #1d3048;
+  --ui-muted: #405972;
+  --ui-border: #8ba8c4;
+  --ui-link: #003399;
+  --ui-input: #ffffff;
+  --ui-input-ink: #172940;
+  --ui-focus: #bf5d16;
+  color-scheme: light;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"]{
+  --ui-canvas: #101a2b;
+  --ui-surface: #1d2b41;
+  --ui-surface-raised: #263a53;
+  --ui-header: #101f39;
+  --ui-header-light: #243c61;
+  --ui-ink: #f0f5fd;
+  --ui-muted: #d0dced;
+  --ui-border: #718aab;
+  --ui-link: #bbd9ff;
+  --ui-input: #152338;
+  --ui-input-ink: #f3f7ff;
+  --ui-focus: #ffbf70;
+  color-scheme: dark;
+}
+
+
+#jdJournalModule #ourspaceThemeControl{
+  position: fixed;
+  inset: auto max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) auto;
+  z-index: 2147483600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 102px;
+  min-height: 38px;
+  padding: 8px 11px;
+  border: 1px solid var(--ui-border);
+  border-radius: 6px;
+  background: var(--ui-header);
+  color: #fff;
+  font: 700 12px/1.3 Verdana,Arial,sans-serif;
+  box-shadow: 0 2px 9px #0005;
+  cursor: pointer;
+  letter-spacing: 0;
+}
+
+
+#jdJournalModule #ourspaceThemeControl:hover{
+  filter: brightness(1.12);
+}
+
+
+#jdJournalModule #ourspaceThemeControl:focus-visible{
+  outline: 3px solid var(--ui-focus);
+  outline-offset: 2px;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] #ourspaceThemeControl{
+  background: #bbd9ff;
+  color: #101a2b;
+  border-color: #bbd9ff;
+}
+
+
+@media (max-width:480px){
+  
+#jdJournalModule #ourspaceThemeControl{
+    min-height: 36px;
+    min-width: 78px;
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+}
+
+
+@media print{
+  
+#jdJournalModule #ourspaceThemeControl{
+    display: none;
+  }
+
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(input:not([type="checkbox"]):not([type="radio"]),textarea,select){
+  color: var(--ui-input-ink)!important;
+  background-color: var(--ui-input)!important;
+  border-color: var(--ui-border)!important;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(input,textarea)::placeholder{
+  color: #c2d0e2!important;
+  opacity: 1;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(a){
+  color: var(--ui-link);
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(button,input,select,textarea,a):focus-visible{
+  outline: 3px solid var(--ui-focus)!important;
+  outline-offset: 2px;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] #jdJournalModule{
+  background: var(--ui-canvas)!important;
+  color: var(--ui-ink)!important;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(.ms-page,.ms-profile,.ms-card,.module,.module-body,.module-content,.card,.card-body,.panel,.panel-body,.page-frame,.page-content,.site-page,.retro-profile-card,.content-card,.page-shell,.profile-card,.profile-section,.sidebar-table,.section-body,.settings-card,.modal-content){
+  background-color: var(--ui-surface)!important;
+  color: var(--ui-ink)!important;
+  border-color: var(--ui-border)!important;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(.ms-item,.ms-card-body,.module-content,.module-body,.panel-body,.section-body,.card-body,.ms-card-body,.empty-state,.notice,.toolbar,.sidebar-table-data,td.value){
+  background-color: var(--ui-surface-raised)!important;
+  color: var(--ui-ink)!important;
+  border-color: var(--ui-border)!important;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(.ms-card-head,.ms-strip,.module-hd,.module-header,.panel-header,.card-header,.section-header,.sidebar-heading,.module-topbar,.retro-module-heading,.sidebar-table-h2,.topbar,.page-title){
+  background-color: var(--ui-header)!important;
+  color: #fff!important;
+  border-color: var(--ui-border)!important;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(.ms-card-head,.ms-strip,.module-hd,.module-header,.panel-header,.card-header,.section-header,.sidebar-heading,.module-topbar,.retro-module-heading,.topbar,.page-title) :where(h1,h2,h3,h4,span,small,strong,p){
+  color: #fff!important;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(.ms-page-intro,.ms-panel,.sidebar-table-header,td.label,th,.nav-bar,.jump-tabs,.tab-bar){
+  background-color: var(--ui-header-light)!important;
+  color: #fff!important;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(button:not(.fullscreen-shell-exit):not(.fullscreen-exit):not(.onyx-bubble):not(.jump-orb),.primary-button,.secondary-button,.ms-actions button){
+  background-color: var(--ui-surface-raised);
+  color: var(--ui-ink);
+  border-color: var(--ui-border);
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(.primary,.btn-primary,.primary-button,.send-button,.is-active,.active){
+  color: #fff;
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] :where(.muted,.subtle,.empty-state,.help-text,.meta-text){
+  color: var(--ui-muted)!important;
+}
+
+
+@media (max-width:680px){
+  
+#jdJournalModule .app-shell{
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+    grid-template-columns: minmax(0,1fr)!important;
+  }
+
+  
+#jdJournalModule .topbar{
+    display: grid;
+    grid-template-columns: auto minmax(0,1fr) auto;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+    max-width: 100%;
+    padding: 5px 6px;
+  }
+
+  
+#jdJournalModule .topbar__menu{
+    grid-column: 1;
+  }
+
+  
+#jdJournalModule .global-search{
+    grid-column: 2;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 5px;
+  }
+
+  
+#jdJournalModule .topbar__actions{
+    grid-column: 3;
+    display: flex;
+    min-width: 0;
+    max-width: 104px;
+    gap: 2px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  
+#jdJournalModule .topbar__actions .icon-button{
+    min-width: 32px;
+    min-height: 34px;
+    padding: 4px;
+  }
+
+  
+#jdJournalModule .workspace, #jdJournalModule .view-root, #jdJournalModule .view-page, #jdJournalModule .view-header, #jdJournalModule .dashboard-grid, #jdJournalModule .home-columns{
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  
+#jdJournalModule .view-root{
+    padding: 12px;
+  }
+
+  
+#jdJournalModule .sidebar{
+    width: min(300px,84vw);
+  }
+
+}
+
+
+#jdJournalModule[data-ui-theme="dark"] .global-search>span{
+  color: #203650!important;
+}
+
+
+
+
+/* Module Designer v7. The sole designer UI layer, appended to this module's canonical CSS. */
+
+
+#jdJournalModule .osd-ui, #jdJournalModule .osd-ui *{box-sizing:border-box!important}
+
+
+#jdJournalModule .osd-ui{position:fixed!important;inset:auto 15px 15px auto!important;z-index:2147483000!important;pointer-events:none!important;font:13px/1.45 Verdana,Arial,sans-serif!important;color:#1e3045!important;isolation:isolate!important}
+
+
+#jdJournalModule .osd-ui button, #jdJournalModule .osd-ui select, #jdJournalModule .osd-ui input{font:inherit!important}
+
+
+#jdJournalModule .osd-ui :is(button,select,input):focus-visible{outline:3px solid #f59f47!important;outline-offset:2px!important}
+
+
+#jdJournalModule .osd-ui .osd-bubble{position:fixed!important;bottom:16px!important;right:18px!important;min-width:84px!important;min-height:55px!important;padding:8px 10px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:1px!important;border:2px solid #153967!important;border-radius:14px!important;background:#e9f2fd!important;color:#12355c!important;box-shadow:0 4px 12px #0004!important;pointer-events:auto!important;cursor:pointer!important;z-index:2147483001!important}
+
+
+#jdJournalModule .osd-ui .osd-bubble span:first-child{font-size:22px!important;line-height:1.1!important}
+
+
+#jdJournalModule .osd-ui .osd-bubble span:last-child{font-size:11px!important;font-weight:800!important}
+
+
+#jdJournalModule .osd-ui .osd-panel{position:fixed!important;top:max(12px,env(safe-area-inset-top))!important;right:14px!important;bottom:85px!important;width:min(410px,calc(100vw - 28px))!important;max-height:calc(100dvh - 100px)!important;background:#fff!important;color:#182b44!important;border:2px solid #416990!important;border-radius:12px!important;box-shadow:0 12px 42px #0006!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;pointer-events:auto!important;z-index:2147483002!important}
+
+
+#jdJournalModule .osd-ui [hidden]{display:none!important}
+
+
+#jdJournalModule .osd-ui .osd-heading{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;padding:11px 13px!important;background:#1b4573!important;color:#fff!important;min-height:65px!important}
+
+
+#jdJournalModule .osd-ui .osd-heading strong{display:block!important;color:#fff!important;font-size:15px!important}
+
+
+#jdJournalModule .osd-ui .osd-heading small{display:block!important;color:#e0ebf7!important;font-size:11px!important}
+
+
+#jdJournalModule .osd-ui .osd-exit{display:grid!important;place-items:center!important;width:36px!important;height:36px!important;flex-shrink:0!important;border:1px solid #a72222!important;border-radius:6px!important;background:#da3333!important;color:#fff!important;font-size:24px!important;cursor:pointer!important}
+
+
+#jdJournalModule .osd-ui .osd-tabs{display:grid!important;grid-template-columns:1fr 1fr!important;background:#e8eff9!important;padding:0!important;border-bottom:1px solid #bdd0e2!important}
+
+
+#jdJournalModule .osd-ui .osd-tabs button{padding:10px 7px!important;background:transparent!important;color:#234c77!important;border:0!important;border-radius:0!important;font-weight:700!important;cursor:pointer!important}
+
+
+#jdJournalModule .osd-ui .osd-tabs button[aria-selected="true"]{background:#fff!important;border-bottom:3px solid #215d9a!important;color:#12345a!important}
+
+
+#jdJournalModule .osd-ui .osd-content{padding:13px!important;overflow:auto!important;overscroll-behavior:contain!important;flex:1 1 auto!important;min-height:0!important;background:#fff!important;color:#1f344b!important}
+
+
+#jdJournalModule .osd-ui .osd-field{display:grid!important;grid-template-columns:1fr!important;gap:5px!important;margin-bottom:11px!important;font-weight:700!important;font-size:12px!important;color:#263b54!important}
+
+
+#jdJournalModule .osd-ui .osd-field select{width:100%!important;min-height:40px!important;padding:7px!important;border:1px solid #9bafc5!important;border-radius:6px!important;background:#fff!important;color:#183049!important}
+
+
+#jdJournalModule .osd-ui .osd-field input[type=color]{width:100%!important;min-height:38px!important;padding:2px!important;border:1px solid #9bafc5!important;border-radius:6px!important;background:#fff!important;cursor:pointer!important}
+
+
+#jdJournalModule .osd-ui .osd-field input[type=range]{width:100%!important;accent-color:#235a92!important;cursor:pointer!important}
+
+
+#jdJournalModule .osd-ui .osd-help{font-size:11px!important;line-height:1.5!important;color:#4a5b70!important;margin:9px 0!important}
+
+
+#jdJournalModule .osd-ui .osd-preset-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:12px 0!important}
+
+
+#jdJournalModule .osd-ui .osd-preset{min-width:0!important;display:grid!important;align-content:start!important;gap:6px!important;text-align:left!important;padding:10px!important;min-height:77px!important;background:#f7f9fd!important;color:#1b3551!important;border:1px solid #aebfd3!important;border-radius:7px!important;cursor:pointer!important}
+
+
+#jdJournalModule .osd-ui .osd-preset strong{font-size:11px!important;color:#18344f!important;overflow-wrap:anywhere!important}
+
+
+#jdJournalModule .osd-ui .osd-preset small{font-size:10px!important;color:#53647a!important}
+
+
+#jdJournalModule .osd-ui .osd-swatch{display:flex!important;gap:2px!important;height:13px!important}
+#jdJournalModule .osd-ui .osd-swatch i{display:block!important;flex:1!important;border:1px solid #0002!important;border-radius:1px!important}
+
+
+#jdJournalModule .osd-ui .osd-page-actions{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;margin-top:9px!important}
+
+
+#jdJournalModule .osd-ui :is(.osd-secondary,.osd-primary){padding:8px 10px!important;min-height:34px!important;border-radius:6px!important;border:1px solid #849cb6!important;background:#ecf2f9!important;color:#1a3d62!important;font-weight:700!important;cursor:pointer!important}
+
+
+#jdJournalModule .osd-ui .osd-primary{background:#1d5c9d!important;color:#fff!important;border-color:#19436f!important}
+
+
+#jdJournalModule .osd-ui button:disabled{cursor:not-allowed!important;opacity:.45!important}
+
+
+#jdJournalModule .osd-ui .osd-decision{background:#fff7dc!important;color:#513d1a!important;padding:10px 13px!important;border-top:2px solid #c79b34!important}
+
+
+#jdJournalModule .osd-ui .osd-decision>div:first-child{font-size:12px!important;font-weight:700!important}
+
+
+#jdJournalModule .osd-ui .osd-footer{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:7px!important;min-height:47px!important;border-top:1px solid #b8c9d9!important;background:#eef3f9!important;padding:7px!important}
+
+
+#jdJournalModule .osd-ui .osd-footer span{font-size:11px!important;flex:1!important;color:#2c4661!important}
+
+
+#jdJournalModule .osd-ui .osd-footer [data-error=true]{color:#9d2828!important}
+
+
+@media (max-width:560px){#jdJournalModule .osd-ui .osd-panel{inset:8px 8px 75px 8px!important;width:auto!important;max-height:calc(100dvh - 85px)!important}
+#jdJournalModule .osd-ui .osd-bubble{right:10px!important;bottom:8px!important;min-height:52px!important;min-width:70px!important}}
+
+
+@media (prefers-reduced-motion:reduce){#jdJournalModule .osd-ui *{scroll-behavior:auto!important;transition:none!important}}
+
+
+
+#jdJournalModule .osd-ui .osd-bubble{touch-action:none!important;user-select:none!important;cursor:grab!important}
+
+
+#jdJournalModule .osd-ui .osd-heading{touch-action:none!important;user-select:none!important;cursor:move!important}
+
+
+#jdJournalModule .osd-ui .osd-panel{resize:both!important;min-width:min(315px,calc(100vw - 20px))!important;min-height:270px!important;max-width:calc(100vw - 8px)!important;max-height:calc(100dvh - 14px)!important}
+
+
+@media (max-width:560px){#jdJournalModule .osd-ui .osd-panel{resize:none!important}}
+
+
+
+#jdJournalModule .osd-ui .osd-source-thumb{display:block!important;width:100%!important;height:68px!important;object-fit:cover!important;object-position:center!important;border-radius:4px!important;background:#e9f1f9!important;border:1px solid #c0d0dc!important}
+
+
+#jdJournalModule .osd-ui .osd-source-link{display:inline-block!important;margin-top:7px!important;color:#215c92!important;text-decoration:underline!important;font-size:11px!important;font-weight:700!important}
+
+
+
+/* v8 image catalog: current canonical module stylesheet only; designer UI scoped. */
+
+
+#jdJournalModule .osd-ui .osd-image-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;margin:10px 0!important;max-width:100%!important}
+
+
+#jdJournalModule .osd-ui .osd-image-card{min-width:0!important;border:1px solid #bdcbd8!important;border-radius:7px!important;overflow:hidden!important;background:#fff!important;color:#1b3350!important}
+
+
+#jdJournalModule .osd-ui .osd-image-card[data-selected="true"]{border:2px solid #15578a!important;outline:2px solid #bcd8ef!important}
+
+
+#jdJournalModule .osd-ui .osd-image-choice{display:flex!important;flex-direction:column!important;width:100%!important;text-align:left!important;padding:6px!important;border:0!important;background:#fff!important;color:#193552!important;gap:4px!important;font:inherit!important;cursor:pointer!important}
+
+
+#jdJournalModule .osd-ui .osd-image-choice img{display:block!important;object-fit:cover!important;object-position:center!important;aspect-ratio:4/3!important;width:100%!important;height:auto!important;min-height:85px!important;max-height:130px!important;background:#edf2f7!important;border:1px solid #d3e0ea!important;border-radius:3px!important}
+
+
+#jdJournalModule .osd-ui .osd-image-choice strong{font-size:11px!important;line-height:1.3!important;color:#143251!important;overflow-wrap:anywhere!important}
+
+
+#jdJournalModule .osd-ui .osd-image-choice small{font-size:10px!important;color:#435872!important;overflow-wrap:anywhere!important}
+
+
+#jdJournalModule .osd-ui .osd-image-fallback{display:none!important;font-size:11px!important;padding:8px!important;color:#675318!important;background:#fff3d8!important}
+
+
+#jdJournalModule .osd-ui .osd-image-card.osd-image-failed img{display:none!important}
+
+
+#jdJournalModule .osd-ui .osd-image-card.osd-image-failed .osd-image-fallback{display:block!important}
+
+
+#jdJournalModule .osd-ui .osd-image-credit{display:block!important;padding:5px 8px 9px!important;font-size:11px!important;color:#1c5792!important;text-decoration:underline!important;background:#fff!important}
+
+
+#jdJournalModule .osd-ui [data-osd-images]>.osd-field{display:grid!important;gap:5px!important;margin:9px 0!important}
+
+
+#jdJournalModule .osd-ui [data-osd-images] input[type="range"]{width:100%!important;accent-color:#1c5e95!important}
+
+
+#jdJournalModule .osd-ui [data-osd-images] a:focus-visible, #jdJournalModule .osd-ui .osd-image-choice:focus-visible{outline:3px solid #d7851c!important;outline-offset:2px!important}
+
+
+@media (max-width:390px){#jdJournalModule .osd-ui .osd-image-grid{grid-template-columns:1fr!important}}
+
+
+
+/* OurSpace Journal & Diary · permanent white surfaces, jasper blue accent palette. */
+
+
+#jdJournalModule[data-theme], #jdJournalModule[data-theme="dark"], #jdJournalModule[data-theme="light"]{
+ --background:#FFFFFF;--surface:#FFFFFF;--surface-2:#F1F7FF;--surface-3:#E6F1FF;
+ --text:#15304F;--muted:#4F6782;--line:#CADBF0;--line-strong:#90B7E6;
+ --primary:#1267B6;--primary-hover:#095298;--primary-dark:#173E6C;
+ --on-bright:#FFFFFF;--shadow:0 12px 32px rgba(29,88,156,.11);color-scheme:light;
+}
+
+
+#jdJournalModule[data-profile="william"]{--profile-primary:#1678DA;--profile-secondary:#75B9F7;--profile-dark:#12528C;--profile-soft:rgba(35,134,226,.12)}
+
+
+#jdJournalModule[data-profile="jasper"]{--profile-primary:#3066BC;--profile-secondary:#A2C7F0;--profile-dark:#21467C;--profile-soft:rgba(77,126,204,.11)}
+
+
+#jdJournalModule, #jdJournalModule, #jdJournalModule #app, #jdJournalModule .workspace{background-color:var(--background);color:var(--text)}
+
+
+#jdJournalModule #app .topbar, #jdJournalModule #app #jdJournalSidebar, #jdJournalModule #app #jdJournalInspector{background-color:#FFFFFF;border-color:var(--line)}
+
+
+#jdJournalModule #app .global-search, #jdJournalModule #app .nav-item:hover, #jdJournalModule #app .card, #jdJournalModule #app .panel{border-color:var(--line)}
+
+
+#jdJournalModule #app .nav-item.is-active{background:#E7F2FF;color:var(--profile-primary)}
+
+
+#jdJournalModule #app :focus-visible{outline-color:var(--profile-primary)}
+
+
+
+#jdJournalModule[data-theme][data-profile]:not(.high-contrast){
+ --background:#FFFFFF!important;--surface:#FFFFFF!important;--surface-2:#F3F8FF!important;
+ --surface-3:#E9F3FF!important;--text:#173653!important;--muted:#53718D!important;
+ --line:#CEDDED!important;--line-strong:#87B0DA!important;
+ --primary:#365FB8!important;
+ --primary-hover:#0C5EA8!important;--primary-dark:#183F68!important;
+ --on-bright:#FFFFFF!important;--profile-primary:#365FB8!important;
+ --profile-secondary:#97BCE7!important;
+ --profile-dark:#163D65!important;--profile-soft:#EDF5FF!important;color-scheme:light!important;
+}
+
+
+#jdJournalModule[data-theme] #app .topbar, #jdJournalModule[data-theme] #app .sidebar, #jdJournalModule[data-theme] #app #jdJournalInspector{background:#FFFFFF!important;color:#173653!important;border-color:#CEDDED!important}
+
+
+#jdJournalModule[data-theme] #app .topbar .brand-product{color:var(--profile-primary)!important}
+
+
+#jdJournalModule[data-theme] #app .sidebar .nav-item.is-active{background:#E9F3FF!important;color:var(--profile-primary)!important}
+
+
+#jdJournalModule[data-theme] #app .topbar .brand-lockup{color:#173653!important}
+

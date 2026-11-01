@@ -1,0 +1,25 @@
+/* Jump nav separate from master nav and design studio; no admin movement/export */
+#profileJumpNav{position:fixed;top:12px;left:75px;z-index:11010;color:#123657;font:12px/1.4 system-ui,sans-serif;pointer-events:none}
+#profileJumpBubble{pointer-events:auto;display:grid;place-items:center;width:52px;height:52px;padding:0;border:2px solid #6699cc;border-radius:6px;background:#003399;color:#fff;font:32px/1 'Noto Sans Egyptian Hieroglyphs','Segoe UI Symbol',serif;box-shadow:0 3px 12px #2236;cursor:pointer}
+#profileJumpMenu{position:absolute;top:58px;left:0;display:flex;flex-direction:column;background:#fff;border:2px solid #6097c9;border-radius:7px;box-shadow:0 8px 24px #10284a50;pointer-events:auto;overflow:hidden;min-width:220px;min-height:170px;max-width:calc(100vw - 16px);max-height:calc(100dvh - 85px)}
+#profileJumpMenu[hidden]{display:none!important}
+#profileJumpMenu header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 10px;background:#003399;color:white;flex:0 0 auto}
+#profileJumpMenu header strong{font-size:12px}
+#profileJumpClose{font-size:19px;background:#da2929;color:#fff;border:1px solid #ad1818;border-radius:4px;width:30px;height:30px;min-height:30px}
+#profileJumpLinks{display:grid;gap:2px;padding:7px;min-height:0;overflow:auto;align-content:start;flex:1;overscroll-behavior:contain}
+#profileJumpLinks button{padding:8px;border:1px solid transparent;background:#edf4fc;color:#124570;min-height:34px;text-align:left;font-weight:700;word-break:break-word}
+#profileJumpLinks button:hover{background:#d7e9fd;border-color:#8aacc8}
+.jump-resize-handles{position:absolute;inset:0;pointer-events:none}
+.jump-resize-handles i{position:absolute;display:block;width:14px;height:14px;pointer-events:auto}
+.jump-resize-handles [data-jump-resize=n]{top:0;left:calc(50% - 7px);cursor:ns-resize}
+.jump-resize-handles [data-jump-resize=s]{bottom:0;left:calc(50% - 7px);cursor:ns-resize}
+.jump-resize-handles [data-jump-resize=w]{left:0;top:calc(50% - 7px);cursor:ew-resize}
+.jump-resize-handles [data-jump-resize=e]{right:0;top:calc(50% - 7px);cursor:ew-resize}
+.jump-resize-handles [data-jump-resize=ne]{right:0;top:0;cursor:nesw-resize}
+.jump-resize-handles [data-jump-resize=nw]{left:0;top:0;cursor:nwse-resize}
+.jump-resize-handles [data-jump-resize=se]{right:0;bottom:0;cursor:nwse-resize}
+.jump-resize-handles [data-jump-resize=sw]{left:0;bottom:0;cursor:nesw-resize}
+#profileApp .profile-column > section{scroll-margin-top:68px}
+@media(max-width:760px){#profileJumpNav{left:72px;top:12px}#profileJumpMenu{left:-55px}}
+
+html.nonprofile #profileJumpNav{display:none!important}

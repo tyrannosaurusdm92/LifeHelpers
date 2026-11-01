@@ -1,0 +1,51 @@
+{
+  "schema": "ourspace.sidebar-messenger-placement.v1",
+  "version": 1,
+  "profiles": {
+    "william": {
+      "position": "fixed-right-rail-with-page-reflow",
+      "widthPx": 170,
+      "heightPx": 911,
+      "topPx": 0,
+      "rightPx": 0,
+      "contentScale": 1,
+      "spacingPx": 10,
+      "computedContentScale": 0.7722,
+      "menuItemCount": 6,
+      "scrollbar": "integrated-rail-scrollbar",
+      "panels": {
+        "quick": {
+          "left": 1289,
+          "top": 89,
+          "width": 453,
+          "height": 488
+        },
+        "friends": {
+          "left": 1386,
+          "top": 117.5,
+          "width": 356,
+          "height": 465
+        },
+        "today": {
+          "left": 1302,
+          "top": 323,
+          "width": 440,
+          "height": 580
+        },
+        "unread": {
+          "left": 1302,
+          "top": 195.125,
+          "width": 440,
+          "height": 580
+        },
+        "rooms": {
+          "left": 1298,
+          "top": 111.21875,
+          "width": 440,
+          "height": 580
+        }
+      }
+    },
+    "jasper": null
+  }
+}

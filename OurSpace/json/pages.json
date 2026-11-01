@@ -1,0 +1,68 @@
+{
+  "site": "OurSpace",
+  "profiles": [
+    {
+      "key": "william",
+      "label": "Dino Nerdzone"
+    },
+    {
+      "key": "jasper",
+      "label": "Squishy's Cottage"
+    }
+  ],
+  "pages": [
+    {
+      "key": "profile",
+      "title": "About / Profile",
+      "implemented": true
+    },
+    {
+      "key": "household",
+      "title": "Household",
+      "implemented": true
+    },
+    {
+      "key": "journal",
+      "title": "Journal & Diary Cards",
+      "implemented": true
+    },
+    {
+      "key": "diary",
+      "title": "Diary Card (Journal tab)",
+      "implemented": true,
+      "aliasOf": "journal",
+      "tab": "diary"
+    },
+    {
+      "key": "feed",
+      "title": "Feed",
+      "implemented": true
+    },
+    {
+      "key": "skills",
+      "title": "Skills",
+      "implemented": true
+    },
+    {
+      "key": "communication",
+      "title": "Communication",
+      "implemented": true
+    },
+    {
+      "key": "audio",
+      "title": "Audio",
+      "implemented": true
+    },
+    {
+      "key": "visual",
+      "title": "Visual",
+      "implemented": true
+    },
+    {
+      "key": "store",
+      "title": "Store",
+      "implemented": true
+    }
+  ],
+  "notes": "Household and Skills native in both profile HTML files; 102 allowed DBT worksheet HTML pages. William #admin edits only final modules and exports final-modules.json. Communication and Sidebar Messenger share the pre-existing message state; Communication placement editing retired. Onyx native widget appears on Journal & Diary and Communication."
+}

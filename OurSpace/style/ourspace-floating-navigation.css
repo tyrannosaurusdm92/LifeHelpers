@@ -1,0 +1,88 @@
+/* OurSpace navigation integration. The jump bubble retains its original visual design. */
+:root{--os-master-ink:#fff;--os-master-black:#131113;--os-master-red:#B51928;--os-master-gold:#D4AF37}
+#masterNav{top:12px;left:12px;width:286px;border:2px solid var(--os-master-black);background:#fff;box-shadow:0 6px 22px #10080b66;z-index:11000}
+#masterNav.collapsed{width:68px;height:68px;border:none;background:transparent}
+#masterNav .master-head{background:var(--os-master-black);color:white}
+#masterNav .master-drag{color:white}
+#masterNav .master-toggle{background:var(--os-master-gold);border:1px solid #f9e6aa;color:var(--os-master-black);min-width:38px;min-height:38px}
+#masterNav .master-toggle:hover,#masterNav .master-toggle:focus-visible{background:var(--os-master-red);color:white}
+#masterNav.collapsed .master-head{height:68px;background:transparent}
+#masterNav.collapsed .master-toggle{font:900 19px/1 system-ui,sans-serif;letter-spacing:1px;min-width:68px;min-height:68px;width:68px;height:68px;border-radius:6px;border:3px solid var(--os-master-black);background:var(--os-master-black);color:white;box-shadow:inset 0 0 0 2px var(--os-master-gold),0 4px 13px #11070b55}
+#masterNav.collapsed .master-toggle:hover,#masterNav.collapsed .master-toggle:focus-visible{background:var(--os-master-red);border-color:var(--os-master-black);color:white}
+#masterNav .master-content{background:#fff!important;color:#171416!important}
+#masterNav .master-links a{color:#191311;background:#D4AF37;border:1px solid #9C7425}
+#masterNav .master-links a:hover,#masterNav .master-links a:focus-visible{color:#fff;background:#B51928}
+#masterNav .master-links a[aria-current=page]{background:#f6e4aa;border-color:#a00e20;color:#191311}
+#masterNav .master-links a[aria-current=page]:hover{background:var(--os-master-red);color:#fff}
+#masterNav .master-footer button{background:var(--os-master-gold);color:#1c1412;border-color:#806000}
+#masterNav .master-footer button:hover{background:var(--os-master-red);color:white}
+#masterNav input[type=search]{border:1px solid #55433f;background:white;color:#161616}
+/* Profile starts ten percent from the left and fills up to the messenger gutter. */
+html[data-profile] body:has(#sidebar-messenger-root.mp-vertical-root) .profile-frame{
+  box-sizing:border-box!important;margin-left:10vw!important;margin-right:0!important;
+  width:calc(90vw - var(--os-sidebar-width) - var(--os-sidebar-right) - var(--os-sidebar-gap))!important;
+  max-width:none!important;min-width:0!important;
+}
+html[data-profile] body:not(:has(#sidebar-messenger-root.mp-vertical-root)) .profile-frame{
+  box-sizing:border-box!important;margin-left:10vw!important;margin-right:0!important;width:90vw!important;max-width:none!important;
+}
+@media(max-width:760px){html[data-profile] body:has(#sidebar-messenger-root.mp-vertical-root) .profile-frame{margin-left:10vw!important;margin-right:0!important;width:calc(90vw - var(--os-sidebar-width) - var(--os-sidebar-right) - var(--os-sidebar-gap))!important}}
+/* Exact existing jump bubble colors/shape are preserved; only placement/panel direction change. */
+#profileJumpNav{top:calc(50dvh - 26px);left:auto;right:calc(var(--os-sidebar-width,300px) + var(--os-sidebar-right,0px) + 14px)}
+#profileJumpNav[data-dock="right"] #profileJumpMenu{right:0;left:auto}
+#profileJumpNav[data-dock="left"] #profileJumpMenu{right:auto;left:0}
+html.nonprofile #profileJumpNav{display:block!important}
+#profileJumpNav{z-index:11010}
+#profileJumpMenu{max-width:calc(100vw - 14px)}
+/* Do not show the old embedded Feed or Communication jump orb: the original shared bubble does that job. */
+#ourspacePageArea [data-ourspace-page="feed"] .jump-nav,
+#ourspacePageArea [data-ourspace-page="communication"] .jump-nav{display:none!important}
+/* The design widget uses the actual quill artwork and lives just left of the Quick Chat rail. */
+#designWidget #designerBubble{top:12px;left:auto;right:calc(var(--os-sidebar-width,300px) + var(--os-sidebar-right,0px) + 18px);background:transparent!important}
+#designWidget #designerBubble img{width:100px;height:100px;object-fit:contain}
+#designWidget #designerPanel{max-width:calc(100vw - var(--os-sidebar-width,0px) - 12px)}
+/* The supplied accent shades apply ONLY to chosen notes, pins, and folder entries. */
+.os-accent-color-trigger{all:revert;cursor:pointer!important;display:inline-flex!important;align-items:center;justify-content:center;vertical-align:middle;flex:0 0 auto;min-height:24px!important;min-width:24px!important;width:25px!important;height:25px!important;padding:2px!important;margin:1px 3px!important;border:2px solid #171717!important;border-radius:7px!important;background:var(--os-accent,#98FF98)!important;color:var(--os-accent-ink,#111)!important;box-shadow:0 1px 2px #0004!important;font:900 14px/1 system-ui,sans-serif!important}
+.os-accent-color-trigger:hover,.os-accent-color-trigger:focus-visible{outline:2px solid #CE3657!important;outline-offset:2px!important}
+.os-accent-palette{position:fixed;z-index:2147483101;display:none;flex-direction:column;width:min(340px,calc(100vw - 16px));max-height:min(70dvh,530px);overflow:hidden;border:2px solid #343238;border-radius:10px;background:#fff!important;color:#171717!important;box-shadow:0 12px 35px #0006;font:12px/1.35 system-ui,sans-serif}
+.os-accent-palette.open{display:flex}
+.os-accent-palette .os-palette-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;background:#181818!important;color:white!important}
+.os-accent-palette .os-palette-head button{width:31px;height:31px;border:1px solid #aaa;border-radius:5px;background:#fff!important;color:#111!important}
+.os-accent-palette .os-palette-scroll{padding:9px;overflow-y:auto;overscroll-behavior:contain;background:white!important}
+.os-accent-palette .os-palette-group{margin:7px 0 3px;color:#121212!important;font-weight:850}
+.os-accent-palette .os-palette-swatches{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}
+.os-accent-palette .os-palette-swatch{min-height:32px;border-radius:5px;border:2px solid #767676;cursor:pointer;background:var(--shade)!important;color:var(--ink)!important;font:700 10px/1 system-ui,sans-serif!important}
+.os-accent-palette .os-palette-swatch[aria-pressed="true"]{outline:3px solid #d62039;outline-offset:1px}
+/* User-selected folder accent overrides the generic theme's forced blue/white background. */
+html[data-profile] #ourspacePageArea [data-os-folder-accent]{background:var(--os-accent,#98FF98)!important;background-image:none!important;color:var(--os-accent-ink,#111)!important;border-color:var(--os-accent-edge,#121212)!important}
+html[data-profile] #ourspacePageArea [data-os-folder-accent] :is(span,small,strong,em){color:var(--os-accent-ink,#111)!important;background:transparent!important}
+html[data-profile] #ourspacePageArea [data-os-folder-accent] > button:not(.os-accent-color-trigger),
+html[data-profile] #ourspacePageArea button[data-os-folder-accent]{background:var(--os-accent,#98FF98)!important;color:var(--os-accent-ink,#111)!important}
+#osCommunicationModule .oscom-pin-btn[data-os-pin-accent]{background:var(--os-accent,#98FF98)!important;color:var(--os-accent-ink,#111)!important;border:2px solid var(--os-accent-edge,#111)!important}
+#osCommunicationModule .oscom-pinned-overview button[data-os-pin-accent],#osQuickDock .os-quick-item[data-os-pin-accent]{background:var(--os-accent,#98FF98)!important;color:var(--os-accent-ink,#111)!important;border-left:4px solid var(--os-accent-edge,#111)!important}
+@media(max-width:760px){#designWidget #designerPanel{max-width:calc(100vw - var(--os-sidebar-width,0px) - 8px)}#profileJumpMenu{min-width:min(220px,calc(100vw - 16px))}}
+
+#bulletinBoardModule .scrap-card.style-note,#bulletinBoardModule .structured-card.style-note{color:var(--bulletin-note-ink,#1D2531)!important}
+#bulletinBoardModule :is(.scrap-card.style-note,.structured-card.style-note) :is(h3,.item-body,.card-type-row,.why-saved,.tag,.source-link,.event-meta,.local-caption,p,span){color:var(--bulletin-note-ink,#1D2531)!important}
+#bulletinBoardModule :is(.scrap-card.style-note,.structured-card.style-note) a{color:var(--bulletin-note-ink,#1D2531)!important;text-decoration:underline}
+
+/* Keep the opened dialogs within the shrinking content area on narrow screens. */
+#profileJumpMenu{min-width:min(220px,calc(100vw - var(--os-sidebar-width,150px) - var(--os-sidebar-right,0px) - 8px))}
+#designWidget #designerPanel{min-width:min(330px,calc(100vw - var(--os-sidebar-width,150px) - var(--os-sidebar-right,0px) - 12px))!important}
+/* Stronger than the source-wide white theme reset: only explicitly accented folders. */
+html[data-profile] #ourspacePageArea [data-ourspace-page] [data-os-folder-accent],
+html[data-profile] #ourspacePageArea [data-ourspace-page] button[data-os-folder-accent]{
+ background-color:var(--os-accent,#98FF98)!important;
+ background-image:none!important;
+ color:var(--os-accent-ink,#111)!important;
+ border-color:var(--os-accent-edge,#171717)!important;
+}
+html[data-profile] #ourspacePageArea [data-ourspace-page] [data-os-folder-accent] :is(button,span,small,strong,em){
+ color:var(--os-accent-ink,#111)!important;
+}
+html[data-profile] #ourspacePageArea [data-ourspace-page] [data-os-folder-accent] > button:not(.os-accent-color-trigger){
+ background-color:var(--os-accent,#98FF98)!important;
+ color:var(--os-accent-ink,#111)!important;
+}
+
+#profileJumpNav[hidden]{display:none!important}

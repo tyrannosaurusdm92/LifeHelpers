@@ -1,0 +1,10 @@
+/* Proportionally scaled Links Module inside a SINGLE in-flow profile box. */
+#profile-links.links-module-flow{box-sizing:border-box;position:relative;flex:0 0 auto;align-self:flex-start;width:100%;max-width:100%;min-width:0;min-height:0!important;height:auto!important;overflow:visible!important;resize:none!important;background:#fff}
+#profile-links .lm-body{box-sizing:border-box;position:relative;display:block;width:100%;padding:0!important;margin:0!important;min-width:0;max-width:none!important;min-height:0!important;overflow:visible!important;resize:none!important}
+#profile-links #linksModuleShell{position:relative;display:block;width:100%;height:auto;overflow:visible;min-width:0;box-sizing:border-box;contain:style}
+#profile-links #linksModuleFlow{position:absolute;left:0;top:0;width:860px!important;min-width:860px!important;max-width:none!important;height:auto!important;transform-origin:top left;transform:scale(var(--lm-visual-scale,1));overflow:visible!important;isolation:isolate}
+#profile-links #linksModuleRoot{display:block;width:calc(100% - 24px);max-width:none;min-width:0;margin:14px auto;padding:0;border:1px solid #6699cc;background:#fff;color:#243950;box-sizing:border-box}
+#profile-links .ms-card-body{padding:12px}
+#profile-links .ms-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+#profile-links.links-module-flow.is-collapsed .lm-body,#profile-links.links-module-flow.is-collapsed #linksModuleShell{display:none!important;height:0!important}
+#linksModuleRoot[data-ui-theme="dark"]{background:#101e31!important;color:#eaf1fb!important;border-color:#527295!important}

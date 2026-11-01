@@ -1,0 +1,434 @@
+[
+  {
+    "id": "dino-drink",
+    "name": "Favorite drink restock",
+    "category": "Drinks",
+    "source": "Walmart/delivery/custom",
+    "emoji": "\ud83e\udd64",
+    "notes": "William/Dino chooses drink; real purchase is manual.",
+    "link": "",
+    "price": {
+      "totalCopper": 100,
+      "platinum": 0,
+      "gold": 1,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-drink",
+      "title": "Favorite drink restock",
+      "owner": "william",
+      "category": "Drinks",
+      "source": "Walmart/delivery/custom",
+      "price": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 100
+      },
+      "emoji": "\ud83e\udd64",
+      "notes": "William/Dino chooses drink; real purchase is manual.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-safe-snack",
+    "name": "Safe snack or easy meal stash",
+    "category": "Food",
+    "source": "Walmart/delivery/custom",
+    "emoji": "\ud83c\udf7d\ufe0f",
+    "notes": "Easy bedside food, pantry food, or comfort snack.",
+    "link": "",
+    "price": {
+      "totalCopper": 150,
+      "platinum": 0,
+      "gold": 1,
+      "silver": 5,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-safe-snack",
+      "title": "Safe snack or easy meal stash",
+      "owner": "william",
+      "category": "Food",
+      "source": "Walmart/delivery/custom",
+      "price": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 5,
+        "copper": 0,
+        "total_copper_units": 150
+      },
+      "emoji": "\ud83c\udf7d\ufe0f",
+      "notes": "Easy bedside food, pantry food, or comfort snack.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-homecooked-meal",
+    "name": "Homecooked meal request",
+    "category": "Homecooked Meals",
+    "source": "Homecooked",
+    "emoji": "\ud83c\udf72",
+    "notes": "A planned meal William wants cooked or prepped when feasible.",
+    "link": "",
+    "price": {
+      "totalCopper": 800,
+      "platinum": 0,
+      "gold": 8,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-homecooked-meal",
+      "title": "Homecooked meal request",
+      "owner": "william",
+      "category": "Homecooked Meals",
+      "source": "Homecooked",
+      "price": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 800
+      },
+      "emoji": "\ud83c\udf72",
+      "notes": "A planned meal William wants cooked or prepped when feasible.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-writing-supplies",
+    "name": "Writing/project supplies",
+    "category": "Creative Work",
+    "source": "Amazon/Walmart/custom",
+    "emoji": "\u270d\ufe0f",
+    "notes": "Notebook, pens, binders, index cards, research aid, or project supplies.",
+    "link": "",
+    "price": {
+      "totalCopper": 500,
+      "platinum": 0,
+      "gold": 5,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-writing-supplies",
+      "title": "Writing/project supplies",
+      "owner": "william",
+      "category": "Creative Work",
+      "source": "Amazon/Walmart/custom",
+      "price": {
+        "platinum": 0,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 500
+      },
+      "emoji": "\u270d\ufe0f",
+      "notes": "Notebook, pens, binders, index cards, research aid, or project supplies.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-ttrpg-dice",
+    "name": "TTRPG dice or accessory",
+    "category": "TTRPG & Gaming",
+    "source": "Amazon/local/custom",
+    "emoji": "\ud83c\udfb2",
+    "notes": "Dice, tokens, minis, maps, cards, or VTT-related treat.",
+    "link": "",
+    "price": {
+      "totalCopper": 600,
+      "platinum": 0,
+      "gold": 6,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-ttrpg-dice",
+      "title": "TTRPG dice or accessory",
+      "owner": "william",
+      "category": "TTRPG & Gaming",
+      "source": "Amazon/local/custom",
+      "price": {
+        "platinum": 0,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 600
+      },
+      "emoji": "\ud83c\udfb2",
+      "notes": "Dice, tokens, minis, maps, cards, or VTT-related treat.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-video-game",
+    "name": "Video game or game currency",
+    "category": "Games & Digital",
+    "source": "Custom link",
+    "emoji": "\ud83c\udfae",
+    "notes": "Game, expansion, account funds, or in-game item; link/platform required.",
+    "link": "",
+    "price": {
+      "totalCopper": 1000,
+      "platinum": 1,
+      "gold": 0,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-video-game",
+      "title": "Video game or game currency",
+      "owner": "william",
+      "category": "Games & Digital",
+      "source": "Custom link",
+      "price": {
+        "platinum": 1,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 1000
+      },
+      "emoji": "\ud83c\udfae",
+      "notes": "Game, expansion, account funds, or in-game item; link/platform required.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-art-tool",
+    "name": "Art/studio tool or asset",
+    "category": "Art & Studio",
+    "source": "Custom link",
+    "emoji": "\ud83c\udfa8",
+    "notes": "Brush pack, texture pack, reference, canvas/art supply, or Studio resource.",
+    "link": "",
+    "price": {
+      "totalCopper": 800,
+      "platinum": 0,
+      "gold": 8,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-art-tool",
+      "title": "Art/studio tool or asset",
+      "owner": "william",
+      "category": "Art & Studio",
+      "source": "Custom link",
+      "price": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 800
+      },
+      "emoji": "\ud83c\udfa8",
+      "notes": "Brush pack, texture pack, reference, canvas/art supply, or Studio resource.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-accessibility-comfort",
+    "name": "Accessibility comfort item",
+    "category": "Accessibility & Comfort",
+    "source": "Walmart/Amazon/custom",
+    "emoji": "\ud83d\udecf\ufe0f",
+    "notes": "Pillows, reacher, tray, cable, mount, cushion, blanket, hygiene supply, or bedside comfort.",
+    "link": "",
+    "price": {
+      "totalCopper": 800,
+      "platinum": 0,
+      "gold": 8,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-accessibility-comfort",
+      "title": "Accessibility comfort item",
+      "owner": "william",
+      "category": "Accessibility & Comfort",
+      "source": "Walmart/Amazon/custom",
+      "price": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 800
+      },
+      "emoji": "\ud83d\udecf\ufe0f",
+      "notes": "Pillows, reacher, tray, cable, mount, cushion, blanket, hygiene supply, or bedside comfort.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-cat-dad-treat",
+    "name": "Cat Dad treat for Onyx/siblings",
+    "category": "Cats",
+    "source": "Walmart/Amazon/pet store",
+    "emoji": "\ud83d\udc08\u200d\u2b1b",
+    "notes": "Toy, treats, bed, brush, or cat enrichment chosen by William/Dino.",
+    "link": "",
+    "price": {
+      "totalCopper": 300,
+      "platinum": 0,
+      "gold": 3,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-cat-dad-treat",
+      "title": "Cat Dad treat for Onyx/siblings",
+      "owner": "william",
+      "category": "Cats",
+      "source": "Walmart/Amazon/pet store",
+      "price": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 300
+      },
+      "emoji": "\ud83d\udc08\u200d\u2b1b",
+      "notes": "Toy, treats, bed, brush, or cat enrichment chosen by William/Dino.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-book-research",
+    "name": "Book/research resource",
+    "category": "Writing & Research",
+    "source": "Amazon/library/custom",
+    "emoji": "\ud83d\udcda",
+    "notes": "Book, ebook, audiobook, article access, map/history/science resource.",
+    "link": "",
+    "price": {
+      "totalCopper": 700,
+      "platinum": 0,
+      "gold": 7,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-book-research",
+      "title": "Book/research resource",
+      "owner": "william",
+      "category": "Writing & Research",
+      "source": "Amazon/library/custom",
+      "price": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 700
+      },
+      "emoji": "\ud83d\udcda",
+      "notes": "Book, ebook, audiobook, article access, map/history/science resource.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-comfort-media",
+    "name": "Comfort media night",
+    "category": "Comfort Bonus",
+    "source": "Custom",
+    "emoji": "\ud83c\udfa7",
+    "notes": "Movie rental, music, audiobook, stream treat, or intentional comfort session.",
+    "link": "",
+    "price": {
+      "totalCopper": 200,
+      "platinum": 0,
+      "gold": 2,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-comfort-media",
+      "title": "Comfort media night",
+      "owner": "william",
+      "category": "Comfort Bonus",
+      "source": "Custom",
+      "price": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 200
+      },
+      "emoji": "\ud83c\udfa7",
+      "notes": "Movie rental, music, audiobook, stream treat, or intentional comfort session.",
+      "requires_manual_purchase": true
+    }
+  },
+  {
+    "id": "dino-outfit-or-shirt",
+    "name": "Dino/creator shirt or outfit piece",
+    "category": "Clothes",
+    "source": "Walmart/Amazon/custom",
+    "emoji": "\ud83d\udc55",
+    "notes": "Shirt/clothing link, size, style, and color required.",
+    "link": "",
+    "price": {
+      "totalCopper": 1000,
+      "platinum": 1,
+      "gold": 0,
+      "silver": 0,
+      "copper": 0
+    },
+    "fulfillmentType": "partner-request",
+    "requiresManualFulfillment": true,
+    "restrictedCheckout": false,
+    "originalMetadata": {
+      "id": "dino-outfit-or-shirt",
+      "title": "Dino/creator shirt or outfit piece",
+      "owner": "william",
+      "category": "Clothes",
+      "source": "Walmart/Amazon/custom",
+      "price": {
+        "platinum": 1,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0,
+        "total_copper_units": 1000
+      },
+      "emoji": "\ud83d\udc55",
+      "notes": "Shirt/clothing link, size, style, and color required.",
+      "requires_manual_purchase": true
+    }
+  }
+]

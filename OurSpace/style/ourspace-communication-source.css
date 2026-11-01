@@ -1,0 +1,567 @@
+/* Native-only stylesheet extracted from source Communication module.
+   The source's other-page/global rules intentionally excluded to protect OurSpace. */
+#osCommunicationModule{font-family:Inter,system-ui,sans-serif;min-width:0;color:#183553;background:#fff;}
+#osCommunicationModule .page-title{padding:18px 18px 15px;background:#f1f7ff;border-bottom:2px solid #6699cc;color:#16406d}
+#osCommunicationModule .page-title .page-kicker{display:block;font-weight:800;letter-spacing:.12em;color:#5279a3;font-size:11px}
+#osCommunicationModule .page-title h1{margin:5px 0;font-size:clamp(23px,3vw,32px);color:#173f73}
+#osCommunicationModule .page-title p{margin:0;color:#4b6b88}
+#osCommunicationModule .jump-nav{display:none!important} /* the page uses OurSpace's existing nav; no second widget */
+#osCommunicationModule .oscom-wrap{border:1px solid #a4bfdc;background:#fff;border-radius:0 0 9px 9px}
+#osCommunicationModule .oscom-identity{background:#eef5ff;color:#163b6d;border-bottom:1px solid #b5cae5}
+#osCommunicationModule .oscom-grid{background:#fff;min-height:490px}
+#osCommunicationModule .oscom-sidebar,#osCommunicationModule .oscom-details{background:#f3f7fc;color:#183e65}
+#osCommunicationModule .oscom-chat{border-inline:1px solid #c9d8e8}
+#osCommunicationModule .oscom-chathead{background:#eaf3ff;border-bottom:1px solid #bdcfe6}
+#osCommunicationModule .oscom-thread{background:#fff;min-height:210px;overflow-y:auto}
+#osCommunicationModule .oscom-bubble{background:#eaf3ff;color:#173d6b;border:1px solid #abc4e0;border-radius:12px}
+#osCommunicationModule .oscom-bubble.mine{background:#d9f2ff;border-color:#75b4da}
+#osCommunicationModule .oscom-compose{background:#eef5ff;border-top:1px solid #a3bedb}
+#osCommunicationModule .oscom-wrap button{background:#e8f2fd;border:1px solid #9ebbd7;border-radius:6px;color:#174f7d}
+#osCommunicationModule .oscom-wrap button:hover{background:#d6ebff}
+#osCommunicationModule .oscom-wrap button[aria-current="true"],#osCommunicationModule .oscom-wrap button[aria-selected="true"]{background:#205d96;color:#fff}
+#osCommunicationModule .oscom-wrap input,#osCommunicationModule .oscom-wrap textarea,#osCommunicationModule .oscom-wrap select{border:1px solid #a4bfdc;border-radius:5px;background:#fff;color:#1a3954}
+#osCommunicationModule .oscom-details button,#osCommunicationModule #oscom-send{background:#205d96;color:#fff}
+#osQuickDock{position:fixed;z-index:2147483001;bottom:16px;right:88px;width:min(380px,calc(100vw - 32px));max-height:77dvh;background:#fff;border:2px solid #6792bd;border-radius:12px;box-shadow:0 12px 40px #14345655;color:#20446b;display:none;overflow:hidden}
+#osQuickDock.open{display:flex;flex-direction:column}
+#osPhotoDialog{position:fixed;inset:0;display:none;place-items:center;background:#0009;z-index:2147483005;padding:15px}
+#osPhotoDialog.open{display:grid}
+#osCommunicationModule .oscom-sidebar.is-minimized #oscom-sidebar-items{display:none}
+#osCommunicationModule .oscom-sidebar.is-minimized{max-width:64px}
+#osCommunicationModule .oscom-sidebar.is-minimized .oscom-sidehead h2{display:none}
+#osCommunicationModule{
+  display: block;
+  max-width: 100%;
+}
+#osCommunicationModule .oscom-wrap{
+  --os-brown: #003399;
+  --os-teal: #6699cc;
+  --os-yellow: #f3f7fc;
+  --os-white: #ffffff;
+  --os-black: #000000;
+  --os-soft: #f3f7fc;
+  overflow: hidden;
+  font: 15px/1.45 Inter,system-ui,sans-serif;
+  container-type: inline-size;
+  min-width: 0;
+}
+#osCommunicationModule .oscom-wrap *{
+  box-sizing: border-box;
+}
+#osCommunicationModule .oscom-wrap button, #osCommunicationModule .oscom-wrap input, #osCommunicationModule .oscom-wrap select, #osCommunicationModule .oscom-wrap textarea{
+  font: inherit;
+}
+#osCommunicationModule .oscom-wrap button{
+  padding: 9px 12px;
+  min-height: 42px;
+  cursor: pointer;
+  font-weight: 750;
+}
+#osCommunicationModule .oscom-wrap button:focus-visible, #osCommunicationModule .oscom-wrap input:focus-visible, #osCommunicationModule .oscom-wrap textarea:focus-visible{
+  outline: 3px solid #336699;
+  outline-offset: 2px;
+}
+#osCommunicationModule .oscom-wrap input, #osCommunicationModule .oscom-wrap textarea, #osCommunicationModule .oscom-wrap select{
+  padding: 10px;
+  max-width: 100%;
+  min-width: 0;
+}
+#osCommunicationModule .oscom-wrap h2{
+  margin: 0;
+  font-size: 1.1rem;
+}
+#osCommunicationModule .oscom-wrap p{
+  margin: 4px 0 0;
+}
+#osCommunicationModule .oscom-identity{
+  padding: 14px 18px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#osCommunicationModule .oscom-identity strong{
+  display: block;
+  font-size: 1.35rem;
+}
+#osCommunicationModule .oscom-identity span{
+  display: inline-block;
+}
+#osCommunicationModule .oscom-indicators{
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+#osCommunicationModule .oscom-indicators select{
+  max-width: 160px;
+}
+#osCommunicationModule .oscom-mode{
+  padding: 5px 10px;
+}
+#osCommunicationModule .oscom-grid{
+  display: grid;
+  grid-template-columns: minmax(180px,.82fr) minmax(0,2.3fr) minmax(170px,.72fr);
+  min-height: 530px;
+  max-height: min(800px,79dvh);
+}
+#osCommunicationModule .oscom-sidebar, #osCommunicationModule .oscom-details{
+  padding: 12px;
+  overflow: auto;
+  min-width: 0;
+}
+#osCommunicationModule .oscom-sidehead{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+#osCommunicationModule .oscom-sidehead button{
+  padding: 4px 8px;
+  min-height: 36px;
+}
+#osCommunicationModule .oscom-sidebar label{
+  display: block;
+  margin: 12px 0 5px;
+}
+#osCommunicationModule .oscom-sidebar input{
+  width: 100%;
+}
+#osCommunicationModule .oscom-group-title{
+  font-weight: 850;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  margin: 18px 0 8px;
+}
+#osCommunicationModule .oscom-links{
+  display: grid;
+  gap: 5px;
+}
+#osCommunicationModule .oscom-wrap .oscom-conversation{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  gap: 9px;
+  min-width: 0;
+  overflow: hidden;
+}
+#osCommunicationModule .oscom-conversation .oscom-icon{
+  width: 34px;
+  height: 34px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+#osCommunicationModule .oscom-conversation span.oscom-label{
+  min-width: 0;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#osCommunicationModule .oscom-side-note{
+  margin-top: 18px;
+  font-size: 12px;
+}
+#osCommunicationModule .oscom-chat{
+  display: grid;
+  grid-template-rows: auto minmax(0,1fr) auto;
+  min-width: 0;
+  min-height: 0;
+}
+#osCommunicationModule .oscom-chathead{
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#osCommunicationModule .oscom-chathead p{
+  font-size: 12px;
+}
+#osCommunicationModule .oscom-toolbar{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+#osCommunicationModule .oscom-toolbar button{
+  font-size: 12px;
+  padding: 6px 8px;
+  min-height: 35px;
+}
+#osCommunicationModule .oscom-thread{
+  overflow: auto;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+}
+#osCommunicationModule .oscom-empty{
+  text-align: center;
+  margin: auto;
+}
+#osCommunicationModule .oscom-bubble{
+  max-width: min(86%,580px);
+  padding: 10px 12px;
+  overflow-wrap: anywhere;
+  align-self: flex-start;
+  min-width: 80px;
+}
+#osCommunicationModule .oscom-bubble.mine{
+  align-self: flex-end;
+}
+#osCommunicationModule .oscom-msgmeta{
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+#osCommunicationModule .oscom-msgbody{
+  white-space: pre-wrap;
+}
+#osCommunicationModule .oscom-attachment{
+  display: block;
+  max-width: 100%;
+  margin-top: 7px;
+}
+#osCommunicationModule .oscom-attachment img{
+  display: block;
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+}
+#osCommunicationModule .oscom-attachment audio, #osCommunicationModule .oscom-attachment video{
+  max-width: 100%;
+  width: min(100%,360px);
+}
+#osCommunicationModule .oscom-compose{
+  padding: 12px;
+  display: grid;
+  gap: 7px;
+}
+#osCommunicationModule .oscom-compose label{
+  font-weight: 800;
+}
+#osCommunicationModule .oscom-compose textarea{
+  resize: vertical;
+  min-height: 65px;
+  max-height: 180px;
+  width: 100%;
+}
+#osCommunicationModule .oscom-compose-actions{
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+#osCommunicationModule .oscom-file-button{
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 9px 12px;
+  min-height: 42px;
+  cursor: pointer;
+}
+#osCommunicationModule .oscom-file-button input{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+#osCommunicationModule .oscom-detail-card{
+  padding: 9px;
+  margin-top: 12px;
+}
+#osCommunicationModule .oscom-detail-card strong, #osCommunicationModule .oscom-detail-card span{
+  display: block;
+}
+#osCommunicationModule .oscom-details p{
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+#osCommunicationModule .oscom-details button{
+  width: 100%;
+  margin-top: 10px;
+}
+#osCommunicationModule .oscom-details [id]{
+  overflow-wrap: anywhere;
+}
+@container (max-width:830px){#osCommunicationModule .oscom-grid{
+    grid-template-columns: minmax(158px,.38fr) minmax(0,1fr);
+  }
+#osCommunicationModule .oscom-details{
+    display: none;
+  }}
+@container (max-width:540px){#osCommunicationModule .oscom-grid{
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+  }
+#osCommunicationModule .oscom-links{
+    grid-template-columns: repeat(auto-fit,minmax(min(170px,100%),1fr));
+  }
+#osCommunicationModule .oscom-chat{
+    min-height: 460px;
+  }
+#osCommunicationModule .oscom-thread{
+    min-height: 280px;
+    max-height: 55dvh;
+  }
+#osCommunicationModule .oscom-details{
+    display: block;
+  }
+#osCommunicationModule .oscom-identity{
+    padding: 10px;
+  }
+#osCommunicationModule .oscom-indicators{
+    width: 100%;
+  }
+#osCommunicationModule .oscom-sidebar.is-minimized #oscom-sidebar-items{
+    display: none;
+  }}
+@media (prefers-reduced-motion:reduce){#osCommunicationModule .oscom-wrap *{
+    scroll-behavior: auto;
+  }}
+#osCommunicationModule .oscom-wrap{
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+#osQuickDock{
+  position: fixed;
+  right: 8px;
+  bottom: 48px;
+  z-index: 2147483100;
+  width: min(480px,calc(100vw - 16px));
+  max-height: min(71dvh,670px);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font: 13px/1.45 Oxanium,system-ui,sans-serif;
+}
+#osQuickDock.open{
+  display: flex;
+}
+#osQuickDock *{
+  box-sizing: border-box;
+}
+#osQuickDock .os-quick-hd{
+  padding: 10px 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+#osQuickDock .os-quick-body{
+  padding: 10px;
+  overflow-y: auto;
+  display: grid;
+  gap: 9px;
+}
+#osQuickDock .os-quick-tabs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#osQuickDock button, #osCommunicationModule .oscom-extra-actions button, .os-photo-dialog button{
+  padding: 6px 10px;
+  font: 700 12px Oxanium,system-ui,sans-serif;
+  min-height: 36px;
+  cursor: pointer;
+}
+#osQuickDock .os-quick-list{
+  display: grid;
+  gap: 5px;
+}
+#osQuickDock .os-quick-item{
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+  overflow-wrap: anywhere;
+}
+#osQuickDock .os-quick-item button{
+  flex: 0 0 auto;
+}
+#osQuickDock .os-quick-compose{
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: 6px;
+}
+#osQuickDock input, #osQuickDock select{
+  min-width: 0;
+  width: 100%;
+  padding: 7px;
+  font: inherit;
+}
+#osQuickDock .os-quick-note{
+  font-size: 11px;
+}
+#osCommunicationModule .oscom-extra-actions{
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 7px 0;
+  align-items: center;
+}
+#osCommunicationModule .oscom-toolbar, #osCommunicationModule .oscom-compose-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#osCommunicationModule .oscom-chathead{
+  min-width: 0;
+  flex-wrap: wrap;
+}
+#osCommunicationModule .oscom-chathead>div:first-child{
+  min-width: 0;
+  flex: 1 1 190px;
+}
+#osCommunicationModule .oscom-msgmeta{
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#osCommunicationModule .oscom-pin-btn{
+  margin-left: auto;
+  min-height: 26px;
+  padding: 2px 7px;
+  cursor: pointer;
+}
+#osCommunicationModule .oscom-pinned-overview{
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 7px;
+  margin: 5px 0;
+}
+#osCommunicationModule .oscom-pinned-overview button{
+  min-height: 28px;
+  max-width: 100%;
+  font-size: 11px;
+  padding: 3px 8px;
+  white-space: normal;
+}
+#osPhotoDialog{
+  position: fixed;
+  inset: 0;
+  z-index: 2147483200;
+  display: none;
+  place-items: center;
+  padding: 12px;
+  overflow-y: auto;
+}
+#osPhotoDialog.open{
+  display: grid;
+}
+#osPhotoDialog .os-photo-panel{
+  width: min(690px,100%);
+  max-height: 95dvh;
+  overflow: auto;
+  padding: 12px;
+}
+#osPhotoDialog h2{
+  margin: 0 0 8px;
+}
+#osPhotoDialog video{
+  width: 100%;
+  max-height: 56dvh;
+  object-fit: contain;
+  aspect-ratio: 16/9;
+}
+#osPhotoDialog .os-photo-controls{
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+#osPhotoDialog select{
+  min-height: 36px;
+}
+#osPhotoDialog .os-photo-note{
+  font-size: 11px;
+  display: block;
+  margin: 9px 0 0;
+}
+@media (max-width:640px){#osQuickDock{
+    bottom: 51px;
+    right: 4px;
+    width: calc(100vw - 8px);
+  }
+#osQuickDock .os-quick-compose{
+    grid-template-columns: 1fr;
+  }
+#osCommunicationModule .oscom-extra-actions button{
+    flex: 1 1 auto;
+  }}
+.os-quick-compose, #osCommunicationModule .oscom-message-bubble, #osCommunicationModule .oscom-msg, #osCommunicationModule .oscom-message, #osCommunicationModule .oscom-message-body{
+  opacity: 1!important;
+}
+#osCommunicationModule .oscom-grid{
+  max-height: none!important;
+  min-height: 640px;
+  height: auto!important;
+}
+#osCommunicationModule .oscom-chat{
+  min-height: 560px;
+  grid-template-rows: auto minmax(420px,auto) auto;
+}
+#osCommunicationModule .oscom-thread{
+  max-height: none!important;
+  min-height: 420px!important;
+  height: auto!important;
+  overflow: visible!important;
+}
+#osCommunicationModule .oscom-sidebar, #osCommunicationModule .oscom-details{
+  overflow: visible!important;
+}
+#osCommunicationModule .oscom-wrap{
+  display: block!important;
+}
+#osCommunicationModule .oscom-detail-card{
+  border: 1px solid #6699cc;
+  background: #fff;
+  border-radius: 0!important;
+  box-shadow: none!important;
+}
+#osCommunicationModule .oscom-identity{
+  background: #003399!important;
+  background-image: none!important;
+  color: #fff!important;
+  border-radius: 0!important;
+  box-shadow: none!important;
+}
+#osCommunicationModule .oscom-identity :where(h1,h2,h3,p,span,small,strong){
+  color: inherit!important;
+  text-shadow: none!important;
+}
+#osCommunicationModule .oscom-grid{
+  max-width: 1100px;
+  width: 100%;
+  margin-inline: auto;
+}
+:root[data-ui-theme="dark"] #osCommunicationModule .oscom-details, :root[data-ui-theme="dark"] #osCommunicationModule .oscom-detail-card{
+  background: #253951!important;
+  color: #f0f5fd!important;
+  border-color: #7f96b6!important;
+}
+:root[data-ui-theme="dark"] #osCommunicationModule .oscom-detail-card :is(p,span,strong,small){
+  color: #f0f5fd!important;
+}
+
+/* Native placement requires the communication content to expand with the resized frame.
+   The original global 1100px layout limit is intentionally not applied inside OurSpace. */
+#osCommunicationModule .oscom-grid{max-width:100%;width:100%;margin-inline:0}

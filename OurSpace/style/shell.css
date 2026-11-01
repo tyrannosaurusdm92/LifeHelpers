@@ -1,0 +1,744 @@
+/* Isolated within widget Onyx Adventures fullscreen. */
+/* Page 11: neutral game shell. Every visual is CSS. No reference image is embedded. */
+#slowPetGame{
+      color-scheme: dark;
+      --housing: #111d2b;
+      --housing-shadow: #050a11;
+      --blue: #399af7;
+      --blue-light: #69cbff;
+      --light-text: #f3f5fb;
+      --button-size: clamp(34px, 5.75vw, 112px);
+      --joystick-size: min(17.2vw, 37vh);
+    }
+#slowPetGame *{ box-sizing: border-box; }
+#slowPetGame,
+#slowPetGame{ margin: 0; width: 100%; height: 100%; overflow: hidden; }
+#slowPetGame{ background: #0e1927; font: 700 16px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif; }
+#slowPetGame button{ font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: none; }
+#slowPetGame button:focus-visible,
+#slowPetGame [tabindex]:focus-visible{
+      outline: 3px solid #e6faff; outline-offset: 5px;
+    }
+#slowPetGame .game-shell{
+      position: relative; isolation: isolate; width: 100vw; height: 100vh; height: 100dvh;
+      min-height: 0; overflow: hidden; user-select: none; -webkit-user-select: none;
+      background:
+        radial-gradient(ellipse 55% 78% at 51% 37%, rgba(57,78,104,.34), transparent 73%),
+        radial-gradient(ellipse 25% 37% at 8% 44%, rgba(39,76,111,.35), transparent),
+        radial-gradient(ellipse 25% 37% at 92% 42%, rgba(31,67,104,.35), transparent),
+        linear-gradient(118deg,#1c2b3a 0%, #0c1725 47%,#142334 78%,#0b1522 100%);
+    }
+#slowPetGame .game-shell::after{
+      content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      box-shadow: inset 0 0 6vw rgba(0,0,0,.25);
+    }
+/* Stepped / curved-metal rim details are reconstructed with CSS polygons. */
+#slowPetGame .chrome-top,
+#slowPetGame .chrome-bottom{ position: absolute; inset-inline: 0; pointer-events: none; z-index: 1; }
+#slowPetGame .chrome-top{
+      top: 6.2%; height: 9%;
+      background: linear-gradient(to bottom,#020914 0 11%,#2a5279 12% 17%, #63bbff 18% 22%, #0d2744 25% 35%,transparent 39%);
+      clip-path: polygon(0 0,4% 0,5.5% 12%,8.1% 72%,14.4% 72%,17% 14%,18.7% 0,79.3% 0,81.4% 18%,84.4% 72%,91% 72%,94.8% 0,100% 0,100% 70%,95.7% 70%,92.1% 100%,83% 100%,79.2% 32%,18.5% 32%,15% 100%,7.8% 100%,3.6% 27%,0 24%);
+      filter: drop-shadow(0 2px 2px #050b14);
+    }
+#slowPetGame .chrome-bottom{
+      bottom: 9%; height: 18%;
+      background: linear-gradient(to bottom, #020813 0 6%, #438be5 9% 12%,#09203d 17% 22%, transparent 27%);
+      clip-path: polygon(0 0,7.3% 0,9.1% 10%,15.6% 64%,21% 64%,26.6% 91%,72.2% 91%,78.1% 64%,84% 64%,92.8% 0,100% 0,100% 32%,93.4% 32%,86% 79%,78.9% 79%,73.7% 100%,25.9% 100%,20.4% 79%,14.8% 79%,6.8% 30%,0 30%);
+    }
+#slowPetGame .viewport-frame{
+      position: absolute; left: 17.4%; top: 7.7%; width: 64%; height: 67.2%; z-index: 2;
+      padding: clamp(5px, .9vw, 16px);
+      border: clamp(3px,.36vw,7px) solid #080f19;
+      border-radius: clamp(14px, 2.4vw, 40px);
+      background: linear-gradient(135deg,#253a51,#111c2a 53%,#293d52);
+      box-shadow: 0 0 0 2px #37536e, inset 0 0 0 2px #020710,
+                  0 5px 9px rgba(0,0,0,.75), 0 -3px 7px rgba(49,123,185,.14);
+    }
+#slowPetGame .game-viewport{
+      width: 100%; height: 100%; overflow: hidden; position: relative;
+      border: clamp(2px,.26vw,5px) solid #080d15;
+      border-radius: clamp(8px,1.35vw,23px);
+      background: linear-gradient(149deg,#526074 0%,#414e61 33%,#303c4d 77%,#283443 100%);
+      box-shadow: inset 0 1px 2px rgba(255,255,255,.12), inset 0 -2px 8px rgba(0,0,0,.30);
+      touch-action: none;
+    }
+/* A future game may add a canvas / iframe / board as a child of #gameViewport. */
+#slowPetGame .game-viewport > :is(canvas, iframe){ display: block; width: 100%; height: 100%; border: 0; }
+#slowPetGame .quickbar{
+      position: absolute; z-index: 3; left: 50%; bottom: 13.6%;
+      transform: translateX(-50%); width: 47.3%; display: flex;
+      justify-content: space-between; align-items: center; gap: 1%;
+    }
+#slowPetGame .game-slot{
+      flex: 0 0 18%; height: clamp(42px, 9.2vh, 92px);
+      min-width: 0; padding: 0; border-radius: 29% / 45%;
+      color: #f3f5ff; font-size: clamp(18px, 3vw, 52px); font-weight: 500;
+      text-shadow: 0 2px 2px #03060d;
+      border: clamp(3px,.35vw,6px) solid #050b15;
+      background: linear-gradient(166deg,#555f6e,#2b3444 51%,#151d2c 100%);
+      box-shadow: 0 0 0 2px #42638c, inset 0 3px 0 #9ea8b5,
+                  inset 0 -4px 2px #090e16, 0 5px 3px #03060d;
+      transition: filter .11s, transform .11s, box-shadow .11s;
+    }
+#slowPetGame .game-slot:hover,
+#slowPetGame .game-slot.is-selected{ filter: brightness(1.25); }
+#slowPetGame .game-slot:active,
+#slowPetGame .game-slot.is-held{ transform: translateY(3px); filter: brightness(1.35); }
+#slowPetGame .game-slot.is-selected{ box-shadow: 0 0 0 2px #75c8ff, inset 0 3px 0 #b1c7d7, 0 0 10px #287dd6; }
+#slowPetGame .sr-only{
+      position: absolute!important; width: 1px!important; height: 1px!important;
+      padding: 0!important; margin: -1px!important; overflow: hidden!important;
+      clip: rect(0,0,0,0)!important; white-space: nowrap!important; border: 0!important;
+    }
+@media  (max-height: 500px) and (min-aspect-ratio: 11/10) {#slowPetGame .quickbar{ bottom: 10%; }}
+@media  (max-aspect-ratio: 11/10) {/* Preserve all controls in portrait, without replacing the page with a mockup. */
+#slowPetGame .viewport-frame{ left: 13%; top: 13%; width: 74%; height: 47%; }
+#slowPetGame .quickbar{ bottom: 3%; width: 44%; left: 49%; }
+#slowPetGame .game-slot{ font-size: clamp(12px,3vw,34px);height: clamp(30px,5vh,60px); }
+#slowPetGame .chrome-top{ top: 12%; }
+#slowPetGame .chrome-bottom{ bottom: 28%; }}
+@media  (prefers-reduced-motion: reduce) {#slowPetGame *,
+#slowPetGame *::before,
+#slowPetGame *::after{ transition: none!important; animation: none!important; }}
+/* ------------ Revised full-width display + lower controller layout ------------ */
+#slowPetGame{
+      --button-size: clamp(20px, 2.875vw, 56px); /* exactly half the previous letter diameter */
+      --joystick-size: min(12.2vw, 21vh);
+      --topbar-height: clamp(35px, 5.2vh, 52px);
+      --subbar-height: clamp(33px, 4.6vh, 44px);
+      --hud-height: calc(var(--topbar-height) + var(--subbar-height));
+      --hud-border: #3a6d99;
+    }
+#slowPetGame .hud-header{
+      position: absolute; z-index: 9; top: 0; left: 0; right: 0;
+      padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) 0 env(safe-area-inset-left, 0px);
+      color: #f4f7ff;
+      text-shadow: 0 1px 2px #030911;
+    }
+#slowPetGame .hud-topbar,
+#slowPetGame .hud-subbar{
+      display: flex; align-items: center; justify-content: center; min-width: 0;
+      background: linear-gradient(180deg, #314257 0%, #15263a 44%, #091524 100%);
+      box-shadow: inset 0 1px 0 #4a6480, 0 2px 8px #060e1b;
+    }
+#slowPetGame .hud-topbar{
+      height: var(--topbar-height); gap: clamp(3px, 1.1vw, 19px);
+      padding: 4px clamp(6px, 1.5vw, 22px);
+      border-bottom: 2px solid #428fe5;
+    }
+#slowPetGame .hud-tab{
+      flex: 0 1 clamp(90px, 18vw, 200px); min-width: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      height: calc(var(--topbar-height) - 10px); min-height: 0;
+      border: 1px solid #3f6083; border-radius: 9px;
+      background: linear-gradient(#354a63, #152538);
+      box-shadow: inset 0 1px 0 #6983a0, 0 2px 2px #050b14;
+      color: #f7f9fe; font-size: clamp(10px, 1.12vw, 16px);
+      font-weight: 800; white-space: nowrap; padding: 0 clamp(2px,.75vw,12px);
+      touch-action: manipulation;
+    }
+#slowPetGame .hud-tab:hover,
+#slowPetGame .hud-tab[aria-expanded="true"]{ background: linear-gradient(#426c9b,#1a3756); }
+#slowPetGame .hud-tab .tab-symbol{ font-size: 1.18em; margin-right: 4px; }
+#slowPetGame .hud-subbar{
+      height: var(--subbar-height); gap: clamp(7px, 3vw, 38px);
+      border-bottom: 2px solid #375f87; padding: 2px 8px;
+    }
+#slowPetGame .sound-controls,
+#slowPetGame .resource-counters{ display: flex; align-items: center; min-width: 0; }
+#slowPetGame .sound-controls{ gap: clamp(2px,.45vw,7px); }
+#slowPetGame .resource-counters{ gap: clamp(4px,.9vw,13px); }
+#slowPetGame .hud-sound,
+#slowPetGame .pause-button{
+      border: 1px solid #476d96; border-radius: 7px;
+      background: linear-gradient(#354860,#17283d); color: #f5f9ff;
+      box-shadow: inset 0 1px 0 #7892ac;
+      padding: 0; touch-action: manipulation;
+      height: clamp(26px,3.5vh,37px); width: clamp(27px,3.65vh,38px);
+      font-size: clamp(15px,1.6vw,21px); min-height: 0;
+    }
+#slowPetGame .hud-sound[aria-pressed="true"]{
+      border-color: #72c2ff; background: linear-gradient(#397cb4,#173a66);
+      box-shadow: 0 0 7px #3282d3, inset 0 1px 0 #b4e1ff;
+    }
+#slowPetGame .resource-counter{
+      display: inline-flex; align-items: center; gap: 2px; white-space: nowrap;
+      font-size: clamp(12px,1.6vw,19px); font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+#slowPetGame .resource-counter span{ font-size: .87em; }
+#slowPetGame .pause-button{ font-weight: 900; font-size: clamp(19px, 2.5vw, 29px); }
+#slowPetGame .pause-button[aria-pressed="true"]{ background: #3268a4; border-color: #81d0ff; }
+#slowPetGame .hud-panel{
+      position: absolute; z-index: 12;
+      right: max(10px, env(safe-area-inset-right, 0px));
+      top: calc(var(--hud-height) + env(safe-area-inset-top, 0px) + 8px);
+      width: min(380px, calc(100vw - 20px));
+      max-height: min(65vh, 560px); overflow: auto;
+      color: #f5f8ff; text-shadow: none;
+      border: 2px solid #5895d1; border-radius: 13px;
+      padding: 13px; background: linear-gradient(158deg,#243d56,#101c2c);
+      box-shadow: 0 10px 32px #02060be8, inset 0 1px 1px #6488aa;
+    }
+#slowPetGame .hud-panel[hidden]{ display: none!important; }
+#slowPetGame .hud-panel h2{ margin: 0 0 9px; font-size: 17px; }
+#slowPetGame .hud-panel p{ margin: 5px 0 12px; font-size: 13px; font-weight: 500; line-height: 1.4; }
+#slowPetGame .hud-panel dl{ display: grid; gap: 8px; margin: 0; font-size: 13px; }
+#slowPetGame .hud-panel dl div{ display: flex; gap: 12px; justify-content: space-between; }
+#slowPetGame .hud-panel dt{ font-weight: 700; }
+#slowPetGame .hud-panel dd{ margin: 0; color: #c7ddf5; text-align: right; }
+#slowPetGame .hud-panel label{ display: flex; align-items: center; gap: 9px; padding: 7px 0; font-size: 13px; }
+#slowPetGame .hud-panel input[type="checkbox"]{ accent-color: #52b4ff; width: 19px; height: 19px; }
+#slowPetGame .hud-panel button[type="submit"]{ touch-action: manipulation; padding: 8px 12px; color: white; border: 1px solid #73b9ef; border-radius: 8px; background: #2269a2; }
+#slowPetGame .chat-log{ max-height: 175px; min-height: 70px; overflow: auto; border: 1px solid #45698d; background: #0b1726; padding: 8px; border-radius: 7px; font-size: 13px; font-weight: 400; overflow-wrap: anywhere; }
+#slowPetGame .chat-log p{ margin: 4px 0; }
+#slowPetGame .chat-form{ display: flex; gap: 7px; margin-top: 10px; }
+#slowPetGame .chat-form input{ min-width: 0; flex: 1; border: 1px solid #6384a5; color: white; border-radius: 7px; padding: 6px 8px; background: #111c2b; font-size: 13px; }
+#slowPetGame .game-shell.accessible-contrast .game-viewport{ border-color: #a7e6ff; }
+#slowPetGame .game-shell.accessible-contrast .hud-tab,
+#slowPetGame .game-shell.accessible-contrast .game-slot{ outline: 1px solid white; }
+#slowPetGame .game-shell.accessible-motionless *,
+#slowPetGame .game-shell.accessible-motionless *::before,
+#slowPetGame .game-shell.accessible-motionless *::after{ transition: none!important; animation: none!important; }
+/* Shell controls are now below an expanded, nearly full-width viewport. */
+#slowPetGame .chrome-top{ top: calc(var(--hud-height) + 1%); height: 6%; opacity: .65; }
+#slowPetGame .chrome-bottom{ bottom: 0; height: 17%; opacity: .8; }
+#slowPetGame .viewport-frame{
+      left: 2.2%; width: 95.6%;
+      top: calc(var(--hud-height) + clamp(7px,1.5vh,17px));
+      height: auto; bottom: max(102px, 24vh);
+      border-radius: clamp(13px,2vw,30px);
+    }
+#slowPetGame .quickbar{ bottom: clamp(10px,3.6vh,35px); width: 47.3%; }
+#slowPetGame .game-slot{ height: clamp(27px,7.5vh,76px); font-size: clamp(14px,2.4vw,41px); }
+/* Include safe-area padding on short landscape phones. */
+@media  (max-height: 500px) and (min-aspect-ratio: 11/10) {#slowPetGame{ --topbar-height: 34px; --subbar-height: 32px; }
+#slowPetGame .viewport-frame{ bottom: max(94px, 26vh); }
+#slowPetGame .quickbar{ bottom: 3.1%; }
+#slowPetGame .hud-sound,
+#slowPetGame .pause-button{ width: 27px; height: 26px; }}
+@media  (max-aspect-ratio: 11/10) {#slowPetGame{ --topbar-height: 45px; --subbar-height: 43px; }
+#slowPetGame .hud-topbar{ gap: 3px; padding: 4px; }
+#slowPetGame .hud-tab{ flex: 1 1 0; font-size: clamp(9px,2.6vw,12px); padding: 0 2px; }
+#slowPetGame .hud-tab .tab-symbol{ margin-right: 1px; }
+#slowPetGame .hud-subbar{ gap: clamp(6px,2vw,12px); }
+#slowPetGame .resource-counters{ gap: 5px; }
+#slowPetGame .resource-counter{ font-size: clamp(11px,3vw,15px); }
+#slowPetGame .hud-sound,
+#slowPetGame .pause-button{ height: 29px; width: 29px; }
+#slowPetGame .viewport-frame{
+        left: 3%; width: 94%;
+        top: calc(var(--hud-height) + 10px);
+        height: auto; bottom: 34%;
+      }
+#slowPetGame .quickbar{ bottom: 2.2%; width: 66%; left: 50%; }
+#slowPetGame .game-slot{ height: clamp(32px,5.5vh,48px); font-size: clamp(13px,3vw,20px); }
+#slowPetGame .chrome-top{ top: calc(var(--hud-height) + 2px); }
+#slowPetGame .chrome-bottom{ bottom: 0; height: 15%; }}
+@media  (max-width: 430px) {#slowPetGame .hud-subbar{ gap: 6px; padding: 2px 4px; }
+#slowPetGame .hud-sound,
+#slowPetGame .pause-button{ width: 26px; height: 28px; }
+#slowPetGame .resource-counters{ gap: 4px; }}
+/* ===== Functional classic menus, neutral palette + classic subbar geometry ===== */
+#slowPetGame{--menu-ink:#f4f8ff;--menu-muted:#c4d8ed;--menu-bg:#14253a;--menu-surface:#213a54;--menu-blue:#4ca6f3}
+#slowPetGame .hud-subbar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:clamp(4px,1vw,12px);
+ justify-content:initial;align-items:center;padding:3px clamp(9px,1.7vw,20px)}
+#slowPetGame .sound-controls{justify-self:start;gap:5px}
+#slowPetGame .resource-counters{display:flex!important;align-items:center;justify-content:center;
+ gap:clamp(4px,.75vw,13px);background:linear-gradient(#273e57,#112237);border:1px solid #476e95;
+ border-radius:7px;min-height:30px;padding:2px clamp(4px,.7vw,10px);white-space:nowrap;box-shadow:inset 0 -2px #07121f}
+#slowPetGame .resource-counter{font-size:clamp(11px,1.55vw,17px)}
+#slowPetGame .pause-button{justify-self:end;min-width:34px}
+#slowPetGame .hud-panel{position:fixed;z-index:30;top:calc(var(--hud-height) + 10px);left:10px;right:auto;
+ width:min(var(--panel-w,560px),calc(100vw - 20px));height:auto;max-height:min(75dvh,720px);
+ padding:0;display:none;grid-template-rows:auto minmax(0,1fr);overflow:hidden;border:2px solid #6098c7;
+ background:#13253a;border-radius:12px;box-shadow:0 8px 24px #02070edc,0 0 0 1px #152d47}
+#slowPetGame .hud-panel[hidden]{display:none!important}
+#slowPetGame .hud-panel.is-open{display:grid}
+#slowPetGame .hud-panel.is-pinned{border-color:#83c7ff;box-shadow:0 8px 25px #020710ef,0 0 0 1px #4c91d2}
+#slowPetGame .hud-chat-window{height:min(74dvh,700px);min-height:230px;min-width:min(280px,calc(100vw - 16px))}
+#slowPetGame .hud-panel-head{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:8px;align-items:center;
+ padding:5px 8px;min-height:42px;background:linear-gradient(100deg,#3a5a78,#213a56 61%,#13283c);
+ border-bottom:2px solid #438cce;color:#f4f8ff;cursor:grab;touch-action:none;user-select:none}
+#slowPetGame .hud-panel-head:active{cursor:grabbing}
+#slowPetGame .hud-panel-head strong{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#slowPetGame .hud-panel-icon{font-size:19px}
+#slowPetGame .hud-panel-actions{display:flex;gap:4px}
+#slowPetGame .hud-panel-icon-btn{min-height:30px;min-width:30px;padding:0 5px;border:1px solid #6897c2;
+ border-radius:6px;background:#162b44;color:#f0f8ff;font-size:19px;touch-action:manipulation}
+#slowPetGame .hud-panel-icon-btn:hover,
+#slowPetGame .hud-panel-icon-btn[aria-pressed="true"]{background:#3672aa}
+#slowPetGame .hud-panel-body{padding:12px;min-height:0;overflow:auto;overscroll-behavior:contain;background:#102136;color:var(--menu-ink);
+ font-size:13px;line-height:1.4;user-select:text;-webkit-user-select:text;text-shadow:none}
+#slowPetGame .hud-panel-body *{box-sizing:border-box}
+#slowPetGame .hud-panel-body .section{display:grid;gap:9px;margin:0 0 10px;padding:10px;
+ border:1px solid #456f97;background:#1c324a;border-radius:9px}
+#slowPetGame .hud-panel-body .section:last-child{margin-bottom:0}
+#slowPetGame .hud-panel-body .section h3{margin:0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#d8eeff}
+#slowPetGame .hud-panel-body .grid{display:grid;gap:7px}
+#slowPetGame .hud-panel-body .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+#slowPetGame .hud-panel-body .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+#slowPetGame .hud-panel-body .cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+#slowPetGame .hud-panel-body .btn{min-height:32px;padding:7px 9px;border:1px solid #6897c0;border-radius:7px;
+ background:linear-gradient(#395771,#1a314b);color:#f5faff;font-size:12px;font-weight:800;cursor:pointer;touch-action:manipulation}
+#slowPetGame .hud-panel-body .btn.active,
+#slowPetGame .hud-panel-body .btn:hover{background:#286aa4}
+#slowPetGame .hud-panel-body .btn:focus-visible{outline:2px solid #a4e0ff}
+#slowPetGame .hud-panel-body .readout{padding:9px;border:1px solid #426989;background:#0e1c2d;border-radius:7px;
+ font:600 12px/1.45 system-ui;color:#dbeeff;white-space:normal;overflow-wrap:anywhere}
+#slowPetGame .hud-panel-body .check{display:flex;align-items:center;gap:8px;font-size:12px;min-width:0;line-height:1.35;font-weight:650}
+#slowPetGame .hud-panel-body .check input{accent-color:#53aaff;flex:0 0 auto}
+#slowPetGame .hud-panel-body .field{display:grid;gap:5px;font-size:12px}
+#slowPetGame .hud-panel-body select,
+#slowPetGame .hud-panel-body input:not([type="checkbox"]):not([type="range"]){min-width:0;max-width:100%;padding:6px;
+ background:#102337;border:1px solid #668daf;border-radius:6px;color:#f4f9ff}
+#slowPetGame .hud-panel-body .slider{display:grid;grid-template-columns:minmax(80px,.8fr) minmax(80px,1.7fr) 65px;align-items:center;gap:8px;
+ font-size:12px;font-weight:650}
+#slowPetGame .hud-panel-body .slider input{min-width:0;width:100%;accent-color:#53abef}
+#slowPetGame .hud-panel-body .slider output{display:grid;place-items:center;background:#102237;border:1px solid #416d94;
+ border-radius:5px;padding:5px;font-size:11px}
+#slowPetGame .hud-panel-body .control-table{width:100%;border-collapse:collapse;font-size:12px;text-align:left}
+#slowPetGame .hud-panel-body .control-table th,
+#slowPetGame .hud-panel-body .control-table td{border:1px solid #446d91;padding:7px;text-align:left;vertical-align:top}
+#slowPetGame .hud-panel-body .control-table th{background:#213c57;color:#f2f9ff}
+#slowPetGame .hud-panel-body details{border:1px solid #4d7298;border-radius:7px;background:#182c43;padding:9px}
+#slowPetGame .hud-panel-body details+details{margin-top:6px}
+#slowPetGame .hud-panel-body summary{font-weight:800;cursor:pointer;touch-action:manipulation}
+#slowPetGame .hud-panel-body .personality-mood-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+#slowPetGame .hud-panel-body .personality-mood-row{display:flex;align-items:center;gap:4px;min-height:30px;font-size:11px}
+#slowPetGame .chat-panel-body{padding:0!important;overflow:hidden!important;background:#0f1e2f!important}
+#slowPetGame .leisure-chat-frame{display:block;width:100%;height:100%;border:0;background:#0f1e2f}
+#slowPetGame .panel-resize-handle{position:absolute;z-index:2;right:1px;bottom:1px;width:22px;height:22px;cursor:nwse-resize;touch-action:none;
+ background:linear-gradient(135deg,transparent 53%,#5da6e5 54% 62%,transparent 63% 70%,#5da6e5 71% 79%,transparent 80%)}
+#slowPetGame .game-shell.large-controls .game-slot{scale:1.08}
+#slowPetGame .game-shell.accessible-contrast .hud-panel{border-color:#d0ecff}
+#slowPetGame .game-shell.hud-hidden .hud-subbar{visibility:hidden}
+#slowPetGame .game-shell.hud-hidden .hud-topbar{border-bottom:2px solid #428fe5}
+@media  (max-width:620px){#slowPetGame .hud-panel{max-height:min(78dvh,650px)}
+#slowPetGame .hud-panel-body{padding:9px}
+#slowPetGame .hud-panel-body .cols-3,
+#slowPetGame .hud-panel-body .cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+#slowPetGame .hud-panel-body .slider{grid-template-columns:64px minmax(0,1fr) 56px;gap:5px}}
+@media (max-width:430px){#slowPetGame .hud-subbar{gap:4px;padding:3px 5px}
+#slowPetGame .resource-counters{gap:4px;padding:2px 4px}
+#slowPetGame .resource-counter{font-size:11px}
+#slowPetGame .sound-controls{gap:3px}}
+/* ===== Viewport control layout + requested subbar sequence =====
+       Keep the established navy/blue visual design, and all existing menus/chat. */
+#slowPetGame .viewport-frame{
+      left: 1.25%; width: 97.5%;
+      top: calc(var(--hud-height) + env(safe-area-inset-top, 0px) + clamp(5px, 1vh, 12px));
+      bottom: max(6px, env(safe-area-inset-bottom, 0px));
+      height: auto;
+      isolation: isolate;
+    }
+#slowPetGame .viewport-frame .game-viewport{position:relative;z-index:0;}
+/* Hide only in-viewport controls: subbar menu shortcuts always remain available. */
+/* Four functional groups: sounds, game menus+visibility, pause, balances. */
+#slowPetGame .hud-subbar{
+      display:grid;
+      grid-template-columns: auto minmax(0,1fr) auto auto;
+      gap:clamp(4px,1.3vw,18px);
+      align-items:center;
+      padding:2px clamp(5px,1.45vw,20px);
+    }
+#slowPetGame .subbar-center{display:flex;justify-content:center;align-items:center;gap:clamp(3px,.65vw,10px);min-width:0;}
+#slowPetGame .hud-subbar .quickbar{
+      position:static;left:auto;right:auto;bottom:auto;top:auto;
+      width:auto;transform:none;flex:0 0 auto;
+      display:flex;justify-content:center;align-items:center;gap:clamp(2px,.4vw,7px);
+    }
+#slowPetGame .hud-subbar .game-slot{
+      width:clamp(22px,3vw,38px);height:clamp(25px,3.6vh,35px);flex:0 0 auto;
+      border-radius:7px;border-width:2px;
+      padding:0;font-size:clamp(12px,1.25vw,19px);font-weight:800;
+    }
+#slowPetGame .display-controls{display:flex;align-items:center;justify-content:center;gap:clamp(2px,.4vw,6px);flex:0 0 auto;}
+#slowPetGame .hud-control-toggle{
+      width:clamp(25px,3.4vh,36px);height:clamp(25px,3.4vh,36px);
+      padding:0;min-width:0;min-height:0;touch-action:manipulation;
+      background:linear-gradient(#354860,#17283d);
+      border:1px solid #507ba5;border-radius:7px;
+      box-shadow:inset 0 1px 0 #7892ac;color:#f4faff;
+      font-size:clamp(15px,1.5vw,20px);line-height:1;
+    }
+#slowPetGame .hud-control-toggle[aria-pressed="true"]{border-color:#77c9ff;background:linear-gradient(#397bb4,#173a66);box-shadow:0 0 6px #2682c2,inset 0 1px 0 #b4e1ff;}
+#slowPetGame .hud-control-toggle:disabled{cursor:not-allowed;opacity:.6;}
+#slowPetGame .hud-subbar .sound-controls{justify-self:start;flex-shrink:0;}
+#slowPetGame .hud-subbar .pause-button{justify-self:center;}
+#slowPetGame .hud-subbar .resource-counters{justify-self:end;min-width:0;gap:clamp(2px,.55vw,9px);}
+#slowPetGame .hud-subbar .resource-counter{font-size:clamp(10px,1.18vw,17px);}
+@media  (max-height:500px) and (min-aspect-ratio:11/10) {#slowPetGame .viewport-frame{top:calc(var(--hud-height) + 4px);bottom:4px;}
+#slowPetGame .hud-subbar .game-slot{height:25px;width:clamp(23px,3vw,32px)}
+#slowPetGame .hud-control-toggle{width:26px;height:26px}
+#slowPetGame .hud-subbar .resource-counter{font-size:clamp(10px,1.45vw,14px)}}
+@media  (max-aspect-ratio:11/10) {#slowPetGame .viewport-frame{left:2%;width:96%;top:calc(var(--hud-height) + 7px);bottom:8px;height:auto;}
+#slowPetGame .hud-subbar{gap:clamp(3px,.8vw,8px);padding:2px 4px;}
+#slowPetGame .hud-subbar .resource-counters{padding:1px 3px;gap:2px;min-height:26px;}
+#slowPetGame .hud-subbar .resource-counter{font-size:clamp(10px,2.5vw,13px)}
+#slowPetGame .hud-subbar .quickbar{width:auto;left:auto;gap:2px}
+#slowPetGame .hud-subbar .game-slot{height:26px;width:clamp(21px,5.5vw,27px);font-size:12px}
+#slowPetGame .hud-subbar .hud-control-toggle{width:clamp(22px,5.8vw,27px);height:27px;font-size:15px}
+#slowPetGame .hud-subbar .hud-sound{width:clamp(22px,6vw,29px);height:27px}
+#slowPetGame .hud-subbar .pause-button{width:25px;height:27px;min-width:25px;font-size:18px}
+#slowPetGame .subbar-center{gap:3px}
+#slowPetGame .sound-controls{gap:2px}}
+/*  Narrow portraits use two legible subbar lines rather than overlapping controls.
+        The document order stays sounds → 1–5 → 🕹️ 🔐 → pause → balances. */
+@media  (max-width:390px) and (max-aspect-ratio:11/10) {#slowPetGame{--subbar-height:65px}
+#slowPetGame .hud-subbar{grid-template-columns:auto minmax(0,1fr);grid-template-rows:29px 29px;
+        padding:2px 5px;gap:2px 5px;}
+#slowPetGame .hud-subbar .sound-controls{grid-column:1;grid-row:1;}
+#slowPetGame .hud-subbar .subbar-center{grid-column:2;grid-row:1;justify-content:flex-start;gap:4px;}
+#slowPetGame .hud-subbar .pause-button{grid-column:1;grid-row:2;justify-self:center;}
+#slowPetGame .hud-subbar .resource-counters{grid-column:2;grid-row:2;justify-self:end;}
+#slowPetGame .hud-subbar .game-slot{width:21px;height:25px;}
+#slowPetGame .hud-subbar .hud-control-toggle{width:24px;height:25px;}}
+/* RETRO ARCADE 2026 PALETTE ONLY. No sizing, placement, geometry, typography or behavior changes.
+   Colors donated from retro_arcade_website_template(1).html's final #5A8580 scheme. */
+#slowPetGame{
+ --ra-teal:#5A8580; --ra-cyan:#00FFFF; --ra-blue:#1E90FF;
+ --ra-lime:#35DB35; --ra-yellow:#FFF600; --ra-orange:#FF8A3D;
+ --ra-ice:#D1FDFF; --ra-black:#121819; --ra-ink:#1D1914;
+ --ra-storm:#3A5663; --ra-stone:#A9B7B8; --ra-pine:#354839;
+ --ra-castle:#394240; --ra-copper:#C09A6C;
+ --housing:var(--ra-black);--housing-shadow:var(--ra-ink);
+ --blue:var(--ra-cyan);--blue-light:var(--ra-ice);--light-text:var(--ra-ice);
+ --hud-border:var(--ra-blue);--menu-ink:var(--ra-black);--menu-muted:var(--ra-castle);
+ --menu-bg:#FFFFFF;--menu-surface:var(--ra-ice);--menu-blue:var(--ra-blue);
+}
+#slowPetGame,
+#slowPetGame{background:var(--ra-teal);color:var(--ra-ice)}
+#slowPetGame .game-shell{background:var(--ra-teal)}
+#slowPetGame .game-shell::after{box-shadow:inset 0 0 6vw rgba(18,24,25,.21)}
+#slowPetGame .chrome-top{
+ background:linear-gradient(to bottom,var(--ra-black) 0 11%,var(--ra-blue) 12% 17%,var(--ra-cyan) 18% 22%,var(--ra-storm) 25% 35%,transparent 39%);
+ filter:drop-shadow(0 2px 2px var(--ra-black));
+}
+#slowPetGame .chrome-bottom{
+ background:linear-gradient(to bottom,var(--ra-black) 0 6%,var(--ra-lime) 9% 12%,var(--ra-storm) 17% 22%,transparent 27%);
+}
+#slowPetGame .viewport-frame{
+ border-color:var(--ra-black);
+ background:linear-gradient(135deg,var(--ra-storm),var(--ra-castle) 53%,var(--ra-pine));
+ box-shadow:0 0 0 2px var(--ra-cyan),inset 0 0 0 2px var(--ra-black),0 5px 9px rgba(18,24,25,.74),0 -3px 7px rgba(0,255,255,.18);
+}
+#slowPetGame .game-viewport{
+ border-color:var(--ra-black);
+ background:linear-gradient(149deg,var(--ra-stone) 0%,var(--ra-teal) 33%,var(--ra-storm) 77%,var(--ra-castle) 100%);
+ box-shadow:inset 0 1px 2px rgba(255,255,255,.18),inset 0 -2px 8px rgba(18,24,25,.32);
+}
+#slowPetGame .game-slot{
+ color:var(--ra-black);text-shadow:none;
+ border-color:var(--ra-black);
+ background:linear-gradient(166deg,var(--ra-ice),var(--ra-cyan) 51%,var(--ra-blue) 100%);
+ box-shadow:0 0 0 2px var(--ra-storm),inset 0 3px 0 #FFFFFF,inset 0 -4px 2px var(--ra-storm),0 5px 3px var(--ra-black);
+}
+#slowPetGame .game-slot.is-selected{
+ box-shadow:0 0 0 2px var(--ra-yellow),inset 0 3px 0 #FFFFFF,0 0 10px var(--ra-lime);
+}
+#slowPetGame .hud-header{color:var(--ra-ice);text-shadow:0 1px 2px var(--ra-black)}
+#slowPetGame .hud-topbar,
+#slowPetGame .hud-subbar{
+ background:linear-gradient(180deg,var(--ra-storm) 0%,var(--ra-castle) 44%,var(--ra-black) 100%);
+ box-shadow:inset 0 1px 0 var(--ra-stone),0 2px 8px var(--ra-black);
+}
+#slowPetGame .hud-topbar{border-bottom-color:var(--ra-cyan)}
+#slowPetGame .hud-subbar{border-bottom-color:var(--ra-lime)}
+#slowPetGame .hud-tab{
+ border-color:var(--ra-black);color:var(--ra-black);
+ background:linear-gradient(var(--ra-ice),var(--ra-cyan));
+ box-shadow:inset 0 1px 0 #FFFFFF,0 2px 2px var(--ra-black);
+}
+#slowPetGame .hud-tab:hover,
+#slowPetGame .hud-tab[aria-expanded="true"]{background:linear-gradient(#B5FFA9,var(--ra-lime));color:var(--ra-black)}
+#slowPetGame .hud-sound,
+#slowPetGame .pause-button,
+#slowPetGame .hud-control-toggle{
+ border-color:var(--ra-cyan);color:var(--ra-ice);
+ background:linear-gradient(var(--ra-storm),var(--ra-black));
+ box-shadow:inset 0 1px 0 var(--ra-stone);
+}
+#slowPetGame .hud-sound[aria-pressed="true"],
+#slowPetGame .hud-control-toggle[aria-pressed="true"]{
+ border-color:var(--ra-yellow);
+ background:linear-gradient(var(--ra-lime),var(--ra-pine));
+ box-shadow:0 0 7px var(--ra-cyan),inset 0 1px 0 var(--ra-ice);
+}
+#slowPetGame .pause-button[aria-pressed="true"]{background:var(--ra-orange);border-color:var(--ra-yellow);color:var(--ra-black)}
+#slowPetGame .resource-counters{
+ background:linear-gradient(var(--ra-storm),var(--ra-black));
+ border-color:var(--ra-lime);box-shadow:inset 0 -2px var(--ra-black);
+}
+#slowPetGame .resource-counter{color:var(--ra-ice)}
+#slowPetGame .hud-panel{
+ border-color:var(--ra-blue);background:#FFFFFF;color:var(--ra-black);
+ box-shadow:0 8px 24px rgba(18,24,25,.86),0 0 0 1px var(--ra-storm);
+}
+#slowPetGame .hud-panel.is-pinned{
+ border-color:var(--ra-yellow);
+ box-shadow:0 8px 25px rgba(18,24,25,.9),0 0 0 1px var(--ra-lime);
+}
+#slowPetGame .hud-panel-head{
+ background:linear-gradient(100deg,var(--ra-cyan),var(--ra-stone) 61%,var(--ra-ice));
+ border-bottom-color:var(--ra-blue);color:var(--ra-black);
+}
+#slowPetGame .hud-panel-icon-btn{
+ border-color:var(--ra-black);background:var(--ra-ice);color:var(--ra-black);
+}
+#slowPetGame .hud-panel-icon-btn:hover,
+#slowPetGame .hud-panel-icon-btn[aria-pressed="true"]{background:var(--ra-yellow);color:var(--ra-black)}
+#slowPetGame .hud-panel-body{
+ background:#FFFFFF;color:var(--ra-black);
+}
+#slowPetGame .hud-panel-body .section{
+ border-color:var(--ra-storm);background:var(--ra-ice);
+}
+#slowPetGame .hud-panel-body .section h3{color:var(--ra-black)}
+#slowPetGame .hud-panel-body .btn{
+ border-color:var(--ra-castle);background:linear-gradient(var(--ra-ice),var(--ra-cyan));color:var(--ra-black);
+}
+#slowPetGame .hud-panel-body .btn.active,
+#slowPetGame .hud-panel-body .btn:hover{background:var(--ra-lime);color:var(--ra-black)}
+#slowPetGame .hud-panel-body .btn:focus-visible{outline-color:var(--ra-orange)}
+#slowPetGame .hud-panel-body .readout{
+ border-color:var(--ra-storm);background:#FFFFFF;color:var(--ra-black);
+}
+#slowPetGame .hud-panel-body .check input,
+#slowPetGame .hud-panel-body .slider input{accent-color:var(--ra-blue)}
+#slowPetGame .hud-panel-body select,
+#slowPetGame .hud-panel-body input:not([type="checkbox"]):not([type="range"]){
+ background:#FFFFFF;border-color:var(--ra-storm);color:var(--ra-black);
+}
+#slowPetGame .hud-panel-body .slider output{background:#FFFFFF;border-color:var(--ra-storm);color:var(--ra-black)}
+#slowPetGame .hud-panel-body .control-table th,
+#slowPetGame .hud-panel-body .control-table td{border-color:var(--ra-storm);color:var(--ra-black)}
+#slowPetGame .hud-panel-body .control-table th{background:var(--ra-cyan);color:var(--ra-black)}
+#slowPetGame .hud-panel-body details{border-color:var(--ra-storm);background:#FFFFFF;color:var(--ra-black)}
+#slowPetGame .chat-panel-body,
+#slowPetGame .leisure-chat-frame{background:#FFFFFF!important}
+#slowPetGame .panel-resize-handle{
+ background:linear-gradient(135deg,transparent 53%,var(--ra-blue) 54% 62%,transparent 63% 70%,var(--ra-orange) 71% 79%,transparent 80%);
+}
+#slowPetGame .game-shell.accessible-contrast .hud-panel{border-color:var(--ra-yellow)}
+#slowPetGame .game-shell.accessible-contrast .game-viewport{border-color:var(--ra-yellow)}
+#slowPetGame .game-shell.accessible-contrast .hud-tab,
+#slowPetGame .game-shell.accessible-contrast .game-slot{outline-color:var(--ra-black)}
+#slowPetGame .game-shell.hud-hidden .hud-topbar{border-bottom-color:var(--ra-cyan)}
+#slowPetGame button:focus-visible,
+#slowPetGame [tabindex]:focus-visible{outline-color:var(--ra-orange)}
+#slowPetGame{
+ --ra-screen:#192b30;--ra-screen-mid:#284348;--ra-screen-glow:#355e60;
+ --ra-neon-soft:#97FBFF;--ra-orange-light:#FFD19A;
+}
+#slowPetGame,
+#slowPetGame{background-color:var(--ra-teal)}
+#slowPetGame .game-shell{
+ background:linear-gradient(145deg,var(--ra-teal) 0%,#466e6d 32%,var(--ra-storm) 72%,var(--ra-castle) 100%);
+}
+#slowPetGame .chrome-top{
+ background:linear-gradient(to bottom,var(--ra-black) 0 11%,var(--ra-blue) 12% 17%,var(--ra-cyan) 18% 22%,var(--ra-storm) 25% 35%,transparent 39%);
+}
+#slowPetGame .chrome-bottom{
+ background:linear-gradient(to bottom,var(--ra-black) 0 6%,var(--ra-orange) 9% 12%,var(--ra-castle) 17% 22%,transparent 27%);
+}
+#slowPetGame .viewport-frame{
+ background:linear-gradient(150deg,var(--ra-black),var(--ra-storm) 35%,var(--ra-castle) 75%,var(--ra-black));
+ box-shadow:0 0 0 2px var(--ra-cyan),inset 0 0 0 2px var(--ra-black),0 7px 14px rgba(18,24,25,.8),0 0 14px rgba(0,255,255,.15);
+}
+#slowPetGame .game-viewport{
+ background:
+  radial-gradient(ellipse at 50% 12%,rgba(0,255,255,.14),transparent 66%),
+  repeating-linear-gradient(to bottom,rgba(209,253,255,.026) 0 1px,transparent 1px 6px),
+  linear-gradient(155deg,var(--ra-screen-glow),var(--ra-screen-mid) 42%,var(--ra-screen) 100%);
+ border-color:var(--ra-black);
+ box-shadow:inset 0 1px 2px rgba(209,253,255,.15),inset 0 -2px 10px rgba(18,24,25,.56);
+}
+#slowPetGame .hud-header{color:var(--ra-ice)}
+#slowPetGame .hud-topbar,
+#slowPetGame .hud-subbar{
+ background:linear-gradient(180deg,#394240 0%,#223032 47%,#121819 100%);
+ box-shadow:inset 0 1px 0 #5A8580,0 2px 8px rgba(18,24,25,.8);
+}
+#slowPetGame .hud-topbar{border-bottom-color:var(--ra-cyan)}
+#slowPetGame .hud-subbar{border-bottom-color:var(--ra-orange)}
+#slowPetGame .hud-tab{background:linear-gradient(#D1FDFF,#00FFFF 55%,#5A8580);border-color:#121819;color:#121819}
+#slowPetGame .hud-tab:hover,
+#slowPetGame .hud-tab[aria-expanded="true"]{background:linear-gradient(#FFF600,#35DB35);border-color:#121819;color:#121819}
+#slowPetGame .game-slot{background:linear-gradient(#D1FDFF,#00FFFF 58%,#1E90FF);border-color:#121819;color:#121819}
+#slowPetGame .hud-subbar .game-slot:nth-child(2){background:linear-gradient(#D1FDFF,#97FBFF 55%,#5A8580)}
+#slowPetGame .hud-subbar .game-slot:nth-child(3){background:linear-gradient(#D1FDFF,#9BFB82 43%,#35DB35)}
+#slowPetGame .hud-subbar .game-slot:nth-child(4){background:linear-gradient(#FFFDD0,#FFF600 75%,#C09A6C)}
+#slowPetGame .hud-subbar .game-slot:nth-child(5){background:linear-gradient(#FFD19A,#FF8A3D 75%,#C09A6C)}
+#slowPetGame .hud-subbar .game-slot.is-selected{box-shadow:0 0 0 2px #FFF600,inset 0 2px 0 #FFFFFF,0 0 13px #35DB35}
+#slowPetGame .hud-sound,
+#slowPetGame .hud-control-toggle,
+#slowPetGame .pause-button{background:linear-gradient(#3A5663,#121819);color:#D1FDFF;border-color:#00FFFF}
+#slowPetGame .hud-sound[aria-pressed="true"]{background:linear-gradient(#D1FDFF,#35DB35);color:#121819;border-color:#FFF600;box-shadow:0 0 7px rgba(0,255,255,.6)}
+#slowPetGame .hud-control-toggle[aria-pressed="true"]{background:linear-gradient(#D1FDFF,#00FFFF);border-color:#FFF600;color:#121819}
+#slowPetGame .pause-button[aria-pressed="true"]{background:linear-gradient(#FFD19A,#FF8A3D);color:#121819;border-color:#FFF600}
+#slowPetGame .resource-counters{background:linear-gradient(#253d40,#121819);border-color:#00FFFF;box-shadow:inset 0 0 0 1px #394240,inset 0 -2px #121819}
+#slowPetGame .resource-counter{color:#D1FDFF}
+#slowPetGame .hud-panel{border-color:#00FFFF;box-shadow:0 10px 28px rgba(18,24,25,.86),0 0 0 1px #1E90FF}
+#slowPetGame .hud-panel.is-pinned{border-color:#FFF600;box-shadow:0 10px 28px rgba(18,24,25,.9),0 0 0 1px #35DB35}
+#slowPetGame .hud-panel-head{background:linear-gradient(100deg,#121819,#394240 60%,#3A5663);border-bottom-color:#00FFFF;color:#D1FDFF}
+#slowPetGame .hud-panel-head strong{color:#D1FDFF}
+#slowPetGame .hud-panel-icon-btn{background:linear-gradient(#D1FDFF,#00FFFF);border-color:#394240;color:#121819}
+#slowPetGame .hud-panel-icon-btn:hover,
+#slowPetGame .hud-panel-icon-btn[aria-pressed="true"]{background:#FFF600;color:#121819}
+#slowPetGame .hud-panel-body{background:#FFFFFF;color:#121819}
+#slowPetGame .hud-panel-body .section{background:#D1FDFF;border-color:#5A8580}
+#slowPetGame .hud-panel-body .btn{background:linear-gradient(#D1FDFF,#00FFFF);border-color:#394240;color:#121819}
+#slowPetGame .hud-panel-body .btn.active,
+#slowPetGame .hud-panel-body .btn:hover{background:#35DB35;color:#121819}
+#slowPetGame .hud-panel-body .control-table th{background:#3A5663;color:#D1FDFF}
+#slowPetGame .hud-panel-body .readout,
+#slowPetGame .hud-panel-body details{background:#FFFFFF;color:#121819;border-color:#5A8580}
+#slowPetGame .chat-panel-body,
+#slowPetGame .leisure-chat-frame{background:#FFFFFF!important}
+#slowPetGame .hud-subbar{
+ display:grid;
+ grid-template-columns:repeat(5,max-content);
+ grid-template-rows:minmax(0,1fr);
+ align-items:center;
+ justify-content:space-between;
+ gap:0 clamp(7px,1.2vw,24px);
+ padding:2px clamp(8px,1.5vw,24px);
+}
+#slowPetGame .hud-subbar > .sound-controls{grid-column:1;grid-row:1;justify-self:start;gap:clamp(3px,.6vw,9px)}
+#slowPetGame .hud-subbar > .quickbar{
+ grid-column:2;grid-row:1;position:static;transform:none;
+ display:flex;align-items:center;justify-content:center;
+ gap:clamp(4px,.65vw,10px);width:auto;left:auto;right:auto;
+}
+#slowPetGame .hud-subbar > .display-controls{grid-column:3;grid-row:1;justify-self:center;gap:clamp(4px,.6vw,9px)}
+#slowPetGame .hud-subbar > .pause-button{grid-column:4;grid-row:1;justify-self:center}
+#slowPetGame .hud-subbar > .resource-counters{grid-column:5;grid-row:1;justify-self:end;gap:clamp(3px,.65vw,10px)}
+@media (max-height:500px) and (min-aspect-ratio:11/10){#slowPetGame .hud-subbar{gap:0 clamp(4px,1vw,12px);padding:2px clamp(6px,1.4vw,12px)}
+#slowPetGame .hud-subbar > .quickbar{gap:clamp(3px,.5vw,6px)}
+#slowPetGame .hud-subbar > .display-controls{gap:4px}}
+@media (max-aspect-ratio:11/10){#slowPetGame .hud-subbar{gap:0 clamp(3px,.9vw,8px);padding:2px clamp(4px,1vw,10px)}
+#slowPetGame .hud-subbar > .quickbar{gap:clamp(2px,.65vw,5px)}
+#slowPetGame .hud-subbar > .display-controls{gap:clamp(2px,.65vw,5px)}
+#slowPetGame .hud-subbar > .resource-counters{gap:3px}}
+/* Narrow portrait: an intentionally balanced two-row toolbar, never overlapping. */
+@media (max-width:460px) and (max-aspect-ratio:11/10){#slowPetGame{--subbar-height:73px}
+#slowPetGame .hud-subbar{
+  grid-template-columns:max-content minmax(0,1fr) max-content;
+  grid-template-rows:31px 31px;
+  justify-content:stretch;
+  column-gap:clamp(5px,1.4vw,10px);row-gap:5px;
+  padding:3px clamp(5px,1.6vw,8px);
+ }
+#slowPetGame .hud-subbar > .sound-controls{grid-column:1;grid-row:1}
+#slowPetGame .hud-subbar > .quickbar{grid-column:2;grid-row:1;justify-self:center;gap:clamp(2px,.8vw,4px)}
+#slowPetGame .hud-subbar > .display-controls{grid-column:3;grid-row:1;justify-self:end;gap:3px}
+#slowPetGame .hud-subbar > .pause-button{grid-column:1;grid-row:2;justify-self:center}
+#slowPetGame .hud-subbar > .resource-counters{grid-column:2/4;grid-row:2;justify-self:end}
+#slowPetGame .hud-subbar .game-slot{height:27px;width:clamp(21px,5.6vw,27px)}
+#slowPetGame .hud-subbar .hud-control-toggle{height:27px;width:clamp(23px,5.9vw,28px)}
+#slowPetGame .hud-subbar .hud-sound{height:27px;width:clamp(22px,6.1vw,28px)}
+#slowPetGame .hud-subbar .pause-button{height:27px;width:27px;min-width:27px}
+#slowPetGame .hud-subbar .resource-counters{min-height:28px;padding:1px 5px}}
+/* === GAME READY GEOMETRY / ALIGNMENT OVERRIDE (always last) === */
+#slowPetGame{ --topbar-height:clamp(38px,5.1vh,48px); --subbar-height:clamp(39px,4.8vh,46px); --hud-height:calc(var(--topbar-height) + var(--subbar-height)); }
+#slowPetGame .hud-header{ box-sizing:border-box; width:100%; max-width:100%; }
+#slowPetGame .hud-topbar{ box-sizing:border-box; min-height:0; height:var(--topbar-height); padding:4px clamp(6px,1vw,18px); gap:clamp(4px,1.05vw,20px); overflow:hidden; }
+#slowPetGame .hud-tab{ height:calc(var(--topbar-height) - 10px); min-height:0; flex:1 1 0; max-width:250px; white-space:nowrap; line-height:1; }
+#slowPetGame .hud-subbar{
+ box-sizing:border-box; display:grid!important; position:relative;
+ grid-template-columns:minmax(0,1fr) max-content max-content max-content minmax(0,1fr)!important;
+ grid-template-rows:minmax(0,1fr)!important;
+ align-items:center; justify-content:stretch; column-gap:clamp(5px,1.6vw,25px); row-gap:0;
+ width:100%; min-width:0; height:var(--subbar-height); min-height:0;
+ padding:3px clamp(8px,1.2vw,22px)!important; margin:0;
+ border-bottom:2px solid var(--ra-orange); overflow:hidden;
+}
+#slowPetGame .hud-subbar > .sound-controls,
+#slowPetGame .hud-subbar > .quickbar,
+#slowPetGame .hud-subbar > .display-controls,
+#slowPetGame .hud-subbar > .pause-button,
+#slowPetGame .hud-subbar > .resource-counters{ position:static; top:auto; bottom:auto; left:auto; right:auto; transform:none;
+ min-width:0; max-width:100%; margin:0; align-self:center; }
+#slowPetGame .hud-subbar > .sound-controls{grid-column:1;grid-row:1;display:flex;justify-self:start;justify-content:start;gap:clamp(2px,.36vw,8px)}
+#slowPetGame .hud-subbar > .quickbar{grid-column:2;grid-row:1;display:flex!important;justify-self:center;justify-content:center;gap:clamp(2px,.45vw,9px);width:max-content; }
+#slowPetGame .hud-subbar > .display-controls{grid-column:3;grid-row:1;display:flex;justify-self:center;gap:clamp(3px,.45vw,8px)}
+#slowPetGame .hud-subbar > .pause-button{grid-column:4;grid-row:1;justify-self:center}
+#slowPetGame .hud-subbar > .resource-counters{grid-column:5;grid-row:1;display:flex!important;justify-self:end;justify-content:end;
+ border:1px solid var(--ra-cyan);gap:clamp(4px,.55vw,12px);padding:2px clamp(4px,.5vw,9px);min-height:0;height:auto;line-height:1;white-space:nowrap}
+#slowPetGame .hud-subbar .game-slot{ width:clamp(26px,2.35vw,43px);height:calc(var(--subbar-height) - 10px); max-height:36px;min-height:0;flex:0 0 auto;line-height:1; font-size:clamp(12px,1.2vw,19px);border-width:2px; }
+#slowPetGame .hud-subbar .hud-sound,
+#slowPetGame .hud-subbar .hud-control-toggle,
+#slowPetGame .hud-subbar .pause-button{width:clamp(26px,2.2vw,36px);height:calc(var(--subbar-height) - 10px);max-height:36px;min-height:0; flex:0 0 auto;display:grid;place-items:center;line-height:1; font-size:clamp(15px,1.6vw,21px);padding:0}
+#slowPetGame .hud-subbar .pause-button{min-width:0;font-size:clamp(19px,2vw,27px)}
+#slowPetGame .hud-subbar .resource-counter{display:inline-flex;align-items:center;gap:2px;font-size:clamp(11px,1.2vw,16px);line-height:1}
+#slowPetGame .hud-subbar .resource-counter span{line-height:1}
+#slowPetGame .viewport-frame{top:calc(var(--hud-height) + env(safe-area-inset-top,0px) + 5px);bottom:max(6px, env(safe-area-inset-bottom,0px));}
+#slowPetGame .chrome-top{top:calc(var(--hud-height) + env(safe-area-inset-top,0px) + 5px);pointer-events:none}
+/* Decorative bottom chrome previously leaked across the playfield edge. */
+#slowPetGame .chrome-bottom{display:none!important;}
+#slowPetGame .hud-panel{ max-height:min(calc(100dvh - var(--hud-height) - 18px),720px); }
+#slowPetGame .hud-panel-body{overflow-x:hidden;}
+#slowPetGame .game-shell.hud-hidden .hud-subbar{ visibility:hidden }
+#slowPetGame .phase-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;text-align:center}
+#slowPetGame .phase-summary span{border:1px solid #5a8580;border-radius:5px;background:#121819;color:#D1FDFF;padding:6px 3px;font-size:11px}
+#slowPetGame .phase-summary span.is-current{background:#35db35;color:#121819}
+#slowPetGame .stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#slowPetGame .stat-grid > div{padding:8px;background:#fff;border:1px solid #5a8580;border-radius:7px;min-width:0}
+#slowPetGame .stat-grid span,
+#slowPetGame .stat-grid strong{display:block;overflow-wrap:anywhere}
+#slowPetGame .stat-grid span{font-size:10px;color:#3A5663}
+#slowPetGame .stat-grid strong{font-size:13px}
+#slowPetGame .booster-card{border:2px solid #5a8580;border-radius:9px;padding:8px;background:linear-gradient(#fff,#d1fdff);min-width:0;display:grid;gap:5px;color:#121819}
+#slowPetGame .booster-card strong{font-size:13px}
+#slowPetGame .booster-card p{font-size:11px;margin:0;overflow-wrap:anywhere}
+#slowPetGame .booster-card .btn{min-height:36px}
+#slowPetGame .booster-card .btn:disabled{opacity:.55;cursor:not-allowed;filter:grayscale(.45)}
+#slowPetGame .hud-panel-body .btn:disabled{opacity:.55;cursor:not-allowed}
+#slowPetGame .hud-panel-body .control-table{max-width:100%;table-layout:fixed}
+#slowPetGame .hud-panel-body .control-table th,
+#slowPetGame .hud-panel-body .control-table td{overflow-wrap:anywhere}
+#slowPetGame .hud-panel-body .field select{width:100%}
+#slowPetGame #onyxMoodArt:not([hidden]){display:block!important}
+@media  (max-width:900px) {#slowPetGame .hud-subbar{column-gap:clamp(3px,.75vw,8px)!important;padding-inline:clamp(4px,.85vw,8px)!important}
+#slowPetGame .hud-subbar .game-slot{width:clamp(24px,3.4vw,33px)}
+#slowPetGame .hud-subbar .hud-sound,
+#slowPetGame .hud-subbar .hud-control-toggle,
+#slowPetGame .hud-subbar .pause-button{width:clamp(24px,3.4vw,29px)}
+#slowPetGame .hud-subbar .resource-counter{font-size:clamp(10px,1.65vw,13px)}
+#slowPetGame .hud-subbar > .resource-counters{gap:3px;padding:2px 4px}}
+@media  (max-height:500px) and (min-aspect-ratio:11/10) {#slowPetGame{--topbar-height:34px;--subbar-height:34px}
+#slowPetGame .hud-subbar .game-slot,
+#slowPetGame .hud-subbar .hud-sound,
+#slowPetGame .hud-subbar .hud-control-toggle,
+#slowPetGame .hud-subbar .pause-button{height:26px}
+#slowPetGame .viewport-frame{top:calc(var(--hud-height) + 4px)}
+#slowPetGame .hud-panel{max-height:calc(100dvh - var(--hud-height) - 10px)}}
+@media  (max-width:560px) and (max-aspect-ratio:11/10) {#slowPetGame{--topbar-height:clamp(38px,5.5vh,46px);--subbar-height:76px}
+#slowPetGame .hud-topbar{gap:2px;padding:3px}
+#slowPetGame .hud-tab{min-width:0;max-width:none;font-size:clamp(9px,2.45vw,12px);padding:0 1px}
+#slowPetGame .hud-tab .tab-symbol{margin-right:1px}
+#slowPetGame .hud-subbar{
+  grid-template-columns:max-content minmax(0,1fr) max-content!important;
+  grid-template-rows:31px 31px!important;column-gap:clamp(3px,1vw,8px)!important;row-gap:6px;
+  padding:4px clamp(3px,1vw,8px)!important;align-items:center;
+ }
+#slowPetGame .hud-subbar > .sound-controls{grid-column:1;grid-row:1;gap:2px}
+#slowPetGame .hud-subbar > .quickbar{grid-column:2;grid-row:1;gap:clamp(1px,.65vw,4px);justify-self:center}
+#slowPetGame .hud-subbar > .display-controls{grid-column:3;grid-row:1;gap:2px;justify-self:end}
+#slowPetGame .hud-subbar > .pause-button{grid-column:1;grid-row:2;justify-self:center}
+#slowPetGame .hud-subbar > .resource-counters{grid-column:2/4;grid-row:2;justify-self:end}
+#slowPetGame .hud-subbar .game-slot{width:clamp(19px,5.65vw,28px);height:27px;font-size:12px}
+#slowPetGame .hud-subbar .hud-sound{width:clamp(20px,6vw,28px);height:27px;font-size:15px}
+#slowPetGame .hud-subbar .hud-control-toggle{width:clamp(22px,6.25vw,28px);height:27px;font-size:15px}
+#slowPetGame .hud-subbar .pause-button{width:28px;height:27px}
+#slowPetGame .hud-subbar .resource-counter{font-size:clamp(11px,3vw,14px)}
+#slowPetGame .hud-subbar .resource-counters{gap:clamp(3px,1.25vw,7px);padding:2px 5px}}
+@media  (max-width:360px) and (max-aspect-ratio:11/10) {#slowPetGame .hud-subbar{column-gap:2px!important}
+#slowPetGame .hud-subbar .game-slot{width:20px}
+#slowPetGame .hud-subbar .hud-sound{width:21px}
+#slowPetGame .hud-subbar .hud-control-toggle{width:23px}
+#slowPetGame .hud-subbar .resource-counter{font-size:11px}}
+/* Onyx is a companion overlay, not a label or panel rendered into the game canvas. */
+@media (prefers-reduced-motion:reduce){#slowPetGame .onyx-booster-dock *{animation:none!important}}

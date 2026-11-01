@@ -1,0 +1,44 @@
+/* Actual integrated Audio, Visual and News pages. No iframe, Shadow DOM or viewport wrappers. */
+html:not([data-ourspace-current-page="visual"]) #ourspacePageArea [data-ourspace-page="visual"],
+html:not([data-ourspace-current-page="audio"]) #ourspacePageArea [data-ourspace-page="audio"],
+html:not([data-ourspace-current-page="feed"]) #ourspacePageArea [data-ourspace-page="feed"]{display:none!important}
+#ourspacePageArea{--os-page-gap:12px;box-sizing:border-box;min-width:0;width:calc(100vw - var(--os-sidebar-width,170px) - var(--os-sidebar-right,0px) - 22px);max-width:calc(100vw - var(--os-sidebar-width,170px) - var(--os-sidebar-right,0px) - 22px);margin-right:calc(var(--os-sidebar-width,170px) + var(--os-sidebar-right,0px) + 12px);margin-left:auto;padding:20px 12px 40px;overflow-x:clip}
+#ourspacePageArea .os-page{max-width:100%;min-width:0;box-sizing:border-box}
+#ourspacePageArea .os-page-content{box-sizing:border-box;min-width:0;max-width:100%;padding:0!important;min-height:1px}
+/* Each item is in normal flow; wrap instead of overlapping as widths change. */
+#ourspacePageArea .layout-quad .module-grid,#ourspacePageArea .ospv-grid,#ourspacePageArea .osm-grid{display:flex!important;flex-wrap:wrap!important;align-items:stretch!important;justify-content:flex-start!important;gap:var(--os-page-gap)!important;min-width:0;max-width:100%;width:100%;box-sizing:border-box;grid-template-columns:none!important}
+#ourspacePageArea .layout-quad .module-grid>.module,#ourspacePageArea .ospv-grid>.ospv-panel,#ourspacePageArea .osm-grid>.osm-panel{position:relative;box-sizing:border-box;flex:0 0 auto!important;width:calc(50% - var(--os-page-gap))!important;min-width:0!important;max-width:100%!important;min-height:90px;align-self:stretch;grid-column:auto!important;grid-row:auto!important;transform:none!important;float:none!important}
+#ourspacePageArea .layout-quad .module-grid>.module.full-width{width:100%!important}
+#ourspacePageArea .ospv-grid>.ospv-sidebar,#ourspacePageArea .osm-grid>.osm-panel:first-child{width:clamp(220px,31%,330px)!important}
+#ourspacePageArea .ospv-grid>.ospv-panel:not(.ospv-sidebar),#ourspacePageArea .osm-grid>.osm-panel:not(:first-child){flex:1 1 320px!important;width:calc(100% - 350px)!important}
+#ourspacePageArea [data-page-fill-module]{height:auto;overflow:visible!important;min-width:0;min-height:var(--page-fill-min-height,120px)!important;max-width:100%;width:min(var(--page-fill-width,100%),100%)!important;flex:none!important;position:relative;z-index:auto!important;}
+#ourspacePageArea :is(.osm-top,.ospv-top,.osm-panel,.ospv-panel,.module,.osm-card,.ospv-card){max-width:100%;box-sizing:border-box}
+#ourspacePageArea :is(button,input,textarea,select){max-width:100%;min-width:0;box-sizing:border-box}
+#ourspacePageArea :is(img,video,canvas){max-width:100%}
+#ourspacePageArea :is(.module-body,.osm-list,.ospv-list,.osm-panel,.ospv-panel){min-width:0;max-width:100%;overflow-wrap:anywhere}
+#ourspacePageArea .osm-mini-player{max-width:100%;}
+.os-feature-panel{box-sizing:border-box;background:#fff;color:#000;border:1px solid #7ba2b8;border-radius:6px;padding:10px;display:grid;gap:7px;margin:12px 0;max-width:100%}
+.os-feature-panel>strong{font-size:13px}
+.os-feature-controls{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.os-feature-controls select{flex:1 1 220px;min-width:0;max-width:100%;padding:7px;border:1px solid #8baabd;border-radius:3px}
+.os-feature-controls button{background:#e8f6fa;border:1px solid #72a7bb;color:#143849;border-radius:4px;padding:7px 11px;font-weight:700}
+.os-feature-panel [role=status]{font-size:11px;min-height:16px}
+@media(max-width:780px){#ourspacePageArea{padding:10px 5px 28px}#ourspacePageArea .layout-quad .module-grid>.module,#ourspacePageArea .ospv-grid>.ospv-panel,#ourspacePageArea .osm-grid>.osm-panel{width:100%!important;flex-basis:auto!important}#ourspacePageArea .ospv-grid>.ospv-sidebar,#ourspacePageArea .osm-grid>.osm-panel:first-child{width:100%!important}#ourspacePageArea [data-page-fill-module]{width:min(var(--page-fill-width,100%),100%)!important}}
+/* This rule is more specific than the source .full-width and media grid sizing rules. */
+#ourspacePageArea .os-page .os-page-content :is(.module,.osm-panel,.ospv-panel)[data-page-fill-module]{width:min(var(--page-fill-width,100%),100%)!important;min-height:var(--page-fill-min-height,120px)!important;flex:0 0 auto!important}
+/* Source audio mini-player floats independently, but must never sit under the rail. */
+body:has(#sidebar-messenger-root.mp-vertical-root) .osm-mini-player{right:calc(var(--os-sidebar-width,170px) + var(--os-sidebar-right,0px) + 12px)!important;max-width:calc(100vw - var(--os-sidebar-width,170px) - var(--os-sidebar-right,0px) - 24px)!important}
+/* Narrow viewports with the fixed right rail: stop the media headers collapsing
+   into single-letter vertical columns. The rail stays at the saved width. */
+@media(max-width:850px){
+ #ourspacePageArea :is(.osm-top,.ospv-top){display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:7px!important;min-width:0;width:100%}
+ #ourspacePageArea :is(.osm-title,.ospv-title){display:block!important;width:100%!important;flex:none!important;min-width:0!important}
+ #ourspacePageArea :is(.osm-title h2,.ospv-title h2){font-size:clamp(16px,4.5vw,23px)!important;line-height:1.25!important;word-break:normal!important;overflow-wrap:break-word!important;white-space:normal!important}
+ #ourspacePageArea :is(.osm-title p,.ospv-title p){font-size:11px!important;line-height:1.35!important;overflow-wrap:anywhere;word-break:normal}
+ #ourspacePageArea :is(.osm-status,.ospv-status){display:flex!important;flex-wrap:wrap!important;min-width:0!important;gap:4px!important;justify-content:flex-start!important}
+ #ourspacePageArea :is(.osm-pill,.ospv-pill){font-size:9px!important;max-width:100%;padding:2px 4px!important}
+ #ourspacePageArea :is(.osm-card,.ospv-card){padding:7px!important;min-width:0!important}
+ #ourspacePageArea .os-feature-panel{font-size:12px}
+ #ourspacePageArea .os-feature-panel strong{font-size:12px}
+ #ourspacePageArea .os-feature-controls button,#ourspacePageArea .os-feature-controls select{font-size:11px!important}
+}

@@ -1,0 +1,1303 @@
+{
+  "schema": "onyx.frontend-manifest.canonical-no-duplicate-routing",
+  "version": "2026-11-01-adventures-embedded-single-html",
+  "backendIncluded": false,
+  "backendEndpoint": "https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec",
+  "avatarPolicy": {
+    "moduleWidgetPrimary": "script/onyx_widget_onyx-mood-renderers.js",
+    "moduleWidgetTarget": "#onyxCanvas",
+    "sourceLineage": "Onyx Art Studio portal-era chest-up renderer",
+    "completedCodedStates": [
+      "advising_professor",
+      "caring",
+      "hungry",
+      "judgmental",
+      "listening",
+      "purring",
+      "sleepy",
+      "snuggly",
+      "thinking",
+      "thoughtful"
+    ],
+    "pngFallbacks": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/onyx_<mood>.png; used only if procedural rendering fails",
+    "gameIsolation": {
+      "leisure": "Sibling Games/index.html in Onyx Leisure fullscreen",
+      "virtual": "Single-document Adventures world embedded inside #slowPetGame; original three WASM cats."
+    },
+    "perMoodCompatibility": {
+      "advising_professor": {
+        "js": "script/onyx_widget_onyx_advising_professor.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_advising_professor.css"
+      },
+      "caring": {
+        "js": "script/onyx_widget_onyx_caring.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_caring.css"
+      },
+      "hungry": {
+        "js": "script/onyx_widget_onyx_hungry.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_hungry.css"
+      },
+      "judgmental": {
+        "js": "script/onyx_widget_onyx_judgmental.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_judgmental.css"
+      },
+      "listening": {
+        "js": "script/onyx_widget_onyx_listening.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_listening.css"
+      },
+      "purring": {
+        "js": "script/onyx_widget_onyx_purring.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_purring.css"
+      },
+      "sleepy": {
+        "js": "script/onyx_widget_onyx_sleepy.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_sleepy.css"
+      },
+      "snuggly": {
+        "js": "script/onyx_widget_onyx_snuggly.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_snuggly.css"
+      },
+      "thinking": {
+        "js": "script/onyx_widget_onyx_thinking.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_thinking.css"
+      },
+      "thoughtful": {
+        "js": "script/onyx_widget_onyx_thoughtful.js",
+        "css": "style/onyx/onyx-core/onyx_widget_onyx_thoughtful.css"
+      }
+    }
+  },
+  "counts": {
+    "js": 91,
+    "css": 8,
+    "json": 28,
+    "html": 1,
+    "assets": 261
+  },
+  "validation": {
+    "templateReusesSharedJS": true,
+    "portalCSSSeparated": true,
+    "profileIframeSrcdoc": true,
+    "skillsPageLinked": true,
+    "gamesPageURL": "https://tyrannosaurusdm92.github.io/LifeHelpers/Games/index.html (Onyx Leisure fullscreen only)",
+    "backendModified": false,
+    "browserSmokeTest": "Static Chromium layout and one-document widget mode switching verified; live asset/WASM visual playtest blocked by local-navigation policy.",
+    "adventuresBlank": false,
+    "professorRequiresExplicitTrigger": true
+  },
+  "files": [
+    {
+      "path": "assets/onyx_widget_onyx_meow_001.wav",
+      "bytes": 33370
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_002.wav",
+      "bytes": 36904
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_003.wav",
+      "bytes": 35314
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_004.wav",
+      "bytes": 37610
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_005.wav",
+      "bytes": 43090
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_006.wav",
+      "bytes": 42560
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_007.wav",
+      "bytes": 30012
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_008.wav",
+      "bytes": 40986
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_009.wav",
+      "bytes": 38062
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_010.wav",
+      "bytes": 62444
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_011.wav",
+      "bytes": 18926
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_012.wav",
+      "bytes": 31178
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_013.wav",
+      "bytes": 17178
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_014.wav",
+      "bytes": 32054
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_015.wav",
+      "bytes": 19144
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_016.wav",
+      "bytes": 20020
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_017.wav",
+      "bytes": 31616
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_018.wav",
+      "bytes": 33584
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_019.wav",
+      "bytes": 22864
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_020.wav",
+      "bytes": 25926
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_021.wav",
+      "bytes": 28334
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_022.wav",
+      "bytes": 38948
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_023.wav",
+      "bytes": 45774
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_024.wav",
+      "bytes": 27764
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_025.wav",
+      "bytes": 20774
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_026.wav",
+      "bytes": 42310
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_027.wav",
+      "bytes": 41030
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_028.wav",
+      "bytes": 41016
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_029.wav",
+      "bytes": 56518
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_030.wav",
+      "bytes": 26536
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_031.wav",
+      "bytes": 29202
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_032.wav",
+      "bytes": 25648
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_033.wav",
+      "bytes": 40084
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_034.wav",
+      "bytes": 34754
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_035.wav",
+      "bytes": 46082
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_036.wav",
+      "bytes": 22316
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_037.wav",
+      "bytes": 32534
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_038.wav",
+      "bytes": 32312
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_039.wav",
+      "bytes": 43416
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_040.wav",
+      "bytes": 34754
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_041.wav",
+      "bytes": 36754
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_042.wav",
+      "bytes": 38530
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_043.wav",
+      "bytes": 23254
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_044.wav",
+      "bytes": 40844
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_045.wav",
+      "bytes": 29776
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_046.wav",
+      "bytes": 33530
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_047.wav",
+      "bytes": 29182
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_048.wav",
+      "bytes": 13964
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_049.wav",
+      "bytes": 46114
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_050.wav",
+      "bytes": 22570
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_051.wav",
+      "bytes": 16364
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_052.wav",
+      "bytes": 37596
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_053.wav",
+      "bytes": 43696
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_054.wav",
+      "bytes": 49568
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_055.wav",
+      "bytes": 24270
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_056.wav",
+      "bytes": 26078
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_057.wav",
+      "bytes": 24044
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_058.wav",
+      "bytes": 34208
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_059.wav",
+      "bytes": 32176
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_060.wav",
+      "bytes": 31046
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_061.wav",
+      "bytes": 25624
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_062.wav",
+      "bytes": 41210
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_063.wav",
+      "bytes": 40244
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_064.wav",
+      "bytes": 39750
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_065.wav",
+      "bytes": 35038
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_066.wav",
+      "bytes": 34294
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_067.wav",
+      "bytes": 18922
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_068.wav",
+      "bytes": 14210
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_069.wav",
+      "bytes": 25372
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_070.wav",
+      "bytes": 20412
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_071.wav",
+      "bytes": 20166
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_072.wav",
+      "bytes": 30332
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_073.wav",
+      "bytes": 22150
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_074.wav",
+      "bytes": 23884
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_075.wav",
+      "bytes": 16690
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_076.wav",
+      "bytes": 29336
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_077.wav",
+      "bytes": 34792
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_078.wav",
+      "bytes": 29336
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_079.wav",
+      "bytes": 25370
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_080.wav",
+      "bytes": 20408
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_081.wav",
+      "bytes": 28592
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_082.wav",
+      "bytes": 27600
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_083.wav",
+      "bytes": 28648
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_084.wav",
+      "bytes": 43632
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_085.wav",
+      "bytes": 29800
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_086.wav",
+      "bytes": 30790
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_087.wav",
+      "bytes": 38424
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_088.wav",
+      "bytes": 27864
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_089.wav",
+      "bytes": 30350
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_090.wav",
+      "bytes": 32420
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_091.wav",
+      "bytes": 30350
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_092.wav",
+      "bytes": 27206
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_093.wav",
+      "bytes": 29868
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_094.wav",
+      "bytes": 32896
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_095.wav",
+      "bytes": 28052
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_096.wav",
+      "bytes": 20666
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_097.wav",
+      "bytes": 31024
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_098.wav",
+      "bytes": 22894
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_099.wav",
+      "bytes": 22284
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_100.wav",
+      "bytes": 29016
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_101.wav",
+      "bytes": 25400
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_102.wav",
+      "bytes": 31048
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_103.wav",
+      "bytes": 19076
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_104.wav",
+      "bytes": 36694
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_105.wav",
+      "bytes": 20206
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_106.wav",
+      "bytes": 26756
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_107.wav",
+      "bytes": 28562
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_108.wav",
+      "bytes": 25626
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_109.wav",
+      "bytes": 36468
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_110.wav",
+      "bytes": 30024
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_111.wav",
+      "bytes": 35482
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_112.wav",
+      "bytes": 35482
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_113.wav",
+      "bytes": 28278
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_114.wav",
+      "bytes": 42252
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_115.wav",
+      "bytes": 50114
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_116.wav",
+      "bytes": 51860
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_117.wav",
+      "bytes": 26312
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_118.wav",
+      "bytes": 55218
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_119.wav",
+      "bytes": 55668
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_120.wav",
+      "bytes": 51604
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_121.wav",
+      "bytes": 54992
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_122.wav",
+      "bytes": 43622
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_123.wav",
+      "bytes": 33984
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_124.wav",
+      "bytes": 48668
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_125.wav",
+      "bytes": 34662
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_126.wav",
+      "bytes": 41212
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_127.wav",
+      "bytes": 22690
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_128.wav",
+      "bytes": 20656
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_129.wav",
+      "bytes": 25854
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_130.wav",
+      "bytes": 51782
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_131.wav",
+      "bytes": 24272
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_132.wav",
+      "bytes": 21108
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_133.wav",
+      "bytes": 18398
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_134.wav",
+      "bytes": 16366
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_135.wav",
+      "bytes": 27024
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_136.wav",
+      "bytes": 22784
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_137.wav",
+      "bytes": 45504
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_138.wav",
+      "bytes": 48216
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_139.wav",
+      "bytes": 30822
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_140.wav",
+      "bytes": 23820
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_141.wav",
+      "bytes": 38050
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_142.wav",
+      "bytes": 31726
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_143.wav",
+      "bytes": 32402
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_144.wav",
+      "bytes": 18172
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_145.wav",
+      "bytes": 26982
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_146.wav",
+      "bytes": 40986
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_147.wav",
+      "bytes": 32854
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_148.wav",
+      "bytes": 24724
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_149.wav",
+      "bytes": 41440
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_150.wav",
+      "bytes": 44150
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_151.wav",
+      "bytes": 37822
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_152.wav",
+      "bytes": 25626
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_153.wav",
+      "bytes": 36014
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_154.wav",
+      "bytes": 41210
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_155.wav",
+      "bytes": 34434
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_156.wav",
+      "bytes": 28550
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_157.wav",
+      "bytes": 19142
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_158.wav",
+      "bytes": 47942
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_159.wav",
+      "bytes": 31686
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_160.wav",
+      "bytes": 18292
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_161.wav",
+      "bytes": 31132
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_162.wav",
+      "bytes": 33060
+    },
+    {
+      "path": "assets/onyx_widget_onyx_meow_163.wav",
+      "bytes": 30492
+    },
+    {
+      "path": "assets/onyx_widget_call-end.wav",
+      "bytes": 7982
+    },
+    {
+      "path": "assets/onyx_widget_call-start.wav",
+      "bytes": 7100
+    },
+    {
+      "path": "assets/onyx_widget_create-in-defiance.mp3",
+      "bytes": 6588819
+    },
+    {
+      "path": "assets/onyx_widget_incoming-call.wav",
+      "bytes": 12392
+    },
+    {
+      "path": "assets/onyx_widget_message-received.wav",
+      "bytes": 14156
+    },
+    {
+      "path": "assets/onyx_widget_message-sent.wav",
+      "bytes": 10628
+    },
+    {
+      "path": "assets/onyx_widget_onyx-meow.wav",
+      "bytes": 61918
+    },
+    {
+      "path": "assets/onyx_widget_android-icon.png",
+      "bytes": 517971
+    },
+    {
+      "path": "assets/onyx_widget_android-icon.png",
+      "bytes": 517971
+    },
+    {
+      "path": "assets/onyx_widget_android-icon.png",
+      "bytes": 517971
+    },
+    {
+      "path": "assets/onyx_widget_ourspace-icon-192.png",
+      "bytes": 84619
+    },
+    {
+      "path": "assets/onyx_widget_android-icon.png",
+      "bytes": 517971
+    },
+    {
+      "path": "assets/onyx_widget_android-icon.png",
+      "bytes": 517971
+    },
+    {
+      "path": "assets/onyx_widget_frame-black.svg",
+      "bytes": 256611
+    },
+    {
+      "path": "assets/onyx_widget_onyx_advising_professor.png",
+      "bytes": 1159142
+    },
+    {
+      "path": "assets/onyx_widget_onyx_caring.png",
+      "bytes": 1092124
+    },
+    {
+      "path": "assets/onyx_widget_onyx_hungry.png",
+      "bytes": 1161983
+    },
+    {
+      "path": "assets/onyx_widget_onyx_judgmental.png",
+      "bytes": 1128231
+    },
+    {
+      "path": "assets/onyx_widget_onyx_listening.png",
+      "bytes": 1040412
+    },
+    {
+      "path": "assets/onyx_widget_onyx_purring.png",
+      "bytes": 1105334
+    },
+    {
+      "path": "assets/onyx_widget_onyx_sleepy.png",
+      "bytes": 1123240
+    },
+    {
+      "path": "assets/onyx_widget_onyx_snuggly.png",
+      "bytes": 1152317
+    },
+    {
+      "path": "assets/onyx_widget_onyx_thinking.png",
+      "bytes": 1161865
+    },
+    {
+      "path": "assets/onyx_widget_onyx_thoughtful.png",
+      "bytes": 1165300
+    },
+    {
+      "path": "assets/onyx_widget_frame-black.svg",
+      "bytes": 256611
+    },
+    {
+      "path": "assets/onyx_widget_onyx-alert-virtual-pet.svg",
+      "bytes": 80596
+    },
+    {
+      "path": "assets/onyx_widget_frame-black.svg",
+      "bytes": 256611
+    },
+    {
+      "path": "assets/onyx_widget_onyx-alert-virtual-pet.png",
+      "bytes": 10938
+    },
+    {
+      "path": "assets/onyx_widget_onyx-alert-virtual-pet.svg",
+      "bytes": 80596
+    },
+    {
+      "path": "assets/onyx_widget_onyx-widget-fallback.png",
+      "bytes": 22233
+    },
+    {
+      "path": "style/onyx-professor.css",
+      "bytes": 9719
+    },
+    {
+      "path": "style/onyx_widget_style.css",
+      "bytes": 173288
+    },
+    {
+      "path": "docs/05_onyx_widget_IMAGE_TAB_PASS8.md",
+      "bytes": 951
+    },
+    {
+      "path": "docs/ONYX_ADVENTURES_PROFESSOR_TESTER_2026-10-31.md",
+      "bytes": 5148
+    },
+    {
+      "path": "docs/onyx_widget_DESIGN_WIDGET.md",
+      "bytes": 1750
+    },
+    {
+      "path": "docs/onyx_widget_ONYX_DBT_ASSIGNMENTS.md",
+      "bytes": 1870
+    },
+    {
+      "path": "docs/onyx_widget_README.md",
+      "bytes": 2029
+    },
+    {
+      "path": "docs/onyx_widget_SOURCES-LICENSES.md",
+      "bytes": 1590
+    },
+    {
+      "path": "docs/onyx_widget_STYLE_GUIDE_PASS6.md",
+      "bytes": 704
+    },
+    {
+      "path": "docs/onyx_widget_third_party_IMAGE2SCAN_LICENSE.txt",
+      "bytes": 11357
+    },
+    {
+      "path": "docs/onyx_widget_third_party_XYZALIGN_LICENSE.txt",
+      "bytes": 1526
+    },
+    {
+      "path": "script/onyx_widget_brain-link__bubble.js",
+      "bytes": 121418
+    },
+    {
+      "path": "script/onyx_widget_onyx-alerts__bubble.js",
+      "bytes": 33951
+    },
+    {
+      "path": "script/onyx_widget_onyx-atlas.js",
+      "bytes": 0
+    },
+    {
+      "path": "script/onyx_widget_onyx-behavior.js",
+      "bytes": 803
+    },
+    {
+      "path": "script/onyx_widget_onyx-config.js",
+      "bytes": 643
+    },
+    {
+      "path": "script/onyx_widget_onyx-core__bubble.js",
+      "bytes": 100073
+    },
+    {
+      "path": "script/onyx_widget_onyx-media.js",
+      "bytes": 480
+    },
+    {
+      "path": "script/onyx_widget_onyx-mood-renderers.js",
+      "bytes": 37363
+    },
+    {
+      "path": "script/onyx_widget_onyx-mood.js",
+      "bytes": 2304
+    },
+    {
+      "path": "script/onyx_widget_onyx-responsive-resize__bubble.js",
+      "bytes": 17558
+    },
+    {
+      "path": "script/onyx_widget_onyx-runtime.js",
+      "bytes": 4488
+    },
+    {
+      "path": "script/onyx_widget_onyx-scanner.js",
+      "bytes": 44105
+    },
+    {
+      "path": "script/onyx_widget_onyx-signature-parts.js",
+      "bytes": 6270
+    },
+    {
+      "path": "script/onyx_widget_onyx-ui__bubble.js",
+      "bytes": 102592
+    },
+    {
+      "path": "script/onyx_widget_onyx-voice.js",
+      "bytes": 432
+    },
+    {
+      "path": "script/onyx_widget_onyx_advising_professor.js",
+      "bytes": 39500
+    },
+    {
+      "path": "script/onyx_widget_onyx_caring.js",
+      "bytes": 36556
+    },
+    {
+      "path": "script/onyx_widget_onyx_hungry.js",
+      "bytes": 836
+    },
+    {
+      "path": "script/onyx_widget_onyx_judgmental.js",
+      "bytes": 860
+    },
+    {
+      "path": "script/onyx_widget_onyx_listening.js",
+      "bytes": 854
+    },
+    {
+      "path": "script/onyx_widget_onyx_purring.js",
+      "bytes": 842
+    },
+    {
+      "path": "script/onyx_widget_onyx_sleepy.js",
+      "bytes": 836
+    },
+    {
+      "path": "script/onyx_widget_onyx_snuggly.js",
+      "bytes": 842
+    },
+    {
+      "path": "script/onyx_widget_onyx_thinking.js",
+      "bytes": 848
+    },
+    {
+      "path": "script/onyx_widget_onyx_thoughtful.js",
+      "bytes": 860
+    },
+    {
+      "path": "script/onyx_widget_app.js",
+      "bytes": 14206
+    },
+    {
+      "path": "script/onyx_widget_dbt-worksheet-entry.js",
+      "bytes": 21477
+    },
+    {
+      "path": "script/onyx_widget_onyx-assignments.js",
+      "bytes": 63376
+    },
+    {
+      "path": "script/onyx_widget_print-export.js",
+      "bytes": 17131
+    },
+    {
+      "path": "script/onyx_widget_resizing-responsive.js",
+      "bytes": 25144
+    },
+    {
+      "path": "script/onyx_widget_skills.js",
+      "bytes": 15809
+    },
+    {
+      "path": "script/onyx_widget_brain-link.js",
+      "bytes": 121769
+    },
+    {
+      "path": "script/onyx_widget_onyx-alerts.js",
+      "bytes": 45774
+    },
+    {
+      "path": "script/onyx_widget_onyx-atlas.js",
+      "bytes": 0
+    },
+    {
+      "path": "script/onyx_widget_onyx-behavior.js",
+      "bytes": 803
+    },
+    {
+      "path": "script/onyx_widget_onyx-config.js",
+      "bytes": 643
+    },
+    {
+      "path": "script/onyx_widget_onyx-core.js",
+      "bytes": 100464
+    },
+    {
+      "path": "script/onyx_widget_onyx-media.js",
+      "bytes": 480
+    },
+    {
+      "path": "script/onyx_widget_onyx-mood-renderers.js",
+      "bytes": 37363
+    },
+    {
+      "path": "script/onyx_widget_onyx-mood.js",
+      "bytes": 2304
+    },
+    {
+      "path": "script/onyx_widget_onyx-repository-bridge.js",
+      "bytes": 2444
+    },
+    {
+      "path": "script/onyx_widget_onyx-responsive-resize.js",
+      "bytes": 17925
+    },
+    {
+      "path": "script/onyx_widget_onyx-runtime.js",
+      "bytes": 4488
+    },
+    {
+      "path": "script/onyx_widget_onyx-scanner.js",
+      "bytes": 44105
+    },
+    {
+      "path": "script/onyx_widget_onyx-signature-parts.js",
+      "bytes": 6270
+    },
+    {
+      "path": "script/onyx_widget_onyx-ui.js",
+      "bytes": 101429
+    },
+    {
+      "path": "script/onyx_widget_onyx-voice.js",
+      "bytes": 432
+    },
+    {
+      "path": "script/onyx_widget_onyx_advising_professor.js",
+      "bytes": 39500
+    },
+    {
+      "path": "script/onyx_widget_onyx_caring.js",
+      "bytes": 36556
+    },
+    {
+      "path": "script/onyx_widget_onyx_hungry.js",
+      "bytes": 836
+    },
+    {
+      "path": "script/onyx_widget_onyx_judgmental.js",
+      "bytes": 860
+    },
+    {
+      "path": "script/onyx_widget_onyx_listening.js",
+      "bytes": 854
+    },
+    {
+      "path": "script/onyx_widget_onyx_purring.js",
+      "bytes": 842
+    },
+    {
+      "path": "script/onyx_widget_onyx_sleepy.js",
+      "bytes": 836
+    },
+    {
+      "path": "script/onyx_widget_onyx_snuggly.js",
+      "bytes": 842
+    },
+    {
+      "path": "script/onyx_widget_onyx_thinking.js",
+      "bytes": 848
+    },
+    {
+      "path": "script/onyx_widget_onyx_thoughtful.js",
+      "bytes": 860
+    },
+    {
+      "path": "script/onyx_widget_shared-bootstrap.js",
+      "bytes": 107
+    },
+    {
+      "path": "script/onyx_widget_shared-onyx-audio-votes.js",
+      "bytes": 7754
+    },
+    {
+      "path": "script/onyx_widget_shared-onyx-currency.js",
+      "bytes": 5264
+    },
+    {
+      "path": "script/onyx_widget_shared-onyx-frame-animation.js",
+      "bytes": 10120
+    },
+    {
+      "path": "script/onyx_widget_shared-onyx-income.js",
+      "bytes": 3602
+    },
+    {
+      "path": "script/onyx_widget_shared-onyx-work-income.js",
+      "bytes": 4314
+    },
+    {
+      "path": "script/onyx_widget_shared-prof.js",
+      "bytes": 21856
+    },
+    {
+      "path": "script/onyx_widget_shared-runtime.js",
+      "bytes": 7700
+    },
+    {
+      "path": "script/onyx_widget_shared-shells.js",
+      "bytes": 421
+    },
+    {
+      "path": "script/onyx_widget_work-tab.js",
+      "bytes": 50507
+    },
+    {
+      "path": "script/onyx-professor.js",
+      "bytes": 22355
+    },
+    {
+      "path": "script/onyx-tester.js",
+      "bytes": 6848
+    },
+    {
+      "path": "script/onyx_widget_design_widget.js",
+      "bytes": 102837
+    },
+    {
+      "path": "script/onyx_widget_legacy-static-moods.js",
+      "bytes": 1925
+    },
+    {
+      "path": "script/onyx_widget_theme.js",
+      "bytes": 1209
+    },
+    {
+      "path": "script/onyx_widget_backend-client.js",
+      "bytes": 3868
+    },
+    {
+      "path": "script/onyx_widget_color-mode.js",
+      "bytes": 1444
+    },
+    {
+      "path": "json/onyx_widget_fields.json",
+      "bytes": 1058956
+    },
+    {
+      "path": "json/onyx_widget_pairings.json",
+      "bytes": 142169
+    },
+    {
+      "path": "json/onyx_widget_currency.json",
+      "bytes": 1840
+    },
+    {
+      "path": "json/onyx_widget_discord-patterns.json",
+      "bytes": 1005
+    },
+    {
+      "path": "json/onyx_widget_frontend-manifest.json",
+      "bytes": 35112
+    },
+    {
+      "path": "json/onyx_widget_income.json",
+      "bytes": 1441
+    },
+    {
+      "path": "json/onyx_widget_module.json",
+      "bytes": 231
+    },
+    {
+      "path": "json/onyx_widget_onyx-care.json",
+      "bytes": 490
+    },
+    {
+      "path": "json/onyx_widget_onyx-health.json",
+      "bytes": 271
+    },
+    {
+      "path": "json/onyx_widget_onyx-manifest.json",
+      "bytes": 4911
+    },
+    {
+      "path": "json/onyx_widget_onyx-runtime.json",
+      "bytes": 393
+    },
+    {
+      "path": "json/onyx_widget_onyx-shared.json",
+      "bytes": 1131
+    },
+    {
+      "path": "json/onyx_widget_package-manifest.json",
+      "bytes": 8727
+    },
+    {
+      "path": "json/onyx_widget_project-catalog-schema.json",
+      "bytes": 489
+    },
+    {
+      "path": "json/onyx_widget_work-moods.json",
+      "bytes": 1963
+    },
+    {
+      "path": "json/onyx_widget_work-schema.json",
+      "bytes": 963
+    },
+    {
+      "path": "json/onyx_widget_work-tabs.json",
+      "bytes": 5433
+    },
+    {
+      "path": "onyx_widget.html",
+      "bytes": 22509
+    }
+  ],
+  "jsCount": 74,
+  "jsonCount": 17,
+  "docsCount": 9,
+  "packageBytes": 29915576,
+  "profilePages": {
+    "william": "assets/code/william.html",
+    "jasper": "assets/code/jasper.html"
+  },
+  "portal": "ourspace.html",
+  "standaloneOnyxHtml": true,
+  "stylesheetPaths": {
+    "widget": "style/onyx_widget_style.css",
+    "professor": "style/onyx-professor.css"
+  },
+  "styleMigrationNote": "Original style/onyx_widget_style.css preserved, with one new separate style/onyx-professor.css stylesheet for the focused workspace.",
+  "integration": {
+    "singleHtml": "onyx_widget.html",
+    "adventuresEmbeddedIn": "#slowPetGame > #gameShell",
+    "gameSrcPageRemoved": true,
+    "lazyRuntime": "script/onyx-widget-adventures-loader.js",
+    "originalCatsWasm": [
+      "script/onyx-engine.wasm",
+      "script/callie-engine.wasm",
+      "script/harvey-engine.wasm"
+    ],
+    "backendModified": false,
+    "duplicateProfessorPortraitCount": 1
+  },
+  "sourceFileInventoryNote": "files[] is retained from the original widget source snapshot; authoritative merged-file inventory is in json/onyx_widget_integrated-manifest.json."
+}

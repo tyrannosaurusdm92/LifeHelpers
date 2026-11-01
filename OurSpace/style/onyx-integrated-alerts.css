@@ -1,0 +1,8 @@
+
+/* Alerts live strictly within the existing black-frame miniature box, never as another floating module. */
+#onyxBubble [data-onyx-alert-status]{max-width:100%;overflow:hidden;pointer-events:none}
+#onyxBubble [data-onyx-alert-inline-text]{display:block;max-width:75px;font:700 9px/1.1 system-ui,sans-serif;color:#fff;text-shadow:0 1px 2px #000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:auto}
+#onyxBubble [data-onyx-alert-inline-text]:empty{display:none}
+.onyx-dbt-chat-card .onyx-save-to-tasks,.onyx-professor-resource .onyx-save-to-tasks{background:#e6f3ff!important;border:1px solid #297db4!important;color:#123c56!important;border-radius:8px;padding:6px 10px;cursor:pointer;margin:3px 6px}
+.onyx-professor-resource a{display:inline-block;margin:5px 10px 5px 0;color:#1e6ca2!important;text-decoration:underline}
+.onyx-professor-resource{background:#f2f7ff;color:#19364b;border:1px solid #accde4;border-radius:10px;padding:10px;margin-top:8px}

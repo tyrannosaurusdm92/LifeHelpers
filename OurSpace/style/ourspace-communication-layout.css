@@ -1,0 +1,35 @@
+/* Communication page is a native document-flow page, not an iframe or visual overlay. */
+html:not([data-ourspace-current-page="communication"]) #ourspacePageArea [data-ourspace-page="communication"]{display:none!important}
+#ourspacePageArea .os-communication-page{width:100%;max-width:100%;min-width:0;box-sizing:border-box;padding:0;margin:0}
+#osCommunicationPage{box-sizing:border-box;min-width:0;max-width:100%;padding:0 0 14px;border:1px solid #bdd5ed;border-radius:12px;background:#fff;box-shadow:0 3px 16px #23558820;color:#183553}
+#osCommunicationPage,#osCommunicationPage *{box-sizing:border-box}
+#osCommunicationFlow{display:block;padding:14px;min-width:0;max-width:100%;box-sizing:border-box}
+#osCommunicationFrame{--oscom-frame-width:100%;--oscom-frame-height:900px;--oscom-frame-left:0px;--oscom-frame-top:12px;position:relative;display:flex;flex-direction:column;box-sizing:border-box;min-width:130px;max-width:100%;width:min(var(--oscom-frame-width),calc(100% - var(--oscom-frame-left)));height:var(--oscom-frame-height);margin-left:var(--oscom-frame-left);margin-top:var(--oscom-frame-top);border:1px solid #a3c1dd;border-radius:10px;background:#fff;box-shadow:0 3px 12px #23558824}
+#osCommunicationFrameBody{flex:1 1 auto;min-height:0;min-width:0;width:100%;overflow:auto;scrollbar-gutter:stable;border-radius:inherit}
+#osCommunicationModule{width:100%;min-width:0;min-height:100%;margin:0}
+#osCommunicationPage .os-communication-layout-status{font:12px system-ui,sans-serif;color:#225680;margin:10px 14px}
+#osCommunicationFrame.oscom-admin{border:2px dashed #0978a9}
+#osCommunicationFrame .oscom-admin-bar{display:flex;position:relative;z-index:25;gap:8px;align-items:center;flex-wrap:wrap;background:#e8f6ff;color:#134d67;border-bottom:1px dashed #348db5;padding:7px 9px;border-radius:8px 8px 0 0;font:12px system-ui,sans-serif}
+#osCommunicationFrame .oscom-admin-bar button{touch-action:none;user-select:none;cursor:grab;border:1px solid #2f91b5;background:#fff;color:#0c4a68;font:750 12px system-ui,sans-serif;padding:8px 11px;border-radius:6px}
+#osCommunicationFrame .oscom-admin-bar output{font:12px system-ui,sans-serif;color:#165675}
+#osCommunicationFrame .oscom-resize-grip{position:absolute;z-index:40;touch-action:none;user-select:none;width:17px;height:17px;background:#c0f0fb;border:2px solid #126486;border-radius:4px;box-shadow:0 0 0 2px white;cursor:move}
+#osCommunicationFrame .oscom-resize-grip[data-oscom-edge=n]{top:-9px;left:50%;cursor:ns-resize}
+#osCommunicationFrame .oscom-resize-grip[data-oscom-edge=s]{bottom:-9px;left:50%;cursor:ns-resize}
+#osCommunicationFrame .oscom-resize-grip[data-oscom-edge=e]{right:-9px;top:50%;cursor:ew-resize}
+#osCommunicationFrame .oscom-resize-grip[data-oscom-edge=w]{left:-9px;top:50%;cursor:ew-resize}
+#osCommunicationFrame .oscom-resize-grip[data-oscom-edge=nw]{left:-9px;top:-9px;cursor:nwse-resize}
+#osCommunicationFrame .oscom-resize-grip[data-oscom-edge=ne]{right:-9px;top:-9px;cursor:nesw-resize}
+#osCommunicationFrame .oscom-resize-grip[data-oscom-edge=sw]{left:-9px;bottom:-9px;cursor:nesw-resize}
+#osCommunicationFrame .oscom-resize-grip[data-oscom-edge=se]{right:-9px;bottom:-9px;cursor:nwse-resize}
+#osCommunicationExport{position:fixed;left:12px;bottom:12px;z-index:12500;border:2px solid #fff;border-radius:9px;padding:10px 14px;background:#084d88;color:white;box-shadow:0 4px 18px #16334f88;font:750 13px system-ui,sans-serif;max-width:calc(100vw - 30px);cursor:pointer}
+#osCommunicationModule .oscom-grid{min-width:0;max-width:100%}
+#osCommunicationModule .oscom-chat,#osCommunicationModule .oscom-chathead,#osCommunicationModule .oscom-compose{min-width:0}
+#osCommunicationModule .oscom-thread{overscroll-behavior:contain;scrollbar-gutter:stable;flex:1 1 auto}
+@container(max-width:830px){#osCommunicationModule .oscom-grid{grid-template-columns:minmax(150px,.38fr) minmax(0,1fr)}#osCommunicationModule .oscom-details{display:none}}
+@container(max-width:540px){#osCommunicationModule .oscom-grid{display:flex;flex-direction:column;max-height:none}#osCommunicationModule .oscom-sidebar{max-height:210px;flex:none}#osCommunicationModule .oscom-chat{min-height:470px}#osCommunicationModule .oscom-thread{min-height:230px}#osCommunicationModule .oscom-details{display:none}}
+@media(max-width:620px){#osCommunicationFlow{padding:8px}#osCommunicationFrame .oscom-admin-bar{font-size:11px}}
+@media print{#osCommunicationFrame .oscom-admin-bar,#osCommunicationFrame .oscom-resize-grip,#osCommunicationExport{display:none!important}#osCommunicationFrame{height:auto!important;width:100%!important;margin:0!important}#osCommunicationFrameBody{overflow:visible!important}}
+
+/* When the fixed messenger rail is present, keep the Communication editor beside it,
+   not beneath it. Override only this page's older global 1000px profile constraint. */
+html[data-ourspace-current-page="communication"] body:has(#sidebar-messenger-root.mp-vertical-root) .profile-frame{max-width:calc(100% - var(--os-sidebar-width,170px) - var(--os-sidebar-right,0px) - var(--os-sidebar-gap,18px))!important}

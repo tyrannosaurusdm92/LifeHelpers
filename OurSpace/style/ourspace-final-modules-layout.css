@@ -1,0 +1,33 @@
+/* Skills and Household native modules. Flow-based geometry, no overlays. */
+html:not([data-ourspace-current-page="household"]) #ourspacePageArea [data-ourspace-page="household"],
+html:not([data-ourspace-current-page="skills"]) #ourspacePageArea [data-ourspace-page="skills"]{display:none!important}
+#ourspacePageArea .os-final-page{box-sizing:border-box;max-width:100%;min-width:0;margin:0;padding:12px clamp(6px,1.5vw,18px) 48px;overflow:visible}
+.os-final-flow{display:flow-root;box-sizing:border-box;min-height:1px;min-width:0;max-width:100%;padding:12px 8px 28px}
+.os-final-frame{position:relative;box-sizing:border-box;display:block;margin-left:var(--final-left,0px);margin-top:var(--final-top,12px);margin-bottom:18px;width:var(--final-width,100%);max-width:100%;height:var(--final-height,900px);min-width:140px;min-height:360px;background:#fff;border:1px solid #b2c8db;isolation:isolate;overflow:visible}
+.os-final-native{width:100%;height:100%;box-sizing:border-box;min-width:0;overflow:auto;overscroll-behavior:contain;position:relative}
+.os-final-native *{box-sizing:border-box}
+.os-final-native[hidden]{display:none!important}
+.os-final-admin{outline:2px dashed #a64d1d;outline-offset:3px}
+.os-final-admin .os-final-native{height:calc(100% - 40px)}
+.os-final-admin-bar{min-height:40px;display:flex;align-items:center;gap:12px;padding:5px 12px;background:#173e72;color:#fff;position:relative;z-index:40}
+.os-final-admin-bar button{border:1px solid #f7db73;background:#f4df93;color:#1b2b3f;border-radius:5px;cursor:grab;touch-action:none;padding:5px 10px;font-weight:750}
+.os-final-admin-bar output{font-size:12px;color:#fff}
+.os-final-handle{position:absolute;z-index:45;display:block;width:17px;height:17px;background:#fff1aa;border:2px solid #934900;border-radius:3px;touch-action:none;user-select:none;box-shadow:0 1px 6px #2225}
+.os-final-handle[data-edge=n]{top:-10px;left:calc(50% - 8px);cursor:ns-resize}.os-final-handle[data-edge=s]{bottom:-10px;left:calc(50% - 8px);cursor:ns-resize}
+.os-final-handle[data-edge=e]{right:-10px;top:calc(50% - 8px);cursor:ew-resize}.os-final-handle[data-edge=w]{left:-10px;top:calc(50% - 8px);cursor:ew-resize}
+.os-final-handle[data-edge=nw]{left:-10px;top:-10px;cursor:nwse-resize}.os-final-handle[data-edge=ne]{right:-10px;top:-10px;cursor:nesw-resize}
+.os-final-handle[data-edge=sw]{left:-10px;bottom:-10px;cursor:nesw-resize}.os-final-handle[data-edge=se]{right:-10px;bottom:-10px;cursor:nwse-resize}
+#osFinalExport{position:fixed;z-index:2147482950;left:16px;bottom:18px;border:2px solid #ffdf66;background:#203a60;color:#fff;font:700 13px Verdana,sans-serif;border-radius:8px;padding:12px 18px;box-shadow:0 3px 18px #0005}
+.os-final-layout-status{margin:5px 12px;padding:8px 10px;background:#e6f0f9;border:1px solid #a1b7d6;color:#213a60}
+/* Position original Household sidebar within its module, never over the outer OurSpace messenger. */
+#osHouseholdModule{--sidebar:235px;--topbar:72px;--bg:#f8fbff;--ink:#213954;--panel:#fff;--line:#d0deeb;--muted:#56697c;--shadow:0 3px 10px #13263e20;background:var(--bg)!important;color:var(--ink)!important;position:relative;isolation:isolate}
+#osHouseholdModule .topbar{position:sticky!important;top:0!important;left:0!important;right:0!important;width:100%!important;z-index:18!important;inset:auto!important}
+#osHouseholdModule .sidebar{position:absolute!important;top:var(--topbar)!important;left:0!important;bottom:0!important;max-height:calc(100% - var(--topbar));overflow-y:auto;z-index:5!important}
+#osHouseholdModule .app{min-height:780px;min-width:0}
+#osHouseholdModule .fab,#osHouseholdModule .fab-menu{position:absolute!important;right:22px!important;bottom:22px!important}
+#osHouseholdModule .modal-backdrop{position:absolute!important;inset:0!important;z-index:35!important;min-height:100%}
+#osSkillsModule .master-nav,#osSkillsModule .jump-nav{z-index:22}
+#osSkillsModule .site-header,#osSkillsModule .shell{box-sizing:border-box;max-width:100%}
+@media(max-width:790px){#osHouseholdModule .sidebar{position:relative!important;top:0!important;width:100%!important;max-height:none!important}#osHouseholdModule .app{margin-left:0!important;padding-left:12px!important}}
+/* Keep the Onyx widget only on the two specified pages; Onyx fullscreen game is native. */
+html:not([data-ourspace-current-page="journal"]):not([data-ourspace-current-page="communication"]) #osOnyxNativeRoot{display:none!important}

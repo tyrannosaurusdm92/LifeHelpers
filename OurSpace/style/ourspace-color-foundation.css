@@ -1,0 +1,24 @@
+/* Neutral first-party colors. Accent hues are confined to borders, indicators and highlights. */
+html[data-profile]{--os-surface:#fff;--os-ink:#000;--os-line:#9baebc;color-scheme:light}
+html[data-ourspace-theme="dark"][data-profile]{--os-surface:#000;--os-ink:#fff;--os-line:#6e8491;color-scheme:dark}
+html[data-profile] body{background-color:var(--os-surface)!important;background-image:none!important;color:var(--os-ink)!important}
+html[data-profile] :is(#profileApp,#ourspacePageArea,.profile-frame,.profile-content,.profile-column,.profile-box,.box-body,.profile-notice,.profile-sidebar,.profile-main,.profile-footer,.profile-mast,.profile-nav,.profile-searchbar,.info-table th,.info-table td){background-color:var(--os-surface);background-image:none;color:var(--os-ink)}
+html[data-profile] :is(#profileApp,#ourspacePageArea) :is(h1,h2,h3,h4,h5,p,label,small,strong,em,li,span){color:var(--os-ink)}
+html[data-profile] :is(#profileApp,#ourspacePageArea) :is(input,textarea,select,button,.module,.module-body,.module-hd,.osm-panel,.ospv-panel,.osm-card,.ospv-card,.osm-list,.ospv-list,.osm-item,.ospv-item,.ms-item,.ms-card,.profile-avatar,.profile-contact button,.profile-edit-dialog,.box-head){background-color:var(--os-surface);background-image:none;color:var(--os-ink)}
+html[data-profile] :is(#profileApp,#ourspacePageArea) :is(input,textarea,select,button){border-color:var(--os-line)}
+html[data-profile] #sidebar-messenger-root.mp-vertical-root{--mp-bg:var(--os-surface);--mp-text:var(--os-ink)}
+html[data-profile] #sidebar-messenger-root.mp-vertical-root :is(.mp-sidebar,.mp-rail,.mp-rail-item,.mp-panel,.mp-menu-panel,.mp-card,.mp-menu-content){background-color:var(--os-surface)!important;color:var(--os-ink)!important}
+html[data-profile] #masterNav .master-content{background:var(--os-surface);color:var(--os-ink)}
+/* Explicit theme defaults; individual Design Widget values are inserted in a later generated stylesheet and remain editable. */
+html[data-ourspace-theme="dark"] :is(#ourspacePageArea,#profileApp) :is(a,button){color:var(--os-ink)}
+html[data-profile] #ourspacePageArea .os-page-content{background:var(--os-surface);color:var(--os-ink)}
+/* Source color skins originally tinted large cards blue. Override only the defaults;
+   the generated per-page designer sheet is appended after this CSS. */
+html[data-profile] #ourspacePageArea :is(.site-page,.page,.page-title,.module-grid,.module,.module-hd,.module-body,.field,.field-grid,.os-feature-panel,.osm-panel,.ospv-panel,.osm-card,.ospv-card,.osm-drop,.ospv-drop,.osm-section-title,.ospv-section-title,.osm-mini-player,.osm-top,.ospv-top,.osm-grid,.ospv-grid,.module-title-wrap,.news-jump,.news-jump-inner){background:var(--os-surface)!important;background-image:none!important;color:var(--os-ink)!important;box-shadow:none}
+html[data-profile] #ourspacePageArea :is(.site-page,.page,.page-title,.module-grid,.module,.module-hd,.module-body,.field,.field-grid,.os-feature-panel,.osm-panel,.ospv-panel,.osm-card,.ospv-card) :is(h1,h2,h3,h4,p,span,label,small,strong){color:var(--os-ink)!important}
+html[data-profile] #ourspacePageArea :is(button,input,select,textarea){background-color:var(--os-surface)!important;color:var(--os-ink)!important}
+html[data-profile] #ourspacePageArea :is(.os-fill-admin-tools,.os-fill-move,.os-fill-resize-grip){color:var(--os-ink)!important}
+html[data-ourspace-theme="dark"] #ourspacePageArea :is(.site-page,.module,.module-body,.osm-panel,.ospv-panel,.osm-card,.ospv-card,.os-feature-panel){border-color:var(--os-line)!important}
+html[data-profile] #ourspacePageArea [data-ourspace-page] :is(div,span,section,aside,header,footer,main,article,figure,figcaption,li,ul,ol,nav,fieldset,legend,form){background-color:var(--os-surface)!important;background-image:none!important;color:var(--os-ink)!important}
+html[data-profile] #ourspacePageArea [data-ourspace-page] :is(h1,h2,h3,h4,h5,h6,p,small,strong,em,label){background-color:transparent!important;background-image:none!important;color:var(--os-ink)!important}
+html[data-profile] #ourspacePageArea [data-ourspace-page] :is(a){color:var(--os-ink)!important}

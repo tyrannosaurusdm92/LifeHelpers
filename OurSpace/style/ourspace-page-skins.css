@@ -1,0 +1,14 @@
+/* Geometry stays owned by each module and the saved #admin layouts.
+   MySpace imported presets are paint-only; no preset owns grid/flex/position. */
+:root{--ourspace-rail-gutter:calc(var(--os-sidebar-width,170px) + var(--os-sidebar-right,0px) + 12px)}
+html[data-profile],html[data-profile] body{scrollbar-width:none!important;overflow-x:hidden}
+html[data-profile]::-webkit-scrollbar,html[data-profile] body::-webkit-scrollbar{display:none!important;width:0!important}
+/* Profile and long pages scroll through the one sidebar messenger thumb, while
+   internal editors, chats, lists and worksheets retain their native scrolling. */
+html[data-profile] .profile-frame{scrollbar-width:none}
+html[data-profile] .profile-frame::-webkit-scrollbar{display:none}
+#ourspacePageArea .os-page{min-width:0!important;max-width:100%!important;box-sizing:border-box}
+#ourspacePageArea .os-page:where(:not([hidden])){isolation:isolate}
+#ourspacePageArea [data-os-presets-geometry-locked]{transform:none!important}
+#onyxLeisureGameFrame{overflow:hidden;min-height:calc(100dvh - 72px)}
+#onyxLeisureGameFrame>iframe{width:100%;height:100%;min-height:calc(100dvh - 88px)}

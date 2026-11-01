@@ -1,0 +1,457 @@
+{
+  "sources": {
+    "birds": "Pixel_Bird_Atlases_7_Species.zip; free-form recovery from original transparent generated source sheets",
+    "nature": "VanaVie-main.zip",
+    "catAttachedContacts": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip; 21 supplied transparent composites",
+    "repairedCatAtlasLayout": "Original user PNGs arranged with nonuniform row/column gaps; extracted 32 RGBA poses per cat without recoloring or scaling source pixels."
+  },
+  "files": {
+    "nature-01-1.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_1/1.png",
+      "category": "nature",
+      "biome": 1,
+      "layer": 1
+    },
+    "nature-01-10.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_1/10.png",
+      "category": "nature",
+      "biome": 1,
+      "layer": 10
+    },
+    "nature-01-2.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_1/2.png",
+      "category": "nature",
+      "biome": 1,
+      "layer": 2
+    },
+    "nature-01-3.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_1/3.png",
+      "category": "nature",
+      "biome": 1,
+      "layer": 3
+    },
+    "nature-01-5.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_1/5.png",
+      "category": "nature",
+      "biome": 1,
+      "layer": 5
+    },
+    "nature-01-6.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_1/6.png",
+      "category": "nature",
+      "biome": 1,
+      "layer": 6
+    },
+    "nature-01-7.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_1/7.png",
+      "category": "nature",
+      "biome": 1,
+      "layer": 7
+    },
+    "nature-01-8.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_1/8.png",
+      "category": "nature",
+      "biome": 1,
+      "layer": 8
+    },
+    "nature-02-1.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_2/1.png",
+      "category": "nature",
+      "biome": 2,
+      "layer": 1
+    },
+    "nature-02-2.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_2/2.png",
+      "category": "nature",
+      "biome": 2,
+      "layer": 2
+    },
+    "nature-02-3.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_2/3.png",
+      "category": "nature",
+      "biome": 2,
+      "layer": 3
+    },
+    "nature-02-4.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_2/4.png",
+      "category": "nature",
+      "biome": 2,
+      "layer": 4
+    },
+    "nature-03-1.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_3/1.png",
+      "category": "nature",
+      "biome": 3,
+      "layer": 1
+    },
+    "nature-03-2.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_3/2.png",
+      "category": "nature",
+      "biome": 3,
+      "layer": 2
+    },
+    "nature-03-3.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_3/3.png",
+      "category": "nature",
+      "biome": 3,
+      "layer": 3
+    },
+    "nature-03-4.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_3/4.png",
+      "category": "nature",
+      "biome": 3,
+      "layer": 4
+    },
+    "nature-04-1.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_4/1.png",
+      "category": "nature",
+      "biome": 4,
+      "layer": 1
+    },
+    "nature-04-2.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_4/2.png",
+      "category": "nature",
+      "biome": 4,
+      "layer": 2
+    },
+    "nature-04-3.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_4/3.png",
+      "category": "nature",
+      "biome": 4,
+      "layer": 3
+    },
+    "nature-04-4.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_4/4.png",
+      "category": "nature",
+      "biome": 4,
+      "layer": 4
+    },
+    "nature-05-1.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_5/1.png",
+      "category": "nature",
+      "biome": 5,
+      "layer": 1
+    },
+    "nature-05-2.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_5/2.png",
+      "category": "nature",
+      "biome": 5,
+      "layer": 2
+    },
+    "nature-05-3.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_5/3.png",
+      "category": "nature",
+      "biome": 5,
+      "layer": 3
+    },
+    "nature-05-4.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_5/4.png",
+      "category": "nature",
+      "biome": 5,
+      "layer": 4
+    },
+    "nature-05-5.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_5/5.png",
+      "category": "nature",
+      "biome": 5,
+      "layer": 5
+    },
+    "nature-06-1.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_6/1.png",
+      "category": "nature",
+      "biome": 6,
+      "layer": 1
+    },
+    "nature-06-2.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_6/2.png",
+      "category": "nature",
+      "biome": 6,
+      "layer": 2
+    },
+    "nature-06-3.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_6/3.png",
+      "category": "nature",
+      "biome": 6,
+      "layer": 3
+    },
+    "nature-07-1.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_7/1.png",
+      "category": "nature",
+      "biome": 7,
+      "layer": 1
+    },
+    "nature-07-2.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_7/2.png",
+      "category": "nature",
+      "biome": 7,
+      "layer": 2
+    },
+    "nature-08-1.png": {
+      "from": "VanaVie-main/assets/backgrounds/craftpix-net-823949-free-nature-backgrounds-pixel-art/nature_8/1.png",
+      "category": "nature",
+      "biome": 8,
+      "layer": 1
+    },
+    "tree-slender.png": {
+      "derivedFrom": "nature-01-6.png",
+      "category": "tree-cutout"
+    },
+    "tree-canopy.png": {
+      "derivedFrom": "nature-01-7.png",
+      "category": "tree-cutout"
+    },
+    "bird-bluejay.png": {
+      "from": "Pixel_Bird_Atlases/Bluejays_Atlas_3000x3000.png",
+      "category": "alpha-isolated 33 usable bird-flight frames (remaining final three slots cleared)",
+      "species": "bluejay",
+      "grid": "6x6, 256px cells"
+    },
+    "bird-cardinal.png": {
+      "from": "Pixel_Bird_Atlases/Cardinals_Atlas_3000x3000.png",
+      "category": "alpha-isolated 33 usable bird-flight frames (remaining final three slots cleared)",
+      "species": "cardinal",
+      "grid": "6x6, 256px cells"
+    },
+    "bird-sparrow.png": {
+      "from": "Pixel_Bird_Atlases/Sparrows_Atlas_3000x3000.png",
+      "category": "alpha-isolated 33 usable bird-flight frames (remaining final three slots cleared)",
+      "species": "sparrow",
+      "grid": "6x6, 256px cells"
+    },
+    "bird-finch.png": {
+      "from": "Pixel_Bird_Atlases/Finches_Atlas_3000x3000.png",
+      "category": "alpha-isolated 33 usable bird-flight frames (remaining final three slots cleared)",
+      "species": "finch",
+      "grid": "6x6, 256px cells"
+    },
+    "bird-dove.png": {
+      "from": "Pixel_Bird_Atlases/Doves_Atlas_3000x3000.png",
+      "category": "alpha-isolated 33 usable bird-flight frames (remaining final three slots cleared)",
+      "species": "dove",
+      "grid": "6x6, 256px cells"
+    },
+    "bird-robin.png": {
+      "from": "Pixel_Bird_Atlases/Robins_Atlas_3000x3000.png",
+      "category": "alpha-isolated 33 usable bird-flight frames (remaining final three slots cleared)",
+      "species": "robin",
+      "grid": "6x6, 256px cells"
+    },
+    "bird-hummingbird.png": {
+      "from": "Pixel_Bird_Atlases/Hummingbirds_Atlas_3000x3000.png",
+      "category": "alpha-isolated 33 usable bird-flight frames (remaining final three slots cleared)",
+      "species": "hummingbird",
+      "grid": "6x6, 256px cells"
+    },
+    "bird-greenwood.mp3": {
+      "from": "Google Drive/dany_photo-forestbirds-319791.mp3",
+      "category": "looping environment bird audio",
+      "environment": "Greenwood",
+      "sourceFile": "dany_photo-forestbirds-319791.mp3"
+    },
+    "bird-sunmeadow.mp3": {
+      "from": "Google Drive/bird_ambience_spring_01.mp3",
+      "category": "looping environment bird audio",
+      "environment": "Sunmeadow",
+      "sourceFile": "bird_ambience_spring_01.mp3"
+    },
+    "bird-snowcrown.mp3": {
+      "from": "Google Drive/bird_chirp_short_01.mp3",
+      "category": "looping environment bird audio",
+      "environment": "Snowcrown Highlands",
+      "sourceFile": "bird_chirp_short_01.mp3"
+    },
+    "bird-mosswood.mp3": {
+      "from": "Google Drive/freesound_community-birds-chirping-ambiance-26052.mp3",
+      "category": "looping environment bird audio",
+      "environment": "Mosswood",
+      "sourceFile": "freesound_community-birds-chirping-ambiance-26052.mp3"
+    },
+    "bird-bluegrass.mp3": {
+      "from": "Google Drive/freesound_community-birds-chirping-75156.mp3",
+      "category": "looping environment bird audio",
+      "environment": "Bluegrass Fields",
+      "sourceFile": "freesound_community-birds-chirping-75156.mp3"
+    },
+    "bird-starlit.mp3": {
+      "from": "Google Drive/bird_chirp_ambience_01.mp3",
+      "category": "looping environment bird audio",
+      "environment": "Starlit Pass",
+      "sourceFile": "bird_chirp_ambience_01.mp3"
+    },
+    "bird-standingstones.mp3": {
+      "from": "Google Drive/bird_chirp_ambience_02.mp3",
+      "category": "looping environment bird audio",
+      "environment": "Standing Stones",
+      "sourceFile": "bird_chirp_ambience_02.mp3"
+    },
+    "bird-seabright.mp3": {
+      "from": "Google Drive/dany_photo-birds-339196.mp3",
+      "category": "looping environment bird audio",
+      "environment": "Seabright Coast",
+      "sourceFile": "dany_photo-birds-339196.mp3"
+    },
+    "bird-icon.png": {
+      "from": "isolated bluejay frame 1",
+      "category": "icon"
+    },
+    "cat-contact-onyx-bluejay.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Onyx_Bluejay_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "onyx",
+      "bird": "bluejay",
+      "contact": "paw"
+    },
+    "cat-contact-onyx-cardinal.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Onyx_Cardinal_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "onyx",
+      "bird": "cardinal",
+      "contact": "mouth"
+    },
+    "cat-contact-onyx-dove.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Onyx_Dove_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "onyx",
+      "bird": "dove",
+      "contact": "paw"
+    },
+    "cat-contact-onyx-finch.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Onyx_Finch_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "onyx",
+      "bird": "finch",
+      "contact": "mouth"
+    },
+    "cat-contact-onyx-hummingbird.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Onyx_Hummingbird_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "onyx",
+      "bird": "hummingbird",
+      "contact": "paw"
+    },
+    "cat-contact-onyx-robin.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Onyx_Robin_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "onyx",
+      "bird": "robin",
+      "contact": "mouth"
+    },
+    "cat-contact-onyx-sparrow.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Onyx_Sparrow_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "onyx",
+      "bird": "sparrow",
+      "contact": "paw"
+    },
+    "cat-contact-callie-bluejay.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Callie_Bluejay_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "callie",
+      "bird": "bluejay",
+      "contact": "paw"
+    },
+    "cat-contact-callie-cardinal.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Callie_Cardinal_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "callie",
+      "bird": "cardinal",
+      "contact": "mouth"
+    },
+    "cat-contact-callie-dove.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Callie_Dove_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "callie",
+      "bird": "dove",
+      "contact": "paw"
+    },
+    "cat-contact-callie-finch.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Callie_Finch_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "callie",
+      "bird": "finch",
+      "contact": "mouth"
+    },
+    "cat-contact-callie-hummingbird.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Callie_Hummingbird_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "callie",
+      "bird": "hummingbird",
+      "contact": "paw"
+    },
+    "cat-contact-callie-robin.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Callie_Robin_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "callie",
+      "bird": "robin",
+      "contact": "mouth"
+    },
+    "cat-contact-callie-sparrow.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Callie_Sparrow_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "callie",
+      "bird": "sparrow",
+      "contact": "paw"
+    },
+    "cat-contact-harvey-bluejay.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Harvey_Bluejay_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "harvey",
+      "bird": "bluejay",
+      "contact": "paw"
+    },
+    "cat-contact-harvey-cardinal.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Harvey_Cardinal_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "harvey",
+      "bird": "cardinal",
+      "contact": "mouth"
+    },
+    "cat-contact-harvey-dove.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Harvey_Dove_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "harvey",
+      "bird": "dove",
+      "contact": "paw"
+    },
+    "cat-contact-harvey-finch.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Harvey_Finch_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "harvey",
+      "bird": "finch",
+      "contact": "mouth"
+    },
+    "cat-contact-harvey-hummingbird.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Harvey_Hummingbird_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "harvey",
+      "bird": "hummingbird",
+      "contact": "paw"
+    },
+    "cat-contact-harvey-robin.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Harvey_Robin_mouth_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "harvey",
+      "bird": "robin",
+      "contact": "mouth"
+    },
+    "cat-contact-harvey-sparrow.png": {
+      "from": "Cat_Bird_Explosions_21_Transparent_PNGs(2).zip/Harvey_Sparrow_paw_catch_explosion.png",
+      "category": "cat-attached-collision-only",
+      "cat": "harvey",
+      "bird": "sparrow",
+      "contact": "paw"
+    },
+    "onyx-original-transparent.png": {
+      "category": "unmodified-source-atlas",
+      "note": "exact user-supplied 724×2172 RGBA; game atlas is lossless rearrangement of visible pixels"
+    },
+    "callie-original-transparent.png": {
+      "category": "unmodified-source-atlas",
+      "note": "exact user-supplied 724×2172 RGBA; game atlas is lossless rearrangement of visible pixels"
+    },
+    "harvey-original-transparent.png": {
+      "category": "unmodified-source-atlas",
+      "note": "exact user-supplied 724×2172 RGBA; game atlas is lossless rearrangement of visible pixels"
+    }
+  }
+}

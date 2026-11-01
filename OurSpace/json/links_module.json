@@ -1,0 +1,35 @@
+{
+  "schema": "ourspace.links-module-placement.v1",
+  "version": 1,
+  "generatedAt": "2026-10-31T16:49:19.058Z",
+  "moduleId": "links_module",
+  "profiles": {
+    "william": {
+      "column": "main",
+      "index": 2,
+      "afterId": "profile-about",
+      "beforeId": "profile-posts",
+      "widthPx": 617,
+      "heightPx": 399,
+      "horizontalOffsetPx": 0,
+      "verticalGapPx": 0,
+      "sizingMode": "proportional-content",
+      "scaleFactor": 0.71268,
+      "referenceWidthPx": 860,
+      "referenceHeightPx": 525,
+      "unscaledContentHeightPx": 434,
+      "measured": {
+        "leftPx": 0,
+        "topPx": 160,
+        "pageLeftPx": 817,
+        "pageTopPx": 369
+      },
+      "viewport": {
+        "widthPx": 1920,
+        "heightPx": 911
+      }
+    },
+    "jasper": null
+  },
+  "notes": "The entire links_module scales proportionally within one normal-flow profile section. Save on william.html in #admin. Reimport this JSON with the package to establish permanent defaults."
+}

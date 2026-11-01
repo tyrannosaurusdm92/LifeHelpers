@@ -1,0 +1,42 @@
+/* Store page is native in william.html / jasper.html; no iframe/Shadow DOM/overlay. */
+html:not([data-ourspace-current-page="store"]) #ourspacePageArea [data-ourspace-page="store"]{display:none!important}
+#ourspacePageArea .os-store-page{width:100%;min-width:0;max-width:100%;box-sizing:border-box;padding:0;margin:0}
+#osStorePage{background:#fff;color:#163552;border:1px solid #bcd4ed;border-radius:12px;box-shadow:0 3px 16px #23558820;min-width:0;padding-bottom:18px}
+#osStorePage,#osStorePage *{box-sizing:border-box}
+#osStorePage .os-store-page-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f2f8ff;padding:15px 18px;border-bottom:1px solid #bdd5ed;border-radius:12px 12px 0 0}
+#osStorePage .os-store-page-heading h1{font:750 clamp(20px,2.4vw,29px)/1.2 system-ui,sans-serif;color:#1b5182;margin:0}
+#osStorePage .os-store-page-heading p{font:13px system-ui,sans-serif;color:#54728e;margin:4px 0 0}
+#osStorePage .os-store-flow{width:100%;min-width:0;padding:14px 14px 25px;display:block}
+#osStorePage .os-store-frame{--os-store-width:100%;--os-store-height:1150px;--os-store-left:0px;--os-store-top:24px;display:flex;flex-direction:column;position:relative;box-sizing:border-box;min-width:130px;max-width:100%;width:min(var(--os-store-width),calc(100% - var(--os-store-left)));height:var(--os-store-height);margin-left:var(--os-store-left);margin-top:var(--os-store-top);border:1px solid #97bbdc;border-radius:11px;background:#243950;box-shadow:0 2px 9px #28629024}
+#osStorePage .os-store-frame-body{width:100%;flex:1 1 auto;min-width:0;min-height:0;overflow:auto;scrollbar-gutter:stable;border-radius:10px}
+#osStorePage #osStoreModule{min-height:100%;width:100%;margin:0;}
+#osStorePage .os-store-layout-status{color:#225680;font:12px system-ui,sans-serif;margin:10px 14px;}
+#osStorePage .os-store-frame.os-store-admin{border:2px dashed #0074aa}
+#osStorePage .os-store-admin-bar{position:relative;z-index:20;display:flex;align-items:center;flex-wrap:wrap;gap:8px;background:#e6f5fc;border-bottom:1px dashed #4ca0c6;padding:6px 9px;border-radius:8px 8px 0 0;color:#124965;font:12px system-ui,sans-serif}
+#osStorePage .os-store-admin-bar button{touch-action:none;user-select:none;cursor:grab;border:1px solid #3a9ec2;border-radius:7px;background:#fff;color:#0c4c69;font:700 12px system-ui,sans-serif;padding:8px 12px}
+#osStorePage .os-store-admin-bar output{font:12px system-ui,sans-serif;color:#17546e}
+#osStorePage .os-store-grip{position:absolute;z-index:25;touch-action:none;user-select:none;width:16px;height:16px;background:#bbeefa;border:2px solid #0b648b;border-radius:4px;box-shadow:0 0 0 2px #fff;cursor:move}
+#osStorePage .os-store-grip[data-store-edge=n]{left:50%;top:-8px;cursor:ns-resize}
+#osStorePage .os-store-grip[data-store-edge=s]{left:50%;bottom:-8px;cursor:ns-resize}
+#osStorePage .os-store-grip[data-store-edge=e]{right:-8px;top:50%;cursor:ew-resize}
+#osStorePage .os-store-grip[data-store-edge=w]{left:-8px;top:50%;cursor:ew-resize}
+#osStorePage .os-store-grip[data-store-edge=nw]{left:-8px;top:-8px;cursor:nwse-resize}
+#osStorePage .os-store-grip[data-store-edge=ne]{right:-8px;top:-8px;cursor:nesw-resize}
+#osStorePage .os-store-grip[data-store-edge=sw]{left:-8px;bottom:-8px;cursor:nesw-resize}
+#osStorePage .os-store-grip[data-store-edge=se]{right:-8px;bottom:-8px;cursor:nwse-resize}
+#osStoreExportStores{position:fixed;bottom:12px;left:12px;z-index:12500;border:2px solid #fff;border-radius:9px;padding:10px 14px;color:white;background:#084d88;box-shadow:0 4px 18px #16334f88;font:750 13px system-ui,sans-serif;max-width:calc(100vw - 30px);cursor:pointer}
+@media(max-width:620px){#osStorePage .os-store-flow{padding:8px}#osStorePage .os-store-page-heading{padding:10px}#osStorePage .os-store-admin-bar{font-size:11px}}
+@media print{#osStorePage .os-store-admin-bar,#osStorePage .os-store-grip,#osStoreExportStores{display:none!important}#osStorePage .os-store-frame{height:auto!important;width:100%!important;margin:0!important}#osStorePage .os-store-frame-body{overflow:visible!important}}
+
+/* When the admin narrows the store module, its contents reflow at the module width,
+   not at the browser window width. */
+#osStoreModule.os-store-compact .layout{grid-template-columns:minmax(0,1fr);gap:12px;padding:12px}
+#osStoreModule.os-store-compact .sidebar{position:relative;top:auto;max-height:none}
+#osStoreModule.os-store-compact .toolbar{grid-template-columns:minmax(0,1fr)}
+#osStoreModule.os-store-compact .product-grid{grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr))}
+#osStoreModule.os-store-compact .topbar-inner{flex-wrap:wrap;padding:12px}
+#osStoreModule.os-store-compact .account-zone{justify-content:flex-start}
+#osStoreModule.os-store-compact .hero{padding:12px}
+
+/* Read-only imported store geometry; editor moved to Communication. */
+html[data-profile="william"] #osStoreFrame{--os-store-width:1674px;--os-store-height:1150px;--os-store-left:0px;--os-store-top:24px}

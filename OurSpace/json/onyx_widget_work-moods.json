@@ -1,0 +1,48 @@
+{
+  "schema": "onyx.work.moods.v1",
+  "surface": "work",
+  "activeStates": [
+    {
+      "id": "listening",
+      "asset": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/onyx_widget_onyx_listening.png",
+      "source": "input/output"
+    },
+    {
+      "id": "thinking",
+      "asset": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/onyx_widget_onyx_thinking.png",
+      "source": "input/output"
+    },
+    {
+      "id": "thoughtful",
+      "asset": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/onyx_widget_onyx_thoughtful.png",
+      "source": "input/output"
+    },
+    {
+      "id": "judgmental",
+      "asset": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/onyx_widget_onyx_judgmental.png",
+      "source": "input/output"
+    },
+    {
+      "id": "purring",
+      "asset": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/onyx_widget_onyx_purring.png",
+      "source": "input/output"
+    }
+  ],
+  "idleStates": [
+    {
+      "id": "snuggly",
+      "afterMs": 180000,
+      "asset": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/onyx_widget_onyx_snuggly.png"
+    },
+    {
+      "id": "sleepy",
+      "afterMs": 300000,
+      "asset": "https://raw.githubusercontent.com/tyrannosaurusdm92/LifeHelpers/main/OurSpace/assets/onyx_widget_onyx_sleepy.png"
+    }
+  ],
+  "notes": [
+    "This manifest is intentionally Work-only.",
+    "Active mood selection is semantic and based on user input, backend mood when Work-safe, and Onyx output.",
+    "Idle timing is measured from the most recent successful user or Onyx chat activity."
+  ]
+}

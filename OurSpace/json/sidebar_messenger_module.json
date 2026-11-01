@@ -1,0 +1,49 @@
+{
+  "id": "sidebar_messenger",
+  "entry": "assets/code/william.html + assets/code/jasper.html (embedded DOM root; no separate module HTML)",
+  "source": "OurSpace individual modules",
+  "visual_style": "classic MySpace blue/white",
+  "integration": "Original MessengerPlugin core, scoped CSS and existing OurSpace Design Widget; original independent design bubble removed",
+  "layout": "Fixed vertical messenger rail on the right; each item opens a separate drag-and-eight-handle resizable panel on the left",
+  "menuItems": [
+    "Quick Chat",
+    "Chats",
+    "Rooms",
+    "unread",
+    "messages",
+    "today"
+  ],
+  "scrollbar": "Single internal right rail scrollbar replacing visible page scrollbar; switches between page and menu scroll targets",
+  "name": "Sidebar Messenger",
+  "responsivePanels": "Panel contents reflow with each actual panel width using container queries and short-height resize observation",
+  "compatibility": "Existing window.MessengerPlugin, window.ourspaceMessenger, ourspace.messenger.v3 data keys and message protocol retained",
+  "version": "Pass 11",
+  "page": "Both profile pages and all existing blank routes",
+  "designer": {
+    "floatingBubble": false,
+    "independent": false,
+    "integratedWith": "OurSpace profile design widget",
+    "targets": 47,
+    "scope": "#sidebar-messenger-root.mp-vertical-root",
+    "geometryControls": [
+      "widthPx",
+      "heightPx",
+      "contentScale",
+      "spacingPx"
+    ],
+    "layoutExport": "sidebar-messenger.json"
+  },
+  "admin": {
+    "profile": "william",
+    "requires": "#admin preview",
+    "handles": 8,
+    "move": true,
+    "export": "sidebar-messenger.json"
+  },
+  "assets": {
+    "script": "script/sidebar_messenger_messenger.js",
+    "style": "style/sidebar_messenger_style.css",
+    "designParts": "script/sidebar_messenger_design_specs.js",
+    "geometry": "script/sidebar_messenger_layout.js"
+  }
+}
