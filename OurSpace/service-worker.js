@@ -1,56 +1,36 @@
-/* OurSpace installed-app alerts. One root service worker, no duplicate registrations.
- * Backend API and deployment are unchanged. Foreground updates use notification.list.
- * Background pushes require the existing backend web-push gateway to be configured. */
-'use strict';
-const ROOT = new URL('./',self.location.href);
-const ICON = new URL('assets/images/ourspace-icon-192.png', ROOT).href;
-const DB = 'ourspace-device-alert-settings-v1', STORE='settings';
-self.addEventListener('install', event=>event.waitUntil(self.skipWaiting()));
-self.addEventListener('activate', event=>event.waitUntil(self.clients.claim()));
-function dbOpen(){return new Promise((ok,bad)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE,{keyPath:'profileKey'})};r.onsuccess=()=>ok(r.result);r.onerror=()=>bad(r.error)});}
-async function settings(profileKey,value){if(!['william','jasper','__active__'].includes(profileKey) || (value && profileKey==='__active__'))return null;const db=await dbOpen();try{
- if(value){const row={profileKey,systemNotifications:value.systemNotifications===true,appBadge:value.appBadge!==false,sound:value.sound===true,kinds:value.kinds||{},categories:value.categories||{},updatedAt:new Date().toISOString()};await new Promise((ok,bad)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(row);tx.objectStore(STORE).put({profileKey:'__active__',activeProfileKey:profileKey});tx.oncomplete=ok;tx.onerror=()=>bad(tx.error)});return row;}
- return await new Promise((ok,bad)=>{const tx=db.transaction(STORE,'readonly');const r=tx.objectStore(STORE).get(profileKey);r.onsuccess=()=>ok(r.result||null);r.onerror=()=>bad(r.error)});
-}finally{db.close();}}
-function jsonPayload(event){if(!event.data)return {};try{return event.data.json()||{}}catch(_){try{return {body:event.data.text()}}catch(_){return {}}}}
-function category(kind){kind=String(kind||'').toLowerCase();if(/come[._-]?back/.test(kind))return 'return';if(/therapy/.test(kind))return 'therapy';if(/^onyx/.test(kind))return /selfcare|self.care|care/.test(kind)?'selfcare':'return';if(/call/.test(kind))return 'calls';if(/voice/.test(kind))return 'voice';if(/message|messenger|text/.test(kind))return 'texts';if(/calendar|appointment|organizer|event/.test(kind))return 'calendar';if(/task/.test(kind))return 'tasks';if(/receipt|purchase|store/.test(kind))return 'purchase';if(/visit/.test(kind))return 'visitor';if(/selfcare|self.care/.test(kind))return 'selfcare';return 'other';}
-function targetFor(profileKey,kind){const page=({calls:'communication',texts:'communication',voice:'communication',calendar:'household',tasks:'household',purchase:'store',visitor:'retrobuilder',therapy:'skills',selfcare:'skills',return:'retrobuilder'})[category(kind)]||'retrobuilder';return new URL(`assets/code/${profileKey}.html#${page}`,ROOT).href;}
-self.addEventListener('message',event=>{const data=event.data;if(data?.type==='OURSPACE_DEVICE_ALERT_SETTINGS')event.waitUntil(settings(String(data.profileKey||'').toLowerCase(),data.settings||{}).catch(()=>{})); if(data?.type==='OURSPACE_DEVICE_ALERT_SIGNOUT')event.waitUntil((async()=>{const db=await dbOpen();await new Promise((ok,bad)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).delete('__active__');tx.oncomplete=ok;tx.onerror=bad});db.close();try{await self.navigator?.clearAppBadge?.()}catch(_){}})());});
-self.addEventListener('push',event=>event.waitUntil((async()=>{
- const raw=jsonPayload(event),n=raw.notification&&typeof raw.notification==='object'?raw.notification:raw;
- const profileKey=String(n.profileKey||raw.profileKey||n.data?.profileKey||raw.data?.profileKey||'').toLowerCase();
- // Never assume the current account or expose an unknown recipient's information.
- if(!['william','jasper'].includes(profileKey))return;
- const [prefs,active]=await Promise.all([settings(profileKey).catch(()=>null), settings('__active__').catch(()=>null)]);
- if(!prefs || !prefs.systemNotifications || active?.activeProfileKey!==profileKey)return;
- const kind=String(n.kind||raw.kind||'system'),cat=category(kind);
- if(prefs.categories?.[cat]===false || (/^onyx/.test(kind)&&prefs.kinds?.onyx===false))return;
- const buyer=String(n.purchaserProfile||n.data?.purchaserProfile||raw.data?.purchaserProfile||'').toLowerCase();
- const purchaseTitle=cat==='purchase' && ['william','jasper'].includes(buyer)?`New purchase from ${buyer==='william'?'William':'Jasper'}`:'';
- const title=String(purchaseTitle||n.title||n.subject||({calls:'Incoming call',texts:'Incoming text',calendar:'Calendar event',tasks:'Task reminder',voice:'Incoming voice message',purchase:'New purchase',visitor:'Profile visitor',therapy:'Onyx therapy session',selfcare:'Onyx self-care reminder',return:'Onyx check-in'})[cat]||'OurSpace').slice(0,120);
- const body=String(n.body||n.message||'You have a new OurSpace notification.').slice(0,400);
- const tag=String(n.tag||n.id||n.notificationId||`ourspace-${kind}-${Date.now()}`);
- const url=targetFor(profileKey,kind);
- await self.registration.showNotification(title,{body,tag,renotify:false,icon:ICON,badge:ICON,silent:!prefs.sound,
-  data:{url,kind,profileKey,notificationId:n.id||n.notificationId||''}});
- if(prefs.appBadge!==false){try{if(self.navigator?.setAppBadge)await self.navigator.setAppBadge(Math.max(1,Number(n.badgeCount||raw.badgeCount||1)||1))}catch(_){}}
- const clients=await self.clients.matchAll({type:'window',includeUncontrolled:true});
- for(const client of clients)if(new URL(client.url).origin===self.location.origin)client.postMessage({type:'OURSPACE_PUSH_RECEIVED',payload:{title,body,kind,profileKey}});
-})()));
-self.addEventListener('notificationclick',event=>{
- event.notification.close();
+/* Static app shell only: no API, login response, message or user-content caching. */
+const CACHE='ourspace-myspace-shell-v23-verified-geometry-and-dbt-links';
+const STATIC=['./script/sidebar_messenger_messenger.js','./script/sidebar_messenger_design_specs.js','./script/sidebar_messenger_layout.js','./script/sidebar_messenger_sync.js','./style/sidebar_messenger_style.css','./json/sidebar-messenger.json','./json/sidebar_messenger_module.json','./script/photo-crop.js','./script/profile-jump-nav.js','./style/ourspace-floating-navigation.css','./script/ourspace-accent-palettes.js','./script/ourspace-folder-pin-accents.js','./json/ourspace-accent-palette.json','./style/profile-photo.css','./style/profile-jump-nav.css','./script/profile_about_profile-controller.js','./script/contact_links_profile-controller.js','./script/current_projects_profile-controller.js','./script/profile_news_profile-controller.js','./script/classic_pins_profile-controller.js','./script/profile_interests_profile-controller.js','./script/profile_posts_profile-controller.js','./script/guestbook_profile-controller.js','./script/profile_tags_profile-controller.js','./script/profile_identity_profile-controller.js','./script/carousel_gallery_module_profile-controller.js','./script/donation_module_profile-controller.js','./script/profile_modules_migration.js','./script/profile_modules_features.js','./script/profile_modules_theme.js','./script/profile_modules_layout.js','./script/profile_modules_design_specs.js','./json/profile-module-design-parts.json','./json/profile-modules.json','./style/profile_modules_style.css','./style/bulletin_board_style.css','./style/bulletin_board_layout.css','./style/links_module_style.css','./style/links_module_layout.css','./script/links_module_profile-controller.js','./script/links_module_theme.js','./script/links_module_design_specs.js','./script/links_module_layout.js','./json/links_module.json','./script/bulletin_board_placement.js','./script/bulletin_board_design_specs.js','./script/bulletin_board_postit-colors.js','./script/bulletin_board_postit-init.js','./script/bulletin_board_theme.js','./json/bulletin.json','./json/bulletin_board_module.json','./json/bulletin_board_postit-colors.json','./json/bulletin_board_postit-palette.json','./script/bulletin_board_inline-script-01.js','./script/bulletin_board_inline-script-02.js','./script/bulletin_board_inline-script-03.js','./script/bulletin_board_inline-script-04.js','./script/bulletin_board_inline-script-05.js','./script/bulletin_board_inline-script-06.js','./script/bulletin_board_inline-script-07.js','./style/page-feed.css','./style/page-audio.css','./style/page-visual.css','./style/page-fill-layout.css','./style/ourspace-color-foundation.css','./script/ourspace-theme.js','./script/page-fills-design.js','./script/page-fills-bridge.js','./script/news_feed_inline-script-02.js','./script/audio_page_inline-script-02.js','./script/audio_page_inline-script-03.js','./script/visual_player_inline-script-02.js','./script/visual_player_inline-script-03.js','./json/page-design-targets.json','./json/page-fills.json','./script/journal-diary-william-runtime.js','./style/journal-diary-william-journal.css','./style/journal-diary-william-diary.css','./script/journal-diary-jasper-runtime.js','./style/journal-diary-jasper-journal.css','./style/journal-diary-jasper-diary.css','./style/journal-diary-layout.css','./script/journal-diary-tabs.js','./script/journal-diary-layout.js','./script/ourspace-store-william.js','./script/ourspace-store-jasper.js','./script/ourspace-store-design-specs.js','./script/ourspace-communication-design-specs.js','./script/ourspace-communication-media.js','./style/ourspace-communication-layout.css','./style/ourspace-communication-source.css','./json/communication_page_module.json','./json/communication-design-source-parts.json','./json/stores-imported-placement.json','./style/ourspace-store-william.css','./style/ourspace-store-jasper.css','./style/ourspace-store-layout.css','./json/stores.json','./json/journal-diary-imported-placement.json','./json/journal-diary-layout.json','./assets/images/journal-quill.webp','./style/ourspace-final-modules-layout.css','./style/ourspace-final-household.css','./style/ourspace-final-skills.css','./style/ourspace-final-onyx.css','./script/ourspace-final-layout.js','./script/ourspace-final-design-specs.js','./script/final-household_inline-script-01.js','./script/final-household_inline-script-02.js','./script/final-skills-native.js','./script/final-dbt-skills.js','./script/final-dbt-resizing-responsive.js','./script/ourspace-module-bridge.js','./assets/code/onyx_widget.html','./assets/code/skills.html','./ourspace.html','./ourspace.webmanifest','./style/site.css','./style/profile.css','./style/design-widget.css','./script/ourspace-auth.js','./script/portal.js','./script/profile-app.js','./script/design-widget.js','./json/record-player-parts.json','./json/record-player.json','./script/record_player_layout.js','./script/record_player_design_specs.js','./script/record_player_theme.js','./script/record_player_inline-script-03.js','./script/record_player_inline-script-02.js','./script/record_player_inline-script-01.js','./style/record_player_layout.css','./style/record_player_style.css','./script/design-sync.js','./json/deleted.json','./assets/code/william.html','./assets/code/jasper.html','./style/ourspace-page-skins.css','./script/ourspace-account-badge.js','./script/onyx_widget_onyx-repository-bridge.js','./script/final-dbt-onyx-assignments.js','./script/onyx_widget_onyx-assignments.js','./json/ourspace-page-preset-contract.json','./assets/images/ourspace-logo.png','./assets/images/design-bubble.png','./assets/images/icon-192.png','./assets/images/icon-180.png','./assets/images/icon-256.png','./assets/images/icon-512.png','./assets/images/icon-192-maskable.png','./assets/images/icon-512-maskable.png'];
+self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(STATIC.map(url=>cache.add(url)))).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('ourspace-myspace-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET')return;const u=new URL(req.url);if(u.origin!==self.location.origin)return;if(u.pathname.includes('/api/')||u.pathname.includes('/exec')||u.searchParams.has('public'))return;const allowed=STATIC.some(p=>new URL(p,self.registration.scope).pathname===u.pathname);if(!allowed)return;event.respondWith(caches.match(req).then(cached=>cached||fetch(req).then(response=>{if(response.ok&&response.type==='basic'){const copy=response.clone();caches.open(CACHE).then(c=>c.put(req,copy))}return response})))})
+
+/* Push delivery is driven by the existing account-scoped backend and an optional
+   configured web-push gateway. No private backend source or secrets are embedded. */
+self.addEventListener('push',event=>{
+ let p={};try{p=event.data?.json()||{}}catch(_){p={body:event.data?.text()||'OurSpace notification'}}
+ const validCount=Number.isFinite(+p.badgeCount)?Math.max(0,Math.trunc(+p.badgeCount)):0;
+ const kind=String(p.kind||'notification').slice(0,40);
+ const title=String(p.title||'OurSpace notification').slice(0,120);
+ const body=String(p.body||p.message||'Open OurSpace to view your updates.').slice(0,300);
+ const profile=['william','jasper'].includes(p.profileKey)?p.profileKey:'';
+ const page=['profile','journal','store','communication','household','skills','visual','audio','feed'].includes(p.page)?p.page:'communication';
+ const url=profile?'./assets/code/'+profile+'.html?page='+page:'./ourspace.html';
+ const options={body,tag:String(p.tag||kind).slice(0,80),icon:'./assets/images/icon-192.png',badge:'./assets/images/icon-192.png',data:{url,count:validCount},renotify:false};
  event.waitUntil((async()=>{
-  const data=event.notification.data||{},key=String(data.profileKey||'').toLowerCase();
-  if(!['william','jasper'].includes(key))return;
-  const target=targetFor(key,data.kind||'system');
-  const clients=await self.clients.matchAll({type:'window',includeUncontrolled:true});
-  for(const client of clients){try{
-   const u=new URL(client.url);
-   // Open the correct profile, never steal a different user's current tab.
-   if(u.origin===self.location.origin && u.pathname.endsWith(`/assets/code/${key}.html`)){
-    await client.focus();client.postMessage({type:'OURSPACE_NOTIFICATION_OPEN',url:target,kind:data.kind,profileKey:key,notificationId:data.notificationId||''});return;
-   }
-  }catch(_){}}
-  if(self.clients.openWindow)await self.clients.openWindow(target);
+   if(validCount&&self.navigator?.setAppBadge)try{await self.navigator.setAppBadge(validCount)}catch(_){}
+   await self.registration.showNotification(title,options);
+   const clients=await self.clients.matchAll({type:'window',includeUncontrolled:true});
+   for(const client of clients)client.postMessage({type:'ourspace:notification-changed',badgeCount:validCount});
+ })());
+});
+self.addEventListener('notificationclick',event=>{
+ event.notification.close();const dest=new URL(event.notification?.data?.url||'./ourspace.html',self.registration.scope);
+ // Only open an OurSpace-relative route, never an untrusted push URL.
+ if(!dest.href.startsWith(self.registration.scope))return;
+ event.waitUntil((async()=>{const list=await self.clients.matchAll({type:'window',includeUncontrolled:true});
+ const client=list.find(c=>c.url.startsWith(self.registration.scope));
+ if(client){await client.focus();client.postMessage({type:'ourspace:open-notification',url:dest.href});}
+ else await self.clients.openWindow(dest.href);
  })());
 });
