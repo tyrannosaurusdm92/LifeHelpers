@@ -57,8 +57,11 @@ assert.ok(work.intents.includes("coding"));
 assert.equal(work.permissions.allowWrites, true);
 assert.equal(work.requiresExplicitWriteConfirmation, false);
 
-const virtual = await createCapabilityPlan({ message: "Help me plan this room", surface: "virtual" });
-assert.equal(virtual.destination, "games/virtual");
+const legacySurface = await createCapabilityPlan({ message: "Help me plan this room", surface: "virtual", lane: "virtual" });
+assert.equal(legacySurface.surface, "core");
+assert.equal(legacySurface.destination, "onyx-core");
+assert.equal(Object.hasOwn(ONYX_ACTIONS, "petGet"), false);
+assert.equal(Object.hasOwn(ONYX_ACTIONS, "petSave"), false);
 
 const calls = [];
 const mockTransport = {
@@ -191,7 +194,8 @@ assert.equal(transportRequest.init.headers["Content-Type"], "text/plain;charset=
 
 console.log(JSON.stringify({
   ok: true,
-  tests: 51,
+  tests: "core-only regression assertions",
+  virtualPetActionsAvailable: false,
   registeredDomains: registry.domains.length,
   indexedCorpusFiles: fileIndex.fileCount,
   backendFilesModified: 0

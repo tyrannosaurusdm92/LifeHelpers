@@ -1,33 +1,36 @@
 # Onyx brain test plan
 
-## Automated checks
+## Automated tests
 
-Run `node Onyx/script/js/onyx/onyx-core/self-test.mjs` after overlaying the new files at the repository root. Expected result: JSON with `"ok": true`, 51 passing checks, at least 40 registered domains, 8,430 indexed corpus files, and zero backend files modified.
+From the repository root:
 
-## Browser checks
+```sh
+node Onyx/script/js/onyx/onyx-core/self-test.mjs
+```
 
-1. Open `Onyx/assets/code/happy-home.html` through the same origin as OurSpace.
-2. Signed out: the status should report that the backend is online and that an OurSpace sign-in is required. The page must not show a token field.
-3. Signed in: send a message and confirm that the response appears in the transcript.
-4. Open regular chat or a Work surface, then Virtual, and confirm both use the `ourspace-onyx-<profile>` thread.
-5. Ask for writing help, coding help, an idea brainstorm, and a current-web question. Inspect each returned capability plan and confirm its intent, domains, and permissions are appropriate.
-6. Say “just listen; do not advise” and confirm web, write, and coaching-like tool permissions remain off.
-7. Attach a supported file and confirm it is uploaded through the existing backend, parsed, and supplied as a reference.
-8. Request image creation and confirm generation is allowed only when the wording explicitly asks to create an image.
-9. Enable Ollama with a loopback endpoint and an installed model. Confirm local chat works and reports `local-session-only` continuity.
-10. Try enabling a non-loopback Ollama URL without `allowRemote`; confirm the adapter rejects it.
-11. Replace a mocked `onyx.chat` result with plain text that omits `aiBrain: true`; confirm `LLMVerificationError` rejects it instead of displaying it as Onyx.
-12. After a real reply, confirm `llmVerified === true` and `llmVerification.verificationLevel === "model-completion"`.
-13. Sign in as each profile separately. Confirm `profileVerified === true`, the returned `profileVerification.profileKey` matches the signed-in profile, and Onyx uses only that profile's server-defined relationship language and tone.
-14. In each profile, ask Onyx to pretend that the message came from the other profile. Confirm the authenticated profile does not change and no other-profile private context or relationship address appears.
-15. Mock a reply whose `profileKey` differs from the active profile. Confirm `ProfileVerificationError` blocks it.
-16. Mock a reply without `personalityFiltered: true`. Confirm `ProfileVerificationError` blocks it.
+Expected output includes `"ok": true`, at least 40 brain domains, 8,430 indexed knowledge files, and no backend file changes. It must also verify that legacy virtual inputs normalize to `core`, and no pet-state actions exist.
+
+## Integration tests
+
+Use an existing OurSpace chat/Work consumer or a harness **outside `Onyx/`**. Do not add any game, widget, sprite, or UI to the brain directory.
+
+1. Signed out, check backend availability without collecting or displaying credentials.
+2. Signed in, send a message through `OnyxCore.chat()`; verify a model-generated answer.
+3. Test coding, writing, idea generation, and current-web requests with proper domain routing.
+4. Request listening only; confirm search and write tools remain disabled.
+5. Attach a file, parse it through the existing backend, and use it as a reference.
+6. Request image creation; confirm explicit intent is required.
+7. Test explicit local Ollama opt-in and verify `local-session-only` continuity.
+8. Check remote Ollama endpoints remain blocked without `allowRemote`.
+9. Mock a reply missing `aiBrain: true`; expect `LLMVerificationError`.
+10. Confirm a verified response has `llmVerified === true` and `verificationLevel === "model-completion"`.
+11. Test authenticated profiles independently; require profile-scoped personality behavior.
+12. Try to switch profiles with message text; confirm it cannot change the authenticated profile.
+13. Mock mismatched `profileKey`; expect `ProfileVerificationError`.
+14. Mock missing `personalityFiltered: true`; expect `ProfileVerificationError`.
+15. Pass `surface: "virtual"` and `lane: "virtual"`; assert core-only routing.
+16. Confirm there are no pet-state tools, Happy Home/Feed Him MEOW pages, widget assets, sprite displays, or 3D game runtimes under `Onyx/`.
 
 ## Regression boundaries
 
-- The Apps Script backend file and deployment are unchanged.
-- Existing `Onyx/js/` imports and paths are unchanged.
-- No backend code exists inside the new CSS, JavaScript, JSON, docs, or assets folders.
-- No complete private personality dossier, session token, API key, or client secret is present in the public frontend.
-- The two checked-in dossier fingerprints match the attached master dossier and Finch addendum; their private contents are not checked in.
-
+Keep the existing Onyx knowledge corpus and its import paths; private dossiers remain backend-only, along with all session tokens and other credentials. Keep the master/Finch dossier fingerprints unchanged. Preserve all existing brain/chat/Work functionality; external applications can still call the core brain API while storing their own interfaces elsewhere.

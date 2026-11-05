@@ -37,7 +37,8 @@ function intentList(text) {
 export async function createCapabilityPlan(input = {}) {
   const message = String(input.message || input.text || "").trim();
   if (!message) throw new Error("Onyx needs a message.");
-  const surface = input.surface === "virtual" || input.lane === "virtual" ? "virtual" : "core";
+  // The Onyx repository houses the brain, not any game or visual surface.
+  const surface = "core";
   const intents = intentList(message);
   const urls = extractUrls(message);
   const domains = await routeBrainDomains(message, { limit: input.domainLimit || 8 });
@@ -53,7 +54,7 @@ export async function createCapabilityPlan(input = {}) {
     schema: "onyx.capability-plan.v1",
     message,
     surface,
-    destination: surface === "virtual" ? "games/virtual" : "onyx-core",
+    destination: "onyx-core",
     intents: unique(intents),
     domains: domains.map(domain => ({ id: domain.id, score: domain.score, guides: domain.guides || [] })),
     urls,

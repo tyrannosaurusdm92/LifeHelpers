@@ -10,9 +10,7 @@ export const ONYX_ACTIONS = Object.freeze({
   fileParse: "onyx.ai.file.parse",
   fileArchive: "onyx.ai.file.archive",
   fileUpload: "onyx.ai.file.upload",
-  imageGenerate: "onyx.ai.image.generate",
-  petGet: "onyx.pet.state.get",
-  petSave: "onyx.pet.state.save"
+  imageGenerate: "onyx.ai.image.generate"
 });
 
 export const ONYX_CORE_CONFIG = Object.freeze({
@@ -25,8 +23,7 @@ export const ONYX_CORE_CONFIG = Object.freeze({
   projectId: "ourspace-onyx",
   defaultProvider: "ourspace-ai-brain",
   surfaces: Object.freeze({
-    core: Object.freeze(["chat", "work", "writing", "coding", "ideas", "research"]),
-    virtual: Object.freeze(["happy-home", "virtual-pet", "game"])
+    core: Object.freeze(["chat", "work", "writing", "coding", "ideas", "research"])
   }),
   privacy: Object.freeze({
     sessionTokens: "memory-only-or-existing-host-bridge",

@@ -9,9 +9,7 @@ const TOOL_DEFINITIONS = Object.freeze({
   fileParse: Object.freeze({ action: ONYX_ACTIONS.fileParse, write: false, timeoutMs: 90000 }),
   fileUpload: Object.freeze({ action: ONYX_ACTIONS.fileUpload, write: true, timeoutMs: 90000 }),
   fileArchive: Object.freeze({ action: ONYX_ACTIONS.fileArchive, write: true, timeoutMs: 90000 }),
-  imageGenerate: Object.freeze({ action: ONYX_ACTIONS.imageGenerate, write: true, timeoutMs: 120000 }),
-  petGet: Object.freeze({ action: ONYX_ACTIONS.petGet, write: false, timeoutMs: 30000 }),
-  petSave: Object.freeze({ action: ONYX_ACTIONS.petSave, write: true, timeoutMs: 30000 })
+  imageGenerate: Object.freeze({ action: ONYX_ACTIONS.imageGenerate, write: true, timeoutMs: 120000 })
 });
 
 function readBlobAsDataUrl(blob, signal) {
