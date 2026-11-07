@@ -61,11 +61,11 @@ export async function createCapabilityPlan(input = {}) {
     listenOnly,
     sensitive,
     permissions: Object.freeze({
-      webSearch: !listenOnly && (explicitResearch || freshness || urls.length > 0),
-      useDrive: !listenOnly && (input.useDrive === true || hasAttachments || intents.some(intent => ["files", "project", "coding", "writing"].includes(intent))),
-      allowWrites: !listenOnly && explicitWrite,
-      allowAssetGeneration: !listenOnly && imageIntent,
-      allowExternalTools: !listenOnly && (explicitResearch || urls.length > 0 || hasAttachments || explicitWrite || imageIntent),
+      webSearch: !listenOnly && input.webSearch !== false && (explicitResearch || freshness || urls.length > 0),
+      useDrive: !listenOnly && input.useDrive !== false && (input.useDrive === true || hasAttachments || intents.some(intent => ["files", "project", "coding", "writing"].includes(intent))),
+      allowWrites: !listenOnly && input.allowWrites !== false && explicitWrite,
+      allowAssetGeneration: !listenOnly && input.allowAssetGeneration !== false && imageIntent,
+      allowExternalTools: !listenOnly && input.allowExternalTools !== false && (explicitResearch || urls.length > 0 || hasAttachments || explicitWrite || imageIntent),
       autoRemember: input.autoRemember === true || (input.autoRemember !== false && !sensitive),
       allowGlobalDrive: input.allowGlobalDrive === true
     }),
