@@ -1,0 +1,121 @@
+/* MySpace 247 themes: PAINT ONLY. HUD sizing/position/font geometry comes from the canonical stylesheet. */
+html[data-os-layout-active]:not([data-os-design-widget-standalone]) body{background-color:var(--osls-page)!important;background-image:linear-gradient(var(--osls-overlay),var(--osls-overlay)),var(--osls-source-ornament,none),var(--osls-background-image,var(--osls-source-image,none))!important;background-position:center,center,var(--osls-background-position,center top),var(--osls-background-position,center top)!important;background-size:auto,cover,var(--osls-background-size,auto),var(--osls-background-size,auto)!important;background-repeat:no-repeat,no-repeat,var(--osls-background-repeat,repeat),var(--osls-background-repeat,repeat)!important;background-attachment:fixed,fixed,var(--osls-background-attachment,var(--osls-source-background-attachment,scroll)),var(--osls-background-attachment,var(--osls-source-background-attachment,scroll))!important;color:var(--osls-page-text)!important;scrollbar-color:var(--osls-scroll-thumb) var(--osls-scroll-track);}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell){color:var(--osls-text);scrollbar-color:var(--osls-scroll-thumb) var(--osls-scroll-track);}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(.profile-box,.module,.panel,.card,.ms-card,.osm-panel,.ospv-panel,.oscom-detail-card,.os-final-frame,.site-page,.profile-searchbar,.master-content,.jump-panel,.jump-menu,.jump-content,.mp-menu,.mp-panel,.work-app,.app-shell,.sidebar-table,.content-card,.settings-card,.page-frame,.profile-mast,.profile-nav,.topbar,.sidebar,.channel-sidebar,.server-list,.chat-main,.chat-panel,.ms-card-body,.box-body,.dialog,.modal):not(:is(#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#slowPetGame *,#onyxLeisureFullscreen *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *,[data-game-graphics] *,.bulletin-board-flow,#profile-bulletins,#recordPlayerFlow,#onyxWidget)){background-color:var(--osls-panel)!important;background-image:var(--osls-source-panel-image,none)!important;background-repeat:var(--osls-source-panel-repeat,repeat);background-attachment:var(--osls-source-panel-attachment,scroll);background-position:var(--osls-source-panel-position,0% 0%);background-size:var(--osls-source-panel-size,auto);color:var(--osls-text)!important;border-color:var(--osls-border)!important;border-style:var(--osls-source-border-style,solid)!important;box-shadow:none;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(.box-head,.module-head,.module-header,.panel-heading,.ms-card-head,.profile-mast,.profile-nav,.topbar,.dialog-head,.chat-header,.channel-header,.master-head,.jump-head,.mp-menu-header,.sidebar-head):not(:is(#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *)){background-color:var(--osls-header)!important;background-image:var(--osls-source-header-image,none)!important;background-repeat:repeat;color:var(--osls-header-text)!important;border-color:var(--osls-border)!important;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(h1,h2,h3,h4,h5,h6,label,.label,.title,.subtitle,.heading,p,li,td,th,small,summary):not(:is(#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#slowPetGame *,#onyxLeisureFullscreen *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *,[data-game-graphics] *,.wordmark *,.ourspace-logo *)){color:var(--osls-text)!important;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(a,.page-route,.nav-link,.jump-link,.sidebar-link):not(:is(#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#slowPetGame *,#onyxLeisureFullscreen *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *)){color:var(--osls-link)!important;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(button,.button,[role="button"],.page-route,.jump-link):not(:is(#osMessengerUnifiedHeart,#designerBubble,#osb-designerBubble,#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#slowPetGame *,#onyxLeisureFullscreen *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *,[data-game-graphics] *)){background-color:var(--osls-button)!important;color:var(--osls-button-text)!important;border-color:var(--osls-border)!important;accent-color:var(--osls-accent)!important;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(button,.button,[role="button"],.page-route,.jump-link):hover:not(:disabled):not(:is(#osMessengerUnifiedHeart,#designerBubble,#osb-designerBubble,#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#slowPetGame *,#onyxLeisureFullscreen *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *)){background-color:var(--osls-button-hover)!important;color:var(--osls-hover-text)!important;border-color:var(--osls-accent)!important;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(button,.button,[role="button"],.page-route,.jump-link):is(:active,.is-active,.active,[aria-current="page"],[aria-selected="true"]):not(:is(#osMessengerUnifiedHeart,#designerBubble,#osb-designerBubble,#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#slowPetGame *,#onyxLeisureFullscreen *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *)){background-color:var(--osls-selected)!important;color:var(--osls-selected-text)!important;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(input,textarea,select,[contenteditable="true"]):not(:is(#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#slowPetGame *,#onyxLeisureFullscreen *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *)){background-color:var(--osls-input)!important;color:var(--osls-input-text)!important;border-color:var(--osls-border)!important;accent-color:var(--osls-accent)!important;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(input,textarea):not(:is(#bulletinBoardModule *,#recordPlayerFlow *,#onyxBubble *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *))::placeholder{color:var(--osls-input-placeholder)!important;opacity:1;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(button,input,textarea,select,a,[tabindex]):focus-visible{outline-color:var(--osls-focus)!important;}
+html[data-os-layout-active] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) button:disabled{opacity:.56;cursor:not-allowed;}
+html[data-os-layout-active] :is(body,#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) *:not(:is(#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *))::-webkit-scrollbar-track{background:var(--osls-scroll-track)!important;}
+html[data-os-layout-active] :is(body,#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) *:not(:is(#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *))::-webkit-scrollbar-thumb{background:var(--osls-scroll-thumb)!important;border-color:var(--osls-scroll-track)!important;}
+html[data-os-layout-active] :is(body,#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) *:not(:is(#bulletinBoardModule *,#bulletinBoardFlow *,#recordPlayerFlow *,#onyxBubble *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *))::-webkit-scrollbar-thumb:hover{background:var(--osls-scroll-hover)!important;}
+/* Navigational hover and selection are appearance tokens, not geometry overrides. */
+html[data-os-layout-active] :is(#masterNav,#profileJumpNav,#profileJumpMenu) :is(a,.page-route,.nav-link,.jump-link,[role="tab"]):hover:not([aria-disabled="true"]){background-color:var(--osls-nav-hover)!important;color:var(--osls-nav-hover-text)!important;}
+html[data-os-layout-active] :is(#masterNav,#profileJumpNav,#profileJumpMenu) :is(a,.page-route,.nav-link,.jump-link,[role="tab"]):is([aria-current="page"],[aria-selected="true"],.active,.current){background-color:var(--osls-nav-selected)!important;color:var(--osls-nav-selected-text)!important;}
+html[data-os-layout-active] :is(#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell){background-color:var(--osls-panel)!important;color:var(--osls-text)!important;border-color:var(--osls-border)!important;}
+
+/* Archive typography preserves canonical HUD sizes, line heights and frame dimensions. */
+html[data-os-layout-active][data-os-layout-font="on"] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell,#publishProfile,#photoCropDialog) :is(h1,h2,h3,h4,h5,h6,p,small,li,td,th,label,summary,button,input,select,textarea,a,.title,.subtitle,.heading,.box-head,.module-head,.module-header,.panel-heading,.master-head,.jump-head,.topbar):not(:is(#bulletinBoardModule *,#recordPlayerFlow *,#onyxBubble *,#gameMount *,#slowPetGame *,#onyxLeisureFullscreen *,#channelList *,[data-folder-row] *,[data-folder] *,[data-channel-color] *,[data-folder-color] *,[data-design-protected],[data-design-protected] *,.wordmark,.wordmark *,.ourspace-logo,.ourspace-logo *)){font-family:var(--osls-font-choice,var(--osls-source-font))!important;}
+html[data-os-layout-active][data-os-layout-font="on"] #bulletinBoardModule :is(.bulletin-heading,.nav-label,.nav-desc,.menu-titlebar,.inspector-title,.dialog-head,button,input,select,textarea):not(:is(#board-surface *,#board-items *,[data-os-original-art] *)){font-family:var(--osls-font-choice,var(--osls-source-font))!important;}
+html[data-os-layout-active][data-os-layout-bold="on"] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(h1,h2,h3,.box-head .label,.module-head,.module-header,.panel-heading,.page-title):not(:is(#bulletinBoardModule *,#recordPlayerFlow *,#onyxBubble *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-design-protected] *)){font-weight:700!important;}
+html[data-os-layout-active][data-os-layout-italic="on"] :is(#profileApp,#ourspacePageArea,#masterNav,#profileJumpNav,#designWidget,#sidebar-messenger-root,#onyxPopout,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell) :is(p,small,label,.subtitle,button,input,textarea):not(:is(#bulletinBoardModule *,#recordPlayerFlow *,#onyxBubble *,#gameMount *,#channelList *,[data-folder-row] *,[data-folder] *,[data-design-protected] *)){font-style:italic!important;}
+#osLayoutStudio{box-sizing:border-box;position:fixed;inset:3vh 2vw;width:96vw;max-width:1600px;height:94vh;max-height:none;margin:auto;padding:0;border:1px solid var(--osls-border,#52708d);border-radius:14px;background:var(--osls-panel,#f2f6fa);color:var(--osls-text,#1b2634);font:14px/1.4 system-ui,sans-serif;box-shadow:0 24px 90px #0009;z-index:2147483000;overflow:hidden;}
+#osLayoutStudio::backdrop{background:#101729c9;backdrop-filter:blur(3px)}
+#osLayoutStudio *{box-sizing:border-box}
+#osLayoutStudio button,#osLayoutStudio input,#osLayoutStudio select{font:inherit}
+#osLayoutStudio button{cursor:pointer}
+#osLayoutStudio :is(button,input,select,textarea):focus-visible{outline:2px solid var(--osls-focus,#1979c4);outline-offset:2px}
+.osls{height:100%;display:flex;flex-direction:column}
+.osls-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;background:var(--osls-header,#274f6b);color:var(--osls-header-text,#fff);border-bottom:1px solid var(--osls-border,#668ca4)}
+.osls-head h2{font-size:20px;margin:0}
+.osls-head p{margin:2px 0 0;font-size:12px}
+.osls-head button{font-size:22px;line-height:1;background:transparent;color:inherit;border:1px solid currentColor;border-radius:6px;width:36px;height:36px}
+.osls-layout{flex:1;min-height:0;display:grid;grid-template-columns:minmax(270px,335px) minmax(0,1fr)}
+.osls-sidebar{min-height:0;overflow:auto;border-right:1px solid var(--osls-border,#8299aa);padding:12px;display:flex;flex-direction:column;gap:8px}
+.osls-sidebar label,.osls-work label{display:grid;gap:3px;font-size:12px;font-weight:650}
+.osls input,.osls select{width:100%;min-height:34px;border:1px solid var(--osls-border,#839aae);border-radius:5px;padding:5px 8px;background:var(--osls-input,#fff);color:var(--osls-input-text,#182532)}
+.osls button{background:var(--osls-button,#d9e8f1);border:1px solid var(--osls-border,#839aae);border-radius:5px;color:var(--osls-button-text,#193145);padding:6px 9px}
+.osls button:hover{background:var(--osls-button-hover,#bed8eb);color:var(--osls-hover-text,#173248)}
+.osls button[aria-pressed="true"],.osls .selected{background:var(--osls-selected,#43799e);color:var(--osls-selected-text,#fff)}
+.osls-tabs{display:flex;flex-wrap:wrap;gap:4px}
+.osls-tabs button{font-size:11px;padding:5px 7px}
+.osls-filters{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.osls-list{min-height:120px;overflow:auto;display:grid;align-content:start;gap:5px;flex:1}
+.osls-card{width:100%;display:grid;grid-template-columns:50px minmax(0,1fr) 22px;gap:8px;align-items:center;text-align:left;padding:5px!important}
+.osls-card-art{height:48px;border:1px solid var(--osls-border,#999);border-radius:4px;background-color:var(--thumb);background-image:var(--thumb-image,none);background-size:cover;background-position:center}
+.osls-card span{min-width:0}
+.osls-card strong,.osls-card small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.osls-card small{font-size:10px;opacity:.8}
+.osls-count{font-size:12px;opacity:.8}
+.osls-work{min-width:0;min-height:0;overflow:auto;padding:12px 16px;display:flex;flex-direction:column;gap:9px}
+.osls-title{display:flex;justify-content:space-between;align-items:start;gap:10px;flex-wrap:wrap}
+.osls-title h3{font-size:18px;margin:0}
+.osls-title p{margin:3px 0;font-size:11px}
+.osls-actions{display:flex;align-items:end;gap:7px;flex-wrap:wrap}
+.osls-actions label{min-width:125px}
+.osls-preview{flex:1;min-height:320px;overflow:auto;border:1px solid var(--osls-border,#7890a4);border-radius:6px;background:var(--osls-page,#d4e2ed)}
+.osls-canvas{position:relative;width:var(--osls-preview-w,700px);height:var(--osls-preview-h,520px);margin:0 auto;overflow:hidden}
+.osls-canvas iframe{position:absolute;inset:0;width:2200px;height:3500px;border:0;transform-origin:0 0;transform:scale(var(--osls-preview-scale,.55));background:#fff}
+.osls-details{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:12px}
+.osls-details a{color:var(--osls-link,#17679d)}
+.osls-editor{border-top:1px solid var(--osls-border,#9aa);padding-top:8px}
+.osls-editor summary{cursor:pointer;font-weight:750}
+.osls-editor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:7px;margin:10px 0}
+.osls-color{display:flex;gap:5px;align-items:center}
+.osls-color input[type=color]{width:44px;padding:1px;flex:none}
+.osls-editor-grid .wide{grid-column:span 2}
+.osls-status{min-height:20px;font-size:12px}
+.osls-foot{display:flex;gap:6px;flex-wrap:wrap;padding:9px 16px;border-top:1px solid var(--osls-border,#8299aa);background:var(--osls-panel,#eef5fa)}
+.osls-foot button{font-size:12px}
+.osls-launch{width:100%;margin:4px 0!important}
+#osLayoutStudio[data-expanded="true"]{inset:0;width:100vw;height:100vh;border-radius:0}
+@media(max-width:800px){#osLayoutStudio{inset:0;width:100vw;height:100vh;border-radius:0}.osls-layout{grid-template-columns:1fr;grid-template-rows:minmax(190px,33vh) minmax(0,1fr)}.osls-sidebar{border-right:0;border-bottom:1px solid var(--osls-border,#888)}.osls-list{max-height:100px}.osls-work{padding:8px}.osls-canvas{margin:0}.osls-editor-grid .wide{grid-column:auto}}
+/* Page titles sit on the outer page background, not on a panel. */
+html[data-os-layout-active] #profileTitle{color:var(--osls-page-text)!important;}
+
+.osls :is(input,textarea)::placeholder{color:var(--osls-input-placeholder,#596979);opacity:1}
+
+/* Pass 7: Looks owns preset discovery; the modal remains the full-site preview/editor. */
+#designWidget,#designerBubble{background-color:transparent!important;background-image:none!important;}
+#designWidget{box-shadow:none!important;}
+#designerPanel{backdrop-filter:none!important;}
+#osMessengerUnifiedHeart,#osMessengerUnifiedHeart::before,#osMessengerUnifiedHeart::after{background:transparent!important;background-image:none!important;box-shadow:none!important;}
+#osMessengerUnifiedHeart svg path{fill:var(--osls-hud-cyan-medium,#00FFFF)!important;stroke:var(--osls-hud-teal-deep,#083F40)!important;}
+#osMessengerUnifiedHeart:is(:hover,:focus-visible) svg path{fill:var(--osls-hud-cyan-light,#99FFFF)!important;stroke:var(--osls-hud-teal-medium,#176B65)!important;}
+.os-looks-presets{background:transparent!important;background-image:none!important;}
+.os-looks-presets-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.os-looks-presets-filters label{min-width:0;}
+#osLooksPresetSearch{width:100%;}
+.os-looks-preset-list{display:grid;gap:5px;max-height:310px;overflow:auto;margin:8px 0;scrollbar-color:var(--osls-scroll-thumb,#5686A6) var(--osls-scroll-track,#c8f5dc);}
+.os-looks-preset-row{display:grid;grid-template-columns:minmax(0,1fr) 38px;gap:5px;min-width:0;}
+#designWidget .os-looks-preset-select{display:flex;text-align:left;gap:7px;align-items:center;min-width:0;padding:5px;}
+.os-looks-preset-select>span:last-child{min-width:0;overflow:hidden;}
+.os-looks-preset-select strong,.os-looks-preset-select small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.os-looks-preset-select small{font-size:10px;opacity:.85;}
+.os-looks-preset-art{flex:0 0 45px;height:43px;background-color:var(--osls-thumb-color);background-position:center;background-size:cover;border:1px solid var(--osls-border,#5686A6);border-radius:4px;}
+#designWidget .os-looks-preset-star{display:grid;place-items:center;padding:1px;font-size:20px;}
+#designWidget .os-looks-presets-edit{width:100%;}
+/* The floating widget's transparent shell and heart handle never inherit theme fills. */
+html[data-os-layout-active] :is(#designWidget,#designerBubble),html[data-os-layout-active] :is(#osMessengerUnifiedHeart,#osMessengerUnifiedHeart::before,#osMessengerUnifiedHeart::after){background-color:transparent!important;background-image:none!important;box-shadow:none!important;}
+@media(max-width:560px){.os-looks-presets-filters{grid-template-columns:1fr}}
+
+/* Archive-vs-converted artwork inspection only; no replacement site or module geometry. */
+.osls-source-compare{border:1px solid var(--osls-border,#8299aa);border-radius:7px;padding:8px 10px;}
+.osls-source-compare summary{cursor:pointer;font-weight:750;}
+.osls-source-compare p{font-size:11px;margin:6px 0;}
+.osls-compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:8px 0;}
+.osls-compare-grid figure{min-width:0;margin:0;}
+.osls-artwork-tile{height:165px;width:100%;border:1px solid var(--osls-border,#8299aa);border-radius:4px;}
+.osls-compare-grid figcaption{font-size:11px;margin:4px 0;}
+@media(max-width:480px){.osls-compare-grid{grid-template-columns:1fr;}}
+
+.osls-compare-assets{display:flex;flex-wrap:wrap;gap:8px;}
+.osls-compare-assets figure{width:105px;min-width:0;margin:0;}
+.osls-art-asset{height:55px;background-size:contain;background-repeat:repeat;background-position:center;border:1px solid var(--osls-border,#8299aa);}
+.osls-compare-assets figcaption{font-size:10px;margin:3px 0;}

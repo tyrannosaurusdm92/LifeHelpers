@@ -1,0 +1,65 @@
+/* OurSpace Settings: the same floating, draggable & reducible window behavior as HUD panels. */
+#osSettingsPanel {position:fixed;left:max(8px,calc(50vw - 250px));top:8vh;z-index:2147480150;width:min(520px,calc(100vw - 14px));height:min(790px,86vh);min-width:330px;min-height:200px;max-width:calc(100vw - 8px);max-height:calc(100dvh - 8px);background:#fff;color:#083f40;border:3px solid #176b65;border-radius:15px;box-shadow:0 14px 42px #062c3488;font:13px/1.45 system-ui,Arial,sans-serif;display:flex;flex-direction:column;overflow:hidden;isolation:isolate;}
+#osSettingsPanel[hidden],#osSettingsPanel [hidden]{display:none!important}
+#osSettingsPanel *{box-sizing:border-box}
+#osSettingsPanel .os-settings-title{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#00ffff;color:#083f40;border-bottom:3px solid #176b65;padding:10px 12px;cursor:move;touch-action:none;user-select:none}
+#osSettingsPanel .os-settings-window-controls{display:flex;gap:5px}
+#osSettingsPanel button{background:#ffd12e;border:2px solid #f47745;border-radius:7px;color:#083f40;min-height:30px;padding:4px 9px;font:inherit;font-weight:700;cursor:pointer}
+#osSettingsPanel button:hover,#osSettingsPanel button:focus-visible{background:#00ffff;border-color:#176b65}
+#osSettingsPanel button:disabled{opacity:.6;cursor:wait}
+#osSettingsPanel .os-settings-window-controls button{min-width:34px;font-size:18px}
+#osSettingsPanel .os-settings-content{padding:10px 13px;flex:1;overflow-y:auto;min-height:0;overscroll-behavior:contain;scrollbar-color:#f47745 #e8ffff}
+#osSettingsPanel .os-settings-tabs{display:flex;gap:8px;position:sticky;top:-10px;background:#fff;z-index:2;padding:8px 0}
+#osSettingsPanel [aria-selected="true"],#osSettingsPanel [aria-pressed="true"]{background:#00ffff;border-color:#176b65}
+#osSettingsPanel h3{font-size:15px;margin:13px 0 7px;color:#083f40}
+#osSettingsPanel p{margin:7px 0 10px}
+#osSettingsPanel .os-settings-muted{color:#476b68;font-size:12px}
+#osSettingsPanel .os-settings-icon-preview{position:relative;margin:12px auto;width:140px;display:grid;place-items:center;gap:4px;text-align:center;font-size:10px}
+#osSettingsPanel .os-settings-icon-preview img{width:104px;height:104px;object-fit:contain}
+#osSettingsPanel #osSettingsIconCode{position:absolute;top:8px;left:50%;transform:translateX(-50%);color:#083f40;font-size:24px;line-height:1;font-weight:900;text-shadow:0 1px 2px #fff}
+#osSettingsPanel .os-settings-preset-groups{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#osSettingsPanel .os-settings-preset{border:1px solid #6fa9a0;border-radius:8px;min-width:0;padding:8px}
+#osSettingsPanel .os-settings-preset legend{font-weight:700}
+#osSettingsPanel .os-settings-preset-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+#osSettingsPanel .os-settings-preset-buttons button{font-size:11px;padding:4px;min-width:0}
+#osSettingsPanel .os-settings-code-list{border:2px solid #6fa9a0;border-radius:8px;overflow:auto}
+#osSettingsPanel .os-settings-code-row,#osSettingsPanel .os-settings-code-header{display:grid;grid-template-columns:minmax(0,1fr) 46px 42px;align-items:center;gap:4px;padding:5px 8px;border-bottom:1px solid #c7e9df}
+#osSettingsPanel .os-settings-code-header{background:#e8fffc;font-weight:800;text-align:center}
+#osSettingsPanel .os-settings-code-row label{line-height:1.3;min-width:0}
+#osSettingsPanel .os-settings-code-row code{font-weight:800;background:#e8fffc;border-radius:4px;padding:2px 4px;color:#083f40}
+#osSettingsPanel .os-settings-code-row input{height:18px;width:18px;justify-self:center;accent-color:#176b65}
+#osSettingsPanel .os-settings-actions{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}
+#osSettingsPanel .os-settings-section form{display:flex;flex-wrap:wrap;align-items:end;gap:8px;margin:8px 0 12px}
+#osSettingsPanel .os-settings-section label{display:grid;gap:3px;min-width:min(235px,100%);flex:1}
+#osSettingsPanel .os-settings-section :is(input:not([type="checkbox"]),select){width:100%;border:1px solid #6fa9a0;border-radius:6px;min-height:32px;background:#fff;color:#083f40;padding:5px}
+#osSettingsPanel .os-settings-email-list{display:grid;gap:6px}
+#osSettingsPanel .os-settings-email-row{display:flex;flex-wrap:wrap;gap:5px;align-items:center;padding:6px;border:1px solid #d3f3ec;border-radius:6px;overflow-wrap:anywhere}
+#osSettingsPanel .os-settings-email-row span{flex:1;min-width:130px}
+#osSettingsPanel .os-settings-email-row button{font-size:11px}
+#osSettingsPanel .os-settings-feedback{position:sticky;bottom:-10px;background:#eafff8;border-top:2px solid #176b65;padding:10px;margin:12px -13px -10px;min-height:36px;z-index:3}
+#osSettingsPanel .os-settings-feedback[data-error="true"]{background:#fff1e9;color:#00FFFF}
+#osSettingsPanel .os-settings-resize{position:absolute;bottom:0;right:0;width:22px;height:22px;cursor:nwse-resize;touch-action:none;background:linear-gradient(135deg,transparent 50%,#176b65 50%,#00ffff 65%,#176b65 77%)}
+#osSettingsPanel.os-settings-reduced{height:47px!important;min-height:47px;max-height:47px;overflow:hidden}
+#osSettingsPanel.os-settings-reduced .os-settings-content,#osSettingsPanel.os-settings-reduced .os-settings-resize{display:none}
+@media(max-width:580px){#osSettingsPanel{left:4px;top:9vh;width:calc(100vw - 8px);min-width:0}#osSettingsPanel .os-settings-preset-groups{grid-template-columns:1fr}}
+
+/* OurSpace final canonical palette, CSS only (2026-11-04).
+   Old red hover states are cyan, metallic gold is teal, dark gold is persimmon,
+   and light gold is cadmium. Red X, Cancel, Delete, Remove retain red. */
+:root{--ourspace-red-replacement:#00FFFF;--ourspace-gold-replacement:#176B65;--ourspace-dark-gold-replacement:#F47745;--ourspace-light-gold-replacement:#FFD12E;}
+#bulletinBoardModule, #osb-designWidget{--red:#00FFFF!important;--red-dark:#176B65!important;--gold:#176B65!important;--gold-line:#176B65!important;--gold-dark:#F47745!important;--gold-light:#FFD12E!important;--outline:#00FFFF!important;}
+/* Preserve the original long 1771×3000 pinboard and the existing viewport thumb. */
+#bulletinBoardModule #board-surface{aspect-ratio:1771 / 3000!important;height:auto!important;background-size:100% auto!important;}
+#bulletinBoardModule #workspace-viewport{overflow-y:auto!important;}
+#bulletinBoardModule #heart-scrollbar{border-color:#176B65!important;}
+#bulletinBoardModule #heart-scrollbar-fill{background:linear-gradient(#176B65,#00FFFF)!important;border-color:#176B65!important;}
+#bulletinBoardModule #heart-scrollbar-handle{border-color:#176B65!important;background:linear-gradient(155deg,#FFD12E,#F47745)!important;}
+#bulletinBoardModule .heart-scrollbar-icon path{fill:#00FFFF!important;stroke:#176B65!important;}
+#bulletinBoardModule .gold-button:not([data-action*="delete"]):not([data-action*="remove"]):not([data-action*="cancel"]):not([data-action*="exit"]){background:#176B65!important;background-image:none!important;border-color:#176B65!important;color:white!important;}
+#bulletinBoardModule :is(.nav-tile,.gold-button,.menu-action,.inspector-btn,.icon-button,.bc-button,.bulletin-button,.bc-tabs button,.bc-deco-grid button):not(.bc-close):not([data-action*="delete"]):not([data-action*="remove"]):not([data-action*="cancel"]):not([data-action*="exit"]):where(:hover,:focus-visible,:active),
+#bulletinBoardModule :is(.nav-tile,.bc-tabs button).active {background:#00FFFF!important;border-color:#176B65!important;color:#123735!important;box-shadow:0 0 0 2px #176B6538!important;}
+#bulletinBoardModule .bulletin-craft-dialog :is(.bc-content,.bc-tabs,.bc-deco-grid){scrollbar-color:#00FFFF #fff!important;}
+#bulletinBoardModule .bulletin-craft-dialog :is(.bc-content,.bc-tabs,.bc-deco-grid)::-webkit-scrollbar-thumb{background:#00FFFF!important;border-color:#176B65!important;}
+#bulletinBoardModule .bulletin-craft-dialog button:focus-visible:not(.bc-close){outline-color:#00FFFF!important;}
+/* No duplicate top-of-page navigation; all navigation is in the movable master NAV. */
+html[data-profile] #profileApp>.profile-nav{display:none!important;}

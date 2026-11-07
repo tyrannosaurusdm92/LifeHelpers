@@ -1,0 +1,108 @@
+/* Repair 2026-11-02: profile.json owns both modules' outer dimensions.
+   Never allow hidden browser scrollbars to compete with Bulletins' heart scrollbar.
+   This changes CONTENT containment only, not module X/Y/W/H. */
+html.os-profile-baseline #profileApp #profile-bulletins.os-embedded-fit,
+html.os-profile-baseline #profileApp #profile-music.os-embedded-fit{
+  overflow:hidden!important;scrollbar-width:none!important;resize:none!important;
+}
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardModule,
+#profileApp #profile-bulletins.os-embedded-fit .bb-body,
+#profileApp #profile-music.os-embedded-fit .rp-body{
+  box-sizing:border-box!important;position:relative!important;max-width:100%!important;
+  overflow:hidden!important;scrollbar-width:none!important;
+  min-height:0!important;padding:0!important;
+}
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardModule{
+  width:100%!important;max-height:100%!important;
+}
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardFlow,
+#profileApp #profile-music.os-embedded-fit #recordPlayerFlow{
+  position:absolute!important;top:0!important;left:0!important;
+  max-width:none!important;margin:0!important;transform-origin:top left!important;
+  overflow:visible!important;zoom:1!important;
+}
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardFlow{
+  width:1180px!important;min-width:1180px!important;height:790px!important;min-height:790px!important;
+}
+#profileApp #profile-music.os-embedded-fit #recordPlayerFlow{
+  width:980px!important;min-width:980px!important;max-height:none!important;height:auto!important;min-height:0!important;
+}
+#profileApp #profile-music.os-embedded-fit #recordPlayerFlow>.widget-stage{
+  width:100%!important;max-width:100%!important;
+}
+#profileApp #profile-music.os-embedded-fit #recordPlayerFlow .retro-player{
+  width:100%!important;max-width:100%!important;
+}
+/* Keep the existing pinboard scroll/heart pair: no extra profile or outer board scroller. */
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardModule .workspace-shell .workspace-viewport{
+  overflow:auto;scrollbar-width:none!important;
+}
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardModule .workspace-shell .workspace-viewport::-webkit-scrollbar{
+  display:none!important;width:0!important;height:0!important;
+}
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardModule .heart-scrollbar{
+  display:block;
+}
+#profileApp #profile-bulletins.os-embedded-fit.is-collapsed .bb-body,
+#profileApp #profile-music.os-embedded-fit.is-collapsed .rp-body{
+  display:none!important;
+}
+/* Merged module headings occupy exactly one bar; tiny optional kickers remain text. */
+#profileApp .os-module-kicker{
+  margin:2px 0 8px;color:#5686A6;font:italic 12px/1.4 Verdana,Arial,sans-serif;
+}
+
+/* Fill the original saved module's available height by extending the board's
+   inner workspace; do not enlarge its fonts, buttons, parent, or columns. */
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardFlow,
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardFlow>#bulletin-root,
+#profileApp #profile-bulletins.os-embedded-fit #bulletinBoardFlow .app-shell{
+  height:var(--os-bb-inner-height,790px)!important;
+  min-height:var(--os-bb-inner-height,790px)!important;
+  max-height:var(--os-bb-inner-height,790px)!important;
+}
+
+/* Profile/About backdrop — 65% transparent, not 65% element opacity.
+   The translucent film is a separate layer; parents, contents, and scrollers
+   do not inherit opacity. This applies to BOTH signed-in account profiles
+   and does not affect Feed, Store, Diary, Household, or other pages. */
+html[data-profile]:not(.nonprofile) #profileApp.profile-frame {
+  position:relative;
+  isolation:isolate;
+  background-color:transparent!important;
+  opacity:1!important;
+  --os-profile-backdrop-opacity:0.35;
+}
+html[data-profile]:not(.nonprofile) #profileApp.profile-frame::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,var(--os-profile-backdrop-opacity))!important;
+  pointer-events:none;
+  z-index:0;
+}
+/* Clear ONLY outer layout wrappers: wallpaper stays visible in the gaps. */
+html[data-profile]:not(.nonprofile) #profileApp .profile-content,
+html[data-profile]:not(.nonprofile) #profileApp .profile-content > .profile-column {
+  background-color:transparent!important;
+  opacity:1!important;
+}
+/* All direct page sections paint above the film; do not alter their geometry. */
+html[data-profile]:not(.nonprofile) #profileApp > :is(.profile-mast,.profile-searchbar,.profile-status,.profile-content,.profile-footer,.profile-notice) {
+  position:relative;
+  z-index:1;
+  opacity:1!important;
+}
+/* Content itself is never dimmed along with the backdrop. Keep the saved
+   designer's solid module colors, customized art, fonts and existing scrollbars. */
+html[data-profile]:not(.nonprofile) #profileApp :is(
+  .profile-box,.box-head,.box-body,.pm-module-box,.pm-flow-space,.pm-scale-surface,
+  .pm-module-root,.ms-card,.ms-card-body,.ms-card-head,.ms-item,.module,.module-body,
+  .profile-avatar,.profile-photo-frame,.info-table,.info-table th,.info-table td,
+  button,input,textarea,select,.os-heart-track,.os-heart-handle,.heart-scrollbar
+){opacity:1!important;}
+/* Text and images remain opaque as individual elements without inheriting
+   the page overlay; configured foreground colors and artwork are preserved. */
+html[data-profile]:not(.nonprofile) #profileApp .profile-box :is(
+  h1,h2,h3,h4,h5,h6,p,label,span,strong,em,small,li,a,summary,img,svg
+){opacity:1!important;}

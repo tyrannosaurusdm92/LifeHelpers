@@ -1,0 +1,55 @@
+/* Official Onyx Widget / Work / Professor palette. GAME COLORS ARE UNTOUCHED. */
+#onyxWidget,#onyxWorkFullscreenShell,#onyxProfessorFullscreenShell{
+ --onyx-shell-navy:#243950;--onyx-shell-blue:#176B65;--onyx-shell-mid:#176B65;
+ --onyx-shell-border:#F47745;--onyx-shell-accent:#00FFFF;
+ --onyx-shell-light:#D5E8FB;--onyx-shell-paper:#F8FBFF;
+ --onyx-button-face:#FFD12E;--onyx-button-border:#F47745;
+ --onyx-button-active:#00FFFF;--onyx-button-text:#182036;
+ --onyx-button-type-stroke:0.075px #000000;
+ --onyx-gold:#176B65;--onyx-dark-gold:#F47745;--onyx-light-gold:#FFD12E;
+ --onyx-red:#00FFFF;
+}
+#onyxWidget #onyxPopout{background:var(--onyx-shell-paper)!important;color:#243950!important;border-color:#F47745!important}
+#onyxWidget .onyx-panel-header{background:linear-gradient(110deg,#176B65,#176B65)!important;color:white!important;border-color:#F47745!important}
+#onyxWidget .onyx-speech{background:#D5E8FB!important;color:#243950!important;border-color:#F47745!important}
+#onyxWidget .jump-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;background:#176B65!important;border-color:#F47745!important}
+#onyxWidget .jump-tab{min-width:0;flex:1 1 0;background:#FFD12E!important;color:#182036!important;border-color:#F47745!important}
+#onyxWidget .jump-tab.is-active{background:#00FFFF!important;color:#083839!important;border-color:#176B65!important}
+#onyxWidget .jump-pane{color:#243950!important}
+#onyxWidget #onyxPopout :is(button,[role="button"]),
+#onyxWorkFullscreenShell :is(button,[role="button"]),
+#onyxProfessorFullscreenShell :is(button,[role="button"]){
+ background:#FFD12E!important;border-color:#F47745!important;color:#182036!important;
+ -webkit-text-stroke:0.075px #000;paint-order:stroke fill;
+}
+#onyxWidget #onyxPopout :is(button,[role="button"]):is(:hover,:focus-visible,[aria-pressed="true"],[aria-selected="true"],.is-active,.active),
+#onyxWorkFullscreenShell :is(button,[role="button"]):is(:hover,:focus-visible,[aria-pressed="true"],[aria-selected="true"],.is-active,.active),
+#onyxProfessorFullscreenShell :is(button,[role="button"]):is(:hover,:focus-visible,[aria-pressed="true"],[aria-selected="true"],.is-active,.active){
+ background:#00FFFF!important;border-color:#176B65!important;color:#083839!important;
+}
+#onyxWidget #onyxPopout :is(button,[role="button"]):disabled,
+#onyxWorkFullscreenShell :is(button,[role="button"]):disabled,
+#onyxProfessorFullscreenShell :is(button,[role="button"]):disabled{opacity:.55;cursor:not-allowed}
+/* Exceptions: only cancellation and X exits remain red. */
+#onyxWidget .onyx-close,#onyxWidget .fullscreen-exit,
+#onyxWorkFullscreenShell :is(.catalog-close-button,.fullscreen-shell-exit,[aria-label^="Close"],[aria-label^="Cancel"]),
+#onyxProfessorFullscreenShell :is(.fullscreen-shell-exit,[aria-label^="Close"],[aria-label^="Cancel"]){
+ background:#CE2828!important;border-color:#961B1B!important;color:white!important;
+}
+
+/* Palette/tabs pass — only the widget, Work and Professor; no game repaint. */
+#onyxWidget .jump-panel .jump-tabs,
+#onyxWidget.discord-layout-shell .jump-panel .jump-tabs{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ grid-auto-columns:minmax(0,1fr)!important;width:100%!important;gap:3px!important;
+}
+#onyxWidget .jump-panel .jump-tabs > .jump-tab{
+ grid-column:auto!important;width:100%!important;min-width:0!important;
+ max-width:none!important;margin:0!important;box-sizing:border-box!important;
+}
+#onyxWidget #onyxPopout :is(.onyx-wallet-badge,.jump-pane,.jump-content){border-color:#F47745}
+#onyxWidget :is(.onyx-close,[aria-label="Close"],[aria-label^="Cancel"],.fullscreen-exit),
+#onyxWorkFullscreenShell :is(.fullscreen-shell-exit,[aria-label="Close"],[aria-label^="Cancel"]),
+#onyxProfessorFullscreenShell :is(.fullscreen-shell-exit,[aria-label="Close"],[aria-label^="Cancel"]){
+ background:#c62828!important;border-color:#921c1c!important;color:#fff!important;
+}
