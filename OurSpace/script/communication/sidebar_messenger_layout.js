@@ -1,6 +1,9 @@
 /* Approved sidebar placement: no admin editor or export controls. */
 (()=>{'use strict';const root=document.getElementById('sidebar-messenger-root');if(!root)return;
 const who=document.documentElement.dataset.profile==='jasper'?'jasper':'william';
+// Never display the member rail to public viewers or unmatched sessions.
+const auth=window.OurSpaceAuth;
+if(new URLSearchParams(location.search).get('public')==='1'||!auth?.isAuthenticated?.()||auth?.isAdmin?.()||auth?.profile?.()!==who)return;
 const cfg={"widthPx":170,"heightPx":911,"topPx":0,"rightPx":0,"contentScale":1,"spacingPx":10,"panels":{"quick":{"left":1289,"top":89,"width":453,"height":488},"friends":{"left":1386,"top":117.5,"width":356,"height":465},"today":{"left":1302,"top":323,"width":440,"height":580},"unread":{"left":1302,"top":195.125,"width":440,"height":580},"rooms":{"left":1298,"top":111.21875,"width":440,"height":580}}};
 // Preserve the rail's prior size/spacing, but default its presence to a closed drawer.
 const DRAWER_KEY='ourspace.sidebar-messenger.drawer.v1.'+who;
