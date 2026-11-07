@@ -58,7 +58,8 @@ function wireMaster(){const master=$('#masterNav'),toggle=$('#masterToggle'),dra
  if(auth.isAdmin()){const b=$('#switchProfile');b.hidden=false;b.textContent=who==='william'?'Switch to Jasper':'Switch to William';b.addEventListener('click',()=>location.assign(who==='william'?'jasper.html?page=profile':'william.html?page=profile'))}
 }
 async function publicMode(){
- // Published-only display. The private profile application is never initialized.
+ // Direct ?public=1 requests use the same exact native published-only renderer as
+ // william.html's OurSpace dropdown. This frame runs no signed-in profile scripts.
  $('#profileApp').hidden=true;
  $('#masterNav').hidden=true;
  $('#designWidget').hidden=true;
@@ -66,132 +67,24 @@ async function publicMode(){
  $('#profileEdit')?.remove();
  const mount=$('#publicProfile');
  mount.hidden=false;
- mount.classList.add('os-public-published');
- mount.dataset.owner=who;
- mount.replaceChildren(node('p','Loading the published OurSpace profile…','os-public-message'));
- const safeUrl=v=>typeof v==='string'&&/^https?:\/\//i.test(v.trim())?validUrl(v.trim()):'';
- const addImage=(host,url,alt,css)=>{
-   const src=safeUrl(url);if(!src)return false;
-   const img=node('img',undefined,css||'');
-   img.src=src;img.alt=String(alt||'Published image').slice(0,140);
-   img.loading='lazy';img.referrerPolicy='no-referrer';
-   host.append(img);return true;
+ mount.style.cssText='width:100%;max-width:none;padding:0;margin:0;min-height:100vh';
+ mount.replaceChildren();
+ const frame=node('iframe');
+ frame.id='ourspaceNativePublicFrame';
+ frame.title=(who==='jasper'?'Jasper':'William')+' · Published OurSpace profile';
+ frame.loading='eager';
+ frame.referrerPolicy='no-referrer';
+ frame.style.cssText='display:block;width:100%;height:3200px;border:0;overflow:hidden';
+ frame.src='public-profile.html?profile='+encodeURIComponent(who);
+ mount.append(frame);
+ const onMessage=e=>{
+   if(e.origin!==location.origin||e.source!==frame.contentWindow)return;
+   const info=e.data;
+   if(info?.type!=='ourspace:public-profile-height'||info.profileKey!==who)return;
+   const height=Number(info.height);
+   if(Number.isFinite(height))frame.style.height=Math.min(12000,Math.max(500,height))+'px';
  };
- const link=(label,url)=>{
-   const src=safeUrl(url);if(!src)return null;
-   const a=node('a',String(label||'Published link').slice(0,160));
-   a.href=src;a.target='_blank';a.rel='noopener noreferrer';return a;
- };
- const section=(title)=>{
-   const el=node('section',undefined,'os-public-section');
-   el.append(node('h2',title));return el;
- };
- const text=(host,value)=>{if(typeof value==='string'&&value.trim())host.append(node('p',value.slice(0,3000)))};
- const cards=(host,entries)=>{
-   (Array.isArray(entries)?entries:[]).slice(0,80).forEach(item=>{
-     const data=item&&typeof item==='object'?item:{title:String(item)};
-     const card=node('div',undefined,'os-public-card');
-     const title=String(data.title||data.name||data.label||'').slice(0,180);
-     if(title)card.append(node('h3',title));
-     text(card,data.description||data.summary||data.body);
-     addImage(card,data.imageUrl||data.image||data.posterUrl,title,'os-public-card-image');
-     const a=link('Open',data.url||data.link);if(a)card.append(a);
-     if(card.childNodes.length)host.append(card);
-   });
- };
- try{
-   const response=await auth.request('public.profile.get',{profileKey:who});
-   const pub=response&&response.profile;
-   // Fail closed for unpublished, invalid, or unavailable data; never request profile.get.
-   if(!response||response.ok!==true||response.view!=='public-profile'||!pub||pub.profileKey!==who){
-     mount.replaceChildren(node('p','This profile is not currently published.','os-public-message'));return;
-   }
-   const article=node('article',undefined,'os-public-container');
-   const hero=node('header',undefined,'os-public-hero');
-   const banner=node('div',undefined,'os-public-banner');
-   addImage(banner,pub.bannerUrl,'Published profile banner','os-public-banner-image');
-   hero.append(banner);
-   const whoBox=node('div',undefined,'os-public-identity');
-   const avatar=node('div',undefined,'os-public-avatar');
-   if(!addImage(avatar,pub.avatarUrl,'Published profile image','os-public-avatar-image'))avatar.append(node('strong',who==='jasper'?'J':'W'));
-   whoBox.append(avatar);
-   const words=node('div',undefined,'os-public-identity-text');
-   words.append(node('p',profileName,'os-public-eyebrow'));
-   words.append(node('h1',String(pub.displayName||displayName).slice(0,120)));
-   text(words,pub.headline);
-   whoBox.append(words);hero.append(whoBox);article.append(hero);
-   const grid=node('div',undefined,'os-public-grid');
-   if(typeof pub.bio==='string'&&pub.bio.trim()){const about=section('About');text(about,pub.bio);grid.append(about)}
-   if(Array.isArray(pub.interests)&&pub.interests.length){
-     const interests=section('Interests'),tags=node('div',undefined,'os-public-tags');
-     pub.interests.slice(0,40).forEach(x=>{if(typeof x==='string'&&x.trim())tags.append(node('span',x.slice(0,120)))});
-     if(tags.childNodes.length){interests.append(tags);grid.append(interests)}
-   }
-   if(Array.isArray(pub.projects)&&pub.projects.length){
-     const projects=section('Projects');cards(projects,pub.projects);
-     if(projects.childNodes.length>1)grid.append(projects);
-   }
-   const links=Array.isArray(response.links)?response.links:[];
-   if(links.length){
-     const list=section('Shared links');
-     links.slice(0,200).forEach(item=>{
-       if(!item||typeof item!=='object')return;
-       const a=link(item.name||item.title||'Published link',item.url||item.link);
-       if(!a)return;
-       const div=node('div',undefined,'os-public-link');
-       div.append(a);text(div,item.description);list.append(div);
-     });
-     if(list.childNodes.length>1)grid.append(list);
-   }
-   if((Array.isArray(pub.donationMethods)&&pub.donationMethods.length)||pub.creatorDonation){
-     const donation=section('Donation and support');
-     cards(donation,pub.donationMethods);
-     if(pub.creatorDonation&&typeof pub.creatorDonation==='object'){
-       const a=link(pub.creatorDonation.label||'Support the creator',pub.creatorDonation.url||pub.creatorDonation.donationUrl);
-       if(a)donation.append(a);
-     }
-     if(donation.childNodes.length>1)grid.append(donation);
-   }
-   const music=response.musicPlayer&&Array.isArray(response.musicPlayer.items)?response.musicPlayer.items:[];
-   const favorite=pub.favoriteSong&&typeof pub.favoriteSong==='object'?pub.favoriteSong:null;
-   if(music.length||favorite){
-     const panel=section('Music');
-     if(favorite&&favorite.title){
-       panel.append(node('p','Favorite song: '+String(favorite.title).slice(0,160)+(favorite.artist?' — '+String(favorite.artist).slice(0,100):'')));
-       const a=link('Open favorite song',favorite.url||favorite.link);if(a)panel.append(a);
-     }
-     music.slice(0,80).forEach(item=>{
-       if(!item||typeof item!=='object')return;
-       const card=node('div',undefined,'os-public-card');
-       card.append(node('h3',String(item.title||'Published track').slice(0,150)));
-       if(item.artist)text(card,String(item.artist).slice(0,120));
-       const src=safeUrl(item.url);
-       if(src){const audio=node('audio');audio.controls=true;audio.preload='none';audio.src=src;card.append(audio);
-         const a=link('Open music',src);if(a)card.append(a);
-       }
-       panel.append(card);
-     });
-     if(panel.childNodes.length>1)grid.append(panel);
-   }
-   const visuals=response.visualPlayer&&Array.isArray(response.visualPlayer.items)?response.visualPlayer.items:[];
-   if(visuals.length){
-     const panel=section('Photos and videos'),gallery=node('div',undefined,'os-public-gallery');
-     visuals.slice(0,80).forEach(item=>{
-       if(!item||typeof item!=='object')return;
-       const fig=node('figure'),kind=String(item.kind||'').toLowerCase(),src=safeUrl(item.url);
-       if(kind==='image')addImage(fig,src,item.title||'Published image','os-public-gallery-image');
-       if(kind==='video'&&src){const video=node('video');video.controls=true;video.preload='metadata';video.src=src;
-         const poster=safeUrl(item.posterUrl);if(poster)video.poster=poster;fig.append(video);
-       }
-       if(!fig.childNodes.length){const a=link('Open published media',src);if(a)fig.append(a)}
-       if(fig.childNodes.length){fig.append(node('figcaption',String(item.title||'Published media').slice(0,140)));gallery.append(fig)}
-     });
-     if(gallery.childNodes.length){panel.append(gallery);grid.append(panel)}
-   }
-   if(!grid.childNodes.length){const blank=section('Published profile');blank.append(node('p','No additional sections have been shared publicly yet.'));grid.append(blank)}
-   article.append(grid,node('p','Read-only • Only information published in OurSpace appears here.','os-public-privacy'));
-   mount.replaceChildren(article);
- }catch(_){mount.replaceChildren(node('p','This published profile is temporarily unavailable.','os-public-message'))}
+ window.addEventListener('message',onMessage);
 }
 async function init(){if(isPublic){await publicMode();return}
  if(!pages.includes(page)){location.replace(who+'.html?page=profile');return}
