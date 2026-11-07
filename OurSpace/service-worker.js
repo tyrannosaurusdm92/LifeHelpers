@@ -4,7 +4,7 @@
  * notification title/icon and the running app's custom overlay. OS badge = count/dot.
  */
 'use strict';
-const OS_CACHE='ourspace-static-pwa-v53-profile-backdrop-65pct-transparent-game-account-arcade25';
+const OS_CACHE='ourspace-static-pwa-v54-landing-styles-network-first';
 const OS_PRECACHE=[
  './ourspace.webmanifest',
  './assets/images/app/ourspace-app-192.png',
@@ -90,7 +90,20 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 self.addEventListener('fetch',event=>{
  const request=event.request;if(!osStaticPath(request))return;
  event.respondWith((async()=>{
-  const cache=await caches.open(OS_CACHE),stored=await cache.match(request);
+  const cache=await caches.open(OS_CACHE);
+  // CSS is network-first so newly published styles cannot be masked by stale PWA data.
+  if(request.destination==='style'||/\\.css$/i.test(new URL(request.url).pathname)){
+   try{
+    const network=await fetch(new Request(request,{cache:'no-cache'}));
+    if(network.ok&&network.type==='basic'&&!/no-store|private/i.test(network.headers.get('Cache-Control')||''))await cache.put(request,network.clone());
+    return network;
+   }catch(error){
+    const saved=await cache.match(request);
+    if(saved)return saved;
+    throw error;
+   }
+  }
+  const stored=await cache.match(request);
   if(stored)return stored;
   const network=await fetch(request);
   if(network.ok&&network.type==='basic'&&!/no-store|private/i.test(network.headers.get('Cache-Control')||''))await cache.put(request,network.clone());
