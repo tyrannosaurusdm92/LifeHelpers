@@ -4,7 +4,7 @@
 :root{color-scheme:light}
 html,body{margin:0;padding:0;min-height:100%;overflow-x:hidden;scrollbar-width:none}
 html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
-html[data-os-native-public="true"] :is(#designWidget,#designerPanel,#profileJumpNav,
+html[data-os-native-public="true"] :is(#designWidget,#designerPanel,
  #profileJumpOnyxToggle,#profileJumpDesignToggle,#ourspaceOnyxIntegrationFrame,
  .os-onyx-embedded-frame,[data-ourspace-onyx-widget],.mp-panel,.mp-sidebar){display:none!important;visibility:hidden!important}
 html[data-os-native-public="true"] #sidebar-messenger-root.os-scroll-only{display:block!important;visibility:visible!important}
@@ -53,3 +53,23 @@ body.ourspace-native-public{background:#e5e5e5;font-family:Verdana,Arial,Helveti
 #profileApp .os-public-gallery-item figcaption{font-size:11px;color:#31566f}
 #profileApp #profilePictureDisplay img{max-width:100%;height:100%;object-fit:cover}
 @media(prefers-reduced-motion:reduce){html,body{scroll-behavior:auto!important}}
+
+/* The public Jump Nav reuses the real Profile/About markup and geometry.
+   The signed-in Onyx and Design buttons never exist in this public frame. */
+html[data-os-native-public="true"] #profileJumpNav{
+ display:block!important;visibility:visible!important;pointer-events:none!important
+}
+html[data-os-native-public="true"] #profileJumpBubble,
+html[data-os-native-public="true"] #profileJumpMenu{
+ pointer-events:auto!important
+}
+html[data-os-native-public="true"] #profileJumpNav [data-jump-resize]{
+ touch-action:none
+}
+html[data-os-native-public="true"] #profileJumpLinks button{
+ color:#31566F
+}
+html[data-os-native-public="true"] #profileApp :is(.ms-actions,[data-import]),
+html[data-os-native-public="true"] #profileApp label:has([data-import]){
+ display:none!important;visibility:hidden!important
+}
