@@ -286,6 +286,15 @@ export class OnyxRuntime {
         profileContinuity: profileContext,
         unifiedBrainRuntime: ONYX_CORE_CONFIG.schema
       },
+      // Preserve the originating interface's conversation semantics while
+      // Onyx's core remains the only AI/knowledge authority.
+      responseIntent: String(input.responseIntent || (plan.listenOnly ? "listen_only" : "normal")),
+      listenOnly: plan.listenOnly,
+      supportMode: String(input.supportMode || ""),
+      chatMode: String(input.chatMode || ""),
+      mode: String(input.mode || ""),
+      mood: String(input.mood || ""),
+      memoryClass: String(input.memoryClass || ""),
       webSearch: plan.permissions.webSearch,
       useDrive: plan.permissions.useDrive,
       allowWrites: plan.permissions.allowWrites && !plan.requiresExplicitWriteConfirmation,
