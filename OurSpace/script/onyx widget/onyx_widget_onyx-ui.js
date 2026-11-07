@@ -209,6 +209,8 @@
   function activateVisualTab(tabName,focus=false){if(!TABS[tabName])return;state.activeTab=tabName;if(SERVERS[tabName])state.activeServer=tabName;for(const tab of tabs){const on=tab.dataset.tab===tabName;tab.classList.toggle('is-active',on);tab.setAttribute('aria-selected',String(on));tab.tabIndex=on?0:-1;if(on&&focus)tab.focus()}for(const pane of panes){const on=pane.dataset.pane===tabName;pane.classList.toggle('is-active',on);pane.hidden=!on}if(SERVERS[tabName]){renderHistory(tabName);renderHeader(tabName);setTimeout(()=>syncDecorations(tabName),0)}positionPanel()}
   function positionPanel(){
     if(widget.classList.contains('is-fullscreen')||widget.classList.contains('tab-fullscreen'))return;
+    // Once moved or resized, the module owns its geometry until reset.
+    if(panel?.classList.contains('onyx-user-sized'))return;
     const rect=orb?.getBoundingClientRect?.();
     if(!rect)return;
 
