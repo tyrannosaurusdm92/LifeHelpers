@@ -1,0 +1,2476 @@
+{
+  "schema": "ourspace.shop.v1",
+  "version": "2.0.0-canonical-2026-11-06",
+  "profile": "william",
+  "currency": "fictional-in-app currency",
+  "profilePrivate": true,
+  "noDirectRealMoneyPurchases": true,
+  "purchaseFlow": {
+    "requestStatus": [
+      "requested",
+      "approved",
+      "fulfilled",
+      "declined",
+      "cancelled"
+    ],
+    "userApprovalRequired": true,
+    "noExternalVendorCheckout": true,
+    "adultRestrictedItems": "disabled by default; manual age/legal verification outside the game, no automated fulfillment",
+    "spendDenominationsOnApprovedRequest": true
+  },
+  "itemCount": 93,
+  "items": [
+    {
+      "id": "william-shop-regular-red-bull-20-oz-preferred",
+      "profile": "william",
+      "name": "Regular Red Bull, 20 oz preferred",
+      "aisle": "Caffeine connoisseur",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 2,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite energy drink.",
+      "tags": [
+        "energy_drink",
+        "favorite"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 336
+      },
+      "pricingBasis": "single energy drink",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-green-apple-c4",
+      "profile": "william",
+      "name": "Green apple C4",
+      "aisle": "Caffeine connoisseur",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 2,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite.",
+      "tags": [
+        "energy_drink"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 337
+      },
+      "pricingBasis": "single energy drink",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-watermelon-ghost",
+      "profile": "william",
+      "name": "Watermelon Ghost",
+      "aisle": "Caffeine connoisseur",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 2,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite.",
+      "tags": [
+        "energy_drink"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 338
+      },
+      "pricingBasis": "single energy drink",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-energy-drink-multipack-contribution",
+      "profile": "william",
+      "name": "Energy drink multipack contribution",
+      "aisle": "Caffeine connoisseur",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Bigger reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 339
+      },
+      "pricingBasis": "multiple beverages",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-polar-orange-dry",
+      "profile": "william",
+      "name": "Polar Orange Dry",
+      "aisle": "Drinks, no cola",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Local favorite.",
+      "tags": [
+        "drink",
+        "local_favorite"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 340
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-pulp-heavy-orange-juice",
+      "profile": "william",
+      "name": "Pulp-heavy orange juice",
+      "aisle": "Drinks, no cola",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Must be pulpy.",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 341
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-chocolate-milk",
+      "profile": "william",
+      "name": "Chocolate milk",
+      "aisle": "Drinks, no cola",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Sweet drink favorite.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 342
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-juice-bottle-non-cola",
+      "profile": "william",
+      "name": "Juice bottle, non-cola",
+      "aisle": "Drinks, no cola",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Cran-apple, cran-grape, etc.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 343
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-sour-trolli-worms",
+      "profile": "william",
+      "name": "Sour Trolli worms",
+      "aisle": "Candy",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite candy.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 344
+      },
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-starburst",
+      "profile": "william",
+      "name": "Starburst",
+      "aisle": "Candy",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite candy.",
+      "tags": [
+        "candy",
+        "favorite"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 345
+      },
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-blue-cheese-wedges",
+      "profile": "william",
+      "name": "Blue cheese wedges",
+      "aisle": "Salty/cheese snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite snack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 346
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-strawberries",
+      "profile": "william",
+      "name": "Strawberries",
+      "aisle": "Salty/cheese snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Pair with blue cheese.",
+      "tags": [
+        "snack",
+        "fruit"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 347
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-blue-cheese-strawberries-snack-plate",
+      "profile": "william",
+      "name": "Blue cheese + strawberries snack plate",
+      "aisle": "Salty/cheese snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Top-tier favorite snack combo.",
+      "tags": [
+        "snack",
+        "combo"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 348
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-pork-cracklins",
+      "profile": "william",
+      "name": "Pork cracklins",
+      "aisle": "Salty/cheese snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite salty snack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 349
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-pork-rinds",
+      "profile": "william",
+      "name": "Pork rinds",
+      "aisle": "Salty/cheese snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite salty snack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 350
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-rap-snacks",
+      "profile": "william",
+      "name": "Rap Snacks",
+      "aisle": "Salty/cheese snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite salty snack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 351
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-chips-non-cola-snack-run",
+      "profile": "william",
+      "name": "Chips, non-cola snack run",
+      "aisle": "Salty/cheese snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Any salty snack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 352
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-small-t-rex-figure",
+      "profile": "william",
+      "name": "Small T-rex figure",
+      "aisle": "T-rex collection",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Dino collectible.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 353
+      },
+      "pricingBasis": "personal collectible",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-t-rex-plush",
+      "profile": "william",
+      "name": "T-rex plush",
+      "aisle": "T-rex collection",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Comfort/collection.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 354
+      },
+      "pricingBasis": "personal collectible",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-fancy-t-rex-collectible",
+      "profile": "william",
+      "name": "Fancy T-rex collectible",
+      "aisle": "T-rex collection",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier.",
+      "tags": [
+        "collector",
+        "t_rex"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 355
+      },
+      "pricingBasis": "premium collectible",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-t-rex-shirt-decor-item",
+      "profile": "william",
+      "name": "T-rex shirt/decor item",
+      "aisle": "T-rex collection",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Collection + style.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 356
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-breathable-shorts",
+      "profile": "william",
+      "name": "Breathable shorts",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Power-wheelchair-friendly.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 357
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-pun-shirt",
+      "profile": "william",
+      "name": "Pun shirt",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Style favorite.",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 358
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-nerdy-shirt",
+      "profile": "william",
+      "name": "Nerdy shirt",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Style favorite.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 359
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-band-t-shirt",
+      "profile": "william",
+      "name": "Band T-shirt",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Style favorite.",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 360
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-d-d-shirt",
+      "profile": "william",
+      "name": "D&D shirt",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Style favorite.",
+      "tags": [
+        "clothes",
+        "dnd",
+        "masculine"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 361
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-pajama-pants",
+      "profile": "william",
+      "name": "Pajama pants",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Breathable/easy wear.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 362
+      },
+      "pricingBasis": "clothing or bag",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-hoodie",
+      "profile": "william",
+      "name": "Hoodie",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Comfort/style.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 363
+      },
+      "pricingBasis": "outerwear",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-tripp-pants",
+      "profile": "william",
+      "name": "Tripp pants",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier style reward.",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 364
+      },
+      "pricingBasis": "premium specialty clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-wheelchair-comfy-outfit-bundle",
+      "profile": "william",
+      "name": "Wheelchair-comfy outfit bundle",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Shorts/pants + shirt + hoodie.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 365
+      },
+      "pricingBasis": "multiple accessible garments",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-lip-jewelry",
+      "profile": "william",
+      "name": "Lip jewelry",
+      "aisle": "Piercings/gauges",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Body jewelry.",
+      "tags": [
+        "piercing"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 366
+      },
+      "pricingBasis": "body jewelry or accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-eyebrow-jewelry",
+      "profile": "william",
+      "name": "Eyebrow jewelry",
+      "aisle": "Piercings/gauges",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Body jewelry.",
+      "tags": [
+        "piercing"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 367
+      },
+      "pricingBasis": "body jewelry or accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-gauge-tunnel-plugs-set",
+      "profile": "william",
+      "name": "Gauge/tunnel/plugs set",
+      "aisle": "Piercings/gauges",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Body jewelry.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 368
+      },
+      "pricingBasis": "body jewelry or accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-black-steel-silicone-jewelry-upgrade",
+      "profile": "william",
+      "name": "Black steel/silicone jewelry upgrade",
+      "aisle": "Piercings/gauges",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Higher-tier.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 369
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-bedside-organizer",
+      "profile": "william",
+      "name": "Bedside organizer",
+      "aisle": "Accessibility comforts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Keeps items within reach.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 370
+      },
+      "pricingBasis": "accessibility accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-wheelchair-cup-holder",
+      "profile": "william",
+      "name": "Wheelchair cup holder",
+      "aisle": "Accessibility comforts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Practical comfort.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 371
+      },
+      "pricingBasis": "accessibility accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-wheelchair-bag-pouch",
+      "profile": "william",
+      "name": "Wheelchair bag/pouch",
+      "aisle": "Accessibility comforts",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Access support.",
+      "tags": [
+        "accessibility"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 372
+      },
+      "pricingBasis": "accessibility comfort equipment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-bed-tray-lap-desk",
+      "profile": "william",
+      "name": "Bed tray/lap desk",
+      "aisle": "Accessibility comforts",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Bed-level work/play.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 373
+      },
+      "pricingBasis": "accessibility comfort equipment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-heating-pad-cold-pack",
+      "profile": "william",
+      "name": "Heating pad / cold pack",
+      "aisle": "Accessibility comforts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Pain comfort.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 374
+      },
+      "pricingBasis": "comfort accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-support-pillow-positioning-aid",
+      "profile": "william",
+      "name": "Support pillow / positioning aid",
+      "aisle": "Accessibility comforts",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Pain/access support.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 375
+      },
+      "pricingBasis": "substantial comfort/accommodation item",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-everquest-2-game-funds",
+      "profile": "william",
+      "name": "EverQuest 2 game funds",
+      "aisle": "Gaming",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Main game.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 376
+      },
+      "pricingBasis": "small game contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-sims-2-related-item-modding-comfort-fund",
+      "profile": "william",
+      "name": "Sims 2 related item/modding comfort fund",
+      "aisle": "Gaming",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Main game.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 377
+      },
+      "pricingBasis": "general item default based on ordinary treat/comfort effort",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-gaming-mouse-keyboard-contribution",
+      "profile": "william",
+      "name": "Gaming mouse/keyboard contribution",
+      "aisle": "Gaming",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Setup reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 378
+      },
+      "pricingBasis": "general item default based on ordinary treat/comfort effort",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-tower-gaming-system-contribution-small",
+      "profile": "william",
+      "name": "Tower gaming system contribution, small",
+      "aisle": "Gaming",
+      "priceDenominations": {
+        "platinum": 7,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Very high-tier savings reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 379
+      },
+      "pricingBasis": "large electronic goal contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-tower-gaming-system-contribution-major",
+      "profile": "william",
+      "name": "Tower gaming system contribution, major",
+      "aisle": "Gaming",
+      "priceDenominations": {
+        "platinum": 13,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Long-term jackpot reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 380
+      },
+      "pricingBasis": "large electronic goal contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-foundry-vtt-purchase-contribution",
+      "profile": "william",
+      "name": "Foundry VTT purchase contribution",
+      "aisle": "Virtual D&D",
+      "priceDenominations": {
+        "platinum": 6,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Major digital D&D need.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 381
+      },
+      "pricingBasis": "premium digital roleplay software",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-foundry-premium-module-package",
+      "profile": "william",
+      "name": "Foundry premium/module/package",
+      "aisle": "Virtual D&D",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Digital D&D pack.",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 382
+      },
+      "pricingBasis": "specialized digital roleplay content",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-arkenforge-package-asset-pack",
+      "profile": "william",
+      "name": "Arkenforge package/asset pack",
+      "aisle": "Virtual D&D",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Map/VTT tools.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 383
+      },
+      "pricingBasis": "specialized digital roleplay content",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-digital-map-token-asset-pack",
+      "profile": "william",
+      "name": "Digital map/token asset pack",
+      "aisle": "Virtual D&D",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Online D&D.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 384
+      },
+      "pricingBasis": "digital asset pack",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-dice-set",
+      "profile": "william",
+      "name": "Dice set",
+      "aisle": "In-person D&D material",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Even if mostly online.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 385
+      },
+      "pricingBasis": "general item default based on ordinary treat/comfort effort",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-d-d-lore-handbook",
+      "profile": "william",
+      "name": "D&D lore/handbook",
+      "aisle": "In-person D&D material",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Big book reward.",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 386
+      },
+      "pricingBasis": "reference book",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-campaign-notebook-binder",
+      "profile": "william",
+      "name": "Campaign notebook/binder",
+      "aisle": "In-person D&D material",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Writing/worldbuilding.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 387
+      },
+      "pricingBasis": "writing or organizing material",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-mini-terrain-display-piece",
+      "profile": "william",
+      "name": "Mini/terrain/display piece",
+      "aisle": "In-person D&D material",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "In-person material joy.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 388
+      },
+      "pricingBasis": "general item default based on ordinary treat/comfort effort",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-nice-notebook-journal",
+      "profile": "william",
+      "name": "Nice notebook/journal",
+      "aisle": "Writing",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Saga/songs/poems.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 389
+      },
+      "pricingBasis": "writing or organizing material",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-pens-highlighters-tabs",
+      "profile": "william",
+      "name": "Pens/highlighters/tabs",
+      "aisle": "Writing",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Writing tools.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 390
+      },
+      "pricingBasis": "writing or organizing material",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-worldbuilding-binder-supplies",
+      "profile": "william",
+      "name": "Worldbuilding binder supplies",
+      "aisle": "Writing",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "D&D/saga/MMORPG.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 391
+      },
+      "pricingBasis": "writing or organizing material",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-writing-software-app-contribution",
+      "profile": "william",
+      "name": "Writing software/app contribution",
+      "aisle": "Writing",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Digital writing support.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 392
+      },
+      "pricingBasis": "general item default based on ordinary treat/comfort effort",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-brev-ai-music-tool-session-reward",
+      "profile": "william",
+      "name": "Brev.ai/music tool session/reward",
+      "aisle": "Music",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Songwriting support.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 393
+      },
+      "pricingBasis": "creative music session or digital allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-music-app-subscription-contribution",
+      "profile": "william",
+      "name": "Music app/subscription contribution",
+      "aisle": "Music",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "If useful.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 394
+      },
+      "pricingBasis": "music software contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-cat-treats",
+      "profile": "william",
+      "name": "Cat treats",
+      "aisle": "Cats",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Spoil Onyx/Harvey/Callie.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 395
+      },
+      "pricingBasis": "pet treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-cat-toy",
+      "profile": "william",
+      "name": "Cat toy",
+      "aisle": "Cats",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 5,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Cat joy.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 396
+      },
+      "pricingBasis": "pet enrichment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-cat-brush-grooming-item",
+      "profile": "william",
+      "name": "Cat brush/grooming item",
+      "aisle": "Cats",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Practical care.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 397
+      },
+      "pricingBasis": "pet care tool",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-t-rex-cat-comfort-plush",
+      "profile": "william",
+      "name": "T-rex/cat comfort plush",
+      "aisle": "Comfort",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Comfort object.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 398
+      },
+      "pricingBasis": "personal collectible",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-candle-or-cozy-room-item",
+      "profile": "william",
+      "name": "Candle or cozy room item",
+      "aisle": "Comfort",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Comfort/ambience.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 399
+      },
+      "pricingBasis": "comfort item",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-weighted-sensory-comfort-item",
+      "profile": "william",
+      "name": "Weighted/sensory comfort item",
+      "aisle": "Comfort",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Autism/decompression support.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 400
+      },
+      "pricingBasis": "substantial comfort/accommodation item",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-uber-eats-order-contribution-small",
+      "profile": "william",
+      "name": "Uber Eats/order contribution, small",
+      "aisle": "Food delivery",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Food reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 401
+      },
+      "pricingBasis": "delivery or gift-card contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-full-food-delivery-order",
+      "profile": "william",
+      "name": "Full food delivery order",
+      "aisle": "Food delivery",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 402
+      },
+      "pricingBasis": "prepared food + delivery + service",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-favorite-low-spoon-meal-request",
+      "profile": "william",
+      "name": "Favorite low-spoon meal request",
+      "aisle": "Homecooked food",
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "If Squishy has capacity. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 403
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "william-shop-steak-starch-veggie-meal",
+      "profile": "william",
+      "name": "Steak/starch/veggie meal",
+      "aisle": "Homecooked food",
+      "priceDenominations": {
+        "platinum": 7,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Higher cost/labor. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 404
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "william-shop-edible-dispensary-contribution-small",
+      "profile": "william",
+      "name": "Edible dispensary contribution, small",
+      "aisle": "Adult MA cannabis",
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Edibles only for Dino due asthma.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 405
+      },
+      "pricingBasis": "adult-restricted manual-only contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-edible-dispensary-contribution-larger",
+      "profile": "william",
+      "name": "Edible dispensary contribution, larger",
+      "aisle": "Adult MA cannabis",
+      "priceDenominations": {
+        "platinum": 6,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Manual review/adult-only.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 406
+      },
+      "pricingBasis": "adult-restricted manual-only contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-topical-tincture-contribution",
+      "profile": "william",
+      "name": "Topical/tincture contribution",
+      "aisle": "Adult MA cannabis",
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Non-smoking option.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 407
+      },
+      "pricingBasis": "adult-restricted manual-only contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-check-dispensary-edible-menu",
+      "profile": "william",
+      "name": "Check dispensary edible menu",
+      "aisle": "Adult MA cannabis admin",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Planning task/reward.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 408
+      },
+      "pricingBasis": "manual-only administrative planning; no automatic purchase",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-shop-plan-accessible-dispensary-pickup-delivery",
+      "profile": "william",
+      "name": "Plan accessible dispensary pickup/delivery",
+      "aisle": "Adult MA cannabis admin",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Access planning.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 409
+      },
+      "pricingBasis": "manual-only administrative planning; no automatic purchase",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-blue-cheese",
+      "profile": "william",
+      "name": "Blue cheese",
+      "aisle": "Snack Plate",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Favorite savory snack.",
+      "tags": [
+        "snack"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-d-d-handbook",
+      "profile": "william",
+      "name": "D&D handbook",
+      "aisle": "D&D Books + Lore",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Digital or physical handbook reward.",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "reference book",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-monster-book",
+      "profile": "william",
+      "name": "Monster book",
+      "aisle": "D&D Books + Lore",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Monster or creature reference reward.",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "reference book",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-campaign-book",
+      "profile": "william",
+      "name": "Campaign book",
+      "aisle": "D&D Books + Lore",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Adventure/campaign sourcebook reward.",
+      "tags": [
+        "dnd",
+        "book"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "reference book",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-foundry-vtt-license",
+      "profile": "william",
+      "name": "Foundry VTT license",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "priceDenominations": {
+        "platinum": 6,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier virtual tabletop purchase.",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "premium digital roleplay software",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-foundry-vtt-module",
+      "profile": "william",
+      "name": "Foundry VTT module",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Add-on module, system, world, or tool package.",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "specialized digital roleplay content",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-foundry-vtt-world-package",
+      "profile": "william",
+      "name": "Foundry VTT world package",
+      "aisle": "Virtual D&D / VTT Hoard",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "World or campaign package for virtual play.",
+      "tags": [
+        "foundry",
+        "vtt",
+        "digital_dnd"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "specialized digital roleplay content",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-arkenforge-map-pack",
+      "profile": "william",
+      "name": "Arkenforge map pack",
+      "aisle": "Arkenforge / Mapmaking",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Map asset or content pack for virtual D&D prep.",
+      "tags": [
+        "arkenforge",
+        "mapmaking",
+        "digital_dnd"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "specialized digital roleplay content",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-arkenforge-asset-bundle",
+      "profile": "william",
+      "name": "Arkenforge asset bundle",
+      "aisle": "Arkenforge / Mapmaking",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Asset bundle for maps, tokens, or worldbuilding.",
+      "tags": [
+        "arkenforge",
+        "mapmaking",
+        "digital_dnd"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "specialized digital roleplay content",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-t-rex-plush-or-figure",
+      "profile": "william",
+      "name": "T-rex plush or figure",
+      "aisle": "Collectibles",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Comfort or display collectible.",
+      "tags": [
+        "collector",
+        "t_rex"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "personal collectible",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-cargo-pants",
+      "profile": "william",
+      "name": "Cargo pants",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Masculine-only clothing reward.",
+      "tags": [
+        "clothes",
+        "masculine"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "clothing or bag",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-tunnels-or-plugs",
+      "profile": "william",
+      "name": "Tunnels or plugs",
+      "aisle": "Piercings + Gauges",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 4,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Gauged-ear jewelry reward.",
+      "tags": [
+        "gauges"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "small clothing/accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-brev-ai-music-session",
+      "profile": "william",
+      "name": "Brev.ai music session",
+      "aisle": "Music Creation",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Music creation session or subscription contribution.",
+      "tags": [
+        "music",
+        "brev_ai"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "creative music session or digital allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-facebook-comfort-link",
+      "profile": "william",
+      "name": "Facebook comfort link",
+      "aisle": "Social + Serotonin",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 0,
+        "silver": 8,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Facebook comfort/social replacement for TikTok.",
+      "tags": [
+        "facebook",
+        "serotonin"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "in-game digital comfort token",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-snapchat-connection-item",
+      "profile": "william",
+      "name": "Snapchat connection item",
+      "aisle": "Social + Serotonin",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 0,
+        "silver": 8,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Snapchat social/comfort module item.",
+      "tags": [
+        "snapchat",
+        "serotonin"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "in-game digital comfort token",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-bed-tray",
+      "profile": "william",
+      "name": "Bed tray",
+      "aisle": "Accessibility Comforts",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Bed-level activity support.",
+      "tags": [
+        "accessibility"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "accessibility comfort equipment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-reacher-or-extender-tool",
+      "profile": "william",
+      "name": "Reacher or extender tool",
+      "aisle": "Accessibility Comforts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Reach-access support.",
+      "tags": [
+        "accessibility"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "accessibility accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-heating-pad",
+      "profile": "william",
+      "name": "Heating pad",
+      "aisle": "Accessibility Comforts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Pain comfort support.",
+      "tags": [
+        "accessibility",
+        "pain"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "comfort accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "william-legacy-shop-nicotine-e-cig-budget-tracker",
+      "profile": "william",
+      "name": "Nicotine / e-cig budget tracker",
+      "aisle": "Budget Only",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Track budget/restock only; do not treat as a reward loop.",
+      "tags": [
+        "nicotine",
+        "budget_only"
+      ],
+      "adultOnly": false,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": false,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "william/store_items.json"
+      },
+      "pricingBasis": "planning/tracking only; no purchase or fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "purchasable": false
+    }
+  ],
+  "pricingPolicy": {
+    "canonicalUnit": "normalized_denominations",
+    "allItemsHaveExplicitPrice": true,
+    "priceIsFictionalNotCashExchange": true,
+    "method": "Household effort, ingredients, supplies, cleanup, accessibility, and item scale; no original/archival price values.",
+    "homemadeMealPolicy": "Every homemade meal costs at least 3,900 copper, exceeding ordinary sweater and dress rewards.",
+    "fulfillmentConsentRequired": true,
+    "noAutomaticRealWorldCheckout": true,
+    "pricesStoredAsDenominations": true,
+    "canonicalRepresentation": "priceDenominations only; four denominations; no standalone totals"
+  }
+}

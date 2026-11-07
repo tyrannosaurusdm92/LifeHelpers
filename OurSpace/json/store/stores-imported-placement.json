@@ -1,0 +1,41 @@
+{
+  "schema": "ourspace.stores-placement.v1",
+  "version": 1,
+  "generatedAt": "2026-11-01T03:12:02.435Z",
+  "profile": "william",
+  "pages": {
+    "store": {
+      "modules": {
+        "dino-store": {
+          "moduleId": "dino-store",
+          "index": 0,
+          "widthPx": 1674,
+          "heightPx": 1150,
+          "offsetX": 0,
+          "offsetY": 24,
+          "flow": "normal"
+        }
+      }
+    }
+  },
+  "profiles": {
+    "william": {
+      "pages": {
+        "store": {
+          "modules": {
+            "dino-store": {
+              "moduleId": "dino-store",
+              "index": 0,
+              "widthPx": 1674,
+              "heightPx": 1150,
+              "offsetX": 0,
+              "offsetY": 24,
+              "flow": "normal"
+            }
+          }
+        }
+      }
+    }
+  },
+  "notes": "Native Dino / Squishy Store layout. Profile-specific module placement; no iframe, Shadow DOM or standalone store HTML."
+}

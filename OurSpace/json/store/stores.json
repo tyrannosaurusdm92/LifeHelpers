@@ -1,0 +1,41 @@
+{
+  "schema": "ourspace.stores-placement.v1",
+  "version": 1,
+  "profiles": {
+    "william": {
+      "pages": {
+        "store": {
+          "modules": {
+            "dino-store": {
+              "moduleId": "dino-store",
+              "index": 0,
+              "widthPx": 1674,
+              "heightPx": 1150,
+              "offsetX": 0,
+              "offsetY": 24,
+              "flow": "normal"
+            }
+          }
+        }
+      }
+    },
+    "jasper": {
+      "pages": {
+        "store": {
+          "modules": {
+            "squishy-store": {
+              "moduleId": "squishy-store",
+              "index": 0,
+              "widthPx": null,
+              "heightPx": 1150,
+              "offsetX": 0,
+              "offsetY": 24,
+              "flow": "normal"
+            }
+          }
+        }
+      }
+    }
+  },
+  "generatedAt": "2026-11-01T03:12:02.435Z"
+}

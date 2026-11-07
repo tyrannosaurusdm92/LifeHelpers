@@ -1,0 +1,2686 @@
+{
+  "schema": "ourspace.shop.v1",
+  "version": "2.0.0-canonical-2026-11-06",
+  "profile": "jasper",
+  "currency": "fictional-in-app currency",
+  "profilePrivate": true,
+  "noDirectRealMoneyPurchases": true,
+  "purchaseFlow": {
+    "requestStatus": [
+      "requested",
+      "approved",
+      "fulfilled",
+      "declined",
+      "cancelled"
+    ],
+    "userApprovalRequired": true,
+    "noExternalVendorCheckout": true,
+    "adultRestrictedItems": "disabled by default; manual age/legal verification outside the game, no automated fulfillment",
+    "spendDenominationsOnApprovedRequest": true
+  },
+  "itemCount": 103,
+  "items": [
+    {
+      "id": "jasper-shop-rubber-duck-of-choice",
+      "profile": "jasper",
+      "name": "Rubber duck of choice",
+      "aisle": "Duck collection",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Signature Jasper collectible.",
+      "tags": [
+        "collector",
+        "duck"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 132
+      },
+      "pricingBasis": "personal collectible",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-special-themed-duck",
+      "profile": "jasper",
+      "name": "Special themed duck",
+      "aisle": "Duck collection",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Fancy/seasonal duck.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 133
+      },
+      "pricingBasis": "specialty collectible",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-mini-duck-pack",
+      "profile": "jasper",
+      "name": "Mini duck pack",
+      "aisle": "Duck collection",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Multi-duck reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 134
+      },
+      "pricingBasis": "collectible bundle",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-root-beer",
+      "profile": "jasper",
+      "name": "Root beer",
+      "aisle": "Pop + soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Drink aisle.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 135
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-7-up",
+      "profile": "jasper",
+      "name": "7-Up",
+      "aisle": "Pop + soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Drink aisle.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 136
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-regular-coke",
+      "profile": "jasper",
+      "name": "Regular Coke",
+      "aisle": "Pop + soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper fave, not Dino.",
+      "tags": [
+        "drink",
+        "cola"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 137
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-cherry-pepsi",
+      "profile": "jasper",
+      "name": "Cherry Pepsi",
+      "aisle": "Pop + soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper fave, not Dino.",
+      "tags": [
+        "drink",
+        "cola"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 138
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-orange-pop",
+      "profile": "jasper",
+      "name": "Orange pop",
+      "aisle": "Pop + soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Drink aisle.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 139
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-grape-pop",
+      "profile": "jasper",
+      "name": "Grape pop",
+      "aisle": "Pop + soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Drink aisle.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 140
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-mountain-dew",
+      "profile": "jasper",
+      "name": "Mountain Dew",
+      "aisle": "Pop + soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Drink aisle.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 141
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-shasta-ginger-ale",
+      "profile": "jasper",
+      "name": "Shasta ginger ale",
+      "aisle": "Pop + soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Drink aisle.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 142
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-gold-peak-sweet-tea",
+      "profile": "jasper",
+      "name": "Gold Peak sweet tea",
+      "aisle": "Tea + juice",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Bigger drink reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 143
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-yoohoo-milk",
+      "profile": "jasper",
+      "name": "Yoohoo milk",
+      "aisle": "Tea + juice",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Drink/snack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 144
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-juice-boxes",
+      "profile": "jasper",
+      "name": "Juice boxes",
+      "aisle": "Tea + juice",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Pack/multipack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 145
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-capri-sun-pouches",
+      "profile": "jasper",
+      "name": "Capri Sun pouches",
+      "aisle": "Tea + juice",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Pack/multipack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 146
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-bottle-of-cran-grape-juice",
+      "profile": "jasper",
+      "name": "Bottle of cran-grape juice",
+      "aisle": "Tea + juice",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Grocery drink.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 147
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-bottle-of-cran-apple-juice",
+      "profile": "jasper",
+      "name": "Bottle of cran-apple juice",
+      "aisle": "Tea + juice",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Grocery drink.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 148
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-watermelon-red-bull",
+      "profile": "jasper",
+      "name": "Watermelon Red Bull",
+      "aisle": "Energy drinks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 2,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Energy drink.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 149
+      },
+      "pricingBasis": "single energy drink",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-grape-ghost",
+      "profile": "jasper",
+      "name": "Grape Ghost",
+      "aisle": "Energy drinks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 2,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Energy drink.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 150
+      },
+      "pricingBasis": "single energy drink",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-candy-bar",
+      "profile": "jasper",
+      "name": "Candy bar",
+      "aisle": "Candy",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Small treat.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 151
+      },
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-bag-of-candy",
+      "profile": "jasper",
+      "name": "Bag of candy",
+      "aisle": "Candy",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Standard candy reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 152
+      },
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-gum",
+      "profile": "jasper",
+      "name": "Gum",
+      "aisle": "Candy",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Small treat.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 153
+      },
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-mints",
+      "profile": "jasper",
+      "name": "Mints",
+      "aisle": "Candy",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Small treat.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 154
+      },
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-box-of-chocolates",
+      "profile": "jasper",
+      "name": "Box of chocolates",
+      "aisle": "Candy",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Bigger treat.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 155
+      },
+      "pricingBasis": "specialty food treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-pop-tarts",
+      "profile": "jasper",
+      "name": "Pop-Tarts",
+      "aisle": "Sweet snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Box/snack pack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 156
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-nutella-and-crackers",
+      "profile": "jasper",
+      "name": "Nutella and crackers",
+      "aisle": "Sweet snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper item.",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 157
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-applesauce",
+      "profile": "jasper",
+      "name": "Applesauce",
+      "aisle": "Sweet snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Snack pack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 158
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-cream-cheese-frosting-nilla-wafers",
+      "profile": "jasper",
+      "name": "Cream cheese frosting + Nilla wafers",
+      "aisle": "Sweet snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Treat combo.",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 159
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-cookies",
+      "profile": "jasper",
+      "name": "Cookies",
+      "aisle": "Sweet snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Pack/bakery.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 160
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-sheet-cake",
+      "profile": "jasper",
+      "name": "Sheet cake",
+      "aisle": "Sweet snacks",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier dessert.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 161
+      },
+      "pricingBasis": "prepared bakery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-trail-mix",
+      "profile": "jasper",
+      "name": "Trail mix",
+      "aisle": "Salty snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Snack.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 162
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-salt-and-vinegar-chips",
+      "profile": "jasper",
+      "name": "Salt and vinegar chips",
+      "aisle": "Salty snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Chip flavor.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 163
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-barbecue-chips",
+      "profile": "jasper",
+      "name": "Barbecue chips",
+      "aisle": "Salty snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Chip flavor.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 164
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-sour-cream-and-onion-chips",
+      "profile": "jasper",
+      "name": "Sour cream and onion chips",
+      "aisle": "Salty snacks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Chip flavor.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 165
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-spam",
+      "profile": "jasper",
+      "name": "Spam",
+      "aisle": "Pantry foods",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Pantry item.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 166
+      },
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-cherry-lime-ricky",
+      "profile": "jasper",
+      "name": "Cherry lime ricky",
+      "aisle": "Special drinks/food",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Special drink/treat.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 167
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-candle",
+      "profile": "jasper",
+      "name": "Candle",
+      "aisle": "Comfort objects",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Cozy/cottagecore reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 168
+      },
+      "pricingBasis": "comfort item",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-small-stuffed-animal",
+      "profile": "jasper",
+      "name": "Small stuffed animal",
+      "aisle": "Comfort objects",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 6,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Comfort reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 169
+      },
+      "pricingBasis": "small comfort object",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-medium-stuffed-animal",
+      "profile": "jasper",
+      "name": "Medium stuffed animal",
+      "aisle": "Comfort objects",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Bigger comfort reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 170
+      },
+      "pricingBasis": "medium comfort object",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-large-stuffed-animal",
+      "profile": "jasper",
+      "name": "Large stuffed animal",
+      "aisle": "Comfort objects",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier comfort.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 171
+      },
+      "pricingBasis": "large comfort object",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-small-craft-supply",
+      "profile": "jasper",
+      "name": "Small craft supply",
+      "aisle": "Crafts",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 6,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Stickers, markers, small kit.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 172
+      },
+      "pricingBasis": "craft materials",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-medium-craft-supply",
+      "profile": "jasper",
+      "name": "Medium craft supply",
+      "aisle": "Crafts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Better kit/supplies.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 173
+      },
+      "pricingBasis": "craft materials",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-large-craft-project-item",
+      "profile": "jasper",
+      "name": "Large craft project item",
+      "aisle": "Crafts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier craft reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 174
+      },
+      "pricingBasis": "multi-step craft supplies",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-music-cd",
+      "profile": "jasper",
+      "name": "Music CD",
+      "aisle": "Music/media",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper item only.",
+      "tags": [
+        "media"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 175
+      },
+      "pricingBasis": "physical media",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-phone-pop-socket",
+      "profile": "jasper",
+      "name": "Phone pop socket",
+      "aisle": "Phone accessories",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 5,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Phone accessory.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 176
+      },
+      "pricingBasis": "small phone accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-shirt-link-t-shirt",
+      "profile": "jasper",
+      "name": "Shirt link / T-shirt",
+      "aisle": "Clothes — shirts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper pastes link/size.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 177
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-pants-link",
+      "profile": "jasper",
+      "name": "Pants link",
+      "aisle": "Clothes — pants",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper pastes link/size.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 178
+      },
+      "pricingBasis": "clothing or bag",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-shorts-link",
+      "profile": "jasper",
+      "name": "Shorts link",
+      "aisle": "Clothes — shorts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper pastes link/size.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 179
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-skirt-link",
+      "profile": "jasper",
+      "name": "Skirt link",
+      "aisle": "Clothes — skirts",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper pastes link/size.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 180
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-jacket-hoodie-link",
+      "profile": "jasper",
+      "name": "Jacket/hoodie link",
+      "aisle": "Clothes — jackets",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier clothing.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 181
+      },
+      "pricingBasis": "outerwear",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-shoes-link",
+      "profile": "jasper",
+      "name": "Shoes link",
+      "aisle": "Clothes — shoes",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 4,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier clothing.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 182
+      },
+      "pricingBasis": "footwear",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-socks",
+      "profile": "jasper",
+      "name": "Socks",
+      "aisle": "Clothes — socks",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 4,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Small clothing reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 183
+      },
+      "pricingBasis": "small clothing/accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-purse-bag-link",
+      "profile": "jasper",
+      "name": "Purse/bag link",
+      "aisle": "Clothes — purses",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper pastes link.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 184
+      },
+      "pricingBasis": "clothing or bag",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-put-money-on-game",
+      "profile": "jasper",
+      "name": "Put money on game",
+      "aisle": "Games",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Game currency/card.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 185
+      },
+      "pricingBasis": "small game contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-buy-video-game-small-indie",
+      "profile": "jasper",
+      "name": "Buy video game, small/indie",
+      "aisle": "Games",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Mid/high reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 186
+      },
+      "pricingBasis": "smaller game",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-buy-video-game-major-newer",
+      "profile": "jasper",
+      "name": "Buy video game, major/newer",
+      "aisle": "Games",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 187
+      },
+      "pricingBasis": "full new game",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-uber-eats-gift-card-small",
+      "profile": "jasper",
+      "name": "Uber Eats gift card, small",
+      "aisle": "Gift cards",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Food delivery.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 188
+      },
+      "pricingBasis": "delivery or gift-card contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-uber-eats-gift-card-bigger",
+      "profile": "jasper",
+      "name": "Uber Eats gift card, bigger",
+      "aisle": "Gift cards",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 189
+      },
+      "pricingBasis": "delivery or gift-card contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-walmart-item-link-small",
+      "profile": "jasper",
+      "name": "Walmart item link, small",
+      "aisle": "Online shopping",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Paste link.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 190
+      },
+      "pricingBasis": "small flexible item allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-walmart-item-link-medium",
+      "profile": "jasper",
+      "name": "Walmart item link, medium",
+      "aisle": "Online shopping",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Paste link.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 191
+      },
+      "pricingBasis": "medium shopping allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-walmart-item-link-large",
+      "profile": "jasper",
+      "name": "Walmart item link, large",
+      "aisle": "Online shopping",
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 4,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Manual review.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 192
+      },
+      "pricingBasis": "large shopping allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-tiktok-shop-item-small",
+      "profile": "jasper",
+      "name": "TikTok Shop item, small",
+      "aisle": "Online shopping",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper can keep TikTok.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 193
+      },
+      "pricingBasis": "small flexible item allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-tiktok-shop-item-medium",
+      "profile": "jasper",
+      "name": "TikTok Shop item, medium",
+      "aisle": "Online shopping",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Paste link.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 194
+      },
+      "pricingBasis": "medium shopping allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-amazon-item-small",
+      "profile": "jasper",
+      "name": "Amazon item, small",
+      "aisle": "Online shopping",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Paste link.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 195
+      },
+      "pricingBasis": "small flexible item allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-amazon-item-medium",
+      "profile": "jasper",
+      "name": "Amazon item, medium",
+      "aisle": "Online shopping",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Paste link.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 196
+      },
+      "pricingBasis": "medium shopping allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-small-uber-eats-order-contribution",
+      "profile": "jasper",
+      "name": "Small Uber Eats order contribution",
+      "aisle": "Food delivery",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Delivery reward.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 197
+      },
+      "pricingBasis": "delivery or gift-card contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-full-uber-eats-order",
+      "profile": "jasper",
+      "name": "Full Uber Eats order",
+      "aisle": "Food delivery",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "High-tier.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 198
+      },
+      "pricingBasis": "prepared food + delivery + service",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-vernors",
+      "profile": "jasper",
+      "name": "Vernors",
+      "aisle": "Exclusive treats",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Exclusive/Michigan item.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 199
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-mackinac-island-fudge",
+      "profile": "jasper",
+      "name": "Mackinac Island fudge",
+      "aisle": "Exclusive treats",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Special treat.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 200
+      },
+      "pricingBasis": "specialty food treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-michigan-cherries-food",
+      "profile": "jasper",
+      "name": "Michigan cherries food",
+      "aisle": "Exclusive treats",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 6,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Special treat.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 201
+      },
+      "pricingBasis": "regional food treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-michigan-maple-syrup",
+      "profile": "jasper",
+      "name": "Michigan maple syrup",
+      "aisle": "Exclusive treats",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Special treat.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 202
+      },
+      "pricingBasis": "specialty food treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-arby-s-in-person-trip",
+      "profile": "jasper",
+      "name": "Arby’s in-person trip",
+      "aisle": "Exclusive treats",
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Special outing.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 203
+      },
+      "pricingBasis": "transport + meal outing logistics",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-pancake-burgers",
+      "profile": "jasper",
+      "name": "Pancake burgers",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Labor/time reward. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 204
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-barbecue-chicken",
+      "profile": "jasper",
+      "name": "Barbecue chicken",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 5,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Labor/time reward. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 205
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-alfredo",
+      "profile": "jasper",
+      "name": "Alfredo",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Labor/time reward. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 206
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-kielbasa-and-pierogies",
+      "profile": "jasper",
+      "name": "Kielbasa and pierogies",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Labor/time reward. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 207
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-shrimp-taco-supplies",
+      "profile": "jasper",
+      "name": "Shrimp taco supplies",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 5,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Ingredient cost. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 208
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-sticky-sausage-and-hard-boiled-eggs",
+      "profile": "jasper",
+      "name": "Sticky sausage and hard-boiled eggs",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Labor/time reward. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 209
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-steak-starch-veggie",
+      "profile": "jasper",
+      "name": "Steak + starch + veggie",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 7,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Higher ingredient cost. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 210
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-swedish-meatballs",
+      "profile": "jasper",
+      "name": "Swedish meatballs",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 5,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Labor/time reward. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 211
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-pork-chops-starch-veggie",
+      "profile": "jasper",
+      "name": "Pork chops + starch + veggie",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 6,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Higher ingredient cost. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 212
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-stuffed-mushrooms",
+      "profile": "jasper",
+      "name": "Stuffed mushrooms",
+      "aisle": "Homecooked meals",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Labor/time reward. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "tags": [],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 213
+      },
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "jasper-shop-one-hitter-one-piece",
+      "profile": "jasper",
+      "name": "One-hitter / one piece",
+      "aisle": "Adult 21+ MA cannabis",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Adult-only/manual review.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 214
+      },
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-pipe",
+      "profile": "jasper",
+      "name": "Pipe",
+      "aisle": "Adult 21+ MA cannabis",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Adult-only/manual review.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 215
+      },
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-bong",
+      "profile": "jasper",
+      "name": "Bong",
+      "aisle": "Adult 21+ MA cannabis",
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Adult-only/manual review.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 216
+      },
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-grinder-papers-lighter-stash-supply",
+      "profile": "jasper",
+      "name": "Grinder / papers / lighter / stash supply",
+      "aisle": "Adult 21+ MA cannabis",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Adult-only/manual review.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 217
+      },
+      "pricingBasis": "adult-restricted supply; manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-dispensary-order-contribution-small",
+      "profile": "jasper",
+      "name": "Dispensary order contribution, small",
+      "aisle": "Adult 21+ MA cannabis",
+      "priceDenominations": {
+        "platinum": 6,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Adult-only/manual review.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 218
+      },
+      "pricingBasis": "adult-restricted manual-only contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-dispensary-order-contribution-larger",
+      "profile": "jasper",
+      "name": "Dispensary order contribution, larger",
+      "aisle": "Adult 21+ MA cannabis",
+      "priceDenominations": {
+        "platinum": 6,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Adult-only/manual review.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 219
+      },
+      "pricingBasis": "adult-restricted manual-only contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-check-dispensary-menu",
+      "profile": "jasper",
+      "name": "Check dispensary menu",
+      "aisle": "Adult 21+ MA cannabis admin",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Admin/planning reward.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 220
+      },
+      "pricingBasis": "manual-only administrative planning; no automatic purchase",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-plan-pickup-delivery",
+      "profile": "jasper",
+      "name": "Plan pickup/delivery",
+      "aisle": "Adult 21+ MA cannabis admin",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Legal/adult-only planning.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 221
+      },
+      "pricingBasis": "manual-only administrative planning; no automatic purchase",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-shop-medical-card-renewal-reminder-check",
+      "profile": "jasper",
+      "name": "Medical card renewal reminder/check",
+      "aisle": "Adult 21+ MA cannabis admin",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Admin support.",
+      "tags": [],
+      "adultOnly": true,
+      "manualReview": true,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "Pasted markdown(4).md",
+        "line": 222
+      },
+      "pricingBasis": "manual-only administrative planning; no automatic purchase",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-other-cola-choice",
+      "profile": "jasper",
+      "name": "Other cola choice",
+      "aisle": "Pop + Soda",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Only show in Jasper store, not William store.",
+      "tags": [
+        "drink",
+        "cola"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-duck-collectible-bundle",
+      "profile": "jasper",
+      "name": "Duck collectible bundle",
+      "aisle": "Collectibles",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Higher-tier duck collection reward.",
+      "tags": [
+        "collector",
+        "duck"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "collectible bundle",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-tiktok-shop-link-item",
+      "profile": "jasper",
+      "name": "TikTok Shop link item",
+      "aisle": "Social Shopping",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Quick-add TikTok Shop item, past order, or favorite store for Jasper only.",
+      "tags": [
+        "tiktok",
+        "link_item"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "small flexible item allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-tiktok-shop-past-order-reorder",
+      "profile": "jasper",
+      "name": "TikTok Shop past order reorder",
+      "aisle": "Social Shopping",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper can paste or save a past TikTok order.",
+      "tags": [
+        "tiktok",
+        "past_order"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "previously chosen shopping item",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-clothes-skirts",
+      "profile": "jasper",
+      "name": "Clothes: skirts",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Clothing link category for Jasper only.",
+      "tags": [
+        "clothes"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-clothes-purses",
+      "profile": "jasper",
+      "name": "Clothes: purses",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Clothing link category for Jasper only.",
+      "tags": [
+        "clothes",
+        "accessory"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "clothing or bag",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-clothes-shirts",
+      "profile": "jasper",
+      "name": "Clothes: shirts",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper clothing link category.",
+      "tags": [
+        "clothes"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-clothes-pants",
+      "profile": "jasper",
+      "name": "Clothes: pants",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper clothing link category.",
+      "tags": [
+        "clothes"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "clothing or bag",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-clothes-shorts",
+      "profile": "jasper",
+      "name": "Clothes: shorts",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper clothing link category.",
+      "tags": [
+        "clothes"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "ordinary clothing",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-clothes-jackets",
+      "profile": "jasper",
+      "name": "Clothes: jackets",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper clothing link category.",
+      "tags": [
+        "clothes"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "outerwear",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-clothes-shoes",
+      "profile": "jasper",
+      "name": "Clothes: shoes",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 4,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper clothing link category.",
+      "tags": [
+        "clothes"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "footwear",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "jasper-legacy-shop-clothes-socks",
+      "profile": "jasper",
+      "name": "Clothes: socks",
+      "aisle": "Clothes",
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 4,
+        "silver": 0,
+        "copper": 0
+      },
+      "currency": "fictional_in_app_only",
+      "notes": "Jasper clothing link category.",
+      "tags": [
+        "clothes"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "requiresHouseholdFulfillment": true,
+      "realMoneyCheckout": false,
+      "source": {
+        "file": "OurSpace_William_Jasper_Shared_Cleaned.zip",
+        "path": "jasper/store_items.json"
+      },
+      "pricingBasis": "small clothing/accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    }
+  ],
+  "pricingPolicy": {
+    "canonicalUnit": "normalized_denominations",
+    "allItemsHaveExplicitPrice": true,
+    "priceIsFictionalNotCashExchange": true,
+    "method": "Household effort, ingredients, supplies, cleanup, accessibility, and item scale; no original/archival price values.",
+    "homemadeMealPolicy": "Every homemade meal costs at least 3,900 copper, exceeding ordinary sweater and dress rewards.",
+    "fulfillmentConsentRequired": true,
+    "noAutomaticRealWorldCheckout": true,
+    "pricesStoredAsDenominations": true,
+    "canonicalRepresentation": "priceDenominations only; four denominations; no standalone totals"
+  }
+}

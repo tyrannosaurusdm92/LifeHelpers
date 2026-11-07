@@ -1,0 +1,30 @@
+{
+  "schema": "ourspace.journal-diary-placement.v1",
+  "version": 1,
+  "profile": "william",
+  "pages": {
+    "journal": {
+      "modules": {
+        "journal": {
+          "moduleId": "journal",
+          "index": 0,
+          "widthPx": 1674,
+          "heightPx": 890,
+          "offsetX": 0,
+          "offsetY": 0,
+          "flow": "normal"
+        },
+        "diary": {
+          "moduleId": "diary",
+          "index": 1,
+          "widthPx": 1674,
+          "heightPx": 1100,
+          "offsetX": 0,
+          "offsetY": 0,
+          "flow": "normal"
+        }
+      }
+    }
+  },
+  "notes": "User-supplied Journal & Diary frame layout from bulletin (1).json. Read-only in this store-editing iteration; layout export and admin grips are now on Store."
+}

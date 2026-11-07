@@ -1,0 +1,2051 @@
+{
+  "schema": "ourspace.shop.shared.v1",
+  "version": "2.0.0-canonical-2026-11-06",
+  "profile": "shared",
+  "itemCount": 78,
+  "items": [
+    {
+      "id": "shared-shop-root-beer",
+      "name": "Root beer",
+      "aisle": "Pop + Soda",
+      "tags": [
+        "drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared soda option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-7-up",
+      "name": "7-Up",
+      "aisle": "Pop + Soda",
+      "tags": [
+        "drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared soda option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-orange-pop",
+      "name": "Orange pop",
+      "aisle": "Pop + Soda",
+      "tags": [
+        "drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared soda option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-grape-pop",
+      "name": "Grape pop",
+      "aisle": "Pop + Soda",
+      "tags": [
+        "drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared soda option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-mountain-dew",
+      "name": "Mountain Dew",
+      "aisle": "Pop + Soda",
+      "tags": [
+        "drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared soda option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-shasta-ginger-ale",
+      "name": "Shasta ginger ale",
+      "aisle": "Pop + Soda",
+      "tags": [
+        "drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared soda option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-watermelon-red-bull",
+      "name": "Watermelon Red Bull",
+      "aisle": "Energy Drinks",
+      "tags": [
+        "energy_drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 2,
+        "copper": 0
+      },
+      "notes": "Shared energy drink option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "single energy drink",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-grape-ghost",
+      "name": "Grape Ghost",
+      "aisle": "Energy Drinks",
+      "tags": [
+        "energy_drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 2,
+        "copper": 0
+      },
+      "notes": "Shared energy drink option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "single energy drink",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-gold-peak-sweet-tea",
+      "name": "Gold Peak sweet tea",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "tags": [
+        "drink",
+        "tea"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared tea option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-yoohoo",
+      "name": "Yoohoo",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "tags": [
+        "drink"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared drink option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-juice-boxes",
+      "name": "Juice boxes",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared drink option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-capri-sun-pouches",
+      "name": "Capri Sun pouches",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared drink option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-cran-grape-juice",
+      "name": "Cran-grape juice",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared drink option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-cran-apple-juice",
+      "name": "Cran-apple juice",
+      "aisle": "Juice + Tea + Soft Drinks",
+      "tags": [
+        "drink",
+        "juice"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared drink option.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-candy-bar",
+      "name": "Candy bar",
+      "aisle": "Candy",
+      "tags": [
+        "candy"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "notes": "Shared candy reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-bag-of-candy",
+      "name": "Bag of candy",
+      "aisle": "Candy",
+      "tags": [
+        "candy"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "notes": "Shared candy reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-gum",
+      "name": "Gum",
+      "aisle": "Candy",
+      "tags": [
+        "candy"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "notes": "Shared small reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-mints",
+      "name": "Mints",
+      "aisle": "Candy",
+      "tags": [
+        "candy"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 8,
+        "copper": 0
+      },
+      "notes": "Shared small reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small candy treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-box-of-chocolates",
+      "name": "Box of chocolates",
+      "aisle": "Candy",
+      "tags": [
+        "candy"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared treat reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "specialty food treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-pop-tarts",
+      "name": "Pop-Tarts",
+      "aisle": "Sweet Snacks",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared snack reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-cookies",
+      "name": "Cookies",
+      "aisle": "Sweet Snacks",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared snack reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-sheet-cake",
+      "name": "Sheet cake",
+      "aisle": "Sweet Snacks",
+      "tags": [
+        "snack",
+        "sweet"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Higher-tier sweet treat.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "prepared bakery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-applesauce",
+      "name": "Applesauce",
+      "aisle": "Sweet Snacks",
+      "tags": [
+        "snack"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared snack reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-trail-mix",
+      "name": "Trail mix",
+      "aisle": "Salty Snacks",
+      "tags": [
+        "snack"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared snack reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-potato-chips",
+      "name": "Potato chips",
+      "aisle": "Salty Snacks",
+      "tags": [
+        "snack"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared snack reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-salt-and-vinegar-chips",
+      "name": "Salt and vinegar chips",
+      "aisle": "Salty Snacks",
+      "tags": [
+        "snack"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared chip flavor.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-bbq-chips",
+      "name": "BBQ chips",
+      "aisle": "Salty Snacks",
+      "tags": [
+        "snack"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared chip flavor.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-sour-cream-and-onion-chips",
+      "name": "Sour cream and onion chips",
+      "aisle": "Salty Snacks",
+      "tags": [
+        "snack"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared chip flavor.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-spam",
+      "name": "Spam",
+      "aisle": "Pantry / Oddball Food Joy",
+      "tags": [
+        "pantry"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared pantry reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "snack or basic grocery treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-uber-eats-gift-card-or-order",
+      "name": "Uber Eats gift card or order",
+      "aisle": "Food Delivery",
+      "tags": [
+        "delivery"
+      ],
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared delivery reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "delivery or gift-card contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-walmart-link-item",
+      "name": "Walmart link item",
+      "aisle": "Walmart-Style Quick Add",
+      "tags": [
+        "walmart",
+        "link_item"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Paste Walmart item URL, past order, or favorite store.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small flexible item allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-amazon-link-item",
+      "name": "Amazon link item",
+      "aisle": "Amazon / Online Shopping",
+      "tags": [
+        "amazon",
+        "link_item"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Paste Amazon item URL or wishlist item.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small flexible item allowance",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-youtube-comfort-playlist-item",
+      "name": "YouTube comfort playlist item",
+      "aisle": "Music / Media",
+      "tags": [
+        "youtube",
+        "serotonin"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 0,
+        "silver": 8,
+        "copper": 0
+      },
+      "notes": "Shared comfort, learning, or background playlist item.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "in-game digital comfort token",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-craft-supplies",
+      "name": "Craft supplies",
+      "aisle": "Craft Supplies",
+      "tags": [
+        "crafts"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 6,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared craft/art supply reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "craft materials",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-phone-pop-socket",
+      "name": "Phone pop socket",
+      "aisle": "Phone Accessories",
+      "tags": [
+        "phone"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 5,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared phone accessory.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small phone accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-phone-charger-cable",
+      "name": "Phone charger cable",
+      "aisle": "Phone Accessories",
+      "tags": [
+        "phone"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 5,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Shared practical accessory.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small phone accessory",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-candle",
+      "name": "Candle",
+      "aisle": "Comfort Objects",
+      "tags": [
+        "comfort"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 8,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared comfort reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "comfort item",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-stuffed-animal-small",
+      "name": "Stuffed animal - small",
+      "aisle": "Comfort Objects",
+      "tags": [
+        "comfort"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared comfort reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "comfort object",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-stuffed-animal-medium",
+      "name": "Stuffed animal - medium",
+      "aisle": "Comfort Objects",
+      "tags": [
+        "comfort"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared comfort reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "comfort object",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-stuffed-animal-large",
+      "name": "Stuffed animal - large",
+      "aisle": "Comfort Objects",
+      "tags": [
+        "comfort"
+      ],
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared comfort reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "large comfort object",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-cat-treats",
+      "name": "Cat treats",
+      "aisle": "Cat Kingdom Tribute",
+      "tags": [
+        "cats"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Reward that spoils the cats.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "pet treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-cat-toys",
+      "name": "Cat toys",
+      "aisle": "Cat Kingdom Tribute",
+      "tags": [
+        "cats"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 5,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Reward that spoils the cats.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "pet enrichment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-cat-brush-or-nail-supplies",
+      "name": "Cat brush or nail supplies",
+      "aisle": "Cat Kingdom Tribute",
+      "tags": [
+        "cats"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 9,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Cat care supplies.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "pet care tool",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-cat-litter-or-food-restock-contribution",
+      "name": "Cat litter or food restock contribution",
+      "aisle": "Cat Kingdom Tribute",
+      "tags": [
+        "cats"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Practical cat supply support.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "pet essentials budget contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-put-money-on-games",
+      "name": "Put money on games",
+      "aisle": "Games",
+      "tags": [
+        "games"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared game currency/top-up reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "small game contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-buy-a-video-game",
+      "name": "Buy a video game",
+      "aisle": "Games",
+      "tags": [
+        "games"
+      ],
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared higher-tier game reward.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "game reward",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-pancake-burgers",
+      "name": "Pancake burgers",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-barbecue-chicken",
+      "name": "Barbecue chicken",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 5,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-alfredo",
+      "name": "Alfredo",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-kielbasa-and-pierogies",
+      "name": "Kielbasa and pierogies",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-shrimp-taco-supplies",
+      "name": "Shrimp taco supplies",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 5,
+        "gold": 6,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-sticky-sausage-and-hard-boiled-eggs",
+      "name": "Sticky sausage and hard boiled eggs",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-steak-with-starch-and-vegetable",
+      "name": "Steak with starch and vegetable",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 7,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-swedish-meatballs",
+      "name": "Swedish meatballs",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 5,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-pork-chops-with-starch-and-vegetable",
+      "name": "Pork chops with starch and vegetable",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 6,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-stuffed-mushrooms",
+      "name": "Stuffed mushrooms",
+      "aisle": "Homecooked Meals",
+      "tags": [
+        "meal"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Shared homecooked meal ticket. | Includes groceries, preparation, cooking, cleanup, and caregiver energy. No one owes a meal on demand.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "ingredients + cooking labor + cleanup + accessibility effort",
+      "priceSystem": "normalized_denominations_10_to_1",
+      "householdEffort": "high",
+      "fulfillmentRequiresWillingHouseholdMember": true,
+      "fulfillmentIsNeverAutomatic": true
+    },
+    {
+      "id": "shared-shop-vernors",
+      "name": "Vernors",
+      "aisle": "Michigan / Exclusive Treats",
+      "tags": [
+        "exclusive"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Special-run or high-tier treat.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "beverage",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-mackinac-island-fudge",
+      "name": "Mackinac Island fudge",
+      "aisle": "Michigan / Exclusive Treats",
+      "tags": [
+        "exclusive"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Special-run or high-tier treat.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "specialty food treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-michigan-cherries-food",
+      "name": "Michigan cherries food",
+      "aisle": "Michigan / Exclusive Treats",
+      "tags": [
+        "exclusive"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 6,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Special-run or high-tier treat.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "regional food treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-michigan-maple-syrup",
+      "name": "Michigan maple syrup",
+      "aisle": "Michigan / Exclusive Treats",
+      "tags": [
+        "exclusive"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 7,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Special-run or high-tier treat.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "specialty food treat",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-arby-s-in-person-trip",
+      "name": "Arby's in-person trip",
+      "aisle": "Michigan / Exclusive Treats",
+      "tags": [
+        "exclusive"
+      ],
+      "priceDenominations": {
+        "platinum": 3,
+        "gold": 2,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Special-run or high-tier treat.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": false,
+      "manualReview": false,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "transport + meal outing logistics",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-dispensary-order-contribution",
+      "name": "Dispensary order contribution",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 6,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted manual-only contribution",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-flower",
+      "name": "Flower",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-pre-roll",
+      "name": "Pre-roll",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-edible",
+      "name": "Edible",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-tincture",
+      "name": "Tincture",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-topical",
+      "name": "Topical",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-pipe",
+      "name": "Pipe",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 2,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-bong",
+      "name": "Bong",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 4,
+        "gold": 5,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-grinder",
+      "name": "Grinder",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted supply; manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-rolling-papers",
+      "name": "Rolling papers",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted supply; manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-lighter",
+      "name": "Lighter",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted supply; manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-smell-proof-pouch",
+      "name": "Smell-proof pouch",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted supply; manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-stash-jar",
+      "name": "Stash jar",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted supply; manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-cleaning-supplies",
+      "name": "Cleaning supplies",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 1,
+        "gold": 1,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "adult-restricted supply; manual fulfillment",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-medical-card-renewal-reminder",
+      "name": "Medical card renewal reminder",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "manual-only administrative planning; no automatic purchase",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-dispensary-menu-planning",
+      "name": "Dispensary menu planning",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 1,
+        "silver": 5,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "manual-only administrative planning; no automatic purchase",
+      "priceSystem": "normalized_denominations_10_to_1"
+    },
+    {
+      "id": "shared-shop-accessible-pickup-or-delivery-planning",
+      "name": "Accessible pickup or delivery planning",
+      "aisle": "Cannabis - Massachusetts Legal Adult / Medical Card Aisle",
+      "tags": [
+        "cannabis",
+        "massachusetts",
+        "adult21"
+      ],
+      "priceDenominations": {
+        "platinum": 0,
+        "gold": 3,
+        "silver": 0,
+        "copper": 0
+      },
+      "notes": "Massachusetts adult-use cannabis is 21+ and requires government-issued ID at licensed retailers. Massachusetts guidance lists up to 2 ounces carried and up to 10 ounces at home. Jasper was born in 1999 and William was born in 1992, so both are over 21 in 2026. Use only where legal, follow medical-card and dispensary rules, and do not drive or do unsafe tasks while impaired.",
+      "availableTo": [
+        "william",
+        "jasper"
+      ],
+      "adultOnly": true,
+      "manualReview": true,
+      "externalCheckout": false,
+      "currency": "fictional_in_app_only",
+      "pricingBasis": "manual-only administrative planning; no automatic purchase",
+      "priceSystem": "normalized_denominations_10_to_1"
+    }
+  ],
+  "pricingNote": "All active item prices are fully specified in copper and recalculated at 10:1.",
+  "currencyRef": "currency.json",
+  "realMoneyCheckout": false,
+  "ageRestrictedRewardRules": {
+    "disabledByDefault": true,
+    "manualReviewOnly": true,
+    "noAutomatedFulfillment": true
+  },
+  "pricingPolicy": {
+    "canonicalUnit": "normalized_denominations",
+    "allItemsHaveExplicitPrice": true,
+    "priceIsFictionalNotCashExchange": true,
+    "method": "Household effort, ingredients, supplies, cleanup, accessibility, and item scale; no original/archival price values.",
+    "homemadeMealPolicy": "Every homemade meal costs at least 3,900 copper, exceeding ordinary sweater and dress rewards.",
+    "fulfillmentConsentRequired": true,
+    "noAutomaticRealWorldCheckout": true,
+    "pricesStoredAsDenominations": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "site": "OurSpace",
+  "profiles": [
+    {
+      "key": "william",
+      "label": "Dino Nerdzone"
+    },
+    {
+      "key": "jasper",
+      "label": "Squishy's Cottage"
+    }
+  ],
+  "pages": [
+    {
+      "key": "profile",
+      "title": "About / Profile",
+      "implemented": true
+    },
+    {
+      "key": "household",
+      "title": "Household",
+      "implemented": true
+    },
+    {
+      "key": "journal",
+      "title": "Journal & Diary Cards",
+      "implemented": true
+    },
+    {
+      "key": "diary",
+      "title": "Diary Card (Journal tab)",
+      "implemented": true,
+      "aliasOf": "journal",
+      "tab": "diary"
+    },
+    {
+      "key": "feed",
+      "title": "Feed",
+      "implemented": true
+    },
+    {
+      "key": "communication",
+      "title": "Communication",
+      "implemented": true
+    },
+    {
+      "key": "audio",
+      "title": "Audio",
+      "implemented": true
+    },
+    {
+      "key": "visual",
+      "title": "Visual",
+      "implemented": true
+    },
+    {
+      "key": "store",
+      "title": "Store",
+      "implemented": true
+    }
+  ],
+  "notes": "Household is native in both profile pages; the legacy Onyx Widget, CAT-astrophic Cuteness, Picnic Panic, and Skills workbook/handouts/worksheets have been removed from this package. The journal/diary skills tracker is independent and remains."
+}

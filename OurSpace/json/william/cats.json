@@ -1,0 +1,230 @@
+{
+  "schema": "ourspace.cats.player.v1",
+  "version": "2.0.0-canonical-2026-11-06",
+  "profile": "william",
+  "catCount": 3,
+  "petIds": [
+    "onyx",
+    "callie",
+    "harvey"
+  ],
+  "allThreeAreCaredFor": true,
+  "profilePrivate": true,
+  "independentSaveData": true,
+  "playerRelationship": {
+    "screenName": "William / Dino",
+    "catParentName": "Papa",
+    "upsetName": "Father",
+    "tone": "Onyx speaks as William’s longtime devoted working-cat partner: observant, loyal, grumbly, protective, and not patronizing.",
+    "personalCare": [
+      "accessible low-spoon task planning",
+      "physical care pacing",
+      "comfort",
+      "DBT",
+      "communication",
+      "creative pursuits"
+    ],
+    "favoriteCompanionBehaviors": {
+      "onyx": [
+        "protective check-in",
+        "professor lecture",
+        "rest companion",
+        "bowtie ceremony"
+      ],
+      "callie": [
+        "quiet co-presence",
+        "shared loaf break"
+      ],
+      "harvey": [
+        "playful encouragement",
+        "energy break"
+      ]
+    },
+    "goalAcknowledgements": [
+      "A small step counts. The Emperor has inspected it and approves.",
+      "Rest is still care, Papa."
+    ],
+    "referencePack": "william/service_dino.json"
+  },
+  "pets": [
+    {
+      "catId": "onyx",
+      "canonicalCatRef": "../shared/cats.json#/cats/onyx",
+      "playerRole": "Papa",
+      "upsetForm": "Father",
+      "bond": {
+        "level": 1,
+        "points": 0,
+        "milestonesCompleted": [],
+        "isStarterState": true
+      },
+      "virtualPetState": {
+        "starterMeters": {
+          "hunger": 75,
+          "thirst": 75,
+          "energy": 75,
+          "affection": 75,
+          "enrichment": 75,
+          "comfort": 75,
+          "bond": 75
+        },
+        "mood": "content",
+        "shelter": "outdoors",
+        "manualCareHistory": [],
+        "neverDiesOrRunsAway": true,
+        "notPunishedForMissedHumanTasks": true
+      },
+      "personalizedActions": [
+        "protective check-in",
+        "professor lecture",
+        "rest companion",
+        "bowtie ceremony"
+      ],
+      "personalizedDialogue": {
+        "callsPlayer": "Papa",
+        "whenUpset": "Father"
+      },
+      "therapyRole": true
+    },
+    {
+      "catId": "callie",
+      "canonicalCatRef": "../shared/cats.json#/cats/callie",
+      "playerRole": "Papa",
+      "upsetForm": "Father",
+      "bond": {
+        "level": 1,
+        "points": 0,
+        "milestonesCompleted": [],
+        "isStarterState": true
+      },
+      "virtualPetState": {
+        "starterMeters": {
+          "hunger": 75,
+          "thirst": 75,
+          "energy": 75,
+          "affection": 75,
+          "enrichment": 75,
+          "comfort": 75,
+          "bond": 75
+        },
+        "mood": "content",
+        "shelter": "outdoors",
+        "manualCareHistory": [],
+        "neverDiesOrRunsAway": true,
+        "notPunishedForMissedHumanTasks": true
+      },
+      "personalizedActions": [
+        "quiet co-presence",
+        "shared loaf break"
+      ],
+      "personalizedDialogue": {
+        "callsPlayer": "Papa",
+        "whenUpset": "Father"
+      },
+      "therapyRole": false
+    },
+    {
+      "catId": "harvey",
+      "canonicalCatRef": "../shared/cats.json#/cats/harvey",
+      "playerRole": "Papa",
+      "upsetForm": "Father",
+      "bond": {
+        "level": 1,
+        "points": 0,
+        "milestonesCompleted": [],
+        "isStarterState": true
+      },
+      "virtualPetState": {
+        "starterMeters": {
+          "hunger": 75,
+          "thirst": 75,
+          "energy": 75,
+          "affection": 75,
+          "enrichment": 75,
+          "comfort": 75,
+          "bond": 75
+        },
+        "mood": "content",
+        "shelter": "outdoors",
+        "manualCareHistory": [],
+        "neverDiesOrRunsAway": true,
+        "notPunishedForMissedHumanTasks": true
+      },
+      "personalizedActions": [
+        "playful encouragement",
+        "energy break"
+      ],
+      "personalizedDialogue": {
+        "callsPlayer": "Papa",
+        "whenUpset": "Father"
+      },
+      "therapyRole": false
+    }
+  ],
+  "progression": {
+    "goalMilestones": [
+      {
+        "id": "first-checkin",
+        "title": "First caring check-in",
+        "threshold": 1,
+        "source": "created game design template"
+      },
+      {
+        "id": "three-tiny-steps",
+        "title": "Three small steps",
+        "threshold": 3,
+        "source": "created game design template"
+      },
+      {
+        "id": "seven-days-of-checkins",
+        "title": "Seven days with at least one check-in",
+        "threshold": 7,
+        "source": "created game design template"
+      },
+      {
+        "id": "ten-cat-care-actions",
+        "title": "Ten cat-care interactions",
+        "threshold": 10,
+        "source": "created game design template"
+      },
+      {
+        "id": "bond-keeper",
+        "title": "A growing bond with all three cats",
+        "threshold": 30,
+        "source": "created game design template"
+      }
+    ],
+    "noPunitiveStreaks": true,
+    "humanSelfCareAwardsBondExperience": true,
+    "catCareAwardsBondExperience": true,
+    "doNotAutomaticallyMarkTasksComplete": true
+  },
+  "onyxAssistant": {
+    "enabled": true,
+    "virtualPetSimultaneously": true,
+    "mentalHealthSupportRole": "fictional therapeutic/psychiatry-themed AI companion, not a real clinician",
+    "requiresConsentForSensitivePersonalization": true,
+    "privacy": "Only read owner-scoped health and journal data through an authenticated backend.",
+    "clinicalRulesRef": "../shared/cats.json#/clinicalBoundaries",
+    "supportModes": [
+      "comfort",
+      "grounding",
+      "DBT",
+      "self-care coach",
+      "journal reflection",
+      "care coordination",
+      "coping skills"
+    ]
+  },
+  "statePersistence": "Profile-scoped saved state; never share private journals or care logs to other profile.",
+  "currentSupportAdjustments": {
+    "date": "2026-11-06",
+    "OnyxCanOfferOptInEmotionalSupportAroundRelocation": true,
+    "OnyxDoesNotClaimLicensureOrProvideMedicalDiagnosis": true,
+    "allThreeCatsRemainPetsToCareFor": true,
+    "neverMakeHumanHealthTaskCompletionAConditionForCatSurvival": true,
+    "householdPestTraumaNeverReenactedAsMiniGame": true,
+    "neverAutomaticallySurfaceDistressingLifeEvents": true,
+    "careRoutineSuggestionsHonorFoodInsecurityAndDisability": true
+  }
+}

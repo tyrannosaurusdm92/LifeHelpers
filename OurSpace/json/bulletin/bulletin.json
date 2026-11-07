@@ -1,0 +1,35 @@
+{
+  "schema": "ourspace.bulletin-placement.v1",
+  "version": 1,
+  "generatedAt": "2026-10-31T16:21:28.139Z",
+  "moduleId": "bulletin_board",
+  "profiles": {
+    "william": {
+      "column": "main",
+      "index": 6,
+      "afterId": "profile-guestbook",
+      "beforeId": null,
+      "widthPx": 617,
+      "heightPx": 490,
+      "horizontalOffsetPx": 0,
+      "verticalGapPx": 0,
+      "sizingMode": "proportional-content",
+      "scaleFactor": 0.51949,
+      "referenceWidthPx": 1180,
+      "referenceHeightPx": 790,
+      "unscaledContentHeightPx": 790,
+      "measured": {
+        "leftPx": 0,
+        "topPx": 956,
+        "pageLeftPx": 817,
+        "pageTopPx": 1166
+      },
+      "viewport": {
+        "widthPx": 1920,
+        "heightPx": 911
+      }
+    },
+    "jasper": null
+  },
+  "notes": "The entire bulletin scales proportionally within one normal-flow profile section. Save on william.html in #admin. Reimport this JSON with the package to establish permanent defaults."
+}

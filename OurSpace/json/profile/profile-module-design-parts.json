@@ -1,0 +1,1804 @@
+{
+  "modules": [
+    {
+      "id": "donation_module",
+      "label": "Donation Module",
+      "domId": "profile-donation",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "carousel_gallery_module",
+      "label": "Carousel Gallery",
+      "domId": "profile-gallery",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "profile_identity",
+      "label": "Profile Identity",
+      "domId": "profile-identity",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "profile_tags",
+      "label": "Profile Tags",
+      "domId": "profile-tags",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "guestbook",
+      "label": "Guestbook",
+      "domId": "profile-guestbook",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "profile_posts",
+      "label": "Profile Posts",
+      "domId": "profile-posts",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "profile_interests",
+      "label": "Profile Interests",
+      "domId": "profile-interests",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "classic_pins",
+      "label": "Classic Pins",
+      "domId": "profile-pins",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "profile_news",
+      "label": "Profile News",
+      "domId": "profile-news",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "current_projects",
+      "label": "Current Projects",
+      "domId": "profile-projects",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "contact_links",
+      "label": "Contact Links",
+      "domId": "profile-contact",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    },
+    {
+      "id": "profile_about",
+      "label": "Profile About",
+      "domId": "profile-about",
+      "parts": [
+        {
+          "id": "headings",
+          "label": "Section headings",
+          "selectors": [
+            "h1",
+            "h2",
+            ".ms-card-head h1",
+            ".module-hd h2"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "subheadings",
+          "label": "Subheadings",
+          "selectors": [
+            "h3",
+            "h4",
+            ".ms-strip"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "body-copy",
+          "label": "Body copy",
+          "selectors": [
+            "p",
+            "li",
+            ".ms-card-body"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "actions",
+          "label": "Action buttons",
+          "selectors": [
+            "button",
+            ".ms-actions button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation tabs",
+          "selectors": [
+            "nav button",
+            "nav a",
+            ".jump-tab",
+            ".nav-button"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "fields",
+          "label": "Inputs and form controls",
+          "selectors": [
+            "input:not([type=hidden])",
+            "textarea",
+            "select"
+          ],
+          "fields": [
+            "fill",
+            "text",
+            "border",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "links",
+          "label": "Links",
+          "selectors": [
+            "a"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "cards",
+          "label": "Cards and panels",
+          "selectors": [
+            ".ms-card",
+            ".module",
+            ".panel",
+            ".section-card",
+            ".card",
+            ".ms-item"
+          ],
+          "fields": [
+            "fill",
+            "border"
+          ],
+          "kind": ""
+        },
+        {
+          "id": "labels",
+          "label": "Labels and captions",
+          "selectors": [
+            "label",
+            "small",
+            ".muted",
+            ".ms-tag"
+          ],
+          "fields": [
+            "text",
+            "font",
+            "size"
+          ],
+          "kind": ""
+        }
+      ]
+    }
+  ]
+}

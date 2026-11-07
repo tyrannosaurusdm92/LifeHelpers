@@ -1,0 +1,366 @@
+{
+  "schema": "ourspace.cats.shared.v1",
+  "version": "2.0.0-canonical-2026-11-06",
+  "description": "Exactly three distinct virtual cats modeled on family-reported pets and the existing CAT-astrophic Cuteness guide.",
+  "catCount": 3,
+  "cats": {
+    "onyx": {
+      "id": "onyx",
+      "name": "Onyx",
+      "fullTitle": "Lord Onyx Blepman, Emperor of the Voidattude",
+      "pronouns": [
+        "he",
+        "him"
+      ],
+      "appearance": {
+        "type": "black senior long-haired Maine-Coon mix",
+        "eyes": "green-gold",
+        "whiskers": "black and white",
+        "accessory": "green plaid bowtie",
+        "notable": "expressive grumbles and occasional blep"
+      },
+      "personality": [
+        "protective",
+        "loyal",
+        "opinionated",
+        "affectionate",
+        "expressively grumbly",
+        "comfort-oriented",
+        "observant",
+        "dramatic about food"
+      ],
+      "householdLoreRoles": [
+        "Emperor of the Voidattude",
+        "Tiny Bowtie Professor",
+        "Victorian Child",
+        "Bookshelf Gargoyle"
+      ],
+      "signatureActions": [
+        "blep",
+        "side-eye",
+        "grumble",
+        "bow head for bowtie",
+        "knead",
+        "purr",
+        "seek blankets",
+        "request fan",
+        "inspect comfort"
+      ],
+      "favoriteInteractions": [
+        "scritches",
+        "brushing",
+        "bowtie restoration",
+        "soft blankets",
+        "fan",
+        "snuggles",
+        "tuna scent"
+      ],
+      "foodAnecdotesNotDietAdvice": [
+        "Fancy Feast beef Gravy Lovers",
+        "tuna juice",
+        "Churu",
+        "human food curiosity"
+      ],
+      "gameRole": {
+        "virtualPet": true,
+        "supportCompanion": true,
+        "supportPersona": "fictional therapist/psychiatrist-inspired Onyx professor",
+        "chatModes": [
+          "comfort",
+          "listening",
+          "DBT skills",
+          "grounding",
+          "self-care planning",
+          "reflective journaling",
+          "task support",
+          "care coordination"
+        ],
+        "professionalStatus": "not a licensed therapist, psychiatrist, clinician or emergency service",
+        "medicalBoundaries": [
+          "never diagnose",
+          "never prescribe or change medication",
+          "never shame, punish or withhold support",
+          "encourage real-world care when needed",
+          "crisis needs human/emergency help"
+        ],
+        "safetyOverridesCatHumor": true
+      },
+      "castleTentColor": "green",
+      "movementStyle": "measured, watchful, with autonomous exploring and long naps",
+      "relationshipRules": {
+        "william": "Papa; Father only if displeased",
+        "jasper": "Momma; Mother only if displeased"
+      }
+    },
+    "callie": {
+      "id": "callie",
+      "name": "Callie",
+      "fullTitle": "Callie Round",
+      "pronouns": [
+        "she",
+        "her"
+      ],
+      "appearance": {
+        "type": "fluffy tortoiseshell",
+        "eyes": "large expressive owl-like stare",
+        "posture": "distinctive round loaf"
+      },
+      "personality": [
+        "comfort-focused",
+        "stubborn about chosen seats",
+        "observant",
+        "quietly affectionate",
+        "playful in bursts",
+        "famously judgmental-looking"
+      ],
+      "householdLoreRoles": [
+        "HR Director",
+        "Sentient Meatball",
+        "Judgmental Bowling Ball"
+      ],
+      "signatureActions": [
+        "loaf",
+        "claim a chair",
+        "long stare",
+        "groom",
+        "softly cuddle",
+        "sudden chase",
+        "loud food announcement"
+      ],
+      "favoriteInteractions": [
+        "gentle brushing",
+        "warmth",
+        "quiet company",
+        "seat choice",
+        "playful chase on her own terms"
+      ],
+      "foodAnecdotesNotDietAdvice": [
+        "turkey and ham interest",
+        "Sheba food bowl"
+      ],
+      "gameRole": {
+        "virtualPet": true,
+        "supportCompanion": true,
+        "supportPersona": "gentle comfort and cozy encouragement, not medical support"
+      },
+      "castleTentColor": "purple",
+      "movementStyle": "unhurried resting with occasional bursts of zoomies and play",
+      "relationshipRules": {
+        "william": "Papa; Father only if displeased",
+        "jasper": "Momma; Mother only if displeased"
+      }
+    },
+    "harvey": {
+      "id": "harvey",
+      "name": "Harvey",
+      "fullTitle": "Harvey Square",
+      "pronouns": [
+        "she",
+        "her"
+      ],
+      "appearance": {
+        "type": "calico",
+        "coatColors": [
+          "black",
+          "orange/ginger",
+          "white"
+        ],
+        "paws": "white sock feet, pink paw pads"
+      },
+      "personality": [
+        "energetic",
+        "curious",
+        "playful",
+        "easily distracted",
+        "opportunistic",
+        "tender and affectionate"
+      ],
+      "householdLoreRoles": [
+        "Secretary Cocaine-a-co (family joke about zoomies)",
+        "Polkadot Baby"
+      ],
+      "signatureActions": [
+        "zoomies",
+        "investigate",
+        "pounce",
+        "chase Callie",
+        "motorboat purr",
+        "ask for running water",
+        "quick cuddle"
+      ],
+      "favoriteInteractions": [
+        "catnip play",
+        "exploration",
+        "safe running water observation",
+        "playful encouragement",
+        "Momma lap cuddles"
+      ],
+      "foodAnecdotesNotDietAdvice": [
+        "banana curiosity",
+        "hot dog anecdote"
+      ],
+      "gameRole": {
+        "virtualPet": true,
+        "supportCompanion": true,
+        "supportPersona": "playful invitations and cheerful encouragement, not medical support"
+      },
+      "castleTentColor": "pink",
+      "movementStyle": "fast roaming, spontaneous investigation, affectionate naps",
+      "relationshipRules": {
+        "william": "Papa; Father only if displeased",
+        "jasper": "Momma; Mother only if displeased"
+      }
+    }
+  },
+  "catNeedsMeters": [
+    "hunger",
+    "thirst",
+    "energy",
+    "affection",
+    "enrichment",
+    "comfort",
+    "bond"
+  ],
+  "careActions": [
+    {
+      "id": "feed",
+      "category": "need",
+      "effect": "nourishment",
+      "isRealWorldVeterinaryAdvice": false
+    },
+    {
+      "id": "water",
+      "category": "need",
+      "effect": "hydration"
+    },
+    {
+      "id": "pet",
+      "category": "bond",
+      "effect": "affection"
+    },
+    {
+      "id": "brush",
+      "category": "bond",
+      "effect": "grooming"
+    },
+    {
+      "id": "play",
+      "category": "bond",
+      "effect": "enrichment"
+    },
+    {
+      "id": "rest",
+      "category": "need",
+      "effect": "comfort"
+    },
+    {
+      "id": "scritches",
+      "category": "bond",
+      "effect": "affection"
+    },
+    {
+      "id": "slow-blink",
+      "category": "bond",
+      "effect": "trust"
+    },
+    {
+      "id": "blanket",
+      "category": "comfort",
+      "effect": "cozy"
+    },
+    {
+      "id": "check-in",
+      "category": "support",
+      "effect": "user-support-acknowledgement"
+    }
+  ],
+  "virtualCareRules": {
+    "careIsOptional": true,
+    "noPunishmentForHumanMissedGoals": true,
+    "noPetDeathOrNeglectPunishment": true,
+    "metersAreGameAbstractionsNotRealPetMedicalFacts": true,
+    "allThreeCatsCanBeCaredForSeparately": true,
+    "eachProfileHasSeparatePetStateButSharedPersonalityCanon": true,
+    "validSceneBehaviors": [
+      "walk",
+      "observe",
+      "sit",
+      "loaf",
+      "sleep",
+      "eat",
+      "drink",
+      "groom",
+      "stretch",
+      "pounce",
+      "hunt",
+      "play",
+      "socialize",
+      "talk",
+      "explore"
+    ],
+    "autonomyOnlyOutsideExplicitPlayerJobs": true,
+    "temporaryCastleTents": {
+      "onyx": "green",
+      "callie": "purple",
+      "harvey": "pink"
+    },
+    "outdoorWorldOnly": true,
+    "maxActiveCats": 3
+  },
+  "dialogueRules": {
+    "william": "Papa, or Father when displeased",
+    "jasper": "Momma, or Mother when displeased",
+    "neverUseAccountFirstNamesInCatDialogue": true,
+    "toneByCat": {
+      "onyx": "grumbly and insightful",
+      "callie": "dry HR director humor and calm",
+      "harvey": "curious and energetic"
+    },
+    "speechBubblePlacement": "near active cat in scene"
+  },
+  "clinicalBoundaries": {
+    "schema": "ourspace.onyx.clinical_boundaries.v1",
+    "purpose": "Psychiatry-adjacent support boundaries for Onyx. Onyx can provide coping support, journaling structure, DBT/ADHD tools, crisis-resource nudges, and care coordination prompts, but cannot diagnose, prescribe, replace a clinician, or provide emergency services.",
+    "notMedicalCare": true,
+    "notTherapyReplacement": true,
+    "emergencyRule": "If the user may be in immediate danger, encourage contacting local emergency services/crisis resources or a trusted person in real life.",
+    "clinicalSafetyFromSource": {
+      "shortDisclaimer": "Onyx can coach skills, grounding, routines, and self-care check-ins, but he is not licensed therapy or emergency care.",
+      "crisisMessage": "If Dino might hurt themself, might hurt someone else, is in immediate danger, or cannot stay safe, use emergency help now: call local emergency services, contact a trusted nearby person, or use a crisis line such as 988 in the U.S.",
+      "neverDo": [
+        "diagnose",
+        "tell Dino to stop or change medication",
+        "encourage isolation during danger",
+        "treat self-harm as ordinary chat",
+        "promise confidentiality in emergencies"
+      ],
+      "alwaysDo": [
+        "validate first",
+        "reduce shame",
+        "ask for one tiny safe next step",
+        "encourage professional and emergency support when needed",
+        "use Dino/Onyx language while staying clear and safe"
+      ]
+    },
+    "crisisResourcesFromBotData": {
+      "primary": "If there is immediate danger, call local emergency services now.",
+      "usCanada": "In the U.S. and Canada, call or text 988 for the Suicide & Crisis Lifeline. You can also use 988 chat online.",
+      "safetySteps": [
+        "Move away from anything you could use to harm yourself or someone else.",
+        "Get near another person, even if you cannot explain everything yet.",
+        "Use one short sentence: 'I am not safe alone right now. Please stay with me.'",
+        "Keep the chat open only as a bridge while you contact real-time help."
+      ]
+    }
+  },
+  "personalityDossier": {
+    "source": "Three_Cat_Master_Personality_Dossier(2).txt",
+    "provenance": "family reports, family lore, and cautious interpretation—not veterinary advice",
+    "fullText": "THE THREE-CAT MASTER PERSONALITY DOSSIER\nONYX BLEPMAN • CALLIE ROUND • HARVEY SQUARE\nUnified family personality bible | November 1, 2026\n\n======================================================================\nPURPOSE AND SOURCE STANDARD\n======================================================================\n\nThis document merges the cat-specific personality material in:\n  • ONYX_MASTER_MERGED_PERSONALITY(8)(1).txt\n  • Callie_Harvey_Master_Personality_Adventures_Dossier(10).txt\n\nIt concerns the THREE CATS AS INDIVIDUALS: their observed traits, reported\nhabits, appearances, preferences, family relationships, communication,\nmemorable anecdotes, nicknames, and shared household culture. It is not a\ntechnical specification, a care schedule, or a veterinary assessment.\n\nThe descriptions distinguish three kinds of material:\n  REPORTED: behavior or an incident attributed to the family, including the\n  family songs and descriptions summarized in the supplied dossiers.\n  FAMILY LORE: affectionate anthropomorphism, office titles, nicknames, and\n  comic interpretations of the cats' conduct.\n  INTERPRETATION: a cautious reading of how the reported patterns fit together.\n\nA family nickname does not literally make a cat a government official, a\npsychiatrist, or an employee. Likewise, apparent conversational awareness is\nnot a claim that a cat understands human language as a person would. The\nhumor is preserved because it records what makes each cat recognizable.\n\nNo exact ages, unconfirmed ancestry, coat-patch maps, diagnoses, or histories\nare assigned to Callie or Harvey. The anecdotes about human food are records\nof curiosity and household stories, not feeding recommendations. Onyx's\nservice history is described as family-reported and is not a substitute for\nformal medical or training records.\n\n======================================================================\nPART I — LORD ONYX BLEPMAN\nEMPEROR OF THE VOIDATTUDE\n======================================================================\n\n01. IDENTITY AT A GLANCE\n\nOnyx is a large, black, senior cat, described as part Maine Coon, with\nnotable green-gold eyes, long whiskers, a serious face, and a striking\npreference for his bowtie. The family reports his weight at approximately\n27 pounds. Those physical qualities are distinctive, but his personality\ncannot be reduced to the appearance of an imposing black cat.\n\nHis central character is an extraordinary combination of committed\nattachment, practical and social attentiveness, routine, comfort-seeking,\nexpressive complaint, food opportunism, stubborn autonomy, and context-\nsensitive seriousness. He can be the sleepiest cat in the room and still\nbehave as if the entire room falls under his supervision.\n\nThe family's most accurate shorthand is \"protective attachment wrapped in\ntheatrical entitlement.\" He takes up space, insists on being understood,\nexpects familiar conditions to remain familiar, and makes a production of\nminor inconveniences. Yet this is an intensely affectionate cat. The\ncomplaining takes place inside the relationship rather than signaling a\nwish to leave it.\n\nHe is the Emperor who wants to be the baby; the baby who expects to be\ntreated like the Emperor. His affection is physical. His independence is\nreal. His judgments can be severe-looking, while his loyalty stays put.\n\n02. THE EMPEROR'S GOVERNING TEMPERAMENT\n\nOnyx appears to regard family life as a shared operation in which he has\nstanding. He cares where Papa lies, whether the blanket is correct, when\nfood is served, where his bowtie has gone, who is speaking to him, and\nwhether somebody has disrupted a chosen resting position. A complaint is\nnot simply a complaint. In family mythology, it is an imperial grievance.\n\nHe has strong expectations of reliability. He anticipates food, comfort,\nattention, familiar touch, known voices, and habitual procedures. He is\ncomfortable enough in the household to be inconvenient: he can sprawl,\nrefuse to relocate, require a blanket adjustment, or deliver a long\n\"sermon\" without acting as if affection will disappear afterward.\n\nThat mix is why he is so funny. The household can interpret a missing\nblanket as a constitutional crisis because he has the certainty of a\ncreature who knows he belongs. His grumpiness coexists with trust.\n\nOnyx is not merely an irritable elder. He is a securely attached,\nconspicuously opinionated participant in family decisions. His sense of\nentitlement is one of the ways his confidence becomes visible.\n\n03. HOW ONYX COMMUNICATES\n\nOnyx has a rich, recognizable collection of sounds and body signals.\nReported vocal behavior includes meows, yowls, grumbles, groans, huffs,\nand sustained \"grumble-grumble sermons.\" He can make a point and then\nmake the same point more firmly when it has not been acknowledged.\n\nHis face also speaks. Fixed stares, narrowing eyes, side-eye, changes in\near and pupil position, and offended postures produce the family image of\na stern elderly gentleman inspecting the decisions of others.\n\nPhysical communication is especially important: he can lean, climb,\npaw, knead, stroke a person to request petting, occupy a pathway, or\nposition himself directly on the person whose attention he wants. His\npreferred locations are not random. He repeatedly chooses Papa's legs,\nchests, pillows, furniture, higher vantage points, and other places where\nhis body means something to the people around him.\n\nPersistence links the signals together. A stare becomes a sound. A sound\ncan become a repeated sound. A request can become a paw or scratching.\nHe seems willing to revise his tactics until the message gets through.\n\nThe family affectionately says Onyx \"speaks fluent human.\" This means\nhis reactions often seem well timed and contextually appropriate, not\nthat anyone has established humanlike language comprehension. Years of\nclose observation have made Onyx and his people fluent in one another's\nhabits and expectations.\n\n04. SOCIAL INTELLIGENCE AND PRACTICAL LEARNING\n\nThe source dossiers emphasize Onyx's social intelligence more than\nabstract problem-solving. He appears attentive to which person is speaking,\nwhich action results in food, who tolerates a kind of touch, which signal\nis likely to be effective, and which deviations from routine are worth\nchallenging.\n\nHe has reportedly learned sit, stay, come, up, down, pose, sit pretty,\nand high-five. He has traveled on a leash and in a stroller and worked\nalongside William as a service animal. These reports convey trainability,\nstructured cooperation, and an interest in being involved.\n\nThe most memorable impression, however, comes from timing. He protests\nwhen something changes, responds differently to different family members,\nand can shift from ordinary domestic negotiation to concentrated attention.\nHis apparent intelligence is therefore inseparable from relationship.\n\nHe is not a generic \"clever cat\" who performs every trick for everyone.\nHis skills and reactions seem embedded in particular people, places,\nroutines, and consequences.\n\n05. PAPA / WILLIAM: BEST FRIEND AND HOME BASE\n\nWilliam describes Onyx as his best friend. Their relationship reaches\nacross more than a decade of adult life, changing states and homes,\nhousing instability, travel, disability, medical experiences, and major\nchanges in the family. Onyx's familiar bodily closeness carries all of\nthat shared history.\n\nOnyx sleeps across William, on his chest, and particularly on the backs\nof his legs. He may knead, purr, stretch, lean, sprawl, and treat Papa's\nbody as reliable furniture. That reliance is comical and deeply trusting\nat the same time.\n\nThe relationship also has a peer-like quality. William is the trusted\nhuman, longstanding companion, service partner, food provider, bowtie\nrestorer, preferred resting place, and person to supervise. Onyx may\naccept care without accepting every manner of being addressed. In the\nfamily account, he generally objects when Papa uses baby talk.\n\nThis is not a simple parent-and-dependent relationship. William has cared\nfor Onyx through hard conditions. Onyx has reportedly watched, responded\nto, alerted, and protected William. Their history gives ordinary cuddling\nthe meaning of an old partnership.\n\n06. MOMMA / JASPER: THE AFFECTIONATE EXCEPTION\n\nJasper has a distinct relationship with Onyx, not an interchangeable\nversion of William's bond. Jasper is permitted to baby-talk him, cup his\nface, scoop and cuddle him, give him outrageous nicknames, play around\nwith his bowtie, and sometimes place objects on his head during affectionate\nfooling around. Onyx may grumble through such indignities while remaining\ncomfortable and engaged.\n\nThe supplied history recalls Jasper in Onyx's chosen spot in 2023, with\nOnyx behind them looking like a suspicious landlord. Later family photos\nand descriptions portray affectionate cradling, hugging, carrying, and\ncuddling. Jasper became a trusted parent with a uniquely permissive set of\nsocial rules.\n\nMomma can call him Onion, Bunion, Onion Fart, or Mr. Poop Poop, and this\nis part of their special relationship. Onyx's protests can be part of the\nritual instead of a withdrawal of affection. Jasper can also intervene\nwhen Onyx's decision to remain on William's legs has become impractical.\n\nHis different conduct with William and Jasper is fundamental. Onyx is\nselective, not indiscriminately tolerant. Being intensely loved does not\nerase his boundaries; instead, his trusted people have different kinds\nof permission.\n\n07. THE WORKING-CAT SWITCH\n\nOnyx is described as a real service cat with reported alert and response\nwork involving William's medical and trauma-related needs. At ordinary\ntimes, Onyx may be deeply asleep, demanding food, kneading, or indulging\nin old-man complaints. When a situation matters, he has reportedly\nbecome sharply attentive, persistent, and physically direct.\n\nThat change is the \"working-cat switch.\" He can stop being an offended\nmuffin and concentrate. The qualities that make him difficult to ignore\nwhen hungry—observation, persistence, communication, and willingness to\nuse his body—also appear in the family's account of his service work.\n\nThe most consequential story describes a train/subway incident in 2018.\nAccording to William's account, corroborated in the family's telling by\nwitnesses, Onyx left an open stroller he ordinarily stayed in, launched\nhimself against William's chest during a dangerous moment near an incoming\ntrain, altered his movement, and returned. This remains a family-reported\nincident. Its personality significance is Onyx's apparent willingness to\nbreak a familiar rule when he perceived something urgent.\n\nThe source deliberately refuses to portray Onyx as a solemn hero every\nminute. The same cat who could act protectively is also an old man\ncomplaining about dinner and behaving as if a displaced blanket is an\nemergency. Those are not different cats. They are different sides of a\nrecognizable individual.\n\n08. HISTORY, RESILIENCE, AND RETURN\n\nDuring periods of homelessness and unstable housing, Onyx reportedly\nexplored outdoors, traveled with William, and hunted birds. He could\nleave the immediate area and return. The meaningful pattern for the\nfamily is not only his independence but his return to William.\n\nThe source draws a distinction between physical surroundings and emotional\nhome. When addresses, rooms, and circumstances changed, William remained\na familiar person and point of return. Onyx later became highly particular\nabout blankets, soft beds, fans, pillows, routines, and formalwear. His\ncomfort standards are funnier because they follow a history that was not\nalways comfortable.\n\nHe has also adapted to different locations, public travel, leash walking,\nand stroller use. The family does not interpret this as proof that he\nloves all novelty. His apparent adaptability may depend on familiar\npeople and routines accompanying him through unfamiliar places.\n\n09. PRESSURE, PROXIMITY, AND PHYSICAL AFFECTION\n\nOnyx has a strongly physical way of showing attachment. He places weight\non his people, seeks sustained contact, purrs, kneads according to the\nsource accounts, moves closer, and returns to favorite resting positions.\nHis considerable size can make him feel like a living weighted blanket.\n\nOne especially specific routine involves the backs of William's legs.\nIn cooler weather, William may arrange himself so Onyx can lie there;\nOnyx expects an appropriate blanket beneath him. If the configuration\nis unacceptable, he may grumble, reposition, and object again. Affection\nbecomes a negotiation over furniture standards.\n\nThe family jokes that Papa is not merely a human but an important piece\nof infrastructure. The tenderness beneath the joke is obvious: Onyx\ntrusts William's body as a safe, familiar place to sleep.\n\nHe also has a \"Rotisserie Cat\" tendency to reposition himself for\nattention, warmth, or more favorable access to petting. Even his lounging\ncan feel active and purposeful.\n\n10. COMFORT ENGINEERING: BLANKETS, FANS, AND PILLOWS\n\nOnyx prefers soft surfaces, familiar textures, appropriate blankets,\nspecific sleeping positions, and dependable personal spaces. A favorite\npillow, ottoman, elevated bookshelf perch, chair, stroller, bed, or\npiece of occupied human furniture can become part of his routine.\n\nThe source emphasizes that he reportedly enjoys strong airflow from\nfans even while seeking contact and warmth. His ideal may involve being\nsnuggled and weighted against a familiar person without becoming too\nwarm. He is not inconsistent so much as exacting about a combination of\ncomfort variables.\n\nHis requirements are sensory and social: softness, temperature, airflow,\npressure, scent, elevation, familiarity, security, and proximity. Once\nhe likes a particular arrangement, he can treat it as established policy.\n\n\"Blanket engineering has failed\" is the family interpretation of a cat\nwho knows the difference between the position he expected and the one\nhe was actually offered.\n\n11. THE BOWTIE GENTLEMAN\n\nThe bowtie is one of Onyx's clearest individual markers. The supplied\nfamily descriptions distinguish it from an ordinary collar: he reportedly\nlikes the bowtie and expects it to be put back after it is removed for\nscratchies. He may lower or bow his head to assist with reapplication.\n\nWilliam is described as the preferred person to restore it, while Jasper\nhas unusual permission to remove it temporarily or joke with it. In\nfamily lore, an undressed Onyx is \"naked\" and an appropriately bowtied\nOnyx has regained his ceremonial dignity.\n\nThe familiar green plaid bowtie, black coat, green-gold eyes, large\nwhiskers, and serious gaze form a strongly recognizable portrait. The\nbowtie expresses routine, identity, cooperative trust, and a standard of\npersonal presentation that seems deeply Onyx.\n\n12. BLEPS, GRUMBLES, AND DIGNITY MALFUNCTIONS\n\nThe name \"Blepman\" celebrates the tongue that occasionally protrudes\nfrom the face of an otherwise imposing cat. Onyx may look stern or\nancient, like a scholar silently reviewing the household, only for his\nblep to undo the entire majestic presentation.\n\nThis contradiction is part of his appeal. He is dignified and goofy,\nserious and ridiculous, confident and soft, ancient-looking and\nbabyish. A perfectly imperial expression can collapse into pure cat\nnonsense in a moment.\n\nHis grumbles work similarly. They may accompany petting, cuddling,\nrepositioning, dressing, and even situations where he plainly remains\nattached to the person he is \"complaining\" about. The family hears\nthose grumbles as commentary, not necessarily rejection.\n\n13. THE VICTORIAN CHILD AND FOOD POLITICS\n\nFood is a major feature of Onyx's social life. He watches distribution,\nnotices who is eating, and treats meals as household events in which he\nought to have a say. Wet food becomes tribute; human food becomes an\nopportunity for investigation; the bowl is a site of negotiation.\n\nThe supplied histories describe particular interest in beef Gravy Lovers\nFancy Feast, tuna juice, catnip treats, and a wide assortment of human\nfoods or food smells. Those anecdotes include milk, yogurt, pudding,\nmeat, cheese flavors, donuts, and other things that should not be treated\nas dietary advice. The personality point is opportunism and curiosity,\nnot a recommended menu.\n\nHe reportedly uses different tactics with different people. Momma is a\nprominent begging target. With Papa, protest may escalate into repeated\nsignals and paw-based persuasion. The family imagines him calculating\nfood portions and arguing about taxation.\n\n\"Victorian Child\" describes the sound of his food-related melodrama.\nDinner can be only slightly late, yet Onyx vocalizes as though a Dickensian\nworkhouse has denied him sustenance since the nineteenth century. The\ndrama is affectionate comedy because the family knows he is cared for.\n\nFood is also an invitation to belong. When people eat, Onyx wants to be\npart of the occasion. His apparent grievance is not only \"I am hungry\"\nbut \"Why was I excluded from this decision?\"\n\n14. SENIORITY: OLD MAN MUFFIN\n\nOnyx's senior age has intensified the personality he already had. He is\nstill observant, persistent, affectionate, demanding, food-aware, and\nroutine-loving. Now those preferences carry the authority of long habit.\nHe knows his places, his sounds, his people, his ceremonies, and his\nstandards.\n\n\"Old Man Muffin\" captures an elder who can be both profoundly sleepy\nand thoroughly babied. He is senior enough to seem to have tenure in\nevery domestic dispute, and soft enough to be treated as a precious\ninfant by his family.\n\nHe does not need constant activity to be present. His resting presence,\nweight, small movements, and occasional offended noises are themselves\nrecognizable Onyx behaviors.\n\n15. INDEPENDENCE, SELECTIVITY, AND BOUNDARIES\n\nOnyx's affection is intense but not indiscriminate. He can explore,\nchoose a high perch, refuse to move, dislike certain handling or tones,\nand express dissent through sound, posture, ear position, withdrawal,\nor stubborn stillness. He is neither merely aloof nor helplessly clingy.\n\nHis trust allows closeness. He permits different forms of handling from\nWilliam and Jasper, cooperates with familiar rituals, and sleeps deeply\non people he knows. His willingness to stay close does not mean he has\nlost the ability to make preferences known.\n\nThe clearest synthesis is: Onyx loves intensely without surrendering his\nsense of self. He can protest and remain. He can explore and return.\nHe can object to a procedure and still seek the person carrying it out.\n\n16. PLAY, HUNTING, AND PRACTICAL INTERESTS\n\nThe family material describes Onyx as less interested in some ordinary\ncat toys and laser pointers than in people, food, environments,\nmeaningful interaction, and historically real hunting. This is a\npreference reported about this individual, not a claim that ordinary\ncat play is beneath cats generally.\n\nHis family jokingly describes him as a \"practical cat\" who has reviewed\na laser-pointer pursuit without a real outcome and found the business model lacking. What\nis actually visible is that Onyx seems most responsive to activities\nconnected with his relationships, surroundings, or concrete interests.\n\nHis hunting history is part of his biography, but it does not erase the\npresent-day senior who would rather find the right blanket and nap.\n\n17. SONGS AND PERSON-SPECIFIC RITUALS\n\nWilliam sings \"Baby Mine\" to Onyx. Jasper has an affectionate,\npersonalized musical ritual built around Onyx as an infant void with\nabsurd nicknames. These rituals have different tones: William's is\nlinked with longtime tenderness; Jasper's with playful babying,\nface-cupping, and permission to be ridiculous.\n\nThe sources do not establish that Onyx understands song lyrics. They\nrecord familiar voice, melody, rhythm, touch, and repeated attention as\nfeatures of how he is loved. Family songs are part of the environment\nthrough which he recognizes people and is recognized by them.\n\n18. AN ENTIRE ECOLOGY OF NICKNAMES\n\nThe merged Onyx source records an unusually extensive list, including:\n\n  Lord Onyx Blepman, Emperor of the Voidattude\n  Sir Onyx Newton from the Land of Derpitude\n  Void Boy Genius\n  Sweet Baby Onion Fart\n  Baby Bobungus\n  Baby Fungus Bungus\n  Onion Lad / Onion / Bunion / Onion Fart\n  Old Man Muffin / The Muffin Man / Huffin Muffin / Man Muffin\n  Grumbly Lad\n  Onyx Poop Poop / Mr. Poop Poop\n  Beautiful Little Parasite\n  Rotisserie Cat\n  Chungus\n  Bookshelf Gargoyle\n  Tiny Void Emperor\n  Bowtie-Crowned King\n  Tiny Bowtie Professor\n  Victorian Child\n\nThe family uses these names as a kind of affectionate shorthand.\n\"Grumbly Lad\" is sound. \"Rotisserie Cat\" is movement. \"Bookshelf\nGargoyle\" is the high-perch stare. \"Victorian Child\" is the food\nsermon. \"Blepman\" is the tongue that ruins solemnity. \"Beautiful\nLittle Parasite\" is the cat who monopolizes resources while giving\nback companionship and laughter.\n\n\"Tiny Bowtie Professor\" and \"Emperor\" are playful titles about his\nexpression and perceived authority, not claims of human occupations.\n\n19. JUDGMENT WITHOUT WITHDRAWAL\n\nOnyx can look as though he is evaluating every human mistake. The source\nincludes his seeming disapproval of William and Jasper flirting, his\nstares over disputed sleeping spots, and his protests during affectionate\nhandling. Yet the relationship continues. He may judge the person and\nthen sleep on them.\n\nThis is a defining difference between actual conflict and family comedy.\nIn the family's reading, Onyx's stare says, \"I have documented the\nviolation,\" not \"I no longer belong to you.\"\n\nHis stern appearance and his strong attachment are simultaneous truths.\nThe Emperor judges; the best friend stays.\n\n20. COMMITTED PRESENCE AND EMOTIONAL ANCHORING\n\nOnyx's most consistent love language, in human metaphor, is sustained\npresence. He stays nearby, comes back, lies on familiar bodies, watches\nchanges, touches, complains, alerts, travels, and returns to his people's\nimmediate world. Even asleep, he changes the family's sense of space.\n\nHis weight, purring, breathing, scent, warmth, and consistent routines\ncan be grounding to people who know him. The supplied analysis describes\nhim as a living orientation point through difficult experiences, not a\nmagical healer or an animal who must always perform a job.\n\nHe has shaped family language: songs, nicknames, grievance jokes, blanket\nprocedures, cherished photographs, and the shared stories that define\nhome. Onyx is not loved only because of his service history. He is\nloved because he is Onyx in all the silly and ordinary hours as well.\n\n21. THE FAMILY'S \"FORMERLY HUMAN\" MYTHOLOGY\n\nWilliam has described Onyx as so socially attentive and individual that\nliving with him has made ideas about consciousness or reincarnation feel\nmore imaginable. The supplied master dossier treats this as the family's\npersonal interpretation, not evidence that reincarnation has been proved.\n\nThe feeling arises from Onyx's strong routines, contextual reactions,\ndistinct relationships, dignity, social exceptions, apparent conversation,\nand elderly-gentleman demeanor. The family experiences a substantial,\ncontinuous individual behind his eyes.\n\nHis personality does not require a supernatural explanation to be\nmeaningful. The observation that matters is how recognizably and\nconsistently he has been himself across years of change.\n\n22. ONYX IN ONE COMPLETE PORTRAIT\n\nOnyx is a protective, opinionated, expressive senior with a formidable\nsense of routine and a profound bond with his family. He loves weight,\ncloseness, comfort, familiar people, competent arrangements, and a\nwell-placed bowtie. He notices patterns, communicates persistently,\nlearns practical tasks, and can become focused when the situation\nrequires it. He also bleps, complains, solicits food with theatrical\nurgency, and turns William's legs into an imperially regulated bed.\n\nHis signature paradox is that he can be loyal and demanding, independent\nand attached, stern and goofy, sleepy and vigilant, dignified and\nhilariously undignified—without ceasing to be the same cat.\n\n======================================================================\nPART II — CALLIE ROUND\nTHE TORTOISESHELL HR DIRECTOR AND SENTIENT MEATBALL\n======================================================================\n\n23. IDENTITY AT A GLANCE\n\nCallie is the family's tortoiseshell cat: fluffy, expressive, and notably\ncommitted to comfortable positions of her own choosing. The family calls\nher Callie Round, a \"sentient meatball,\" and a \"judgmental bowling ball.\"\nThese descriptions emphasize her dense, cozy presence and how difficult\nshe can be to persuade to move once she has settled.\n\nHer signature temperament combines stubborn comfort, a disapproving\nlooking stare, seat-claiming determination, remarkable fur production,\npowerful food-related vocalization, and sudden bursts of genuine play.\n\nCallie is not merely an inert or grumpy cat. She participates in chases\nwith Harvey and has a playful side that contrasts sharply with her\nusual air of immovable authority. Her affection is quieter than Harvey's\nhigh-speed exuberance and different from Onyx's imperial demands.\n\n24. THE HR DIRECTOR\n\n\"HR\" is Callie's family office title. It works because of the serious,\npatient, apparently unimpressed way she can regard the world, especially\nOnyx's endless imagined complaints. A single long stare can suggest a\nfinal decision. Onyx may spend minutes delivering a grievance; Callie\nlooks as if the matter was resolved before he began.\n\nThe joke is that Callie seems capable of denying the Emperor's appeal\nwhile maintaining a few strong property claims of her own. She does not\nneed to be louder than Onyx. Her authority comes from remaining where\nshe has chosen to sit.\n\nThis is affectionate family lore, not evidence that Callie is unkind.\nHer apparent judgment should never be confused with a permanently angry\ntemperament. She can be warm, comfortable, playful, and close to the\nothers while looking very serious.\n\n25. OWNERSHIP OF CHAIRS AND SELECTED SPOTS\n\nThe family's songs describe Callie taking Momma's office chair, Papa's\nwheelchair, and whichever other seat a person intended to use. Once\nshe chooses a spot, it ceases to be available for routine human plans.\nThe joke rests in her magnificent refusal to budge.\n\nShe can compress herself into a tight loaf, tuck her paws, lower her body,\nand make the possibility of moving her seem like a complicated negotiation.\n\"Bowling-ball protest\" is the family's metaphor for this substantial,\nrelaxed deadweight, not a claim that she literally becomes a ball or\nthat her stubbornness is fear.\n\nThe seat-stealing anecdotes show a recognizable preference for owning\ncomfort through stillness. She does not need to defend a chair with\nconstant activity. Possession is accomplished simply by being there.\n\n26. THE FLOOF GOOF POOF POOF\n\nCallie's abundant coat is central to the family's experience of her.\nShe is described as dense, soft, and exceptionally shed-happy. Brushing\ncan produce so much loose fur that the family jokes about constructing\nan entirely new small creature from it.\n\nHer floof and her round resting shapes create the affectionate\n\"meatball\" association. She remains a cat, with distinct tortoiseshell\nmarkings and ordinary feline anatomy; the comic roundness chiefly comes\nfrom how she settles, curls, tucks, and becomes thoroughly comfortable.\n\nThe visual humor of Callie is very different from Harvey's sock-footed\nspeed and Onyx's broad black dignity. Callie looks like she has chosen\nthe optimal resting shape and intends to maintain it until further notice.\n\n27. FOOD VOICE: TURKEY, HAM, AND THE SHEBA BOWL\n\nThe family songs describe Callie as a turkey and ham enthusiast with a\nstrong interest in her Sheba bowl. They compare the strength of her\nfood vocals to \"Kelly Clarkson lungs.\" This is a humorous description\nof the force and clarity of her demands.\n\nHer food communication differs from Onyx's. Onyx sounds, in family lore,\nlike an offended Victorian monarch pleading his case. Callie is more\nof a direct, confident announcer who expects the catering department to\nhear her immediately.\n\nShe may appear almost inseparable from her chair until a familiar food\ncue makes movement worthwhile. This sudden change from resting stone to\npurposeful cat is one of her comic signatures.\n\nThe turkey and ham references are preserved as household anecdotes,\nnot as instructions to serve human processed meats to a cat.\n\n28. OWL EYES AND THE POWER OF THE STARE\n\nOne family song describes Callie's eyes as seeming to look directly\nthrough a person's soul. She has an alert, penetrating, evaluative\npresence that makes the HR metaphor especially apt.\n\nA long look, small head movement, or unhurried blink can communicate a\ngreat deal. Her facial expressiveness often derives from restraint. She\ndoes not need Onyx's prolonged lecture or Harvey's elaborate activity\nto tell the family that something has been noticed.\n\nCallie's gaze should not be equated with aggression. An affectionate,\nsettled cat can have an absolutely formidable resting expression.\n\n29. COMFORT, WARMTH, AND \"TOASTING HER BEANS\"\n\nCallie is especially associated with finding and defending pleasant\nplaces to rest. William has anticipated that she will enjoy lying in\nfront of an electric fireplace in the family's prospective home and\n\"toasting her beans.\" This is an expectation, not evidence that a\nfuture fireplace habit has already occurred.\n\nThe image is consistent with the rest of her characterization: a warm,\ncomfortable spot becomes an important appointment, paws may be stretched\nout, and getting up is optional so far as Callie is concerned.\n\nHer comfort is not simply laziness. It is an active preference, a way\nof settling securely into a favorite place and making it hers.\n\n30. SURPRISING ZOOMIES AND CHASES\n\nCallie's stationary tendencies are only half her personality. The\nfamily has reported household chase scenes between Callie and Harvey,\nsometimes loud enough to disturb resting Onyx. Callie can chase, be\nchased, turn, pounce, and suddenly move with surprising speed.\n\nThat contrast matters. A Callie who was just a perfectly immovable loaf\nmay become fully absorbed in play, then return to the quiet composure\nshe seems to prefer much of the time.\n\nShe is not a passive object beside a more athletic sister. She is a\nparticipant in their relationship, sometimes responding to Harvey's\nprovocations and sometimes taking part in the rush herself.\n\n31. AFFECTION AND SOFTNESS UNDER THE JUDGMENT\n\nThe family's comic descriptions are sharp, but their affection for\nCallie is unambiguous. William and Jasper love her fluff, stolen seats,\nfood voice, serious looks, and deeply determined comfort rituals.\n\nThe supplied material does not establish a rigid catalogue of specific\ncuddling habits for Callie. It supports a gentler description: she is a\ncat who can be close through shared rest, settled presence, ease around\nfamiliar family members, and contentment in a chosen spot.\n\nShe need not be constantly social to be loving. Her quietness is part of\nher individuality; the \"judgmental\" joke is not a reason to call her\nmean.\n\n32. CALLIE IN ONE COMPLETE PORTRAIT\n\nCallie Round is a luxurious, stubborn, observant tortie who converts\nchairs into territory, food requests into powerful announcements, and\nlooks into apparent administrative rulings. She is profoundly fluffy,\ncomically difficult to relocate, interested in warmth and comfort, and\nfully capable of shocking everyone with a sudden chase.\n\nHer greatest contradiction is that a cat who seems to have all the\nmovability of a bowling ball may spring into action when she decides\nsomething is finally worth leaving her seat for. Callie is not just\n\"slow\" or \"judgmental.\" She is comfortable, willful, playful,\noccasionally theatrical, and loved on her own terms.\n\n======================================================================\nPART III — HARVEY SQUARE\nTHE CALICO SECRETARY COCAINE-A-CO\n======================================================================\n\n33. IDENTITY AT A GLANCE\n\nHarvey is the family's calico with black, orange/ginger, and white\npatches, white sock-like feet, and pink paw pads. Her striking coat,\n\"polkadot baby\" associations, and small socked paws distinguish her\nfrom Callie's tortie floof and Onyx's dark, formal silhouette.\n\nHer signature is curiosity in motion. She is fast, distractible,\nopportunistic, playful, and eager to investigate. But her warmth is as\nimportant as her speed: she can climb onto Momma, purr like a motorboat,\nrest close, and become a deeply affectionate little cat.\n\nThe central combination is energy + curiosity + boldness + tactile\ncloseness + the capacity to settle suddenly and sincerely.\n\n34. SECRETARY COCAINE-A-CO\n\nThe family calls Harvey \"Secretary Cocaine-a-co,\" an absurd nickname\nfor her tremendous speed and administrative-chaos energy. It is a joke\nabout constant activity and has nothing to do with actual drug use.\n\nIn this imaginary office, Harvey is always running between meetings,\ngetting distracted halfway to the next one, discovering a new incident,\nand leaving Callie with an entirely fresh pile of supposed paperwork.\nHer enthusiasm far exceeds her interest in a stable agenda.\n\nThe title captures a recognizable behavior pattern: active exploration,\nsudden changes of attention, and an ability to create a surprising amount\nof household bustle in a short time. She can be chaotic without being\nunintelligent, and distracted without being incapable of focus.\n\n35. SPEED AND ZOOMIES\n\nThe songs repeatedly describe Harvey as zooming like lightning,\nracing through the house, and moving with seemingly inexhaustible\nenthusiasm. Her curiosity can send her from one interesting target to\nanother before anyone has had time to understand the first mission.\n\nShe may race, pause, inspect, reverse direction, become excited by play,\nand then abruptly flop down. A burst of speed followed by a warm,\ncontented rest is as much Harvey as uninterrupted motion.\n\nUnlike Callie, she is quick to abandon a comfortable position when\nsomething new attracts her. Unlike Onyx, she can be the source of the\nnoise that interrupts a perfectly respectable old-man nap.\n\n36. BANANAS AND ODDLY SPECIFIC INTERESTS\n\nHarvey's reported fascination with bananas is among her most distinctive\nfamily quirks. The songs call her a banana lover. It is an anecdote\nabout an unusual focus of curiosity, not a claim that bananas should be\npart of a routine feline diet.\n\nHarvey is not defined by generic toy enthusiasm alone. The family\nrecognizes the particular things she notices, approaches, and demands\nthe chance to investigate. Her quirks add specificity to the speed.\n\n37. \"SINK JUICE\" AND THE RUNNING-WATER CAMPAIGN\n\nHarvey has an especially memorable preference for running faucet water,\nwhich the family calls \"sink juice.\" The family songs describe her\ncalling loudly until somebody turns on the tap.\n\nThis is more individual than ordinary thirst. Her excitement concerns\nthe running water and the human activity that makes it available. She\napparently has an entire routine of asking for it, watching for the\nwater, and enjoying the attention surrounding it.\n\nThe demand is a particularly Harvey combination of urgent communication,\nintense interest in a specific sensory experience, and a willingness to\ninvolve Momma or Papa in the proceedings.\n\n38. SOCK FEET, PINK BEANS, AND CALICO PATCHES\n\nHarvey's white paws look like little socks. Her toe beans are pink.\nHer calico coloring includes ginger/orange, black, and white. The songs\nalso describe her with spotted or \"polkadot\" affection.\n\nThese details are not accessories: they are her real appearance and an\nimportant part of how her family recognizes and describes her. The\nsource does not establish an exact symmetrical patch map, so none is\ninvented here.\n\nHer little socks and pink beans are especially prominent in the way\nthe family talks about her when she stretches, rests, cuddles, or puts\na paw against a loved person's face.\n\n39. AIRPLANE EARS AND THE FORBIDDEN \"D\" NAMES\n\nThe family songs associate certain teasing variants of Harvey's name,\nincluding \"Darvin\" and \"Darvey,\" with her ears shifting backward into\n\"airplane ears\" and an unimpressed expression. This is one of the most\nspecific observations about her communication.\n\nThe report does not prove that she understands the spelling of words.\nIt describes an observable reaction to familiar human teasing, tone,\nor sounds. Harvey can display disapproval, concentration, surprise,\nand social boundaries alongside her playful exuberance.\n\nHer speed does not mean she is an indiscriminate bundle of activity.\nShe has preferences, limits, and moments of genuine opinion.\n\n40. MOTORBOAT PURRING AND MOMMA'S LAP\n\nHarvey can be exceptionally affectionate. Her songs describe her\nclimbing onto Momma's knee, purring with the sound of a motorboat,\nand placing her socked paws against Momma's face. These are tactile,\nclose, relaxed moments, not an unrelated detail.\n\nThis is the second half of Harvey's personality. She may spend her time\nzooming and tackling, then transform into a warm, devoted lap cat.\nThe intensity of her purr and willingness to seek closeness give her\nemotional texture beyond the comic secretary title.\n\nHer calm moments should be remembered just as distinctly as her fast\nones. The tiny engine can idle peacefully when she feels settled.\n\n41. OPPORTUNISM: HOT-DOG STORY AND CATNIP PLAY\n\nThe family songs mention Harvey stealing a hot dog, responding to\ncatnip, and treating unfamiliar objects as things worth investigating.\nThe hot-dog anecdote illustrates bold opportunism rather than a sound\nfeeding practice. The catnip reference adds a playful, rolling,\neasy-to-delight side to her temperament.\n\nHarvey does not need a grand plan to get into trouble. She sees a\npossibility, acts, and may leave others to make sense of it. Her\nmischief tends to begin with curiosity and momentum.\n\nThese stories should not be flattened into \"bad behavior.\" Their\nfamily meaning is the recognizable playfulness of a particular cat.\n\n42. TACKLING CALLIE AND INTERRUPTING BATH TIME\n\nHarvey is known for tackling her sister and interrupting grooming or\n\"bath time.\" The sisters reportedly chase each other around the house,\nand Harvey's enthusiasm can prompt Callie to abandon an otherwise\ncomfortable position.\n\nHer interactions are opportunistic. A resting or grooming Callie may be\ninteresting precisely because Harvey sees a chance for play. In return,\nCallie can give her a long stare, ignore the invitation, or participate\nin a sudden chase of her own.\n\nThis relationship is specific to them. Harvey's behavior is not simply\nthat of an energetic cat in an empty room. She interacts with another\nwell-known individual whose habits she can interrupt and react to.\n\n43. STEALING ONYX'S SPOTS\n\nHarvey's song also describes taking spaces Onyx regards as his. Where\nCallie settles somewhere and seems determined to keep it forever,\nHarvey may claim a desirable spot and then lose interest almost\nimmediately when something else catches her eye.\n\nTo Onyx, an occupied place can look like a violation of imperial\nproperty law. To Harvey, it may have been a delightful discovery that\nlasted only until the next distraction. Their mismatch in timing\nsupplies much of the family humor.\n\nHarvey is not always trying to upset Onyx. Her curiosity can simply\ncross the path of a senior cat with a very serious idea about furniture.\n\n44. TENDERNESS UNDER ALL THAT MOTION\n\nHarvey's affectionate side does not need to be explained away as an\nexception. She rests, purrs, climbs close, responds to attention,\nshows visible disapproval when something is unwelcome, and can become\nabsorbed in a particular object or experience.\n\nThe most complete Harvey is not a cat who only runs. She is the calico\nwho runs, turns the house upside down for a moment, seeks sink juice,\ninvestigates bananas, bothers her sister, and then climbs onto Momma\nfor the warmest possible purring session.\n\n45. HARVEY IN ONE COMPLETE PORTRAIT\n\nHarvey Square is an impulsively curious, fast-moving, physically\naffectionate calico with pink beans, sock feet, a powerful purr, and a\nhighly specific love of running water. She brings activity to the\nhousehold, gets distracted by strange objects, challenges other cats\nto play, reacts with airplane ears to unwelcome teasing, and can curl\nup in deep contentment.\n\nHer signature paradox is that she is both the busiest secretary in the\nfamily's imaginary office and a very cozy, loving lap cat.\n\n======================================================================\nPART IV — THE THREE-CAT FAMILY TOGETHER\n======================================================================\n\n46. A FAMILY OF THREE DISTINCT TEMPOS\n\nOnyx is most defined by enduring attachment, senior comfort rituals,\ncomplaints, and the capacity for protective focus. He often prefers\nstillness, but his stillness comes with intense awareness of his people\nand surroundings.\n\nCallie also enjoys rest, but hers is self-contained and territorial:\nshe selects comfort, takes ownership of seats, and gives the world a\nlong, evaluative look. She can surprise everyone with a chase.\n\nHarvey is the most overtly kinetic: quick, curious, playful, easily\ndiverted, and quick to return to affection. She can be quiet and tender,\nnotwithstanding her reputation for zoomies.\n\nThese are tendencies, not rigid categories. All three cats can rest,\nwatch, play, protest, pursue comfort, and share space. Their\nindividuality comes from what they prioritize and how they express it.\n\n47. THE IMAGINARY HOUSEHOLD BUREAUCRACY\n\nThe family has given the trio affectionate office titles:\n\n  ONYX: Emperor of the Voidattude, resident complainant, the executive\n  whose standards apparently govern every blanket and food decision.\n\n  CALLIE: HR director, capable of denying a grievance with a single\n  owl-eyed stare while claiming furniture for her own use.\n\n  HARVEY: Secretary Cocaine-a-co, the enthusiastic communications\n  department, provider of surprise meetings and unintended incidents.\n\nThe roles work because they are exaggerated versions of repeated\nbehavior. Onyx tends to object. Callie tends to look like she has\nreviewed the objection and found it unpersuasive. Harvey tends to\ncreate the next event before either has finished reacting.\n\nThe joke should not crowd out the actual relationships. The cats are\nnot literal staff members in a hierarchy, and none is required to play\na single emotional role at all times.\n\n48. CALLIE AND HARVEY: SISTERS IN CONTRAST\n\nThe strongest shared story about Callie and Harvey is their recurring\nhousehold chases. Harvey's speed and enthusiasm often make her the\nobvious instigator; Callie, despite her preference for stationary\ncomfort, is perfectly capable of responding and joining in.\n\nTheir contrast creates a recognizable rhythm: a speedy invitation, an\nimpressed or offended look, a burst of movement, and a return to calmer\nactivities. Harvey may interrupt Callie's grooming. Callie may refuse\nto budge. Neither response cancels their shared playfulness.\n\nIt is not accurate to describe Harvey as always chasing and Callie as\nalways fleeing or always refusing. The family reports a real\nback-and-forth, including Callie chasing Harvey as well.\n\n49. ONYX AND CALLIE: GRIEVANCE MEETS HR\n\nOnyx's complaints and Callie's long stare are a natural comic pair.\nHe can act as though a domestic inconvenience deserves an inquiry.\nCallie seems capable of resolving it by continuing to occupy her\nselected seat.\n\nTheir similarities also matter. Both have strong comfort preferences,\ncan be deeply stationary, and seem to expect a chosen space to remain\nundisturbed. Onyx communicates his discontent loudly; Callie may\ncommunicate hers by making absolutely no movement at all.\n\nThe supplied material gives more detail about their family roles than\nabout particular recurring one-on-one physical interactions. Their\nrelationship should not be embellished with invented rivalries or\nclaimed affection rituals.\n\n50. ONYX AND HARVEY: SENIORITY MEETS INTERRUPTION\n\nOnyx's affection for routine and undisturbed sleep contrasts with\nHarvey's zoomies and spot-stealing. She may create the commotion that\nmakes him open an eye, grumble, or look as though somebody owes him an\napology.\n\nHarvey's energy is not necessarily directed against him. She may\nsimply be following her curiosity. Onyx's comic interpretation of\nthat curiosity as a breach of imperial procedure says as much about\nhim as it does about her.\n\nTheir relationship is therefore richer than \"old cat versus young\ntroublemaker.\" Onyx has his own history of exploration and hunting,\nand Harvey has her own soft, purring need for closeness.\n\n51. THE HOUSEHOLD'S SHARED LANGUAGE OF LOVE\n\nThe cats have inspired songs, names, photos, anecdotes, and a private\nlanguage that turns ordinary habits into recognizable family events.\nThe jokes are affectionate observation rather than replacements for\nknowing the actual animals.\n\nThe family can call Onyx a Victorian Child because his hunger complaints\nare specific; Callie a sentient meatball because her resistance to\nmoving is specific; Harvey a secretary because her speed and\nimprovisation are specific.\n\nThe deepest shared feature is not that all three are equally energetic,\nequally sociable, or equally willing to be handled. It is that each is\nknown as an individual and allowed to have different preferences.\n\n52. THE QUIET THREE-CAT MOMENT\n\nNot every family moment is a chase or a joke. An equally recognizable\npicture is Onyx sleeping, Callie comfortable in a claimed spot, and\nHarvey finally curled up somewhere nearby after exhausting her latest\ninterest. The household can be connected without all three cats\nactively seeking one another.\n\nA familiar stare, a small adjustment of position, nearby rest, and\nshared calm can carry as much personality as a dramatic incident.\nThe differences in how they settle are themselves part of the family.\n\n======================================================================\nFINAL SIDE-BY-SIDE PERSONALITY REFERENCE\n======================================================================\n\nNAME                 ONYX BLEPMAN\nFAMILY ROLE          Emperor / senior complainant\nAPPEARANCE           Large black cat; green-gold eyes; bowtie\nCORE                 Secure attachment, vigilance, stubborn routine\nCOMMUNICATION        Grumbles, sermons, stares, pawing, body placement\nCOMFORT              Papa's legs, blankets, fans, pillows, contact\nFOOD                 Political negotiations; Victorian-child theatrics\nAFFECTION            Weight, contact, purring, staying and returning\nACTIVITY             Senior rest; practical curiosity; historical hunting\nSOCIAL DISTINCTION   Different permissions and rituals for Papa/Momma\nUNIQUE CONTRAST      Dignified elder who bleps; sleepy cat who focuses\n\nNAME                 CALLIE ROUND\nFAMILY ROLE          HR director / sentient meatball\nAPPEARANCE           Fluffy tortoiseshell; powerful owl-eyed stare\nCORE                 Cozy determination, composed judgment, selectivity\nCOMMUNICATION        Long looks, slow reactions, strong food vocals\nCOMFORT              Claimed chairs, chosen spots, warm resting places\nFOOD                 Turkey/ham interest in family songs; Sheba bowl\nAFFECTION            Quiet familiar presence; contented settling\nACTIVITY             Often restful; genuine fast chases with Harvey\nSOCIAL DISTINCTION   One stare can \"deny\" Onyx's grievance\nUNIQUE CONTRAST      The unmovable floof who suddenly becomes athletic\n\nNAME                 HARVEY SQUARE\nFAMILY ROLE          Secretary Cocaine-a-co / cheerful chaos\nAPPEARANCE           Calico; ginger, black, white; sock feet; pink beans\nCORE                 Curiosity, momentum, play, affectionate warmth\nCOMMUNICATION        Loud sink-water requests; airplane-ear disapproval\nCOMFORT              Momma's lap, face-level sock paws, deep purring\nFOOD/INTERESTS       Banana fascination; hot-dog anecdote; catnip play\nAFFECTION            Motorboat purr; climbs close; can settle deeply\nACTIVITY             Lightning-fast zoomies; tackles and chases Callie\nSOCIAL DISTINCTION   Interrupts Callie; steals Onyx's spots, then moves\nUNIQUE CONTRAST      A whirlwind who turns into a very cozy lap cat\n\n======================================================================\nCLOSING PORTRAIT\n======================================================================\n\nOnyx presides. Callie reviews. Harvey interrupts.\n\nBut Onyx also curls against his family and watches over the people he\nloves. Callie also springs into play and announces the food situation\nwith full force. Harvey also rests, purrs, and offers warm physical\naffection.\n\nWhat unites them is not a single generic \"cat personality\" but an\nunusually well-observed set of different selves: the emperor who stays,\nthe HR director who will not budge, and the secretary who is already\non her way to the next fascinating thing.\n\nEND OF MERGED PERSONALITY DOSSIER\n"
+  },
+  "sourceReference": {
+    "guide": "Catastrophic_Complete_Game_Guide_50000_Words(1).txt",
+    "originalOnyxMaster": "embedded personality/onyx-master-personality.json in backend; not duplicated in public client JSON",
+    "gameplayImplementationRequired": true
+  }
+}

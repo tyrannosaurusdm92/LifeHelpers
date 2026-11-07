@@ -1,0 +1,59 @@
+{
+  "schema": "ourspace.journal-diary-placement.v1",
+  "version": 1,
+  "generatedAt": "2026-11-01T02:51:35.397Z",
+  "profile": "william",
+  "pages": {
+    "journal": {
+      "modules": {
+        "journal": {
+          "moduleId": "journal",
+          "index": 0,
+          "widthPx": 1674,
+          "heightPx": 890,
+          "offsetX": 0,
+          "offsetY": 0,
+          "flow": "normal"
+        },
+        "diary": {
+          "moduleId": "diary",
+          "index": 1,
+          "widthPx": 1674,
+          "heightPx": 1100,
+          "offsetX": 0,
+          "offsetY": 0,
+          "flow": "normal"
+        }
+      }
+    }
+  },
+  "profiles": {
+    "william": {
+      "pages": {
+        "journal": {
+          "modules": {
+            "journal": {
+              "moduleId": "journal",
+              "index": 0,
+              "widthPx": 1674,
+              "heightPx": 890,
+              "offsetX": 0,
+              "offsetY": 0,
+              "flow": "normal"
+            },
+            "diary": {
+              "moduleId": "diary",
+              "index": 1,
+              "widthPx": 1674,
+              "heightPx": 1100,
+              "offsetX": 0,
+              "offsetY": 0,
+              "flow": "normal"
+            }
+          }
+        }
+      }
+    }
+  },
+  "notes": "Journal and Diary Cards; native flow-based offsets, dimensions and per-tab modules. Existing profile bulletin board data is unchanged."
+}

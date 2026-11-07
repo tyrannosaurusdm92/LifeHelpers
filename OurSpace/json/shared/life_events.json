@@ -1,0 +1,85 @@
+{
+  "schema": "ourspace.life-events.shared.v1",
+  "version": "2.0.0-canonical-2026-11-06",
+  "visibility": "shared_household_with_explicit_consent",
+  "eventTemplates": [
+    {
+      "id": "shared-anniversary",
+      "title": "Celebrate a chosen anniversary",
+      "category": "relationship",
+      "date": null,
+      "requiresDate": true,
+      "enabled": false
+    },
+    {
+      "id": "shared-cat-birthday",
+      "title": "Celebrate a cat birthday or adoption day",
+      "category": "cats",
+      "date": null,
+      "requiresDate": true,
+      "enabled": false
+    },
+    {
+      "id": "shared-game-progress",
+      "title": "A new CAT-astrophic Cuteness chapter",
+      "category": "gaming",
+      "date": null,
+      "trigger": "manual",
+      "enabled": false
+    },
+    {
+      "id": "shared-home-win",
+      "title": "Shared home-care milestone",
+      "category": "household",
+      "date": null,
+      "trigger": "manual",
+      "enabled": false
+    },
+    {
+      "id": "shared-celebration",
+      "title": "A chosen shared celebration",
+      "category": "holiday",
+      "date": null,
+      "requiresDate": true,
+      "enabled": false
+    },
+    {
+      "id": "shared-life-update",
+      "title": "An important life update",
+      "category": "life-change",
+      "date": null,
+      "requiresConsentFromBoth": true,
+      "enabled": false
+    }
+  ],
+  "recordedEvents": [],
+  "sharedCalendars": [],
+  "privacyRules": {
+    "privateHealthEventsNeverAppearHereAutomatically": true,
+    "bothUsersConsentForSensitiveSharedEvent": true
+  },
+  "catReactions": [
+    "Onyx may offer a dry congratulations",
+    "Callie may inspect the celebration from a chair",
+    "Harvey may zoom through with excitement"
+  ],
+  "missingDatesAreIntentionallyBlank": true,
+  "householdTransitionTemplates": [
+    {
+      "id": "shared-move-back-michigan",
+      "title": "Plan the move back to Michigan",
+      "category": "household-transition",
+      "date": null,
+      "enabled": false,
+      "requiresConsentFromBoth": true,
+      "privateLifeEventDetailsNotIncluded": true,
+      "optionalSteps": [
+        "Sort essentials for three cats",
+        "Choose accessible essentials",
+        "List items that cannot be transported",
+        "Plan rest and food breaks",
+        "Ask about available assistance if wanted"
+      ]
+    }
+  ]
+}
