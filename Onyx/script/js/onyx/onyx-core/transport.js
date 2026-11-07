@@ -140,7 +140,7 @@ export class OnyxTransport {
       let result;
       const host = hostBackend();
       if (host) {
-        result = await host.request(requestedAction, data, { ...options, signal: timed.signal });
+        result = await host.request(requestedAction, data, { ...options, timeout: timeoutMs, signal: timed.signal });
       } else {
         const payload = { action: requestedAction, data };
         if (this.#sessionToken) payload.sessionToken = this.#sessionToken;
