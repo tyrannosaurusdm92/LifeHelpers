@@ -85,7 +85,12 @@ export class OnyxTransport {
   get profileKey() {
     const host = hostBackend();
     const hostProfile = host?.activeProfile?.() || host?.profile?.();
-    const value = String(this.#profileKey || hostProfile || "shared").toLowerCase();
+    // Live authenticated account identity overrides a profile cached from an
+    // earlier session. Never route Jasper's chat to William (or vice versa).
+    const authenticatedHostProfile = host?.authenticated?.() === true ||
+      (host?.isAuthenticated?.() === true && host?.isAdmin?.() !== true)
+      ? hostProfile : "";
+    const value = String(authenticatedHostProfile || this.#profileKey || hostProfile || "shared").toLowerCase();
     return ["william", "jasper", "shared"].includes(value) ? value : "shared";
   }
 
