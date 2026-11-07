@@ -312,10 +312,10 @@
         const startY = event.clientY;
         const s = state.get(panel);
 
-        const minW = Math.min(s.baseW * SCALE_MIN, Math.max(1, window.innerWidth - 8));
-        const minH = Math.min(s.baseH * SCALE_MIN, Math.max(1, window.innerHeight - 8));
-        const maxW = Math.max(minW, Math.min(s.baseW * SCALE_MAX, window.innerWidth - 8));
-        const maxH = Math.max(minH, Math.min(s.baseH * SCALE_MAX, window.innerHeight - 8));
+        const minW = Math.min(320, Math.max(180, window.innerWidth - 8));
+        const minH = Math.min(260, Math.max(180, window.innerHeight - 8));
+        const maxW = Math.max(minW, window.innerWidth - 8);
+        const maxH = Math.max(minH, window.innerHeight - 8);
 
         panel.classList.add("onyx-user-sized", "onyx-resizing");
         panel.style.position = "absolute";
@@ -384,6 +384,50 @@
       });
     });
 
+
+    // Move the open panel by dragging its header, without dragging buttons.
+    const titleBar = panel.querySelector(".onyx-panel-header");
+    titleBar?.addEventListener("pointerdown", event => {
+      if (event.button !== undefined && event.button !== 0) return;
+      if (event.target.closest("button,a,input,select,textarea,[contenteditable],.onyx-resize-handle")) return;
+      if (widget.classList.contains("is-fullscreen") || widget.classList.contains("tab-fullscreen")) return;
+      if (!captureBaseline(panel)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const start = panel.getBoundingClientRect(), host = widget.getBoundingClientRect();
+      const dx0 = event.clientX, dy0 = event.clientY;
+      panel.classList.add("onyx-user-sized", "onyx-moving");
+      panel.style.position = "absolute";
+      panel.style.transform = "none";
+      panel.style.right = "auto";
+      panel.style.bottom = "auto";
+      panel.style.maxWidth = "none";
+      panel.style.maxHeight = "none";
+      panel.style.width = toCssPx(panel,start.width);
+      panel.style.height = toCssPx(panel,start.height);
+      panel.style.left = toCssPx(panel,start.left-host.left);
+      panel.style.top = toCssPx(panel,start.top-host.top);
+      try { titleBar.setPointerCapture(event.pointerId); } catch (_) {}
+      const move = ev => {
+        const x = clamp(start.left + ev.clientX-dx0, 4, Math.max(4,window.innerWidth-start.width-4));
+        const y = clamp(start.top + ev.clientY-dy0, 4, Math.max(4,window.innerHeight-start.height-4));
+        const root = widget.getBoundingClientRect();
+        panel.style.left = toCssPx(panel,x-root.left);
+        panel.style.top = toCssPx(panel,y-root.top);
+        window.dispatchEvent(new CustomEvent("onyx:uiresize"));
+      };
+      const end = () => {
+        panel.classList.remove("onyx-moving");
+        titleBar.removeEventListener("pointermove",move);
+        titleBar.removeEventListener("pointerup",end);
+        titleBar.removeEventListener("pointercancel",end);
+        applyScale(widget,panel);
+      };
+      titleBar.addEventListener("pointermove",move);
+      titleBar.addEventListener("pointerup",end);
+      titleBar.addEventListener("pointercancel",end);
+    });
+
     const keepInsideViewport = () => {
       if (!panel.classList.contains("onyx-user-sized")) return;
       if (widget.classList.contains("is-fullscreen") || widget.classList.contains("tab-fullscreen")) return;
@@ -393,10 +437,10 @@
       const s = state.get(panel);
       if (!s) return;
 
-      const minW = Math.min(s.baseW * SCALE_MIN, Math.max(1, window.innerWidth - 8));
-      const minH = Math.min(s.baseH * SCALE_MIN, Math.max(1, window.innerHeight - 8));
-      const maxW = Math.max(minW, Math.min(s.baseW * SCALE_MAX, window.innerWidth - 8));
-      const maxH = Math.max(minH, Math.min(s.baseH * SCALE_MAX, window.innerHeight - 8));
+      const minW = Math.min(320, Math.max(180, window.innerWidth - 8));
+      const minH = Math.min(260, Math.max(180, window.innerHeight - 8));
+      const maxW = Math.max(minW, window.innerWidth - 8);
+      const maxH = Math.max(minH, window.innerHeight - 8);
 
       let width = clamp(pr.width, minW, maxW);
       let height = clamp(pr.height, minH, maxH);
