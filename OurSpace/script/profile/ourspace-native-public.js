@@ -1,0 +1,278 @@
+/* OurSpace PUBLIC native profile mirror.
+ * Reuses the exact profile-frame and 15 modules from jasper.html/william.html,
+ * and their canonical CSS. Original scripts are NEVER executed in this viewer.
+ * Only the published OurSpace -> AI Brain JSONP contract supplies profile data.
+ */
+(function(){
+'use strict';
+const q=new URLSearchParams(location.search);
+const key=q.get('profile')==='jasper'?'jasper':q.get('profile')==='william'?'william':'';
+const webApp='https://script.google.com/macros/s/AKfycbwhdSPEHXi81Z-72xCYNkuX7bti8LYMwQPnjOB-DliseOftVNnkCJuK-cfO1cAZGRf0/exec';
+const message=document.getElementById('publicMessage');
+const viewport=document.getElementById('publicViewport');
+const host=document.getElementById('publicHost');
+const $=(sel,root=document)=>root.querySelector(sel);
+const $$=(sel,root=document)=>Array.from(root.querySelectorAll(sel));
+const txt=(parent,tag,value,cls)=>{
+  const item=document.createElement(tag);if(cls)item.className=cls;
+  item.textContent=String(value||'');parent.appendChild(item);return item;
+};
+const safeUrl=value=>{
+  if(typeof value!=='string'||!/^https?:\/\//i.test(value.trim()))return '';
+  try{const u=new URL(value.trim());return /^https?:$/.test(u.protocol)?u.href:''}catch(_){return ''}
+};
+const insertLink=(parent,label,url)=>{
+  const safe=safeUrl(url);if(!safe)return null;
+  const a=txt(parent,'a',String(label||'Published link').slice(0,150));
+  a.href=safe;a.rel='noopener noreferrer';a.target='_blank';return a;
+};
+const toItems=list=>Array.isArray(list)?list:[];
+const fail=reason=>{host.replaceChildren();viewport.hidden=true;message.hidden=false;message.textContent=reason};
+if(!key){fail('Choose Jasper or William to view a published OurSpace profile.');return;}
+document.documentElement.dataset.profile=key;
+document.documentElement.dataset.ourspaceCurrentPage='profile';
+document.title=(key==='jasper'?"Jasper's":"William's")+' published OurSpace profile';
+
+let callbackId=0;
+function fetchPublished(){
+ return new Promise((resolve,reject)=>{
+  let done=false,script=document.createElement('script');
+  const callback='__osNativePublic'+(++callbackId);
+  const timeout=setTimeout(()=>finish(new Error('Published profile request timed out')),16000);
+  function finish(error,data){
+    if(done)return;done=true;clearTimeout(timeout);
+    script.remove();try{delete window[callback]}catch(_){window[callback]=undefined}
+    if(error)reject(error);else resolve(data);
+  }
+  window[callback]=data=>finish(null,data);
+  script.onerror=()=>finish(new Error('The public profile service did not respond'));
+  script.src=webApp+'?action=ourspace.publicProfiles&callback='+callback+'&nonce='+Date.now();
+  script.async=true;document.head.appendChild(script);
+ });
+}
+function readRecord(all){
+ const r=all&&all.view==='ourspace-public-profiles'&&all.profiles&&all.profiles[key];
+ if(!r||r.ok!==true||r.published!==true||r.profile?.profileKey!==key)return null;
+ return r.profile;
+}
+async function fetchNativeTemplate(){
+ const source=key+'.html';
+ const r=await fetch(source,{cache:'no-store',credentials:'omit'});
+ if(!r.ok)throw new Error('Native OurSpace profile template returned HTTP '+r.status);
+ const html=await r.text();
+ const doc=new DOMParser().parseFromString(html,'text/html');
+ const app=doc.querySelector('#profileApp');
+ const modules=app?app.querySelectorAll('.profile-box').length:0;
+ if(!app||modules<15||!app.querySelector('#recordPlayerFlow')||!app.querySelector('#bulletinBoardFlow')){
+  throw new Error('The native OurSpace module template is incomplete.');
+ }
+ // The native module layout is imported as DOM, never as an executable HTML page.
+ const styleLinks=Array.from(doc.querySelectorAll('link[rel="stylesheet"][href]'));
+ const anchor=$('link[href$="ourspace-native-public.css"]');
+ styleLinks.forEach(l=>{
+  const raw=l.getAttribute('href')||'';
+  // All canonical asset paths are site-relative inside OurSpace/assets/code/.
+  if(!/^(?:\.\.\/)+style\//i.test(raw))return;
+  const copy=document.createElement('link');
+  copy.rel='stylesheet';copy.href=raw;
+  document.head.insertBefore(copy,anchor);
+ });
+ const cloned=document.importNode(app,true);
+ // Untrusted HTML and account-only features never become active.
+ cloned.querySelectorAll('script,style,iframe,object,embed,form,dialog,textarea,input,select,template').forEach(el=>el.remove());
+ cloned.querySelectorAll('*').forEach(el=>{
+  Array.from(el.attributes).forEach(attr=>{
+   if(/^on/i.test(attr.name)||attr.name==='srcdoc'||attr.name==='formaction')el.removeAttribute(attr.name);
+  });
+  if(el.matches('a')){el.removeAttribute('href');el.removeAttribute('target');}
+ });
+ // Preserve native module artwork but eliminate private action controls.
+ cloned.querySelectorAll('button').forEach(btn=>{
+  const permitted=['playButton','previousButton','nextButton','rewindButton','forwardButton'];
+  if(!permitted.includes(btn.id)){btn.disabled=true;btn.hidden=true;btn.setAttribute('aria-hidden','true');}
+ });
+ cloned.querySelectorAll('[contenteditable],[draggable]').forEach(el=>{
+  el.removeAttribute('contenteditable');el.removeAttribute('draggable');
+ });
+ cloned.querySelectorAll('audio,video').forEach(el=>{el.pause?.();el.removeAttribute('src');el.removeAttribute('autoplay');el.querySelectorAll('source').forEach(x=>x.remove());});
+ cloned.querySelectorAll('[data-module-items],.ms-items,.profile-list,.gallery-grid').forEach(el=>el.replaceChildren());
+ cloned.querySelectorAll('.profile-box').forEach(box=>{
+  box.classList.remove('is-collapsed');
+  box.removeAttribute('hidden');
+  box.querySelectorAll('.empty-state,[data-empty]').forEach(x=>{
+   if(x.id==='links_module_section'||x.id==='profile_interests_section')return;
+   if(x.classList.contains('empty-state'))x.textContent='No additional information published yet.';
+  });
+ });
+ cloned.querySelectorAll('a[href^="javascript:"]').forEach(a=>a.remove());
+ // Default OurSpace identity + existing module coordinates/styles stay intact.
+ return cloned;
+}
+function normalizeText(str,max=3000){return typeof str==='string'?str.slice(0,max):''}
+function renderNative(data,app){
+ const name=normalizeText(data.displayName|| (key==='jasper'?'Jasper':'William'),120);
+ const title=$('#profileTitle',app);if(title)title.textContent=name+"'s space";
+ const greet=$('#headerGreeting',app);if(greet)greet.textContent=key==='jasper'?"Squishy's Cottage":'Dino Nerdzone';
+ const network=$('#networkNotice',app);if(network)network.textContent='Published OurSpace profile · '+name;
+ const photo=$('#profilePictureDisplay',app);
+ if(photo){
+  photo.replaceChildren();
+  const url=safeUrl(data.avatarUrl);
+  if(url){const img=txt(photo,'img','');img.alt=name+' published profile image';img.src=url;img.loading='lazy';}
+  else txt(photo,'span',key==='jasper'?'J':'W');
+ }
+ const photoEmpty=$('#profilePictureEmpty',app);
+ if(photoEmpty)photoEmpty.hidden=Boolean(safeUrl(data.avatarUrl));
+ const identity=$('#profile-identity .ms-card-body',app)||$('#profile-identity .module-body',app)||$('#profile-identity .box-body',app);
+ if(identity){const info=txt(identity,'div','', 'os-public-readout');
+  txt(info,'strong',name);if(data.headline)txt(info,'p',normalizeText(data.headline,240));
+ }
+ const bio=$('#aboutBio',app)||$('#aboutPublic',app)||$('#profile-about [data-module-items]',app);
+ if(bio){bio.replaceChildren();txt(bio,'p',normalizeText(data.bio)||'No public biography has been shared.')}
+ const interests=$('#interestsList',app)||$('#profile-interests [data-module-items]',app);
+ if(interests){
+  interests.replaceChildren();
+  toItems(data.interests).slice(0,40).forEach(v=>{const str=normalizeText(v,120);if(str)txt(interests,'div',str,'os-public-interest')});
+  if(!interests.childNodes.length)txt(interests,'p','No interests published yet.');
+ }
+ const tags=$('#fusionTagsList',app);
+ if(tags){tags.replaceChildren();toItems(data.interests).slice(0,25).forEach(v=>{if(typeof v==='string'&&v.trim())txt(tags,'span',v.trim().slice(0,90),'os-public-tag')})}
+ const projects=$('#profile-projects [data-module-items]',app);
+ if(projects){projects.replaceChildren();toItems(data.projects).slice(0,24).forEach(p=>{
+   if(!p||typeof p!=='object')return;
+   const item=txt(projects,'div','','os-public-entry');
+   txt(item,'strong',normalizeText(p.name||p.title,160));if(p.description)txt(item,'p',normalizeText(p.description,800));
+   insertLink(item,'View project',p.url||p.link);
+  });if(!projects.childNodes.length)txt(projects,'p','No projects published yet.');
+ }
+ const links=$('#linksList',app)||$('#profile-links [data-module-items]',app);
+ if(links){links.replaceChildren();toItems(data.links).slice(0,200).forEach(entry=>{
+  if(!entry||typeof entry!=='object')return;
+  const row=txt(links,'div','','os-public-entry');
+  if(!insertLink(row,entry.name||entry.title||'Published link',entry.url||entry.link)){row.remove();return}
+  if(entry.description)txt(row,'p',normalizeText(entry.description,700));
+ });if(!links.childNodes.length)txt(links,'p','No links published yet.')}
+ const donation=$('#profile-donation [data-module-items]',app)||$('#profile-donation .ms-items',app);
+ if(donation){donation.replaceChildren();toItems(data.donationMethods).slice(0,12).forEach(x=>{
+  if(!x||typeof x!=='object')return;
+  const item=txt(donation,'div','','os-public-entry');txt(item,'strong',normalizeText(x.name,160));
+  insertLink(item,'Open support option',x.url||x.link);
+ });
+ const c=data.creatorDonation;
+ if(c&&typeof c==='object')insertLink(donation,c.label||'Support the creator',c.url||c.donationUrl);
+ }
+ // The exact retro record player is ALWAYS present, regardless of the playlist.
+ const player=$('#profile-music',app);if(player)player.classList.remove('is-collapsed');
+ const audio=$('#audioElement',app);
+ const tracks=toItems(data.musicPlayer?.items).filter(t=>t&&safeUrl(t.url)).slice(0,200);
+ const song=data.favoriteSong&&safeUrl(data.favoriteSong.url)?data.favoriteSong:null;
+ if(song&&!tracks.some(t=>t.url===song.url))tracks.unshift({title:song.title||'Favorite song',artist:song.artist||'',url:song.url});
+ const list=$('#musicList',app);
+ if(list){list.replaceChildren();tracks.forEach((t,i)=>{
+  const el=txt(list,'li','','os-public-track');
+  const button=txt(el,'button',normalizeText(t.title||'Published song',160));
+  button.type='button';button.dataset.trackIndex=String(i);button.disabled=false;button.hidden=false;button.removeAttribute('aria-hidden');
+ });if(!tracks.length)txt(list,'li','No published tracks yet.','os-public-track-empty');}
+ const artist=$('#artistValue',app),titleValue=$('#titleValue',app),time=$('#currentTime',app),duration=$('#durationTime',app);
+ const play=$('#playButton',app),prev=$('#previousButton',app),next=$('#nextButton',app);
+ const rewind=$('#rewindButton',app),forward=$('#forwardButton',app),playIcon=$('#playIcon',app);
+ let trackIndex=0;
+ function select(index,auto=false){
+  if(!audio||!tracks.length)return;
+  trackIndex=(index+tracks.length)%tracks.length;const t=tracks[trackIndex];
+  audio.src=safeUrl(t.url);audio.preload='none';
+  if(artist)artist.textContent=normalizeText(t.artist||'',160);
+  if(titleValue)titleValue.textContent=normalizeText(t.title||'Published track',170);
+  $$('.os-public-track',list).forEach((x,i)=>x.classList.toggle('current',i===trackIndex));
+  if(auto)audio.play().catch(()=>{});else audio.load();
+ }
+ const clock=sec=>{if(!Number.isFinite(sec))return '00:00';sec=Math.floor(sec);return Math.floor(sec/60).toString().padStart(2,'0')+':'+(sec%60).toString().padStart(2,'0')};
+ if(audio){
+  audio.addEventListener('timeupdate',()=>{if(time)time.textContent=clock(audio.currentTime)});
+  audio.addEventListener('loadedmetadata',()=>{if(duration)duration.textContent=clock(audio.duration)});
+  audio.addEventListener('play',()=>{if(playIcon)playIcon.textContent='❚❚';$('#vinyl',app)?.classList.add('is-playing')});
+  audio.addEventListener('pause',()=>{if(playIcon)playIcon.textContent='▶';$('#vinyl',app)?.classList.remove('is-playing')});
+  audio.addEventListener('ended',()=>select(trackIndex+1,true));
+ }
+ if(list)list.addEventListener('click',e=>{const b=e.target.closest('[data-track-index]');if(b)select(Number(b.dataset.trackIndex),true)});
+ if(play)play.addEventListener('click',()=>{if(!audio||!tracks.length)return;if(!audio.src)select(0);if(audio.paused)audio.play().catch(()=>{});else audio.pause()});
+ if(prev)prev.addEventListener('click',()=>select(trackIndex-1,true));
+ if(next)next.addEventListener('click',()=>select(trackIndex+1,true));
+ if(rewind)rewind.addEventListener('click',()=>{if(audio)audio.currentTime=Math.max(0,audio.currentTime-3)});
+ if(forward)forward.addEventListener('click',()=>{if(audio)audio.currentTime=Math.min(audio.duration||0,audio.currentTime+3)});
+ if(tracks.length)select(0);
+ else {if(artist)artist.textContent='';if(titleValue)titleValue.textContent='No published tracks yet';}
+ // The exact Bulletin pinboard ALWAYS renders, even when no pins are shared.
+ const board=$('#profile-bulletins',app);if(board)board.classList.remove('is-collapsed');
+ const privacy=$('#privacy-pill',app);if(privacy)privacy.textContent='PUBLIC VIEW';
+ const boardName=$('#board-name',app);if(boardName)boardName.textContent='Published Bulletin';
+ const boardSubtitle=$('#board-subtitle',app);if(boardSubtitle)boardSubtitle.textContent='Only approved public content';
+ const boardItems=$('#board-items',app);
+ if(boardItems){boardItems.replaceChildren();txt(boardItems,'div','No bulletin pins have been published to this public profile.','os-public-bulletin-note')}
+ const boardStatus=$('#board-status',app);if(boardStatus)boardStatus.textContent='Read-only public bulletin';
+ const footer=$('#profileApp .profile-footer',app)||$('.profile-footer',app);
+ if(footer)footer.textContent='Published OurSpace profile · Read-only';
+ // Gallery uses the native original Gallery module, not an external imitation.
+ const gallery=$('#galleryGrid',app)||$('#profile-gallery [data-module-items]',app);
+ if(gallery){gallery.replaceChildren();toItems(data.visualPlayer?.items).slice(0,80).forEach(media=>{
+  if(!media||!safeUrl(media.url))return;
+  const tile=txt(gallery,'figure','','os-public-gallery-item');
+  if(media.kind==='image'){const img=txt(tile,'img','');img.src=safeUrl(media.url);img.alt=normalizeText(media.title||'Published photo',130);img.loading='lazy'}
+  else if(media.kind==='video'){const video=txt(tile,'video','');video.src=safeUrl(media.url);video.controls=true;video.preload='none'}
+  else {tile.remove();return}
+  txt(tile,'figcaption',normalizeText(media.title||'Published media',130));
+ });if(!gallery.childNodes.length)txt(gallery,'p','No published media yet.')}
+ // No private account data, messages, posts, scrapbook, workspaces, or stored items are fetched.
+}
+function applyPublishedTheme(theme){
+ if(!theme||typeof theme!=='object')return;
+ if(theme.schema!=='ourspace.native-profile.css.v1'||typeof theme.css!=='string')return;
+ if(theme.css.length>44000||/@import\b|javascript\s*:|expression\s*\(/i.test(theme.css))return;
+ const style=document.createElement('style');style.id='ourspace-published-design';style.textContent=theme.css;document.head.appendChild(style);
+}
+function appendScript(path){
+ return new Promise(resolve=>{
+  const script=document.createElement('script');script.src=path;script.onload=resolve;script.onerror=resolve;document.body.appendChild(script);
+ });
+}
+function sendHeight(){
+ if(viewport.hidden)return;
+ const width=1754;
+ const scale=Math.min(1,(window.innerWidth-12)/width);
+ host.style.transform='scale('+scale+')';
+ host.style.width=width+'px';
+ host.style.height='auto';
+ viewport.style.width=Math.ceil(width*scale)+'px';
+ const natural=Math.max(host.scrollHeight,$('#profileApp')?.scrollHeight||0,3420);
+ const h=Math.max(500,Math.ceil(natural*scale)+28);
+ viewport.style.height=h+'px';
+ try{window.parent.postMessage({type:'ourspace:public-profile-height',profileKey:key,height:h},'*')}catch(_){}
+}
+function initSizing(){
+ let pending=false;
+ function update(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;sendHeight()})}
+ window.addEventListener('resize',update);
+ if('ResizeObserver'in window){
+  const observer=new ResizeObserver(update);
+  if($('#profileApp'))observer.observe($('#profileApp'));
+ }
+ document.fonts?.ready?.then(update).catch(()=>{});
+ setTimeout(update,300);setTimeout(update,1600);update();
+}
+async function load(){
+ try{
+  const [response,app]=await Promise.all([fetchPublished(),fetchNativeTemplate()]);
+  const data=readRecord(response);
+  if(!data){fail('This OurSpace profile is not published or the public connection is unavailable.');return}
+  host.replaceChildren(app);
+  renderNative(data,app);
+  message.hidden=true;viewport.hidden=false;
+  // Run only the existing native geometry and artwork fit. No account scripts.
+  await appendScript('../../script/profile/ourspace-profile-baseline.js');
+  await appendScript('../../script/profile/ourspace-profile-embedded-fit.js');
+  applyPublishedTheme(data.theme);
+  initSizing();
+ }catch(error){fail('The published OurSpace profile could not be loaded.')}
+}
+load();
+})();
