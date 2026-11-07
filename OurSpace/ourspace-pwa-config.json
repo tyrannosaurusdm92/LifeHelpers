@@ -1,0 +1,8 @@
+{
+  "schema": "ourspace.pwa-config.v1",
+  "backendWebApp": "https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec",
+  "vapidPublicKey": "",
+  "firebaseConfig": null,
+  "firebaseSdkVersion": "11.10.0",
+  "note": "Public Firebase project config and VAPID public key are not secrets. Never put Firebase service-account credentials, tokens or API gateway secrets in this file."
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html data-ourspace-profile="william" data-profile="william" lang="en">
+<head>
+<base href="../../"/>
+<script>(function(){var p=new URLSearchParams(location.search).get('profile');if(p==='william'||p==='jasper'){document.documentElement.dataset.profile=p;document.documentElement.dataset.ourspaceProfile=p;}})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>Onyx Widget · OurSpace</title>
+<link href="style/onyx widget/onyx_widget_style.css" rel="stylesheet"/><link href="style/onyx widget/ourspace-onyx-embedded.css" rel="stylesheet"/>
+<link href="style/profile/design_widget_icon.css" rel="stylesheet"/>
+<link href="style/onyx widget/onyx-design-widget-hooks.css" rel="stylesheet"/><link href="style/onyx widget/onyx-professor.css" rel="stylesheet"/>
+<script src="script/onyx widget/onyx_widget_shared-onyx-currency.js"></script>
+<link rel="stylesheet" href="style/onyx widget/onyx-chat-and-ui-integration.css">
+<link rel="stylesheet" href="style/onyx widget/onyx-adventures-integration.css">
+<link rel="stylesheet" href="style/onyx widget/onyx-widget-colors.css">
+<link rel="stylesheet" href="style/onyx widget/onyx-game-frame.css">
+</head>
+<body data-onyx-standalone-viewport="ourspace-main-page" data-profile="william">
+<script>(function(){var p=document.documentElement.dataset.profile;if(p==='william'||p==='jasper')document.body.dataset.profile=p;})();</script>
+<div class="ms-native-profile-slot" hidden="" id="ourspaceProfileFrame"></div>
+<script src="script/onyx widget/onyx_widget_shared-bootstrap.js"></script>
+<div class="onyx-widget jump-nav profile-jump onyx-round-widget onyx-bubble-widget movable discord-layout-shell" data-jump-nav="onyx-widget" data-layout="discord-inspired" data-mood="sleeping" data-movable="true" data-onyx-tab="health" data-size-state="hyper-reduced" data-state="sleeping" id="onyxWidget">
+<button aria-controls="onyxPopout" aria-expanded="false" aria-label="Open Onyx" class="onyx-bubble jump-orb" id="onyxBubble" type="button">
+<img alt="Onyx, thinking" draggable="false" id="onyxLegacyStatic" src="assets/images/onyx widget/onyx_widget_onyx_thinking.png"/><img alt="" aria-hidden="true" class="jump-orb-frame" draggable="false" src="assets/images/onyx widget/onyx_widget_frame-black.svg"/>
+<span aria-hidden="true" class="onyx-alert-status" data-onyx-alert-status="">
+<span class="onyx-alert-reaction" data-onyx-alert-reaction=""></span>
+<span class="onyx-alert-count" data-onyx-alert-count="" hidden=""></span>
+</span>
+<img alt="" aria-hidden="true" hidden="" id="onyxFallback" src="assets/images/onyx widget/onyx_widget_onyx_sleeping.png" style="display:none!important"/>
+<canvas aria-hidden="true" aria-label="Onyx" class="onyx-canvas" height="216" id="onyxCanvas" style="display:none!important" width="216"></canvas>
+<span class="onyx-state-label" id="onyxBubbleState">Sleeping</span>
+</button>
+<span aria-atomic="true" aria-live="polite" class="onyx-sr-only" data-onyx-alert-live="" role="status"></span>
+<div aria-hidden="true" aria-label="Onyx" class="onyx-popout jump-panel bottom-drag-surface" data-bottom-drag-surface="widget" id="onyxPopout" role="region" tabindex="-1">
+<header class="onyx-panel-header module-topbar">
+<div class="onyx-panel-title"><strong>Onyx</strong><span id="onyxMoodText">Sleeping</span><span id="onyxMomentText">Sleeping</span><small aria-live="polite" class="onyx-backend-status" id="onyxBackendStatus">Connecting…</small></div>
+<button aria-label="Toggle Design Widget for this tab" aria-pressed="false" class="onyx-design-toggle onyx-design-topbar" data-onyx-design-toggle data-design-surface="widget" type="button" title="Show / hide Design Widget (integration hook)"><span aria-hidden="true" class="design-widget-icon"></span></button>
+<output aria-label="Shared Onyx wallet" class="onyx-wallet-badge" data-onyx-currency-balance="" title="Shared wallet · earn from games, widget tools, and Work">🟤0 ⚪0 🪙0 🔘0</output>
+<button aria-label="Close" class="onyx-close" id="onyxClose" type="button">×</button>
+</header>
+<div aria-live="polite" class="onyx-speech module-speech" id="onyxSpeech">Zzz.</div>
+<div aria-label="Onyx tabs" class="jump-tabs" role="tablist">
+<button aria-controls="onyx-pane-health" aria-selected="true" class="jump-tab is-active" data-onyx-tab-button="health" data-tab="health" id="onyx-tab-health" role="tab" type="button">Virtual &amp; Health</button>
+<button aria-controls="onyx-pane-leisure" aria-selected="false" class="jump-tab" data-onyx-tab-button="leisure" data-tab="leisure" id="onyx-tab-leisure" role="tab" type="button">Leisure</button>
+<button aria-controls="onyx-pane-work" aria-selected="false" class="jump-tab" data-onyx-tab-button="work" data-tab="work" id="onyx-tab-work" role="tab" type="button">Work</button>
+</div>
+<div class="jump-content">
+<section aria-labelledby="onyx-tab-health" class="jump-pane is-active" data-onyx-tab-panel="health" data-pane="health" id="onyx-pane-health" role="tabpanel"></section>
+<section aria-labelledby="onyx-tab-leisure" class="jump-pane" data-onyx-tab-panel="leisure" data-pane="leisure" hidden="" id="onyx-pane-leisure" role="tabpanel"></section>
+<section aria-labelledby="onyx-tab-work" class="jump-pane" data-onyx-tab-panel="work" data-pane="work" hidden="" id="onyx-pane-work" role="tabpanel">
+<div class="pane-toolbar"><h2 class="pane-title">Work</h2></div>
+<div class="work-fullscreen-launch-card module-design-section">
+<strong>Onyx Work</strong>
+<p>Open the full Work workspace with subtabs, chat, attachments, image creation, and the project catalog.</p>
+<button class="module-design-button" id="onyxOpenWorkFullscreen" type="button">Open Work fullscreen</button>
+</div>
+</section>
+</div>
+</div>
+<button aria-label="Exit fullscreen" class="fullscreen-exit" data-global-fullscreen-exit="" id="onyxFullscreenExit" title="Exit fullscreen" type="button">×</button>
+<div aria-live="polite" class="widget-toast" role="status"></div>
+</div>
+<section aria-label="CAT-astrophic Cuteness fullscreen · Virtual &amp; Health" class="onyx-fullscreen-shell-host onyx-adventures-fullscreen" hidden id="slowPetGame" tabindex="-1">
+  <iframe id="onyxHealthGameFrame" class="onyx-fullscreen-shell-frame onyx-game-iframe"
+    title="CAT-astrophic Cuteness · Virtual &amp; Health game"
+    data-game-src="assets/code/game.html" src="about:blank"
+    loading="lazy" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
+  <button aria-label="Exit CAT-astrophic Cuteness and return to Virtual &amp; Health" class="fullscreen-shell-exit" id="slowGameExit" title="Exit to Virtual &amp; Health" type="button">×</button>
+</section>
+<section aria-label="LifeHelpers Games fullscreen" class="onyx-leisure-game-host" hidden="" id="onyxLeisureFullscreen">
+<iframe allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write" allowfullscreen aria-label="LifeHelpers Arcade game launcher" class="onyx-leisure-game-frame" id="onyxLeisureGameFrame" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-downloads allow-pointer-lock allow-popups allow-popups-to-escape-sandbox" src="about:blank" title="LifeHelpers Arcade"></iframe>
+<button aria-label="Exit Games fullscreen and return to Leisure" class="fullscreen-shell-exit" id="onyxLeisureGameExit" title="Back to Leisure" type="button">❌</button>
+</section>
+<section aria-label="Work fullscreen" class="onyx-fullscreen-shell-host onyx-work-fullscreen-host" hidden="" id="onyxWorkFullscreenShell">
+<div class="ms-native-fullscreen" id="onyxWorkFullscreenFrame" tabindex="-1">
+<div aria-label="Onyx Work chat workspace" class="work-app" id="workApp">
+<aside aria-label="Work tabs" class="server-rail">
+<div aria-label="Onyx Work" class="brand-orb" title="Onyx Work"><span>O</span></div>
+<div aria-orientation="vertical" class="server-list" id="serverList" role="tablist"></div>
+<button aria-label="Project catalog" class="rail-button" id="catalogButton" title="Project catalog" type="button">▦</button>
+<button aria-label="Toggle Design Widget for Work" aria-pressed="false" class="onyx-design-toggle onyx-design-rail" data-onyx-design-toggle data-design-surface="work" type="button" title="Show / hide Design Widget (integration hook)"><span aria-hidden="true" class="design-widget-icon"></span></button>
+<button aria-label="Work settings" class="rail-button" id="settingsButton" title="Work settings" type="button">⚙</button>
+</aside>
+<aside aria-label="Subtabs" class="channel-sidebar" id="channelSidebar">
+<header class="channel-header">
+<div class="channel-title-wrap">
+<span class="eyebrow">WORK TAB</span>
+<h1 id="serverTitle">Coding</h1>
+</div>
+<button aria-label="Close subtabs" class="icon-button mobile-only" id="closeChannelsButton" type="button">×</button>
+</header>
+<div class="server-description" id="serverDescription"></div>
+<section aria-label="Onyx current Work mood" class="onyx-idle-window" id="onyxIdleWindow">
+<div class="onyx-idle-stage">
+<img alt="Onyx is sleeping" draggable="false" id="onyxMoodImage" src="assets/images/onyx widget/onyx_widget_onyx_sleeping.png"/>
+</div>
+<div class="onyx-idle-meta">
+<span class="onyx-idle-name">ONYX</span>
+<span class="onyx-mood-label" id="onyxMoodLabel">Sleeping</span>
+</div>
+</section>
+<div class="channel-toolbar">
+<span>SUBTABS</span>
+<button aria-label="Add subtab" class="icon-button" id="addChannelButton" title="Add subtab" type="button">＋</button>
+</div>
+<nav aria-label="Subtabs" class="channel-list" id="channelList"></nav>
+<div class="channel-footer">
+<div class="brain-status"><span class="status-dot" id="brainStatusDot"></span><span id="brainStatusText">Onyx Brain</span></div>
+<button class="small-button" id="newChannelButton" type="button">＋ New subtab</button>
+</div>
+</aside>
+<main class="chat-shell">
+<header class="chat-header">
+<div class="chat-header-main">
+<button aria-label="Open subtabs" class="icon-button mobile-only" id="openChannelsButton" type="button">☰</button>
+<div aria-hidden="true" class="channel-hash">#</div>
+<div class="chat-heading">
+<strong id="channelTitle">general</strong>
+<span id="channelTopic">General help in this Work tab.</span>
+</div>
+</div>
+<div class="chat-actions">
+<button aria-label="Rename subtab" class="icon-button" id="renameChannelButton" title="Rename subtab" type="button">✎</button>
+<button aria-label="Export this subtab" class="icon-button" id="exportChannelButton" title="Export this subtab" type="button">⇩</button>
+<button aria-label="Clear this subtab" class="icon-button" id="clearChannelButton" title="Clear this subtab" type="button">⌫</button>
+<button aria-label="Delete this subtab" class="icon-button" id="deleteChannelButton" title="Delete this subtab" type="button">🗑</button>
+</div>
+</header>
+<section aria-label="Conversation" aria-live="polite" class="message-viewport" id="messageViewport">
+<div class="messages" id="messages"></div>
+</section>
+<section aria-label="Message composer" class="composer-shell">
+<div class="attachment-tray" hidden="" id="attachmentTray"></div>
+<div class="composer-options">
+<label class="option-chip"><input checked="" id="webSearchToggle" type="checkbox"/><span>Web search</span></label>
+<label class="option-chip"><input checked="" id="driveToggle" type="checkbox"/><span>My OurSpace files</span></label>
+<label class="option-chip image-mode-chip" hidden="" id="imageModeChip"><input checked="" id="imageModeToggle" type="checkbox"/><span>Generate image</span></label>
+<label class="reasoning-control">Reasoning
+            <select aria-label="Reasoning effort" id="reasoningSelect">
+<option value="minimal">Minimal</option>
+<option selected="" value="medium">Medium</option>
+<option value="high">High</option>
+</select>
+</label>
+</div>
+<form class="composer" id="composerForm">
+<button aria-label="Attach files" class="composer-icon" id="attachButton" title="Attach files" type="button">＋</button>
+<textarea aria-label="Message Onyx" id="messageInput" maxlength="16000" placeholder="Message Onyx…" rows="1"></textarea>
+<button aria-label="Send message" class="send-button" id="sendButton" title="Send" type="submit">➤</button>
+<input hidden="" id="fileInput" multiple="" type="file"/>
+</form>
+<div class="composer-note">Enter to send · Shift+Enter for a new line · each subtab keeps its own local thread context.</div>
+</section>
+</main>
+</div>
+<aside aria-hidden="true" aria-label="Projects &amp; Catalog" class="catalog-drawer" id="catalogDrawer" inert="">
+<header class="catalog-head"><output aria-label="Shared Onyx wallet" class="work-wallet" data-onyx-currency-balance="" title="Shared wallet · Work activity earns copper">🟤0 ⚪0 🪙0 🔘0</output><div><span class="eyebrow">WORK BRAIN</span><h2>Projects &amp; Catalog</h2></div><button aria-label="Close Projects &amp; Catalog" class="icon-button catalog-close-button" id="closeCatalogButton" title="Close Projects &amp; Catalog" type="button"><span aria-hidden="true">×</span><span>Close</span></button></header>
+<div class="catalog-tools">
+<input aria-label="Search project catalog" id="catalogSearch" placeholder="Search projects, categories, tags…" type="search"/>
+<select aria-label="Sort projects" id="catalogSort"><option value="updated">Recently updated</option><option value="name">Name A–Z</option><option value="category">Category</option><option value="priority">Priority</option></select>
+<button class="primary-button" id="newProjectButton" type="button">＋ Project</button>
+</div>
+<div class="category-strip" id="categoryStrip"></div>
+<div class="project-dropzone" id="projectDropzone">Drop files here to catalog them in the selected project</div>
+<div class="project-list" id="projectList"></div>
+<section class="catalog-files" id="catalogFiles"><div class="catalog-section-title">CATALOGED FILES</div><div id="catalogFileList"></div></section>
+</aside>
+<dialog class="project-dialog" id="projectDialog">
+<form class="settings-card" id="projectForm" method="dialog">
+<header><div><span class="eyebrow">PROJECT</span><h2 id="projectDialogTitle">New project</h2></div><button aria-label="Close" class="icon-button" value="cancel">×</button></header>
+<div class="settings-body project-grid">
+<label class="field"><span>Name</span><input id="projectName" maxlength="100" required=""/></label>
+<label class="field"><span>Category</span><input id="projectCategory" list="projectCategories" placeholder="Coding, Writing, Household…"/><datalist id="projectCategories"></datalist></label>
+<label class="field"><span>Status</span><select id="projectStatus"><option>Planning</option><option>Active</option><option>Paused</option><option>Complete</option><option>Archived</option></select></label>
+<label class="field"><span>Priority</span><select id="projectPriority"><option>Low</option><option selected="">Normal</option><option>High</option><option>Urgent</option></select></label>
+<label class="field span-2"><span>Tags</span><input id="projectTags" placeholder="comma, separated, tags"/></label>
+<label class="field span-2"><span>Summary</span><textarea id="projectSummary" rows="3"></textarea></label>
+</div>
+<footer><button class="secondary-button" id="deleteProjectButton" type="button">Delete</button><button class="primary-button" id="saveProjectButton" type="button">Save project</button></footer>
+</form>
+</dialog>
+<dialog class="settings-dialog" id="settingsDialog">
+<form class="settings-card" id="settingsForm" method="dialog">
+<header>
+<div><span class="eyebrow">ONYX WORK</span><h2>Connection &amp; workspace</h2></div>
+<button aria-label="Close settings" class="icon-button" value="cancel">×</button>
+</header>
+<div class="settings-body">
+<label class="field"><span>OurSpace session token</span><input autocomplete="off" id="sessionTokenInput" placeholder="Usually detected from OurSpace login" type="password"/></label>
+<p class="field-help">The Work tab reuses the signed-in OurSpace session. The token is stored only in this browser when you choose Save.</p>
+<label class="field"><span>Backend</span><input id="backendUrlInput" readonly="" type="url"/></label>
+<div class="settings-status" id="settingsStatus">Not checked yet.</div>
+</div>
+<footer>
+<button class="secondary-button" id="testConnectionButton" type="button">Test connection</button>
+<button class="primary-button" id="saveSettingsButton" type="button">Save</button>
+</footer>
+</form>
+</dialog>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+ Existing GitHub-hosted Onyx brain assets: no duplicate brain files in this package. 
+
+
+
+
+
+</div>
+<button aria-label="Exit Work" class="fullscreen-shell-exit" id="onyxWorkFullscreenExit" title="Exit Work" type="button">×</button>
+</section>
+<section aria-label="Professor Onyx therapy and DBT workspace" aria-labelledby="onyxProfessorTitle" aria-modal="true" class="onyx-fullscreen-shell-host onyx-professor-fullscreen-host" hidden="" id="onyxProfessorFullscreenShell" role="dialog">
+<div class="ms-native-fullscreen onyx-professor-workspace" id="onyxProfessorFullscreenFrame" tabindex="-1">
+<div class="work-app professor-work-app" id="onyxProfessorApp">
+<aside aria-label="Professor therapy sections" class="server-rail professor-server-rail">
+<div class="brand-orb" title="Professor Onyx"><span>O</span></div>
+<nav aria-label="Therapy sections" class="server-list" id="onyxProfessorSections"></nav>
+<div class="onyx-professor-rail-actions"><button aria-label="Toggle Design Widget for Professor" aria-pressed="false" class="onyx-design-toggle onyx-design-rail" data-onyx-design-toggle data-design-surface="professor" type="button" title="Show / hide Design Widget (integration hook)"><span aria-hidden="true" class="design-widget-icon"></span></button>
+<button aria-label="Professor settings" class="rail-button onyx-professor-settings-shortcut" data-onyx-professor-settings-shortcut type="button" title="Professor settings">⚙</button></div>
+</aside>
+<aside aria-label="Session navigation" class="channel-sidebar professor-channel-sidebar" id="onyxProfessorSidebar">
+<header class="channel-header"><div class="channel-title-wrap"><span class="eyebrow">PROFESSOR ONYX</span><h1 id="onyxProfessorTitle">Support Session</h1></div></header>
+<div class="server-description">Supportive listening, psychology education, DBT skills and worksheets. Onyx is not a licensed psychiatrist or a substitute for professional care.</div>
+<section class="professor-portrait"><img alt="Professor Onyx" src="assets/images/onyx widget/onyx_widget_onyx_advising_professor.png"/><strong>Professor Onyx</strong><span id="onyxProfessorSessionTimer">Session ready</span></section>
+<div class="channel-toolbar"><span>SESSION SUBTABS</span><button aria-label="Add therapy subtab" class="icon-button" id="onyxProfessorAddThread" title="Add subtab" type="button">＋</button></div>
+<nav aria-label="Therapy conversations" class="channel-list" id="onyxProfessorThreads"></nav>
+<div class="channel-footer"><div class="brain-status"><span class="status-dot" id="onyxProfessorStatusDot"></span><span id="onyxProfessorStatus">Support session ready</span></div><button class="small-button" id="onyxProfessorNewThread" type="button">＋ New subtab</button></div>
+</aside>
+<main class="chat-shell professor-chat-shell">
+<header class="chat-header"><div class="chat-header-main"><button aria-label="Open session navigation" class="icon-button mobile-only" id="onyxProfessorMobileNav" type="button">☰</button><span class="channel-hash">#</span><div class="chat-heading"><strong id="onyxProfessorChatTitle">session</strong><span id="onyxProfessorChatTopic">A private support conversation with Professor Onyx</span></div></div>
+<div class="chat-actions"><button aria-label="Rename subtab" class="icon-button" id="onyxProfessorRenameThread" title="Rename subtab" type="button">✎</button><button aria-label="Export subtab" class="icon-button" id="onyxProfessorExportThread" title="Export subtab" type="button">⇩</button><button aria-label="Clear messages" class="icon-button" id="onyxProfessorClearThread" title="Clear messages" type="button">⌫</button><button aria-label="Delete subtab" class="icon-button" id="onyxProfessorDeleteThread" title="Delete subtab" type="button">🗑</button></div>
+</header>
+<div class="professor-schedule-banner" id="onyxProfessorSchedule" role="status">Every Saturday · 3:00–4:00 PM Eastern · William and Jasper each have their own session</div>
+<section aria-label="Professor conversation" class="message-viewport"><div aria-live="polite" class="messages" id="onyxProfessorMessages"></div></section>
+<section aria-label="Professor composer" class="composer-shell professor-composer-shell">
+<div class="professor-prompt-row" id="onyxProfessorQuickPrompts"></div>
+<div aria-live="polite" class="professor-attachment-tray" hidden="" id="onyxProfessorAttachmentTray"></div>
+<input accept=".txt,.md,.csv,.json,.pdf,.docx,.png,.jpg,.jpeg,.webp" aria-label="Attach worksheet or supporting document" hidden="" id="onyxProfessorFileInput" multiple="" type="file"/>
+<form class="composer" id="onyxProfessorComposer"><button aria-label="Attach worksheet or document" class="professor-attach-button" id="onyxProfessorAttach" title="Attach worksheet or document" type="button">＋</button><textarea aria-label="Message Professor Onyx" id="onyxProfessorInput" maxlength="12000" placeholder="Tell Onyx what you’d like support with…" required="" rows="2"></textarea><button class="primary-button" id="onyxProfessorSend" type="submit">Send</button></form>
+<p class="professor-footnote">This is AI-guided mental-health support, not clinical treatment. Your session stays separate from Work and is not stored in this browser after you leave the page.</p>
+</section>
+</main>
+</div>
+</div>
+<dialog aria-label="Professor display settings" class="onyx-professor-preferences" id="onyxProfessorDisplaySettings">
+<form method="dialog"><strong>Professor display settings</strong>
+<label>Message text size <select id="onyxProfessorTextSize"><option value="1">Regular</option><option value="1.15">Large</option><option value="1.3">Extra large</option></select></label>
+<label><input type="checkbox" id="onyxProfessorReducedEffects"/> Reduce decorative motion</label>
+<button type="submit" value="close">Close</button></form>
+</dialog>
+<button aria-label="Exit Professor mode" class="fullscreen-shell-exit" id="onyxProfessorFullscreenExit" title="Exit Professor mode" type="button">×</button>
+</section>
+<script src="script/onyx widget/onyx_widget_onyx-config.js"></script>
+<script defer src="script/onyx widget/onyx-design-widget-hooks.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-atlas.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-mood.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-scanner.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-repository-bridge.js" type="module"></script>
+<script src="script/onyx widget/onyx_widget_brain-link.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-behavior.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-voice.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-alerts.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-media.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-ui.js?v=9af239327b64"></script>
+<script src="script/onyx widget/onyx_widget_onyx-responsive-resize.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-signature-parts.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx_advising_professor.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx_caring.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-mood-renderers.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx_hungry.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx_judgmental.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx_listening.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx_purring.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx_sleeping.js"></script>
+
+<script src="script/onyx widget/onyx_widget_onyx_thinking.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx_thoughtful.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-core.js"></script>
+<script defer="" src="script/onyx widget/onyx-household-bridge.js"></script>
+<script defer="" src="script/onyx widget/onyx_widget_onyx-assignments.js"></script>
+<script src="script/onyx widget/onyx_widget_onyx-runtime.js"></script>
+<script src="script/onyx widget/onyx_widget_shared-shells.js?v=20261016-visual-pass-4"></script>
+<script src="script/onyx widget/onyx_widget_shared-runtime.js?v=20261016-visual-pass-4"></script>
+<script src="script/onyx widget/onyx_widget_shared-onyx-income.js"></script>
+<script src="script/onyx widget/onyx_widget_shared-onyx-audio-votes.js"></script>
+<script src="script/onyx widget/onyx_widget_backend-client.js"></script>
+<script src="script/onyx widget/onyx-tester.js"></script>
+<script src="script/onyx widget/onyx-professor.js"></script>
+<script src="script/onyx widget/onyx_widget_work-tab.js"></script><script src="script/onyx widget/onyx_widget_legacy-static-moods.js"></script><script src="script/onyx widget/onyx-widget-game-frame.js" defer></script>
+
+<script src="script/onyx widget/ourspace-onyx-frame-bridge.js"></script></body>
+</html>
