@@ -256,10 +256,14 @@ function extractArtifacts(result){
 }
 function snapshot(){const configuredEndpoint=String(root.OnyxConfig?.backendEndpoint||'').trim();return {online:Boolean(status.online),transportReady:Boolean(hostRequest()||sessionToken()),transport:hostRequest()?'host':sessionToken()?'direct':'none',endpointConfigured:Boolean(ENDPOINT),endpointMatchesConfig:Boolean(configuredEndpoint&&configuredEndpoint===ENDPOINT),lastAction:status.lastAction,lastError:status.lastError,profileKey:status.profileKey||activeProfile(),moduleContract:status.moduleContract,petContract:status.petContract,capabilityContract:status.capabilityContract,checkedAt:status.checkedAt}}
 function available(){return Boolean(hostRequest()||sessionToken())}
+function authenticated(){
+  const host=hostRequest();
+  return Boolean(sessionToken()||(host&&host.isAdmin?.()!==true&&host.token?.()));
+}
 
 root.OnyxBackendClient=Object.freeze({
   actions:ACTIONS,request,contracts,capabilities,history,petGet,petSave,chat,dbtSuggest,webSearch,urlFetch,fileUpload,fileParse,fileArchive,imageGenerate,alertSubscribe,alertUnsubscribe,alertList,alertSend,
-  extractArtifacts,publicError,activeProfile,resolveProfile,stableThread,available,snapshot,setAuthContext,clearAuthContext,requestAuthContext,waitForAuthContext,isTrustedMessageEvent,
+  extractArtifacts,publicError,activeProfile,resolveProfile,stableThread,available,authenticated,snapshot,setAuthContext,clearAuthContext,requestAuthContext,waitForAuthContext,isTrustedMessageEvent,
   onStatus(fn){if(typeof fn==='function')listeners.add(fn);return()=>listeners.delete(fn)}
 });
 if(!available())requestAuthContext();
@@ -1325,20 +1329,19 @@ root.OnyxConversationEngine=Object.freeze({reply,inferMode,isListenOnly,stateFor
   async function chat(payload={},options={}){
     const backend=root.OnyxBackendClient;
     if(!backend||typeof backend.chat!=='function')throw new Error('Onyx brain bridge is not ready.');
-    let augmented=payload;
-    try {
-      if(root.OnyxRepositoryBridge?.enrich) augmented=await root.OnyxRepositoryBridge.enrich(payload,options);
-    } catch(error) {
-      try{root.dispatchEvent(new CustomEvent('onyx:brain-index-unavailable',{detail:{reason:String(error?.message||'Index unavailable').slice(0,180)}}))}catch(_){}
-    }
-    return backend.chat({...augmented,useBrain:true,ai:true},options);
+    // The single repository brain owns retrieval, domain routing, profile
+    // verification and answer generation. Do not run a second retrieval pass.
+    const bridge=root.OnyxRepositoryBridge;
+    if(bridge?.chat)return bridge.chat({...payload,useBrain:true,ai:true},options);
+    throw new Error("Onyx's repository brain is not connected. Refresh the widget.");
   }
   function snapshot(){
     const backend=root.OnyxBackendClient;
     const backendState=backend?.snapshot?.()||{};
     const endpointMatchesConfig=backendState.endpointMatchesConfig===true;
     const actionSupported=backend?.actions?.chat===metadata.chatAction;
-    return {...metadata,backendAvailable:Boolean(backend?.available?.()),endpointConfigured:backendState.endpointConfigured===true,endpointMatchesConfig,actionSupported,routeReady:endpointMatchesConfig&&actionSupported,connectionState:!endpointMatchesConfig?'configuration-mismatch':backend?.available?.()?'authenticated':'awaiting-auth'};
+    const repository=root.OnyxRepositoryBridge?.status?.()||{available:false};
+    return {...metadata,repositoryBrain:repository.source||'LifeHelpers/Onyx',repositoryAvailable:repository.available===true,backendAvailable:Boolean(backend?.authenticated?.()),endpointConfigured:backendState.endpointConfigured===true,endpointMatchesConfig,actionSupported,routeReady:endpointMatchesConfig&&actionSupported&&repository.available===true,connectionState:!endpointMatchesConfig?'configuration-mismatch':repository.available?'repository-linked':backend?.authenticated?.()?'repository-unavailable':'awaiting-auth'};
   }
   root.OnyxBrainLink=Object.freeze({metadata,chat,snapshot});
 })(window);
