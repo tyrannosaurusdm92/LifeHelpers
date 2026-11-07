@@ -88,8 +88,12 @@ async function fetchNativeTemplate(){
  });
  // Preserve native module artwork but eliminate private action controls.
  cloned.querySelectorAll('button').forEach(btn=>{
-  const permitted=['playButton','previousButton','nextButton','rewindButton','forwardButton'];
-  if(!permitted.includes(btn.id)){btn.disabled=true;btn.hidden=true;btn.setAttribute('aria-hidden','true');}
+  const permitted=['playButton','previousButton','nextButton','rewindButton','forwardButton','fusionGalleryPrev','fusionGalleryNext'];
+  if(!permitted.includes(btn.id)){
+    btn.disabled=true;btn.setAttribute('aria-disabled','true');btn.tabIndex=-1;
+    // Read-only buttons remain visibly native so bulletin/module layouts match.
+    if(btn.closest('.mast-actions,.profile-photo-actions,.ms-actions,.editor-box,.profile-controls'))btn.hidden=true;
+  }
  });
  cloned.querySelectorAll('[contenteditable],[draggable]').forEach(el=>{
   el.removeAttribute('contenteditable');el.removeAttribute('draggable');
@@ -116,10 +120,11 @@ function renderNative(data,app){
  const network=$('#networkNotice',app);if(network)network.textContent='Published OurSpace profile · '+name;
  const photo=$('#profilePictureDisplay',app);
  if(photo){
-  photo.replaceChildren();
+  // Canonical profilePictureDisplay is already an IMG element (not a wrapper).
   const url=safeUrl(data.avatarUrl);
-  if(url){const img=txt(photo,'img','');img.alt=name+' published profile image';img.src=url;img.loading='lazy';}
-  else txt(photo,'span',key==='jasper'?'J':'W');
+  photo.hidden=!url;
+  if(url){photo.src=url;photo.alt=name+' published profile image';photo.loading='lazy';}
+  else photo.removeAttribute('src');
  }
  const photoEmpty=$('#profilePictureEmpty',app);
  if(photoEmpty)photoEmpty.hidden=Boolean(safeUrl(data.avatarUrl));
@@ -152,7 +157,7 @@ function renderNative(data,app){
   if(!insertLink(row,entry.name||entry.title||'Published link',entry.url||entry.link)){row.remove();return}
   if(entry.description)txt(row,'p',normalizeText(entry.description,700));
  });if(!links.childNodes.length)txt(links,'p','No links published yet.')}
- const donation=$('#profile-donation [data-module-items]',app)||$('#profile-donation .ms-items',app);
+ const donation=$('#donatePreview',app);
  if(donation){donation.replaceChildren();toItems(data.donationMethods).slice(0,12).forEach(x=>{
   if(!x||typeof x!=='object')return;
   const item=txt(donation,'div','','os-public-entry');txt(item,'strong',normalizeText(x.name,160));
@@ -213,7 +218,7 @@ function renderNative(data,app){
  const footer=$('#profileApp .profile-footer',app)||$('.profile-footer',app);
  if(footer)footer.textContent='Published OurSpace profile · Read-only';
  // Gallery uses the native original Gallery module, not an external imitation.
- const gallery=$('#galleryGrid',app)||$('#profile-gallery [data-module-items]',app);
+ const gallery=$('#picturesList',app)||$('#profile-gallery [data-module-items]',app);
  if(gallery){gallery.replaceChildren();toItems(data.visualPlayer?.items).slice(0,80).forEach(media=>{
   if(!media||!safeUrl(media.url))return;
   const tile=txt(gallery,'figure','','os-public-gallery-item');
@@ -222,6 +227,30 @@ function renderNative(data,app){
   else {tile.remove();return}
   txt(tile,'figcaption',normalizeText(media.title||'Published media',130));
  });if(!gallery.childNodes.length)txt(gallery,'p','No published media yet.')}
+ // Keep the original OurSpace Gallery carousel and its original control geometry.
+ const pictures=toItems(data.visualPlayer?.items).filter(item=>item?.kind==='image'&&safeUrl(item.url)).slice(0,80);
+ const galleryImg=$('#fusionGalleryImage',app),galleryCaption=$('#fusionGalleryCaption',app);
+ const galleryCount=$('#fusionGalleryCounter',app),thumbs=$('#fusionGalleryThumbs',app);
+ let pictureIndex=0;
+ function showPicture(i){
+   if(!pictures.length||!galleryImg)return;
+   pictureIndex=(i+pictures.length)%pictures.length;
+   const item=pictures[pictureIndex];
+   galleryImg.src=safeUrl(item.url);
+   galleryImg.alt=normalizeText(item.title||'Published picture',130);
+   if(galleryCaption)galleryCaption.textContent=normalizeText(item.title||'',130);
+   if(galleryCount)galleryCount.textContent=(pictureIndex+1)+' / '+pictures.length;
+   if(thumbs)Array.from(thumbs.children).forEach((x,n)=>x.setAttribute('aria-current',String(n===pictureIndex)));
+ }
+ if(thumbs){thumbs.replaceChildren();pictures.forEach((item,i)=>{
+   const b=txt(thumbs,'button',String(i+1));b.type='button';b.disabled=false;b.hidden=false;
+   b.setAttribute('aria-label','Show published picture '+(i+1));
+   b.addEventListener('click',()=>showPicture(i));
+ });}
+ $('#fusionGalleryPrev',app)?.addEventListener('click',()=>showPicture(pictureIndex-1));
+ $('#fusionGalleryNext',app)?.addEventListener('click',()=>showPicture(pictureIndex+1));
+ if(pictures.length)showPicture(0);
+ else if(galleryCount)galleryCount.textContent='0 / 0';
  // No private account data, messages, posts, scrapbook, workspaces, or stored items are fetched.
 }
 function applyPublishedTheme(theme){
