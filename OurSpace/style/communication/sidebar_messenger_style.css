@@ -1145,3 +1145,12 @@ html[data-public-view="true"] #sidebar-messenger-root {
 /* Overlay drawer does not reserve permanent body gutters; navigation owns page geometry. */
 :root{--os-sidebar-width:0px;--os-sidebar-right:0px;--os-sidebar-top:0px;--os-sidebar-height:100dvh;--os-sidebar-scale:1;--os-sidebar-gap:0px}
 #sidebar-messenger-root.mp-vertical-root :is(.mp-contact,.mp-room,.mp-summary-row,.mp-tool-row,.mp-composer-line){gap:clamp(3px,calc(var(--os-sidebar-gap-size,6px) * var(--mp-ui-scale,1) * .6),22px)!important}
+
+/* Native page scrollbar independently visible without the Sidebar Messenger UI. */
+#sidebar-messenger-root.os-scroll-only > :not(#osMessengerPageScrollRail){display:none!important;visibility:hidden!important;pointer-events:none!important}
+#sidebar-messenger-root.os-scroll-only :is(.mp-sidebar,.mp-panel,.mp-window,.mp-windows,.mp-call-window,.mp-toast-stack,.mp-modal){display:none!important;visibility:hidden!important;pointer-events:none!important}
+#sidebar-messenger-root.os-scroll-only:not(.os-drawer-open) #osMessengerPageScrollRail{background:#fff!important;border-color:#EC5800!important;pointer-events:auto!important;visibility:visible!important}
+#sidebar-messenger-root.os-scroll-only:not(.os-drawer-open) .os-messenger-page-scroll-fill{display:block!important;background:#FFF600!important}
+#sidebar-messenger-root.os-scroll-only:not(.os-drawer-open) .os-messenger-drawer-heart{top:var(--os-rail-heart-position,25.6%)!important}
+#sidebar-messenger-root.os-scroll-only .os-heart-alert{display:none!important}
+#sidebar-messenger-root.os-scroll-only #osMessengerPageScrollRail{touch-action:none}
