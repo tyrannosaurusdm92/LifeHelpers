@@ -78,6 +78,18 @@ async function fetchNativeTemplate(){
   document.head.insertBefore(copy,anchor);
  });
  const cloned=document.importNode(app,true);
+ const jumpSource=doc.querySelector('#profileJumpNav');
+ const publicJump=jumpSource?document.importNode(jumpSource,true):null;
+ if(publicJump){
+   // Duplicate the original Profile/About Jump Nav *only*, excluding its
+   // signed-in Onyx and Design Widget entries and without running their code.
+   publicJump.querySelectorAll(
+     '#profileJumpOnyxToggle,#profileJumpDesignToggle,'+
+     '#profileJumpOnyxStatus,#profileJumpDesignStatus,[data-ourspace-onyx-widget]'
+   ).forEach(el=>el.remove());
+   publicJump.removeAttribute('data-design-target');
+   publicJump.setAttribute('aria-label','Published profile section navigation');
+ }
  // Enforce the published-only boundary even if a future signed-in page moves
  // widget containers into the profile frame. They are never public modules.
  cloned.querySelectorAll(
@@ -88,6 +100,12 @@ async function fetchNativeTemplate(){
  ).forEach(el=>el.remove());
  // Untrusted HTML and account-only features never become active.
  cloned.querySelectorAll('script,style,iframe,object,embed,form,dialog,textarea,input,select,template').forEach(el=>el.remove());
+ // Editing/export controls are absent from the public DOM, not just disabled.
+ // A file input may already have been removed above, leaving its visible
+ // "Import JSON" label behind; remove that label throughout *all* modules.
+ cloned.querySelectorAll('.ms-actions,[data-import],label,button,a,summary,[role="button"]').forEach(el=>{
+   if(el.matches('.ms-actions,[data-import]')||/\bimport\s+json\b/i.test(el.textContent||''))el.remove();
+ });
  cloned.querySelectorAll('*').forEach(el=>{
   Array.from(el.attributes).forEach(attr=>{
    if(/^on/i.test(attr.name)||attr.name==='srcdoc'||attr.name==='formaction')el.removeAttribute(attr.name);
@@ -118,7 +136,7 @@ async function fetchNativeTemplate(){
  });
  cloned.querySelectorAll('a[href^="javascript:"]').forEach(a=>a.remove());
  // Default OurSpace identity + existing module coordinates/styles stay intact.
- return cloned;
+ return {app:cloned,jump:publicJump};
 }
 function normalizeText(str,max=3000){return typeof str==='string'?str.slice(0,max):''}
 function renderNative(data,app){
@@ -289,6 +307,133 @@ function sendHeight(){
  viewport.style.height=h+'px';
  try{window.parent.postMessage({type:'ourspace:public-profile-height',profileKey:key,height:h},'*')}catch(_){}
 }
+
+function initPublicJumpNav(nav){
+ if(!nav)return;
+ // Native markup, selectors, icons, and resize handles come from the signed-in
+ // Profile/About template. This is a public-only controller: no widget hooks,
+ // edit buttons, private session stores, route changes or URL hashes.
+ const bubble=nav.querySelector('#profileJumpBubble');
+ const menu=nav.querySelector('#profileJumpMenu');
+ const links=nav.querySelector('#profileJumpLinks');
+ const closeButton=nav.querySelector('#profileJumpClose');
+ if(!bubble||!menu||!links)return;
+ const clamp=(v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+ const posKey='ourspace.public-profile-jump.position.'+key;
+ const sizeKey='ourspace.public-profile-jump.size.'+key;
+ let position=null,size={width:310,height:420},dragging=null,resizing=null,wasDragged=false;
+ try{const p=JSON.parse(localStorage.getItem(posKey)||'null');if(Number.isFinite(p?.x)&&Number.isFinite(p?.y))position=p}catch(_){}
+ try{const p=JSON.parse(localStorage.getItem(sizeKey)||'null');if(Number.isFinite(p?.width)&&Number.isFinite(p?.height))size=p}catch(_){}
+ const entries=new Map();
+ function layout(){
+   const availableRight=Math.max(80,innerWidth-74);
+   const maxWidth=Math.max(200,Math.min(innerWidth-16,availableRight-12));
+   menu.style.width=clamp(size.width,200,maxWidth)+'px';
+   menu.style.height=clamp(size.height,170,Math.max(170,innerHeight-80))+'px';
+   const p=position||{x:Math.min(80,availableRight-60),y:innerHeight*.30};
+   const x=clamp(p.x,6,Math.max(6,availableRight-54));
+   const y=clamp(p.y,6,Math.max(6,innerHeight-58));
+   nav.style.left=Math.round(x)+'px';
+   nav.style.top=Math.round(y)+'px';
+   nav.style.right='auto';
+   const right=x>innerWidth*.48;
+   nav.dataset.dock=right?'right':'left';
+   menu.style.left=right?'auto':'0';
+   menu.style.right=right?'0':'auto';
+   return {x,y};
+ }
+ function collect(){
+   entries.clear();links.replaceChildren();
+   const sections=document.querySelectorAll('#profileApp .profile-column > section.profile-box');
+   sections.forEach(section=>{
+     if(!section.id)return;
+     const label=section.querySelector('.box-head .label')?.textContent?.trim()||section.dataset.designLabel||section.id;
+     entries.set(section.id,{node:section,label});
+   });
+   for(const [id,item] of [...entries].slice(0,38)){
+     const button=document.createElement('button');
+     button.type='button';button.dataset.jumpTo=id;button.textContent=item.label;
+     links.appendChild(button);
+   }
+   if(!links.children.length)links.textContent='No published profile sections.';
+   const title=menu.querySelector('header strong');
+   if(title)title.textContent='Profile · Jump';
+ }
+ function open(){
+   collect();layout();menu.hidden=false;bubble.setAttribute('aria-expanded','true');
+ }
+ function close(){
+   menu.hidden=true;bubble.setAttribute('aria-expanded','false');
+ }
+ bubble.addEventListener('click',()=>{if(wasDragged){wasDragged=false;return}menu.hidden?open():close()});
+ closeButton?.addEventListener('click',()=>{close();bubble.focus()});
+ links.addEventListener('click',e=>{
+   const button=e.target.closest('[data-jump-to]');if(!button)return;
+   const item=entries.get(button.dataset.jumpTo);if(!item)return;
+   close();
+   requestAnimationFrame(()=>item.node.scrollIntoView({
+     behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',
+     block:'start'
+   }));
+ });
+ bubble.addEventListener('pointerdown',e=>{
+   if(e.button!==0)return;
+   const p=layout();
+   dragging={id:e.pointerId,x:e.clientX,y:e.clientY,ox:p.x,oy:p.y,moved:false};
+   bubble.setPointerCapture(e.pointerId);
+ });
+ bubble.addEventListener('pointermove',e=>{
+   if(!dragging||dragging.id!==e.pointerId)return;
+   const dx=e.clientX-dragging.x,dy=e.clientY-dragging.y;
+   if(Math.hypot(dx,dy)<5&&!dragging.moved)return;
+   dragging.moved=true;position={x:dragging.ox+dx,y:dragging.oy+dy};
+   layout();
+ });
+ bubble.addEventListener('pointerup',e=>{
+   if(!dragging||dragging.id!==e.pointerId)return;
+   wasDragged=dragging.moved;
+   if(wasDragged){
+     position=layout();
+     try{localStorage.setItem(posKey,JSON.stringify(position))}catch(_){}
+   }
+   dragging=null;try{bubble.releasePointerCapture(e.pointerId)}catch(_){}
+ });
+ bubble.addEventListener('pointercancel',()=>dragging=null);
+ bubble.addEventListener('keydown',e=>{
+   if(!e.altKey||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;
+   e.preventDefault();const p=layout();
+   position={x:p.x+(e.key==='ArrowLeft'?-16:e.key==='ArrowRight'?16:0),
+             y:p.y+(e.key==='ArrowUp'?-16:e.key==='ArrowDown'?16:0)};
+   position=layout();
+   try{localStorage.setItem(posKey,JSON.stringify(position))}catch(_){}
+ });
+ menu.querySelectorAll('[data-jump-resize]').forEach(handle=>{
+   handle.addEventListener('pointerdown',e=>{
+     if(e.button!==0)return;e.preventDefault();
+     const r=menu.getBoundingClientRect();
+     resizing={dir:handle.dataset.jumpResize,id:e.pointerId,x:e.clientX,y:e.clientY,w:r.width,h:r.height};
+     handle.setPointerCapture(e.pointerId);
+   });
+   handle.addEventListener('pointermove',e=>{
+     if(!resizing||resizing.id!==e.pointerId)return;
+     const dx=e.clientX-resizing.x,dy=e.clientY-resizing.y,d=resizing.dir;
+     size.width=Math.max(200,resizing.w+(d.includes('e')?dx:d.includes('w')?-dx:0));
+     size.height=Math.max(170,resizing.h+(d.includes('s')?dy:d.includes('n')?-dy:0));
+     layout();
+   });
+   handle.addEventListener('pointerup',e=>{
+     if(!resizing||resizing.id!==e.pointerId)return;
+     resizing=null;try{handle.releasePointerCapture(e.pointerId)}catch(_){}
+     try{localStorage.setItem(sizeKey,JSON.stringify(size))}catch(_){}
+   });
+   handle.addEventListener('pointercancel',()=>resizing=null);
+ });
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){close();bubble.focus()}});
+ window.addEventListener('resize',layout);
+ layout();close();
+ window.OurSpacePublicJumpNav={open,close,refresh:collect};
+}
+
 function initSizing(){
  let pending=false;
  function update(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;sendHeight()})}
@@ -302,11 +447,16 @@ function initSizing(){
 }
 async function load(){
  try{
-  const [response,app]=await Promise.all([fetchPublished(),fetchNativeTemplate()]);
+  const [response,template]=await Promise.all([fetchPublished(),fetchNativeTemplate()]);
   const data=readRecord(response);
   if(!data){fail('This OurSpace profile is not published or the public connection is unavailable.');return}
+  const {app,jump}=template;
   host.replaceChildren(app);
   renderNative(data,app);
+  if(jump){
+    document.body.appendChild(jump);
+    initPublicJumpNav(jump);
+  }
   message.hidden=true;viewport.hidden=false;
   // Run only the existing native geometry and artwork fit. No account scripts.
   await appendScript('../../script/profile/ourspace-profile-baseline.js');
