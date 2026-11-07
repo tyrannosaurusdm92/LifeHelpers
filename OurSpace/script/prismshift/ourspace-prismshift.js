@@ -110,6 +110,13 @@
     return mode;
   }
   function createToggle(){
+    // The sign-in/landing screen is public: it must never render the
+    // members-only Messenger drawer, wallet, or custom scroll rail.
+    if(document.querySelector('.portal-screen'))return;
+    // Public profile views and unsigned visitors cannot open Messenger.
+    if(new URLSearchParams(location.search).get('public')==='1')return;
+    const auth=window.OurSpaceAuth;
+    if(!auth?.isAuthenticated?.()||auth?.isAdmin?.())return;
     if(inFrame()||document.getElementById('osPrismShiftToggle'))return;
     if(document.getElementById('sidebar-messenger-root'))return;
     // On isolated pages show the
