@@ -3212,8 +3212,13 @@ body.ourspace-account-settings-open {
   right: auto!important;
   bottom: auto!important;
 }
-.onyx-round-widget .onyx-panel-header {cursor:move;touch-action:none;}
+.onyx-round-widget .onyx-panel-header {cursor:grab;touch-action:none;}
+.onyx-round-widget .onyx-moving .onyx-panel-header {cursor:grabbing;}
 .onyx-round-widget .onyx-panel-header button {cursor:pointer;}
+.onyx-round-widget .onyx-panel-title::before{
+  content:"⋮⋮";display:inline-block;margin-right:7px;letter-spacing:-.17em;
+  opacity:.85;cursor:grab;vertical-align:middle;
+}
 .onyx-round-widget .onyx-resize-handle {
   position: absolute;
   z-index: 5000;
@@ -3222,6 +3227,21 @@ body.ourspace-account-settings-open {
   user-select: none;
   -webkit-user-select: none;
   pointer-events: auto;
+  background:rgba(23,107,101,.25);
+  border:1px solid rgba(23,107,101,.65);
+  opacity:.78;
+}
+.onyx-round-widget .onyx-resize-handle[data-edge="nw"],
+.onyx-round-widget .onyx-resize-handle[data-edge="ne"],
+.onyx-round-widget .onyx-resize-handle[data-edge="sw"],
+.onyx-round-widget .onyx-resize-handle[data-edge="se"]{
+  background:rgba(244,119,69,.45);
+  border-color:#F47745;
+}
+.onyx-round-widget .onyx-resize-handle:hover,
+.onyx-round-widget .onyx-resize-handle:focus-visible{
+  opacity:1;background:rgba(244,119,69,.72);
+  outline:2px solid #F47745;outline-offset:-1px;
 }
 .onyx-round-widget .onyx-resize-handle[data-edge="n"] {
   top: 0;
