@@ -1,85 +1,107 @@
 /*
- * OurSpace -> existing Onyx repository brain adapter.
- * Keeps the current authenticated backend and private profile contracts unchanged.
+ * OurSpace interface -> canonical LifeHelpers/Onyx brain.
+ * Presentation, Professor, Work, Leisure, and games stay in OurSpace.
+ * Only the authenticated backend may supply private personality/profile data.
  */
-// The upstream repository module is optional and was not present in either input ZIP.
-// Keep the existing backend client working when this separate repository is absent.
-let OnyxCore=null;
+let OnyxCore = null;
+let loadError = "";
 try {
-  const source=await import('../../../../Onyx/script/js/onyx/onyx-core/index.js');
-  OnyxCore=source?.default||null;
-} catch(_) { /* No external repository shipped: basic backend/chat remains independent. */ }
-
+  // From OurSpace/script/onyx widget/ up to repository root, then Onyx/.
+  const module = await import("../../../Onyx/script/js/onyx/onyx-core/index.js");
+  OnyxCore = module.default || module.OnyxCore || null;
+} catch (error) {
+  loadError = String(error?.message || error || "Onyx brain could not load.");
+  console.warn("Onyx repository brain is unavailable:", loadError);
+}
 
 const config = Object.freeze({
-  schema: "ourspace.onyx.repository-bridge.v1",
+  schema: "ourspace.onyx.repository-bridge.v2",
   source: "LifeHelpers/Onyx",
-  maxSources: 3,
-  maxTotalChars: 12000
+  brainModule: "Onyx/script/js/onyx/onyx-core/index.js",
+  surfaces: Object.freeze(["health", "virtual", "leisure", "work", "professor", "game"]),
+  privateContext: "authenticated-backend-only"
 });
 
-async function enrich(payload = {}, options = {}) {
-  const message = String(payload.message || payload.text || "").trim();
-  if (!message || options.signal?.aborted || !OnyxCore) return payload;
+function status() {
+  const state = OnyxCore?.status?.() || {};
+  return {
+    ...state,
+    available: !!OnyxCore,
+    source: config.source,
+    brainModule: config.brainModule,
+    error: loadError || "",
+    authenticated: Boolean(state.authenticated),
+    profileKey: state.profileKey || "shared"
+  };
+}
 
-  const plan = await OnyxCore.createCapabilityPlan({
+function cleanContext(input, lane) {
+  const context = input.context && typeof input.context === "object" && !Array.isArray(input.context)
+    ? { ...input.context }
+    : (typeof input.context === "string" ? { additionalGuidance: input.context.slice(0, 12000) } : {});
+  // UI identity describes the consuming surface; the authenticated session
+  // still determines which private profile and relationship rules are active.
+  const surface = ["health", "virtual", "leisure", "work", "professor", "game"].includes(lane) ? lane : "health";
+  return {
+    ...context,
+    caller: "OurSpace Onyx widget",
+    interfaceSurface: surface,
+    conversationLane: surface,
+    ...(typeof input.supportMode === "string" ? { requestedSupportMode: input.supportMode } : {}),
+    ...(typeof input.chatMode === "string" ? { requestedChatMode: input.chatMode } : {}),
+    ...(input.listenOnly === true ? { listenOnly: true } : {})
+  };
+}
+
+async function chat(payload = {}, options = {}) {
+  if (!OnyxCore) throw new Error("Onyx's repository brain could not load. " + (loadError || "Refresh OurSpace and try again."));
+  const message = String(payload.message || payload.text || "").trim();
+  if (!message) throw new Error("Onyx needs a message.");
+  const lane = String(payload.lane || payload.context?.tabLane || payload.context?.lane ||
+    payload.context?.interfaceSurface || (payload.supportMode === "dbt" ? "professor" : "health")).toLowerCase();
+  const coreInput = {
     message,
-    surface: payload.surface === "virtual" ? "virtual" : "core",
-    lane: payload.lane,
-    listenOnly: payload.listenOnly === true,
+    surface: "core", // Onyx owns one brain, not a second game/virtual brain.
+    lane,
+    history: Array.isArray(payload.history) ? payload.history : [],
+    references: Array.isArray(payload.references) ? payload.references : [],
+    attachments: Array.isArray(payload.attachments) ? payload.attachments : [],
+    context: cleanContext(payload, lane),
+    threadId: String(payload.threadId || ""),
+    aiSessionId: String(payload.aiSessionId || payload.sessionId || ""),
+    listenOnly: payload.listenOnly === true || payload.responseIntent === "listen_only",
     webSearch: payload.webSearch === true,
     useDrive: payload.useDrive === true,
     allowWrites: payload.allowWrites === true,
     allowAssetGeneration: payload.allowAssetGeneration === true,
+    allowExternalTools: payload.allowExternalTools === true,
     autoRemember: payload.autoRemember === true,
-    reasoningEffort: payload.reasoningEffort,
-    maxOutputTokens: payload.maxOutputTokens
-  });
+    reasoningEffort: payload.reasoningEffort || "medium",
+    maxOutputTokens: payload.maxOutputTokens || 1800,
+    timeoutMs: options.timeoutMs || options.timeout || payload.timeoutMs,
+    signal: options.signal || payload.signal
+  };
+  // The core retrieves Onyx corpus guides, sends one authenticated onyx.chat,
+  // then verifies both real AI completion and the backend's personality/profile proof.
+  return OnyxCore.chat(coreInput);
+}
 
-  const sources = await OnyxCore.loadBrainSources(
-    message, plan.domains,
-    { maxSources: config.maxSources, maxTotalChars: config.maxTotalChars }
-  );
-  if (options.signal?.aborted) return payload;
-
-  const references = Array.isArray(payload.references) ? payload.references.slice() : [];
-  const sourcePaths = [];
-  for (const source of sources) {
-    if (!source?.text ||
-        references.some(ref => ref.path === source.path || ref.name === "Onyx corpus: " + source.path)) continue;
-    sourcePaths.push(source.path);
-    references.push({
-      name: "Onyx corpus: " + source.path,
-      path: source.path,
-      mimeType: "text/plain",
-      text: source.text
-    });
-  }
-
+async function enrich(payload = {}, options = {}) {
+  // Older integrations can request the canonical planner without duplicating
+  // corpus references: OnyxCore.chat() already loads them once.
+  if (!OnyxCore || options.signal?.aborted || !String(payload.message || payload.text || "").trim()) return payload;
+  const plan = await OnyxCore.createCapabilityPlan(payload);
   return {
     ...payload,
-    references: references.slice(0, 32),
     context: {
-      ...(payload.context && typeof payload.context === "object" ? payload.context : {}),
-      repositoryBrain: {
-        schema: config.schema,
-        repository: config.source,
-        domains: plan.domains.map(domain => domain.id),
-        intents: plan.intents,
-        sourcePaths,
-        readOnly: true
-      }
+      ...cleanContext(payload, String(payload.lane || payload.context?.tabLane || "health")),
+      repositoryBrain: { schema: config.schema, repository: config.source,
+        domains: plan.domains.map(domain => domain.id), intents: plan.intents, readOnly: true }
     }
   };
 }
 
-window.OnyxRepositoryBridge = Object.freeze({
-  config,
-  enrich,
-  core: OnyxCore,
-  status: () => OnyxCore?.status?.() || {available:false,reason:'Optional repository brain is not bundled; existing OurSpace backend remains unchanged.'}
-});
-window.dispatchEvent(new CustomEvent(
-  "onyx:repository-brain-ready",
-  { detail: { source: config.source } }
-));
+window.OnyxRepositoryBridge = Object.freeze({ config, core: OnyxCore, chat, enrich, status });
+window.dispatchEvent(new CustomEvent("onyx:repository-brain-ready", {
+  detail: { source: config.source, available: !!OnyxCore, error: loadError || "" }
+}));
