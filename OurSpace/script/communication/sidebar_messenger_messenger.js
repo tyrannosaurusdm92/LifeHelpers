@@ -331,8 +331,11 @@
     }
 
     render() {
-      document.documentElement.classList.add('sidebar-messenger-active');
-      this.root.className = 'mp-root mp-vertical-root';
+      // Communication retains its message engine. Only the sidebar UI is
+      // suppressed; keep the independent page scrollbar across re-renders.
+      document.documentElement.classList.remove('sidebar-messenger-active');
+      const preservedRail=this.root.querySelector('#osMessengerPageScrollRail');
+      this.root.className = 'mp-root mp-vertical-root os-scroll-only';
       this.root.dataset.mpUi = 'vertical';
       this.root.innerHTML = `
         <div class="mp-windows" data-mp-windows></div>
@@ -348,6 +351,7 @@
         <div class="mp-toast-stack" data-toast-stack aria-live="polite"></div>
         <nav class="mp-sidebar mp-vertical-menu" data-sidebar aria-label="Sidebar Messenger menu"></nav>
       `;
+      if(preservedRail)this.root.appendChild(preservedRail);
       this.renderAll();
       this.bindGlobalEvents();
       document.addEventListener('ourspace:appearancechange',()=>this.updateModeToggle());
