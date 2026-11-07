@@ -16,7 +16,9 @@
   return /(?:^|[^a-z])(cancel|delete|remove|destructive|danger|exit|close)(?:$|[^a-z])/.test(ident)
     || /[❌✖❎]/.test(ident);
 };
-const isEligible=el=>!el.closest('#designWidget,#osProfileGridToolbar,#osb-designWidget,[hidden]')&&el.type!=='hidden'&&!isDestructive(el);
+// The retro record player's five transport buttons and brass load knob retain
+// their original coordinated silver/brass styling; never recolor them cyan.
+const isEligible=el=>!el.closest('#recordPlayerFlow,#designWidget,#osProfileGridToolbar,#osb-designWidget,[hidden]')&&el.type!=='hidden'&&!isDestructive(el);
  function identity(el,i){const ancestor=el.closest('[id],[data-ourspace-page]');const key=el.id||el.getAttribute('data-action')||el.getAttribute('data-route')||el.getAttribute('title')||el.textContent.trim().slice(0,65);return [ancestor?.id||ancestor?.getAttribute('data-ourspace-page')||'',key,el.parentElement?.className||'',i].join('|').replace(/\b(william|jasper|dino|squishy)\b/gi,'account')}
  let task=0,lastCount=-1;
  function assign(){task=0;
