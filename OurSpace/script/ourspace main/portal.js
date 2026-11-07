@@ -152,7 +152,7 @@ async function rememberRecoveryPassword(email,password){
 }
 $('#recoveryCode')?.addEventListener('submit',async e=>{
  e.preventDefault();
- const code=$('#recoveryCodeInput').value.trim().replace(/[\s-]+/g,'');
+ const code=$('#recoveryCodeInput').value.replace(/\D/g,'');
  const password=$('#newPasswordInput').value,confirm=$('#confirmNewPasswordInput').value;
  if(!/^\d{6}$/.test(code))return rshow('Enter the six-digit code from your email.',true);
  if(password.length<8)return rshow('Password must be at least eight characters.',true);
