@@ -40,11 +40,17 @@ function timeoutController(timeoutMs, outerSignal) {
 }
 
 function hostBackend() {
-  const candidates = [globalThis.OurSpaceBackend];
+  const candidates = [globalThis.OnyxBackendClient, globalThis.OurSpaceBackend];
   try {
-    if (globalThis.parent && globalThis.parent !== globalThis) candidates.push(globalThis.parent.OurSpaceBackend);
+    if (globalThis.parent && globalThis.parent !== globalThis) {
+      candidates.push(globalThis.parent.OnyxBackendClient, globalThis.parent.OurSpaceBackend);
+    }
   } catch {}
-  return candidates.find(candidate => candidate && typeof candidate.request === "function") || null;
+  const usable = candidates.filter(candidate => candidate && typeof candidate.request === "function");
+  // Prefer an already authenticated, profile-scoped Onyx adapter over an empty iframe host.
+  return usable.find(candidate => candidate.authenticated?.() === true ||
+    (candidate.isAuthenticated?.() === true && candidate.isAdmin?.() !== true && !!candidate.token?.())) ||
+    usable[0] || null;
 }
 
 export class OnyxTransport {
@@ -77,14 +83,15 @@ export class OnyxTransport {
   }
 
   get profileKey() {
-    const hostProfile = hostBackend()?.profile?.();
+    const host = hostBackend();
+    const hostProfile = host?.activeProfile?.() || host?.profile?.();
     const value = String(this.#profileKey || hostProfile || "shared").toLowerCase();
     return ["william", "jasper", "shared"].includes(value) ? value : "shared";
   }
 
   get authenticated() {
     const host = hostBackend();
-    return Boolean(host?.isAuthenticated?.() || host?.token?.() || this.#sessionToken);
+    return Boolean(host?.authenticated?.() || (host?.isAuthenticated?.() && host?.isAdmin?.() !== true && host?.token?.()) || this.#sessionToken);
   }
 
   subscribe(listener) {
