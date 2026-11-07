@@ -78,6 +78,14 @@ async function fetchNativeTemplate(){
   document.head.insertBefore(copy,anchor);
  });
  const cloned=document.importNode(app,true);
+ // Enforce the published-only boundary even if a future signed-in page moves
+ // widget containers into the profile frame. They are never public modules.
+ cloned.querySelectorAll(
+   '#designWidget,#designerPanel,#profileJumpNav,#profileJumpOnyxToggle,'+
+   '#profileJumpDesignToggle,#ourspaceOnyxIntegrationFrame,'+
+   '#sidebar-messenger-root,[data-ourspace-onyx-widget],' +
+   '.os-onyx-embedded-frame,.onyx-popout,.onyx-widget,.mp-root,.mp-panel'
+ ).forEach(el=>el.remove());
  // Untrusted HTML and account-only features never become active.
  cloned.querySelectorAll('script,style,iframe,object,embed,form,dialog,textarea,input,select,template').forEach(el=>el.remove());
  cloned.querySelectorAll('*').forEach(el=>{
@@ -103,9 +111,9 @@ async function fetchNativeTemplate(){
  cloned.querySelectorAll('.profile-box').forEach(box=>{
   box.classList.remove('is-collapsed');
   box.removeAttribute('hidden');
-  box.querySelectorAll('.empty-state,[data-empty]').forEach(x=>{
-   if(x.id==='links_module_section'||x.id==='profile_interests_section')return;
-   if(x.classList.contains('empty-state'))x.textContent='No additional information published yet.';
+  box.querySelectorAll('[data-empty]').forEach(el=>el.removeAttribute('data-empty'));
+  box.querySelectorAll('.empty-state').forEach(el=>{
+   el.textContent='No additional information published yet.';
   });
  });
  cloned.querySelectorAll('a[href^="javascript:"]').forEach(a=>a.remove());
