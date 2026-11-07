@@ -651,6 +651,9 @@ bindEvents();
 render();
 resizeComposer();
 seedMoodFromHistory();
+window.addEventListener("onyx:repository-brain-ready",()=>{ void checkBrainStatus(); });
+window.addEventListener("ourspace:auth",()=>{ void checkBrainStatus(); });
+window.addEventListener("ourspace:signed-out",()=>setBrainStatus(false,"Sign in to connect"));
 checkBrainStatus();
 
 })().catch(error => {
