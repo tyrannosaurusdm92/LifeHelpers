@@ -1,5 +1,5 @@
 /* Only active in the Onyx iframe, not on the parent site. */
 html.ourspace-onyx-embedded,html.ourspace-onyx-embedded body{margin:0!important;background:transparent!important;overflow:hidden!important}
-html.ourspace-onyx-embedded #onyxWidget{left:12px!important;right:auto!important;top:18px!important}
+html.ourspace-onyx-embedded #onyxWidget{left:12px;right:auto;top:max(12px,min(calc(18vh + 18px),calc(100dvh - var(--onyx-bubble-size,190px) - 12px)))}
 html.ourspace-onyx-embedded .onyx-fullscreen-shell-host,
 html.ourspace-onyx-embedded .onyx-leisure-game-host{background:#142c3f}
