@@ -84,9 +84,14 @@
       const references=await parseAttachments(value,ctl.signal);if(references.length)data.references=references;
       let result;
       if(window.OnyxTester?.active?.())result=await window.OnyxTester.chat(value,{threadId:data.threadId,supportMode:'dbt',signal:ctl.signal});
-      else if(window.OnyxBackendClient?.chat && window.OnyxBackendClient?.available?.())result=await window.OnyxBackendClient.chat(data,{timeout:90000,signal:ctl.signal});
-      else if(window.OurSpaceBackend?.request)result=await window.OurSpaceBackend.request('onyx.chat',data,{signal:ctl.signal});
-      else throw new Error('The existing Onyx backend is not connected.');
+      else if(window.OnyxBrainLink?.chat)result=await window.OnyxBrainLink.chat({
+        ...data,
+        lane:'professor',
+        autoRemember:false,
+        listenOnly:/\b(just listen|no advice|let me vent|do not advise|don't advise)\b/i.test(value),
+        history:t.messages.filter(m=>m.role==='user'||m.role==='assistant').slice(-18).map(m=>({role:m.role,content:m.text}))
+      },{timeout:90000,signal:ctl.signal});
+      else throw new Error("Onyx's repository brain is not connected.");
       const reply=String(result?.response||result?.onyxReply||result?.text||result?.message||'').trim();
       const homework=!isStartIntent(value)&&!isEndIntent(value)&&reply?window.OnyxDBTAssignments?.choose?.(value):null;
       t.messages.push({role:'assistant',text:reply||'Onyx did not provide a reply this time.',homeworkPairId:homework?.pairId||''});
