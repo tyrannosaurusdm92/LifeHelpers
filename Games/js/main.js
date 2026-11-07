@@ -229,6 +229,28 @@
   const fullscreenMobileButton = document.getElementById("fullscreenMobileButton");
 
   let currentGame = null;
+  // Read-only play telemetry for OurSpace's signed-in parent. This launcher never
+  // receives account credentials, writes wallets, or awards rewards itself.
+  let arcadeSessionId = "";
+  let arcadeActiveSeconds = 0;
+  const arcadeId = () => (typeof crypto !== "undefined" && crypto.randomUUID
+    ? crypto.randomUUID().replace(/-/g, "") : Date.now().toString(36) + Math.random().toString(36).slice(2));
+  function reportOurSpacePlay(type){
+    if(!currentGame || !arcadeSessionId || window.top === window) return;
+    try { window.top.postMessage({
+      source:"lifehelpers-arcade-bridge-v1", type, title:currentGame.title,
+      path:currentGame.path, sessionId:arcadeSessionId, activeSeconds:arcadeActiveSeconds
+    },"*"); } catch (_) {}
+  }
+  // Count only time with the actual embedded game focused in a visible tab.
+  // Loading, reloading, or leaving an idle launcher does not accrue play time.
+  setInterval(() => {
+    if(!currentGame || document.visibilityState !== "visible" ||
+       document.activeElement !== gameFrame) return;
+    arcadeActiveSeconds += 5;
+    if(arcadeActiveSeconds % 15 === 0) reportOurSpacePlay("progress");
+  }, 5000);
+
   let fullscreenMode = null;
 
   const normalize = value => String(value ?? "").trim().toLowerCase();
@@ -326,6 +348,8 @@
 
   function loadGame(game){
     currentGame = game;
+    arcadeSessionId = arcadeId(); arcadeActiveSeconds = 0;
+    reportOurSpacePlay("start");
     viewerTitle.textContent = game.title;
     viewerEmpty.classList.add("hidden");
     viewerStatus.textContent = `Loading ${game.title}…`;
@@ -336,6 +360,7 @@
   function closeGame(){
     gameBotsApi()?.detach?.();
     currentGame = null;
+    arcadeSessionId = ""; arcadeActiveSeconds = 0;
     gameFrame.removeAttribute("src");
     viewerTitle.textContent = "No game loaded";
     viewerEmpty.classList.remove("hidden");
