@@ -83,7 +83,7 @@
  frame.hidden=true;frame.setAttribute('aria-hidden','true');
  frame.setAttribute('allow','microphone; clipboard-read; clipboard-write; fullscreen; autoplay');
  const src=new URL('onyx_widget.html',new URL('../../assets/code/',document.baseURI));
- src.searchParams.set('profile',profile);src.searchParams.set('embedded','1');
+ src.searchParams.set('profile',profile);src.searchParams.set('embedded','1');src.searchParams.set('v','20261107-onyx-window-2');
  let started=false;
  const show=()=>{frame.hidden=false;frame.setAttribute('aria-hidden','false');if(!started){started=true;frame.src=src.href;}};
  const hide=()=>{frame.hidden=true;frame.setAttribute('aria-hidden','true');};
