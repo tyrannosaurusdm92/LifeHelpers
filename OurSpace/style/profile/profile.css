@@ -86,12 +86,12 @@ html[data-profile] #profileApp #ourspacePlayedGames .os-played-games-status {fon
 
 /* Public profile privacy boundary: private widgets and navigation never render. */
 html[data-public-view="true"] :is(
-  #designWidget,#designerPanel,#profileJumpNav,#profileJumpOnyxToggle,
+  #designWidget,#designerPanel,#profileJumpOnyxToggle,
   #profileJumpDesignToggle,#ourspaceOnyxIntegrationFrame,
   .os-onyx-embedded-frame,[data-ourspace-onyx-widget],
   .onyx-popout,.onyx-widget,.onyx-shell,[data-onyx-widget]
 ){display:none!important;visibility:hidden!important;pointer-events:none!important}
 html[data-public-view="true"]:not([data-os-native-public="true"]) :is(
-  #profileApp,#masterNav,#sidebar-messenger-root,
+  #profileApp,#masterNav,#profileJumpNav,#sidebar-messenger-root,
   .mp-root,.mp-vertical-root
 ){display:none!important;visibility:hidden!important;pointer-events:none!important}
