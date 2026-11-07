@@ -119,3 +119,15 @@ html[data-profile] #profileApp #ourspacePlayedGames .os-played-games-status {fon
 .os-public-gallery figcaption{font-size:12px;line-height:1.4;margin-top:6px}
 .os-public-privacy,.os-public-message{text-align:center;color:#cde8e7;margin:25px auto}
 @media(max-width:700px){.profile-public.os-public-published{padding:14px 8px 50px}.os-public-grid{grid-template-columns:1fr}.os-public-identity{gap:10px;padding:0 12px 15px}.os-public-avatar{width:78px;height:78px;flex-basis:78px;font-size:38px}.os-public-identity-text{padding-top:40px}}
+
+/* Public profile privacy boundary: private widgets and navigation never render. */
+html[data-public-view="true"] :is(
+  #designWidget,#designerPanel,#profileJumpNav,#profileJumpOnyxToggle,
+  #profileJumpDesignToggle,#ourspaceOnyxIntegrationFrame,
+  .os-onyx-embedded-frame,[data-ourspace-onyx-widget],
+  .onyx-popout,.onyx-widget,.onyx-shell,[data-onyx-widget]
+){display:none!important;visibility:hidden!important;pointer-events:none!important}
+html[data-public-view="true"]:not([data-os-native-public="true"]) :is(
+  #profileApp,#masterNav,#sidebar-messenger-root,
+  .mp-root,.mp-vertical-root
+){display:none!important;visibility:hidden!important;pointer-events:none!important}
