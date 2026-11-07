@@ -1518,8 +1518,12 @@
 /* OurSpace Communication: shared conversation transport and persistent Sidebar Messenger. */
 (()=>{
  'use strict';
+ // Messaging is private: public profile visitors, logged-out viewers and
+ // admin previews must never initialize locally cached conversations.
  if(new URLSearchParams(location.search).get('public')==='1')return;
-  const profile=document.documentElement.dataset.profile==='jasper'?'jasper':'william';
+ const auth=window.OurSpaceAuth;
+ const profile=document.documentElement.dataset.profile==='jasper'?'jasper':'william';
+ if(!auth?.isAuthenticated?.()||auth?.isAdmin?.()||auth?.profile?.()!==profile)return;
  const own=profile==='jasper'?{id:'jasper',label:'Jasper',avatar:'🦆',status:'online',mood:'In OurSpace'}:{id:'william',label:'William',avatar:'🦖',status:'online',mood:'In OurSpace'};
  const other=profile==='jasper'?{id:'william',label:'William',avatar:'🦖',status:'away',mood:'Around'}:{id:'jasper',label:'Jasper',avatar:'🦆',status:'away',mood:'Around'};
  const rooms=[{id:'ourspace-shared',label:'Shared Lounge',avatar:'⚡',members:['william','jasper']},{id:'household-chat',label:'Household',avatar:'🏡',members:['william','jasper']},{id:'plans-chat',label:'Plans & Notes',avatar:'📝',members:['william','jasper']}];
