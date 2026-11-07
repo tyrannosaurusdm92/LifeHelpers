@@ -91,11 +91,27 @@
   frame.classList.remove('os-onyx-layout-bubble','os-onyx-layout-panel','os-onyx-layout-fullscreen');
   frame.classList.add('os-onyx-layout-'+(name==='fullscreen'?'fullscreen':name==='panel'?'panel':'bubble'));
  };
+
+ // A clipped, full-viewport iframe makes both the bubble and the open panel
+ // freely movable while leaving clicks outside their rectangles on OurSpace.
+ const shape=rect=>{
+  if(!rect||![rect.x,rect.y,rect.w,rect.h].every(Number.isFinite)||rect.w<=0||rect.h<=0)return '';
+  const left=Math.max(0,Math.floor(rect.x)-8),top=Math.max(0,Math.floor(rect.y)-8);
+  const right=Math.min(window.innerWidth,Math.ceil(rect.x+rect.w)+8);
+  const bottom=Math.min(window.innerHeight,Math.ceil(rect.y+rect.h)+8);
+  return right>left&&bottom>top?`M ${left} ${top} H ${right} V ${bottom} H ${left} Z`:'';
+ };
+ const applyGeometry=data=>{
+  const shapes=data.mode==='fullscreen'?[]:[shape(data.bubble),data.mode==='panel'?shape(data.panel):''].filter(Boolean);
+  const clip=data.mode==='fullscreen'?'none':shapes.length?`path("${shapes.join(' ')}")`:'inset(0 100% 100% 0)';
+  frame.style.clipPath=clip;frame.style.webkitClipPath=clip;
+ };
  document.body.append(frame);
  window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==frame.contentWindow)return;
   const d=event.data;if(!d||d.profile!==profile)return;
   if(d.type==='ourspace:onyx-frame-layout')mode(d.mode);
+  if(d.type==='ourspace:onyx-frame-geometry'){mode(d.mode);applyGeometry(d);}
   if(d.type==='ourspace:onyx-design-toggle'){
    const hook=window.OurSpaceDesignJumpHook;
    if(typeof d.visible==='boolean'&&hook){
