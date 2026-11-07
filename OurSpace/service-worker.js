@@ -4,7 +4,7 @@
  * notification title/icon and the running app's custom overlay. OS badge = count/dot.
  */
 'use strict';
-const OS_CACHE='ourspace-static-pwa-v54-landing-styles-network-first';
+const OS_CACHE='ourspace-static-pwa-v55-private-messenger-visitor-guard';
 const OS_PRECACHE=[
  './ourspace.webmanifest',
  './assets/images/app/ourspace-app-192.png',
