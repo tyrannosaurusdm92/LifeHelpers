@@ -1,0 +1,49 @@
+{
+  "title": "OurSpace current Onyx Widget, Skills and Household integration",
+  "inputProjectFileCount": 313,
+  "preservedProjectFileCount": 313,
+  "canonicalPersonalSharedJsonFiles": [
+    "json/william/cats.json",
+    "json/william/life_events.json",
+    "json/william/self_care.json",
+    "json/william/tasks.json",
+    "json/william/shop.json",
+    "json/jasper/cats.json",
+    "json/jasper/life_events.json",
+    "json/jasper/self_care.json",
+    "json/jasper/tasks.json",
+    "json/jasper/shop.json",
+    "json/shared/game_rules.json",
+    "json/shared/cats.json",
+    "json/shared/life_events.json",
+    "json/shared/manifest.json",
+    "json/shared/self_care.json",
+    "json/shared/tasks.json",
+    "json/shared/shop.json",
+    "json/shared/currency.json"
+  ],
+  "duplicateCanonicalJsonFilesAdded": 0,
+  "gamePlaceholderUnchanged": true,
+  "backendSourceIncluded": false,
+  "widgetFiles": {
+    "scripts": 61,
+    "styles": 10,
+    "json": 8,
+    "images": 12,
+    "audio": 8
+  },
+  "dbtPairCount": 102,
+  "javascriptSyntaxPassed": 161,
+  "jsonParsingPassed": 81,
+  "cssParsingPassed": 50,
+  "htmlStaticResourcesResolved": 298,
+  "unresolvedStaticResources": 0,
+  "homeworkLocalUnitTest": "PASS; account isolation, dedupe, page links, show/hide",
+  "householdImportUnitTest": "PASS; account scoping, dedupe, valid workbook link, zero unsolicited reward",
+  "limitations": [
+    "No deployed Apps Script live session tested",
+    "Full site interactive browser test blocked by localhost network policy",
+    "Live external Work, therapy, asset fetch and sessions not verified",
+    "Owner JSON in public GitHub Pages is accessible without auth; frontend sign-in does not secure static files"
+  ]
+}

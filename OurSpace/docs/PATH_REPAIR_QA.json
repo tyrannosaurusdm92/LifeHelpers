@@ -1,0 +1,38 @@
+{
+  "originalFileCount": 741,
+  "finalOriginalFileCount": 741,
+  "movedOriginalFiles": 376,
+  "unchangedAssetsAndOtherOriginalFiles": 365,
+  "textFilesRewritten": 169,
+  "htmlImageReferencesRepaired": 0,
+  "activeHtmlRelativeReferencesResolved": 1499,
+  "remainingMissingHtmlReferences": 0,
+  "missingReferencedTargetsUnique": 0,
+  "missingReferencesTop": [],
+  "missingReferencesByHtml": {},
+  "cssDirectoryExists": false,
+  "scriptJsDirectoryExists": false,
+  "sourceFilesPreserved": true,
+  "htmlDeadLinksRemoved": 3,
+  "htmlFilesWithDeadLinksRemoved": {
+    "assets/code/william.html": 151,
+    "assets/code/jasper.html": 151,
+    "assets/code/onyx_widget.html": 163
+  },
+  "jsSyntaxFailures": [],
+  "jsonParsingFailures": [],
+  "cssFileRelativeMissingResources": [],
+  "moduleImportsNotFound": [
+    [
+      "script/onyx widget/onyx_widget_onyx-repository-bridge.js",
+      "../../Onyx/script/js/onyx/onyx-core/index.js"
+    ]
+  ],
+  "javascriptFileCount": 223,
+  "cssFileCount": 66,
+  "jsonFileCount": 97,
+  "wasmCount": 8,
+  "knownOptionalExternalOnyxModule": "../../Onyx/script/js/onyx/onyx-core/index.js",
+  "gameplayTestsPassed": 27,
+  "fileStructureFinal": "style/<feature>/*.css, script/<feature>/*.js, script/wasm/*.wasm, json/<feature>/*.json"
+}

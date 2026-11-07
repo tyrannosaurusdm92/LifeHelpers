@@ -1,0 +1,22 @@
+{
+  "result": "passed",
+  "originalFilesRetained": 285,
+  "originalFilesChanged": 4,
+  "changed": [
+    "OurSpace_Messenger_Heart_Thumb_Scrollbar_Canonical_CSS_Fixed/assets/code/jasper.html",
+    "OurSpace_Messenger_Heart_Thumb_Scrollbar_Canonical_CSS_Fixed/assets/code/william.html",
+    "OurSpace_Messenger_Heart_Thumb_Scrollbar_Canonical_CSS_Fixed/script/profile/profile-jump-nav.js",
+    "OurSpace_Messenger_Heart_Thumb_Scrollbar_Canonical_CSS_Fixed/style/profile/profile-jump-nav.css"
+  ],
+  "newFiles": [
+    "OurSpace_Messenger_Heart_Thumb_Scrollbar_Canonical_CSS_Fixed/docs/ONYX_JUMP_NAV_HOOK.md",
+    "OurSpace_Messenger_Heart_Thumb_Scrollbar_Canonical_CSS_Fixed/style/profile/onyx_sleeping_icon.css",
+    "OurSpace_Messenger_Heart_Thumb_Scrollbar_Canonical_CSS_Fixed/docs/ONYX_JUMP_NAV_QA.json"
+  ],
+  "javascriptSyntaxPassed": 99,
+  "jsonParsingPassed": 51,
+  "htmlStaticResourceMissing": [],
+  "iconCssCopiedByteForByte": true,
+  "scope": "Only the existing shared profile Jump Nav button/menu and new hook documentation, no Onyx widget/game/skills files",
+  "runtimeTest": "Isolated Chromium DOM test: click, dynamic widget mount, show/hide, event dispatch all passed. Full deployed site not runtime tested."
+}

@@ -1,0 +1,53 @@
+{
+  "js_count": 178,
+  "js_errors": [],
+  "json_count": 82,
+  "json_errors": [],
+  "css_parse_errors": [],
+  "missing_references": [],
+  "missing_reference_count": 0,
+  "profiles": {
+    "assets/code/william.html": {
+      "widgetRoots": 1,
+      "studioEngines": 1,
+      "standalone": false,
+      "staticResourceRefs": 142,
+      "jumpNavToggle": 1
+    },
+    "assets/code/jasper.html": {
+      "widgetRoots": 1,
+      "studioEngines": 1,
+      "standalone": false,
+      "staticResourceRefs": 142,
+      "jumpNavToggle": 1
+    },
+    "assets/code/design_widget.html": {
+      "widgetRoots": 1,
+      "studioEngines": 1,
+      "standalone": true,
+      "staticResourceRefs": 41,
+      "jumpNavToggle": 0
+    }
+  },
+  "preservation_checks": {
+    "assets/code/game.html": true,
+    "assets/code/onyx_widget.html": true,
+    "assets/code/skills.html": true,
+    "assets/code/design_widget.html": "new unchanged",
+    "assets/images/design-bubble.png": "new unchanged",
+    "script/design/design-widget.js": "new unchanged",
+    "script/design/design-studio.js": "new unchanged",
+    "style/design/design-widget.css": "new unchanged"
+  },
+  "backend_source_in_bundle": [],
+  "sync_uses_existing_backend_contract": true,
+  "new_scripts_not_mounted_duplicates": true,
+  "github_privacy_warning": "Static JSON content remains directly accessible on a publicly deployed site.",
+  "frontend_backend_client_files": [
+    "script/onyx widget/onyx_widget_backend-client.js (existing frontend network client; not Apps Script backend)"
+  ],
+  "browser_test": "Chromium navigation blocked by administrator for localhost and virtual URL; end-to-end deployed/browser interaction unverified.",
+  "duplicated_design_css_imports": 0,
+  "duplicated_design_js_imports": 0,
+  "both_onyx_to_parent_and_jump_nav_hooks": "Existing same-origin Onyx frame bridge dispatches ourspace:onyx-design-toggle; parent host invokes OurSpaceDesignJumpHook."
+}

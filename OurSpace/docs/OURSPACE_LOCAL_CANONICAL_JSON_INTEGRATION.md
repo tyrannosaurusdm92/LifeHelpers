@@ -1,0 +1,11 @@
+# Canonical JSON integration — frontend only
+
+All 18 supplied canonical JSON files are copied **byte-for-byte** under `json/shared/`, `json/william/`, and `json/jasper/`, keeping their original names. **No Google Apps Script backend was changed.**
+
+`script/ourspace main/ourspace-canonical.js` fetches local files relative to the page, not from a backend. Existing Household tasks and Store load their account catalog plus applicable shared entries. Each original `rewardDenominations` and `priceDenominations` object remains unchanged in the source; the UI calculates copper totals only for existing display/accounting. Existing completed tasks and local user-created records survive reloads. On-demand and flexible/interval task schedules are not forced into exact daily schedules; original schedule metadata remains available.
+
+Future Onyx widget (not installed): `window.OurSpaceCanonical.read('cats')`, `.read('self_care')`, `.read('life_events')`, `.read('cats',{scope:'shared'})`, `.getVirtualPets()`, `.onyxContext(...)`, `.getSession(slot)`, `.saveSession(slot,state)`, `.getPetState(slot)`, `.savePetState(slot,state)`. The latter four store per-profile local browser state and emit `ourspace:canonical:session-saved` or `ourspace:canonical:pet-state-saved`. To synchronize across devices in a later update, replace the state adapter rather than modifying canonical JSON source. `ourspace:canonical:ready`, `ourspace:canonical:tasks-updated`, and `ourspace:canonical:task-completed` events remain available. Deleted Onyx/game/Skills runtime files were not reintroduced.
+
+**Visibility warning:** GitHub Pages publishes the JSON as static files. Anyone with the URL can access `json/william/*.json` and `json/jasper/*.json` regardless of site login. These include private and health-related information. This is the arrangement explicitly requested; remove sensitive content before publishing if you do not want it publicly accessible.
+
+**Testing:** Serve this project using HTTP(S), e.g., a local static server or GitHub Pages. `file://` typically blocks fetch. Test both accounts' Task and Store pages, and any existing sessions in the browser storage. Real-world Apps Script authentication is separate and was not modified.

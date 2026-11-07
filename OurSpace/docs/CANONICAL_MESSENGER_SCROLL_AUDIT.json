@@ -1,0 +1,39 @@
+{
+  "version": "v38-heart-as-scroll-thumb",
+  "referenceMockup": {
+    "width": 338,
+    "height": 2048,
+    "drawerWidthPx": 246,
+    "railWidthPx": 60,
+    "railRightPx": 4,
+    "railTopPx": 9,
+    "railBorder": "#EC5800",
+    "progressFill": "#FFF600",
+    "unfilledTrack": "#FFFFFF",
+    "heartOuter": "#00FFFF",
+    "heartInner": "#FFF600",
+    "heartTopWhenUnscrolled": "25.6%"
+  },
+  "activeOriginalFilesEdited": [
+    "style/communication/sidebar_messenger_style.css",
+    "script/communication/sidebar_messenger_layout.js",
+    "script/communication/sidebar_messenger_messenger.js",
+    "style/prismshift/ourspace-prismshift.css",
+    "script/prismshift/ourspace-prismshift.js",
+    "service-worker.js"
+  ],
+  "scrollBehavior": "Click yellow/white rail to scroll page; drag cyan/yellow heart to scroll; click heart to toggle drawer; mouse wheel and keyboard on rail scroll; menu scrolls independently.",
+  "cssConsolidation": "Canonical Messenger and standalone styles edited in place, not appended. Different feature-specific stylesheets retained where merging would change layout or cascade.",
+  "sourceCleanup": {
+    "removedDuplicateHTMLScriptTags": {
+      "assets/code/william.html": 2,
+      "assets/code/jasper.html": 2
+    },
+    "removedIdenticalCSSRules": {},
+    "removedDuplicateServiceWorkerUrls": 6
+  },
+  "gameAndPhotos": "Not changed",
+  "integrationLimits": [
+    "Browser fixture tests are representative, not proof of backend or all deployed modules."
+  ]
+}

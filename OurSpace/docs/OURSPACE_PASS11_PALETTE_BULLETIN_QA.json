@@ -1,0 +1,94 @@
+{
+  "version": "pass11",
+  "source": "OurSpace_CATastrophic_Palette_Bulletin_Pass10(1).zip",
+  "userPalette": {
+    "red": "#00FFFF",
+    "gold": "#176B65",
+    "darkGold": "#F47745",
+    "lightGold": "#FFD12E"
+  },
+  "destructiveControls": "Only explicit cancel/close/delete/exit controls may retain red; asset imagery and user authored colors are intentionally unchanged",
+  "bulletin": {
+    "image": "assets/images/bulletin/classic-brown-cork-board.png",
+    "artworkPixels": [
+      1771,
+      3000
+    ],
+    "legacyPinReferencePixels": [
+      1771,
+      1335
+    ],
+    "legacyPinCoordinateHeightPercent": 100,
+    "extendedPinCoordinateHeightPercent": 224.7191,
+    "pinHeightScalingAgainstBoard": 0.445,
+    "compatibility": "Existing pin x/y/w/h state is retained. Render and drag/resize convert legacy y/h units so objects retain their original dimensions; new items can be placed below old canvas.",
+    "originalImageModified": false
+  },
+  "codeSyntaxVerification": "pending",
+  "changedFiles": [
+    "json/bulletin/bulletin_board_module_source.json",
+    "json/onyx widget/onyx-widget-palette.json",
+    "script/bulletin/bulletin_board_app.js",
+    "script/ourspace main/ourspace-palette-buttons.js",
+    "script/prismshift/prismshift-adapters-sway-theme.js",
+    "script/skills/final-dbt-dbt-worksheet-entry.js",
+    "style/audio visual/page-audio.css",
+    "style/audio visual/page-visual.css",
+    "style/audio visual/record_player_style.css",
+    "style/bulletin/bulletin_board_layout.css",
+    "style/bulletin/bulletin_board_style.css",
+    "style/feed/page-feed.css",
+    "style/household/ourspace-final-household.css",
+    "style/journal diary/journal-diary-jasper-diary.css",
+    "style/journal diary/journal-diary-jasper-journal.css",
+    "style/journal diary/journal-diary-william-diary.css",
+    "style/journal diary/journal-diary-william-journal.css",
+    "style/onyx widget/onyx_widget_style.css",
+    "style/onyx widget/onyx_widget_style__original-duplicate.css",
+    "style/onyx widget/ourspace-final-onyx.css",
+    "style/onyx widget/ourspace-onyx-embedded-v2.css",
+    "style/ourspace main/site.css",
+    "style/profile/links_module_style.css",
+    "style/profile/profile_modules_style.css",
+    "style/store/os-store-dino.css",
+    "style/store/os-store-squishy.css",
+    "style/store/ourspace-store.css"
+  ],
+  "result": "pass",
+  "scope": "Second palette pass and fixed-size bulletin pin placement on extended corkboard",
+  "originalFileCount": 748,
+  "allOriginalFilesPresent": true,
+  "assetsByteIdentical": true,
+  "originalFilesModified": 27,
+  "newQAFile": [
+    "docs/OURSPACE_PASS11_PALETTE_BULLETIN_QA.json"
+  ],
+  "javascriptSyntax": {
+    "filesChecked": 224,
+    "failures": []
+  },
+  "jsonParsing": {
+    "filesChecked": 100,
+    "failures": []
+  },
+  "cssTopLevelParse": {
+    "filesChecked": 67,
+    "failures": []
+  },
+  "bulletinSimulation": {
+    "test": "Chromium set_content offline harness",
+    "loaded": true,
+    "uncaughtPageErrors": 0,
+    "actualCorkboardPixels": [
+      1771,
+      3000
+    ],
+    "legacyPinHeightUnits": 1335,
+    "pinSizePreserved": true,
+    "scrollRegionGrew": true,
+    "canCreateItemInNewLowerBoardArea": true,
+    "activeNavBackground": "rgb(0,255,255)",
+    "scrollTrackMoved": true
+  },
+  "caveat": "Local browser harness uses inline CSS/JS; real deployment, saved custom theme overrides and PWA delivery are not tested."
+}
