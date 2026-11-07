@@ -2418,7 +2418,7 @@
   border:2px solid #F47745;
   border-radius:11px;
   background:linear-gradient(#176B65,#176B65);
-  color:#fff;
+  color:#000;
 }
 #profile-bulletins #bulletinBoardModule .nav-tile > span:last-child {min-width:0;flex:1 1 auto;}
 #profile-bulletins #bulletinBoardModule .nav-tile .nav-emoji {font-size:16px !important;flex:0 0 auto;}
@@ -2429,7 +2429,7 @@
   overflow-wrap:normal;
   word-break:normal;
   hyphens:none;
-  color:#fff !important;
+  color:#000 !important;
 }
 #profile-bulletins #bulletinBoardModule .nav-tile .nav-desc {
   display:block;
@@ -2438,14 +2438,14 @@
   line-height:1.18;
   overflow-wrap:normal;
   word-break:normal;
-  color:#fff !important;
+  color:#000 !important;
   opacity:.95;
 }
 #profile-bulletins #bulletinBoardModule .nav-tile:hover:not(:disabled),
 #profile-bulletins #bulletinBoardModule .nav-tile.active {
   background:#00FFFF !important;
   border-color:#00FFFF !important;
-  color:#fff !important;
+  color:#000 !important;
 }
 #profile-bulletins #bulletinBoardModule .board-meta {
   background:#fff !important;
