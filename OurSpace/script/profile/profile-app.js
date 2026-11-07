@@ -57,12 +57,141 @@ function wireMaster(){const master=$('#masterNav'),toggle=$('#masterToggle'),dra
  $('#signoutProfile').addEventListener('click',async()=>{await auth.signOut();location.replace('../../ourspace.html')});
  if(auth.isAdmin()){const b=$('#switchProfile');b.hidden=false;b.textContent=who==='william'?'Switch to Jasper':'Switch to William';b.addEventListener('click',()=>location.assign(who==='william'?'jasper.html?page=profile':'william.html?page=profile'))}
 }
-async function publicMode(){// Never expose or fall back to private profile data.
- $('#profileApp').hidden=true;$('#masterNav').hidden=true;$('#designWidget').hidden=true;$('#profileJumpNav').hidden=true;$('#profileEdit')?.remove();const mount=$('#publicProfile');mount.hidden=false;mount.replaceChildren(node('h1',profileName));const card=node('div',null,'public-card');mount.append(card);
- try{const response=await auth.request('public.profile.get',{profileKey:who});const pub=response.profile||response.data?.profile;if(!pub||!response.ok&&response.ok!==undefined){card.textContent='This profile is not published.';return}const title=node('h2',String(pub.displayName||displayName).slice(0,150));card.append(title);for(const k of ['headline','bio']){if(typeof pub[k]==='string')card.append(node('p',pub[k].slice(0,10000)))}const imgUrl=validUrl(pub.avatar||pub.avatarUrl||pub.profileImage||'');if(imgUrl){const img=node('img');img.src=imgUrl;img.alt='Published profile picture';img.style.maxWidth='180px';card.prepend(img)}for(const field of ['links','music','photos','news']){if(!Array.isArray(pub[field]))continue;const ul=node('ul');for(const item of pub[field].slice(0,75)){const li=node('li');let u=validUrl(item?.url||item?.src||'');if(u){const a=node('a',String(item.title||item.name||u).slice(0,200));a.href=u;a.rel='noopener noreferrer';a.target='_blank';li.append(a)}else li.textContent=String(item?.title||'').slice(0,200);ul.append(li)}if(field==='photos')for(const entry of pub.photos.slice(0,75)){const url=validUrl(entry?.url||entry?.image||'');if(url){const img=node('img');img.src=url;img.alt=String(entry.title||entry.caption||'Published photo').slice(0,130);img.loading='lazy';img.style.maxWidth='170px';img.style.maxHeight='230px';img.style.objectFit='contain';const li=node('li');li.append(img);ul.append(li)}}
- if(field==='music')for(const entry of pub.music.slice(0,75)){const url=validUrl(entry?.url||entry?.audio||'');if(url){const player=node('audio');player.controls=true;player.preload='none';player.src=url;const li=node('li');li.append(node('strong',entry.title||'Published music'),player);ul.append(li)}}
- if(ul.childElementCount)card.append(node('h3',field),ul)}
- }catch(_){card.textContent='This published profile is unavailable.'}
+async function publicMode(){
+ // Published-only display. The private profile application is never initialized.
+ $('#profileApp').hidden=true;
+ $('#masterNav').hidden=true;
+ $('#designWidget').hidden=true;
+ $('#profileJumpNav').hidden=true;
+ $('#profileEdit')?.remove();
+ const mount=$('#publicProfile');
+ mount.hidden=false;
+ mount.classList.add('os-public-published');
+ mount.dataset.owner=who;
+ mount.replaceChildren(node('p','Loading the published OurSpace profile…','os-public-message'));
+ const safeUrl=v=>typeof v==='string'&&/^https?:\/\//i.test(v.trim())?validUrl(v.trim()):'';
+ const addImage=(host,url,alt,css)=>{
+   const src=safeUrl(url);if(!src)return false;
+   const img=node('img',undefined,css||'');
+   img.src=src;img.alt=String(alt||'Published image').slice(0,140);
+   img.loading='lazy';img.referrerPolicy='no-referrer';
+   host.append(img);return true;
+ };
+ const link=(label,url)=>{
+   const src=safeUrl(url);if(!src)return null;
+   const a=node('a',String(label||'Published link').slice(0,160));
+   a.href=src;a.target='_blank';a.rel='noopener noreferrer';return a;
+ };
+ const section=(title)=>{
+   const el=node('section',undefined,'os-public-section');
+   el.append(node('h2',title));return el;
+ };
+ const text=(host,value)=>{if(typeof value==='string'&&value.trim())host.append(node('p',value.slice(0,3000)))};
+ const cards=(host,entries)=>{
+   (Array.isArray(entries)?entries:[]).slice(0,80).forEach(item=>{
+     const data=item&&typeof item==='object'?item:{title:String(item)};
+     const card=node('div',undefined,'os-public-card');
+     const title=String(data.title||data.name||data.label||'').slice(0,180);
+     if(title)card.append(node('h3',title));
+     text(card,data.description||data.summary||data.body);
+     addImage(card,data.imageUrl||data.image||data.posterUrl,title,'os-public-card-image');
+     const a=link('Open',data.url||data.link);if(a)card.append(a);
+     if(card.childNodes.length)host.append(card);
+   });
+ };
+ try{
+   const response=await auth.request('public.profile.get',{profileKey:who});
+   const pub=response&&response.profile;
+   // Fail closed for unpublished, invalid, or unavailable data; never request profile.get.
+   if(!response||response.ok!==true||response.view!=='public-profile'||!pub||pub.profileKey!==who){
+     mount.replaceChildren(node('p','This profile is not currently published.','os-public-message'));return;
+   }
+   const article=node('article',undefined,'os-public-container');
+   const hero=node('header',undefined,'os-public-hero');
+   const banner=node('div',undefined,'os-public-banner');
+   addImage(banner,pub.bannerUrl,'Published profile banner','os-public-banner-image');
+   hero.append(banner);
+   const whoBox=node('div',undefined,'os-public-identity');
+   const avatar=node('div',undefined,'os-public-avatar');
+   if(!addImage(avatar,pub.avatarUrl,'Published profile image','os-public-avatar-image'))avatar.append(node('strong',who==='jasper'?'J':'W'));
+   whoBox.append(avatar);
+   const words=node('div',undefined,'os-public-identity-text');
+   words.append(node('p',profileName,'os-public-eyebrow'));
+   words.append(node('h1',String(pub.displayName||displayName).slice(0,120)));
+   text(words,pub.headline);
+   whoBox.append(words);hero.append(whoBox);article.append(hero);
+   const grid=node('div',undefined,'os-public-grid');
+   if(typeof pub.bio==='string'&&pub.bio.trim()){const about=section('About');text(about,pub.bio);grid.append(about)}
+   if(Array.isArray(pub.interests)&&pub.interests.length){
+     const interests=section('Interests'),tags=node('div',undefined,'os-public-tags');
+     pub.interests.slice(0,40).forEach(x=>{if(typeof x==='string'&&x.trim())tags.append(node('span',x.slice(0,120)))});
+     if(tags.childNodes.length){interests.append(tags);grid.append(interests)}
+   }
+   if(Array.isArray(pub.projects)&&pub.projects.length){
+     const projects=section('Projects');cards(projects,pub.projects);
+     if(projects.childNodes.length>1)grid.append(projects);
+   }
+   const links=Array.isArray(response.links)?response.links:[];
+   if(links.length){
+     const list=section('Shared links');
+     links.slice(0,200).forEach(item=>{
+       if(!item||typeof item!=='object')return;
+       const a=link(item.name||item.title||'Published link',item.url||item.link);
+       if(!a)return;
+       const div=node('div',undefined,'os-public-link');
+       div.append(a);text(div,item.description);list.append(div);
+     });
+     if(list.childNodes.length>1)grid.append(list);
+   }
+   if((Array.isArray(pub.donationMethods)&&pub.donationMethods.length)||pub.creatorDonation){
+     const donation=section('Donation and support');
+     cards(donation,pub.donationMethods);
+     if(pub.creatorDonation&&typeof pub.creatorDonation==='object'){
+       const a=link(pub.creatorDonation.label||'Support the creator',pub.creatorDonation.url||pub.creatorDonation.donationUrl);
+       if(a)donation.append(a);
+     }
+     if(donation.childNodes.length>1)grid.append(donation);
+   }
+   const music=response.musicPlayer&&Array.isArray(response.musicPlayer.items)?response.musicPlayer.items:[];
+   const favorite=pub.favoriteSong&&typeof pub.favoriteSong==='object'?pub.favoriteSong:null;
+   if(music.length||favorite){
+     const panel=section('Music');
+     if(favorite&&favorite.title){
+       panel.append(node('p','Favorite song: '+String(favorite.title).slice(0,160)+(favorite.artist?' — '+String(favorite.artist).slice(0,100):'')));
+       const a=link('Open favorite song',favorite.url||favorite.link);if(a)panel.append(a);
+     }
+     music.slice(0,80).forEach(item=>{
+       if(!item||typeof item!=='object')return;
+       const card=node('div',undefined,'os-public-card');
+       card.append(node('h3',String(item.title||'Published track').slice(0,150)));
+       if(item.artist)text(card,String(item.artist).slice(0,120));
+       const src=safeUrl(item.url);
+       if(src){const audio=node('audio');audio.controls=true;audio.preload='none';audio.src=src;card.append(audio);
+         const a=link('Open music',src);if(a)card.append(a);
+       }
+       panel.append(card);
+     });
+     if(panel.childNodes.length>1)grid.append(panel);
+   }
+   const visuals=response.visualPlayer&&Array.isArray(response.visualPlayer.items)?response.visualPlayer.items:[];
+   if(visuals.length){
+     const panel=section('Photos and videos'),gallery=node('div',undefined,'os-public-gallery');
+     visuals.slice(0,80).forEach(item=>{
+       if(!item||typeof item!=='object')return;
+       const fig=node('figure'),kind=String(item.kind||'').toLowerCase(),src=safeUrl(item.url);
+       if(kind==='image')addImage(fig,src,item.title||'Published image','os-public-gallery-image');
+       if(kind==='video'&&src){const video=node('video');video.controls=true;video.preload='metadata';video.src=src;
+         const poster=safeUrl(item.posterUrl);if(poster)video.poster=poster;fig.append(video);
+       }
+       if(!fig.childNodes.length){const a=link('Open published media',src);if(a)fig.append(a)}
+       if(fig.childNodes.length){fig.append(node('figcaption',String(item.title||'Published media').slice(0,140)));gallery.append(fig)}
+     });
+     if(gallery.childNodes.length){panel.append(gallery);grid.append(panel)}
+   }
+   if(!grid.childNodes.length){const blank=section('Published profile');blank.append(node('p','No additional sections have been shared publicly yet.'));grid.append(blank)}
+   article.append(grid,node('p','Read-only • Only information published in OurSpace appears here.','os-public-privacy'));
+   mount.replaceChildren(article);
+ }catch(_){mount.replaceChildren(node('p','This published profile is temporarily unavailable.','os-public-message'))}
 }
 async function init(){if(isPublic){await publicMode();return}
  if(!pages.includes(page)){location.replace(who+'.html?page=profile');return}
