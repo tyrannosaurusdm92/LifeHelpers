@@ -5,13 +5,17 @@ const who=document.documentElement.dataset.profile==='jasper'?'jasper':'william'
 const auth=window.OurSpaceAuth;
 if(new URLSearchParams(location.search).get('public')==='1'||!auth?.isAuthenticated?.()||auth?.isAdmin?.()||auth?.profile?.()!==who)return;
 const cfg={"widthPx":170,"heightPx":911,"topPx":0,"rightPx":0,"contentScale":1,"spacingPx":10,"panels":{"quick":{"left":1289,"top":89,"width":453,"height":488},"friends":{"left":1386,"top":117.5,"width":356,"height":465},"today":{"left":1302,"top":323,"width":440,"height":580},"unread":{"left":1302,"top":195.125,"width":440,"height":580},"rooms":{"left":1298,"top":111.21875,"width":440,"height":580}}};
-// Preserve the rail's prior size/spacing, but default its presence to a closed drawer.
+// The page scrollbar is independent of Messenger. Keep the private messaging
+// engine available for Communication, but never render or open its sidebar UI.
+root.classList.add('os-scroll-only');
+document.documentElement.classList.remove('sidebar-messenger-active');
 const DRAWER_KEY='ourspace.sidebar-messenger.drawer.v1.'+who;
-let drawerOpen=(()=>{try{return localStorage.getItem(DRAWER_KEY)==='open'}catch(_){return false}})();
+let drawerOpen=false;
+try{localStorage.setItem(DRAWER_KEY,'closed')}catch(_){}
 const drawerButton=document.createElement('button');
 drawerButton.id='osMessengerDrawerHeart';drawerButton.type='button';drawerButton.className='os-messenger-drawer-heart';
-drawerButton.setAttribute('aria-controls','mpMenuScroll');drawerButton.setAttribute('aria-label','Open Messenger drawer');
-drawerButton.setAttribute('title','Open Messenger drawer');
+drawerButton.setAttribute('aria-label','Drag this heart to scroll the OurSpace page');
+drawerButton.setAttribute('title','Drag the heart to scroll; the Messenger sidebar is hidden');
 // The user-supplied mockup uses ONE heart-shaped scrollbar thumb on a
 // full-height yellow/orange track, not a second small orange marker.
 const HEART_SVG='<svg class="os-heart-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 65" aria-hidden="true"><path fill="#00FFFF" stroke="#083F40" stroke-width="2.2" d="M28 60 C20 53 3 38 3 23 C3 11 10 5 18 5 C23 5 26 9 28 13 C31 8 35 5 41 5 C50 5 54 12 54 23 C54 38 38 52 28 60Z"/><path fill="#FFF600" d="M28 51 C20 43 10 34 10 23 C10 16 14 12 19 12 C23 12 26 17 28 20 C30 16 35 12 40 12 C45 12 48 17 48 23 C48 34 37 44 28 51Z"/></svg>';
@@ -55,7 +59,7 @@ function refreshSiteRail(){
 }
 function siteRailScroll(y){const el=choosePageScroller(),extent=scrollRange(el);if(!extent)return;el.scrollTop=thumbFraction(y)*extent;refreshSiteRail()}
 siteRail.addEventListener('pointerdown',e=>{
- if(e.target===drawerButton||drawerButton.contains(e.target)||!drawerOpen)return;
+ if(e.target===drawerButton||drawerButton.contains(e.target))return;
  if(e.button!==0&&e.pointerType!=='touch')return;
  e.preventDefault();trackDrag=e.pointerId;siteRail.setPointerCapture(e.pointerId);siteRailScroll(e.clientY);
 });
@@ -67,14 +71,14 @@ drawerButton.addEventListener('pointerdown',e=>{if(e.button!==0&&e.pointerType!=
 drawerButton.addEventListener('pointermove',e=>{
  if(!heartDrag||heartDrag.id!==e.pointerId)return;
  if(Math.abs(e.clientY-heartDrag.startY)>6)heartDrag.dragged=true;
- if(heartDrag.dragged&&drawerOpen){e.preventDefault();siteRailScroll(e.clientY)}
+ if(heartDrag.dragged){e.preventDefault();siteRailScroll(e.clientY)}
 });
 function heartRelease(e){if(!heartDrag||heartDrag.id!==e.pointerId)return;
- suppressHeartClick=heartDrag.dragged&&drawerOpen;heartDrag=null;
+ suppressHeartClick=heartDrag.dragged;heartDrag=null;
  try{drawerButton.releasePointerCapture(e.pointerId)}catch(_){}
 }
 drawerButton.addEventListener('pointerup',heartRelease);drawerButton.addEventListener('pointercancel',heartRelease);
-siteRail.addEventListener('wheel',e=>{if(!drawerOpen)return;const target=choosePageScroller();if(!scrollRange(target))return;e.preventDefault();target.scrollTop+=e.deltaY;refreshSiteRail()},{passive:false});
+siteRail.addEventListener('wheel',e=>{const target=choosePageScroller();if(!scrollRange(target))return;e.preventDefault();target.scrollTop+=e.deltaY;refreshSiteRail()},{passive:false});
 siteRail.addEventListener('keydown',e=>{
  if(e.target!==siteRail)return;
  const el=choosePageScroller(),amt={'ArrowDown':48,'ArrowUp':-48,'PageDown':el.clientHeight*.85,'PageUp':-el.clientHeight*.85,'Home':-Infinity,'End':Infinity}[e.key];
@@ -84,17 +88,18 @@ document.addEventListener('scroll',refreshSiteRail,{capture:true,passive:true});
 window.addEventListener('resize',refreshSiteRail,{passive:true});
 window.addEventListener('ourspace:page-changed',refreshSiteRail);
 function drawerState(save=false){
- root.classList.toggle('os-drawer-open',drawerOpen);
+ drawerOpen=false;
+ root.classList.remove('os-drawer-open');
  root.dataset.drawerState=drawerOpen?'open':'closed';
  document.documentElement.classList.toggle('os-messenger-drawer-open',drawerOpen);
- drawerButton.setAttribute('aria-expanded',String(drawerOpen));
- drawerButton.setAttribute('aria-label',drawerOpen?'Close Messenger drawer':'Open Messenger drawer');
- drawerButton.title=drawerOpen?'Close Messenger drawer':'Open Messenger drawer';
+ drawerButton.removeAttribute('aria-expanded');
+ drawerButton.setAttribute('aria-label','Drag this heart to scroll the OurSpace page');
+ drawerButton.title='Drag the heart to scroll';
  if(save)try{localStorage.setItem(DRAWER_KEY,drawerOpen?'open':'closed')}catch(_){ }
  apply();requestAnimationFrame(refreshSiteRail);
  window.dispatchEvent(new CustomEvent('ourspace:messenger-drawer-state',{detail:{open:drawerOpen}}));
 }
-drawerButton.addEventListener('click',e=>{if(suppressHeartClick){e.preventDefault();e.stopPropagation();suppressHeartClick=false;return}drawerOpen=!drawerOpen;drawerState(true)});
+drawerButton.addEventListener('click',e=>{e.preventDefault();suppressHeartClick=false;});
 const state={...(who==='william'?cfg:cfg),...(()=>{try{return JSON.parse(localStorage.getItem('ourspace.sidebar-messenger.layout.v1.'+who)||'null')||{}}catch(_){return {}}})()};
 const minmax=(x,a,b)=>Math.max(a,Math.min(b,+x||a));
 // Recent alert categories rotate in place without moving the heart or covering the screen.
@@ -107,7 +112,7 @@ function refreshAlertSpot(){
   if(!list.length){alertSpot.textContent='';drawerButton.setAttribute('data-alerts','0');return;}
   alertSpot.textContent=alertVisuals[list[alertIndex++%list.length].type]||'';
   drawerButton.dataset.alerts=String(list.length);
-  drawerButton.title=`${drawerOpen?'Close':'Open'} Messenger drawer · ${list.length} recent alert type${list.length===1?'':'s'}`;
+  drawerButton.title='Drag the heart to scroll the OurSpace page';
 }
 function recordAlert(type){
   if(!alertVisuals[type])return;
@@ -159,5 +164,5 @@ function keepDrawerVisibleInFullscreen(){
 document.addEventListener('fullscreenchange',keepDrawerVisibleInFullscreen);
 document.addEventListener('webkitfullscreenchange',keepDrawerVisibleInFullscreen);
 window.addEventListener('resize',apply);drawerState(false);requestAnimationFrame(applyPanels);
-window.OurSpaceSidebarLayout={get:()=>({...state,drawerOpen}),isAdmin:false,refresh:apply,open:()=>{drawerOpen=true;drawerState(true)},close:()=>{drawerOpen=false;drawerState(true)},toggle:()=>{drawerOpen=!drawerOpen;drawerState(true)}};
+window.OurSpaceSidebarLayout={get:()=>({...state,drawerOpen:false,scrollOnly:true}),isAdmin:false,refresh:apply,open:()=>{},close:()=>drawerState(false),toggle:()=>{}};
 })();
