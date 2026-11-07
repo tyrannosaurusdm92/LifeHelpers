@@ -3212,6 +3212,8 @@ body.ourspace-account-settings-open {
   right: auto!important;
   bottom: auto!important;
 }
+.onyx-round-widget .onyx-panel-header {cursor:move;touch-action:none;}
+.onyx-round-widget .onyx-panel-header button {cursor:pointer;}
 .onyx-round-widget .onyx-resize-handle {
   position: absolute;
   z-index: 5000;
