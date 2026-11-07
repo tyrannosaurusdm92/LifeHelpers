@@ -275,11 +275,15 @@ function appendScript(path){
 function sendHeight(){
  if(viewport.hidden)return;
  const width=1754;
- const scale=Math.min(1,(window.innerWidth-12)/width);
+ // Reserve the native 60px heart track and a small touch gutter without
+ // moving or altering any original OurSpace module coordinates.
+ const scale=Math.min(1,Math.max(300,window.innerWidth-78)/width);
  host.style.transform='scale('+scale+')';
  host.style.width=width+'px';
  host.style.height='auto';
  viewport.style.width=Math.ceil(width*scale)+'px';
+ viewport.style.marginLeft=window.innerWidth<width+90?'0':'auto';
+ viewport.style.marginRight=window.innerWidth<width+90?'0':'auto';
  const natural=Math.max(host.scrollHeight,$('#profileApp')?.scrollHeight||0,3420);
  const h=Math.max(500,Math.ceil(natural*scale)+28);
  viewport.style.height=h+'px';
