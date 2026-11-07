@@ -36,6 +36,14 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .dialog-head{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#31566F;color:white}
 .dialog-head h2{font-size:16px;margin:0}.dialog-head button{background:#F47745;border:1px solid #F47745;color:white;font-weight:900;border-radius:4px;font-size:22px;width:32px;height:32px;line-height:1;}
 .dialog-main{padding:17px}.dialog-main .main-button{margin-top:5px}.recovery-status{min-height:18px;color:#F47745;margin:8px 0;}
+/* Password recovery inherits login controls: readable, responsive, never stores a password in page storage. */
+#recoveryDialog .recovery-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#recoveryDialog .recovery-checks{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0}
+#recoveryDialog .password-row{display:flex;gap:6px;align-items:center}
+#recoveryDialog .password-row input{flex:1;min-width:0}
+#recoveryDialog .password-row button{flex-shrink:0;min-width:62px}
+#recoveryCodeNotice{color:#31566F;line-height:1.45}
+
 .admin-profiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}.admin-profiles button{padding:18px 12px}
 .install-notes{padding:11px;background:#C8F5DC;border:1px solid #A6C4D8;max-width:485px;width:100%;font-size:12px;margin-top:8px}
 @media(max-width:800px){.portal-screen{grid-template-columns:1fr}.portal-right{min-height:0;padding:10px 30px 30px;grid-row:1}.portal-right img{max-height:32dvh;max-width:430px}.portal-left{padding:16px 20px 35px}.portal-heading{font-size:29px}.portal-tagline{margin-bottom:18px}.portal-form{margin:auto}}
