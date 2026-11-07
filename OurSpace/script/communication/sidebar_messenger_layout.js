@@ -3,7 +3,10 @@
 const who=document.documentElement.dataset.profile==='jasper'?'jasper':'william';
 // Never display the member rail to public viewers or unmatched sessions.
 const auth=window.OurSpaceAuth;
-if(new URLSearchParams(location.search).get('public')==='1'||!auth?.isAuthenticated?.()||auth?.isAdmin?.()||auth?.profile?.()!==who)return;
+const nativePublished=document.documentElement.dataset.osNativePublic==='true';
+// Native published views need only the scrollbar; never authenticate or
+// initialize any account Messenger UI.
+if(!nativePublished&&(new URLSearchParams(location.search).get('public')==='1'||!auth?.isAuthenticated?.()||auth?.isAdmin?.()||auth?.profile?.()!==who))return;
 const cfg={"widthPx":170,"heightPx":911,"topPx":0,"rightPx":0,"contentScale":1,"spacingPx":10,"panels":{"quick":{"left":1289,"top":89,"width":453,"height":488},"friends":{"left":1386,"top":117.5,"width":356,"height":465},"today":{"left":1302,"top":323,"width":440,"height":580},"unread":{"left":1302,"top":195.125,"width":440,"height":580},"rooms":{"left":1298,"top":111.21875,"width":440,"height":580}}};
 // The page scrollbar is independent of Messenger. Keep the private messaging
 // engine available for Communication, but never render or open its sidebar UI.
