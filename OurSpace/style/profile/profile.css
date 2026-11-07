@@ -72,9 +72,11 @@
 
 
 /* Profile/About: account-backed LifeHelpers arcade history. */
-.os-played-games {margin:1rem 0;padding:1rem;border:1px solid #5686A6;border-radius:12px;background:#C8F5DC;color:#31566F;opacity:1;}
-.os-played-games h3 {margin:0 0 .45rem;color:#31566F;}
-.os-played-games-status {font-size:.85rem;margin:.25rem 0 .7rem;}
+/* Match OurSpace's mint/black palette on William, Jasper, and #admin previews.
+   Scope to the interests subpanel so other profile modules keep their styling. */
+html[data-profile] #profileApp #ourspacePlayedGames {margin:1rem 0;padding:1rem;border:1px solid #5686A6;border-radius:12px;background:#C8F5DC!important;background-image:none!important;color:#000!important;opacity:1;}
+html[data-profile] #profileApp #ourspacePlayedGames h3 {margin:0 0 .45rem;color:#000!important;}
+html[data-profile] #profileApp #ourspacePlayedGames .os-played-games-status {font-size:.85rem;margin:.25rem 0 .7rem;color:#000!important;}
 .os-played-games-grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:.75rem;}
 .os-played-game {display:flex;align-items:center;flex-direction:column;gap:.35rem;padding:.7rem;background:#176B65;border:1px solid #00ffff;color:#fff;border-radius:10px;text-decoration:none;min-height:86px;}
 .os-played-game:hover,.os-played-game:focus-visible {background:#235b57;outline:2px solid #FFD12E;}
