@@ -30,21 +30,27 @@ async function request(action,data={},opts={}){
  if(result?.ok===false)throw new Error(String(result.message||result.error||'The request was not accepted.'));
  return result;
 }
+function acceptSession(result,remember){
+ // Only a successful backend-verified sign-in or verified account creation
+ // may return an authoritative session; never synthesize client credentials.
+ if(result?.ok===false||!result?.sessionToken||!['william','jasper'].includes(result?.user?.profileKey))
+  throw new Error('Account identity was not confirmed by the server.');
+ memoryToken=result.sessionToken;memoryProfile=result.user.profileKey;
+ [ss(),ls()].forEach(s=>{put(s,sessionKey,'');put(s,profileKey,'')});
+ const store=remember?ls():ss();put(store,sessionKey,memoryToken);put(store,profileKey,memoryProfile);
+ put(ss(),previewKey,'');return {admin:false,profile:memoryProfile,user:result.user};
+}
 async function signIn(identifier,password,remember){
  if(identifier.trim()==='#admin'&&password==='#admin'){
   await signOut(false);put(ss(),previewKey,'true');return {admin:true};
  }
  const result=await request('auth.signin',{identifier:identifier.trim(),password,rememberThisDevice:!!remember});
- if(!result?.sessionToken||!['william','jasper'].includes(result?.user?.profileKey))throw new Error('Account identity was not confirmed by the server.');
- memoryToken=result.sessionToken;memoryProfile=result.user.profileKey;
- [ss(),ls()].forEach(s=>{put(s,sessionKey,'');put(s,profileKey,'')});
- const store=remember?ls():ss();put(store,sessionKey,memoryToken);put(store,profileKey,memoryProfile);
- put(ss(),previewKey,'');return {admin:false,profile:memoryProfile,user:result.user};
+ return acceptSession(result,remember);
 }
 async function signOut(contactServer=true){
  if(contactServer&&token()&&!isAdmin())try{await request('auth.signout',{})}catch(_){}
  memoryToken='';memoryProfile='';for(const s of [ss(),ls()]){put(s,sessionKey,'');put(s,profileKey,'')};put(ss(),previewKey,'');
 }
 function authorize(viewingProfile){return isAdmin()||isAuthenticated()&&profile()===viewingProfile}
-window.OurSpaceAuth={request,signIn,signOut,token,profile,isAdmin,isAuthenticated,authorize};
+window.OurSpaceAuth={request,signIn,acceptSession,signOut,token,profile,isAdmin,isAuthenticated,authorize};
 })();
