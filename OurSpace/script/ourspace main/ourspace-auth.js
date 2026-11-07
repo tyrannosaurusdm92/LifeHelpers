@@ -15,6 +15,14 @@ async function request(action,data={},opts={}){
  let response;
  const gateway='/api/ourspace',published='https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec';
  const requestOptions={method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload),cache:'no-store',signal:AbortSignal.timeout(opts.timeout||18000)};
+ // Email challenges can continue server-side after a browser timeout. Distinguish
+ // "unknown delivery state" from a confirmed backend failure; never auto-resend.
+ const emailChallengeRequest=action==='auth.password.forgot'||
+   (action==='auth.signup'&&!data.verificationCode&&!data.code&&!data.verificationToken);
+ const timeoutError=()=>{const error=new Error(emailChallengeRequest
+   ? 'The email request took too long to confirm; a code may still arrive. Please do not request another immediately.'
+   : 'The account request timed out. Please check the account state before retrying.');
+   error.deliveryUnconfirmed=emailChallengeRequest;return error;};
  try{
    // GitHub Pages does not provide /api/ourspace. Keep the secure gateway for
    // custom hosts that have one; never forward a token to an arbitrary URL.
@@ -24,9 +32,15 @@ async function request(action,data={},opts={}){
      try{response=await fetch(gateway,{...requestOptions,credentials:'same-origin'});}catch(_){response=null}
      if(!response||response.status===404||response.status===405)response=await fetch(published,{...requestOptions,redirect:'follow'});
    }
- }catch(_){throw new Error('Account backend connection unavailable. Check the Apps Script deployment or hosting gateway.');}
+ }catch(error){
+   if(requestOptions.signal.aborted)throw timeoutError();
+   throw new Error('Account backend connection unavailable. Check the Apps Script deployment or hosting gateway.');
+ }
  if(!response.ok)throw new Error('Account backend unavailable ('+response.status+').');
- let result;try{result=await response.json()}catch(_){throw new Error('The account service returned an invalid response.');}
+ let result;try{result=await response.json()}catch(error){
+   if(requestOptions.signal.aborted)throw timeoutError();
+   throw new Error('The account service returned an invalid response.');
+ }
  if(result?.ok===false)throw new Error(String(result.message||result.error||'The request was not accepted.'));
  return result;
 }
