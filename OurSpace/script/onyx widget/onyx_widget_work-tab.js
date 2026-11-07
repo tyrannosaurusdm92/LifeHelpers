@@ -432,6 +432,17 @@ function getSessionToken() {
 }
 
 async function api(action, data = {}, timeoutMs = 120000) {
+  // Every Work conversation uses the same Onyx brain as Virtual & Health,
+  // Leisure, Professor and the fullscreen game.
+  if (action === "onyx.chat") {
+    if (!window.OnyxBrainLink?.chat) throw new Error("Onyx's repository brain is not connected.");
+    return window.OnyxBrainLink.chat({...data,lane:"work"}, {timeout:timeoutMs});
+  }
+  // Tools remain explicit authenticated backend actions. Never require a
+  // second pasted token when the OurSpace account is already signed in.
+  if (window.OnyxBackendClient?.authenticated?.()) {
+    return window.OnyxBackendClient.request(action,data,{timeout:timeoutMs});
+  }
   const sessionToken = getSessionToken();
   if (!sessionToken) throw new Error("No OurSpace session token was found. Open Work settings and paste the active session token, or sign in through OurSpace first.");
   const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -495,7 +506,7 @@ async function sendMessage(text) {
     removeTyping();
     const failure = { id:uid("m"), role:"assistant", content:error?.message || String(error), error:true, createdAt:nowIso() };
     setThreadMessages([...threadMessages(), failure]); renderMessages(); setBrainStatus(false,"Connection issue");
-    if (!getSessionToken()) openSettings();
+    if (!window.OnyxBackendClient?.authenticated?.() && !getSessionToken()) openSettings();
   } finally { sending = false; updateSendState(); renderOnyxMood(); }
 }
 
@@ -605,8 +616,14 @@ async function testConnection() {
 }
 function saveSettings() { const token = els.sessionToken.value.trim(); if (token) localStorage.setItem(STORAGE.session,token); else localStorage.removeItem(STORAGE.session); toast("Work settings saved"); els.settingsDialog.close?.(); checkBrainStatus(); }
 async function checkBrainStatus() {
-  if (!getSessionToken()) { setBrainStatus(false,"Sign in to connect"); return; }
-  try { const result = await api("onyx.health",{},45000); setBrainStatus(Boolean(result?.ok), result?.ok ? "Onyx Brain connected" : "Connection issue"); }
+  if (!window.OnyxBackendClient?.authenticated?.() && !getSessionToken()) { setBrainStatus(false,"Sign in to connect"); return; }
+  try {
+    const result = await api("onyx.health",{},45000);
+    const linked = window.OnyxRepositoryBridge?.status?.().available === true;
+    const verifiedProvider = result?.aiBrain?.configured === true;
+    setBrainStatus(Boolean(result?.ok && linked && verifiedProvider),
+      !linked ? "Onyx repository brain unavailable" : !verifiedProvider ? "AI Brain needs configuration" : "Onyx Brain connected");
+  }
   catch { setBrainStatus(false,"Connection issue"); }
 }
 function setBrainStatus(ok,text) { els.statusDot.classList.toggle("ok",!!ok); els.statusDot.classList.toggle("bad",!ok); els.statusText.textContent = text; }
