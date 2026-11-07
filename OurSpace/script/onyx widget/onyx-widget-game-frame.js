@@ -123,7 +123,12 @@
    let doc,child;
    try{doc=frame.contentDocument;child=frame.contentWindow;}catch(_){return;}
    if(!doc||!child||!doc.getElementById('chatForm'))return;
-   if(installedDocument===doc)return;
+   if(installedDocument===doc){
+     gameChatStatus(doc,gameAuthenticated()&&window.OnyxRepositoryBridge?.status?.().available
+       ?'Connected to Onyx brain · LifeHelpers/Onyx'
+       :'Sign in to connect game chat to Onyx brain');
+     return;
+   }
    installedDocument=doc;
    const intercept=(event)=>{
      const target=event.target;
