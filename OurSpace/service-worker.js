@@ -92,7 +92,7 @@ self.addEventListener('fetch',event=>{
  event.respondWith((async()=>{
   const cache=await caches.open(OS_CACHE);
   // CSS is network-first so newly published styles cannot be masked by stale PWA data.
-  if(request.destination==='style'||/\\.css$/i.test(new URL(request.url).pathname)){
+  if(request.destination==='style'||/\.css$/i.test(new URL(request.url).pathname)){
    try{
     const network=await fetch(new Request(request,{cache:'no-cache'}));
     if(network.ok&&network.type==='basic'&&!/no-store|private/i.test(network.headers.get('Cache-Control')||''))await cache.put(request,network.clone());
