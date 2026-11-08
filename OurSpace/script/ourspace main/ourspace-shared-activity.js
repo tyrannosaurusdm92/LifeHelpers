@@ -28,6 +28,10 @@ function normalize(input,authorOverride){
    entries:(Array.isArray(c.entries)?c.entries:[]).slice(0,70).map(i=>({
     id:clean(i.id,100),title:clean(i.title,160),kind:clean(i.kind,24),
     body:clean(i.body,600),url:link(i.url),driveFileId:clean(i.driveFileId,130),
+    x:Number.isFinite(Number(i.x))?Math.max(0,Math.min(100,Number(i.x))):8,
+    y:Number.isFinite(Number(i.y))?Math.max(0,Math.min(100,Number(i.y))):12,
+    w:Number.isFinite(Number(i.w))?Math.max(8,Math.min(90,Number(i.w))):16,
+    h:Number.isFinite(Number(i.h))?Math.max(8,Math.min(90,Number(i.h))):14,
     folderId:clean(i.folderId,100)
    }))
   };
