@@ -206,9 +206,11 @@
  function railLeft(){
    const drawer=$('#sidebar-messenger-root');
    const isOpen=drawer?.classList.contains('os-drawer-open');
-   if(!isOpen)return Math.max(76,innerWidth-64);
-   const drawerWidth=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--os-sidebar-drawer-width'))||288;
-   return Math.max(60,innerWidth-drawerWidth-56);
+   const css=getComputedStyle(document.documentElement);
+   const railWidth=Math.max(28,parseFloat(css.getPropertyValue('--os-page-heart-rail-width'))||36);
+   if(!isOpen)return Math.max(76,innerWidth-railWidth-8);
+   const drawerWidth=parseFloat(css.getPropertyValue('--os-sidebar-drawer-width'))||246;
+   return Math.max(60,innerWidth-drawerWidth-railWidth-8);
  }
  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
  function availableRight(){return Math.max(65,railLeft()-8)}
