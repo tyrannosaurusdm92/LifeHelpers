@@ -162,13 +162,17 @@ function wishlistAdd(input){
   if(idx>=0)item.id=items[idx].id;
   const next=[item,...items.filter(x=>x.id!==item.id)];
   return{items:next,item};
- }).then(({item:record})=>{
-  publish({id:'wish-'+who()+'-'+record.id,key:'wish-'+who()+'-'+record.id,
+ }).then(async({item:record})=>{
+  const entry=normalize({id:'wish-'+who()+'-'+record.id,key:'wish-'+who()+'-'+record.id,
    type:'wishlist',author:who(),title:record.name,
    body:'Added to wishlist · '+record.pricePlatinum.toLocaleString()+' platinum',
    url:record.url,image:record.image,source:'OurSpace Wishlist',
-   metadata:{wishlist:{id:record.id,pricePlatinum:record.pricePlatinum}}});
-  return record;
+   metadata:{wishlist:{id:record.id,pricePlatinum:record.pricePlatinum}}},who());
+  merge([entry]);
+  let partnerShared=false;
+  try{partnerShared=await sendRemote(entry)}
+  catch(err){console.warn('Wishlist saved, but partner announcement unconfirmed:',err.message)}
+  return{...record,partnerShared};
  });
 }
 function wishlistRemove(id){
