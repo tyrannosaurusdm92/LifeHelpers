@@ -16,7 +16,7 @@ const PATTERNS = Object.freeze({
   correction: /\b(?:i meant|correction|that's wrong|that is wrong|not what i meant|actually,? i|no,? i meant|you have that wrong)\b/i,
   safety: /\b(?:suicid|self[- ]?harm|crisis|emergency|overdose|actively unsafe|immediate danger)\b/i,
   sensitive: /\b(?:diagnos|medication|prescription|dosage|dose|seizure|oxygen|blood sugar|hospital|symptom|therapy|therapist|psychiatr|trauma|abuse|pain flare|medical record|treatment plan)\b/i,
-  privateContact: /(?:[\w.+-]+@[\w.-]+\.[A-Za-z]{2,})|\b\d{3}-\d{2}-\d{4}\b|\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/
+  privateContact: /(?:[\w.+-]+@[\w.-]+\.[A-Za-z]{2,})|\b\d{3}-\d{2}-\d{4}\b|\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/,
   privateData: /\b(?:password|passcode|one[-\s]?time code|verification code|api key|access token|secret key|credit card|debit card|bank account|routing number|account number|credit score|income details|benefit amount|home address|street address|precise address|security answer)\b/i
 });
 
@@ -208,7 +208,9 @@ export class OnyxMemory {
     const memorySettings = safeContext.memoryPolicy && typeof safeContext.memoryPolicy === "object" ? safeContext.memoryPolicy : {};
     const contextPolicy = normalizePolicy(memorySettings.requested);
     const effectiveRequestPolicy = policy === "auto" && ["on", "off"].includes(contextPolicy) ? contextPolicy : policy;
-    const hardSensitive = Boolean(sensitive || PATTERNS.sensitive.test(String(message || "")));
+    const currentMessage = String(message || "");
+    const hardSensitive = Boolean(sensitive || PATTERNS.sensitive.test(currentMessage) ||
+      PATTERNS.privateContact.test(currentMessage) || PATTERNS.privateData.test(currentMessage));
     const hardSerious = Boolean(serious || safeContext.serious === true || PATTERNS.safety.test(String(message || "")));
     const durable = resolveAutoRemember({
       message,
