@@ -16,7 +16,8 @@ const validTypes=new Set(['post','news','pin','image','video','music','media','s
 function normalize(input,authorOverride){
  const x=input||{},type=clean(x.type||'post',24).toLowerCase(),author=authorOverride||x.author;
  const rawMeta=x.metadata&&typeof x.metadata==='object'?x.metadata:{};
- const safeMeta={local:false,library:clean(rawMeta.library,40),assetId:clean(rawMeta.assetId,120)};
+ const safeMeta={local:false,library:clean(rawMeta.library,40),assetId:clean(rawMeta.assetId,120),
+  driveFileId:/^[A-Za-z0-9_-]{15,128}$/.test(String(rawMeta.driveFileId||'').replace(/^drive-/,''))?String(rawMeta.driveFileId).replace(/^drive-/,''):''};
  // Share metadata is explicit and bounded; do not transmit arbitrary app state.
  if(type==='collection'&&rawMeta.sharedCollection){
   const c=rawMeta.sharedCollection;
