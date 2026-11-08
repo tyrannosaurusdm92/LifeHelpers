@@ -329,6 +329,7 @@
     try{
       const saved=await service.list('record');
       const wanted=new Set();
+      const priorTrackId=state.tracks[state.index]?.id||'';
       for(const item of saved){
         if(item.kind!=='audio')continue;
         const id='profile-sent-'+item.id;wanted.add(id);
@@ -347,10 +348,10 @@
       }
       // Deleting a sent selection removes only the account-sent copy.
       state.tracks=state.tracks.filter(t=>!t.id.startsWith('profile-sent-')||wanted.has(t.id));
-      const current=state.tracks[state.index];
-      if(current?.id?.startsWith('profile-sent-')&&!wanted.has(current.id)){
-        await loadTrack(0,false);
-      }
+      const stillSelected=state.tracks.findIndex(t=>t.id===priorTrackId);
+      if(stillSelected>=0)state.index=stillSelected;
+      else if(priorTrackId&&state.tracks.length)await loadTrack(0,false);
+      else if(!state.tracks.length)state.index=-1;
       updateControls();
     }catch(error){
       console.warn('Could not load saved Profile Record Player tracks:',error.message);
