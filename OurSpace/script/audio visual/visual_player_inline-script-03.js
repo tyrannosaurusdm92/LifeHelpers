@@ -1166,7 +1166,15 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
   }
 
   function readSyncQueue() {
-    try { return JSON.parse(localStorage.getItem(SYNC_QUEUE_KEY) || '[]'); } catch { return []; }
+    try{
+      const list=JSON.parse(localStorage.getItem(SYNC_QUEUE_KEY)||'[]');
+      if(!Array.isArray(list))return [];
+      // Migrate old queued envelopes: authentication is supplied only by the
+      // current session at send time, never from persisted queue data.
+      return list.slice(-120).filter(x=>x&&x.action==='record.save'&&x.data)
+        .map(item=>JSON.parse(JSON.stringify({action:'record.save',data:item.data},
+          (key,value)=>/^(sessionToken|authToken|accessToken|inlineFile|dataUrl|base64|blob|bytes)$/i.test(key)?undefined:value)));
+    }catch{return []}
   }
 
   function writeSyncQueue(queue) {
@@ -1257,6 +1265,8 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
       return;
     }
     state.db = await openDb();
+    // Remove legacy persisted session tokens and inline media from old retry entries.
+    writeSyncQueue(readSyncQueue());
     await loadLibrary();
     if (!state.library.currentAssetId) state.library.currentAssetId = state.library.assets[0]?.id || '';
     render();
