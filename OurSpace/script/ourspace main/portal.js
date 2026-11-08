@@ -20,6 +20,21 @@ $('#togglePassword')?.addEventListener('click',()=>{const field=$('#password'),b
 let recoveryMode='reset',recoveryExpiresAt=0,lastCodeRequestAt=0,codeRequestBusy=false,recoveryTicker=null;
 const resendWaitMs=90000;
 const recoveryEmail=s=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+function showDeliveryReceipt({confirmed=false,result=null,unknown=false}={}){
+ const receipt=$('#recoveryDeliveryReceipt'),title=$('#recoveryReceiptTitle'),body=$('#recoveryReceiptText');
+ if(!receipt||!title||!body)return;
+ if(!confirmed&&!unknown){receipt.hidden=true;body.textContent='';return}
+ receipt.hidden=false;
+ const timestamp=new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit',second:'2-digit'});
+ const target=result?.destination||result?.maskedDestination||'the selected recovery email';
+ const expiry=result?.expiresAt?new Date(result.expiresAt).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}):'not provided';
+ title.textContent=unknown?'Email request status: unconfirmed':'Email request status: accepted by backend';
+ body.textContent=unknown
+  ? 'At '+timestamp+', the browser could not confirm a response. An email might still arrive; sending another request may cause duplicate codes.'
+  : 'Backend response received at '+timestamp+'. Destination: '+target+'. Code expires at '+expiry+
+    '. This is a backend request receipt, not confirmation that an email reached Gmail.';
+}
+
 const recoveryStep=s=>{['Start','Choose','Code'].forEach(part=>$('#recovery'+part).hidden=part.toLowerCase()!==s)};
 const hint=msg=>{$('#recoveryModeHint').textContent=msg};
 function setVisible(fieldId,buttonId,visible,caption){
@@ -59,7 +74,7 @@ function showRecovery(){
  setVisible('newPasswordInput','recoveryToggleNewPassword',false,'new password');
  setVisible('confirmNewPasswordInput','recoveryToggleConfirmPassword',false,'password confirmation');
  recoveryStep('start');hint('Enter your OurSpace account email to receive an email verification code.');
- rshow('');updateCodeNotice();if(!recover.open)recover.showModal();$('#recoveryIdentifier').focus();
+ rshow('');showDeliveryReceipt();updateCodeNotice();if(!recover.open)recover.showModal();$('#recoveryIdentifier').focus();
 }
 $('#forgotLink')?.addEventListener('click',e=>{e.preventDefault();showRecovery()});
 $('#recoveryClose')?.addEventListener('click',()=>recover.close());
@@ -94,12 +109,14 @@ async function issueRecoveryCode(){
     throw new Error('The backend did not confirm a password reset email.');
   }
   recoveryExpiresAt=Date.parse(result.expiresAt||'')||0;
+  showDeliveryReceipt({confirmed:true,result});
   recoveryStep('code');startTicker();
   hint('Enter the emailed code for '+recoveryId+' and create your password. Avoid repeated resend requests.');
-  rshow('Email request accepted. Check your inbox or spam; delivery can take time. Use a code before its expiry.');
+  rshow('Apps Script confirmed the email request. That does not confirm Gmail delivery; see the request receipt below.');
   $('#recoveryCodeInput').focus();
  }catch(err){
   if(err?.deliveryUnconfirmed){
+   showDeliveryReceipt({unknown:true});
    recoveryExpiresAt=0;recoveryStep('code');startTicker();
    hint('The email request could not be confirmed. You may still enter a code if one arrives.');
    rshow('The request timed out, but a code might still arrive. Avoid requesting another immediately.',true);
