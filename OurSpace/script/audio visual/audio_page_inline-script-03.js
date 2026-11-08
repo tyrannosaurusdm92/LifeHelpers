@@ -813,7 +813,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
         const c=event.metadata.sharedCollection,remoteId='partner-audio-'+event.author+'-'+c.id;
         const collection=c.collectionType==='playlist'?state.library.playlists:state.library.folders;
         let target=collection.find(x=>x.id===remoteId);
-        if(target?.sharedRevision===event.createdAt)continue;
+        if(target?.sharedRevision&&Date.parse(target.sharedRevision)>=Date.parse(event.createdAt))continue;
         if(!target){
           target=c.collectionType==='playlist'?
             {id:remoteId,name:'♥ '+c.name+' ('+event.author+')',trackIds:[],createdAt:Date.now(),readOnly:true,shared:true}:
