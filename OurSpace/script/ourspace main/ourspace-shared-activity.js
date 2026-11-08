@@ -26,7 +26,7 @@ function normalize(input,authorOverride){
    collectionType:clean(c.collectionType,40),
    entries:(Array.isArray(c.entries)?c.entries:[]).slice(0,70).map(i=>({
     id:clean(i.id,100),title:clean(i.title,160),kind:clean(i.kind,24),
-    url:link(i.url),driveFileId:clean(i.driveFileId,130),
+    body:clean(i.body,600),url:link(i.url),driveFileId:clean(i.driveFileId,130),
     folderId:clean(i.folderId,100)
    }))
   };
