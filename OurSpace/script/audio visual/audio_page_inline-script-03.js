@@ -1059,7 +1059,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
       const byId=new Map(state.library.tracks.map(t=>[t.id,t]));
       for(const file of files){
         const id='drive-'+file.fileId;
-        if(byId.has(id))continue;
+        if(byId.has(id)||[...byId.values()].some(item=>item.backendId===id))continue;
         const parsed=parseName({name:file.name});
         byId.set(id,{id,title:parsed.title,artist:parsed.artist,album:'',
           folderId:'folder-all',mime:file.mimeType,size:file.sizeBytes,duration:0,
