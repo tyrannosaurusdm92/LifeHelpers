@@ -7,12 +7,13 @@
 #sidebar-messenger-root :is(button,input,textarea,select,a,video,.mp-window,.mp-panel,.mp-modal){pointer-events:auto}
 #sidebar-messenger-root.mp-vertical-root{
   --mp-rail-width:var(--os-sidebar-drawer-width,246px);
+  --os-page-heart-rail-width:36px;
   position:fixed;inset:0;z-index:2147483100;pointer-events:none;
   font-family:Arial,Helvetica,sans-serif;
 }
 #sidebar-messenger-root.mp-vertical-root .mp-sidebar.mp-vertical-menu{
-  position:fixed;top:0;bottom:0;right:calc(64px + env(safe-area-inset-right,0px));
-  width:var(--mp-rail-width);max-width:calc(100vw - 78px);
+  position:fixed;top:0;bottom:0;right:calc(var(--os-page-heart-rail-width,36px) + 8px + env(safe-area-inset-right,0px));
+  width:var(--mp-rail-width);max-width:calc(100vw - 54px);
   height:100dvh;display:flex;flex-direction:column;gap:0;
   padding:max(4px,env(safe-area-inset-top,0px)) 0 max(6px,env(safe-area-inset-bottom,0px));
   border:0;border-left:2px solid #111;background:#fff;color:#080808;
@@ -89,37 +90,36 @@
 #sidebar-messenger-root #osMessengerPageScrollRail{
   position:fixed;top:max(9px,env(safe-area-inset-top,0px));
   right:calc(4px + env(safe-area-inset-right,0px));
-  bottom:max(4px,env(safe-area-inset-bottom,0px));width:60px;
+  bottom:max(4px,env(safe-area-inset-bottom,0px));width:36px!important;min-width:36px!important;max-width:36px!important;
   padding:0;border:2px solid #EC5800;border-radius:9px;
   background:#fff;z-index:2147483134;pointer-events:auto;
   touch-action:none;user-select:none;cursor:pointer;
 }
-#sidebar-messenger-root:not(.os-drawer-open) #osMessengerPageScrollRail{
-  background:transparent;border-color:transparent;pointer-events:none;
-}
+/* The page rail stays visible and draggable when Messenger is closed.
+   The cyan/yellow heart remains the drawer toggle on signed-in pages. */
 #sidebar-messenger-root .os-messenger-page-scroll-fill{
   position:absolute;inset:0 0 auto 0;height:var(--os-rail-heart-position,25.6%);
   background:#FFF600;border-radius:6px 6px 0 0;pointer-events:none;
 }
-#sidebar-messenger-root:not(.os-drawer-open) .os-messenger-page-scroll-fill{display:none}
+
 #sidebar-messenger-root #osMessengerPageScrollRail:focus-visible{outline:3px solid #176B65;outline-offset:3px}
 #sidebar-messenger-root .os-messenger-drawer-heart{
   position:absolute;left:50%;top:var(--os-rail-heart-position,25.6%);
   transform:translate(-50%,-50%);z-index:2147483138;
-  display:grid;place-items:center;width:56px;height:65px;
+  display:grid;place-items:center;width:36px;height:42px;
   margin:0;padding:0;border:0;border-radius:0;
   background:transparent;color:#00FFFF;box-shadow:none;
   cursor:grab;pointer-events:auto;touch-action:none;
 }
-#sidebar-messenger-root:not(.os-drawer-open) .os-messenger-drawer-heart{top:50%}
+
 #sidebar-messenger-root .os-messenger-drawer-heart:active{cursor:grabbing}
-#sidebar-messenger-root .os-heart-art{display:block;width:54px;height:63px;overflow:visible;pointer-events:none}
+#sidebar-messenger-root .os-heart-art{display:block;width:34px;height:41px;overflow:visible;pointer-events:none}
 #sidebar-messenger-root .os-messenger-drawer-heart .os-heart-alert{
   position:absolute;inset:0;display:grid;place-items:center;
-  font:700 21px/1 Arial,sans-serif;color:#fff;text-shadow:0 1px 3px #000;pointer-events:none;
+  font:700 14px/1 Arial,sans-serif;color:#fff;text-shadow:0 1px 3px #000;pointer-events:none;
 }
 #sidebar-messenger-root .os-messenger-drawer-heart:focus-visible{outline:3px solid #176B65;outline-offset:0;border-radius:50%}
-#sidebar-messenger-root:not(.os-drawer-open) :is(.mp-panel,.mp-window,.mp-windows,.mp-call-window,.mp-toast-stack){visibility:hidden;pointer-events:none}
+#sidebar-messenger-root:not(.os-drawer-open) :is(.mp-panel){visibility:hidden;pointer-events:none}
 @media(max-width:700px){
   #sidebar-messenger-root .mp-menu-items{grid-template-rows:repeat(6,minmax(82px,1fr));padding:28px 3px 28px}
   #sidebar-messenger-root.mp-vertical-root .mp-sidebar .mp-rail-item{min-height:82px}
@@ -705,7 +705,7 @@ html[data-public-view="true"] #sidebar-messenger-root {
 
 
 
-#sidebar-messenger-root:not(.os-drawer-open) :is(.mp-panel,.mp-window,.mp-windows,.mp-call-window,.mp-toast-stack){
+#sidebar-messenger-root:not(.os-drawer-open) :is(.mp-panel){
   visibility:hidden!important;pointer-events:none!important;
 }
 
@@ -868,14 +868,14 @@ html[data-public-view="true"] #sidebar-messenger-root {
 #sidebar-messenger-root.mp-vertical-root .mp-edge-se { bottom: 0; right: 0; cursor: se-resize; }
 #sidebar-messenger-root.mp-vertical-root .mp-edge-sw { bottom: 0; left: 0; cursor: sw-resize; }
 #sidebar-messenger-root.mp-vertical-root .mp-call-window {
-  right: calc(var(--mp-rail-width) + 68px)!important;
+  right: calc(var(--mp-rail-width) + 44px)!important;
   bottom: 12px!important;
   z-index: 2147483130!important;
   max-width: calc(100vw - var(--mp-rail-width) - 20px)!important;
 }
 #sidebar-messenger-root.mp-vertical-root .mp-modal { z-index: 2147483140!important; }
 #sidebar-messenger-root.mp-vertical-root .mp-toast-stack {
-  right: calc(var(--mp-rail-width) + 68px)!important;
+  right: calc(var(--mp-rail-width) + 44px)!important;
   bottom: 15px!important;
   z-index: 2147483142!important;
 }
@@ -1125,20 +1125,20 @@ html[data-public-view="true"] #sidebar-messenger-root {
   max-width:calc(100vw - 16px)!important;
 }
 #sidebar-messenger-root.os-drawer-open.mp-vertical-root .mp-panel{
-  min-width:min(270px,calc(100vw - var(--os-sidebar-drawer-width) - 80px))!important;
-  max-width:min(360px,calc(100vw - var(--os-sidebar-drawer-width) - 80px))!important;
-  right:calc(var(--os-sidebar-drawer-width) + 68px)!important;
+  min-width:min(270px,calc(100vw - var(--os-sidebar-drawer-width) - 54px))!important;
+  max-width:min(360px,calc(100vw - var(--os-sidebar-drawer-width) - 54px))!important;
+  right:calc(var(--os-sidebar-drawer-width) + 44px)!important;
   left:auto!important;
 }
 @media(max-width:760px){
   #sidebar-messenger-root.os-drawer-open.mp-vertical-root .mp-panel{
-    width:min(330px,calc(100vw - 69px))!important;
-    min-width:min(235px,calc(100vw - 69px))!important;
-    max-width:calc(100vw - 69px)!important;
+    width:min(330px,calc(100vw - 50px))!important;
+    min-width:min(235px,calc(100vw - 50px))!important;
+    max-width:calc(100vw - 50px)!important;
     height:min(75dvh,650px)!important;
     max-height:min(82dvh,690px)!important;
     top:max(10px,6dvh)!important;
-    right:calc(57px + env(safe-area-inset-right,0px))!important;
+    right:calc(40px + env(safe-area-inset-right,0px))!important;
     bottom:auto!important;left:auto!important;
   }
 }
