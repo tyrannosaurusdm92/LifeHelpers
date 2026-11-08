@@ -83,7 +83,7 @@
       }
       const references=await parseAttachments(value,ctl.signal);if(references.length)data.references=references;
       let result;
-      if(window.OnyxTester?.active?.())result=await window.OnyxTester.chat(value,{threadId:data.threadId,supportMode:'dbt',signal:ctl.signal});
+      if(window.OnyxTester?.active?.())result=await window.OnyxTester.chat(value,{threadId:data.threadId,mode:'professor',supportMode:'dbt',context:{therapySection:s.section,interfaceSurface:'professor'},signal:ctl.signal});
       else if(window.OnyxBrainLink?.chat)result=await window.OnyxBrainLink.chat({
         ...data,
         lane:'professor',
