@@ -1,6 +1,6 @@
 import { ONYX_ACTIONS, ONYX_BACKEND_URL, ONYX_CORE_CONFIG } from "./config.js";
 import { ONYX_PUBLIC_PERSONALITY } from "./personality-contract.js";
-import { createCapabilityPlan } from "./capability-router.js";
+import { createCapabilityPlan, createExecutionContract } from "./capability-router.js";
 import { loadBrainRegistry, loadBrainFileIndex, routeBrainDomains, searchBrainFiles, loadDomainGuides, loadBrainSources } from "./brain-registry.js";
 import { OnyxTransport } from "./transport.js";
 import { OnyxToolRegistry } from "./tool-registry.js";
@@ -31,6 +31,7 @@ export const OnyxCore = Object.freeze({
   configureOllama: options => onyx.configureOllama(options),
   verifyLLM: options => onyx.verifyLLM(options),
   createCapabilityPlan,
+  createExecutionContract,
   loadBrainRegistry,
   loadBrainFileIndex,
   routeBrainDomains,
@@ -50,6 +51,7 @@ export {
   ONYX_CORE_CONFIG,
   ONYX_PUBLIC_PERSONALITY,
   createCapabilityPlan,
+  createExecutionContract,
   loadBrainRegistry,
   loadBrainFileIndex,
   routeBrainDomains,
