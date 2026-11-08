@@ -6,7 +6,24 @@ const rshow=(msg,error=false)=>{recoveryStatus.textContent=msg;recoveryStatus.st
 let installPrompt=null,recoveryId='';
 function goProfile(who){location.assign('assets/code/'+who+'.html?page=profile')}
 function showAdmin(){login.hidden=true;$('#previewChooser').hidden=false;$('#previewChooser').querySelectorAll('[data-admin-open]').forEach(b=>b.addEventListener('click',()=>goProfile(b.dataset.adminOpen),{once:true}));show('Choose the profile to preview.');}
-if(auth.isAdmin())showAdmin();else if(auth.isAuthenticated())goProfile(auth.profile());
+// A locally cached token is not proof of a current account session.
+async function restoreSavedSession(){
+ if(auth.isAdmin())return showAdmin();
+ if(!auth.isAuthenticated())return;
+ show('Checking your saved sign-in…');
+ try{
+  const result=await auth.request('auth.me',{}, {timeout:45000});
+  if(!['william','jasper'].includes(result?.user?.profileKey)||result.user.profileKey!==auth.profile())
+   throw new Error('The saved account identity does not match the server.');
+  goProfile(result.user.profileKey);
+ }catch(err){
+  if(err?.serverRejected&&/session|signed out|expired|user not found|missing session/i.test(err.message||'')){
+   await auth.signOut(false);
+   show('Your previous sign-in expired. Please sign in again.',true);
+  }else show('Could not verify the previous sign-in. You can sign in again, or retry once the account service is available.',true);
+ }
+}
+restoreSavedSession();
 login?.addEventListener('submit',async e=>{
  e.preventDefault();const identifier=$('#accountId').value.trim(),password=$('#password').value,button=$('#signInButton');
  if(!identifier||!password)return show('Enter your email and password, or use Forgot password to create your first password.',true);
@@ -17,7 +34,8 @@ $('#togglePassword')?.addEventListener('click',()=>{const field=$('#password'),b
 // Recovery uses only the existing backend's signup and reset actions.
 // The backend can validate any unexpired code for the matching account and
 // purpose when challengeId is omitted. Keep delayed email codes usable.
-let recoveryMode='reset',recoveryExpiresAt=0,lastCodeRequestAt=0,codeRequestBusy=false,recoveryTicker=null;
+let recoveryIntent='reset',recoveryMode='reset',recoveryExpiresAt=0,lastCodeRequestAt=0,codeRequestBusy=false,recoveryTicker=null;
+const recentCodeRequests=new Map(); // One active tab; never persist codes or passwords.
 const resendWaitMs=90000;
 const recoveryEmail=s=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 function showDeliveryReceipt({confirmed=false,result=null,unknown=false}={}){
@@ -64,19 +82,31 @@ function updateCodeNotice(){
 }
 function stopTicker(){if(recoveryTicker!==null)clearInterval(recoveryTicker);recoveryTicker=null}
 function startTicker(){stopTicker();recoveryTicker=setInterval(updateCodeNotice,1000);updateCodeNotice()}
-function showRecovery(){
- recoveryId='';recoveryMode='reset';recoveryExpiresAt=0;lastCodeRequestAt=0;codeRequestBusy=false;stopTicker();
- $('#recoveryIdentifier').value=$('#accountId').value.trim();
+function showRecovery(intent='reset'){
+ const priorEmail=recover?.open?$('#recoveryIdentifier').value.trim():$('#accountId').value.trim();
+ recoveryIntent=intent==='signup'?'signup':'reset';
+ recoveryId='';recoveryMode=recoveryIntent;recoveryExpiresAt=0;lastCodeRequestAt=0;codeRequestBusy=false;stopTicker();
+ $('#recoveryIdentifier').value=priorEmail;
  $('#recoveryCodeInput').value='';$('#newPasswordInput').value='';$('#confirmNewPasswordInput').value='';
  $('#recoveryOption').replaceChildren();
  $('#recoveryRememberDevice').checked=$('#rememberDevice').checked;
  $('#recoveryRememberPassword').checked=$('#rememberPassword').checked;
  setVisible('newPasswordInput','recoveryToggleNewPassword',false,'new password');
  setVisible('confirmNewPasswordInput','recoveryToggleConfirmPassword',false,'password confirmation');
- recoveryStep('start');hint('Enter your OurSpace account email to receive an email verification code.');
- rshow('');showDeliveryReceipt();updateCodeNotice();if(!recover.open)recover.showModal();$('#recoveryIdentifier').focus();
+ $('#recoveryDialogTitle').textContent=recoveryIntent==='signup'?'Create your OurSpace account':'Reset your OurSpace password';
+ $('#recoverySwitchMode').textContent=recoveryIntent==='signup'?'Already have an account? Reset password':'Need an account? Create one';
+ $('#recoverySavePassword').textContent=recoveryIntent==='signup'?'Create account and sign in':'Reset password and sign in';
+ recoveryStep('start');
+ hint(recoveryIntent==='signup'
+  ? 'Use your invited OurSpace email. An account is created only after you enter its emailed six-digit code and choose your password.'
+  : 'Enter the email linked to your existing OurSpace account. A verified email code is required to reset its password.');
+ rshow('');showDeliveryReceipt();updateCodeNotice();
+ if(!recover.open)recover.showModal();
+ $('#recoveryIdentifier').focus();
 }
-$('#forgotLink')?.addEventListener('click',e=>{e.preventDefault();showRecovery()});
+$('#forgotLink')?.addEventListener('click',e=>{e.preventDefault();showRecovery('reset')});
+$('#createAccountLink')?.addEventListener('click',e=>{e.preventDefault();showRecovery('signup')});
+$('#recoverySwitchMode')?.addEventListener('click',()=>showRecovery(recoveryIntent==='signup'?'reset':'signup'));
 $('#recoveryClose')?.addEventListener('click',()=>recover.close());
 recover?.addEventListener('close',stopTicker);
 function freshSetupSecret(){
@@ -87,6 +117,9 @@ function freshSetupSecret(){
 }
 async function issueRecoveryCode(){
  if(codeRequestBusy)return;
+ if(lastCodeRequestAt&&Date.now()-lastCodeRequestAt<resendWaitMs){
+  rshow('Please wait for the resend countdown before requesting another code.',true);return;
+ }
  codeRequestBusy=true;const first=!lastCodeRequestAt;
  lastCodeRequestAt=Date.now();updateCodeNotice();
  const send=$('#recoveryChoose button[type="submit"]');if(send)send.disabled=true;
@@ -109,6 +142,7 @@ async function issueRecoveryCode(){
     throw new Error('The backend did not confirm a password reset email.');
   }
   recoveryExpiresAt=Date.parse(result.expiresAt||'')||0;
+  recentCodeRequests.set(recoveryMode+'|'+recoveryId,{at:lastCodeRequestAt,expiresAt:recoveryExpiresAt,confirmed:true,result});
   showDeliveryReceipt({confirmed:true,result});
   recoveryStep('code');startTicker();
   hint('Enter the emailed code for '+recoveryId+' and create your password. Avoid repeated resend requests.');
@@ -116,6 +150,7 @@ async function issueRecoveryCode(){
   $('#recoveryCodeInput').focus();
  }catch(err){
   if(err?.deliveryUnconfirmed){
+   recentCodeRequests.set(recoveryMode+'|'+recoveryId,{at:lastCodeRequestAt,expiresAt:0,confirmed:false});
    showDeliveryReceipt({unknown:true});
    recoveryExpiresAt=0;recoveryStep('code');startTicker();
    hint('The email request could not be confirmed. You may still enter a code if one arrives.');
@@ -128,36 +163,58 @@ async function issueRecoveryCode(){
  }finally{codeRequestBusy=false;if(send)send.disabled=false;updateCodeNotice()}
 }
 $('#recoveryStart')?.addEventListener('submit',async e=>{
- e.preventDefault();recoveryId=$('#recoveryIdentifier').value.trim().toLowerCase();
+ e.preventDefault();
+ recoveryId=$('#recoveryIdentifier').value.trim().toLowerCase();
  if(!recoveryEmail(recoveryId))return rshow('Enter a valid account email address.',true);
  const btn=e.currentTarget.querySelector('[type="submit"]');btn.disabled=true;
- rshow('Checking your account’s verified recovery email…');
+ rshow('Checking account status with the backend…');
  try{
   const result=await auth.request('auth.recovery.options',{identifier:recoveryId},{timeout:45000});
+  if(result?.found!==true&&result?.found!==false)throw new Error('The backend did not confirm account status.');
   const select=$('#recoveryOption');select.replaceChildren();
-  if(result.found===false){
+  if(recoveryIntent==='signup'){
+   if(result.found)throw new Error('An account already exists for this email. Sign in or use Reset password instead.');
    recoveryMode='first-time';
-   const opt=document.createElement('option');opt.value='first-time';
-   opt.textContent='Email verification for '+recoveryId;select.append(opt);
-   hint('First-time password setup: the backend creates the account only after email verification.');
+   const option=document.createElement('option');
+   option.value='first-time';option.textContent='Send verification email to '+recoveryId;select.append(option);
+   hint('First-time registration: choose a password after your email code arrives. This does not overwrite an existing account.');
   }else{
+   if(!result.found)throw new Error('No active account matches this email. Use Create account if this is your first sign-in.');
    recoveryMode='reset';
    const emails=(Array.isArray(result.options)?result.options:[]).filter(o=>o?.type==='email'&&o.optionId);
-   if(!emails.length)throw new Error('The backend did not return a verified recovery email for this account.');
+   if(!emails.length)throw new Error('This account has no email recovery destination. Contact the account administrator.');
    for(const item of emails){
-    const opt=document.createElement('option');opt.value=String(item.optionId);
-    opt.textContent=String(item.label||'Email')+' · '+String(item.destination||'verified address');
-    select.append(opt);
+    const option=document.createElement('option');option.value=String(item.optionId);
+    option.textContent=String(item.label||'Email')+' · '+String(item.destination||'verified address');
+    select.append(option);
    }
-   hint('Password recovery: a six-digit code will be sent to your verified email.');
+   hint('Password recovery: choose your verified email and request a six-digit security code.');
   }
-  if(select.options.length===1)await issueRecoveryCode();
-  else{recoveryStep('choose');rshow('Choose the email address for your code.')}
- }catch(err){rshow(err.message||'Could not check recovery methods.',true)}
- finally{btn.disabled=false}
+  const previous=recentCodeRequests.get(recoveryMode+'|'+recoveryId);
+  if(previous&&(previous.expiresAt>Date.now()||(!previous.confirmed&&Date.now()-previous.at<resendWaitMs))){
+   lastCodeRequestAt=previous.at;recoveryExpiresAt=previous.expiresAt;
+   recoveryStep('code');startTicker();
+   if(previous.confirmed){
+    showDeliveryReceipt({confirmed:true,result:previous.result});
+    rshow('You already requested a code for this account. Enter it here, or use Send another code after the countdown.');
+   }else{
+    showDeliveryReceipt({unknown:true});
+    rshow('The earlier request could not be confirmed. Check for the code before requesting another.',true);
+   }
+   $('#recoveryCodeInput').focus();
+  }else{
+   lastCodeRequestAt=0;recoveryExpiresAt=0;showDeliveryReceipt();
+   recoveryStep('choose');
+   rshow('No email has been requested yet. Select Send verification code to send one.');
+  }
+ }catch(err){
+  recoveryStep('start');
+  rshow(err.message||'Could not check the account status.',true);
+ }finally{btn.disabled=false}
 });
 $('#recoveryChoose')?.addEventListener('submit',async e=>{
- e.preventDefault();if(!codeRequestBusy&&!lastCodeRequestAt)await issueRecoveryCode();
+ e.preventDefault();
+ await issueRecoveryCode();
 });
 $('#recoveryResend')?.addEventListener('click',async()=>{
  if(!codeRequestBusy&&(!lastCodeRequestAt||Date.now()-lastCodeRequestAt>=resendWaitMs))await issueRecoveryCode();
@@ -200,16 +257,19 @@ $('#recoveryCode')?.addEventListener('submit',async e=>{
   $('#rememberPassword').checked=$('#recoveryRememberPassword').checked;
   await rememberRecoveryPassword(recoveryId,password);
   $('#recoveryCodeInput').value='';$('#newPasswordInput').value='';$('#confirmNewPasswordInput').value='';
-  stopTicker();recover.close();show('Password saved. Signed in successfully.');
+  recentCodeRequests.delete(recoveryMode+'|'+recoveryId);
+  stopTicker();recover.close();
+  show(recoveryMode==='first-time'?'Account created and signed in.':'Password reset and signed in.');
   goProfile(session.profile);
  }catch(err){
   if(passwordSaved){
+   recentCodeRequests.delete(recoveryMode+'|'+recoveryId);
    $('#accountId').value=recoveryId;$('#password').value='';
    $('#rememberDevice').checked=rememberDevice;
    $('#rememberPassword').checked=$('#recoveryRememberPassword').checked;
    await rememberRecoveryPassword(recoveryId,password);
    stopTicker();recover.close();
-   show('Your password was saved. Sign in with the new password.',false);
+   show(recoveryMode==='first-time'?'Your account was created. Sign in using your new password.':'Your password was reset. Sign in using your new password.',false);
   }else{
    const error=err.message||'The code was not accepted.';
    rshow(/invalid|expired/i.test(error)
