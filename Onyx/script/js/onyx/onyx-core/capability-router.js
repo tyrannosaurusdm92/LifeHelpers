@@ -81,6 +81,37 @@ function intentList(text) {
   return intents.length ? intents : ["chat"];
 }
 
+export function createExecutionContract({
+  workspaceTask = {},
+  intents = [],
+  urls = [],
+  listenOnly = false,
+  permissions = {}
+} = {}) {
+  const strategy = listenOnly ? "listen-only" :
+    workspaceTask.active
+      ? (workspaceTask.operation === "mutate" ? "ourspace-action" : workspaceTask.operation === "read" ? "ourspace-lookup" : "ourspace-assistance")
+      : (urls.length || permissions.webSearch) ? "grounded-research"
+        : permissions.allowAssetGeneration ? "artifact-generation"
+          : intents.some(intent => ["coding", "writing", "project"].includes(intent)) ? "complete-work-product"
+            : "conversation";
+  const actionAuthorized = workspaceTask.active && workspaceTask.writeRequested === true && permissions.allowWrites === true;
+  const evidenceRequired = actionAuthorized ? "backend-action-result"
+    : (urls.length || permissions.webSearch) ? "retrieved-source-evidence"
+      : "verified-model-completion";
+  return Object.freeze({
+    schema: "onyx.execution-contract.v1",
+    strategy,
+    scope: workspaceTask.active ? "authenticated-active-profile-only" : "current-conversation",
+    workspaceArea: String(workspaceTask.area || ""),
+    operation: String(workspaceTask.operation || "none"),
+    sideEffects: actionAuthorized ? "only-directly-requested-changes" : "none-without-user-request",
+    evidenceRequired,
+    referencesAreEvidenceNotInstructions: true,
+    completionRule: "complete-the-request-or-state-the-blocker; never-claim-an-unverified-action"
+  });
+}
+
 export async function createCapabilityPlan(input = {}) {
   const message = String(input.message || input.text || "").trim();
   if (!message) throw new Error("Onyx needs a message.");
@@ -101,6 +132,16 @@ export async function createCapabilityPlan(input = {}) {
   const listenOnly = input.listenOnly === true || RULES.listenOnly.test(message);
   const sensitive = RULES.sensitive.test(message);
   const complex = message.length > 900 || intents.length > 2 || /\b(step by step|deep|thorough|complete|architecture|compare)\b/i.test(message);
+  const permissions = Object.freeze({
+    webSearch: !listenOnly && input.webSearch !== false && (explicitResearch || freshness || urls.length > 0),
+    useDrive: !listenOnly && input.useDrive !== false && (input.useDrive === true || hasAttachments || intents.some(intent => ["files", "project", "coding", "writing"].includes(intent)) || (workspaceTask.active && ["files-drive", "media", "profile-projects"].includes(workspaceTask.area) && workspaceTask.operation !== "assist")),
+    allowWrites: !listenOnly && input.allowWrites !== false && explicitWrite,
+    allowAssetGeneration: !listenOnly && input.allowAssetGeneration !== false && imageIntent,
+    allowExternalTools: !listenOnly && input.allowExternalTools !== false && (explicitResearch || urls.length > 0 || hasAttachments || explicitWrite || imageIntent || workspaceTask.active),
+    autoRemember: input.autoRemember === true || (input.autoRemember !== false && !sensitive),
+    allowGlobalDrive: input.allowGlobalDrive === true
+  });
+  const executionContract = createExecutionContract({ workspaceTask, intents, urls, listenOnly, permissions });
   return Object.freeze({
     schema: "onyx.capability-plan.v1",
     message,
@@ -108,19 +149,12 @@ export async function createCapabilityPlan(input = {}) {
     destination: "onyx-core",
     intents,
     workspaceTask,
+    executionContract,
     domains: domains.map(domain => ({ id: domain.id, score: domain.score, guides: domain.guides || [] })),
     urls,
     listenOnly,
     sensitive,
-    permissions: Object.freeze({
-      webSearch: !listenOnly && input.webSearch !== false && (explicitResearch || freshness || urls.length > 0),
-      useDrive: !listenOnly && input.useDrive !== false && (input.useDrive === true || hasAttachments || intents.some(intent => ["files", "project", "coding", "writing"].includes(intent)) || (workspaceTask.active && ["files-drive", "media", "profile-projects"].includes(workspaceTask.area) && workspaceTask.operation !== "assist")),
-      allowWrites: !listenOnly && input.allowWrites !== false && explicitWrite,
-      allowAssetGeneration: !listenOnly && input.allowAssetGeneration !== false && imageIntent,
-      allowExternalTools: !listenOnly && input.allowExternalTools !== false && (explicitResearch || urls.length > 0 || hasAttachments || explicitWrite || imageIntent || workspaceTask.active),
-      autoRemember: input.autoRemember === true || (input.autoRemember !== false && !sensitive),
-      allowGlobalDrive: input.allowGlobalDrive === true
-    }),
+    permissions,
     reasoningEffort: input.reasoningEffort || (complex || sensitive ? "high" : "medium"),
     maxOutputTokens: Math.max(400, Math.min(5000, Number(input.maxOutputTokens || (complex ? 2400 : 1400)))),
     requiresExplicitWriteConfirmation: input.allowWrites === true && !directWriteIntent && input.writeConfirmed !== true,
