@@ -217,6 +217,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
       await idbSet(STORE_STATE, LIBRARY_KEY, state.library).catch(err => notify(`Could not save visual library locally: ${err.message}`, 'error'));
       writePlayback();
     }, 160);
+    scheduleSharedVisualSync();
   }
 
   function readPlayback() {
@@ -957,8 +958,22 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     notify(`Created playlist: ${name}`);
   }
 
-  async function shareVisualCollection(type){
-    const lib=state.library,entry=type==='folder'?selectedFolder():selectedPlaylist();
+  const visualShareDigests=new Map();
+  let visualSharedTimer=null;
+  function scheduleSharedVisualSync(){
+    clearTimeout(visualSharedTimer);
+    visualSharedTimer=setTimeout(()=>{
+      if(!window.OurSpaceActivity?.shareCollection)return;
+      for(const folder of state.library.folders.filter(f=>f.shared&&!f.readOnly&&!f.system))
+        void shareVisualCollection('folder',folder.id,{automatic:true});
+      for(const playlist of state.library.playlists.filter(p=>p.shared&&!p.readOnly&&!p.system))
+        void shareVisualCollection('playlist',playlist.id,{automatic:true});
+    },4500);
+  }
+  async function shareVisualCollection(type,id=null,options={}){
+    const lib=state.library,entry=type==='folder'?
+      (id?lib.folders.find(f=>f.id===id):selectedFolder()):
+      (id?lib.playlists.find(p=>p.id===id):selectedPlaylist());
     if(!entry||entry.system||entry.readOnly)return notify('Select a user-created Visual folder or playlist.','error');
     const assets=type==='folder'?lib.assets.filter(a=>folderAndDescendantIds(entry.id).has(a.folderId)):
       lib.assets.filter(a=>entry.assetIds.includes(a.id));
@@ -968,13 +983,18 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
         /^https?:\/\//i.test(asset.downloadUrl||'')?asset.downloadUrl:'';
       return{ id:asset.id,title:asset.title,kind:asset.kind,driveFileId,url };
     }).filter(x=>x.driveFileId||x.url);
-    if(entries.length<assets.length)notify('Only '+entries.length+' of '+assets.length+' visuals have shareable Drive/link references. Upload local files first.','error');
+    if(entries.length<assets.length&&!options.automatic)notify('Only '+entries.length+' of '+assets.length+' visuals have shareable Drive/link references. Upload local files first.','error');
+    const digest=JSON.stringify([entry.name,entries]),digestKey=type+':'+entry.id;
+    if(options.automatic&&visualShareDigests.get(digestKey)===digest)return;
     try{
       await window.OurSpaceActivity.shareCollection({
         category:'visual',id:entry.id,name:entry.name,collectionType:type,entries
       });
-      entry.shared=true;scheduleSave();render();notify('Shared '+entry.name+' with your partner.','success');
-    }catch(err){notify('Visual collection was not shared: '+err.message,'error')}
+      visualShareDigests.set(digestKey,digest);
+      if(!options.automatic){
+        entry.shared=true;scheduleSave();render();notify('Shared '+entry.name+' with your partner.','success');
+      }
+    }catch(err){if(!options.automatic)notify('Visual collection was not shared: '+err.message,'error');else console.warn('Visual partner update unavailable:',err.message)}
   }
   let importingVisualCollections=false;
   function importSharedVisual(){
