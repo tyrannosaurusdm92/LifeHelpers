@@ -1,13 +1,15 @@
 /* OurSpace PUBLIC native profile mirror.
  * Reuses the exact profile-frame and 15 modules from jasper.html/william.html,
  * and their canonical CSS. Original scripts are NEVER executed in this viewer.
- * Only the published OurSpace -> AI Brain JSONP contract supplies profile data.
+ * Public data comes from the published-only AI Brain bridge, with a read-only
+ * fallback to the canonical OurSpace public.profile.get action on transient outages.
  */
 (function(){
 'use strict';
 const q=new URLSearchParams(location.search);
 const key=q.get('profile')==='jasper'?'jasper':q.get('profile')==='william'?'william':'';
 const webApp='https://script.google.com/macros/s/AKfycbwhdSPEHXi81Z-72xCYNkuX7bti8LYMwQPnjOB-DliseOftVNnkCJuK-cfO1cAZGRf0/exec';
+const sourceWebApp='https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec';
 const message=document.getElementById('publicMessage');
 const viewport=document.getElementById('publicViewport');
 const host=document.getElementById('publicHost');
@@ -40,26 +42,54 @@ document.documentElement.dataset.ourspaceCurrentPage='profile';
 document.title=(key==='jasper'?"Jasper's":"William's")+' published OurSpace profile';
 
 let callbackId=0;
-function fetchPublished(){
+function fetchPublicJsonp(endpoint,action){
  return new Promise((resolve,reject)=>{
-  let done=false,script=document.createElement('script');
+  let done=false;const script=document.createElement('script');
   const callback='__osNativePublic'+(++callbackId);
   const timeout=setTimeout(()=>finish(new Error('Published profile request timed out')),45000);
   function finish(error,data){
-    if(done)return;done=true;clearTimeout(timeout);
-    script.remove();try{delete window[callback]}catch(_){window[callback]=undefined}
-    if(error)reject(error);else resolve(data);
+   if(done)return;done=true;clearTimeout(timeout);
+   script.remove();try{delete window[callback]}catch(_){window[callback]=undefined}
+   if(error)reject(error);else resolve(data);
   }
   window[callback]=data=>finish(null,data);
   script.onerror=()=>finish(new Error('The public profile service did not respond'));
-  script.src=webApp+'?action=ourspace.publicProfile&profileKey='+encodeURIComponent(key)+'&callback='+callback+'&nonce='+Date.now();
+  script.src=endpoint+'?'+new URLSearchParams({
+   action,profileKey:key,callback,nonce:String(Date.now())
+  }).toString();
   script.async=true;document.head.appendChild(script);
  });
 }
 function readRecord(all){
- const r=all?.view==='ourspace-public-profiles'?all?.profiles?.[key]:all;
- if(!r||r.ok!==true||r.published!==true||r.profile?.profileKey!==key)return null;
- return r.profile;
+ // AI Brain's single-profile response is strictly published-only.
+ const ai=all?.view==='ourspace-public-profiles'?all?.profiles?.[key]:all;
+ if(ai?.ok===true&&ai.published===true&&ai.profile?.profileKey===key)return ai.profile;
+ // Direct fallback is ONLY the backend's published-only public.profile.get.
+ if(all?.view==='public-profile'&&all.ok===true&&all.profile?.profileKey===key){
+  const p=all.profile;
+  return{
+   profileKey:key,displayName:p.displayName,headline:p.headline,bio:p.bio,
+   avatarUrl:p.avatarUrl,bannerUrl:p.bannerUrl,
+   interests:Array.isArray(p.interests)?p.interests:[],
+   projects:Array.isArray(p.projects)?p.projects:[],
+   donationMethods:Array.isArray(p.donationMethods)?p.donationMethods:[],
+   creatorDonation:p.creatorDonation||null,favoriteSong:p.favoriteSong||{},
+   theme:p.theme||{},links:Array.isArray(all.links)?all.links:[],
+   musicPlayer:{items:Array.isArray(all.musicPlayer?.items)?all.musicPlayer.items:[]},
+   visualPlayer:{items:Array.isArray(all.visualPlayer?.items)?all.visualPlayer.items:[]}
+  };
+ }
+ return null;
+}
+async function fetchPublicRecord(){
+ let result=null;
+ try{result=await fetchPublicJsonp(webApp,'ourspace.publicProfile')}
+ catch(err){console.warn('Public AI Brain bridge temporarily unavailable:',err.message)}
+ const published=readRecord(result);if(published)return published;
+ // Never fall back to a private endpoint or show stale content when unpublished.
+ if(result?.reason==='not-publicly-available'||result?.reason==='not-published')return null;
+ try{return readRecord(await fetchPublicJsonp(sourceWebApp,'public.profile.get'))}
+ catch(err){console.warn('Canonical public profile endpoint unavailable:',err.message);return null}
 }
 async function fetchNativeTemplate(){
  const source=key+'.html';
@@ -453,8 +483,7 @@ function initSizing(){
 }
 async function load(){
  try{
-  const [response,template]=await Promise.all([fetchPublished(),fetchNativeTemplate()]);
-  const data=readRecord(response);
+  const [data,template]=await Promise.all([fetchPublicRecord(),fetchNativeTemplate()]);
   if(!data){fail('This OurSpace profile is not published or the public connection is unavailable.');return}
   const {app,jump}=template;
   host.replaceChildren(app);
