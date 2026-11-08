@@ -131,7 +131,7 @@ const wishlistNormalize=item=>{
   throw Error('Enter an expected value between 0 and one billion platinum.');
  const name=clean(item?.name||item?.label,160),url=wishlistUrl(item?.url);
  if(!name||(!url&&!item?.catalogItemId))throw Error('A label and shopping link are required for custom wishlist items.');
- return{id:clean(item?.id||('wish-'+globalThis.crypto?.randomUUID?.()||Date.now()),100),
+ return{id:clean(item?.id||('wish-'+(globalThis.crypto?.randomUUID?.()||Date.now().toString(36)+'-'+Math.random().toString(36).slice(2))),100),
   name,url,image:wishlistUrl(item?.image),pricePlatinum:price,
   catalogItemId:clean(item?.catalogItemId,120),
   createdAt:item?.createdAt||new Date().toISOString()};
