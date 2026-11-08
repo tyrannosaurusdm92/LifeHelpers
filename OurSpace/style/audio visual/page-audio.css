@@ -965,3 +965,31 @@
 [data-ourspace-page="audio"] .osd-ui [data-osd-images] input[type="range"]{width:100%!important;accent-color:#00BFC4!important;}
 [data-ourspace-page="audio"] .osd-ui [data-osd-images] a:focus-visible, [data-ourspace-page="audio"] .osd-ui .osd-image-choice:focus-visible{outline:3px solid #00BFC4!important;outline-offset:2px!important;}
 @media (max-width:390px){}
+
+/* Shared audio folder/playlist tiles — OurSpace dark steel blue.
+   Consolidated at the canonical stylesheet's end so retro/MySpace rules
+   cannot restore white-on-white controls. The original shape is preserved. */
+[data-ourspace-page="audio"] #ourspace-media-module .osm-item.osm-drop-target,
+[data-ourspace-page="audio"] #ourspace-media-module .osm-drop-target{
+  background:#2e4863!important;
+  border-color:#5c7d9b!important;
+  color:#f5f9ff!important;
+}
+[data-ourspace-page="audio"] #ourspace-media-module .osm-drop-target .osm-plain-target,
+[data-ourspace-page="audio"] #ourspace-media-module .osm-drop-target .osm-item-title,
+[data-ourspace-page="audio"] #ourspace-media-module .osm-drop-target .osm-item-meta,
+[data-ourspace-page="audio"] #ourspace-media-module .osm-drop-target .osm-tag{
+  color:#f5f9ff!important;
+  background:transparent;
+}
+[data-ourspace-page="audio"] #ourspace-media-module .osm-drop-target .osm-actions .osm-btn{
+  background:#29435e!important;
+  color:#f5f9ff!important;
+  border:1px solid #799bb8!important;
+}
+[data-ourspace-page="audio"] #ourspace-media-module .osm-drop-target .osm-actions .osm-btn:hover,
+[data-ourspace-page="audio"] #ourspace-media-module .osm-drop-target .osm-actions .osm-btn:focus-visible{
+  background:#395c79!important;
+  color:#ffffff!important;
+  border-color:#9ed4de!important;
+}
