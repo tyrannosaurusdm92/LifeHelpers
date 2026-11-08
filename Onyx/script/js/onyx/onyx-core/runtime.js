@@ -281,7 +281,11 @@ export class OnyxRuntime {
       authenticated: this.transport.authenticated,
       message: plan.message,
       lane: input.lane || plan.surface,
-      context: input.context,
+      context: {
+        ...(input.context || {}),
+        conversationPolicy: "continuous-account-scoped-multi-lane",
+        conversationLane: String(input.lane || plan.surface || "core")
+      },
       requestedPolicy: ["on", "off"].includes(String(input.memoryPolicy || "").toLowerCase())
         ? input.memoryPolicy
         : (input.context?.memoryPolicy?.requested || "auto"),
@@ -301,6 +305,9 @@ export class OnyxRuntime {
       context: {
         ...(input.context || {}),
         memory: memory.context,
+        conversationPolicy: "continuous-account-scoped-multi-lane",
+        conversationLane: String(input.lane || plan.surface || "core"),
+        workspaceTask: plan.workspaceTask,
         application: "OurSpace",
         module: "Onyx",
         surface: plan.surface,
@@ -351,6 +358,7 @@ export class OnyxRuntime {
     }
     this.#llmStatus = llmVerification;
     this.#profileStatus = profileVerification;
+    this.memory.invalidateProfile?.(expectedProfileKey);
 
     return normalizedResult(result, {
       provider: "ourspace-ai-brain",
