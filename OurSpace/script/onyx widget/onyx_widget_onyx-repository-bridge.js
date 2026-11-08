@@ -90,7 +90,8 @@ async function chat(payload = {}, options = {}) {
   };
   // The core retrieves Onyx corpus guides, sends one authenticated onyx.chat,
   // then verifies both real AI completion and the backend's personality/profile proof.
-  return OnyxCore.chat(coreInput);
+  const prepared = window.OnyxVoiceContext?.decorate?.(coreInput, lane) || coreInput;
+  return OnyxCore.chat(prepared);
 }
 
 async function enrich(payload = {}, options = {}) {
