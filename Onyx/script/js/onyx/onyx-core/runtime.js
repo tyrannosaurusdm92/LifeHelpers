@@ -8,6 +8,7 @@ import { OllamaProvider } from "./ollama-provider.js";
 import { BoundedAgent } from "./bounded-agent.js";
 import { inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion, LLMVerificationError } from "./llm-verifier.js";
 import { profileContinuityContext, verifyProfileCompletion } from "./profile-verifier.js";
+import { OnyxMemory } from "./memory.js";
 
 const MAX_GUIDE_TEXT = 6000;
 const MAX_REFERENCE_TEXT = 24000;
@@ -100,12 +101,19 @@ export class OnyxRuntime {
     this.tools = options.tools || new OnyxToolRegistry(this.transport);
     this.ollama = options.ollama || new OllamaProvider(options.ollamaOptions);
     this.agent = options.agent || new BoundedAgent({ maxSteps: ONYX_CORE_CONFIG.limits.agentSteps });
+    this.memory = options.memory || new OnyxMemory(options.memoryOptions);
   }
 
-  setAuthContext(context) { return this.transport.setAuthContext(context); }
-  clearAuthContext() { return this.transport.clearAuthContext(); }
+  setAuthContext(context) {
+    const requestedProfile = String(context?.profileKey || context?.profile || "").trim().toLowerCase();
+    if (requestedProfile && requestedProfile !== this.transport.profileKey) this.memory.clear();
+    return this.transport.setAuthContext(context);
+  }
+  clearAuthContext() { this.memory.clear(); return this.transport.clearAuthContext(); }
   subscribe(listener) { return this.transport.subscribe(listener); }
-  status() { return { ...this.transport.snapshot(), ollama: this.ollama.snapshot(), llm: this.#llmStatus, profile: this.#profileStatus }; }
+  status() { return { ...this.transport.snapshot(), ollama: this.ollama.snapshot(), llm: this.#llmStatus, profile: this.#profileStatus, memory: this.memory.snapshot() }; }
+  memoryStatus() { return this.memory.snapshot(); }
+  clearMemoryCache() { this.memory.clear(); }
   configureOllama(options) { return this.ollama.configure(options); }
 
   async connect({ includeCapabilities = true, requireLLM = true, signal } = {}) {
@@ -267,6 +275,22 @@ export class OnyxRuntime {
       });
     }
 
+    const memory = await this.memory.prepare({
+      tools: this.tools,
+      profileKey: this.transport.profileKey,
+      authenticated: this.transport.authenticated,
+      message: plan.message,
+      lane: input.lane || plan.surface,
+      context: input.context,
+      requestedPolicy: ["on", "off"].includes(String(input.memoryPolicy || "").toLowerCase())
+        ? input.memoryPolicy
+        : (input.context?.memoryPolicy?.requested || "auto"),
+      autoRemember: typeof input.autoRemember === "boolean" ? input.autoRemember : undefined,
+      defaultAutoRemember: plan.permissions.autoRemember,
+      serious: input.context?.serious === true,
+      provider: plan.provider,
+      signal: input.signal
+    });
     const expectedProfileKey = this.transport.profileKey;
     const profileContext = profileContinuityContext(expectedProfileKey);
 
@@ -276,6 +300,7 @@ export class OnyxRuntime {
       references: prepared.references,
       context: {
         ...(input.context || {}),
+        memory: memory.context,
         application: "OurSpace",
         module: "Onyx",
         surface: plan.surface,
@@ -301,7 +326,7 @@ export class OnyxRuntime {
       allowAssetGeneration: plan.permissions.allowAssetGeneration,
       allowExternalTools: plan.permissions.allowExternalTools,
       allowGlobalDrive: plan.permissions.allowGlobalDrive,
-      autoRemember: plan.permissions.autoRemember,
+      autoRemember: memory.autoRemember,
       reasoningEffort: plan.reasoningEffort,
       maxOutputTokens: plan.maxOutputTokens,
       threadId: threadId(this.transport, input.threadId),
@@ -335,7 +360,8 @@ export class OnyxRuntime {
       profileVerification,
       plan,
       artifacts: [...prepared.artifacts, ...extractArtifacts(result)],
-      continuity: "backend-profile-scoped"
+      continuity: "backend-profile-scoped",
+      memory: memory.metadata
     });
   }
 

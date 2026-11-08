@@ -76,3 +76,14 @@ node Onyx/script/js/onyx/onyx-core/self-test.mjs
 ```
 
 This validates corpus coverage, domain routing, core-only requests, listen-only behavior, backend calls, profile isolation, LLM proofs, write guards, and Ollama restrictions. See `ONYX_BRAIN_TEST_PLAN.md`.
+
+
+## Profile-scoped conversation memory and learning
+
+Onyx has one memory policy shared by every OurSpace lane. The core uses the existing `onyx.chat.history` action only when the authenticated session identifies William or Jasper. A history response is accepted only when the backend marks it account-scoped and returns the same active profile key. Cross-profile history is discarded.
+
+The memory module filters recalled user messages for obvious medical, crisis, and private-contact details, ranks relevant entries against the current request, and bounds the context sent to Gemini. Its short-lived cache stays in JavaScript memory and is cleared when the active profile changes or authentication is cleared. It does not use localStorage, IndexedDB, or browser cookies for memory.
+
+Learning means using direct preferences and corrections from the current user's messages to guide later replies. Past messages are treated as historical data, never as instructions or permission to perform a write. Durable memory still goes through the existing backend's `autoRemember` handling. An explicit no-memory request and serious/crisis turns disable it. No model training or weights are added.
+
+The widget bridge carries its existing memory choice to the core, so health, virtual, leisure, work, professor, and game conversations continue through one authenticated Gemini brain. The machine-readable policy and review of all supplied Drive repository resources are recorded in `json/shared/onyx-core/donor-architecture-map.json`. That map records design patterns only; no source archives, Python implementations, or model weights are copied into Onyx.

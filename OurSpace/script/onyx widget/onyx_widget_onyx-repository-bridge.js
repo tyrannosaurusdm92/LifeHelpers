@@ -76,6 +76,7 @@ async function chat(payload = {}, options = {}) {
     mode: String(payload.mode || ""),
     mood: String(payload.mood || ""),
     memoryClass: String(payload.memoryClass || ""),
+    memoryPolicy: String(payload.memoryPolicy || "auto"),
     webSearch: payload.webSearch === true,
     useDrive: payload.useDrive === true,
     ...(typeof payload.allowWrites === "boolean" ? { allowWrites: payload.allowWrites } : {}),

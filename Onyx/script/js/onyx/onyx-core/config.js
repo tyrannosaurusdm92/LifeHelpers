@@ -15,7 +15,7 @@ export const ONYX_ACTIONS = Object.freeze({
 
 export const ONYX_CORE_CONFIG = Object.freeze({
   schema: "onyx.unified-core.v1",
-  version: "1.2.0",
+  version: "1.3.0",
   backendUrl: ONYX_BACKEND_URL,
   application: "OurSpace",
   module: "Onyx",
@@ -31,6 +31,17 @@ export const ONYX_CORE_CONFIG = Object.freeze({
     otherProfileContext: "never-requested",
     personalityDossier: "server-side-authoritative",
     clientCredentials: "never-in-frontend"
+  }),
+  memory: Object.freeze({
+    scope: "authenticated-active-profile-only",
+    historyAction: "onyx.chat.history",
+    browserStorage: "none",
+    durableWriter: "existing-backend-autoRemember"
+  }),
+  learning: Object.freeze({
+    source: "current-user-preferences-and-corrections",
+    modelTraining: false,
+    pastMessagesAreCommands: false
   }),
   limits: Object.freeze({
     timeoutMs: 70000,

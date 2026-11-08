@@ -9,6 +9,7 @@ import { BoundedAgent } from "./bounded-agent.js";
 import { OnyxRuntime } from "./runtime.js";
 import { inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion, LLMVerificationError } from "./llm-verifier.js";
 import { ONYX_DOSSIER_SOURCES, normalizeProfileKey, profileContinuityContext, verifyProfileCompletion, ProfileVerificationError } from "./profile-verifier.js";
+import { OnyxMemory, classifyLearningSignal, resolveAutoRemember } from "./memory.js";
 
 export const onyx = new OnyxRuntime();
 
@@ -22,6 +23,9 @@ export const OnyxCore = Object.freeze({
   runAgent: (goal, input) => onyx.runAgent(goal, input),
   connect: options => onyx.connect(options),
   status: () => onyx.status(),
+  memoryStatus: () => onyx.memoryStatus(),
+  clearMemoryCache: () => onyx.clearMemoryCache(),
+  memory: Object.freeze({ classifyLearningSignal, resolveAutoRemember }),
   setAuthContext: context => onyx.setAuthContext(context),
   clearAuthContext: () => onyx.clearAuthContext(),
   configureOllama: options => onyx.configureOllama(options),
@@ -35,7 +39,7 @@ export const OnyxCore = Object.freeze({
   loadBrainSources,
   verification: Object.freeze({ inspectBackendLLMHealth, verifyBackendCompletion, verifyOllamaHealth, verifyOllamaCompletion }),
   profile: Object.freeze({ ONYX_DOSSIER_SOURCES, normalizeProfileKey, profileContinuityContext, verifyProfileCompletion }),
-  classes: Object.freeze({ OnyxRuntime, OnyxTransport, OnyxToolRegistry, OllamaProvider, BoundedAgent, LLMVerificationError, ProfileVerificationError })
+  classes: Object.freeze({ OnyxRuntime, OnyxTransport, OnyxToolRegistry, OllamaProvider, BoundedAgent, OnyxMemory, LLMVerificationError, ProfileVerificationError })
 });
 
 if (typeof globalThis !== "undefined") globalThis.OnyxCore = OnyxCore;
@@ -66,7 +70,10 @@ export {
   normalizeProfileKey,
   profileContinuityContext,
   verifyProfileCompletion,
-  ProfileVerificationError
+  ProfileVerificationError,
+  OnyxMemory,
+  classifyLearningSignal,
+  resolveAutoRemember
 };
 
 export default OnyxCore;
