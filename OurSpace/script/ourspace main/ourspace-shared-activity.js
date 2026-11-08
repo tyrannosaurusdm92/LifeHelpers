@@ -1,46 +1,111 @@
-/* OurSpace two-profile activity ledger. Uses the existing authenticated backend when available.
-   Keeps metadata (not private diary content or media blobs) in shared origin storage so
-   William and Jasper can see each other's feed cards on the same installation. */
+/* OurSpace account-to-account Feed.
+ * 3.4.6 generic records are PRIVATE to the owner. Activity therefore travels
+ * through the existing authenticated William/Jasper message channel.
+ * Never transfer diary, therapy, unpublished profile media bytes, or tokens. */
 (()=>{'use strict';
- const KEY='ourspace.activity.shared.v1',LIMIT=180;
- const who=()=>document.documentElement.dataset.profile==='jasper'?'jasper':'william';
- const read=()=>{try{const v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[]}catch(_){return []}};
- const validLink=v=>{try{const u=new URL(String(v||''),location.href);return /^(http:|https:)$/.test(u.protocol)?u.href:''}catch(_){return ''}};
- const clean=v=>String(v??'').replace(/\s+/g,' ').trim();
- const validThumb=v=>{v=String(v||'');return /^data:image\/(?:png|jpeg|jpg|webp|gif);base64,[a-zA-Z0-9+/=]+$/.test(v)&&v.length<55000?v:''};
- const normalize=item=>{
-  const raw=item||{},kind=String(raw.type||'post').toLowerCase();
-  return {id:String(raw.id||raw.key||((globalThis.crypto?.randomUUID?.()||Date.now())+'-'+Math.random().toString(36).slice(2))),
-   key:String(raw.key||raw.id||''),type:['post','news','pin','image','video','music','media','share','link','project'].includes(kind)?kind:'post',
-   author:['william','jasper'].includes(raw.author)?raw.author:who(),title:clean(raw.title).slice(0,240),body:clean(raw.body).slice(0,3000),
-   url:validLink(raw.url),image:validThumb(raw.image)||validLink(raw.image),source:clean(raw.source||'OurSpace Local').slice(0,100),
-   reason:clean(raw.reason||kind).slice(0,80),createdAt:!Number.isNaN(Date.parse(raw.createdAt))?raw.createdAt:new Date().toISOString(),
-   metadata:{local:true,library:clean(raw.metadata?.library||'').slice(0,40),assetId:clean(raw.metadata?.assetId||'').slice(0,120)}};
- };
- let items=read().map(normalize);
- function store(){
-  let compact=items.slice(0,LIMIT);
-  try{localStorage.setItem(KEY,JSON.stringify(compact))}
-  catch(_){compact=compact.map((x,i)=>i>=35?{...x,image:''}:x);
-   try{localStorage.setItem(KEY,JSON.stringify(compact))}catch(_){compact=compact.map(x=>({...x,image:''}));try{localStorage.setItem(KEY,JSON.stringify(compact.slice(0,80)))}catch(__){}}}
+const KEY='ourspace.activity.shared.v1',CHANNEL='ourspace-activity-feed',LIMIT=400;
+const who=()=>document.documentElement.dataset.profile==='jasper'?'jasper':'william';
+const other=()=>who()==='william'?'jasper':'william';
+const auth=()=>window.OurSpaceAuth;
+const ready=()=>auth()?.isAuthenticated?.()&&!auth()?.isAdmin?.()&&auth()?.profile?.()===who()&&
+ new URLSearchParams(location.search).get('public')!=='1';
+const read=()=>{try{const arr=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(arr)?arr:[]}catch(_){return []}};
+const clean=(v,n=240)=>String(v??'').replace(/\s+/g,' ').trim().slice(0,n);
+const link=v=>{try{const u=new URL(String(v||''));return /^https?:$/.test(u.protocol)?u.href:''}catch{return ''}};
+const validTypes=new Set(['post','news','pin','image','video','music','media','share','link','project','profile','game','wishlist','collection']);
+function normalize(input,authorOverride){
+ const x=input||{},type=clean(x.type||'post',24).toLowerCase(),author=authorOverride||x.author;
+ const rawMeta=x.metadata&&typeof x.metadata==='object'?x.metadata:{};
+ const safeMeta={local:false,library:clean(rawMeta.library,40),assetId:clean(rawMeta.assetId,120)};
+ // Share metadata is explicit and bounded; do not transmit arbitrary app state.
+ if(type==='collection'&&rawMeta.sharedCollection){
+  const c=rawMeta.sharedCollection;
+  const category=['audio','visual','bulletin'].includes(c.category)?c.category:'';
+  if(category)safeMeta.sharedCollection={
+   category,id:clean(c.id,100),name:clean(c.name,140),
+   collectionType:clean(c.collectionType,40),
+   entries:(Array.isArray(c.entries)?c.entries:[]).slice(0,70).map(i=>({
+    id:clean(i.id,100),title:clean(i.title,160),kind:clean(i.kind,24),
+    url:link(i.url),driveFileId:clean(i.driveFileId,130),
+    folderId:clean(i.folderId,100)
+   }))
+  };
  }
- function merge(arr,notify=true){const map=new Map(items.map(x=>[x.id,x]));for(const raw of arr||[]){const x=normalize(raw);map.set(x.id,{...(map.get(x.id)||{}),...x})}
-  items=[...map.values()].sort((a,b)=>Date.parse(b.createdAt)-Date.parse(a.createdAt)).slice(0,LIMIT);store();
-  if(notify)window.dispatchEvent(new CustomEvent('ourspace:activity-updated',{detail:{count:items.length}}));
+ if(type==='wishlist'){
+  const p=rawMeta.wishlist||{};
+  safeMeta.wishlist={id:clean(p.id,100),pricePlatinum:Number.isSafeInteger(p.pricePlatinum)&&p.pricePlatinum>=0?p.pricePlatinum:0};
  }
- let channel;try{channel=new BroadcastChannel('ourspace-two-person-activity');channel.onmessage=e=>{if(e.data?.type==='updated'){items=read();window.dispatchEvent(new Event('ourspace:activity-updated'))}}}catch(_){}
- async function sendRemote(entry){
-  const auth=window.OurSpaceAuth;
-  if(!auth?.token?.()||auth.isAdmin?.()||auth.profile?.()!==entry.author)return;
-  // Exact existing record.save action; backend may reject until its feed bucket is enabled.
-  try{await auth.request('record.save',{bucket:'feed',key:entry.id,value:{...entry,metadata:{...entry.metadata,local:false}}})}catch(err){console.info('OurSpace: feed entry saved locally; remote publication unavailable.',err?.message||err)}
+ const id=clean(x.id||x.key||((globalThis.crypto?.randomUUID?.()||Date.now())+'-'+Math.random().toString(36).slice(2)),180);
+ return{id,key:clean(x.key||id,180),type:validTypes.has(type)?type:'post',
+  author:['william','jasper'].includes(author)?author:who(),
+  title:clean(x.title,240),body:clean(x.body,2500),url:link(x.url),
+  image:link(x.image),source:clean(x.source||'OurSpace',100),
+  reason:clean(x.reason||type,80),
+  createdAt:!Number.isNaN(Date.parse(x.createdAt))?x.createdAt:new Date().toISOString(),
+  metadata:safeMeta};
+}
+let items=read().map(x=>normalize(x));
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(items.slice(0,LIMIT)))}catch(_){}}
+function merge(values,announce=true){
+ const map=new Map(items.map(x=>[x.id,x]));
+ for(const v of values||[]){
+  if(!v||typeof v!=='object'||!['william','jasper'].includes(v.author))continue;
+  const x=normalize(v,v.author);map.set(x.id,x);
  }
- function publish(raw,{remote=true}={}){
-  const x=normalize(raw);merge([x]);try{channel?.postMessage({type:'updated'})}catch(_){}
-  if(remote)void sendRemote(x);
-  return x;
- }
- const list=()=>items.map(x=>({...x,metadata:{...x.metadata}}));
- window.OurSpaceActivity=Object.freeze({publish,list,refresh:()=>{items=read();window.dispatchEvent(new Event('ourspace:activity-updated'))}});
- window.addEventListener('storage',e=>{if(e.key===KEY){items=read();window.dispatchEvent(new Event('ourspace:activity-updated'))}});
+ items=[...map.values()].sort((a,b)=>Date.parse(b.createdAt)-Date.parse(a.createdAt)).slice(0,LIMIT);
+ persist();
+ if(announce)window.dispatchEvent(new CustomEvent('ourspace:activity-updated',{detail:{count:items.length}}));
+}
+let channel;
+try{channel=new BroadcastChannel('ourspace-two-person-activity');channel.onmessage=e=>{
+ if(e.data?.type==='updated'){items=read().map(x=>normalize(x));window.dispatchEvent(new Event('ourspace:activity-updated'))}
+}}catch(_){}
+async function sendRemote(entry){
+ if(!ready()||entry.author!==who())return false;
+ const data={activity:{...entry,metadata:{...entry.metadata,local:false}},clientMessageId:entry.id};
+ const result=await auth().request('message.send',{
+  channelId:CHANNEL,fromProfile:who(),toProfile:other(),kind:'activity',
+  text:entry.title||'New '+entry.type+' on OurSpace',...data},{timeout:45000});
+ if(!result?.messageId)throw Error('Account did not confirm sharing this Feed update.');
+ return true;
+}
+function publish(raw,{remote=true}={}){
+ const x=normalize(raw,who());
+ merge([x]);try{channel?.postMessage({type:'updated'})}catch(_){}
+ if(remote&&ready())void sendRemote(x).catch(err=>console.warn('Feed item retained locally; partner delivery unconfirmed:',err.message));
+ return x;
+}
+let pollBusy=false,lastConnected=false;
+async function refresh(){
+ if(!ready())return{items:list(),connected:false};
+ if(pollBusy)return{items:list(),connected:lastConnected};
+ pollBusy=true;
+ try{
+  const reply=await auth().request('message.list',{channelId:CHANNEL,limit:500},{timeout:45000});
+  if(!Array.isArray(reply?.messages))throw Error('The account feed did not return messages.');
+  const incoming=[];
+  for(const msg of reply.messages){
+   if(msg.channelId!==CHANNEL||msg.kind!=='activity'||!['william','jasper'].includes(msg.fromProfile))continue;
+   const raw=msg.data?.activity;
+   if(!raw||raw.author!==msg.fromProfile)continue;
+   incoming.push(normalize(raw,msg.fromProfile));
+  }
+  merge(incoming);lastConnected=true;
+  return{items:list(),connected:true};
+ }catch(err){
+  lastConnected=false;console.warn('Partner Feed unavailable; local items preserved:',err.message);
+  return{items:list(),connected:false};
+ }finally{pollBusy=false}
+}
+const list=()=>items.map(x=>({...x,metadata:{...x.metadata}}));
+const sharedCollections=()=>list().filter(x=>x.type==='collection'&&x.metadata.sharedCollection);
+window.OurSpaceActivity=Object.freeze({publish,list,refresh,sharedCollections,
+ connected:()=>lastConnected});
+window.addEventListener('storage',e=>{if(e.key===KEY){
+ items=read().map(x=>normalize(x));window.dispatchEvent(new Event('ourspace:activity-updated'));
+}});
+window.addEventListener('focus',()=>{if(ready())void refresh()});
+if(ready()){
+ void refresh();setInterval(()=>{if(document.visibilityState!=='hidden')void refresh()},60000);
+}
 })();
