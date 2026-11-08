@@ -981,7 +981,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
         const c=event.metadata.sharedCollection,id='partner-visual-'+event.author+'-'+c.id;
         const collection=c.collectionType==='playlist'?state.library.playlists:state.library.folders;
         let group=collection.find(item=>item.id===id);
-        if(group?.sharedRevision===event.createdAt)continue;
+        if(group?.sharedRevision&&Date.parse(group.sharedRevision)>=Date.parse(event.createdAt))continue;
         if(!group){
           group=c.collectionType==='playlist'?
             {id,name:'♥ '+c.name+' ('+event.author+')',assetIds:[],system:false,readOnly:true,shared:true,createdAt:Date.now()}:
