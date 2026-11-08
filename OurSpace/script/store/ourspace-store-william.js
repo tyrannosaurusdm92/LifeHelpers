@@ -109,7 +109,7 @@ async function addCatalogWish(id){
  if(!item)return;
  if(!wishlistService()?.available?.())return toast('Sign in to use wishlists.','error');
  const url=linkSafe(item.sourceUrl||item.url||item.productUrl||item.link);
- if(!url)return toast('This item has no verified shopping link. Use the wishlist form to add its link.','error');
+ // Canonical catalog items have stable IDs even without external shopping links.
  try{
   const value=Math.floor(totalCopper(item)/1000);
   await wishlistService().add({id:'catalog-'+item.id,catalogItemId:item.id,
