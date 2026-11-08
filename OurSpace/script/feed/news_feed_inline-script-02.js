@@ -244,6 +244,10 @@ function filteredItems() {
   return items;
 }
 function mediaMarkup(item) {
+  const driveId=String(item.metadata?.driveFileId||'').replace(/^drive-/,'');
+  if(['image','video','music'].includes(item.type)&&/^[A-Za-z0-9_-]{15,128}$/.test(driveId)){
+    return `<div class="feed-card-media"><button type="button" data-feed-drive-id="${esc(driveId)}" data-feed-drive-kind="${esc(item.type)}">Load shared ${esc(item.type==='music'?'audio':item.type)}</button></div>`;
+  }
   // Never turn a data:image preview into a video/audio source: playable media
   // requires a genuine same-origin or HTTPS asset URL.
   const mediaURL=safeURL(item.metadata?.streamUrl||item.metadata?.url||item.url||'');
@@ -289,7 +293,25 @@ function syncFiltersFrom(root) {
   renderAll();
 }
 roots.forEach(root=>{
-  $$('[data-feed-filter]',root).forEach(el=>{
+  root.addEventListener('click',event=>{
+    const button=event.target.closest('[data-feed-drive-id]');if(!button)return;
+    const media=window.OurSpaceMemberMedia;
+    if(!media?.available?.()){setStatus('Sign in to open shared Drive media.');return}
+    const kind=button.dataset.feedDriveKind,id=button.dataset.feedDriveId;
+    button.disabled=true;button.textContent='Loading shared media…';
+    void media.objectUrl({fileId:id}).then(url=>{
+      const element=document.createElement(kind==='music'?'audio':kind==='video'?'video':'img');
+      if(kind==='video'||kind==='music'){element.controls=true;element.preload='metadata'}
+      if(kind==='video')element.playsInline=true;
+      if(kind==='image'){element.alt='Shared OurSpace image';element.loading='lazy'}
+      element.src=url;element.style.maxWidth='100%';
+      button.replaceWith(element);
+    }).catch(err=>{
+      button.disabled=false;button.textContent='Retry shared media';
+      setStatus('Could not open shared media: '+err.message);
+    });
+  });
+  $('[data-feed-filter]',root).forEach(el=>{
     el.addEventListener('change',()=>syncFiltersFrom(root));
     if(el.dataset.feedFilter==='query') el.addEventListener('input',()=>syncFiltersFrom(root));
   });
