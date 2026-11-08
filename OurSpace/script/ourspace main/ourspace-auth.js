@@ -156,5 +156,95 @@ window.OurSpaceMemberMedia=Object.freeze({
  contractVersion:'3.4.6',available:mediaMember,list:mediaList,get:mediaGet,
  blob:mediaBlob,objectUrl:mediaObjectUrl,revoke:revokeMediaUrl,clear:clearMediaUrls
 });
+// Member-only destinations for Visual -> Picture Carousel and Audio -> Record Player.
+// Preferences store small references, never binary bytes or temporary blob: URLs.
+// Sending to a signed-in profile is NOT permission to publish anything publicly.
+const profileMediaScope='profile-media',profileMediaQueues=new Map();
+const profileMediaDestination=kind=>{
+ if(kind!=='carousel'&&kind!=='record')throw new Error('Unknown profile player destination.');
+ return kind==='carousel'?'picture-carousel-v1':'retro-record-player-v1';
+};
+function assertProfileMedia(){
+ if(!mediaMember())throw new Error('Sign in as this profile to send media.');
+ return profile();
+}
+function safeProfileMediaItem(input,kind){
+ if(!input||typeof input!=='object')throw new Error('Choose an existing media item.');
+ const mediaKind=String(input.kind||'').toLowerCase();
+ if(kind==='carousel'&&!['image','video'].includes(mediaKind)||
+    kind==='record'&&mediaKind!=='audio')throw new Error('This media type does not match the selected profile player.');
+ let driveFileId=String(input.driveFileId||input.backendId||'').replace(/^drive-/,'');
+ if(driveFileId&&!/^[A-Za-z0-9_-]{15,128}$/.test(driveFileId))
+   throw new Error('The Drive file reference is not valid.');
+ let url='';
+ if(typeof input.url==='string'&&input.url){
+  try{const parsed=new URL(input.url);if(['https:','http:'].includes(parsed.protocol))url=parsed.href}
+  catch(_){}
+ }
+ if(!driveFileId&&!url)throw new Error('Save this file to your OurSpace Drive first, or use a playable HTTPS media link.');
+ const sourceId=String(input.sourceId||input.id||driveFileId||url).slice(0,220);
+ if(!sourceId)throw new Error('The source media has no identifier.');
+ const clean=value=>String(value||'').slice(0,220);
+ return{ id:sourceId,kind:mediaKind,driveFileId,url,
+  title:clean(input.title||'Untitled'),artist:clean(input.artist),
+  caption:clean(input.caption||input.title),addedAt:new Date().toISOString()};
+}
+async function listProfileMedia(destination){
+ const owner=assertProfileMedia(),key=profileMediaDestination(destination);
+ const result=await request('preference.get',{profileKey:owner,scope:profileMediaScope,key},{timeout:45000});
+ const value=result?.value;
+ if(value===null||value===undefined)return [];
+ if(value.profileKey!==owner||value.schema!=='ourspace.profile-media.v1'||!Array.isArray(value.items))
+   throw new Error('The saved profile media is not in the supported account format.');
+ const items=[];
+ for(const item of value.items.slice(0,160)){
+  try{
+   const clean=safeProfileMediaItem(item,destination);
+   items.push({...clean,addedAt:String(item.addedAt||clean.addedAt)});
+  }catch(_){}
+ }
+ return items;
+}
+function mutateProfileMedia(destination,fn){
+ profileMediaDestination(destination);
+ const pending=profileMediaQueues.get(destination)||Promise.resolve();
+ const next=pending.catch(()=>{}).then(async()=>{
+  const owner=assertProfileMedia(),key=profileMediaDestination(destination);
+  const items=await listProfileMedia(destination);
+  const result=fn(items);
+  if(result.changed){
+   await request('preference.set',{profileKey:owner,scope:profileMediaScope,key,
+    value:{schema:'ourspace.profile-media.v1',profileKey:owner,items:result.items.slice(0,150)}
+   },{timeout:90000});
+   window.dispatchEvent(new CustomEvent('ourspace:profile-media-updated',{detail:{profileKey:owner,destination}}));
+  }
+  return result;
+ });
+ profileMediaQueues.set(destination,next);
+ next.finally(()=>{if(profileMediaQueues.get(destination)===next)profileMediaQueues.delete(destination)}).catch(()=>{});
+ return next;
+}
+function sendProfileMedia(destination,item){
+ const normalized=safeProfileMediaItem(item,destination);
+ return mutateProfileMedia(destination,items=>{
+  const i=items.findIndex(x=>x.id===normalized.id||
+   (normalized.driveFileId&&x.driveFileId===normalized.driveFileId));
+  if(i>=0){
+   const merged={...items[i],...normalized,addedAt:items[i].addedAt||normalized.addedAt};
+   items.splice(i,1);items.unshift(merged);
+  }else items.unshift(normalized);
+  return{changed:true,items,added:i<0,entry:items[0]};
+ });
+}
+function removeProfileMedia(destination,id){
+ return mutateProfileMedia(destination,items=>{
+  const next=items.filter(x=>x.id!==id);
+  return{changed:next.length!==items.length,items:next};
+ });
+}
+window.OurSpaceProfileMedia=Object.freeze({
+ list:listProfileMedia,send:sendProfileMedia,remove:removeProfileMedia,
+ available:mediaMember
+});
 window.addEventListener('pagehide',clearMediaUrls);
 })();
