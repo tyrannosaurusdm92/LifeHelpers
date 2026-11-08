@@ -86,7 +86,8 @@
    async function call(repair){
      const message=promptFor(input,profile,mode,chosen,index,total,repair);
      if(active()){
-       if(selectedProfile!==profile)await tester.select(profile);
+       // Reassert server-side tester profile before every request; another widget tab can change it.
+       await tester.select(profile);
        const res=await jsonp("onyx.chat",{message,profileKey:profile,webSearch:false,autoRemember:false,allowWrites:false},{signal});
        if(res.testerMode!==true||res.selectedProfile!==profile)throw Error("The backend did not confirm the selected read-only tester profile.");
        return{ text:replyOf(res),source:"Read-only Apps Script tester",modelAttested:/gemini/i.test(str(res.provider||res.modelProvider)) };
