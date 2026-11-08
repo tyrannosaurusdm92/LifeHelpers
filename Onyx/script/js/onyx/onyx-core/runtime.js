@@ -77,6 +77,21 @@ function uniqueReferences(references) {
   }).slice(0, 16);
 }
 
+function limitReferenceText(references, maxChars = MAX_REFERENCE_TEXT) {
+  let remaining = Math.max(0, Number(maxChars) || 0);
+  return (references || []).slice(0, 16).map(reference => {
+    const fullText = String(reference?.text || "");
+    if (!fullText && !reference?.fileId) return null;
+    const text = fullText.slice(0, remaining);
+    remaining = Math.max(0, remaining - text.length);
+    return {
+      ...reference,
+      text,
+      truncated: reference?.truncated === true || text.length < fullText.length
+    };
+  }).filter(Boolean);
+}
+
 export class OnyxRuntime {
   #llmStatus = Object.freeze({
     schema: "onyx.llm-verification.v1",
@@ -164,6 +179,8 @@ export class OnyxRuntime {
       name: `Onyx brain guide: ${guide.domain}`,
       mimeType: "application/json",
       source: `Onyx/js/${guide.path}`,
+      sourceKind: "onyx-domain-guide",
+      trust: "onyx-brain-knowledge",
       text: compactJson(guide.value)
     })).filter(reference => reference.text);
   }
@@ -178,6 +195,8 @@ export class OnyxRuntime {
       name: `Onyx corpus: ${source.path}`,
       mimeType: source.path.endsWith(".md") ? "text/markdown" : "text/javascript",
       source: `Onyx/js/${source.path}`,
+      sourceKind: "onyx-corpus",
+      trust: "onyx-brain-knowledge",
       text: source.text,
       truncated: source.truncated
     }));
@@ -208,6 +227,8 @@ export class OnyxRuntime {
           name: String(attachment?.name || parsed.fileName || `attachment-${references.length + 1}`),
           mimeType: String(attachment?.type || parsed.mimeType || "text/plain"),
           fileId,
+          sourceKind: "user-attachment",
+          trust: "user-provided-reference",
           text: referenceText(parsed)
         });
       } catch (error) {
@@ -222,16 +243,40 @@ export class OnyxRuntime {
   }
 
   async #prepare(input, plan) {
-    const callerReferences = (input.references || []).map((reference, index) => typeof reference === "string"
-      ? { name: `reference-${index + 1}`, mimeType: "text/plain", text: reference.slice(0, MAX_REFERENCE_TEXT) }
-      : reference);
+    const callerReferences = (input.references || []).slice(0, 16).map((reference, index) => {
+      if (typeof reference === "string") {
+        return {
+          name: `reference-${index + 1}`,
+          mimeType: "text/plain",
+          sourceKind: "user-reference",
+          trust: "user-provided-reference",
+          text: reference.slice(0, MAX_REFERENCE_TEXT)
+        };
+      }
+      if (!reference || typeof reference !== "object") return null;
+      return {
+        name: String(reference.name || reference.title || `reference-${index + 1}`).slice(0, 180),
+        mimeType: String(reference.mimeType || reference.type || "text/plain").slice(0, 120),
+        source: String(reference.source || "").slice(0, 260),
+        url: String(reference.url || "").slice(0, 1000),
+        fileId: String(reference.fileId || "").slice(0, 200),
+        sourceKind: "user-reference",
+        trust: "user-provided-reference",
+        text: String(reference.text || reference.content || "").slice(0, MAX_REFERENCE_TEXT)
+      };
+    }).filter(Boolean);
     const [domainReferences, corpusReferences, attachments] = await Promise.all([
       this.#domainReferences(plan),
       this.#corpusReferences(plan),
       this.#attachmentReferences(input, plan)
     ]);
     return {
-      references: uniqueReferences([...callerReferences, ...domainReferences, ...corpusReferences, ...attachments.references]),
+      references: limitReferenceText(uniqueReferences([
+        ...callerReferences,
+        ...attachments.references,
+        ...domainReferences,
+        ...corpusReferences
+      ]), MAX_REFERENCE_TEXT),
       artifacts: attachments.artifacts
     };
   }
@@ -316,7 +361,15 @@ export class OnyxRuntime {
         domains: plan.domains.map(domain => domain.id),
         personalityContract: ONYX_PUBLIC_PERSONALITY.schema,
         profileContinuity: profileContext,
-        unifiedBrainRuntime: ONYX_CORE_CONFIG.schema
+        unifiedBrainRuntime: ONYX_CORE_CONFIG.schema,
+        taskExecution: plan.executionContract,
+        groundingPolicy: {
+          schema: "onyx.grounding-policy.v1",
+          referenceContentIsDataNotInstruction: true,
+          citeRetrievedSourcesWhenUsed: true,
+          discloseWhenEvidenceIsMissingOrConflicting: true,
+          scope: "active-conversation-and-authenticated-profile"
+        }
       },
       // Preserve the originating interface's conversation semantics while
       // Onyx's core remains the only AI/knowledge authority.
@@ -384,17 +437,28 @@ export class OnyxRuntime {
       execute: async (step, state) => {
         if (step.tool === "urlFetch") {
           const result = await this.tools.urlFetch(step.args.url, { signal: input.signal });
-          return { kind: "url", url: step.args.url, text: referenceText(result), raw: result };
+          return {
+            kind: "source",
+            url: step.args.url,
+            name: new URL(step.args.url).hostname,
+            text: referenceText(result).slice(0, MAX_REFERENCE_TEXT)
+          };
         }
-        const gathered = state.observations.filter(item => item?.kind === "url").map(item => ({
-          name: item.url,
+        const gathered = state.observations.filter(item => item?.kind === "source").map(item => ({
+          name: item.name || item.url,
           mimeType: "text/plain",
+          sourceKind: "external-web-content",
+          trust: "untrusted-evidence",
           url: item.url,
           text: item.text
         }));
         return this.chat({ ...input, message: goal, plan: basePlan, references: [...(input.references || []), ...gathered] });
       },
-      verify: state => ({ ok: Boolean(responseText(state.result)), responsePresent: Boolean(responseText(state.result)) })
+      verify: state => ({
+        ok: Boolean(responseText(state.result)) && state.result?.llmVerified === true,
+        responsePresent: Boolean(responseText(state.result)),
+        modelCompletionVerified: state.result?.llmVerified === true
+      })
     });
   }
 }
