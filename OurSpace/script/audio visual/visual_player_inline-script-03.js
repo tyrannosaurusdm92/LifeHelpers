@@ -467,7 +467,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     const root = state.root;
     $('[data-action="upload-files"]', root)?.addEventListener('change', event => handleFiles(event.target.files));
     $('[data-action="upload-folder"]', root)?.addEventListener('change', event => handleFiles(event.target.files, { useRelativeFolders: true }));
-    $('[data-action="refresh-drive"]',root)?.addEventListener('click',()=>void refreshDriveMedia().then(()=>notify('Drive visuals refreshed.')));
+    $('[data-action="refresh-drive"]',root)?.addEventListener('click',()=>void refreshDriveMedia().then(ok=>notify(ok?'Drive visuals refreshed.':'Drive visuals unavailable; local files are unchanged.',ok?'info':'error')));
     $('[data-action="create-folder"]', root)?.addEventListener('click', createFolderFromInput);
     $('[data-action="create-playlist"]', root)?.addEventListener('click', createPlaylistFromInput);
     $('[data-action="rename-folder"]', root)?.addEventListener('click', renameSelectedFolder);
@@ -1253,8 +1253,8 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
       }
       state.library=normalizeLibrary({...state.library,assets:[...byId.values()]});
       if(!state.library.currentAssetId)state.library.currentAssetId=state.library.assets[0]?.id||'';
-      scheduleSave();render();
-    }catch(err){console.warn('OurSpace Drive visual listing unavailable; keeping local photos and videos.',err.message)}
+      scheduleSave();render();return true;
+    }catch(err){console.warn('OurSpace Drive visual listing unavailable; keeping local photos and videos.',err.message);return false}
   }
 
   async function init(root = null) {
