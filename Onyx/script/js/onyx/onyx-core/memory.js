@@ -17,6 +17,7 @@ const PATTERNS = Object.freeze({
   safety: /\b(?:suicid|self[- ]?harm|crisis|emergency|overdose|actively unsafe|immediate danger)\b/i,
   sensitive: /\b(?:diagnos|medication|prescription|dosage|dose|seizure|oxygen|blood sugar|hospital|symptom|therapy|therapist|psychiatr|trauma|abuse|pain flare|medical record|treatment plan)\b/i,
   privateContact: /(?:[\w.+-]+@[\w.-]+\.[A-Za-z]{2,})|\b\d{3}-\d{2}-\d{4}\b|\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/
+  privateData: /\b(?:password|passcode|one[-\s]?time code|verification code|api key|access token|secret key|credit card|debit card|bank account|routing number|account number|credit score|income details|benefit amount|home address|street address|precise address|security answer)\b/i
 });
 
 function cleanText(value, limit = 1600) {
@@ -41,7 +42,7 @@ function words(value) {
 
 function normalizePastMessage(row) {
   const text = cleanText(row?.userText ?? row?.user ?? row?.message, 1800);
-  if (!text || PATTERNS.sensitive.test(text) || PATTERNS.privateContact.test(text)) return null;
+  if (!text || PATTERNS.sensitive.test(text) || PATTERNS.privateContact.test(text) || PATTERNS.privateData.test(text)) return null;
   const at = cleanText(row?.createdAt ?? row?.timestamp ?? row?.time, 48);
   return { text, at, terms: words(text) };
 }
@@ -101,12 +102,16 @@ export function resolveAutoRemember({
   serious = false,
   provider = "ourspace-ai-brain"
 } = {}) {
+  const text = String(message || "");
   const policy = normalizePolicy(requestedPolicy);
-  if (provider !== "ourspace-ai-brain" || PATTERNS.explicitForget.test(message) || policy === "off") return false;
-  if (serious || PATTERNS.safety.test(String(message || ""))) return false;
-  if (policy === "on" || PATTERNS.explicitRemember.test(String(message || ""))) return true;
+  if (provider !== "ourspace-ai-brain" || PATTERNS.explicitForget.test(text) || policy === "off") return false;
+  if (serious || PATTERNS.safety.test(text) || sensitive ||
+      PATTERNS.sensitive.test(text) || PATTERNS.privateContact.test(text) || PATTERNS.privateData.test(text)) return false;
+  const signals = classifyLearningSignal(text).signals;
+  if (policy === "on" || signals.includes("explicit-memory-request") ||
+      signals.includes("stated-preference") || signals.includes("user-correction")) return true;
   if (typeof autoRemember === "boolean") return autoRemember;
-  return Boolean(defaultAutoRemember && !sensitive && !PATTERNS.sensitive.test(String(message || "")));
+  return Boolean(defaultAutoRemember);
 }
 
 export class OnyxMemory {
@@ -129,6 +134,15 @@ export class OnyxMemory {
     this.#lastReadAt = "";
   }
 
+  invalidateProfile(profileKey) {
+    const profile = normalizedProfile(profileKey);
+    if (!profile) return false;
+    this.#epoch += 1;
+    this.#cache.delete(profile);
+    this.#pending.delete(profile);
+    return true;
+  }
+
   snapshot() {
     return Object.freeze({
       schema: "onyx.memory-status.v1",
@@ -141,10 +155,14 @@ export class OnyxMemory {
 
   async #loadProfileEntries({ tools, profileKey, authenticated, signal }) {
     const profile = normalizedProfile(profileKey);
-    if (!profile || !authenticated || typeof tools?.history !== "function") return [];
+    if (!profile || !authenticated || typeof tools?.history !== "function") {
+      return { entries: [], verified: false };
+    }
     const now = Date.now();
     const cached = this.#cache.get(profile);
-    if (cached && now - cached.at < this.cacheTtlMs) return cached.entries.slice();
+    if (cached && now - cached.at < this.cacheTtlMs) {
+      return { entries: cached.entries.slice(), verified: cached.verified === true };
+    }
     if (this.#pending.has(profile)) return this.#pending.get(profile);
 
     const epoch = this.#epoch;
@@ -152,14 +170,16 @@ export class OnyxMemory {
       try {
         const result = await tools.history(this.historyLimit, { signal, timeoutMs: 15000 });
         if (signal?.aborted) throw signal.reason || new Error("Memory recall cancelled.");
-        if (epoch !== this.#epoch || result?.accountScoped !== true || normalizedProfile(result?.profileKey) !== profile || !Array.isArray(result?.messages)) return [];
+        const verified = epoch === this.#epoch && result?.accountScoped === true &&
+          normalizedProfile(result?.profileKey) === profile && Array.isArray(result?.messages);
+        if (!verified) return { entries: [], verified: false };
         const entries = result.messages.map(normalizePastMessage).filter(Boolean);
-        this.#cache.set(profile, { at: Date.now(), entries });
+        this.#cache.set(profile, { at: Date.now(), entries, verified: true });
         this.#lastReadAt = new Date().toISOString();
-        return entries.slice();
+        return { entries: entries.slice(), verified: true };
       } catch (error) {
         if (signal?.aborted || error?.name === "AbortError") throw error;
-        return cached?.entries?.slice() || [];
+        return { entries: cached?.entries?.slice() || [], verified: cached?.verified === true };
       } finally {
         if (this.#pending.get(profile) === pending) this.#pending.delete(profile);
       }
@@ -202,16 +222,20 @@ export class OnyxMemory {
     const userDisabledMemory = effectiveRequestPolicy === "off" || PATTERNS.explicitForget.test(String(message || ""));
     let source = "none";
     let recalled = [];
+    let historyVerified = false;
     let recallSuppressed = false;
 
     if (userDisabledMemory || hardSensitive || hardSerious || provider !== "ourspace-ai-brain") {
       recallSuppressed = hardSensitive || hardSerious || userDisabledMemory;
       source = userDisabledMemory ? "user-disabled" : hardSerious ? "safety-protected" : hardSensitive ? "sensitive-topic-protected" : "provider-local";
     } else if (authenticated) {
-      const entries = await this.#loadProfileEntries({ tools, profileKey, authenticated, signal });
+      const history = await this.#loadProfileEntries({ tools, profileKey, authenticated, signal });
       if (signal?.aborted) throw signal.reason || new Error("Memory recall cancelled.");
-      recalled = memoryEntriesFor(message, entries, { limit: this.maxEntries, maxChars: this.maxContextChars });
-      source = recalled.length ? "authenticated-profile-chat-history" : "no-relevant-history";
+      historyVerified = history.verified === true;
+      recalled = memoryEntriesFor(message, history.entries, { limit: this.maxEntries, maxChars: this.maxContextChars });
+      source = historyVerified
+        ? (recalled.length ? "authenticated-profile-chat-history" : "no-relevant-history")
+        : "history-unavailable";
     } else {
       source = "sign-in-required";
     }
@@ -223,7 +247,8 @@ export class OnyxMemory {
         schema: "onyx.memory-context.v1",
         scope: "authenticated-active-profile-only",
         lane: cleanText(lane, 32) || "core",
-        continuityProvided: safeContext.conversationPolicy === "continuous-account-scoped-multi-lane",
+        continuityProvided: historyVerified,
+        conversationPolicy: historyVerified ? "continuous-account-scoped-multi-lane" : "authenticated-profile-history-unavailable",
         source,
         recallSuppressed,
         entries: recalled,
@@ -237,6 +262,7 @@ export class OnyxMemory {
       metadata: Object.freeze({
         durable,
         recalledEntries: recalled.length,
+        historyVerified,
         source,
         learningSignals: learning.signals
       })
