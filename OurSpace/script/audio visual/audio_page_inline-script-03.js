@@ -215,6 +215,11 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
 
   async function getTrackUrl(track) {
     if (!track) return '';
+    if(track.backendId?.startsWith('drive-')&&track.source==='drive'){
+      if(state.objectUrls.has(track.id))return state.objectUrls.get(track.id);
+      const url=await window.OurSpaceMemberMedia.objectUrl(track.backendId);
+      state.objectUrls.set(track.id,url);return url;
+    }
     if (track.remoteUrl) return track.remoteUrl;
     if (state.objectUrls.has(track.id)) return state.objectUrls.get(track.id);
     const blob = await idbGet(STORE_BLOBS, track.id).catch(() => null);
@@ -227,6 +232,8 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     if (!track) return null;
     const blob = await idbGet(STORE_BLOBS, track.id).catch(() => null);
     if (blob) return blob;
+    if(track.source==='drive'&&track.backendId?.startsWith('drive-'))
+      return window.OurSpaceMemberMedia.blob(track.backendId);
     if (!track.downloadUrl && !track.remoteUrl) return null;
     const res = await fetch(track.downloadUrl || track.remoteUrl);
     if (!res.ok) throw new Error('Download failed');
@@ -988,47 +995,26 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     setTimeout(() => URL.revokeObjectURL(url), 1200);
   }
 
-  async function backendPost(action, payload, opaqueFallback = true) {
-    const profile = document.body?.dataset?.profile || window.OurSpaceBackendClient?.profileKey?.() || 'shared'; const sessionToken = window.OurSpaceBackendClient?.sessionToken?.() || window.OURSPACE_SESSION_TOKEN || ''; const body = JSON.stringify({ app:'OurSpace', module:'media-player', action, profile, profileKey:profile, sessionToken, data:payload, payload, sentAt:new Date().toISOString() });
-    try {
-      const res = await fetch(BACKEND_URL, { method:'POST', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body });
-      const text = await res.text();
-      try { return JSON.parse(text); } catch { return { ok: res.ok, text }; }
-    } catch (err) {
-      if (!opaqueFallback) throw err;
-      await fetch(BACKEND_URL, { method:'POST', mode:'no-cors', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body }).catch(() => null);
-      return { ok:true, opaque:true };
-    }
+  async function backendPost(action,payload){
+    const auth=window.OurSpaceAuth;
+    if(!auth?.isAuthenticated?.()||auth.isAdmin?.()||auth.profile?.()!==document.documentElement.dataset.profile)
+      throw new Error('Sign in to synchronize your media library.');
+    return auth.request(action,payload,{timeout:90000});
   }
-  function backendJsonp(action, payload = {}) {
-    return new Promise((resolve, reject) => {
-      const callback = `__osmMediaJsonp_${Date.now()}_${Math.random().toString(36).slice(2)}`;
-      const script = document.createElement('script');
-      const cleanup = () => { delete window[callback]; script.remove(); };
-      window[callback] = (data) => { cleanup(); resolve(data); };
-      script.onerror = () => { cleanup(); reject(new Error('JSONP request failed')); };
-      const profile = document.body?.dataset?.profile || window.OurSpaceBackendClient?.profileKey?.() || 'shared'; const params = new URLSearchParams({ action, callback, profile, profileKey:profile, sessionToken:window.OurSpaceBackendClient?.sessionToken?.() || window.OURSPACE_SESSION_TOKEN || '', data:JSON.stringify(payload), payload: JSON.stringify(payload), app:'OurSpace', module:'media-player' });
-      script.src = `${BACKEND_URL}?${params.toString()}`;
-      document.head.appendChild(script);
-      setTimeout(() => { if (window[callback]) { cleanup(); reject(new Error('JSONP request timed out')); } }, 12000);
+  async function backendJsonp(action,payload={}) {
+    // JSONP exposes tokens in GET URLs and is never permitted for private media.
+    return backendPost(action,payload);
+  }
+  async function uploadToBackend(track,file){
+    if(file.size>24*1024*1024)return; // Existing Drive files may be added directly.
+    const dataUrl=await fileToDataUrl(file);
+    const result=await backendPost('upload.media',{
+      kind:'audio',fileName:file.name,mimeType:file.type||'audio/mpeg',
+      dataUrl,pageId:'audio',moduleId:'audio-player'
     });
-  }
-  async function uploadToBackend(track, file) {
-    // Avoid forcing huge base64 uploads through Apps Script. Metadata always syncs; binary upload is attempted only for smaller files.
-    const smallEnoughForAppsScript = file.size <= 18 * 1024 * 1024;
-    const payload = { track: {...track}, binaryIncluded: false };
-    if (smallEnoughForAppsScript) {
-      const dataUrl = await fileToDataUrl(file);
-      payload.binaryIncluded = true;
-      payload.file = { name:file.name, type:file.type || 'audio/mpeg', size:file.size, dataUrl };
-    }
-    const result = await backendPost('uploadTrack', payload, true);
-    if (result?.track?.remoteUrl || result?.remoteUrl) {
-      track.remoteUrl = result.track?.remoteUrl || result.remoteUrl;
-      track.downloadUrl = result.track?.downloadUrl || result.downloadUrl || track.remoteUrl;
-      track.backendId = result.track?.id || result.id || track.backendId;
-      track.source = 'backend+local';
-      scheduleSave();
+    if(result?.driveFileId){
+      track.backendId='drive-'+result.driveFileId;
+      track.source='backend+local';scheduleSave();
     }
   }
   function fileToDataUrl(file) {
@@ -1039,26 +1025,48 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
       reader.readAsDataURL(file);
     });
   }
-  async function syncNow(showToast = false) {
-    const payload = {
-      schemaVersion: state.library.schemaVersion,
-      folders: state.library.folders,
-      playlists: state.library.playlists,
-      links: state.library.links || [],
-      deletedPlaylistIds: state.library.deletedPlaylistIds || [],
-      tracks: state.library.tracks.map(({id,title,artist,album,folderId,mime,size,duration,originalName,addedAt,backendId,remoteUrl,downloadUrl,source}) => ({id,title,artist,album,folderId,mime,size,duration,originalName,addedAt,backendId,remoteUrl,downloadUrl,source})),
-      playback: readPlayback()
+  async function syncNow(showToast=false){
+    const profileKey=document.documentElement.dataset.profile;
+    const library={
+      schemaVersion:state.library.schemaVersion,folders:state.library.folders,
+      playlists:state.library.playlists,links:state.library.links,
+      deletedPlaylistIds:state.library.deletedPlaylistIds,
+      tracks:state.library.tracks.filter(t=>t.source!=='drive')
+        .map(({id,title,artist,album,folderId,mime,size,duration,originalName,addedAt,backendId,remoteUrl,downloadUrl,source})=>
+        ({id,title,artist,album,folderId,mime,size,duration,originalName,addedAt,backendId,remoteUrl,downloadUrl,source})),
+      playback:readPlayback()
     };
-    const result = await backendPost('saveMediaLibrary', payload, true).catch(err => ({ ok:false, error:err.message }));
-    if (showToast) notify(result?.ok === false ? `Backend sync may need adapter setup: ${result.error || 'no confirmation'}` : 'Media metadata sync sent to backend.');
+    try{
+      await backendPost('preference.set',{profileKey,scope:'media-player',key:'library',value:library});
+      if(showToast)notify('Music library preferences saved to your OurSpace account.');
+      return {ok:true};
+    }catch(err){
+      if(showToast)notify('Music library is still local: '+String(err.message||err),'error');
+      return {ok:false,error:String(err.message||err)};
+    }
   }
-  async function loadBackendMetadata() {
-    const result = await backendJsonp('listMediaLibrary', { localUpdatedAt: state.library.updatedAt }).catch(() => null);
-    if (!result?.library?.tracks?.length) return;
-    const merged = mergeBackendLibrary(state.library, result.library);
-    state.library = normalizeLibrary(merged);
-    scheduleSave();
-    render();
+  async function loadBackendMetadata(){
+    const profileKey=document.documentElement.dataset.profile;
+    if(!window.OurSpaceMemberMedia?.available?.())return;
+    try{
+      const saved=await backendPost('preference.get',{profileKey,scope:'media-player',key:'library'});
+      if(saved?.value?.tracks)state.library=normalizeLibrary(mergeBackendLibrary(state.library,saved.value));
+    }catch(err){console.warn('Account music preferences unavailable:',err.message)}
+    try{
+      const files=await window.OurSpaceMemberMedia.list({kind:'audio',owner:'all'});
+      const byId=new Map(state.library.tracks.map(t=>[t.id,t]));
+      for(const file of files){
+        const id='drive-'+file.fileId;
+        if(byId.has(id))continue;
+        const parsed=parseName({name:file.name});
+        byId.set(id,{id,title:parsed.title,artist:parsed.artist,album:'',
+          folderId:'folder-all',mime:file.mimeType,size:file.sizeBytes,duration:0,
+          originalName:file.name,addedAt:Date.parse(file.modifiedAt)||Date.now(),
+          backendId:id,remoteUrl:'',downloadUrl:'',source:'drive'});
+      }
+      state.library=normalizeLibrary({...state.library,tracks:[...byId.values()]});
+      scheduleSave();render();
+    }catch(err){console.warn('Drive music list unavailable; local tracks kept:',err.message)}
   }
   function mergeBackendLibrary(local, remote) {
     const merged = normalizeLibrary(local);
@@ -1188,7 +1196,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     const track = currentTrack();
     if (track) loadIntoAudio(track, true).catch(() => null);
     watchGames();
-    if (BACKEND_URL) loadBackendMetadata().catch(() => null);
+    if (window.OurSpaceMemberMedia?.available?.()) loadBackendMetadata().catch(() => null);
     window.dispatchEvent(new CustomEvent('ourspace:media-ready'));
   }
 
@@ -1201,6 +1209,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     jump,
     addFiles,
     syncNow,
+    refreshDrive:loadBackendMetadata,
     watchGames,
     gameLoaded,
     resumeAfterGame,
