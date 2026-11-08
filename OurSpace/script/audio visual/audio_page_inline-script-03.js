@@ -470,7 +470,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     const id = button.dataset.id;
     if (action === 'choose-files') $('#osmFileInput', state.root)?.click();
     if (action === 'choose-folder') $('#osmFolderInput', state.root)?.click();
-    if (action === 'refresh-drive') void loadBackendMetadata().then(()=>notify('Drive music refreshed.'));
+    if (action === 'refresh-drive') void loadBackendMetadata().then(ok=>notify(ok?'Drive music refreshed.':'Drive music could not be reached; local tracks are unchanged.',ok?'info':'error'));
     if (action === 'new-folder') createFolder();
     if (action === 'new-playlist') createPlaylist();
     if (action === 'rename-folder') renameFolder(id);
@@ -1067,8 +1067,8 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
           backendId:id,remoteUrl:'',downloadUrl:'',source:'drive'});
       }
       state.library=normalizeLibrary({...state.library,tracks:[...byId.values()]});
-      scheduleSave();render();
-    }catch(err){console.warn('Drive music list unavailable; local tracks kept:',err.message)}
+      scheduleSave();render();return true;
+    }catch(err){console.warn('Drive music list unavailable; local tracks kept:',err.message);return false}
   }
   function mergeBackendLibrary(local, remote) {
     const merged = normalizeLibrary(local);
