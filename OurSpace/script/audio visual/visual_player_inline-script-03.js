@@ -238,6 +238,11 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
 
   async function getAssetUrl(asset) {
     if (!asset) return '';
+    if(asset.source==='drive'&&asset.backendId?.startsWith('drive-')){
+      if(state.objectUrls.has(asset.id))return state.objectUrls.get(asset.id);
+      const url=await window.OurSpaceMemberMedia.objectUrl(asset.backendId);
+      state.objectUrls.set(asset.id,url);return url;
+    }
     if (asset.remoteUrl) return asset.remoteUrl;
     if (state.objectUrls.has(asset.id)) return state.objectUrls.get(asset.id);
     const blob = await idbGet(STORE_BLOBS, asset.id).catch(() => null);
@@ -251,6 +256,8 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     if (!asset) return null;
     const blob = await idbGet(STORE_BLOBS, asset.id).catch(() => null);
     if (blob) return blob;
+    if(asset.source==='drive'&&asset.backendId?.startsWith('drive-'))
+      return window.OurSpaceMemberMedia.blob(asset.backendId);
     const url = asset.downloadUrl || asset.remoteUrl;
     if (!url) return null;
     const res = await fetch(url);
@@ -1148,17 +1155,18 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     try { localStorage.setItem(SYNC_QUEUE_KEY, JSON.stringify(queue)); } catch {}
   }
 
-  function scheduleSync(action, payload) {
-    const profile = document.body?.dataset?.profile || state.root?.dataset?.profile || window.OurSpaceBackendClient?.profileKey?.() || 'shared';
-    const envelope = {
-      app: 'OurSpace', module: 'visual-player', action: 'record.save', profile, profileKey: profile,
-      sessionToken: window.OurSpaceBackendClient?.sessionToken?.() || window.OURSPACE_SESSION_TOKEN || '',
-      deviceId: getDeviceId(), sentAt: nowIso(),
-      data: { profileKey: profile, bucket: 'visual-player', key: `${action}:${payload?.id || payload?.assetId || payload?.playlistId || payload?.folderId || Date.now()}`, value: { action, payload, deviceId:getDeviceId(), sentAt:nowIso() } }
-    };
-    enqueueSync(envelope);
+  function scheduleSync(action,payload){
+    const auth=window.OurSpaceAuth,profile=document.documentElement.dataset.profile;
+    if(!auth?.isAuthenticated?.()||auth.isAdmin?.()||auth.profile?.()!==profile)return;
+    // Never place account tokens or image/video base64 in persistent retry queues.
+    const clean=JSON.parse(JSON.stringify(payload,(key,value)=>
+      /^(sessionToken|authToken|accessToken|dataUrl|base64|blob|bytes)$/i.test(key)?undefined:value));
+    const data={profileKey:profile,bucket:'visual-player',
+      key:String(action)+':'+String(payload?.id||payload?.assetId||payload?.playlistId||payload?.folderId||Date.now()),
+      value:{action,payload:clean,deviceId:getDeviceId(),sentAt:nowIso()}};
+    enqueueSync({action:'record.save',data});
     clearTimeout(state.syncTimer);
-    state.syncTimer = setTimeout(flushSyncQueue, 700);
+    state.syncTimer=setTimeout(flushSyncQueue,700);
   }
 
   function getDeviceId() {
@@ -1168,22 +1176,20 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     return value;
   }
 
-  async function flushSyncQueue() {
-    const queue = readSyncQueue();
-    if (!queue.length || !BACKEND_URL) return;
-    const remaining = [];
-    for (const item of queue) {
-      try {
-        const res = await fetch(BACKEND_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(item),
-          keepalive: JSON.stringify(item).length < 60000
-        });
-        if (!res.ok) throw new Error(`Backend returned ${res.status}`);
-      } catch (err) {
-        remaining.push(item);
-      }
+  async function flushSyncQueue(){
+    const auth=window.OurSpaceAuth,profile=document.documentElement.dataset.profile;
+    if(!auth?.isAuthenticated?.()||auth.isAdmin?.()||auth.profile?.()!==profile)return;
+    const queue=readSyncQueue();if(!queue.length)return;
+    const remaining=[];
+    for(const item of queue){
+      try{
+        if(item.action!=='record.save'||!item.data)continue;
+        const clean=JSON.parse(JSON.stringify(item.data,(key,value)=>
+          /^(sessionToken|authToken|accessToken|dataUrl|base64|blob|bytes)$/i.test(key)?undefined:value));
+        clean.profileKey=profile;
+        const result=await auth.request('record.save',clean,{timeout:45000});
+        if(result?.ok===false)throw new Error('Account did not confirm record.');
+      }catch(err){remaining.push(item)}
     }
     writeSyncQueue(remaining.slice(-120));
   }
@@ -1202,6 +1208,27 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     setInterval(check, 2500);
   }
 
+  async function refreshDriveMedia(){
+    const media=window.OurSpaceMemberMedia;
+    if(!media?.available?.())return;
+    try{
+      const files=(await media.list({owner:'all'})).filter(f=>f.kind==='image'||f.kind==='video');
+      const byId=new Map(state.library.assets.map(asset=>[asset.id,asset]));
+      for(const file of files){
+        const id='drive-'+file.fileId;
+        if(byId.has(id))continue;
+        byId.set(id,{id,title:file.name,kind:file.kind,folderId:'folder-all',
+          mime:file.mimeType,size:file.sizeBytes,duration:0,width:0,height:0,
+          originalName:file.name,relativePath:file.path,thumbDataUrl:'',
+          addedAt:Date.parse(file.modifiedAt)||Date.now(),backendId:id,
+          remoteUrl:'',downloadUrl:'',source:'drive'});
+      }
+      state.library=normalizeLibrary({...state.library,assets:[...byId.values()]});
+      if(!state.library.currentAssetId)state.library.currentAssetId=state.library.assets[0]?.id||'';
+      scheduleSave();render();
+    }catch(err){console.warn('OurSpace Drive visual listing unavailable; keeping local photos and videos.',err.message)}
+  }
+
   async function init(root = null) {
     if (state.initialized) return;
     state.initialized = true;
@@ -1215,7 +1242,8 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     await loadLibrary();
     if (!state.library.currentAssetId) state.library.currentAssetId = state.library.assets[0]?.id || '';
     render();
-    flushSyncQueue();
+    void refreshDriveMedia();
+    void flushSyncQueue();
     setupGameAutoPause();
     window.addEventListener('ourspace:game-loaded', () => {
       if (state.isPlaying) { pause(); notify('Visual playback paused while a game is loaded.'); }
@@ -1232,7 +1260,8 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     previous,
     uploadFiles: handleFiles,
     getLibrary: () => JSON.parse(JSON.stringify(state.library)),
-    flushSync: flushSyncQueue,
+    flushSync:flushSyncQueue,
+    refreshDrive:refreshDriveMedia,
     backendUrl: BACKEND_URL
   };
 
