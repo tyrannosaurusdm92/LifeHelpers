@@ -197,6 +197,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
       await idbSet(STORE_STATE, LIBRARY_KEY, state.library).catch(err => notify(`Could not save library locally: ${err.message}`, 'error'));
       writePlayback();
     }, 160);
+    scheduleSharedAudioSync();
   }
   function readPlayback() {
     try { return JSON.parse(localStorage.getItem(PLAYBACK_KEY) || 'null'); } catch { return null; }
@@ -782,24 +783,41 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     if(!driveFileId&&!url)return null;
     return{id:track.id,title:track.title,kind:'audio',driveFileId,url};
   }
-  async function shareAudioCollection(type,id){
+  const audioShareDigests=new Map();
+  let audioSharedTimer=null;
+  function scheduleSharedAudioSync(){
+    clearTimeout(audioSharedTimer);
+    audioSharedTimer=setTimeout(()=>{
+      if(!window.OurSpaceActivity?.shareCollection)return;
+      for(const folder of state.library.folders.filter(f=>f.shared&&!f.readOnly&&!f.system))
+        void shareAudioCollection('folder',folder.id,{automatic:true});
+      for(const playlist of state.library.playlists.filter(p=>p.shared&&!p.readOnly&&!p.system))
+        void shareAudioCollection('playlist',playlist.id,{automatic:true});
+    },4500);
+  }
+  async function shareAudioCollection(type,id,options={}){
     const lib=state.library;
     const entry=type==='playlist'?lib.playlists.find(x=>x.id===id):lib.folders.find(x=>x.id===id);
     if(!entry||entry.system||entry.readOnly)return notify('Select a user-created folder or playlist to share.','error');
     const tracks=type==='playlist'?lib.tracks.filter(t=>entry.trackIds.includes(t.id)):
       lib.tracks.filter(t=>folderAndDescendantIds(entry.id).has(t.folderId));
     const rows=tracks.map(transferableAudio).filter(Boolean);
-    if(rows.length<tracks.length){
+    if(rows.length<tracks.length&&!options.automatic){
       notify('Only '+rows.length+' of '+tracks.length+' items are shareable. Upload remaining local files to Drive first.','error');
     }
+    const digest=JSON.stringify([entry.name,rows]),digestKey=type+':'+id;
+    if(options.automatic&&audioShareDigests.get(digestKey)===digest)return;
     try{
       await window.OurSpaceActivity.shareCollection({
         category:'audio',id:entry.id,name:entry.name,
         collectionType:type,entries:rows
       });
-      entry.shared=true;scheduleSave();render();
-      notify('Shared '+entry.name+' with the other OurSpace account.','success');
-    }catch(err){notify('Could not share collection: '+err.message,'error')}
+      audioShareDigests.set(digestKey,digest);
+      if(!options.automatic){
+        entry.shared=true;scheduleSave();render();
+        notify('Shared '+entry.name+' with the other OurSpace account.','success');
+      }
+    }catch(err){if(!options.automatic)notify('Could not share collection: '+err.message,'error');else console.warn('Audio shared update not confirmed:',err.message)}
   }
   let checkingSharedAudio=false;
   function importSharedAudio(){
