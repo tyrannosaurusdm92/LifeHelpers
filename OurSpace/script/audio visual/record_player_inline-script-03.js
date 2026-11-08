@@ -323,12 +323,47 @@
     window.parent.postMessage({ channel: 'ourspace-record', kind: 'ready' }, '*');
   }
 
+  async function refreshProfileSentTracks(){
+    const service=window.OurSpaceProfileMedia;
+    if(!service?.available?.())return;
+    try{
+      const saved=await service.list('record');
+      const wanted=new Set();
+      for(const item of saved){
+        if(item.kind!=='audio')continue;
+        const id='profile-sent-'+item.id;wanted.add(id);
+        const existing=state.tracks.find(t=>t.id===id);
+        const track={
+          id,title:item.title||'Sent audio',artist:item.artist||'OurSpace',
+          album:'Profile Record Player',sourceKey:id
+        };
+        if(item.driveFileId){
+          track.kind='drive-track';track.driveId='drive-'+item.driveFileId;
+        }else if(/^https?:\/\//i.test(item.url||'')){
+          track.kind='sent-profile-link';track.src=item.url;
+        }else continue;
+        if(existing)Object.assign(existing,track);
+        else state.tracks.splice(state.bundledCount,0,track);
+      }
+      // Deleting a sent selection removes only the account-sent copy.
+      state.tracks=state.tracks.filter(t=>!t.id.startsWith('profile-sent-')||wanted.has(t.id));
+      const current=state.tracks[state.index];
+      if(current?.id?.startsWith('profile-sent-')&&!wanted.has(current.id)){
+        await loadTrack(0,false);
+      }
+      updateControls();
+    }catch(error){
+      console.warn('Could not load saved Profile Record Player tracks:',error.message);
+      setStatus('Account-saved record tracks unavailable; the original record player remains usable.');
+    }
+  }
+
   async function refreshDriveTracks(){
     const media=window.OurSpaceMemberMedia;
     if(!media?.available?.())return;
     try{
       const files=await media.list({kind:'audio',owner:'all'});
-      const known=new Set(state.tracks.map(t=>t.id));
+      const known=new Set(state.tracks.flatMap(t=>[t.id,t.driveId].filter(Boolean)));
       for(const file of files){
         const id='drive-'+file.fileId;
         if(known.has(id))continue;
@@ -354,7 +389,7 @@
         .map((x) => ({ id:'profile-' + x.sourceIndex, src:x.src, title:x.title || 'Untitled track',
           artist:x.artist || 'Unknown Artist', album:x.album || '', kind:'profile-link', profileIndex:x.sourceIndex }));
       const previous = state.index >= 0 ? state.tracks[state.index] : null;
-      const localFiles = state.tracks.filter(x => x.kind === 'local-file'||x.kind === 'drive-track');
+      const localFiles = state.tracks.filter(x => x.kind === 'local-file'||x.kind === 'drive-track'||x.kind === 'sent-profile-link');
       state.tracks = sanitizeManifestTracks(DEFAULT_TRACKS).concat(sanitizeManifestTracks(clean),localFiles);
       state.bundledCount = DEFAULT_TRACKS.length;
       const at = previous ? state.tracks.findIndex(x => x.id === previous.id && x.src === previous.src) : -1;
@@ -541,6 +576,12 @@
   updateControls();
   updatePlayState();
   installMediaSessionActions();
-  loadBundledTrackManifest().then(()=>refreshDriveTracks()).catch(error=>console.warn('Record player initialization:',error));
+  loadBundledTrackManifest()
+    .then(async()=>{await refreshProfileSentTracks();await refreshDriveTracks()})
+    .catch(error=>console.warn('Record player initialization:',error));
+  window.addEventListener('ourspace:profile-media-updated',event=>{
+    if(event.detail?.profileKey===document.documentElement.dataset.profile&&event.detail?.destination==='record')
+      void refreshProfileSentTracks();
+  });
 })();
 
