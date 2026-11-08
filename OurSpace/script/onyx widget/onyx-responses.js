@@ -4,11 +4,12 @@
    read-only tester calls the verified Apps Script onyx.chat action. */
 (() => {
   'use strict';
-  const MOODS=['auto','listening','thinking','thoughtful','hungry','caring','judgmental','purring','sleeping'];
+  const MOODS=['auto','professor','listening','thinking','thoughtful','hungry','caring','judgmental','purring','sleeping'];
   const PROFILES=['william','jasper'];
   const APPROVED='ourspace.onyx.work.voice-approved.v1.';
   const MAX_GENERATE=6;
   const recent=new Map();
+  const testThreads=new Map(); // In-memory only; never stored in tester backend or localStorage.
   const fallbackApproved=new Map();
   const get=id=>document.getElementById(id);
   const str=v=>String(v==null?'':v).trim();
@@ -36,13 +37,13 @@
   }
   const isClinical=text=>/(\bpsychiatr|\btherap|\bdiagnos|\bmedication|\bself.harm|\bsuicid|\bseizure|\bmedical|\bmental health)/i.test(text);
   const isSocial=text=>/^\s*(?:hey|hi|hello|hiya|morning|good (?:morning|evening)|how are you|how'?s it going|you okay|love you|miss you|goodnight|night)\b/i.test(str(text)) && !/\b(?:code|debug|repair|fix|build|review|analy[sz]e)\b/i.test(text);
-  function voicePrompt({profile,mode,mood,input,index,total,previous=[]}){
+  function voicePrompt({profile,mode,mood,input,index,total,previous=[],history=[]}){
     const address=profile==='william'?'Papa':'Momma',stern=profile==='william'?'Father':'Mother';
     const social=isSocial(input);
     const approved=readApproved(profile).slice(-3).map(r=>str(r.text).slice(0,260));
     return [
       'You are Lord Onyx Blepman: a deeply loved, old, black cat with an ancient, observant mind; genuinely affectionate, sleepy, proudly dignified, occasionally grumpy.',
-      'This is a Work/Leisure voice-library test for Onyx, NOT a request to perform an action or save memory.',
+      'This is a voice-library or conversation test for the existing OurSpace widget. Generate an original, context-fitting reply. Do not perform unrequested actions or store memory.',
       'Your reply is addressed to '+address+'. Use '+stern+' ONLY for mild, affectionate displeasure, never casually. Do not use a given name.',
       'Speak as yourself: natural, semiformally old-world, thoughtful, with dry humor only when it fits. Not a robot, a stand-up comedian, or a theatrical Shakespeare imitation.',
       'Your thoughtfulness may be informed by attentive observation, humane warmth, curiosity, measured wit and practical reasoning, never impersonating any historical or living person.',
@@ -51,6 +52,7 @@
       'Do not invent health monitoring, tool results, research, file changes, knowledge of unseen events, or permissions.',
       'Keep the reply natural and fresh, normally 1-5 sentences. Do not include this instruction, meta commentary, headings, or quotation marks around the whole reply.',
       approved.length?'Useful APPROVED voice examples; do not copy them: '+approved.join(' / '):'',
+      history.length?'CONVERSATION SO FAR (use continuity, do not simply echo):\n'+history.slice(-8).map(turn=>'Parent: '+str(turn.user).slice(0,250)+'\nOnyx: '+str(turn.assistant).slice(0,330)).join('\n'):'',
       previous.length?'Avoid wording and ideas from these recent replies: '+previous.slice(-3).join(' / ').slice(0,750):'',
       'THE PERSON SAYS: '+str(input).slice(0,1700)
     ].filter(Boolean).join('\n');
@@ -64,13 +66,14 @@
     }
     throw new Error('The AI Brain returned no usable response.');
   }
-  async function requestAI({profile,mode,prompt,index,signal}){
+  async function requestAI({profile,mode,prompt,index,signal,input='',mood='auto'}){
     if(inTester()){
       const active=currentProfile();
       if(profile!==active)throw new Error('Choose the matching tester profile first.');
       const result=await window.OnyxTester.chat(prompt,{
-        mode,supportMode:'chat',threadId:'onyx-voice-workshop-'+profile,
-        context:{interfaceSurface:'work',conversationLane:mode,repositoryBrain:'LifeHelpers/Onyx',generator:true,readOnly:true,doNotAutoSaveGeneratorOutput:true},
+        mode,supportMode:mode==='professor'?'dbt':mode==='health'?'health':'chat',threadId:'onyx-voice-workshop-'+profile+'-'+mode,
+        context:{interfaceSurface:mode,conversationLane:mode,repositoryBrain:'LifeHelpers/Onyx',generator:true,readOnly:true,doNotAutoSaveGeneratorOutput:true,
+          onyxVoiceGuidance:window.OnyxVoiceContext?.guidance?.(input||prompt,mode,mood)},
         signal
       });
       if(result.testerMode!==true)throw new Error('Backend did not verify that the reply belongs to read-only tester mode.');
@@ -84,9 +87,10 @@
     const active=currentProfile();
     if(profile!==active)throw new Error('Account profile does not match the active authenticated user.');
     const result=await window.OnyxRepositoryBridge.chat({
-      message:prompt,lane:'work',supportMode:'chat',chatMode:mode,
+      message:prompt,lane:mode,supportMode:mode==='professor'?'dbt':mode==='health'?'health':'chat',chatMode:mode,
       history:[],threadId:'onyx-work-voice-library-'+profile,
-      context:{interfaceSurface:'work',conversationLane:mode,voiceLibrary:true,doNotAutoSaveGeneratorOutput:true},
+      context:{interfaceSurface:mode,conversationLane:mode,voiceLibrary:true,doNotAutoSaveGeneratorOutput:true,
+        onyxVoiceGuidance:window.OnyxVoiceContext?.guidance?.(input||prompt,mode,mood)},
       webSearch:false,useDrive:false,autoRemember:false,allowWrites:false,allowExternalTools:false,
       reasoningEffort:'medium',maxOutputTokens:1400
     },{timeoutMs:180000,signal});
@@ -97,10 +101,10 @@
   async function generate({input,profile=currentProfile(),mode='work',mood='auto',count=1,onProgress,signal}={}){
     input=str(input);
     if(!PROFILES.includes(profile))throw new Error('Choose a verified tester profile or sign in to OurSpace.');
-    if(!['work','leisure'].includes(mode))throw new Error('Choose Work or Leisure.');
+    if(!['work','leisure','health','professor'].includes(mode))throw new Error('Choose Work, Leisure, Virtual & Health, or Professor.');
     if(!MOODS.includes(mood))throw new Error('Choose a supported Onyx mood.');
     if(input.length<5||input.length>1700)throw new Error('Enter a scenario of 5–1,700 characters.');
-    if(isClinical(input))throw new Error('The voice workshop is nonclinical. Use the separate Professor workspace for health and therapy conversations.');
+    // Health and Professor may now be tested. Backend safety and clinical boundaries remain authoritative.
     if(!Number.isInteger(Number(count))||count<1||count>MAX_GENERATE)throw new Error('Choose between 1 and 6 responses.');
     const key=profile+'|'+mode;
     const previous=recent.get(key)||[];
@@ -108,7 +112,7 @@
     for(let i=0;i<count;i++){
       if(signal?.aborted)throw new Error('Generation canceled.');
       const prompt=voicePrompt({profile,mode,mood,input,index:i+1,total:count,previous:[...previous,...out.map(r=>r.text)]});
-      const result=await requestAI({profile,mode,prompt,index:i,signal});
+      const result=await requestAI({profile,mode,prompt,index:i,signal,input,mood});
       const text=result.text;
       const duplicate=[...previous,...out.map(r=>r.text)].some(other=>str(other).toLowerCase()===text.toLowerCase());
       const overAnalytical=isSocial(input)&&/\b(?:separat(e|ing) what is known|practical next step|assumption|settle first)\b/i.test(text);
@@ -119,6 +123,29 @@
     }
     recent.set(key,[...previous,...out.map(r=>r.text)].slice(-24));
     return out;
+  }
+  function conversationKey(profile,mode,threadId){
+    return profile+'|'+mode+'|'+str(threadId||'default').slice(0,80);
+  }
+  function getConversation(profile=currentProfile(),mode='leisure',threadId='default'){
+    return (testThreads.get(conversationKey(profile,mode,threadId))||[]).map(t=>({...t}));
+  }
+  async function converse({input,profile=currentProfile(),mode='leisure',threadId='default',mood='auto',signal}={}){
+    input=str(input);threadId=str(threadId||'default').slice(0,80);
+    if(!PROFILES.includes(profile)||profile!==currentProfile())throw new Error('Select an authenticated parent profile before chatting.');
+    if(!['work','leisure','health','professor'].includes(mode))throw new Error('Choose a supported conversation mode.');
+    if(!input||input.length>1700)throw new Error('Enter a message of 1–1,700 characters.');
+    const key=conversationKey(profile,mode,threadId);
+    const history=getConversation(profile,mode,threadId).slice(-10);
+    const prompt=voicePrompt({profile,mode,mood,input,index:1,total:1,previous:history.map(x=>x.assistant),history});
+    const result=await requestAI({profile,mode,prompt,index:0,signal,input,mood});
+    const turn={user:input,assistant:result.text,source:result.source,mode,profile,createdAt:new Date().toISOString()};
+    testThreads.set(key,[...history,turn].slice(-12));
+    return {...turn,quality:window.OnyxVoiceContext?.inspectReply?.(input,result.text,mode)||null};
+  }
+  function clearConversation(profile=currentProfile(),mode='leisure',threadId='default'){
+    if(!PROFILES.includes(profile)||profile!==currentProfile())return false;
+    return testThreads.delete(conversationKey(profile,mode,threadId));
   }
   function approve(entry){
     if(!entry||!PROFILES.includes(entry.profile)||entry.profile!==currentProfile())
@@ -166,7 +193,7 @@
     if(label)label.title=state.active?'Tester active — '+(state.selectedProfile||'select profile'):'Email tester code';
   }
   let generated=[],busy=false;
-  function setBusy(next){busy=!!next;['onyxTesterRequest','onyxTesterResend','onyxTesterVerify','onyxVoiceGenerate'].forEach(id=>{const x=get(id);if(x)x.disabled=busy;});}
+  function setBusy(next){busy=!!next;['onyxTesterRequest','onyxTesterResend','onyxTesterVerify','onyxVoiceGenerate','onyxVoiceChatSend'].forEach(id=>{const x=get(id);if(x)x.disabled=busy;});}
   function renderEntries(){
     const host=get('onyxVoiceResults');if(!host)return;host.replaceChildren();
     generated.forEach((entry,i)=>{
@@ -181,6 +208,18 @@
       btn.addEventListener('click',()=>{try{const n=approve(entry);btn.textContent='Approved ('+n+')';btn.disabled=true;}catch(e){textStatus('onyxVoiceStatus',e.message);}});
       card.append(btn);host.append(card);
     });
+  }
+  function renderConversation(){
+    const host=get('onyxVoiceTranscript');if(!host)return;
+    host.replaceChildren();
+    const profile=currentProfile(),mode=get('onyxVoiceMode')?.value||'leisure',threadId=get('onyxVoiceThreadId')?.value||'default';
+    for(const turn of getConversation(profile,mode,threadId)){
+      const entry=document.createElement('div');entry.className='settings-status';
+      const request=document.createElement('p');const user=document.createElement('strong');user.textContent=profile==='william'?'Papa: ':'Momma: ';request.append(user,document.createTextNode(turn.user));
+      const answer=document.createElement('p');const name=document.createElement('strong');name.textContent='Onyx: ';answer.append(name,document.createTextNode(turn.assistant));
+      const source=document.createElement('small');source.textContent=turn.source;
+      entry.append(request,answer,source);host.append(entry);
+    }
   }
   function init(){
     if(!get('onyxTesterOpen')||!get('onyxVoiceOpen'))return;
@@ -234,15 +273,33 @@
       }catch(e){textStatus('onyxVoiceStatus',e.message+(generated.length?' Completed responses remain visible.':''));}
       finally{setBusy(false);}
     });
+    get('onyxVoiceChatSend')?.addEventListener('click',async()=>{
+      if(busy)return;setBusy(true);textStatus('onyxVoiceChatStatus','Onyx is responding through the shared AI Brain…');
+      try{
+        const profile=currentProfile(),mode=get('onyxVoiceMode')?.value||'leisure';
+        const result=await converse({input:get('onyxVoiceChatInput')?.value,profile,mode,
+          threadId:get('onyxVoiceThreadId')?.value||'default',mood:get('onyxVoiceMood')?.value||'auto'});
+        if(get('onyxVoiceChatInput'))get('onyxVoiceChatInput').value='';
+        renderConversation();
+        textStatus('onyxVoiceChatStatus',result.quality?.shouldReview?'Reply received but review its contextual fit.':'Reply received from '+result.source+'.');
+      }catch(e){textStatus('onyxVoiceChatStatus',e.message);}
+      finally{setBusy(false);}
+    });
+    get('onyxVoiceChatClear')?.addEventListener('click',()=>{
+      clearConversation(currentProfile(),get('onyxVoiceMode')?.value||'leisure',get('onyxVoiceThreadId')?.value||'default');
+      renderConversation();textStatus('onyxVoiceChatStatus','This local test thread was cleared.');
+    });
+    get('onyxVoiceMode')?.addEventListener('change',renderConversation);
+    get('onyxVoiceThreadId')?.addEventListener('change',renderConversation);
     get('onyxVoiceExport')?.addEventListener('click',()=>{
       try{download(exportJS(),'onyx-responses.js');textStatus('onyxVoiceStatus','Exported locally approved examples. Nothing was written to the backend.');}
       catch(e){textStatus('onyxVoiceStatus',e.message);}
     });
     get('onyxVoiceClear')?.addEventListener('click',()=>{generated=[];renderEntries();textStatus('onyxVoiceStatus','Unsaved candidate responses cleared.');});
-    window.addEventListener('onyx:tester-state',()=>{stateUpdate();renderEntries();});
+    window.addEventListener('onyx:tester-state',()=>{stateUpdate();renderEntries();renderConversation();});
     stateUpdate();
   }
-  window.OnyxResponses=Object.freeze({generate,approve,readApproved,exportJS,MOODS});
+  window.OnyxResponses=Object.freeze({generate,converse,getConversation,clearConversation,approve,readApproved,exportJS,MOODS});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })();

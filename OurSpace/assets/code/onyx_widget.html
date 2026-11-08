@@ -232,13 +232,22 @@
 <p>Active identity: <strong id="onyxVoiceProfile">Not connected</strong></p>
 <label class="field"><span>What was said to Onyx? / Response scenario</span><textarea id="onyxVoiceInput" maxlength="1700" placeholder="Hey buddy, how are you doing?" rows="4"></textarea></label>
 <div class="settings-body">
-<label class="field"><span>Conversation mode</span><select id="onyxVoiceMode"><option value="work">Work</option><option value="leisure">Leisure</option></select></label>
-<label class="field"><span>Mood</span><select id="onyxVoiceMood"><option value="auto">Automatic</option><option value="listening">Listening</option><option value="thinking">Thinking</option><option value="thoughtful">Thoughtful</option><option value="hungry">Hungry</option><option value="caring">Caring</option><option value="judgmental">Judgmental</option><option value="purring">Purring</option><option value="sleeping">Sleeping</option></select></label>
+<label class="field"><span>Conversation mode</span><select id="onyxVoiceMode"><option value="work">Work</option><option value="leisure">Leisure</option><option value="health">Virtual &amp; Health</option><option value="professor">Professor</option></select></label>
+<label class="field"><span>Mood</span><select id="onyxVoiceMood"><option value="auto">Automatic</option><option value="professor">Professor</option><option value="listening">Listening</option><option value="thinking">Thinking</option><option value="thoughtful">Thoughtful</option><option value="hungry">Hungry</option><option value="caring">Caring</option><option value="judgmental">Judgmental</option><option value="purring">Purring</option><option value="sleeping">Sleeping</option></select></label>
 <label class="field"><span>Number of responses</span><select id="onyxVoiceCount"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></label>
 </div>
 <div class="chat-actions"><button class="primary-button" id="onyxVoiceGenerate" type="button">Generate responses</button><button class="secondary-button" id="onyxVoiceClear" type="button">Clear candidates</button><button class="secondary-button" id="onyxVoiceExport" type="button">Export onyx-responses.js</button></div>
 <p aria-live="polite" class="settings-status" id="onyxVoiceStatus">Ready. Responses are only approved and exported on this device; no backend write is performed.</p>
 <div aria-label="AI-generated candidate responses" aria-live="polite" id="onyxVoiceResults"></div>
+<section class="settings-body" aria-labelledby="onyxVoiceConversationTitle">
+<h3 id="onyxVoiceConversationTitle">Conversation tester</h3>
+<p class="field-help">Continue a conversation with the same Onyx brain and the selected lane. This testing thread stays in this page only; account conversations remain profile-scoped. Tester access is read-only.</p>
+<label class="field"><span>Test thread name</span><input id="onyxVoiceThreadId" maxlength="80" value="default" autocomplete="off"/></label>
+<label class="field"><span>Talk to Onyx</span><textarea id="onyxVoiceChatInput" maxlength="1700" rows="3" placeholder="Hey buddy, how are you doing?"></textarea></label>
+<div class="chat-actions"><button class="primary-button" id="onyxVoiceChatSend" type="button">Send to Onyx</button><button class="secondary-button" id="onyxVoiceChatClear" type="button">Clear this test thread</button></div>
+<p class="settings-status" aria-live="polite" id="onyxVoiceChatStatus">Ready for a natural conversation.</p>
+<div role="log" aria-label="Onyx conversation tester transcript" aria-live="polite" id="onyxVoiceTranscript"></div>
+</section>
 </div>
 </div>
 </dialog>
@@ -298,6 +307,7 @@
 <script src="script/onyx widget/onyx_widget_onyx-atlas.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-mood.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-scanner.js"></script>
+<script src="script/onyx widget/onyx-widget-conversation-guidance.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-repository-bridge.js" type="module"></script>
 <script src="script/onyx widget/onyx_widget_brain-link.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-behavior.js"></script>
