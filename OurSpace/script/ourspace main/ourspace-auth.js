@@ -11,7 +11,13 @@ const profile=()=>memoryProfile||get(ss(),profileKey)||get(ls(),profileKey);
 const isAuthenticated=()=>!!token()&&!isAdmin();
 async function request(action,data={},opts={}){
  const payload={action,data,clientId:'ourspace-browser'};
- if(token())payload.sessionToken=token();
+ // Pre-auth requests must never inherit an unrelated account's old session.
+ const publicAuthActions=new Set([
+  'auth.signin','auth.signup','auth.recovery.options','auth.password.forgot',
+  'auth.password.reset','auth.config','auth.ui.contract',
+  'auth.verification.request','auth.verification.complete'
+ ]);
+ if(!publicAuthActions.has(action)&&token()&&!isAdmin())payload.sessionToken=token();
  let response;
  const gateway='/api/ourspace',published='https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec';
  const requestOptions={method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload),cache:'no-store',signal:AbortSignal.timeout(opts.timeout||18000)};
@@ -41,7 +47,11 @@ async function request(action,data={},opts={}){
    if(requestOptions.signal.aborted)throw timeoutError();
    throw new Error('The account service returned an invalid response.');
  }
- if(result?.ok===false)throw new Error(String(result.message||result.error||'The request was not accepted.'));
+ if(result?.ok===false){
+  const rejected=new Error(String(result.message||result.error||'The request was not accepted.'));
+  rejected.serverRejected=true;
+  throw rejected;
+ }
  return result;
 }
 function acceptSession(result,remember){
