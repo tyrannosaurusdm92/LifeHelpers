@@ -101,6 +101,61 @@ const list=()=>items.map(x=>({...x,metadata:{...x.metadata}}));
 const sharedCollections=()=>list().filter(x=>x.type==='collection'&&x.metadata.sharedCollection);
 window.OurSpaceActivity=Object.freeze({publish,list,refresh,sharedCollections,
  connected:()=>lastConnected});
+/* Each account owns a wishlist preference; only user-submitted item previews
+ * are sent to their partner's Feed. No real-money checkout or price scraping. */
+const wishlistScope='store',wishlistKey='wishlist-v1';
+const wishlistUrl=v=>{try{const u=new URL(String(v||''));return /^https?:$/.test(u.protocol)?u.href:''}catch{return ''}};
+const wishlistNormalize=item=>{
+ const price=Math.floor(Number(item?.pricePlatinum)||0);
+ if(!Number.isSafeInteger(price)||price<0||price>1000000000)
+  throw Error('Enter an expected value between 0 and one billion platinum.');
+ const name=clean(item?.name||item?.label,160),url=wishlistUrl(item?.url);
+ if(!name||!url)throw Error('A name and an HTTPS shopping link are required.');
+ return{id:clean(item?.id||('wish-'+globalThis.crypto?.randomUUID?.()||Date.now()),100),
+  name,url,image:wishlistUrl(item?.image),pricePlatinum:price,
+  catalogItemId:clean(item?.catalogItemId,120),
+  createdAt:item?.createdAt||new Date().toISOString()};
+};
+let wishQueue=Promise.resolve();
+async function listWishlist(){
+ if(!ready())throw Error('Sign in to load this account wishlist.');
+ const result=await auth().request('preference.get',{profileKey:who(),
+  scope:wishlistScope,key:wishlistKey},{timeout:45000});
+ return(Array.isArray(result.value?.items)?result.value.items:[])
+  .slice(0,300).flatMap(x=>{try{return[wishlistNormalize(x)]}catch{return[]}});
+}
+function wishlistChange(fn){
+ const p=wishQueue.catch(()=>{}).then(async()=>{
+  const old=await listWishlist(),next=fn(old);
+  await auth().request('preference.set',{profileKey:who(),scope:wishlistScope,key:wishlistKey,
+   value:{schema:'ourspace.wishlist.v1',profileKey:who(),items:next.items.slice(0,250)}},{timeout:45000});
+  window.dispatchEvent(new Event('ourspace:wishlist-updated'));
+  return next;
+ });
+ wishQueue=p;return p;
+}
+function wishlistAdd(input){
+ const item=wishlistNormalize(input);
+ return wishlistChange(items=>{
+  const idx=items.findIndex(x=>x.id===item.id||x.url===item.url);
+  if(idx>=0)item.id=items[idx].id;
+  const next=[item,...items.filter(x=>x.id!==item.id)];
+  return{items:next,item};
+ }).then(({item:record})=>{
+  publish({id:'wish-'+who()+'-'+record.id,key:'wish-'+who()+'-'+record.id,
+   type:'wishlist',author:who(),title:record.name,
+   body:'Added to wishlist · '+record.pricePlatinum.toLocaleString()+' platinum',
+   url:record.url,image:record.image,source:'OurSpace Wishlist',
+   metadata:{wishlist:{id:record.id,pricePlatinum:record.pricePlatinum}}});
+  return record;
+ });
+}
+function wishlistRemove(id){
+ return wishlistChange(items=>({items:items.filter(x=>x.id!==id)}));
+}
+window.OurSpaceWishlist=Object.freeze({list:listWishlist,add:wishlistAdd,
+ remove:wishlistRemove,available:ready});
+
 window.addEventListener('storage',e=>{if(e.key===KEY){
  items=read().map(x=>normalize(x));window.dispatchEvent(new Event('ourspace:activity-updated'));
 }});
