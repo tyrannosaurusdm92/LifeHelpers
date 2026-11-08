@@ -112,9 +112,9 @@ async function addCatalogWish(id){
  // Canonical catalog items have stable IDs even without external shopping links.
  try{
   const value=Math.floor(totalCopper(item)/1000);
-  await wishlistService().add({id:'catalog-'+item.id,catalogItemId:item.id,
+  const added=await wishlistService().add({id:'catalog-'+item.id,catalogItemId:item.id,
    name:item.name,url,image:linkSafe(item.image),pricePlatinum:value});
-  await refreshWishlist();toast('Added to your wishlist and partner Feed.','success');
+  await refreshWishlist();toast(added.partnerShared?'Added to your wishlist and partner Feed.':'Saved to wishlist; partner Feed delivery not confirmed.',added.partnerShared?'success':'error');
  }catch(err){toast('Could not add to wishlist: '+err.message,'error')}
 }
 async function previewWishlistImage(){
@@ -165,10 +165,10 @@ function installWishlist(){
   const fields=new FormData(form);
   btn.disabled=true;
   try{
-   await wishlistService().add({name:String(fields.get('wishName')||''),
+   const added=await wishlistService().add({name:String(fields.get('wishName')||''),
     url:String(fields.get('wishUrl')||''),image:String(fields.get('wishImage')||''),
     pricePlatinum:Number(fields.get('wishPlatinum'))});
-   form.reset();await refreshWishlist();toast('Wishlist updated and shared on partner Feed.','success');
+   form.reset();await refreshWishlist();toast(added.partnerShared?'Wishlist saved and delivered to partner Feed.':'Wishlist saved; partner Feed delivery not confirmed.',added.partnerShared?'success':'error');
   }catch(err){toast('Wishlist was not saved: '+err.message,'error')}
   finally{btn.disabled=false}
  });
