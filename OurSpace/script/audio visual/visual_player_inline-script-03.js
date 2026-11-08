@@ -298,6 +298,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
               <span>Choose files or drag them here.</span>
               <input class="ospv-hidden-input" type="file" accept="image/*,video/*" multiple data-action="upload-files">
             </label>
+            <button class="ospv-btn ospv-btn-small" type="button" data-action="refresh-drive" title="Find manually uploaded Drive images and videos">Refresh Drive media</button>
             <label class="ospv-drop ospv-folder-drop" data-action="folder-picker">
               <strong>Upload a folder</strong>
               <span>Keeps the first folder name as an album.</span>
@@ -466,6 +467,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     const root = state.root;
     $('[data-action="upload-files"]', root)?.addEventListener('change', event => handleFiles(event.target.files));
     $('[data-action="upload-folder"]', root)?.addEventListener('change', event => handleFiles(event.target.files, { useRelativeFolders: true }));
+    $('[data-action="refresh-drive"]',root)?.addEventListener('click',()=>void refreshDriveMedia().then(()=>notify('Drive visuals refreshed.')));
     $('[data-action="create-folder"]', root)?.addEventListener('click', createFolderFromInput);
     $('[data-action="create-playlist"]', root)?.addEventListener('click', createPlaylistFromInput);
     $('[data-action="rename-folder"]', root)?.addEventListener('click', renameSelectedFolder);
