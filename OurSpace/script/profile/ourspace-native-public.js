@@ -28,7 +28,7 @@ const insertLink=(parent,label,url)=>{
 };
 const toItems=list=>Array.isArray(list)?list:[];
 const announce=(status,reason='')=>{
- try{window.parent?.postMessage({type:'ourspace:public-profile-state',profileKey:key,status,reason},location.origin)}catch(_){}
+ try{window.parent?.postMessage({type:'ourspace:public-profile-state',profileKey:key,status,reason},'*')}catch(_){}
 };
 const fail=reason=>{
  host.replaceChildren();viewport.hidden=true;message.hidden=false;message.textContent=reason;
