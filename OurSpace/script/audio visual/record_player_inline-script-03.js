@@ -94,6 +94,7 @@
 
   function revokeCurrentUrl() {
     if (!state.objectUrl) return;
+    window.OurSpaceMemberMedia?.revoke?.(state.objectUrl);
     URL.revokeObjectURL(state.objectUrl);
     state.objectUrl = null;
   }
@@ -154,7 +155,14 @@
 
     resetAudioSource();
 
-    if (track.file) {
+    if(track.kind==='drive-track'&&track.driveId){
+      try{
+        setStatus('Loading shared Drive audio…');
+        const url=await window.OurSpaceMemberMedia.objectUrl(track.driveId);
+        if(token!==state.loadingToken){window.OurSpaceMemberMedia.revoke(url);return}
+        state.objectUrl=url;audio.src=url;
+      }catch(err){setStatus('Drive track unavailable: '+err.message);return}
+    } else if (track.file) {
       state.objectUrl = URL.createObjectURL(track.file);
       audio.src = state.objectUrl;
     } else if (track.src && track.src.startsWith('embedded:')) {
@@ -315,6 +323,27 @@
     window.parent.postMessage({ channel: 'ourspace-record', kind: 'ready' }, '*');
   }
 
+  async function refreshDriveTracks(){
+    const media=window.OurSpaceMemberMedia;
+    if(!media?.available?.())return;
+    try{
+      const files=await media.list({kind:'audio',owner:'all'});
+      const known=new Set(state.tracks.map(t=>t.id));
+      for(const file of files){
+        const id='drive-'+file.fileId;
+        if(known.has(id))continue;
+        const title=file.name.replace(/\\.(mp3|m4a|aac|ogg|wav|flac|webm)$/i,'');
+        state.tracks.push({id,driveId:id,title,artist:'OurSpace Drive',
+          album:file.ownerProfileKey==='shared'?'Shared Drive':file.ownerProfileKey,
+          kind:'drive-track',sourceKey:id});
+        known.add(id);
+      }
+      updateControls();
+      if(state.index<0&&state.tracks.length)await loadTrack(0,false);
+      setStatus(files.length+' Drive track'+(files.length===1?'':'s')+' available alongside your existing playlist.');
+    }catch(err){console.warn('Record player kept local and linked tracks:',err.message)}
+  }
+
   // Receive the profile's saved music links without replacing its bundled records.
   window.addEventListener('message', (event) => {
     if (event.source !== window.parent || event.data?.channel !== 'ourspace-record') return;
@@ -325,7 +354,7 @@
         .map((x) => ({ id:'profile-' + x.sourceIndex, src:x.src, title:x.title || 'Untitled track',
           artist:x.artist || 'Unknown Artist', album:x.album || '', kind:'profile-link', profileIndex:x.sourceIndex }));
       const previous = state.index >= 0 ? state.tracks[state.index] : null;
-      const localFiles = state.tracks.filter(x => x.kind === 'local-file');
+      const localFiles = state.tracks.filter(x => x.kind === 'local-file'||x.kind === 'drive-track');
       state.tracks = sanitizeManifestTracks(DEFAULT_TRACKS).concat(sanitizeManifestTracks(clean),localFiles);
       state.bundledCount = DEFAULT_TRACKS.length;
       const at = previous ? state.tracks.findIndex(x => x.id === previous.id && x.src === previous.src) : -1;
@@ -512,6 +541,6 @@
   updateControls();
   updatePlayState();
   installMediaSessionActions();
-  loadBundledTrackManifest();
+  loadBundledTrackManifest().then(()=>refreshDriveTracks()).catch(error=>console.warn('Record player initialization:',error));
 })();
 
