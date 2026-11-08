@@ -26,6 +26,7 @@
  }
  function open(){
    lastFocus=document.activeElement;panel.hidden=false;panel.setAttribute("aria-hidden","false");
+   if(!brain.tester.status().active){const p=root.OnyxBackendClient?.activeProfile?.();if(p==="william"||p==="jasper")$("ors-profile").value=p;}
    connection();savedCount();$("ors-input").focus();
  }
  function close(){
