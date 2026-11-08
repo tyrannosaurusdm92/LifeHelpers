@@ -363,6 +363,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
         <button class="osm-btn osm-btn-small" data-action="play-track" data-id="${esc(track.id)}">Play</button>
         <button class="osm-btn osm-btn-small" data-action="add-to-playlist" data-id="${esc(track.id)}">Add to playlist</button>
         <button class="osm-btn osm-btn-small" data-action="download-track" data-id="${esc(track.id)}">Download</button>
+        <button class="osm-btn osm-btn-small" data-action="send-profile-record" data-id="${esc(track.id)}">Send to Profile Record Player</button>
         <button class="osm-btn osm-btn-small osm-btn-danger" data-action="delete-track" data-id="${esc(track.id)}">Delete</button>
       </div>
     </article>`;
@@ -493,6 +494,10 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     if (action === 'play-track') playTrack(id);
     if (action === 'download-current') downloadTrack(currentTrack());
     if (action === 'download-track') downloadTrack(state.library.tracks.find(t => t.id === id));
+    if (action === 'send-profile-record') {
+      button.disabled=true;
+      void sendAudioToProfile(id).finally(()=>{if(button.isConnected)button.disabled=false});
+    }
     if (action === 'download-list') downloadList();
     if (action === 'delete-track') deleteTrack(id);
     if (action === 'add-to-playlist') addToPlaylist(id);
@@ -1007,17 +1012,50 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     // JSONP exposes tokens in GET URLs and is never permitted for private media.
     return backendPost(action,payload);
   }
-  async function uploadToBackend(track,file){
-    if(file.size>24*1024*1024)return; // Existing Drive files may be added directly.
-    const dataUrl=await fileToDataUrl(file);
-    const result=await backendPost('upload.media',{
-      kind:'audio',fileName:file.name,mimeType:file.type||'audio/mpeg',
-      dataUrl,pageId:'audio',moduleId:'audio-player'
-    });
-    if(result?.driveFileId){
+  async function sendAudioToProfile(trackId){
+    const track=state.library.tracks.find(t=>t.id===trackId);
+    if(!track)return notify('That track was removed from the Audio Player.','error');
+    const service=window.OurSpaceProfileMedia;
+    if(!service?.available?.())return notify('Sign into your OurSpace account to send audio to the Profile Record Player.','error');
+    try{
+      let driveFileId=String(track.backendId|| (track.source==='drive'?track.id:''));
+      const url=/^https?:\/\//i.test(track.remoteUrl||'')?track.remoteUrl:
+        /^https?:\/\//i.test(track.downloadUrl||'')?track.downloadUrl:'';
+      if(!driveFileId&&!url){
+        const file=await idbGet(STORE_BLOBS,track.id);
+        if(!file)throw new Error('Local audio is missing. Restore it or add it to Drive.');
+        if(file.size>24*1024*1024)throw new Error('Put this larger audio file in Google Drive, then Refresh Drive before sending.');
+        await uploadToBackend(track,file);
+        driveFileId=String(track.backendId||'');
+      }
+      await service.send('record',{
+        sourceId:track.id,kind:'audio',title:track.title,
+        artist:track.artist||'',driveFileId,url
+      });
+      notify('Track sent to your Profile Retro Record Player.','success');
+    }catch(err){notify('Could not send to Profile Record Player: '+err.message,'error')}
+  }
+
+  const inflightAudioUploads=new Map();
+  function uploadToBackend(track,file){
+    if(track.backendId)return Promise.resolve(track.backendId);
+    if(inflightAudioUploads.has(track.id))return inflightAudioUploads.get(track.id);
+    const work=(async()=>{
+      if(file.size>24*1024*1024)throw new Error('This audio exceeds 24 MiB; place it in Google Drive and refresh the library.');
+      const dataUrl=await fileToDataUrl(file);
+      const result=await backendPost('upload.media',{
+        kind:'audio',fileName:file.name||track.originalName||track.title||'audio',
+        mimeType:file.type||track.mime||'audio/mpeg',
+        dataUrl,pageId:'audio',moduleId:'audio-player'
+      });
+      if(!result?.driveFileId)throw new Error('Drive did not confirm the audio upload.');
       track.backendId='drive-'+result.driveFileId;
       track.source='backend+local';scheduleSave();
-    }
+      return track.backendId;
+    })();
+    inflightAudioUploads.set(track.id,work);
+    work.finally(()=>{if(inflightAudioUploads.get(track.id)===work)inflightAudioUploads.delete(track.id)}).catch(()=>{});
+    return work;
   }
   function fileToDataUrl(file) {
     return new Promise((resolve, reject) => {
