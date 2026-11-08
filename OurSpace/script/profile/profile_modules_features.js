@@ -6,9 +6,17 @@ const who=document.documentElement.dataset.profile||'william';
 const $=(selector,root=document)=>root.querySelector(selector);
 const el=(tag,text,className)=>{const e=document.createElement(tag);if(text!=null)e.textContent=String(text);if(className)e.className=className;return e};
 const root=(scope)=>document.querySelector('[data-os-design-scope="'+scope+'"]');
-const read=kind=>{try{const val=JSON.parse(localStorage.getItem('myspace_module_'+who+'_'+kind)||'[]');return Array.isArray(val)?val:[]}catch(_){return []}};
+const read=kind=>{
+ if(kind==='pictures'){
+  const combined=window.OurSpaceModuleControllers?.carousel_gallery_module?.getDisplayEntries?.();
+  if(Array.isArray(combined))return combined;
+ }
+ try{const val=JSON.parse(localStorage.getItem('myspace_module_'+who+'_'+kind)||'[]');return Array.isArray(val)?val:[]}catch(_){return []}
+};
 const validUrl=url=>{try{const u=new URL(url);return ['https:','http:'].includes(u.protocol)?u.href:''}catch(_){return ''}};
-const imageValue=value=>typeof value==='string'&&(value.startsWith('data:image/')||validUrl(value))?value:'';
+const imageValue=value=>typeof value==='string'&&(value.startsWith('data:image/')||value.startsWith('blob:')||validUrl(value))?value:'';
+const playableValue=value=>typeof value==='string'&&(value.startsWith('blob:')||validUrl(value))?value:'';
+const isVideo=x=>x?.mediaKind==='video'||Boolean(x?.video);
 function fill(root){if(!root)return;const list=$('[data-module-items]',root);if(list&&'MutationObserver'in window){let frame=null;new MutationObserver(()=>{if(frame)cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{frame=null;drawAll()})}).observe(list,{childList:true,subtree:false})}}
 let slide=0,filter='All';
 function showAbout(){const scope=root('profile_about');if(!scope)return;const record=read('about')[0]||{};const area=$('#aboutPublic',scope);if(area){area.replaceChildren();if(record.bio)area.append(el('p',record.bio));if(record.details)area.append(el('p',record.details))}
@@ -18,10 +26,51 @@ function showDonate(){const scope=root('donation_module');if(!scope)return;const
 function showTags(){const scope=root('profile_tags');if(!scope)return;const mount=$('#fusionTagsList',scope);if(!mount)return;mount.replaceChildren();const tags=[...new Set(read('tags').flatMap(item=>String(item.tags||'').split(/[,\n]+/).map(x=>x.trim()).filter(Boolean)))].slice(0,120);for(const tag of tags)mount.append(el('span',tag,'fusion-tag'))}
 function showGuestbook(){const scope=root('guestbook');if(!scope)return;const mount=$('#fusionGuestbookList',scope);if(!mount)return;mount.replaceChildren();for(const item of read('guestbook').slice(0,100)){const box=el('article',null,'ms-item');box.append(el('strong',(item.sticker||'💌')+' '+(item.name||'Guest')));box.append(el('p',item.text||''));mount.append(box)}}
 function showContact(){const scope=root('contact_links');if(!scope)return;const mount=$('#contactsList',scope);if(!mount)return;mount.replaceChildren();for(const item of read('contact').slice(0,100)){const box=el('article',null,'ms-item');const label=String(item.label||item.type||'Contact method');box.append(el('strong',label));const url=validUrl(item.value);if(url){const a=el('a',item.value);a.href=url;a.target='_blank';a.rel='noopener noreferrer';box.append(a)}else box.append(el('p',item.value||''));if(item.note)box.append(el('small',item.note));mount.append(box)}}
-function showGallery(){const scope=root('carousel_gallery_module');if(!scope)return;const images=read('pictures');slide=images.length?((slide%images.length)+images.length)%images.length:0;
- const image=$('#fusionGalleryImage',scope),caption=$('#fusionGalleryCaption',scope),counter=$('#fusionGalleryCounter',scope),thumbs=$('#fusionGalleryThumbs',scope);
- const current=images[slide]||null;if(image){image.hidden=!current;if(current){image.src=imageValue(current.image||current.imageUrl||'');image.alt=current.caption||'Gallery picture'}else image.removeAttribute('src')}
- if(caption)caption.textContent=current?.caption||'No pictures yet';if(counter)counter.textContent=images.length?slide+1+' / '+images.length:'0 / 0';if(thumbs){thumbs.replaceChildren();images.slice(0,35).forEach((item,index)=>{const src=imageValue(item.image||item.imageUrl);if(!src)return;const btn=el('button');btn.type='button';btn.dataset.galleryItem=String(index);btn.setAttribute('aria-label','Choose gallery image '+(index+1));btn.className=index===slide?'active':'';const img=el('img');img.loading='lazy';img.src=src;img.alt=item.caption||'Gallery thumbnail';btn.append(img);thumbs.append(btn)})}}
+function showGallery(){
+ const scope=root('carousel_gallery_module');if(!scope)return;
+ const images=read('pictures');
+ slide=images.length?((slide%images.length)+images.length)%images.length:0;
+ const image=$('#fusionGalleryImage',scope),caption=$('#fusionGalleryCaption',scope),
+  counter=$('#fusionGalleryCounter',scope),thumbs=$('#fusionGalleryThumbs',scope);
+ const current=images[slide]||null,videoMode=isVideo(current);
+ const controller=window.OurSpaceModuleControllers?.carousel_gallery_module;
+ const resolved=current?controller?.ensureSource?.(current)||'':'';
+ const source=videoMode?playableValue(current?.video||resolved||current?.url):
+  imageValue(current?.image||current?.imageUrl||resolved);
+ let video=$('#fusionGalleryVideo',scope);
+ if(videoMode&&image&&!video){
+  video=el('video');video.id='fusionGalleryVideo';video.playsInline=true;
+  video.muted=true;video.preload='metadata';
+  video.setAttribute('aria-label','Video preview. Open fullscreen to play with sound.');
+  video.style.cssText='width:100%;height:100%;object-fit:contain';
+  image.after(video);
+ }
+ if(video){
+  if(!videoMode){video.pause();video.removeAttribute('src')}
+  video.hidden=!videoMode||!source;
+  if(videoMode&&source&&video.getAttribute('src')!==source)video.src=source;
+ }
+ if(image){
+  image.hidden=!current||videoMode||!source;
+  if(current&&!videoMode&&source){image.src=source;image.alt=current.caption||'Gallery picture'}
+  else image.removeAttribute('src');
+ }
+ if(caption)caption.textContent=current?.caption||'No pictures yet';
+ if(counter)counter.textContent=images.length?slide+1+' / '+images.length:'0 / 0';
+ if(thumbs){
+  thumbs.replaceChildren();
+  images.slice(0,35).forEach((item,index)=>{
+   const src=imageValue(item.image||item.imageUrl);
+   const btn=el('button');btn.type='button';btn.dataset.galleryItem=String(index);
+   btn.setAttribute('aria-label','Choose gallery '+(isVideo(item)?'video ':'image ')+(index+1));
+   btn.className=index===slide?'active':'';
+   if(isVideo(item))btn.append(el('span','🎞'));
+   else if(src){const img=el('img');img.loading='lazy';img.src=src;img.alt=item.caption||'Gallery thumbnail';btn.append(img)}
+   else btn.append(el('span','🖼'));
+   thumbs.append(btn);
+  });
+ }
+}
 function showPinFilters(){const scope=root('classic_pins');if(!scope)return;const mount=$('#pinBoardChips',scope),list=$('#pinsList',scope);if(!mount||!list)return;const pins=read('pins'),boards=['All',...new Set(pins.map(x=>x.board||'Unsorted'))];if(!boards.includes(filter))filter='All';mount.replaceChildren();for(const name of boards){const b=el('button',name);b.type='button';b.dataset.pinFilter=name;b.setAttribute('aria-pressed',String(name===filter));mount.append(b)}for(const [i,card] of [...list.children].entries())card.hidden=filter!=='All'&&(pins[i]?.board||'Unsorted')!==filter}
 function showIdentity(){const scope=root('profile_identity');if(!scope)return;const record=read('identity')[0]||{};if(record.displayName){const title=document.getElementById('profileTitle');if(title)title.textContent=record.displayName+"'s space";}
  // Profile photos are handled ONLY by the dedicated crop/fit portrait above Identity.
@@ -31,7 +80,24 @@ function showIdentity(){const scope=root('profile_identity');if(!scope)return;co
 function drawAll(){showAbout();showDonate();showTags();showGuestbook();showContact();showGallery();showPinFilters();showIdentity();window.OurSpaceProfileModulesLayout?.refresh?.()}
 for(const scope of ['profile_about','donation_module','profile_tags','guestbook','contact_links','carousel_gallery_module','classic_pins','profile_identity'])fill(root(scope));
 for(const scope of ['profile_about','donation_module','profile_tags','guestbook','contact_links','profile_identity'])root(scope)?.addEventListener('submit',()=>setTimeout(drawAll,60));
-const pictureRoot=root('carousel_gallery_module');pictureRoot?.addEventListener('click',e=>{const step=e.target.closest('#fusionGalleryPrev,#fusionGalleryNext'),item=e.target.closest('[data-gallery-item]'),open=e.target.closest('#fusionGalleryOpen');if(step){slide+=step.id==='fusionGalleryNext'?1:-1;showGallery()}else if(item){slide=+item.dataset.galleryItem;showGallery()}else if(open){const current=read('pictures')[slide];const source=imageValue(current?.image||current?.imageUrl);if(!source)return;const overlay=document.createElement('dialog');overlay.className='pm-photo-dialog';const img=el('img');img.alt=current?.caption||'Gallery image';img.src=source;img.style.cssText='max-width:min(94vw,1100px);max-height:85vh;object-fit:contain';const close=el('button','Close image');close.type='button';close.addEventListener('click',()=>overlay.close());overlay.append(close,img);document.body.append(overlay);overlay.addEventListener('close',()=>overlay.remove());overlay.showModal();}});
+const pictureRoot=root('carousel_gallery_module');pictureRoot?.addEventListener('click',e=>{const step=e.target.closest('#fusionGalleryPrev,#fusionGalleryNext'),item=e.target.closest('[data-gallery-item]'),open=e.target.closest('#fusionGalleryOpen');if(step){slide+=step.id==='fusionGalleryNext'?1:-1;showGallery()}else if(item){slide=+item.dataset.galleryItem;showGallery()}else if(open){
+ const current=read('pictures')[slide];
+ const resolved=window.OurSpaceModuleControllers?.carousel_gallery_module?.ensureSource?.(current)||'';
+ const videoMode=isVideo(current);
+ const source=videoMode?playableValue(current?.video||resolved||current?.url):
+  imageValue(current?.image||current?.imageUrl||resolved);
+ if(!source)return;
+ const overlay=document.createElement('dialog');overlay.className='pm-photo-dialog';
+ const media=el(videoMode?'video':'img');
+ if(videoMode){media.controls=true;media.playsInline=true;media.preload='metadata'}
+ else media.alt=current?.caption||'Gallery image';
+ media.src=source;media.style.cssText='max-width:min(94vw,1100px);max-height:85vh;object-fit:contain';
+ const close=el('button',videoMode?'Close video':'Close image');close.type='button';
+ close.addEventListener('click',()=>overlay.close());
+ overlay.append(close,media);document.body.append(overlay);
+ overlay.addEventListener('close',()=>{if(videoMode)media.pause();overlay.remove()});
+ overlay.showModal();
+}});
 root('classic_pins')?.addEventListener('click',e=>{const b=e.target.closest('[data-pin-filter]');if(b){filter=b.dataset.pinFilter;showPinFilters()}});
 drawAll();
 window.OurSpaceModuleFeatures={refresh:drawAll};
