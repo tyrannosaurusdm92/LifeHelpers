@@ -40,7 +40,7 @@ function initFilters(){const s=$('#category');s.innerHTML='<option value="all">A
 function filterItems(){let arr=catalog.filter(i=>{const q=state.query.toLowerCase();const hay=`${i.name} ${i.category} ${i.notes||''} ${i.source||''}`.toLowerCase();if(q&&!hay.includes(q))return false;if(state.category!=='all'&&i.category!==state.category)return false;if(state.affordable&&state.balance!=null&&totalCopper(i)>state.balance)return false;return true});if(state.sort==='price-low')arr.sort((a,b)=>totalCopper(a)-totalCopper(b));else if(state.sort==='price-high')arr.sort((a,b)=>totalCopper(b)-totalCopper(a));else if(state.sort==='name')arr.sort((a,b)=>a.name.localeCompare(b.name));else if(state.sort==='category')arr.sort((a,b)=>a.category.localeCompare(b.category)||a.name.localeCompare(b.name));return arr}
 function isOwned(i){return state.owned.has(i.id)||state.owned.has(i.backendItemId)}
 function productVisual(i){if(i.image)return `<img loading="lazy" src="${esc(i.image)}" alt="">`;if(cfg.mode==='onyx'){if(i.effectType==='house-area-unlock')return '🏠';if(i.effectType==='design-tier-unlock')return '🛠️';if(i.effectType==='studio-blank-mesh')return '⬜';return '🐈‍⬛'}return esc(i.emoji||'🎁')}
-function renderProducts(){const arr=filterItems(),shown=arr.slice(0,state.shown);$('#count').textContent=`${shown.length} of ${arr.length} items`;$('#products').innerHTML=shown.map(i=>{const owned=isOwned(i),restricted=!!i.restrictedCheckout,afford=state.balance==null||totalCopper(i)<=state.balance,reason=checkoutReason();let label=cfg.mode==='onyx'?(owned&&!i.repeatable?'Owned':'Unlock now'):'Add to cart';let disabled=restricted||!!reason||(!afford&&state.balance!=null)||(cfg.mode==='onyx'&&owned&&!i.repeatable);let details=[];if(i.tierName)details.push(i.tierName);if(i.source)details.push(i.source);if(i.palette)details.push(i.palette);return `<article class="product-card ${restricted?'restricted':''}" data-id="${esc(i.id)}"><div class="product-image">${productVisual(i)}</div><div class="product-body"><div class="meta"><span class="tag">${esc(i.category)}</span>${details.slice(0,2).map(x=>`<span class="tag">${esc(x)}</span>`).join('')}${restricted?'<span class="tag">reference only</span>':''}</div><h3>${esc(i.name)}</h3><div class="product-note">${esc(restricted?'This source entry is preserved as reference data only and is not checkout-enabled in this build.':(i.notes||''))}</div><div class="price" aria-label="Price ${esc(money(totalCopper(i)))}">${esc(money(totalCopper(i)))}</div><div class="card-actions"><button class="buy" data-buy="${esc(i.id)}" ${disabled?'disabled':''}>${esc(label)}</button></div></div></article>`}).join('')||'<div class="empty">No items match these filters.</div>';$('#loadMore').hidden=shown.length>=arr.length;$$('[data-buy]').forEach(b=>b.addEventListener('click',()=>handleBuy(b.dataset.buy)))}
+function renderProducts(){const arr=filterItems(),shown=arr.slice(0,state.shown);$('#count').textContent=`${shown.length} of ${arr.length} items`;$('#products').innerHTML=shown.map(i=>{const owned=isOwned(i),restricted=!!i.restrictedCheckout,afford=state.balance==null||totalCopper(i)<=state.balance,reason=checkoutReason();let label=cfg.mode==='onyx'?(owned&&!i.repeatable?'Owned':'Unlock now'):'Add to cart';let disabled=restricted||!!reason||(!afford&&state.balance!=null)||(cfg.mode==='onyx'&&owned&&!i.repeatable);let details=[];if(i.tierName)details.push(i.tierName);if(i.source)details.push(i.source);if(i.palette)details.push(i.palette);return `<article class="product-card ${restricted?'restricted':''}" data-id="${esc(i.id)}"><div class="product-image">${productVisual(i)}</div><div class="product-body"><div class="meta"><span class="tag">${esc(i.category)}</span>${details.slice(0,2).map(x=>`<span class="tag">${esc(x)}</span>`).join('')}${restricted?'<span class="tag">reference only</span>':''}</div><h3>${esc(i.name)}</h3><div class="product-note">${esc(restricted?'This source entry is preserved as reference data only and is not checkout-enabled in this build.':(i.notes||''))}</div><div class="price" aria-label="Price ${esc(money(totalCopper(i)))}">${esc(money(totalCopper(i)))}</div><div class="card-actions"><button class="buy" data-buy="${esc(i.id)}" ${disabled?'disabled':''}>${esc(label)}</button><button class="buy" type="button" data-wish-catalog="${esc(i.id)}">Add to wishlist</button></div></div></article>`}).join('')||'<div class="empty">No items match these filters.</div>';$('#loadMore').hidden=shown.length>=arr.length;$('[data-buy]').forEach(b=>b.addEventListener('click',()=>handleBuy(b.dataset.buy)));$('[data-wish-catalog]').forEach(b=>b.addEventListener('click',()=>void addCatalogWish(b.dataset.wishCatalog)))}
 function cartItem(id){return catalog.find(i=>i.id===id)}
 function handleBuy(id){const i=cartItem(id);if(!i)return;if(cfg.mode==='onyx')return autoBuyOnyx(i);if(i.restrictedCheckout)return toast('This source entry is reference-only in this build.','error');const n=Number(state.cart.get(id)||0)+1;state.cart.set(id,n);saveCart();renderCart();toast(`${i.name} added to cart.`)}
 function renderCart(){if(cfg.mode==='onyx'){renderOwned();return}const rows=[...state.cart.entries()].map(([id,q])=>[cartItem(id),q]).filter(([i])=>i);$('#cartList').innerHTML=rows.length?rows.map(([i,q])=>`<div class="cart-row"><div><h4>${esc(i.name)}</h4><p>${esc(money(totalCopper(i)))} each</p></div><div class="qty"><button data-minus="${esc(i.id)}" aria-label="Remove one ${esc(i.name)}">−</button><strong>${q}</strong><button data-plus="${esc(i.id)}" aria-label="Add one ${esc(i.name)}">+</button></div></div>`).join(''):'<div class="empty">Your cart is empty.</div>';const total=rows.reduce((s,[i,q])=>s+totalCopper(i)*q,0);$('#cartTotal').textContent=money(total);const reason=checkoutReason();$('#checkout').disabled=!rows.length||!!reason||(state.balance!=null&&total>state.balance);$$('[data-minus]').forEach(b=>b.onclick=()=>changeQty(b.dataset.minus,-1));$$('[data-plus]').forEach(b=>b.onclick=()=>changeQty(b.dataset.plus,1));}
@@ -56,6 +56,124 @@ async function autoBuyOnyx(i){if(state.busy)return;const reason=checkoutReason()
 if(!backendNative){const amount=totalCopper(i);if(amount>0)await api('currency.spend',{profileKey:state.profile,amountCopper:amount,reason:`Onyx Store: ${i.name}`,sourceType:'onyx-store-frontend',sourceId:purchaseKey});try{await api('record.save',{profileKey:state.profile,bucket:'onyx-store-owned',recordId:purchaseKey,key:i.id,value:{schema:'ourspace.onyx.store.owned.v1',purchaseId:purchaseKey,purchasedAt:new Date().toISOString(),item:i,automaticFulfillment:true,realMoney:false}})}catch(err){if(amount>0){try{await api('currency.earn',{profileKey:state.profile,amountCopper:amount,reason:`Rollback failed Onyx Store fulfillment: ${i.name}`,sourceType:'onyx-store-rollback',sourceId:purchaseKey+':rollback'})}catch{}}throw err}}
 const ownedValue={item:i,purchaseId:result?.purchaseId||purchaseKey,purchasedAt:new Date().toISOString(),automaticFulfillment:true};if(i.repeatable){const old=state.owned.get(i.id)||{item:i,quantity:0};ownedValue.quantity=Number(old.quantity||0)+1}state.owned.set(i.id,ownedValue);saveOwnedLocal();toast(`${i.name} unlocked for Onyx automatically.`,'success');setStatus('Purchase complete. This Onyx Store item was fulfilled automatically; no human seller action is required.','success');await Promise.allSettled([refreshBalance(),refreshOwned()])}catch(e){toast(e.message,'error');setStatus(e.message,'error')}finally{state.busy=false;renderProducts()}}
 function setupEvents(){const q=$('#search');q.addEventListener('input',()=>{state.query=q.value;state.shown=36;renderProducts()});$('#category').addEventListener('change',e=>{state.category=e.target.value;state.shown=36;renderProducts()});$('#sort').addEventListener('change',e=>{state.sort=e.target.value;renderProducts()});$('#affordable').addEventListener('change',e=>{state.affordable=e.target.checked;renderProducts()});$('#loadMore').onclick=()=>{state.shown+=36;renderProducts()};$('#checkout')?.addEventListener('click',openCheckout);$('#closeCheckout')?.addEventListener('click',()=>$('#checkoutModal').hidden=true);$('#cancelCheckout')?.addEventListener('click',()=>$('#checkoutModal').hidden=true);$('#placeOrder')?.addEventListener('click',submitCheckout);$('#refreshBalance').onclick=()=>refreshBalance();$('#mobileCart').onclick=()=>$('#sidebar').classList.toggle('open');$('#closeSidebar').onclick=()=>$('#sidebar').classList.remove('open');document.addEventListener('keydown',e=>{if(e.key==='Escape'){const m=$('#checkoutModal');if(m)m.hidden=true;$('#sidebar').classList.remove('open')}})}
+let wishlistPanel=null,wishlistItems=[];
+const wishlistService=()=>window.OurSpaceWishlist;
+const linkSafe=value=>{try{const u=new URL(value);return /^https?:$/.test(u.protocol)?u.href:''}catch{return ''}};
+const displayPlatinum=n=>Math.max(0,Math.floor(Number(n)||0)).toLocaleString()+' platinum';
+function prepareWishlistCart(item){
+ const id='custom-wish-'+item.id;
+ let product=catalog.find(x=>x.id===id);
+ if(!product){
+  const totalCopper=item.pricePlatinum*1000;
+  if(!Number.isSafeInteger(totalCopper))throw Error('Wishlist value is too large for the cart.');
+  product={id,name:item.name,category:'Wishlist',notes:'Wishlist request only; external purchase is not automatic.',
+   source:item.url,image:item.image||'',emoji:'🎁',price:{totalCopper}};
+  catalog.push(product);
+ }
+ return product;
+}
+function renderWishlist(){
+ if(!wishlistPanel)return;
+ const list=wishlistPanel.querySelector('[data-wishlist-items]');
+ list.innerHTML=wishlistItems.length?wishlistItems.map(item=>`<article class="product-card" data-wishlist-id="${esc(item.id)}">
+  <div class="product-image">${item.image?`<img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'🎁'}</div>
+  <div class="product-body"><h3>${esc(item.name)}</h3>
+   <div class="price">${esc(displayPlatinum(item.pricePlatinum))}</div>
+   <div class="card-actions"><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">View item</a>
+    <button class="buy" type="button" data-wishlist-cart="${esc(item.id)}">Add to cart</button>
+    <button class="buy" type="button" data-wishlist-remove="${esc(item.id)}">Remove</button>
+   </div></div></article>`).join(''):'<p class="empty">Your wishlist is empty. Add an item from the store or paste a shopping link.</p>';
+ for(const btn of wishlistPanel.querySelectorAll('[data-wishlist-remove]'))
+  btn.addEventListener('click',async()=>{
+   btn.disabled=true;try{await wishlistService().remove(btn.dataset.wishlistRemove);await refreshWishlist()}
+   catch(err){toast('Could not remove wishlist item: '+err.message,'error')}finally{btn.disabled=false}
+  });
+ for(const btn of wishlistPanel.querySelectorAll('[data-wishlist-cart]'))
+  btn.addEventListener('click',()=>{
+   const item=wishlistItems.find(x=>x.id===btn.dataset.wishlistCart);
+   if(!item)return;
+   try{const entry=prepareWishlistCart(item);handleBuy(entry.id)}
+   catch(err){toast(err.message,'error')}
+  });
+}
+async function refreshWishlist(){
+ if(!wishlistService()?.available?.())return;
+ try{
+  wishlistItems=await wishlistService().list();
+  wishlistItems.forEach(prepareWishlistCart);
+  renderWishlist();
+ }catch(err){toast('Wishlist is unavailable: '+err.message,'error')}
+}
+async function addCatalogWish(id){
+ const item=catalog.find(x=>x.id===id);
+ if(!item)return;
+ if(!wishlistService()?.available?.())return toast('Sign in to use wishlists.','error');
+ const url=linkSafe(item.sourceUrl||item.url||item.productUrl||item.link);
+ if(!url)return toast('This item has no verified shopping link. Use the wishlist form to add its link.','error');
+ try{
+  const value=Math.floor(totalCopper(item)/1000);
+  await wishlistService().add({id:'catalog-'+item.id,catalogItemId:item.id,
+   name:item.name,url,image:linkSafe(item.image),pricePlatinum:value});
+  await refreshWishlist();toast('Added to your wishlist and partner Feed.','success');
+ }catch(err){toast('Could not add to wishlist: '+err.message,'error')}
+}
+async function previewWishlistImage(){
+ if(!wishlistPanel)return;
+ const input=wishlistPanel.querySelector('[name="wishUrl"]'),
+  image=wishlistPanel.querySelector('[name="wishImage"]');
+ if(!input||!image)return;
+ const url=linkSafe(input.value.trim());
+ if(!url)return toast('Enter an HTTPS product link first.','error');
+ if(/\.(?:png|jpe?g|webp|gif|avif)(?:[?#]|$)/i.test(url)){
+  image.value=url;return toast('Product image URL detected.','success');
+ }
+ try{
+  // Remote storefronts often prohibit cross-origin previews. No cookies/tokens sent.
+  const r=await fetch(url,{method:'GET',credentials:'omit',referrerPolicy:'no-referrer',mode:'cors',signal:AbortSignal.timeout(9000)});
+  if(!r.ok)throw Error('The store blocked a preview request.');
+  const doc=new DOMParser().parseFromString((await r.text()).slice(0,250000),'text/html');
+  const src=doc.querySelector('meta[property="og:image"],meta[name="twitter:image"]')?.content||'';
+  const resolved=linkSafe(new URL(src,url).href);
+  if(!resolved)throw Error('No product image was found.');
+  image.value=resolved;
+  if(!wishlistPanel.querySelector('[name="wishName"]').value){
+   wishlistPanel.querySelector('[name="wishName"]').value=
+    (doc.querySelector('meta[property="og:title"]')?.content||doc.title||'').slice(0,160);
+  }
+  toast('Image and product title discovered.','success');
+ }catch(_){toast('This shop does not allow automatic previews here. Paste an image URL instead.','error')}
+}
+function installWishlist(){
+ if(cfg.mode==='onyx'||!storeRoot||wishlistPanel)return;
+ wishlistPanel=document.createElement('section');
+ wishlistPanel.className='store-section';
+ wishlistPanel.setAttribute('aria-label','Wishlist');
+ wishlistPanel.innerHTML=`<div class="product-body"><h2>Wishlist</h2>
+ <p>Your saved gift ideas appear on the other member's Feed. Platinum values are personal estimates, not real prices.</p>
+ <form data-wishlist-form>
+  <label>Item label <input required name="wishName" maxlength="160" placeholder="Comforter set"></label>
+  <label>Shopping URL <input required name="wishUrl" type="url" placeholder="https://www.walmart.com/..."></label>
+  <label>Image URL (optional) <input name="wishImage" type="url" placeholder="https://...image.jpg"></label>
+  <button class="buy" type="button" data-wishlist-preview>Find image from link</button>
+  <label>Estimated value in platinum <input required name="wishPlatinum" type="number" min="0" max="1000000000" step="1" placeholder="10000"></label>
+  <button class="buy" type="submit">Add to wishlist</button>
+ </form></div><div data-wishlist-items></div>`;
+ storeRoot.append(wishlistPanel);
+ wishlistPanel.querySelector('[data-wishlist-preview]').addEventListener('click',()=>void previewWishlistImage());
+ wishlistPanel.querySelector('[data-wishlist-form]').addEventListener('submit',async event=>{
+  event.preventDefault();const form=event.currentTarget,btn=form.querySelector('[type="submit"]');
+  const fields=new FormData(form);
+  btn.disabled=true;
+  try{
+   await wishlistService().add({name:String(fields.get('wishName')||''),
+    url:String(fields.get('wishUrl')||''),image:String(fields.get('wishImage')||''),
+    pricePlatinum:Number(fields.get('wishPlatinum'))});
+   form.reset();await refreshWishlist();toast('Wishlist updated and shared on partner Feed.','success');
+  }catch(err){toast('Wishlist was not saved: '+err.message,'error')}
+  finally{btn.disabled=false}
+ });
+ void refreshWishlist();
+}
 function renderAll(){renderProducts();renderCart();renderOrders()}
 async function init(){document.getElementById('osStoreModule')?.classList.add('theme-'+cfg.theme);$('#storeTitle').textContent=cfg.title;$('#storeSubtitle').textContent=cfg.subtitle;$('#heroTitle').textContent=cfg.heroTitle;$('#heroText').textContent=cfg.heroText;$('#sidebarTitle').textContent=cfg.mode==='onyx'?'Owned by Onyx':'Cart';if(cfg.mode==='onyx'){$('#checkout').hidden=true;$('#checkoutModal').remove();$('#sidebarHint').textContent='Automatic fulfillment inventory';}else $('#sidebarHint').textContent=`Receipt goes to ${profileNames[cfg.storeOwnerProfile]}`;await hydrateIdentity();
  try{
@@ -64,7 +182,7 @@ async function init(){document.getElementById('osStoreModule')?.classList.add('t
   catalog.splice(0,catalog.length,...localCatalog.entries.map(window.OurSpaceCanonical.toStoreItem));
   window.dispatchEvent(new CustomEvent('ourspace:canonical:store-ready',{detail:{profile:localCatalog.profile,count:catalog.length}}));
  }catch(error){console.warn('[OurSpace] Canonical store unavailable:',error.message);catalog.splice(0);const status=$('#status');if(status){status.hidden=false;status.textContent='Catalog unavailable. Check the OurSpace JSON files.';}}
- initFilters();loadCart();setupEvents();renderAll()}
+ initFilters();loadCart();setupEvents();renderAll();installWishlist()}
 document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
 
