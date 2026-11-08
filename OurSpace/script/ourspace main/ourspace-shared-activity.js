@@ -99,8 +99,28 @@ async function refresh(){
 }
 const list=()=>items.map(x=>({...x,metadata:{...x.metadata}}));
 const sharedCollections=()=>list().filter(x=>x.type==='collection'&&x.metadata.sharedCollection);
+async function shareCollection(collection){
+ if(!ready())throw Error('Sign in to share a collection.');
+ if(!collection||!['audio','visual','bulletin'].includes(collection.category))
+  throw Error('Select an Audio, Visual, or Bulletin collection.');
+ const id=clean(collection.id,100),name=clean(collection.name,140);
+ if(!id||!name)throw Error('Collection needs a name and ID.');
+ const entries=Array.isArray(collection.entries)?collection.entries:[];
+ const raw={id:'collection-'+who()+'-'+collection.category+'-'+id,
+  type:'collection',author:who(),title:'Shared '+collection.category+' collection: '+name,
+  body:name+' is available to '+other()+' in OurSpace.',
+  source:'OurSpace Shared Collections',createdAt:new Date().toISOString(),
+  metadata:{sharedCollection:{category:collection.category,id,name,
+   collectionType:collection.collectionType||'folder',entries}}};
+ const item=normalize(raw,who());
+ // Do not claim that a shared collection is available until the backend ACK.
+ const confirmed=await sendRemote(item);
+ if(!confirmed)throw Error('No authenticated partner delivery was confirmed.');
+ merge([item]);try{channel?.postMessage({type:'updated'})}catch(_){}
+ return item;
+}
 window.OurSpaceActivity=Object.freeze({publish,list,refresh,sharedCollections,
- connected:()=>lastConnected});
+ shareCollection,connected:()=>lastConnected});
 /* Each account owns a wishlist preference; only user-submitted item previews
  * are sent to their partner's Feed. No real-money checkout or price scraping. */
 const wishlistScope='store',wishlistKey='wishlist-v1';
