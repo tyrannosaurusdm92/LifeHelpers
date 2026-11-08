@@ -72,9 +72,89 @@ async function signIn(identifier,password,remember){
  return acceptSession(result,remember);
 }
 async function signOut(contactServer=true){
+ try{window.OurSpaceMemberMedia?.clear?.()}catch(_){}
  if(contactServer&&token()&&!isAdmin())try{await request('auth.signout',{})}catch(_){}
  memoryToken='';memoryProfile='';for(const s of [ss(),ls()]){put(s,sessionKey,'');put(s,profileKey,'')};put(ss(),previewKey,'');
 }
 function authorize(viewingProfile){return isAdmin()||isAuthenticated()&&profile()===viewingProfile}
 window.OurSpaceAuth={request,signIn,acceptSession,signOut,token,profile,isAdmin,isAuthenticated,authorize};
+/* OurSpace 3.4.6: single authenticated Drive media client. File bytes and session
+ * tokens never enter URLs, localStorage, GitHub, or public profiles. */
+const mediaUrls=new Set();
+const mediaMember=()=>isAuthenticated()&&!isAdmin()&&
+ ['william','jasper'].includes(profile())&&
+ document.documentElement.dataset.profile===profile()&&
+ new URLSearchParams(location.search).get('public')!=='1'&&
+ document.documentElement.dataset.osNativePublic!=='true';
+const requireMediaMember=()=>{if(!mediaMember())throw new Error('Sign in as the current OurSpace profile to access shared Drive media.');};
+const mediaId=record=>{
+ const id=String(record?.fileId||record?.driveFileId||record?.mediaId||record||'').replace(/^drive-/,'');
+ if(!/^[A-Za-z0-9_-]{15,128}$/.test(id))throw new Error('Invalid Drive media file identifier.');
+ return id;
+};
+async function mediaList(options={}){
+ requireMediaMember();
+ const kind=String(options.kind||'').toLowerCase(),owner=String(options.owner||'all').toLowerCase();
+ if(kind&&!['image','audio','video'].includes(kind))throw new Error('Invalid media kind.');
+ if(!['all','william','jasper','shared'].includes(owner))throw new Error('Invalid media owner.');
+ let offset=0,files=[],pages=0;
+ do{
+  requireMediaMember();
+  const result=await request('media.drive.list',{kind,ownerProfileKey:owner,offset,limit:250},{timeout:90000});
+  const batch=Array.isArray(result.media)?result.media:[];
+  for(const f of batch){
+   if(!f||!['image','audio','video'].includes(f.kind)||!['william','jasper','shared'].includes(f.ownerProfileKey))continue;
+   files.push({fileId:mediaId(f),mediaId:f.mediaId||'drive-'+mediaId(f),
+    name:String(f.name||f.fileName||'Untitled'),mimeType:String(f.mimeType||'application/octet-stream'),
+    sizeBytes:Number(f.sizeBytes)||0,kind:f.kind,category:String(f.category||'media'),
+    ownerProfileKey:f.ownerProfileKey,path:String(f.path||''),modifiedAt:String(f.modifiedAt||'')});
+  }
+  offset=Number.isSafeInteger(result.nextOffset)?result.nextOffset:null;
+  pages++;
+ }while(offset!==null&&pages<8);
+ return files;
+}
+async function mediaGet(record){
+ requireMediaMember();
+ const result=await request('media.drive.get',{fileId:mediaId(record)},{timeout:45000});
+ if(!result?.media||!['image','audio','video'].includes(result.media.kind))throw new Error('Drive did not return an accessible media file.');
+ return result.media;
+}
+async function mediaBlob(record,options={}){
+ requireMediaMember();
+ const fileId=mediaId(record);
+ const metadata=await mediaGet(fileId);
+ const size=Number(metadata.sizeBytes);
+ if(!Number.isSafeInteger(size)||size<0||size>512*1024*1024)throw new Error('Drive media size is unsupported.');
+ const maximum=Number(options.maxBytes||512*1024*1024);
+ if(size>maximum)throw new Error('This Drive file is larger than the selected player can safely assemble.');
+ const chunks=[];let offset=0,steps=0;
+ while(offset<size){
+  requireMediaMember();
+  if(options.signal?.aborted)throw new DOMException('Media load cancelled.','AbortError');
+  const part=await request('media.drive.content',{fileId,offset,maxBytes:262144},{timeout:90000});
+  if(part.fileId!==fileId||part.offset!==offset||!Number.isInteger(part.bytesRead)||part.bytesRead<=0||
+     part.bytesRead>262144||part.bytesRead>size-offset||typeof part.base64!=='string')
+   throw new Error('Drive returned an invalid media chunk.');
+  const raw=atob(part.base64);
+  if(raw.length!==part.bytesRead)throw new Error('Drive media chunk length mismatch.');
+  const bytes=new Uint8Array(raw.length);
+  for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+  chunks.push(bytes);offset+=bytes.length;steps++;
+  options.onProgress?.({fileId,bytesRead:offset,sizeBytes:size});
+  if(steps>2048)throw new Error('Drive media chunk count exceeds the playback limit.');
+ }
+ return new Blob(chunks,{type:metadata.mimeType||'application/octet-stream'});
+}
+async function mediaObjectUrl(record,options={}){
+ const blob=await mediaBlob(record,options),url=URL.createObjectURL(blob);
+ mediaUrls.add(url);return url;
+}
+function revokeMediaUrl(url){if(mediaUrls.delete(url))URL.revokeObjectURL(url)}
+function clearMediaUrls(){for(const url of mediaUrls)URL.revokeObjectURL(url);mediaUrls.clear()}
+window.OurSpaceMemberMedia=Object.freeze({
+ contractVersion:'3.4.6',available:mediaMember,list:mediaList,get:mediaGet,
+ blob:mediaBlob,objectUrl:mediaObjectUrl,revoke:revokeMediaUrl,clear:clearMediaUrls
+});
+window.addEventListener('pagehide',clearMediaUrls);
 })();
