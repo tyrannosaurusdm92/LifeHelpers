@@ -91,6 +91,9 @@
        if(res.testerMode!==true||res.selectedProfile!==profile)throw Error("The backend did not confirm the selected read-only tester profile.");
        return{ text:replyOf(res),source:"Read-only Apps Script tester",modelAttested:/gemini/i.test(str(res.provider||res.modelProvider)) };
      }
+     const activeAccountProfile=root.OnyxBackendClient?.activeProfile?.();
+     if(!root.OnyxBackendClient?.authenticated?.() || !PROFILES.includes(activeAccountProfile)) throw Error("Sign in to your OurSpace profile, or use the verified email tester.");
+     if(activeAccountProfile!==profile) throw Error("The signed-in OurSpace profile differs from the selected parent. Select your own profile or enter verified tester mode to test both.");
      if(!root.OnyxRepositoryBridge?.status?.().available || !root.OnyxBrainLink?.chat)
        throw Error("Canonical LifeHelpers/Onyx brain not available. Sign in to OurSpace or use Email tester code.");
      const res=await root.OnyxBrainLink.chat({
