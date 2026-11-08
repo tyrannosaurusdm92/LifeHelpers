@@ -80,6 +80,7 @@
 <div aria-orientation="vertical" class="server-list" id="serverList" role="tablist"></div>
 <button aria-label="Project catalog" class="rail-button" id="catalogButton" title="Project catalog" type="button">▦</button>
 <button aria-label="Toggle Design Widget for Work" aria-pressed="false" class="onyx-design-toggle onyx-design-rail" data-onyx-design-toggle data-design-surface="work" type="button" title="Show / hide Design Widget (integration hook)"><span aria-hidden="true" class="design-widget-icon"></span></button>
+<button aria-label="Email Onyx tester code" class="rail-button" id="onyxTesterOpen" title="Email tester code" type="button">✉</button>
 <button aria-label="Work settings" class="rail-button" id="settingsButton" title="Work settings" type="button">⚙</button>
 </aside>
 <aside aria-label="Subtabs" class="channel-sidebar" id="channelSidebar">
@@ -121,6 +122,7 @@
 </div>
 </div>
 <div class="chat-actions">
+<button class="small-button" id="onyxVoiceOpen" title="Open Onyx response generator" type="button">Voice library</button>
 <button aria-label="Rename subtab" class="icon-button" id="renameChannelButton" title="Rename subtab" type="button">✎</button>
 <button aria-label="Export this subtab" class="icon-button" id="exportChannelButton" title="Export this subtab" type="button">⇩</button>
 <button aria-label="Clear this subtab" class="icon-button" id="clearChannelButton" title="Clear this subtab" type="button">⌫</button>
@@ -197,6 +199,48 @@
 <button class="primary-button" id="saveSettingsButton" type="button">Save</button>
 </footer>
 </form>
+</dialog>
+<dialog aria-label="Onyx tester email verification" class="settings-dialog" id="onyxTesterDialog">
+<div class="settings-card">
+<header><div><span class="eyebrow">FULLSCREEN WORK ONLY</span><h2>Onyx AI Brain tester</h2></div><button aria-label="Close tester dialog" class="icon-button" id="onyxTesterClose" type="button">×</button></header>
+<div class="settings-body">
+<p class="field-help">Use the existing OurSpace backend to request a six-digit email code. Verified tester sessions last up to three hours and are read-only. No OurSpace account login is required.</p>
+<div id="onyxTesterEmailStep">
+<label class="field"><span>Tester email address</span><input autocomplete="email" id="onyxTesterEmail" type="email" value="williamsaville92@gmail.com"/></label>
+<div class="chat-actions"><button class="secondary-button" id="onyxTesterCancelEmail" type="button">Cancel</button><button class="primary-button" id="onyxTesterRequest" type="button">Confirm · email tester code</button></div>
+</div>
+<div hidden id="onyxTesterCodeStep">
+<label class="field"><span>Six-digit verification code</span><input autocomplete="one-time-code" id="onyxTesterCode" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" placeholder="000000" type="text"/></label>
+<div class="chat-actions"><button class="secondary-button" id="onyxTesterCancelCode" type="button">Cancel</button><button class="secondary-button" id="onyxTesterResend" type="button">Resend code</button><button class="primary-button" id="onyxTesterVerify" type="button">Confirm code</button></div>
+</div>
+<div hidden id="onyxTesterActiveStep">
+<label class="field"><span>Read-only tester profile</span><select id="onyxTesterProfile"><option value="william">William · Papa</option><option value="jasper">Jasper · Momma</option></select></label>
+<p class="field-help" id="onyxTesterCurrent">Tester mode active.</p>
+<div class="chat-actions"><button class="secondary-button" id="onyxTesterExit" type="button">Exit tester mode</button></div>
+</div>
+<p aria-live="polite" class="settings-status" id="onyxTesterStatus">Request a code to begin.</p>
+<p class="field-help">For testing only: temporary tester tokens and messages travel using the backend's read-only JSONP URL interface and may appear in network logs. Do not enter private or sensitive material in this mode.</p>
+</div>
+</div>
+</dialog>
+<dialog aria-label="Onyx AI response generator" class="settings-dialog" id="onyxVoiceDialog">
+<div class="settings-card">
+<header><div><span class="eyebrow">FULLSCREEN WORK · VOICE LIBRARY</span><h2>Onyx response generator</h2></div><button aria-label="Close voice library" class="icon-button" id="onyxVoiceClose" type="button">×</button></header>
+<div class="settings-body">
+<p class="field-help">Generate fresh, context-sensitive Onyx responses through the same shared AI Brain. Account mode uses the canonical LifeHelpers/Onyx brain; verified email tester mode uses the existing read-only backend. No generator styling is imported.</p>
+<p class="settings-status" id="onyxVoiceProvider">Checking backend mode…</p>
+<p>Active identity: <strong id="onyxVoiceProfile">Not connected</strong></p>
+<label class="field"><span>What was said to Onyx? / Response scenario</span><textarea id="onyxVoiceInput" maxlength="1700" placeholder="Hey buddy, how are you doing?" rows="4"></textarea></label>
+<div class="settings-body">
+<label class="field"><span>Conversation mode</span><select id="onyxVoiceMode"><option value="work">Work</option><option value="leisure">Leisure</option></select></label>
+<label class="field"><span>Mood</span><select id="onyxVoiceMood"><option value="auto">Automatic</option><option value="listening">Listening</option><option value="thinking">Thinking</option><option value="thoughtful">Thoughtful</option><option value="hungry">Hungry</option><option value="caring">Caring</option><option value="judgmental">Judgmental</option><option value="purring">Purring</option><option value="sleeping">Sleeping</option></select></label>
+<label class="field"><span>Number of responses</span><select id="onyxVoiceCount"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></label>
+</div>
+<div class="chat-actions"><button class="primary-button" id="onyxVoiceGenerate" type="button">Generate responses</button><button class="secondary-button" id="onyxVoiceClear" type="button">Clear candidates</button><button class="secondary-button" id="onyxVoiceExport" type="button">Export onyx-responses.js</button></div>
+<p aria-live="polite" class="settings-status" id="onyxVoiceStatus">Ready. Responses are only approved and exported on this device; no backend write is performed.</p>
+<div aria-label="AI-generated candidate responses" aria-live="polite" id="onyxVoiceResults"></div>
+</div>
+</div>
 </dialog>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
  Existing GitHub-hosted Onyx brain assets: no duplicate brain files in this package. 
@@ -284,6 +328,7 @@
 <script src="script/onyx widget/onyx_widget_shared-onyx-audio-votes.js"></script>
 <script src="script/onyx widget/onyx_widget_backend-client.js"></script>
 <script src="script/onyx widget/onyx-tester.js"></script>
+<script src="script/onyx widget/onyx-responses.js"></script>
 <script src="script/onyx widget/onyx-professor.js"></script>
 <script src="script/onyx widget/onyx_widget_work-tab.js"></script><script src="script/onyx widget/onyx_widget_legacy-static-moods.js"></script><script src="script/onyx widget/onyx-widget-game-frame.js" defer></script>
 
