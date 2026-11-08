@@ -9,12 +9,23 @@ const status=(message,error=false)=>{const e=$('#profileStatus');if(e){e.textCon
 const defaultProfile=()=>({displayName,handle:'',headline:'',pronouns:'',status:'',mood:'',location:'',hereFor:'',avatar:'',about:'',tags:'',musicInterest:'',movieInterest:'',bookInterest:'',gameInterest:'',posts:[],music:[],gallery:[],comments:[],links:[],projects:[]});
 const keys=['displayName','handle','headline','pronouns','status','mood','location','hereFor','avatar','about','tags','musicInterest','movieInterest','bookInterest','gameInterest'];
 const lists=['posts','music','gallery','comments','links','projects'];
-let data=defaultProfile(),saveRunning=false;
+let data=defaultProfile(),saveRunning=false,lastPartnerProfileDigest='';
 function sanitizeObject(raw){const base=defaultProfile();if(!raw||typeof raw!=='object')return base;for(const key of keys)if(typeof raw[key]==='string')base[key]=raw[key].slice(0,key==='about'?10000:300);for(const key of lists){if(Array.isArray(raw[key]))base[key]=raw[key].slice(0,250).filter(x=>x&&typeof x==='object').map(x=>({id:String(x.id||'').slice(0,100),title:String(x.title||'').slice(0,120),body:String(x.body||'').slice(0,10000),name:String(x.name||'').slice(0,80),url:validUrl(x.url||''),artist:String(x.artist||'').slice(0,80),album:String(x.album||'').slice(0,80),date:String(x.date||'').slice(0,50)}))}return base}
 function previewLoad(){try{data=sanitizeObject(JSON.parse(localStorage.getItem(demoKey)||'null'))}catch(_){data=defaultProfile()}window.OurSpaceLinksModule?.importLegacy?.(data.links)}
-async function serverLoad(){try{const r=await auth.request('profile.get',{profileKey:who});const maybe=r?.profile||r?.data?.profile||r?.data;if(maybe&&typeof maybe==='object'){data=sanitizeObject(maybe);window.OurSpaceModuleMigration?.migrate?.(data);status('Profile loaded.')}else status('The server did not return a saved profile.');render() }catch(err){status('Could not load account profile: '+err.message,true)}}
+async function serverLoad(){try{const r=await auth.request('profile.get',{profileKey:who});const maybe=r?.profile||r?.data?.profile||r?.data;if(maybe&&typeof maybe==='object'){data=sanitizeObject(maybe);lastPartnerProfileDigest=JSON.stringify([data.headline,data.about]);window.OurSpaceModuleMigration?.migrate?.(data);status('Profile loaded.')}else status('The server did not return a saved profile.');render() }catch(err){status('Could not load account profile: '+err.message,true)}}
 async function save(){if(saveRunning)return;saveRunning=true;if(auth.isAdmin()){try{localStorage.setItem(demoKey,JSON.stringify(data));status('Preview saved on this browser only.')}catch(_){status('Preview changes are temporary in this browser session; export a snapshot for backup.',true)}saveRunning=false;return}
- try{await auth.request('profile.save',{profileKey:who,profile:data});status('Profile saved to your account.');queuePublishedSync()}catch(err){status('This edit is visible here but could not sync to the account: '+err.message,true)}finally{saveRunning=false}}
+ try{
+  await auth.request('profile.save',{profileKey:who,profile:data});
+  status('Profile saved to your account.');queuePublishedSync();
+  const signature=JSON.stringify([data.headline,data.about]);
+  if(lastPartnerProfileDigest!==signature){
+   lastPartnerProfileDigest=signature;
+   window.OurSpaceActivity?.publish({type:'profile',author:who,
+     id:'profile-about-'+who,key:'profile-about-'+who,
+     title:data.headline||'Updated About Me',body:data.about||'Profile details updated',
+     source:'OurSpace Profile',createdAt:new Date().toISOString()});
+  }
+ }catch(err){status('This edit is visible here but could not sync to the account: '+err.message,true)}finally{saveRunning=false}}
 // Public publication is opt-in and separate from private profile.save.
 // Only selected fields and explicitly selected, link-backed media leave the account.
 let publicSyncTimer=null;
@@ -121,7 +132,14 @@ function wireProfile(){
  if(btn.dataset.removeId){const arr=data[btn.dataset.removeType];if(!arr)return;data[btn.dataset.removeType]=arr.filter(x=>x.id!==btn.dataset.removeId);render();save();return}
  if(btn.dataset.playId){const index=data.music.findIndex(x=>x.id===btn.dataset.playId);if(index>=0)window.postMessage({channel:'ourspace-record',kind:'select',index,autoplay:true},location.origin==='null'?'*':location.origin);return}
  });
- $$('form[data-collection]').forEach(form=>form.addEventListener('submit',e=>{e.preventDefault();const type=form.dataset.collection;const fd=new FormData(form);const entry={id:String(Date.now())+'-'+String(Math.random()).slice(2,9),date:new Date().toISOString()};for(const [k,v] of fd.entries())entry[k]=String(v).trim();if('url'in entry){entry.url=validUrl(entry.url);if(!entry.url){status('Please use an http(s) URL.',true);return}}data[type].unshift(entry);if(data[type].length>250)data[type].length=250;form.reset();render();save()}));
+ $$('form[data-collection]').forEach(form=>form.addEventListener('submit',e=>{e.preventDefault();const type=form.dataset.collection;const fd=new FormData(form);const entry={id:String(Date.now())+'-'+String(Math.random()).slice(2,9),date:new Date().toISOString()};for(const [k,v] of fd.entries())entry[k]=String(v).trim();if('url'in entry){entry.url=validUrl(entry.url);if(!entry.url){status('Please use an http(s) URL.',true);return}}data[type].unshift(entry);if(data[type].length>250)data[type].length=250;
+ const feedType={posts:'post',projects:'project',music:'music',gallery:'image',links:'link'}[type];
+ if(feedType)window.OurSpaceActivity?.publish({type:feedType,author:who,
+  id:'profile-'+type+'-'+who+'-'+entry.id,key:'profile-'+type+'-'+who+'-'+entry.id,
+  title:entry.title||entry.name||'New '+type,body:entry.body||entry.description||'',
+  url:entry.url||'',image:feedType==='image'?(entry.image||entry.url||''):'',
+  source:'OurSpace Profile',createdAt:new Date().toISOString()});
+ form.reset();render();save()}));
  $('#moduleSearch')?.addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();$$('#profileApp .profile-box').forEach(el=>el.hidden=!!q&&!el.querySelector('.label')?.textContent.toLowerCase().includes(q))});
  render();status(auth.isAdmin()?'Local preview mode. Account data is not accessible here.':'Your profile.');
 }
