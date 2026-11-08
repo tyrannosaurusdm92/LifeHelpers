@@ -43,6 +43,9 @@ function stableId(item) {
 }
 function normalizeType(v) {
   const s=String(v||'activity').toLowerCase();
+  if (/wishlist|wish/.test(s)) return 'wishlist';
+  if (/collection|folder|playlist|board/.test(s)) return 'collection';
+  if (/game|arcade|progress/.test(s)) return 'game';
   if (/pin/.test(s)) return 'pin';
   if (/video/.test(s)) return 'video';
   if (/image|photo|gif/.test(s)) return 'image';
