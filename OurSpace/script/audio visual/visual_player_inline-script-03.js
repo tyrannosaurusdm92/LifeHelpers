@@ -409,6 +409,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
           <div class="ospv-item-actions">
             <button class="ospv-btn ospv-btn-small" data-action="select-asset" data-asset-id="${esc(asset.id)}">Open</button>
             <button class="ospv-btn ospv-btn-small" data-action="download-asset" data-asset-id="${esc(asset.id)}">Download</button>
+            <button class="ospv-btn ospv-btn-small" type="button" data-action="send-profile-carousel" data-asset-id="${esc(asset.id)}">Send to Profile Carousel</button>
           </div>
         </div>
       </article>
@@ -508,7 +509,11 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     $$('[data-drop-kind="folder"]', root).forEach(btn => btn.addEventListener('click', () => { state.library.selectedFolderId = btn.dataset.id || 'folder-all'; state.library.selectedPlaylistId = ''; state.library.currentAssetId = visibleAssets()[0]?.id || ''; pause(); state.imageElapsed = 0; scheduleSave(); render(); }));
     $$('[data-drop-kind="playlist"]', root).forEach(btn => btn.addEventListener('click', () => { state.library.selectedPlaylistId = btn.dataset.id || ''; state.library.currentAssetId = visibleAssets()[0]?.id || state.library.currentAssetId; pause(); state.imageElapsed = 0; scheduleSave(); render(); }));
     $$('[data-action="select-asset"]', root).forEach(btn => btn.addEventListener('click', () => selectAsset(btn.dataset.assetId, false)));
-    $$('[data-action="download-asset"]', root).forEach(btn => btn.addEventListener('click', () => downloadAsset(btn.dataset.assetId)));
+    $('[data-action="download-asset"]', root).forEach(btn => btn.addEventListener('click', () => downloadAsset(btn.dataset.assetId)));
+    $('[data-action="send-profile-carousel"]', root).forEach(btn => btn.addEventListener('click', () => {
+      btn.disabled=true;
+      void sendVisualToProfile(btn.dataset.assetId).finally(()=>{if(btn.isConnected)btn.disabled=false});
+    }));
     $('[data-action="previous"]', root)?.addEventListener('click', previous);
     $('[data-action="rewind"]', root)?.addEventListener('click', () => seekRelative(-5));
     $('[data-action="play"]', root)?.addEventListener('click', play);
@@ -848,21 +853,56 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     });
   }
 
-  async function uploadMemberMedia(asset,file){
-    const auth=window.OurSpaceAuth;
-    if(!auth?.isAuthenticated?.()||auth.isAdmin?.()||auth.profile?.()!==document.documentElement.dataset.profile)return;
-    if(file.size>24*1024*1024){notify('File kept locally. Files larger than 24 MiB can be added directly to Google Drive for shared access.');return}
-    const dataUrl=await blobToDataUrl(file);
-    const result=await auth.request('upload.media',{
-      kind:asset.kind==='video'?'video':'image',
-      fileName:file.name,mimeType:file.type||asset.mime,dataUrl,
-      pageId:'visual',moduleId:'visual-player'
-    },{timeout:90000});
-    if(result?.driveFileId){
+  async function sendVisualToProfile(assetId){
+    const asset=state.library.assets.find(item=>item.id===assetId);
+    if(!asset)return notify('That visual is no longer in your library.','error');
+    const service=window.OurSpaceProfileMedia;
+    if(!service?.available?.())return notify('Sign into your OurSpace account to send visuals to your profile.','error');
+    try{
+      let driveFileId=String(asset.backendId|| (asset.source==='drive'?asset.id:''));
+      const url=/^https?:\/\//i.test(asset.remoteUrl||'')?asset.remoteUrl:
+        /^https?:\/\//i.test(asset.downloadUrl||'')?asset.downloadUrl:'';
+      if(!driveFileId&&!url){
+        const file=await idbGet(STORE_BLOBS,asset.id);
+        if(!file)throw new Error('Local file is missing. Restore it or add it to Drive.');
+        if(file.size>24*1024*1024)throw new Error('Add this large video to your Google Drive Media folder, then Refresh Drive before sending.');
+        await uploadMemberMedia(asset,file);
+        driveFileId=String(asset.backendId||'');
+      }
+      await service.send('carousel',{
+        sourceId:asset.id,kind:asset.kind,title:asset.title,
+        caption:asset.title||asset.originalName||'Visual',
+        driveFileId,url
+      });
+      notify((asset.kind==='video'?'Video':'Image')+' sent to your Profile Picture Carousel.','success');
+    }catch(err){notify('Could not send to Profile Carousel: '+err.message,'error')}
+  }
+
+  const inflightVisualUploads=new Map();
+  function uploadMemberMedia(asset,file){
+    if(asset.backendId)return Promise.resolve(asset.backendId);
+    if(inflightVisualUploads.has(asset.id))return inflightVisualUploads.get(asset.id);
+    const work=(async()=>{
+      const auth=window.OurSpaceAuth;
+      if(!auth?.isAuthenticated?.()||auth.isAdmin?.()||auth.profile?.()!==document.documentElement.dataset.profile)
+        throw new Error('Sign in to upload visual media.');
+      if(file.size>24*1024*1024)throw new Error('File exceeds 24 MiB; place it in Google Drive and refresh the library.');
+      const name=file.name||asset.originalName||asset.title||'visual';
+      const dataUrl=await blobToDataUrl(file);
+      const result=await auth.request('upload.media',{
+        kind:asset.kind==='video'?'video':'image',
+        fileName:name,mimeType:file.type||asset.mime,dataUrl,
+        pageId:'visual',moduleId:'visual-player'
+      },{timeout:90000});
+      if(!result?.driveFileId)throw new Error('Drive did not confirm the visual upload.');
       asset.backendId='drive-'+result.driveFileId;
       asset.source='backend+local';scheduleSave();
-      notify(file.name+' uploaded to your OurSpace Drive media folder.');
-    }
+      notify(name+' uploaded to your OurSpace Drive media folder.');
+      return asset.backendId;
+    })();
+    inflightVisualUploads.set(asset.id,work);
+    work.finally(()=>{if(inflightVisualUploads.get(asset.id)===work)inflightVisualUploads.delete(asset.id)}).catch(()=>{});
+    return work;
   }
 
   async function metadataForSync(asset, file) {
