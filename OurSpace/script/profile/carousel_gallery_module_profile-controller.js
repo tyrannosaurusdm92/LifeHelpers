@@ -112,7 +112,8 @@ const imp=$('[data-import]');if(imp)imp.addEventListener('change',async e=>{cons
 window.OurSpaceModuleControllers=window.OurSpaceModuleControllers||{};
 window.OurSpaceModuleControllers[root.dataset.osDesignScope]={
  getEntries:()=>JSON.parse(JSON.stringify(entries)),
- getDisplayEntries:()=>displayEntries().map(x=>({...x,src:sourceFor(x)})),
+ getDisplayEntries:()=>displayEntries().map(x=>({...x})),
+ ensureSource:entry=>{const original=displayEntries().find(x=>x.id===entry?.id);return original?sourceFor(original):''},
  upsertFeatured:(x)=>{if(!x||!x.ourspaceFeatureKey)return;const i=entries.findIndex(y=>y.ourspaceFeatureKey===x.ourspaceFeatureKey);if(i>=0)entries[i]={...entries[i],...x};else entries.unshift({...x});save();render()},
  importLegacy:raw=>{if(entries.length||!Array.isArray(raw)||!raw.length)return false;entries=raw.filter(x=>x&&typeof x==='object').slice(0,250);save();render();return true},
  refresh:render,refreshAccountSent
