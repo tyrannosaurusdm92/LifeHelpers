@@ -19,7 +19,7 @@
     return PROFILES.includes(p)?p:'';
   };
   function readApproved(profile){
-    if(!PROFILES.includes(profile))return [];
+    if(!PROFILES.includes(profile)||profile!==currentProfile())return [];
     if(fallbackApproved.has(profile))return fallbackApproved.get(profile).slice();
     try {
       const saved=JSON.parse(localStorage.getItem(APPROVED+profile)||'[]');
@@ -129,7 +129,7 @@
     return rows.length;
   }
   function exportJS(profile=currentProfile()){
-    if(!PROFILES.includes(profile))throw new Error('Select a valid profile first.');
+    if(!PROFILES.includes(profile)||profile!==currentProfile())throw new Error('You can export only the current authorized profile.');
     const data={schema:'onyx.responses.approved.v1',profile,source:'OurSpace fullscreen Work voice-library',entries:readApproved(profile)};
     // No temporary tester token, backend session, private dossiers or generator CSS.
     return '/** Approved Onyx voice examples. References, not hardcoded automatic replies. */\n'+
