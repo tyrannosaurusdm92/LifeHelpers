@@ -7,12 +7,14 @@ const ss=()=>{try{return window.sessionStorage}catch(_){return emptyStorage}},ls
 let memoryToken='',memoryProfile='';
 const read=(store,key)=>{try{return store.getItem(key)||'';}catch(_){return ''}};
 const write=(store,key,val)=>{try{val?store.setItem(key,val):store.removeItem(key);}catch(_){}};
-const demo=()=>read(ss(),AK)==='true';
-const token=()=>memoryToken||read(ss(),SK)||read(ls(),SK);
-const profile=()=>memoryProfile||read(ss(),'ourspace.auth.profile')||read(ls(),'ourspace.auth.profile');
-const loggedIn=()=>demo()||!!token();
+const demo=()=>window.OurSpaceAuth?.isAdmin?.()||
+ read(ss(),'ourspace.admin.preview')==='true'||read(ss(),AK)==='true';
+const token=()=>window.OurSpaceAuth?.token?.()||memoryToken||read(ss(),SK)||read(ls(),SK);
+const profile=()=>window.OurSpaceAuth?.profile?.()||memoryProfile||read(ss(),'ourspace.auth.profile')||read(ls(),'ourspace.auth.profile');
+const loggedIn=()=>window.OurSpaceAuth?.isAuthenticated?.()??(!demo()&&!!token());
 const publicActions=new Set(['health','actions','auth.config','auth.password.forgot','auth.password.reset','auth.recovery.options','auth.signin','auth.bootstrap','public.profile.get','route.resolve','pwa.manifest.hints']);
 async function request(action,data={},options={}){
+ if(window.OurSpaceAuth?.request)return window.OurSpaceAuth.request(action,data,options);
  if(demo()&&!publicActions.has(action))throw new Error('Testing mode is local only. Sign in to save or send.');
  const payload={action,data,clientId:'ourspace-browser',...(token()?{sessionToken:token()}:{})};
  let response;
@@ -35,6 +37,10 @@ function saveSession(result,remember){
  return result;
 }
 async function signIn(identifier,password,remember){
+ if(window.OurSpaceAuth?.signIn){
+  const result=await window.OurSpaceAuth.signIn(identifier,password,remember);
+  return {ok:true,...result};
+ }
  if(identifier.trim()==='#admin'&&password==='#admin'){
   write(ss(),AK,'true');memoryToken='';memoryProfile='';
   [ss(),ls()].forEach(s=>{write(s,SK,'');write(s,'ourspace.auth.profile','');});
@@ -44,7 +50,9 @@ async function signIn(identifier,password,remember){
  const result=await request('auth.signin',{identifier:identifier.trim(),password,rememberThisDevice:!!remember});
  return saveSession(result,remember);
 }
-async function signOut(){const t=token();if(t&&!demo()){try{await request('auth.signout',{});}catch(_){}}
+async function signOut(){
+ if(window.OurSpaceAuth?.signOut)return window.OurSpaceAuth.signOut();
+ const t=token();if(t&&!demo()){try{await request('auth.signout',{});}catch(_){}}
  memoryToken='';memoryProfile='';for(const s of [ss(),ls()]){write(s,SK,'');write(s,'ourspace.auth.profile','');}write(ss(),AK,'');window.dispatchEvent(new Event('ourspace:signed-out'));
 }
 window.OurSpaceBackend={endpoint:ENDPOINT,request,signIn,signOut,token,profile,isAdmin:demo,isAuthenticated:loggedIn};
