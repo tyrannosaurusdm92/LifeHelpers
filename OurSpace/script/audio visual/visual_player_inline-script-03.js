@@ -899,6 +899,13 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
       if(!result?.driveFileId)throw new Error('Drive did not confirm the visual upload.');
       asset.backendId='drive-'+result.driveFileId;
       asset.source='backend+local';scheduleSave();
+      window.OurSpaceActivity?.publish({
+        type:asset.kind,author:document.documentElement.dataset.profile,
+        key:'visual-'+document.documentElement.dataset.profile+'-'+asset.id,
+        title:asset.title||name,body:asset.originalName||name,
+        source:'OurSpace Drive',createdAt:new Date().toISOString(),
+        metadata:{library:'visual',assetId:asset.id,driveFileId:result.driveFileId}
+      });
       notify(name+' uploaded to your OurSpace Drive media folder.');
       return asset.backendId;
     })();
