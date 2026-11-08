@@ -27,7 +27,13 @@ const insertLink=(parent,label,url)=>{
   a.href=safe;a.rel='noopener noreferrer';a.target='_blank';return a;
 };
 const toItems=list=>Array.isArray(list)?list:[];
-const fail=reason=>{host.replaceChildren();viewport.hidden=true;message.hidden=false;message.textContent=reason};
+const announce=(status,reason='')=>{
+ try{window.parent?.postMessage({type:'ourspace:public-profile-state',profileKey:key,status,reason},location.origin)}catch(_){}
+};
+const fail=reason=>{
+ host.replaceChildren();viewport.hidden=true;message.hidden=false;message.textContent=reason;
+ announce('error',reason);
+};
 if(!key){fail('Choose Jasper or William to view a published OurSpace profile.');return;}
 document.documentElement.dataset.profile=key;
 document.documentElement.dataset.ourspaceCurrentPage='profile';
@@ -458,6 +464,7 @@ async function load(){
     initPublicJumpNav(jump);
   }
   message.hidden=true;viewport.hidden=false;
+  announce('ready');
   // Run only the existing native geometry and artwork fit. No account scripts.
   await appendScript('../../script/profile/ourspace-profile-baseline.js');
   await appendScript('../../script/profile/ourspace-profile-embedded-fit.js');
