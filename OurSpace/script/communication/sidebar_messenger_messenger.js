@@ -331,11 +331,13 @@
     }
 
     render() {
-      // Communication retains its message engine. Only the sidebar UI is
-      // suppressed; keep the independent page scrollbar across re-renders.
-      document.documentElement.classList.remove('sidebar-messenger-active');
+      // Preserve the account's entire Messenger UI (chats, notifications,
+      // date/currency, theme, windows) on every rerender and in fullscreen.
+      // Only matching authenticated member sessions reach this renderer.
+      const drawerWasOpen=this.root.classList.contains('os-drawer-open');
+      document.documentElement.classList.add('sidebar-messenger-active');
       const preservedRail=this.root.querySelector('#osMessengerPageScrollRail');
-      this.root.className = 'mp-root mp-vertical-root os-scroll-only';
+      this.root.className = 'mp-root mp-vertical-root'+(drawerWasOpen?' os-drawer-open':'');
       this.root.dataset.mpUi = 'vertical';
       this.root.innerHTML = `
         <div class="mp-windows" data-mp-windows></div>
