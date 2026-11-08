@@ -5,9 +5,9 @@ const APP_VERSION='1.1.1-clean';
 const LEGACY_STORAGE_KEY='ourspace_household_organizer_v1';
 const STORAGE_KEY='ourspace_household_organizer_v2_'+(document.documentElement.dataset.profile==='jasper'?'jasper':'william');
 const BACKEND=Object.freeze({
-  webApp:'https://script.google.com/macros/s/AKfycbw_wdbMMTKFNXjisAyGEdn5LwJaYQOH8FgrfbkSMItNCqyQYWD2uxcYX57L2Cap_ALn3w/exec',
-  library:'https://script.google.com/macros/library/d/1OAfZ4nWbCcdTCS87wHag_mWLAfrGcUu_UJx_GzMQWu6hiuRfcFXHogVp/1',
-  libraryVersion:'1'
+  webApp:'https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec',
+  library:'Canonical OurSpace account storage (no separate library)',
+  libraryVersion:'3.4.6'
 });
 const DAY=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const MONTH=['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -71,6 +71,7 @@ function migrate(raw){
   merged.version=APP_VERSION;
   return merged;
 }
+const hadSavedHouseholdData=Boolean(localStorage.getItem(STORAGE_KEY)||localStorage.getItem(LEGACY_STORAGE_KEY));
 let state=(()=>{try{
  const saved=localStorage.getItem(STORAGE_KEY);if(saved)return migrate(JSON.parse(saved));
  const legacy=localStorage.getItem(LEGACY_STORAGE_KEY);if(!legacy)return defaultState();
@@ -110,7 +111,7 @@ importOnyxHomework();
 window.addEventListener('ourspace:onyx-task-saved',event=>{if(event.detail?.profile!==ACTIVE_HOUSEHOLD_ID)return;if(importOnyxHomework())render()});
 window.addEventListener('storage',event=>{if(event.key==='ourspace.onyx.professor.tasks.v1.'+ACTIVE_HOUSEHOLD_ID){if(importOnyxHomework())render()}});
 let modalCleanup=null;
-function save(renderTop=true){state.currentMemberId=ACTIVE_HOUSEHOLD_ID;localStorage.setItem(STORAGE_KEY,JSON.stringify(state));applySettings();if(renderTop)renderChrome();window.dispatchEvent(new CustomEvent("ourspace:household-updated",{detail:{profile:ACTIVE_HOUSEHOLD_ID}}));}
+function save(renderTop=true){state.currentMemberId=ACTIVE_HOUSEHOLD_ID;state.accountSyncUpdatedAt=nowIso();localStorage.setItem(STORAGE_KEY,JSON.stringify(state));applySettings();if(renderTop)renderChrome();window.dispatchEvent(new CustomEvent("ourspace:household-updated",{detail:{profile:ACTIVE_HOUSEHOLD_ID}}));}
 
 function member(id=state.currentMemberId){return state.household.members.find(m=>m.id===id)||state.household.members[0];}
 function logActivity(text,kind='info'){state.activity.unshift({id:uid('activity'),text,kind,at:nowIso(),memberId:state.currentMemberId});state.activity=state.activity.slice(0,250);}
@@ -244,12 +245,91 @@ function normalizeFrequency(v){v=String(v||'on_demand').toLowerCase().replace(/[
 function normalizeImportedTask(obj,type='task'){return{id:String(obj.id||obj.key||uid('task')),title:String(obj.title||obj.name||'').trim(),type:TYPE_META[obj.type]?obj.type:type,description:String(obj.description||obj.notes||''),frequency:normalizeFrequency(obj.frequency||obj.recurrence||'on_demand'),rewardCopper:Math.max(1,Math.floor(Number(obj.rewardDenominations&&window.OurSpaceCanonical?window.OurSpaceCanonical.toCopper(obj.rewardDenominations):(obj.rewardCopper??obj.reward_copper??DEFAULT_REWARD[normalizeFrequency(obj.frequency)]??10)))),assignee:String(obj.assignee||obj.assignedProfile||'shared'),priority:['low','medium','high'].includes(obj.priority)?obj.priority:'medium',tags:asArray(obj.tags),reminder:Boolean(obj.reminder),time:String(obj.time||obj.timeOfDay||obj.schedule?.timeOfDay||''),weekdays:asArray(obj.weekdays||obj.schedule?.weekdays).map(Number),dayOfMonth:Number(obj.dayOfMonth||obj.schedule?.dayOfMonth||1),month:Number(obj.month||obj.schedule?.month||1),active:obj.active!==false,createdAt:obj.createdAt||nowIso(),updatedAt:nowIso()}}
 function mergeById(current,incoming,replace=false){if(replace)return incoming;const map=new Map(current.map(x=>[x.id,x]));incoming.forEach(x=>map.set(x.id,map.has(x.id)?{...map.get(x.id),...x}:x));return[...map.values()]}
 function runImport(){try{let obj=JSON.parse(document.getElementById('jsonText').value);if(Array.isArray(obj))obj={tasks:obj};const replace=document.getElementById('replaceImport').checked;const tasks=[...asArray(obj.tasks).map(x=>normalizeImportedTask(x,'task')),...asArray(obj.care).map(x=>normalizeImportedTask(x,'care')),...asArray(obj.dbt_adhd).map(x=>normalizeImportedTask(x,'dbt_adhd'))].filter(x=>x.title);if(tasks.length)state.tasks=mergeById(state.tasks,tasks,replace);if(obj.events)state.events=mergeById(state.events,asArray(obj.events).map(e=>({...e,id:e.id||uid('event'),date:e.date||e.startDate||today(),startDate:e.startDate||e.date||today(),frequency:e.frequency||'none',createdAt:e.createdAt||nowIso()})),replace);if(obj.notes)state.notes=mergeById(state.notes,asArray(obj.notes).map(n=>({...n,id:n.id||uid('note'),body:sanitizeHTML(n.body||n.text||''),title:n.title||'Untitled note',createdAt:n.createdAt||nowIso(),updatedAt:nowIso()})),replace);if(obj.lists)state.lists=mergeById(state.lists,asArray(obj.lists).map(l=>({...l,id:l.id||uid('list'),items:asArray(l.items).map(i=>typeof i==='string'?{id:uid('item'),text:i,checked:false}:{id:i.id||uid('item'),...i}),createdAt:l.createdAt||nowIso()})),replace);if(obj.rewards)state.rewards=mergeById(state.rewards,asArray(obj.rewards).map(r=>({...r,id:r.id||uid('reward'),costCopper:Math.max(1,Number(r.costCopper)||25)})),replace);if(obj.members){const mem=asArray(obj.members).map(m=>({...m,id:m.id||uid('member'),name:m.name||'Member',walletCopper:Math.max(0,Number(m.walletCopper)||0)}));state.household.members=mergeById(state.household.members,mem,replace)}logActivity(`Imported JSON: ${tasks.length} task entries plus supplied household data.`,'import');save();closeModal();render();toast(`Imported ${tasks.length} task entries and related data.`,'success')}catch(e){toast(`Import failed: ${e.message}`,'error')}}
-function sessionToken(){return window.OURSPACE_SESSION_TOKEN||window.OurSpaceSession?.token||window.OurSpaceAuth?.sessionToken||localStorage.getItem('ourspace_session_token')||localStorage.getItem('ourspaceSessionToken')||sessionStorage.getItem('ourspace_session_token')||''}
-async function backendRequest(action,data={}){const token=sessionToken();if(!token)throw new Error('No OurSpace session token was found. Local mode remains active.');const body={action,sessionToken:token,data:{profileKey:state.currentMemberId,clientModule:'OurSpaceHouseholdOrganizer',clientVersion:APP_VERSION,...data}};const res=await fetch(BACKEND.webApp,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});if(!res.ok)throw new Error(`Backend returned ${res.status}`);const text=await res.text();try{return JSON.parse(text)}catch{return{text}}}
+// 3.4.6 uses the existing signed-in account, never legacy tokens or Onyx storage.
+async function backendRequest(action,data={}){
+ const auth=window.OurSpaceAuth;
+ if(!auth?.isAuthenticated?.()||auth.isAdmin?.()||auth.profile?.()!==ACTIVE_HOUSEHOLD_ID)
+   throw new Error('Sign in to this OurSpace account to sync Household.');
+ return auth.request(action,{profileKey:ACTIVE_HOUSEHOLD_ID,...data},{timeout:90000});
+}
+const householdScope='household',manifestKey='organizer-snapshot-v1';
+async function cloudManifest(){
+ const result=await backendRequest('preference.get',{scope:householdScope,key:manifestKey});
+ const value=result?.value;
+ return value?.schema==='ourspace.household.account-snapshot.v1'&&value.profileKey===ACTIVE_HOUSEHOLD_ID?value:null;
+}
+async function readCloudSnapshot(manifest){
+ if(!manifest||!Number.isSafeInteger(manifest.parts)||manifest.parts<1||manifest.parts>80||
+    !/^[A-Za-z0-9_-]{6,80}$/.test(String(manifest.generation||'')))
+  throw new Error('The account snapshot metadata is invalid.');
+ const parts=[];
+ for(let i=0;i<manifest.parts;i++){
+  const r=await backendRequest('preference.get',{
+   scope:householdScope,key:'organizer-part-'+manifest.generation+'-'+i
+  });
+  if(typeof r?.value?.text!=='string')throw new Error('A Household snapshot chunk is missing.');
+  parts.push(r.value.text);
+ }
+ const text=parts.join('');
+ if(text.length!==manifest.length)throw new Error('The Household snapshot is incomplete.');
+ const parsed=JSON.parse(text);
+ if(!parsed||typeof parsed!=='object'||!Array.isArray(parsed.tasks)||
+    !Array.isArray(parsed.completions)||!Array.isArray(parsed.lists))
+  throw new Error('The Household snapshot format is invalid.');
+ return parsed;
+}
+async function restoreOnCleanDevice(){
+ if(hadSavedHouseholdData||!window.OurSpaceAuth?.isAuthenticated?.())return;
+ try{
+  const manifest=await cloudManifest();if(!manifest)return;
+  const incoming=await readCloudSnapshot(manifest);
+  state=migrate(incoming);state.currentMemberId=ACTIVE_HOUSEHOLD_ID;
+  state.accountSyncUpdatedAt=manifest.updatedAt;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+  render();toast('Your Household Organizer was restored from your OurSpace account.','success');
+ }catch(err){console.warn('Account Household restore unavailable; local content remains intact:',err.message)}
+}
 async function syncNow(testOnly=false){
  const box=document.getElementById('syncStatus');
- if(box)box.textContent='Legacy Onyx task sync is retired. Household data remains saved locally; export a backup under Data & JSON.';
- toast('Household is in local mode. The old Onyx connector is removed.');
+ const say=(msg,type='')=>{if(box)box.textContent=msg;toast(msg,type)};
+ try{
+  const result=await backendRequest('auth.me',{});
+  if(!result?.user||result.user.profileKey!==ACTIVE_HOUSEHOLD_ID)
+    throw new Error('The backend did not verify the current member account.');
+  if(testOnly){say('OurSpace 3.4.6 account connection confirmed.','success');return}
+  const manifest=await cloudManifest();
+  const localTime=Date.parse(state.accountSyncUpdatedAt||'')||0;
+  const remoteTime=Date.parse(manifest?.updatedAt||'')||0;
+  if(manifest&&remoteTime>localTime){
+   if(!window.confirm('The saved account Household is newer than this device. Restore its snapshot? Cancel keeps both copies unchanged.')){
+    say('Cloud has newer Household content. Nothing was overwritten.');return
+   }
+   const incoming=await readCloudSnapshot(manifest);
+   state=migrate(incoming);state.currentMemberId=ACTIVE_HOUSEHOLD_ID;
+   state.accountSyncUpdatedAt=manifest.updatedAt;
+   localStorage.setItem(STORAGE_KEY,JSON.stringify(state));render();
+   say('Household Organizer restored from your account.','success');return;
+  }
+  const serialized=JSON.stringify(state);
+  const parts=serialized.match(/[\\s\\S]{1,18000}/g)||[];
+  if(!parts.length||parts.length>80)throw new Error('This Household snapshot is too large for the current backend. Export a local backup.');
+  const generation='os'+Date.now().toString(36)+Math.random().toString(36).slice(2,9);
+  for(let i=0;i<parts.length;i++){
+   await backendRequest('preference.set',{
+    scope:householdScope,key:'organizer-part-'+generation+'-'+i,
+    value:{text:parts[i]}
+   });
+  }
+  const timestamp=nowIso();
+  await backendRequest('preference.set',{
+   scope:householdScope,key:manifestKey,
+   value:{schema:'ourspace.household.account-snapshot.v1',profileKey:ACTIVE_HOUSEHOLD_ID,
+    generation,parts:parts.length,length:serialized.length,updatedAt:timestamp}
+  });
+  state.accountSyncUpdatedAt=timestamp;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+  say('Household Organizer saved to your existing OurSpace account.','success');
+ }catch(err){say('Household sync was not confirmed. Local data is unchanged: '+err.message,'error')}
 }
 function quickFocus(){const candidates=tasksForDate(today()).filter(t=>!isCompleted(t,today()));if(!candidates.length)return toast('Nothing scheduled remains today.','success');const t=candidates.sort(taskSort)[0];openModal(modalShell('One next step',`<div style="text-align:center;padding:16px"><div style="font-size:3rem">${TYPE_META[t.type].icon}</div><h2>${esc(t.title)}</h2><p class="muted">${esc(t.description||'Open the task and do the smallest useful next step.')}</p><p class="reward">Earn ${formatCurrency(t.rewardCopper)}</p></div>`,`<button class="btn" data-action="close-modal">Not now</button><button class="btn primary" data-action="complete-focus" data-id="${esc(t.id)}">Mark complete</button>`))}
 function playTone(){if(!state.settings.sound)return;try{const ac=new(window.AudioContext||window.webkitAudioContext)(),o=ac.createOscillator(),g=ac.createGain();o.frequency.value=523;g.gain.setValueAtTime(.0001,ac.currentTime);g.gain.exponentialRampToValueAtTime(.12,ac.currentTime+.03);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+.35);o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+.4)}catch{}}
@@ -352,5 +432,5 @@ async function hydrateCanonicalTasks(){
 }
 setInterval(checkReminders,60000);setTimeout(checkReminders,1500);
 render();
-hydrateCanonicalTasks();
+void restoreOnCleanDevice().finally(()=>hydrateCanonicalTasks());
 })();
