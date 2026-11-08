@@ -44,6 +44,74 @@ function referenceText(payload) {
   return direct ? direct.slice(0, MAX_REFERENCE_TEXT) : compactJson(payload, MAX_REFERENCE_TEXT);
 }
 
+function safeCitationUrl(value) {
+  try {
+    const url = new URL(String(value || ""));
+    if (!/^https?:$/i.test(url.protocol) || url.username || url.password) return "";
+    for (const key of [...url.searchParams.keys()]) {
+      if (/(?:token|secret|password|auth|signature|session|credential|access[_-]?key)/i.test(key)) {
+        url.searchParams.delete(key);
+      }
+    }
+    url.hash = "";
+    return url.href;
+  } catch {
+    return "";
+  }
+}
+
+function citationRecord(value) {
+  const source = typeof value === "string" ? { url: value } : value;
+  if (!source || typeof source !== "object") return null;
+  const url = safeCitationUrl(source.url || source.canonicalUrl || source.canonical_url || source.href || source.uri || source.source_url);
+  if (!url) return null;
+  return {
+    url,
+    title: String(source.title || source.name || source.label || "").slice(0, 240)
+  };
+}
+
+function sourceEvidence(payload, requestedUrl) {
+  const envelopes = [payload, payload?.result, payload?.data, payload?.source, payload?.metadata]
+    .filter(value => value && typeof value === "object" && !Array.isArray(value));
+  const firstString = keys => {
+    for (const key of keys) {
+      const value = envelopes.map(envelope => envelope[key]).find(item => typeof item === "string" && item.trim());
+      if (value) return value;
+    }
+    return "";
+  };
+  const title = firstString(["title", "pageTitle", "page_title"]);
+  const rawUrl = firstString(["canonicalUrl", "canonical_url", "finalUrl", "final_url", "url", "sourceUrl", "source_url"]);
+  const url = safeCitationUrl(rawUrl || requestedUrl);
+  const citations = [];
+  const seen = new Set();
+  for (const envelope of envelopes) {
+    const lists = ["citations", "sources", "references"]
+      .flatMap(key => Array.isArray(envelope[key]) ? envelope[key] : []);
+    if (envelope.source && typeof envelope.source === "object") lists.push(envelope.source);
+    for (const value of lists) {
+      const citation = citationRecord(value);
+      if (!citation || seen.has(citation.url)) continue;
+      seen.add(citation.url);
+      citations.push(citation);
+      if (citations.length >= 8) break;
+    }
+    if (citations.length >= 8) break;
+  }
+  if (url && !seen.has(url)) citations.unshift({ url, title });
+  const name = title || (url ? new URL(url).hostname : "Retrieved source");
+  return {
+    kind: "source",
+    url,
+    name,
+    title,
+    citations: citations.slice(0, 8),
+    retrievedAt: firstString(["retrievedAt", "retrieved_at", "fetchedAt", "fetched_at"]),
+    text: referenceText(payload).slice(0, MAX_REFERENCE_TEXT)
+  };
+}
+
 function responseText(payload) {
   return String(payload?.response || payload?.onyxReply || payload?.text || payload?.result?.response || payload?.message?.content || "").trim();
 }
@@ -258,7 +326,7 @@ export class OnyxRuntime {
         name: String(reference.name || reference.title || `reference-${index + 1}`).slice(0, 180),
         mimeType: String(reference.mimeType || reference.type || "text/plain").slice(0, 120),
         source: String(reference.source || "").slice(0, 260),
-        url: String(reference.url || "").slice(0, 1000),
+        url: safeCitationUrl(reference.url),
         fileId: String(reference.fileId || "").slice(0, 200),
         sourceKind: "user-reference",
         trust: "user-provided-reference",
@@ -411,7 +479,9 @@ export class OnyxRuntime {
     }
     this.#llmStatus = llmVerification;
     this.#profileStatus = profileVerification;
-    this.memory.invalidateProfile?.(expectedProfileKey);
+    const memoryCacheUpdated = memory.autoRemember === true &&
+      this.memory.appendVerifiedUserMessage?.(expectedProfileKey, plan.message) === true;
+    if (!memoryCacheUpdated) this.memory.invalidateProfile?.(expectedProfileKey);
 
     return normalizedResult(result, {
       provider: "ourspace-ai-brain",
@@ -437,12 +507,7 @@ export class OnyxRuntime {
       execute: async (step, state) => {
         if (step.tool === "urlFetch") {
           const result = await this.tools.urlFetch(step.args.url, { signal: input.signal });
-          return {
-            kind: "source",
-            url: step.args.url,
-            name: new URL(step.args.url).hostname,
-            text: referenceText(result).slice(0, MAX_REFERENCE_TEXT)
-          };
+          return sourceEvidence(result, step.args.url);
         }
         const gathered = state.observations.filter(item => item?.kind === "source").map(item => ({
           name: item.name || item.url,
@@ -450,6 +515,9 @@ export class OnyxRuntime {
           sourceKind: "external-web-content",
           trust: "untrusted-evidence",
           url: item.url,
+          title: item.title,
+          citations: item.citations,
+          retrievedAt: item.retrievedAt,
           text: item.text
         }));
         return this.chat({ ...input, message: goal, plan: basePlan, references: [...(input.references || []), ...gathered] });
