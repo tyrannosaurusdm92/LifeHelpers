@@ -92,6 +92,9 @@ const FALLBACK_TABS = {
 let tabConfig = FALLBACK_TABS;
 let state = null;
 let allMessages = loadJson(STORAGE.messages, {});
+let accountMessages = allMessages;
+const testerMessagesByProfile = {william:{},jasper:{}};
+let displayedTesterProfile = "";
 let queuedFiles = [];
 let sending = false;
 let toastTimer = 0;
@@ -122,8 +125,24 @@ function currentChannel() {
 }
 function threadKey(serverId = state.activeServerId, channelId = currentChannel()?.id) { return `${serverId}::${channelId || "general"}`; }
 function threadMessages() { return allMessages[threadKey()] || []; }
-function saveMessages() { saveJson(STORAGE.messages, allMessages); }
+function saveMessages() {
+  // Read-only tester conversations stay in memory and never enter account storage.
+  if (window.OnyxTester?.active?.()) return;
+  accountMessages=allMessages;
+  saveJson(STORAGE.messages, accountMessages);
+}
 function setThreadMessages(messages) { allMessages[threadKey()] = messages.slice(-MAX_LOCAL_MESSAGES); saveMessages(); }
+function applyTesterState() {
+  const status=window.OnyxTester?.publicStatus?.() || {active:false};
+  const profile=status.active && ["william","jasper"].includes(status.selectedProfile)?status.selectedProfile:"";
+  if(profile===displayedTesterProfile)return;
+  if(profile){
+    if(!displayedTesterProfile)accountMessages=allMessages;
+    allMessages=testerMessagesByProfile[profile];
+  } else allMessages=accountMessages;
+  displayedTesterProfile=profile;
+  if(state)renderMessages();
+}
 function persistState() { saveJson(STORAGE.state, state); }
 
 function cleanMoodName(value) {
@@ -434,6 +453,12 @@ function getSessionToken() {
 async function api(action, data = {}, timeoutMs = 120000) {
   // Every Work conversation uses the same Onyx brain as Virtual & Health,
   // Leisure, Professor and the fullscreen game.
+  if (window.OnyxTester?.active?.()) {
+    if (action !== "onyx.chat") throw new Error("Tester mode is read-only chat. Sign in to your account for image generation and other tools.");
+    if (!window.OnyxTester?.publicStatus?.().selectedProfile) throw new Error("Select William or Jasper in the tester dialog.");
+    return window.OnyxTester.chat(data.message,{mode:"work",supportMode:"chat",threadId:data.threadId,
+      context:{repositoryBrain:"LifeHelpers/Onyx",work:workContext(),readOnly:true,doNotAutoSaveGeneratorOutput:true}});
+  }
   if (action === "onyx.chat") {
     if (!window.OnyxBrainLink?.chat) throw new Error("Onyx's repository brain is not connected.");
     return window.OnyxBrainLink.chat({...data,lane:"work"}, {timeout:timeoutMs});
@@ -468,6 +493,7 @@ function historyForBackend() { return threadMessages().slice(-22).filter(m => !m
 
 async function sendMessage(text) {
   const clean = String(text || "").trim(); if (!clean || sending) return;
+  if(window.OnyxTester?.active?.() && queuedFiles.length){toast("Tester mode is read-only text chat; remove attachments to continue.");return;}
   moodPreview = "";
   markChatMood(inferWorkMood(clean,"user"),"user-input");
   sending = true; updateSendState(); renderOnyxMood();
@@ -487,7 +513,7 @@ async function sendMessage(text) {
       setThreadMessages([...threadMessages(), assistant]); renderMessages();
       markChatMood(backendWorkMood(result) || inferWorkMood(assistant.content,"assistant"),"onyx-output");
     } else {
-      const references = await parseQueuedAttachmentsForMessage(userMessage.id, clean);
+      const references = window.OnyxTester?.active?.()?[]:await parseQueuedAttachmentsForMessage(userMessage.id, clean);
       const result = await api(brainConfig.chatAction || "onyx.chat", {
         message:clean, threadId:threadId(), history:historyForBackend().slice(0,-1), references,
         context:workContext(), webSearch:els.webSearch.checked, useDrive:els.drive.checked,
@@ -500,13 +526,13 @@ async function sendMessage(text) {
       setThreadMessages([...threadMessages(), assistant]); renderMessages();
       markChatMood(backendWorkMood(result) || inferWorkMood(reply,"assistant"),"onyx-output");
     }
-    setBrainStatus(true,"Onyx Brain connected");
+    setBrainStatus(true,window.OnyxTester?.active?.()?"Read-only tester · AI Brain replied":"Onyx Brain connected");
   } catch (error) {
     userMessageFilesCache.delete(userMessage.id);
     removeTyping();
     const failure = { id:uid("m"), role:"assistant", content:error?.message || String(error), error:true, createdAt:nowIso() };
     setThreadMessages([...threadMessages(), failure]); renderMessages(); setBrainStatus(false,"Connection issue");
-    if (!window.OnyxBackendClient?.authenticated?.() && !getSessionToken()) openSettings();
+    if (!window.OnyxTester?.active?.() && !window.OnyxBackendClient?.authenticated?.() && !getSessionToken()) openSettings();
   } finally { sending = false; updateSendState(); renderOnyxMood(); }
 }
 
@@ -609,6 +635,7 @@ function openSettings() {
   if (typeof els.settingsDialog.showModal === "function") els.settingsDialog.showModal(); else els.settingsDialog.setAttribute("open","");
 }
 async function testConnection() {
+  if(window.OnyxTester?.active?.()){els.settingsStatus.textContent="A read-only tester session is active. No account token is required.";setBrainStatus(true,"Tester mode active");return;}
   const typed = els.sessionToken.value.trim(); if (typed) localStorage.setItem(STORAGE.session,typed);
   els.settingsStatus.textContent = "Checking the existing Onyx backend…";
   try { const result = await api("onyx.health",{},60000); els.settingsStatus.textContent = `Connected. ${result.module || "Onyx"} · AI Brain ${result.aiBrain?.configured === false ? "needs configuration" : "available"}.`; setBrainStatus(true,"Onyx Brain connected"); }
@@ -616,6 +643,11 @@ async function testConnection() {
 }
 function saveSettings() { const token = els.sessionToken.value.trim(); if (token) localStorage.setItem(STORAGE.session,token); else localStorage.removeItem(STORAGE.session); toast("Work settings saved"); els.settingsDialog.close?.(); checkBrainStatus(); }
 async function checkBrainStatus() {
+  if(window.OnyxTester?.active?.()){
+    const p=window.OnyxTester.publicStatus().selectedProfile;
+    setBrainStatus(Boolean(p),"Read-only tester"+(p?" · "+p:" · select profile"));
+    return;
+  }
   if (!window.OnyxBackendClient?.authenticated?.() && !getSessionToken()) { setBrainStatus(false,"Sign in to connect"); return; }
   try {
     const result = await api("onyx.health",{},45000);
@@ -652,6 +684,8 @@ render();
 resizeComposer();
 seedMoodFromHistory();
 window.addEventListener("onyx:repository-brain-ready",()=>{ void checkBrainStatus(); });
+window.addEventListener("onyx:tester-state",()=>{applyTesterState();void checkBrainStatus();});
+applyTesterState();
 window.addEventListener("ourspace:auth",()=>{ void checkBrainStatus(); });
 window.addEventListener("ourspace:signed-out",()=>setBrainStatus(false,"Sign in to connect"));
 checkBrainStatus();
