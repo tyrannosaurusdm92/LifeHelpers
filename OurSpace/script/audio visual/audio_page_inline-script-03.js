@@ -406,6 +406,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
       </button>
       <div class="osm-actions">
         <button class="osm-btn osm-btn-small" data-action="rename-folder" data-id="${esc(folder.id)}" ${folder.system ? 'disabled' : ''}>Rename</button>
+        <button class="osm-btn osm-btn-small" data-action="share-audio-folder" data-id="${esc(folder.id)}" ${folder.system||folder.readOnly?'disabled':''}>Share with partner</button>
         <button class="osm-btn osm-btn-small osm-btn-danger" data-action="delete-folder" data-id="${esc(folder.id)}" ${folder.system ? 'disabled' : ''}>Delete</button>
       </div>
     </div>`;
@@ -419,6 +420,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
       </button>
       <div class="osm-actions">
         <button class="osm-btn osm-btn-small" data-action="rename-playlist" data-id="${esc(playlist.id)}">Rename</button>
+        <button class="osm-btn osm-btn-small" data-action="share-audio-playlist" data-id="${esc(playlist.id)}" ${playlist.readOnly?'disabled':''}>Share with partner</button>
         <button class="osm-btn osm-btn-small" data-action="merge-playlist" data-id="${esc(playlist.id)}">Merge</button>
         <button class="osm-btn osm-btn-small osm-btn-danger" data-action="delete-playlist" data-id="${esc(playlist.id)}">Delete</button>
       </div>
@@ -473,6 +475,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     if (action === 'choose-folder') $('#osmFolderInput', state.root)?.click();
     if (action === 'refresh-drive') void loadBackendMetadata().then(ok=>notify(ok?'Drive music refreshed.':'Drive music could not be reached; local tracks are unchanged.',ok?'info':'error'));
     if (action === 'new-folder') createFolder();
+    if (action === 'share-audio-folder'||action === 'share-audio-playlist') void shareAudioCollection(action==='share-audio-folder'?'folder':'playlist',id);
     if (action === 'new-playlist') createPlaylist();
     if (action === 'rename-folder') renameFolder(id);
     if (action === 'delete-folder') deleteFolder(id);
@@ -772,6 +775,73 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     playTrack(previousId);
   }
 
+  function transferableAudio(track){
+    const driveFileId=String(track.backendId||'').replace(/^drive-/,'');
+    const url=/^https?:\/\//i.test(track.remoteUrl||'')?track.remoteUrl:
+      /^https?:\/\//i.test(track.downloadUrl||'')?track.downloadUrl:'';
+    if(!driveFileId&&!url)return null;
+    return{id:track.id,title:track.title,kind:'audio',driveFileId,url};
+  }
+  async function shareAudioCollection(type,id){
+    const lib=state.library;
+    const entry=type==='playlist'?lib.playlists.find(x=>x.id===id):lib.folders.find(x=>x.id===id);
+    if(!entry||entry.system||entry.readOnly)return notify('Select a user-created folder or playlist to share.','error');
+    const tracks=type==='playlist'?lib.tracks.filter(t=>entry.trackIds.includes(t.id)):
+      lib.tracks.filter(t=>folderAndDescendantIds(entry.id).has(t.folderId));
+    const rows=tracks.map(transferableAudio).filter(Boolean);
+    if(rows.length<tracks.length){
+      notify('Only '+rows.length+' of '+tracks.length+' items are shareable. Upload remaining local files to Drive first.','error');
+    }
+    try{
+      await window.OurSpaceActivity.shareCollection({
+        category:'audio',id:entry.id,name:entry.name,
+        collectionType:type,entries:rows
+      });
+      entry.shared=true;scheduleSave();render();
+      notify('Shared '+entry.name+' with the other OurSpace account.','success');
+    }catch(err){notify('Could not share collection: '+err.message,'error')}
+  }
+  let checkingSharedAudio=false;
+  function importSharedAudio(){
+    if(checkingSharedAudio)return;
+    checkingSharedAudio=true;
+    try{
+      const own=document.documentElement.dataset.profile;
+      const events=window.OurSpaceActivity?.sharedCollections?.().filter(x=>x.author!==own&&x.metadata?.sharedCollection?.category==='audio')||[];
+      let changed=false;
+      for(const event of events){
+        const c=event.metadata.sharedCollection,remoteId='partner-audio-'+event.author+'-'+c.id;
+        const collection=c.collectionType==='playlist'?state.library.playlists:state.library.folders;
+        let target=collection.find(x=>x.id===remoteId);
+        if(target?.sharedRevision===event.createdAt)continue;
+        if(!target){
+          target=c.collectionType==='playlist'?
+            {id:remoteId,name:'♥ '+c.name+' ('+event.author+')',trackIds:[],createdAt:Date.now(),readOnly:true,shared:true}:
+            {id:remoteId,name:'♥ '+c.name+' ('+event.author+')',parentId:'',createdAt:Date.now(),readOnly:true,shared:true};
+          collection.push(target);
+        }
+        target.sharedRevision=event.createdAt;
+        const ids=[];
+        for(const item of c.entries||[]){
+          if(item.kind!=='audio'||(!item.driveFileId&&!item.url))continue;
+          const tid=remoteId+'-'+item.id;
+          let track=state.library.tracks.find(t=>t.id===tid);
+          if(!track){
+            track={id:tid,title:item.title||'Shared track',artist:event.author,album:'Shared from '+event.author,
+              folderId:c.collectionType==='folder'?target.id:'folder-all',
+              mime:'audio/mpeg',size:0,duration:0,originalName:item.title||'',
+              addedAt:Date.now(),backendId:item.driveFileId?'drive-'+item.driveFileId:'',
+              remoteUrl:item.url||'',downloadUrl:'',source:item.driveFileId?'drive':'remote'};
+            state.library.tracks.push(track);
+          }
+          ids.push(tid);
+        }
+        if(c.collectionType==='playlist')target.trackIds=ids;
+        changed=true;
+      }
+      if(changed){scheduleSave();render();}
+    }finally{checkingSharedAudio=false}
+  }
   function createFolder() {
     const name = prompt('Folder name:');
     if (!name) return;
@@ -1237,6 +1307,8 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     if (track) loadIntoAudio(track, true).catch(() => null);
     watchGames();
     if (window.OurSpaceMemberMedia?.available?.()) loadBackendMetadata().catch(() => null);
+    importSharedAudio();
+    window.addEventListener('ourspace:activity-updated',importSharedAudio);
     window.dispatchEvent(new CustomEvent('ourspace:media-ready'));
   }
 
