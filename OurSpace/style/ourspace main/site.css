@@ -26,6 +26,9 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .portal-checks label{display:flex;align-items:center;gap:5px;font-size:11px}
 .portal-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .portal-actions button[type=submit]{font-size:14px;padding:9px 20px}
+.portal-actions a{display:inline-block;min-height:30px;padding:6px 2px;white-space:nowrap}
+#recoverySwitchMode{margin-top:9px}
+#recoveryDialog .dialog-main>button{max-width:100%}
 .portal-status{min-height:18px;font-size:12px;color:#5a3550;margin:12px 0 0}
 .portal-install{margin-top:19px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .portal-right{display:flex;justify-content:center;align-items:center;padding:24px 3vw;background:white;min-width:0;min-height:100vh}
