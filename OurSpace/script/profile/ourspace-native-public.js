@@ -38,7 +38,7 @@ function fetchPublished(){
  return new Promise((resolve,reject)=>{
   let done=false,script=document.createElement('script');
   const callback='__osNativePublic'+(++callbackId);
-  const timeout=setTimeout(()=>finish(new Error('Published profile request timed out')),16000);
+  const timeout=setTimeout(()=>finish(new Error('Published profile request timed out')),45000);
   function finish(error,data){
     if(done)return;done=true;clearTimeout(timeout);
     script.remove();try{delete window[callback]}catch(_){window[callback]=undefined}
@@ -46,12 +46,12 @@ function fetchPublished(){
   }
   window[callback]=data=>finish(null,data);
   script.onerror=()=>finish(new Error('The public profile service did not respond'));
-  script.src=webApp+'?action=ourspace.publicProfiles&callback='+callback+'&nonce='+Date.now();
+  script.src=webApp+'?action=ourspace.publicProfile&profileKey='+encodeURIComponent(key)+'&callback='+callback+'&nonce='+Date.now();
   script.async=true;document.head.appendChild(script);
  });
 }
 function readRecord(all){
- const r=all&&all.view==='ourspace-public-profiles'&&all.profiles&&all.profiles[key];
+ const r=all?.view==='ourspace-public-profiles'?all?.profiles?.[key]:all;
  if(!r||r.ok!==true||r.published!==true||r.profile?.profileKey!==key)return null;
  return r.profile;
 }
