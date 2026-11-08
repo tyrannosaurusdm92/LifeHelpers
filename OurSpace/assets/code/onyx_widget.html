@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="style/onyx widget/onyx-adventures-integration.css">
 <link rel="stylesheet" href="style/onyx widget/onyx-widget-colors.css">
 <link rel="stylesheet" href="style/onyx widget/onyx-game-frame.css">
+<link rel="stylesheet" href="style/onyx widget/onyx-response-studio.css?v=20261108-pass7-widget-integration"/>
 </head>
 <body data-onyx-standalone-viewport="ourspace-main-page" data-profile="william">
 <script>(function(){var p=document.documentElement.dataset.profile;if(p==='william'||p==='jasper')document.body.dataset.profile=p;})();</script>
@@ -54,6 +55,7 @@
 <strong>Onyx Work</strong>
 <p>Open the full Work workspace with subtabs, chat, attachments, image creation, and the project catalog.</p>
 <button class="module-design-button" id="onyxOpenWorkFullscreen" type="button">Open Work fullscreen</button>
+<button class="module-design-button" id="onyxOpenResponseStudio" type="button">Open Response Studio</button>
 </div>
 </section>
 </div>
@@ -121,6 +123,7 @@
 </div>
 </div>
 <div class="chat-actions">
+<button id="onyxOpenResponseStudioFull" type="button" class="icon-button" aria-label="Open Onyx Response Studio" title="Response Studio">✦</button>
 <button aria-label="Rename subtab" class="icon-button" id="renameChannelButton" title="Rename subtab" type="button">✎</button>
 <button aria-label="Export this subtab" class="icon-button" id="exportChannelButton" title="Export this subtab" type="button">⇩</button>
 <button aria-label="Clear this subtab" class="icon-button" id="clearChannelButton" title="Clear this subtab" type="button">⌫</button>
@@ -287,5 +290,48 @@
 <script src="script/onyx widget/onyx-professor.js"></script>
 <script src="script/onyx widget/onyx_widget_work-tab.js"></script><script src="script/onyx widget/onyx_widget_legacy-static-moods.js"></script><script src="script/onyx widget/onyx-widget-game-frame.js" defer></script>
 
-<script src="script/onyx widget/ourspace-onyx-frame-bridge.js?v=20261107-onyx-window-1"></script></body>
+<script src="script/onyx widget/ourspace-onyx-frame-bridge.js?v=20261107-onyx-window-1"></script>
+<section id="onyxResponseStudio" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Onyx Response Studio" hidden>
+<div class="ors-shell">
+<header class="ors-header">
+ <div><h2>Onyx Response Studio</h2><p>Write and review original Work and Leisure replies through the existing LifeHelpers/Onyx brain. Not a separate Onyx model.</p></div>
+ <button id="ors-close" type="button" aria-label="Close Response Studio">Close ×</button>
+</header>
+<div class="ors-actions"><output id="ors-connection" aria-live="polite">Checking existing brain…</output><button type="button" id="ors-test-email">Email tester code</button><button type="button" id="ors-test-exit" hidden>Exit tester mode</button></div>
+<form id="ors-form">
+<div class="ors-fields">
+<label>Profile<select id="ors-profile"><option value="william">William · Papa</option><option value="jasper">Jasper · Momma</option></select></label>
+<label>Mode<select id="ors-mode"><option value="leisure">Leisure</option><option value="work">Work</option></select></label>
+<label>Mood<select id="ors-mood"><option value="auto">Automatic</option><option value="listening">Listening</option><option value="thinking">Thinking</option><option value="thoughtful">Thoughtful</option><option value="hungry">Hungry</option><option value="caring">Caring</option><option value="judgmental">Judgmental</option><option value="purring">Purring</option><option value="sleeping">Sleeping</option></select></label>
+<label>Responses<select id="ors-count"><option>1</option><option>2</option><option>3</option><option>5</option><option>8</option><option>12</option></select></label>
+</div>
+<label>What does Papa or Momma say to Onyx?<textarea id="ors-input" rows="4" maxlength="1800" placeholder="Hey buddy, how are you doing?" required></textarea></label>
+<div class="ors-actions">
+<button type="submit" id="ors-generate">Generate with Onyx Brain</button>
+<button type="button" id="ors-cancel" disabled>Cancel</button>
+<button type="button" id="ors-export">Export approved onyx-responses.js</button>
+</div>
+</form>
+<output id="ors-status" role="status" aria-live="polite"></output>
+<p id="ors-saved-count" class="ors-secondary"></p>
+<ol id="ors-results" aria-label="Onyx response drafts"></ol>
+<div class="ors-footer ors-secondary">Signed-in conversation uses the existing LifeHelpers/Onyx repository brain. Email tester access is read-only. Tester tokens and non-sensitive prompts travel in HTTPS query URLs and can appear in network logs. Drafts are saved only after explicit approval.</div>
+</div>
+<dialog id="ors-tester-dialog" aria-label="Email tester code">
+<h3>Onyx tester verification</h3>
+<div id="ors-email-step">
+<label>Registered email<input type="email" id="ors-email" autocomplete="email" value="williamsaville92@gmail.com"></label>
+<div class="ors-actions"><button id="ors-email-confirm" type="button">Confirm and email code</button><button id="ors-email-cancel" type="button">Cancel</button></div>
+</div>
+<div id="ors-code-step" hidden>
+<label>Six-digit email code<input id="ors-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}"></label>
+<div class="ors-actions"><button id="ors-code-confirm" type="button">Confirm code</button><button id="ors-code-resend" type="button">Resend code</button><button id="ors-code-cancel" type="button">Cancel</button></div>
+</div>
+<output role="status" aria-live="polite" id="ors-tester-message"></output>
+</dialog>
+</section>
+
+<script src="script/onyx widget/onyx-responses.js?v=20261108-pass7-widget-integration"></script>
+<script src="script/onyx widget/onyx-response-studio.js?v=20261108-pass7-widget-integration"></script>
+</body>
 </html>
