@@ -311,7 +311,7 @@ async function syncNow(testOnly=false){
    say('Household Organizer restored from your account.','success');return;
   }
   const serialized=JSON.stringify(state);
-  const parts=serialized.match(/[\\s\\S]{1,18000}/g)||[];
+  const parts=serialized.match(/[\s\S]{1,18000}/g)||[];
   if(!parts.length||parts.length>80)throw new Error('This Household snapshot is too large for the current backend. Export a local backup.');
   const generation='os'+Date.now().toString(36)+Math.random().toString(36).slice(2,9);
   for(let i=0;i<parts.length;i++){
