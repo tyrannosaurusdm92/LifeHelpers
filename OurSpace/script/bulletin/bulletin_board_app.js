@@ -343,7 +343,7 @@ function importSharedBulletinBoards(){
   for(const event of incoming){
    const c=event.metadata.sharedCollection,id='partner-bulletin-'+event.author+'-'+c.id;
    let target=state.boards.find(b=>b.id===id);
-   if(target?.sharedRevision===event.createdAt)continue;
+   if(target?.sharedRevision&&Date.parse(target.sharedRevision)>=Date.parse(event.createdAt))continue;
    if(!target){
     target={id,name:'♥ '+c.name+' ('+event.author+')',private:false,
      shared:true,sharedFrom:event.author,background:'cork',created:stamp(),
