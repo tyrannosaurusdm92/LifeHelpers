@@ -23,40 +23,77 @@
   const requestIntent = text => /\b(?:send|email|request|get|generate|give)\b[\s\S]{0,75}\btester\b[\s\S]{0,60}\b(?:code|verification|access)\b/i.test(String(text||'')) || /\btester\b[\s\S]{0,40}\b(?:verification|login|access)\b[\s\S]{0,40}\bcode\b/i.test(String(text||''));
   const selectIntent = text => { const m=String(text||'').trim().match(/^(?:onyx[,! ]+)?(?:switch(?:\s+tester)?\s+to|select|test\s+as|talk\s+to|use\s+profile|i(?:'m| am)\s+testing\s+as)\s+(william|jasper)[.! ]*$/i);return m?m[1].toLowerCase():''; };
   const exitIntent = text => /^(?:onyx[,! ]+)?(?:exit|end|stop|disable|leave)(?:\s+the)?\s+tester(?:\s+mode|\s+session)?[.! ]*$/i.test(String(text||'').trim());
+  // Existing Apps Script public JSONP interface: read-only tester actions only.
+  // This transport is used because hosted pages and file:// cannot reliably read
+  // Apps Script's cross-origin POST redirects. Tester tokens/messages appear in
+  // request URLs and may appear in browser/network logs: no private information.
   async function api(action, data={}, signal) {
     if(!Object.values(ACTIONS).includes(action))throw new Error('Unsupported tester action.');
-    const payload={action,data:{...data,...(active()?{testerToken:state.token}:{})}};
-    if(!active() && ![ACTIONS.request,ACTIONS.verify,ACTIONS.contract,ACTIONS.chat].includes(action))throw new Error('Tester verification required.');
-    // A verified tester session intentionally works without logging in to either real account.
-    // No user-supplied email destination or elevated permission is ever accepted here.
-    const target=window.OurSpaceBackend?.endpoint||ENDPOINT;
-    let response;
-    try {response=await fetch(target,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload),redirect:'follow',signal:signal||AbortSignal.timeout(90000)});}
-    catch(e){throw new Error(e?.name==='AbortError'?'Tester request was cancelled or timed out.':'Cannot reach the Onyx backend.');}
-    if(!response.ok)throw new Error('Onyx backend HTTP '+response.status+'.');
-    let result;try{result=await response.json();}catch(_){throw new Error('Onyx backend returned an unreadable response.');}
-    if(!result || result.ok===false)throw new Error(String(result?.error||result?.message||'Tester request was rejected.'));
+    if(!active() && ![ACTIONS.request,ACTIONS.verify,ACTIONS.contract].includes(action))throw new Error('Tester verification required.');
+    const payload={action,namespace:'ourspace.onyx',data:{...data,...(active()?{testerToken:state.token}:{})}};
+    const serialized=JSON.stringify(payload);
+    if(serialized.length>4500)throw new Error('Tester message is too long for the secure size limit of this read-only connection. Shorten it to about 3,000 characters.');
+    const url=new URL(ENDPOINT);
+    const random=(window.crypto?.randomUUID?.() || (Date.now()+'_'+Math.random().toString(36).slice(2))).replace(/[^A-Za-z0-9_]/g,'');
+    const callback='__ourspaceOnyxTester_'+random;
+    url.searchParams.set('callback',callback);
+    url.searchParams.set('payload',serialized);
+    if(url.href.length>8200)throw new Error('The tester request is too long for Google Apps Script.');
+    return new Promise((resolve,reject)=>{
+      let finished=false;
+      const script=document.createElement('script');
+      script.async=true;
+      script.referrerPolicy='no-referrer';
+      const timeoutMs=action===ACTIONS.chat?180000:45000;
+      const cleanup=()=>{clearTimeout(timer);script.remove();try{delete window[callback];}catch(_){window[callback]=undefined;}signal?.removeEventListener('abort',cancel);};
+      const finish=(error,result)=>{
+        if(finished)return;
+        finished=true;cleanup();
+        if(error)return reject(error);
+        if(!result||typeof result!=='object')return reject(new Error('Apps Script did not return JSON.'));
+        if(result.ok===false||result.error)return reject(new Error(String(result.error||result.message||'Tester action failed.')));
+        resolve(result);
+      };
+      const cancel=()=>finish(new Error('Tester request canceled.'));
+      const timer=setTimeout(()=>finish(new Error(action===ACTIONS.chat?'The AI Brain did not respond within three minutes. Check the existing backend and try one short message.':'Tester backend did not respond in time.')),timeoutMs);
+      if(signal?.aborted){cancel();return;}
+      window[callback]=result=>finish(null,result);
+      script.onerror=()=>finish(new Error('Cannot reach the existing OurSpace tester backend.'));
+      signal?.addEventListener('abort',cancel,{once:true});
+      script.src=url.toString();
+      document.head.append(script);
+    });
+  }
+  async function requestCode(email) {
+    if(String(email||'').trim().toLowerCase()!=='williamsaville92@gmail.com')throw new Error('Enter the email address registered with the existing tester backend.');
+    // The backend chooses the destination: this frontend never supplies a new mailbox.
+    const result=await api(ACTIONS.request,{});
+    state.pendingCode=result.verificationPending!==false;
+    remember();
     return result;
   }
+  async function resendCode(email){return requestCode(email);}
   async function verifyCode(code){const r=await api(ACTIONS.verify,{code:String(code||'').trim()}); if(!r.testerToken || !r.expiresAt)throw new Error('The backend did not issue a tester session.');state.token=r.testerToken;state.expiresAt=r.expiresAt;state.selectedProfile='';state.pendingCode=false;remember();return r;}
   async function select(profile){const p=String(profile||'').toLowerCase();if(!profiles.has(p))throw new Error('Choose William or Jasper.');const r=await api(ACTIONS.select,{profileKey:p});state.selectedProfile=r.selectedProfile||p;remember();return r;}
   async function end(){if(active())await api(ACTIONS.exit,{});clear();return {ok:true,message:'Tester mode ended.'};}
   async function chat(message,options={}){
     if(!active())throw new Error('Tester mode is not active.');
     if(!state.selectedProfile)throw new Error('Select William or Jasper before chatting.');
-    const r=await api(ACTIONS.chat,{message:String(message),...(options.threadId?{threadId:options.threadId}:{}),supportMode:options.supportMode||'chat',webSearch:false,autoRemember:false,allowWrites:false,allowExternalTools:false},options.signal);
+    const r=await api(ACTIONS.chat,{message:String(message),profileKey:state.selectedProfile,useBrain:true,mode:options.mode||'work',...(options.threadId?{threadId:options.threadId}:{}),supportMode:options.supportMode||'chat',context:options.context||{},webSearch:false,autoRemember:false,allowWrites:false,allowExternalTools:false},options.signal);
     if(r.selectedProfile && profiles.has(r.selectedProfile)){state.selectedProfile=r.selectedProfile;remember();}
     return r;
   }
   async function tryConversation(message, {tab='health'}={}) {
     const text=String(message||'').trim();if(!text)return null;
+    // Tester controls and conversations belong exclusively to fullscreen Work.
+    if(tab!=='work'||document.getElementById('onyxWorkFullscreenShell')?.hidden!==false)return null;
     const specialRequest=requestIntent(text),selected=selectIntent(text),exit=exitIntent(text),isCode=/^\d{6}$/.test(text);
     if(!active()&&!specialRequest&&!(isCode&&state.pendingCode))return null;
     try {
       let r;
       if(active() && exit)r=await end();
       else if(active() && selected)r=await select(selected);
-      else if(!active()&&specialRequest){r=await api(ACTIONS.request,{message:text});state.pendingCode=Boolean(r.verificationPending);remember();}
+      else if(!active()&&specialRequest){return null;}
       else if(!active()&&isCode&&state.pendingCode)r=await verifyCode(text);
       else if(active()&&specialRequest)r={ok:true,message:'Tester mode is already active. You can select William or Jasper.'};
       else if(active())r=await chat(text,{supportMode:tab==='health'?'health':'chat'});
@@ -64,6 +101,6 @@
       return {text:String(r.response||r.onyxReply||r.message||'Onyx tester updated.'),state:r.professorActive?'advising_professor':'listening',testerMode:true,professorActive:!!r.professorActive,activateProfessorBubble:!!r.professorActive,artifacts:[],citations:[]};
     }catch(err){if(/expired|invalid tester session/i.test(String(err?.message||'')))clear();return {error:true,publicError:String(err?.message||'Tester request failed.')};}
   }
-  window.OnyxTester=Object.freeze({api,chat,tryConversation,verifyCode,select,end,active,publicStatus,requestIntent,selectIntent,exitIntent,clear});
+  window.OnyxTester=Object.freeze({api,chat,tryConversation,requestCode,resendCode,verifyCode,select,end,active,publicStatus,requestIntent,selectIntent,exitIntent,clear});
   remember();
 })();
