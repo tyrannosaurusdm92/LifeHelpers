@@ -10,13 +10,16 @@ function showAdmin(){login.hidden=true;$('#previewChooser').hidden=false;$('#pre
 async function restoreSavedSession(){
  if(auth.isAdmin())return showAdmin();
  if(!auth.isAuthenticated())return;
+ const savedToken=auth.token();
  show('Checking your saved sign-in…');
  try{
   const result=await auth.request('auth.me',{}, {timeout:45000});
+  if(auth.token()!==savedToken||auth.isAdmin())return; // A newer sign-in supersedes this check.
   if(!['william','jasper'].includes(result?.user?.profileKey)||result.user.profileKey!==auth.profile())
    throw new Error('The saved account identity does not match the server.');
   goProfile(result.user.profileKey);
  }catch(err){
+  if(auth.token()!==savedToken||auth.isAdmin())return;
   if(err?.serverRejected&&/session|signed out|expired|user not found|missing session/i.test(err.message||'')){
    await auth.signOut(false);
    show('Your previous sign-in expired. Please sign in again.',true);
@@ -43,7 +46,7 @@ function showDeliveryReceipt({confirmed=false,result=null,unknown=false}={}){
  if(!receipt||!title||!body)return;
  if(!confirmed&&!unknown){receipt.hidden=true;body.textContent='';return}
  receipt.hidden=false;
- const timestamp=new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit',second:'2-digit'});
+ const timestamp=new Date(result?.receiptAt||Date.now()).toLocaleTimeString([], {hour:'numeric',minute:'2-digit',second:'2-digit'});
  const target=result?.destination||result?.maskedDestination||'the selected recovery email';
  const expiry=result?.expiresAt?new Date(result.expiresAt).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}):'not provided';
  title.textContent=unknown?'Email request status: unconfirmed':'Email request status: accepted by backend';
@@ -142,8 +145,9 @@ async function issueRecoveryCode(){
     throw new Error('The backend did not confirm a password reset email.');
   }
   recoveryExpiresAt=Date.parse(result.expiresAt||'')||0;
-  recentCodeRequests.set(recoveryMode+'|'+recoveryId,{at:lastCodeRequestAt,expiresAt:recoveryExpiresAt,confirmed:true,result});
-  showDeliveryReceipt({confirmed:true,result});
+  const receiptResult={...result,receiptAt:Date.now()};
+  recentCodeRequests.set(recoveryMode+'|'+recoveryId,{at:lastCodeRequestAt,expiresAt:recoveryExpiresAt,confirmed:true,result:receiptResult});
+  showDeliveryReceipt({confirmed:true,result:receiptResult});
   recoveryStep('code');startTicker();
   hint('Enter the emailed code for '+recoveryId+' and create your password. Avoid repeated resend requests.');
   rshow('Apps Script confirmed the email request. That does not confirm Gmail delivery; see the request receipt below.');
