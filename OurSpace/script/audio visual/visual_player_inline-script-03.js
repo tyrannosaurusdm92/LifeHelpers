@@ -702,6 +702,9 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
         if (!state.library.currentAssetId) state.library.currentAssetId = asset.id;
         added += 1;
         scheduleSync('upsertAsset', await metadataForSync(asset, file));
+        // Save supported uploads to the account's existing Media folder so both
+        // members can browse the file through the unified 3.4.6 Drive catalog.
+        void uploadMemberMedia(asset,file).catch(err=>notify('Kept locally; Drive upload failed: '+err.message,'error'));
       } catch (err) {
         notify(`Could not add ${file.name}: ${err.message}`, 'error');
       }
@@ -843,13 +846,28 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     });
   }
 
+  async function uploadMemberMedia(asset,file){
+    const auth=window.OurSpaceAuth;
+    if(!auth?.isAuthenticated?.()||auth.isAdmin?.()||auth.profile?.()!==document.documentElement.dataset.profile)return;
+    if(file.size>24*1024*1024){notify('File kept locally. Files larger than 24 MiB can be added directly to Google Drive for shared access.');return}
+    const dataUrl=await blobToDataUrl(file);
+    const result=await auth.request('upload.media',{
+      kind:asset.kind==='video'?'video':'image',
+      fileName:file.name,mimeType:file.type||asset.mime,dataUrl,
+      pageId:'visual',moduleId:'visual-player'
+    },{timeout:90000});
+    if(result?.driveFileId){
+      asset.backendId='drive-'+result.driveFileId;
+      asset.source='backend+local';scheduleSave();
+      notify(file.name+' uploaded to your OurSpace Drive media folder.');
+    }
+  }
+
   async function metadataForSync(asset, file) {
     const payload = { ...asset, syncedAt: nowIso() };
     delete payload.remoteUrl;
     delete payload.downloadUrl;
-    if (file && file.size <= MAX_INLINE_SYNC_BYTES) {
-      payload.inlineFile = await blobToDataUrl(file).catch(() => '');
-    }
+    // Media bytes use upload.media only, never persistent record.save metadata queues.
     return payload;
   }
 
