@@ -1,0 +1,30 @@
+/* Scoped only to Onyx Response Studio; never restyles widget, Professor or games. */
+#onyxResponseStudio[hidden],#onyxResponseStudio [hidden]{display:none!important}
+#onyxResponseStudio{position:fixed;inset:0;z-index:2147483600;overflow:auto;background:rgba(2,11,17,.87);padding:clamp(8px,2vw,28px);font:15px/1.5 system-ui,Arial,sans-serif;color:#e6f8f9;box-sizing:border-box}
+#onyxResponseStudio *,#onyxResponseStudio *:before,#onyxResponseStudio *:after{box-sizing:border-box}
+#onyxResponseStudio .ors-shell{max-width:1050px;margin:0 auto;background:#152630;border:1px solid #468c93;border-radius:14px;padding:clamp(12px,2vw,26px);box-shadow:0 24px 70px #000b}
+#onyxResponseStudio .ors-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border-bottom:1px solid #3d6971;padding-bottom:14px}
+#onyxResponseStudio .ors-header h2{margin:0 0 6px;color:#9dffff;font-size:1.5rem}
+#onyxResponseStudio .ors-header p{margin:0;color:#c0d4d7;max-width:70ch}
+#onyxResponseStudio .ors-fields{display:grid;grid-template-columns:repeat(4,minmax(135px,1fr));gap:10px;margin:16px 0}
+#onyxResponseStudio label{display:flex;flex-direction:column;gap:5px}
+#onyxResponseStudio :is(input,textarea,select){background:#081a22;color:#fff;border:1px solid #6ca2aa;border-radius:7px;padding:9px;font:inherit;width:100%}
+#onyxResponseStudio textarea{min-height:98px;resize:vertical}
+#onyxResponseStudio button{font:inherit;padding:8px 13px;border:1px solid #6ba8b0;background:#24434c;color:#fff;border-radius:7px;cursor:pointer}
+#onyxResponseStudio button:hover{background:#35636c}
+#onyxResponseStudio button:disabled{opacity:.5;cursor:not-allowed}
+#onyxResponseStudio button:focus-visible,#onyxResponseStudio :is(input,textarea,select):focus-visible{outline:3px solid #00ffff;outline-offset:2px}
+#onyxResponseStudio #ors-generate{font-weight:700;background:#087d85;border-color:#26dce2}
+#onyxResponseStudio .ors-actions{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0;align-items:center}
+#onyxResponseStudio .ors-secondary{font-size:.87rem;color:#bbd7dc}
+#onyxResponseStudio #ors-status{display:block;padding:8px 0;min-height:40px}
+#onyxResponseStudio [data-error="true"]{color:#ffae9f}
+#onyxResponseStudio #ors-results{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px;padding:0}
+#onyxResponseStudio .ors-response{border:1px solid #518a94;background:#213b45;padding:12px;border-radius:10px}
+#onyxResponseStudio .ors-response-meta{color:#b7d4d8;font-size:.8rem;margin-bottom:9px}
+#onyxResponseStudio .ors-response textarea{min-height:140px}
+#onyxResponseStudio .ors-footer{margin-top:20px;padding-top:11px;border-top:1px solid #3d6971}
+#onyxResponseStudio #ors-tester-dialog{border:1px solid #77d2d9;border-radius:12px;max-width:min(92vw,510px);padding:22px;background:#172b35;color:#fff}
+#onyxResponseStudio #ors-tester-dialog::backdrop{background:#000b}
+@media(max-width:760px){#onyxResponseStudio .ors-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){#onyxResponseStudio .ors-fields{grid-template-columns:1fr}}
