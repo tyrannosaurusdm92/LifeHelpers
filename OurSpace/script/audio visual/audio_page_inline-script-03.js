@@ -276,6 +276,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
           <div class="osm-actions">
             <button class="osm-btn osm-btn-small" data-action="choose-files">Upload files</button>
             <button class="osm-btn osm-btn-small" data-action="choose-folder">Upload folder</button>
+            <button class="osm-btn osm-btn-small" data-action="refresh-drive" title="Find music placed directly in either member's permitted Google Drive Music folder">Refresh Drive</button>
           </div>
           <div class="osm-section-title"><h3>Folders</h3><button class="osm-btn osm-btn-small" data-action="new-folder">New</button></div>
           <div class="osm-list" aria-label="Folders">
@@ -469,6 +470,7 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
     const id = button.dataset.id;
     if (action === 'choose-files') $('#osmFileInput', state.root)?.click();
     if (action === 'choose-folder') $('#osmFolderInput', state.root)?.click();
+    if (action === 'refresh-drive') void loadBackendMetadata().then(()=>notify('Drive music refreshed.'));
     if (action === 'new-folder') createFolder();
     if (action === 'new-playlist') createPlaylist();
     if (action === 'rename-folder') renameFolder(id);
