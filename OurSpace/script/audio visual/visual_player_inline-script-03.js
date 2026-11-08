@@ -1244,7 +1244,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
       const byId=new Map(state.library.assets.map(asset=>[asset.id,asset]));
       for(const file of files){
         const id='drive-'+file.fileId;
-        if(byId.has(id))continue;
+        if(byId.has(id)||[...byId.values()].some(item=>item.backendId===id))continue;
         byId.set(id,{id,title:file.name,kind:file.kind,folderId:'folder-all',
           mime:file.mimeType,size:file.sizeBytes,duration:0,width:0,height:0,
           originalName:file.name,relativePath:file.path,thumbDataUrl:'',
