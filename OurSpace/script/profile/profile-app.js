@@ -14,7 +14,75 @@ function sanitizeObject(raw){const base=defaultProfile();if(!raw||typeof raw!=='
 function previewLoad(){try{data=sanitizeObject(JSON.parse(localStorage.getItem(demoKey)||'null'))}catch(_){data=defaultProfile()}window.OurSpaceLinksModule?.importLegacy?.(data.links)}
 async function serverLoad(){try{const r=await auth.request('profile.get',{profileKey:who});const maybe=r?.profile||r?.data?.profile||r?.data;if(maybe&&typeof maybe==='object'){data=sanitizeObject(maybe);window.OurSpaceModuleMigration?.migrate?.(data);status('Profile loaded.')}else status('The server did not return a saved profile.');render() }catch(err){status('Could not load account profile: '+err.message,true)}}
 async function save(){if(saveRunning)return;saveRunning=true;if(auth.isAdmin()){try{localStorage.setItem(demoKey,JSON.stringify(data));status('Preview saved on this browser only.')}catch(_){status('Preview changes are temporary in this browser session; export a snapshot for backup.',true)}saveRunning=false;return}
- try{await auth.request('profile.save',{profileKey:who,profile:data});status('Profile saved to your account.')}catch(err){status('This edit is visible here but could not sync to the account: '+err.message,true)}finally{saveRunning=false}}
+ try{await auth.request('profile.save',{profileKey:who,profile:data});status('Profile saved to your account.');queuePublishedSync()}catch(err){status('This edit is visible here but could not sync to the account: '+err.message,true)}finally{saveRunning=false}}
+// Public publication is opt-in and separate from private profile.save.
+// Only selected fields and explicitly selected, link-backed media leave the account.
+let publicSyncTimer=null;
+const publicLinkUrl=value=>{
+ const href=validUrl(value);
+ return href&&/^https?:\/\//i.test(href)?href:'';
+};
+const publishedPayload=selected=>{
+ const entry={profileKey:who};
+ if(selected.displayName)entry.displayName=data.displayName||displayName;
+ if(selected.headline)entry.headline=data.headline||'';
+ if(selected.about)entry.bio=data.about||'';
+ if(selected.avatar)entry.avatarUrl=publicLinkUrl(data.avatar)||'';
+ return entry;
+};
+async function syncPublishedGroup({enabled,action,listAction,removeAction,idField,listField,prefix,items,map}){
+ if(!enabled)return;
+ const rows=items.map((item,index)=>({id:prefix+index,details:map(item,index)}))
+  .filter(x=>Boolean(x.details?.url)).slice(0,200);
+ const current=await auth.request(listAction,{profileKey:who});
+ const old=Array.isArray(current?.[listField])?current[listField]:[];
+ for(const row of rows){
+  await auth.request(action,{profileKey:who,[idField]:row.id,...row.details});
+ }
+ const kept=new Set(rows.map(x=>x.id));
+ for(const entry of old){
+  const id=String(entry.id||'');
+  if(id.startsWith(prefix)&&!kept.has(id))await auth.request(removeAction,{profileKey:who,[idField]:id});
+ }
+}
+async function syncPublicSelection(selected,publish=false){
+ if(auth.isAdmin()||!auth.isAuthenticated?.()||auth.profile?.()!==who)
+  throw new Error('Sign in as the owner to publish.');
+ await auth.request('public.profile.save',publishedPayload(selected));
+ await syncPublishedGroup({enabled:selected.links,action:'public.link.upsert',
+  listAction:'public.link.list',removeAction:'public.link.remove',idField:'linkId',
+  listField:'links',prefix:'os-profile-'+who+'-link-',items:
+   window.OurSpaceLinksModule?.getEntries?.()||data.links,
+  map:x=>({name:String(x.label||x.name||x.title||'Link').slice(0,160),
+   url:publicLinkUrl(x.url||x.link),description:String(x.description||'').slice(0,1000)})});
+ await syncPublishedGroup({enabled:selected.music,action:'public.media.upsert',
+  listAction:'public.media.list',removeAction:'public.media.remove',idField:'publicMediaId',
+  listField:'media',prefix:'os-profile-'+who+'-music-',items:data.music,
+  map:x=>({kind:'music',title:x.title||'Track',artist:x.artist||'',
+   description:x.body||'',url:publicLinkUrl(x.url)})});
+ await syncPublishedGroup({enabled:selected.gallery,action:'public.media.upsert',
+  listAction:'public.media.list',removeAction:'public.media.remove',idField:'publicMediaId',
+  listField:'media',prefix:'os-profile-'+who+'-gallery-',items:data.gallery,
+  map:x=>({kind:/\\.(mp4|webm|mov|m4v)(?:[?#]|$)/i.test(x.url||'')?'video':'image',
+   title:x.title||'Photo',description:x.body||'',url:publicLinkUrl(x.url)})});
+ if(publish)await auth.request('public.profile.publish',{profileKey:who,published:true});
+}
+function queuePublishedSync(){
+ if(auth.isAdmin()||!auth.isAuthenticated?.())return;
+ clearTimeout(publicSyncTimer);
+ publicSyncTimer=setTimeout(async()=>{
+  try{
+   const saved=await auth.request('preference.get',{profileKey:who,
+     scope:'public-profile',key:'selected-fields'});
+   const selection=saved?.value;
+   if(!selection||typeof selection!=='object')return;
+   // Account edits never make an unpublished profile public automatically.
+   const publicRecord=await auth.request('public.profile.get',{profileKey:who});
+   if(publicRecord?.profile?.profileKey!==who)return;
+   await syncPublicSelection(selection,false);
+  }catch(err){console.warn('Public profile sync deferred. Private profile remains saved:',err.message)}
+ },1000);
+}
 function node(tag,text,className){const el=document.createElement(tag);if(text!==undefined&&text!==null)el.textContent=String(text);if(className)el.className=className;return el}
 function appendText(id,key){$$(`[data-bind="${key}"]`).forEach(el=>{el.textContent=data[key]||''})}
 function renderIdentity(){for(const key of keys)appendText('',key);const title=$('#profileTitle'),greeting=$('#headerGreeting'),notice=$('#networkNotice');if(title)title.textContent=(data.displayName||displayName)+"'s space";if(greeting)greeting.textContent=profileName;if(notice)notice.textContent=(data.displayName||displayName)+' is in your OurSpace';}
@@ -28,7 +96,23 @@ function download(content,name,type){const blob=new Blob([content],{type}),url=U
 function navigatePublic(){location.assign(publicUrl())}
 function wireProfile(){
  $('#publishClose').addEventListener('click',()=>$('#publishProfile').close());$('#publishCancel').addEventListener('click',()=>$('#publishProfile').close());
- $('#publishForm').addEventListener('submit',async e=>{e.preventDefault();if(auth.isAdmin())return status('Preview mode cannot publish.',true);const check=k=>Boolean(e.currentTarget.elements.namedItem(k)?.checked);const entry={profileKey:who};if(check('displayName'))entry.displayName=data.displayName;if(check('headline'))entry.headline=data.headline;if(check('about'))entry.bio=data.about;if(check('avatar'))entry.avatar=data.avatar;if(check('links'))entry.links=(window.OurSpaceLinksModule?.getEntries?.()||data.links).map(x=>({title:x.label||x.title||'Link',url:x.url}));if(check('music'))entry.music=data.music.map(x=>({title:x.title,artist:x.artist,url:x.url}));if(check('gallery'))entry.photos=data.gallery.map(x=>({title:x.title,url:x.url}));const statusEl=$('#publishStatus');statusEl.textContent='Publishing selected fields…';try{await auth.request('public.profile.save',entry);$('#publishProfile').close();status('Selected profile information published.')}catch(err){statusEl.textContent='Publication unavailable: '+err.message}});
+ $('#publishForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(auth.isAdmin())return status('Preview mode cannot publish.',true);
+  const check=k=>Boolean(e.currentTarget.elements.namedItem(k)?.checked);
+  const selected={
+   displayName:check('displayName'),headline:check('headline'),
+   about:check('about'),avatar:check('avatar'),
+   links:check('links'),music:check('music'),gallery:check('gallery')
+  };
+  const el=$('#publishStatus');el.textContent='Publishing selected fields…';
+  try{
+   await syncPublicSelection(selected,true);
+   await auth.request('preference.set',{profileKey:who,scope:'public-profile',key:'selected-fields',value:selected});
+   $('#publishProfile').close();
+   status('Published selections synced to OurSpace and the external profile viewer.');
+  }catch(err){el.textContent='Publication was not confirmed: '+err.message}
+ });
 
  document.addEventListener('click',async e=>{const btn=e.target.closest('[data-action],[data-collapse],[data-remove-id],[data-play-id]');if(!btn)return;const act=btn.dataset.action;
  if(act==='edit'){editOpen();return}if(act==='publish'){if(auth.isAdmin())status('Preview mode cannot publish account information.',true);else $('#publishProfile').showModal();return}if(act==='copyLink'){try{await navigator.clipboard.writeText(publicUrl());status('Public profile URL copied.')}catch(_){status('Public profile URL: '+publicUrl())}return}
