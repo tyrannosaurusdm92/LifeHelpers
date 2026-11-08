@@ -79,7 +79,7 @@ function renderWishlist(){
   <div class="product-image">${item.image?`<img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'🎁'}</div>
   <div class="product-body"><h3>${esc(item.name)}</h3>
    <div class="price">${esc(displayPlatinum(item.pricePlatinum))}</div>
-   <div class="card-actions"><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">View item</a>
+   <div class="card-actions">${item.url?`<a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">View item</a>`:'<span>OurSpace catalog item</span>'}
     <button class="buy" type="button" data-wishlist-cart="${esc(item.id)}">Add to cart</button>
     <button class="buy" type="button" data-wishlist-remove="${esc(item.id)}">Remove</button>
    </div></div></article>`).join(''):'<p class="empty">Your wishlist is empty. Add an item from the store or paste a shopping link.</p>';
