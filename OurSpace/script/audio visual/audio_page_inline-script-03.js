@@ -1121,6 +1121,14 @@ if (new URLSearchParams(location.search).get("page")==="audio" && new URLSearchP
       if(!result?.driveFileId)throw new Error('Drive did not confirm the audio upload.');
       track.backendId='drive-'+result.driveFileId;
       track.source='backend+local';scheduleSave();
+      window.OurSpaceActivity?.publish({
+        type:'music',author:document.documentElement.dataset.profile,
+        key:'audio-'+document.documentElement.dataset.profile+'-'+track.id,
+        title:track.title||track.originalName||'New music',
+        body:track.artist||'',source:'OurSpace Drive',
+        createdAt:new Date().toISOString(),
+        metadata:{library:'audio',assetId:track.id,driveFileId:result.driveFileId}
+      });
       return track.backendId;
     })();
     inflightAudioUploads.set(track.id,work);
