@@ -133,6 +133,7 @@ async function previewWishlistImage(){
   if(!r.ok)throw Error('The store blocked a preview request.');
   const doc=new DOMParser().parseFromString((await r.text()).slice(0,250000),'text/html');
   const src=doc.querySelector('meta[property="og:image"],meta[name="twitter:image"]')?.content||'';
+  if(!src)throw Error('No product image was found.');
   const resolved=linkSafe(new URL(src,url).href);
   if(!resolved)throw Error('No product image was found.');
   image.value=resolved;
