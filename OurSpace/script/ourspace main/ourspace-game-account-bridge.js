@@ -68,6 +68,12 @@
    if(secs>=300&&progress.eligible){
     const claim=await auth().request('arcade.reward.claim',{profileKey:who(),sessionId:id,activeSeconds:secs});
     track.paid=true;
+    if(!claim.duplicate)window.OurSpaceActivity?.publish({
+      type:'game',author:who(),title:'Arcade progress: '+(game.title||'Game'),
+      body:'Completed '+Math.floor(secs/60)+' minutes of active play and earned '+Number(claim.rewardCopper||0)+' copper-equivalent game rewards.',
+      key:'game-progress-'+who()+'-'+id,createdAt:new Date().toISOString(),
+      source:'OurSpace Arcade',metadata:{library:'arcade',assetId:game.path}
+    });
     const confirmed=Number(claim.balanceCopper);
     const n=Number.isSafeInteger(confirmed)?confirmed:await balance();
     window.dispatchEvent(new CustomEvent('ourspace:wallet-changed',{detail:{profile:who(),balanceCopper:n}}));
