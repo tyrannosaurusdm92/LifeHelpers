@@ -312,7 +312,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
             <select class="ospv-field" data-field="folder-select">
               ${lib.folders.map(f => `<option value="${esc(f.id)}" ${f.id === lib.selectedFolderId ? 'selected' : ''}>${esc(folderNameWithPath(f))}</option>`).join('')}
             </select>
-            <div class="ospv-action-row"><button class="ospv-btn ospv-btn-small" data-action="rename-folder">Rename folder</button><button class="ospv-btn ospv-btn-small ospv-btn-danger" data-action="delete-folder">Delete folder</button></div>
+            <div class="ospv-action-row"><button class="ospv-btn ospv-btn-small" data-action="rename-folder">Rename folder</button><button class="ospv-btn ospv-btn-small" data-action="share-visual-folder">Share folder</button><button class="ospv-btn ospv-btn-small ospv-btn-danger" data-action="delete-folder">Delete folder</button></div>
             <div class="ospv-drop-list" data-folder-drop-list>${lib.folders.map(folderDropItem).join('')}</div>
             <div class="ospv-field-row">
               <input class="ospv-field" type="text" placeholder="New playlist name" data-field="playlist-name">
@@ -323,7 +323,7 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
               <option value="">No playlist filter</option>
               ${lib.playlists.map(p => `<option value="${esc(p.id)}" ${p.id === lib.selectedPlaylistId ? 'selected' : ''}>${esc(p.name)} (${p.assetIds.length})</option>`).join('')}
             </select>
-            <div class="ospv-action-row"><button class="ospv-btn ospv-btn-small" data-action="rename-playlist">Rename playlist</button><button class="ospv-btn ospv-btn-small ospv-btn-danger" data-action="delete-playlist">Delete playlist</button></div>
+            <div class="ospv-action-row"><button class="ospv-btn ospv-btn-small" data-action="rename-playlist">Rename playlist</button><button class="ospv-btn ospv-btn-small" data-action="share-visual-playlist">Share playlist</button><button class="ospv-btn ospv-btn-small ospv-btn-danger" data-action="delete-playlist">Delete playlist</button></div>
             <div class="ospv-drop-list" data-playlist-drop-list>${lib.playlists.map(playlistDropItem).join('')}</div>
             <button class="ospv-btn" data-action="add-selected-to-playlist">Add checked items to playlist</button>
             <button class="ospv-btn ospv-btn-danger" data-action="delete-selected">Delete checked items</button>
@@ -472,8 +472,10 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     $('[data-action="create-folder"]', root)?.addEventListener('click', createFolderFromInput);
     $('[data-action="create-playlist"]', root)?.addEventListener('click', createPlaylistFromInput);
     $('[data-action="rename-folder"]', root)?.addEventListener('click', renameSelectedFolder);
+    $('[data-action="share-visual-folder"]',root)?.addEventListener('click',()=>void shareVisualCollection('folder'));
     $('[data-action="delete-folder"]', root)?.addEventListener('click', deleteSelectedFolder);
     $('[data-action="rename-playlist"]', root)?.addEventListener('click', renameSelectedPlaylist);
+    $('[data-action="share-visual-playlist"]',root)?.addEventListener('click',()=>void shareVisualCollection('playlist'));
     $('[data-action="delete-playlist"]', root)?.addEventListener('click', deleteSelectedPlaylist);
     $('[data-action="add-link"]', root)?.addEventListener('click', addLink);
     $$('[data-action="delete-link"]', root).forEach(btn => btn.addEventListener('click', () => deleteLink(btn.dataset.linkId)));
@@ -948,6 +950,66 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     notify(`Created playlist: ${name}`);
   }
 
+  async function shareVisualCollection(type){
+    const lib=state.library,entry=type==='folder'?selectedFolder():selectedPlaylist();
+    if(!entry||entry.system||entry.readOnly)return notify('Select a user-created Visual folder or playlist.','error');
+    const assets=type==='folder'?lib.assets.filter(a=>folderAndDescendantIds(entry.id).has(a.folderId)):
+      lib.assets.filter(a=>entry.assetIds.includes(a.id));
+    const entries=assets.map(asset=>{
+      const driveFileId=String(asset.backendId||'').replace(/^drive-/,'');
+      const url=/^https?:\/\//i.test(asset.remoteUrl||'')?asset.remoteUrl:
+        /^https?:\/\//i.test(asset.downloadUrl||'')?asset.downloadUrl:'';
+      return{ id:asset.id,title:asset.title,kind:asset.kind,driveFileId,url };
+    }).filter(x=>x.driveFileId||x.url);
+    if(entries.length<assets.length)notify('Only '+entries.length+' of '+assets.length+' visuals have shareable Drive/link references. Upload local files first.','error');
+    try{
+      await window.OurSpaceActivity.shareCollection({
+        category:'visual',id:entry.id,name:entry.name,collectionType:type,entries
+      });
+      entry.shared=true;scheduleSave();render();notify('Shared '+entry.name+' with your partner.','success');
+    }catch(err){notify('Visual collection was not shared: '+err.message,'error')}
+  }
+  let importingVisualCollections=false;
+  function importSharedVisual(){
+    if(importingVisualCollections)return;
+    importingVisualCollections=true;
+    try{
+      const current=document.documentElement.dataset.profile;
+      const rows=window.OurSpaceActivity?.sharedCollections?.().filter(x=>x.author!==current&&x.metadata?.sharedCollection?.category==='visual')||[];
+      let changed=false;
+      for(const event of rows){
+        const c=event.metadata.sharedCollection,id='partner-visual-'+event.author+'-'+c.id;
+        const collection=c.collectionType==='playlist'?state.library.playlists:state.library.folders;
+        let group=collection.find(item=>item.id===id);
+        if(group?.sharedRevision===event.createdAt)continue;
+        if(!group){
+          group=c.collectionType==='playlist'?
+            {id,name:'♥ '+c.name+' ('+event.author+')',assetIds:[],system:false,readOnly:true,shared:true,createdAt:Date.now()}:
+            {id,name:'♥ '+c.name+' ('+event.author+')',parentId:'',system:false,readOnly:true,shared:true,createdAt:Date.now()};
+          collection.push(group);
+        }
+        group.sharedRevision=event.createdAt;
+        const ids=[];
+        for(const item of c.entries||[]){
+          if(!['image','video'].includes(item.kind)||(!item.driveFileId&&!item.url))continue;
+          const assetId=id+'-'+item.id;
+          if(!state.library.assets.some(a=>a.id===assetId)){
+            state.library.assets.push({id:assetId,title:item.title||'Shared visual',kind:item.kind,
+              folderId:c.collectionType==='folder'?group.id:'folder-all',mime:item.kind==='video'?'video/mp4':'image/jpeg',
+              size:0,width:0,height:0,duration:0,originalName:item.title||'',
+              thumbDataUrl:'',addedAt:Date.now(),
+              backendId:item.driveFileId?'drive-'+item.driveFileId:'',
+              remoteUrl:item.url||'',downloadUrl:'',source:item.driveFileId?'drive':'remote'});
+          }
+          ids.push(assetId);
+        }
+        if(c.collectionType==='playlist')group.assetIds=ids;
+        changed=true;
+      }
+      if(changed){scheduleSave();render();}
+    }finally{importingVisualCollections=false}
+  }
+
   function selectedFolder() { return state.library.folders.find(f => f.id === state.library.selectedFolderId); }
   function selectedPlaylist() { return state.library.playlists.find(p => p.id === state.library.selectedPlaylistId); }
   function renameSelectedFolder() {
@@ -1313,6 +1375,8 @@ if (new URLSearchParams(location.search).get("page")==="visual" && new URLSearch
     if (!state.library.currentAssetId) state.library.currentAssetId = state.library.assets[0]?.id || '';
     render();
     void refreshDriveMedia();
+    importSharedVisual();
+    window.addEventListener('ourspace:activity-updated',importSharedVisual);
     void flushSyncQueue();
     setupGameAutoPause();
     window.addEventListener('ourspace:game-loaded', () => {
