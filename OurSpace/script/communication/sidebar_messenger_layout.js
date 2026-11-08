@@ -146,6 +146,8 @@ function apply(){
  css.setProperty('--os-sidebar-right','0px');css.setProperty('--os-sidebar-top','0px');
  css.setProperty('--os-sidebar-height',vh+'px');
  css.setProperty('--os-sidebar-scale','1');css.setProperty('--os-sidebar-gap-size','6px');
+ root.style.setProperty('--os-sidebar-drawer-width',w+'px');
+ root.style.setProperty('--os-page-heart-rail-width','36px');
  const rail=root.querySelector('[data-sidebar]');if(rail){rail.style.setProperty('--os-sidebar-scale','1');rail.style.setProperty('--os-sidebar-gap-size','6px')}
 }
 function applyPanels(){const messenger=window.ourspaceMessenger;if(!messenger)return;try{messenger.panelGeometry={...(messenger.panelGeometry||{}),...(state.panels||{})};messenger.configureOpenPanel?.()}catch(_){}}
@@ -154,21 +156,39 @@ const sourceParent=root.parentNode,sourceNext=root.nextSibling;
 // independent, movable and reachable alongside the Messenger heart handle.
 const jumpNav=document.getElementById('profileJumpNav');
 const jumpParent=jumpNav?.parentNode,jumpNext=jumpNav?.nextSibling;
+function fullscreenMessengerTarget(full){
+ if(!member||full.tagName!=='IFRAME')return full;
+ try{
+  const child=full.contentDocument;
+  if(!child?.body)return full;
+  if(!child.getElementById('osMessengerFullscreenStyles')){
+   const source=document.querySelector('link[href*="sidebar_messenger_style.css"]');
+   if(source?.href&&child.head){
+    const sheet=child.createElement('link');
+    sheet.id='osMessengerFullscreenStyles';sheet.rel='stylesheet';sheet.href=source.href;
+    child.head.appendChild(sheet);
+   }
+  }
+  child.documentElement.dataset.osColorMode=document.documentElement.dataset.osColorMode||'light';
+  return child.fullscreenElement||child.webkitFullscreenElement||child.body;
+ }catch(_){return full}
+}
 function keepDrawerVisibleInFullscreen(){
-  const full=document.fullscreenElement||document.webkitFullscreenElement;
-  if(full){
-    if(!full.contains(root))full.appendChild(root);
-    if(jumpNav&&!full.contains(jumpNav))full.appendChild(jumpNav);
-   }else if(sourceParent&&root.parentNode!==sourceParent){
-    if(sourceNext&&sourceNext.parentNode===sourceParent)sourceParent.insertBefore(root,sourceNext);
-    else sourceParent.appendChild(root);
-  }
-  if(!full&&jumpNav&&jumpParent&&jumpNav.parentNode!==jumpParent){
-    if(jumpNext&&jumpNext.parentNode===jumpParent)jumpParent.insertBefore(jumpNav,jumpNext);
-    else jumpParent.appendChild(jumpNav);
-  }
-  apply();
-  window.dispatchEvent(new Event('ourspace:messenger-drawer-state'));requestAnimationFrame(refreshSiteRail);
+ const full=document.fullscreenElement||document.webkitFullscreenElement;
+ if(full){
+  const target=fullscreenMessengerTarget(full);
+  if(!target.contains(root))target.appendChild(root);
+  if(jumpNav&&target.ownerDocument===document&&!target.contains(jumpNav))target.appendChild(jumpNav);
+ }else if(sourceParent&&root.parentNode!==sourceParent){
+  if(sourceNext&&sourceNext.parentNode===sourceParent)sourceParent.insertBefore(root,sourceNext);
+  else sourceParent.appendChild(root);
+ }
+ if(!full&&jumpNav&&jumpParent&&jumpNav.parentNode!==jumpParent){
+  if(jumpNext&&jumpNext.parentNode===jumpParent)jumpParent.insertBefore(jumpNav,jumpNext);
+  else jumpParent.appendChild(jumpNav);
+ }
+ apply();
+ window.dispatchEvent(new Event('ourspace:messenger-drawer-state'));requestAnimationFrame(refreshSiteRail);
 }
 document.addEventListener('fullscreenchange',keepDrawerVisibleInFullscreen);
 document.addEventListener('webkitfullscreenchange',keepDrawerVisibleInFullscreen);
