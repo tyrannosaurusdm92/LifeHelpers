@@ -207,32 +207,12 @@ async function loadPublicProfiles() {
   results.forEach((r,i)=>{if(r.status==='fulfilled')items.push(...publicProfileItems(PROFILE_KEYS[i],r.value))});
   return {items,ok:results.filter(r=>r.status==='fulfilled').length};
 }
-async function loadSignedInActivity() {
-  const request=window.OurSpaceAuth?.request;
-  if(!request && !BACKEND_URL)return {items:[],profileKey:'',connected:false};
-  const token=window.OurSpaceAuth?.token?.()||getSessionToken();
-  if(!token) return {items:[],profileKey:'',connected:false};
-  const items=[]; let profileKey='';
-  try {
-    const snap=await (request?request('sync.snapshot',{}):apiPost('sync.snapshot',{}));
-    profileKey=normalizeAuthor(snap?.profileKey||'');
-    if(profileKey) state.sessionProfile=profileKey;
-    items.push(...snapshotItems(snap?.state||snap?.snapshot||{},profileKey));
-  } catch(_) {}
-  try {
-    const notes=await (request?request('notification.list',{}):apiPost('notification.list',{}));
-    const pk=normalizeAuthor(notes?.profileKey||profileKey||'');
-    items.push(...notificationItems(notes,pk));
-  } catch(_) {}
-  for(const kind of ['media','music']) {
-    try { const shared=await (request?request(kind==='media'?'shared.media.list':'shared.music.list',{limit:200}):apiPost(kind==='media'?'shared.media.list':'shared.music.list',{limit:200})); items.push(...sharedFileItems(shared,kind)); } catch(_) {}
-  }
-  try {
-    const records=await (request?request('record.list',{bucket:'feed'}):apiPost('record.list',{bucket:'feed'}));
-    const pk=profileKey||state.sessionProfile;
-    (records?.records||[]).forEach(r=>items.push(unpackRecord(r,pk)));
-  } catch(_) {}
-  return {items,profileKey,connected:true};
+async function loadSignedInActivity(){
+ const shared=window.OurSpaceActivity;
+ if(!shared?.refresh)return{items:[],profileKey:'',connected:false};
+ const remote=await shared.refresh();
+ return{items:remote.items||[],profileKey:window.OurSpaceAuth?.profile?.()||'',
+  connected:Boolean(remote.connected)};
 }
 async function refreshFeed({announce=true}={}) {
   setStatus('Refreshing Feed…');
@@ -240,12 +220,12 @@ async function refreshFeed({announce=true}={}) {
   mergeItems(pub.items,false);
   mergeItems(auth.items,false);
   if(window.OurSpaceActivity)mergeItems(window.OurSpaceActivity.list(),false);
-  state.backendState=auth.connected?'signed-in':'public';
+  state.backendState=auth.connected?'signed-in':'offline';
   state.lastRefresh=nowISO();
   if(announce) state.newCount=0;
   persistCache();
   renderAll();
-  setStatus(`Feed refreshed · ${pub.ok}/2 public profiles reachable · ${auth.connected?'signed-in activity connected':'local shared activity'} · William and Jasper.`);
+  setStatus(`Feed refreshed · ${pub.ok}/2 public profiles reachable · ${auth.connected?'partner activity synchronized':'partner activity offline (local history kept)'} · William and Jasper.`);
 }
 function setStatus(message) { roots.forEach(r=>{const el=$('[data-feed-connection-state]',r);if(el)el.textContent=message}); }
 
@@ -328,20 +308,12 @@ for(const kind of ['post','pin','share','link','image','video','media','project'
   document.addEventListener(`ourspace:${kind}`,e=>{const d=e.detail||{};mergeItems([{...d,type:kind}],true)});
 }
 
-async function publish(raw={}) {
-  const item=normalizeItem({...raw,source:raw.source||'OurSpace Local',createdAt:raw.createdAt||nowISO(),metadata:{...(raw.metadata||{}),local:true}});
-  mergeItems([item],true);
-  window.OurSpaceActivity?.publish({...item,source:raw.source||'OurSpace Local'},{remote:false});
-  const token=window.OurSpaceAuth?.token?.()||getSessionToken();
-  if(token){
-    try{
-      await (window.OurSpaceAuth?.request?window.OurSpaceAuth.request('record.save',{bucket:'feed',key:item.id,value:{...item,metadata:{...(item.metadata||{}),local:false}}}):apiPost('record.save',{bucket:'feed',key:item.id,value:{...item,metadata:{...(item.metadata||{}),local:false}}}));
-      item.source='OurSpace';
-      item.metadata.local=false;
-      mergeItems([item],false);
-    }catch(err){console.warn('OurSpace Feed: backend save unavailable; item remains local.',err)}
-  }
-  return item;
+async function publish(raw={}){
+ const item=normalizeItem({...raw,source:raw.source||'OurSpace Local',
+  createdAt:raw.createdAt||nowISO(),metadata:{...(raw.metadata||{}),local:true}});
+ mergeItems([item],true);
+ window.OurSpaceActivity?.publish({...item,source:raw.source||'OurSpace Feed'});
+ return item;
 }
 window.OurSpaceFeedBridge=Object.freeze({
   publish,
