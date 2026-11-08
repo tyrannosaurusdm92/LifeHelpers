@@ -32,7 +32,7 @@ const publishedPayload=selected=>{
 };
 async function syncPublishedGroup({enabled,action,listAction,removeAction,idField,listField,prefix,items,map}){
  if(!enabled)return;
- const rows=items.map((item,index)=>({id:prefix+index,details:map(item,index)}))
+ const rows=(Array.isArray(items)?items:[]).filter(item=>item&&typeof item==='object').map((item,index)=>({id:prefix+index,details:map(item,index)}))
   .filter(x=>Boolean(x.details?.url)).slice(0,200);
  const current=await auth.request(listAction,{profileKey:who});
  const old=Array.isArray(current?.[listField])?current[listField]:[];
