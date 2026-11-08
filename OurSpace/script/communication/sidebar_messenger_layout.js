@@ -4,21 +4,23 @@ const who=document.documentElement.dataset.profile==='jasper'?'jasper':'william'
 // Never display the member rail to public viewers or unmatched sessions.
 const auth=window.OurSpaceAuth;
 const nativePublished=document.documentElement.dataset.osNativePublic==='true';
-// Native published views need only the scrollbar; never authenticate or
-// initialize any account Messenger UI.
-if(!nativePublished&&(new URLSearchParams(location.search).get('public')==='1'||!auth?.isAuthenticated?.()||auth?.isAdmin?.()||auth?.profile?.()!==who))return;
+// Public views may use the page scrollbar, but only the matching signed-in
+// William/Jasper session can reveal or interact with private Messenger UI.
+const isPublic=new URLSearchParams(location.search).get('public')==='1'||document.documentElement.dataset.publicView==='true';
+const member=!isPublic&&!nativePublished&&!!auth?.isAuthenticated?.()&&!auth?.isAdmin?.()&&auth?.profile?.()===who;
+if(!member&&!nativePublished)return;
 const cfg={"widthPx":170,"heightPx":911,"topPx":0,"rightPx":0,"contentScale":1,"spacingPx":10,"panels":{"quick":{"left":1289,"top":89,"width":453,"height":488},"friends":{"left":1386,"top":117.5,"width":356,"height":465},"today":{"left":1302,"top":323,"width":440,"height":580},"unread":{"left":1302,"top":195.125,"width":440,"height":580},"rooms":{"left":1298,"top":111.21875,"width":440,"height":580}}};
-// The page scrollbar is independent of Messenger. Keep the private messaging
-// engine available for Communication, but never render or open its sidebar UI.
-root.classList.add('os-scroll-only');
-document.documentElement.classList.remove('sidebar-messenger-active');
+// The scrollbar works on both surfaces. Only public published views are scroll-only.
+// Do not wipe the member's saved drawer preference or hide their Messenger UI.
+root.classList.toggle('os-scroll-only',!member);
+if(member)document.documentElement.classList.add('sidebar-messenger-active');
 const DRAWER_KEY='ourspace.sidebar-messenger.drawer.v1.'+who;
-let drawerOpen=false;
-try{localStorage.setItem(DRAWER_KEY,'closed')}catch(_){}
+let drawerOpen=member&&(()=>{try{return localStorage.getItem(DRAWER_KEY)==='open'}catch(_){return false}})();
 const drawerButton=document.createElement('button');
 drawerButton.id='osMessengerDrawerHeart';drawerButton.type='button';drawerButton.className='os-messenger-drawer-heart';
-drawerButton.setAttribute('aria-label','Drag this heart to scroll the OurSpace page');
-drawerButton.setAttribute('title','Drag the heart to scroll; the Messenger sidebar is hidden');
+drawerButton.setAttribute('aria-controls','mpMenuScroll');
+drawerButton.setAttribute('aria-label',member?'Open Messenger drawer':'Drag heart to scroll the page');
+drawerButton.setAttribute('title',member?'Open Messenger drawer (drag to scroll)':'Drag the heart to scroll the page');
 // The user-supplied mockup uses ONE heart-shaped scrollbar thumb on a
 // full-height yellow/orange track, not a second small orange marker.
 const HEART_SVG='<svg class="os-heart-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 65" aria-hidden="true"><path fill="#00FFFF" stroke="#083F40" stroke-width="2.2" d="M28 60 C20 53 3 38 3 23 C3 11 10 5 18 5 C23 5 26 9 28 13 C31 8 35 5 41 5 C50 5 54 12 54 23 C54 38 38 52 28 60Z"/><path fill="#FFF600" d="M28 51 C20 43 10 34 10 23 C10 16 14 12 19 12 C23 12 26 17 28 20 C30 16 35 12 40 12 C45 12 48 17 48 23 C48 34 37 44 28 51Z"/></svg>';
@@ -91,18 +93,22 @@ document.addEventListener('scroll',refreshSiteRail,{capture:true,passive:true});
 window.addEventListener('resize',refreshSiteRail,{passive:true});
 window.addEventListener('ourspace:page-changed',refreshSiteRail);
 function drawerState(save=false){
- drawerOpen=false;
- root.classList.remove('os-drawer-open');
+ if(!member)drawerOpen=false;
+ root.classList.toggle('os-drawer-open',drawerOpen);
  root.dataset.drawerState=drawerOpen?'open':'closed';
  document.documentElement.classList.toggle('os-messenger-drawer-open',drawerOpen);
- drawerButton.removeAttribute('aria-expanded');
- drawerButton.setAttribute('aria-label','Drag this heart to scroll the OurSpace page');
- drawerButton.title='Drag the heart to scroll';
- if(save)try{localStorage.setItem(DRAWER_KEY,drawerOpen?'open':'closed')}catch(_){ }
+ drawerButton.setAttribute('aria-expanded',String(drawerOpen));
+ drawerButton.setAttribute('aria-label',member?(drawerOpen?'Close Messenger drawer':'Open Messenger drawer'):'Drag heart to scroll the page');
+ drawerButton.title=member?(drawerOpen?'Close Messenger drawer (drag to scroll)':'Open Messenger drawer (drag to scroll)'):'Drag the heart to scroll';
+ if(save&&member)try{localStorage.setItem(DRAWER_KEY,drawerOpen?'open':'closed')}catch(_){ }
  apply();requestAnimationFrame(refreshSiteRail);
  window.dispatchEvent(new CustomEvent('ourspace:messenger-drawer-state',{detail:{open:drawerOpen}}));
 }
-drawerButton.addEventListener('click',e=>{e.preventDefault();suppressHeartClick=false;});
+drawerButton.addEventListener('click',e=>{
+ if(suppressHeartClick){e.preventDefault();e.stopPropagation();suppressHeartClick=false;return;}
+ if(!member){e.preventDefault();return;}
+ drawerOpen=!drawerOpen;drawerState(true);
+});
 const state={...(who==='william'?cfg:cfg),...(()=>{try{return JSON.parse(localStorage.getItem('ourspace.sidebar-messenger.layout.v1.'+who)||'null')||{}}catch(_){return {}}})()};
 const minmax=(x,a,b)=>Math.max(a,Math.min(b,+x||a));
 // Recent alert categories rotate in place without moving the heart or covering the screen.
@@ -115,7 +121,7 @@ function refreshAlertSpot(){
   if(!list.length){alertSpot.textContent='';drawerButton.setAttribute('data-alerts','0');return;}
   alertSpot.textContent=alertVisuals[list[alertIndex++%list.length].type]||'';
   drawerButton.dataset.alerts=String(list.length);
-  drawerButton.title='Drag the heart to scroll the OurSpace page';
+  drawerButton.title=member?`${drawerOpen?'Close':'Open'} Messenger drawer · ${list.length} recent alert type${list.length===1?'':'s'}`:'Drag the heart to scroll the OurSpace page';
 }
 function recordAlert(type){
   if(!alertVisuals[type])return;
@@ -130,10 +136,11 @@ window.OurSpaceMessengerAlert={notify:recordAlert,clear:()=>{recentAlerts=[];ref
 function apply(){
  const vw=Math.max(280,window.innerWidth||document.documentElement.clientWidth);
  const vh=Math.max(300,window.innerHeight||document.documentElement.clientHeight);
- // The 338px-wide reference shows a 246px white drawer plus a 60px yellow rail.
- const w=Math.round(Math.min(246,Math.max(180,vw-78)));
+ // Preserve the white Messenger drawer; the yellow/heart page rail is 40% narrower.
+ const w=Math.round(Math.min(246,Math.max(180,vw-54)));
  const css=document.documentElement.style;
  css.setProperty('--os-sidebar-drawer-width',w+'px');
+ css.setProperty('--os-page-heart-rail-width','36px');
  // The drawer is an overlay; never reserve a game-HUD or page-layout gutter.
  css.setProperty('--os-sidebar-width','0px');
  css.setProperty('--os-sidebar-right','0px');css.setProperty('--os-sidebar-top','0px');
@@ -152,8 +159,7 @@ function keepDrawerVisibleInFullscreen(){
   if(full){
     if(!full.contains(root))full.appendChild(root);
     if(jumpNav&&!full.contains(jumpNav))full.appendChild(jumpNav);
-    if(drawerOpen){drawerOpen=false;drawerState(false)}
-  }else if(sourceParent&&root.parentNode!==sourceParent){
+   }else if(sourceParent&&root.parentNode!==sourceParent){
     if(sourceNext&&sourceNext.parentNode===sourceParent)sourceParent.insertBefore(root,sourceNext);
     else sourceParent.appendChild(root);
   }
@@ -167,5 +173,11 @@ function keepDrawerVisibleInFullscreen(){
 document.addEventListener('fullscreenchange',keepDrawerVisibleInFullscreen);
 document.addEventListener('webkitfullscreenchange',keepDrawerVisibleInFullscreen);
 window.addEventListener('resize',apply);drawerState(false);requestAnimationFrame(applyPanels);
-window.OurSpaceSidebarLayout={get:()=>({...state,drawerOpen:false,scrollOnly:true}),isAdmin:false,refresh:apply,open:()=>{},close:()=>drawerState(false),toggle:()=>{}};
+window.OurSpaceSidebarLayout={
+ get:()=>({...state,drawerOpen,scrollOnly:!member}),
+ isAdmin:false,refresh:apply,
+ open:()=>{if(member){drawerOpen=true;drawerState(true)}},
+ close:()=>{if(member){drawerOpen=false;drawerState(true)}},
+ toggle:()=>{if(member){drawerOpen=!drawerOpen;drawerState(true)}}
+};
 })();
