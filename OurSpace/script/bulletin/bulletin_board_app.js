@@ -54,7 +54,7 @@ function decorateItemBorder(el,x){
 }
 
 const nav=[
-{id:'pinboard',emoji:'📌',name:'Pinboard',desc:'Boards & canvas',items:[['Open Pinboard','open-board','📍'],['My Bulletin','my-bulletin','📋'],['New board ＋','new-board','＋'],['Switch boards','switch-board','🔀'],['Rename board','rename-board','✎'],['Duplicate board','duplicate-board','⧉'],['Delete board','delete-board','🗑'],['Board privacy (private/public)','privacy-board','🔒']]},
+{id:'pinboard',emoji:'📌',name:'Pinboard',desc:'Boards & canvas',items:[['Open Pinboard','open-board','📍'],['My Bulletin','my-bulletin','📋'],['New board ＋','new-board','＋'],['Switch boards','switch-board','🔀'],['Rename board','rename-board','✎'],['Duplicate board','duplicate-board','⧉'],['Delete board','delete-board','🗑'],['Board privacy (private/public)','privacy-board','🔒'],['Share this board with partner','share-board','♡']]},
 {id:'pins',emoji:'📍',name:'Pins',desc:'Pin management',items:[['Create new pin','new-pin','＋'],['Add photo','add-photo','🖼'],['Add note / Post-it','add-note','📝'],['Add link / webpage','add-link','🔗'],['Add document','add-document','📄'],['Add quote','add-quote','❞'],['Add event','add-event','📅'],['Edit pins','edit-pins','✎'],['Pin details and tags','pin-details','🏷']]},
 {id:'grid',emoji:'▦',name:'Grid',desc:'Views & layouts',items:[['Grid view','view-grid','▦'],['Masonry view','view-masonry','▤'],['Freeform canvas','view-freeform','⬚'],['List view','view-list','≡'],['Compact view','view-compact','▥'],['Thumbnail sizes','thumb-size','◫'],['Sort and filter','sort-filter','⇅'],['Zoom controls','zoom-dialog','🔎']]},
 {id:'journal',emoji:'📖',name:'Journal',desc:'Junk journal',items:[['New journal page','journal-new','＋'],['Add scrap','journal-scrap','✂'],['Add photo','journal-photo','🖼'],['Add handwritten note','journal-handwriting','✎'],['Add washi tape','journal-washi','〰'],['Add paper backgrounds','journal-paper','▧'],['Page templates','journal-template','▣'],['Journal covers','journal-cover','📕'],['Page flipping / navigation','journal-open','⇆']]},
@@ -313,6 +313,57 @@ function exitBulletinFullscreen(){
 function alignSelected(){const a=currentItems().filter(x=>selected.has(x.id));if(a.length<2){notice('Select two or more pins using Shift-click');return}showDialog('Align and distribute',[{name:'align',label:'Alignment',type:'select',options:[['left','Align left'],['center','Center horizontally'],['top','Align top'],['middle','Align vertically'],['space-x','Distribute horizontally'],['space-y','Distribute vertically']]}],v=>selectedUpdate(x=>{if(v.align==='left')x.x=Math.min(...a.map(i=>i.x));if(v.align==='top')x.y=Math.min(...a.map(i=>i.y));if(v.align==='center')x.x=a.reduce((s,i)=>s+i.x+i.w/2,0)/a.length-x.w/2;if(v.align==='middle')x.y=a.reduce((s,i)=>s+i.y+i.h/2,0)/a.length-x.h/2;if(['space-x','space-y'].includes(v.align)){const axis=v.align==='space-x'?'x':'y',sorted=[...a].sort((l,r)=>l[axis]-r[axis]),i=sorted.findIndex(t=>t.id===x.id),min=sorted[0][axis],max=sorted.at(-1)[axis];x[axis]=min+(max-min)*i/Math.max(1,sorted.length-1)}},'Pins aligned'))}
 function groupSelected(){const a=currentItems().filter(x=>selected.has(x.id));if(!a.length){notice('Select one or more pins first');return}const g=a.every(i=>i.group&&i.group===a[0].group)?null:uid();selectedUpdate(i=>i.group=g,g?'Pins grouped':'Pins ungrouped')}
 function arrangeHint(msg){if(!state.arrange)commit(()=>state.arrange=true,'Arrange mode enabled');notice(msg)}
+async function shareBulletinBoard(){
+ const current=board();
+ if(!current||current.sharedFrom)return notice('Choose one of your own boards to share.');
+ if(!globalThis.OurSpaceActivity?.shareCollection)return notice('Sign into OurSpace to share a board.');
+ // Sharing is explicit. Only pins, notes, and safe links go to the partner.
+ // Junk-journal pages, reading notes, archived content and local blobs stay private.
+ const items=current.items.filter(i=>!i.archived).slice(0,70).map(pin=>({
+  id:pin.id,title:pin.title||'Pin',kind:pin.kind||'note',
+  body:String(pin.text||'').slice(0,600),
+  url:/^https?:\/\//i.test(pin.url||'')?pin.url:''
+ }));
+ try{
+  await globalThis.OurSpaceActivity.shareCollection({
+   category:'bulletin',id:current.id,name:current.name,
+   collectionType:'board',entries:items
+  });
+  commit(()=>{current.shared=true;current.private=false},'Board shared with your OurSpace partner.');
+ }catch(err){notice('Board sharing was not confirmed: '+err.message)}
+}
+let processingSharedBoards=false;
+function importSharedBulletinBoards(){
+ if(processingSharedBoards)return;
+ processingSharedBoards=true;
+ try{
+  const incoming=globalThis.OurSpaceActivity?.sharedCollections?.().filter(e=>
+   e.author!==PROFILE&&e.metadata?.sharedCollection?.category==='bulletin')||[];
+  let change=false;
+  for(const event of incoming){
+   const c=event.metadata.sharedCollection,id='partner-bulletin-'+event.author+'-'+c.id;
+   let target=state.boards.find(b=>b.id===id);
+   if(target?.sharedRevision===event.createdAt)continue;
+   if(!target){
+    target={id,name:'♥ '+c.name+' ('+event.author+')',private:false,
+     shared:true,sharedFrom:event.author,background:'cork',created:stamp(),
+     items:[],journal:[],reading:[]};
+    state.boards.push(target);
+   }
+   target.sharedRevision=event.createdAt;
+   target.items=(c.entries||[]).map((entry,index)=>({
+    id:'shared-pin-'+index+'-'+entry.id,kind:entry.kind||'note',
+    title:entry.title||'Shared pin',text:entry.body||'',
+    url:/^https?:\/\//i.test(entry.url||'')?entry.url:'',
+    x:8+(index%5)*17,y:12+Math.floor(index/5)*15,w:16,h:14,
+    rotation:0,z:index+2,created:stamp(),color:'#F7E7CE',
+    favorite:false,clipped:false,archived:false,locked:false
+   }));
+   change=true;
+  }
+  if(change){queueSave();render();notice('A partner-shared Bulletin board was updated.')}
+ }finally{processingSharedBoards=false}
+}
 function action(a){switch(a){
 case 'open-board':case 'my-bulletin':goBoard();break;
 case 'new-board':askName('Name your new board','New Bulletin',name=>commit(()=>{const b={id:uid(),name,private:true,background:'cork',created:stamp(),items:[],journal:[],reading:[]};state.boards.push(b);state.currentBoard=b.id;selected.clear();workspace='board'},'New board created'));break;
@@ -320,6 +371,7 @@ case 'switch-board':workspace='boards';render();break;
 case 'rename-board':askName('Rename board',board().name,name=>commit(()=>{board().name=name},'Board renamed'));break;
 case 'duplicate-board':askName('Duplicate board',board().name+' (copy)',name=>commit(()=>{const b=structuredClone(board());b.id=uid();b.name=name;b.created=stamp();b.items.forEach(i=>i.id=uid());b.journal.forEach(p=>p.id=uid());b.reading.forEach(r=>r.id=uid());state.boards.push(b);state.currentBoard=b.id;selected.clear();workspace='board'},'Board duplicated'));break;
 case 'delete-board':confirmAction('Delete current board?',`“${board().name}” will be moved to the Restore board area.`,()=>commit(()=>{const b=board();state.deletedBoards.push(b);state.boards=state.boards.filter(x=>x.id!==b.id);if(!state.boards.length){const n={id:uid(),name:'My Bulletin',private:true,background:'cork',created:stamp(),items:[],journal:[],reading:[]};state.boards.push(n)}state.currentBoard=state.boards[0].id;workspace='board';selected.clear()},'Board moved to restore area'));break;
+case 'share-board':void shareBulletinBoard();break;
 case 'privacy-board':case 'privacy-settings':showDialog('Board privacy',[{name:'privacy',label:'Visibility',type:'select',value:board().private?'private':'public',options:[['private','Private'],['public','Public (local label only)']]},{info:'Public is a visibility label only. This standalone offline Bulletin has no cloud publishing or sharing service.'}],v=>commit(()=>{board().private=v.privacy==='private'},'Board visibility updated'));break;
 case 'new-pin':promptItem('note','Create a pin');break;case 'add-event':showDialog('Add event pin',[{name:'title',label:'Event title',value:''},{name:'date',label:'Event date / time',type:'datetime-local',value:''},{name:'location',label:'Location',value:''},{name:'text',label:'Details',type:'textarea',value:''}],v=>addItem('event',{title:saneText(v.title)||'Event',text:[v.date?new Date(v.date).toLocaleString():'',v.location,saneText(v.text)].filter(Boolean).join('\n'),eventDate:v.date,eventLocation:saneText(v.location)},'Event pin added'));break;
 case 'add-photo':chooseFile('photo');break;
@@ -366,6 +418,8 @@ $('#workspace-overlay').addEventListener('input',e=>{if(e.target.id==='journal-t
 document.addEventListener('keydown',e=>{if(!$('#bulletin-root').contains(document.activeElement)&&!$('#bulletin-dialog').open)return;if($('#bulletin-dialog').open||/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName||''))return;if((e.ctrlKey||e.metaKey)&&e.key==='z'){e.preventDefault();e.shiftKey?redo():undo()}else if((e.ctrlKey||e.metaKey)&&e.key==='y'){e.preventDefault();redo()}else if(e.key==='Delete'&&selected.size){e.preventDefault();handleInspector('delete')}else if(e.key==='Escape'&&selected.size){selected.clear();render()}});
 connectMenuDrag();globalThis.addEventListener('resize',()=>{sizeBoard()});}
 async function start(){await initStore();navBuild();connectEvents();render();setupViewportScrollbar();setupAdaptiveMenus();
+ importSharedBulletinBoards();
+ globalThis.addEventListener('ourspace:activity-updated',importSharedBulletinBoards);
  document.addEventListener('fullscreenchange',()=>{
   const isFull=document.fullscreenElement===$('#bulletin-root');
   $('#bulletin-fullscreen-exit').setAttribute('aria-hidden',String(!isFull));
