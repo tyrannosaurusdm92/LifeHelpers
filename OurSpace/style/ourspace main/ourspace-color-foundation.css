@@ -21,3 +21,35 @@ html[data-profile] #ourspacePageArea :is(.os-fill-admin-tools,.os-fill-move,.os-
 html[data-profile] #ourspacePageArea [data-ourspace-page] :is(div,span,section,aside,header,footer,main,article,figure,figcaption,li,ul,ol,nav,fieldset,legend,form):not([data-os-custom-background]){background-color:var(--os-surface)!important;background-image:none!important;color:var(--os-ink)!important}
 html[data-profile] #ourspacePageArea [data-ourspace-page] :is(h1,h2,h3,h4,h5,h6,p,small,strong,em,label):not([data-os-custom-background]){background-color:transparent!important;background-image:none!important;color:var(--os-ink)!important}
 html[data-profile] #ourspacePageArea [data-ourspace-page] :is(a){color:var(--os-ink)!important}
+
+/* Audio library folder and playlist surfaces: explicit exception to the global
+   white MySpace/design foundation. This authoritative rule applies to William,
+   Jasper, and #admin preview without changing their layout or other modules. */
+html[data-profile] #ourspacePageArea [data-ourspace-page="audio"] #ourspace-media-module .osm-item.osm-drop-target {
+  background: #2e4863 !important;
+  background-image: none !important;
+  color: #f5f9ff !important;
+  border-color: #7697b6 !important;
+}
+html[data-profile] #ourspacePageArea [data-ourspace-page="audio"] #ourspace-media-module .osm-item.osm-drop-target :is(.osm-plain-target,.osm-item-head,.osm-item-title,.osm-item-meta,.osm-actions,.osm-tag) {
+  background: transparent !important;
+  background-image: none !important;
+  color: #f5f9ff !important;
+}
+html[data-profile] #ourspacePageArea [data-ourspace-page="audio"] #ourspace-media-module .osm-item.osm-drop-target .osm-actions .osm-btn {
+  background: #29435e !important;
+  background-image: none !important;
+  color: #f5f9ff !important;
+  border-color: #799bb8 !important;
+}
+html[data-profile] #ourspacePageArea [data-ourspace-page="audio"] #ourspace-media-module .osm-item.osm-drop-target .osm-actions .osm-btn:is(:hover,:focus-visible) {
+  background: #395c79 !important;
+  background-image: none !important;
+  color: #fff !important;
+  border-color: #9ed4de !important;
+}
+html[data-profile] #ourspacePageArea [data-ourspace-page="audio"] #ourspace-media-module .osm-item.osm-drop-target .osm-actions .osm-btn:disabled {
+  background: #29435e !important;
+  color: #f5f9ff !important;
+  opacity: .75;
+}
