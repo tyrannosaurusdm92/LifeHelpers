@@ -136,3 +136,45 @@ test('Work, Leisure, Virtual & Health and Professor share Onyx brain and voice, 
   assert.match(brainPersonality,/"sleeping"/);
   assert.match(brainPersonality,/"advising_professor"/);
 });
+
+
+test('authorized voice sampling chooses the correct parent and never contaminates clinical or social turns',async ()=>{
+  class StubRetrieval {
+    constructor(entries){assert.equal(entries.length,10000);}
+    retrieve({profile,mode,input}){
+      assert.equal(mode,'work');
+      assert.match(input,/button/i);
+      return [
+        {entry:{
+          id:profile==='jasper'?'J-0001':'W-0001',
+          mood:'thinking',cue:'The button does not work',
+          topic:'Work Coding button',text:profile==='jasper'?'Momma, I shall examine the button.':'Papa, I shall examine the button.'
+        }},
+        {entry:{id:'irrelevant',cue:'a garden tree',topic:'gardening',text:'Unrelated example'}}
+      ];
+    }
+  }
+  let profile='william';
+  const window={OnyxTester:{active:()=>true,publicStatus:()=>({selectedProfile:profile})}};
+  const document={currentScript:{src:'https://example.test/OurSpace/script/onyx%20widget/onyx-widget-conversation-guidance.js'}};
+  let fetched=0;
+  const fetch=async ()=>{fetched++;return{ok:true,json:async()=>({entries:Array.from({length:10000},()=>({id:'reference'}))})}};
+  const source=read('script/onyx widget/onyx-widget-conversation-guidance.js')
+    .replace('import(retrievalUrl.href)','Promise.resolve({Retrieval:StubRetrieval})');
+  runInNewContext(source,{window,document,fetch,URL,StubRetrieval,setTimeout,clearTimeout,console:{warn(){}}});
+  const voice=window.OnyxVoiceContext;
+  const first=await voice.enrich({message:'Help me fix the button that does not work',lane:'work'},'work');
+  assert.equal(first.context.onyxVoiceCorpus.profile,'william');
+  assert.equal(first.context.onyxVoiceCorpus.examples.length,1);
+  assert.match(first.context.onyxVoiceCorpus.examples[0].styleOnly,/Papa/);
+  profile='jasper';
+  const second=await voice.enrich({message:'Help me fix the button that does not work',lane:'work'},'work');
+  assert.equal(second.context.onyxVoiceCorpus.profile,'jasper');
+  assert.equal(second.context.onyxVoiceCorpus.examples[0].id,'J-0001');
+  assert.match(second.context.onyxVoiceCorpus.examples[0].styleOnly,/Momma/);
+  const clinical=await voice.enrich({message:'Help me fix the button that does not work',lane:'professor'},'professor');
+  assert.equal(clinical.context.onyxVoiceCorpus.examples.length,0);
+  const greeting=await voice.enrich({message:'Hey buddy how are you doing?',lane:'leisure'},'leisure');
+  assert.equal(greeting.context.onyxVoiceCorpus.examples.length,0);
+  assert.equal(fetched,1,'The corpus must be cached across both parents and lanes.');
+});
