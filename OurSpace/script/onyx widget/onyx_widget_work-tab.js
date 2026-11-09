@@ -456,7 +456,8 @@ async function api(action, data = {}, timeoutMs = 120000) {
   if (window.OnyxTester?.active?.()) {
     if (action !== "onyx.chat") throw new Error("Tester mode is read-only chat. Sign in to your account for image generation and other tools.");
     if (!window.OnyxTester?.publicStatus?.().selectedProfile) throw new Error("Select William or Jasper in the tester dialog.");
-    return window.OnyxTester.chat(data.message,{mode:"work",supportMode:"chat",threadId:data.threadId,
+    const testerLane = ["work","professor","virtual","leisure"].includes(document.getElementById("onyxTesterLane")?.value) ? document.getElementById("onyxTesterLane").value : "work";
+     return window.OnyxTester.chat(data.message,{mode:testerLane,supportMode:testerLane === "professor" ? "dbt" : testerLane === "virtual" ? "health" : "chat",threadId:data.threadId,
       context:{repositoryBrain:"LifeHelpers/Onyx",work:workContext(),readOnly:true,doNotAutoSaveGeneratorOutput:true}});
   }
   if (action === "onyx.chat") {
