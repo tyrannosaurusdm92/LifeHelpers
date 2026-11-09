@@ -22,6 +22,7 @@ const SYNONYMS = Object.freeze({
   clicking:'click', clicked:'click', buttons:'button', events:'event', handlers:'handler',
   anxious:'anxiety', worrying:'worry', worries:'worry', panicking:'panic', sad:'sadness', depressed:'depression',
   sleeping:'sleep', sleepy:'sleep', tiredness:'fatigue', exhausted:'fatigue', overwhelm:'overwhelmed',
+  dinner:'meal', supper:'meal', plate:'meal', food:'meal', breakfast:'meal', lunch:'meal',
   accessibility:'access', accessible:'access', wheelchair:'mobility', mobility:'mobility',
   therapy:'therapeutic', therapist:'therapeutic', psychiatric:'psychiatry', diagnosis:'diagnose',
   games:'game', gaming:'game', videogame:'game', stories:'story', writing:'write', coded:'code', coding:'code',
