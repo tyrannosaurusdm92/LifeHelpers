@@ -1,5 +1,7 @@
 # Onyx Pass 7 → OurSpace widget integration
 
+> **Current corpus update (8 Nov 2026):** The 10,000-example-only instructions below are historical. The current unified widget now has all **100,000 original account/lane response examples** available through eight compressed shards, including Virtual & Health and Professor. See [`ONYX_100000_VOICE_CORPUS_INTEGRATION.md`](./ONYX_100000_VOICE_CORPUS_INTEGRATION.md) for counts, verification, privacy precautions, and Work tester audit. The existing standalone Pass 7 workshop still has its original 10,000-example source for authoring.
+
 ## Scope
 
 The existing `OurSpace/assets/code/onyx_widget.html` remains the only entrypoint for the widget. The source generator is **not** embedded as a second HTML page, iframe, duplicated application, or alternate login. Its useful conversational tester and response workshop controls are incorporated into the existing **fullscreen Work → Voice library** dialog.
@@ -45,7 +47,7 @@ The live authenticated Google Apps Script Gemini path, browser rendering in both
 
 Do not add the standalone generator CSS, second HTML application or a shadow DOM. Keep the voice bridge in the widget code, the current CSS in the widget style folder, and model/knowledge implementation in the canonical `Onyx/` brain. If server-side prompt handling changes, verify the `onyxVoiceGuidance` context field is honored and does not override private canonical persona context.
 
-## Unified 10,000-example voice grounding (integration follow-up, 8 Nov 2026)
+## Historical Pass 7 10,000-example voice grounding (superseded by 100,000-example integration)
 
 The ordinary chats now also use the maintained Pass 7 library as a **bounded, non-authoritative voice reference**. `OnyxVoiceContext.enrich()` is called by the canonical OurSpace repository bridge and by the existing read-only tester. Thus Virtual & Health, Leisure, fullscreen Work, and fullscreen Professor all use the same base personality rules, while the Work Voice library remains the only response-authoring UI.
 
