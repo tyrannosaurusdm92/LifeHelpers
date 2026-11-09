@@ -52,7 +52,8 @@ async function staticText(user,lane){
  const url=new URL(PREFIX+user+'/'+lane+'/onyx_'+lane+'.txt',document.baseURI);
  const res=await fetch(url.href,{credentials:'same-origin',cache:'force-cache'});
  if(!res.ok)return null;
- return res.text();
+ const text=await res.text();
+ return text.startsWith('LORD ONYX BLEPMAN')?text:null;
 }
 
 let staticArchivePromise=null;
@@ -106,7 +107,7 @@ async function retrieve({profile,lane,input,limit=2}={}){
  if(!query.length)return [];
  const top=[];for(const record of records){
    const s=score(query,record);
-   if(s<2)continue;
+   if(s<=0)continue;
    if(top.length<8||s>top[top.length-1].score){
      top.push({entry:record,score:s});top.sort((a,b)=>b.score-a.score||a.entry.id.localeCompare(b.entry.id));if(top.length>8)top.pop()
    }
