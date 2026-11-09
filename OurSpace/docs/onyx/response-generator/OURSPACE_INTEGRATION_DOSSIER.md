@@ -2,7 +2,7 @@
 
 ## What is integrated
 
-The Pass 7 response generator now runs from the existing `assets/code/onyx_widget.html` entry point, within fullscreen Work’s Voice Library. Its modular JavaScript engine, 10,000-example voice corpus, canon and strategy JSON, lexical WASM ranker, tests, build notes, and dossier are maintained in Onyx-specific subfolders. The separate generator stylesheet is not loaded; the interface uses the existing Onyx widget stylesheet.
+The full Pass 7 response generator now runs from the existing `assets/code/onyx_widget.html` entry point, within fullscreen Work’s Voice Library. Its modular JavaScript engine, complete 10,000-example voice corpus, rebuilt single-file JavaScript bundle, build tooling, template source, canon and strategy JSON, both WASM rankers, tests, and dossiers are maintained in Onyx-specific subfolders. The generator bundle is loaded only after Voice Library opens. The original standalone HTML markup is merged into the existing widget page; no second HTML page is added. The separate generator stylesheet is not loaded; the interface uses the existing Onyx widget stylesheet.
 
 The source modules retain response drafting, social-intent classification, conversational continuity, quality checks, profile-scoped local approvals, explicit opt-in nonclinical notes, and JSON / `onyx-responses.js` export. The Work panel exposes Work, Leisure, Virtual & Health, and Professor lanes.
 
@@ -27,6 +27,6 @@ Professor uses the `professor` lane and `dbt` support mode. It can respond to em
 
 ## Runtime and verification limits
 
-The included Node suite checks source inventory, WASM loading, four-lane routing, Professor / health boundaries, social-intent repair, profile separation, tester routing, and widget integration without importing generator CSS. A passing local suite confirms the code paths and test doubles. It does not prove a live deployed Gemini completion; that requires a valid tester session or signed-in account and the deployed Apps Script / backend to be reachable.
+The included Node suite checks source inventory, WASM loading, four-lane routing, Professor / health boundaries, social-intent repair, profile separation, tester routing, and widget integration without importing generator CSS. The build script can regenerate the complete JavaScript bundle from the modular source and 10,000 references; it does not emit another HTML page or stylesheet. A passing local suite confirms the code paths and test doubles. It does not prove a live deployed Gemini completion; that requires a valid tester session or signed-in account and the deployed Apps Script / backend to be reachable.
 
-The source tree deliberately does not carry a second HTML application, a duplicate brain, or the old generated standalone bundle. The Pass 7 source modules, full 10,000-example corpus, WASM ranker, source dossier, tests, and workflow are integrated into the existing widget entry point and Onyx-specific subfolders. The original generator stylesheet is excluded; all workshop styling is scoped into the existing Onyx widget stylesheet.
+The existing `script/onyx widget/onyx-responses.js` loader brings in the rebuilt Pass 7 bundle on demand. The bundle contains the full corpus and engine for a self-contained script load, while the modular source remains canonical for maintenance. The local development server serves the existing widget at `/` and retains only the original scoped backend relay behavior. The original generator stylesheet is excluded; all workshop styling is scoped into the existing Onyx widget stylesheet.

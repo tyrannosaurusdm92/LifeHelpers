@@ -9,8 +9,8 @@ See [OURSPACE_INTEGRATION_DOSSIER.md](OURSPACE_INTEGRATION_DOSSIER.md) for full 
 | Path | Role |
 | --- | --- |
 | `assets/code/onyx_widget.html` | Existing single widget document; includes the Work-only workshop and four lane controls. |
-| `script/onyx widget/onyx-responses.js` | Lazy-loads the full workshop when Voice Library opens. |
-| `script/onyx widget/response-generator/` | Generation, conversation planning, quality checks, memory boundaries, account/tester adapter, and tests. |
+| `script/onyx widget/onyx-responses.js` | Lazy-loads the complete compiled workshop only when Voice Library opens. |
+| `script/onyx widget/response-generator/` | Full modular engine, generated bundle, build and local-server tools, conversation planning, quality checks, memory boundaries, account/tester adapter, and tests. |
 | `script/onyx widget/onyx_widget_onyx-repository-bridge.js` | Existing authenticated bridge to the repository brain, with a single quality retry for a plainly mismatched social check-in. |
 | `json/onyx widget/response-generator/` | Full 10,000-example corpus and voice strategy/canon data. |
 | `script/wasm/onyx-response-generator/` | WASM lexical rankers used by the generator. |

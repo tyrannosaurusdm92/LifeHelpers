@@ -8,10 +8,11 @@ Read [OURSPACE_INTEGRATION_DOSSIER.md](OURSPACE_INTEGRATION_DOSSIER.md) for the 
 
 ## What is included
 
-- Full modular Pass 7 response and conversation source under `script/onyx widget/response-generator/`.
+- Full modular Pass 7 response and conversation source, a rebuilt 14-module bundle, and its build / local-server tools under `script/onyx widget/response-generator/`.
 - The original 10,000 voice-reference entries and lane/canon JSON under `json/onyx widget/response-generator/`.
 - The active lexical C/WASM ranker plus the preserved auxiliary similarity primitive and their C sources under `script/wasm/onyx-response-generator/`.
 - The lazy Work-view loader at `script/onyx widget/onyx-responses.js`.
+- The original standalone page's interface markup is integrated into the existing widget; the bundle is fetched only after Voice Library opens. The build regenerates JavaScript without writing a second HTML page.
 - Targeted workshop rules appended to the existing `style/onyx widget/onyx_widget_style.css`. The standalone `generator.css` is excluded.
 - The current dossier, test record, and Pass 7 source documentation under `docs/onyx/response-generator/`.
 

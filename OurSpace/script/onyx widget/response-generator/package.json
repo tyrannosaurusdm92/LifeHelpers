@@ -1,10 +1,12 @@
 {
   "name": "onyx-response-workshop-ourspace",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "private": true,
   "type": "module",
   "description": "Pass 7 Onyx generator integrated into the existing four-lane OurSpace widget and canonical AI Brain",
   "scripts": {
+    "start": "node dev-server.mjs",
+    "build": "node build-standalone.mjs",
     "test": "node --test \"*.test.mjs\""
   },
   "engines": {

@@ -35,6 +35,7 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   const html=read('assets/code/onyx_widget.html');
   const widgetCss=read('style/onyx widget/onyx_widget_style.css');
   const loader=read('script/onyx widget/onyx-responses.js');
+  const bundle=read('script/onyx widget/response-generator/standalone-bundle.generated.js');
   const adapter=read('script/onyx widget/response-generator/ourspace-adapter.js');
   const brainBridge=read('script/onyx widget/onyx_widget_onyx-repository-bridge.js');
   assert.match(html,/id="onyxVoiceDialog"/);
@@ -43,7 +44,13 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   assert.doesNotMatch(html,/Existing GitHub-hosted Onyx brain assets/);
   assert.match(html,/script\/onyx widget\/onyx_widget_onyx-repository-bridge\.js" type="module"/);
   assert.match(html,/<script type="module" src="script\/onyx widget\/onyx-responses\.js"/);
-  assert.match(loader,/import\('\.\/response-generator\/generator-app\.js'\)/);
+  assert.match(loader,/response-generator\/standalone-bundle\.generated\.js/);
+  assert.doesNotMatch(loader,/import\('\.\/response-generator\/generator-app\.js'\)/);
+  assert.match(bundle,/assetMode:'integrated-widget'/);
+  assert.ok(Buffer.byteLength(bundle)>4_700_000,'the complete embedded corpus and engine bundle are present');
+  assert.match(bundle,/voice-exemplars\.json/);
+  assert.match(read('script/onyx widget/response-generator/package.json'),/node build-standalone\.mjs/);
+  assert.match(read('script/onyx widget/response-generator/dev-server.mjs'),/assets\/code\/onyx_widget\.html/);
   assert.match(loader,/onyxVoiceOpen/);
   assert.match(brainBridge,/chatWithSocialRepair\(prepared/);
   assert.match(brainBridge,/OnyxCore\.chat\(request\)/);
@@ -53,6 +60,43 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   assert.doesNotMatch(loader,/generator\.css/i);
   assert.match(widgetCss,/\.onyx-response-layout/);
   assert.doesNotMatch(widgetCss,/generator\.css/i);
+  assert.doesNotMatch(read('script/onyx widget/response-generator/index-template.txt'),/generator\.css/i);
+  assert.match(read('script/onyx widget/response-generator/build-standalone.mjs'),/does not emit another HTML page or import generator\.css/i);
+});
+
+test('Voice Library defers the complete bundle until opened and reuses the same load',async()=>{
+  let clickHandler,appended,appendCount=0;
+  const dialog={open:false,showModal(){this.open=true;}};
+  const button={addEventListener(type,handler){assert.equal(type,'click');clickHandler=handler;}};
+  const document={
+    getElementById(id){return id==='onyxVoiceDialog'?dialog:id==='onyxVoiceOpen'?button:null;},
+    createElement(tag){assert.equal(tag,'script');return {dataset:{},onload:null,onerror:null};},
+    head:{append(script){appended=script;appendCount++;}}
+  };
+  const window={__ONYX_WORKSHOP_CHECK:()=>({loaded:true,examples:10000})};
+  const source=read('script/onyx widget/onyx-responses.js').replace('import.meta.url',JSON.stringify('https://example.test/OurSpace/script/onyx%20widget/onyx-responses.js'));
+  runInNewContext(source,{window,document,URL});
+  assert.equal(dialog.open,false);
+  clickHandler();
+  assert.equal(dialog.open,true);
+  assert.equal(appended.src,'https://example.test/OurSpace/script/onyx%20widget/response-generator/standalone-bundle.generated.js');
+  const ready=window.OnyxResponseWorkshop.open();
+  appended.onload();
+  assert.deepEqual(JSON.parse(JSON.stringify(await ready)),{loaded:true,examples:10000});
+  assert.equal(appendCount,1);
+});
+
+test('all Pass 7 controls are merged into the widget or mapped to its existing tester flow',()=>{
+  const template=read('script/onyx widget/response-generator/index-template.txt');
+  const html=read('assets/code/onyx_widget.html');
+  const app=read('script/onyx widget/response-generator/generator-app.js');
+  const ids=text=>new Set([...text.matchAll(/\bid=["']([^"']+)["']/g)].map(match=>match[1]));
+  const widgetIds=ids(html);
+  const missing=[...ids(template)].filter(id=>!widgetIds.has(id)).sort();
+  const mappedTesterIds=['tester-code','tester-code-cancel','tester-code-confirm','tester-code-resend','tester-dialog','tester-dialog-message','tester-email','tester-email-cancel','tester-email-confirm','tester-email-step','tester-code-step'].sort();
+  assert.deepEqual(missing,[...mappedTesterIds,'tester-dialog-title'].sort());
+  for(const id of mappedTesterIds)assert.match(app,new RegExp(`['"]${id}['"]`));
+  assert.match(html,/aria-label="Onyx tester email verification"/);
 });
 
 test('the generator retains separate Professor and Virtual & Health support routes',()=>{
