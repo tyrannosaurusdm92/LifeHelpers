@@ -133,8 +133,8 @@ test('Tester generator uses compact contextual prompts within the Apps Script UR
    const r=await generator.generate({profile:'william',mode:'leisure',input:'Hey buddy how are you doing?',provider:'backend',testerToken:'read-only-token',count:1});
    assert.equal(r.entries[0].source,'backend-tester-readonly');
    assert.equal(seen[0].testerToken,'read-only-token');
-   assert.match(seen[0].message,/The user said:/);assert.match(seen[0].message,/LEISURE LANE/);
-   assert.ok(seen[0].message.length<4200,'prompt must stay beneath the tester JSONP payload limit');
+   assert.match(seen[0].message,/answer the social meaning directly/i);assert.match(seen[0].message,/Leisure: answer as familiar companionship/);
+   assert.ok(seen[0].message.length<=2400,'prompt must stay beneath the existing tester backend message limit');
  }finally{OnyxBackendClient.prototype.chat=old;}
 });
 

@@ -2,9 +2,16 @@
 
 ## What is integrated
 
-The full Pass 7 response generator now runs from the existing `assets/code/onyx_widget.html` entry point, within fullscreen Work’s Voice Library. Its modular JavaScript engine, complete 10,000-example voice corpus, rebuilt single-file JavaScript bundle, build tooling, template source, canon and strategy JSON, both WASM rankers, tests, and dossiers are maintained in Onyx-specific subfolders. The generator bundle is loaded only after Voice Library opens. The original standalone HTML markup is merged into the existing widget page; no second HTML page is added. The separate generator stylesheet is not loaded; the interface uses the existing Onyx widget stylesheet.
+The full Pass 7 response generator runs from the existing `assets/code/onyx_widget.html` entry point, within fullscreen Work’s Voice Library. Its modular JavaScript engine, complete 10,000-example voice corpus, build tooling, template source, canon and strategy JSON, both WASM rankers, tests, and dossiers are maintained in Onyx-specific subfolders. Voice Library lazily imports the maintained ESM source modules, so the deployed code and tested source stay aligned. A generated single-file bundle remains available as a build artifact. The original standalone HTML markup is merged into the existing widget page; no second HTML page is added. The separate generator stylesheet is not loaded; the interface uses the existing Onyx widget stylesheet.
 
 The source modules retain response drafting, social-intent classification, conversational continuity, quality checks, profile-scoped local approvals, explicit opt-in nonclinical notes, and JSON / `onyx-responses.js` export. The Work panel exposes Work, Leisure, Virtual & Health, and Professor lanes.
+
+## Tester prompt repair · 2026-11-09
+
+- Verified tester generation now uses a compact, lane-specific prompt under a 2,400-character client budget, leaving margin below the existing Apps Script tester route's approximately 3,000-character message limit. Oversized inputs receive a clear message instead of being cut off.
+- Both response-generator and ordinary conversation social retries preserve the selected profile, mood, thread, support mode, and lane, and reuse the active tester route. This prevents a Leisure retry from silently becoming Work and prevents an oversized rewrite from failing.
+- A regression test reproduces the exact “separate what is known” greeting and confirms that one retry returns to the check-in. Professor uses `dbt`; Virtual & Health uses `health`.
+- The browser UI’s current tester status is read-only. Generated samples and Professor conversations remain ephemeral and are not saved.
 
 ## Backend and privacy routing
 
@@ -27,6 +34,6 @@ Professor uses the `professor` lane and `dbt` support mode. It can respond to em
 
 ## Runtime and verification limits
 
-The included Node suite checks source inventory, WASM loading, four-lane routing, Professor / health boundaries, social-intent repair, profile separation, tester routing, and widget integration without importing generator CSS. The build script can regenerate the complete JavaScript bundle from the modular source and 10,000 references; it does not emit another HTML page or stylesheet. A passing local suite confirms the code paths and test doubles. It does not prove a live deployed Gemini completion; that requires a valid tester session or signed-in account and the deployed Apps Script / backend to be reachable.
+The included Node suite checks source inventory, WASM loading, four-lane routing, Professor / health boundaries, social-intent repair, profile separation, tester routing, and widget integration without importing generator CSS. The build script can regenerate the complete JavaScript bundle from the modular source and 10,000 references; it does not emit another HTML page or stylesheet. The live page loads the maintained modules directly. A passing local suite confirms the code paths and test doubles. It does not prove Gemini provider identity; that requires an upstream attestation from the deployed Apps Script / backend.
 
-The existing `script/onyx widget/onyx-responses.js` loader brings in the rebuilt Pass 7 bundle on demand. The bundle contains the full corpus and engine for a self-contained script load, while the modular source remains canonical for maintenance. The local development server serves the existing widget at `/` and retains only the original scoped backend relay behavior. The original generator stylesheet is excluded; all workshop styling is scoped into the existing Onyx widget stylesheet.
+The existing `script/onyx widget/onyx-responses.js` loader imports the Pass 7 app module on demand. The full corpus remains a separate project JSON resource, the WASM ranker remains in its original Onyx subfolder, and the modular source is canonical for maintenance. The local development server serves the existing widget at `/` and retains only the original scoped backend relay behavior. The original generator stylesheet is excluded; all workshop styling is scoped into the existing Onyx widget stylesheet.

@@ -16,7 +16,9 @@
     "professor"
   ],
   "bundledModuleCount": 14,
-  "generatedJavaScriptBundleBytes": 4753365,
+  "generatedJavaScriptBundleBytes": 4758209,
+  "runtimeLoading": "lazy ESM modules from maintained source",
+  "generatedBundleRuntimeUse": false,
   "embeddedLexicalWasmBytes": 158,
   "wasmSourceLanguages": [
     "C",
@@ -28,11 +30,11 @@
   "generatorStylesheetImported": false,
   "geminiCredentialInBrowser": false,
   "pythonRuntimeIncluded": false,
-  "automatedTestsPassed": 68,
+  "automatedTestsPassed": 65,
   "automatedTestsFailed": 0,
   "liveGeminiVerified": false,
-  "liveGeminiVerificationReason": "Requires a valid signed-in account or existing tester session and reachable deployed Apps Script / Onyx AI Brain.",
+  "liveGeminiVerificationReason": "The tester route must return an AI Brain completion; provider identity requires explicit upstream attestation.",
   "buildCommand": "node build-standalone.mjs from script/onyx widget/response-generator/",
   "testCommand": "node --test \"OurSpace/script/onyx widget/response-generator/\"*.test.mjs \"OurSpace/script/onyx widget/onyx-widget-conversation-guidance.test.mjs\"",
-  "notes": "The original standalone index markup is absorbed into the single existing widget HTML page. generator.css is excluded as requested. The generated bundle and modular source are both present; no filler code was added."
+  "notes": "The original standalone index markup is absorbed into the single existing widget HTML page. generator.css is excluded as requested. The live page lazily imports maintained ESM modules. The generated bundle remains a reproducible build artifact; no filler code was added."
 }

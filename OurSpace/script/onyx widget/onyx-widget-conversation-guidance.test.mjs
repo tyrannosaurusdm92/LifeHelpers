@@ -35,7 +35,6 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   const html=read('assets/code/onyx_widget.html');
   const widgetCss=read('style/onyx widget/onyx_widget_style.css');
   const loader=read('script/onyx widget/onyx-responses.js');
-  const bundle=read('script/onyx widget/response-generator/standalone-bundle.generated.js');
   const adapter=read('script/onyx widget/response-generator/ourspace-adapter.js');
   const brainBridge=read('script/onyx widget/onyx_widget_onyx-repository-bridge.js');
   assert.match(html,/id="onyxVoiceDialog"/);
@@ -44,11 +43,11 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   assert.doesNotMatch(html,/Existing GitHub-hosted Onyx brain assets/);
   assert.match(html,/script\/onyx widget\/onyx_widget_onyx-repository-bridge\.js" type="module"/);
   assert.match(html,/<script type="module" src="script\/onyx widget\/onyx-responses\.js"/);
-  assert.match(loader,/response-generator\/standalone-bundle\.generated\.js/);
-  assert.doesNotMatch(loader,/import\('\.\/response-generator\/generator-app\.js'\)/);
-  assert.match(bundle,/assetMode:'integrated-widget'/);
-  assert.ok(Buffer.byteLength(bundle)>4_700_000,'the complete embedded corpus and engine bundle are present');
-  assert.match(bundle,/voice-exemplars\.json/);
+  assert.match(loader,/response-generator\/generator-app\.js/);
+  assert.match(loader,/import\(moduleUrl\)/);
+  assert.match(loader,/maintained-modules/);
+  assert.match(read('script/onyx widget/response-generator/generator-app.js'),/createOnyxResponses/);
+  assert.equal(JSON.parse(read('json/onyx widget/response-generator/voice-exemplars.json')).entries.length,10000);
   assert.match(read('script/onyx widget/response-generator/package.json'),/node build-standalone\.mjs/);
   assert.match(read('script/onyx widget/response-generator/dev-server.mjs'),/assets\/code\/onyx_widget\.html/);
   assert.match(loader,/onyxVoiceOpen/);
@@ -64,26 +63,13 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   assert.match(read('script/onyx widget/response-generator/build-standalone.mjs'),/does not emit another HTML page or import generator\.css/i);
 });
 
-test('Voice Library defers the complete bundle until opened and reuses the same load',async()=>{
-  let clickHandler,appended,appendCount=0;
-  const dialog={open:false,showModal(){this.open=true;}};
-  const button={addEventListener(type,handler){assert.equal(type,'click');clickHandler=handler;}};
-  const document={
-    getElementById(id){return id==='onyxVoiceDialog'?dialog:id==='onyxVoiceOpen'?button:null;},
-    createElement(tag){assert.equal(tag,'script');return {dataset:{},onload:null,onerror:null};},
-    head:{append(script){appended=script;appendCount++;}}
-  };
-  const window={__ONYX_WORKSHOP_CHECK:()=>({loaded:true,examples:10000})};
-  const source=read('script/onyx widget/onyx-responses.js').replace('import.meta.url',JSON.stringify('https://example.test/OurSpace/script/onyx%20widget/onyx-responses.js'));
-  runInNewContext(source,{window,document,URL});
-  assert.equal(dialog.open,false);
-  clickHandler();
-  assert.equal(dialog.open,true);
-  assert.equal(appended.src,'https://example.test/OurSpace/script/onyx%20widget/response-generator/standalone-bundle.generated.js');
-  const ready=window.OnyxResponseWorkshop.open();
-  appended.onload();
-  assert.deepEqual(JSON.parse(JSON.stringify(await ready)),{loaded:true,examples:10000});
-  assert.equal(appendCount,1);
+test('Voice Library defers the maintained module import until opened and reuses the same load',()=>{
+  const loader=read('script/onyx widget/onyx-responses.js');
+  assert.match(loader,/const open = async \(\) =>/);
+  assert.match(loader,/new URL\('\.\/response-generator\/generator-app\.js', import\.meta\.url\)/);
+  assert.match(loader,/loading = import\(moduleUrl\)/);
+  assert.match(loader,/if \(!loading\)/);
+  assert.match(loader,/OnyxResponseWorkshop = Object\.freeze\(\{ open \}\)/);
 });
 
 test('all Pass 7 controls are merged into the widget or mapped to its existing tester flow',()=>{

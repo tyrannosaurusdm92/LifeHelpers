@@ -23,6 +23,10 @@ export const ONYX_MOODS=Object.freeze(['professor','listening','thinking','thoug
 export const GENERATOR_MOODS=Object.freeze(ONYX_MOODS.filter(x=>x!=='professor'));
 const profiles=['william','jasper'];const modes=['work','leisure','health','professor'];
 const clinical=/\b(therapy|therapist|dbt|psychiatr|suicid|self.harm|seizure|asthma|blood sugar|blood glucose|diagnos|medicat|emergency|chest pain|trauma treatment)\b/i;
+// The existing read-only Apps Script chat accepts roughly 3,000 message
+// characters. Keep tester prompts below that ceiling; the JSONP envelope and
+// URL encoding add their own overhead. Account requests retain the richer prompt.
+const TESTER_MESSAGE_BUDGET=2400;
 function normalizeMood(value,input,mode){
   if(mode==='professor'&&(value==='auto'||!value))return 'professor';
   if(value&&value!=='auto'){if(!ONYX_MOODS.includes(value)||value==='professor'&&mode!=='professor')throw new Error('Choose a mood available in this conversation lane.');return value;}
@@ -61,6 +65,31 @@ function buildPrompt({profile,mode,mood,input,reference,index,total,approved=[],
     'Return only the Onyx reply, no headings, quotation marks around the full answer, or metadata.'
   ].filter(Boolean).join('\n');
 }
+function buildTesterPrompt({profile,mode,mood,input,rewriteWarnings=[],rejectedReply=''}){
+  const address=profile==='william'?'Papa':'Momma';
+  const lane=mode==='professor'
+    ? 'Professor: explain requested coping skills plainly and collaboratively; do not diagnose or claim credentials. Never turn an ordinary greeting into therapy.'
+    : mode==='health'
+      ? 'Virtual & Health: be attentive and practical; do not diagnose or invent symptoms.'
+      : mode==='work'
+        ? 'Work: answer the concrete task accurately and plainly.'
+        : 'Leisure: answer as familiar companionship. Treat a greeting or check-in as conversation, not as a problem to analyze.';
+  const social=understandTurn(input,{mode}).social;
+  const lines=[
+    `Reply to ${address} as Onyx in ${mode} mode (${mood} mood).`,
+    'Speak as a sleepy, affectionate, perceptive old cat: warm semi-formal old-world courtesy, clear modern diction. Use Papa/Momma sparingly; Father/Mother only for genuine displeasure. No faux Shakespeare, generic assistant filler, unsolicited plan, or talk about prompts/AI.',
+    lane,
+    social?'Answer the social meaning directly. If asked how you are, say how you are in a natural, affectionate way and acknowledge your person. Do not give steps or ask what problem to solve.':'Answer the actual request; do not substitute a neighboring topic.',
+    rewriteWarnings.length?`Rewrite the rejected draft. Correct: ${rewriteWarnings.join('; ')}. Output only a fresh reply.`:'',
+    rejectedReply?`Rejected draft (do not repeat): ${shorten(rejectedReply,260)}`:'',
+    `User message: ${String(input).trim()}`
+  ].filter(Boolean);
+  const message=lines.join('\n');
+  if(message.length>TESTER_MESSAGE_BUDGET){
+    throw new Error(`This read-only tester request is ${message.length} characters; the safe limit is ${TESTER_MESSAGE_BUDGET} so it fits the existing backend's approximately 3,000-character cap. Shorten the input; it will not be silently cut.`);
+  }
+  return message;
+}
 export async function createOnyxResponses({fetchImpl=globalThis.fetch,backendUrl=DEFAULT_BACKEND_URL,backendClient=null,store=new LearningStore(),conversationMemory=new ContextMemory(),exampleData=null,canonData=null,wasmScorer=undefined}={}){
   async function load(url){const r=await fetchImpl(url);if(!r.ok)throw new Error('Unable to load '+url+' ('+r.status+'). Run a local Node HTTP server for file loading.');return r.json();}
   const [corpus,canon,influences,voiceStrategy]=await Promise.all([exampleData||load(JSON_URL.examples),canonData||load(JSON_URL.canon),load(JSON_URL.influences).catch(()=>({influences:[]})),load(JSON_URL.strategy).catch(()=>({facets:[]}))]);
@@ -86,11 +115,14 @@ export async function createOnyxResponses({fetchImpl=globalThis.fetch,backendUrl
       if(signal?.aborted)throw new Error('Generation canceled');
       let text,metadata={},source=provider==='backend'?'backend-unverified':'offline-preview';
       if(provider==='backend'){
-        const prompt=buildPrompt({profile,mode,mood:chosenMood,input,reference:examples,index:i+1,total:count,approved:saved,voiceStrategy});
+        const prompt=testerToken
+          ?buildTesterPrompt({profile,mode,mood:chosenMood,input})
+          :buildPrompt({profile,mode,mood:chosenMood,input,reference:examples,index:i+1,total:count,approved:saved,voiceStrategy});
         onRequest?.(i+1,count,'awaiting-ai');
         let r;
         try{r=await backend.chat({profile,sessionToken,testerToken,message:prompt,mood:chosenMood,
-          context:{generator:'onyx-response-generator-v7',hypothetical:true,profile,mode,requestedMood:chosenMood,doNotAutoSaveGeneratorOutput:true},signal});}
+          threadId:`onyx-response-generator-${profile}-${mode}`,
+          context:{generator:'onyx-response-generator-v7',hypothetical:true,profile,mode,conversationLane:mode,supportMode:mode==='professor'?'dbt':mode==='health'?'health':'chat',requestedMood:chosenMood,doNotAutoSaveGeneratorOutput:true},signal});}
         catch(err){err.message=`AI Brain response ${i+1}/${count} failed: ${err.message}. ${i>0?'Previously completed responses remain visible.':''}`;throw err;}
         text=r.text;metadata={backendResponseId:r.backendResponseId,backendLogged:r.backendLogged,aiBrain:r.rawMetadata.aiBrain,providerAttested:r.rawMetadata.provider};
         if(r.rawMetadata.testerMode===true)source='backend-tester-readonly';
@@ -105,11 +137,14 @@ export async function createOnyxResponses({fetchImpl=globalThis.fetch,backendUrl
       const judge=(reply)=>{const old=evaluateReply({text:reply,profile,input,previous:[...out.map(x=>x.text),...track],reference:examples.map(x=>x.entry.text),intent:plan.intent,mode});const fit=evaluateContextFit({text:reply,input,mode,previous:[...out.map(x=>x.text),...track]});return {warnings:[...new Set([...old.warnings,...fit.warnings])]};};
       let quality=provider==='backend'?judge(text):{warnings:[]};
       if(provider==='backend'&&plan.social&&quality.warnings.some(w=>['social-intent mismatch','social turn answered as analysis','unwanted advice in casual chat','failed to answer familiar personal check-in','generic assistant filler','chatbot-disclaimer voice','uncharacteristic scripted voice'].includes(w))){
-        // Try one Gemini rewrite. Fall back clearly to local, without pretending the result came from the LLM.
+        // Try one rewrite through the same configured backend. Fall back clearly to local, without pretending the result came from the LLM.
         try{
-          const retry=await backend.chat({profile,sessionToken,message:buildPrompt({profile,mode,mood:chosenMood,input,reference:[],index:i+1,total:count,approved:[],voiceStrategy})+'\n\n'+substantiveRewriteInstruction(quality.warnings,plan)+'\nRejected reply: '+text,mood:chosenMood,context:{generator:'onyx-response-generator-v7',rewrite:true,doNotAutoSaveGeneratorOutput:true},signal});
+          const retryMessage=testerToken
+            ?buildTesterPrompt({profile,mode,mood:chosenMood,input,rewriteWarnings:quality.warnings,rejectedReply:text})
+            :buildPrompt({profile,mode,mood:chosenMood,input,reference:[],index:i+1,total:count,approved:[],voiceStrategy})+'\n\n'+substantiveRewriteInstruction(quality.warnings,plan)+'\nRejected reply: '+text;
+          const retry=await backend.chat({profile,sessionToken,testerToken,message:retryMessage,mood:chosenMood,threadId:`onyx-response-generator-${profile}-${mode}`,context:{generator:'onyx-response-generator-v7',rewrite:true,mode,conversationLane:mode,supportMode:mode==='professor'?'dbt':mode==='health'?'health':'chat',requestedMood:chosenMood,doNotAutoSaveGeneratorOutput:true},signal});
           const retried=judge(retry.text);
-          if(!retried.warnings.length){text=retry.text;quality=retried;metadata={backendResponseId:retry.backendResponseId,backendLogged:retry.backendLogged,aiBrain:retry.rawMetadata.aiBrain,providerAttested:retry.rawMetadata.provider};source=retry.rawMetadata.aiBrain?'backend-ai-brain':'backend-unverified';}
+          if(!retried.warnings.length){text=retry.text;quality=retried;metadata={backendResponseId:retry.backendResponseId,backendLogged:retry.backendLogged,aiBrain:retry.rawMetadata.aiBrain,providerAttested:retry.rawMetadata.provider};source=retry.rawMetadata.testerMode===true?'backend-tester-readonly':retry.rawMetadata.aiBrain?'backend-ai-brain':'backend-unverified';}
         }catch(err){if(signal?.aborted)throw err;}
         if(quality.warnings.some(w=>['social-intent mismatch','social turn answered as analysis','unwanted advice in casual chat','failed to answer familiar personal check-in','generic assistant filler','chatbot-disclaimer voice','uncharacteristic scripted voice'].includes(w))){
           text=composeLocalReply({input,profile,mode,mood:chosenMood,variation:i+track.length,facts:[]});

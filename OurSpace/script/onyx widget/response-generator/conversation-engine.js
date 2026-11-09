@@ -16,6 +16,29 @@ const LANES=new Set(['work','leisure','health','professor']);
 const strip=(text,max)=>String(text||'').replace(/\s+/g,' ').trim().slice(0,max);
 function moodFrom(input,mode){if(/\b(eat|food|tuna|hungry|snack|bacon)\b/i.test(input))return 'hungry';if(/\b(sleep|nap|pillow|blanket)\b/i.test(input))return 'sleeping';if(/\b(just listen|hear me out|no advice)\b/i.test(input))return 'listening';if(/\b(celebrate|great news|glad|delighted)\b/i.test(input))return 'purring';if(/\b(frustrating|ridiculous|annoying|unfair)\b/i.test(input))return 'judgmental';return mode==='work'?'thinking':'thoughtful';}
 const delimiter=(name,s)=>`<${name}>\n${s}\n</${name}>`;
+const TESTER_MESSAGE_BUDGET=2400;
+function testerRewritePrompt({profile,mode,input,mood,warnings,draft}){
+  const address=profile==='william'?'Papa':'Momma';
+  const social=understandTurn(input,{mode}).social;
+  const lane=mode==='professor'
+    ?'Professor: explain requested coping skills plainly and collaboratively; do not diagnose or claim credentials.'
+    :mode==='health'
+      ?'Virtual & Health: be attentive and practical; do not diagnose or invent symptoms.'
+      :mode==='work'
+        ?'Work: answer the concrete task accurately.'
+        :'Leisure: respond as familiar companionship, not as a problem-solving exercise.';
+  const message=[
+    `Rewrite the reply to ${address} as Onyx in ${mode} mode (${mood} mood).`,
+    'Use warm, semi-formal old-world courtesy with clear modern diction. Speak as a sleepy, affectionate, perceptive cat. Papa/Momma sparingly; Father/Mother only for genuine displeasure. No generic assistant filler or talk about AI.',
+    lane,
+    social?'Answer the greeting/check-in naturally, say how you are if asked, and acknowledge your person. No steps, analysis, or invented problem.':'Answer the actual request directly.',
+    `Correct these problems: ${warnings.join('; ')}. Output only the revised reply.`,
+    `Rejected draft (do not repeat): ${strip(draft,220)}`,
+    `User message: ${input}`
+  ].join('\n');
+  if(message.length>TESTER_MESSAGE_BUDGET)throw new Error(`The tester rewrite exceeds the safe ${TESTER_MESSAGE_BUDGET}-character message budget. Shorten the input; it will not be silently cut.`);
+  return message;
+}
 function promptFor({profile,mode,mood,input,turns,facts,examples,approved,voice,strategy,intent,plan}){
   const [address,stern]=ADDRESSES[profile];
   const previous=turns.slice(-3).map((t,i)=>`${i+1}. ${address}: ${strip(t.user,220)}\nOnyx: ${strip(t.assistant,260)}`).join('\n');
@@ -85,7 +108,10 @@ export async function createConversationEngine({fetchImpl=globalThis.fetch,backe
     let q=judge(res.text);
     if(provider==='backend'&&qualityRetry&&q.warnings.length){
       try{
-        const revision=await backend.chat({profile,sessionToken,message:prompt+'\n\nFIRST DRAFT (do not repeat): '+res.text+'\n\n'+repairInstruction(q.warnings)+'\n'+substantiveRewriteInstruction(q.warnings,plan),mood:chosen,threadId:`onyx-voice-${profile}-${threadId}`,context:{generator:'onyx-conversation-v5',rewrite:true,autoRemember:false},signal});
+        const revisionMessage=testerToken
+          ?testerRewritePrompt({profile,mode,input,mood:chosen,warnings:q.warnings,draft:res.text})
+          :prompt+'\n\nFIRST DRAFT (do not repeat): '+res.text+'\n\n'+repairInstruction(q.warnings)+'\n'+substantiveRewriteInstruction(q.warnings,plan);
+        const revision=await backend.chat({profile,sessionToken,testerToken,message:revisionMessage,mood:chosen,threadId:`onyx-voice-${profile}-${threadId}`,context:{generator:'onyx-conversation-v7',rewrite:true,profile,mode,supportMode:mode==='professor'?'dbt':mode==='health'?'health':'chat',autoRemember:false,doNotAutoSaveGeneratorOutput:true},signal});
         const revised=judge(revision.text);
         if(revised.warnings.length<=q.warnings.length){res=revision;q=revised;}
       }catch(err){if(signal?.aborted)throw err;}

@@ -50,6 +50,35 @@ test('requires credentials for live backend; never stores keys or makes Gemini d
   assert.equal(requests.at(-1).data.allowWrites,false);
   assert.ok(!JSON.stringify(requests.at(-1)).match(/API_KEY|AIza/));
 });
+test('verified tester generation stays under the backend cap and keeps Leisure mode through social rewrite',async()=>{
+  const calls=[];
+  const testerEngine=await createOnyxResponses({fetchImpl,store:new LearningStore({indexedDBImpl:null}),backendClient:{chat:async args=>{
+    calls.push(args);
+    return {text:calls.length===1
+      ?'Papa, I would begin by separating what is known from what we are assuming. Which part would you like to settle first?'
+      :"I'm well, Papa. I have been dozing in a patch of sun, and it is lovely to hear from you.",
+      rawMetadata:{testerMode:true,aiBrain:true,provider:'unverified'}};
+  }}});
+  const result=await testerEngine.generate({profile:'william',mode:'leisure',input:'Hey buddy how are you doing?',provider:'backend',testerToken:'verified-test-session'});
+  assert.equal(calls.length,2,'the context guard should request one rewrite after the analytical first reply');
+  assert.equal(result.entries[0].text,"I'm well, Papa. I have been dozing in a patch of sun, and it is lovely to hear from you.");
+  assert.equal(result.entries[0].source,'backend-tester-readonly');
+  for(const call of calls){
+    assert.ok(call.message.length<=2400,`tester message was ${call.message.length} characters`);
+    assert.equal(call.context.mode,'leisure');
+    assert.equal(call.context.conversationLane,'leisure');
+    assert.equal(call.testerToken,'verified-test-session');
+  }
+  assert.match(calls[0].message,/answer the social meaning directly/i);
+  assert.match(calls[1].message,/Rejected draft/);
+  assert.match(calls[1].message,/User message: Hey buddy how are you doing\?/);
+});
+test('tester generation reports oversized input instead of silently truncating it',async()=>{
+  let called=false;
+  const testerEngine=await createOnyxResponses({fetchImpl,store:new LearningStore({indexedDBImpl:null}),backendClient:{chat:async()=>{called=true;return {text:'unexpected'};}}});
+  await assert.rejects(testerEngine.generate({profile:'william',mode:'professor',input:'x'.repeat(2400),provider:'backend',testerToken:'verified-test-session'}),/safe limit is 2400.*Shorten the input; it will not be silently cut/);
+  assert.equal(called,false);
+});
 test('approved response memory remains profile scoped; exports are clean JS/JSON',async()=>{
   const saved=await engine.saveApproved({id:'approved-one',profile:'william',mode:'work',mood:'thinking',topic:'the button does not work',text:'Papa, inspect the handler first.',source:'backend-ai-brain'});
   assert.equal(saved.id,'approved-one');assert.equal((await engine.listApproved('william')).length,1);

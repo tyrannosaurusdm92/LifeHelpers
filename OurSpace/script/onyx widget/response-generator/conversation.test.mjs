@@ -48,6 +48,26 @@ test('Professor and Virtual & Health route clinical conversation through the liv
   await assert.rejects(engine.chat({profile:'william',mode:'leisure',input:'Help with DBT therapy',sessionToken:'mock-token'}),/belong in Virtual & Health or Professor/);
   await assert.rejects(engine.chat({profile:'jasper',mode:'professor',input:'What shall I write tomorrow?',mood:'sleeping',sessionToken:'mock-token'}),/mood available/);
 });
+test('read-only tester social repair stays compact and retains its lane and tester session',async()=>{
+  const testerCalls=[];
+  const testerEngine=await createConversationEngine({memory:new ContextMemory({indexedDBImpl:null}),fetchImpl,backendClient:{chat:async args=>{
+    testerCalls.push(args);
+    return {text:testerCalls.length===1
+      ?'Papa, I would begin by separating what is known from what we are assuming. Which part would you like to settle first?'
+      :"I'm well, Papa. I have been resting, and it is very good to hear from you.",
+      rawMetadata:{aiBrain:true,provider:'unverified',testerMode:true}};
+  }}});
+  const result=await testerEngine.chat({profile:'william',mode:'leisure',input:'Hey buddy how are you doing?',testerToken:'verified-test-session',threadId:'tester-leisure'});
+  assert.equal(testerCalls.length,2);
+  assert.equal(result.text,"I'm well, Papa. I have been resting, and it is very good to hear from you.");
+  assert.equal(result.source,'backend-tester-readonly');
+  const retry=testerCalls[1];
+  assert.ok(retry.message.length<=2400);
+  assert.equal(retry.testerToken,'verified-test-session');
+  assert.equal(retry.context.mode,'leisure');
+  assert.equal(retry.context.supportMode,'chat');
+  assert.match(retry.message,/User message: Hey buddy how are you doing\?/);
+});
 test('Reply quality feedback detects wrong profile and false tool activity',()=>{
   const r=evaluateReply({profile:'william',input:'Can you help',text:'Mother, I committed your changes to GitHub.'});
   assert.equal(r.pass,false);assert.ok(r.warnings.includes('wrong-profile address'));assert.ok(r.warnings.includes('possible invented tool execution'));

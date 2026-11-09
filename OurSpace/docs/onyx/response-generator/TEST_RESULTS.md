@@ -1,12 +1,12 @@
 # Pass 7 OurSpace integration verification — 2026-11-09
 
-- Automated Node tests: **68 passed, 0 failed**.
-- Coverage includes the 10,000-entry source corpus, both functional WASM scorers, all four lanes, signed-in and tester adapter routing, profile isolation, the exact Leisure greeting regression, social-reply retry through the canonical brain bridge, and Professor conversation capability and privacy.
-- Professor scenarios covered emotional reflection, DBT STOP practice, plain-language psychoeducation, clinician preparation, listening without advice, thread continuity, and no persistent local turns or notes.
-- The widget smoke checks verify the existing single Work fullscreen entry, deferred bundle loading and single-load reuse, the 4.75 MB generated Pass 7 bundle, existing widget stylesheet usage, no `generator.css` reference, and the Onyx repository brain connection.
-- DOM coverage confirms that all standalone template controls exist in the widget, with tester controls mapped to the existing email-code dialog.
-- `node --check` passes for the bundle builder, generated bundle, and local development server.
-- The suite uses deterministic test doubles. **Live Gemini completion and the deployed widget in both signed-in accounts remain unverified**; those require the live backend plus an authenticated account or valid tester code.
+- Automated Node tests: **65 passed, 0 failed** after the tester prompt repair.
+- Coverage includes the 10,000-entry source corpus, WASM loading, all four lanes, signed-in and tester routing, profile isolation, the exact Leisure greeting regression, and Professor support/privacy.
+- New regression checks reproduce the inappropriate “separate what is known” greeting, confirm a compact tester rewrite stays in Leisure, verify the tester session is retained, and reject oversize input without silent truncation.
+- Professor cases cover emotional reflection, DBT STOP practice, plain-language psychoeducation, clinician preparation, listening without advice, thread continuity, and no persistent local turns or notes.
+- Widget checks verify that the existing fullscreen Work Voice Library lazily imports the maintained ESM source, uses the Onyx widget stylesheet, excludes `generator.css`, and remains connected to the Onyx repository bridge.
+- The build command succeeds and regenerates the 14-module single-file JavaScript artifact; the deployed page imports the maintained source modules directly so source fixes take effect without bundle drift.
+- Tests use deterministic back-end doubles. **Live tester generation and Gemini provider identity still require the deployed page and backend check below.** A reply from the tester route alone does not prove Gemini was the upstream model.
 
 Run from the repository root:
 
