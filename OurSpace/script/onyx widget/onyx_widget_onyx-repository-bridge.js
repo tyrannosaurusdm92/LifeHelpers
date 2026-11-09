@@ -92,7 +92,10 @@ async function chat(payload = {}, options = {}) {
   };
   // The core retrieves Onyx corpus guides, sends one authenticated onyx.chat,
   // then verifies both real AI completion and the backend's personality/profile proof.
-  const prepared = window.OnyxVoiceContext?.decorate?.(coreInput, lane) || coreInput;
+  // One voice-enrichment pass for Work, Leisure, Virtual & Health, and Professor.
+  // Any unavailable corpus silently falls back to the canonical Onyx brain.
+  const prepared = await (window.OnyxVoiceContext?.enrich?.(coreInput, lane) ||
+    Promise.resolve(window.OnyxVoiceContext?.decorate?.(coreInput, lane) || coreInput));
   const inspector = window.OnyxVoiceContext?.inspectReply;
   if (typeof inspector !== "function") return OnyxCore.chat(prepared);
   return chatWithSocialRepair(prepared, {

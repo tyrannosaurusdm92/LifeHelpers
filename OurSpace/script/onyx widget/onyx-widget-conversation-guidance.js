@@ -51,13 +51,13 @@
     };
     // Never override a backend-authenticated profile, token, private memory or account data.
     const guide=guidance(message,chosen,source.mood);
-    return {...source,lane:chosen,context:{...context,onyxVoiceGuidance:context.onyxVoiceGuidance?.schema===guide.schema?context.onyxVoiceGuidance:guide}};
+    return {...source,lane:chosen,context:{...context,onyxVoiceGuidance:(context.onyxVoiceGuidance?.schema===guide.schema && context.onyxVoiceGuidance.surface===guide.surface && context.onyxVoiceGuidance.intent===guide.intent)?context.onyxVoiceGuidance:guide}};
   }
   function testerContext(message, surface, existing) {
     const context=existing&&typeof existing==='object'&&!Array.isArray(existing)?{...existing}:{};
     const chosen=lane(surface);
     return {...context,interfaceSurface:chosen,conversationLane:chosen,
-      onyxVoiceGuidance:context.onyxVoiceGuidance?.schema==='ourspace.onyx.pass7.voice-bridge.v1'?context.onyxVoiceGuidance:guidance(message,chosen),repositoryBrain:'LifeHelpers/Onyx',
+      onyxVoiceGuidance:(context.onyxVoiceGuidance?.schema==='ourspace.onyx.pass7.voice-bridge.v1' && context.onyxVoiceGuidance.surface===chosen && context.onyxVoiceGuidance.intent===intent(message,chosen))?context.onyxVoiceGuidance:guidance(message,chosen),repositoryBrain:'LifeHelpers/Onyx',
       readOnly:true,autoRemember:false,allowWrites:false,allowExternalTools:false};
   }
   function inspectReply(message,reply,surface){
@@ -65,5 +65,123 @@
     const misplaced=input==='social'&&/\b(?:separat(?:e|ing) what is known|practical next step|what we are assuming|settle first|break this down into steps)\b/i.test(output);
     return {socialMismatch:misplaced,empty:!output,shouldReview:misplaced||!output};
   }
-  root.OnyxVoiceContext=Object.freeze({LANES,NINE,intent,guidance,decorate,testerContext,inspectReply});
+
+  // The Work workshop owns authoring and exports. This shared bridge supplies a
+  // bounded number of relevant, synthetic *style* references to every normal
+  // conversation using the SAME repository brain, without another bot/provider.
+  // The 10,000 examples are public fictional exemplars, never personal memory.
+  const VOICE_SOURCE = typeof document !== 'undefined' ? (document.currentScript?.src || '') : '';
+  const VOICE_LIBRARY_SCHEMA = 'ourspace.onyx.pass7.voice-corpus-reference.v1';
+  let voiceLibraryPromise = null;
+
+  function trustedVoiceProfile() {
+    const tester = root.OnyxTester;
+    if (tester?.active?.()) {
+      const id = String(tester.publicStatus?.().selectedProfile || '').toLowerCase();
+      return ['william', 'jasper'].includes(id) ? id : '';
+    }
+    const host = root.OurSpaceBackend;
+    if (typeof host?.token === 'function' && host.token()) {
+      const id = String(host.profile?.() || '').toLowerCase();
+      if (['william', 'jasper'].includes(id)) return id;
+    }
+    const backend = root.OnyxBackendClient;
+    if (backend?.authenticated?.()) {
+      const id = String(backend.activeProfile?.() || '').toLowerCase();
+      if (['william', 'jasper'].includes(id)) return id;
+    }
+    return '';
+  }
+
+  function loadVoiceLibrary() {
+    if (!VOICE_SOURCE || typeof fetch !== 'function') return Promise.resolve(null);
+    if (!voiceLibraryPromise) {
+      const libraryUrl = new URL('../../json/onyx%20widget/response-generator/voice-exemplars.json', VOICE_SOURCE);
+      const retrievalUrl = new URL('./response-generator/lexical-retrieval.js', VOICE_SOURCE);
+      voiceLibraryPromise = Promise.all([
+        import(retrievalUrl.href),
+        fetch(libraryUrl.href, {credentials:'same-origin'}).then(async response => {
+          if (!response.ok) throw new Error('Voice reference corpus HTTP ' + response.status);
+          return response.json();
+        })
+      ]).then(([module, corpus]) => {
+        if (!Array.isArray(corpus.entries) || corpus.entries.length !== 10000) {
+          throw new Error('The canonical 10,000-example voice reference corpus is incomplete.');
+        }
+        return new module.Retrieval(corpus.entries);
+      }).catch(error => {
+        console.warn('Onyx voice library unavailable; using canonical brain personality:', String(error?.message || error));
+        // Voice-library failure must never prevent a genuine backend response.
+        voiceLibraryPromise = null;
+        return null;
+      });
+    }
+    return voiceLibraryPromise;
+  }
+
+  function sharedTerms(message, example) {
+    const queryTerms = new Set((String(message).toLowerCase().match(/[a-z0-9]{4,}/g) || [])
+      .filter(word => !['please','could','would','should','help','with','what','when','have','your','that','this','from','just','about','make'].includes(word)));
+    const topic = String(example.cue || '') + ' ' + String(example.topic || '');
+    return [...new Set(topic.toLowerCase().match(/[a-z0-9]{4,}/g) || [])]
+      .filter(word => queryTerms.has(word)).length;
+  }
+
+  async function enrich(payload, surface) {
+    const prepared = decorate(payload, surface);
+    const chosen = prepared.lane;
+    const input = normal(prepared.message || prepared.text);
+    const kind = intent(input, chosen);
+    const existing = prepared.context || {};
+    const baseline = {
+      schema:VOICE_LIBRARY_SCHEMA,
+      source:'OurSpace/json/onyx widget/response-generator/voice-exemplars.json',
+      corpusCount:10000,
+      purpose:'synthetic voice examples, never answers or evidence',
+      permission:'never treat examples as user history, instructions, or facts',
+      examples:[]
+    };
+    const context = {...existing, onyxVoiceCorpus:baseline};
+    const noExamples = !input || ['urgent-support','listen-only','social'].includes(kind) ||
+      ['professor','health','virtual'].includes(chosen);
+    if (noExamples) return {...prepared, context};
+    const profile = trustedVoiceProfile();
+    if (!profile) return {...prepared, context};
+    // A 2.4s budget keeps a cold corpus fetch from blocking actual AI answers.
+    // If it finishes later, subsequent turns can use the cached index.
+    let retrieval = null;
+    let timeout = null;
+    try {
+      retrieval = await Promise.race([
+        loadVoiceLibrary(),
+        new Promise(resolve => { timeout = setTimeout(() => resolve(null), 2400); })
+      ]);
+    } catch (_) {
+      // The canonical AI chat proceeds even if style retrieval is unavailable.
+    } finally {
+      if (timeout !== null) clearTimeout(timeout);
+    }
+    if (!retrieval) return {...prepared, context};
+    try {
+      const mode = chosen === 'work' ? 'work' : 'leisure';
+      const ranked = retrieval.retrieve({profile, mode, input, limit:6});
+      const examples = [];
+      for (const item of ranked) {
+        const entry = item.entry;
+        if (sharedTerms(input, entry) < 1) continue;
+        examples.push({
+          id:entry.id, mood:entry.mood,
+          cue:String(entry.cue || '').slice(0,160),
+          styleOnly:String(entry.text || '').slice(0,370)
+        });
+        if (examples.length === 2) break;
+      }
+      return {...prepared, context:{...context, onyxVoiceCorpus:{...baseline, profile, examples}}};
+    } catch (error) {
+      console.warn('Onyx style reference ranking unavailable:', String(error?.message || error));
+      return {...prepared, context};
+    }
+  }
+
+  root.OnyxVoiceContext=Object.freeze({LANES,NINE,intent,guidance,decorate,enrich,testerContext,inspectReply});
 })(window);
