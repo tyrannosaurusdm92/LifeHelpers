@@ -41,7 +41,7 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   assert.match(html,/id="onyxVoiceOpen"/);
   assert.match(html,/value="professor">Professor/);
   assert.doesNotMatch(html,/Existing GitHub-hosted Onyx brain assets/);
-  assert.match(html,/script\/onyx widget\/onyx_widget_onyx-repository-bridge\.js" type="module"/);
+  assert.match(html,/script\/onyx widget\/onyx_widget_onyx-repository-bridge\.js\?v=20261108-pass7-unified-voice" type="module"/);
   assert.match(html,/<script type="module" src="script\/onyx widget\/onyx-responses\.js\?v=20261109-tester-prompt-repair"/);
   assert.match(loader,/response-generator\/generator-app\.js/);
   assert.match(loader,/import\(moduleUrl\)/);
@@ -95,4 +95,44 @@ test('the generator retains separate Professor and Virtual & Health support rout
   assert.match(app,/VIRTUAL & HEALTH LANE/);
   assert.match(professor,/Professor conversations accept emotional support/);
   assert.match(professor,/DBT grounding skill/);
+});
+
+
+test('voice references are bounded, synthetic, and scoped to a verified account',async ()=>{
+  const window={};
+  runInNewContext(read('script/onyx widget/onyx-widget-conversation-guidance.js'),{window});
+  const voice=window.OnyxVoiceContext;
+  assert.equal(typeof voice.enrich,'function');
+  const noAuth=await voice.enrich({message:'Help me debug this button',lane:'work'},'work');
+  assert.equal(noAuth.context.onyxVoiceCorpus.corpusCount,10000);
+  assert.equal(noAuth.context.onyxVoiceCorpus.examples.length,0);
+  assert.match(noAuth.context.onyxVoiceCorpus.permission,/never treat examples/i);
+  for(const mode of ['health','professor','virtual','leisure']){
+    const checked=await voice.enrich({message:'Hey buddy how are you doing?',lane:mode},mode);
+    assert.equal(checked.context.onyxVoiceCorpus.examples.length,0,mode);
+    assert.equal(checked.context.onyxVoiceGuidance.surface,mode,mode);
+  }
+});
+
+test('Work, Leisure, Virtual & Health and Professor share Onyx brain and voice, not generator CSS',()=>{
+  const bridge=read('script/onyx widget/onyx_widget_onyx-repository-bridge.js');
+  const tester=read('script/onyx widget/onyx-tester.js');
+  const work=read('script/onyx widget/onyx_widget_work-tab.js');
+  const professor=read('script/onyx widget/onyx-professor.js');
+  const core=read('script/onyx widget/onyx_widget_onyx-core.js');
+  const html=read('assets/code/onyx_widget.html');
+  assert.match(bridge,/OnyxVoiceContext\?\.enrich/);
+  assert.match(bridge,/OnyxCore\.chat\(request\)/);
+  assert.match(tester,/OnyxVoiceContext\?\.enrich/);
+  assert.match(work,/OnyxBrainLink\.chat/);
+  assert.match(professor,/OnyxBrainLink\.chat/);
+  assert.match(core,/OnyxConversationEngine\.reply/);
+  assert.match(html,/onyx-widget-conversation-guidance\.js\?v=20261108-pass7-unified-voice/);
+  assert.match(html,/onyx-tester\.js\?v=20261108-pass7-unified-voice/);
+  assert.doesNotMatch(html,/generator\.css/i);
+  assert.equal(JSON.parse(read('json/onyx widget/response-generator/voice-exemplars.json')).entries.length,10000);
+  const brainPersonality=read('../Onyx/script/js/onyx/onyx-core/personality-contract.js');
+  assert.doesNotMatch(brainPersonality,/"snuggly"|"sleepy"/);
+  assert.match(brainPersonality,/"sleeping"/);
+  assert.match(brainPersonality,/"advising_professor"/);
 });
