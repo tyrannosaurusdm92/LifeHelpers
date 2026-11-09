@@ -256,9 +256,10 @@
 <section class="onyx-response-tester" aria-labelledby="tester-access-heading">
 <h4 id="tester-access-heading">Live backend access</h4>
 <p class="field-help">Use your signed-in account, or verify the existing read-only tester code inside Work. Email verification and a model reply are separate checks.</p>
-<div class="chat-actions"><button type="button" id="email-tester-code" class="secondary-button">Email tester code</button><button type="button" id="tester-exit" class="secondary-button" hidden>Exit tester mode</button><button type="button" id="check-connection" class="secondary-button">Test live connection</button></div>
+<div class="chat-actions"><button type="button" id="email-tester-code" class="secondary-button">Email tester code</button><button type="button" id="tester-exit" class="secondary-button" hidden>Exit tester mode</button><button type="button" id="check-connection" class="secondary-button">Test live connection</button><button type="button" id="audit-100k" class="secondary-button">Verify 100,000 voice references</button></div>
 <p id="tester-state" class="settings-status" role="status" aria-live="polite">Tester not verified. Signed-in account access remains available.</p>
 <p id="connection-result" class="settings-status" role="status" aria-live="polite">Start with one short response. The connection test uses a natural Onyx greeting.</p>
+<p id="audit-100k-status" class="settings-status" role="status" aria-live="polite">Work tester can choose Work, Leisure, Virtual &amp; Health, or Professor above. Voice references are loaded by account and mode.</p>
 <p class="field-help">Backend: <code id="endpoint"></code></p>
 </section>
 <div class="chat-actions"><button type="button" id="generate" class="primary-button">Generate responses</button><button type="button" id="cancel" class="secondary-button" disabled>Cancel</button></div>
@@ -355,7 +356,7 @@
 <script src="script/onyx widget/onyx_widget_onyx-atlas.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-mood.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-scanner.js"></script>
-<script src="script/onyx widget/onyx-widget-conversation-guidance.js?v=20261108-pass7-unified-voice"></script>
+<script src="script/onyx widget/onyx-widget-conversation-guidance.js?v=20261108-onyx100k"></script>
 <script src="script/onyx widget/onyx_widget_onyx-repository-bridge.js?v=20261108-pass7-unified-voice" type="module"></script>
 <script src="script/onyx widget/onyx_widget_brain-link.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-behavior.js"></script>
@@ -385,8 +386,8 @@
 <script src="script/onyx widget/onyx_widget_shared-onyx-income.js"></script>
 <script src="script/onyx widget/onyx_widget_shared-onyx-audio-votes.js"></script>
 <script src="script/onyx widget/onyx_widget_backend-client.js"></script>
-<script src="script/onyx widget/onyx-tester.js?v=20261108-pass7-unified-voice"></script>
-<script type="module" src="script/onyx widget/onyx-responses.js?v=20261109-tester-prompt-repair"></script>
+<script src="script/onyx widget/onyx-tester.js?v=20261108-onyx100k"></script>
+<script type="module" src="script/onyx widget/onyx-responses.js?v=20261108-onyx100k"></script>
 <script src="script/onyx widget/onyx-professor.js"></script>
 <script src="script/onyx widget/onyx_widget_work-tab.js"></script><script src="script/onyx widget/onyx_widget_legacy-static-moods.js"></script><script src="script/onyx widget/onyx-widget-game-frame.js" defer></script>
 
