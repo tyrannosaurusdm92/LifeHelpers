@@ -42,7 +42,9 @@ function chatLane(payload,surface){
 function enrichVoice(obj,input,surface){
  const ctx=obj?.context&&typeof obj.context==='object'?obj.context:{};
  const original=ctx.onyxVoiceGuidance||prior.guidance(input,surface);
- return {...obj,context:{...ctx,onyxVoiceGuidance:{...original,instructions:String(original.instructions||'')+'\n'+CRAFT,voiceReference:'Onyx 100k master character contract / eight craft influences / nine moods'}}};
+ const existing=String(original.instructions||'');
+ const instructions=existing.includes('Historical craft influences, not voice impersonations:')?existing:existing+'\n'+CRAFT;
+ return {...obj,context:{...ctx,onyxVoiceGuidance:{...original,instructions,voiceReference:'Onyx 100k master character contract / eight craft influences / nine moods'}}};
 }
 function decorate(payload,surface){
  const base=prior.decorate(payload,surface);
