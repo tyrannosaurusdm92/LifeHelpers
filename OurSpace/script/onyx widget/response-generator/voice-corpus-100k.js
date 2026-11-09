@@ -102,7 +102,7 @@ export async function retrieveVoiceExamples({profile,lane,message,history=[],moo
     if(!support)continue;
     // Subject/cue agreement is required. Generic body phrasing is excluded.
     const score=a*7+b*4+(a&&b?3:0)+(mood&&e.mood.toLowerCase()===mood.toLowerCase()?2:0);
-    const threshold=query.size<=2?7:8;
+    const threshold=7;
     if(score<threshold||((a===0)&&(b<2)))continue;
     ranks.push({entry:e,score});
   }
