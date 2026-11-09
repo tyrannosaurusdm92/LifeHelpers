@@ -42,7 +42,7 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   assert.match(html,/value="professor">Professor/);
   assert.doesNotMatch(html,/Existing GitHub-hosted Onyx brain assets/);
   assert.match(html,/script\/onyx widget\/onyx_widget_onyx-repository-bridge\.js" type="module"/);
-  assert.match(html,/<script type="module" src="script\/onyx widget\/onyx-responses\.js"/);
+  assert.match(html,/<script type="module" src="script\/onyx widget\/onyx-responses\.js\?v=20261109-tester-prompt-repair"/);
   assert.match(loader,/response-generator\/generator-app\.js/);
   assert.match(loader,/import\(moduleUrl\)/);
   assert.match(loader,/maintained-modules/);
