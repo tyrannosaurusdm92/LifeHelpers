@@ -95,6 +95,11 @@
       const who=String(backend.activeProfile?.()||'').toLowerCase();
       if(['william','jasper'].includes(who))return who;
     }
+    const repository=root.OnyxRepositoryBridge?.status?.()||{};
+    if(repository.authenticated===true){
+      const who=String(repository.profileKey||'').toLowerCase();
+      if(['william','jasper'].includes(who))return who;
+    }
     return '';
   }
 
@@ -146,19 +151,24 @@
     }finally{if(timeout!==null)clearTimeout(timeout);}
     if(!module)return {...base,context:{...base.context,onyxVoiceCorpus:{...baseline,status:'not-ready'}}};
 
-    let examples=[];
+    let examples=[],shardTimer=null,loaded=false;
     try{
       // One authenticated parent, one matching chat lane, every time.
       // The Work fullscreen voice workshop explicitly selects any of the
       // four lanes, and its read-only tester passes that lane through here.
-      examples=await module.retrieveVoiceExamples({
+      const pending=module.retrieveVoiceExamples({
         profile,lane:scope,message:input,history:prepared.history||[],
         mood:prepared.mood||'',limit:kind==='social'?1:3
-      });
+      }).then(items=>{loaded=true;return items;});
+      // A slow static host must not stop the real canonical LLM conversation.
+      examples=await Promise.race([pending,new Promise(resolve=>{
+        shardTimer=setTimeout(()=>resolve([]),8000);
+      })]);
     }catch(error){
       console.warn('Onyx voice shard unavailable:',String(error?.message||error));
       return {...base,context:{...base.context,onyxVoiceCorpus:{...baseline,status:'not-ready'}}};
-    }
+    }finally{if(shardTimer!==null)clearTimeout(shardTimer);}
+    if(!loaded)return {...base,context:{...base.context,onyxVoiceCorpus:{...baseline,status:'warming'}}};
     const instructions=[
       'The matching Onyx voice library is '+scope+' for the backend-authenticated '+profile+' profile.',
       'These are hypothetical, stylistic examples. Use only their conversational manner and task framing.',
