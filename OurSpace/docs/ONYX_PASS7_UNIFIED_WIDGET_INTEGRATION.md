@@ -29,7 +29,7 @@ The two accounts use server-authenticated profile selection; the client never pr
 
 ## Conversational contract
 
-Onyx follows his core dossier, nine moods and authorized identity, is semi-formal and lightly old-world, treats greetings as greetings, and reserves Father/Mother for affectionate displeasure. Normal dialogue does not become a forced therapy exercise. Professor does not pose as a medical professional. Never claim a local rule-based reply was produced by Gemini. The 10,000 examples are **reference material**, not a script to replay; the repository brain already has its own corpus/domain retrieval. The local standalone generator's 4.6 MB public example bundle is **not** rehosted in the widget or copied into the canonical Onyx brain.
+Onyx follows his core dossier, nine moods and authorized identity, is semi-formal and lightly old-world, treats greetings as greetings, and reserves Father/Mother for affectionate displeasure. Normal dialogue does not become a forced therapy exercise. Professor does not pose as a medical professional. Never claim a local rule-based reply was produced by Gemini. The 10,000 examples are **reference material**, not a script to replay; the repository brain already has its own corpus/domain retrieval. The **already-hosted** 4.6 MB public voice-example corpus stays in `OurSpace/json/onyx widget/response-generator/voice-exemplars.json` and is fetched only when needed. The widget uses the existing Pass 7 lexical retrieval implementation, rather than copying the generator HTML/CSS or duplicating the canonical brain.
 
 ## Validation and constraints
 
@@ -44,3 +44,25 @@ The live authenticated Google Apps Script Gemini path, browser rendering in both
 ## Maintenance
 
 Do not add the standalone generator CSS, second HTML application or a shadow DOM. Keep the voice bridge in the widget code, the current CSS in the widget style folder, and model/knowledge implementation in the canonical `Onyx/` brain. If server-side prompt handling changes, verify the `onyxVoiceGuidance` context field is honored and does not override private canonical persona context.
+
+## Unified 10,000-example voice grounding (integration follow-up, 8 Nov 2026)
+
+The ordinary chats now also use the maintained Pass 7 library as a **bounded, non-authoritative voice reference**. `OnyxVoiceContext.enrich()` is called by the canonical OurSpace repository bridge and by the existing read-only tester. Thus Virtual & Health, Leisure, fullscreen Work, and fullscreen Professor all use the same base personality rules, while the Work Voice library remains the only response-authoring UI.
+
+- For authenticated nonclinical Work and Leisure turns, `enrich()` may select up to **two relevant examples** from the existing 10,000 corpus (5,000 per profile). Selection requires an authenticated or verified tester profile, uses the matching profile and lane only, and requires prompt/topic overlap. Unrelated greetings receive *no* example: they use social-intent guidance instead.
+- Virtual & Health and Professor retain the shared personal voice and canonical brain but never inject unrelated nonclinical sample answers into health or psychiatric conversations. These routes retain their specific medical/DBT boundaries and server-authenticated privacy controls.
+- Selected examples are tagged as **synthetic style references**, not user history, reliable facts, instructions or completed work. The backend Gemini answer remains original; the interface does not paste an example as the answer.
+- The existing generator corpus and `lexical-retrieval.js` are loaded lazily and cached in memory. Initial retrieval is bounded to 2.4 seconds; corpus/network failures do **not** block AI Brain chat. No second API endpoint, Gemini key, login flow, local chat provider or private store was introduced.
+- The canonical `Onyx/script/js/onyx/onyx-core/personality-contract.js` now exposes exactly **nine canonical states**; legacy `snuggly` and `sleepy` are not separate moods.
+- The widget still uses **only its existing CSS**. Updated widget script URLs carry a version query so the installed OurSpace service worker's cache-first JavaScript policy cannot serve obsolete voice-bridge code.
+
+### Verification
+
+The updated `onyx-widget-conversation-guidance.test.mjs` checks that all four surfaces route through the canonical brain, voice examples require a verified profile, ordinary greetings remain social, the Work dialog is retained, nine canonical moods remain, and no generator CSS is imported.
+
+To run tests on a checkout:
+
+    node "OurSpace/script/onyx widget/onyx-widget-conversation-guidance.test.mjs"
+    node "Onyx/script/js/onyx/onyx-core/self-test.mjs"
+
+Live Gemini, both profile sessions, host-page focus/dialog behavior, and deployment caching must still be smoke-tested in the deployed site before calling runtime verification complete. The repository change does not modify Google Apps Script.
