@@ -81,7 +81,10 @@
     if(!state.selectedProfile)throw new Error('Select William or Jasper before chatting.');
     const mode=options.mode||(options.supportMode==='dbt'?'professor':'work');
     const guidedContext=window.OnyxVoiceContext?.testerContext?.(message,mode,options.context)||options.context||{};
-    const r=await api(ACTIONS.chat,{message:String(message),profileKey:state.selectedProfile,useBrain:true,mode,...(options.threadId?{threadId:options.threadId}:{}),supportMode:options.supportMode||'chat',context:guidedContext,webSearch:false,autoRemember:false,allowWrites:false,allowExternalTools:false},options.signal);
+    const enriched=await (window.OnyxVoiceContext?.enrich?.({message:String(message),lane:mode,context:guidedContext},mode) ||
+      Promise.resolve({context:guidedContext}));
+    const fullContext=enriched.context||guidedContext;
+    const r=await api(ACTIONS.chat,{message:String(message),profileKey:state.selectedProfile,useBrain:true,mode,...(options.threadId?{threadId:options.threadId}:{}),supportMode:options.supportMode||'chat',context:fullContext,webSearch:false,autoRemember:false,allowWrites:false,allowExternalTools:false},options.signal);
     if(r.testerMode!==true)throw new Error('The backend did not confirm read-only tester mode for this reply.');
     if(!String(r.response||r.onyxReply||r.text||'').trim())throw new Error('The AI Brain returned an empty tester reply.');
     if(r.selectedProfile && profiles.has(r.selectedProfile)){state.selectedProfile=r.selectedProfile;remember();}
