@@ -51,13 +51,13 @@
     };
     // Never override a backend-authenticated profile, token, private memory or account data.
     const guide=guidance(message,chosen,source.mood);
-    return {...source,lane:chosen,context:{...context,onyxVoiceGuidance:context.onyxVoiceGuidance?.schema===guide.schema?context.onyxVoiceGuidance:guide}};
+    return {...source,lane:chosen,context:{...context,onyxVoiceGuidance:(context.onyxVoiceGuidance?.schema===guide.schema && context.onyxVoiceGuidance.surface===guide.surface && context.onyxVoiceGuidance.intent===guide.intent)?context.onyxVoiceGuidance:guide}};
   }
   function testerContext(message, surface, existing) {
     const context=existing&&typeof existing==='object'&&!Array.isArray(existing)?{...existing}:{};
     const chosen=lane(surface);
     return {...context,interfaceSurface:chosen,conversationLane:chosen,
-      onyxVoiceGuidance:context.onyxVoiceGuidance?.schema==='ourspace.onyx.pass7.voice-bridge.v1'?context.onyxVoiceGuidance:guidance(message,chosen),repositoryBrain:'LifeHelpers/Onyx',
+      onyxVoiceGuidance:(context.onyxVoiceGuidance?.schema==='ourspace.onyx.pass7.voice-bridge.v1' && context.onyxVoiceGuidance.surface===chosen && context.onyxVoiceGuidance.intent===intent(message,chosen))?context.onyxVoiceGuidance:guidance(message,chosen),repositoryBrain:'LifeHelpers/Onyx',
       readOnly:true,autoRemember:false,allowWrites:false,allowExternalTools:false};
   }
   function inspectReply(message,reply,surface){
