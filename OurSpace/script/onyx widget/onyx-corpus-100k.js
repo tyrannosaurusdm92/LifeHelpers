@@ -136,4 +136,22 @@ async function status(){
  return {installed:manifest?.count===100000,count:manifest?.count||0,expected:100000,files:manifest?.chatFiles||0};
 }
 root.OnyxCorpus100k=Object.freeze({load,retrieve,importZip,status,expected:100000,counts:COUNTS,profiles:USERS,lanes:LANES});
+const fileInput=document.getElementById('onyxCorpusImport');
+const statusElement=document.getElementById('onyxCorpusImportStatus');
+if(fileInput){
+ fileInput.addEventListener('change',async event=>{
+  const file=event.target.files?.[0];
+  if(!file)return;
+  fileInput.disabled=true;
+  if(statusElement)statusElement.textContent='Validating all eight chat libraries…';
+  try{
+   const summary=await importZip(file);
+   if(statusElement)statusElement.textContent='Imported '+summary.count.toLocaleString()+' original responses across '+summary.files+' account/mode files. Available for this browser; not uploaded.';
+   root.dispatchEvent(new CustomEvent('onyx:corpus-100k-ready',{detail:summary}));
+  }catch(error){if(statusElement)statusElement.textContent='Import rejected: '+String(error?.message||error);}
+  finally{fileInput.disabled=false;fileInput.value='';}
+ });
+ status().then(result=>{if(result.installed&&statusElement)statusElement.textContent='100,000 response examples are installed locally and available for profile-scoped retrieval.'}).catch(()=>{});
+}
+
 })(window);
