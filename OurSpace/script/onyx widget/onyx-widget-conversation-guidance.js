@@ -150,12 +150,17 @@
     // A 2.4s budget keeps a cold corpus fetch from blocking actual AI answers.
     // If it finishes later, subsequent turns can use the cached index.
     let retrieval = null;
+    let timeout = null;
     try {
       retrieval = await Promise.race([
         loadVoiceLibrary(),
-        new Promise(resolve => setTimeout(() => resolve(null), 2400))
+        new Promise(resolve => { timeout = setTimeout(() => resolve(null), 2400); })
       ]);
-    } catch (_) {}
+    } catch (_) {
+      // The canonical AI chat proceeds even if style retrieval is unavailable.
+    } finally {
+      if (timeout !== null) clearTimeout(timeout);
+    }
     if (!retrieval) return {...prepared, context};
     try {
       const mode = chosen === 'work' ? 'work' : 'leisure';
