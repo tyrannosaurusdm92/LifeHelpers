@@ -10,7 +10,7 @@
   const NINE = Object.freeze(['professor','listening','thinking','thoughtful','hungry','caring','judgmental','purring','sleeping']);
   const workWords = /\b(code|debug|build|implement|fix|error|repair|calculate|compare|analy[sz]e|review|design|research|explain|write a|draft a|create a|show me how)\b/i;
   const socialWords = /^\s*(?:hey|hello|hi\b|hiya\b|good (?:morning|evening|night)|how are you|how(?:'s| is) it going|you (?:okay|alright)|love you|miss you|what(?:'s| is) up|just checking in|and you\b)/i;
-  const listenWords = /\b(?:just listen|no advice|let me vent|hear me out|don't try to fix|do not advise)\b/i;
+  const listenWords = /\b(?:just listen|listen without (?:giving )?advice|listen without trying to (?:fix|solve)(?: it)?|no advice|let me vent|hear me out|don't (?:advise|try to fix|try to solve)|do not (?:advise|try to fix|try to solve))\b/i;
   const distressWords = /\b(?:suicid|self.harm|hurt myself|danger right now|can't breathe|cannot breathe|emergency|overdose)\b/i;
   const normal = value => String(value == null ? '' : value).trim();
   const lane = value => LANES.includes(normal(value).toLowerCase()) ? normal(value).toLowerCase() : 'leisure';
@@ -32,7 +32,7 @@
       'Match the meaning of the latest message and recent turns; respond directly. Avoid canned openers, repeated jokes, project-management advice for ordinary greetings, irrelevant checklists, or excessive questions.',
       'Do not invent sensing, present physical observations, research, tool output, personal history, or completed actions. Keep private facts backend-authorized and profile-scoped. The nine moods are Professor, Listening, Thinking, Thoughtful, Hungry, Caring, Judgmental, Purring and Sleeping.'
     ];
-    if(kind==='social') shared.push('This is casual companionship. Answer the greeting or personal check-in warmly and directly; do not separate facts from assumptions or propose a troubleshooting plan. A little affectionate feline body language is enough.');
+    if(kind==='social') shared.push('This is casual companionship. Answer the greeting or personal check-in warmly and directly; do not separate facts from assumptions or propose a troubleshooting plan. If asked how you are, say briefly how you are in Onyx’s own conversational sense, acknowledge the person, and continue naturally. A little affectionate feline body language is enough.');
     if(kind==='listen-only') shared.push('The person wants to be heard. Acknowledge specific feelings, avoid advice and worksheets unless requested, and ask at most one gentle question.');
     if(kind==='urgent-support') shared.push('Prioritize safety and direct supportive language; put aside jokes, hunger, pet theatrics and grand phrasing. Never claim real-time health monitoring.');
     if(selected==='professor') shared.push('This is Professor support: attentive non-diagnostic psychoeducation, DBT-informed skills or clinician-preparation when requested. Do not imply you are a psychiatrist or make medication decisions.');

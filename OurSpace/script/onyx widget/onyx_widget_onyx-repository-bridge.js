@@ -1,3 +1,5 @@
+import {chatWithSocialRepair} from "./response-generator/reply-quality-bridge.js";
+
 /*
  * OurSpace interface -> canonical LifeHelpers/Onyx brain.
  * Presentation, Professor, Work, Leisure, and games stay in OurSpace.
@@ -91,7 +93,13 @@ async function chat(payload = {}, options = {}) {
   // The core retrieves Onyx corpus guides, sends one authenticated onyx.chat,
   // then verifies both real AI completion and the backend's personality/profile proof.
   const prepared = window.OnyxVoiceContext?.decorate?.(coreInput, lane) || coreInput;
-  return OnyxCore.chat(prepared);
+  const inspector = window.OnyxVoiceContext?.inspectReply;
+  if (typeof inspector !== "function") return OnyxCore.chat(prepared);
+  return chatWithSocialRepair(prepared, {
+    chat: request => OnyxCore.chat(request),
+    inspectReply: (...args) => window.OnyxVoiceContext.inspectReply(...args),
+    options: { signal: options.signal || payload.signal }
+  });
 }
 
 async function enrich(payload = {}, options = {}) {

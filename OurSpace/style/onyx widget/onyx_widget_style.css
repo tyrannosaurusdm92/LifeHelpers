@@ -6199,3 +6199,155 @@ html[data-runtime-mode="work"] #onyxWidget {
   color-scheme: light;
 }
 #onyxBubble,#onyxLegacyStatic,#onyxWidget {background-color:transparent!important;}
+/* Pass 7 response workshop layout; it uses the existing Onyx widget palette and controls. */
+#onyxVoiceDialog.onyx-response-dialog {
+  width: min(1480px,100vw);
+  height: min(100dvh,100vh);
+  max-width: 100vw;
+  max-height: 100dvh;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+#onyxVoiceDialog.onyx-response-dialog::backdrop { background: rgba(8,18,32,.78); }
+#onyxVoiceDialog .onyx-response-workshop {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#onyxVoiceDialog .onyx-response-workshop > header {
+  flex: 0 0 auto;
+  border-bottom: 1px solid currentColor;
+  border-color: color-mix(in srgb,currentColor 20%,transparent);
+}
+#onyxVoiceDialog .onyx-response-workshop > header h2 { font-size: clamp(18px,2vw,24px); }
+#onyxVoiceDialog .onyx-response-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: block;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.onyx-response-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1.85fr) minmax(270px,.8fr);
+  align-items: start;
+  gap: 14px;
+  margin-top: 12px;
+}
+.onyx-response-main,.onyx-response-side { display: grid; gap: 12px; min-width: 0; }
+.onyx-response-panel {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb,currentColor 22%,transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb,currentColor 3%,transparent);
+}
+.onyx-response-panel h3,.onyx-response-panel h4 { margin: 2px 0 9px; }
+.onyx-response-panel > p { line-height: 1.5; }
+.onyx-response-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.onyx-response-heading h3 { margin: 0; font-size: 16px; }
+.onyx-response-control-pair { display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.onyx-response-control-pair fieldset,.onyx-response-lanes {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.onyx-response-control-pair legend,.onyx-response-lanes legend {
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 850;
+}
+.onyx-response-lanes { margin: 12px 0; }
+.onyx-response-control-pair .segment,.onyx-response-lanes .segment {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.onyx-response-control-pair .segment label,.onyx-response-lanes .segment label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 5px 9px;
+  border: 1px solid color-mix(in srgb,currentColor 25%,transparent);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.onyx-response-control-pair .segment input,.onyx-response-lanes .segment input { margin: 0; }
+.onyx-response-control-pair .segment input:disabled + span { opacity: .72; }
+.onyx-response-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+#onyxVoiceDialog .field { min-width: 0; margin: 9px 0; }
+#onyxVoiceDialog .field textarea,#onyxVoiceDialog .field input,#onyxVoiceDialog .field select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+#onyxVoiceDialog textarea { min-height: 76px; max-height: 36vh; resize: vertical; }
+.onyx-response-tester {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 11px;
+  border: 1px solid color-mix(in srgb,currentColor 20%,transparent);
+  border-radius: 9px;
+}
+.onyx-response-tester h4,.onyx-response-tester p { margin: 0; }
+.onyx-response-tester .settings-status { overflow-wrap: anywhere; }
+.onyx-response-buttons { display: grid; grid-template-columns: 1fr; margin: 10px 0; }
+.onyx-response-buttons button { min-height: 36px; }
+.onyx-response-results,.onyx-response-saved-list,.onyx-response-dialogue-feed {
+  display: grid;
+  gap: 9px;
+  max-height: 46vh;
+  overflow: auto;
+  padding: 3px;
+}
+#onyxVoiceDialog .response-card,#onyxVoiceDialog .saved-card,#onyxVoiceDialog .dialogue-msg,.onyx-response-empty {
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid color-mix(in srgb,currentColor 18%,transparent);
+  border-radius: 9px;
+  overflow-wrap: anywhere;
+}
+#onyxVoiceDialog .response-card p,#onyxVoiceDialog .saved-card p { white-space: pre-wrap; line-height: 1.55; }
+#onyxVoiceDialog .response-card .card-meta { display: flex; gap: 6px; flex-wrap: wrap; font-size: 10px; opacity: .8; }
+#onyxVoiceDialog .response-card .card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+#onyxVoiceDialog .response-card .source-note { margin-bottom: 0; font-size: 10px; opacity: .8; }
+.onyx-response-stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin: 12px 0; }
+.onyx-response-stats > div { display: grid; gap: 3px; padding: 8px; border: 1px solid color-mix(in srgb,currentColor 18%,transparent); border-radius: 8px; }
+.onyx-response-stats strong { font-size: 18px; }
+.onyx-response-stats span { font-size: 10px; }
+.onyx-response-dialogue-feed { max-height: 34vh; margin: 10px 0; }
+#onyxVoiceDialog .dialogue-msg { white-space: pre-wrap; }
+#onyxVoiceDialog .dialogue-msg.user { justify-self: end; }
+#onyxVoiceDialog .dialogue-msg .who { display: block; margin-bottom: 4px; font-size: 10px; font-weight: 850; }
+#onyxVoiceDialog .checkline { display: flex; align-items: start; gap: 8px; margin: 8px 0; }
+#onyxVoiceDialog .checkline input { flex: 0 0 auto; margin-top: 2px; }
+#onyxVoiceDialog :is(button,input,select,textarea):focus-visible { outline: 3px solid #00a6a6; outline-offset: 2px; }
+#onyxVoiceDialog [hidden] { display: none!important; }
+@media (max-width:900px) {
+  .onyx-response-layout { grid-template-columns: minmax(0,1fr); }
+  .onyx-response-side { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:620px) {
+  #onyxVoiceDialog.onyx-response-dialog { width: 100vw; height: 100dvh; max-width: 100vw; max-height: 100dvh; border-radius: 0; }
+  #onyxVoiceDialog .settings-card header { padding: 12px; }
+  #onyxVoiceDialog .onyx-response-body { padding: 10px; }
+  .onyx-response-grid,.onyx-response-side { grid-template-columns: minmax(0,1fr); }
+  .onyx-response-panel { padding: 10px; }
+  .onyx-response-heading { align-items: start; }
+}
+

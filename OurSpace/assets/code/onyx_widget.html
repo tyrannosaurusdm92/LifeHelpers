@@ -223,41 +223,89 @@
 </div>
 </div>
 </dialog>
-<dialog aria-label="Onyx AI response generator" class="settings-dialog" id="onyxVoiceDialog">
-<div class="settings-card">
-<header><div><span class="eyebrow">FULLSCREEN WORK · VOICE LIBRARY</span><h2>Onyx response generator</h2></div><button aria-label="Close voice library" class="icon-button" id="onyxVoiceClose" type="button">×</button></header>
-<div class="settings-body">
-<p class="field-help">Generate fresh, context-sensitive Onyx responses through the same shared AI Brain. Account mode uses the canonical LifeHelpers/Onyx brain; verified email tester mode uses the existing read-only backend. No generator styling is imported.</p>
-<p class="settings-status" id="onyxVoiceProvider">Checking backend mode…</p>
-<p>Active identity: <strong id="onyxVoiceProfile">Not connected</strong></p>
-<label class="field"><span>What was said to Onyx? / Response scenario</span><textarea id="onyxVoiceInput" maxlength="1700" placeholder="Hey buddy, how are you doing?" rows="4"></textarea></label>
-<div class="settings-body">
-<label class="field"><span>Conversation mode</span><select id="onyxVoiceMode"><option value="work">Work</option><option value="leisure">Leisure</option><option value="health">Virtual &amp; Health</option><option value="professor">Professor</option></select></label>
-<label class="field"><span>Mood</span><select id="onyxVoiceMood"><option value="auto">Automatic</option><option value="professor">Professor</option><option value="listening">Listening</option><option value="thinking">Thinking</option><option value="thoughtful">Thoughtful</option><option value="hungry">Hungry</option><option value="caring">Caring</option><option value="judgmental">Judgmental</option><option value="purring">Purring</option><option value="sleeping">Sleeping</option></select></label>
-<label class="field"><span>Number of responses</span><select id="onyxVoiceCount"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></label>
+<dialog aria-label="Onyx Pass 7 response workshop" class="settings-dialog onyx-response-dialog" id="onyxVoiceDialog">
+<section class="settings-card onyx-response-workshop">
+<header><div><span class="eyebrow">FULLSCREEN WORK · PASS 7 RESPONSE WORKSHOP</span><h2>Onyx response generator</h2></div><button aria-label="Close response workshop" class="icon-button" id="onyxVoiceClose" type="button">×</button></header>
+<div class="settings-body onyx-response-body">
+<p class="field-help">The full Pass 7 generator, voice corpus and WASM ranking now run inside this Work view. Live replies use the signed-in OurSpace brain or the existing read-only tester session. Approved examples stay on this device.</p>
+<div class="onyx-response-layout">
+<main class="onyx-response-main">
+<section class="onyx-response-panel" aria-labelledby="create-heading">
+<div class="onyx-response-heading"><div><span class="eyebrow">01 / AUTHOR</span><h3 id="create-heading">Create responses from a real input</h3></div><span id="load-state" class="health">Loading the full corpus…</span></div>
+<div class="onyx-response-control-pair">
+<fieldset><legend>Speaking to</legend><div class="segment" role="radiogroup" aria-label="Account profile">
+<label><input type="radio" name="profile" value="william" checked><span>William <small>· Papa</small></span></label>
+<label><input type="radio" name="profile" value="jasper"><span>Jasper <small>· Momma</small></span></label>
+</div></fieldset>
+<p class="field-help">Active identity: <strong id="active-profile">Checking account…</strong></p>
 </div>
-<div class="chat-actions"><button class="primary-button" id="onyxVoiceGenerate" type="button">Generate responses</button><button class="secondary-button" id="onyxVoiceClear" type="button">Clear candidates</button><button class="secondary-button" id="onyxVoiceExport" type="button">Export onyx-responses.js</button></div>
-<p aria-live="polite" class="settings-status" id="onyxVoiceStatus">Ready. Responses are only approved and exported on this device; no backend write is performed.</p>
-<div aria-label="AI-generated candidate responses" aria-live="polite" id="onyxVoiceResults"></div>
-<section class="settings-body" aria-labelledby="onyxVoiceConversationTitle">
-<h3 id="onyxVoiceConversationTitle">Conversation tester</h3>
-<p class="field-help">Continue a conversation with the same Onyx brain and the selected lane. This testing thread stays in this page only; account conversations remain profile-scoped. Tester access is read-only.</p>
-<label class="field"><span>Test thread name</span><input id="onyxVoiceThreadId" maxlength="80" value="default" autocomplete="off"/></label>
-<label class="field"><span>Talk to Onyx</span><textarea id="onyxVoiceChatInput" maxlength="1700" rows="3" placeholder="Hey buddy, how are you doing?"></textarea></label>
-<div class="chat-actions"><button class="primary-button" id="onyxVoiceChatSend" type="button">Send to Onyx</button><button class="secondary-button" id="onyxVoiceChatClear" type="button">Clear this test thread</button></div>
-<p class="settings-status" aria-live="polite" id="onyxVoiceChatStatus">Ready for a natural conversation.</p>
-<div role="log" aria-label="Onyx conversation tester transcript" aria-live="polite" id="onyxVoiceTranscript"></div>
+<fieldset class="onyx-response-lanes"><legend>Conversation lane</legend><div class="segment" role="radiogroup" aria-label="Onyx conversation mode">
+<label><input type="radio" name="mode" value="work"><span>Work</span></label>
+<label><input type="radio" name="mode" value="leisure" checked><span>Leisure</span></label>
+<label><input type="radio" name="mode" value="health"><span>Virtual &amp; Health</span></label>
+<label><input type="radio" name="mode" value="professor"><span>Professor</span></label>
+</div></fieldset>
+<label class="field" for="prompt"><span>What did you say to Onyx?</span><textarea id="prompt" rows="4" maxlength="2800" placeholder="Hey buddy, how are you doing?">Hey buddy how are you doing?</textarea></label>
+<p class="field-help">The greeting stays a greeting. Professor and Virtual &amp; Health requests go through their named support lanes; those replies are not saved in local memory.</p>
+<div class="onyx-response-grid">
+<label class="field"><span>Mood</span><select id="mood"><option value="auto">Automatic</option><option value="professor">Professor</option><option value="listening">Listening</option><option value="thinking">Thinking</option><option value="thoughtful">Thoughtful</option><option value="hungry">Hungry</option><option value="caring">Caring</option><option value="judgmental">Judgmental</option><option value="purring">Purring</option><option value="sleeping">Sleeping</option></select></label>
+<label class="field"><span>Number of responses</span><select id="count"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></label>
+<label class="field"><span>Generation source</span><select id="provider"><option value="backend" selected>Live OurSpace AI Brain (Gemini when configured)</option><option value="offline-preview">Local draft · not an LLM</option></select></label>
+</div>
+<input id="token" type="hidden" value="">
+<section class="onyx-response-tester" aria-labelledby="tester-access-heading">
+<h4 id="tester-access-heading">Live backend access</h4>
+<p class="field-help">Use your signed-in account, or verify the existing read-only tester code inside Work. Email verification and a model reply are separate checks.</p>
+<div class="chat-actions"><button type="button" id="email-tester-code" class="secondary-button">Email tester code</button><button type="button" id="tester-exit" class="secondary-button" hidden>Exit tester mode</button><button type="button" id="check-connection" class="secondary-button">Test live connection</button></div>
+<p id="tester-state" class="settings-status" role="status" aria-live="polite">Tester not verified. Signed-in account access remains available.</p>
+<p id="connection-result" class="settings-status" role="status" aria-live="polite">Start with one short response. The connection test uses a natural Onyx greeting.</p>
+<p class="field-help">Backend: <code id="endpoint"></code></p>
 </section>
+<div class="chat-actions"><button type="button" id="generate" class="primary-button">Generate responses</button><button type="button" id="cancel" class="secondary-button" disabled>Cancel</button></div>
+<p id="status" role="status" aria-live="polite" class="settings-status">Preparing the Onyx response workshop…</p>
+</section>
+<section class="onyx-response-panel" aria-labelledby="results-heading">
+<div class="onyx-response-heading"><div><span class="eyebrow">02 / REVIEW</span><h3 id="results-heading">New responses</h3></div><span id="results-count" class="health">0 results</span></div>
+<div id="results" class="onyx-response-results" aria-live="polite"><div class="onyx-response-empty">Generated replies appear here. Keep only the ones that sound like Onyx.</div></div>
+</section>
+<section class="onyx-response-panel" aria-labelledby="dialogue-heading">
+<div class="onyx-response-heading"><div><span class="eyebrow">03 / CONVERSATION</span><h3 id="dialogue-heading">Continue a conversation</h3></div><span id="dialogue-health" class="health">No turns saved</span></div>
+<p class="field-help">Replies use the same selected lane and brain. Professor and health conversations remain ephemeral in this workshop.</p>
+<label class="field"><span>Thread name</span><input id="thread-id" value="default" maxlength="80" spellcheck="false"></label>
+<label class="checkline"><input type="checkbox" id="remember-turn"> Remember Work or Leisure turns on this device</label>
+<label class="checkline"><input type="checkbox" id="include-facts" checked> Use my approved local notes in Work or Leisure</label>
+<div class="onyx-response-dialogue-feed" id="dialogue-feed" aria-live="polite"><p class="muted">No turns in this thread yet.</p></div>
+<label class="field"><span>Your next message</span><textarea id="dialogue-input" rows="3" maxlength="2800" placeholder="Hey buddy, how are you doing?"></textarea></label>
+<div class="chat-actions"><button class="primary-button" type="button" id="dialogue-send">Send to Onyx</button><button class="secondary-button" type="button" id="dialogue-clear">Clear this test thread</button></div>
+<p id="dialogue-status" class="settings-status" aria-live="polite">Live conversations route through the existing brain or verified read-only tester.</p>
+</section>
+</main>
+<aside class="onyx-response-side">
+<section class="onyx-response-panel" aria-label="Voice references">
+<span class="eyebrow">04 / REFERENCE</span><h3>Onyx’s voice</h3>
+<p>The same old, perceptive, affectionate black cat in every lane. Family address follows the signed-in profile; displeasure is occasional, not a greeting.</p>
+<div class="onyx-response-stats"><div><strong id="source-count">—</strong><span>voice examples</span></div><div><strong id="saved-count">0</strong><span>approved locally</span></div><div><strong id="wasm-status">—</strong><span>WASM ranking</span></div></div>
+<p class="field-help">The 10,000 examples guide voice retrieval. They are not returned at random or treated as facts.</p>
+</section>
+<section class="onyx-response-panel" aria-labelledby="saved-heading">
+<span class="eyebrow">05 / APPROVALS</span><h3 id="saved-heading">Approved responses</h3>
+<p class="field-help">Approval is local to this browser and profile. It does not retrain Gemini or write to the backend.</p>
+<div class="chat-actions onyx-response-buttons"><button type="button" id="export-js" class="secondary-button">Export onyx-responses.js</button><button type="button" id="export-json" class="secondary-button">Export approved JSON</button><button type="button" id="clear-saved" class="secondary-button">Clear this profile’s approvals</button></div>
+<div id="saved-list" class="onyx-response-saved-list"><p class="muted">Nothing approved yet.</p></div>
+</section>
+<section class="onyx-response-panel" aria-labelledby="notes-heading">
+<span class="eyebrow">06 / LOCAL NOTES</span><h3 id="notes-heading">Approved nonclinical notes</h3>
+<p class="field-help">Notes are available only in Work and Leisure, and are isolated by profile and lane.</p>
+<label class="field"><span>Remember this note</span><textarea id="memory-input" rows="3" maxlength="2500" placeholder="A nonclinical detail Onyx may use in Work or Leisure."></textarea></label>
+<div class="chat-actions onyx-response-buttons"><button id="memory-add" class="secondary-button" type="button">Remember note</button><button id="memory-export" class="secondary-button" type="button">Export local notes</button></div>
+<div id="memory-list" class="onyx-response-saved-list"><p class="muted">No saved notes for this profile and lane.</p></div>
+</section>
+</aside>
 </div>
 </div>
+</section>
 </dialog>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
- Existing GitHub-hosted Onyx brain assets: no duplicate brain files in this package. 
-
-
-
-
-
 </div>
 <button aria-label="Exit Work" class="fullscreen-shell-exit" id="onyxWorkFullscreenExit" title="Exit Work" type="button">×</button>
 </section>
@@ -338,7 +386,7 @@
 <script src="script/onyx widget/onyx_widget_shared-onyx-audio-votes.js"></script>
 <script src="script/onyx widget/onyx_widget_backend-client.js"></script>
 <script src="script/onyx widget/onyx-tester.js"></script>
-<script src="script/onyx widget/onyx-responses.js"></script>
+<script type="module" src="script/onyx widget/onyx-responses.js"></script>
 <script src="script/onyx widget/onyx-professor.js"></script>
 <script src="script/onyx widget/onyx_widget_work-tab.js"></script><script src="script/onyx widget/onyx_widget_legacy-static-moods.js"></script><script src="script/onyx widget/onyx-widget-game-frame.js" defer></script>
 

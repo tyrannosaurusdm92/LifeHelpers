@@ -1,0 +1,42 @@
+{
+  "schema": "onyx.response.generator.manifest.v7.1",
+  "version": "7.1.0",
+  "backendUrl": "https://script.google.com/macros/s/AKfycbwxviV1hERFKIivY5we5W1gVMqfsH6DNY0mNZkEs2SXcoa4gDM88c14tIyraytnSAyKvQ/exec",
+  "aiAction": "onyx.chat",
+  "profileScope": [
+    "william",
+    "jasper"
+  ],
+  "conversationLanes": [
+    "work",
+    "leisure",
+    "health",
+    "professor"
+  ],
+  "exampleCount": 10000,
+  "moodCount": 9,
+  "remoteOnlyProvider": "Existing OurSpace AI Brain (Gemini if configured server-side; not direct Gemini API)",
+  "notes": "This bundle does not include or alter Apps Script backend, keys, or stored private profile data.",
+  "conversationMemory": "opt-in browser-local IndexedDB for Work/Leisure only; Professor and Health remain ephemeral",
+  "geminiConnection": "Existing backend only. Not verified end-to-end without user-authenticated session and server configuration.",
+  "responseGeneration": "LLM via onyx.chat, never direct browser Gemini secret",
+  "additionalFeatures": [
+    "multi-turn continuity",
+    "explicit save/forget facts",
+    "per-thread opt-in history",
+    "quality checks with optional rewrite",
+    "WASM scoring helpers",
+    "multi-turn conversational follow-ups",
+    "quality check before committing a response",
+    "strict backend source attribution",
+    "approved-memory relevance gating",
+    "backend envelope normalizer"
+  ],
+  "widgetIntegration": "Full Pass 7 source modules and 10,000 voice references load from the existing fullscreen Work view; only the existing widget stylesheet is used",
+  "securityNote": "Account traffic uses the canonical LifeHelpers/Onyx bridge; tester traffic reuses OnyxTester read-only JSONP. No direct Gemini key, writes, or Drive access.",
+  "responseAttribution": "Backend result is never labeled Gemini unless the backend explicitly declares a Gemini provider; aiBrain=true alone confirms only the backend assertion.",
+  "dialogueFit": "Four-lane speech-act planner, social-response context evaluator, generation rewrite, explicitly labeled local repair.",
+  "corpusIntegrity": "Exactly 10,000 reference entries retained; 5,000 per profile.",
+  "sourceArchiveCountReviewed": 19,
+  "liveGeminiVerified": false
+}

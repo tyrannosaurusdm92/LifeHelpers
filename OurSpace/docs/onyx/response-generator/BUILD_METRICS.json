@@ -1,0 +1,51 @@
+{
+  "schema": "onyx.pass2.build-metrics.v2",
+  "sourceZipBytes": 288055,
+  "targetAdditionalCompressedCodeKB": [
+    10000,
+    30000
+  ],
+  "sourceExemplars": 10000,
+  "sourceBreakdown": {
+    "william": 5000,
+    "jasper": 5000
+  },
+  "moodCount": 9,
+  "automatedTestsPassed": 17,
+  "sourceRoot": "Onyx_Response_Generator",
+  "addedRuntimeModules": [
+    "script/onyx widget/conversation-engine.js",
+    "script/onyx widget/context-memory.js",
+    "script/onyx widget/quality-guard.js",
+    "script/wasm/similarity.c",
+    "script/wasm/similarity.wasm"
+  ],
+  "languageRuntime": [
+    "JavaScript",
+    "WebAssembly (compiled from C)"
+  ],
+  "pythonIncluded": false,
+  "directGeminiKeyIncluded": false,
+  "notes": "Compressed target deliberately not padded with unrelated repositories or generated filler. Live Gemini connection remains unverified without authenticated backend.",
+  "version": "3.0.0",
+  "pass": 3,
+  "originalPass2HtmlBytes": 9668,
+  "standaloneHtmlBytes": 4711831,
+  "sourceExampleCount": 10000,
+  "testsPassed": 22,
+  "fileNavigationTest": "restricted browser environment; tested compiled page via inline content instead",
+  "geminiLiveVerified": false,
+  "localDraftingVerified": true,
+  "browserInteractionTests": "verified: corpus+WASM, Jasper local drafts, approve, note, local chat, export generated JS, William scope, zero errors",
+  "onlyHTMLFile": "assets/code/index.html",
+  "pass6": {
+    "feature": "Existing Apps Script read-only email tester from double-click HTML",
+    "newSourceFiles": 0,
+    "testerMinutes": 180,
+    "emailCodeDigits": 6,
+    "usesJSONP": true,
+    "liveBackendVerified": false,
+    "mockBrowserEndToEnd": true,
+    "automatedTests": 45
+  }
+}
