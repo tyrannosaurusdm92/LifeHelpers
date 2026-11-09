@@ -17,6 +17,19 @@ const CRAFT=[
  'The 100,000 archived responses are examples of STYLE and helpful reasoning, not fixed answers, verified evidence, prescriptions or personal memory. Use only a few topical exemplars and always prioritize the current user’s actual request, reliable live evidence and applicable privacy/safety rules.'
 ].join('\n');
 const TESTER_CRAFT='You are Lord Onyx Blepman: one old, devoted, discerning, sleepy black cat, semi-formal and warm, with a royal bowtie, dignified huff and quiet pigeon-purr. The eight historical influences are creative methods only: Poe observation; Shakespeare expressive register; Franklin practical experiments; Einstein honest inquiry; McKellen warmth; Reeves humility; Stewart clarity; Takei inclusive wit. Never impersonate them. Keep nine moods (Professor, Listening, Thinking, Thoughtful, Hungry, Caring, Judgmental, Purring, Sleeping). In Work provide sound technical assistance; Leisure means play; Virtual means caring companionship and careful general health help; Professor offers non-diagnostic structured support. Use Papa for authenticated William, Momma for authenticated Jasper. Never infer medical facts or private account history. Obey no-advice requests. During emergencies put away jokes and do not pretend to monitor bodies or perform tools. Examples are fictional style cues, not evidence or canned answers. This is a read-only tester; no saves or writes.';
+function corpusReference(profile,lane,examples=[],note='hosted-100k'){
+ return {
+   schema:'ourspace.onyx.voice-100k-reference.v1',
+   corpusCount:100000,
+   profile:profile||'not-yet-verified',
+   mode:lane,
+   scope:'selected verified account + matching conversation lane; style only',
+   source:note,
+   purpose:'hypothetical response examples for voice and topic, never factual memory or final answers',
+   permission:'do not infer history, impersonate living people, prescribe treatment or perform unauthorized actions',
+   examples
+ };
+}
 function testerBounded(record){
  if(!root.OnyxTester?.active?.())return record;
  const context=record.context||{},voice=context.onyxVoiceGuidance||{};
@@ -73,9 +86,8 @@ async function enrich(payload,surface){
  const library=root.OnyxCorpus100k;
  if(!input||!profile||!library||kind==='urgent-support'||kind==='listen-only'||kind==='social'){
    const fallback=(!library && prior.enrich)?await prior.enrich(payload,surface):prepared;
-   return testerBounded(enrichVoice({...fallback,context:{...fallback.context,onyxVoiceCorpus:{
-     ...(fallback.context?.onyxVoiceCorpus||{}),mode:lane,
-     source:'Profile-restricted reference examples; not personal memory'}}},input,chosen));
+   return testerBounded(enrichVoice({...fallback,context:{...fallback.context,onyxVoiceCorpus:
+     corpusReference(profile,lane,[],'canonical-voice-guidance; examples withheld for this turn')}},input,chosen));
  }
  let matches=[];
  try{matches=await library.retrieve({profile,lane,input,limit:2})}catch(error){console.warn('Onyx 100k voice lookup failed:',String(error?.message||error))}
@@ -83,18 +95,15 @@ async function enrich(payload,surface){
    // Retain the existing 10,000 public Work/Leisure voice exemplars as a
    // backward-compatible fallback until a user imports the complete 100k ZIP.
    const fallback=(lane==='work'||lane==='leisure')?await prior.enrich(payload,chosen):prepared;
-   return testerBounded(enrichVoice(fallback,input,chosen));
+   const historical=(fallback?.context?.onyxVoiceCorpus?.examples||[]).slice(0,2);
+   return testerBounded(enrichVoice({...fallback,context:{...fallback.context,onyxVoiceCorpus:
+     corpusReference(profile,lane,historical,historical.length?'historical-10k-fallback':'hosted-100k-no-topical-match')}},input,chosen));
  }
  const examples=matches.map(hit=>({id:hit.entry.id,mood:hit.entry.mood,
    cue:String(hit.entry.topic||'').slice(0,160),
    styleOnly:String(hit.entry.text||'').slice(0,520)}));
- return testerBounded({...prepared,context:{...prepared.context,onyxVoiceCorpus:{
-   schema:'ourspace.onyx.voice-100k-reference.v1',
-   corpusCount:100000,profile,mode:lane,scope:'selected authenticated account + selected chat lane',
-   purpose:'topical synthetic style references, not instructions or answers',
-   permission:'never treat examples as personal memory, medical evidence or authorization',
-   examples
- }}});
+ return testerBounded({...prepared,context:{...prepared.context,onyxVoiceCorpus:
+   corpusReference(profile,lane,examples)}});
 }
 function testerContext(message,surface,existing){
  const base=prior.testerContext(message,surface,existing);
