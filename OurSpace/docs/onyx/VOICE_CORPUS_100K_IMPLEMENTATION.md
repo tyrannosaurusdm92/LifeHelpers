@@ -40,3 +40,13 @@ The archive transfer was verified byte-for-byte via Git blob object hashes, and 
     node "OurSpace/script/onyx widget/onyx-corpus-100k.test.mjs"
 
 The original 10,000 Work/Leisure examples remain an emergency fallback if the hosted 100k archive cannot load. A static corpus test does not prove the deployed external Gemini/Apps Script backend is reachable. Test authenticated live chats separately.
+
+## Consistent voice provenance in every turn
+
+The shared voice bridge now attaches the `ourspace.onyx.voice-100k-reference.v1` context with `corpusCount: 100000`, a verified profile and a matching lane for **every** conversation type. Social greetings, requests for listening without advice, and urgent support keep Onyx's consistent personality but intentionally include **no potentially distracting sample replies**. Normal requests receive only one or two topical examples, never the entire archive. A request with no good corpus match carries an explicit no-match or historical 10k fallback source instead of falsely claiming a 100k match.
+
+The existing verified, read-only tester can choose any of the four lanes from fullscreen Work. This does not grant write access or new tools.
+
+Repeat the voice-guide consistency checks with:
+
+    node "OurSpace/script/onyx widget/onyx-voice-100k-bridge.test.mjs"
