@@ -16,7 +16,17 @@ const CRAFT=[
  'For ordinary greetings answer warmly rather than dispensing a plan. For no-advice requests, listen instead of assigning tasks. During serious distress or danger the jokes and food begging cease. Never fabricate real-time sensing, live clinical monitoring, tool results, file edits or completed external actions.',
  'The 100,000 archived responses are examples of STYLE and helpful reasoning, not fixed answers, verified evidence, prescriptions or personal memory. Use only a few topical exemplars and always prioritize the current user’s actual request, reliable live evidence and applicable privacy/safety rules.'
 ].join('\n');
-const status={checkedAt:0,full:false};
+const TESTER_CRAFT='You are Lord Onyx Blepman: one old, devoted, discerning, sleepy black cat, semi-formal and warm, with a royal bowtie, dignified huff and quiet pigeon-purr. The eight historical influences are creative methods only: Poe observation; Shakespeare expressive register; Franklin practical experiments; Einstein honest inquiry; McKellen warmth; Reeves humility; Stewart clarity; Takei inclusive wit. Never impersonate them. Keep nine moods (Professor, Listening, Thinking, Thoughtful, Hungry, Caring, Judgmental, Purring, Sleeping). In Work provide sound technical assistance; Leisure means play; Virtual means caring companionship and careful general health help; Professor offers non-diagnostic structured support. Use Papa for authenticated William, Momma for authenticated Jasper. Never infer medical facts or private account history. Obey no-advice requests. During emergencies put away jokes and do not pretend to monitor bodies or perform tools. Examples are fictional style cues, not evidence or canned answers. This is a read-only tester; no saves or writes.';
+function testerBounded(record){
+ if(!root.OnyxTester?.active?.())return record;
+ const context=record.context||{},voice=context.onyxVoiceGuidance||{};
+ const corpus=context.onyxVoiceCorpus||{};
+ return {...record,context:{...context,
+   onyxVoiceGuidance:{schema:voice.schema||'ourspace.onyx.pass7.voice-bridge.v1',
+     surface:voice.surface||record.lane,intent:voice.intent||'task',instructions:TESTER_CRAFT},
+   onyxVoiceCorpus:{...corpus,examples:(corpus.examples||[]).slice(0,1).map(e=>({...e,styleOnly:String(e.styleOnly||'').slice(0,260)}))}
+ }};
+}
 function authenticatedProfile(){
  const tester=root.OnyxTester;
  if(tester?.active?.()){const selected=String(tester.publicStatus?.().selectedProfile||'').toLowerCase();return ['william','jasper'].includes(selected)?selected:''}
@@ -63,9 +73,9 @@ async function enrich(payload,surface){
  const library=root.OnyxCorpus100k;
  if(!input||!profile||!library||kind==='urgent-support'||kind==='listen-only'||kind==='social'){
    const fallback=(!library && prior.enrich)?await prior.enrich(payload,surface):prepared;
-   return enrichVoice({...fallback,context:{...fallback.context,onyxVoiceCorpus:{
+   return testerBounded(enrichVoice({...fallback,context:{...fallback.context,onyxVoiceCorpus:{
      ...(fallback.context?.onyxVoiceCorpus||{}),mode:lane,
-     source:'Profile-restricted reference examples; not personal memory'}}},input,chosen);
+     source:'Profile-restricted reference examples; not personal memory'}}},input,chosen));
  }
  let matches=[];
  try{matches=await library.retrieve({profile,lane,input,limit:2})}catch(error){console.warn('Onyx 100k voice lookup failed:',String(error?.message||error))}
@@ -73,23 +83,23 @@ async function enrich(payload,surface){
    // Retain the existing 10,000 public Work/Leisure voice exemplars as a
    // backward-compatible fallback until a user imports the complete 100k ZIP.
    const fallback=(lane==='work'||lane==='leisure')?await prior.enrich(payload,chosen):prepared;
-   return enrichVoice(fallback,input,chosen);
+   return testerBounded(enrichVoice(fallback,input,chosen));
  }
  const examples=matches.map(hit=>({id:hit.entry.id,mood:hit.entry.mood,
    cue:String(hit.entry.topic||'').slice(0,160),
    styleOnly:String(hit.entry.text||'').slice(0,520)}));
- return {...prepared,context:{...prepared.context,onyxVoiceCorpus:{
+ return testerBounded({...prepared,context:{...prepared.context,onyxVoiceCorpus:{
    schema:'ourspace.onyx.voice-100k-reference.v1',
    corpusCount:100000,profile,mode:lane,scope:'selected authenticated account + selected chat lane',
    purpose:'topical synthetic style references, not instructions or answers',
    permission:'never treat examples as personal memory, medical evidence or authorization',
    examples
- }}};
+ }}});
 }
 function testerContext(message,surface,existing){
  const base=prior.testerContext(message,surface,existing);
  return {...base,onyxVoiceGuidance:{...prior.guidance(message,surface),
-   instructions:prior.guidance(message,surface).instructions+'\n'+CRAFT},
+   instructions:TESTER_CRAFT},
    voiceReferenceCount:100000,scope:'verified tester profile; read-only; no memory or writes'};
 }
 root.OnyxVoiceContext=Object.freeze({
