@@ -54,6 +54,29 @@ async function staticText(user,lane){
  if(!res.ok)return null;
  return res.text();
 }
+
+let staticArchivePromise=null;
+async function staticArchivedText(user,lane){
+ const scope=key(user,lane);
+ if(!staticArchivePromise)staticArchivePromise=(async()=>{
+  const parts=await Promise.all(Array.from({length:8},async(_,i)=>{
+   const relative=PREFIX+'archive.part'+String(i).padStart(2,'0')+'.bin';
+   const url=new URL(relative,document.baseURI);
+   const res=await fetch(url.href,{credentials:'same-origin',cache:'force-cache'});
+   if(!res.ok)throw new Error('Missing Onyx archive segment '+i+': '+res.status);
+   return new Uint8Array(await res.arrayBuffer());
+  }));
+  const size=parts.reduce((n,p)=>n+p.byteLength,0);
+  if(size!==2640718)throw new Error('Incomplete 100k archive: '+size+' bytes');
+  const full=new Uint8Array(size);let offset=0;
+  for(const part of parts){full.set(part,offset);offset+=part.byteLength}
+  return full.buffer;
+ })().catch(error=>{staticArchivePromise=null;throw error});
+ const buffer=await staticArchivePromise;
+ const matching=await zipFiles({name:'Onyx_100k_OurSpace_Deploy_Package.zip',arrayBuffer:async()=>buffer},scope);
+ return matching.get(scope)||null;
+}
+
 async function load(user,lane){
  if(!valid(user,lane))throw new Error('A verified profile and chat lane are required.');
  const scope=key(user,lane);
@@ -62,6 +85,7 @@ async function load(user,lane){
    let saved=await read(scope);
    // Only accept a complete local corpus; otherwise try the static file.
    if(typeof saved!=='string'){try{saved=await staticText(user,lane)}catch(_){}}
+   if(typeof saved!=='string'){try{saved=await staticArchivedText(user,lane)}catch(error){console.warn('Onyx compressed archive unavailable:',String(error?.message||error))}}
    if(typeof saved!=='string')return null;
    try{return parse(saved,user,lane)}catch(error){console.warn('Onyx corpus rejected:',error);return null}
  })();
@@ -96,7 +120,7 @@ async function retrieve({profile,lane,input,limit=2}={}){
 function bytes(data,offset=0,n=data.byteLength-offset){return new Uint8Array(data,offset,n)}
 function u16(view,pos){return view.getUint16(pos,true)}
 function u32(view,pos){return view.getUint32(pos,true)}
-async function zipFiles(file){
+async function zipFiles(file,onlyScope=''){
  if(!file||!String(file.name).toLowerCase().endsWith('.zip'))throw new Error('Select the original Onyx_100000_By_User_Chat.zip archive.');
  const buffer=await file.arrayBuffer(),view=new DataView(buffer),decoder=new TextDecoder('utf-8'),size=buffer.byteLength;
  let end=-1;for(let at=size-22;at>=Math.max(0,size-65557);at--){if(u32(view,at)===0x06054b50){end=at;break}}
@@ -107,7 +131,7 @@ async function zipFiles(file){
   const method=u16(view,pos+10),packed=u32(view,pos+20),nameLen=u16(view,pos+28),extra=u16(view,pos+30),comment=u16(view,pos+32),local=u32(view,pos+42);
   const name=decoder.decode(bytes(buffer,pos+46,nameLen)).replace(/\\/g,'/');
   const match=name.match(/(?:^|\/)(jasper|william)\/(work|professor|virtual|leisure)\/onyx_\2\.txt$/);
-  if(match){
+  if(match && (!onlyScope || key(match[1],match[2])===onlyScope)){
     const user=match[1],lane=match[2],scope=key(user,lane);
     if(results.has(scope))throw new Error('Duplicate ZIP chat entry: '+scope);
     if(u32(view,local)!==0x04034b50)throw new Error('Bad ZIP local file header.');
@@ -122,7 +146,8 @@ async function zipFiles(file){
   }
   pos+=46+nameLen+extra+comment;
  }
- if(results.size!==8)throw new Error('The ZIP must contain all eight original chat files; found '+results.size+'.');
+ if(!onlyScope&&results.size!==8)throw new Error('The ZIP must contain all eight original chat files; found '+results.size+'.');
+ if(onlyScope&&results.size!==1)throw new Error('The selected account/mode corpus entry is absent: '+onlyScope);
  return results;
 }
 async function importZip(file){
