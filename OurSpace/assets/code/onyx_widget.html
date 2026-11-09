@@ -215,6 +215,9 @@
 </div>
 <div hidden id="onyxTesterActiveStep">
 <label class="field"><span>Read-only tester profile</span><select id="onyxTesterProfile"><option value="william">William · Papa</option><option value="jasper">Jasper · Momma</option></select></label>
+<label class="field"><span>Chat lane to exercise in Work tester</span><select id="onyxTesterLane" aria-label="Onyx tester chat lane"><option value="work">Work</option><option value="professor">Professor</option><option value="virtual">Virtual &amp; Health</option><option value="leisure">Leisure</option></select></label>
+<label class="field"><span>Import all 100,000 examples to this browser (ZIP)</span><input id="onyxCorpusImport" type="file" accept=".zip,application/zip" aria-describedby="onyxCorpusImportStatus"/></label>
+<p class="field-help" id="onyxCorpusImportStatus" aria-live="polite">The original ZIP stays on this device; no private reference dossier is uploaded to public GitHub.</p>
 <p class="field-help" id="onyxTesterCurrent">Tester mode active.</p>
 <div class="chat-actions"><button class="secondary-button" id="onyxTesterExit" type="button">Exit tester mode</button></div>
 </div>
@@ -356,6 +359,8 @@
 <script src="script/onyx widget/onyx_widget_onyx-mood.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-scanner.js"></script>
 <script src="script/onyx widget/onyx-widget-conversation-guidance.js?v=20261108-pass7-unified-voice"></script>
+<script src="script/onyx widget/onyx-corpus-100k.js?v=20261108-full-corpus"></script>
+<script src="script/onyx widget/onyx-voice-100k-bridge.js?v=20261108-all-modes"></script>
 <script src="script/onyx widget/onyx_widget_onyx-repository-bridge.js?v=20261108-pass7-unified-voice" type="module"></script>
 <script src="script/onyx widget/onyx_widget_brain-link.js"></script>
 <script src="script/onyx widget/onyx_widget_onyx-behavior.js"></script>
