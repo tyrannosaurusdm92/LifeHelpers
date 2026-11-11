@@ -281,7 +281,7 @@
   const DB='catastrophic-onyx-angel-art-v1', STORE='uploads';
   const BIRDS=['hummingbird','robin','sparrow','bluejay','cardinal','dove','finch'];
   const ASSET_ROOT='assets/images/game/';
-  const state={phase:'ground',alt:0,xSpeed:0,active:false,images:{},urls:{},pressed:new Set(),controller:false,ready:false,loading:null,status:'New sprites not installed yet'};
+  const state={phase:'ground',alt:0,xSpeed:0,active:false,images:{},urls:{},pressed:new Set(),hoverLock:false,controller:false,ready:false,loading:null,status:'New sprites not installed yet'};
   const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
   const imageUrl=blob=>URL.createObjectURL(blob);
   const pauseForFrame=()=>new Promise(resolve=>requestAnimationFrame(resolve));
@@ -323,6 +323,8 @@
     if(status)status.textContent=message;
     const toggle=document.getElementById('onyxAngelFlightToggle');
     if(toggle){toggle.textContent=state.phase==='ground'?'Fly with Onyx':'Land Onyx';toggle.setAttribute('aria-pressed',String(state.phase!=='ground'));}
+    const hover=document.getElementById('onyxAngelHoverToggle');
+    if(hover){hover.disabled=state.phase==='ground';hover.setAttribute('aria-pressed',String(state.hoverLock));hover.textContent=state.hoverLock?'Resume flying':'Hover in place';}
   }
   async function loadImage(blob){
     const url=imageUrl(blob),img=new Image();
@@ -436,13 +438,20 @@
   }
   const airborne=()=>state.phase!=='ground';
   function toggle(){
-    if(state.phase==='ground'){state.phase='takingoff';state.alt=0;state.xSpeed=0;}
+    if(state.phase==='ground'){state.phase='takingoff';state.alt=0;state.xSpeed=0;state.hoverLock=false;}
     else{state.phase='landing';}
     setStatus(state.phase==='landing'?'Onyx is coming in for a gentle landing.':
       'Onyx is taking flight. A/D or ←/→ move; W/↑/Space rise; S/↓/Shift descend.');
     return true;
   }
-  function land(){if(airborne()){state.phase='landing';setStatus('Onyx is gliding down to land.');}}
+  function land(){if(airborne()){state.phase='landing';state.hoverLock=false;setStatus('Onyx is gliding down to land.');}}
+  function hover(){
+    if(!airborne())return false;
+    state.hoverLock=!state.hoverLock;
+    if(state.hoverLock){state.xSpeed=0;state.phase='hovering';}
+    setStatus(state.hoverLock?'Onyx is hovering gently in place. Use W/S or ↑/↓ to rise and descend.':'Onyx can glide again.');
+    return state.hoverLock;
+  }
   function altitude(){return state.alt;}
   function advance(dt){
     if(!airborne())return false;
@@ -450,19 +459,28 @@
     const up=state.pressed.has('up'),down=state.pressed.has('down');
     if(state.phase==='takingoff'){
       state.alt=Math.min(120,state.alt+dt*148);
-      if(state.alt>=120)state.phase='flying';
+      if(state.alt>=120){state.phase='hovering';setStatus('Onyx is hovering with his angel wings.');}
     }else if(state.phase==='landing'){
       state.alt=Math.max(0,state.alt-dt*165);
-      if(state.alt<=0){state.phase='ground';state.alt=0;state.xSpeed=0;setStatus('Onyx has landed safely.');return false;}
+      if(state.alt<=0){
+        state.phase='ground';state.alt=0;state.xSpeed=0;
+        state.hoverLock=false;state.nativeAnchor=null;
+        setStatus('Onyx has landed safely.');return false;
+      }
     }else{
       const v=(up?1:0)-(down?1:0);
       state.alt=clamp(state.alt+v*dt*186,40,460);
     }
-    const horizontal=state.pressed.has('right')?1:0;
-    const left=state.pressed.has('left')?1:0;
-    const desired=(horizontal-left)*250;
-    state.xSpeed+=(desired-state.xSpeed)*Math.min(1,dt*10);
-    if(state.phase==='landing')state.xSpeed*=Math.max(0,1-dt*7);
+    const direction=(state.pressed.has('right')?1:0)-(state.pressed.has('left')?1:0);
+    const desired=(state.hoverLock?0:direction*250);
+    state.xSpeed+=(desired-state.xSpeed)*Math.min(1,dt*(state.hoverLock?16:10));
+    if(state.hoverLock)state.xSpeed=0;
+    if(state.phase==='landing'){
+      state.xSpeed*=Math.max(0,1-dt*7);
+    }else if(state.phase!=='takingoff'){
+      const next=state.hoverLock||(!direction&&Math.abs(state.xSpeed)<4)?'hovering':'flying';
+      state.phase=next;
+    }
     return true;
   }
   function updateLegacy(cat,dt,world,ground){
@@ -502,6 +520,7 @@
     const frame=Math.floor((clock||performance.now()/1000)*(reduced()?2:7))%5;
     if(phase==='landing')return ['air',7,frame];
     if(phase==='takingoff')return ['air',5,frame];
+    if(phase==='hovering')return ['air',8,Math.floor((clock||performance.now()/1000)*(reduced()?1:3))%5];
     if(phase==='flying')return ['air',6+Math.floor((clock||0)/3)%2,frame];
     const row=anim==='sleep'||anim==='rest'?3:anim==='groom'||anim==='yawn'?2:
       anim==='pounce'||anim==='play'?4:anim==='walk'?1:0;
@@ -515,7 +534,7 @@
     const sprite=state.images[name]?.image;
     if(!sprite?.complete)return false;
     const h=height*(airborne()?1.27:1.12),w=h*(airborne()?1.18:1.08);
-    const bob=airborne()&&!reduced()?Math.sin((clock||performance.now()/1000)*5)*2.8:0;
+    const bob=airborne()&&!reduced()?Math.sin((clock||performance.now()/1000)*(state.phase==='hovering'?2.4:5))*(state.phase==='hovering'?4:2.8):0;
     ctx.save();ctx.imageSmoothingEnabled=false;
     const x=Math.round(centerX-w/2),y=Math.round(footY-h-state.alt+bob);
     if(facing<0){ctx.translate(Math.round(centerX+w/2),0);ctx.scale(-1,1);drawFrame(ctx,sprite,name,row,col,0,y,w,h);}
@@ -546,6 +565,7 @@
   document.addEventListener('keydown',event=>{
     if(event.ctrlKey||event.metaKey||event.altKey||isTyping(event.target))return;
     if(event.code==='KeyF'&&!event.repeat){event.preventDefault();toggle();return;}
+    if(event.code==='KeyH'&&!event.repeat&&airborne()){event.preventDefault();hover();return;}
     if(event.code==='Escape'&&airborne()){land();return;}
     const direction=keyDirection(event.code);
     if(direction&&airborne()){state.pressed.add(direction);event.preventDefault();}
@@ -559,11 +579,15 @@
     const box=document.createElement('div');box.id='onyxAngelFlightControls';box.className='section';
     const title=document.createElement('h3');title.textContent='Onyx’s angel wings';box.appendChild(title);
     const paragraph=document.createElement('p');
-    paragraph.textContent='F: fly or land · A/D or ←/→: travel · W/↑/Space: ascend · S/↓/Shift: descend · Esc: land.';
+    paragraph.textContent='F: fly or land · H: hover in place · A/D or ←/→: travel · W/↑/Space: ascend · S/↓/Shift: descend · Esc: land. Onyx also hovers automatically when still.';
     box.appendChild(paragraph);
     const toggleButton=document.createElement('button');toggleButton.id='onyxAngelFlightToggle';
     toggleButton.type='button';toggleButton.className='btn';toggleButton.textContent='Fly with Onyx';toggleButton.addEventListener('click',toggle);
     box.appendChild(toggleButton);
+    const hoverButton=document.createElement('button');hoverButton.id='onyxAngelHoverToggle';
+    hoverButton.type='button';hoverButton.className='btn';hoverButton.textContent='Hover in place';
+    hoverButton.style.marginLeft='8px';hoverButton.disabled=true;hoverButton.setAttribute('aria-pressed','false');
+    hoverButton.addEventListener('click',hover);box.appendChild(hoverButton);
     const importButton=document.createElement('button');importButton.id='onyxAngelImport';
     importButton.type='button';importButton.className='btn';importButton.textContent='Install Onyx’s angel sprite ZIP';
     importButton.style.marginLeft='8px';box.appendChild(importButton);
@@ -587,7 +611,7 @@
   document.head.appendChild(stylesheet);
   document.addEventListener('DOMContentLoaded',attachControl);
   window.addEventListener('catastrophic-archive-ready',attachControl);
-  window.OnyxAngelicFlight={prepare,applyOverrides,importZip,toggle,land,altitude,updateLegacy,updateNative,mirrorNative,drawLegacy,drawNative,drawSleep,
+  window.OnyxAngelicFlight={prepare,applyOverrides,importZip,toggle,hover,land,altitude,updateLegacy,updateNative,mirrorNative,drawLegacy,drawNative,drawSleep,
     get installed(){return state.ready;},get phase(){return state.phase;}};
 })();
 </script>
