@@ -68,3 +68,23 @@ html[data-runtime-mode="professor"] #onyxWidget {display:none!important}
 #onyxProfessorFullscreenShell .professor-attachment-chip button {border:0;border-radius:5px;background:#91404e;color:white;font-size:13px}
 #onyxProfessorFullscreenShell .professor-attach-button {background:#365477;border:1px solid #7391af;border-radius:9px;color:white;font-weight:900;font-size:24px;min-width:44px;max-height:65px}
 #onyxProfessorFullscreenShell .professor-composer-shell.dragging {outline:3px dashed #91d4ff;outline-offset:-4px}
+
+
+/* Keep source decorations behind the Professor Onyx portrait at their intended scale. */
+#onyxProfessorFullscreenShell .professor-portrait .onyx-professor-art img.onyx-angel-wing {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  max-width: none;
+  object-fit: contain;
+  border-radius: 0;
+}
+#onyxProfessorFullscreenShell .professor-portrait .onyx-professor-art img.onyx-professor-avatar {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  height: 90px;
+  max-width: 90%;
+  object-fit: contain;
+  border-radius: 12px;
+}

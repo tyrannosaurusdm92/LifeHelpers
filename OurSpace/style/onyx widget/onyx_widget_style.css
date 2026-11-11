@@ -6351,3 +6351,132 @@ html[data-runtime-mode="work"] #onyxWidget {
   .onyx-response-heading { align-items: start; }
 }
 
+
+
+/* Onyx's angel accents are sourced SVGs; these rules only place, mirror, and crop them. */
+.onyx-angel-wings,
+.onyx-angel-halo {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+.onyx-angel-wings {
+  inset: 0;
+  z-index: 4;
+}
+.onyx-angel-wing {
+  position: absolute;
+  width: min(32%, 62px);
+  height: min(32%, 62px);
+  object-fit: contain;
+  opacity: .92;
+  filter: drop-shadow(0 1px 2px rgba(18, 30, 46, .35));
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+.onyx-angel-wing--left {
+  left: 3%;
+  top: 32%;
+  transform: scaleX(-1) rotate(9deg);
+}
+.onyx-angel-wing--right {
+  right: 3%;
+  top: 32%;
+  transform: rotate(-9deg);
+}
+.onyx-angel-halo {
+  left: 50%;
+  top: 4%;
+  width: min(38%, 72px);
+  height: 24px;
+  overflow: hidden;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.onyx-angel-halo-source {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: var(--onyx-halo-icon-size, 72px);
+  height: var(--onyx-halo-icon-size, 72px);
+  background: #f4cf72;
+  -webkit-mask-image: url("../../assets/images/onyx%20widget/onyx-angel-halo.svg");
+  mask-image: url("../../assets/images/onyx%20widget/onyx-angel-halo.svg");
+  -webkit-mask-position: top left;
+  mask-position: top left;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+#onyxBubble .onyx-angel-wings {
+  z-index: 4;
+}
+#onyxBubble .onyx-angel-halo {
+  top: 3%;
+  width: 72px;
+  height: 24px;
+  --onyx-halo-icon-size: 72px;
+}
+.onyx-idle-stage > .onyx-angel-wings {
+  z-index: 2;
+}
+.onyx-idle-stage .onyx-angel-wing {
+  width: 42px;
+  height: 42px;
+}
+.onyx-idle-stage .onyx-angel-wing--left {
+  left: 1px;
+  top: 37%;
+}
+.onyx-idle-stage .onyx-angel-wing--right {
+  right: 1px;
+  top: 37%;
+}
+.onyx-idle-stage > .onyx-angel-halo {
+  top: 0;
+  width: 56px;
+  height: 20px;
+  --onyx-halo-icon-size: 56px;
+  z-index: 2;
+}
+.onyx-professor-art {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  flex: 0 0 108px;
+  place-items: center;
+  width: 108px;
+  height: 94px;
+}
+.onyx-professor-art > .onyx-angel-wings {
+  z-index: 3;
+}
+.onyx-professor-art .onyx-angel-wing {
+  width: 38px;
+  height: 38px;
+}
+.onyx-professor-art .onyx-angel-wing--left {
+  left: 0;
+  top: 34px;
+}
+.onyx-professor-art .onyx-angel-wing--right {
+  right: 0;
+  top: 34px;
+}
+.onyx-professor-art > .onyx-angel-halo {
+  top: 0;
+  width: 50px;
+  height: 18px;
+  --onyx-halo-icon-size: 50px;
+  z-index: 4;
+}
+.onyx-professor-avatar {
+  position: relative;
+  z-index: 2;
+  height: 90px;
+  max-width: 90%;
+  object-fit: contain;
+  border-radius: 12px;
+}
