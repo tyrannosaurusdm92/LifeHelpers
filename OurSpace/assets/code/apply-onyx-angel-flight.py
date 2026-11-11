@@ -37,13 +37,13 @@ def embed_angels(document: str) -> str:
             if not any(name.endswith('_onyx_'+bird+'_halo.png') for name in names):
                 raise RuntimeError('Onyx angel sprite ZIP is missing bird: '+bird)
     marker='<script id="gameArchive" type="application/octet-stream">'
-    previous=re.compile(r'<script id="onyxAngelArtArchive" type="application/octet-stream">[A-Za-z0-9+/=]*</script>\\n?')
+    previous=re.compile(r'<script id="onyxAngelArtArchive" type="application/octet-stream">[A-Za-z0-9+/=]*</script>\n?')
     document=previous.sub('',document)
     if document.count(marker)!=1:
         raise RuntimeError('Cannot locate one original game archive')
     encoded=base64.b64encode(raw).decode('ascii')
     return document.replace(marker,
-        '<script id="onyxAngelArtArchive" type="application/octet-stream">'+encoded+'</script>\\n'+marker,1)
+        '<script id="onyxAngelArtArchive" type="application/octet-stream">'+encoded+'</script>\n'+marker,1)
 
 if '</script' in addon.lower():
     raise RuntimeError('Inline module contains an HTML script-closing token.')
