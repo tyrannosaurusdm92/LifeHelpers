@@ -210,7 +210,7 @@
     const still=advance(dt);
     if(!still){
       actor.linkedWorld=false;actor.goal=null;actor.path=[];actor.task='idle';
-      actor.next=0;state.nativeOverride=true;
+      actor.next=0;state.nativeOverride=false;state.nativeAnchor=null;
       return false;
     }
     const max=actor.zone==='mosswood'?238:actor.zone==='apothecary'?18:48;
@@ -231,8 +231,8 @@
     if(phase==='flying')return ['air',6+Math.floor((clock||0)/3)%2,frame];
     const row=anim==='sleep'||anim==='rest'?3:anim==='groom'||anim==='yawn'?2:
       anim==='pounce'||anim==='play'?4:anim==='walk'?1:0;
-    if(row===0) return ['bowtie',0,frame%4];
     if(anim==='proud'||anim==='settle')return ['bowtie',2,frame%4];
+    if(row===0) return ['bowtie',0,frame%4];
     return ['ground',row,frame];
   }
   function paint(ctx,anim,centerX,footY,height,facing,clock){
