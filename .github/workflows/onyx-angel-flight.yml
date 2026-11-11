@@ -6,6 +6,7 @@ on:
       - '.github/workflows/onyx-angel-flight.yml'
       - 'OurSpace/assets/code/apply-onyx-angel-flight.py'
       - 'OurSpace/assets/code/onyx-angel-flight.js'
+      - 'OurSpace/assets/code/onyx-angel-art.zip'
       - 'OurSpace/assets/code/onyx-angel-flight.js'
   workflow_dispatch:
 
@@ -25,6 +26,7 @@ jobs:
             OurSpace/assets/code/game.html
             OurSpace/assets/code/onyx-angel-flight.js
             OurSpace/assets/code/apply-onyx-angel-flight.py
+            OurSpace/assets/code/onyx-angel-art.zip
           sparse-checkout-cone-mode: false
           persist-credentials: true
       - name: Integrate flying and replacement sprite hooks
