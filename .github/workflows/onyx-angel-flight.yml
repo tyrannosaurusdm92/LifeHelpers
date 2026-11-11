@@ -1,0 +1,57 @@
+name: Install Onyx's Angel Flight in CAT-astrophic Cuteness
+
+on:
+  push:
+    paths:
+      - '.github/workflows/onyx-angel-flight.yml'
+      - 'OurSpace/assets/code/apply-onyx-angel-flight.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out just the game and installer
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          filter: blob:none
+          sparse-checkout: |
+            OurSpace/assets/code/game.html
+            OurSpace/assets/code/onyx-angel-flight.js
+            OurSpace/assets/code/apply-onyx-angel-flight.py
+          sparse-checkout-cone-mode: false
+          persist-credentials: true
+      - name: Integrate flying and replacement sprite hooks
+        run: python3 OurSpace/assets/code/apply-onyx-angel-flight.py
+      - name: Validate flight module syntax
+        run: node --check OurSpace/assets/code/onyx-angel-flight.js
+      - name: Validate final bootloader syntax
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          html=Path('OurSpace/assets/code/game.html').read_text()
+          start=html.rfind('<script>\n(async function(){')
+          assert start>=0
+          end=html.find('</script>',start)
+          assert end>start
+          Path('/tmp/onyx-game-loader.js').write_text(html[start+len('<script>'):end])
+          PY
+          node --check /tmp/onyx-game-loader.js
+      - name: Commit the verified integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          git add OurSpace/assets/code/game.html
+          if git diff --cached --quiet; then
+            echo "The game already contains Onyx's flight integration."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Integrate Onyx angel sprites and flying into game.html"
+          git push origin HEAD:main
