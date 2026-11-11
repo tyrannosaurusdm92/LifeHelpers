@@ -1,2 +1,0 @@
-/* OurSpace uses a single light appearance. Custom accent palettes remain independent. */
-(()=>{'use strict';const root=document.documentElement;root.dataset.uiTheme='light';root.dataset.ourspaceTheme='light';root.style.colorScheme='light';document.querySelectorAll('[data-ui-theme],[data-theme]').forEach(el=>{if(el.dataset.uiTheme)el.dataset.uiTheme='light';if(el.dataset.theme==='dark')el.dataset.theme='light'});})();

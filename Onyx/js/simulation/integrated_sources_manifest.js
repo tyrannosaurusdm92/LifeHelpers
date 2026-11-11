@@ -1,1 +1,0 @@
-export default JSON.parse("{\"schema\":\"universal.simulator-integrated-sources.v1\",\"manifest\":\"json/universal_simulator_manifest.json\",\"generatedFrom\":\"UniversalSimulator v6.0.0\",\"fileCount\":1713}");

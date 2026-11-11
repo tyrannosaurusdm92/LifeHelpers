@@ -1,7 +1,0 @@
-html:not([data-ourspace-current-page="skills"]) #ourspacePageArea [data-ourspace-page="skills"]{display:none!important}
-#ourspacePageArea [data-ourspace-page="skills"]{width:100%;min-width:0}
-.os-skills-shell{padding:14px;max-width:1400px;margin:0 auto;color:#192f42}
-.os-skills-shell h1{color:#176B65;margin:0 0 6px}
-.os-skills-shell p{margin:0 0 12px}
-.os-skills-iframe{border:3px solid #176B65;border-radius:14px;width:100%;height:max(78vh,720px);height:max(78dvh,720px);background:#fff}
-@media(max-width:700px){.os-skills-shell{padding:6px}.os-skills-iframe{height:85dvh}}
