@@ -185,13 +185,37 @@
     return true;
   }
   function updateLegacy(cat,dt,world,ground){
-    if(cat?.id!=='onyx'||!airborne())return false;
+    if(cat?.id!=='onyx'||!airborne()||!isLegacyScene())return false;
     const active=advance(dt);
     if(!active)return false;
     const length=world?.length||12000;
     const x=clamp(cat.worldX()+state.xSpeed*dt,40,Math.max(41,length-40));
     try{cat.brain.force?.(0);cat.brain.place(x,ground);}catch(err){console.warn('Onyx flight placement:',err);}
     return true;
+  }
+  function isLegacyScene(){
+    return (document.getElementById('slowPetGame')?.dataset.currentBiomeLayer||'legacy')==='legacy';
+  }
+  function updateNative(actor,dt){
+    if(actor?.id!=='onyx'||!airborne()||isLegacyScene())return false;
+    if(!state.nativeAnchor || state.nativeAnchor.zone!==actor.zone)
+      state.nativeAnchor={zone:actor.zone,x:actor.x,y:actor.y};
+    const still=advance(dt);
+    if(!still){
+      actor.linkedWorld=false;actor.goal=null;actor.path=[];actor.task='idle';
+      actor.next=0;state.nativeOverride=true;
+      return false;
+    }
+    const max=actor.zone==='mosswood'?238:actor.zone==='apothecary'?18:48;
+    state.nativeAnchor.x=clamp(state.nativeAnchor.x+state.xSpeed*dt,1.9,max);
+    actor.x=state.nativeAnchor.x;actor.y=state.nativeAnchor.y;
+    actor.linkedWorld=false;actor.goal=null;actor.path=[];actor.task='angel-flight';
+    actor.anim='idle';actor.animClock=(actor.animClock||0)+dt;
+    actor.facing=state.xSpeed<-.5?-1:state.xSpeed>.5?1:actor.facing;
+    return true;
+  }
+  function mirrorNative(actor){
+    return actor?.id==='onyx'&&(airborne()||!!state.nativeOverride);
   }
   function frameFor(phase,anim,clock){
     const frame=Math.floor((clock||performance.now()/1000)*(reduced()?2:7))%5;
@@ -280,6 +304,6 @@
   document.head.appendChild(stylesheet);
   document.addEventListener('DOMContentLoaded',attachControl);
   window.addEventListener('catastrophic-archive-ready',attachControl);
-  window.OnyxAngelicFlight={prepare,applyOverrides,importZip,toggle,land,altitude,updateLegacy,drawLegacy,drawNative,drawSleep,
+  window.OnyxAngelicFlight={prepare,applyOverrides,importZip,toggle,land,altitude,updateLegacy,updateNative,mirrorNative,drawLegacy,drawNative,drawSleep,
     get installed(){return state.ready;},get phase(){return state.phase;}};
 })();
