@@ -19,11 +19,29 @@ MODULE=ROOT / 'onyx-angel-flight.js'
 source=GAME.read_text(encoding='utf-8')
 addon=MODULE.read_text(encoding='utf-8')
 
-if 'Onyx Angel Flight —' in source:
-    print('Onyx flight already installed; no changes.')
-    raise SystemExit(0)
 if '</script' in addon.lower():
     raise RuntimeError('Inline module contains an HTML script-closing token.')
+
+# A previously integrated game keeps the ZIP immutable. Refresh only the
+# inlined sprite/flight module so a standalone download stays up to date.
+if 'Onyx Angel Flight —' in source:
+    begin='<script>\n/* Onyx Angel Flight —'
+    boundary='\n</script>\n<script id="gameArchive" type="application/octet-stream">'
+    start=source.find(begin)
+    end=source.find(boundary,start)
+    if start<0 or end<0:
+        raise RuntimeError('Cannot safely locate previously embedded Onyx module')
+    old_archive=re.search(r'<script id="gameArchive" type="application/octet-stream">([A-Za-z0-9+/=]+)</script>',source)
+    replacement=source[:start]+'<script>\n'+addon+source[end:]
+    new_archive=re.search(r'<script id="gameArchive" type="application/octet-stream">([A-Za-z0-9+/=]+)</script>',replacement)
+    if not old_archive or not new_archive or old_archive.group(1)!=new_archive.group(1):
+        raise RuntimeError('Updated code would alter the original game archive')
+    if replacement!=source:
+        GAME.write_text(replacement,encoding='utf-8')
+        print('Refreshed standalone Onyx flight module; original game archive preserved.')
+    else:
+        print('Onyx flight already current; no changes.')
+    raise SystemExit(0)
 
 marker='<script id="gameArchive" type="application/octet-stream">'
 assert source.count(marker)==1, 'Missing or duplicate embedded ZIP script.'
