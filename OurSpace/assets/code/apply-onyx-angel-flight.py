@@ -19,6 +19,32 @@ MODULE=ROOT / 'onyx-angel-flight.js'
 source=GAME.read_text(encoding='utf-8')
 addon=MODULE.read_text(encoding='utf-8')
 
+ART=ROOT / 'onyx-angel-art.zip'
+def embed_angels(document: str) -> str:
+    """Bundle the user-supplied art once; leave the original game ZIP unchanged."""
+    if not ART.exists():
+        return document
+    raw=ART.read_bytes()
+    if len(raw)>16_000_000:
+        raise RuntimeError('Onyx angel art ZIP is unexpectedly large')
+    with zipfile.ZipFile(io.BytesIO(raw)) as z:
+        names=[Path(name).name.lower() for name in z.namelist()]
+        required=('haloed cat sprite sheet-1.png','angelic cat sprite sheet-2.png','haloed bowtie sprite sheet.png')
+        for suffix in required:
+            if not any(name.endswith(suffix) for name in names):
+                raise RuntimeError('Onyx angel sprite ZIP is missing '+suffix)
+        for bird in ('hummingbird','robin','sparrow','bluejay','cardinal','dove','finch'):
+            if not any(name.endswith('_onyx_'+bird+'_halo.png') for name in names):
+                raise RuntimeError('Onyx angel sprite ZIP is missing bird: '+bird)
+    marker='<script id="gameArchive" type="application/octet-stream">'
+    previous=re.compile(r'<script id="onyxAngelArtArchive" type="application/octet-stream">[A-Za-z0-9+/=]*</script>\\n?')
+    document=previous.sub('',document)
+    if document.count(marker)!=1:
+        raise RuntimeError('Cannot locate one original game archive')
+    encoded=base64.b64encode(raw).decode('ascii')
+    return document.replace(marker,
+        '<script id="onyxAngelArtArchive" type="application/octet-stream">'+encoded+'</script>\\n'+marker,1)
+
 if '</script' in addon.lower():
     raise RuntimeError('Inline module contains an HTML script-closing token.')
 
@@ -33,6 +59,7 @@ if 'Onyx Angel Flight —' in source:
         raise RuntimeError('Cannot safely locate previously embedded Onyx module')
     old_archive=re.search(r'<script id="gameArchive" type="application/octet-stream">([A-Za-z0-9+/=]+)</script>',source)
     replacement=source[:start]+'<script>\n'+addon+source[end:]
+    replacement=embed_angels(replacement)
     new_archive=re.search(r'<script id="gameArchive" type="application/octet-stream">([A-Za-z0-9+/=]+)</script>',replacement)
     if not old_archive or not new_archive or old_archive.group(1)!=new_archive.group(1):
         raise RuntimeError('Updated code would alter the original game archive')
@@ -130,6 +157,7 @@ replace_once(old_loop,new_loop,'Native and legacy renderer hooks')
 later=re.search(r'<script id="gameArchive" type="application/octet-stream">([A-Za-z0-9+/=]+)</script>',source)
 assert later and later.group(1)==encoded.group(1),'The embedded original game archive was modified.'
 assert source.count('window.OnyxAngelicFlight?.applyOverrides(urls);')==1
+source=embed_angels(source)
 assert len(source)>23_000_000
 GAME.write_text(source,encoding='utf-8')
 print(f'Integrated Onyx flight: {len(source):,} characters, embedded ZIP preserved, runtime hooks validated.')
