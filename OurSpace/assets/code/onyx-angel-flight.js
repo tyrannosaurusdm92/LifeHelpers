@@ -138,13 +138,27 @@
     state.ready=true;
     setStatus('Onyx’s halo, wings and all seven bird scenes are ready.');
   }
+  function bundledArchive(){
+    const el=document.getElementById('onyxAngelArtArchive');
+    const encoded=el?.textContent?.trim();
+    if(!encoded)return null;
+    try {
+      const binary=atob(encoded),bytes=new Uint8Array(binary.length);
+      for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+      return new Blob([bytes],{type:'application/zip'});
+    }catch(err){console.warn('Embedded Onyx sprite archive could not be decoded:',err);return null;}
+  }
   async function prepare(){
     if(state.loading)return state.loading;
     state.loading=(async()=>{
-      const blob=await savedArchive();
-      if(blob){
-        try{await fromZip(blob);}catch(err){console.warn('Onyx saved art:',err);setStatus('Saved sprites need re-import: '+err.message);}
+      const saved=await savedArchive();
+      const bundled=bundledArchive();
+      const attempts=[saved,bundled].filter(Boolean);
+      for(const blob of attempts){
+        try {await fromZip(blob);return true;}
+        catch(err){console.warn('Onyx angel sprite archive:',err);setStatus('Sprite archive needs re-import: '+err.message);}
       }
+      if(!attempts.length)setStatus('Select Install Onyx’s angel sprite ZIP once to replace the original sprites.');
       return state.ready;
     })();
     return state.loading;
