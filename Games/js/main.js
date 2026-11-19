@@ -347,13 +347,18 @@
     loadGame(game);
   }
 
-  function loadGame(game){
+  async function loadGame(game){
     currentGame = game;
     arcadeSessionId = arcadeId(); arcadeActiveSeconds = 0;
     reportOurSpacePlay("start");
     viewerTitle.textContent = game.title;
     viewerEmpty.classList.add("hidden");
     viewerStatus.textContent = `Loading ${game.title}…`;
+    // Restore cloud-backed browser keys BEFORE the game's scripts read localStorage.
+    // A backend outage must never prevent launching a game.
+    try { await window.LifeHelpersArcadeCloud?.beforeGameLoad?.(game.path); }
+    catch (error) { console.warn("Cloud restore skipped:",error); }
+    if(currentGame !== game) return;
     gameFrame.src = game.path;
     document.getElementById("arcade-viewer").scrollIntoView({behavior:"smooth",block:"start"});
   }
