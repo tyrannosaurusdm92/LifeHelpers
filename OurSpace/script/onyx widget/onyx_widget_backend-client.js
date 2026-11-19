@@ -17,10 +17,25 @@ async function request(action,data={},options={}){
  if(window.OurSpaceAuth?.request)return window.OurSpaceAuth.request(action,data,options);
  if(demo()&&!publicActions.has(action))throw new Error('Testing mode is local only. Sign in to save or send.');
  const payload={action,data,clientId:'ourspace-browser',...(token()?{sessionToken:token()}:{})};
+ // Onyx chat can take longer than ordinary account actions. Honor the caller's
+ // timeout and cancellation rather than cutting every request off at 20 seconds.
+ const requestedTimeout=Number(options.timeout||options.timeoutMs);
+ const timeoutMs=Math.min(180000,Math.max(1000,Number.isFinite(requestedTimeout)&&requestedTimeout>0?requestedTimeout:(action==='onyx.chat'?90000:20000)));
+ const controller=new AbortController();
+ const onAbort=()=>controller.abort();
+ if(options.signal){if(options.signal.aborted)onAbort();else options.signal.addEventListener('abort',onAbort,{once:true});}
+ const timer=setTimeout(()=>controller.abort(),timeoutMs);
  let response;
  try{
-  response=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload),redirect:'follow',signal:AbortSignal.timeout(20000)});
- }catch(err){throw new Error('OurSpace could not reach the server. Check your connection and try again.');}
+  response=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload),redirect:'follow',signal:controller.signal});
+ }catch(err){
+  if(options.signal?.aborted)throw new Error('OurSpace request was cancelled.');
+  if(controller.signal.aborted)throw new Error('OurSpace request timed out. Please retry.');
+  throw new Error('OurSpace could not reach the server. Check your connection and try again.');
+ }finally{
+  clearTimeout(timer);
+  options.signal?.removeEventListener?.('abort',onAbort);
+ }
  if(!response.ok)throw new Error('OurSpace is unavailable right now ('+response.status+').');
  let body;try{body=await response.json()}catch(_){throw new Error('The server did not return a usable response.');}
  if(body?.ok===false)throw new Error(body.error||body.message||'This action could not be completed.');
