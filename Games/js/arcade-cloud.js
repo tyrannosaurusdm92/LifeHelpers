@@ -200,8 +200,13 @@
       return;
     }
     try {
+      var prior = getPending(gameId, slot);
+      var which = gameId + "|" + slot;
+      var baseRevision = prior && Number.isSafeInteger(prior.baseRevision) ?
+        prior.baseRevision : (Number.isSafeInteger(revisions[which]) ? revisions[which] : null);
       localStorage.setItem(pendingKey(gameId, slot), JSON.stringify({
-        gameId: gameId, slot: slot, state: state, writeId: "write_" + randomHex(12)
+        gameId: gameId, slot: slot, state: state,
+        baseRevision: baseRevision, writeId: "write_" + randomHex(12)
       }));
     } catch (error) {
       setStatus("Device storage is unavailable; cloud save was not queued.", true);
@@ -225,9 +230,16 @@
         if (!pending) continue;
         var which = pending.gameId + "|" + pending.slot;
         var cloud = await read("load", { token: token, gameId: pending.gameId, slot: pending.slot });
-        var expected = Object.prototype.hasOwnProperty.call(revisions, which) ?
-          revisions[which] : cloud.revision;
-        /* Never force an outdated revision over newer progress from another device. */
+        var expected = Number.isSafeInteger(pending.baseRevision) ?
+          pending.baseRevision : cloud.revision;
+        if (cloud.found && cloud.writeId === pending.writeId) {
+          revisions[which] = cloud.revision;
+          var duplicate = JSON.parse(localStorage.getItem(keys[j]) || "null");
+          if (duplicate && duplicate.writeId === pending.writeId) localStorage.removeItem(keys[j]);
+          continue;
+        }
+        /* Never force an outdated revision over newer progress from another device,
+           including after a browser reload with an unsynced local copy. */
         if (expected !== cloud.revision) {
           setStatus("Cloud progress changed on another device. Close and reopen that game to review it.", true);
           continue;
@@ -241,6 +253,11 @@
         revisions[which] = verified.revision;
         var latest = JSON.parse(localStorage.getItem(keys[j]) || "null");
         if (latest && latest.writeId === pending.writeId) localStorage.removeItem(keys[j]);
+        else if (latest && Number.isSafeInteger(latest.baseRevision) &&
+                 latest.baseRevision === expected) {
+          latest.baseRevision = verified.revision;
+          localStorage.setItem(keys[j], JSON.stringify(latest));
+        }
         setStatus("Cloud save synchronized.");
       }
       await refreshSaves();
