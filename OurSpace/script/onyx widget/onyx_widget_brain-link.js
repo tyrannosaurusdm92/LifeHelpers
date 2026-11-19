@@ -58,13 +58,19 @@ function abortError(){try{return new DOMException('Request cancelled.','AbortErr
 function throwIfAborted(signal){if(signal?.aborted)throw abortError()}
 
 function safeText(value,max=260){return String(value==null?'':value).replace(/[\r\n\t]+/g,' ').replace(/\s{2,}/g,' ').trim().slice(0,max)}
+function backendErrorText(result){
+  const error=result?.error;
+  return safeText((typeof error==='string'?error:error?.message||error?.code)||result?.message||'Backend rejected request.',1000);
+}
 function publicError(error){
   const raw=safeText(error?.message||error||'');
-  if(/session|sign.?in|auth/i.test(raw))return 'Sign in to OurSpace to use Onyx tools.';
+  if(/session|sign.?in|auth/i.test(raw))return 'Onyx needs a fresh OurSpace sign-in before he can reply. Please sign in and retry.';
   if(/too large|exceeds/i.test(raw))return raw.replace(/OurSpace/gi,'').trim().slice(0,180)||'That file is too large for this action.';
-  if(/timeout|abort/i.test(raw))return 'Onyx could not finish that request.';
-  if(/network|fetch|http/i.test(raw))return 'Onyx could not reach the service.';
-  return 'Onyx could not complete that action.';
+  if(/cancel|abort/i.test(raw))return 'The chat request was stopped. You can try sending your message again.';
+  if(/timeout|timed out/i.test(raw))return 'Onyx\'s chat connection timed out. This is a technical problem, not a reply to your words. Please retry.';
+  if(/quota|rate.?limit|resource.?exhaust|too many requests/i.test(raw))return 'Onyx\'s AI service is busy or has reached its limit. Please try again later.';
+  if(/network|fetch|http|reach|unavailable/i.test(raw))return 'Onyx\'s chat service cannot be reached right now. Your message was not rejected; please retry.';
+  return 'Onyx\'s chat did not finish because of an app or service error. This is not a response to what you said. Please retry.';
 }
 function emit(){
   const snap=Object.freeze(snapshot());
@@ -154,7 +160,7 @@ async function directRequest(action,data,timeout,signal){
   try{
     const res=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,sessionToken:token,data:data||{}}),signal:ctl.signal,cache:'no-store',credentials:'omit'});
     if(!res.ok)throw new Error('Backend HTTP '+res.status);
-    const out=await res.json();if(!out||out.ok===false)throw new Error(String(out?.error||out?.message||'Backend rejected request.'));throwIfAborted(signal);return out;
+    const out=await res.json();if(!out||out.ok===false)throw new Error(backendErrorText(out));throwIfAborted(signal);return out;
   }catch(error){if(signal?.aborted)throw abortError();throw error}
   finally{clearTimeout(timer);if(signal)signal.removeEventListener('abort',relay)}
 }
@@ -170,7 +176,7 @@ async function request(action,data={},options={}){
     if(host)out=await withTimeout(host.request(action,data,{...options,signal}),options.timeout||35000,signal);
     else out=await directRequest(action,data,options.timeout||35000,signal);
     throwIfAborted(signal);
-    if(!out||out.ok===false)throw new Error(String(out?.error||out?.message||'Backend rejected request.'));
+    if(!out||out.ok===false)throw new Error(backendErrorText(out));
     status.online=true;status.checkedAt=new Date().toISOString();
     const returnedProfile=String(out.profileKey||out.profile||'').toLowerCase(),localProfile=activeProfile();
     if(['william','jasper','shared'].includes(returnedProfile))status.profileKey=returnedProfile;else if(!status.profileKey&&localProfile!=='shared')status.profileKey=localProfile;
