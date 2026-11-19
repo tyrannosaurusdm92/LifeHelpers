@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#001e24">
   <title>LifeHelpers Arcade</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="The Arcade">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="LifeHelpers Arcade">
   <link rel="stylesheet" href="css/main.css">
   <style>
     /* The two permanent sections share the existing arcade design system. */
@@ -148,13 +156,23 @@
     <div class="masthead">
       <div class="brand-row">
         <div class="logo">LifeHelpers <em>Arcade</em></div>
-        <div class="badge">HTML Game Loader</div>
+        <div class="arcade-app-actions">
+          <button id="downloadAppButton" class="orange download-app-btn" type="button">⬇ Download App</button>
+          <span class="badge">HTML Game Loader</span>
+        </div>
       </div>
-      <p class="tagline">Desktop + mobile HTML game launcher.</p>
+      <p class="tagline">Desktop + mobile HTML game launcher. Install it with your Arcade icon and launch it from your Home Screen, Dock, or desktop.</p>
+      <div id="installHelp" class="install-help" hidden role="region" aria-label="Install LifeHelpers Arcade">
+        <button id="installHelpClose" class="dark install-help-close" type="button" aria-label="Close instructions">✕</button>
+        <strong>Install The Arcade</strong>
+        <p id="installHelpText">Use your browser's install or Add to Home Screen command.</p>
+        <p>This is an installable web app, not a native .exe, .apk, or .dmg. Internet access is needed for games that are not already available offline.</p>
+      </div>
     </div>
     <nav class="navbar" aria-label="Arcade navigation">
       <a href="#game-search">Games</a>
       <a href="#arcade-viewer">Viewer</a>
+      <a href="#cloud-saves">Cloud Saves</a>
     </nav>
   </header>
 
@@ -245,6 +263,34 @@
       </div>
     </section>
 
+    <section class="module" id="cloud-saves">
+      <div class="module-hd"><h2>Cloud Saves &amp; Device Pairing</h2><span aria-hidden="true">☁</span></div>
+      <p class="module-subtitle">No game account required. Connect your phone and desktop with a private pairing code.</p>
+      <div class="module-body">
+        <p id="cloudStatus" role="status" aria-live="polite">Cloud saves are optional.</p>
+        <div class="cloud-profile-actions">
+          <button id="cloudCreateButton" type="button">Create Save Profile</button>
+          <label class="field cloud-pair-field" for="cloudPairInput">
+            <span>Pair an existing device</span>
+            <input id="cloudPairInput" type="text" autocapitalize="characters" autocomplete="off" spellcheck="false" placeholder="ARC-...">
+          </label>
+          <button id="cloudLinkButton" class="orange" type="button">Link Device</button>
+        </div>
+        <div class="cloud-connected" data-cloud-connected hidden>
+          <label class="field cloud-pair-field" for="pairingCode"><span>Your private pairing code</span>
+            <input id="pairingCode" type="password" readonly autocomplete="off" aria-label="Private cloud pairing code">
+          </label>
+          <div class="cloud-row-actions">
+            <button id="cloudShowButton" class="dark" type="button">Show</button>
+            <button id="cloudCopyButton" class="dark" type="button">Copy Code</button>
+            <button id="cloudRefreshButton" type="button">Refresh Saves</button>
+            <button id="cloudUnlinkButton" class="dark" type="button">Unlink This Device</button>
+          </div>
+          <div id="cloudSaveList" class="cloud-save-list" aria-live="polite">Loading saved games…</div>
+        </div>
+        <p class="cloud-note">Progress sync supports games using compatible localStorage saves or the Arcade save bridge. Some older games use different storage formats and will continue saving locally until individually adapted. Never share your pairing code.</p>
+      </div>
+    </section>
     <section class="module" id="arcade-viewer">
       <div class="module-hd"><h2>Arcade Viewer</h2><span aria-hidden="true">✦</span></div>
       <p class="module-subtitle">Games load here.</p>
@@ -300,6 +346,7 @@
 
 <script src="GameBots/js/gamebots.js"></script>
 <script src="js/main.js"></script>
+<script src="js/arcade-cloud.js"></script>
 
 
 
