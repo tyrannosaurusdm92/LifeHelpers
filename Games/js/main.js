@@ -96,6 +96,7 @@
   { title: "Archery Game", path: "Both/14-Archery-Game/index.html", platform: "both" },
   { title: "Tic-Tac-Toe", path: "Both/15-Tic-Tac-Toe/index.html", platform: "both" },
   { title: "Ping Pong Game", path: "Both/19-Ping-Pong-Game/index.html", platform: "both" },
+  { title: "Lumenwake", path: "Both/lumenwake.html", platform: "both" },
   { title: "Rainbow Bottles", path: "Both/3d-rainbow-bottles.html", platform: "both" },
   { title: "Angry Birds", path: "Desktop/angrybirds.html", platform: "desktop" },
   { title: "Backrooms", path: "Desktop/backrooms.html", platform: "desktop" },
@@ -172,12 +173,12 @@
     const modes = new Set(["single"]);
 
     if(/fnaf|five nights|backrooms|evil glitch/.test(t)) genres.add("horror");
-    if(/shooter|trigger|sniper|archer|archery|zombie rush|temple of boom|stick fighter/.test(t)) genres.add("shooter");
+    if(/lumenwake|shooter|trigger|sniper|archer|archery|zombie rush|temple of boom|stick fighter/.test(t)) genres.add("shooter");
     if(/bloons|tower defence|tower defense|age of war|ages of conflict|state\.io|clash of vikings|plants vs|chess/.test(t)) genres.add("strategy");
     if(/papa's|miner|melon playground|duck life|learn to fly|rainbow bottles/.test(t)) genres.add("simulation");
     if(/idle|clicker|spacebar clicker/.test(t)) genres.add("idle");
     if(/wordle|riddle school|trivia|hangman/.test(t)) genres.add("word");
-    if(/sudoku|solitaire|minesweeper|bloxorz|connect the pipes|candy crush|bubble shooter|trap the cat|stacktris|stack$|tetris|rainbow bottles|chess/.test(t)) genres.add("puzzle");
+    if(/sudoku|solitaire|minesweeper|bloxorz|connect the pipes|candy crush|bubble shooter|lumenwake|trap the cat|stacktris|stack$|tetris|rainbow bottles|chess/.test(t)) genres.add("puzzle");
     if(/racer|racing|polytrack|free rider|hover racer|eagle ride|blumgi racers/.test(t)) genres.add("racing");
     if(/8 ball|baseball|fishing|ping pong|archery/.test(t)) genres.add("sports");
     if(/stick fighter|iron snout|bacon may die|choppy orc/.test(t)) genres.add("fighting");
