@@ -179,10 +179,16 @@
       else row.style.gridTemplateColumns = "minmax(150px,1fr) minmax(120px,180px) 42px 96px";
     });
 
-    /* Give chat the vertical priority. If a user makes the panel short,
-       surrounding page controls can scroll instead of crushing messages. */
+    /* Reserve a readable transcript, not merely a percentage of the panel.
+       The compact layout stacks a channel rail and wraps composer controls;
+       both need extra vertical budget before the messages get their space.
+       Let the outer conversation page scroll when the widget is short. */
+    const readingSpace = sized(430, scale, 380, 760);
+    const controlsSpace = stackedServer
+      ? sized(450, scale, 380, 900)
+      : sized(315, scale, 280, 630);
     panel.style.setProperty("--onyx-fit-chat-floor",
-      px(clamp(height * (fit === "tiny" ? 0.44 : 0.52), 180, 620)));
+      px(readingSpace + controlsSpace));
   }
   function captureBaseline(panel) {
     let s = state.get(panel);
@@ -210,6 +216,7 @@
     /* Fullscreen is an existing independent Onyx presentation mode. */
     if (widget.classList.contains("is-fullscreen") || widget.classList.contains("tab-fullscreen")) {
       setScaledVars(panel, 1);
+      panel.style.setProperty("--onyx-fit-chat-floor", "0px");
       return;
     }
 
@@ -462,6 +469,7 @@
     const classObserver = new MutationObserver(() => {
       if (widget.classList.contains("is-fullscreen") || widget.classList.contains("tab-fullscreen")) {
         setScaledVars(panel, 1);
+        panel.style.setProperty("--onyx-fit-chat-floor", "0px");
       } else {
         requestAnimationFrame(() => {
           keepInsideViewport();
