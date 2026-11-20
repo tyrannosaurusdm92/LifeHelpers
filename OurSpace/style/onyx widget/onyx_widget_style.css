@@ -1298,6 +1298,13 @@ body {
 .onyx-round-widget .onyx-chat-line.system {
   font-style: italic;
 }
+.onyx-round-widget .onyx-chat-line .onyx-chat-speaker {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: 1em;
+  line-height: 1.35;
+}
 .onyx-round-widget .onyx-chat-line.is-pinned {
   outline: 2px solid var(--panel-border);
 }
