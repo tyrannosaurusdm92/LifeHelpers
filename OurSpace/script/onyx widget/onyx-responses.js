@@ -12,7 +12,7 @@
     if (!dialog) return;
     if (!dialog.open) dialog.showModal();
     if (!loading) {
-      const moduleUrl = new URL('./response-generator/generator-app.js', import.meta.url).href;
+      const moduleUrl = new URL('./response-generator/generator-app.js?v=20261119-speaker-markers', import.meta.url).href;
       loading = import(moduleUrl).then(() => ({loaded:true,source:'maintained-modules'})).catch(error => {
         loading = null;
         const status = document.getElementById('status') || document.getElementById('onyxVoiceStatus');
