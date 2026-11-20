@@ -3649,10 +3649,11 @@ body.ourspace-account-settings-open {
   margin-top: var(--onyx-rgap7);
 }
 .onyx-round-widget .jump-panel.onyx-responsive-scale .onyx-chat-line {
-  margin-bottom: var(--onyx-rgap6);
-  padding: var(--onyx-rpad7) var(--onyx-rpad8);
-  font-size: var(--onyx-rf11);
-  line-height: 1.42;
+  margin-bottom: var(--onyx-rgap10);
+  padding: var(--onyx-rpad9) var(--onyx-rpad10);
+  font-size: var(--onyx-rf12);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 .onyx-round-widget .jump-panel.onyx-responsive-scale .chat-conversation-section .chat-compose-toolbar {
   gap: var(--onyx-rgap4);
@@ -3809,7 +3810,7 @@ body.ourspace-account-settings-open {
   --onyx-ui-scale: 1;
 }
 .onyx-round-widget .jump-panel.onyx-responsive-scale {
-  --onyx-fit-chat-floor: 280px;
+  --onyx-fit-chat-floor: 745px;
 }
 .onyx-round-widget .jump-panel.onyx-responsive-scale :is(
   button,input,select,textarea,form,main,section,aside,details,
