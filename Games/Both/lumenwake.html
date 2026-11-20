@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="dark light" name="color-scheme"/>
-<title>Lumenwake — Tropical Storm HUD · First 111 + Endless Pass 11</title>
+<title>Lumenwake — Wide Playfield and Sliding Shooter · Pass 11 Repair</title>
 <style>
 :root{
   --cyan:#00ffff;--teal:#008080;--lime:#32cd32;--blue:#1e90ff;
@@ -1788,26 +1788,29 @@ function resizeBoard() {
     render();
 }
 let cameraFrame=null;
+let cameraPanX=0;
 function world() {
     if(cameraFrame)return cameraFrame;
     const width=(0,core_js_1.fieldWidth)(state);
-    const baseLaunch=1+core_js_1.ROW_STEP*(state.rows-1)+4;
-    const reserve=W<=620?Math.min(H*.31,140):Math.min(H*.23,142);
-    const top=W>620?75:16;
-    // Size the board from actual cell geometry before extending the launch gap.
-    // This prevents a deeper launcher from shrinking the playfield.
-    const scale=Math.max(.4,Math.min((W-16)/(width+3.2),(H-reserve-top-16)/(baseLaunch+.5)));
-    const frame={scale,ox:(W-width*scale)/2,oy:top};
-    const joy=document.getElementById('leftJoystick');
-    if(joy){
-      const jr=joy.getBoundingClientRect(),cr=canvas.getBoundingClientRect();
-      if(cr.height>0&&jr.height>0){
-        const centerInCanvas=(jr.top+jr.height/2-cr.top)*(H/cr.height);
-        const desiredY=Math.max(top+(baseLaunch+.8)*scale,Math.min(H-9,centerInCanvas));
-        state.launcherGap=Math.max(0,Math.min(36,(desiredY-top)/scale-baseLaunch));
-      }
+    const launch=(0,core_js_1.launcher)(state);
+    const top=W>620?35:12, bottom=W>620?18:12;
+    // The viewport already fills the HUD. Fit the ACTUAL launch location,
+    // not empty reserved grid rows or the on-screen joystick position.
+    // Preserve round bubbles and exact world-to-shot collision coordinates.
+    const byHeight=Math.max(5,(H-top-bottom)/(launch.y+1.15));
+    const byWidth=Math.max(4,(W-18)/(width+3));
+    let scale=Math.min(byWidth,byHeight);
+    // Phone landscape/portrait uses a legible camera window onto the SAME
+    // canonical board. Panning follows the movable launcher across the reef.
+    if(W<700)scale=Math.min(byHeight,Math.max(scale,Math.min(12,byHeight)));
+    const visualWidth=width*scale,idealOx=(W-visualWidth)/2;
+    const maxPan=Math.max(0,(visualWidth-W)/2+9);
+    if(maxPan===0)cameraPanX=0;
+    else {
+       const follow=W/2-((0,core_js_1.launcher)(state).x*scale+idealOx);
+       cameraPanX=Math.max(-maxPan,Math.min(maxPan,follow));
     }
-    return cameraFrame=frame;
+    return cameraFrame={scale,ox:idealOx+cameraPanX,oy:top};
 }
 // Drops use the actual disconnected cells reported by the game resolver.
 function spawnShotEffects(beforeCells, outcome) {
@@ -2294,6 +2297,11 @@ function render() {
         ctx.fillStyle = '#f5fff1';
         ctx.textAlign = 'center';
         ctx.fillText(state.turn === 'fred' ? 'FRED' : 'YOU', q.x, q.y + radius + 20);
+        if(state.turn==='player' && !reducedMotion.matches){
+          ctx.save();ctx.font='700 11px system-ui';ctx.fillStyle='rgba(213,255,247,.78)';
+          ctx.textAlign='left';ctx.fillText('↔ Drag below to slide shooter · Shift + ← →',11,H-13);
+          ctx.restore();
+        }
     }
     weatherVisuals?.drawForeground(ctx, W, H);
     drawWeatherDepth(true);
@@ -2449,95 +2457,96 @@ function viewportGeometry(originalCols=9,originalRows=10){
     return {cols,rows,phone};
 }
 function extendPlayableCanopy(s,stage){
-    if(stage.geometryV3)return;
-    // Pass 10: all stages including the pinned first 111 have screen-independent
-    // logical dimensions. Only the drawing camera scales to phone/tablet/desktop.
-    const n=BigInt(stage.level), endless=n>111n;
-    const stableSeed=(Number(stage.seed)>>>0)||1;
-    const initial=Number(n>111n?111n:n);
+    if((Number(stage.geometryV3)||0)>=4)return;
+    // Preserve the 111 canonical starting layouts and the deterministic endless
+    // recipes: re-project the original contiguous columns into three or four
+    // natural marsh islands distributed across the horizontal playfield.
+    // This expands playable WIDTH without tripling the actual target count.
+    const n=BigInt(stage.level),endless=n>111n;
+    const seed=(Number(stage.seed)>>>0)||1;
+    const index=Number(n>111n?111n:n);
     const logical=endless
-        ? {cols:14+(stableSeed%4),rows:11+((stableSeed>>>5)%3)}
-        : {cols:11+Math.min(4,Math.floor((initial-1)/24))+((stableSeed>>>6)&1),
-           rows:10+Math.min(2,Math.floor((initial-1)/36))+((stableSeed>>>10)&1)};
-    const g=logical,priorCols=s.cols,priorRows=s.rows;
-    const targetCols=Math.max(priorCols,g.cols), targetRows=Math.max(priorRows,g.rows);
-    const shift=Math.floor((targetCols-priorCols)/2);
-    if(shift){
-        for(const c of s.cells){c.col+=shift;c.id=(0,core_js_1.key)(c.col,c.row);}
-        for(const v of s.veils||[]){const owner=s.cells.find(c=>c.podId===v.id);if(owner)v.cellId=owner.id;}
-        for(const gate of s.gates||[])gate.col+=shift;
-        for(const n of s.nurseries||[])n.col+=shift;
-        if(s.rotor){s.rotor.center.col+=shift;
-            for(const ring of s.rotor.slotRings||[])for(const p of ring)p.col+=shift;}
-        // A level can carry per-cell ownership and goal references.
-        if(s.ownership){const updated={};for(const [key,who] of Object.entries(s.ownership)){
-            const [col,row]=key.split(',').map(Number);updated[(0,core_js_1.key)(col+shift,row)]=who;
-        }s.ownership=updated;}
+        ? {cols:42+(seed%9),rows:11+((seed>>>5)%3)}
+        : {cols:34+Math.min(12,Math.floor((index-1)/9))+((seed>>>6)&1),
+           rows:10+Math.min(2,Math.floor((index-1)/36))+((seed>>>10)&1)};
+    const oldCols=s.cols,oldRows=s.rows,oldCount=s.cells.length;
+    const targetCols=Math.max(oldCols,logical.cols),targetRows=Math.max(oldRows,logical.rows);
+    const count=Math.min(4,Math.max(3,Math.ceil(oldCols/3.1)));
+    const groupWidth=Math.ceil(oldCols/count);
+    const groups=[];
+    for(let i=0;i<count;i++){
+        const from=i*groupWidth,to=Math.min(oldCols,from+groupWidth);
+        if(from>=to)continue;
+        const maxLeft=targetCols-(to-from)-1;
+        const start=Math.round(1+(maxLeft-1)*(groups.length===0?0:i/(count-1)));
+        groups.push({from,to,start});
     }
+    const mapCol=col=>{
+       if(!Number.isFinite(col))return col;
+       const band=groups.find(g=>col>=g.from&&col<g.to);
+       return band?band.start+(col-band.from):col;
+    };
+    const oldToNew={};
+    for(const c of s.cells){
+       const oldId=c.id||((0,core_js_1.key)(c.col,c.row));
+       c.col=mapCol(c.col);c.id=(0,core_js_1.key)(c.col,c.row);
+       oldToNew[oldId]=c.id;
+    }
+    for(const v of s.veils||[])if(oldToNew[v.cellId])v.cellId=oldToNew[v.cellId];
+    for(const v of s.clues||[])if(oldToNew[v.cellId])v.cellId=oldToNew[v.cellId];
+    for(const gate of s.gates||[])gate.col=mapCol(gate.col);
+    for(const spot of s.nurseries||[])spot.col=mapCol(spot.col);
+    for(const item of s.seeds||[]){if(Number.isFinite(item.col))item.col=mapCol(item.col);
+       if(oldToNew[item.cellId])item.cellId=oldToNew[item.cellId];}
+    if(s.ownership){const ownership={};for(const [id,who] of Object.entries(s.ownership)){
+       const [col,row]=id.split(',').map(Number);
+       ownership[(0,core_js_1.key)(mapCol(col),row)]=who;
+    }s.ownership=ownership;}
     s.cols=targetCols;s.rows=targetRows;
     if(s.pressure)s.pressure.limit=targetRows-1;
-    const used=new Set(s.cells.map(c=>c.id)),seed=(Number(stage.seed)>>>0)||1;
-    const rand=(col,row,salt=0)=>{let n=Math.imul((col+23)^seed,0x9e3779b1)^Math.imul(row+31+salt,0x85ebca6b);
-        n^=n>>>16;n=Math.imul(n,0x7feb352d);n^=n>>>15;return (n>>>0)/4294967296;};
-    const depth=Math.min(targetRows-2,Math.max(6,Math.round(targetRows*(stage.cushion?.67:.74))));
-    const variant=endless?seed%12:seed%Math.min(12,3+Math.floor((initial-1)/11)),easy=Boolean(stage.cushion),added=[];
-    // Parent-supported branches, arches, trenches, bridges and intentional bank lanes.
-    for(let row=0;row<depth;row++){
-      for(let col=0;col<targetCols;col++){
-        const id=(0,core_js_1.key)(col,row);
-        if(used.has(id))continue;
-        const existingMiddle=col>=shift && col<shift+priorCols;
-        if(existingMiddle&&row<5)continue; // Preserve pre-existing puzzles, rotors and blockers.
-        let density=easy? [1,.82,.66,.40,.30,.24,.20,.17][Math.min(row,7)]
-                        : [1,.91,.81,.68,.55,.44,.36,.28,.25,.21,.18,.15][Math.min(row,11)];
-        if(row>=depth-2)density*=.72;
-        const band=Math.floor((col+(seed%4))/4);
-        const channel=variant===0&&(band%4===2)&&row>3 || variant===1&&((col+row)%11===0)&&row>4 ||
-                      variant===2&&((col-row)%13===0)&&row>2 ||
-                      variant===6&&((col+2*row)%9<2)&&row>3 ||
-                      variant===7&&((2*col-row)%11<2)&&row>2 ||
-                      variant===8&&(Math.abs(col-Math.floor(targetCols/2))<2)&&row>4 ||
-                      variant===9&&((col+Math.floor(row/2))%7===3)&&row>3 ||
-                      variant===10&&((col*3+row)%13<2)&&row>4 ||
-                      variant===11&&((col+row)%8===4)&&row>3;
-        if(channel)density*=.16;
-        const trunk=(col-(seed%5)+100)%5===0;
-        const nearTrunk=((col-(seed%5)+100)%5<=1)||((col-(seed%5)+100)%5>=4);
-        if(row>=4 && nearTrunk)density=Math.max(density,easy?.41:.63);
-        if(row>=5 && !nearTrunk)density*=.56;
-        const keep=row===0 || (trunk && row>=1) || rand(col,row,11)<density;
-        if(!keep)continue;
-        if(row>0){
-           const supported=(0,core_js_1.neighbors)(s,col,row).some(p=>p.row===row-1&&used.has((0,core_js_1.key)(p.col,p.row)));
-           if(!supported)continue;
+    const rng=(col,row,salt=0)=>{
+       let x=(seed^Math.imul(col+31,0x9e3779b1)^Math.imul(row+salt+17,0x85ebca6b))>>>0;
+       x^=x>>>16;x=Math.imul(x,0x7feb352d);x^=x>>>15;x=Math.imul(x,0x846ca68b);x^=x>>>16;
+       return (x>>>0)/4294967296;
+    };
+    const occupied=new Set(s.cells.map(c=>c.id));
+    const colors=s.colors||[];
+    const depth=Math.min(targetRows-2,Math.max(5,s.cells.reduce((m,c)=>Math.max(m,c.row),0)+2));
+    const cap=Math.min(18,Math.ceil(oldCount*(stage.cushion?.20:.31))+(endless?2:0));
+    const added=[];
+    // Small contiguous side branches give each island extra tactical options,
+    // but the shot budget is never inflated by an entire new full-width canopy.
+    for(let row=1;row<=depth && added.length<cap;row++){
+      for(const g of groups){
+        for(let col=g.start-1;col<=g.start+g.to-g.from && added.length<cap;col++){
+          if(col<0||col>=targetCols)continue;
+          const id=(0,core_js_1.key)(col,row);
+          if(occupied.has(id))continue;
+          const parent=(0,core_js_1.neighbors)(s,col,row).some(p=>
+               p.row===row-1&&occupied.has((0,core_js_1.key)(p.col,p.row)));
+          if(!parent)continue;
+          const density=(stage.cushion?.22:.39)*Math.pow(.81,Math.max(0,row-2));
+          if(rng(col,row,91)>=density)continue;
+          const hue=colors[Math.floor(rng(col,row,17)*colors.length)];
+          if(!hue)continue;
+          added.push({id,col,row,hue,tags:[]});occupied.add(id);
         }
-        const stripe=Math.floor((col+Math.floor(row/3)+(seed%5))/3);
-        const colors=s.colors||[],cCount=colors.length;
-        if(!cCount)continue;
-        const idx=((stripe+Math.floor(row/4))%cCount+cCount)%cCount;
-        let hue=colors[idx];
-        if(row>2&&rand(col,row,31)>.91)hue=colors[(idx+1)%cCount];
-        const cell={id,col,row,hue,tags:[]};used.add(id);added.push(cell);
       }
     }
     s.cells.push(...added);
     s.cells.sort((a,b)=>a.row-b.row||a.col-b.col);
-    const extra=added.length;
-    // Match-three cascades and support cuts scale faster than individual shot count.
-    const moreShots=Math.ceil(extra*(easy?.72:.49));
-    if(s.shotsRemaining){s.shotsRemaining.player+=moreShots;
-       if(s.fredActive)s.shotsRemaining.fred+=Math.ceil(extra*.28);}
-    stage.shots=(stage.shots||0)+moreShots;
-    stage.parTime=(stage.parTime||0)+Math.round(extra*1.65);
-    if(stage.timerSeconds)stage.timerSeconds+=Math.round(extra*2.3);
-    if(s.collection){const available=s.cells.filter(c=>c.hue===s.collection.symbol).length;
-       s.collection.target=Math.min(24,Math.max(s.collection.target,Math.ceil(available*.42)));
-       if(stage.collectible)stage.collectible.target=s.collection.target;
-       if(s.goal?.id===3)s.goal.target=Math.min(s.collection.target,Math.max(s.goal.target||3,8));}
-    stage.geometryV3=3;stage.geometryWidth=targetCols;stage.geometryDepth=depth;stage.extraCanopy=(stage.extraCanopy||0)+extra;
+    if(s.collection){
+      const tally=s.cells.filter(c=>c.hue===s.collection.symbol).length;
+      s.collection.target=Math.min(Math.max(1,tally),s.collection.target);
+      if(stage.collectible)stage.collectible.target=s.collection.target;
+    }
+    stage.geometryV3=4;
+    stage.geometryWidth=targetCols;
+    stage.geometryDepth=depth;
+    stage.extraCanopy=(stage.extraCanopy||0)+added.length;
+    stage.widePlayfield={version:1,islands:groups.length,originalBubbles:oldCount,extraBubbles:added.length};
     if(s.mechanics)s.mechanics.priorCount=s.cells.length;
 }
-
 
 
 // Verify connected components after building the logical canopy. This does not
@@ -2702,6 +2711,7 @@ function installDescendingTide(s,stage){
  if(!spinner){
    const rows=stage.cushion?3:4;
    s.cells=s.cells.filter(c=>c.row<rows);
+   s.launchRow=Math.min(s.rows-1,rows+1);
    if(s.veils) s.veils=s.veils.filter(v=>s.cells.some(c=>c.podId===v.id));
    if(s.clues) s.clues=s.clues.filter(c=>!c.cellId||s.cells.some(a=>a.id===c.cellId));
    // Existing matching groups, hazards and per-cell symbols stay real and interactive.
@@ -2848,6 +2858,7 @@ function updateRotorAtmosphere(dt){
        extendPlayableCanopy(sampleState,sample);
         installSpinnerStage(sampleState,sample);
         certifyBoard(sampleState,sample);
+        fixLaunchRail(sampleState);
         sampleState.pressure.enabled=false;
        if(isTideChallenge(n))installDescendingTide(sampleState,sample);
        calibrateShotBudget(sampleState,sample);
@@ -2862,6 +2873,12 @@ function updateRotorAtmosphere(dt){
             firstChapter:n<=111n,canonicalFirst111:!!sample.first111Pinned,recipeVersion:sample.recipeVersion};
     }
  });
+ function fixLaunchRail(s){
+     const deepest=s.cells.reduce((m,c)=>Math.max(m,c.row),0);
+     s.launchRow=Math.min(s.rows-1,Math.max(4,deepest+1));
+     if(!Number.isFinite(s.launcherX))s.launcherX=(0,core_js_1.fieldWidth)(s)/2;
+     s.launcherX=Math.max(1.35,Math.min((0,core_js_1.fieldWidth)(s)-1.35,s.launcherX));
+ }
  function loadStage(level) {
     if (!(0, progress_js_1.isUnlocked)(progress, level))
         return false;
@@ -2872,6 +2889,7 @@ function updateRotorAtmosphere(dt){
     extendPlayableCanopy(state,record);
     installSpinnerStage(state,record);
     certifyBoard(state,record);
+    fixLaunchRail(state);
     state.pressure.enabled=false;
     if(record.pressure)record.pressure.enabled=false;
     if(isTideChallenge(record.level))installDescendingTide(state,record);
@@ -2879,6 +2897,8 @@ function updateRotorAtmosphere(dt){
     calibrateShotBudget(state,record);
     installFiniteAmmo(state,record);
     angleDeg = 0;
+    cameraFrame=null;
+    cameraPanX=0;
     locked = false;
     paused = false;
     flying = null;
@@ -2907,6 +2927,14 @@ function resume() {
         if (prior?.version === 1 && [levels_js_1.GENERATOR_VERSION,'lumenwake.endless.10-pinned-first111','lumenwake.endless.9-infinite-marsh','lumenwake.endless.7-physical-reef-pressure','lumenwake.endless.5-viewport-storm-research'].includes(prior.record?.version) &&
             [levels_js_1.GENERATOR_VERSION,'lumenwake.endless.10-pinned-first111','lumenwake.endless.9-infinite-marsh','lumenwake.endless.7-physical-reef-pressure','lumenwake.endless.5-viewport-storm-research'].includes(prior.state?.rulesVersion) && /^[1-9]\d*$/.test(prior.record.level) && (0, progress_js_1.isUnlocked)(progress, prior.record.level)) {
             ({ campaignSeed, record, state } = prior);
+            if(!Number.isInteger(state.launchRow))fixLaunchRail(state);
+            if(!Number.isFinite(state.launcherX))state.launcherX=(0,core_js_1.fieldWidth)(state)/2;
+            if((Number(record.geometryV3)||0)<4 && !state.result &&
+               (state.standardShots?.player||0)===0 && (state.standardShots?.fred||0)===0){
+                // Unplayed saved boards are safe to widen; preserve the level number,
+                // campaign seed, stars and inventory without mutating completed runs.
+                loadStage(record.level);return;
+            }
             if(record.version!==levels_js_1.GENERATOR_VERSION){
                 // Keep an in-progress board intact; new replays use the pinned v10 recipe.
                 if(!record.geometryV3)extendPlayableCanopy(state,record);
@@ -3204,6 +3232,50 @@ async function shoot() {
         }
     }
 }
+function slideShooter(worldX,commit=false){
+    if(!state||locked||paused||state.result||state.turn!=='player'||$('gameHud').dataset.view!=='game')return;
+    const width=(0,core_js_1.fieldWidth)(state);
+    state.launcherX=Math.max(1.35,Math.min(width-1.35,worldX));
+    cameraFrame=null;
+    lastPaint=0;
+    render();
+    if(commit)save();
+}
+let slidingPointer=null;
+function sliderWorldX(event){
+    const rect=canvas.getBoundingClientRect(),pixel=(event.clientX-rect.left)*(W/rect.width);
+    const frame=world();return (pixel-frame.ox)/frame.scale;
+}
+// Drag along the lower portion of the REAL shooter board to change where the
+// shot originates. Capture prevents the usual canvas click-to-shoot action.
+canvas.addEventListener('pointerdown',event=>{
+    if(!state||locked||paused||state.result||$('gameHud').dataset.view!=='game')return;
+    const rect=canvas.getBoundingClientRect(),py=(event.clientY-rect.top)*H/rect.height;
+    if(py<H*.76)return;
+    slidingPointer=event.pointerId;
+    canvas.setPointerCapture?.(event.pointerId);
+    slideShooter(sliderWorldX(event));
+    event.preventDefault();event.stopImmediatePropagation();
+},true);
+canvas.addEventListener('pointermove',event=>{
+    if(slidingPointer!==event.pointerId)return;
+    slideShooter(sliderWorldX(event));
+    event.preventDefault();event.stopImmediatePropagation();
+},true);
+function stopSlide(event){
+    if(slidingPointer!==event.pointerId)return;
+    slidingPointer=null;save();event.stopImmediatePropagation();
+}
+canvas.addEventListener('pointerup',stopSlide,true);
+canvas.addEventListener('pointercancel',stopSlide,true);
+// Shift + arrow keys slides the shooter; bare arrows still operate the HUD aim.
+window.addEventListener('keydown',event=>{
+    if(!event.shiftKey||!['ArrowLeft','ArrowRight'].includes(event.key)||
+       /^(INPUT|TEXTAREA|SELECT)$/.test(event.target?.tagName||''))return;
+    if(!state||locked||paused||state.result||$('gameHud').dataset.view!=='game')return;
+    event.preventDefault();event.stopImmediatePropagation();
+    slideShooter((0,core_js_1.launcher)(state).x+(event.key==='ArrowLeft'?-1:1),true);
+},true);
 function aimAt(event) {
     if (!state || locked || paused || state.turn !== 'player' || state.result)
         return;
@@ -3992,7 +4064,13 @@ const point = (c, r) => ({ x: 1 + 2 * c + (r % 2), y: 1 + exports.ROW_STEP * r }
 exports.point = point;
 const fieldWidth = s => 2 * s.cols + 1;
 exports.fieldWidth = fieldWidth;
-const launcher = s => ({ x: (0, exports.fieldWidth)(s) / 2, y: 1 + exports.ROW_STEP * (s.rows - 1) + 4 + Math.max(0,Number(s.launcherGap)||0) });
+const launcher = s => ({
+    // A shot can originate anywhere along the playable horizontal rail.
+    // The launch row is chosen once when the board is generated, rather than
+    // from unused reserve rows that would shrink the whole puzzle on wide HUDs.
+    x: (0, exports.clamp)(Number.isFinite(s.launcherX) ? s.launcherX : (0, exports.fieldWidth)(s) / 2, 1.35, Math.max(1.35, (0, exports.fieldWidth)(s) - 1.35)),
+    y: 1 + exports.ROW_STEP * (Number.isInteger(s.launchRow) ? s.launchRow : s.rows - 1) + 3.5
+});
 exports.launcher = launcher;
 function component(s, c, r, pred = (cell) => Boolean(cell)) {
     const cells = (0, exports.lookup)(s), start = (0, exports.key)(c, r), seedCell = cells.get(start);
