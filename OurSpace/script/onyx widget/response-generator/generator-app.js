@@ -150,7 +150,7 @@ async function generate(){if(!engine){status('Corpus has not loaded.',true);retu
 }
 
 function scope(){return {profile:selection('profile'),mode:selection('mode'),threadId:$('thread-id').value.trim()||'default'};}
-function messageNode(role,text){const n=make('div','dialogue-msg '+(role==='You'?'user':''));n.append(make('span','who',role),make('div','',text));return n;}
+function messageNode(role,text){const n=make('div','dialogue-msg '+(role==='You'?'user':''));const identity=window.OnyxVoiceContext?.speaker?.(role==='You'?'user':'assistant',scope().profile);const label=identity?.icon?identity.icon+' '+identity.label:role;n.append(make('span','who',label),make('div','',text));return n;}
 async function refreshDialogue(){
   const {profile,mode,threadId}=scope();const turns=await memory.turns(profile,mode,threadId,40),feed=$('dialogue-feed');feed.replaceChildren();
   if(!turns.length)feed.append(make('p','muted','No locally saved turns in this thread.'));

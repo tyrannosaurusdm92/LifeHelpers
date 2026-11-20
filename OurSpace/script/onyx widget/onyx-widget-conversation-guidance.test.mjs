@@ -20,6 +20,31 @@ test('ordinary greeting intent remains social in every Onyx surface',()=>{
   assert.equal(voice.intent('Could you listen without advice?', 'professor'),'listen-only');
 });
 
+test('Onyx speaker markers and family endearments are consistent in each lane',()=>{
+  let profile='william';
+  const window={OnyxTester:{active:()=>true,publicStatus:()=>({selectedProfile:profile})}};
+  runInNewContext(read('script/onyx widget/onyx-widget-conversation-guidance.js'),{window});
+  const voice=window.OnyxVoiceContext;
+  assert.equal(voice.speaker('assistant').icon,'🐈‍⬛');
+  assert.equal(voice.speaker('user').icon,'🩵');
+  assert.equal(voice.speaker('user').label,'William');
+  profile='jasper';
+  assert.equal(voice.speaker('user').icon,'💛');
+  assert.equal(voice.speaker('user').label,'Jasper');
+  assert.equal(voice.speaker('system').icon,'');
+  for(const lane of ['virtual','health','leisure','work','professor']){
+    const rules=voice.guidance('Hey buddy',lane).instructions;
+    assert.match(rules,/must NEVER call William/);
+    assert.match(rules,/never capitalize it as Buddy/);
+  }
+  const persona=read('../Onyx/script/js/onyx/onyx-core/personality-contract.js');
+  assert.match(persona,/Onyx must never address William as my boy/);
+  assert.match(persona,/never write Buddy as a capitalized name/);
+  assert.match(read('script/onyx widget/onyx_widget_onyx-core.js'),/onyx-chat-speaker/);
+  assert.match(read('script/onyx widget/onyx_widget_work-tab.js'),/message.error/);
+  assert.match(read('script/onyx widget/onyx-professor.js'),/🐈‍⬛ Professor Onyx/);
+});
+
 test('the exact inappropriate greeting reply is flagged for the live retry',()=>{
   const window={};
   runInNewContext(read('script/onyx widget/onyx-widget-conversation-guidance.js'),{window});
@@ -42,7 +67,7 @@ test('only the existing Work fullscreen entry loads the full response workshop',
   assert.match(html,/value="professor">Professor/);
   assert.doesNotMatch(html,/Existing GitHub-hosted Onyx brain assets/);
   assert.match(html,/script\/onyx widget\/onyx_widget_onyx-repository-bridge\.js\?v=20261108-pass7-unified-voice" type="module"/);
-  assert.match(html,/<script type="module" src="script\/onyx widget\/onyx-responses\.js\?v=20261109-tester-prompt-repair"/);
+  assert.match(html,/<script type="module" src="script\/onyx widget\/onyx-responses\.js\?v=20261119-speaker-markers"/);
   assert.match(loader,/response-generator\/generator-app\.js/);
   assert.match(loader,/import\(moduleUrl\)/);
   assert.match(loader,/maintained-modules/);
@@ -127,7 +152,7 @@ test('Work, Leisure, Virtual & Health and Professor share Onyx brain and voice, 
   assert.match(work,/OnyxBrainLink\.chat/);
   assert.match(professor,/OnyxBrainLink\.chat/);
   assert.match(core,/OnyxConversationEngine\.reply/);
-  assert.match(html,/onyx-widget-conversation-guidance\.js\?v=20261108-pass7-unified-voice/);
+  assert.match(html,/onyx-widget-conversation-guidance\.js\?v=20261119-speaker-markers/);
   assert.match(html,/onyx-tester\.js\?v=20261108-pass7-unified-voice/);
   assert.doesNotMatch(html,/generator\.css/i);
   assert.equal(JSON.parse(read('json/onyx widget/response-generator/voice-exemplars.json')).entries.length,10000);
