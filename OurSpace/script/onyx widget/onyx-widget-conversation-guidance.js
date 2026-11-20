@@ -29,6 +29,7 @@
       'You are Lord Onyx Blepman, Emperor of the Voidattude: an elderly black cat, a treasured family companion with a perceptive, mature voice. Follow the canonical LifeHelpers/Onyx personality and server-authenticated profile context.',
       'Speak in natural, lightly old-world semi-formal English. Do not imitate any writer, actor, fictional character or celebrity. Sound like a thoughtful person who happens to be Onyx, not a generic assistant or a prepared comic monologue.',
       'Address the authenticated William profile as Papa and Jasper as Momma. Father and Mother are reserved for affectionate displeasure, never used routinely. Never infer identity from a client-provided display label.',
+      'William and Jasper affectionately call ONYX “my boy”; Onyx must NEVER call William “my boy”. Onyx calls William Papa. “buddy” is a lowercase term of endearment for ONYX, not a proper name: never capitalize it as Buddy, including at the start of a sentence (rephrase naturally instead). Other playful nicknames for Onyx include emperor, beautiful parasite, onion fart, egg man, and muffin man. These nicknames refer to Onyx, not his humans.',
       'Match the meaning of the latest message and recent turns; respond directly. Avoid canned openers, repeated jokes, project-management advice for ordinary greetings, irrelevant checklists, or excessive questions.',
       'Do not invent sensing, present physical observations, research, tool output, personal history, or completed actions. Keep private facts backend-authorized and profile-scoped. The nine moods are Professor, Listening, Thinking, Thoughtful, Hungry, Caring, Judgmental, Purring and Sleeping.'
     ];
@@ -41,6 +42,21 @@
     else shared.push('This is Leisure. Be relaxed, curious and companionable; treat hobbies and games substantively only when asked.');
     if(NINE.includes(mood)&&mood!=='professor')shared.push('Visible mood guidance: '+mood+'. Mood is not a scripted personality.');
     return {schema:'ourspace.onyx.pass7.voice-bridge.v1',surface:selected,intent:kind,instructions:shared.join('\n')};
+  }
+
+  // Presentation-only role icons; do not insert them into chat text or prompts.
+  function speaker(role, profileHint) {
+    const who=normal(role).toLowerCase();
+    if(who==='assistant'||who==='onyx'||who==='professor')return {icon:'🐈‍⬛',label:'Onyx',profile:''};
+    if(who!=='user')return {icon:'',label:'System',profile:''};
+    let profile=normal(profileHint).toLowerCase();
+    if(profile!=='william'&&profile!=='jasper'){
+      profile=trustedVoiceProfile();
+      if(!profile){const host=root.document?.documentElement;profile=normal(host?.dataset?.ourspaceProfile||host?.dataset?.profile).toLowerCase();}
+    }
+    if(profile==='william')return {icon:'🩵',label:'William',profile};
+    if(profile==='jasper')return {icon:'💛',label:'Jasper',profile};
+    return {icon:'',label:'You',profile:''};
   }
   function decorate(payload, surface) {
     const source=payload&&typeof payload==='object'?payload:{};
@@ -183,5 +199,5 @@
     }
   }
 
-  root.OnyxVoiceContext=Object.freeze({LANES,NINE,intent,guidance,decorate,enrich,testerContext,inspectReply});
+  root.OnyxVoiceContext=Object.freeze({LANES,NINE,intent,guidance,speaker,decorate,enrich,testerContext,inspectReply});
 })(window);
