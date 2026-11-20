@@ -384,11 +384,12 @@ function renderMessages() {
 }
 
 function messageNode(message) {
+  const identity = message.error ? {icon:"",label:"System"} : window.OnyxVoiceContext?.speaker?.(message.role,message.profileKey);
   const row = document.createElement("article"); row.className = `message-row ${message.role === "assistant" ? "assistant" : "user"}`;
-  const avatar = document.createElement("div"); avatar.className = "message-avatar"; avatar.textContent = message.role === "assistant" ? "O" : "YOU";
+  const avatar = document.createElement("div"); avatar.className = "message-avatar"; avatar.textContent = identity?.icon || (message.error ? "!" : message.role === "assistant" ? "O" : "YOU");
   const main = document.createElement("div"); main.className = "message-main";
   const meta = document.createElement("div"); meta.className = "message-meta";
-  const author = document.createElement("span"); author.className = "message-author"; author.textContent = message.role === "assistant" ? "Onyx" : "You";
+  const author = document.createElement("span"); author.className = "message-author"; author.textContent = identity?.label || (message.role === "assistant" ? "Onyx" : "You");
   const time = document.createElement("time"); time.className = "message-time"; time.textContent = formatTime(message.createdAt); meta.append(author,time);
   const content = document.createElement("div"); content.className = "message-content";
   if (message.error) { const e = document.createElement("div"); e.className = "message-error"; e.textContent = message.content; content.append(e); }
@@ -500,7 +501,7 @@ async function sendMessage(text) {
   sending = true; updateSendState(); renderOnyxMood();
   const fileObjects = queuedFiles.slice();
   const attachments = fileObjects.map(f => ({name:f.name,size:f.size,type:f.type}));
-  const userMessage = { id:uid("m"), role:"user", content:clean, createdAt:nowIso(), attachments };
+  const userMessage = { id:uid("m"), role:"user", content:clean, createdAt:nowIso(), attachments, profileKey:window.OnyxVoiceContext?.speaker?.("user")?.profile || "" };
   if (fileObjects.length) userMessageFilesCache.set(userMessage.id,fileObjects);
   setThreadMessages([...threadMessages(), userMessage]);
   queuedFiles = []; renderAttachments(); els.input.value = ""; resizeComposer(); renderMessages(); addTyping();
@@ -510,7 +511,7 @@ async function sendMessage(text) {
       const result = await api("onyx.ai.image.generate", { prompt:clean, threadId:threadId(), context:workContext(), reasoningEffort:els.reasoning.value, allowAssetGeneration:true }, 180000);
       removeTyping();
       const images = result.images || result.assets || [];
-      const assistant = { id:uid("m"), role:"assistant", content: result.revisedPrompt ? `Generated from: ${result.revisedPrompt}` : (images.length ? "Generated image result." : "The image request completed, but the backend did not return a directly renderable image artifact."), images, createdAt:nowIso() };
+      const assistant = { id:uid("m"), role:"assistant", profileKey:userMessage.profileKey, content: result.revisedPrompt ? `Generated from: ${result.revisedPrompt}` : (images.length ? "Generated image result." : "The image request completed, but the backend did not return a directly renderable image artifact."), images, createdAt:nowIso() };
       setThreadMessages([...threadMessages(), assistant]); renderMessages();
       markChatMood(backendWorkMood(result) || inferWorkMood(assistant.content,"assistant"),"onyx-output");
     } else {
@@ -523,7 +524,7 @@ async function sendMessage(text) {
       removeTyping();
       const reply = String(result.response || result.onyxReply || result.text || "").trim() || "Onyx returned an empty response.";
       userMessageFilesCache.delete(userMessage.id);
-      const assistant = { id:uid("m"), role:"assistant", content:reply, createdAt:nowIso(), responseId:result.responseId || "" };
+      const assistant = { id:uid("m"), role:"assistant", profileKey:userMessage.profileKey, content:reply, createdAt:nowIso(), responseId:result.responseId || "" };
       setThreadMessages([...threadMessages(), assistant]); renderMessages();
       markChatMood(backendWorkMood(result) || inferWorkMood(reply,"assistant"),"onyx-output");
     }
